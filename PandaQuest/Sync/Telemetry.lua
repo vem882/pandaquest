@@ -526,9 +526,20 @@ local function isOwnKill(sourceGUID)
     return sourceGUID == UnitGUID("pet")
 end
 
+-- 5.5.4 exposes the combat log payload only as C_CombatLog.GetCurrentEventInfo; the bare
+-- CombatLogGetCurrentEventInfo global of Retail does not exist here (it is absent from Ketho's
+-- 5.5.4 dump). Resolved once: without it there is nothing to read, and ApplySettings then skips
+-- registering COMBAT_LOG_EVENT_UNFILTERED entirely instead of paying for every combat log line.
+local function combatLogInfoFunc()
+    local C = _G.C_CombatLog
+    if C and C.GetCurrentEventInfo then return C.GetCurrentEventInfo end
+    return _G.CombatLogGetCurrentEventInfo
+end
+M.GetCombatLogInfoFunc = combatLogInfoFunc
+
 local function onCombatLogEvent()
     if not active then return end
-    local info = _G.CombatLogGetCurrentEventInfo
+    local info = combatLogInfoFunc()
     if not info then return end
 
     local _, subevent, _, sourceGUID, _, _, _, destGUID = info()
@@ -701,7 +712,9 @@ function M.ApplySettings()
     active = wanted
 
     if combatFrame then
-        if active then
+        -- COMBAT_LOG_EVENT_UNFILTERED is the highest-frequency event in the game: only ask the
+        -- client to dispatch it when there is an API to read the payload with.
+        if active and combatLogInfoFunc() then
             combatFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
         else
             combatFrame:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")

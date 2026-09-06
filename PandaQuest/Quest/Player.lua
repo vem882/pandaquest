@@ -342,23 +342,31 @@ function M.Init()
     -- Nothing that needs the world; the caches build themselves on first use.
 end
 
+-- Frame:RegisterEvent errors on an event name the client does not know, and AceEvent forwards that
+-- straight out of Enable(). One bad name would then strip every handler registered after it, so
+-- each registration is isolated: a miss costs that one handler and is logged, nothing else.
+local function safeRegister(event, handler)
+    local ok, err = pcall(listener.RegisterEvent, listener, event, handler)
+    if not ok then
+        Log.Error("Player", "RegisterEvent(%s) failed: %s", tostring(event), tostring(err))
+    end
+    return ok
+end
+M.SafeRegister = safeRegister
+
 function M.Enable()
     if not listener.RegisterEvent then return end
 
-    listener:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() announceZone("ZONE_CHANGED_NEW_AREA") end)
-    listener:RegisterEvent("PLAYER_ENTERING_WORLD", function()
+    safeRegister("ZONE_CHANGED_NEW_AREA", function() announceZone("ZONE_CHANGED_NEW_AREA") end)
+    safeRegister("PLAYER_ENTERING_WORLD", function()
         M.InvalidateCompleted()
         M.InvalidateSkills()
         announceZone("PLAYER_ENTERING_WORLD")
     end)
 
-    listener:RegisterEvent("PLAYER_LEVEL_UP", function() M.InvalidateSkills() end)
-    listener:RegisterEvent("SKILL_LINES_CHANGED", function() M.InvalidateSkills() end)
-    listener:RegisterEvent("LEARNED_SPELL_IN_TAB", function() M.InvalidateSkills() end)
-
     -- The completed-quest flags are set server side a moment after the turn-in, so the immediate
     -- optimistic mark is followed by a real refresh two seconds later (docs/06 section 8).
-    listener:RegisterEvent("QUEST_TURNED_IN", function(_, questID)
+    safeRegister("QUEST_TURNED_IN", function(_, questID)
         if type(questID) == "number" then
             M.GetCompleted()[questID] = true
         end
@@ -368,6 +376,11 @@ function M.Enable()
             M.InvalidateCompleted()
         end
     end)
+
+    safeRegister("PLAYER_LEVEL_UP", function() M.InvalidateSkills() end)
+    safeRegister("SKILL_LINES_CHANGED", function() M.InvalidateSkills() end)
+    -- 5.5.4 spelling (docs/02 A5): LEARNED_SPELL_IN_TAB is a Retail-only event and errors here.
+    safeRegister("LEARNED_SPELL_IN_SKILL_LINE", function() M.InvalidateSkills() end)
 end
 
 function M.OnProfileChanged()

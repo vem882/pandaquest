@@ -41,6 +41,7 @@ local queue = {}                    -- specs waiting for a frame
 local queueIndex = 1
 local activeWorld = {}              -- pin frame -> spec
 local activeMinimap = {}
+local placed = {}                   -- spec key -> { spec = spec, world = pin, mini = pin }
 local pool = {}                     -- free pin frames
 local pinCount = 0
 local currentKey = nil              -- Router's current target key (highlight)
@@ -264,6 +265,24 @@ local function placePin(spec, minimap)
     return pin
 end
 
+--- Removes both pins of one spec key from the maps and returns the frames to the pool.
+local function removePlaced(key)
+    local rec = placed[key]
+    if not rec then return end
+    local lib = hbdPins()
+    if rec.world then
+        if lib then lib:RemoveWorldMapIcon(HBD_REF, rec.world) end
+        activeWorld[rec.world] = nil
+        releasePin(rec.world)
+    end
+    if rec.mini then
+        if lib then lib:RemoveMinimapIcon(HBD_REF, rec.mini) end
+        activeMinimap[rec.mini] = nil
+        releasePin(rec.mini)
+    end
+    placed[key] = nil
+end
+
 --- Draws up to `budget` queued specs. Returns how many were drawn.
 function M.ProcessQueue(budget)
     budget = budget or PINS_PER_FRAME
@@ -273,12 +292,28 @@ function M.ProcessQueue(budget)
     while drawn < budget and queueIndex <= #queue do
         local spec = queue[queueIndex]
         queueIndex = queueIndex + 1
-        local world = placePin(spec, false)
-        if world then activeWorld[world] = spec end
-        if wantMinimap then
-            local mini = placePin(spec, true)
-            if mini then activeMinimap[mini] = spec end
+        local rec = placed[spec.key]
+        if not rec then
+            rec = { spec = spec }
+            placed[spec.key] = rec
         end
+        rec.spec = spec
+        -- A spec can be queued for its missing half only (the minimap was switched back on).
+        if not rec.world then
+            local world = placePin(spec, false)
+            if world then
+                activeWorld[world] = spec
+                rec.world = world
+            end
+        end
+        if wantMinimap and not rec.mini then
+            local mini = placePin(spec, true)
+            if mini then
+                activeMinimap[mini] = spec
+                rec.mini = mini
+            end
+        end
+        if not rec.world and not rec.mini then placed[spec.key] = nil end
         drawn = drawn + 1
     end
     if queueIndex > #queue then
@@ -315,29 +350,79 @@ function M.Clear()
     for pin in pairs(activeMinimap) do releasePin(pin) end
     wipe(activeWorld)
     wipe(activeMinimap)
+    wipe(placed)
     wipe(queue)
     queueIndex = 1
     if driver then driver:Hide() end
 end
 
---- Pins.Redraw([immediate]): rebuilds the pin set. Without `immediate` the drawing is spread over
--- following frames (24 pins each); with it everything is drawn at once (used by tests and /pq reset).
+--- Pins.Redraw([immediate]) -> number of specs. Rebuilds the pin set as a DIFF against what is
+-- already on the maps: a redraw arrives on every quest-log tick, and clearing everything first made
+-- the whole zone blink while the queue refilled it 24 pins per frame. Only the pins whose
+-- coordinate disappeared are removed; unchanged ones are refreshed in place and never re-created.
+-- Without `immediate` the new pins are spread over the following frames (24 each); with it they
+-- are all drawn at once (used by tests and /pq reset).
 function M.Redraw(immediate)
     redrawPending = false
-    M.Clear()
     local p = profile()
     if not p then return 0 end
     local count = buildSpecs()
-    for i = 1, count do queue[i] = specs[i] end
+    local map = mapProfile()
+    local wantMinimap = not map or map.showOnMinimap ~= false
+
+    local byKey = {}
+    for i = 1, count do byKey[specs[i].key] = specs[i] end
+    for key, rec in pairs(placed) do
+        local spec = byKey[key]
+        if not spec or spec.uiMapID ~= rec.spec.uiMapID or spec.x ~= rec.spec.x or spec.y ~= rec.spec.y then
+            removePlaced(key)
+        end
+    end
+
+    wipe(queue)
     queueIndex = 1
-    if count == 0 then return 0 end
-    if immediate then
-        M.ProcessQueue(count * 2 + 1)
+    local kept, lib = 0, hbdPins()
+    for i = 1, count do
+        local spec = specs[i]
+        local rec = placed[spec.key]
+        if rec then
+            -- Same coordinate: the quests behind it (and therefore icon and tooltip) may still have
+            -- changed, so the existing frames are re-pointed instead of being torn down.
+            rec.spec = spec
+            if rec.world then
+                activeWorld[rec.world] = spec
+                rec.world.spec, rec.world.data = spec, spec.targets[1]
+                if ns.Icons then ns.Icons.Apply(rec.world.texture, spec.targets[1], false, rec.world) end
+                applyHighlight(rec.world)
+            end
+            if rec.mini and not wantMinimap then
+                if lib then lib:RemoveMinimapIcon(HBD_REF, rec.mini) end
+                activeMinimap[rec.mini] = nil
+                releasePin(rec.mini)
+                rec.mini = nil
+            elseif rec.mini then
+                activeMinimap[rec.mini] = spec
+                rec.mini.spec, rec.mini.data = spec, spec.targets[1]
+                if ns.Icons then ns.Icons.Apply(rec.mini.texture, spec.targets[1], true, rec.mini) end
+                applyHighlight(rec.mini)
+            end
+            kept = kept + 1
+            if wantMinimap and not rec.mini then queue[#queue + 1] = spec end
+        else
+            queue[#queue + 1] = spec
+        end
+    end
+
+    local pending = #queue
+    if pending == 0 then
+        if driver then driver:Hide() end
+    elseif immediate then
+        M.ProcessQueue(pending * 2 + 1)
     else
         local d = ensureDriver()
-        if d then d:Show() else M.ProcessQueue(count * 2 + 1) end
+        if d then d:Show() else M.ProcessQueue(pending * 2 + 1) end
     end
-    Log.Debug("Pins", "redraw: %d pins queued", count)
+    Log.Debug("Pins", "redraw: %d pins (%d kept, %d queued)", count, kept, pending)
     return count
 end
 
@@ -485,15 +570,15 @@ function M.BuildMenu(spec)
     return menu
 end
 
-function M.OpenMenu(spec)
+--- Pins.OpenMenu(spec, owner): right-click menu for a pin. 5.5.4 has no EasyMenu (it was removed
+-- with the old dropdown builders), so the entries go through the shared MenuUtil shim in Nav/Arrow,
+-- which falls back to chat when even MenuUtil is missing.
+function M.OpenMenu(spec, owner)
     local menu = M.BuildMenu(spec)
     M.lastMenu = menu
-    -- EasyMenu is FrameXML, not a documented API: reach it through _G so a client without it
-    -- simply loses the menu instead of erroring.
-    local easyMenu = _G and _G.EasyMenu
-    if easyMenu and CreateFrame then
-        M.menuFrame = M.menuFrame or CreateFrame("Frame", "PandaQuestPinMenu", UIParent, "UIDropDownMenuTemplate")
-        easyMenu(menu, M.menuFrame, "cursor", 0, 0, "MENU")
+    local Arrow = ns.Arrow
+    if Arrow and Arrow.ShowContextMenu then
+        M.lastMenuMode = Arrow.ShowContextMenu(owner, menu)
     end
     return menu
 end
@@ -503,7 +588,7 @@ function onClick(self, button)
     local target = spec and spec.targets[1]
     if not target then return end
     if button == "RightButton" then
-        M.OpenMenu(spec)
+        M.OpenMenu(spec, self)
         return
     end
     local shift = IsShiftKeyDown and IsShiftKeyDown()

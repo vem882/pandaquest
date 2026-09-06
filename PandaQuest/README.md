@@ -7,14 +7,39 @@ PandaQuest shows an on-screen arrow that always points to the next sensible ques
 minimap, adds quest information to NPC and item tooltips, and links to Wowhead in game. The quest
 database is derived from Questie's MoP data with its corrections applied.
 
+## What works in 0.1.0
+
+- **Database** – 17 693 quests, 60 224 NPCs, 20 326 objects and 80 049 items, decoded in a
+  coroutine at login (about half a second) so the game never freezes. Zone/area mapping,
+  dungeon entrances, hidden-quest lists and Wowhead/community overrides on top.
+- **Quest layer** – reads the quest log with the 5.5.4 API (`GetNumQuestLogEntries` +
+  `GetQuestLogTitle` + `C_QuestLog.GetQuestObjectives`), parses objective progress, and works out
+  which quests you could pick up (level, race, class, prerequisites, reputation, skill, exclusivity).
+- **Navigation** – every unfinished objective, every ready turn-in and the nearest available quests
+  become targets; the router weighs priority against real world distance and picks one.
+- **Arrow** – a TomTom-style arrow with the quest name in difficulty colour, the action to take,
+  the distance and an ETA from your actual speed, an arrival flash, drag-to-move and a right-click
+  menu. Hides itself in instances, on taxis and in pet battles.
+- **Map** – pins on the world map and the minimap through HereBeDragons, merged per spawn cluster,
+  with tooltips and a right-click menu; the current target is highlighted.
+- **Tooltips** – NPC and item tooltips list the quests they start, end or count towards.
+- **Tracker / notifications** – distance and a "navigate here" button on the Blizzard tracker,
+  and a short centre-screen message when a quest completes or the target changes.
+- **Options** – a full AceConfig panel in the Blizzard settings window, plus AceDB profiles.
+- **TomTom** – optional waypoint mirroring when TomTom is installed.
+- **Sync** – optional local telemetry in `PandaQuestSync` for the PandaQuest Hub. Nothing is ever
+  uploaded by the addon itself; the companion tool reads the saved variables when you run it.
+
+Not in this version: flight-path routing between continents (a cross-continent target sorts last
+and shows no distance), and a PandaQuest tracker of its own.
+
 ## Install
 
-1. Copy the `PandaQuest` folder into `World of Warcraft/_classic_/Interface/AddOns/`
-   (or run `python3 tools/install.py --wow-dir <path>` from the repository).
+1. Copy the `PandaQuest` folder into `World of Warcraft/_classic_/Interface/AddOns/`.
 2. Make sure the folder is named exactly `PandaQuest` and contains `PandaQuest.toc`.
-3. Restart the game or `/reload`.
+3. Restart the game, or `/reload` if it was already running.
 
-Optional: TomTom (waypoint mirroring) and Questie are detected automatically when present.
+Optional: **TomTom** (waypoint mirroring) and **Questie** are detected automatically when present.
 
 ## Slash commands
 
@@ -37,17 +62,45 @@ Optional: TomTom (waypoint mirroring) and Questie are detected automatically whe
 | `/pq sync` | telemetry and community data status |
 | `/pq lang auto\|enUS\|fiFI` | interface language |
 
+## Settings
+
+Everything has a working default; the panel (`/pq`) is optional. Groups and the keys behind them:
+
+| Group | What you can change |
+|---|---|
+| General | distance units (metres/yards), minimap button, language note |
+| Arrow | show/lock, quest text, ETA, community timings, hide in instances, arrival flash, size, opacity, text size, reset position |
+| Navigation | target selection (auto / focused quest / nearest), focused quest ID, route to turn-ins, route to new quests + radius and count, arrival radius |
+| TomTom | off or mirror the current target |
+| Map | objective / turn-in / available pins, minimap pins, edge pins, spawn merging, pin sizes, which quests to show (low level, repeatable, dungeon, raid, PvP, pet battle) |
+| Tooltips | quest info in tooltips, quest IDs |
+| Tracker | enhance the Blizzard tracker, show distance |
+| Notifications | on/off, quest complete, next objective, sound, preview |
+| Synchronisation | record quest data, movement breadcrumbs and their interval, sessions kept, events per session |
+| Advanced | log level, arrow debug output, redraw pins, print status |
+| Profiles | the standard AceDB profile management |
+
+Language: PandaQuest follows the game locale and ships English and Finnish. The WoW client never
+reports `fiFI`, so Finnish is selected with `/pq lang fiFI` (reload the UI afterwards).
+
 ## Saved variables
 
 `PandaQuestDB` (settings, AceDB profiles) and `PandaQuestSync` (optional telemetry for the
-PandaQuest Hub; disable with the Sync options).
+PandaQuest Hub; turn it off under Synchronisation).
 
 ## Development
 
-See `docs/` (Finnish) for the module contract and `tools/` for the database builder, the
-WoW API stub test harness (`python3 -m pytest tools/tests`) and the luacheck runner.
+See `docs/` (Finnish) for the module contract and `tools/` for the database builder, the texture
+generator, the WoW API stub test harness and the luacheck runner:
+
+```sh
+python3 -m pytest tools/tests -q -p no:cacheprovider   # 282 tests, no game client needed
+python3 tools/luacheck_runner.py                       # lint every Lua file
+python3 tools/syntax_check.py PandaQuest/**/*.lua      # Lua 5.1 syntax only
+```
 
 ## License
 
 Addon code: see the repository license. Embedded libraries keep their own licenses
-(`Libs/README.md`).
+(`Libs/README.md`), and the map icons copied from Questie/pfQuest keep theirs
+(`Textures/Icons/LICENSE.md`).

@@ -114,8 +114,9 @@ function Icons.Get(name) return PREFIX .. (FILES[name] or FILES.custom) end
 
 Notes for users of the textures:
 
-- `arrow.tga` is square and centred; draw it in a square texture region (e.g. 42x42 inside
-  the 56x42 arrow frame) so `SetRotation` does not distort it. The fill is pure white so the
+- `arrow.tga` is square, centred and fits inside the inscribed circle of its canvas; draw it
+  in a SQUARE texture region (56x56 in the arrow frame) so `SetRotation` neither distorts
+  nor clips it. The fill is pure white so the
   red->yellow->green bearing gradient is applied with `SetVertexColor`; the outline stays dark.
 - `arrow_glow.tga` is white with a radial alpha falloff; tint it and fade its alpha for the
   arrival flash. Use `SetBlendMode("ADD")` for a stronger glow.

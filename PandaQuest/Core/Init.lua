@@ -320,12 +320,17 @@ commands.status = function()
 end
 
 commands.sync = function()
-    local enabled = ns.Telemetry and ns.Telemetry.IsEnabled and ns.Telemetry.IsEnabled()
-    if enabled == nil then enabled = PQ.db.global.telemetry.enabled end
-    local sessions = ns.Sync and ns.Sync.sessions and #ns.Sync.sessions or 0
-    Log.Print(L["Telemetry: %s, sessions stored: %d"], L[enabled and "Enabled" or "Disabled"], sessions)
-    local community = ns.Overrides and ns.Overrides.community
-    Log.Print(L["Community data: %s"], community and community.generated or L["none"])
+    -- Telemetry owns the wording (docs/06 section 13); the fallback keeps /pq sync useful if the
+    -- module failed to load.
+    if ns.Telemetry and ns.Telemetry.GetStatusLines then
+        -- The last line of GetStatusLines() is already the community data freshness.
+        for _, line in ipairs(ns.Telemetry.GetStatusLines()) do Log.Print("%s", line) end
+        return
+    end
+    local enabled = PQ.db.global.telemetry and PQ.db.global.telemetry.enabled
+    Log.Print(L["Telemetry: %s, sessions stored: %d"], L[enabled and "Enabled" or "Disabled"], 0)
+    local text = ns.Community and ns.Community.GetFreshnessText and ns.Community.GetFreshnessText()
+    Log.Print(L["Community data: %s"], text or L["none"])
 end
 
 commands.lang = function(arg)

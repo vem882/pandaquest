@@ -526,6 +526,45 @@ local function targetsForDescriptor(DB, questID, entry, objective, desc, out)
     return out
 end
 
+-- C_QuestLog.SetMapForQuestPOIs mutates the client's SHARED quest-POI selection: Blizzard's own
+-- QuestMapFrame draws its blobs and buttons from it (Wrath/QuestMapFrame.lua:31), so pointing it at
+-- the player's zone from inside a rebuild would silently corrupt an open world map of another zone.
+-- The list is therefore fetched at most once per second per map, and whatever selection Blizzard
+-- had is restored immediately afterwards.
+local poiCache = { uiMapID = nil, at = -1, list = nil }
+local POI_CACHE_SECONDS = 1.0
+
+local function questPoiList(uiMapID)
+    local t = (GetTime and GetTime()) or 0
+    if poiCache.uiMapID == uiMapID and (t - poiCache.at) < POI_CACHE_SECONDS then
+        return poiCache.list
+    end
+
+    local previous
+    if C_QuestLog.GetMapForQuestPOIs then
+        local gotPrevious, prev = pcall(C_QuestLog.GetMapForQuestPOIs)
+        if gotPrevious then previous = prev end
+    end
+    local switched = false
+    if C_QuestLog.SetMapForQuestPOIs and previous ~= uiMapID then
+        switched = pcall(C_QuestLog.SetMapForQuestPOIs, uiMapID)
+        if switched and QuestMapUpdateAllQuests then pcall(QuestMapUpdateAllQuests) end
+    end
+
+    local ok, list = pcall(C_QuestLog.GetQuestsOnMap, uiMapID)
+
+    if switched and previous then
+        pcall(C_QuestLog.SetMapForQuestPOIs, previous)
+        if QuestMapUpdateAllQuests then pcall(QuestMapUpdateAllQuests) end
+    end
+
+    poiCache.uiMapID = uiMapID
+    poiCache.at = t
+    poiCache.list = (ok and type(list) == "table") and list or nil
+    return poiCache.list
+end
+M.InvalidatePoiCache = function() poiCache.uiMapID, poiCache.at, poiCache.list = nil, -1, nil end
+
 --- Blizzard POI fallback (docs/06 section 8): when the database knows no spawn we still know the
 -- blob the Blizzard map draws for this quest.
 local function buildPoiTarget(questID, entry, objective)
@@ -538,11 +577,8 @@ local function buildPoiTarget(questID, entry, objective)
     end
     if not uiMapID then return nil end
 
-    if C_QuestLog.SetMapForQuestPOIs then pcall(C_QuestLog.SetMapForQuestPOIs, uiMapID) end
-    if QuestMapUpdateAllQuests then pcall(QuestMapUpdateAllQuests) end
-
-    local ok, list = pcall(C_QuestLog.GetQuestsOnMap, uiMapID)
-    if not ok or type(list) ~= "table" then return nil end
+    local list = questPoiList(uiMapID)
+    if type(list) ~= "table" then return nil end
     for i = 1, #list do
         local poi = list[i]
         if poi and poi.questID == questID and poi.x and poi.y then
@@ -663,12 +699,17 @@ local function bestGiver(DB, npcIDs, objectIDs)
         if #points == 0 then return end
         local score = huge
         if pos and pos.worldX then
-            local rep = points[1]
-            local _, wx, wy, instanceID = worldFor(rep.areaID, rep.x, rep.y)
-            if wx then
-                local dx, dy = wx - pos.worldX, wy - pos.worldY
-                score = (dx * dx + dy * dy) ^ 0.5
-                if instanceID ~= pos.instanceID then score = OTHER_CONTINENT_PENALTY + score end
+            -- Score the SAME point the placement will use. points[1] comes out of pairs() over the
+            -- spawn table, so for a giver that stands in several zones it can be a copy on another
+            -- continent while another copy is next to the player.
+            local rep = chooseRepresentative(points)
+            if rep then
+                local _, wx, wy, instanceID = worldFor(rep.areaID, rep.x, rep.y)
+                if wx then
+                    local dx, dy = wx - pos.worldX, wy - pos.worldY
+                    score = (dx * dx + dy * dy) ^ 0.5
+                    if instanceID ~= pos.instanceID then score = OTHER_CONTINENT_PENALTY + score end
+                end
             end
         end
         if not best or score < bestScore then
@@ -676,10 +717,10 @@ local function bestGiver(DB, npcIDs, objectIDs)
         end
     end
 
+    -- NPC and object givers compete in one pass: a quest that can be handed in at an object right
+    -- next to the player must not route to an NPC across the zone just because NPCs are tried first.
     for _, id in ipairs(npcIDs or {}) do consider("npc", id) end
-    if not best then
-        for _, id in ipairs(objectIDs or {}) do consider("object", id) end
-    end
+    for _, id in ipairs(objectIDs or {}) do consider("object", id) end
     return best, bestPoints
 end
 

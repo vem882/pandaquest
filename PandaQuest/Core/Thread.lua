@@ -18,6 +18,12 @@ local tremove = table.remove
 local BUDGET_MS = Const.THREAD_BUDGET_MS or 8
 local DEFAULT_TICKS = Const.THREAD_TICKS_PER_YIELD or 24
 
+-- Backstop for the inner resume loop. The frame budget is the real limit in game, but it depends on
+-- the clock moving: under the test harness Compat.NowMs() only advances when a test advances it, and
+-- a job that never finishes would otherwise spin forever inside one Step. 4000 resumes is far above
+-- anything a real pass needs (the database scan yields every 24 quests, so ~96 000 quests per frame).
+local MAX_RESUMES_PER_JOB = Const.THREAD_MAX_RESUMES_PER_JOB or 4000
+
 local jobs = {}             -- ordered list of running handles
 local current = nil         -- handle being resumed right now
 local frameStart = 0        -- Compat.NowMs() when the current Step started
@@ -95,8 +101,18 @@ function Thread.Step(budget)
             finish(handle, false, "cancelled")
         elseif inCombat and handle.pauseInCombat then
             i = i + 1
-        elseif resume(handle) then
-            i = i + 1
+        else
+            -- Keep resuming the SAME job until the frame budget is spent. ticksPerYield is the
+            -- granularity of a yield, not a per-frame quota: resuming every job only once per frame
+            -- would leave almost all of the 8 ms unused and stretch a full database pass over
+            -- thousands of frames (docs/06 section 5).
+            local alive = resume(handle)
+            local resumes = 1
+            while alive and resumes < MAX_RESUMES_PER_JOB and (nowMs() - frameStart) < budgetMs do
+                alive = resume(handle)
+                resumes = resumes + 1
+            end
+            if alive then i = i + 1 end
         end
     end
     if driver and #jobs == 0 then

@@ -214,13 +214,16 @@ local function applyOverrides(set, label)
             for id, fields in pairs(byId) do
                 if type(fields) == "table" then
                     local row = target[id]
-                    if not row then
-                        row = {}
-                        target[id] = row
-                    end
                     for name, value in pairs(fields) do
                         local index = keys[name]
                         if index then
+                            -- A row is only created for an unknown id when there is real schema data
+                            -- to put in it: a community guide entry (runs/avgSeconds/hotspots) must
+                            -- not conjure an empty, nameless quest into the database.
+                            if not row then
+                                row = {}
+                                target[id] = row
+                            end
                             row[index] = value
                             applied = applied + 1
                         else

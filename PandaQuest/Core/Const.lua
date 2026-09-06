@@ -9,8 +9,6 @@ do
     local version
     if C_AddOns and C_AddOns.GetAddOnMetadata then
         version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version")
-    elseif GetAddOnMetadata then
-        version = GetAddOnMetadata(ADDON_NAME, "Version")
     end
     Const.VERSION = version or "0.0.0"
 end
@@ -34,6 +32,7 @@ Const.TARGET_PRIORITY = { OBJECTIVE = 10, ITEMUSE = 10, EXPLORE = 10, TURNIN = 5
 -- Thread driver budget (docs/06 section 5).
 Const.THREAD_BUDGET_MS = 8
 Const.THREAD_TICKS_PER_YIELD = 24
+Const.THREAD_MAX_RESUMES_PER_JOB = 4000   -- backstop if the clock does not advance (see Core/Thread.lua)
 
 -- Log levels (Core/Log.lua).
 Const.LOG_ERROR, Const.LOG_WARN, Const.LOG_INFO, Const.LOG_DEBUG, Const.LOG_TRACE = 0, 1, 2, 3, 4
@@ -57,7 +56,9 @@ ns.DEFAULTS = {
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },
-        minimapButton = { hide = false, minimapPos = 220, radius = 80 },
+        -- No radius here: LibDBIcon only offers a library-wide button radius, so exposing one
+        -- would move every other addon's minimap button too (see UI/MinimapButton.lua).
+        minimapButton = { hide = false, minimapPos = 220 },
         debug = { level = 1, arrowDebug = false },
     },
     char = { hiddenQuests = {}, manualTargetKey = nil, tomtomWaypoint = nil, questAcceptedAt = {}, customTargets = {} },

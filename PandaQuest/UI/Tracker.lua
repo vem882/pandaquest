@@ -177,7 +177,10 @@ function M.Refresh()
             if not p or p.showDistance ~= false then
                 local distance = distanceForQuest(row.questID)
                 overlay.fs:ClearAllPoints()
-                overlay.fs:SetPoint("LEFT", row.line, "RIGHT", 4, 0)
+                -- docs/06 section 11: the distance goes UNDER the quest line. Anchoring it to the
+                -- right of the line would push it out of the 204 px wide, right-docked WatchFrame
+                -- (its lines are up to WATCHFRAME_MAXLINEWIDTH = 192) and against the screen edge.
+                overlay.fs:SetPoint("TOPLEFT", row.line, "BOTTOMLEFT", 0, -1)
                 overlay.fs:SetText(distance and Util.FormatDistance(distance) or "")
                 overlay.fs:Show()
             else

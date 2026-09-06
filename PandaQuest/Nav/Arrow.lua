@@ -21,12 +21,30 @@ ns.Arrow = M
 
 local Const, Util, Log, Compat = ns.Const, ns.Util, ns.Log, ns.Compat
 
+-- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
+-- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
+-- handler another module installed for the same message, so every module listens through its own
+-- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+local listener = {}
+M.listener = listener
+do
+    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
+    if AceEvent then AceEvent:Embed(listener) end
+    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
+    if AceTimer then AceTimer:Embed(listener) end
+end
+
 local tonumber, tostring = tonumber, tostring
 local abs, floor, pi = math.abs, math.floor, math.pi
 local format = string.format
 
 local PI2 = pi * 2
-local BASE_WIDTH, BASE_HEIGHT = 56, 42
+-- The arrow texture is rotated with Texture:SetRotation, which spins the texture coordinates INSIDE
+-- the region's rect. A non-square rect therefore stretches the image differently at every angle
+-- (worst at 90/270 degrees) and clips the tip on the diagonals, so the region is square and the
+-- artwork in arrow.tga fits inside its inscribed circle (tools/make_textures.py).
+local BASE_SIZE = 56
+local TEXT_BLOCK = 56                   -- room under the arrow for the four text lines
 local NO_TARGET_GRACE = 1.0             -- keep the arrow up for a second before hiding (docs 9.5)
 local TEXT_INTERVAL = 0.1               -- how often the text values are re-examined
 local EVALUATE_INTERVAL = 0.2           -- show/hide heartbeat (a hidden frame has no OnUpdate)
@@ -105,14 +123,15 @@ local function rebuildText(target, distance, eta)
     end
     if not statusText then return end
     if not distance then
-        statusText:SetText("")
+        -- Explicit, not blank: an empty line next to a visible arrow reads as "zero metres away".
+        statusText:SetText(L["Distance unknown"])
         return
     end
     local units = profile().units
     if not p.showETA or not eta then
         statusText:SetText(Util.FormatDistance(distance, units))
     else
-        statusText:SetText(format("%s  -  ~%s", Util.FormatDistance(distance, units), Util.FormatTime(eta)))
+        statusText:SetText(format("%s  \226\128\162  ~%s", Util.FormatDistance(distance, units), Util.FormatTime(eta)))
     end
 end
 
@@ -204,6 +223,12 @@ local function onUpdate(self, elapsed)
             local r, g, b = gradient(ahead)
             arrowTex:SetVertexColor(r, g, b)
         end
+    elseif arrowTex then
+        -- No bearing: the target sits in another instance group, or HBD cannot resolve the map
+        -- right now. Keeping the last rotation would point the player confidently in a direction
+        -- that is no longer meaningful, so the arrow is reset and greyed out instead.
+        arrowTex:SetRotation(0)
+        arrowTex:SetVertexColor(0.55, 0.55, 0.55)
     end
 
     -- Arrival glow (numbers only; the texture alpha is a scalar setter).
@@ -254,6 +279,39 @@ local function onDragStop(self)
     savePosition()
 end
 
+--- ShowContextMenu(owner, menu) -> "menu"|"chat"|nil
+-- 5.5.4 removed EasyMenu together with the old UIDropDownMenu builders (it exists neither in the
+-- client source nor in Ketho's global dump); MenuUtil.CreateContextMenu is the replacement and is
+-- what Blizzard's own WatchFrame.lua:88 calls. `menu` is the classic EasyMenu array, so the entries
+-- stay inspectable by tests and by the chat fallback that keeps the actions reachable on a client
+-- without MenuUtil.
+function M.ShowContextMenu(owner, menu)
+    if type(menu) ~= "table" then return nil end
+    local util = _G and _G.MenuUtil
+    if util and util.CreateContextMenu then
+        -- pcall: a right click must never throw, whatever the menu API does with the owner region.
+        local ok, err = pcall(util.CreateContextMenu, owner or UIParent, function(_, root)
+            if not root then return end
+            for i = 1, #menu do
+                local entry = menu[i]
+                if entry.isTitle then
+                    if root.CreateTitle then root:CreateTitle(entry.text) end
+                elseif entry.func and root.CreateButton then
+                    root:CreateButton(entry.text, entry.func)
+                end
+            end
+        end)
+        if ok then return "menu" end
+        Log.Error("Arrow", "context menu failed: %s", tostring(err))
+    end
+    -- No menu system at all: print the actions instead of silently doing nothing.
+    for i = 1, #menu do
+        local entry = menu[i]
+        if not entry.isTitle and entry.text then Log.Print("- %s", tostring(entry.text)) end
+    end
+    return "chat"
+end
+
 local function openMenu()
     local Router = ns.Router
     local target = Router and Router.GetCurrent and Router.GetCurrent() or nil
@@ -302,13 +360,7 @@ local function openMenu()
     end
     menu[#menu + 1] = { text = L["Close"], notCheckable = true, func = function() end }
     M.lastMenu = menu
-    -- EasyMenu is FrameXML, not a documented API: guard it through _G so a future client that
-    -- drops it only loses the menu instead of erroring.
-    local easyMenu = _G and _G.EasyMenu
-    if easyMenu and CreateFrame then
-        M.menuFrame = M.menuFrame or CreateFrame("Frame", "PandaQuestArrowMenu", UIParent, "UIDropDownMenuTemplate")
-        easyMenu(menu, M.menuFrame, "cursor", 0, 0, "MENU")
-    end
+    return M.ShowContextMenu(frame, menu)
 end
 M.OpenMenu = openMenu
 
@@ -379,10 +431,11 @@ local function applyLayout()
     if not frame then return end
     local p = arrowProfile()
     local scale = tonumber(p.scale) or 1
-    frame:SetSize(BASE_WIDTH * scale, BASE_HEIGHT * scale + 56)
+    local size = BASE_SIZE * scale
+    frame:SetSize(size, size + TEXT_BLOCK)
     frame:SetAlpha(tonumber(p.alpha) or 1)
-    if arrowTex then arrowTex:SetSize(BASE_WIDTH * scale, BASE_HEIGHT * scale) end
-    if glowTex then glowTex:SetSize(BASE_WIDTH * scale * 1.6, BASE_HEIGHT * scale * 1.6) end
+    if arrowTex then arrowTex:SetSize(size, size) end
+    if glowTex then glowTex:SetSize(size * 1.6, size * 1.6) end
     frame:SetMovable(not p.locked)
     frame:EnableMouse(true)
     local fontSize = tonumber(p.fontSize) or 12
@@ -510,6 +563,21 @@ function M.GetFrame()
     return frame
 end
 
+--- GetTextures() -> arrowTex, glowTex. Introspection for the options preview and the tests
+-- (the rotated region has to stay square, see BASE_SIZE).
+function M.GetTextures()
+    return arrowTex, glowTex
+end
+
+--- The four text lines exactly as they are on screen: title, action, status, community.
+function M.GetTexts()
+    if not frame then return nil end
+    return titleText and titleText:GetText() or "",
+           actionText and actionText:GetText() or "",
+           statusText and statusText:GetText() or "",
+           communityText and communityText:GetText() or ""
+end
+
 --- Debug dump for `/pq debug arrow`: prints the raw angle numbers so the sign convention can be
 -- checked in game without a reload.
 function M.DebugAngles()
@@ -555,11 +623,10 @@ end
 
 function M.Enable()
     createFrame()
-    local PQ = ns.PQ
-    if PQ and PQ.RegisterMessage then
-        PQ:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
-        PQ:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
-        PQ:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+    if listener.RegisterMessage then
+        listener:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
+        listener:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
+        listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
             M.Refresh()
             -- `/pq debug arrow` flips this flag; print the raw angles once so the sign convention
             -- can be verified in game without a reload.
@@ -568,13 +635,13 @@ function M.Enable()
             end
         end)
     end
-    if PQ and PQ.RegisterEvent then
-        PQ:RegisterEvent("PLAYER_ENTERING_WORLD", M.Evaluate)
-        PQ:RegisterEvent("ZONE_CHANGED_NEW_AREA", M.Evaluate)
+    if listener.RegisterEvent then
+        listener:RegisterEvent("PLAYER_ENTERING_WORLD", M.Evaluate)
+        listener:RegisterEvent("ZONE_CHANGED_NEW_AREA", M.Evaluate)
     end
     -- A hidden frame runs no OnUpdate, so the show/hide decision needs its own heartbeat.
-    if PQ and PQ.ScheduleRepeatingTimer and not evaluateTicker then
-        evaluateTicker = PQ:ScheduleRepeatingTimer(M.Evaluate, EVALUATE_INTERVAL)
+    if listener.ScheduleRepeatingTimer and not evaluateTicker then
+        evaluateTicker = listener:ScheduleRepeatingTimer(M.Evaluate, EVALUATE_INTERVAL)
     end
     if arrowProfile().enabled then
         lastTargetAt = now()

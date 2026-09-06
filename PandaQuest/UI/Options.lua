@@ -106,7 +106,9 @@ local APPLIERS = {
     ["minimapButton"] = refreshMinimapButton,
     ["debug.level"] = function() if Log.SetLevel then Log.SetLevel(M.GetValue("debug.level")) end end,
     ["debug"] = refreshArrow,
-    ["global.telemetry"] = function() end,
+    ["global.telemetry"] = function()
+        if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
+    end,
 }
 
 local function applierFor(path)

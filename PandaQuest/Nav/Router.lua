@@ -19,7 +19,20 @@ ns.Router = M
 
 local Util, Log = ns.Util, ns.Log
 
-local type, tonumber, tostring = type, tonumber, tostring
+-- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
+-- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
+-- handler another module installed for the same message, so every module listens through its own
+-- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+local listener = {}
+M.listener = listener
+do
+    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
+    if AceEvent then AceEvent:Embed(listener) end
+    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
+    if AceTimer then AceTimer:Embed(listener) end
+end
+
+local type, tonumber, tostring, pairs = type, tonumber, tostring, pairs
 local abs, huge, max, pi = math.abs, math.huge, math.max, math.pi
 local sort = table.sort
 local wipe = wipe or table.wipe
@@ -453,10 +466,16 @@ function M.GetManualTarget()
     local Targets = ns.Targets
     local target = Targets and Targets.GetByKey and Targets.GetByKey(manualKey) or nil
     if not target then
-        -- The pinned target disappeared (quest turned in, objective done): drop the pin.
-        manualKey = nil
-        local db = charDB()
-        if db then db.manualTargetKey = nil end
+        -- The pinned target disappeared (quest turned in, objective done): drop the pin - but only
+        -- once the target list actually holds something. At login the first rebuild is still
+        -- pending (debounced, spread over frames) and every key misses; clearing then would make
+        -- db.char.manualTargetKey write-only and no pin would ever survive a reload.
+        local all = Targets and Targets.GetAll and Targets.GetAll() or nil
+        if type(all) == "table" and #all > 0 then
+            manualKey = nil
+            local db = charDB()
+            if db then db.manualTargetKey = nil end
+        end
     end
     return target
 end
@@ -487,13 +506,26 @@ end
 ---------------------------------------------------------------------------
 
 local function onTargetsUpdated()
-    wipe(reached)
+    local Targets = ns.Targets
+    local getByKey = Targets and Targets.GetByKey or nil
+    -- PQ_TARGETS_UPDATED arrives on every objective tick (a rebuild follows PQ_QUESTLOG_CHANGED),
+    -- so wiping the state here would re-fire PQ_TARGET_REACHED for a target the player is still
+    -- standing on - docs/06 9.4 says once per target - and would undo an explicit Skip within a
+    -- second. Both are instead reconciled against the new list: only keys that really disappeared
+    -- are forgotten.
+    if getByKey then
+        for key in pairs(reached) do
+            if not getByKey(key) then reached[key] = nil end
+        end
+        if skippedKey and not getByKey(skippedKey) then skippedKey = nil end
+    else
+        wipe(reached)
+        skippedKey = nil
+    end
     lastRouteKey = nil
-    skippedKey = nil
     -- The current target table was thrown away by the rebuild; re-resolve it by key.
     if current then
-        local Targets = ns.Targets
-        current = (Targets and Targets.GetByKey and Targets.GetByKey(current.key)) or nil
+        current = (getByKey and getByKey(current.key)) or nil
     end
     M.Update(true)
 end
@@ -504,17 +536,15 @@ function M.Init()
 end
 
 function M.Enable()
-    local PQ = ns.PQ
-    if not PQ then return end
-    if PQ.RegisterMessage then
-        PQ:RegisterMessage("PQ_TARGETS_UPDATED", onTargetsUpdated)
+    if listener.RegisterMessage then
+        listener:RegisterMessage("PQ_TARGETS_UPDATED", onTargetsUpdated)
     end
-    if PQ.RegisterEvent then
-        PQ:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Update(true) end)
-        PQ:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() M.Update(true) end)
+    if listener.RegisterEvent then
+        listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Update(true) end)
+        listener:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() M.Update(true) end)
     end
-    if PQ.ScheduleRepeatingTimer and not ticker then
-        ticker = PQ:ScheduleRepeatingTimer(M.Update, TICK)
+    if listener.ScheduleRepeatingTimer and not ticker then
+        ticker = listener:ScheduleRepeatingTimer(M.Update, TICK)
     end
 end
 

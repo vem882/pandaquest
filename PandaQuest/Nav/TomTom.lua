@@ -16,6 +16,19 @@ ns.TomTomBridge = M
 
 local Log, Compat = ns.Log, ns.Compat
 
+-- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
+-- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
+-- handler another module installed for the same message, so every module listens through its own
+-- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+local listener = {}
+M.listener = listener
+do
+    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
+    if AceEvent then AceEvent:Embed(listener) end
+    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
+    if AceTimer then AceTimer:Embed(listener) end
+end
+
 local type, tonumber, tostring = type, tonumber, tostring
 
 local liveUID                       -- the uid returned by TomTom:AddWaypoint (a table)
@@ -107,12 +120,13 @@ function M.Init()
 end
 
 function M.Enable()
-    local PQ = ns.PQ
-    if not PQ or not PQ.RegisterMessage then return end
+    if not listener.RegisterMessage then return end
     -- "mirror" keeps TomTom pointed at whatever PandaQuest points at. Router calls SetWaypoint
     -- directly on a change; this handler covers the case where the setting is flipped later.
-    PQ:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+    listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if path ~= "nav.tomtomMode" then return end
+        local PQ = ns.PQ
+        if not PQ or not PQ.db then return end
         local nav = PQ.db.profile.nav
         if nav.tomtomMode ~= "mirror" then
             M.Clear()

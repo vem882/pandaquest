@@ -18,6 +18,7 @@ local floor = math.floor
 local wipe = wipe or table.wipe
 
 local QUESTS_PER_YIELD = 24
+local RECALC_DEBOUNCE = 1.0         -- collapse a burst of accepts/turn-ins into one pass
 
 -- Own AceEvent object (see Quest/Player.lua): the shared ns.PQ registry is keyed by target, so two
 -- modules listening to the same event on it would overwrite each other.
@@ -25,6 +26,8 @@ local listener = {}
 do
     local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
     if AceEvent then AceEvent:Embed(listener) end
+    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
+    if AceTimer then AceTimer:Embed(listener) end
 end
 M.listener = listener
 
@@ -39,6 +42,7 @@ local scratch = {}                  -- the pass builds into this and swaps at th
 local handle                        -- running Thread handle
 local passQueued = false
 local lastReason
+local debounceTimer                 -- AceTimer handle for the pending debounced pass
 
 ---------------------------------------------------------------------------
 -- Helpers
@@ -424,11 +428,41 @@ end
 function M.Init()
 end
 
+--- ChangesAffectAvailability(changes) -> bool
+-- A full pass walks every quest in the database, so it may only be started by a change that can
+-- actually move a quest in or out of the available set: accepting one (it leaves the set and its
+-- follow-ups may enter), removing/abandoning one, or turning one in. `changes.updated` is objective
+-- progress and a shifted log index - that fires on every credited kill and cannot change anything.
+function M.ChangesAffectAvailability(changes)
+    if type(changes) ~= "table" then return true end     -- unknown payload: stay on the safe side
+    if changes.initial then return true end
+    local accepted, removed, turnedIn = changes.accepted, changes.removed, changes.turnedIn
+    if accepted and #accepted > 0 then return true end
+    if removed and #removed > 0 then return true end
+    if turnedIn and #turnedIn > 0 then return true end
+    return false
+end
+
+-- A burst of accepts (picking up five quests from one NPC) is collapsed into a single pass.
+local function requestRecalculate(reason)
+    if not listener.ScheduleTimer then return M.Recalculate(reason) end
+    if debounceTimer then listener:CancelTimer(debounceTimer, true) end
+    debounceTimer = listener:ScheduleTimer(function()
+        debounceTimer = nil
+        M.Recalculate(reason)
+    end, RECALC_DEBOUNCE)
+    return true
+end
+M.RequestRecalculate = requestRecalculate
+
 function M.Enable()
     if not listener.RegisterEvent then return end
-    listener:RegisterMessage("PQ_QUESTLOG_CHANGED", function() M.Recalculate("PQ_QUESTLOG_CHANGED") end)
-    listener:RegisterEvent("PLAYER_LEVEL_UP", function() M.Recalculate("PLAYER_LEVEL_UP") end)
-    listener:RegisterEvent("SKILL_LINES_CHANGED", function() M.Recalculate("SKILL_LINES_CHANGED") end)
+    listener:RegisterMessage("PQ_QUESTLOG_CHANGED", function(_, changes)
+        if not M.ChangesAffectAvailability(changes) then return end
+        requestRecalculate("PQ_QUESTLOG_CHANGED")
+    end)
+    listener:RegisterEvent("PLAYER_LEVEL_UP", function() requestRecalculate("PLAYER_LEVEL_UP") end)
+    listener:RegisterEvent("SKILL_LINES_CHANGED", function() requestRecalculate("SKILL_LINES_CHANGED") end)
 end
 
 function M.OnDataReady()

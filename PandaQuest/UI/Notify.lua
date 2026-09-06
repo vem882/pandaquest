@@ -12,7 +12,7 @@ local Util, Log = ns.Util, ns.Log
 local M = {}
 ns.Notify = M
 
-local type, pairs, format = type, pairs, string.format
+local type, pairs, tostring, format = type, pairs, tostring, string.format
 
 local HOLD_TIME = 3.0           -- seconds fully visible
 local FADE_TIME = 1.0           -- seconds fading out
@@ -86,9 +86,11 @@ end
 -- Show
 ---------------------------------------------------------------------------
 
---- Notify.Show(text, kind, force) -> bool shown.
--- `force` bypasses the rate limit (used by the options preview button).
-function M.Show(text, kind, force)
+--- Notify.Show(text, kind, force, dedupeKey) -> bool shown.
+-- `force` bypasses the rate limit (used by the options preview button). `dedupeKey` replaces the
+-- text as the repeat key: a message that embeds a live value ("... (420 m)") is a different string
+-- every time the player moves, and would otherwise slip past REPEAT_WINDOW.
+function M.Show(text, kind, force, dedupeKey)
     if type(text) ~= "string" or text == "" then return false end
     kind = kind or "info"
     local p = notifyProfile()
@@ -99,12 +101,13 @@ function M.Show(text, kind, force)
     end
 
     local t = now()
+    local repeatKey = dedupeKey or text
     if not force then
-        local seen = lastShown[text]
+        local seen = lastShown[repeatKey]
         if seen and (t - seen) < REPEAT_WINDOW then return false end
         if (t - lastAny) < MIN_GAP then return false end
     end
-    lastShown[text] = t
+    lastShown[repeatKey] = t
     lastAny = t
 
     history[#history + 1] = { text = text, kind = kind, at = t }
@@ -205,21 +208,68 @@ local function completeText(questID)
     return format(L["%s complete"], title)
 end
 
+-- "Quest complete" is announced on the TRANSITION only. `changes.updated` also lists a quest whose
+-- log index merely shifted (Quest/QuestLog.lua:278), which happens every time any other quest is
+-- accepted, abandoned or turned in - without this set every complete quest in the log would
+-- re-announce itself then, and the rate limiter cannot catch it because the text carries a live
+-- distance.
+local wasComplete = {}
+
+local function isComplete(questID)
+    local QuestLog = ns.QuestLog
+    return (QuestLog and QuestLog.IsComplete and QuestLog.IsComplete(questID)) and true or false
+end
+
+--- Seeds the complete/not-complete memory without announcing anything (login, profile switch).
+function M.SyncCompleteState()
+    for k in pairs(wasComplete) do wasComplete[k] = nil end
+    local QuestLog = ns.QuestLog
+    local all = QuestLog and QuestLog.GetAll and QuestLog.GetAll() or nil
+    if type(all) ~= "table" then return end
+    for questID in pairs(all) do
+        if isComplete(questID) then wasComplete[questID] = true end
+    end
+end
+
+function M.WasComplete(questID)
+    return wasComplete[questID] == true
+end
+
 function M.OnQuestLogChanged(_, changes)
-    if type(changes) ~= "table" or changes.initial then return end
+    if type(changes) ~= "table" then return end
+    if changes.initial then
+        M.SyncCompleteState()
+        return
+    end
     local p = notifyProfile()
     if p and p.questComplete == false then return end
     local turnedIn = changes.turnedIn
     for i = 1, (turnedIn and #turnedIn or 0) do
-        M.Show(format(L["Turned in: %s"], titleFor(turnedIn[i])), "questComplete")
+        local questID = turnedIn[i]
+        wasComplete[questID] = nil
+        M.Show(format(L["Turned in: %s"], titleFor(questID)), "questComplete")
+    end
+    local removed = changes.removed
+    for i = 1, (removed and #removed or 0) do
+        wasComplete[removed[i]] = nil
     end
     local updated = changes.updated
-    local QuestLog = ns.QuestLog
     for i = 1, (updated and #updated or 0) do
         local questID = updated[i]
-        if QuestLog and QuestLog.IsComplete and QuestLog.IsComplete(questID) then
-            M.Show(completeText(questID), "questComplete")
+        if isComplete(questID) then
+            if not wasComplete[questID] then
+                wasComplete[questID] = true
+                M.Show(completeText(questID), "questComplete", false, "complete:" .. tostring(questID))
+            end
+        else
+            wasComplete[questID] = nil
         end
+    end
+    local accepted = changes.accepted
+    for i = 1, (accepted and #accepted or 0) do
+        local questID = accepted[i]
+        -- An instantly-complete quest (an item turn-in) is complete the moment it is accepted.
+        wasComplete[questID] = isComplete(questID) or nil
     end
 end
 
