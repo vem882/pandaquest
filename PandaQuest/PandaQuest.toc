@@ -1,0 +1,50 @@
+## Interface: 50504
+## Title: |cff5fd7ffPanda|rQuest
+## Notes: Quest helper and navigator for Mists of Pandaria Classic
+## Notes-fiFI: Tehtäväapuri ja navigaattori Mists of Pandaria Classiciin
+## Version: 0.1.0
+## Author: vem882
+## SavedVariables: PandaQuestDB, PandaQuestSync
+## OptionalDeps: TomTom, Questie
+## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
+## X-Website: https://github.com/vem882/PandaQuest
+## X-Category: Quests & Leveling
+
+embeds.xml
+Core\Const.lua
+Core\Util.lua
+Core\Log.lua
+Core\Compat.lua
+Core\Thread.lua
+Locales\enUS.lua
+Locales\fiFI.lua
+Database\Schema.lua
+Database\ZoneData.lua
+Database\Zones.lua
+Database\Data\Meta.lua
+Database\Data\Quests.lua
+Database\Data\Npcs.lua
+Database\Data\Objects.lua
+Database\Data\Items.lua
+Database\Overrides\Wowhead.lua
+Database\Overrides\Community.lua
+Database\DB.lua
+Quest\Player.lua
+Quest\QuestLog.lua
+Quest\Objectives.lua
+Quest\Availability.lua
+Nav\Targets.lua
+Nav\Router.lua
+Nav\Arrow.lua
+Nav\TomTom.lua
+Map\Icons.lua
+Map\Pins.lua
+Map\Tooltips.lua
+UI\Options.lua
+UI\MinimapButton.lua
+UI\Wowhead.lua
+UI\Tracker.lua
+UI\Notify.lua
+Sync\Telemetry.lua
+Sync\Community.lua
+Core\Init.lua
