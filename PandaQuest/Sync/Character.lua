@@ -74,6 +74,9 @@ local lastRecordedAt = 0        -- GetTime() of the last recorded snapshot (0 = 
 local lastSnapshot              -- the payload of the last recorded snapshot
 local waitingForItems = false
 local snapshotCount = 0
+--- Item ids a *forced* (incomplete) snapshot is still owed. Non-nil means "an incomplete snapshot
+-- has been recorded and a corrected one is owed the moment the client answers".
+local awaitingCorrection = nil
 
 -- Own AceEvent/AceTimer object: AceEvent keys its registry by target, so registering
 -- PLAYER_LEVEL_UP on ns.PQ or on Telemetry's listener would collide with them.
@@ -424,7 +427,11 @@ end
 -- level, and the character's level. Stats move with every buff and food, so they are deliberately
 -- not part of it -- "when it changes" means the equipment changed, not that a flask ran out.
 function M.Fingerprint(payload)
-    local parts = { "L", tostring(payload.lvl or 0), "I", tostring(payload.ilvlEq or payload.ilvl or 0) }
+    local parts = {
+        "L", tostring(payload.lvl or 0),
+        "I", tostring(payload.ilvlEq or payload.ilvl or 0),
+        "P", payload.partial and "1" or "0",
+    }
     local items = payload.items or {}
     for index = 1, #items do
         local entry = items[index]
@@ -445,6 +452,7 @@ end
 local function clearPending()
     wipe(pendingItems)
     pendingCount = 0
+    awaitingCorrection = nil
     if waitingForItems then
         waitingForItems = false
         if listener.UnregisterEvent then listener:UnregisterEvent("GET_ITEM_INFO_RECEIVED") end
@@ -453,6 +461,30 @@ local function clearPending()
         listener:CancelTimer(waitTimer, true)
     end
     waitTimer = nil
+end
+
+--- markPartial(payload): say out loud that this snapshot was taken before the client had finished
+-- loading the player's items.
+--
+-- Two things go wrong without it and both end up on the hub's character page as plain fact.
+-- `payload.ilvl` comes from GetAverageItemLevel(), which returns 0 or a stale average while item
+-- data is still loading, and the page prints it beside the paper doll as "Item level 0" for a
+-- 450 character. And the slots whose data never arrived have no item level at all, which the page
+-- renders as two blank squares with nothing saying why. So the numbers the client could not
+-- actually compute are dropped rather than sent, and the flag and the slot list are sent instead:
+-- absent is absent, which is the same rule the hub's own stat block follows.
+local function markPartial(payload)
+    payload.partial = true
+    payload.ilvl, payload.ilvlEq = nil, nil
+    local slots
+    local items = payload.items or {}
+    for index = 1, #items do
+        if items[index].ilvl == nil then
+            slots = slots or {}
+            slots[#slots + 1] = items[index].s
+        end
+    end
+    payload.partialSlots = slots
 end
 
 --- Writes the payload as a GEAR event, unless the gear has not changed since the last one.
@@ -520,8 +552,33 @@ function M.Capture(forced)
         end
     end
 
+    local stillMissing = missing and forced and missing or nil
     clearPending()
-    return record(payload, forced)
+    if stillMissing then
+        markPartial(payload)
+        -- Do not go quiet. The deadline recorded what was known; the client usually answers a
+        -- second or two later, and until this the snapshot the hub kept for the whole evening was
+        -- the incomplete one -- fire() is only reached from Request(), and Request() is only
+        -- called by an equipment change, a level, a login or a settings change, none of which a
+        -- player questing in the same gear does again for hours. So the listener stays on for the
+        -- ids that never arrived, and their arrival asks for one corrected snapshot through the
+        -- normal debounce and interval limiter.
+        awaitingCorrection = true
+        for index = 1, #stillMissing do
+            local itemID = stillMissing[index]
+            if not pendingItems[itemID] then
+                pendingItems[itemID] = true
+                pendingCount = pendingCount + 1
+            end
+        end
+        if pendingCount > 0 then
+            waitingForItems = true
+            if listener.RegisterEvent then
+                listener:RegisterEvent("GET_ITEM_INFO_RECEIVED", M.OnItemInfoReceived)
+            end
+        end
+    end
+    return record(payload, stillMissing ~= nil)
 end
 
 --- OnItemInfoReceived(_, itemID): finishes a postponed snapshot once the last item arrives.
@@ -531,6 +588,14 @@ function M.OnItemInfoReceived(_, itemID)
     pendingItems[itemID] = nil
     pendingCount = pendingCount - 1
     if pendingCount > 0 then return end
+    if awaitingCorrection then
+        -- The incomplete snapshot has already been written. Ask for a fresh one the normal way:
+        -- the fingerprint differs (the missing item levels were recorded as absent and are now
+        -- numbers), so record() accepts it, and nothing extra is produced when nothing changed.
+        clearPending()
+        M.Request("item data arrived after an incomplete snapshot")
+        return
+    end
     -- Forced: everything this snapshot asked for has arrived, and a piece swapped in while we
     -- waited must not start a second wait behind the first. The next equipment change requests a
     -- fresh snapshot anyway.
@@ -588,9 +653,16 @@ function M.GetCount()
     return snapshotCount
 end
 
---- IsPending() -> bool. True while the snapshot is waiting for item data.
+--- IsPending() -> bool. True while the module is waiting for item data -- either before the first
+-- snapshot, or after an incomplete one that is owed a correction (see `IsPartial`).
 function M.IsPending()
     return pendingCount > 0
+end
+
+--- IsPartial() -> bool. True when the last recorded snapshot was written by the deadline with
+-- item data missing, and a corrected one is still owed.
+function M.IsPartial()
+    return awaitingCorrection == true
 end
 
 ---------------------------------------------------------------------------
@@ -599,6 +671,7 @@ end
 
 function M.Init()
     lastFingerprint, lastSnapshot = nil, nil
+    awaitingCorrection = nil
     lastRecordedAt, snapshotCount = 0, 0
     clearPending()
 end
