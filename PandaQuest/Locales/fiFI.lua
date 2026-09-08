@@ -266,6 +266,27 @@ local T = {
         "Mitään ei tallenneta, kun telemetria on pois päältä. Voit kytkeä sen takaisin /pq-asetuksista.",
     ["No community data yet."] = "Yhteisödataa ei ole vielä.",
     ["Community data from %s"] = "Yhteisödata päivältä %s",
+    ["Last gear snapshot: %s"] = "Viimeisin varustetilanne: %s",
+    ["Gear snapshots: off."] = "Varustetilanteen tallennus: pois päältä.",
+
+    -- Sync / Consent (docs/07 B1: telemetria on pois päältä kunnes pelaaja sallii sen)
+    ["/pq consent - ask the data sharing question again"] = "/pq consent - kysy tiedonjakokysymys uudelleen",
+    ["PandaQuest can send what you do while questing to the community hub."] =
+        "PandaQuest voi lähettää yhteisöpalvelimelle sen, mitä teet tehtäviä suorittaessasi.",
+    ["That means the quests you accept and finish, what you kill and loot, where you die, and your map position with the time."] =
+        "Eli tehtävät jotka otat ja palautat, mitä tapat ja lootaat, missä kuolet, sekä karttasijaintisi kellonaikoineen.",
+    ["It builds the shared quest routes. It is off until you say yes, and you can stop and delete it whenever you like."] =
+        "Niistä rakennetaan yhteiset tehtäväreitit. Keruu on pois päältä kunnes sallit sen, ja voit lopettaa ja poistaa milloin vain.",
+    ["PandaQuest can share your quest data to build the community routes."] =
+        "PandaQuest voi jakaa tehtävädatasi yhteisöreittien rakentamiseen.",
+    ["It is off. Turn it on in /pq options if you want to take part."] =
+        "Keruu on pois päältä. Laita se päälle asetuksista (/pq), jos haluat osallistua.",
+    ["Share my quest data"] = "Jaa tehtävädatani",
+    ["No thanks"] = "Ei kiitos",
+    ["Thank you. PandaQuest will share your quest data. Turn it off any time with /pq sync."] =
+        "Kiitos. PandaQuest jakaa tehtävädatasi. Voit ottaa sen pois päältä milloin tahansa komennolla /pq sync.",
+    ["Nothing will be collected. Turn it on any time in /pq options."] =
+        "Mitään ei kerätä. Voit ottaa keruun käyttöön milloin tahansa asetuksista (/pq).",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

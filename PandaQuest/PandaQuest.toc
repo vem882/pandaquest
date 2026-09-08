@@ -46,5 +46,7 @@ UI\Wowhead.lua
 UI\Tracker.lua
 UI\Notify.lua
 Sync\Telemetry.lua
+Sync\Character.lua
+Sync\Consent.lua
 Sync\Community.lua
 Core\Init.lua

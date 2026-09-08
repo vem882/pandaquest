@@ -62,7 +62,24 @@ ns.DEFAULTS = {
         debug = { level = 1, arrowDebug = false },
     },
     char = { hiddenQuests = {}, manualTargetKey = nil, tomtomWaypoint = nil, questAcceptedAt = {}, customTargets = {} },
-    global = { telemetry = { enabled = true, breadcrumbs = true, breadcrumbInterval = 10, maxSessions = 30,
-                             maxEventsPerSession = 5000 },
+    -- `gear` records the character sheet (Sync/Character.lua) at most once per `gearInterval`
+    -- seconds. `gearMoney` is the one field in that snapshot that is off unless the operator asks
+    -- for it: nothing the hub shows needs a character's gold.
+    --
+    -- `enabled` is **false** and stays false until the player says otherwise (docs/07 B1).  What
+    -- telemetry records is a movement log -- map coordinates with timestamps, tied to a character
+    -- name -- and the hub's legal basis for processing it is consent.  A default of `true` made
+    -- the consent chain incoherent in both directions: the recorder filled the saved variable
+    -- before anybody had been asked anything, and a player who then ticked the box on the hub was
+    -- consenting to the upload of data collected before the question existed.  Writing to one's
+    -- own disk is not the hub operator's processing, but collecting by default is a bad habit and
+    -- this is the file where the habit is set.
+    --
+    -- `asked` is what stops the first-run question becoming a nag: Sync/Consent.lua sets it once
+    -- the player has answered either way, so "no" is remembered as firmly as "yes".
+    global = { telemetry = { enabled = false, asked = false,
+                             breadcrumbs = true, breadcrumbInterval = 10, maxSessions = 30,
+                             maxEventsPerSession = 5000,
+                             gear = true, gearInterval = 60, gearMoney = false },
                dbCompiled = nil },
 }

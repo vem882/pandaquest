@@ -246,6 +246,20 @@ L["never"] = true
 L["Nothing is recorded while telemetry is off. Re-enable it in /pq options."] = true
 L["No community data yet."] = true
 L["Community data from %s"] = true
+L["Last gear snapshot: %s"] = true
+L["Gear snapshots: off."] = true
+
+-- Sync / Consent (docs/07 B1: telemetry is off until the player says otherwise)
+L["/pq consent - ask the data sharing question again"] = true
+L["PandaQuest can send what you do while questing to the community hub."] = true
+L["That means the quests you accept and finish, what you kill and loot, where you die, and your map position with the time."] = true
+L["It builds the shared quest routes. It is off until you say yes, and you can stop and delete it whenever you like."] = true
+L["PandaQuest can share your quest data to build the community routes."] = true
+L["It is off. Turn it on in /pq options if you want to take part."] = true
+L["Share my quest data"] = true
+L["No thanks"] = true
+L["Thank you. PandaQuest will share your quest data. Turn it off any time with /pq sync."] = true
+L["Nothing will be collected. Turn it on any time in /pq options."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

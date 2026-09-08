@@ -30,6 +30,10 @@ local CODES = {
     ACCEPT = "QA", TURNIN = "QT", REMOVED = "QR", OBJECTIVE = "OBJ", COMPLETE = "QC",
     KILL = "KILL", LOOT = "LOOT", POS = "POS", LEVEL = "LVL", ZONE = "ZONE", DIE = "DIE",
     ARRIVED = "ARR", NAVTARGET = "NAV",
+    -- The character sheet snapshot. Unlike every other code its payload is a nested table (`g`),
+    -- because it is one document about the character rather than a point in a stream; Sync/
+    -- Character.lua owns its shape and `v` on the event is that shape's version.
+    GEAR = "GEAR",
 }
 M.CODES = CODES
 
@@ -797,6 +801,16 @@ function M.GetStatusLines()
 
     local ack = formatStamp(tonumber(store.ackUploadedThrough))
     lines[#lines + 1] = format(L["Last upload confirmed: %s"], ack or L["never"])
+
+    -- The gear snapshot is recorded by Sync/Character.lua but reported here, because /pq sync is
+    -- the one place a player asks "what is this addon sending?".
+    local CharacterSheet = ns.CharacterSheet
+    if CharacterSheet and CharacterSheet.IsEnabled and not CharacterSheet.IsEnabled() then
+        lines[#lines + 1] = L["Gear snapshots: off."]
+    elseif CharacterSheet and CharacterSheet.GetLast then
+        local _, capturedAt = CharacterSheet.GetLast()
+        lines[#lines + 1] = format(L["Last gear snapshot: %s"], formatStamp(capturedAt) or L["never"])
+    end
 
     local Community = ns.Community
     lines[#lines + 1] = (Community and Community.GetFreshnessText and Community.GetFreshnessText())

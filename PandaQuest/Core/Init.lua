@@ -19,7 +19,7 @@ ns.MODULE_ORDER = {
     "Targets", "Router", "Arrow", "TomTomBridge",
     "Icons", "Pins", "Tooltips",
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
-    "Telemetry", "Community",
+    "Telemetry", "CharacterSheet", "Consent", "Community",
 }
 
 local pcall, type, tonumber, tostring, pairs, ipairs, format = pcall, type, tonumber, tostring, pairs, ipairs, string.format
@@ -156,7 +156,9 @@ commands.help = function()
         "/pq hide <questID> - hide a quest from the navigator", "/pq unhide <questID> - show a hidden quest again",
         "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
         "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
-        "/pq sync - telemetry and community data status", "/pq lang auto|enUS|fiFI - interface language",
+        "/pq sync - telemetry and community data status",
+        "/pq consent - ask the data sharing question again",
+        "/pq lang auto|enUS|fiFI - interface language",
     }
     for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end
 end
@@ -331,6 +333,17 @@ commands.sync = function()
     Log.Print(L["Telemetry: %s, sessions stored: %d"], L[enabled and "Enabled" or "Disabled"], 0)
     local text = ns.Community and ns.Community.GetFreshnessText and ns.Community.GetFreshnessText()
     Log.Print(L["Community data: %s"], text or L["none"])
+end
+
+-- docs/07 B1: the first-run telemetry question, on demand.  Somebody who clicked past it, or who
+-- wants to change their mind and would rather be asked than hunt through the options panel, gets
+-- the same dialog with the same wording.
+commands.consent = function()
+    if ns.Consent and ns.Consent.Ask then
+        ns.Consent.Ask()
+        return
+    end
+    Log.Print(L["%s is not available yet."], "consent")
 end
 
 commands.lang = function(arg)
