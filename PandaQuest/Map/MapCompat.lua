@@ -33,6 +33,10 @@
 --     callbacks. That is why the poll below exists and why we do not rely on the provider alone.
 --   * `SetScale` never fires OnSizeChanged for anybody: a frame's own width does not change when
 --     it is scaled. Only the poll can see a rescale done from outside.
+--   * The zoom scales the CANVAS, not the frame: `MapCanvasScrollControllerMixin` calls
+--     `self.Child:SetScale(self.currentScale)` and then `GetMap():OnCanvasScaleChanged()`
+--     (Blizzard_MapCanvas/MapCanvas_ScrollContainerMixin.lua:326,332). Both scales are therefore
+--     tracked, and watching WorldMapFrame alone missed every zoom.
 local _, ns = ...
 
 local M = {}
@@ -50,7 +54,7 @@ local MIN_FACTOR, MAX_FACTOR = 0.1, 10
 local listeners = {}
 local watcher                       -- our own frame, anchored to the canvas
 local provider                      -- our MapCanvas data provider
-local lastScale, lastWidth, lastHeight, lastCanvas
+local lastScale, lastWidth, lastHeight, lastCanvas, lastCanvasScale
 local pollElapsed = 0
 local changeCount = 0
 local enabled = false
@@ -92,6 +96,24 @@ end
 --- MapCompat.GetMapScale() -> WorldMapFrame:GetEffectiveScale() (docs/10 E1), or the UI scale.
 function M.GetMapScale()
     return effectiveScaleOf(M.GetWorldMap()) or M.GetUIScale()
+end
+
+--- MapCompat.GetCanvasScale() -> the effective scale of the canvas the pins hang under.
+--
+-- This is a second number and not the same one: Blizzard's own zoom never touches WorldMapFrame.
+-- `MapCanvasScrollControllerMixin:UpdatePanAndZoomTo` calls `self.Child:SetScale(currentScale)`
+-- and then `GetMap():OnCanvasScaleChanged()` (Blizzard_MapCanvas/MapCanvas_ScrollContainerMixin
+-- .lua:326,332), so the frame's effective scale is unchanged while everything the pins sit on has
+-- moved. Watching only the frame meant the provider callback fired, two unchanged numbers were
+-- read, and no pin was ever re-sized or re-anchored for a zoom -- which is precisely the docs/10
+-- E1 case a map addon that scales the canvas rather than the frame also lands in.
+--
+-- The canvas' own effective scale is read rather than `WorldMapFrame:GetCanvasScale()` (which does
+-- exist on 5.5.4, Blizzard_MapCanvas.lua:588) because the effective scale is the ground truth:
+-- it already carries the zoom, the frame's scale and anything a map addon put between them, and it
+-- is the same number Blizzard's zoom actually changed.
+function M.GetCanvasScale()
+    return effectiveScaleOf(M.GetCanvas()) or M.GetMapScale()
 end
 
 --- MapCompat.GetPinScaleFactor(pin) -> the number a pin's screen size must be multiplied by to
@@ -169,6 +191,7 @@ function M.Check(reason)
     if not frame then return false end
     local canvas = M.GetCanvas()
     local scale = M.GetMapScale()
+    local canvasScale = M.GetCanvasScale()
     local width = canvas and canvas.GetWidth and canvas:GetWidth() or nil
     local height = canvas and canvas.GetHeight and canvas:GetHeight() or nil
 
@@ -179,17 +202,21 @@ function M.Check(reason)
         M.EnsureWatcher(true)
         changed = true
     end
-    if moved(scale, lastScale) or moved(width, lastWidth) or moved(height, lastHeight) then
+    -- Both scales, because they move independently: Leatrix rescales the frame, Blizzard's own
+    -- zoom rescales the canvas underneath it, and either leaves the pins the wrong size.
+    if moved(scale, lastScale) or moved(canvasScale, lastCanvasScale)
+       or moved(width, lastWidth) or moved(height, lastHeight) then
         changed = true
     end
-    lastScale, lastWidth, lastHeight = scale, width, height
+    lastScale, lastWidth, lastHeight, lastCanvasScale = scale, width, height, canvasScale
     if changed then fire(reason or "check") end
     return changed
 end
 
---- MapCompat.GetState() -> scale, canvasWidth, canvasHeight, changeCount (introspection/tests).
+--- MapCompat.GetState() -> scale, canvasWidth, canvasHeight, changeCount, canvasScale
+-- (introspection/tests). The canvas scale is last so the four existing returns keep their places.
 function M.GetState()
-    return lastScale, lastWidth, lastHeight, changeCount
+    return lastScale, lastWidth, lastHeight, changeCount, lastCanvasScale
 end
 
 ---------------------------------------------------------------------------
@@ -264,7 +291,7 @@ function M.GetProvider() return provider end
 ---------------------------------------------------------------------------
 
 function M.Init()
-    lastScale, lastWidth, lastHeight, lastCanvas = nil, nil, nil, nil
+    lastScale, lastWidth, lastHeight, lastCanvas, lastCanvasScale = nil, nil, nil, nil, nil
     pollElapsed = 0
 end
 

@@ -235,12 +235,18 @@ function M.OnTooltipSetUnit(tooltip)
     local npcID = guid and Util.NpcIdFromGuid(guid) or nil
     if not npcID then return end
     -- Blizzard's unit tooltip already carries the name, the level and the type of docs/10 B3's
-    -- block, so the only header line missing here is the respawn (with its live countdown when
-    -- this session watched the mob die). No spawn key: a hovered unit is where it stands now, not
-    -- necessarily where it died, so ns.Respawn answers for the creature as a whole.
+    -- block, so the only header line missing here is the respawn. No spawn key: a hovered unit is
+    -- where it stands now, not necessarily where it died, so ns.Respawn answers for the creature
+    -- as a whole.
+    --
+    -- The countdown is allowed only over a corpse. Without that check, killing one Dappled Moth
+    -- labelled every *living* moth in the zone "Respawn in: 5 Mins" until the estimate ran out --
+    -- an invented fact (docs/10 B3), printed on Blizzard's own tooltip where it reads as
+    -- authoritative. The static "Respawn:" line is about the creature and stays either way.
     local NodeTooltip = ns.NodeTooltip
     if NodeTooltip and NodeTooltip.AppendRespawn then
-        NodeTooltip.AppendRespawn(tooltip, "npc", npcID, nil)
+        local dead = UnitIsDead and UnitIsDead(unit) and true or false
+        NodeTooltip.AppendRespawn(tooltip, "npc", npcID, nil, dead)
     end
     appendLines(tooltip, M.BuildNpcLines(npcID))
 end

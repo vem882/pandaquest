@@ -116,6 +116,7 @@ L["Skill:"] = true
 L["Respawn:"] = true
 L["Respawn in:"] = true
 L["~%s (%d)"] = true
+L["Sightings:"] = true
 L["Unit"] = true
 L["Object"] = true
 L["Item"] = true

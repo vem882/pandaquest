@@ -170,9 +170,20 @@ local function levelText(kind, id, node)
     return nil
 end
 
+-- A spawn key is always in uiMapID space. A node that only carried an areaID is converted here
+-- rather than leaving two numbering schemes in the same field: ns.Respawn then matches the map
+-- strictly, and a kill in one zone can no longer count down an identical coordinate in another.
 local function spawnKeyFor(node)
     if type(node.spawnKey) == "string" then return node.spawnKey end
-    local map = node.uiMapID or node.areaID
+    local map = node.uiMapID
+    if type(map) ~= "number" and type(node.areaID) == "number" then
+        local Zones = ns.Zones
+        if Zones and type(Zones.GetUiMapIdByAreaId) == "function" then
+            local ok, uiMapID = pcall(Zones.GetUiMapIdByAreaId, node.areaID)
+            if ok and type(uiMapID) == "number" then map = uiMapID end
+        end
+        if type(map) ~= "number" then map = node.areaID end
+    end
     if type(map) ~= "number" or type(node.x) ~= "number" or type(node.y) ~= "number" then return nil end
     return Util.SpawnKey(map, node.x, node.y)
 end
@@ -211,9 +222,11 @@ function M.RespawnText(kind, id)
     return text, COLOR_VALUE
 end
 
-local function addRespawn(lines, kind, id, spawnKey)
+--- `allowCountdown` is false where a countdown would be a lie: the unit tooltip of a creature that
+-- is standing in front of the player alive (Map/Tooltips.lua). Absent means true.
+local function addRespawn(lines, kind, id, spawnKey, allowCountdown)
     local staticText, staticColor = M.RespawnText(kind, id)
-    local remaining = remainingFor(kind, id, spawnKey)
+    local remaining = allowCountdown ~= false and remainingFor(kind, id, spawnKey) or nil
     if remaining then
         -- Floor, not round: the countdown ticks over when the whole second changes, so the first
         -- text has to agree with what Tick() will write a second later.
@@ -341,7 +354,15 @@ local function addObjective(lines, target, headerKind, headerID)
         local pct = M.DropRate(target.entityID, target.sourceType or headerKind,
             target.sourceID or headerID)
         if pct then
-            text = text .. format(" (%d%%)", floor(pct + 0.5))
+            -- Never the digit 0. Eight thousand of the seeded cells are below half a percent
+            -- (Burning Charm is 0.32% off a Drywhisker Kobold), and rounding those to an integer
+            -- printed "(0%)" - an assertion that the mob cannot drop the item, built out of data
+            -- that says it does, which is exactly what docs/10 A2 forbids.
+            if pct < 1 then
+                text = text .. format(" (%.2f%%)", pct)
+            else
+                text = text .. format(" (%d%%)", floor(pct + 0.5))
+            end
         end
     end
     local color = finished and COLOR_COMPLETE or progressColor(have, need, gradient)
@@ -447,6 +468,16 @@ function M.BuildLines(node, lines)
 
     if kind and id then addRespawn(lines, kind, id, spawnKeyFor(node)) end
 
+    -- A community node is a place other players reported, and how many reports are behind it is
+    -- the difference between "forty people gather here" and "one loot window was misread once".
+    -- The count travelled with the node from the hub and until now nothing showed it, so the two
+    -- were drawn identically; it is labelled "Sightings" rather than "players" because that is
+    -- what the hub counts (platform/server/pandaquest_hub/nodes.py counts NODE events).
+    if node.source == "community" and type(node.sightings) == "number" and node.sightings > 0 then
+        addDouble(lines, tr("Sightings:"), format("%d", floor(node.sightings)),
+            node.sightings > 1 and COLOR_VALUE or COLOR_ESTIMATE, "sightings")
+    end
+
     addQuests(lines, node, kind, id)
     return lines
 end
@@ -455,9 +486,14 @@ end
 -- Live countdown
 ---------------------------------------------------------------------------
 
+-- `label` and `owner` are what make the line ours rather than "line 4 of whatever is showing".
+-- GameTooltip is shared: it is routinely re-populated without ever being hidden (moving between
+-- two action buttons, a bag item, another addon's SetOwner + ClearLines), and a driver that
+-- remembers only a line *index* goes on writing into whatever now occupies that number.
 local countdown = {
     active = false, tooltip = nil, name = nil, index = nil,
     kind = nil, id = nil, spawnKey = nil, staticText = nil,
+    label = nil, owner = nil,
     lastWhole = nil, elapsed = 0,
 }
 local driver
@@ -479,8 +515,25 @@ function M.StopCountdown()
     countdown.tooltip, countdown.name, countdown.index = nil, nil, nil
     countdown.kind, countdown.id, countdown.spawnKey = nil, nil, nil
     countdown.staticText, countdown.lastWhole = nil, nil
+    countdown.label, countdown.owner = nil, nil
     countdown.elapsed = 0
     if driver then driver:Hide() end
+end
+
+--- True while the remembered line is still the line this module wrote. Two independent checks,
+-- because neither alone is enough: the label catches a re-populated tooltip that kept its owner
+-- (SetOwner is not called again when the same frame re-fills it), and the owner catches the case
+-- where another consumer happens to write a line with the same label.
+local function stillOurs()
+    local tooltip = countdown.tooltip
+    if countdown.owner ~= nil and tooltip and tooltip.GetOwner then
+        local ok, owner = pcall(tooltip.GetOwner, tooltip)
+        if ok and owner ~= countdown.owner then return false end
+    end
+    if not countdown.label then return true end
+    local label = lineFontString("Left")
+    if not label or not label.GetText then return false end
+    return label:GetText() == countdown.label
 end
 
 --- NodeTooltip.Tick(): rewrites the countdown line. Called by the OnUpdate driver (throttled) and
@@ -489,6 +542,12 @@ function M.Tick()
     if not countdown.active then return false end
     local tooltip = countdown.tooltip
     if not tooltip or (tooltip.IsShown and not tooltip:IsShown()) then
+        M.StopCountdown()
+        return false
+    end
+    if not stillOurs() then
+        -- Somebody else owns that line now. Walk away from it without touching it: overwriting an
+        -- item's sell price with a respawn timer is our bug, not theirs.
         M.StopCountdown()
         return false
     end
@@ -536,6 +595,10 @@ end
 local function hookHide(tooltip)
     if not tooltip or not tooltip.HookScript then return end
     tooltip:HookScript("OnHide", M.StopCountdown)
+    -- OnTooltipCleared is the signal a tooltip gives when its contents are thrown away without it
+    -- being hidden, which is the common case: ClearLines and SetOwner both fire it. It exists on
+    -- 5.5.4 (Blizzard_SharedXML/Classic/GameTooltipTemplate.xml:155 binds it on GameTooltip).
+    tooltip:HookScript("OnTooltipCleared", M.StopCountdown)
 end
 
 local function ensureHooks()
@@ -553,6 +616,11 @@ local function startCountdown(tooltip, index, rec)
     countdown.tooltip, countdown.name, countdown.index = tooltip, name, index
     countdown.kind, countdown.id, countdown.spawnKey = rec.entityKind, rec.entityID, rec.spawnKey
     countdown.staticText, countdown.lastWhole, countdown.elapsed = rec.staticText, nil, 0
+    countdown.label = rec.left
+    if tooltip.GetOwner then
+        local ok, owner = pcall(tooltip.GetOwner, tooltip)
+        countdown.owner = ok and owner or nil
+    end
     if ensureDriver() then driver:Show() end
 end
 
@@ -601,12 +669,15 @@ function M.Fill(tooltip, node)
     return true
 end
 
---- NodeTooltip.AppendRespawn(tooltip, kind, id [, spawnKey]) -> bool. The unit tooltip already has
--- the name, the level and the type from Blizzard, so only the respawn line is missing there.
-function M.AppendRespawn(tooltip, kind, id, spawnKey)
+--- NodeTooltip.AppendRespawn(tooltip, kind, id [, spawnKey [, allowCountdown]]) -> bool. The unit
+-- tooltip already has the name, the level and the type from Blizzard, so only the respawn line is
+-- missing there. Pass `allowCountdown = false` for a unit that is alive under the cursor: the
+-- static line is about the creature, but "Respawn in: 5 Mins" over a mob that is standing there is
+-- an invented fact (docs/10 B3).
+function M.AppendRespawn(tooltip, kind, id, spawnKey, allowCountdown)
     if type(tooltip) ~= "table" or not tooltip.AddDoubleLine then return false end
     local lines = wipe(sharedLines)
-    addRespawn(lines, kind, id, spawnKey)
+    addRespawn(lines, kind, id, spawnKey, allowCountdown)
     if #lines == 0 then return false end
     ensureHooks()
     M.StopCountdown()

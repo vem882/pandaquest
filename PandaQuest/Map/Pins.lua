@@ -68,6 +68,7 @@ local minimapDriver                 -- OnUpdate frame for the minimap rank/fade 
 local minimapElapsed = 0
 local rankScratch = {}              -- reused by rankMinimapSpecs: an OnUpdate must not allocate
 local nextRespawnAt                 -- GetTime() at which the soonest drawn countdown runs out
+local ensureDriver                  -- forward: the minimap tick queues single pins through it
 
 local function profile()
     local PQ = ns.PQ
@@ -529,25 +530,46 @@ function M.ApplyMinimapFade(pin)
 end
 
 --- Pins.UpdateMinimapNodes() -> ranked, capped. Re-ranks the specs, fades the placed pins and
--- asks for a redraw when the nearest set changed (a pin came into the cap, or fell out of it).
+-- moves single pins in and out of the cap.
+--
+-- The crossing is handled here rather than by asking for a redraw. Ranks are recomputed from the
+-- player's position four times a second, so in any zone with more specs than the cap ordinary
+-- walking pushes one across the boundary every few ticks -- and a redraw is a complete buildSpecs
+-- (which re-runs the whole profession layer and rebuilds every spec table) to add or remove one
+-- minimap pin. Everything needed to do it in place is already here: the placed record, the pool
+-- and the draw queue. RequestRedraw stays for changes to the spec *set*.
 function M.UpdateMinimapNodes()
     local map = mapProfile()
     if map and map.showOnMinimap == false then return 0, 0 end
     local ranked = rankMinimapSpecs()
     local cap = M.GetMinimapMaxNodes()
-    local capped, dirty = 0, false
-    for _key, rec in pairs(placed) do
+    local capped, queued = 0, 0
+    local lib = hbdPins()
+    for key, rec in pairs(placed) do
         local spec = rec.spec
         if rec.mini then
             rec.mini.miniRank = spec and spec.miniRank
             local alpha = M.ApplyMinimapFade(rec.mini)
             if alpha <= 0 then capped = capped + 1 end
-            if spec and spec.miniRank and spec.miniRank > cap then dirty = true end
+            if spec and spec.miniRank and spec.miniRank > cap then
+                -- Fell out of the cap: give the frame back instead of rebuilding the zone.
+                if lib then lib:RemoveMinimapIcon(HBD_REF, rec.mini) end
+                activeMinimap[rec.mini] = nil
+                releasePin(rec.mini)
+                rec.mini = nil
+                if not rec.world then placed[key] = nil end
+            end
         elseif spec and spec.miniRank and spec.miniRank <= cap then
-            dirty = true
+            -- Rose into it: one spec onto the draw queue, which already knows how to add the
+            -- missing half of a placed record.
+            queue[#queue + 1] = spec
+            queued = queued + 1
         end
     end
-    if dirty then M.RequestRedraw() end
+    if queued > 0 then
+        local d = ensureDriver()
+        if d then d:Show() else M.ProcessQueue(queued * 2 + 1) end
+    end
     return ranked, capped
 end
 
@@ -655,7 +677,7 @@ function M.ProcessQueue(budget)
     return drawn
 end
 
-local function ensureDriver()
+function ensureDriver()
     if driver or not CreateFrame then return driver end
     driver = CreateFrame("Frame", "PandaQuestPinDriver", UIParent)
     driver:Hide()
@@ -1084,6 +1106,12 @@ function M.Enable()
     -- docs/10 C2: ns.Respawn announces a death and a return once, from the event that noticed it,
     -- and this is what turns that into a fade appearing and going away again. It goes through the
     -- same coalescing redraw as everything else, so a pull that kills six mobs is one rebuild.
+    --
+    -- A full rebuild rather than stamping the alpha in place, deliberately: the profession layer's
+    -- alpha is decided by Nodes/Professions while the specs are being built (it is the only thing
+    -- that knows whether the character can gather the node at all), so an in-place respawn fade
+    -- would quietly stop dimming gathered veins. The cost is bounded on the other side instead --
+    -- ns.Respawn only sends this when it has an estimate, i.e. only when something can change.
     M:RegisterMessage("PQ_RESPAWN_CHANGED", function() requestRedraw() end)
     Log.Debug("Pins", "enabled (HBD pins %s)", hbdPins() and "ready" or "missing")
 end

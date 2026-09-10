@@ -33,8 +33,10 @@
 -- (kind, id, position), matched within MATCH_RADIUS map percent, so killing a Kobold Miner at one
 -- end of the mine and meeting another at the other end is not a 3 second respawn.
 --
--- **Bounded.** At most MAX_TRACKED_IDS ids, MAX_SPAWNS_PER_ID spawn points each and
--- MAX_OBSERVATIONS_PER_SPAWN observations each: a full session of killing cannot grow this.
+-- **Bounded.** At most MAX_TRACKED_IDS ids *per kind*, MAX_SPAWNS_PER_ID spawn points each and
+-- MAX_OBSERVATIONS_PER_SPAWN observations each: a full session of killing cannot grow this. A full
+-- budget evicts what it has learned least from rather than refusing the newcomer, so a questing
+-- session that opens hundreds of world objects cannot stop the next kill from being measured.
 --
 -- **Nothing runs per frame.** There is no OnUpdate here at all. The countdown is arithmetic done
 -- when somebody asks for it (GetRemaining), and a spawn coming back is announced once, from the
@@ -83,6 +85,11 @@ local MAX_INTERVAL = 2 * 3600
 
 local MAX_OBSERVATIONS_PER_SPAWN = 8
 local MAX_SPAWNS_PER_ID = 24
+
+--- Ids tracked per kind, NOT in total. Looting world objects (every quest crate, every chest) and
+-- killing creatures are two different streams with two different lifetimes, and one budget shared
+-- between them meant a few hundred opened crates could stop every creature kill for the rest of
+-- the session from being measured at all.
 local MAX_TRACKED_IDS = 400
 
 --- Own observations only take priority over the community median once there are two of them: one
@@ -110,10 +117,15 @@ M.listener = listener
 -- scanned linearly, which is cheaper than keeping it sorted.
 -- spawn = { map = uiMapID, x = , y = , key = "map:x:y", diedAt = GetTime()|nil, n = , [1..n] = dt }
 local tracked = { npc = {}, object = {} }
-local trackedIds = 0
+local trackedIds = { npc = 0, object = 0 }
 
 local unitFrame
 local pendingLoot = {}          -- object ids seen in the loot window, cleared on LOOT_CLOSED
+
+-- The creatures the player has actually engaged: guid -> the last time it was seen alive as the
+-- player's own target (see seenUnit). Declared here so Reset can drop it with everything else.
+local engaged = {}
+local engagedCount = 0
 
 local function now()
     return (GetTime and GetTime()) or 0
@@ -139,6 +151,16 @@ local function nearness(spawn, map, x, y)
     return dx * dx + dy * dy
 end
 
+--- A spawn key's map read as an areaID, or nil. Guarded because ns.Zones needs the generated zone
+-- tables and a caller may be running before they are loaded.
+local function uiMapIdFromArea(mapID)
+    local Zones = ns.Zones
+    if not (Zones and type(Zones.GetUiMapIdByAreaId) == "function") then return nil end
+    local ok, uiMapID = pcall(Zones.GetUiMapIdByAreaId, mapID)
+    if ok and type(uiMapID) == "number" then return uiMapID end
+    return nil
+end
+
 --- The tracked spawn of (kind, id) nearest to (map, x, y) within MATCH_RADIUS, or nil.
 local function findSpawn(list, map, x, y)
     local best, bestDistance = nil, MATCH_RADIUS * MATCH_RADIUS
@@ -152,21 +174,53 @@ local function findSpawn(list, map, x, y)
     return best
 end
 
---- The list for (kind, id), created on demand unless the budget is full.
+--- How much one tracked id is still worth keeping. Observations are the whole point, so they
+-- dominate; an interval that is still open and could still be closed is worth something; an entry
+-- with neither -- a crate looted once, two hours ago -- is worth nothing and scores zero.
+local function entryWeight(list, t)
+    local weight = 0
+    for i = 1, #list do
+        local spawn = list[i]
+        weight = weight + (spawn.n or 0) * 100
+        if spawn.diedAt and (t - spawn.diedAt) <= MAX_INTERVAL then weight = weight + 10 end
+    end
+    return weight
+end
+
+--- Drops the least useful id of one kind. Returns true when something was freed.
+--
+-- Evicting rather than refusing is the point: the budget exists to bound memory, and the entries
+-- filling it are not necessarily the ones that have taught us anything. An entry that can no
+-- longer close an interval and never closed one goes first (weight 0, and the loop stops there),
+-- then the entry with the fewest observations -- the same rule addSpawn already uses inside a list.
+local function evictOne(kind)
+    local byId = tracked[kind]
+    local t = now()
+    local worstId, worst
+    for id, list in pairs(byId) do
+        local weight = entryWeight(list, t)
+        if not worst or weight < worst then
+            worstId, worst = id, weight
+            if weight == 0 then break end
+        end
+    end
+    if worstId == nil then return false end
+    byId[worstId] = nil
+    trackedIds[kind] = trackedIds[kind] - 1
+    return true
+end
+
+--- The list for (kind, id), created on demand. Each kind has its own MAX_TRACKED_IDS budget and
+-- makes room for a newcomer rather than turning it away.
 local function listFor(kind, id, create)
     local byId = tracked[kind]
     local list = byId[id]
     if list then return list end
     if not create then return nil end
-    if trackedIds >= MAX_TRACKED_IDS then
-        -- The budget is a memory bound, not a policy: refusing the newcomer keeps whatever the
-        -- player has already measured rather than throwing a measured spawn away for an unmeasured
-        -- one. A reload clears it, and the estimate that mattered is already in telemetry.
-        return nil
-    end
+    if trackedIds[kind] >= MAX_TRACKED_IDS and not evictOne(kind) then return nil end
     list = {}
     byId[id] = list
-    trackedIds = trackedIds + 1
+    trackedIds[kind] = trackedIds[kind] + 1
     return list
 end
 
@@ -315,11 +369,13 @@ end
 -- *first* is the one that answers it. Taking the newest death instead would report a wait while
 -- an earlier spawn of the same creature was already standing there, which is worse than useless.
 --
--- The key's first field is a uiMapID when the node had one and an areaID when it did not
--- (Map/NodeTooltip.lua takes whichever exists), and the two are different numbering schemes. So a
--- match on the map is tried first and a match on position alone second: same creature id, same
--- coordinate, within two percent of the map -- if that is a different spawn point, the map id was
--- never going to save us.
+-- The key's first field is normally a uiMapID (Map/NodeTooltip.lua converts a node that only
+-- carried an areaID before it builds one), but a key from an older caller may still be in areaID
+-- space. So the map is matched as it stands and, only if that finds nothing, once more through
+-- ns.Zones.GetUiMapIdByAreaId. What is deliberately NOT done is falling back to the position
+-- alone: two percent of one map is two percent of every other map as well, and a creature killed
+-- at (46, 50) in the Jade Forest would otherwise count down a pin at (46, 50) in the Valley of the
+-- Four Winds -- a live mob drawn faint with an invented timer.
 function M.GetRemaining(kind, id, spawnKey)
     if not (validKind(kind) and validId(id)) then return nil end
     local list = tracked[kind][id]
@@ -332,7 +388,11 @@ function M.GetRemaining(kind, id, spawnKey)
     if type(spawnKey) == "string" then
         local map, x, y = Util.SplitAreaSpawnKey(spawnKey)
         if not map then return nil end
-        local spawn = findSpawn(list, map, x, y) or findSpawn(list, nil, x, y)
+        local spawn = findSpawn(list, map, x, y)
+        if not spawn then
+            local translated = uiMapIdFromArea(map)
+            if translated and translated ~= map then spawn = findSpawn(list, translated, x, y) end
+        end
         if not spawn or not spawn.diedAt then return nil end
         elapsedSince = now() - spawn.diedAt
     else
@@ -365,6 +425,11 @@ end
 ---------------------------------------------------------------------------
 
 local function announce(kind, id, spawnKey, event)
+    -- Only announce what somebody can see. PQ_RESPAWN_CHANGED costs Map/Pins a whole spec rebuild,
+    -- and Sync/Telemetry hands this module every creature the player or their pet kills -- not only
+    -- quest mobs. Without an estimate there is no countdown and no fade, so for the overwhelming
+    -- majority of MoP kills the rebuild would redraw the zone to change nothing at all.
+    if not M.Get(kind, id) then return end
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then
         PQ:SendMessage("PQ_RESPAWN_CHANGED", kind, id, spawnKey, event)
@@ -444,7 +509,9 @@ function M.Reset()
     wipe(tracked.npc)
     wipe(tracked.object)
     wipe(pendingLoot)
-    trackedIds = 0
+    wipe(engaged)
+    trackedIds.npc, trackedIds.object = 0, 0
+    engagedCount = 0
 end
 
 ---------------------------------------------------------------------------
@@ -472,7 +539,7 @@ end
 -- it to two frames. Telemetry already resolves the payload function (the bare
 -- CombatLogGetCurrentEventInfo of Retail does not exist on 5.5.4) and already applies exactly the
 -- filter this wants, so with telemetry on the kill arrives here for free -- and with telemetry off
--- nothing registers the event at all and `engagedDeath` below is what notices the kill instead.
+-- nothing registers the event at all and `seenUnit` below is what notices the kill instead.
 function M.NoteKill(npcID)
     if type(npcID) ~= "number" or npcID <= 0 then return nil end
     local uiMapID, x, y = playerPosition()
@@ -480,14 +547,59 @@ function M.NoteKill(npcID)
     return M.NoteDeath("npc", npcID, uiMapID, x, y)
 end
 
--- The guids of the two units the player can be fighting. A creature that dies while it is one of
--- them was killed by the player, near enough: it is the same "it was what I had targeted"
--- attribution Sync/Telemetry.lua makes for UNIT_DIED, and it is what keeps this off every corpse
--- somebody else left lying in the zone.
-local engagedTarget, engagedMouseover
+-- The creatures the player has actually engaged: guid -> the last time it was seen alive as the
+-- player's own target. A creature that dies while it is in here was killed by the player, near
+-- enough: it is the same "it was what I had targeted" attribution Sync/Telemetry.lua makes for
+-- UNIT_DIED, and it is what keeps this off every corpse somebody else left lying in the zone.
+--
+-- A set rather than one variable per event source, because there is no such thing as "the" unit
+-- the player is fighting: a nameplate appearing for another moth used to overwrite the guid of the
+-- moth actually being killed, and with telemetry off (no combat log frame at all) that silently
+-- threw the measurement away for every kill made near anything else alive.
+--
+-- Only the target slot writes here. A nameplate is evidence that a creature is alive, not evidence
+-- that anybody is hitting it, and a mouseover is the cursor crossing something -- if it were
+-- engagement, mousing over a corpse somebody else made would be recorded as the player's own kill,
+-- at the time they looked rather than the time it died, and uploaded as a genuine RESP sample.
+local MAX_ENGAGED = 12
+local ENGAGED_TTL = 60          -- s since the unit was last seen alive as the target
+
+local function rememberEngaged(guid)
+    local t = now()
+    if engaged[guid] then
+        engaged[guid] = t
+        return
+    end
+    if engagedCount >= MAX_ENGAGED then
+        local oldestGuid, oldest
+        for other, at in pairs(engaged) do
+            if t - at > ENGAGED_TTL then
+                engaged[other] = nil
+                engagedCount = engagedCount - 1
+            elseif not oldest or at < oldest then
+                oldestGuid, oldest = other, at
+            end
+        end
+        if engagedCount >= MAX_ENGAGED and oldestGuid then
+            engaged[oldestGuid] = nil
+            engagedCount = engagedCount - 1
+        end
+    end
+    engaged[guid] = t
+    engagedCount = engagedCount + 1
+end
+
+--- Consumes the engagement for one guid. True when the player really was fighting it recently.
+local function takeEngaged(guid)
+    local at = engaged[guid]
+    if at == nil then return false end
+    engaged[guid] = nil
+    engagedCount = engagedCount - 1
+    return (now() - at) <= ENGAGED_TTL
+end
 
 --- A unit token worth reading. Alive: remember it and close any interval that was open here.
--- Dead: if we had it alive a moment ago, that is the kill.
+-- Dead: if the player had it alive a moment ago, that is the kill.
 local function seenUnit(unit, slot)
     if type(unit) ~= "string" then return end
     if not (UnitGUID and UnitExists and UnitExists(unit)) then return end
@@ -497,16 +609,15 @@ local function seenUnit(unit, slot)
     if not npcID then return end
 
     if UnitIsDead and UnitIsDead(unit) then
-        local engaged = (slot == "mouseover") and engagedMouseover or engagedTarget
-        if engaged ~= guid then return end
-        if slot == "mouseover" then engagedMouseover = nil else engagedTarget = nil end
+        -- A corpse first seen already dead is discarded, not recorded: it is not ours to time.
+        if not takeEngaged(guid) then return end
         local uiMapID, x, y = playerPosition()
         if not uiMapID then return end
         M.NoteDeath("npc", npcID, uiMapID, x, y)
         return
     end
 
-    if slot == "mouseover" then engagedMouseover = guid else engagedTarget = guid end
+    if slot == "target" then rememberEngaged(guid) end
 
     -- Only ids this session actually watched die: everything else is a lookup that would allocate
     -- a tracking entry for every creature the player's cursor ever crossed.
@@ -535,6 +646,13 @@ end
 --- LOOT_OPENED over a game object: the one event that is both halves of a gathering interval
 -- (docs/10 D3). GetLootSourceInfo gives the GUID of what is being looted, which is how the object
 -- id is recovered -- there is no "target" for a herb.
+--
+-- Every looted object opens an interval, not only the ones ns.Professions can classify as a
+-- gathering node: a quest crate has a respawn timer too, and Map/Pins fades its pin and
+-- Map/NodeTooltip counts it down through exactly this record. What used to make that a problem was
+-- the shared id budget -- a few hundred crates and no creature kill was ever tracked again -- and
+-- that is fixed where it was broken (listFor): the kinds have separate budgets, and an entry that
+-- closed no interval and can close none any more is the first thing evicted.
 local function onLootOpened()
     if not (GetNumLootItems and GetLootSourceInfo) then return end
     local uiMapID, x, y = playerPosition()

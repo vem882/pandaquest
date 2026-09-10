@@ -86,6 +86,16 @@ local DEPLETED_ALPHA = 0.35         -- and a node this session already emptied (
 
 local MAX_NODES_PER_MAP = 250       -- ns.Pins caps at 300 pins total; quests are added first
 local MAX_SPAWNS_PER_NODE = 80      -- one Copper Vein id carries hundreds of coordinates
+--- The floor a kind keeps when the map's budget has to be shared. Without it a zone with three
+-- thousand herb coordinates and eleven ore veins spends the whole budget on herbs and a Mining
+-- character never sees a vein: the cap silently decided what a gathering zone looks like, in
+-- pairs() order rather than by anything about the zone.
+local MIN_NODES_PER_KIND = 20
+--- How many candidates of one kind are collected before the budget is shared out. It has to be
+-- comfortably above the budget itself, because the sort that decides which ones survive (nearest
+-- to the player) can only sort what was collected -- and the ids arrive in hash order, so a
+-- ceiling equal to the budget would let iteration order pick the winners all over again.
+local COLLECT_PER_KIND = MAX_NODES_PER_MAP * 3
 local GATHER_WINDOW = 8             -- s: how long a gathering cast still explains a loot window
 local DEDUPE_WINDOW = 60            -- s: LOOT_OPENED can fire twice for one object
 local MAX_LEARNED_NODES = 500       -- caps on what play teaches us, so the saved variable stays small
@@ -327,6 +337,16 @@ function M.ResetCache()
     wipe(nodeCache)
 end
 
+--- Professions.ResetMapCache(): drops the per-map node lists only.
+--
+-- Opening the map or walking into a new zone changes which map's nodes are wanted, not what the
+-- ids *are*, and rebuilding `mapIndex` for that costs a full pass over every profession id and its
+-- spawn table (693 database lookups on the committed seed). The index is dropped by ResetCache,
+-- which is what OnDataReady, a profile change and a newly learned node call.
+function M.ResetMapCache()
+    wipe(nodeCache)
+end
+
 -- What play has taught us, kept in the saved variable so a MoP ore vein is on the map again the
 -- next time the player opens it - hub or no hub (docs/10 A4).
 local function learnedStore()
@@ -340,8 +360,12 @@ end
 -- pfQuest's classic data, "learned" is this character gathering it, "community" is the hub's
 -- aggregate of everybody else's gathers. `sightings` travels with the last of those, so a place
 -- one person found once is not presented as a place forty people agree on.
+-- Candidates are collected per kind and the map's budget is shared out between the kinds
+-- afterwards (see `shareTheBudget`), so `out` here is one kind's bucket rather than the map's
+-- whole list, bounded by COLLECT_PER_KIND so a zone carrying thousands of one herb's coordinates
+-- cannot turn this into unbounded work.
 local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings)
-    if #out >= MAX_NODES_PER_MAP then return false end
+    if #out >= COLLECT_PER_KIND then return false end
     if type(x) ~= "number" or type(y) ~= "number" then return true end
     if x < 0 or x > 100 or y < 0 or y > 100 then return true end
     -- Absent, not zero. pfQuest's meta stores "requires skill 1" as 0 and the seed copies that
@@ -365,12 +389,29 @@ local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings)
         node.objectId = id
         node.entityType, node.entityID = "object", id
     end
-    node.gatherable = M.IsGatherable(node)
+    local gatherable, reason = M.IsGatherable(node)
+    -- docs/10 D2 and Const.lua's own words: `onlyMyProfessions` "draws nothing rather than a zone
+    -- full of veins nobody here can touch". That has to be decided here, before the node takes a
+    -- place in the map's budget and before `showUngatherable` gets a say - the two settings are
+    -- about different things. "Show nodes above my skill" is for planning where to level a skill
+    -- you have; it was never meant to fill a rogue's map with ore and herbs.
+    if reason == "profession" and M.OnlyMyProfessions() then return true end
+    node.gatherable = gatherable
     out[#out + 1] = node
     return true
 end
 
-local function appendLearned(out, uiMapID, wanted)
+--- The bucket one kind's candidates go into, created on demand.
+local function bucketFor(buckets, kind)
+    local bucket = buckets[kind]
+    if not bucket then
+        bucket = {}
+        buckets[kind] = bucket
+    end
+    return bucket
+end
+
+local function appendLearned(buckets, uiMapID, wanted)
     local learned = learnedStore()
     if not learned then return end
     for id, entry in pairs(learned) do
@@ -378,10 +419,13 @@ local function appendLearned(out, uiMapID, wanted)
             local def = { kind = entry.k, skill = entry.s, name = entry.n }
             local spawns = entry.p
             if type(spawns) == "table" then
+                local bucket = bucketFor(buckets, entry.k)
                 for key in pairs(spawns) do
                     local map, x, y = Util.SplitAreaSpawnKey(key)
                     if map == uiMapID then
-                        if not addNode(out, id, def, uiMapID, x, y, entry.u, "learned") then return end
+                        -- A full bucket ends this id, not the whole map: another kind may still
+                        -- have room, and it is not this one's to spend.
+                        if not addNode(bucket, id, def, uiMapID, x, y, entry.u, "learned") then break end
                     end
                 end
             end
@@ -404,7 +448,7 @@ local function communityNodes()
     return found
 end
 
-local function appendCommunity(out, uiMapID, wanted)
+local function appendCommunity(buckets, uiMapID, wanted)
     local found = communityNodes()
     if not found then return end
     local learned = learnedStore()
@@ -426,13 +470,14 @@ local function appendCommunity(out, uiMapID, wanted)
                     if ok and type(got) == "string" then name = got end
                 end
                 local def = { kind = entry.k, skill = nil, name = name }
+                local bucket = bucketFor(buckets, entry.k)
                 for i = 1, #places do
                     local place = places[i]
                     if type(place) == "table" and place.m == uiMapID
                        and type(place.x) == "number" and type(place.y) == "number" then
-                        if not addNode(out, id, def, uiMapID, place.x * 100, place.y * 100,
+                        if not addNode(bucket, id, def, uiMapID, place.x * 100, place.y * 100,
                                        false, "community", place.n) then
-                            return
+                            break
                         end
                     end
                 end
@@ -447,9 +492,116 @@ local function byNode(a, b)
     return a.y < b.y
 end
 
+-- Nearest first when the player is standing on this map, and by id otherwise so that what a cap
+-- keeps is at least reproducible rather than a product of table iteration order.
+local function byNearness(a, b)
+    local da, db = a.dist, b.dist
+    if da and db and da ~= db then return da < db end
+    return byNode(a, b)
+end
+
+--- The player's position on `uiMapID` in map percent, or nil when they are somewhere else.
+local function playerPointOn(uiMapID)
+    local Player = ns.Player
+    local pos = Player and Player.GetPosition and Player.GetPosition() or nil
+    if not pos or pos.uiMapID ~= uiMapID or type(pos.x) ~= "number" or type(pos.y) ~= "number" then
+        return nil
+    end
+    return pos.x * 100, pos.y * 100
+end
+
+--- Shares MAX_NODES_PER_MAP out between the kinds that have candidates and copies the survivors
+-- into `out`.
+--
+-- An equal split first, capped by what each kind actually has, and the change handed round until
+-- it is gone. That is what keeps a zone with three thousand herb coordinates from spending the
+-- whole budget before the ore veins - the character's own profession - are ever looked at.
+local function shareTheBudget(buckets, out, uiMapID)
+    local total, present = 0, 0
+    for i = 1, #KINDS do
+        local bucket = buckets[KINDS[i]]
+        local count = bucket and #bucket or 0
+        if count > 0 then
+            total = total + count
+            present = present + 1
+        end
+    end
+    if total == 0 then return out end
+
+    if total <= MAX_NODES_PER_MAP then
+        for i = 1, #KINDS do
+            local bucket = buckets[KINDS[i]]
+            for j = 1, (bucket and #bucket or 0) do out[#out + 1] = bucket[j] end
+        end
+        return out
+    end
+
+    local px, py = playerPointOn(uiMapID)
+    local base = floor(MAX_NODES_PER_MAP / present)
+    if base < MIN_NODES_PER_KIND then base = MIN_NODES_PER_KIND end
+
+    local quota, spent = {}, 0
+    for i = 1, #KINDS do
+        local kind = KINDS[i]
+        local bucket = buckets[kind]
+        local count = bucket and #bucket or 0
+        if count > 0 then
+            local share = count < base and count or base
+            quota[kind] = share
+            spent = spent + share
+        end
+    end
+    -- Round robin so the remainder goes where there is something left to show, a pin at a time.
+    local left = MAX_NODES_PER_MAP - spent
+    while left > 0 do
+        local gave = false
+        for i = 1, #KINDS do
+            local kind = KINDS[i]
+            local bucket = buckets[kind]
+            if left > 0 and quota[kind] and bucket and quota[kind] < #bucket then
+                quota[kind] = quota[kind] + 1
+                left = left - 1
+                gave = true
+            end
+        end
+        if not gave then break end
+    end
+
+    for i = 1, #KINDS do
+        local kind = KINDS[i]
+        local bucket = buckets[kind]
+        local share = quota[kind]
+        if bucket and share and share > 0 then
+            if #bucket > share then
+                if px then
+                    for j = 1, #bucket do
+                        local node = bucket[j]
+                        local dx, dy = node.x - px, node.y - py
+                        node.dist = dx * dx + dy * dy
+                    end
+                end
+                sort(bucket, byNearness)
+            end
+            for j = 1, share do
+                local node = bucket[j]
+                node.dist = nil                 -- scratch, not part of the node contract
+                out[#out + 1] = node
+            end
+        end
+    end
+    return out
+end
+
 --- Professions.NodesForMap(uiMapID) -> { {objectId, x, y, kind, skill, name, gatherable}, ... }
 -- Always an array: a map with no profession data returns an empty one rather than nil, so the
 -- caller never has to ask twice. The array is cached per map and rebuilt by ResetCache.
+--
+-- One consequence of the cache is worth stating: when the zone has more candidates than the map
+-- budget, which ones survive is decided by distance from the player *at the moment the list was
+-- built*, and walking across the zone does not rebuild it (only a zone change, a map change or a
+-- setting does). The minimap's own cap is re-ranked four times a second on top of this, so what
+-- the player is standing next to is still drawn there; this is the coarse cut, and re-running it
+-- on every step would mean a full rebuild per step, which is the thing being fixed elsewhere.
 function M.NodesForMap(uiMapID)
     if type(uiMapID) ~= "number" then return {} end
     local cached = nodeCache[uiMapID]
@@ -459,12 +611,13 @@ function M.NodesForMap(uiMapID)
     nodeCache[uiMapID] = out
     local defs = definitions()
     local index = mapIndex or buildIndex()
-    local bucket = index[uiMapID]
+    local ids = index[uiMapID]
+    local buckets = {}
     local wanted = nil
-    if bucket and defs then
+    if ids and defs then
         wanted = {}
-        for i = 1, #bucket do
-            local entry = bucket[i]
+        for i = 1, #ids do
+            local entry = ids[i]
             local def = defs[entry.id]
             if def and M.KindEnabled(def.kind) then
                 wanted[entry.id] = true
@@ -473,18 +626,20 @@ function M.NodesForMap(uiMapID)
                 if type(coords) == "table" then
                     local limit = #coords
                     if limit > MAX_SPAWNS_PER_NODE then limit = MAX_SPAWNS_PER_NODE end
+                    local bucket = bucketFor(buckets, def.kind)
                     for j = 1, limit do
                         local c = coords[j]
                         if type(c) == "table" then
-                            if not addNode(out, entry.id, def, uiMapID, c[1], c[2], entry.unit, "seed") then break end
+                            if not addNode(bucket, entry.id, def, uiMapID, c[1], c[2], entry.unit, "seed") then break end
                         end
                     end
                 end
             end
         end
     end
-    appendLearned(out, uiMapID, wanted)
-    appendCommunity(out, uiMapID, wanted)
+    appendLearned(buckets, uiMapID, wanted)
+    appendCommunity(buckets, uiMapID, wanted)
+    shareTheBudget(buckets, out, uiMapID)
     sort(out, byNode)
     return out
 end
@@ -831,12 +986,30 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-local function redraw()
-    M.ResetCache()
+-- The map moved: which map's nodes are wanted changed, nothing else. It goes through
+-- Pins.RequestRedraw rather than Pins.Redraw because Blizzard calls OnMapChanged from SetMapID,
+-- which is the same user action that shows the frame -- both hooks fire for one map open, and
+-- calling Redraw directly ran the entire node and pin pipeline twice in a single frame.
+local function askPinsToRedraw()
     local Pins = ns.Pins
-    if Pins and Pins.Redraw then Pins.Redraw() end
+    if Pins and Pins.RequestRedraw then
+        Pins.RequestRedraw()
+    elseif Pins and Pins.Redraw then
+        Pins.Redraw()
+    end
 end
-M.Redraw = redraw
+
+local function mapMoved()
+    M.ResetMapCache()
+    askPinsToRedraw()
+end
+
+--- Professions.Redraw(): a setting changed, not the map. The node lists have to go and so does the
+-- id index, because a kind toggle changes which ids are indexed at all (UI/Options calls this).
+function M.Redraw()
+    M.ResetCache()
+    askPinsToRedraw()
+end
 
 function M.Init()
     M.ResetCache()
@@ -858,7 +1031,7 @@ function M.Enable()
     end)
     M:RegisterEvent("SKILL_LINES_CHANGED", function()
         M.InvalidateSkills()
-        redraw()
+        M.Redraw()
     end)
     M:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", function(_, unit, _castGUID, spellID)
         if unit ~= "player" then return end
@@ -874,12 +1047,12 @@ function M.Enable()
     -- the map and paging to another zone in it. Neither replaces a Blizzard script (HookScript and
     -- hooksecurefunc both run *after* the original), which is docs/10 E4's rule: we do not compete
     -- with a map addon for the same hook.
-    M:RegisterEvent("ZONE_CHANGED_NEW_AREA", redraw)
+    M:RegisterEvent("ZONE_CHANGED_NEW_AREA", mapMoved)
     local frame = _G and _G.WorldMapFrame
     if frame then
-        if frame.HookScript then pcall(frame.HookScript, frame, "OnShow", redraw) end
+        if frame.HookScript then pcall(frame.HookScript, frame, "OnShow", mapMoved) end
         if type(frame.OnMapChanged) == "function" and hooksecurefunc then
-            pcall(hooksecurefunc, frame, "OnMapChanged", redraw)
+            pcall(hooksecurefunc, frame, "OnMapChanged", mapMoved)
         end
     end
     Log.Debug("Professions", "enabled (%s)", M.IsEnabled() and "on" or "off")

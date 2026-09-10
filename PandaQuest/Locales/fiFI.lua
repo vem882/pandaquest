@@ -118,6 +118,7 @@ local T = {
     ["Respawn:"] = "Uudelleensyntymä:",
     ["Respawn in:"] = "Syntyy uudelleen:",
     ["~%s (%d)"] = "~%s (%d)",
+    ["Sightings:"] = "Havaintoja:",
     ["Unit"] = "Olento",
     ["Object"] = "Objekti",
     ["Item"] = "Esine",
