@@ -50,9 +50,24 @@ ns.DEFAULTS = {
                   fontSize = 12 },
         nav = { mode = "auto", includeAvailable = true, includeTurnIn = true, availableRadius = 800, maxAvailable = 5,
                 focusQuestID = nil, tomtomMode = "off", arriveRadius = 15 },
+        -- nodeScale, minimapMaxNodes and minimapFade are docs/10 section B2: the objective dots
+        -- have their own size (they are dots, not glyphs), the minimap carries at most
+        -- minimapMaxNodes of them (nearest first), and a pin fades and shrinks once it is past
+        -- minimapFade of the way from the minimap's centre to its edge (0 = no fade).
         map = { showAvailable = true, showObjectives = true, showTurnIn = true, showOnMinimap = true, iconScale = 1.0,
                 minimapIconScale = 1.0, lowLevelQuests = false, showRepeatable = true, showDungeon = false, showRaid = false,
-                showPvP = false, showPetBattle = true, clusterSpawns = true, fadeMinimapEdge = true },
+                showPvP = false, showPetBattle = true, clusterSpawns = true, fadeMinimapEdge = true,
+                nodeScale = 1.0, minimapMaxNodes = 50, minimapFade = 0.6 },
+        -- docs/10 D2: profession nodes. `onlyMyProfessions` is the filter that keeps the map
+        -- honest for a character with no gathering profession at all - it draws nothing rather
+        -- than a zone full of veins nobody here can touch - while `showUngatherable` is the
+        -- opposite request: show me what I could take if I levelled the skill, faded.
+        -- `respawnCountdown` dims a node this session already emptied until ns.Respawn says it is
+        -- back, and the same switch dims a quest spawn whose mob the player just killed
+        -- (Map/Pins.lua's ApplyRespawnFade): one countdown, one toggle.
+        professions = { enabled = true, mining = true, herbalism = true, fishing = true,
+                        chests = true, rares = true, showUngatherable = false,
+                        onlyMyProfessions = true, respawnCountdown = true },
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },
@@ -81,5 +96,11 @@ ns.DEFAULTS = {
                              breadcrumbs = true, breadcrumbInterval = 10, maxSessions = 30,
                              maxEventsPerSession = 5000,
                              gear = true, gearInterval = 60, gearMoney = false },
+               -- What play taught us about profession nodes (docs/10 A4/D3). Pandaria's ore and
+               -- herbs are in no source we can reach, so the only way they reach the map is that
+               -- somebody gathered one: `nodes[objectId] = { k = kind, s = skill, n = name,
+               -- p = { [spawnKey] = timesSeen } }`. Local and unconditional - writing to one's own
+               -- disk is not the hub's processing - while *sending* it is gated by telemetry.
+               nodes = {},
                dbCompiled = nil },
 }

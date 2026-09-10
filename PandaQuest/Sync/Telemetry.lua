@@ -30,6 +30,12 @@ local CODES = {
     ACCEPT = "QA", TURNIN = "QT", REMOVED = "QR", OBJECTIVE = "OBJ", COMPLETE = "QC",
     KILL = "KILL", LOOT = "LOOT", POS = "POS", LEVEL = "LVL", ZONE = "ZONE", DIE = "DIE",
     ARRIVED = "ARR", NAVTARGET = "NAV",
+    -- One measured respawn interval (docs/10 C2/C3). Nodes/Respawn.lua observes a death and the
+    -- reappearance of the same id at the same spawn point; this is that interval, one event per
+    -- observation, so the hub can take a median over raw samples rather than over other people's
+    -- medians. Not personal data -- a respawn timer is a property of the world -- but it travels
+    -- through the same consent gate as everything else, which is Record() itself.
+    RESPAWN = "RESP",
     -- The character sheet snapshot. Unlike every other code its payload is a nested table (`g`),
     -- because it is one document about the character rather than a point in a stream; Sync/
     -- Character.lua owns its shape and `v` on the event is that shape's version.
@@ -560,6 +566,17 @@ local function onCombatLogEvent()
     local npcID = Util.NpcIdFromGuid(destGUID)
     if not npcID then return end
 
+    -- Hand the kill to the respawn measurement before the quest filter, and before the dedupe:
+    -- docs/10 C2 times every creature the player kills, not only the ones a quest wants, and
+    -- Nodes/Respawn.lua does its own de-duplication by spawn point.
+    --
+    -- It is done from here rather than from a second frame of its own because
+    -- COMBAT_LOG_EVENT_UNFILTERED is the highest frequency event in the game: this handler has
+    -- already resolved the payload function and already applied the "player or pet killed it"
+    -- attribution, so passing the id along costs one call and asks the client for nothing extra.
+    local Respawn = ns.Respawn
+    if Respawn and Respawn.NoteKill then Respawn.NoteKill(npcID) end
+
     -- Only NPCs a quest in the log actually cares about (docs/06 section 13).
     local questID = questNpcs[npcID]
     if not questID then return end
@@ -628,6 +645,35 @@ local function onChatMsgLoot(_, message)
     if not itemID then return end
     -- Only the numeric item id and the count are stored; the chat line itself is discarded.
     Record(CODES.LOOT, { item = itemID, count = count, q = questItems[itemID] })
+end
+
+---------------------------------------------------------------------------
+-- Respawn observations
+---------------------------------------------------------------------------
+
+--- RecordRespawn(kind, id, uiMapID, x, y, seconds, sample) -> event|nil
+-- One RESP event: "this npc/object at this place took `seconds` to come back, and it is my
+-- `sample`th measurement of that spawn point". Called by Nodes/Respawn.lua whenever it closes an
+-- interval; `active` is checked by Record, so with telemetry off nothing at all is written and the
+-- measurement stays on the player's own machine (docs/10 C2).
+--
+-- The addon works in 0..100 map percentages (Nav/Targets.lua) and every event in this file is in
+-- the 0..1 the hub stores, so the conversion happens here rather than in four call sites.
+function M.RecordRespawn(kind, id, uiMapID, x, y, seconds, sample)
+    if not active then return nil end
+    if type(kind) ~= "string" or type(id) ~= "number" or id <= 0 then return nil end
+    seconds = tonumber(seconds)
+    if not seconds or seconds <= 0 then return nil end
+
+    local fields = { kind = kind, id = floor(id), dt = floor(seconds * 10 + 0.5) / 10 }
+    if type(uiMapID) == "number" and type(x) == "number" and type(y) == "number" then
+        fields.m = uiMapID
+        fields.x = round3(x / 100)
+        fields.y = round3(y / 100)
+    end
+    sample = tonumber(sample)
+    if sample and sample > 0 then fields.sample = floor(sample) end
+    return Record(CODES.RESPAWN, fields)
 end
 
 ---------------------------------------------------------------------------

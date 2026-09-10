@@ -37,6 +37,23 @@ Path prefix in Lua: `"Interface\\AddOns\\PandaQuest\\Textures\\"`.
 
 `icon` is not an `Icons.Get` name: it is the TOC `IconTexture` and the LibDBIcon minimap button texture.
 
+## Node and profession textures (docs/10 sections B1 and D1)
+
+`node.tga` is drawn for every objective spawn instead of a full icon: `Map/Pins.lua`
+tints it with a colour hashed from the quest name (`Icons.QuestColor`, pfQuest's
+`str2rgb`), so one quest's dots share a colour without a palette. It carries no baked
+outline - the tint would tint that too - so `node_outline.tga` is drawn behind it.
+
+| `Icons.Get` name | File | Size | Description |
+|---|---|---|---|
+| `node` | `node.tga` | 32x32 | White filled dot for objective spawns - tint per quest with SetVertexColor (docs/10 B1). |
+| `node_outline` | `node_outline.tga` | 32x32 | Dark ring drawn behind node.tga so a tinted dot reads on snow, sand and grass alike. |
+| `mine` | `pin_mine.tga` | 32x32 | Pickaxe - mining node. |
+| `herb` | `pin_herb.tga` | 32x32 | Green sprig - herbalism node. |
+| `fish` | `pin_fish.tga` | 32x32 | Blue fish - fishing pool. |
+| `chest` | `pin_chest.tga` | 32x32 | Treasure chest - lootable container. |
+| `rare` | `pin_rare.tga` | 32x32 | Skull - rare spawn. |
+
 ## MIT icons from Questie/pfQuest (`Icons/`)
 
 Copied unchanged from `_reference/Questie/Icons` - only the files listed as MIT in that

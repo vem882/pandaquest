@@ -111,6 +111,24 @@ local T = {
     ["Turn in: %s"] = "Palauta: %s",
     ["Ends: %s"] = "Päättyy: %s",
 
+    -- Map/NodeTooltip (docs/10 B3)
+    ["Level:"] = "Taso:",
+    ["Type:"] = "Tyyppi:",
+    ["Skill:"] = "Taito:",
+    ["Respawn:"] = "Uudelleensyntymä:",
+    ["Respawn in:"] = "Syntyy uudelleen:",
+    ["~%s (%d)"] = "~%s (%d)",
+    ["Unit"] = "Olento",
+    ["Object"] = "Objekti",
+    ["Item"] = "Esine",
+    ["Area"] = "Alue",
+    ["%d Sec"] = "%d s",
+    ["%d Secs"] = "%d s",
+    ["%d Min"] = "%d min",
+    ["%d Mins"] = "%d min",
+    ["%d Hour"] = "%d t",
+    ["%d Hours"] = "%d t",
+
     -- UI/Options
     ["General"] = "Yleiset",
     ["PandaQuest works out of the box. Everything below is optional."] =
@@ -192,6 +210,15 @@ local T = {
     ["Pin size"] = "Merkin koko",
     ["Map pin size"] = "Kartan merkin koko",
     ["Minimap pin size"] = "Minikartan merkin koko",
+    -- Map/Pins, Map/Icons (docs/10 B1-B2)
+    ["Objective dot size"] = "Tavoitepisteen koko",
+    ["Objective spawns are small dots coloured per quest; quest givers keep their icons."] =
+        "Tavoitteiden spawnit ovat pieniä pisteitä, väri tehtävän mukaan; tehtävänantajat pitävät ikoninsa.",
+    ["Maximum minimap pins"] = "Merkkien enimmäismäärä minikartalla",
+    ["When there are more, the ones nearest to you are kept."] = "Jos niitä on enemmän, lähimmät säilytetään.",
+    ["Minimap edge fade"] = "Minikartan reunahäivytys",
+    ["Pins fade and shrink past this much of the way to the minimap edge. 0 turns it off."] =
+        "Merkit himmenevät ja pienenevät tämän verran minikartan reunaa kohti mentäessä. 0 poistaa häivytyksen.",
     ["Which quests to show"] = "Mitkä tehtävät näytetään",
     ["Show low level quests"] = "Näytä matalatasoiset tehtävät",
     ["Quests that are grey for your level."] = "Tehtävät, jotka ovat tasollesi harmaita.",
@@ -200,6 +227,41 @@ local T = {
     ["Show raid quests"] = "Näytä raid-tehtävät",
     ["Show PvP quests"] = "Näytä PvP-tehtävät",
     ["Show pet battle quests"] = "Näytä lemmikkitaistelutehtävät",
+
+    -- Nodes/Professions (docs/10 D: ammattikohteet kartalla)
+    ["Gathering"] = "Keräily",
+    ["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] =
+        "Malmit, yrtit, kalastuspaikat, arkut ja harvinaiset spawnit kartalla. Pandarian solmut kerätään pelistä, joten ne täydentyvät kun matkustat.",
+    ["Show gathering nodes"] = "Näytä keräilykohteet",
+    ["Turns the whole layer off, whatever the boxes below say."] =
+        "Sammuttaa koko tason riippumatta alla olevista valinnoista.",
+    ["Which nodes"] = "Mitkä kohteet",
+    ["Mining veins"] = "Malmisuonet",
+    ["Ore veins. Hidden when your Mining skill is too low, unless you show those too."] =
+        "Malmisuonet. Piilotetaan jos Mining-taitosi ei riitä, ellet näytä myös niitä.",
+    ["Herbs"] = "Yrtit",
+    ["Herb spawns. Hidden when your Herbalism skill is too low, unless you show those too."] =
+        "Yrttipaikat. Piilotetaan jos Herbalism-taitosi ei riitä, ellet näytä myös niitä.",
+    ["Fishing pools"] = "Kalastuspaikat",
+    ["Fishing pools on lakes, rivers and the coast."] =
+        "Kalastuspaikat järvissä, joissa ja rannikolla.",
+    ["Chests and treasures"] = "Arkut ja aarteet",
+    ["Chests and lockboxes in the world; no gathering skill filters these."] =
+        "Arkut ja lippaat maailmassa; keräilytaito ei suodata näitä.",
+    ["Rare spawns"] = "Harvinaiset spawnit",
+    ["Rare creatures that spawn in a fixed place."] =
+        "Harvinaiset olennot jotka ilmestyvät kiinteään paikkaan.",
+    ["Which of them you can gather"] = "Mitkä niistä osaat kerätä",
+    ["Only my professions"] = "Vain omat ammattini",
+    ["A profession you have not learned contributes nothing at all."] =
+        "Ammatti jota et ole opetellut ei tuo kartalle mitään.",
+    ["Show nodes above my skill"] = "Näytä taitoni yli menevät kohteet",
+    ["Drawn faded. Useful for planning where to level a gathering skill next."] =
+        "Piirretään haaleana. Hyödyllinen kun suunnittelet missä nostat keräilytaitoa seuraavaksi.",
+    ["Fade nodes and mobs until they respawn"] = "Häivytä kohteet ja viholliset kunnes ne palaavat",
+    ["A node you gathered or a mob you killed stays faint until its respawn timer says it is back."] =
+        "Keräämäsi kohde tai tappamasi vihollinen pysyy haaleana kunnes respawn-aika kertoo sen palanneen.",
+
     ["Tooltips"] = "Vihjeruudut",
     ["Add quest info to tooltips"] = "Lisää tehtävätiedot vihjeruutuihin",
     ["Shows which quests an NPC or item starts, ends or counts towards."] =

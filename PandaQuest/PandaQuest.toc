@@ -26,6 +26,7 @@ Database\Data\Quests.lua
 Database\Data\Npcs.lua
 Database\Data\Objects.lua
 Database\Data\Items.lua
+Database\Data\Seed.lua
 Database\Overrides\Wowhead.lua
 Database\Overrides\Community.lua
 Database\DB.lua
@@ -38,8 +39,12 @@ Nav\Router.lua
 Nav\Arrow.lua
 Nav\TomTom.lua
 Map\Icons.lua
+Map\MapCompat.lua
+Map\NodeTooltip.lua
 Map\Pins.lua
 Map\Tooltips.lua
+Nodes\Respawn.lua
+Nodes\Professions.lua
 UI\Options.lua
 UI\MinimapButton.lua
 UI\Wowhead.lua

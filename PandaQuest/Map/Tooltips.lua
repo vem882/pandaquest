@@ -234,6 +234,14 @@ function M.OnTooltipSetUnit(tooltip)
     local guid = UnitGUID and UnitGUID(unit)
     local npcID = guid and Util.NpcIdFromGuid(guid) or nil
     if not npcID then return end
+    -- Blizzard's unit tooltip already carries the name, the level and the type of docs/10 B3's
+    -- block, so the only header line missing here is the respawn (with its live countdown when
+    -- this session watched the mob die). No spawn key: a hovered unit is where it stands now, not
+    -- necessarily where it died, so ns.Respawn answers for the creature as a whole.
+    local NodeTooltip = ns.NodeTooltip
+    if NodeTooltip and NodeTooltip.AppendRespawn then
+        NodeTooltip.AppendRespawn(tooltip, "npc", npcID, nil)
+    end
     appendLines(tooltip, M.BuildNpcLines(npcID))
 end
 

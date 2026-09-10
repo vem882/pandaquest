@@ -17,7 +17,8 @@ ns.MODULE_ORDER = {
     "Schema", "Zones", "DB",
     "Player", "QuestLog", "Objectives", "Availability",
     "Targets", "Router", "Arrow", "TomTomBridge",
-    "Icons", "Pins", "Tooltips",
+    "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
+    "Respawn", "Professions",
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }

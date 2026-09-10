@@ -109,6 +109,47 @@ function Util.FormatTime(seconds)
     return format("%d h %d min", hours, restMin)
 end
 
+-- FormatRespawn(seconds) -> "45 Secs" | "6 Mins 53 Secs" | "1 Hour 5 Mins"; nil for a value we do
+-- not have (docs/10 B3: an unknown line is left out, never rendered as "?" or 0).
+--
+-- This is deliberately not FormatTime: the respawn line copies pfQuest's wording from the owner's
+-- screenshot, where the units are spelled out and pluralised. ns.L is read at call time because
+-- Core/Util.lua loads before Locales/ (and /pq lang rewrites the table in place).
+local RESPAWN_UNITS = {
+    sec = { "%d Sec", "%d Secs" },
+    min = { "%d Min", "%d Mins" },
+    hour = { "%d Hour", "%d Hours" },
+}
+
+local function respawnUnit(value, unit)
+    local forms = RESPAWN_UNITS[unit]
+    local key = forms[value == 1 and 1 or 2]
+    local L = ns.L
+    local pattern = (L and L[key]) or key
+    return format(pattern, value)
+end
+
+function Util.FormatRespawn(seconds)
+    if type(seconds) ~= "number" or seconds ~= seconds or seconds == huge or seconds == -huge then
+        return nil
+    end
+    if seconds < 0 then seconds = 0 end
+    seconds = floor(seconds + 0.5)
+    if seconds < 60 then
+        return respawnUnit(seconds, "sec")
+    end
+    if seconds < 3600 then
+        local minutes = floor(seconds / 60)
+        local rest = seconds - minutes * 60
+        if rest == 0 then return respawnUnit(minutes, "min") end
+        return respawnUnit(minutes, "min") .. " " .. respawnUnit(rest, "sec")
+    end
+    local hours = floor(seconds / 3600)
+    local minutes = floor((seconds - hours * 3600) / 60)
+    if minutes == 0 then return respawnUnit(hours, "hour") end
+    return respawnUnit(hours, "hour") .. " " .. respawnUnit(minutes, "min")
+end
+
 -- GUID field 6 holds the creature/object id: "Creature-0-4379-870-8-57232-0000123456".
 local function guidField(guid, prefixes)
     if type(guid) ~= "string" then return nil end

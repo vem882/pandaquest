@@ -11,7 +11,9 @@ database is derived from Questie's MoP data with its corrections applied.
 
 - **Database** – 17 693 quests, 60 224 NPCs, 20 326 objects and 80 049 items, decoded in a
   coroutine at login (about half a second) so the game never freezes. Zone/area mapping,
-  dungeon entrances, hidden-quest lists and Wowhead/community overrides on top.
+  dungeon entrances, hidden-quest lists and Wowhead/community overrides on top. Plus a seed taken
+  from pfQuest's classic database (`Database/Data/Seed.lua`): 10 738 NPC and 7 008 object respawn
+  timers, 2 108 items with a measured drop rate and 693 gathering nodes.
 - **Quest layer** – reads the quest log with the 5.5.4 API (`GetNumQuestLogEntries` +
   `GetQuestLogTitle` + `C_QuestLog.GetQuestObjectives`), parses objective progress, and works out
   which quests you could pick up (level, race, class, prerequisites, reputation, skill, exclusivity).
@@ -21,7 +23,26 @@ database is derived from Questie's MoP data with its corrections applied.
   the distance and an ETA from your actual speed, an arrival flash, drag-to-move and a right-click
   menu. Hides itself in instances, on taxis and in pet battles.
 - **Map** – pins on the world map and the minimap through HereBeDragons, merged per spawn cluster,
-  with tooltips and a right-click menu; the current target is highlighted.
+  with tooltips and a right-click menu; the current target is highlighted. An objective spawn is a
+  small ringed dot whose colour is derived from the quest's own name, so two spawns of one quest
+  match and two quests do not; quest givers and turn-ins keep their `!` and `?`. The minimap keeps
+  the nearest nodes when it is capped and fades the ones drifting towards the rim. Pins survive
+  another addon rescaling, resizing or re-anchoring the world map (simulated in the harness --
+  see "Not verified" below).
+- **Node tooltips** – hovering a pin gives the pfQuest-style block: the creature's name, its level
+  range, its type, its respawn time and the quests that want it, with each objective's live
+  progress and its drop rate. **A line whose value we do not have is left out** -- never a `?`,
+  never a zero, never an empty bracket.
+- **Respawn timers** – three sources, and the tooltip always says which one it is looking at: the
+  static seed taken from pfQuest's Vanilla/TBC data, the community median measured on the hub
+  (shown as `~5 Mins (12)` with its sample count), and what this session measured itself. Killing
+  a tracked mob or gathering a node starts a live countdown, and its pin stays faint until it is
+  back. Mists of Pandaria is in none of the classic data, so Pandaria's timers are measured from
+  play -- which is the same loop the quest guides already use.
+- **Gathering nodes** – ore veins, herbs, fishing pools, chests and rare spawns on both maps, each
+  with its own icon, filtered by what your character can actually gather (`Show nodes above my
+  skill` brings the rest back faded). Pandaria's veins are in no source anybody can download, so
+  they are learned from play: looting one teaches the addon where it is and starts its timer.
 - **Tooltips** – NPC and item tooltips list the quests they start, end or count towards.
 - **Tracker / notifications** – distance and a "navigate here" button on the Blizzard tracker,
   and a short centre-screen message when a quest completes or the target changes.
@@ -32,6 +53,12 @@ database is derived from Questie's MoP data with its corrections applied.
 
 Not in this version: flight-path routing between continents (a cross-continent target sorts last
 and shows no distance), and a PandaQuest tracker of its own.
+
+**Not verified in game.** Compatibility with Leatrix_Maps is asserted by *simulating* what that
+addon does to the world map -- scaling it, resizing it, re-anchoring it, swapping its canvas -- in
+the test harness, because the current release cannot be downloaded without a CurseForge login. The
+arithmetic holds; whether the two addons actually get on is still an in-game question, and the same
+goes for Mapster and ElvUI's map module.
 
 ## Install
 
@@ -72,7 +99,8 @@ Everything has a working default; the panel (`/pq`) is optional. Groups and the 
 | Arrow | show/lock, quest text, ETA, community timings, hide in instances, arrival flash, size, opacity, text size, reset position |
 | Navigation | target selection (auto / focused quest / nearest), focused quest ID, route to turn-ins, route to new quests + radius and count, arrival radius |
 | TomTom | off or mirror the current target |
-| Map | objective / turn-in / available pins, minimap pins, edge pins, spawn merging, pin sizes, which quests to show (low level, repeatable, dungeon, raid, PvP, pet battle) |
+| Map | objective / turn-in / available pins, minimap pins, edge pins, spawn merging, pin sizes, node size, how many nodes the minimap carries and how far in they start fading, which quests to show (low level, repeatable, dungeon, raid, PvP, pet battle) |
+| Gathering | the whole node layer on/off, mining / herbalism / fishing / chests / rares separately, only my professions, show nodes above my skill, fade nodes and mobs until they respawn |
 | Tooltips | quest info in tooltips, quest IDs |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound, preview |
@@ -94,7 +122,7 @@ See `docs/` (Finnish) for the module contract and `tools/` for the database buil
 generator, the WoW API stub test harness and the luacheck runner:
 
 ```sh
-python3 -m pytest tools/tests -q -p no:cacheprovider   # 282 tests, no game client needed
+python3 -m pytest tools/tests -q -p no:cacheprovider   # 584 tests, no game client needed
 python3 tools/luacheck_runner.py                       # lint every Lua file
 python3 tools/syntax_check.py PandaQuest/**/*.lua      # Lua 5.1 syntax only
 ```

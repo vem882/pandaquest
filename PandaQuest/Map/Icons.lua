@@ -6,11 +6,14 @@ local _, ns = ...
 local M = {}
 ns.Icons = M
 
-local type, pairs = type, pairs
+local type, pairs, tostring = type, pairs, tostring
+local byte, len, sqrt, floor = string.byte, string.len, math.sqrt, math.floor
 
 local TEXTURE_ROOT = "Interface\\AddOns\\PandaQuest\\Textures\\"
 
--- Contract name -> file below Textures/. Keep in sync with ns.Const.ICON_KINDS.
+-- Contract name -> file below Textures/. The first block is ns.Const.ICON_KINDS (docs/06
+-- section 10) and must stay in sync with it; the second is the node and profession set added by
+-- docs/10 sections B1 and D1, which is not part of that older contract.
 local FILES = {
     available            = "pin_available.tga",
     available_gray       = "pin_available_gray.tga",
@@ -28,8 +31,21 @@ local FILES = {
     custom               = "pin_custom.tga",
     glow                 = "arrow_glow.tga",
     arrow                = "arrow.tga",
+    -- docs/10 B1 / D1
+    node                 = "node.tga",
+    node_outline         = "node_outline.tga",
+    mine                 = "pin_mine.tga",
+    herb                 = "pin_herb.tga",
+    fish                 = "pin_fish.tga",
+    chest                = "pin_chest.tga",
+    rare                 = "pin_rare.tga",
 }
 M.FILES = FILES
+
+--- Icons.PROFESSION_ICONS[kind] -> icon name, for ns.Data.professionNodes' `kind` field
+-- ("mine"|"herb"|"fish"|"chest"|"rare", docs/10 D1). Exposed so Map/Professions.lua does not have
+-- to repeat the mapping.
+M.PROFESSION_ICONS = { mine = "mine", herb = "herb", fish = "fish", chest = "chest", rare = "rare" }
 
 -- Fallbacks for names whose texture may not have been generated yet.
 local ALIAS = {
@@ -109,8 +125,21 @@ end
 ---------------------------------------------------------------------------
 
 local BASE_SIZE = 16               -- world-map pin edge in pixels at scale 1.0
-local BASE_MINIMAP_SIZE = 12
-local MIN_SIZE, MAX_SIZE = 6, 64
+local BASE_MINIMAP_SIZE = 10       -- docs/10 B2: smaller than the world map, the owner could not read it
+local MIN_SIZE, MAX_SIZE = 4, 64
+
+-- Objective dots (docs/10 B1) are smaller again than the `!`/`?` icons they replaced: those are
+-- glyphs that have to stay legible, a dot only has to be visible.
+local BASE_NODE_SIZE = 11
+local BASE_NODE_MINIMAP_SIZE = 7
+local CLUSTER_FACTOR = 1.35        -- pfQuest draws a cluster at 18 px where a node is 14
+
+-- node.tga fills 75 % of its texture, node_outline.tga's ring reaches 88.75 % of its own. Drawing
+-- the ring at `0.85 * size + 2.5` puts roughly 1.1 screen pixels of dark rim outside the dot at
+-- every size we use, instead of a rim that vanishes on the minimap and bloats on the world map.
+local function outlineSizeFor(size)
+    return size * 0.85 + 2.5
+end
 
 local function mapProfile()
     local PQ = ns.PQ
@@ -137,8 +166,202 @@ function M.GetSize(minimap)
     return size
 end
 
+--- Icons.GetNodeScale() -> number. profile.map.nodeScale, clamped to 0.25..4. Separate from
+-- iconScale so a player can shrink the dots without shrinking the `!` and `?` glyphs.
+function M.GetNodeScale()
+    local map = mapProfile()
+    local scale = map and map.nodeScale
+    if type(scale) ~= "number" or scale ~= scale then scale = 1.0 end
+    if scale < 0.25 then scale = 0.25 end
+    if scale > 4 then scale = 4 end
+    return scale
+end
+
+--- Icons.GetNodeSize(minimap, cluster) -> pixels for an objective dot.
+function M.GetNodeSize(minimap, cluster)
+    local base = minimap and BASE_NODE_MINIMAP_SIZE or BASE_NODE_SIZE
+    local size = base * M.GetScale(minimap) * M.GetNodeScale()
+    if cluster then size = size * CLUSTER_FACTOR end
+    if size < MIN_SIZE then size = MIN_SIZE end
+    if size > MAX_SIZE then size = MAX_SIZE end
+    return size
+end
+
 M.BASE_SIZE = BASE_SIZE
 M.BASE_MINIMAP_SIZE = BASE_MINIMAP_SIZE
+M.BASE_NODE_SIZE = BASE_NODE_SIZE
+M.BASE_NODE_MINIMAP_SIZE = BASE_NODE_MINIMAP_SIZE
+M.CLUSTER_FACTOR = CLUSTER_FACTOR
+
+---------------------------------------------------------------------------
+-- Quest colour (docs/10 B1)
+---------------------------------------------------------------------------
+
+-- pfQuest's str2rgb (_reference/pfQuest/map.lua:116) ported to Lua 5.1: a stable hash of the quest
+-- name folded into 24 bits and split into three bytes. The point is that it needs no palette --
+-- every quest gets its own colour, the same colour in every session and for every player, and two
+-- dots of the same colour are two spawns of the same quest.
+--
+-- The intermediate values stay well inside the 2^53 a double represents exactly: `counter` is
+-- reduced modulo 4294967279 at the top of each iteration, so the largest product formed is about
+-- 2.1e14.
+local rgbCache = {}
+
+local function str2rgb(text)
+    local counter = 1
+    local l = len(text)
+    for i = 1, l, 3 do
+        counter = (counter * 8161) % 4294967279
+            + (byte(text, i) * 16776193)
+            + ((byte(text, i + 1) or (l - i + 256)) * 8372226)
+            + ((byte(text, i + 2) or (l - i + 256)) * 3932164)
+    end
+    local hash = (counter % 4294967291) % 16777216
+    local r = (hash - (hash % 65536)) / 65536
+    local g = ((hash - r * 65536) - ((hash - r * 65536) % 256)) / 256
+    local b = hash - r * 65536 - g * 256
+    return r / 255, g / 255, b / 255
+end
+
+-- Perceived brightness of the hash, and the floor we insist on. A raw str2rgb value is uniform
+-- over the whole cube, so roughly a fifth of all quests would land on a colour too dark to see
+-- against the world map's terrain. Scaling the darkest ones up keeps the hash deterministic (the
+-- correction is a pure function of the colour) while giving every quest a visible dot.
+local MIN_LUMA = 0.42
+
+local function lumaOf(r, g, b)
+    return sqrt(0.299 * r * r + 0.587 * g * g + 0.114 * b * b)
+end
+
+local function brighten(r, g, b)
+    local luma = lumaOf(r, g, b)
+    if luma >= MIN_LUMA then return r, g, b end
+    -- Scaling the three channels keeps the hue, and is the right answer whenever it fits inside
+    -- the cube. A colour like (0.05, 0.05, 0.95) does not fit -- scaling it would clamp the blue
+    -- and leave the result as dark as it started -- so those blend towards white instead, which
+    -- always reaches the floor because white's luma is 1. Twelve bisection steps put the result
+    -- within 1/4096 of the floor, and the whole thing is still a pure function of the hash.
+    if luma > 0.0001 then
+        local k = MIN_LUMA / luma
+        if r * k <= 1 and g * k <= 1 and b * k <= 1 then
+            return r * k, g * k, b * k
+        end
+    end
+    local lo, hi = 0, 1
+    for _ = 1, 12 do
+        local t = (lo + hi) / 2
+        if lumaOf(r + (1 - r) * t, g + (1 - g) * t, b + (1 - b) * t) < MIN_LUMA then
+            lo = t
+        else
+            hi = t
+        end
+    end
+    return r + (1 - r) * hi, g + (1 - g) * hi, b + (1 - b) * hi
+end
+
+--- Icons.QuestColor(text) -> r, g, b (0..1). Deterministic, cached, never nil.
+function M.QuestColor(text)
+    if type(text) ~= "string" or text == "" then text = "PandaQuest" end
+    local cached = rgbCache[text]
+    if cached then return cached[1], cached[2], cached[3] end
+    local r, g, b = brighten(str2rgb(text))
+    rgbCache[text] = { r, g, b }
+    return r, g, b
+end
+
+--- Icons.ColorForSpec(spec) -> r, g, b. The colour source is the quest *name* (docs/10 B1), with
+-- the quest id and then the entity name as fallbacks so an unnamed target still gets a stable dot.
+function M.ColorForSpec(spec)
+    local target = spec and spec.targets and spec.targets[1]
+    if not target then return M.QuestColor(nil) end
+    local text = target.questTitle
+    if type(text) ~= "string" or text == "" then
+        text = target.questID and ("quest:" .. tostring(target.questID))
+            or target.entityName or target.key or nil
+    end
+    return M.QuestColor(text)
+end
+
+---------------------------------------------------------------------------
+-- Pin appearance (docs/10 B1: dots for objectives, glyphs for givers and turn-ins)
+---------------------------------------------------------------------------
+
+-- Layers that are drawn as a coloured dot rather than as an icon. Quest givers and turn-ins keep
+-- their `!` and `?`: docs/10 B1 says those are already right.
+local DOT_LAYERS = { objective = true }
+
+--- Icons.UsesDot(spec) -> bool
+function M.UsesDot(spec)
+    return spec ~= nil and DOT_LAYERS[spec.layer] == true
+end
+
+--- Icons.ApplyNode(pin, spec, minimap) -> "dot"|"icon", size
+--
+-- Draws one pin: a dot tinted with the quest colour (plus its dark ring and, for a cluster, the
+-- spawn count) or the glyph the target asks for. `pin` is the frame Map/Pins.lua pooled; it is
+-- expected to carry `texture`, and optionally `outline` and `count`.
+--
+-- The size is a SCREEN size divided by ns.MapCompat.GetPinScaleFactor(pin) (docs/10 E1): the pin
+-- is a child of the world map canvas, so a map addon that scales the canvas would otherwise scale
+-- the pin with it.
+function M.ApplyNode(pin, spec, minimap)
+    if not pin or not pin.texture or not pin.texture.SetTexture then return nil end
+    local texture, outline, count = pin.texture, pin.outline, pin.count
+    local dot = M.UsesDot(spec)
+    local cluster = dot and spec.count ~= nil and spec.count > 1
+    local size = dot and M.GetNodeSize(minimap, cluster) or M.GetSize(minimap)
+
+    local factor = 1
+    local Compat = ns.MapCompat
+    if Compat and Compat.GetPinScaleFactor then factor = Compat.GetPinScaleFactor(pin) end
+    local frameSize = size * factor
+
+    if pin.SetSize then pin:SetSize(frameSize, frameSize) end
+    if texture.SetSize then texture:SetSize(frameSize, frameSize) end
+
+    if dot then
+        texture:SetTexture(M.Get("node"))
+        if texture.SetVertexColor then
+            local r, g, b = M.ColorForSpec(spec)
+            texture:SetVertexColor(r, g, b, 1)
+        end
+        if outline then
+            outline:SetTexture(M.Get("node_outline"))
+            if outline.SetSize then
+                local os = outlineSizeFor(size) * factor
+                outline:SetSize(os, os)
+            end
+            outline:Show()
+        end
+        -- The count goes on the world map only. A cluster is drawn larger on the minimap too, so
+        -- "there are several here" still reads there, but a digit under 6 pt on a 9 px dot is not
+        -- information -- it is the smear docs/10 B2 exists to get rid of.
+        if count then
+            if cluster and not minimap then
+                count:SetText(tostring(spec.count))
+                if count.SetFont and count.GetFont then
+                    local path, _, flags = count:GetFont()
+                    if path then
+                        local points = floor(frameSize * 0.72)
+                        if points < 6 then points = 6 end
+                        count:SetFont(path, points, flags or "OUTLINE")
+                    end
+                end
+                count:Show()
+            else
+                count:Hide()
+            end
+        end
+        return "dot", frameSize
+    end
+
+    local path = M.GetForTarget(spec and spec.targets and spec.targets[1])
+    texture:SetTexture(path)
+    if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
+    if outline then outline:Hide() end
+    if count then count:Hide() end
+    return "icon", frameSize
+end
 
 --- Applies the icon of `target` (and the configured size) to a texture + its owning frame.
 -- Returns the icon name that was used, or nil when there was nothing to draw on.

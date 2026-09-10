@@ -100,6 +100,11 @@ local APPLIERS = {
     ["map.showPvP"] = recalcAvailability,
     ["map.showPetBattle"] = recalcAvailability,
     ["map"] = refreshPins,
+    -- docs/10 D2: a profession toggle changes which nodes exist, not just which pins are shown, so
+    -- the per-map node lists are dropped before the pins are rebuilt.
+    ["professions"] = function()
+        if ns.Professions and ns.Professions.Redraw then ns.Professions.Redraw() else refreshPins() end
+    end,
     ["tooltips"] = function() if ns.Tooltips and ns.Tooltips.InvalidateCache then ns.Tooltips.InvalidateCache() end end,
     ["tracker"] = refreshTracker,
     ["notify"] = function() end,
@@ -267,6 +272,15 @@ local function buildTable()
                     sizeHeader = header(10, L["Pin size"]),
                     iconScale = range(11, L["Map pin size"], nil, "map.iconScale", 0.5, 3, 0.05),
                     minimapIconScale = range(12, L["Minimap pin size"], nil, "map.minimapIconScale", 0.5, 3, 0.05),
+                    nodeScale = range(13, L["Objective dot size"],
+                        L["Objective spawns are small dots coloured per quest; quest givers keep their icons."],
+                        "map.nodeScale", 0.5, 3, 0.05),
+                    minimapMaxNodes = range(14, L["Maximum minimap pins"],
+                        L["When there are more, the ones nearest to you are kept."],
+                        "map.minimapMaxNodes", 5, 300, 5),
+                    minimapFade = range(15, L["Minimap edge fade"],
+                        L["Pins fade and shrink past this much of the way to the minimap edge. 0 turns it off."],
+                        "map.minimapFade", 0, 0.95, 0.05),
                     filterHeader = header(20, L["Which quests to show"]),
                     lowLevelQuests = toggle(21, L["Show low level quests"], L["Quests that are grey for your level."], "map.lowLevelQuests"),
                     showRepeatable = toggle(22, L["Show repeatable and daily quests"], nil, "map.showRepeatable"),
@@ -276,15 +290,46 @@ local function buildTable()
                     showPetBattle = toggle(26, L["Show pet battle quests"], nil, "map.showPetBattle"),
                 },
             },
+            professions = {
+                type = "group", order = 5, name = L["Gathering"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] },
+                    enabled = toggle(1, L["Show gathering nodes"],
+                        L["Turns the whole layer off, whatever the boxes below say."], "professions.enabled"),
+                    kindHeader = header(5, L["Which nodes"]),
+                    mining = toggle(6, L["Mining veins"],
+                        L["Ore veins. Hidden when your Mining skill is too low, unless you show those too."],
+                        "professions.mining"),
+                    herbalism = toggle(7, L["Herbs"],
+                        L["Herb spawns. Hidden when your Herbalism skill is too low, unless you show those too."],
+                        "professions.herbalism"),
+                    fishing = toggle(8, L["Fishing pools"],
+                        L["Fishing pools on lakes, rivers and the coast."], "professions.fishing"),
+                    chests = toggle(9, L["Chests and treasures"],
+                        L["Chests and lockboxes in the world; no gathering skill filters these."],
+                        "professions.chests"),
+                    rares = toggle(10, L["Rare spawns"],
+                        L["Rare creatures that spawn in a fixed place."], "professions.rares"),
+                    filterHeader = header(15, L["Which of them you can gather"]),
+                    onlyMyProfessions = toggle(16, L["Only my professions"],
+                        L["A profession you have not learned contributes nothing at all."], "professions.onlyMyProfessions"),
+                    showUngatherable = toggle(17, L["Show nodes above my skill"],
+                        L["Drawn faded. Useful for planning where to level a gathering skill next."],
+                        "professions.showUngatherable"),
+                    respawnCountdown = toggle(18, L["Fade nodes and mobs until they respawn"],
+                        L["A node you gathered or a mob you killed stays faint until its respawn timer says it is back."],
+                        "professions.respawnCountdown"),
+                },
+            },
             tooltips = {
-                type = "group", order = 5, name = L["Tooltips"], args = {
+                type = "group", order = 6, name = L["Tooltips"], args = {
                     enabled = toggle(1, L["Add quest info to tooltips"],
                         L["Shows which quests an NPC or item starts, ends or counts towards."], "tooltips.enabled"),
                     showIds = toggle(2, L["Show quest IDs"], L["Useful when reporting missing data."], "tooltips.showIds"),
                 },
             },
             tracker = {
-                type = "group", order = 6, name = L["Tracker"], args = {
+                type = "group", order = 7, name = L["Tracker"], args = {
                     info = { type = "description", order = 0,
                         name = L["PandaQuest does not replace the Blizzard quest tracker; it only adds to it."] },
                     enhanceBlizzard = toggle(1, L["Enhance the Blizzard tracker"], nil, "tracker.enhanceBlizzard"),
@@ -292,7 +337,7 @@ local function buildTable()
                 },
             },
             notify = {
-                type = "group", order = 7, name = L["Notifications"], args = {
+                type = "group", order = 8, name = L["Notifications"], args = {
                     enabled = toggle(1, L["Show notifications"], L["A short message in the middle of the screen."], "notify.enabled"),
                     questComplete = toggle(2, L["Quest complete and turned in"], nil, "notify.questComplete"),
                     nextTarget = toggle(3, L["Next objective"], nil, "notify.nextTarget"),
@@ -306,7 +351,7 @@ local function buildTable()
                 },
             },
             sync = {
-                type = "group", order = 8, name = L["Synchronisation"], args = {
+                type = "group", order = 9, name = L["Synchronisation"], args = {
                     info = { type = "description", order = 0,
                         name = L["Questing data is stored in your SavedVariables and never uploaded on its own."] },
                     enabled = toggle(1, L["Record quest data"], nil, "global.telemetry.enabled"),

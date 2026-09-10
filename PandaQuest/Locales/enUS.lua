@@ -109,6 +109,24 @@ L["Starts: %s"] = true
 L["Turn in: %s"] = true
 L["Ends: %s"] = true
 
+-- Map/NodeTooltip (docs/10 B3: the pfQuest-style node block)
+L["Level:"] = true
+L["Type:"] = true
+L["Skill:"] = true
+L["Respawn:"] = true
+L["Respawn in:"] = true
+L["~%s (%d)"] = true
+L["Unit"] = true
+L["Object"] = true
+L["Item"] = true
+L["Area"] = true
+L["%d Sec"] = true
+L["%d Secs"] = true
+L["%d Min"] = true
+L["%d Mins"] = true
+L["%d Hour"] = true
+L["%d Hours"] = true
+
 -- UI/Options
 L["General"] = true
 L["PandaQuest works out of the box. Everything below is optional."] = true
@@ -178,6 +196,13 @@ L["One pin for a pack of mobs instead of a dozen."] = true
 L["Pin size"] = true
 L["Map pin size"] = true
 L["Minimap pin size"] = true
+-- Map/Pins, Map/Icons (docs/10 B1-B2: coloured dots, the minimap cap and the edge fade)
+L["Objective dot size"] = true
+L["Objective spawns are small dots coloured per quest; quest givers keep their icons."] = true
+L["Maximum minimap pins"] = true
+L["When there are more, the ones nearest to you are kept."] = true
+L["Minimap edge fade"] = true
+L["Pins fade and shrink past this much of the way to the minimap edge. 0 turns it off."] = true
 L["Which quests to show"] = true
 L["Show low level quests"] = true
 L["Quests that are grey for your level."] = true
@@ -186,6 +211,31 @@ L["Show dungeon quests"] = true
 L["Show raid quests"] = true
 L["Show PvP quests"] = true
 L["Show pet battle quests"] = true
+
+-- Nodes/Professions (docs/10 D: gathering nodes on the map)
+L["Gathering"] = true
+L["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] = true
+L["Show gathering nodes"] = true
+L["Turns the whole layer off, whatever the boxes below say."] = true
+L["Which nodes"] = true
+L["Mining veins"] = true
+L["Ore veins. Hidden when your Mining skill is too low, unless you show those too."] = true
+L["Herbs"] = true
+L["Herb spawns. Hidden when your Herbalism skill is too low, unless you show those too."] = true
+L["Fishing pools"] = true
+L["Fishing pools on lakes, rivers and the coast."] = true
+L["Chests and treasures"] = true
+L["Chests and lockboxes in the world; no gathering skill filters these."] = true
+L["Rare spawns"] = true
+L["Rare creatures that spawn in a fixed place."] = true
+L["Which of them you can gather"] = true
+L["Only my professions"] = true
+L["A profession you have not learned contributes nothing at all."] = true
+L["Show nodes above my skill"] = true
+L["Drawn faded. Useful for planning where to level a gathering skill next."] = true
+L["Fade nodes and mobs until they respawn"] = true
+L["A node you gathered or a mob you killed stays faint until its respawn timer says it is back."] = true
+
 L["Tooltips"] = true
 L["Add quest info to tooltips"] = true
 L["Shows which quests an NPC or item starts, ends or counts towards."] = true
