@@ -314,5 +314,34 @@ L["No thanks"] = true
 L["Thank you. PandaQuest will share your quest data. Turn it off any time with /pq sync."] = true
 L["Nothing will be collected. Turn it on any time in /pq options."] = true
 
+-- Auction house (docs/08): the scan, the invoices, the tooltip and the options section
+L["Scan prices"] = true
+L["Stop scan (%d%%)"] = true
+L["Scanning the auction house. Keep the window open; closing it cancels the scan."] = true
+L["Auction house scan finished: %d auctions of %d items in %s."] = true
+L["The scan stopped at %d auctions to keep the saved file small."] = true
+L["A scan is already running."] = true
+L["Open the auction house first, then press Scan prices or type /pq scan."] = true
+L["This client offers no auction house listing PandaQuest can read."] = true
+L["Scan cancelled: the auction house window was closed."] = true
+L["Scan stopped: the auction house did not answer."] = true
+L["Scan stopped. Nothing was saved."] = true
+L["The auction house sent an empty listing. Nothing was saved."] = true
+L["No scan is running."] = true
+L["Scanning: %d%% (%d auctions read)."] = true
+L["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] = true
+L["No auction house scan yet for this realm."] = true
+L["AH minimum buyout"] = true
+L["AH market value"] = true
+L["bids only"] = true
+L["%s, scanned %s ago"] = true
+L["Auction house"] = true
+L["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] = true
+L["Show the scan button on the auction house window"] = true
+L["Show auction prices on item tooltips"] = true
+L["The lowest buyout and the market value from your last scan on this realm, with how old it is."] = true
+L["Record my auction sales and purchases"] = true
+L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] = true
+
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

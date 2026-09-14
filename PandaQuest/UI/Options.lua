@@ -114,6 +114,11 @@ local APPLIERS = {
     ["global.telemetry"] = function()
         if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
     end,
+    -- docs/08 B3: the tooltip and the mailbox read their switch every time, so only the button on
+    -- an already open auction house window has to be told.
+    ["auction"] = function()
+        if ns.AuctionScanner and ns.AuctionScanner.RefreshButton then ns.AuctionScanner.RefreshButton() end
+    end,
 }
 
 local function applierFor(path)
@@ -362,6 +367,21 @@ local function buildTable()
                     maxSessions = range(4, L["Sessions to keep"], nil, "global.telemetry.maxSessions", 1, 200, 1),
                     maxEventsPerSession = range(5, L["Events per session"], nil,
                         "global.telemetry.maxEventsPerSession", 100, 50000, 100),
+                },
+            },
+            -- docs/08 B3. There is no "scan when the window opens" switch: a scan is the player's
+            -- time and the realm's load, so it only ever starts from the button or /pq scan.
+            auction = {
+                type = "group", order = 10, name = L["Auction house"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] },
+                    scanButton = toggle(1, L["Show the scan button on the auction house window"], nil, "auction.scanButton"),
+                    showTooltipPrices = toggle(2, L["Show auction prices on item tooltips"],
+                        L["The lowest buyout and the market value from your last scan on this realm, with how old it is."],
+                        "auction.showTooltipPrices"),
+                    recordSales = toggle(3, L["Record my auction sales and purchases"],
+                        L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."],
+                        "auction.recordSales"),
                 },
             },
             advanced = {

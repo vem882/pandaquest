@@ -4,7 +4,7 @@
 ## Notes-fiFI: Tehtäväapuri ja navigaattori Mists of Pandaria Classiciin
 ## Version: 0.1.0
 ## Author: vem882
-## SavedVariables: PandaQuestDB, PandaQuestSync
+## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH
 ## OptionalDeps: TomTom, Questie
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/PandaQuest
@@ -50,6 +50,10 @@ UI\MinimapButton.lua
 UI\Wowhead.lua
 UI\Tracker.lua
 UI\Notify.lua
+Auction\Store.lua
+Auction\Scanner.lua
+Auction\Mail.lua
+Auction\Tooltip.lua
 Sync\Telemetry.lua
 Sync\Character.lua
 Sync\Consent.lua

@@ -20,6 +20,7 @@ ns.MODULE_ORDER = {
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
+    "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
 
@@ -68,6 +69,11 @@ function PQ:OnInitialize()
 
     _G.PandaQuestSync = _G.PandaQuestSync or {}
     ns.Sync = _G.PandaQuestSync
+
+    -- docs/08 B2: auction house scans and sales are their own SavedVariable, so a scan an order
+    -- of magnitude bigger than the quest log can be lost or reset without taking telemetry with
+    -- it. Auction/Store.lua gives the table its shape.
+    _G.PandaQuestAH = _G.PandaQuestAH or {}
 
     ApplyLanguage()
 
