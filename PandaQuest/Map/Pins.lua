@@ -148,7 +148,7 @@ local function acquirePin()
     -- The three layers of a dot (docs/10 B1), back to front: the highlight glow, the dark ring
     -- that makes the dot readable on snow, sand and grass alike, and the dot (or glyph) itself.
     -- The ring is a texture of its own rather than part of node.tga because the dot is tinted per
-    -- quest and a baked-in rim would be tinted with it.
+    -- quest (or per gathering kind, Icons.KIND_COLORS) and a baked-in rim would be tinted with it.
     pin.glow = pin:CreateTexture(nil, "BACKGROUND")
     pin.glow:SetPoint("CENTER", pin, "CENTER", 0, 0)
     pin.glow:SetTexture(ns.Icons and ns.Icons.Get("glow") or nil)

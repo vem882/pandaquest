@@ -468,14 +468,31 @@ function M.BuildLines(node, lines)
 
     if kind and id then addRespawn(lines, kind, id, spawnKeyFor(node)) end
 
-    -- A community node is a place other players reported, and how many reports are behind it is
+    -- A gathering node is drawn only where somebody took one (Nodes/Professions.lua), so these two
+    -- lines are its evidence, and the evidence is what tells a player the dot is real. "Found by
+    -- you" is how many times this character took it here, from its own saved records.
+    if type(node.gathered) == "number" and node.gathered > 0 then
+        addDouble(lines, tr("Found by you:"), format("%d", floor(node.gathered)), COLOR_VALUE, "gathered")
+    end
+
+    -- A community place is one other players reported, and how many reports are behind it is
     -- the difference between "forty people gather here" and "one loot window was misread once".
-    -- The count travelled with the node from the hub and until now nothing showed it, so the two
-    -- were drawn identically; it is labelled "Sightings" rather than "players" because that is
-    -- what the hub counts (platform/server/pandaquest_hub/nodes.py counts NODE events).
-    if node.source == "community" and type(node.sightings) == "number" and node.sightings > 0 then
+    -- It is labelled "Sightings" rather than "players" because that is what the hub counts
+    -- (platform/server/pandaquest_hub/nodes.py counts NODE events). Only the hub's export carries
+    -- a sighting count, so the line follows the count rather than the node's source: a place this
+    -- character gathered and the hub also reported is drawn once, and keeps both lines.
+    if type(node.sightings) == "number" and node.sightings > 0 then
         addDouble(lines, tr("Sightings:"), format("%d", floor(node.sightings)),
             node.sightings > 1 and COLOR_VALUE or COLOR_ESTIMATE, "sightings")
+    end
+
+    -- One spawn point serves several ores in 5.5.4, and the node module folds every record of one
+    -- place into one dot; the name above is the best-evidenced of them, and these are the rest.
+    local also = node.alsoHere
+    if type(also) == "table" and #also > 0 then
+        local text = also[1]
+        for i = 2, #also do text = text .. ", " .. also[i] end
+        addDouble(lines, tr("Also here:"), Util.Truncate(text, MAX_NAME_CHARS), COLOR_VALUE, "also")
     end
 
     addQuests(lines, node, kind, id)

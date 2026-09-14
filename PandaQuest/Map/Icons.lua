@@ -12,8 +12,9 @@ local byte, len, sqrt, floor = string.byte, string.len, math.sqrt, math.floor
 local TEXTURE_ROOT = "Interface\\AddOns\\PandaQuest\\Textures\\"
 
 -- Contract name -> file below Textures/. The first block is ns.Const.ICON_KINDS (docs/06
--- section 10) and must stay in sync with it; the second is the node and profession set added by
--- docs/10 sections B1 and D1, which is not part of that older contract.
+-- section 10) and must stay in sync with it; the second is the dot and its ring added by docs/10
+-- section B1, which is not part of that older contract. There are no per-kind gathering glyphs:
+-- a gathering node is the same dot as an objective spawn, tinted by kind (see KIND_COLORS).
 local FILES = {
     available            = "pin_available.tga",
     available_gray       = "pin_available_gray.tga",
@@ -31,21 +32,11 @@ local FILES = {
     custom               = "pin_custom.tga",
     glow                 = "arrow_glow.tga",
     arrow                = "arrow.tga",
-    -- docs/10 B1 / D1
+    -- docs/10 B1
     node                 = "node.tga",
     node_outline         = "node_outline.tga",
-    mine                 = "pin_mine.tga",
-    herb                 = "pin_herb.tga",
-    fish                 = "pin_fish.tga",
-    chest                = "pin_chest.tga",
-    rare                 = "pin_rare.tga",
 }
 M.FILES = FILES
-
---- Icons.PROFESSION_ICONS[kind] -> icon name, for ns.Data.professionNodes' `kind` field
--- ("mine"|"herb"|"fish"|"chest"|"rare", docs/10 D1). Exposed so Map/Professions.lua does not have
--- to repeat the mapping.
-M.PROFESSION_ICONS = { mine = "mine", herb = "herb", fish = "fish", chest = "chest", rare = "rare" }
 
 -- Fallbacks for names whose texture may not have been generated yet.
 local ALIAS = {
@@ -269,9 +260,42 @@ function M.QuestColor(text)
     return r, g, b
 end
 
---- Icons.ColorForSpec(spec) -> r, g, b. The colour source is the quest *name* (docs/10 B1), with
--- the quest id and then the entity name as fallbacks so an unnamed target still gets a stable dot.
+---------------------------------------------------------------------------
+-- Gathering colour (docs/10 D1, as the owner corrected it)
+---------------------------------------------------------------------------
+
+-- One colour per gathering kind, on the same dot and ring as an objective spawn. The owner played
+-- with a pickaxe, a sprig, a fish, a chest and a skull on the map and called them "really
+-- confusing": at 16 px they were five different pictures competing with the quest dots, and a
+-- mining spot is what they wanted to find at a glance - "a small yellow ball". So mining is
+-- yellow because they asked for yellow, and the other four are spread round the hue circle far
+-- enough from it and from each other to be told apart on a 7 px minimap dot. Every one of them is
+-- well above MIN_LUMA, the floor that keeps a quest dot readable on the map's terrain, and the
+-- dark ring (node_outline.tga) carries them on snow and sand alike, exactly as it does the quests.
+-- A quest's colour is a hash and can land anywhere, so these cannot be kept away from every quest;
+-- what keeps the two apart is that a gathering dot is always one of these five.
+local KIND_COLORS = {
+    mine  = { 1.00, 0.85, 0.10 },       -- yellow
+    herb  = { 0.35, 0.90, 0.30 },       -- green
+    fish  = { 0.30, 0.70, 1.00 },       -- blue
+    chest = { 0.80, 0.50, 1.00 },       -- violet
+    rare  = { 1.00, 0.35, 0.30 },       -- red
+}
+M.KIND_COLORS = KIND_COLORS
+
+--- Icons.KindColor(kind) -> r, g, b. A kind this table does not know gets plain white rather than
+-- nil, so a kind added to Nodes/Professions.lua before it is given a colour still draws.
+function M.KindColor(kind)
+    local color = KIND_COLORS[kind]
+    if not color then return 1, 1, 1 end
+    return color[1], color[2], color[3]
+end
+
+--- Icons.ColorForSpec(spec) -> r, g, b. A gathering node is coloured by its kind. Everything else
+-- takes the quest *name* (docs/10 B1), with the quest id and then the entity name as fallbacks so
+-- an unnamed target still gets a stable dot.
 function M.ColorForSpec(spec)
+    if spec and spec.layer == "profession" then return M.KindColor(spec.kind) end
     local target = spec and spec.targets and spec.targets[1]
     if not target then return M.QuestColor(nil) end
     local text = target.questTitle
@@ -287,8 +311,9 @@ end
 ---------------------------------------------------------------------------
 
 -- Layers that are drawn as a coloured dot rather than as an icon. Quest givers and turn-ins keep
--- their `!` and `?`: docs/10 B1 says those are already right.
-local DOT_LAYERS = { objective = true }
+-- their `!` and `?`: docs/10 B1 says those are already right. Gathering nodes are dots too, the
+-- same size and with the same ring as the objective dots the owner had already accepted.
+local DOT_LAYERS = { objective = true, profession = true }
 
 --- Icons.UsesDot(spec) -> bool
 function M.UsesDot(spec)

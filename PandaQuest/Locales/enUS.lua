@@ -117,6 +117,8 @@ L["Respawn:"] = true
 L["Respawn in:"] = true
 L["~%s (%d)"] = true
 L["Sightings:"] = true
+L["Found by you:"] = true
+L["Also here:"] = true
 L["Unit"] = true
 L["Object"] = true
 L["Item"] = true
@@ -199,7 +201,7 @@ L["Map pin size"] = true
 L["Minimap pin size"] = true
 -- Map/Pins, Map/Icons (docs/10 B1-B2: coloured dots, the minimap cap and the edge fade)
 L["Objective dot size"] = true
-L["Objective spawns are small dots coloured per quest; quest givers keep their icons."] = true
+L["Objectives and gathering nodes are small dots, coloured per quest or per kind; quest givers keep their icons."] = true
 L["Maximum minimap pins"] = true
 L["When there are more, the ones nearest to you are kept."] = true
 L["Minimap edge fade"] = true
@@ -215,7 +217,7 @@ L["Show pet battle quests"] = true
 
 -- Nodes/Professions (docs/10 D: gathering nodes on the map)
 L["Gathering"] = true
-L["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] = true
+L["Ore, herbs, fishing pools, chests and rare spawns, drawn only where you or the community really found one."] = true
 L["Show gathering nodes"] = true
 L["Turns the whole layer off, whatever the boxes below say."] = true
 L["Which nodes"] = true
@@ -228,7 +230,7 @@ L["Fishing pools on lakes, rivers and the coast."] = true
 L["Chests and treasures"] = true
 L["Chests and lockboxes in the world; no gathering skill filters these."] = true
 L["Rare spawns"] = true
-L["Rare creatures that spawn in a fixed place."] = true
+L["Rare creatures, at the places a rare was looted."] = true
 L["Which of them you can gather"] = true
 L["Only my professions"] = true
 L["A profession you have not learned contributes nothing at all."] = true

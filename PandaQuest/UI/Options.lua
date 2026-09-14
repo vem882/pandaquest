@@ -273,7 +273,7 @@ local function buildTable()
                     iconScale = range(11, L["Map pin size"], nil, "map.iconScale", 0.5, 3, 0.05),
                     minimapIconScale = range(12, L["Minimap pin size"], nil, "map.minimapIconScale", 0.5, 3, 0.05),
                     nodeScale = range(13, L["Objective dot size"],
-                        L["Objective spawns are small dots coloured per quest; quest givers keep their icons."],
+                        L["Objectives and gathering nodes are small dots, coloured per quest or per kind; quest givers keep their icons."],
                         "map.nodeScale", 0.5, 3, 0.05),
                     minimapMaxNodes = range(14, L["Maximum minimap pins"],
                         L["When there are more, the ones nearest to you are kept."],
@@ -293,7 +293,7 @@ local function buildTable()
             professions = {
                 type = "group", order = 5, name = L["Gathering"], args = {
                     info = { type = "description", order = 0,
-                        name = L["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] },
+                        name = L["Ore, herbs, fishing pools, chests and rare spawns, drawn only where you or the community really found one."] },
                     enabled = toggle(1, L["Show gathering nodes"],
                         L["Turns the whole layer off, whatever the boxes below say."], "professions.enabled"),
                     kindHeader = header(5, L["Which nodes"]),
@@ -309,7 +309,7 @@ local function buildTable()
                         L["Chests and lockboxes in the world; no gathering skill filters these."],
                         "professions.chests"),
                     rares = toggle(10, L["Rare spawns"],
-                        L["Rare creatures that spawn in a fixed place."], "professions.rares"),
+                        L["Rare creatures, at the places a rare was looted."], "professions.rares"),
                     filterHeader = header(15, L["Which of them you can gather"]),
                     onlyMyProfessions = toggle(16, L["Only my professions"],
                         L["A profession you have not learned contributes nothing at all."], "professions.onlyMyProfessions"),

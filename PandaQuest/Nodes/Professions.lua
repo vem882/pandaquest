@@ -2,19 +2,32 @@
 --
 -- Three jobs, in the order the document puts them:
 --
---   D1  Draw them. ns.Data.professionNodes says what an id *is* ("mine", skill 75, "Copper Vein");
---       the object and creature spawn tables in Database/Data say *where* it is. This file joins
---       the two and hands ns.Pins a "profession" layer of specs.
+--   D1  Draw them. A node is drawn only where one was actually taken: by this character (the
+--       saved record D3 makes) or by somebody else (the hub's clustered sightings, which exist
+--       only because a player gathered there). ns.Data.professionNodes is the dictionary that says
+--       what an id *is* ("mine", skill 75, "Copper Vein") and nothing more - it never places a pin.
 --   D2  Filter them by skill. A vein the character cannot mine is not a route, it is noise, so the
 --       default is to draw only what this character could actually gather. `showUngatherable`
 --       brings the rest back faded, which is what a player wants when planning the next 25 points.
---   D3  Collect them. Pandaria's ore and herbs are in no source we can reach (docs/10 A4), so they
---       are measured from play: the loot window opening over a game object is one node, at one
---       place, at one time. That record is also where a respawn measurement starts, so it goes to
---       ns.Respawn rather than being counted twice here. With consent it also goes out as one
---       NODE event, the hub clusters everybody's into positions, and they come back through
---       ns.Overrides.community.nodes - which is the third source this file draws from, after the
---       seed and after what this character gathered itself.
+--   D3  Collect them. The loot window opening over a game object is one node, at one place, at one
+--       time; the loot window over a rare's corpse is the same fact about a rare. That record is
+--       also where a respawn measurement starts, so it goes to ns.Respawn rather than being counted
+--       twice here. With consent a gather also goes out as one NODE event, the hub clusters
+--       everybody's into positions, and they come back through ns.Overrides.community.nodes.
+--
+-- Why the seed's spawn tables stopped placing pins. They used to: every coordinate the object
+-- database holds for an ore id, up to 80 per id. The owner played a Mining character through
+-- Kalimdor in 5.5.4 and reported the map full of mining spots that do not exist. Measured against
+-- what that character really gathered (the hub's NODE rows, k = "mine"): in Stonetalon Mountains
+-- (uiMap 65) this file drew 183 veins for a rank-150 miner - 49 Copper, 60 Tin, 53 Silver, 21 Iron
+-- - where 9 were gathered, only 15 of the 183 were within 2% of any of them, and 3 of those 9
+-- real veins had no pin within 2% at all; in Desolace (66) it drew 125, none within 2% of the 3
+-- veins gathered there. The coordinates are not stale Vanilla ones (none of the 144 Tin Vein
+-- points in Stonetalon matches pfQuest's Vanilla list); they are every point each ore was ever
+-- recorded at, and the ores share them - 227 of the zone's 340 mine coordinates lie within 0.5%
+-- of a coordinate listed under a different ore. The server fills a few of those shared points at a
+-- time, so a table of all of them is a map of where a vein could be, drawn as if one were there.
+-- Nothing in it says which, and play does: so play is the only thing that places a node now.
 --
 -- Two rules from docs/10 apply throughout. A node we cannot classify is not recorded at all (an
 -- "unknown" kind would poison the hub's aggregate), and a skill requirement we do not have is
@@ -39,7 +52,7 @@ local Util, Log = ns.Util, ns.Log
 local M = {}
 ns.Professions = M
 
-local type, pairs, tostring, format = type, pairs, tostring, string.format
+local type, pairs, tostring, tonumber, format = type, pairs, tostring, tonumber, string.format
 local floor, sort, tremove = math.floor, table.sort, table.remove
 local wipe = wipe or function(t) for k in pairs(t) do t[k] = nil end return t end
 
@@ -85,9 +98,8 @@ local UNGATHERABLE_ALPHA = 0.4      -- how faint `showUngatherable` draws a node
 local DEPLETED_ALPHA = 0.35         -- and a node this session already emptied (respawnCountdown)
 
 local MAX_NODES_PER_MAP = 250       -- ns.Pins caps at 300 pins total; quests are added first
-local MAX_SPAWNS_PER_NODE = 80      -- one Copper Vein id carries hundreds of coordinates
 --- The floor a kind keeps when the map's budget has to be shared. Without it a zone with three
--- thousand herb coordinates and eleven ore veins spends the whole budget on herbs and a Mining
+-- thousand herb places and eleven ore veins spends the whole budget on herbs and a Mining
 -- character never sees a vein: the cap silently decided what a gathering zone looks like, in
 -- pairs() order rather than by anything about the zone.
 local MIN_NODES_PER_KIND = 20
@@ -99,7 +111,21 @@ local COLLECT_PER_KIND = MAX_NODES_PER_MAP * 3
 local GATHER_WINDOW = 8             -- s: how long a gathering cast still explains a loot window
 local DEDUPE_WINDOW = 60            -- s: LOOT_OPENED can fire twice for one object
 local MAX_LEARNED_NODES = 500       -- caps on what play teaches us, so the saved variable stays small
-local MAX_LEARNED_SPAWNS = 60
+--- Distinct places kept per id. It was 60, and a place over the cap was silently not remembered,
+-- which matters now that a vein nobody recorded is not drawn at all. One ore id really does stand
+-- in hundreds of places - even clustered to 2%, Tin Vein's
+-- coordinates in the object database fall into 1,464 places over 38 areas, and its busiest area
+-- alone lists 282 points - so a miner working through a continent would stop learning Tin veins in
+-- the second zone. 400 places at about twenty bytes each is still a few kilobytes per id.
+local MAX_LEARNED_SPAWNS = 400
+
+--- How close two records have to be, in map percent, to be the same node. 2% is the hub's cell
+-- (platform/server/pandaquest_hub/nodes.py GRID = 0.02) and ns.Respawn's MATCH_RADIUS, so the
+-- player's own records, the community's and the respawn countdown all agree on what "the same
+-- place" is. It has to be that coarse because a record is where the *player* stood when the loot
+-- window opened, which is a few yards off the vein and a different few yards every time: keyed on
+-- the exact position, ten gathers of one vein were saved as ten places and drawn as ten pins.
+local SAME_NODE_RADIUS = 2.0
 
 -- Gathering spells, by id and (because the ids are not in any reference on this box) by the name
 -- the client reports for them. "Mining" is also the skill-line name, so the name match finds it in
@@ -111,7 +137,6 @@ M.GATHER_SPELLS = GATHER_SPELLS
 -- State
 ---------------------------------------------------------------------------
 
-local mapIndex = nil                -- uiMapID -> { {id = , unit = }, ... }; nil until built
 local nodeCache = {}                -- uiMapID -> the array NodesForMap returns
 local skillCache = {}               -- profession -> rank; wiped on SKILL_LINES_CHANGED
 local skillCacheValid = false
@@ -275,6 +300,8 @@ end
 -- Where the nodes are
 ---------------------------------------------------------------------------
 
+--- The dictionary: ns.Data.professionNodes, from Database/Data/Seed.lua. It classifies an id and
+-- nothing else (see the header for why its spawn tables no longer place anything).
 local function definitions()
     local Data = ns.Data
     local nodes = Data and Data.professionNodes
@@ -282,73 +309,64 @@ local function definitions()
     return nodes
 end
 
-local function spawnsFor(id, unit)
-    local DB = ns.DB
-    if not DB then return nil end
-    local getter = unit and DB.GetNpc or DB.GetObject
-    if type(getter) ~= "function" then return nil end
-    local ok, entry = pcall(getter, id)
-    if not ok or type(entry) ~= "table" then return nil end
-    local spawns = entry.spawns
-    if type(spawns) ~= "table" then return nil end
-    return spawns, entry.name
-end
-
-local function uiMapFor(areaID)
-    local Zones = ns.Zones
-    if not Zones or type(Zones.GetUiMapIdByAreaId) ~= "function" then return nil end
-    local ok, uiMapID = pcall(Zones.GetUiMapIdByAreaId, areaID)
-    if not ok then return nil end
-    return uiMapID
-end
-
--- uiMapID -> which node ids appear on it. Only the ids, not their coordinates: one ore vein id
--- carries hundreds of spawn points and there are hundreds of ids, so materialising every
--- coordinate up front would be megabytes for the sake of one zone's worth of pins.
-local function buildIndex()
-    mapIndex = {}
+--- The dictionary's entry for `id` as a creature (`unit`) or as a game object, or nil.
+--
+-- The table is keyed by bare id and holds both namespaces - a rare is a creature id, everything
+-- else an object id - and 31 of its 442 rares share their number with an unrelated game object.
+-- Object 2744 is a Giant Clam on the Stranglethorn coast and creature 2744 is the rare Shadowforge
+-- Commander, so looking the id up without asking which kind of thing it is recorded every clam a
+-- player opened as that rare, at the clam's position, and uploaded it that way.
+local function dictionaryFor(id, unit)
     local defs = definitions()
-    if not defs then return mapIndex end
-    local seen = 0
-    for id, def in pairs(defs) do
-        if type(def) == "table" and type(id) == "number" then
-            local spawns = spawnsFor(id, def.unit)
-            if spawns then
-                for areaID in pairs(spawns) do
-                    local uiMapID = uiMapFor(areaID)
-                    if uiMapID then
-                        local bucket = mapIndex[uiMapID]
-                        if not bucket then bucket = {}; mapIndex[uiMapID] = bucket end
-                        bucket[#bucket + 1] = { id = id, unit = def.unit and true or false, areaID = areaID }
-                    end
-                end
-                seen = seen + 1
-            end
+    local def = defs and type(id) == "number" and defs[id] or nil
+    if type(def) ~= "table" or not KIND_SETTING[def.kind] then return nil end
+    if (def.unit and true or false) ~= (unit and true or false) then return nil end
+    return def
+end
+
+--- Only a rare is a creature and a rare is only ever a creature. A record that says otherwise was
+-- classified through the id collision above, and has no honest kind to fall back on.
+local function kindFitsEntity(kind, unit)
+    return (kind == "rare") == (unit and true or false)
+end
+
+--- What a node of `id` is, for drawing: the dictionary's word first, then what the record itself
+-- carries (a Pandarian vein is in no dictionary; its gathering cast named it). nil when neither
+-- is a kind this file draws.
+local function describe(id, unit, kind, skill, name)
+    local def = dictionaryFor(id, unit)
+    if def then return def end
+    if not KIND_SETTING[kind] or not kindFitsEntity(kind, unit) then return nil end
+    if type(name) ~= "string" and not unit then
+        local DB = ns.DB
+        if DB and DB.GetObjectName then
+            local ok, got = pcall(DB.GetObjectName, id)
+            if ok and type(got) == "string" then name = got end
         end
     end
-    Log.Debug("Professions", "index built: %d nodes with spawns", seen)
-    return mapIndex
+    return { kind = kind, skill = skill, name = name }
 end
 
---- Professions.ResetCache(): drops the id index and every per-map node list. Called when the
--- database finishes loading, when the profile changes and when a new node is learned from play.
+--- Professions.ResetCache(): drops every per-map node list. Called when the database finishes
+-- loading, when the profile changes and when a new node is learned from play.
 function M.ResetCache()
-    mapIndex = nil
     wipe(nodeCache)
 end
 
---- Professions.ResetMapCache(): drops the per-map node lists only.
+--- Professions.ResetMapCache(): the same thing, under the name the map hooks use.
 --
--- Opening the map or walking into a new zone changes which map's nodes are wanted, not what the
--- ids *are*, and rebuilding `mapIndex` for that costs a full pass over every profession id and its
--- spawn table (693 database lookups on the committed seed). The index is dropped by ResetCache,
--- which is what OnDataReady, a profile change and a newly learned node call.
+-- There used to be a second, expensive cache here - an index of which seeded ids appear on which
+-- map, a full pass over every profession id and its spawn table - and this was the call that kept
+-- it. With the seed no longer placing nodes there is nothing to keep, but the two names say two
+-- different things at their call sites (the map moved, or what we know changed) and stay separate.
 function M.ResetMapCache()
     wipe(nodeCache)
 end
 
--- What play has taught us, kept in the saved variable so a MoP ore vein is on the map again the
--- next time the player opens it - hub or no hub (docs/10 A4).
+-- What play has taught us, kept in the saved variable so a node is on the map again the next time
+-- the player opens it - hub or no hub (docs/10 A4). `PQ.db.global.nodes` is AceDB's global section
+-- of PandaQuestDB, which PandaQuest.toc declares under `## SavedVariables`, so it outlives /reload
+-- and logout.
 local function learnedStore()
     local store = globalStore()
     if not store then return nil end
@@ -356,15 +374,145 @@ local function learnedStore()
     return store.nodes
 end
 
--- `source` says where the node came from and is the one thing that separates the three: "seed" is
--- pfQuest's classic data, "learned" is this character gathering it, "community" is the hub's
--- aggregate of everybody else's gathers. `sightings` travels with the last of those, so a place
--- one person found once is not presented as a place forty people agree on.
+local function sameMapDistance2(ax, ay, bx, by)
+    local dx, dy = ax - bx, ay - by
+    return dx * dx + dy * dy
+end
+
+local function roundTenth(value)
+    return floor(value * 10 + 0.5) / 10
+end
+
+--- Folds `items` into clusters of SAME_NODE_RADIUS and returns the survivors, each carrying what
+-- it absorbed. `items` must already be in priority order: the first item of a cluster is the one
+-- that stays, so the caller decides what "the best record of this place" means by sorting.
+--
+-- Every item needs `x`, `y` and a map (`map`, or a node's `uiMapID`). The grid is a hash of cells
+-- one radius wide, so a candidate only looks at its own cell and the eight around it rather than at
+-- every survivor so far - this runs over every record of an id at login and over a whole map's
+-- nodes on every rebuild.
+local R2 = SAME_NODE_RADIUS * SAME_NODE_RADIUS
+local function cluster(items, absorb)
+    local kept, grid = {}, {}
+    for i = 1, #items do
+        local item = items[i]
+        local map = item.map or item.uiMapID
+        local cx, cy = floor(item.x / SAME_NODE_RADIUS), floor(item.y / SAME_NODE_RADIUS)
+        local host, hostDistance = nil, R2
+        for gx = cx - 1, cx + 1 do
+            for gy = cy - 1, cy + 1 do
+                local cell = grid[map * 10000 + (gx + 1) * 100 + (gy + 1)]
+                if cell then
+                    for j = 1, #cell do
+                        local other = cell[j]
+                        local d = sameMapDistance2(other.x, other.y, item.x, item.y)
+                        if d <= hostDistance then host, hostDistance = other, d end
+                    end
+                end
+            end
+        end
+        if host then
+            absorb(host, item)
+        else
+            local key = map * 10000 + (cx + 1) * 100 + (cy + 1)
+            local cell = grid[key]
+            if not cell then cell = {}; grid[key] = cell end
+            cell[#cell + 1] = item
+            kept[#kept + 1] = item
+        end
+    end
+    return kept
+end
+
+local function byMostGathered(a, b)
+    if a.n ~= b.n then return a.n > b.n end
+    return a.key < b.key
+end
+
+local function absorbPlace(host, place)
+    host.n = host.n + place.n
+end
+
+--- The places of one saved record, cleaned: `{ [spawnKey] = timesGathered }` with every place a
+-- real gather count on a real map position, and no two places of the record within
+-- SAME_NODE_RADIUS of each other. nil when nothing survives.
+--
+-- A place kept is the one gathered most often in its cluster, the hub's modal rule
+-- (nodes.py `_modal`): a spot a player really stood on rather than an average nobody stood on.
+local function cleanPlaces(places)
+    local list = {}
+    for key, count in pairs(places) do
+        local map, x, y = Util.SplitAreaSpawnKey(key)
+        if map and map > 0 and x >= 0 and x <= 100 and y >= 0 and y <= 100
+           and type(count) == "number" and count >= 1 and count == floor(count) then
+            list[#list + 1] = { key = key, map = map, x = x, y = y, n = count }
+        end
+    end
+    if #list == 0 then return nil end
+    sort(list, byMostGathered)
+    local out = {}
+    local kept = cluster(list, absorbPlace)
+    for i = 1, #kept do out[kept[i].key] = kept[i].n end
+    return out
+end
+
+--- Professions.CleanLearned() -> kept, dropped. Runs once per load, from Init.
+--
+-- The saved variable outlives every build that wrote to it, so what is in it is checked rather than
+-- trusted before anything is drawn from it. A record is kept only when it is what D3 writes: an id,
+-- a kind this file draws that fits the kind of thing the id is, and places that each carry a count
+-- of gathers. Anything else is dropped rather than repaired, because the one thing a phantom and a
+-- corrupt record have in common is that nobody gathered there:
+--
+--   * a game object saved under a rare's kind. Up to commit aed1abf ClassifyLoot looked the
+--     looted object's id up in the dictionary without asking whether the entry was a creature, so
+--     every Giant Clam (object 2744) a player opened was saved as the rare Shadowforge Commander
+--     (creature 2744) - the dictionary's classification, at a place no rare has ever stood;
+--   * a place without a positive whole gather count, or off the map - whatever an older build, a
+--     hand edit or a truncated file left there, a coordinate that was not gathered stays off the
+--     map;
+--   * places of one record within SAME_NODE_RADIUS of each other. Not dropped but merged: that
+--     build keyed a place on the unrounded player position, so one vein gathered ten times is ten
+--     places in a real saved variable today, and would be ten pins.
+function M.CleanLearned()
+    local store = globalStore()
+    if not store then return 0, 0 end
+    if type(store.nodes) ~= "table" then
+        store.nodes = {}
+        return 0, 0
+    end
+    local learned = store.nodes
+    local kept, dropped = 0, 0
+    -- Clearing an existing field during pairs() is allowed in Lua 5.1; adding one is not, and
+    -- nothing here adds.
+    for id, entry in pairs(learned) do
+        local places = nil
+        if type(id) == "number" and id > 0 and floor(id) == id and type(entry) == "table"
+           and KIND_SETTING[entry.k] and kindFitsEntity(entry.k, entry.u)
+           and type(entry.p) == "table" then
+            places = cleanPlaces(entry.p)
+        end
+        if places then
+            entry.p = places
+            kept = kept + 1
+        else
+            learned[id] = nil
+            dropped = dropped + 1
+        end
+    end
+    if dropped > 0 then Log.Debug("Professions", "dropped %d saved node records", dropped) end
+    return kept, dropped
+end
+
+-- `source` says whose record a node is: "learned" is this character gathering it, "community" is
+-- the hub's aggregate of everybody's gathers. `gathered` (how many times this character took it)
+-- and `sightings` (how many NODE events the hub counted there) travel with it, so a place found
+-- once is not presented as a place forty people agree on.
 -- Candidates are collected per kind and the map's budget is shared out between the kinds
 -- afterwards (see `shareTheBudget`), so `out` here is one kind's bucket rather than the map's
--- whole list, bounded by COLLECT_PER_KIND so a zone carrying thousands of one herb's coordinates
--- cannot turn this into unbounded work.
-local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings)
+-- whole list, bounded by COLLECT_PER_KIND so a store or an export with thousands of places of one
+-- kind cannot turn this into unbounded work.
+local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings, gathered)
     if #out >= COLLECT_PER_KIND then return false end
     if type(x) ~= "number" or type(y) ~= "number" then return true end
     if x < 0 or x > 100 or y < 0 or y > 100 then return true end
@@ -376,10 +524,11 @@ local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings)
     local node = {
         id = id, kind = def.kind, skill = skill, name = def.name,
         uiMapID = uiMapID, x = x, y = y, unit = unit and true or false,
-        source = source or "seed",
+        source = source,
         learned = source == "learned",
     }
     if type(sightings) == "number" and sightings > 0 then node.sightings = sightings end
+    if type(gathered) == "number" and gathered > 0 then node.gathered = gathered end
     -- The shared contract calls the identifier `objectId`; a rare is a creature and honestly has
     -- none, so it carries `npcId` instead and ns.NodeTooltip resolves it through entityType.
     if unit then
@@ -411,21 +560,23 @@ local function bucketFor(buckets, kind)
     return bucket
 end
 
-local function appendLearned(buckets, uiMapID, wanted)
+local function appendLearned(buckets, uiMapID)
     local learned = learnedStore()
     if not learned then return end
     for id, entry in pairs(learned) do
-        if type(entry) == "table" and (not wanted or wanted[id] == nil) and M.KindEnabled(entry.k) then
-            local def = { kind = entry.k, skill = entry.s, name = entry.n }
-            local spawns = entry.p
-            if type(spawns) == "table" then
-                local bucket = bucketFor(buckets, entry.k)
-                for key in pairs(spawns) do
+        if type(id) == "number" and type(entry) == "table" and type(entry.p) == "table" then
+            local unit = entry.u and true or false
+            local def = describe(id, unit, entry.k, entry.s, entry.n)
+            if def and M.KindEnabled(def.kind) then
+                local bucket = bucketFor(buckets, def.kind)
+                for key, count in pairs(entry.p) do
                     local map, x, y = Util.SplitAreaSpawnKey(key)
-                    if map == uiMapID then
+                    if map == uiMapID and type(count) == "number" and count >= 1 then
                         -- A full bucket ends this id, not the whole map: another kind may still
                         -- have room, and it is not this one's to spend.
-                        if not addNode(bucket, id, def, uiMapID, x, y, entry.u, "learned") then break end
+                        if not addNode(bucket, id, def, uiMapID, x, y, unit, "learned", nil, count) then
+                            break
+                        end
                     end
                 end
             end
@@ -433,8 +584,8 @@ local function appendLearned(buckets, uiMapID, wanted)
     end
 end
 
--- The third source, after the pfQuest seed and this character's own gathers: everybody else's,
--- aggregated by the hub (docs/10 D3; platform/server/pandaquest_hub/nodes.py builds it). Shape:
+-- The second source, after this character's own gathers: everybody else's, aggregated by the hub
+-- (docs/10 D3; platform/server/pandaquest_hub/nodes.py builds it). Shape:
 --
 --   ns.Overrides.community.nodes[objectId] = { k = kind, n = sightings,
 --                                              p = { { m = uiMapID, x = 0..1, y = 0..1, n = 4 } } }
@@ -448,29 +599,22 @@ local function communityNodes()
     return found
 end
 
-local function appendCommunity(buckets, uiMapID, wanted)
+local function appendCommunity(buckets, uiMapID)
     local found = communityNodes()
     if not found then return end
-    local learned = learnedStore()
-    local DB = ns.DB
     for id, entry in pairs(found) do
-        local mine = learned and learned[id]
-        if type(id) == "number" and type(entry) == "table" and type(entry.k) == "string"
-           and (not wanted or wanted[id] == nil) and not mine and M.KindEnabled(entry.k) then
+        if type(id) == "number" and type(entry) == "table" and type(entry.k) == "string" then
+            -- No skill and no name travel with a community node: the hub aggregates positions, not
+            -- the skill requirement it would have to invent, and the object's name is whatever
+            -- this client's own database calls it in this client's own locale. The dictionary
+            -- supplies both when it knows the id; otherwise an absent skill means IsGatherable
+            -- falls through to "anyone with the profession", which is the honest answer rather
+            -- than a guess at 275 Mining. Every hub node is a game object (the hub is only ever
+            -- sent a loot window over one), so a "rare" in the export is the clam collision above.
+            local def = describe(id, false, entry.k, nil, nil)
             local places = entry.p
-            if type(places) == "table" then
-                -- No skill and no name travel with a community node: the hub aggregates positions,
-                -- not the skill requirement it would have to invent, and the object's name is
-                -- whatever this client's own database calls it in this client's own locale. An
-                -- absent skill means IsGatherable falls through to "anyone with the profession",
-                -- which is the honest answer rather than a guess at 275 Mining.
-                local name = nil
-                if DB and DB.GetObjectName then
-                    local ok, got = pcall(DB.GetObjectName, id)
-                    if ok and type(got) == "string" then name = got end
-                end
-                local def = { kind = entry.k, skill = nil, name = name }
-                local bucket = bucketFor(buckets, entry.k)
+            if def and type(places) == "table" and M.KindEnabled(def.kind) then
+                local bucket = bucketFor(buckets, def.kind)
                 for i = 1, #places do
                     local place = places[i]
                     if type(place) == "table" and place.m == uiMapID
@@ -490,6 +634,54 @@ local function byNode(a, b)
     if a.id ~= b.id then return a.id < b.id end
     if a.x ~= b.x then return a.x < b.x end
     return a.y < b.y
+end
+
+-- The record a place is drawn as when several describe it. A node the character can gather comes
+-- first, so a spot where both a vein it can mine and one it cannot were found is not hidden by the
+-- one it cannot. Then this character's own gathers, most first - where the player stood beats an
+-- aggregate of strangers - then the hub's, best corroborated first.
+local function byEvidence(a, b)
+    if a.gatherable ~= b.gatherable then return a.gatherable and true or false end
+    local ga, gb = a.gathered or 0, b.gathered or 0
+    if ga ~= gb then return ga > gb end
+    local sa, sb = a.sightings or 0, b.sightings or 0
+    if sa ~= sb then return sa > sb end
+    return byNode(a, b)
+end
+
+-- One place, one node. The counts add up, because they are counts of the same place; the ids are
+-- kept because a spawn point in 5.5.4 is shared between ores (see the header - 227 of Stonetalon's
+-- 340 mine coordinates), so the dot a player gathered Tin at one day and Silver at the next is
+-- still one dot, and its tooltip says both.
+local function absorbNode(host, node)
+    if node.gathered then host.gathered = (host.gathered or 0) + node.gathered end
+    if node.sightings then host.sightings = (host.sightings or 0) + node.sightings end
+    if node.id ~= host.id then
+        local ids = host.ids
+        if not ids then ids = { host.id }; host.ids = ids end
+        local known = false
+        for i = 1, #ids do
+            if ids[i] == node.id then known = true break end
+        end
+        if not known then
+            ids[#ids + 1] = node.id
+            local name = node.name
+            if type(name) == "string" and name ~= host.name then
+                local also = host.alsoHere
+                if not also then also = {}; host.alsoHere = also end
+                local listed = false
+                for i = 1, #also do
+                    if also[i] == name then listed = true break end
+                end
+                if not listed then also[#also + 1] = name end
+            end
+        end
+    end
+end
+
+local function mergeBucket(bucket)
+    sort(bucket, byEvidence)
+    return cluster(bucket, absorbNode)
 end
 
 -- Nearest first when the player is standing on this map, and by id otherwise so that what a cap
@@ -514,8 +706,8 @@ end
 -- into `out`.
 --
 -- An equal split first, capped by what each kind actually has, and the change handed round until
--- it is gone. That is what keeps a zone with three thousand herb coordinates from spending the
--- whole budget before the ore veins - the character's own profession - are ever looked at.
+-- it is gone. That is what keeps a zone with three thousand herb places from spending the whole
+-- budget before the ore veins - the character's own profession - are ever looked at.
 local function shareTheBudget(buckets, out, uiMapID)
     local total, present = 0, 0
     for i = 1, #KINDS do
@@ -596,6 +788,9 @@ end
 -- Always an array: a map with no profession data returns an empty one rather than nil, so the
 -- caller never has to ask twice. The array is cached per map and rebuilt by ResetCache.
 --
+-- Only observed places are in it: this character's saved gathers, then the hub's sightings, folded
+-- so that one place is one node whichever of the two - or both - recorded it.
+--
 -- One consequence of the cache is worth stating: when the zone has more candidates than the map
 -- budget, which ones survive is decided by distance from the player *at the moment the list was
 -- built*, and walking across the zone does not rebuild it (only a zone change, a map change or a
@@ -609,36 +804,13 @@ function M.NodesForMap(uiMapID)
 
     local out = {}
     nodeCache[uiMapID] = out
-    local defs = definitions()
-    local index = mapIndex or buildIndex()
-    local ids = index[uiMapID]
     local buckets = {}
-    local wanted = nil
-    if ids and defs then
-        wanted = {}
-        for i = 1, #ids do
-            local entry = ids[i]
-            local def = defs[entry.id]
-            if def and M.KindEnabled(def.kind) then
-                wanted[entry.id] = true
-                local spawns = spawnsFor(entry.id, entry.unit)
-                local coords = spawns and spawns[entry.areaID]
-                if type(coords) == "table" then
-                    local limit = #coords
-                    if limit > MAX_SPAWNS_PER_NODE then limit = MAX_SPAWNS_PER_NODE end
-                    local bucket = bucketFor(buckets, def.kind)
-                    for j = 1, limit do
-                        local c = coords[j]
-                        if type(c) == "table" then
-                            if not addNode(bucket, entry.id, def, uiMapID, c[1], c[2], entry.unit, "seed") then break end
-                        end
-                    end
-                end
-            end
-        end
+    appendLearned(buckets, uiMapID)
+    appendCommunity(buckets, uiMapID)
+    for i = 1, #KINDS do
+        local kind = KINDS[i]
+        if buckets[kind] then buckets[kind] = mergeBucket(buckets[kind]) end
     end
-    appendLearned(buckets, uiMapID, wanted)
-    appendCommunity(buckets, uiMapID, wanted)
     shareTheBudget(buckets, out, uiMapID)
     sort(out, byNode)
     return out
@@ -653,27 +825,22 @@ end
 -- The pin layer (docs/10 D1)
 ---------------------------------------------------------------------------
 
-local ICON_FALLBACK = "custom"
-
-local function iconFor(kind)
-    local Icons = ns.Icons
-    local map = Icons and Icons.PROFESSION_ICONS
-    local name = map and map[kind]
-    if type(name) == "string" then return name end
-    return ICON_FALLBACK
-end
-
 -- Faded, and why. A node out of reach is dim because the player cannot take it; a node this
 -- session already emptied is dim because it is not there. Both are docs/10: "the node is drawn
--- faint until it comes back".
+-- faint until it comes back". A place several ores were gathered at is emptied when any of them
+-- was: the spawn point is one, whichever ore the server put in it.
 local function alphaFor(node, spawnKey)
     if not node.gatherable then return UNGATHERABLE_ALPHA end
     if not M.RespawnCountdown() then return 1 end
     local Respawn = ns.Respawn
     if not Respawn or type(Respawn.GetRemaining) ~= "function" then return 1 end
     local kind = node.unit and "npc" or "object"
-    local ok, remaining = pcall(Respawn.GetRemaining, kind, node.id, spawnKey)
-    if ok and type(remaining) == "number" and remaining > 0 then return DEPLETED_ALPHA end
+    local ids = node.ids
+    for i = 1, (ids and #ids or 1) do
+        local id = ids and ids[i] or node.id
+        local ok, remaining = pcall(Respawn.GetRemaining, kind, id, spawnKey)
+        if ok and type(remaining) == "number" and remaining > 0 then return DEPLETED_ALPHA end
+    end
     return 1
 end
 
@@ -687,7 +854,6 @@ local function addSpecsForMap(specs, byKey, maxPins, uiMapID, showUngatherable)
             if not byKey[key] then
                 if type(maxPins) == "number" and #specs >= maxPins then break end
                 local spawnKey = Util.SpawnKey(uiMapID, node.x, node.y)
-                node.icon = iconFor(node.kind)
                 node.key = key
                 local spec = {
                     key = key, uiMapID = uiMapID, x = node.x, y = node.y,
@@ -697,6 +863,7 @@ local function addSpecsForMap(specs, byKey, maxPins, uiMapID, showUngatherable)
                     kind = node.kind, skill = node.skill, name = node.name,
                     gatherable = node.gatherable, spawnKey = spawnKey,
                     source = node.source, sightings = node.sightings,
+                    gathered = node.gathered, alsoHere = node.alsoHere,
                     entityType = node.entityType, entityID = node.entityID,
                     node = node,
                 }
@@ -811,11 +978,9 @@ local function recentGatherKind()
     return lastGather.kind
 end
 
---- Professions.SourceFromLoot() -> objectId|nil, guid|nil
--- GetLootSourceInfo(slot) returns (guid, quantity) pairs; the first GameObject GUID in the window
--- is the thing that was gathered. A creature corpse has a Creature GUID and is deliberately not a
--- node - a mob dying is the respawn module's business, not this one's.
-function M.SourceFromLoot()
+--- The first GUID in the loot window that `parse` turns into an id: id, guid.
+-- GetLootSourceInfo(slot) returns (guid, quantity) pairs, one per slot.
+local function lootSource(parse, accept)
     if type(GetNumLootItems) ~= "function" or type(GetLootSourceInfo) ~= "function" then return nil end
     local okCount, count = pcall(GetNumLootItems)
     if not okCount or type(count) ~= "number" then return nil end
@@ -823,11 +988,32 @@ function M.SourceFromLoot()
     for slot = 1, count do
         local ok, guid = pcall(GetLootSourceInfo, slot)
         if ok and type(guid) == "string" then
-            local id = Util.ObjectIdFromGuid(guid)
-            if id then return id, guid end
+            local id = parse(guid)
+            if id and (not accept or accept(id)) then return id, guid end
         end
     end
     return nil
+end
+
+--- Professions.SourceFromLoot() -> objectId|nil, guid|nil
+-- The first GameObject GUID in the window is the thing that was gathered. A creature corpse has a
+-- Creature GUID and is not a gathering node - a mob dying is the respawn module's business, not
+-- this one's. The one creature this file does want is a rare, and RareFromLoot asks for it.
+function M.SourceFromLoot()
+    return lootSource(Util.ObjectIdFromGuid)
+end
+
+local function isRare(npcId)
+    local def = dictionaryFor(npcId, true)
+    return def ~= nil and def.kind == "rare"
+end
+
+--- Professions.RareFromLoot() -> npcId|nil, guid|nil
+-- A rare's corpse in the loot window. The rare kind has no other honest observation: its spawn
+-- list in the database is the same union of every recorded position the ore tables are (see the
+-- header), and the corpse is within loot range of where the rare really was.
+function M.RareFromLoot()
+    return lootSource(Util.NpcIdFromGuid, isRare)
 end
 
 local function isFishingLoot()
@@ -837,18 +1023,20 @@ local function isFishingLoot()
 end
 
 --- Professions.ClassifyLoot(objectId) -> kind|nil, skill|nil, name|nil
--- Seed first (it knows the skill and the name), then the gathering cast, then the fishing flag.
--- Nothing else: an unclassifiable game object is a quest crate as often as it is a treasure, and
--- docs/10's rule is that a value we do not have is absent rather than guessed.
+-- The dictionary first (it knows the skill and the name), then an earlier record of the same
+-- object, then the gathering cast, then the fishing flag. Nothing else: an unclassifiable game
+-- object is a quest crate as often as it is a treasure, and docs/10's rule is that a value we do
+-- not have is absent rather than guessed. Every lookup asks for a game object, never a creature:
+-- that is the Giant Clam that was saved as a rare (dictionaryFor).
 function M.ClassifyLoot(objectId)
-    local defs = definitions()
-    local def = defs and objectId and defs[objectId]
-    if type(def) == "table" and def.kind then
+    local def = dictionaryFor(objectId, false)
+    if def then
         return def.kind, def.skill, def.name
     end
     local learned = learnedStore()
     local known = learned and objectId and learned[objectId]
-    if type(known) == "table" and known.k then
+    if type(known) == "table" and not known.u and KIND_SETTING[known.k]
+       and kindFitsEntity(known.k, false) then
         return known.k, known.s, known.n
     end
     local kind = recentGatherKind()
@@ -877,15 +1065,26 @@ local function rememberLearned(id, kind, skill, name, unit, uiMapID, x, y)
     end
     entry.k = kind or entry.k
     if type(entry.p) ~= "table" then entry.p = {} end
-    local key = Util.SpawnKey(uiMapID, x, y)
-    if entry.p[key] then
-        entry.p[key] = entry.p[key] + 1
+    -- The same vein gathered again is the same place, counted, not a new one: the nearest saved
+    -- place within SAME_NODE_RADIUS takes the gather.
+    local places = entry.p
+    local nearest, nearestDistance, spawnCount = nil, R2, 0
+    for key in pairs(places) do
+        spawnCount = spawnCount + 1
+        local map, px, py = Util.SplitAreaSpawnKey(key)
+        if map == uiMapID then
+            local d = sameMapDistance2(px, py, x, y)
+            if d <= nearestDistance then nearest, nearestDistance = key, d end
+        end
+    end
+    if nearest then
+        places[nearest] = (tonumber(places[nearest]) or 0) + 1
         return false
     end
-    local spawnCount = 0
-    for _ in pairs(entry.p) do spawnCount = spawnCount + 1 end
     if spawnCount >= MAX_LEARNED_SPAWNS then return false end
-    entry.p[key] = 1
+    -- A tenth of a percent, the precision Map/Pins and ns.Respawn write their keys at. The
+    -- unrounded position is noise below what a map can show, and it is what made every key unique.
+    places[Util.SpawnKey(uiMapID, roundTenth(x), roundTenth(y))] = 1
     return true
 end
 
@@ -933,8 +1132,10 @@ function M.RecordGather(id, kind, uiMapID, x, y, unit, skill, name)
         tremove(observations, 1)
     end
 
-    local isNew = rememberLearned(id, kind, skill, name, unit, uiMapID, x, y)
-    if isNew then M.ResetCache() end
+    -- The node lists go either way: a new place is a new node, and a place gathered again carries
+    -- a new count its tooltip shows. Dropping them costs nothing until the next redraw asks.
+    rememberLearned(id, kind, skill, name, unit, uiMapID, x, y)
+    M.ResetCache()
 
     if M.ForwardToRespawn(unit and "npc" or "object", id, uiMapID, x, y) then
         observation.forwarded = true
@@ -953,6 +1154,29 @@ function M.RecordGather(id, kind, uiMapID, x, y, unit, skill, name)
     return observation
 end
 
+--- Professions.RecordRare(npcId, uiMapID, x, y [, name]) -> observation|nil
+--
+-- A rare's corpse was opened here, so the rare stood here: the same saved record a gather makes,
+-- and nothing else. It is not a respawn measurement - Nodes/Respawn has the death from the combat
+-- log or the target frame at the moment it happened, and a second NoteDeath at the moment the
+-- corpse was opened would restart that clock late. And it is not sent as NODE, because the hub
+-- reads every NODE id as a game object (routers/nodemap.py looks the respawn of one up under
+-- "object"), and a creature id there would be looked up as the wrong thing.
+function M.RecordRare(npcId, uiMapID, x, y, name)
+    if type(npcId) ~= "number" or type(uiMapID) ~= "number" then return nil end
+    if type(x) ~= "number" or type(y) ~= "number" then return nil end
+    local observation = { id = npcId, kind = "rare", uiMapID = uiMapID, x = x, y = y,
+                          unit = true, t = now() }
+    observations[#observations + 1] = observation
+    while #observations > MAX_OBSERVATIONS do
+        tremove(observations, 1)
+    end
+    rememberLearned(npcId, "rare", nil, name, true, uiMapID, x, y)
+    M.ResetCache()
+    Log.Debug("Professions", "looted rare %d at %d (%.1f, %.1f)", npcId, uiMapID, x, y)
+    return observation
+end
+
 --- Professions.GetObservations() -> this session's gathers, oldest first. Read-only.
 function M.GetObservations()
     return observations
@@ -962,7 +1186,11 @@ end
 -- can call it directly and read what it decided.
 function M.OnLootOpened()
     local objectId, guid = M.SourceFromLoot()
-    if not objectId then return nil end
+    local rareId
+    if not objectId then
+        rareId, guid = M.RareFromLoot()
+        if not rareId then return nil end
+    end
 
     -- LOOT_OPENED fires again when the window is re-shown for the same object; one gather is one
     -- observation, so the same GUID inside a minute is ignored.
@@ -972,13 +1200,22 @@ function M.OnLootOpened()
     end
     lastLoot.guid, lastLoot.at = guid, at
 
-    local kind, skill, name = M.ClassifyLoot(objectId)
-    if not kind then return nil end
+    local kind, skill, name
+    if rareId then
+        local def = dictionaryFor(rareId, true)
+        kind, name = "rare", def and def.name
+    else
+        kind, skill, name = M.ClassifyLoot(objectId)
+        if not kind then return nil end
+    end
 
     local Player = ns.Player
     local pos = Player and Player.GetPosition and Player.GetPosition() or nil
     if not pos or not pos.uiMapID or type(pos.x) ~= "number" then return nil end
 
+    if rareId then
+        return M.RecordRare(rareId, pos.uiMapID, pos.x * 100, pos.y * 100, name)
+    end
     return M.RecordGather(objectId, kind, pos.uiMapID, pos.x * 100, pos.y * 100, false, skill, name)
 end
 
@@ -1004,14 +1241,17 @@ local function mapMoved()
     askPinsToRedraw()
 end
 
---- Professions.Redraw(): a setting changed, not the map. The node lists have to go and so does the
--- id index, because a kind toggle changes which ids are indexed at all (UI/Options calls this).
+--- Professions.Redraw(): a setting changed, not the map. The node lists have to go, because a kind
+-- toggle or a skill filter changes which nodes are in them at all (UI/Options calls this).
 function M.Redraw()
     M.ResetCache()
     askPinsToRedraw()
 end
 
 function M.Init()
+    -- Init runs from OnInitialize, after AceDB has read PandaQuestDB and before anything draws: the
+    -- one moment a record left by an older build can be checked before it becomes a pin.
+    M.CleanLearned()
     M.ResetCache()
     M.InvalidateSkills()
     wipe(observations)

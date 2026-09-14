@@ -119,6 +119,8 @@ local T = {
     ["Respawn in:"] = "Syntyy uudelleen:",
     ["~%s (%d)"] = "~%s (%d)",
     ["Sightings:"] = "Havaintoja:",
+    ["Found by you:"] = "Löysit itse:",
+    ["Also here:"] = "Myös tässä:",
     ["Unit"] = "Olento",
     ["Object"] = "Objekti",
     ["Item"] = "Esine",
@@ -213,8 +215,8 @@ local T = {
     ["Minimap pin size"] = "Minikartan merkin koko",
     -- Map/Pins, Map/Icons (docs/10 B1-B2)
     ["Objective dot size"] = "Tavoitepisteen koko",
-    ["Objective spawns are small dots coloured per quest; quest givers keep their icons."] =
-        "Tavoitteiden spawnit ovat pieniä pisteitä, väri tehtävän mukaan; tehtävänantajat pitävät ikoninsa.",
+    ["Objectives and gathering nodes are small dots, coloured per quest or per kind; quest givers keep their icons."] =
+        "Tavoitteet ja keräilykohteet ovat pieniä pisteitä, väri tehtävän tai lajin mukaan; tehtävänantajat pitävät ikoninsa.",
     ["Maximum minimap pins"] = "Merkkien enimmäismäärä minikartalla",
     ["When there are more, the ones nearest to you are kept."] = "Jos niitä on enemmän, lähimmät säilytetään.",
     ["Minimap edge fade"] = "Minikartan reunahäivytys",
@@ -231,8 +233,8 @@ local T = {
 
     -- Nodes/Professions (docs/10 D: ammattikohteet kartalla)
     ["Gathering"] = "Keräily",
-    ["Ore, herbs, fishing pools, chests and rare spawns. Pandaria's are collected from play as you travel."] =
-        "Malmit, yrtit, kalastuspaikat, arkut ja harvinaiset spawnit kartalla. Pandarian solmut kerätään pelistä, joten ne täydentyvät kun matkustat.",
+    ["Ore, herbs, fishing pools, chests and rare spawns, drawn only where you or the community really found one."] =
+        "Malmit, yrtit, kalastuspaikat, arkut ja harvinaiset spawnit, vain siellä missä sinä tai yhteisö on oikeasti löytänyt sellaisen.",
     ["Show gathering nodes"] = "Näytä keräilykohteet",
     ["Turns the whole layer off, whatever the boxes below say."] =
         "Sammuttaa koko tason riippumatta alla olevista valinnoista.",
@@ -250,8 +252,8 @@ local T = {
     ["Chests and lockboxes in the world; no gathering skill filters these."] =
         "Arkut ja lippaat maailmassa; keräilytaito ei suodata näitä.",
     ["Rare spawns"] = "Harvinaiset spawnit",
-    ["Rare creatures that spawn in a fixed place."] =
-        "Harvinaiset olennot jotka ilmestyvät kiinteään paikkaan.",
+    ["Rare creatures, at the places a rare was looted."] =
+        "Harvinaiset olennot, niissä paikoissa joissa sellainen on lootattu.",
     ["Which of them you can gather"] = "Mitkä niistä osaat kerätä",
     ["Only my professions"] = "Vain omat ammattini",
     ["A profession you have not learned contributes nothing at all."] =
