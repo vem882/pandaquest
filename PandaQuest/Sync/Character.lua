@@ -158,17 +158,43 @@ local function positive(value)
     return floor(value)
 end
 
+--- A non-zero whole number, or nil. A random suffix id can be negative, so for that field only an
+-- empty or zero value means "none".
+local function nonZero(value)
+    value = tonumber(value)
+    if not value or value == 0 or value ~= floor(value) then return nil end
+    return value
+end
+
 ---------------------------------------------------------------------------
 -- Item links
 ---------------------------------------------------------------------------
 
---- ParseItemLink(link) -> { id, ench, gems = {..}, suffix, upgrade } or nil.
+--- ParseItemLink(link) -> { id, ench, gems = {..}, suffix, level, spec } or nil.
 --
--- A MoP item link is
---   |cffRRGGBB|Hitem:id:enchant:gem1:gem2:gem3:gem4:suffix:unique:level:spec:upgrade:...|h[..]|h|r
--- so the interesting ids are read positionally out of the colon separated payload. Anything the
--- client appends after `upgrade` is ignored on purpose: this parser must never fail on a longer
--- link than it was written for.
+-- A Mists of Pandaria Classic 5.5.4 item link has nineteen colon separated fields:
+--   |cffRRGGBB|Hitem:id:enchant:gem1:gem2:gem3:gem4:suffix:unique:level::spec:::::::::|h[..]|h|r
+-- All fourteen links of the one character sheet on the hub (character_gear, 2026-09-14; a level 34
+-- Enhancement shaman) read `item:<id>::::::::34::263::::::::`. Field 9 is the character's level,
+-- not the item's: the Double-Stitched Cloak is item level 37 and the Bilgewater Cartel Tabard 1,
+-- and both say 34. Field 11 is the character's specialization: 263 is the id
+-- GetSpecializationInfo returned for "Enhancement" in the same snapshot, on every item alike.
+--
+-- This parser used to take field 11 as an item upgrade id -- the layout of the original 5.4
+-- client, whose links stopped at `level:reforge:upgrade` -- so the website printed "Upgrade 263"
+-- on every piece. No field of the 5.5.4 link has been shown to carry an upgrade. Field 10 and
+-- fields 12-19 are empty in every link seen, and Blizzard's own UI for this build never reads an
+-- upgrade from a link: GetItemInfoFromHyperlink reads nothing past the id
+-- (Blizzard_SharedXML/LinkUtil.lua:120-125), and the Mists upgrade frame asks
+-- C_ItemUpgrade.GetItemUpgradeItemInfo() about the item placed on it
+-- (Blizzard_ItemUpgradeUI/Mists/Blizzard_ItemUpgradeUI.lua:66-83). So nothing is reported as an
+-- upgrade rather than a guessed field; the item level below comes from GetDetailedItemLevelInfo,
+-- which already counts any upgrade.
+--
+-- Field 7 is kept when it is negative. The one suffixed item on that sheet is
+-- `item:2819::::::-14:436535300:34::263:...`, named [Cross Dagger of the Tiger]: -14 is what makes
+-- it "of the Tiger", and dropping it as "not positive" recorded a plain Cross Dagger. Nothing past
+-- field 11 is read, so a link that fills in the trailing fields cannot break the parser.
 function M.ParseItemLink(link)
     if type(link) ~= "string" then return nil end
     local payload = link:match("|Hitem:([%-%d:]+)|h") or link:match("^item:([%-%d:]+)$")
@@ -178,7 +204,7 @@ function M.ParseItemLink(link)
     for value in (payload .. ":"):gmatch("([^:]*):") do
         count = count + 1
         fields[count] = tonumber(value)
-        if count >= 12 then break end
+        if count >= 11 then break end
     end
 
     local itemID = positive(fields[1])
@@ -197,8 +223,9 @@ function M.ParseItemLink(link)
         id = itemID,
         ench = positive(fields[2]),
         gems = gems,
-        suffix = positive(fields[7]),
-        upgrade = positive(fields[11]),
+        suffix = nonZero(fields[7]),
+        level = positive(fields[9]),
+        spec = positive(fields[11]),
     }
 end
 
@@ -280,6 +307,9 @@ function M.CollectItems()
                 if gotLink and type(value) == "string" and value ~= "" then link = value end
             end
 
+            -- The link's level and specialization are the character's, and the payload already
+            -- carries both once (`lvl`, `spec`), so they are not repeated on every item. There is
+            -- no `up`: ParseItemLink explains why no upgrade can be read from this client's link.
             local parsed = link and ParseItemLink(link) or nil
             local entry = {
                 s = slot,
@@ -287,7 +317,6 @@ function M.CollectItems()
                 ench = parsed and parsed.ench or nil,
                 gems = parsed and parsed.gems or nil,
                 suffix = parsed and parsed.suffix or nil,
-                up = parsed and parsed.upgrade or nil,
             }
             if link then entry.link = link:sub(1, MAX_LINK) end
 
@@ -438,7 +467,7 @@ function M.Fingerprint(payload)
         local gems = entry.gems
         parts[#parts + 1] = tconcat({
             tostring(entry.s), tostring(entry.id), tostring(entry.ench or 0),
-            tostring(entry.up or 0), tostring(entry.suffix or 0), tostring(entry.ilvl or 0),
+            tostring(entry.suffix or 0), tostring(entry.ilvl or 0),
             gems and tconcat(gems, ",") or "",
         }, "/")
     end

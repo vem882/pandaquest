@@ -92,9 +92,10 @@ function M.ItemKey(itemID, suffixID)
 end
 
 --- ParseItemLink(link) -> itemID, suffixID. The MoP link payload is
---   item:id:enchant:gem1:gem2:gem3:gem4:suffix:unique:level:...
--- (the same layout Sync/Character.lua reads). A random suffix may be negative, which is why this
--- does not reuse CharacterSheet.ParseItemLink: that one keeps positive ids only.
+--   item:id:enchant:gem1:gem2:gem3:gem4:suffix:unique:level::spec:...
+-- (Sync/Character.lua's ParseItemLink documents the 5.5.4 layout with real links). A random
+-- suffix may be negative. It stays apart from CharacterSheet.ParseItemLink because the scanner
+-- calls it for every auction row and wants only these two numbers, not gems and a specialization.
 function M.ParseItemLink(link)
     if type(link) ~= "string" then return nil end
     local payload = link:match("item:([%-%d:]+)")
