@@ -24,8 +24,8 @@
 -- GetItemReagentQualityInfo, GetTradeSkillDisplayName, GetTradeSkillTexture and
 -- IsGuildTradeSkillsEnabled, then only events -- no GetRecipeInfo, no GetAllRecipeIDs, no
 -- GetRecipeSchematic. The recipe data is in the old globals, and Blizzard's own Mists window is
--- written against them. Every call below is cited to a line of that file; the ones the 5.5.4 UI
--- never calls itself are cited to Ketho's 5.5.4 global dump and said to be so.
+-- written against them. Every call below is cited to a line of that file (.lua unless the .xml is
+-- named); signatures the UI's own calls do not show come from Ketho's 5.5.4 global dump.
 --
 --   GetNumTradeSkills()                        :202
 --   GetTradeSkillLine()   -> name, rank, maxRank    :204, :466 (three returns, not four)
@@ -35,8 +35,10 @@
 --   GetTradeSkillReagentInfo(i, n)                       :511
 --   IsTradeSkillLinked()                                 :234, :575
 --   ExpandTradeSkillSubClass(i) / CollapseTradeSkillSubClass(i)   :449-451, :650-657
---   GetTradeSkillItemLink(i), GetTradeSkillReagentItemLink(i, n), GetTradeSkillRecipeLink(i)
---                                               GlobalAPI_classic.lua:4182, :4190, :4191
+--   GetTradeSkillRecipeLink(i)            .xml:104  (shift-click on any row: self:GetID() is that
+--                                         row's list index, set at :299, not the selection)
+--   GetTradeSkillItemLink(i)              .xml:734  (always TradeSkillFrame.selectedSkill)
+--   GetTradeSkillReagentItemLink(i, n)    .xml:137  (always TradeSkillFrame.selectedSkill)
 --
 -- Item ids come out of links, and a link that has not arrived is asked for by name through
 -- ns.Compat.GetItemInfo -- never _G.GetItemInfo, which does not exist on this client
@@ -66,8 +68,9 @@ local MAX_ARM_ATTEMPTS = 40
 --- The word `/pq scan` hands to this module. Everything else stays the auction scanner's.
 local PROFESSION_WORDS = { professions = true, profession = true, prof = true }
 
--- Link types GetTradeSkillRecipeLink may answer with. No file in Blizzard's 5.5.4 UI calls that
--- function, so the source cannot prove which one a given profession returns; `enchant` is a live
+-- Link types GetTradeSkillRecipeLink may answer with. The 5.5.4 UI does call the function
+-- (Blizzard_TradeSkillUI/Mists/Blizzard_TradeSkillUI.xml:104) but hands the result straight to
+-- HandleModifiedItemClick, so the source says nothing about which type it is; `enchant` is a live
 -- link type on this client (Blizzard_UIPanels_Game/Classic/ItemRef.lua:38) and is what the call is
 -- documented to give. `spell` and `trade` are accepted as well, so a profession that answers
 -- differently is read rather than dropped -- which of the three each one really uses is something
