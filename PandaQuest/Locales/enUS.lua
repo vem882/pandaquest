@@ -351,6 +351,7 @@ L["That window is another player's recipe book, opened from a link. PandaQuest d
 L["This profession window lists no recipes."] = true
 L["Nothing was saved: not one recipe in this window could be read whole."] = true
 L["The profession window changed while it was being read. Nothing was saved."] = true
+L["The window was read short, so the recipe book you already have was kept."] = true
 L["Profession scan cancelled: the window was closed."] = true
 L["Profession scan stopped. Nothing was saved."] = true
 L["PandaQuest will not touch your profession window: it cannot put %s back the way you left it."] = true

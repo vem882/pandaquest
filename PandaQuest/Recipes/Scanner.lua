@@ -486,6 +486,26 @@ local function lineName()
     return (type(name) == "string" and name ~= "" and name) or "Unknown"
 end
 
+--- KeepsStored(entry, scan) -> true when the book already in the file is a better reading of this
+-- window than the one just taken, so nothing is written.
+--
+-- The scan after a fresh login is the one with the coldest item cache, and readRecipe drops every
+-- row whose reagent or product has not arrived: 350 recipes can come back as 200, and the 200 is
+-- what the companion then uploads. docs/11 B2's "replace, never merge" is about a rescan of the
+-- same book being the same book -- it was never an argument for a worse reading winning.
+--
+-- Only at the same rank. A different rank is a genuinely new (rank, difficulty) sample, which is
+-- the whole reason the hub wants a second scan at all (A2), so a short read at a new rank does
+-- replace; the player is told in the same breath that the window can be read again.
+local function keepsStored(entry, scan)
+    if (scan.incomplete + scan.unnamed) == 0 then return false end
+    local stored = Store.GetProfession(entry.character, entry.realm, entry.skillLine, entry.profession)
+    if type(stored) ~= "table" then return false end
+    if (tonumber(stored.incomplete) or 0) > 0 then return false end
+    if (tonumber(stored.rank) or -1) ~= entry.rank then return false end
+    return (tonumber(stored.recipes) or 0) > entry.recipes
+end
+
 -- Everything here comes from the line Start() read, never from a second call: the job body runs
 -- frames later, and the id is derived from the profession (or from the SkillLineID resolved from
 -- it) while the name was being read again beside it. Two reads meant a book whose id the hub
@@ -515,6 +535,7 @@ local function buildEntry(scan)
         truncated = scan.truncated and true or false,
         r = scan.rows,
     }
+    if keepsStored(entry, scan) then return nil end
     Store.SetProfession(entry)
     return entry
 end
@@ -532,6 +553,7 @@ local function reasonText(reason)
     if reason == "empty" then return L["This profession window lists no recipes."] end
     if reason == "nothing" then return L["Nothing was saved: not one recipe in this window could be read whole."] end
     if reason == "changed" then return L["The profession window changed while it was being read. Nothing was saved."] end
+    if reason == "short" then return L["The window was read short, so the recipe book you already have was kept."] end
     -- "pending" deliberately has no text: the list had not arrived, the scan is armed again, and a
     -- line per attempt would be chat about something the player cannot do anything about.
     if reason == "windowClosed" then return L["Profession scan cancelled: the window was closed."] end
@@ -691,6 +713,7 @@ function M.Start()
             return "nothing"
         end
         scan.entry = buildEntry(scan)
+        if not scan.entry then return "short" end
         return nil
     end, {
         name = "RecipeScan",
