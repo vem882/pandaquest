@@ -349,6 +349,7 @@ L["Open a profession window first, then type /pq scan professions."] = true
 L["This client does not offer the recipe list PandaQuest reads."] = true
 L["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] = true
 L["This profession window lists no recipes."] = true
+L["The profession list has not arrived from the server yet. Try again in a moment."] = true
 L["Nothing was saved: not one recipe in this window could be read whole."] = true
 L["The profession window changed while it was being read. Nothing was saved."] = true
 L["The window was read short, so the recipe book you already have was kept."] = true

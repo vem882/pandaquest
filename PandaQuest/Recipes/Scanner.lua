@@ -434,7 +434,7 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
         scan.skipped = scan.skipped + 1
         return nil
     end
-    local reagents, seen = {}, {}
+    local reagents, alreadyUsed = {}, {}
     for n = 1, numReagents do
         -- Return 4 is playerReagentCount: how many of it are in the player's bags right now. It is
         -- dropped at the call rather than at ingest, because docs/07 B2 puts minimisation where
@@ -449,14 +449,14 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
             return nil
         end
         local amount = Store.Amount(reagentCount, 1)
-        if seen[reagentID] or amount > Store.MAX_AMOUNT then
+        if alreadyUsed[reagentID] or amount > Store.MAX_AMOUNT then
             -- One reagent listed twice, or wanted in a quantity the grammar has no room for. No
             -- recipe in the game is either, so the client is the thing that is wrong, and a wrong
             -- crafting cost is the one thing this walk refuses to write down.
             scan.skipped = scan.skipped + 1
             return nil
         end
-        seen[reagentID] = true
+        alreadyUsed[reagentID] = true
         reagents[n] = { reagentID, amount }
         Thread.Yield()
     end
@@ -570,8 +570,8 @@ local function reasonText(reason)
     if reason == "nothing" then return L["Nothing was saved: not one recipe in this window could be read whole."] end
     if reason == "changed" then return L["The profession window changed while it was being read. Nothing was saved."] end
     if reason == "short" then return L["The window was read short, so the recipe book you already have was kept."] end
-    -- "pending" deliberately has no text: the list had not arrived, the scan is armed again, and a
-    -- line per attempt would be chat about something the player cannot do anything about.
+    -- Only ever printed when the addon is NOT going to read the window again by itself; see finish.
+    if reason == "pending" then return L["The profession list has not arrived from the server yet. Try again in a moment."] end
     if reason == "windowClosed" then return L["Profession scan cancelled: the window was closed."] end
     if reason == "stopped" then return L["Profession scan stopped. Nothing was saved."] end
     return nil
@@ -635,8 +635,12 @@ local function finish(scan, ok, reason)
     lastResult = { ok = ok, reason = reason, entry = scan.entry, at = unixNow() }
     -- A list that had not arrived is not a refusal and not a scan either, so the opening goes back
     -- on the arm and the next TRADE_SKILL_UPDATE reads it. tryAutomatic's own attempt ceiling is
-    -- what stops this being a loop; without the re-arm, "once per opening" would spend the one
-    -- read on a window that had nothing in it yet.
+    -- what stops this being a loop; without the re-arm, "once per opening" would spend the one read
+    -- on a window that had nothing in it yet. Said out loud only when nothing is going to retry --
+    -- the switch is off, or the window is already closed -- because a command answered with silence
+    -- is worse than a line, and a line per automatic attempt is noise about nothing the player can
+    -- do.
+    local retries = (reason == "pending") and windowOpen and setting("scanOnOpen") and true or false
     if reason == "pending" and windowOpen then armed = true end
     -- A window the player already closed has nothing left to put back, and saying so would be
     -- blaming the addon for the player's own click.
@@ -648,7 +652,7 @@ local function finish(scan, ok, reason)
         Log.Print(L["Profession scan finished: %s %d/%d, %d recipes in %s."], tostring(entry.profession),
             entry.rank or 0, entry.maxRank or 0, entry.recipes or 0,
             Util.FormatTime(clock() - scan.startedClock))
-    else
+    elseif not retries then
         report(reason)
     end
     -- Said for a scan that was stored and for one that was not: it is the same fact about the

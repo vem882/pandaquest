@@ -404,6 +404,8 @@ local T = {
     ["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] =
         "Tuo ikkuna on toisen pelaajan reseptikirja, avattu linkistä. PandaQuest ei tallenna sitä.",
     ["This profession window lists no recipes."] = "Tässä ammatti-ikkunassa ei ole yhtään reseptiä.",
+    ["The profession list has not arrived from the server yet. Try again in a moment."] =
+        "Reseptilista ei ole vielä saapunut palvelimelta. Yritä hetken kuluttua uudelleen.",
     ["Nothing was saved: not one recipe in this window could be read whole."] =
         "Mitään ei tallennettu: yhtäkään tämän ikkunan reseptiä ei saatu luettua kokonaan.",
     ["The profession window changed while it was being read. Nothing was saved."] =
