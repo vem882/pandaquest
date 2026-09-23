@@ -392,6 +392,43 @@ local T = {
     ["Record my auction sales and purchases"] = "Kirjaa huutokauppamyyntini ja -ostoni",
     ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
         "Luetaan postilaatikon huutokauppakuiteista. Talteen jäävät esine, määrä ja hinta, ei koskaan toisen pelaajan nimeä.",
+
+    -- Ammattireseptit (docs/11)
+    ["/pq scan professions - read the open profession window"] =
+        "/pq scan professions - lue auki oleva ammatti-ikkuna",
+    ["A profession scan is already running."] = "Ammattiskannaus on jo käynnissä.",
+    ["Open a profession window first, then type /pq scan professions."] =
+        "Avaa ensin ammatti-ikkuna ja kirjoita sitten /pq scan professions.",
+    ["This client does not offer the recipe list PandaQuest reads."] =
+        "Tämä peliversio ei tarjoa reseptilistaa, jota PandaQuest osaisi lukea.",
+    ["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] =
+        "Tuo ikkuna on toisen pelaajan reseptikirja, avattu linkistä. PandaQuest ei tallenna sitä.",
+    ["This profession window lists no recipes."] = "Tässä ammatti-ikkunassa ei ole yhtään reseptiä.",
+    ["Nothing was saved: not one recipe in this window could be read whole."] =
+        "Mitään ei tallennettu: yhtäkään tämän ikkunan reseptiä ei saatu luettua kokonaan.",
+    ["Profession scan cancelled: the window was closed."] =
+        "Ammattiskannaus keskeytettiin: ikkuna suljettiin.",
+    ["Profession scan stopped. Nothing was saved."] = "Ammattiskannaus pysäytettiin. Mitään ei tallennettu.",
+    ["PandaQuest will not touch your profession window: it cannot put %s back the way you left it."] =
+        "PandaQuest ei koske ammatti-ikkunaasi: se ei saa palautettua kohtaa %s sellaiseksi kuin jätit sen.",
+    ["PandaQuest could not put your profession window filters back exactly as they were."] =
+        "PandaQuest ei saanut palautettua ammatti-ikkunan suodattimia täsmälleen ennalleen.",
+    ["Profession scan finished: %s %d/%d, %d recipes in %s."] =
+        "Ammattiskannaus valmis: %s %d/%d, %d reseptiä, kesto %s.",
+    ["%d recipes were left out because the game had not loaded their reagents yet. Open the window again to finish them."] =
+        "%d reseptiä jäi pois, koska peli ei ollut vielä ladannut niiden ainesosia. Avaa ikkuna uudelleen, niin ne luetaan loppuun.",
+    ["The scan stopped at %d recipes to keep the saved file small."] =
+        "Skannaus pysähtyi %d reseptiin, jotta tallennustiedosto pysyy pienenä.",
+    ["Last scan of %s (%d/%d): %d recipes, %s ago."] =
+        "Viimeisin skannaus: %s (%d/%d), %d reseptiä, %s sitten.",
+    ["No profession has been scanned on this character yet."] =
+        "Tällä hahmolla ei ole vielä skannattu yhtään ammattia.",
+    ["Professions"] = "Ammatit",
+    ["PandaQuest reads an open profession window once and puts your filters and collapsed categories back."] =
+        "PandaQuest lukee auki olevan ammatti-ikkunan kerran ja palauttaa suodattimet ja suljetut ryhmät ennalleen.",
+    ["Read my recipes when I open a profession"] = "Lue reseptini kun avaan ammatin",
+    ["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] =
+        "Reseptit, ainesosat ja kunkin vaikeus tälle hahmolle. Ei koskaan kirjaa, joka avattiin linkistä.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

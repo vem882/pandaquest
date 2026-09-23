@@ -21,6 +21,9 @@ ns.MODULE_ORDER = {
     "Respawn", "Professions",
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
+    -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
+    -- and hands the rest back (docs/11 B4).
+    "RecipeStore", "RecipeScanner",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
 
@@ -74,6 +77,11 @@ function PQ:OnInitialize()
     -- of magnitude bigger than the quest log can be lost or reset without taking telemetry with
     -- it. Auction/Store.lua gives the table its shape.
     _G.PandaQuestAH = _G.PandaQuestAH or {}
+
+    -- docs/11 B2: the same argument for profession recipes. A book read off one window is larger
+    -- than a questing session, and it must be droppable without the quest log going with it.
+    -- Recipes/Store.lua gives the table its shape.
+    _G.PandaQuestProf = _G.PandaQuestProf or {}
 
     ApplyLanguage()
 
@@ -164,6 +172,7 @@ commands.help = function()
         "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
         "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
         "/pq sync - telemetry and community data status",
+        "/pq scan professions - read the open profession window",
         "/pq consent - ask the data sharing question again",
         "/pq lang auto|enUS|fiFI - interface language",
     }
