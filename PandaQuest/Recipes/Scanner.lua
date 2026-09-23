@@ -479,9 +479,20 @@ local function walk(scan)
     end
 end
 
+--- LineName() -> the window's profession name, or "Unknown". One spelling of the same question,
+-- because the answer has to be the same one every time it is asked in a scan.
+local function lineName()
+    local name = GetTradeSkillLine()
+    return (type(name) == "string" and name ~= "" and name) or "Unknown"
+end
+
+-- Everything here comes from the line Start() read, never from a second call: the job body runs
+-- frames later, and the id is derived from the profession (or from the SkillLineID resolved from
+-- it) while the name was being read again beside it. Two reads meant a book whose id the hub
+-- cannot derive from its own fields -- a final `rejected` under docs/11 C1.5, and an id it will
+-- never accept again -- or, worse, a real SkillLineID sitting next to another profession's name.
 local function buildEntry(scan)
     local name, realm, faction = Store.CurrentCharacter()
-    local lineName, rank, maxRank = GetTradeSkillLine()
     local version, build
     if GetBuildInfo then version, build = GetBuildInfo() end
     local entry = {
@@ -492,7 +503,7 @@ local function buildEntry(scan)
         -- of the same profession, and without it the second would overwrite the first.
         character = name,
         profession = scan.profession, skillLine = scan.skillLine,
-        rank = tonumber(rank) or scan.rank or 0, maxRank = tonumber(maxRank) or scan.maxRank or 0,
+        rank = scan.rank, maxRank = scan.maxRank,
         scannedAt = scan.startedAt,
         addonVersion = Const.VERSION,
         clientBuild = version and (build and (version .. "." .. build) or version) or nil,
@@ -504,7 +515,6 @@ local function buildEntry(scan)
         truncated = scan.truncated and true or false,
         r = scan.rows,
     }
-    if lineName and lineName ~= "" then entry.profession = lineName end
     Store.SetProfession(entry)
     return entry
 end
@@ -521,6 +531,7 @@ local function reasonText(reason)
     if reason == "linked" then return L["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] end
     if reason == "empty" then return L["This profession window lists no recipes."] end
     if reason == "nothing" then return L["Nothing was saved: not one recipe in this window could be read whole."] end
+    if reason == "changed" then return L["The profession window changed while it was being read. Nothing was saved."] end
     -- "pending" deliberately has no text: the list had not arrived, the scan is armed again, and a
     -- line per attempt would be chat about something the player cannot do anything about.
     if reason == "windowClosed" then return L["Profession scan cancelled: the window was closed."] end
@@ -630,16 +641,16 @@ function M.Start()
         return false, reason
     end
 
-    local lineName, rank, maxRank = GetTradeSkillLine()
+    local _, rank, maxRank = GetTradeSkillLine()
     local scan = {
         startedAt = unixNow(), startedClock = clock(),
-        profession = (lineName ~= "" and lineName) or "Unknown",
+        profession = lineName(),
         rank = tonumber(rank) or 0, maxRank = tonumber(maxRank) or 0,
         rows = {}, collapsed = {}, seen = {},
         skipped = 0, incomplete = 0, unnamed = 0, truncated = false,
         filtersOk = true, collapseOk = true,
     }
-    scan.skillLine = M.ResolveSkillLine(lineName)
+    scan.skillLine = M.ResolveSkillLine(scan.profession)
     -- Read the state before clearing it, and clear it before looking at the categories: a name
     -- filter hides whole categories, so what is collapsed can only be read honestly once the
     -- filters are off.
@@ -657,6 +668,13 @@ function M.Start()
         local count = tonumber(GetNumTradeSkills()) or 0
         if count == 0 then return "empty" end
         walk(scan)
+        if lineName() ~= scan.profession then
+            -- The player switched trade skills while this one was being walked, which Blizzard's
+            -- own window handles as an ordinary thing to do (:207-212). The rows just read are then
+            -- some of one book and some of another, and the scan is abandoned rather than stored
+            -- under either name.
+            return "changed"
+        end
         if #scan.rows == 0 then
             -- Not one row survived. Stored, that would be a profession with no recipes -- a claim
             -- about the game rather than about this read, and the auction scanner refuses an empty

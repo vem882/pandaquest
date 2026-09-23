@@ -406,6 +406,8 @@ local T = {
     ["This profession window lists no recipes."] = "Tässä ammatti-ikkunassa ei ole yhtään reseptiä.",
     ["Nothing was saved: not one recipe in this window could be read whole."] =
         "Mitään ei tallennettu: yhtäkään tämän ikkunan reseptiä ei saatu luettua kokonaan.",
+    ["The profession window changed while it was being read. Nothing was saved."] =
+        "Ammatti-ikkuna vaihtui kesken lukemisen. Mitään ei tallennettu.",
     ["Profession scan cancelled: the window was closed."] =
         "Ammattiskannaus keskeytettiin: ikkuna suljettiin.",
     ["Profession scan stopped. Nothing was saved."] = "Ammattiskannaus pysäytettiin. Mitään ei tallennettu.",
