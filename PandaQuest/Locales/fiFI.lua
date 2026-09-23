@@ -415,8 +415,8 @@ local T = {
         "PandaQuest ei saanut palautettua ammatti-ikkunaa täsmälleen sellaiseksi kuin jätit sen.",
     ["Profession scan finished: %s %d/%d, %d recipes in %s."] =
         "Ammattiskannaus valmis: %s %d/%d, %d reseptiä, kesto %s.",
-    ["%d recipes were left out because the game had not loaded their reagents yet. Open the window again to finish them."] =
-        "%d reseptiä jäi pois, koska peli ei ollut vielä ladannut niiden ainesosia. Avaa ikkuna uudelleen, niin ne luetaan loppuun.",
+    ["%d recipes were left out because the game had not finished loading them. Open the window again to finish them."] =
+        "%d reseptiä jäi pois, koska peli ei ollut vielä ladannut niitä loppuun. Avaa ikkuna uudelleen, niin ne luetaan loppuun.",
     ["The scan stopped at %d recipes to keep the saved file small."] =
         "Skannaus pysähtyi %d reseptiin, jotta tallennustiedosto pysyy pienenä.",
     ["Last scan of %s (%d/%d): %d recipes, %s ago."] =

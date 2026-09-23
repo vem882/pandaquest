@@ -426,7 +426,14 @@ local function walk(scan)
         -- recipe, so both are discarded at the call. Return 5, altVerb, is: it is the only thing
         -- that says a recipe produces no item rather than one the client has not loaded.
         local skillName, skillType, _, _, altVerb = GetTradeSkillInfo(i)
-        if skillName and not Store.HEADER_TYPE[skillType] then
+        if not skillName then
+            -- GetNumTradeSkills() counted the row before GetTradeSkillInfo had a name for it: the
+            -- half-arrived list TRADE_SKILL_SHOW warns about, which Blizzard's own window guards
+            -- for the same way (Blizzard_TradeSkillUI/Mists/Blizzard_TradeSkillUI.lua:441-444).
+            -- Counted apart from skipped, because this is the one failure worth reading again --
+            -- the list is coming, and nothing about the row was wrong.
+            scan.unnamed = scan.unnamed + 1
+        elseif not Store.HEADER_TYPE[skillType] then
             if #rows >= limit then
                 scan.truncated = true
                 break
@@ -455,7 +462,11 @@ local function buildEntry(scan)
         scannedAt = scan.startedAt,
         addonVersion = Const.VERSION,
         clientBuild = version and (build and (version .. "." .. build) or version) or nil,
-        recipes = #scan.rows, skipped = scan.skipped, incomplete = scan.incomplete,
+        -- A row whose name had not arrived counts as incomplete, because that is what incomplete
+        -- means to whoever reads it: a row the next read of this window will have. skipped is the
+        -- other kind -- a row reading it again will not help with.
+        recipes = #scan.rows, skipped = scan.skipped,
+        incomplete = scan.incomplete + scan.unnamed,
         truncated = scan.truncated and true or false,
         r = scan.rows,
     }
@@ -476,6 +487,8 @@ local function reasonText(reason)
     if reason == "linked" then return L["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] end
     if reason == "empty" then return L["This profession window lists no recipes."] end
     if reason == "nothing" then return L["Nothing was saved: not one recipe in this window could be read whole."] end
+    -- "pending" deliberately has no text: the list had not arrived, the scan is armed again, and a
+    -- line per attempt would be chat about something the player cannot do anything about.
     if reason == "windowClosed" then return L["Profession scan cancelled: the window was closed."] end
     if reason == "stopped" then return L["Profession scan stopped. Nothing was saved."] end
     return nil
@@ -537,6 +550,11 @@ local function finish(scan, ok, reason)
     local restored = restore(scan)
     ctx = nil
     lastResult = { ok = ok, reason = reason, entry = scan.entry, at = unixNow() }
+    -- A list that had not arrived is not a refusal and not a scan either, so the opening goes back
+    -- on the arm and the next TRADE_SKILL_UPDATE reads it. tryAutomatic's own attempt ceiling is
+    -- what stops this being a loop; without the re-arm, "once per opening" would spend the one
+    -- read on a window that had nothing in it yet.
+    if reason == "pending" and windowOpen then armed = true end
     -- A window the player already closed has nothing left to put back, and saying so would be
     -- blaming the addon for the player's own click.
     if not restored and windowOpen then
@@ -551,10 +569,12 @@ local function finish(scan, ok, reason)
         report(reason)
     end
     -- Said for a scan that was stored and for one that was not: it is the same fact about the
-    -- client either way, and it is the one the player can do something about.
-    if scan.incomplete > 0 then
-        Log.Print(L["%d recipes were left out because the game had not loaded their reagents yet. Open the window again to finish them."],
-            scan.incomplete)
+    -- client either way, and it is the one the player can do something about. Not said for
+    -- "pending", where nothing was read and the addon is going to try again by itself.
+    local waiting = scan.incomplete + scan.unnamed
+    if reason ~= "pending" and waiting > 0 then
+        Log.Print(L["%d recipes were left out because the game had not finished loading them. Open the window again to finish them."],
+            waiting)
     end
     if not ok then return end
     local entry = scan.entry
@@ -581,7 +601,7 @@ function M.Start()
         startedAt = unixNow(), startedClock = clock(),
         profession = (lineName ~= "" and lineName) or "Unknown",
         rank = tonumber(rank) or 0, maxRank = tonumber(maxRank) or 0,
-        rows = {}, collapsed = {}, skipped = 0, incomplete = 0, truncated = false,
+        rows = {}, collapsed = {}, skipped = 0, incomplete = 0, unnamed = 0, truncated = false,
         filtersOk = true, collapseOk = true,
     }
     scan.skillLine = M.ResolveSkillLine(lineName)
@@ -602,11 +622,18 @@ function M.Start()
         local count = tonumber(GetNumTradeSkills()) or 0
         if count == 0 then return "empty" end
         walk(scan)
-        if #scan.rows == 0 and (scan.skipped + scan.incomplete) > 0 then
-            -- The window had rows and not one of them survived. Stored, that would be a profession
-            -- with no recipes -- a claim about the game rather than about this read, and the
-            -- auction scanner refuses an empty listing for the same reason (docs/08 B1). The one
-            -- client behaviour that would do this to every row at once is a reagent read that
+        if #scan.rows == 0 then
+            -- Not one row survived. Stored, that would be a profession with no recipes -- a claim
+            -- about the game rather than about this read, and the auction scanner refuses an empty
+            -- listing for the same reason (docs/08 B1). The rule holds however the rows were lost,
+            -- counted failures or not: a list whose names have not arrived produces no recipe and
+            -- no failure either, and is exactly the case that used to be stored as a real book.
+            if scan.unnamed > 0 and (scan.skipped + scan.incomplete) == 0 then
+                -- Nothing was wrong with the window; it was read too early. Not a refusal and not
+                -- worth a line of chat, so it says nothing and goes back on the arm.
+                return "pending"
+            end
+            -- The one client behaviour that would fail every row at once is a reagent read that
             -- needs its recipe selected first, which is docs/11 A3's open question.
             return "nothing"
         end
