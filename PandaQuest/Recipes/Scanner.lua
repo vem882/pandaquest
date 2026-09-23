@@ -299,7 +299,7 @@ local function headerRows()
     return rows
 end
 
---- ExpandAll() -> collapsedNames, incomplete.
+--- ExpandAll(scan) -> true when categories were still closing after MAX_EXPAND_ROUNDS.
 -- CollapseTradeSkillSubClass(0) and ExpandTradeSkillSubClass(0) do every category at once
 -- (:650-657) and one call would show every row -- but it would also lose the state we promised to
 -- give back, because a category closed inside a closed category is not in the list until its
@@ -308,22 +308,26 @@ end
 --
 -- Descending order matters: expanding a row inserts its children immediately after it, so every
 -- lower index still means what it meant and every higher one does not.
-local function expandAll()
-    local collapsed = {}
+local function expandAll(scan)
     for _ = 1, MAX_EXPAND_ROUNDS do
         local found = {}
         local rows = headerRows()
         for i = 1, #rows do
             if not rows[i].expanded then found[#found + 1] = rows[i] end
         end
-        if #found == 0 then return collapsed, false end
+        if #found == 0 then return false end
         for i = #found, 1, -1 do
+            -- Written into the scan before the call, not collected and handed over after the last
+            -- round: this loop yields (headerRows does), so the player closing the window or a
+            -- client call raising can end the job here. A scan that ends mid-expand still has to
+            -- know what it opened, or the restore closes nothing, finds nothing to disagree about
+            -- and reports success over a window left standing open (docs/11 B1 point 5).
+            scan.collapsed[#scan.collapsed + 1] = found[i].name
             ExpandTradeSkillSubClass(found[i].index)
-            collapsed[#collapsed + 1] = found[i].name
         end
     end
     -- Still finding closed categories after MAX_EXPAND_ROUNDS: stop opening the player's window.
-    return collapsed, true
+    return true
 end
 
 --- CollapseAgain(names) -> true when every name was found and closed.
@@ -492,8 +496,14 @@ end
 local function restore(scan)
     if not scan.touched then return true end
     local ok, err = pcall(function()
-        applyFilters(scan.filters)
+        -- Categories first and filters second, which is the reading order of docs/11 B1 point 2
+        -- run backwards. A category is found by name in 1..GetNumTradeSkills(), and a filter
+        -- decides what is in that list: with the player's filter already back on, a category it
+        -- hides is not there to be closed, so it would be left open and the scan would say so on
+        -- every read of every filtered window. What can only be read with the filters off can only
+        -- be written with the filters off.
         scan.collapseOk = collapseAgain(scan.collapsed)
+        applyFilters(scan.filters)
         scan.filtersOk = M.FiltersEqual(scan.filters, M.ReadFilters())
     end)
     if not ok then
@@ -530,7 +540,7 @@ local function finish(scan, ok, reason)
     -- A window the player already closed has nothing left to put back, and saying so would be
     -- blaming the addon for the player's own click.
     if not restored and windowOpen then
-        Log.Print("%s", L["PandaQuest could not put your profession window filters back exactly as they were."])
+        Log.Print("%s", L["PandaQuest could not put your profession window back exactly as you left it."])
     end
     if ok then
         local entry = scan.entry
@@ -585,8 +595,7 @@ function M.Start()
     clearFilters()
 
     scan.handle = Thread.Run(function()
-        local collapsed, incomplete = expandAll()
-        scan.collapsed = collapsed
+        local incomplete = expandAll(scan)
         if incomplete then
             Log.Warn("RecipeScanner", "categories were still collapsing after %d rounds", MAX_EXPAND_ROUNDS)
         end

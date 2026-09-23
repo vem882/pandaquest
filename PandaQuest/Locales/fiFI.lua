@@ -411,8 +411,8 @@ local T = {
     ["Profession scan stopped. Nothing was saved."] = "Ammattiskannaus pysäytettiin. Mitään ei tallennettu.",
     ["PandaQuest will not touch your profession window: it cannot put %s back the way you left it."] =
         "PandaQuest ei koske ammatti-ikkunaasi: se ei saa palautettua kohtaa %s sellaiseksi kuin jätit sen.",
-    ["PandaQuest could not put your profession window filters back exactly as they were."] =
-        "PandaQuest ei saanut palautettua ammatti-ikkunan suodattimia täsmälleen ennalleen.",
+    ["PandaQuest could not put your profession window back exactly as you left it."] =
+        "PandaQuest ei saanut palautettua ammatti-ikkunaa täsmälleen sellaiseksi kuin jätit sen.",
     ["Profession scan finished: %s %d/%d, %d recipes in %s."] =
         "Ammattiskannaus valmis: %s %d/%d, %d reseptiä, kesto %s.",
     ["%d recipes were left out because the game had not loaded their reagents yet. Open the window again to finish them."] =
