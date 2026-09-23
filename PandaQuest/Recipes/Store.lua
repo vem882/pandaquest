@@ -43,6 +43,13 @@ M.LIMITS = {
     maxReagents = 8,
 }
 
+--- The largest quantity docs/11 C1.1's grammar carries: minMade, maxMade and a reagent's count are
+-- all 1...1000. Nothing craftable in the game comes near it, so this is not a cap anything real
+-- meets -- it is the line past which the client is answering something the contract cannot hold,
+-- and Recipes/Scanner.lua drops such a row rather than trimming it, because one row that breaks
+-- the grammar is the whole book rejected at ingest.
+M.MAX_AMOUNT = 1000
+
 -- skillType as GetTradeSkillInfo returns it (Blizzard_TradeSkillUI/Mists/Blizzard_TradeSkillUI
 -- .lua:19-25) -> the letter the encoding uses. This is the difficulty THIS character sees at THIS
 -- rank, never the breakpoint: the orange/yellow/green/grey thresholds are the hub's to bracket

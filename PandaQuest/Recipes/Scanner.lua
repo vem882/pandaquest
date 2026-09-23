@@ -381,6 +381,12 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
         scan.skipped = scan.skipped + 1
         return nil
     end
+    if scan.seen[spellID] then
+        -- One spellID appears once in a book (docs/11 C1.1). A second row for the same recipe is
+        -- the client repeating itself, not a second sample of anything.
+        scan.skipped = scan.skipped + 1
+        return nil
+    end
     local itemID = M.ParseItemID(GetTradeSkillItemLink(index), skillName)
     if not itemID and not altVerb then
         -- A missing product and an enchant look identical from the link alone, and altVerb is what
@@ -395,10 +401,24 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
     minMade = Store.Amount(minMade, 1)
     maxMade = Store.Amount(maxMade, minMade)
     if maxMade < minMade then maxMade = minMade end
+    if maxMade > Store.MAX_AMOUNT then
+        -- Out of the range the contract's grammar can carry (docs/11 C1.1). Dropped rather than
+        -- clamped, for the reason the missing reagent below is dropped: a number the client made
+        -- up, written down as if it were the recipe, is a crafting cost that is wrong and looks
+        -- right -- and one bad row is the whole book rejected at ingest.
+        scan.skipped = scan.skipped + 1
+        return nil
+    end
 
     local numReagents = tonumber(GetTradeSkillNumReagents(index)) or 0
-    if numReagents > Store.LIMITS.maxReagents then numReagents = Store.LIMITS.maxReagents end
-    local reagents = {}
+    if numReagents > Store.LIMITS.maxReagents then
+        -- MAX_TRADE_SKILL_REAGENTS is 8 (Blizzard_TradeSkillUI/Mists/Blizzard_TradeSkillUI.lua:2)
+        -- and the window draws no more, so this only ever fires on a client answering nonsense --
+        -- which is exactly when keeping the first eight of nine and calling it the recipe is worst.
+        scan.skipped = scan.skipped + 1
+        return nil
+    end
+    local reagents, seen = {}, {}
     for n = 1, numReagents do
         -- Return 4 is playerReagentCount: how many of it are in the player's bags right now. It is
         -- dropped at the call rather than at ingest, because docs/07 B2 puts minimisation where
@@ -412,9 +432,20 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
             scan.incomplete = scan.incomplete + 1
             return nil
         end
-        reagents[n] = { reagentID, Store.Amount(reagentCount, 1) }
+        local amount = Store.Amount(reagentCount, 1)
+        if seen[reagentID] or amount > Store.MAX_AMOUNT then
+            -- One reagent listed twice, or wanted in a quantity the grammar has no room for. No
+            -- recipe in the game is either, so the client is the thing that is wrong, and a wrong
+            -- crafting cost is the one thing this walk refuses to write down.
+            scan.skipped = scan.skipped + 1
+            return nil
+        end
+        seen[reagentID] = true
+        reagents[n] = { reagentID, amount }
         Thread.Yield()
     end
+    -- Written down only now: a row that failed further down is not one this book has already read.
+    scan.seen[spellID] = true
     return Store.EncodeRecipe({ spellID = spellID, itemID = itemID, minMade = minMade,
                                 maxMade = maxMade, difficulty = difficulty, reagents = reagents })
 end
@@ -604,7 +635,8 @@ function M.Start()
         startedAt = unixNow(), startedClock = clock(),
         profession = (lineName ~= "" and lineName) or "Unknown",
         rank = tonumber(rank) or 0, maxRank = tonumber(maxRank) or 0,
-        rows = {}, collapsed = {}, skipped = 0, incomplete = 0, unnamed = 0, truncated = false,
+        rows = {}, collapsed = {}, seen = {},
+        skipped = 0, incomplete = 0, unnamed = 0, truncated = false,
         filtersOk = true, collapseOk = true,
     }
     scan.skillLine = M.ResolveSkillLine(lineName)
