@@ -171,20 +171,33 @@ end
 -- It can legitimately fail, and then the entry has no id. Mining's window is called Smelting: its
 -- name matches no profession and no display name, and guessing from the rank would be inventing a
 -- fact. docs/11 C1.1 says what the hub does with a book that has a name and no id.
-function M.ResolveSkillLine(lineName)
-    if type(lineName) ~= "string" or lineName == "" then return nil end
-    if GetProfessions and GetProfessionInfo then
-        local slots = { GetProfessions() }
-        for i = 1, #slots do
-            local name, _, _, _, _, _, skillLine = GetProfessionInfo(slots[i])
-            if name == lineName and type(skillLine) == "number" then return skillLine end
+function M.ResolveSkillLine(want)
+    if type(want) ~= "string" or want == "" then return nil end
+    if type(GetProfessions) == "function" and type(GetProfessionInfo) == "function" then
+        -- Six returns, any of them nil: two primaries, archaeology, fishing, cooking, first aid.
+        -- They are named one by one rather than collected into a table, the way Blizzard names them
+        -- (SpellBook_UpdateProfTab at Blizzard_UIPanels_Game/Mists/SpellBookFrame.lua:700, with
+        -- FormatProfession opening `if index then` at :581) and the way Nodes/Professions.lua:174
+        -- already does here. A table built from them has holes, and on the client's Lua 5.1
+        -- `#{a, b, nil, nil, e, nil}` is 2 -- so every slot after the first gap goes unread --
+        -- while `#{a, b, nil, d, e, f}` is 6, so GetProfessionInfo(nil) gets called.
+        local ok, a, b, c, d, e, f = pcall(GetProfessions)
+        if ok then
+            local indices = { a, b, c, d, e, f }
+            for i = 1, 6 do
+                local index = indices[i]
+                if type(index) == "number" then
+                    local okInfo, name, _, _, _, _, _, skillLine = pcall(GetProfessionInfo, index)
+                    if okInfo and name == want and type(skillLine) == "number" then return skillLine end
+                end
+            end
         end
     end
     local api = C_TradeSkillUI
     if type(api) == "table" and type(api.GetTradeSkillDisplayName) == "function" then
         for i = 1, #SKILL_LINES do
             local ok, name = pcall(api.GetTradeSkillDisplayName, SKILL_LINES[i])
-            if ok and name == lineName then return SKILL_LINES[i] end
+            if ok and name == want then return SKILL_LINES[i] end
         end
     end
     return nil
