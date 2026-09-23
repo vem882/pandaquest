@@ -194,18 +194,21 @@ end
 -- Filters: read, clear, restore
 ---------------------------------------------------------------------------
 
---- MissingCall() -> the name of the first call a scan needs and this client does not have, or nil.
+--- MissingCall() -> name, kind. kind is "required" for a call without which there is no scan at
+-- all and "filter" for the half of a filter pair whose other half is there. The two are different
+-- refusals and the player is owed the right one: a reader the client does not have is not
+-- something the addon is declining to put back.
 -- A filter whose reader and writer are BOTH missing is not a filter this client has, so there is
 -- nothing to clear and nothing to restore; one half on its own is the refusal.
 function M.MissingCall()
     for i = 1, #REQUIRED_CALLS do
-        if type(_G[REQUIRED_CALLS[i]]) ~= "function" then return REQUIRED_CALLS[i] end
+        if type(_G[REQUIRED_CALLS[i]]) ~= "function" then return REQUIRED_CALLS[i], "required" end
     end
     for i = 1, #FILTER_CALLS do
         local getter, setter = FILTER_CALLS[i][1], FILTER_CALLS[i][2]
         local hasGet, hasSet = type(_G[getter]) == "function", type(_G[setter]) == "function"
         if hasGet ~= hasSet then
-            return hasGet and setter or getter
+            return (hasGet and setter or getter), "filter"
         end
     end
     return nil
@@ -535,9 +538,9 @@ end
 function M.CanScan()
     if ctx then return false, "running" end
     if not windowOpen then return false, "closed" end
-    local missing = M.MissingCall()
+    local missing, kind = M.MissingCall()
     if missing then
-        if type(_G.GetNumTradeSkills) ~= "function" then return false, "unsupported" end
+        if kind == "required" then return false, "unsupported" end
         return false, "restore", missing
     end
     -- Before anything at all is touched: this is the one refusal that is about somebody else.
@@ -729,7 +732,14 @@ local function tryAutomatic()
     if type(GetNumTradeSkills) ~= "function" or (tonumber(GetNumTradeSkills()) or 0) == 0 then
         return
     end
-    M.Start()
+    if not M.Start() then
+        -- Every refusal reachable here -- a filter that cannot be put back, a call this client does
+        -- not have -- is true for as long as this window is open, and Blizzard's own window fires
+        -- TRADE_SKILL_UPDATE freely while it is (Blizzard_TradeSkillUI/Mists/
+        -- Blizzard_TradeSkillUI.lua:176-181), every filter setter and every expand among them. Said
+        -- once per opening like the linked-book refusal next to it, not forty times.
+        armed = false
+    end
 end
 
 local function onShow()
@@ -773,6 +783,12 @@ end
 --- ChatCommand(arg): what is left of `/pq scan professions [status]`.
 function M.ChatCommand(arg)
     arg = tostring(arg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
+    -- The auction scanner's own word, and it has to mean the same thing here: a player who learned
+    -- `stop` from `/pq scan` and typed it at `/pq scan professions` was starting a scan instead.
+    if arg == "stop" then
+        if not M.Stop("stopped") then Log.Print("%s", L["No scan is running."]) end
+        return
+    end
     if arg == "status" then
         statusLines()
         return
