@@ -563,8 +563,8 @@ local function onTakeTaxiNode(index)
         return
     end
     -- The number of legs travels with the click. It is not part of the key and not part of the
-    -- store -- see the note on M.RouteKey -- but it is the one thing that says whether two samples of
-    -- one route measured one path, and a reader chasing a route whose median moved needs to be
+    -- store -- see the note on M.RouteKey -- but it is the one thing that says whether two samples
+    -- of one route measured one path, and a reader chasing a route whose median moved needs to be
     -- able to see it. A chain of n slots is n-1 legs; nil when the polarity could not be settled.
     local legs = entry.hops and (#entry.hops - 1) or nil
     pending = { src = currentNodeID, dst = entry.nodeID, name = entry.name, at = now(), legs = legs }
