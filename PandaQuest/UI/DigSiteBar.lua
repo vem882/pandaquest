@@ -51,8 +51,10 @@
 --
 -- It stays hidden until a survey is cast, hides again when CanScanResearchSite() goes false, is
 -- dragged with the mouse when unlocked, and is switched off entirely by profile.archaeology
--- .digSiteBar. It never guesses: a race the client will not name is drawn with no name rather than
--- with a made-up one.
+-- .digSiteBar -- which refuses the preview too, from either the command or the options button.
+-- It never guesses: a race the client will not name is drawn with no name rather than with a
+-- made-up one, and the counts on screen are the client's own, never the ones clamped to give the
+-- StatusBar a legal range.
 local _, ns = ...
 local L = ns.L
 
@@ -298,6 +300,11 @@ end
 -- showing, for the tests, which cannot look at a screen. Fields the bar does not have are absent
 -- rather than blank: outside a dig site there is no branchID, and a race the client will not name
 -- has no raceName.
+--
+-- `found` and `total` are the StatusBar's own range, which draw() clamps to something legal to
+-- fill; `text` is the line the player reads, which is the client's numbers unclamped. On every
+-- payload a 5.5.4 client really sends the two agree, and where they do not it is `text` that is
+-- the measurement.
 function M.GetState()
     local found, total = 0, 0
     if fillBar then
