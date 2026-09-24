@@ -419,9 +419,14 @@ local function buildTable()
                     barLocked = toggle(7, L["Lock the bar in place"],
                         L["Unlocked, it can be dragged with the left mouse button."], "archaeology.barLocked"),
                     barScale = range(8, L["Bar size"], nil, "archaeology.barScale", 0.5, 2, 0.05),
+                    -- PreviewWithReply and not Preview: the button sits directly under the switch
+                    -- that can refuse it and under the lock that can make its advice useless, and
+                    -- it has to answer the way `/pq digsite` answers. One function, one answer.
                     show = { type = "execute", order = 9, name = L["Show me where it is"],
-                        desc = L["Puts an empty bar on screen for a moment so you can drag it."],
-                        func = function() if ns.DigSiteBar and ns.DigSiteBar.Preview then ns.DigSiteBar.Preview() end end },
+                        desc = L["Puts an empty bar on screen for a moment so you can find it, and drag it when it is unlocked."],
+                        func = function()
+                            if ns.DigSiteBar and ns.DigSiteBar.PreviewWithReply then ns.DigSiteBar.PreviewWithReply() end
+                        end },
                     reset = { type = "execute", order = 10, name = L["Reset bar position"],
                         func = function() if ns.DigSiteBar and ns.DigSiteBar.ResetPosition then ns.DigSiteBar.ResetPosition() end end },
                 },

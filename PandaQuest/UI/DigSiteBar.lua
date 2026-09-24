@@ -343,11 +343,29 @@ function M.Hide()
     visible = false
 end
 
+--- WhyNoPreview() -> the line to print instead of a preview, or nil when nothing is in the way.
+-- Both entry points -- `/pq digsite` and the options panel's "Show me where it is" -- ask this one
+-- question, because a switch that the command obeys and the button beside it ignores is two
+-- answers to one question.
+--
+-- The switch wins over an explicit request here, which is the opposite of the rule `/pq scan
+-- archaeology` follows (docs/11 B5: a player's own request is not the addon's decision). The two
+-- settings are different shapes. `snapshotOnOpen` is an automation switch -- "read it when I open
+-- the window" -- and a typed command is not that automation, so obeying the command contradicts
+-- nothing. `digSiteBar` says "Show the dig site progress bar", and a bar drawn after the player
+-- turned that off contradicts the switch in its own words.
+function M.WhyNoPreview()
+    if stoodDown then return L["This client draws its own dig site progress bar."] end
+    if settings().digSiteBar == false then return L["The dig site bar is switched off in /pq options."] end
+    return nil
+end
+
 --- Preview(): show the bar where it is, with no numbers in it, so the player can find it and drag
 -- it. It says "dig site" and nothing else on purpose -- a preview that filled the bar with a
 -- plausible 2/4 would be this addon showing a number it had not measured.
+-- Returns false when it drew nothing; WhyNoPreview() says why, in words for the player.
 function M.Preview()
-    if stoodDown then return false end
+    if M.WhyNoPreview() then return false end
     createFrame()
     if not frame then return false end
     branchID = nil
@@ -357,10 +375,33 @@ function M.Preview()
     return true
 end
 
+--- PreviewWithReply() -> true when the bar was drawn. The preview plus the one line of chat that
+-- goes with it, so that `/pq digsite` and the options panel's button do the same thing and say the
+-- same thing. Telling a player to drag a bar that is locked would be this addon asking for
+-- something its own settings forbid: onDragStart returns immediately while barLocked is set, and
+-- nothing on screen would say why the dragging did nothing.
+function M.PreviewWithReply()
+    local refusal = M.WhyNoPreview()
+    if refusal then
+        Log.Print("%s", refusal)
+        return false
+    end
+    M.Preview()
+    if settings().barLocked then
+        Log.Print("%s", L["The dig site bar is locked. Unlock it in /pq options to move it."])
+    else
+        Log.Print("%s", L["Drag the dig site bar where you want it. It hides itself again in a moment."])
+    end
+    return true
+end
+
 ---------------------------------------------------------------------------
 -- Events
 ---------------------------------------------------------------------------
 
+-- The same two conditions M.WhyNoPreview() names, as one yes-or-no for the event handlers. They
+-- have to stay in step: a bar that draws itself on a survey but refuses to preview, or the other
+-- way round, is the switch meaning two different things.
 local function enabled()
     return settings().digSiteBar ~= false and not stoodDown
 end
@@ -470,16 +511,5 @@ function M.Init()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
     -- `/pq digsite` -- show the bar where it is so it can be dragged, or say why there is none.
-    PQ.commands.digsite = function()
-        if stoodDown then
-            Log.Print("%s", L["This client draws its own dig site progress bar."])
-            return
-        end
-        if settings().digSiteBar == false then
-            Log.Print("%s", L["The dig site bar is switched off in /pq options."])
-            return
-        end
-        M.Preview()
-        Log.Print("%s", L["Drag the dig site bar where you want it. It hides itself again in a moment."])
-    end
+    PQ.commands.digsite = function() M.PreviewWithReply() end
 end

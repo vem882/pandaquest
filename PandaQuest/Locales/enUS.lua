@@ -389,13 +389,14 @@ L["Lock the bar in place"] = true
 L["Unlocked, it can be dragged with the left mouse button."] = true
 L["Bar size"] = true
 L["Show me where it is"] = true
-L["Puts an empty bar on screen for a moment so you can drag it."] = true
+L["Puts an empty bar on screen for a moment so you can find it, and drag it when it is unlocked."] = true
 L["Reset bar position"] = true
 L["Dig site progress"] = true
 L["Dig site complete"] = true
 L["This client draws its own dig site progress bar."] = true
 L["The dig site bar is switched off in /pq options."] = true
 L["Drag the dig site bar where you want it. It hides itself again in a moment."] = true
+L["The dig site bar is locked. Unlock it in /pq options to move it."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

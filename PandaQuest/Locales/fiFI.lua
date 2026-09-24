@@ -472,8 +472,8 @@ local T = {
         "Lukitsemattomana sitä voi raahata hiiren vasemmalla painikkeella.",
     ["Bar size"] = "Palkin koko",
     ["Show me where it is"] = "Näytä missä se on",
-    ["Puts an empty bar on screen for a moment so you can drag it."] =
-        "Näyttää tyhjän palkin hetkeksi, jotta voit raahata sen paikalleen.",
+    ["Puts an empty bar on screen for a moment so you can find it, and drag it when it is unlocked."] =
+        "Näyttää tyhjän palkin hetkeksi, jotta löydät sen ja voit raahata sen paikalleen, kun se ei ole lukittu.",
     ["Reset bar position"] = "Palauta palkin sijainti",
     ["Dig site progress"] = "Kaivauspaikan edistyminen",
     ["Dig site complete"] = "Kaivauspaikka valmis",
@@ -483,6 +483,8 @@ local T = {
         "Kaivauspalkki on kytketty pois päältä asetuksissa (/pq).",
     ["Drag the dig site bar where you want it. It hides itself again in a moment."] =
         "Raahaa kaivauspalkki haluamaasi kohtaan. Se piiloutuu itsestään hetken kuluttua.",
+    ["The dig site bar is locked. Unlock it in /pq options to move it."] =
+        "Kaivauspalkki on lukittu. Avaa lukitus asetuksissa (/pq), jos haluat siirtää sitä.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
