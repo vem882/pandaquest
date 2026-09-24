@@ -32,13 +32,13 @@
 -- around:
 --
 --   1. It swaps its own event registrations on show and hide -- SURVEY_CAST only while hidden,
---      FIND_COMPLETE and DIGSITE_COMPLETE only while shown (:29-41). That dance exists to stop its
+--      FIND_COMPLETE and DIGSITE_COMPLETE only while shown (:30-42). That dance exists to stop its
 --      AnimIn replaying on every survey of the same site. There are no animations here, so all
 --      three stay registered, and the bar simply redraws. It also fixes the case Blizzard's own
---      comment at :78 apologises for: a player walking from one dig site straight into another.
+--      comment at :81-83 apologises for: a player walking from one dig site straight into another.
 --      On 5.5.4 every one of these events carries researchBranchID, so which race the count belongs
 --      to is answered on every event rather than remembered from the last one.
---   2. It hides itself through an animation whose OnFinished sets shouldShow (:110-123). Here the
+--   2. It hides itself through an animation whose OnFinished sets shouldShow (:116-128). Here the
 --      leave check and the hold after a completed dig site are one OnUpdate with two deadlines.
 --
 -- It stays hidden until a survey is cast, hides again when CanScanResearchSite() goes false, is
@@ -55,7 +55,7 @@ ns.DigSiteBar = M
 
 local type, tonumber, pcall, format = type, tonumber, pcall, string.format
 
--- Blizzard's LEFT_DIGSITE_CHECK_TIME (Cata/ArchaeologyProgressBar.lua:1): how often the bar asks
+-- Blizzard's LEFT_DIGSITE_CHECK_TIME (Cata/ArchaeologyProgressBar.lua:2): how often the bar asks
 -- whether the player is still standing in a dig site. Half a second is also the whole OnUpdate
 -- budget of this file -- everything else is event driven.
 local LEAVE_CHECK = 0.5
