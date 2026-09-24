@@ -441,6 +441,8 @@ local T = {
         "Tämä asiakas ei tarjoa arkeologiatietoja, joita PandaQuest lukee.",
     ["This character has no archaeology races to read yet."] =
         "Tällä hahmolla ei ole vielä yhtään arkeologiakansaa luettavaksi.",
+    ["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] =
+        "Esinehistoriasi ei ole vielä saapunut, joten aiempi arkeologialukema säilytettiin.",
     ["No archaeology has been read on this character yet."] =
         "Tällä hahmolla ei ole vielä luettu arkeologiaa.",
     ["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] =

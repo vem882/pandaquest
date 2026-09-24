@@ -141,7 +141,9 @@ local function readArtifacts(raceIndex, history)
     return out, truncated
 end
 
---- ReadRaces(snapshot) -> array of races.
+--- ReadRaces(snapshot, history) -> array of races. `snapshot` carries the counters the walk fills
+-- in (skipped, unkeyed, truncated); `history` is the one IsArtifactCompletionHistoryAvailable()
+-- answer this reading uses throughout.
 local function readRaces(snapshot, history)
     local okCount, count = pcall(GetNumArchaeologyRaces)
     if not okCount then return {} end
@@ -194,9 +196,32 @@ function M.CanSnapshot()
     return true
 end
 
+--- KeepsStored(entry) -> true when the snapshot already in the file is a better reading of this
+-- character than the one just taken, so nothing is written.
+--
+-- There is exactly one way an archaeology reading can come out short, and it is the completion
+-- history: after a fresh login the server has not sent it yet, GetArtifactInfoByRace's last two
+-- returns mean nothing until it does, and 5.5.4 has no RequestArtifactCompletionHistory to hurry it
+-- along. Without this guard the first window opened after logging in would replace a snapshot that
+-- HAS the completion counts with one that does not, and they would be gone until the player next
+-- opened the window at a luckier moment -- which is Recipes/Scanner.lua's cold-item-cache problem
+-- with a different cause.
+--
+-- Bounded the same way that one is, so this can never become "the file stops updating": only at the
+-- same rank, and only when the stored reading is not the smaller of the two. A rank change or a
+-- longer artifact list is new information and always replaces.
+local function keepsStored(entry)
+    if entry.historyAvailable then return false end
+    local stored = Store.GetArchaeology(entry.character, entry.realm)
+    if type(stored) ~= "table" or not stored.historyAvailable then return false end
+    if stored.rank ~= entry.rank then return false end
+    return M.CountArtifacts(stored) >= M.CountArtifacts(entry)
+end
+
 --- Archaeology.Snapshot() -> entry|nil, reason.
 -- reason is "unsupported" (this client has no archaeology API), "empty" (it has one and this
--- character has no races in it) or nil on success. It runs in one frame on purpose, where the
+-- character has no races in it), "short" (see keepsStored) or nil on success. It runs in one frame
+-- on purpose, where the
 -- recipe walk does not: this is a bounded read of a few dozen numbers with no link parsing and no
 -- player UI to disturb, and a job spread over frames would be more machinery than the work.
 function M.Snapshot()
@@ -255,6 +280,10 @@ function M.Snapshot()
         unkeyed = snapshot.unkeyed,
         truncated = snapshot.truncated,
     }
+    if keepsStored(entry) then
+        lastResult = { ok = false, reason = "short", at = scannedAt }
+        return nil, "short"
+    end
     Store.SetArchaeology(entry)
     lastResult = { ok = true, entry = entry, at = scannedAt }
     return entry
@@ -291,6 +320,7 @@ end
 local function reasonText(reason)
     if reason == "unsupported" then return L["This client does not offer the archaeology data PandaQuest reads."] end
     if reason == "empty" then return L["This character has no archaeology races to read yet."] end
+    if reason == "short" then return L["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] end
     return nil
 end
 
