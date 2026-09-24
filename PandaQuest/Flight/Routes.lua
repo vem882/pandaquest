@@ -192,6 +192,14 @@ end
 --- RouteKey(srcNodeID, dstNodeID) -> "src-dst", or nil when either id is not a number.
 -- Ordered: Gadgetzan to Orgrimmar and Orgrimmar to Gadgetzan are two routes, because they are two
 -- flights over two paths and there is no reason to assume they take the same time.
+--
+-- The pair of node ids is the whole key, and that is a known limit rather than a claim about the
+-- game. A flight from A to B is not one path: Capture() reads a hop chain per destination, and
+-- which intermediate points a character flies through depends on which of them that character has
+-- discovered. So if the chain for a pair changes, the ring mixes samples of two paths under one
+-- median until it has turned over. The sample count is printed beside every figure, the leg count
+-- goes to the log on every landing, and docs/12 B4 says this out loud. What is NOT claimed
+-- anywhere is that a route takes the same time on every character: nothing here measured that.
 function M.RouteKey(srcNodeID, dstNodeID)
     local src, dst = tonumber(srcNodeID), tonumber(dstNodeID)
     if not (src and dst) then return nil end
@@ -554,7 +562,12 @@ local function onTakeTaxiNode(index)
         Log.Debug("Flight", "taxi slot %s was not cached; this flight will not be measured", tostring(index))
         return
     end
-    pending = { src = currentNodeID, dst = entry.nodeID, name = entry.name, at = now() }
+    -- The number of legs travels with the click. It is not part of the key and not part of the
+    -- store -- see the note on Record -- but it is the one thing that says whether two samples of
+    -- one route measured one path, and a reader chasing a route whose median moved needs to be
+    -- able to see it. A chain of n slots is n-1 legs; nil when the polarity could not be settled.
+    local legs = entry.hops and (#entry.hops - 1) or nil
+    pending = { src = currentNodeID, dst = entry.nodeID, name = entry.name, at = now(), legs = legs }
 end
 
 --- The takeoff edge. UnitOnTaxi is the authority; the event only says when.
@@ -576,11 +589,12 @@ local function onControlLost()
         Log.Debug("Flight", "a click %.0f s old is not this takeoff; nothing measured", waited)
         return
     end
-    flight = { src = click.src, dst = click.dst, name = click.name,
+    flight = { src = click.src, dst = click.dst, name = click.name, legs = click.legs,
                startedAt = now(), discarded = false }
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", flight.src, flight.dst) end
-    Log.Debug("Flight", "measuring %d-%d", flight.src, flight.dst)
+    Log.Debug("Flight", "measuring %d-%d over %s legs", flight.src, flight.dst,
+        tostring(flight.legs or "an unread number of"))
 end
 
 --- The landing edge. Control can come back while the player is still on the taxi -- that is not a
@@ -596,6 +610,13 @@ local function onControlGained()
         Log.Debug("Flight", "%d-%d landed early; nothing recorded", f.src, f.dst)
         return
     end
+    -- The leg count is logged and not stored. Two samples of one node-id pair flown over different
+    -- hop chains -- because the character has since found an intermediate flight point -- go into
+    -- one median, and the store has no field that would tell them apart. That is stated in
+    -- docs/12 B4 rather than papered over; this line is what a reader chasing a route whose median
+    -- moved has to go on.
+    Log.Debug("Flight", "%d-%d landed after %s legs", f.src, f.dst,
+        tostring(f.legs or "an unread number of"))
     return M.Record(f.src, f.dst, now() - f.startedAt)
 end
 
