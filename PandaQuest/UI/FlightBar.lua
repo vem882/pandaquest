@@ -7,7 +7,10 @@
 --     the bar shows how far along the flight is and how much is left;
 --   * without one it shows the time in the air and nothing else. No fill, no remaining. A
 --     fraction needs a whole, and an unflown route has no whole; a bar drawn 40% across would be
---     this addon inventing the other 60%.
+--     this addon inventing the other 60%;
+--   * and once the player has pressed "land here", the same elapsed-only face whatever the route
+--     was measured at. The taxi is not going there any more, so neither the remainder nor the
+--     name is about the flight still happening.
 --
 -- **Why one measured flight is not enough to draw a fill.** A median of one sample is that
 -- sample. platform/server/pandaquest_hub/respawn.py:69-71 fixes MIN_SAMPLES = 2 in so many words
@@ -292,6 +295,16 @@ function M.Refresh()
     if not flight then
         M.Hide()
         return false
+    end
+    if flight.discarded then
+        -- "Land here" was pressed. The taxi is coming down somewhere that is not the destination,
+        -- so the remaining time is no longer a remainder of anything and the name on the bar is no
+        -- longer where the player is going. Flight/Routes.lua already refuses to record this
+        -- flight (:595); the bar has to stop drawing it as that route too, rather than counting
+        -- down to a place the player has just cancelled. The time in the air is still true, so
+        -- that is what is left: elapsed only, no fill, no name.
+        draw(nil, flight.elapsed, nil, nil)
+        return true
     end
     draw(flight.name, flight.elapsed, flight.seconds, flight.samples)
     return true
