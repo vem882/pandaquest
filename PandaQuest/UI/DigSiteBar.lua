@@ -77,10 +77,19 @@ local IDLE_TIMEOUT = 300
 --- How long M.Preview() leaves an empty bar on screen for the player to drag.
 local PREVIEW_HOLD = 20
 
+-- The bar at "Bar size" 1.0. Everything inside it is a fraction of these, recomputed in
+-- applyLayout, because a slider that moved the frame and left its contents at 1.0 would be a
+-- slider that breaks the frame: at 0.5 the 14 px fill bar is taller than the 17 px frame and the
+-- text lands on top of it, at 2.0 there is a 44 px gap of mouse-enabled nothing between them.
 local BASE_WIDTH, BASE_HEIGHT = 240, 34
+local BASE_FILL_HEIGHT = 14
 
 local frame, fillBar, raceText, countText
-local branchID                  -- the race the visible count belongs to, as this event named it
+--- The font size the template gave the two font strings, read once before anything scaled them.
+-- Read once rather than on every applyLayout: reading it back after a SetFont would multiply the
+-- last scale by the new one, and the bar would grow every time the slider moved.
+local baseFontSize
+local branchID                -- the race the visible count belongs to, as this event named it
 local accum = 0                 -- seconds since the last leave check
 --- GetTime() at which the bar hides itself, or nil. While it is set it is the ONLY thing that
 -- hides the bar: a preview and a finished dig site both outlive the dig site they were drawn for.
@@ -158,13 +167,32 @@ local function onUpdate(self, elapsed)
     if (t - lastEventAt) > IDLE_TIMEOUT then M.Hide() end
 end
 
+local function scaleFont(fontString, size)
+    if not (fontString and fontString.GetFont and fontString.SetFont and size) then return end
+    local path, _, flags = fontString:GetFont()
+    if path then fontString:SetFont(path, size, flags) end
+end
+
+--- applyLayout(): "Bar size" moves the frame AND everything drawn in it.
+-- Nav/Arrow.lua does the same for its textures (:429-438) and for the same reason: the fill bar's
+-- height and the two font strings are set once at creation, so a frame that scaled on its own
+-- would leave them behind -- at 0.5 the 14 px fill bar is taller than the 17 px frame and the text
+-- sits on top of it, at 2.0 there is a 44 px band of mouse-enabled nothing between them.
 local function applyLayout()
     if not frame then return end
     local p = settings()
     local scale = tonumber(p.barScale) or 1
+    -- A profile edited by hand could hold a zero or a negative, which would collapse the frame to
+    -- nothing the player could ever click again. The slider itself only offers 0.5 to 2.0.
+    if scale <= 0 then scale = 1 end
     frame:SetSize(BASE_WIDTH * scale, BASE_HEIGHT * scale)
     frame:SetMovable(not p.barLocked)
     frame:EnableMouse(true)
+    if fillBar then fillBar:SetHeight(BASE_FILL_HEIGHT * scale) end
+    if baseFontSize then
+        scaleFont(raceText, baseFontSize * scale)
+        scaleFont(countText, baseFontSize * scale)
+    end
 end
 
 local function applyPosition()
@@ -187,7 +215,7 @@ local function createFrame()
     fillBar = CreateFrame("StatusBar", nil, frame)
     fillBar:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 0, 0)
     fillBar:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 0)
-    fillBar:SetHeight(14)
+    fillBar:SetHeight(BASE_FILL_HEIGHT)
     fillBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
     fillBar:SetStatusBarColor(0.9, 0.7, 0.2)
     fillBar:SetMinMaxValues(0, 1)
@@ -202,6 +230,10 @@ local function createFrame()
     raceText:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
     countText = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     countText:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+    if raceText.GetFont then
+        local _, size = raceText:GetFont()
+        baseFontSize = tonumber(size)
+    end
 
     frame:SetScript("OnDragStart", onDragStart)
     frame:SetScript("OnDragStop", onDragStop)
@@ -280,6 +312,24 @@ function M.GetState()
         found = found, total = total,
         locked = settings().barLocked and true or false,
         text = countText and countText:GetText() or nil,
+    }
+end
+
+--- GetLayout() -> { width, height, fillHeight, fontSize }, or nil before the frame exists - the
+-- sizes the bar is actually drawn at. Like GetState(), it is here because the tests cannot look at
+-- a screen, and because "Bar size" has to move all four together or the pieces come apart inside
+-- the frame.
+function M.GetLayout()
+    if not frame then return nil end
+    local fontSize
+    if raceText and raceText.GetFont then
+        local _, size = raceText:GetFont()
+        fontSize = size
+    end
+    return {
+        width = frame:GetWidth(), height = frame:GetHeight(),
+        fillHeight = fillBar and fillBar:GetHeight() or nil,
+        fontSize = fontSize,
     }
 end
 
