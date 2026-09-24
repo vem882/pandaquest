@@ -8,7 +8,7 @@
 -- **Why there is nothing to show before the first flight.** TaxiNodePosition and
 -- TaxiGetSrcX/SrcY/DestX/DestY answer normalised positions on the taxi map TEXTURE, not on any
 -- world map: Blizzard multiplies them by TAXI_MAP_WIDTH/TAXI_MAP_HEIGHT (580x580) and flips y as
--- 1.0-y purely to place a 16 px button (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:66-68), and
+-- 1.0-y purely to place a 16 px button (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:68-69), and
 -- the vanilla frame uses a different texture size for the same world. Turning those into yards
 -- means choosing a scale nobody measured, and there is no taxi speed constant anywhere in either
 -- reference tree to divide it by. So a route that has never been flown shows nothing at all --
@@ -17,14 +17,14 @@
 -- **The key is a pair of numeric node ids, never a name.** C_TaxiMap.GetAllTaxiNodes(uiMapID)
 -- returns TaxiNodeInfo records carrying both `nodeID` -- stable and language independent -- and
 -- `slotIndex`, which is the index space NumTaxiNodes / TaxiNodeName / TaxiNodeCost / TakeTaxiNode
--- all speak (Blizzard_APIDocumentationGenerated/TaxiMapDocumentation.lua:100-113). slotIndex is
+-- all speak (Blizzard_APIDocumentationGenerated/TaxiMapDocumentation.lua:111-122). slotIndex is
 -- the bridge; nodeID is what goes in the file. Keying by TaxiNodeName would give a Finnish client
 -- and an English one two different stores for one flight, and would break the moment Blizzard
 -- retitles a node.
 --
 -- **The two node surfaces are never mixed.** TaxiNodeGetType answers one of five strings and
 -- "DISTANT" is one of them; Enum.FlightPathState has three values and no DISTANT at all
--- (TaxiMapDocumentation.lua:88-99). Reading reachability from `state` would call every distant
+-- (TaxiMapDocumentation.lua:83-95). Reading reachability from `state` would call every distant
 -- node reachable. So reachability, and which node the player is standing at, are read from
 -- TaxiNodeGetType and from nothing else; C_TaxiMap is asked only for nodeID and slotIndex.
 --
@@ -346,8 +346,8 @@ end
 --
 -- The argument is undocumented: _reference/misc/WoW-API/WoW-API/Data/Wiki.lua:9410 declares
 -- TaxiGetNodeSlot with no parameters at all, and the only evidence for its meaning is two of
--- Blizzard's own call sites naming the results srcSlot and dstSlot (Shared/TaxiFrame.lua:175-178,
--- :243-246). That is a reading, not a contract, and this file refuses to depend on it.
+-- Blizzard's own call sites naming the results srcSlot and dstSlot (Shared/TaxiFrame.lua:172-177,
+-- :240-245). That is a reading, not a contract, and this file refuses to depend on it.
 --
 -- There is a free discriminator on every taxi map. A direct flight has exactly one leg, and that
 -- leg runs from the node the player is standing at to the node they are hovering: so whichever
@@ -639,8 +639,17 @@ local function hookTaxiGlobals()
     if type(_G.TakeTaxiNode) ~= "function" then return end
     hooked = true
     hooksecurefunc("TakeTaxiNode", onTakeTaxiNode)
-    -- The player pressing "land here" on the possess bar (Blizzard_ActionBar/
-    -- Classic_PossessActionBar.lua:65 is the call site). What happens after it is not the route.
+    -- The player pressing "land here" on the possess bar. What happens after it is not the route.
+    --
+    -- This hook is as unverified as the two guarded calls above, and for the same reason:
+    -- TaxiRequestEarlyLanding has NO call site anywhere in _reference/wow-ui-source-classic, and
+    -- Blizzard_ActionBar is not in that tree at all. The only call site in any reference tree is
+    -- _reference/misc/WoW-API/WoW-API/_UI/Blizzard_ActionBar/Classic_PossessActionBar.lua:65 --
+    -- whose own first lines say it is an auto-generated LuaLS annotation stub, not shipped 5.5.4
+    -- UI code. The function itself is in _reference/misc/ketho/GlobalAPI_classic.lua, so it exists
+    -- on this client; whether the cancel button really calls it is on docs/12's in-game-only list.
+    -- If it does not, an early landing is recorded as a normal flight of the wrong duration, which
+    -- is why the type check below is the guard and not the citation.
     if type(_G.TaxiRequestEarlyLanding) == "function" then
         hooksecurefunc("TaxiRequestEarlyLanding", function()
             if flight then flight.discarded = true end

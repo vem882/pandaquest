@@ -3,7 +3,7 @@
 -- **Why the tooltip and not a label on the map.** This client loads Shared/TaxiFrame.lua
 -- (Blizzard_UIPanels_Game_Classic.toc:75, "[AllowLoadGameType cata, mists]"), which has no
 -- destination list at all -- only TaxiButton<i> pins on the map texture, 16x16, shoved apart to a
--- minimum TAXI_BUTTON_MIN_DIST of 18 px (Shared/TaxiFrame.lua:29, :84-92). A time written beside
+-- minimum TAXI_BUTTON_MIN_DIST of 18 px (Shared/TaxiFrame.lua:32, :83-89). A time written beside
 -- a pin would land on top of its neighbour on any crowded continent. The tooltip is the one place
 -- with room, and it is already the place the player reads the destination's name and its price.
 --

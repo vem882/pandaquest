@@ -22,7 +22,7 @@
 -- **Why there is no position-based progress bar here.** It was considered: the player's own world
 -- position against the route's hop endpoints would be a real fraction of the way flown, needing no
 -- timing at all. It cannot be built honestly on this client. The hop endpoints exist only as
--- normalised positions on the taxi map TEXTURE (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:66-68
+-- normalised positions on the taxi map TEXTURE (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:68-69
 -- multiplies them by 580x580 and flips y purely to place a button), while ns.Player.GetPosition()
 -- answers a UI map position and world yards (Quest/Player.lua:144-175). Relating the two means
 -- choosing a scale between a texture and a world -- exactly the invention Flight/Routes.lua's
@@ -32,10 +32,17 @@
 -- question it could not answer. It is not built, and this comment is here so the next reader knows
 -- it was weighed rather than missed.
 --
--- Everything about the frame itself -- its size, its fill, its lock, its drag, its "Bar size"
--- slider and the three settings keys that remember where it was dragged to -- is UI/DigSiteBar
--- .lua's, deliberately unchanged. Two progress bars in one addon that behaved differently would be
--- two answers to one question the player already answered once.
+-- The frame is shaped the way Nav/Arrow.lua's is: a movable, clamped frame with a lock, a scale
+-- slider, and the anchor it was dragged to kept in the profile (Nav/Arrow.lua's savePosition at
+-- :261-267, and ns.DEFAULTS.profile.arrow in Core/Const.lua:48 for the key shape). Two draggable
+-- frames in one addon that behaved differently would be two answers to one question the player
+-- already answered once.
+--
+-- Its four geometry numbers, though -- TICK aside -- are this file's own choice and are not
+-- measured. They are named and argued for below, and every one of them is on docs/12's
+-- in-game-only list, because how wide 240 px is against the strings that go in it is a question
+-- only a client can answer. None of them decides a number the player reads: nothing this file
+-- prints changes if they change.
 local _, ns = ...
 local L = ns.L
 
@@ -47,32 +54,49 @@ ns.FlightBar = M
 local type, tonumber, format = type, tonumber, string.format
 local floor, min = math.floor, math.min
 
---- How often the bar redraws itself. UI/DigSiteBar.lua's LEAVE_CHECK, which is in turn Blizzard's
--- own LEFT_DIGSITE_CHECK_TIME (Cata/ArchaeologyProgressBar.lua:2), taken unchanged: it is this
--- addon's established budget for "the only per-frame work in a bar". The consequence is that the
--- seconds digit can be up to half a second behind the clock, which is why it is floored rather
--- than rounded -- a rounded digit would sometimes show a second the flight has not reached.
+--- How often the bar redraws itself. Blizzard's own progress bar for a timed, moment-to-moment
+-- reading checks at exactly this interval -- LEFT_DIGSITE_CHECK_TIME = 0.5 at
+-- _reference/wow-ui-source-classic/Interface/AddOns/Blizzard_FrameXML/Cata/ArchaeologyProgressBar
+-- .lua:2 -- and so does this addon's own UI/Tracker.lua (REFRESH_INTERVAL, :20). Half a second is
+-- therefore the established budget here for "the only per-frame work in a frame". The consequence
+-- is that the seconds digit can be up to half a second behind the clock, which is why it is
+-- floored rather than rounded: a rounded digit would sometimes name a second the flight has not
+-- reached, and a second the flight has not reached is a number nothing measured.
 local TICK = 0.5
 
---- How long M.Preview() leaves an empty bar on screen for the player to drag. UI/DigSiteBar.lua's
--- PREVIEW_HOLD, unchanged.
+--- How long M.Preview() leaves an empty bar on screen for the player to drag. This file's own
+-- choice, and not a measurement: nothing has timed how long a player takes to find a bar and drag
+-- it. It prints no number -- the preview's text is the fixed word "Flight progress" -- so the only
+-- thing it trades off is a player who did not find the bar in time against a bar that sits on
+-- screen after they have stopped looking. Twenty seconds leans towards the first, because `/pq
+-- flight` and the options button can both be pressed again and a bar that will not go away cannot.
 local PREVIEW_HOLD = 20
 
--- The bar at "Bar size" 1.0, and the same numbers UI/DigSiteBar.lua uses, so the two bars are the
--- same object in two places rather than two objects that look similar.
+--- The bar at "Bar size" 1.0. This file's own choice, unmeasured on a screen and on docs/12's
+-- in-game-only list, with one thing that is checkable here: at the smallest scale the slider
+-- offers, 0.5, the frame is 17 px and has to hold a 7 px fill and one line of text, which
+-- GetLayout() shows it does. Everything drawn inside is a fraction of these and is recomputed in
+-- applyLayout, because a slider that moved the frame and left its contents at 1.0 would break it:
+-- at 0.5 an unscaled 14 px fill is taller than the whole 17 px frame.
 local BASE_WIDTH, BASE_HEIGHT = 240, 34
 local BASE_FILL_HEIGHT = 14
 
---- The destination name is cut to this many characters. The right-hand text can reach roughly
--- "~12 min 30 s left (8 flights)", and a flight master with a long name would otherwise run under
--- it. Util.Truncate is the same cut Map/NodeTooltip.lua applies to its "Also here:" row.
+--- The destination name is cut to this many characters so that a flight master with a long name
+-- does not run under the reading on the right. This is a provisional width, not a measurement:
+-- how many characters fit beside the right-hand string in BASE_WIDTH px is a pixel question only
+-- a client can answer, and it is on docs/12's in-game-only list with the rest of the geometry.
+-- What is known is the widest string that can stand beside it, because Util.FormatTime's own
+-- branches bound it: it drops the seconds part at 600 s and above (Core/Util.lua:101-109), and
+-- MAX_FLIGHT stops the store at two hours. Walked over those branches, the longest readings the
+-- bar can produce are 28 characters -- "~9 min 59 s left (8 flights)" just under ten minutes, and
+-- "~1 h 59 min left (8 flights)" at the top of the range. Map/NodeTooltip.lua cuts at 42 (:35),
+-- for a tooltip: a wider surface with no second column beside the name. This is not that cut.
 local MAX_NAME_CHARS = 22
 
 local frame, fillBar, nameText, timeText
 --- The font size the template gave the two font strings, read once before anything scaled them.
 -- Read once rather than on every applyLayout: reading it back after a SetFont would multiply the
--- last scale by the new one, and the bar would grow every time the slider moved (the same note is
--- on UI/DigSiteBar.lua's baseFontSize).
+-- last scale by the new one, and the bar would grow every time the slider moved.
 local baseFontSize
 local accum = 0
 --- GetTime() at which the bar hides itself, or nil. While it is set it is the ONLY thing that
@@ -144,9 +168,9 @@ local function scaleFont(fontString, size)
 end
 
 --- applyLayout(): "Bar size" moves the frame AND everything drawn in it. Nav/Arrow.lua does the
--- same for its textures (:429-438) and UI/DigSiteBar.lua for these same three parts, for the
--- reason both give: the fill height and the font sizes are set once at creation, so a frame that
--- scaled alone would leave them behind -- at 0.5 the 14 px fill is taller than the 17 px frame.
+-- same for its textures (:429-438), for the reason it gives: the fill height and the font sizes
+-- are set once at creation, so a frame that scaled alone would leave them behind -- at 0.5 the
+-- 14 px fill is taller than the 17 px frame.
 local function applyLayout()
     if not frame then return end
     local p = settings()
@@ -183,8 +207,8 @@ end
 
 --- The only per-frame work in this file, and it does arithmetic on two numbers until TICK has gone
 -- by. A pending deadline wins over the flight check rather than being one more reason to hide on
--- top of it -- the same rule UI/DigSiteBar.lua's OnUpdate follows, and for the same reason: a
--- preview is shown when there is no flight at all.
+-- top of it, because a preview is shown precisely when there is no flight at all: letting the
+-- flight check run underneath one would hide it on the frame after it was drawn.
 local function onUpdate(_, elapsed)
     accum = accum + (tonumber(elapsed) or 0)
     if accum < TICK then return end
@@ -393,7 +417,7 @@ end
 
 --- WhyNoPreview() -> the line to print instead of a preview, or nil. Both entry points ask this
 -- one question, because a switch the command obeys and the button beside it ignores is two answers
--- to one question (UI/DigSiteBar.lua makes the same argument for its own preview).
+-- to one question.
 function M.WhyNoPreview()
     if not M.Enabled() then return L["The flight bar is switched off in /pq options."] end
     return nil
