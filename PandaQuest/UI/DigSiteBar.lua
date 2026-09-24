@@ -230,17 +230,34 @@ function M.RaceName(branch)
     return name
 end
 
+--- draw(found, total [, label]): put one reading on screen.
+-- The StatusBar needs a legal, non-empty range or it draws nothing sensible, so the numbers it is
+-- given are clamped. The numbers the PLAYER is given are not: a clamped 0 of 0 finds printed as
+-- "0 / 1" would be this addon showing a denominator the client never sent, which is the one thing
+-- it does not do. A client that named no total gets the count alone, and a client that named
+-- neither gets no text at all -- an empty bar is honest about being empty.
 local function draw(found, total, label)
     local f = createFrame()
     if not f then return end
-    total = tonumber(total) or 0
-    found = tonumber(found) or 0
-    if total < 1 then total = 1 end
-    if found > total then found = total end
-    fillBar:SetMinMaxValues(0, total)
-    fillBar:SetValue(found)
+    local rawFound, rawTotal = tonumber(found), tonumber(total)
+    local barTotal = (rawTotal and rawTotal > 0) and rawTotal or 1
+    local barFound = rawFound or 0
+    if barFound < 0 then barFound = 0 end
+    if barFound > barTotal then barFound = barTotal end
+    fillBar:SetMinMaxValues(0, barTotal)
+    fillBar:SetValue(barFound)
     raceText:SetText(M.RaceName(branchID) or "")
-    countText:SetText(label or format("%d / %d", found, total))
+    local text = label
+    if not text then
+        if rawFound and rawTotal and rawTotal > 0 then
+            text = format("%d / %d", rawFound, rawTotal)
+        elseif rawFound then
+            text = format("%d", rawFound)
+        end
+    end
+    -- nil rather than "": GetState() reports a field the bar does not have as absent, and "no
+    -- count at all" is a different answer from "a count that happens to be blank".
+    countText:SetText(text)
     f:Show()
     visible = true
 end
@@ -284,7 +301,7 @@ function M.Preview()
     createFrame()
     if not frame then return false end
     branchID = nil
-    draw(0, 1, L["Dig site progress"])
+    draw(nil, nil, L["Dig site progress"])
     hideAt = now() + PREVIEW_HOLD
     lastEventAt = now()
     return true
