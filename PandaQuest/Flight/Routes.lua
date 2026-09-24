@@ -31,7 +31,9 @@
 -- **Both of those calls are guarded.** GetTaxiMapID has no call site anywhere in
 -- _reference/wow-ui-source-classic, and neither has C_TaxiMap.GetAllTaxiNodes. If either answers
 -- nothing usable the whole feature draws nothing and says nothing -- no fallback to names, no
--- guessing a map id.
+-- guessing a map id. And because nothing in that tree exercises them, the bridge between the two
+-- index spaces is checked rather than trusted: see Capture(), which compares the two surfaces'
+-- own words for the node the player is standing at and stands the feature down when they differ.
 --
 -- **The route is read when the map opens, not when the button is clicked.** TAXIMAP_OPENED carries
 -- the map system, compared against Enum.UIMapSystem.Taxi the way Mists' own UIParent compares it
@@ -417,15 +419,18 @@ function M.Capture()
         return nil
     end
 
-    -- slotIndex is the only thing C_TaxiMap is asked for besides nodeID and the name: `state` is
-    -- deliberately not read (see the header).
-    local nodeIdBySlot, nameBySlot = {}, {}
+    -- nodeID, slotIndex and the name are what this file needs. `state` is kept for one purpose
+    -- only -- confirming, below, that slotIndex really indexes the taxi frame's slot space -- and
+    -- is never consulted about whether a node can be flown to. That reading is TaxiNodeGetType's
+    -- alone (see the header).
+    local nodeIdBySlot, nameBySlot, stateBySlot = {}, {}, {}
     for i = 1, #infos do
         local info = infos[i]
         if type(info) == "table" then
             local slot, nodeID = tonumber(info.slotIndex), tonumber(info.nodeID)
             if slot and nodeID then
                 nodeIdBySlot[slot] = nodeID
+                stateBySlot[slot] = info.state
                 if type(info.name) == "string" and info.name ~= "" then nameBySlot[slot] = info.name end
             end
         end
@@ -449,11 +454,54 @@ function M.Capture()
         return nil
     end
 
+    -- **Check the bridge before anything is keyed across it.** Every route in the file rests on
+    -- info.slotIndex being an index into the space NumTaxiNodes / TaxiNodeName / TaxiNodeGetType /
+    -- TakeTaxiNode speak. Nothing in _reference/wow-ui-source-classic exercises that, because
+    -- C_TaxiMap.GetAllTaxiNodes has no call site there at all -- so it is a reading of
+    -- TaxiMapDocumentation.lua:111-122, not something this box has seen happen. If the two spaces
+    -- are offset by even one, the feature does not fail: it keys every route to the wrong pair of
+    -- node ids, silently, and later prints a measured time against a destination the player never
+    -- flew to.
+    --
+    -- There are two free checks, and the bridge only has to pass one of them, because a client
+    -- that fails both is a client whose two surfaces disagree about the node under the player's
+    -- feet. The slot TaxiNodeGetType calls "CURRENT" and the C_TaxiMap record claiming that
+    -- slotIndex have to be the same node, so:
+    --   * they must agree on its name. Both strings come from the same client, so the comparison
+    --     is language-neutral -- and this is a name compared with a name, never a name used as a
+    --     key, which is what the header forbids.
+    --   * or that record must say Enum.FlightPathState.Current. Reading `state` to ask "is this
+    --     the same node" is not reading it for reachability, which is the mixing the header
+    --     forbids: no destination is called flyable or not flyable from anything here.
+    -- Either alone would stand the feature down on a client that merely spells a name differently
+    -- on the two surfaces, which nothing here can rule out; both failing is the offset itself.
+    local mappedName, slotName = nameBySlot[currentSlot], nil
+    if type(TaxiNodeName) == "function" then
+        local okName, value = pcall(TaxiNodeName, currentSlot)
+        if okName and type(value) == "string" and value ~= "" then slotName = value end
+    end
+    local namesAgree = mappedName ~= nil and slotName ~= nil and mappedName == slotName
+    local stateAgrees = false
+    local currentState = Enum and Enum.FlightPathState and Enum.FlightPathState.Current
+    if currentState ~= nil then stateAgrees = stateBySlot[currentSlot] == currentState end
+    if not (namesAgree or stateAgrees) then
+        Log.Debug("Flight", "C_TaxiMap slot %d is %s but the taxi frame calls it %s; " ..
+            "the two index spaces do not line up and nothing will be keyed here",
+            currentSlot, tostring(mappedName), tostring(slotName))
+        forgetCapture()
+        return nil
+    end
+
     slotPolarity = resolvePolarity(count)
 
-    local cached = 0
+    -- Two counts, because they answer two questions and only one of them is "how many places can
+    -- the player fly to from here". A REACHABLE slot that C_TaxiMap did not name cannot be keyed,
+    -- so it is a destination this file will show nothing for -- and a log line that folded it into
+    -- the reachable count would hide the one thing a reader chasing an empty tooltip needs.
+    local reachable, cached = 0, 0
     for index = 1, count do
         if TaxiNodeGetType(index) == "REACHABLE" then
+            reachable = reachable + 1
             local nodeID = nodeIdBySlot[index]
             if nodeID then
                 -- The name is cached for the bar to print and for nothing else. Keying by it is
@@ -464,8 +512,8 @@ function M.Capture()
             end
         end
     end
-    Log.Debug("Flight", "taxi map %d: %d reachable destinations, polarity %s",
-        mapID, cached, tostring(slotPolarity))
+    Log.Debug("Flight", "taxi map %d: %d reachable destinations, %d of them keyed, polarity %s",
+        mapID, reachable, cached, tostring(slotPolarity))
     return cached
 end
 
