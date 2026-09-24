@@ -396,6 +396,10 @@ local T = {
     -- Ammattireseptit (docs/11)
     ["/pq scan professions - read the open profession window"] =
         "/pq scan professions - lue auki oleva ammatti-ikkuna",
+    ["/pq scan archaeology - read your archaeology window"] =
+        "/pq scan archaeology - lue arkeologia-ikkunasi",
+    ["/pq digsite - show the dig site bar so you can move it"] =
+        "/pq digsite - näytä kaivauspalkki, jotta voit siirtää sen",
     ["A profession scan is already running."] = "Ammattiskannaus on jo käynnissä.",
     ["Open a profession window first, then type /pq scan professions."] =
         "Avaa ensin ammatti-ikkuna ja kirjoita sitten /pq scan professions.",
@@ -435,6 +439,54 @@ local T = {
     ["Read my recipes when I open a profession"] = "Lue reseptini kun avaan ammatin",
     ["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] =
         "Reseptit, ainesosat ja kunkin vaikeus tälle hahmolle. Ei koskaan kirjaa, joka avattiin linkistä.",
+
+    -- Arkeologia (docs/11 B5 ja B6)
+    ["This client does not offer the archaeology data PandaQuest reads."] =
+        "Tämä asiakas ei tarjoa arkeologiatietoja, joita PandaQuest lukee.",
+    ["This character has no archaeology races to read yet."] =
+        "Tällä hahmolla ei ole vielä yhtään arkeologiakansaa luettavaksi.",
+    ["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] =
+        "Esinehistoriasi ei ole vielä saapunut, joten aiempi arkeologialukema säilytettiin.",
+    ["No archaeology has been read on this character yet."] =
+        "Tällä hahmolla ei ole vielä luettu arkeologiaa.",
+    ["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] =
+        "Arkeologia %d/%d: %d kansaa, %d esinettä, luettu %s sitten.",
+    ["Archaeology %d: %d races, %d artifacts, read %s ago."] =
+        "Arkeologia %d: %d kansaa, %d esinettä, luettu %s sitten.",
+    ["Archaeology: %d races, %d artifacts, read %s ago."] =
+        "Arkeologia: %d kansaa, %d esinettä, luettu %s sitten.",
+    ["Archaeology read: %d races, %d artifacts."] =
+        "Arkeologia luettu: %d kansaa, %d esinettä.",
+    ["The server has not sent your artifact history, so completion counts were left out."] =
+        "Palvelin ei ole lähettänyt esinehistoriaasi, joten valmistumislukuja ei kirjattu.",
+    ["Archaeology"] = "Arkeologia",
+    ["Mists never shipped a dig site progress bar. PandaQuest draws one from the events the game already sends."] =
+        "Mistsissä ei ole kaivauspaikan edistymispalkkia. PandaQuest piirtää sen tapahtumista, joita peli jo lähettää.",
+    ["Read my archaeology when I open the window"] = "Lue arkeologiani kun avaan ikkunan",
+    ["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."] =
+        "Kansasi, niiden avainkivi, sirpaleesi ja esineesi. Vain tämän hahmon omat.",
+    ["Dig site progress bar"] = "Kaivauspaikan edistymispalkki",
+    ["Show the dig site progress bar"] = "Näytä kaivauspaikan edistymispalkki",
+    ["Appears when you survey and hides when you leave the dig site."] =
+        "Tulee näkyviin kun kartoitat ja piiloutuu kun poistut kaivauspaikalta.",
+    ["Lock the bar in place"] = "Lukitse palkki paikalleen",
+    ["Unlocked, it can be dragged with the left mouse button."] =
+        "Lukitsemattomana sitä voi raahata hiiren vasemmalla painikkeella.",
+    ["Bar size"] = "Palkin koko",
+    ["Show me where it is"] = "Näytä missä se on",
+    ["Puts an empty bar on screen for a moment so you can find it, and drag it when it is unlocked."] =
+        "Näyttää tyhjän palkin hetkeksi, jotta löydät sen ja voit raahata sen paikalleen, kun se ei ole lukittu.",
+    ["Reset bar position"] = "Palauta palkin sijainti",
+    ["Dig site progress"] = "Kaivauspaikan edistyminen",
+    ["Dig site complete"] = "Kaivauspaikka valmis",
+    ["This client draws its own dig site progress bar."] =
+        "Tämä asiakas piirtää oman kaivauspaikan edistymispalkkinsa.",
+    ["The dig site bar is switched off in /pq options."] =
+        "Kaivauspalkki on kytketty pois päältä asetuksissa (/pq).",
+    ["Drag the dig site bar where you want it. It hides itself again in a moment."] =
+        "Raahaa kaivauspalkki haluamaasi kohtaan. Se piiloutuu itsestään hetken kuluttua.",
+    ["The dig site bar is locked. Unlock it in /pq options to move it."] =
+        "Kaivauspalkki on lukittu. Avaa lukitus asetuksissa (/pq), jos haluat siirtää sitä.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

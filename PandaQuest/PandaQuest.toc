@@ -50,12 +50,14 @@ UI\MinimapButton.lua
 UI\Wowhead.lua
 UI\Tracker.lua
 UI\Notify.lua
+UI\DigSiteBar.lua
 Auction\Store.lua
 Auction\Scanner.lua
 Auction\Mail.lua
 Auction\Tooltip.lua
 Recipes\Store.lua
 Recipes\Scanner.lua
+Recipes\Archaeology.lua
 Sync\Telemetry.lua
 Sync\Character.lua
 Sync\Consent.lua
