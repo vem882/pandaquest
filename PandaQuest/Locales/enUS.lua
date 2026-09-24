@@ -375,6 +375,7 @@ L["This character has no archaeology races to read yet."] = true
 L["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] = true
 L["No archaeology has been read on this character yet."] = true
 L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] = true
+L["Archaeology %d: %d races, %d artifacts, read %s ago."] = true
 L["Archaeology: %d races, %d artifacts, read %s ago."] = true
 L["Archaeology read: %d races, %d artifacts."] = true
 L["The server has not sent your artifact history, so completion counts were left out."] = true

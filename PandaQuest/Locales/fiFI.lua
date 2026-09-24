@@ -451,6 +451,8 @@ local T = {
         "Tällä hahmolla ei ole vielä luettu arkeologiaa.",
     ["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] =
         "Arkeologia %d/%d: %d kansaa, %d esinettä, luettu %s sitten.",
+    ["Archaeology %d: %d races, %d artifacts, read %s ago."] =
+        "Arkeologia %d: %d kansaa, %d esinettä, luettu %s sitten.",
     ["Archaeology: %d races, %d artifacts, read %s ago."] =
         "Arkeologia: %d kansaa, %d esinettä, luettu %s sitten.",
     ["Archaeology read: %d races, %d artifacts."] =

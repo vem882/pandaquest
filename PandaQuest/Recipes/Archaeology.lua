@@ -366,13 +366,18 @@ local function statusLines()
     end
     local races, artifacts = #(entry.races or {}), M.CountArtifacts(entry)
     local ago = Util.FormatTime(unixNow() - (entry.scannedAt or 0))
-    if entry.rank then
+    -- One line per shape of answer, and no shape borrows a number from another. `entry.rank or 0`
+    -- printed "0/0" and `entry.maxRank or entry.rank` printed "525/525" -- both numbers nobody
+    -- measured, in the one place the player reads them, about the two fields this module
+    -- deliberately leaves absent when the client did not answer (:272). A ceiling invented from
+    -- the rank is worse than no ceiling: it reads as "you are maxed".
+    if entry.rank and entry.maxRank then
         Log.Print(L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."],
-            entry.rank, entry.maxRank or entry.rank, races, artifacts, ago)
+            entry.rank, entry.maxRank, races, artifacts, ago)
+    elseif entry.rank then
+        Log.Print(L["Archaeology %d: %d races, %d artifacts, read %s ago."],
+            entry.rank, races, artifacts, ago)
     else
-        -- The entry has no rank, so the line has no rank. `entry.rank or 0` printed "0/0" -- a
-        -- number nobody measured, in the one place the player reads it, about the one field this
-        -- module deliberately leaves absent when the client did not answer.
         Log.Print(L["Archaeology: %d races, %d artifacts, read %s ago."], races, artifacts, ago)
     end
     if entry.historyAvailable == false then
