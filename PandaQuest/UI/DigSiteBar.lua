@@ -39,7 +39,12 @@
 --      On 5.5.4 every one of these events carries researchBranchID, so which race the count belongs
 --      to is answered on every event rather than remembered from the last one.
 --   2. It hides itself through an animation whose OnFinished sets shouldShow (:116-128). Here the
---      leave check and the hold after a completed dig site are one OnUpdate with two deadlines.
+--      leave check and the holds are one OnUpdate: while a deadline is pending it is the only
+--      thing that hides the bar, and the leave check does not run at all. That is the same rule
+--      Blizzard enforces by taking its own OnUpdate away twice -- on the last find (:74-79) and
+--      again on ARTIFACT_DIGSITE_COMPLETE (:96-100) -- and for the reason its comment gives: a
+--      finished dig site is no longer a dig site, so CanScanResearchSite() answers false while the
+--      bar is still meant to be saying that the site is what finished.
 --
 -- It stays hidden until a survey is cast, hides again when CanScanResearchSite() goes false, is
 -- dragged with the mouse when unlocked, and is switched off entirely by profile.archaeology
@@ -72,13 +77,14 @@ local PREVIEW_HOLD = 20
 local BASE_WIDTH, BASE_HEIGHT = 240, 34
 
 local frame, fillBar, raceText, countText
-local branchID                  -- the race the visible count belongs to, as the last event named it
+local branchID                  -- the race the visible count belongs to, as this event named it
 local accum = 0                 -- seconds since the last leave check
-local hideAt                    -- GetTime() at which the bar hides itself, or nil
+--- GetTime() at which the bar hides itself, or nil. While it is set it is the ONLY thing that
+-- hides the bar: a preview and a finished dig site both outlive the dig site they were drawn for.
+local hideAt
 local lastEventAt = 0
 local visible = false
 local dragging = false
-local previewing = false
 local stoodDown = false         -- Blizzard's own bar exists on this client after all: we drew none
 
 local function now()
@@ -132,11 +138,15 @@ local function onUpdate(self, elapsed)
     if accum < LEAVE_CHECK then return end
     accum = 0
     local t = now()
-    if hideAt and t >= hideAt then
-        M.Hide()
+    -- A pending deadline wins over the leave check, rather than being one more reason to hide on
+    -- top of it. Everything the bar holds itself up for -- a preview, the last find of a site, a
+    -- completed site -- happens when the player is standing somewhere CanScanResearchSite() no
+    -- longer says yes to, so letting the leave check run underneath a deadline would end every
+    -- hold at the next 0.5 s tick. Blizzard's equivalent is nil-ing OnUpdate outright.
+    if hideAt then
+        if t >= hideAt then M.Hide() end
         return
     end
-    if previewing then return end
     if type(CanScanResearchSite) == "function" then
         if not CanScanResearchSite() then M.Hide() end
         return
@@ -258,7 +268,7 @@ function M.IsShown()
 end
 
 function M.Hide()
-    hideAt, previewing = nil, false
+    hideAt = nil
     if frame and visible then frame:Hide() end
     visible = false
 end
@@ -271,7 +281,6 @@ function M.Preview()
     createFrame()
     if not frame then return false end
     branchID = nil
-    previewing = true
     draw(0, 1, L["Dig site progress"])
     hideAt = now() + PREVIEW_HOLD
     lastEventAt = now()
@@ -293,18 +302,31 @@ end
 function M.OnSurveyCast(numFindsCompleted, totalFinds, researchBranchID, successfulFind)  -- luacheck: ignore successfulFind
     if not enabled() then return end
     branchID = tonumber(researchBranchID)
-    hideAt, previewing = nil, false
+    hideAt = nil
     lastEventAt = now()
     accum = 0
     draw(numFindsCompleted, totalFinds)
 end
 
+--- OnFindComplete(numFindsCompleted, totalFinds, researchBranchID): one find of the site is done.
+-- The last one starts the hold rather than clearing it. ARTIFACT_DIGSITE_COMPLETE is a separate
+-- event that arrives after this one, and by then the finished site is no longer a site the player
+-- can scan, so without the hold the leave check hides the bar in the gap and the completion draws
+-- it again -- a blink instead of an ending. Blizzard stops its own leave check at the same moment
+-- and for the same reason (Cata/ArchaeologyProgressBar.lua:74-79). The difference is that this
+-- hold is a deadline rather than Blizzard's "not until the bar is shown again", so a client that
+-- sends a last find and no completion still lets the bar go.
 function M.OnFindComplete(numFindsCompleted, totalFinds, researchBranchID)
     if not enabled() then return end
     branchID = tonumber(researchBranchID) or branchID
-    hideAt, previewing = nil, false
     lastEventAt = now()
     draw(numFindsCompleted, totalFinds)
+    local found, total = tonumber(numFindsCompleted), tonumber(totalFinds)
+    if found and total and total > 0 and found >= total then
+        hideAt = now() + COMPLETE_HOLD
+    else
+        hideAt = nil
+    end
 end
 
 --- OnDigsiteComplete(researchBranchID): the site is finished. The bar is filled, named, held for a
@@ -313,7 +335,6 @@ end
 function M.OnDigsiteComplete(researchBranchID)
     if not enabled() then return end
     branchID = tonumber(researchBranchID) or branchID
-    previewing = false
     lastEventAt = now()
     -- The total the bar was already counting to. Read through an `if` rather than
     -- `fillBar and fillBar:GetMinMaxValues()`, because an `and` expression keeps only the first
