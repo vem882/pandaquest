@@ -605,15 +605,20 @@ function M.Enable()
     hookTaxiGlobals()
 
     listener:RegisterEvent("TAXIMAP_OPENED", function(_, system)
-        -- Blizzard's own Mists UIParent compares this payload against Enum.UIMapSystem.Taxi before
-        -- it shows the frame. A client that sends no system id at all is taken at its word: this
-        -- event has no other sender.
-        local taxi = Enum and Enum.UIMapSystem and Enum.UIMapSystem.Taxi
-        if taxi ~= nil and system ~= nil and system ~= taxi then return end
-        -- A new flight master ends whatever the last one started: a click that never became a
-        -- flight, and a flight whose landing event never arrived. The player is standing on the
-        -- ground in front of a flight master, so neither is still true.
+        -- A map opening ends whatever the last flight master started: a click that never became a
+        -- flight, and a flight whose landing event never arrived. Neither can still be true. This
+        -- runs before the system id is looked at, because a map system this addon does not read is
+        -- still a map system that replaced the one it did: returning with the last flight master's
+        -- table standing would let the click hook key the next flight from it.
         pending, flight = nil, nil
+        -- Blizzard's own Mists UIParent compares this payload against Enum.UIMapSystem.Taxi before
+        -- it shows the frame (Mists/UIParent.lua:1355-1359). A client that sends no system id at
+        -- all is taken at its word: this event has no other sender.
+        local taxi = Enum and Enum.UIMapSystem and Enum.UIMapSystem.Taxi
+        if taxi ~= nil and system ~= nil and system ~= taxi then
+            forgetCapture()
+            return
+        end
         if settings().tooltipETA == false and settings().bar == false then
             -- Nothing on screen wants a route, so none is read. The cache is still cleared: the
             -- click hook keys a measurement from it, and the last flight master's entries would
