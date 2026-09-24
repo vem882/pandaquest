@@ -173,7 +173,15 @@ local function onUpdate(_, elapsed)
     if accum < TICK then return end
     accum = 0
     if hideAt then
-        if now() >= hideAt then M.Hide() end
+        -- The preview ends by reading the world again, not by hiding. Hiding stops the OnUpdate --
+        -- the client only runs it while the frame is shown -- and PQ_FLIGHT_STARTED has already
+        -- fired, so nothing would ever bring the bar back for the rest of a flight that is still
+        -- running. Refresh() draws the flight when there is one and hides when there is not, so
+        -- the preview expires into the live bar mid-air and into nothing on the ground.
+        if now() >= hideAt then
+            hideAt = nil
+            M.Refresh()
+        end
         return
     end
     M.Refresh()
@@ -415,6 +423,13 @@ function M.ApplySettings()
         applyLayout()
         applyPosition()
     end
+    -- Switching the bar back on has to be able to show it, and only this call can: a hidden frame
+    -- runs no OnUpdate, and the flight's own PQ_FLIGHT_STARTED went by while the bar was off. A
+    -- player who notices mid-flight that there is no bar, ticks the box and then sees nothing for
+    -- the rest of the flight reads that as a broken switch. Refresh() hides when there is nothing
+    -- to draw, so this costs nothing on the ground -- but not during a preview, which is the one
+    -- thing allowed to hold an empty bar up (see hideAt).
+    if not hideAt then M.Refresh() end
 end
 
 --- ResetPosition(): put the bar back where the defaults put it.
