@@ -96,9 +96,11 @@ ns.DEFAULTS = {
                              breadcrumbs = true, breadcrumbInterval = 10, maxSessions = 30,
                              maxEventsPerSession = 5000,
                              gear = true, gearInterval = 60, gearMoney = false },
-               -- What play taught us about profession nodes (docs/10 A4/D3). Pandaria's ore and
-               -- herbs are in no source we can reach, so the only way they reach the map is that
-               -- somebody gathered one: `nodes[objectId] = { k = kind, s = skill, n = name,
+               -- What play taught us about profession nodes (docs/10 A4/D3). WHERE Pandaria's ore
+               -- and herbs stand is in no source we can reach, so the only way one reaches the map
+               -- is that somebody gathered it; since docs/10 J the seed does at least say what
+               -- those ids ARE, read from our own object database, and it still places nothing.
+               -- `nodes[objectId] = { k = kind, s = skill, n = name,
                -- p = { [spawnKey] = timesSeen } }`. Local and unconditional - writing to one's own
                -- disk is not the hub's processing - while *sending* it is gated by telemetry.
                nodes = {},

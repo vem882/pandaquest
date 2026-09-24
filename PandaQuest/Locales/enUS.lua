@@ -342,6 +342,30 @@ L["Show auction prices on item tooltips"] = true
 L["The lowest buyout and the market value from your last scan on this realm, with how old it is."] = true
 L["Record my auction sales and purchases"] = true
 L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] = true
+-- Professions (docs/11): the recipe scan, its refusals and the options section
+L["/pq scan professions - read the open profession window"] = true
+L["A profession scan is already running."] = true
+L["Open a profession window first, then type /pq scan professions."] = true
+L["This client does not offer the recipe list PandaQuest reads."] = true
+L["That window is another player's recipe book, opened from a link. PandaQuest does not record it."] = true
+L["This profession window lists no recipes."] = true
+L["The profession list has not arrived from the server yet. Try again in a moment."] = true
+L["Nothing was saved: not one recipe in this window could be read whole."] = true
+L["The profession window changed while it was being read. Nothing was saved."] = true
+L["The window was read short, so the recipe book you already have was kept."] = true
+L["Profession scan cancelled: the window was closed."] = true
+L["Profession scan stopped. Nothing was saved."] = true
+L["PandaQuest will not touch your profession window: it cannot put %s back the way you left it."] = true
+L["PandaQuest could not put your profession window back exactly as you left it."] = true
+L["Profession scan finished: %s %d/%d, %d recipes in %s."] = true
+L["%d recipes were left out because the game had not finished loading them. Open the window again to finish them."] = true
+L["The scan stopped at %d recipes to keep the saved file small."] = true
+L["Last scan of %s (%d/%d): %d recipes, %s ago."] = true
+L["No profession has been scanned on this character yet."] = true
+L["Professions"] = true
+L["PandaQuest reads an open profession window once and puts your filters and collapsed categories back."] = true
+L["Read my recipes when I open a profession"] = true
+L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")
