@@ -440,7 +440,6 @@ local T = {
     ["Flight time:"] = "Lentoaika:",
     ["~%s (%d flight)"] = "~%s (%d lento)",
     ["~%s (%d flights)"] = "~%s (%d lentoa)",
-    ["~%s left (%d flight)"] = "~%s jäljellä (%d lento)",
     ["~%s left (%d flights)"] = "~%s jäljellä (%d lentoa)",
     ["%s in the air"] = "%s ilmassa",
     ["Flight progress"] = "Lennon eteneminen",

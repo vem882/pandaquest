@@ -274,9 +274,13 @@ function M.TimeText(elapsed, seconds, samples)
         if spent < total then
             -- Floored, not rounded: the redraw is TICK apart, and a rounded figure would
             -- sometimes name a second the flight has not reached yet.
+            -- No singular wording here on purpose: this branch is inside `count >= minimum`, and
+            -- minimum is MIN_SAMPLES = 2, so one flight never reaches it. A "(1 flight)" string
+            -- carried for a case the gate above rules out is a line the bar cannot print and a
+            -- reader cannot check. The tooltip's singular is a different matter and stays: that
+            -- surface does print a one-flight figure, with the count beside it.
             local left = Util.FormatTime(floor(total - spent))
-            local pattern = count == 1 and L["~%s left (%d flight)"] or L["~%s left (%d flights)"]
-            return format(pattern, left, count), spent / total
+            return format(L["~%s left (%d flights)"], left, count), spent / total
         end
         return format(L["%s in the air"], Util.FormatTime(floor(spent))), 1
     end

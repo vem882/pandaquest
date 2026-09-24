@@ -371,7 +371,6 @@ L["The recipes, their reagents and how hard each is for this character. Never a 
 L["Flight time:"] = true
 L["~%s (%d flight)"] = true
 L["~%s (%d flights)"] = true
-L["~%s left (%d flight)"] = true
 L["~%s left (%d flights)"] = true
 L["%s in the air"] = true
 L["Flight progress"] = true
