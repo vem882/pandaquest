@@ -78,6 +78,22 @@ ns.DEFAULTS = {
         flight = { tooltipETA = true,
                    bar = true, barLocked = false, barScale = 1.0,
                    barPoint = "CENTER", barRelPoint = "CENTER", barX = 0, barY = -200 },
+        -- docs/11 B5-B6: archaeology. `snapshotOnOpen` reads the archaeology window's own numbers --
+        -- the races, their keystone item, their fragments and their artifacts -- into
+        -- PandaQuestProf whenever the player opens or closes that window. `digSiteBar` is the
+        -- dig-site progress bar Mists never shipped: Blizzard wrote one for Cataclysm
+        -- (Blizzard_FrameXML/Cata/ArchaeologyProgressBar.lua) and listed its XML only in
+        -- Blizzard_FrameXML_Mainline.toc, leaving Mists with the commented-out hook at
+        -- Blizzard_UIParent/Mists/UIParent.lua:1148. The position keys are the arrow's
+        -- (Nav/Arrow.lua): a frame the player can drag has to remember where they dropped it.
+        --
+        -- These live here rather than beside their module the way `recipes` does, because two
+        -- modules read them -- Recipes/Archaeology.lua for the snapshot and UI/DigSiteBar.lua for
+        -- the bar -- and the bar loads first. One declaration in the file that loads before
+        -- everything is one less thing that depends on the TOC's order.
+        archaeology = { snapshotOnOpen = true,
+                        digSiteBar = true, barLocked = false, barScale = 1.0,
+                        barPoint = "CENTER", barX = 0, barY = -260 },
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },

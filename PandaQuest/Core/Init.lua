@@ -20,11 +20,12 @@ ns.MODULE_ORDER = {
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
     "FlightRoutes", "FlightTooltip",
-    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify",
+    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
-    -- and hands the rest back (docs/11 B4).
-    "RecipeStore", "RecipeScanner",
+    -- and hands the rest back (docs/11 B4). Archaeology does the same to RecipeScanner's wrapper,
+    -- so it comes after that one for the same reason (docs/11 B5).
+    "RecipeStore", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
 
@@ -174,6 +175,8 @@ commands.help = function()
         "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
         "/pq sync - telemetry and community data status",
         "/pq scan professions - read the open profession window",
+        "/pq scan archaeology - read your archaeology window",
+        "/pq digsite - show the dig site bar so you can move it",
         "/pq consent - ask the data sharing question again",
         "/pq flight - show the flight bar so you can drag it",
         "/pq lang auto|enUS|fiFI - interface language",

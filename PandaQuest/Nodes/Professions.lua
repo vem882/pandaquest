@@ -73,16 +73,27 @@ M.KIND_SETTING = KIND_SETTING
 local KIND_PROFESSION = { mine = "mining", herb = "herbalism", fish = "fishing" }
 M.KIND_PROFESSION = KIND_PROFESSION
 
--- SkillLineIDs as GetProfessionInfo returns them (its 7th return). All three are in Blizzard's own
+-- SkillLineIDs as GetProfessionInfo returns them (its 7th return). All of them are in Blizzard's own
 -- 5.5.4 code: Blizzard_FrameXMLBase/Classic/Constants.lua's WORLD_QUEST_ICONS_BY_PROFESSION maps
--- 182 to herbalism, 186 to mining and 356 to fishing, and Blizzard_GlueXML's professionsMap names
--- 182 and 186 the same way. The English name is still checked as well, so a wrong id would degrade
--- to "no profession" rather than to a wrong rank.
-local SKILL_LINE = { mining = 186, herbalism = 182, fishing = 356 }
+-- 182 to herbalism, 186 to mining, 356 to fishing and 794 to archaeology, and Blizzard_GlueXML's
+-- professionsMap names 182 and 186 the same way. The English name is still checked as well, so a
+-- wrong id would degrade to "no profession" rather than to a wrong rank.
+--
+-- Archaeology is here and NOT in PROFESSIONS/KIND_PROFESSION below, which is the whole distinction
+-- this file draws: those two tables say "this skill decides whether a map node may be drawn", and
+-- archaeology draws no node at all -- Blizzard's own Mists world map already places the dig sites
+-- (Blizzard_WorldMap_Mists.toc loads Cata/Blizzard_WorldMap.lua, whose :219 adds
+-- DigSiteDataProviderMixin; the same line is commented out on Vanilla, TBC and Wrath). What this
+-- table says is only "how is the rank of this skill found", and that question has one answer for
+-- every profession, cached and invalidated on SKILL_LINES_CHANGED in one place. ns.Archaeology asks
+-- it for the rank it writes into PandaQuestProf.
+local SKILL_LINE = { mining = 186, herbalism = 182, fishing = 356, archaeology = 794 }
 
 -- Lower-cased English skill-line names, the fallback match for SKILL_LINE.
-local SKILL_NAME = { mining = "mining", herbalism = "herbalism", fishing = "fishing" }
+local SKILL_NAME = { mining = "mining", herbalism = "herbalism", fishing = "fishing",
+                     archaeology = "archaeology" }
 
+-- The gathering skills, and only those: this is the list that filters pins (D2).
 local PROFESSIONS = { "mining", "herbalism", "fishing" }
 M.PROFESSIONS = PROFESSIONS
 
@@ -174,21 +185,24 @@ local function rankFromProfessionInfo(profession)
     local ok, a, b, c, d, e, f = pcall(GetProfessions)
     if not ok then return nil end
     local wantLine, wantName = SKILL_LINE[profession], SKILL_NAME[profession]
-    -- Six slots, counted 1..6 and never with `#`. Any of the six may be nil, and on the client's
-    -- Lua 5.1 the length of a table with a hole in it is any border the implementation likes:
-    -- `#{nil, nil, 3, nil, nil, nil}` may be 0, so a character with no primary professions loses
-    -- the third slot onwards -- archaeology, fishing, cooking, first aid -- and this function
-    -- silently returns nil for fishing. The caller then falls back to rankFromSkillLines, which
-    -- matches the *English* name, so the miss is invisible here and breaks on a localised client.
-    -- Recipes/Scanner.lua:184-186 already explains this and counts to 6; this is the same list.
+    -- Counted to six, never with the length operator. GetProfessions() hands back six slots and any
+    -- of them may be nil, so `{ a, b, c, d, e, f }` is a table with holes, and `#` on such a table
+    -- returns *a* border rather than the count -- which one is unspecified. Measured on this box's
+    -- Lua 5.1 over all 64 shapes the six slots can take (tools/tests/test_professions.py names the
+    -- test): 24 (slot, shape) pairs come out past the length and would go unread, among them
+    -- `{1, nil, nil, 4, nil, nil}` whose length is 1 -- a character with one primary profession and
+    -- fishing, whose fishing is then invisible. Slot 3, archaeology
+    -- (Blizzard_UIPanels_Game/Mists/SpellBookFrame.lua:700), is in none of the 24 on this build,
+    -- and that is luck rather than a guarantee: the client's Lua is not this one and any border is
+    -- a legal answer. Six slots, counted to six.
     local indices = { a, b, c, d, e, f }
     for i = 1, 6 do
         local index = indices[i]
         if type(index) == "number" then
-            local okInfo, name, _, rank, _, _, _, skillLine = pcall(GetProfessionInfo, index)
+            local okInfo, name, _, rank, maxRank, _, _, skillLine = pcall(GetProfessionInfo, index)
             if okInfo and type(rank) == "number" then
                 if skillLine == wantLine or (type(name) == "string" and name:lower() == wantName) then
-                    return rank
+                    return rank, (type(maxRank) == "number" and maxRank) or nil
                 end
             end
         end
@@ -197,46 +211,54 @@ local function rankFromProfessionInfo(profession)
 end
 
 -- The fallback docs/10 D2 names. GetSkillLineInfo(index) -> name, isHeader, isExpanded, skillRank,
--- ... (Blizzard_UIPanels_Game/Classic/SkillFrame.lua). Header rows carry no rank and are skipped.
+-- numTempPoints, skillModifier, skillMaxRank, ... (Blizzard_UIPanels_Game/Classic/SkillFrame.lua:26
+-- names all seven). Header rows carry no rank and are skipped.
 local function rankFromSkillLines(profession)
     if type(GetNumSkillLines) ~= "function" or type(GetSkillLineInfo) ~= "function" then return nil end
     local okCount, count = pcall(GetNumSkillLines)
     if not okCount or type(count) ~= "number" then return nil end
     local wantName = SKILL_NAME[profession]
     for i = 1, count do
-        local ok, name, isHeader, _, rank = pcall(GetSkillLineInfo, i)
+        local ok, name, isHeader, _, rank, _, _, maxRank = pcall(GetSkillLineInfo, i)
         if ok and not isHeader and type(name) == "string" and type(rank) == "number" then
-            if name:lower() == wantName then return rank end
+            if name:lower() == wantName then return rank, (type(maxRank) == "number" and maxRank) or nil end
         end
     end
     return nil
 end
 
---- Professions.GetSkillRank(profession) -> rank|nil, source ("profession"|"skillLine")
+--- Professions.GetSkillRank(profession) -> rank|nil, source ("profession"|"skillLine"), maxRank|nil
 -- nil means "this character does not have the profession", which is a different answer from 0
 -- ("has it, has learned nothing yet") and the two are filtered differently (onlyMyProfessions).
+--
+-- maxRank is the third return rather than the second because every caller in this file wants the
+-- rank alone, and it is nil on its own terms: a client that answered a rank and no ceiling has told
+-- us one number, not two, and ns.Archaeology writes down the one it was given rather than a 0 or a
+-- 600 nobody measured.
 function M.GetSkillRank(profession)
     if type(profession) ~= "string" then return nil end
     if skillCacheValid then
         local cached = skillCache[profession]
         if cached ~= nil then
             if cached == false then return nil end
-            return cached[1], cached[2]
+            return cached[1], cached[2], cached[3]
         end
     else
         wipe(skillCache)
         skillCacheValid = true
     end
-    local rank, source = rankFromProfessionInfo(profession), "profession"
+    local source = "profession"
+    local rank, maxRank = rankFromProfessionInfo(profession)
     if rank == nil then
-        rank, source = rankFromSkillLines(profession), "skillLine"
+        source = "skillLine"
+        rank, maxRank = rankFromSkillLines(profession)
     end
     if rank == nil then
         skillCache[profession] = false
         return nil
     end
-    skillCache[profession] = { rank, source }
-    return rank, source
+    skillCache[profession] = { rank, source, maxRank }
+    return rank, source, maxRank
 end
 
 --- Professions.InvalidateSkills(): the next GetSkillRank asks the client again.

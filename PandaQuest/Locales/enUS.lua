@@ -344,6 +344,8 @@ L["Record my auction sales and purchases"] = true
 L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] = true
 -- Professions (docs/11): the recipe scan, its refusals and the options section
 L["/pq scan professions - read the open profession window"] = true
+L["/pq scan archaeology - read your archaeology window"] = true
+L["/pq digsite - show the dig site bar so you can move it"] = true
 L["A profession scan is already running."] = true
 L["Open a profession window first, then type /pq scan professions."] = true
 L["This client does not offer the recipe list PandaQuest reads."] = true
@@ -384,10 +386,35 @@ L["Show the flight time at the flight master"] = true
 L["One line in the destination's tooltip, with how many of your own flights it rests on."] = true
 L["Show the progress bar while flying"] = true
 L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] = true
+-- Archaeology (docs/11 B5 and B6)
+L["This client does not offer the archaeology data PandaQuest reads."] = true
+L["This character has no archaeology races to read yet."] = true
+L["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] = true
+L["No archaeology has been read on this character yet."] = true
+L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] = true
+L["Archaeology %d: %d races, %d artifacts, read %s ago."] = true
+L["Archaeology: %d races, %d artifacts, read %s ago."] = true
+L["Archaeology read: %d races, %d artifacts."] = true
+L["The server has not sent your artifact history, so completion counts were left out."] = true
+L["Archaeology"] = true
+L["Mists never shipped a dig site progress bar. PandaQuest draws one from the events the game already sends."] = true
+L["Read my archaeology when I open the window"] = true
+L["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."] = true
+L["Dig site progress bar"] = true
+L["Show the dig site progress bar"] = true
+L["Appears when you survey and hides when you leave the dig site."] = true
 L["Lock the bar in place"] = true
 L["Unlocked, it can be dragged with the left mouse button."] = true
 L["Bar size"] = true
 L["Show me where it is"] = true
+L["Puts an empty bar on screen for a moment so you can find it, and drag it when it is unlocked."] = true
+L["Reset bar position"] = true
+L["Dig site progress"] = true
+L["Dig site complete"] = true
+L["This client draws its own dig site progress bar."] = true
+L["The dig site bar is switched off in /pq options."] = true
+L["Drag the dig site bar where you want it. It hides itself again in a moment."] = true
+L["The dig site bar is locked. Unlock it in /pq options to move it."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")
