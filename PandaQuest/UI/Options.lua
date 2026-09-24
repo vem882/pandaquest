@@ -384,6 +384,20 @@ local function buildTable()
                         "auction.recordSales"),
                 },
             },
+            -- docs/11 B3. On by default, unlike the auction scan: reading a window the player has
+            -- already opened costs them a fraction of a second and the realm nothing at all, and
+            -- the only visible cost -- the list redrawing while the filters are off -- is over
+            -- before it is noticed. The linked-window refusal is named here because it is the
+            -- promise this switch is really making.
+            recipes = {
+                type = "group", order = 11, name = L["Professions"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["PandaQuest reads an open profession window once and puts your filters and collapsed categories back."] },
+                    scanOnOpen = toggle(1, L["Read my recipes when I open a profession"],
+                        L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."],
+                        "recipes.scanOnOpen"),
+                },
+            },
             advanced = {
                 type = "group", order = 20, name = L["Advanced"], args = {
                     level = { type = "select", order = 1, name = L["Log level"],
