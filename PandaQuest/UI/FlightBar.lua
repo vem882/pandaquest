@@ -108,12 +108,20 @@ end
 -- The frame
 ---------------------------------------------------------------------------
 
+--- savePosition(): store the anchor GetPoint really reported, its relative point included.
+-- GetPoint returns point, relativeTo, relativePoint, xOfs, yOfs. Keeping only the first and
+-- rebuilding the anchor as SetPoint(point, UIParent, point, x, y) round-trips the drag only if the
+-- client leaves point == relativePoint after StopMovingOrSizing, and nothing on this box can say
+-- whether it does: tools/wowstub/api/20_frames.lua's StartMoving and StopMovingOrSizing set a flag
+-- and never touch the anchor list, so the harness re-derives nothing and would agree with either
+-- answer. Rather than assume, the third return is stored and handed back verbatim. What is still
+-- assumed, and is on docs/12's in-game-only list, is that relativeTo stays UIParent.
 local function savePosition()
     if not frame then return end
-    local point, _, _, x, y = frame:GetPoint(1)
+    local point, _, relPoint, x, y = frame:GetPoint(1)
     if not point then return end
     local p = settings()
-    p.barPoint, p.barX, p.barY = point, x, y
+    p.barPoint, p.barRelPoint, p.barX, p.barY = point, relPoint, x, y
 end
 
 local function onDragStart(self)
@@ -148,7 +156,13 @@ local function applyLayout()
     if scale <= 0 then scale = 1 end
     frame:SetSize(BASE_WIDTH * scale, BASE_HEIGHT * scale)
     frame:SetMovable(not p.barLocked)
-    frame:EnableMouse(true)
+    -- Locked, the bar has nothing left to do with the mouse: onDragStart returns immediately while
+    -- barLocked is set, and this frame has no click, no tooltip and no menu. Leaving the mouse on
+    -- would make its 240x34 rectangle swallow every click on the ground, the mob or the map behind
+    -- it for the whole of every flight and for the whole of every preview, in exchange for a drag
+    -- the lock refuses anyway. (Nav/Arrow.lua has the same pair and keeps its mouse on purpose:
+    -- that frame is a Button with a right-click menu.)
+    frame:EnableMouse(not p.barLocked)
     if fillBar then fillBar:SetHeight(BASE_FILL_HEIGHT * scale) end
     if baseFontSize then
         scaleFont(nameText, baseFontSize * scale)
@@ -160,7 +174,10 @@ local function applyPosition()
     if not frame then return end
     local p = settings()
     frame:ClearAllPoints()
-    frame:SetPoint(p.barPoint or "CENTER", UIParent, p.barPoint or "CENTER",
+    -- barRelPoint falls back to barPoint, which is what a hand-edited profile may hold and what
+    -- every profile written before this key existed holds.
+    local point = p.barPoint or "CENTER"
+    frame:SetPoint(point, UIParent, p.barRelPoint or point,
         tonumber(p.barX) or 0, tonumber(p.barY) or -200)
 end
 
@@ -435,7 +452,7 @@ end
 --- ResetPosition(): put the bar back where the defaults put it.
 function M.ResetPosition()
     local p, d = settings(), ns.DEFAULTS.profile.flight
-    p.barPoint, p.barX, p.barY = d.barPoint, d.barX, d.barY
+    p.barPoint, p.barRelPoint, p.barX, p.barY = d.barPoint, d.barRelPoint, d.barX, d.barY
     applyPosition()
 end
 

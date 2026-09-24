@@ -71,13 +71,13 @@ ns.DEFAULTS = {
         -- docs/06 10c: the flight master. `tooltipETA` appends one line to the taxi node tooltip
         -- and `bar` draws the progress bar while the flight runs. Both show nothing at all on a
         -- route this account has never flown, because nothing on this client can say how long an
-        -- unflown route takes (Flight/Routes.lua's header). The bar carries the same three keys
-        -- the dig site bar does -- lock, size, and the point it was dragged to -- because it is
-        -- the same bar in a second place, and two progress bars with two settings shapes would be
-        -- one idea spelled twice.
+        -- unflown route takes (Flight/Routes.lua's header). The bar is locked and sized the way
+        -- `arrow` above is, and remembers where it was dragged to with all four of GetPoint's
+        -- anchor returns rather than three: rebuilding the anchor from `barPoint` alone assumes
+        -- the client leaves point == relativePoint after a drag, and nothing here can check that.
         flight = { tooltipETA = true,
                    bar = true, barLocked = false, barScale = 1.0,
-                   barPoint = "CENTER", barX = 0, barY = -200 },
+                   barPoint = "CENTER", barRelPoint = "CENTER", barX = 0, barY = -200 },
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },
