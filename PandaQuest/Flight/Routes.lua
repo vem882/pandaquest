@@ -148,6 +148,16 @@ local function now()
     return (GetTime and GetTime()) or 0
 end
 
+--- Throw away whatever the last flight master's map said. Called from every path that must not
+-- leave a stale cache behind: a capture that is about to be rebuilt, a capture that will not
+-- happen at all, and Reset(). A stale entry is not a display bug -- the click hook reads this
+-- table to key a measurement, so a leftover from another flight master would file a real flight
+-- under the wrong pair of node ids.
+local function forgetCapture()
+    wipe(captured)
+    currentSlot, currentNodeID, slotPolarity = nil, nil, nil
+end
+
 local function settings()
     local PQ = ns.PQ
     local profile = PQ and PQ.db and PQ.db.profile
@@ -303,8 +313,8 @@ end
 function M.Reset()
     local routes = M.GetRoutes()
     if routes then wipe(routes) end
-    wipe(captured)
-    currentSlot, currentNodeID, slotPolarity, pending, flight = nil, nil, nil, nil, nil
+    forgetCapture()
+    pending, flight = nil, nil
 end
 
 ---------------------------------------------------------------------------
@@ -373,8 +383,7 @@ end
 -- nothing we could use. nil is the whole feature standing down for this flight master: no names,
 -- no guesses, no partly filled cache.
 function M.Capture()
-    wipe(captured)
-    currentSlot, currentNodeID, slotPolarity = nil, nil, nil
+    forgetCapture()
 
     if type(GetTaxiMapID) ~= "function" then return nil end
     local ok, mapID = pcall(GetTaxiMapID)
@@ -572,7 +581,13 @@ function M.Enable()
         -- flight, and a flight whose landing event never arrived. The player is standing on the
         -- ground in front of a flight master, so neither is still true.
         pending, flight = nil, nil
-        if settings().tooltipETA == false and settings().bar == false then return end
+        if settings().tooltipETA == false and settings().bar == false then
+            -- Nothing on screen wants a route, so none is read. The cache is still cleared: the
+            -- click hook keys a measurement from it, and the last flight master's entries would
+            -- otherwise file this flight under the wrong pair of node ids.
+            forgetCapture()
+            return
+        end
         M.Capture()
     end)
 
