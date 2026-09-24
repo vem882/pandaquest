@@ -36,8 +36,11 @@
 --      AnimIn replaying on every survey of the same site. There are no animations here, so all
 --      three stay registered, and the bar simply redraws. It also fixes the case Blizzard's own
 --      comment at :81-83 apologises for: a player walking from one dig site straight into another.
---      On 5.5.4 every one of these events carries researchBranchID, so which race the count belongs
---      to is answered on every event rather than remembered from the last one.
+--      On 5.5.4 every one of these events carries researchBranchID -- ResearchInfoDocumentation
+--      .lua declares it Nilable = false on all three (:43, :55, :72) -- so which race the count
+--      belongs to is answered on every event rather than remembered from the last one. An event
+--      that somehow carried no branch draws an unnamed bar, which is this file's rule everywhere
+--      else; the previous site's name over this site's count would be a name nothing measured.
 --   2. It hides itself through an animation whose OnFinished sets shouldShow (:116-128). Here the
 --      leave check and the holds are one OnUpdate: while a deadline is pending it is the only
 --      thing that hides the bar, and the leave check does not run at all. That is the same rule
@@ -318,7 +321,7 @@ end
 -- sends a last find and no completion still lets the bar go.
 function M.OnFindComplete(numFindsCompleted, totalFinds, researchBranchID)
     if not enabled() then return end
-    branchID = tonumber(researchBranchID) or branchID
+    branchID = tonumber(researchBranchID)
     lastEventAt = now()
     draw(numFindsCompleted, totalFinds)
     local found, total = tonumber(numFindsCompleted), tonumber(totalFinds)
@@ -334,7 +337,7 @@ end
 -- vanished on the last find would take the news with it.
 function M.OnDigsiteComplete(researchBranchID)
     if not enabled() then return end
-    branchID = tonumber(researchBranchID) or branchID
+    branchID = tonumber(researchBranchID)
     lastEventAt = now()
     -- The total the bar was already counting to. Read through an `if` rather than
     -- `fillBar and fillBar:GetMinMaxValues()`, because an `and` expression keeps only the first
