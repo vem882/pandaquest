@@ -435,6 +435,11 @@ local T = {
     ["Read my recipes when I open a profession"] = "Lue reseptini kun avaan ammatin",
     ["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] =
         "Reseptit, ainesosat ja kunkin vaikeus tälle hahmolle. Ei koskaan kirjaa, joka avattiin linkistä.",
+
+    -- Flight master (docs/06 10c)
+    ["Flight time:"] = "Lentoaika:",
+    ["~%s (%d flight)"] = "~%s (%d lento)",
+    ["~%s (%d flights)"] = "~%s (%d lentoa)",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

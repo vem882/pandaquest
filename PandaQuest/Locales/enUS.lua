@@ -367,5 +367,10 @@ L["PandaQuest reads an open profession window once and puts your filters and col
 L["Read my recipes when I open a profession"] = true
 L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] = true
 
+-- Flight master (docs/06 10c)
+L["Flight time:"] = true
+L["~%s (%d flight)"] = true
+L["~%s (%d flights)"] = true
+
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

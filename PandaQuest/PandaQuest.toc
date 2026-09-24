@@ -46,6 +46,7 @@ Map\Tooltips.lua
 Nodes\Respawn.lua
 Nodes\Professions.lua
 Flight\Routes.lua
+Flight\Tooltip.lua
 UI\Options.lua
 UI\MinimapButton.lua
 UI\Wowhead.lua
