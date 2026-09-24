@@ -19,6 +19,7 @@ ns.MODULE_ORDER = {
     "Targets", "Router", "Arrow", "TomTomBridge",
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
+    "FlightRoutes",
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command

@@ -68,6 +68,16 @@ ns.DEFAULTS = {
         professions = { enabled = true, mining = true, herbalism = true, fishing = true,
                         chests = true, rares = true, showUngatherable = false,
                         onlyMyProfessions = true, respawnCountdown = true },
+        -- docs/06 10c: the flight master. `tooltipETA` appends one line to the taxi node tooltip
+        -- and `bar` draws the progress bar while the flight runs. Both show nothing at all on a
+        -- route this account has never flown, because nothing on this client can say how long an
+        -- unflown route takes (Flight/Routes.lua's header). The bar carries the same three keys
+        -- the dig site bar does -- lock, size, and the point it was dragged to -- because it is
+        -- the same bar in a second place, and two progress bars with two settings shapes would be
+        -- one idea spelled twice.
+        flight = { tooltipETA = true,
+                   bar = true, barLocked = false, barScale = 1.0,
+                   barPoint = "CENTER", barX = 0, barY = -200 },
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },
@@ -104,5 +114,14 @@ ns.DEFAULTS = {
                -- p = { [spawnKey] = timesSeen } }`. Local and unconditional - writing to one's own
                -- disk is not the hub's processing - while *sending* it is gated by telemetry.
                nodes = {},
+               -- What play taught us about flight times (docs/06 10c). Nothing on this client can
+               -- convert a taxi map position into yards and nothing names a taxi's speed, so a
+               -- route's duration exists only once somebody has flown it and we timed it.
+               -- `flight.routes["srcNodeID-dstNodeID"] = { n = samples, [1..n] = seconds,
+               -- t = unix time of the newest }`, keyed by the numeric node ids and never by a
+               -- localised node name. Account wide and local: like `nodes` above, writing to one's
+               -- own disk is not the hub's processing, and nothing here is uploaded in this
+               -- version -- there is nothing to aggregate until somebody flies.
+               flight = { routes = {} },
                dbCompiled = nil },
 }
