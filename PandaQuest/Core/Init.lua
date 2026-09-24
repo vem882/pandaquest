@@ -20,7 +20,7 @@ ns.MODULE_ORDER = {
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
     "FlightRoutes", "FlightTooltip",
-    "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
+    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
     -- and hands the rest back (docs/11 B4).
@@ -175,6 +175,7 @@ commands.help = function()
         "/pq sync - telemetry and community data status",
         "/pq scan professions - read the open profession window",
         "/pq consent - ask the data sharing question again",
+        "/pq flight - show the flight bar so you can drag it",
         "/pq lang auto|enUS|fiFI - interface language",
     }
     for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end

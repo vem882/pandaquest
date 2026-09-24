@@ -371,6 +371,24 @@ L["The recipes, their reagents and how hard each is for this character. Never a 
 L["Flight time:"] = true
 L["~%s (%d flight)"] = true
 L["~%s (%d flights)"] = true
+L["~%s left (%d flight)"] = true
+L["~%s left (%d flights)"] = true
+L["%s in the air"] = true
+L["Flight progress"] = true
+L["The flight bar is switched off in /pq options."] = true
+L["The flight bar is locked. Unlock it in /pq options to move it."] = true
+L["Drag the flight bar where you want it. It hides itself again in a moment."] = true
+L["/pq flight - show the flight bar so you can drag it"] = true
+L["Flight master"] = true
+L["PandaQuest times your own flights and shows what it measured. A route you have never flown shows nothing at all."] = true
+L["Show the flight time at the flight master"] = true
+L["One line in the destination's tooltip, with how many of your own flights it rests on."] = true
+L["Show the progress bar while flying"] = true
+L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] = true
+L["Lock the bar in place"] = true
+L["Unlocked, it can be dragged with the left mouse button."] = true
+L["Bar size"] = true
+L["Show me where it is"] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

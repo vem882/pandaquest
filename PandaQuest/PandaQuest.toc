@@ -49,6 +49,7 @@ Flight\Routes.lua
 Flight\Tooltip.lua
 UI\Options.lua
 UI\MinimapButton.lua
+UI\FlightBar.lua
 UI\Wowhead.lua
 UI\Tracker.lua
 UI\Notify.lua

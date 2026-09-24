@@ -440,6 +440,29 @@ local T = {
     ["Flight time:"] = "Lentoaika:",
     ["~%s (%d flight)"] = "~%s (%d lento)",
     ["~%s (%d flights)"] = "~%s (%d lentoa)",
+    ["~%s left (%d flight)"] = "~%s jäljellä (%d lento)",
+    ["~%s left (%d flights)"] = "~%s jäljellä (%d lentoa)",
+    ["%s in the air"] = "%s ilmassa",
+    ["Flight progress"] = "Lennon eteneminen",
+    ["The flight bar is switched off in /pq options."] = "Lentopalkki on pois päältä: /pq options.",
+    ["The flight bar is locked. Unlock it in /pq options to move it."] =
+        "Lentopalkki on lukittu. Avaa lukitus /pq options -asetuksista siirtääksesi sitä.",
+    ["Drag the flight bar where you want it. It hides itself again in a moment."] =
+        "Vedä lentopalkki haluamaasi kohtaan. Se piiloutuu hetken kuluttua.",
+    ["/pq flight - show the flight bar so you can drag it"] = "/pq flight - näytä lentopalkki siirtämistä varten",
+    ["Flight master"] = "Lentomestari",
+    ["PandaQuest times your own flights and shows what it measured. A route you have never flown shows nothing at all."] =
+        "PandaQuest kellottaa omat lentosi ja näyttää mitä se mittasi. Reitistä, jota et ole lentänyt, ei näy mitään.",
+    ["Show the flight time at the flight master"] = "Näytä lentoaika lentomestarilla",
+    ["One line in the destination's tooltip, with how many of your own flights it rests on."] =
+        "Yksi rivi kohteen tooltipissä, ja monenko oman lentosi varassa se on.",
+    ["Show the progress bar while flying"] = "Näytä edistymispalkki lennon aikana",
+    ["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] =
+        "Eteneminen ja jäljellä oleva aika, kun reitti on lennetty kahdesti; sitä ennen vain ilmassa kulunut aika.",
+    ["Lock the bar in place"] = "Lukitse palkki paikalleen",
+    ["Unlocked, it can be dragged with the left mouse button."] = "Lukitsemattomana sitä voi vetää hiiren vasemmalla painikkeella.",
+    ["Bar size"] = "Palkin koko",
+    ["Show me where it is"] = "Näytä missä se on",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

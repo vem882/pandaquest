@@ -119,6 +119,11 @@ local APPLIERS = {
     ["auction"] = function()
         if ns.AuctionScanner and ns.AuctionScanner.RefreshButton then ns.AuctionScanner.RefreshButton() end
     end,
+    -- The bar re-reads its own size and lock; the tooltip line reads its switch on every hover, so
+    -- nothing has to be told about that one.
+    ["flight"] = function()
+        if ns.FlightBar and ns.FlightBar.ApplySettings then ns.FlightBar.ApplySettings() end
+    end,
 }
 
 local function applierFor(path)
@@ -396,6 +401,28 @@ local function buildTable()
                     scanOnOpen = toggle(1, L["Read my recipes when I open a profession"],
                         L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."],
                         "recipes.scanOnOpen"),
+                },
+            },
+            -- docs/06 10c. The description says out loud what the two switches cannot do, because
+            -- a player who turns them on and sees nothing at their first flight master would
+            -- otherwise reasonably conclude the addon is broken.
+            flight = {
+                type = "group", order = 12, name = L["Flight master"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["PandaQuest times your own flights and shows what it measured. A route you have never flown shows nothing at all."] },
+                    tooltipETA = toggle(1, L["Show the flight time at the flight master"],
+                        L["One line in the destination's tooltip, with how many of your own flights it rests on."],
+                        "flight.tooltipETA"),
+                    bar = toggle(2, L["Show the progress bar while flying"],
+                        L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."],
+                        "flight.bar"),
+                    barLocked = toggle(3, L["Lock the bar in place"],
+                        L["Unlocked, it can be dragged with the left mouse button."], "flight.barLocked"),
+                    barScale = range(4, L["Bar size"], nil, "flight.barScale", 0.5, 2, 0.05),
+                    preview = { type = "execute", order = 5, name = L["Show me where it is"],
+                        func = function() if ns.FlightBar then ns.FlightBar.PreviewWithReply() end end },
+                    reset = { type = "execute", order = 6, name = L["Reset position"],
+                        func = function() if ns.FlightBar then ns.FlightBar.ResetPosition() end end },
                 },
             },
             advanced = {
