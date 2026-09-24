@@ -19,7 +19,7 @@ ns.MODULE_ORDER = {
     "Targets", "Router", "Arrow", "TomTomBridge",
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
-    "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
+    "Options", "MinimapButton", "Wowhead", "Tracker", "Notify", "DigSiteBar",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
     -- and hands the rest back (docs/11 B4). Archaeology does the same to RecipeScanner's wrapper,

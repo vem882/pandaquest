@@ -375,8 +375,23 @@ L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] = true
 L["Archaeology read: %d races, %d artifacts."] = true
 L["The server has not sent your artifact history, so completion counts were left out."] = true
 L["Archaeology"] = true
+L["Mists never shipped a dig site progress bar. PandaQuest draws one from the events the game already sends."] = true
 L["Read my archaeology when I open the window"] = true
 L["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."] = true
+L["Dig site progress bar"] = true
+L["Show the dig site progress bar"] = true
+L["Appears when you survey and hides when you leave the dig site."] = true
+L["Lock the bar in place"] = true
+L["Unlocked, it can be dragged with the left mouse button."] = true
+L["Bar size"] = true
+L["Show me where it is"] = true
+L["Puts an empty bar on screen for a moment so you can drag it."] = true
+L["Reset bar position"] = true
+L["Dig site progress"] = true
+L["Dig site complete"] = true
+L["This client draws its own dig site progress bar."] = true
+L["The dig site bar is switched off in /pq options."] = true
+L["Drag the dig site bar where you want it. It hides itself again in a moment."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")

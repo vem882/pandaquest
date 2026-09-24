@@ -119,6 +119,11 @@ local APPLIERS = {
     ["auction"] = function()
         if ns.AuctionScanner and ns.AuctionScanner.RefreshButton then ns.AuctionScanner.RefreshButton() end
     end,
+    -- docs/11 B6: the snapshot switch is read every time the window toggles, so only the bar has to
+    -- be told - its size, its lock and its switch all live on a frame that is already built.
+    ["archaeology"] = function()
+        if ns.DigSiteBar and ns.DigSiteBar.Refresh then ns.DigSiteBar.Refresh() end
+    end,
 }
 
 local function applierFor(path)
@@ -398,13 +403,27 @@ local function buildTable()
                         "recipes.scanOnOpen"),
                 },
             },
-            -- docs/11 B5. Archaeology has no recipe list, so it is not the group above: what is
-            -- collected is the races, their keystone item, the fragments and the artifacts.
+            -- docs/11 B5 and B6. Two unrelated things under one heading because they are one
+            -- profession to the player: what PandaQuest writes down about their digging, and the
+            -- progress bar Mists never shipped.
             archaeology = {
                 type = "group", order = 12, name = L["Archaeology"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["Mists never shipped a dig site progress bar. PandaQuest draws one from the events the game already sends."] },
                     snapshotOnOpen = toggle(1, L["Read my archaeology when I open the window"],
                         L["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."],
                         "archaeology.snapshotOnOpen"),
+                    barHeader = header(5, L["Dig site progress bar"]),
+                    digSiteBar = toggle(6, L["Show the dig site progress bar"],
+                        L["Appears when you survey and hides when you leave the dig site."], "archaeology.digSiteBar"),
+                    barLocked = toggle(7, L["Lock the bar in place"],
+                        L["Unlocked, it can be dragged with the left mouse button."], "archaeology.barLocked"),
+                    barScale = range(8, L["Bar size"], nil, "archaeology.barScale", 0.5, 2, 0.05),
+                    show = { type = "execute", order = 9, name = L["Show me where it is"],
+                        desc = L["Puts an empty bar on screen for a moment so you can drag it."],
+                        func = function() if ns.DigSiteBar and ns.DigSiteBar.Preview then ns.DigSiteBar.Preview() end end },
+                    reset = { type = "execute", order = 10, name = L["Reset bar position"],
+                        func = function() if ns.DigSiteBar and ns.DigSiteBar.ResetPosition then ns.DigSiteBar.ResetPosition() end end },
                 },
             },
             advanced = {
