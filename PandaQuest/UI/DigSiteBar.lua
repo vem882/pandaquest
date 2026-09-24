@@ -232,8 +232,10 @@ local function draw(found, total, label)
     visible = true
 end
 
---- GetState() -> { shown, branchID, raceName, found, total, locked } - what the bar is showing,
--- for /pq status and for the tests, which cannot look at a screen.
+--- GetState() -> { shown, branchID, raceName, found, total, locked, text } - what the bar is
+-- showing, for the tests, which cannot look at a screen. Fields the bar does not have are absent
+-- rather than blank: outside a dig site there is no branchID, and a race the client will not name
+-- has no raceName.
 function M.GetState()
     local found, total = 0, 0
     if fillBar then

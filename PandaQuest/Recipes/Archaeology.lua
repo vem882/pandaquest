@@ -364,9 +364,17 @@ local function statusLines()
         Log.Print("%s", L["No archaeology has been read on this character yet."])
         return
     end
-    Log.Print(L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."],
-        entry.rank or 0, entry.maxRank or 0, #(entry.races or {}), M.CountArtifacts(entry),
-        Util.FormatTime(unixNow() - (entry.scannedAt or 0)))
+    local races, artifacts = #(entry.races or {}), M.CountArtifacts(entry)
+    local ago = Util.FormatTime(unixNow() - (entry.scannedAt or 0))
+    if entry.rank then
+        Log.Print(L["Archaeology %d/%d: %d races, %d artifacts, read %s ago."],
+            entry.rank, entry.maxRank or entry.rank, races, artifacts, ago)
+    else
+        -- The entry has no rank, so the line has no rank. `entry.rank or 0` printed "0/0" -- a
+        -- number nobody measured, in the one place the player reads it, about the one field this
+        -- module deliberately leaves absent when the client did not answer.
+        Log.Print(L["Archaeology: %d races, %d artifacts, read %s ago."], races, artifacts, ago)
+    end
     if entry.historyAvailable == false then
         Log.Print("%s", L["The server has not sent your artifact history, so completion counts were left out."])
     end
