@@ -396,6 +396,10 @@ local T = {
     -- Ammattireseptit (docs/11)
     ["/pq scan professions - read the open profession window"] =
         "/pq scan professions - lue auki oleva ammatti-ikkuna",
+    ["/pq scan archaeology - read your archaeology window"] =
+        "/pq scan archaeology - lue arkeologia-ikkunasi",
+    ["/pq digsite - show the dig site bar so you can move it"] =
+        "/pq digsite - näytä kaivauspalkki, jotta voit siirtää sen",
     ["A profession scan is already running."] = "Ammattiskannaus on jo käynnissä.",
     ["Open a profession window first, then type /pq scan professions."] =
         "Avaa ensin ammatti-ikkuna ja kirjoita sitten /pq scan professions.",

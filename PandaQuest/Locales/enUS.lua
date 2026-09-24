@@ -344,6 +344,8 @@ L["Record my auction sales and purchases"] = true
 L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] = true
 -- Professions (docs/11): the recipe scan, its refusals and the options section
 L["/pq scan professions - read the open profession window"] = true
+L["/pq scan archaeology - read your archaeology window"] = true
+L["/pq digsite - show the dig site bar so you can move it"] = true
 L["A profession scan is already running."] = true
 L["Open a profession window first, then type /pq scan professions."] = true
 L["This client does not offer the recipe list PandaQuest reads."] = true

@@ -174,6 +174,8 @@ commands.help = function()
         "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
         "/pq sync - telemetry and community data status",
         "/pq scan professions - read the open profession window",
+        "/pq scan archaeology - read your archaeology window",
+        "/pq digsite - show the dig site bar so you can move it",
         "/pq consent - ask the data sharing question again",
         "/pq lang auto|enUS|fiFI - interface language",
     }
