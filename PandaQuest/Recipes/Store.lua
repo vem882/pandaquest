@@ -17,6 +17,12 @@
 -- book is the same book. What the hub wants from a second scan is not a second copy but a second
 -- (rank, difficulty) sample, and that is carried by the entry's own rank -- so the newest scan
 -- wins locally and the hub keeps the history (docs/11 C1.6).
+--
+-- Archaeology (docs/11 B5) lives in the same file under its own `archaeology` table, and not in
+-- `professions`, because it is not a recipe book: it has no recipe list, no reagents and no
+-- difficulty, and forcing it into the recipe shape would mean writing empty fields that a reader
+-- would take for measurements. One entry per character, replaced the same way and for the same
+-- reason.
 local _, ns = ...
 
 local M = {}
@@ -25,6 +31,10 @@ ns.RecipeStore = M
 local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format
 local floor, gmatch, concat = math.floor, string.gmatch, table.concat
 
+-- Still 1 after the archaeology table was added beside `professions`, and deliberately so: the
+-- version exists to warn a reader that what it already knows how to read has changed meaning, and
+-- this addition changes nothing about `professions`. A reader that knows only version 1 reads the
+-- same books it always did and ignores a table it never asked for.
 M.VERSION = 1
 
 -- docs/11 B2.
@@ -37,10 +47,22 @@ M.VERSION = 1
 --   maxReagents     MAX_TRADE_SKILL_REAGENTS, Blizzard's own constant
 --                   (Blizzard_TradeSkillUI/Mists/Blizzard_TradeSkillUI.lua:2). The window draws
 --                   eight reagent buttons and no recipe has more.
+--   maxArchaeology  how many characters' archaeology snapshots the file keeps. One snapshot is a
+--                   handful of races with a handful of artifacts each, so it is a fraction of one
+--                   recipe book; twelve is three times the four characters maxProfessions assumes
+--                   and still smaller than a single maxed profession.
+--   maxRaces        the ceiling on one snapshot's race list. Mists has three archaeology races
+--                   (Pandaren, Mogu, Mantid) on top of what the character carries from earlier
+--                   expansions, and GetNumArchaeologyRaces is the client's own count -- this is the
+--                   line past which the client is answering nonsense, not a claim about the game.
+--   maxArtifacts    the same, per race.
 M.LIMITS = {
     maxProfessions = 24,
     maxRecipes = 1500,
     maxReagents = 8,
+    maxArchaeology = 12,
+    maxRaces = 40,
+    maxArtifacts = 60,
 }
 
 --- The largest quantity docs/11 C1.1's grammar carries: minMade, maxMade and a reagent's count are
@@ -81,6 +103,7 @@ function M.GetDB()
     end
     if type(db.version) ~= "number" then db.version = M.VERSION end
     if type(db.professions) ~= "table" then db.professions = {} end
+    if type(db.archaeology) ~= "table" then db.archaeology = {} end
     return db
 end
 
@@ -169,15 +192,17 @@ end
 
 -- The oldest scan goes when the file is full. Age is the scan's own time rather than the wall
 -- clock, so a character nobody has played for a month is dropped before one scanned yesterday.
-local function pruneOldest(professions, keep)
-    while entryCount(professions) > M.LIMITS.maxProfessions do
+-- Shared by the recipe books and the archaeology snapshots: they are two tables with two limits and
+-- one rule, and one rule written twice is one rule that drifts.
+local function pruneOldest(entries, keep, limit)
+    while entryCount(entries) > limit do
         local oldestKey, oldestAt
-        for key, entry in pairs(professions) do
+        for key, entry in pairs(entries) do
             local at = type(entry) == "table" and tonumber(entry.scannedAt) or 0
             if key ~= keep and (not oldestAt or at < oldestAt) then oldestKey, oldestAt = key, at end
         end
         if not oldestKey then return end
-        professions[oldestKey] = nil
+        entries[oldestKey] = nil
     end
 end
 
@@ -188,7 +213,7 @@ function M.SetProfession(entry)
     local db = M.GetDB()
     local key = M.EntryKey(entry.character, entry.realm, entry.skillLine, entry.profession)
     db.professions[key] = entry
-    pruneOldest(db.professions, key)
+    pruneOldest(db.professions, key, M.LIMITS.maxProfessions)
     return entry, key
 end
 
@@ -217,6 +242,50 @@ function M.NewestFor(name, realm)
         end
     end
     return best
+end
+
+---------------------------------------------------------------------------
+-- Archaeology (docs/11 B5)
+---------------------------------------------------------------------------
+
+--- The SkillLineID archaeology is, from Blizzard's own constants
+-- (Blizzard_FrameXMLBase/Classic/Constants.lua:14-30) -- the same id SKILL_LINES above lists and
+-- the same one the hub already maps to "Archaeology"
+-- (platform/server/pandaquest_hub/questdb.py:190).
+M.ARCHAEOLOGY_SKILL_LINE = 794
+
+--- ArchaeologyKey(name, realm) -> the key one character's snapshot is stored under.
+-- The character is in the key for the recipe book's reason: two characters of one account dig
+-- separately and neither one's fragments are the other's. It is local only (docs/11 C1.2).
+function M.ArchaeologyKey(name, realm)
+    return format("%s-%s", tostring(name), tostring(realm))
+end
+
+--- SetArchaeology(entry) -> entry, key. Replaces this character's snapshot.
+-- Replaced, never merged, and here the argument is stronger than it is for a recipe book: every
+-- number in a snapshot is a count as of one moment. Merging two readings of "45 Pandaren fragments"
+-- would produce a number that was never true.
+function M.SetArchaeology(entry)
+    local db = M.GetDB()
+    local key = M.ArchaeologyKey(entry.character, entry.realm)
+    db.archaeology[key] = entry
+    pruneOldest(db.archaeology, key, M.LIMITS.maxArchaeology)
+    return entry, key
+end
+
+--- GetArchaeology(name, realm) -> the stored snapshot or nil.
+function M.GetArchaeology(name, realm)
+    return M.GetDB().archaeology[M.ArchaeologyKey(name, realm)]
+end
+
+--- GetArchaeologyEntries() -> the whole table, key -> entry.
+function M.GetArchaeologyEntries()
+    return M.GetDB().archaeology
+end
+
+--- CountArchaeology() -> how many snapshots are stored.
+function M.CountArchaeology()
+    return entryCount(M.GetDB().archaeology)
 end
 
 --- ReagentTotals(entry) -> itemID -> how many recipes in this book use it. Nothing needs it in the

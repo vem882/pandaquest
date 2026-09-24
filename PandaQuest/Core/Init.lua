@@ -22,8 +22,9 @@ ns.MODULE_ORDER = {
     "Options", "MinimapButton", "Wowhead", "Tracker", "Notify",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
-    -- and hands the rest back (docs/11 B4).
-    "RecipeStore", "RecipeScanner",
+    -- and hands the rest back (docs/11 B4). Archaeology does the same to RecipeScanner's wrapper,
+    -- so it comes after that one for the same reason (docs/11 B5).
+    "RecipeStore", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
 

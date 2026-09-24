@@ -398,6 +398,15 @@ local function buildTable()
                         "recipes.scanOnOpen"),
                 },
             },
+            -- docs/11 B5. Archaeology has no recipe list, so it is not the group above: what is
+            -- collected is the races, their keystone item, the fragments and the artifacts.
+            archaeology = {
+                type = "group", order = 12, name = L["Archaeology"], args = {
+                    snapshotOnOpen = toggle(1, L["Read my archaeology when I open the window"],
+                        L["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."],
+                        "archaeology.snapshotOnOpen"),
+                },
+            },
             advanced = {
                 type = "group", order = 20, name = L["Advanced"], args = {
                     level = { type = "select", order = 1, name = L["Log level"],

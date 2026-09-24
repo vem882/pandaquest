@@ -68,6 +68,10 @@ ns.DEFAULTS = {
         professions = { enabled = true, mining = true, herbalism = true, fishing = true,
                         chests = true, rares = true, showUngatherable = false,
                         onlyMyProfessions = true, respawnCountdown = true },
+        -- docs/11 B5: archaeology. `snapshotOnOpen` reads the archaeology window's own numbers --
+        -- the races, their keystone item, their fragments and their artifacts -- into
+        -- PandaQuestProf whenever the player opens or closes that window.
+        archaeology = { snapshotOnOpen = true },
         tooltips = { enabled = true, showIds = false },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },

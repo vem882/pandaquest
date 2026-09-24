@@ -435,6 +435,24 @@ local T = {
     ["Read my recipes when I open a profession"] = "Lue reseptini kun avaan ammatin",
     ["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] =
         "Reseptit, ainesosat ja kunkin vaikeus tälle hahmolle. Ei koskaan kirjaa, joka avattiin linkistä.",
+
+    -- Arkeologia (docs/11 B5 ja B6)
+    ["This client does not offer the archaeology data PandaQuest reads."] =
+        "Tämä asiakas ei tarjoa arkeologiatietoja, joita PandaQuest lukee.",
+    ["This character has no archaeology races to read yet."] =
+        "Tällä hahmolla ei ole vielä yhtään arkeologiakansaa luettavaksi.",
+    ["No archaeology has been read on this character yet."] =
+        "Tällä hahmolla ei ole vielä luettu arkeologiaa.",
+    ["Archaeology %d/%d: %d races, %d artifacts, read %s ago."] =
+        "Arkeologia %d/%d: %d kansaa, %d esinettä, luettu %s sitten.",
+    ["Archaeology read: %d races, %d artifacts."] =
+        "Arkeologia luettu: %d kansaa, %d esinettä.",
+    ["The server has not sent your artifact history, so completion counts were left out."] =
+        "Palvelin ei ole lähettänyt esinehistoriaasi, joten valmistumislukuja ei kirjattu.",
+    ["Archaeology"] = "Arkeologia",
+    ["Read my archaeology when I open the window"] = "Lue arkeologiani kun avaan ikkunan",
+    ["Your races, their keystone, your fragments and the artifacts you have. Only this character's own."] =
+        "Kansasi, niiden avainkivi, sirpaleesi ja esineesi. Vain tämän hahmon omat.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
