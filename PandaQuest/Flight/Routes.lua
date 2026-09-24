@@ -52,7 +52,9 @@
 --   * a reload or a disconnect in the air -- the measurement lives in memory only, so a session
 --     that ends mid-flight simply loses it, and PLAYER_ENTERING_WORLD drops any leftover;
 --   * a control event with no taxi under it;
---   * a click whose destination this open did not cache.
+--   * a click whose destination this open did not cache;
+--   * a takeoff that no recent click explains -- a click the server refused, or a taxi boarded
+--     from a quest script with no flight master in it. See CLICK_WINDOW.
 --
 -- **Nothing runs per frame here.** Like Nodes/Respawn.lua, this file is entirely event driven; the
 -- arithmetic is done when a screen asks for it. UI/FlightBar.lua has the only OnUpdate, and only
@@ -105,6 +107,23 @@ local MAX_SAMPLES = 8
 -- than a new one. A route only enters the file after somebody has flown it, so this is not a
 -- ceiling anyone reaches by playing -- it is the line past which the file stops growing.
 local MAX_ROUTES = 400
+
+--- How long a click on a destination stays redeemable by a takeoff. The click and the takeoff are
+-- two separate events with nothing in their payloads tying them together, so something has to say
+-- when a click has stopped being about the flight that follows -- otherwise a click the server
+-- refused (not enough money, in combat, out of range) waits forever and is spent on whatever taxi
+-- the player boards next, including a quest-scripted flight taken nowhere near a flight master.
+-- That is a real duration filed under a route nobody flew, which is the one thing this file exists
+-- not to do.
+--
+-- Nodes/Professions.lua:111 already fixes this exact shape of bound -- "how long a gathering cast
+-- still explains a loot window", GATHER_WINDOW = 8 -- and reads it the same way at :981-986: an
+-- action older than the window no longer explains what just happened. This is that question with
+-- a taxi click in place of a cast, so it takes that number rather than a new one. Nothing in this
+-- repository has measured how long the client takes to lift a taxi off after TakeTaxiNode, and a
+-- window that turns out to be too short costs a measurement, not a wrong one -- which is the side
+-- this file's header says it wants to err on.
+local CLICK_WINDOW = 8
 
 --- Below this the median of the samples is the samples. platform/server/pandaquest_hub/respawn.py
 -- :69-71 fixes MIN_SAMPLES = 2 for exactly this reason -- "a median of one is that measurement" --
@@ -491,12 +510,26 @@ local function onTakeTaxiNode(index)
 end
 
 --- The takeoff edge. UnitOnTaxi is the authority; the event only says when.
+--
+-- The click is taken off the table first and whatever happens next, because a control loss the
+-- player did not get from this click has already made the click stale: they were stunned, they
+-- watched a cinematic, they stepped into a vehicle. Leaving it standing would hand it to the next
+-- taxi they board instead. A click spent on a control loss that turns out not to be a taxi costs
+-- one measurement; a click kept costs a wrong number on a route nobody flew.
 local function onControlLost()
-    if not Compat.UnitOnTaxi("player") then return end       -- a stun, a cinematic, a vehicle
-    if not pending then return end                            -- boarded from something we never saw
-    flight = { src = pending.src, dst = pending.dst, name = pending.name,
-               startedAt = now(), discarded = false }
+    local click = pending
     pending = nil
+    if not Compat.UnitOnTaxi("player") then return end       -- a stun, a cinematic, a vehicle
+    if not click then return end                              -- boarded from something we never saw
+    -- And a click that has been waiting longer than the client could plausibly have taken to lift
+    -- this taxi off is not this taxi's click either. See CLICK_WINDOW.
+    local waited = now() - (tonumber(click.at) or 0)
+    if waited < 0 or waited > CLICK_WINDOW then
+        Log.Debug("Flight", "a click %.0f s old is not this takeoff; nothing measured", waited)
+        return
+    end
+    flight = { src = click.src, dst = click.dst, name = click.name,
+               startedAt = now(), discarded = false }
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", flight.src, flight.dst) end
     Log.Debug("Flight", "measuring %d-%d", flight.src, flight.dst)
