@@ -16,7 +16,7 @@ ns.Data = ns.Data or {}
 ns.Data.meta = {
   ["built"] = "2026-09-06T10:00:00Z",
   ["contentPhase"] = 5,
-  ["counts"] = {["items"]=80049,["npcs"]=60224,["objects"]=20326,["quests"]=17693},
+  ["counts"] = {["items"]=80049,["npcs"]=60224,["objects"]=20326,["questXP"]=17930,["quests"]=17693},
   ["expansion"] = "MoP",
   ["schemaVersion"] = 1,
   ["source"] = "Questie 11.37.1",
