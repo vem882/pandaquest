@@ -174,8 +174,15 @@ local function rankFromProfessionInfo(profession)
     local ok, a, b, c, d, e, f = pcall(GetProfessions)
     if not ok then return nil end
     local wantLine, wantName = SKILL_LINE[profession], SKILL_NAME[profession]
+    -- Six slots, counted 1..6 and never with `#`. Any of the six may be nil, and on the client's
+    -- Lua 5.1 the length of a table with a hole in it is any border the implementation likes:
+    -- `#{nil, nil, 3, nil, nil, nil}` may be 0, so a character with no primary professions loses
+    -- the third slot onwards -- archaeology, fishing, cooking, first aid -- and this function
+    -- silently returns nil for fishing. The caller then falls back to rankFromSkillLines, which
+    -- matches the *English* name, so the miss is invisible here and breaks on a localised client.
+    -- Recipes/Scanner.lua:184-186 already explains this and counts to 6; this is the same list.
     local indices = { a, b, c, d, e, f }
-    for i = 1, #indices do
+    for i = 1, 6 do
         local index = indices[i]
         if type(index) == "number" then
             local okInfo, name, _, rank, _, _, _, skillLine = pcall(GetProfessionInfo, index)
