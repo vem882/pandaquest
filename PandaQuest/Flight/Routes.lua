@@ -581,16 +581,36 @@ local function onControlLost()
     local click = pending
     pending = nil
     if not Compat.UnitOnTaxi("player") then return end       -- a stun, a cinematic, a vehicle
-    if not click then return end                              -- boarded from something we never saw
-    -- And a click that has been waiting longer than the client could plausibly have taken to lift
-    -- this taxi off is not this taxi's click either. See CLICK_WINDOW.
-    local waited = now() - (tonumber(click.at) or 0)
-    if waited < 0 or waited > CLICK_WINDOW then
-        Log.Debug("Flight", "a click %.0f s old is not this takeoff; nothing measured", waited)
+
+    -- A flight this module could not put a name to is still a flight, and the player is still in
+    -- the air watching it happen. The bar was hidden for all of them until a player reported
+    -- exactly that: every takeoff where the click was not seen -- a taxi from a quest script, a
+    -- flight master whose map C_TaxiMap could not read (see the header: both of those calls are
+    -- guarded and this client has no call site for either), a click older than CLICK_WINDOW --
+    -- drew nothing at all, which reads as a broken addon rather than as a route nobody knows.
+    --
+    -- So an unidentified flight is measured too, and the only thing it lacks is a name to file
+    -- the measurement under. `src` and `dst` are nil, which is what M.Record refuses on, so
+    -- nothing unidentified ever reaches the store; the stopwatch is real either way and the time
+    -- in the air is the one honest number such a flight has.
+    local usable = click ~= nil
+    if usable then
+        local waited = now() - (tonumber(click.at) or 0)
+        if waited < 0 or waited > CLICK_WINDOW then
+            Log.Debug("Flight", "a click %.0f s old is not this takeoff; timing it unnamed", waited)
+            usable = false
+        end
+    end
+    if not usable then
+        flight = { src = nil, dst = nil, name = nil, legs = nil,
+                   startedAt = now(), discarded = false, identified = false }
+        Log.Debug("Flight", "measuring an unnamed flight; the bar shows the time in the air only")
+        local PQ = ns.PQ
+        if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", nil, nil) end
         return
     end
     flight = { src = click.src, dst = click.dst, name = click.name, legs = click.legs,
-               startedAt = now(), discarded = false }
+               startedAt = now(), discarded = false, identified = true }
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", flight.src, flight.dst) end
     Log.Debug("Flight", "measuring %d-%d over %s legs", flight.src, flight.dst,
@@ -606,6 +626,12 @@ local function onControlGained()
     flight = nil
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_ENDED", f.src, f.dst) end
+    if not f.identified then
+        -- Timed, shown, and never filed: there is no route to file it under. See the takeoff.
+        Log.Debug("Flight", "an unnamed flight landed after %.0f s; nothing recorded",
+            now() - f.startedAt)
+        return
+    end
     if f.discarded then
         Log.Debug("Flight", "%d-%d landed early; nothing recorded", f.src, f.dst)
         return
