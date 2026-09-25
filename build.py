@@ -37,6 +37,11 @@ What was left behind, on purpose
   ``resolve_addons_dir``, symlinking, the dry run.  A player installs a release by unzipping
   it; see README.md.
 * The Windows companion app's identity paths.  The app is not in this repository.
+* The lint configuration.  ``.luacheckrc`` stayed with the linter it configures: it is not a
+  standalone file -- it ``dofile``s ``tools/wowapi/wow_std.lua`` for the WoW global list and its
+  ``exclude_files`` names ``tools/luacheck/``, ``tools/wowstub/`` and ``_reference/``.  A copy
+  here would be a configuration no file in this repository can satisfy, for a linter this
+  repository does not have.
 
 The version: 0.2.<commits reachable from HEAD>
 ---------------------------------------------
@@ -77,6 +82,7 @@ never the clock -- so that building the same commit twice produces the same byte
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import re
 import subprocess
@@ -122,6 +128,11 @@ EXCLUDED_SUFFIXES = {".pyc", ".pyo", ".orig", ".rej", ".bak", ".swp"}
 #: Every zip entry carries these three, and nothing that varies with the clock or the umask.
 ZIP_DATE_TIME = (1980, 1, 1, 0, 0, 0)
 ZIP_EXTERNAL_ATTR = 0o644 << 16
+
+#: Passed to every ``writestr``, not to the ``ZipFile`` -- see :func:`zip_bytes` for why that
+#: distinction is the difference between level 9 and level 6.  Deterministic either way, since
+#: the level is the same for every entry of every build; it is the download size that moves.
+ZIP_COMPRESS_LEVEL = 9
 
 
 # ------------------------------------------------------------------------------- the tree
@@ -207,6 +218,10 @@ def is_shallow(repo: Path | None = None) -> bool:
     here, and sorting below every package the hub already has.  The hub does not fail on that;
     it goes on offering the previous build.  So :func:`package` refuses outright rather than
     producing a number nobody can tell is wrong by looking at it.
+
+    It answers False for *two* different states: a whole history, and no git at all (``_git``
+    returns "" on OSError, and "" is not "true").  Only the first is safe to publish from, so
+    :func:`package` asks :func:`commit_count` separately -- see the guard there.
     """
     return _git("rev-parse", "--is-shallow-repository", repo=repo) == "true"
 
@@ -371,10 +386,11 @@ def _entry(name: str) -> zipfile.ZipInfo:
 def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, bytes]:
     """Every zip entry, by its path inside the archive.  Every key starts with ``PandaQuest/``.
 
-    That prefix is the folder name WoW installs, and the hub's update manifest lists the
-    paths straight out of the archive, so both the installed folder and the manifest depend
-    on it.  It is built from :data:`ADDON` rather than from the checkout's directory name,
-    which on a runner is the repository name and is not the same word.
+    That prefix is the folder name WoW installs, and it is what the hub's update manifest is
+    built from: its ``_safe_member`` drops every entry that does not begin with ``PandaQuest/``
+    and ``index_package`` then refuses the package outright, because the TOC was one of the
+    entries dropped.  It is built from :data:`ADDON` rather than from the checkout's directory
+    name, which on a runner is the repository name and is not the same word.
     """
     root = root or ADDON_DIR
     found: dict[str, bytes] = {}
@@ -399,18 +415,52 @@ def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, byt
     return found
 
 
-def write_zip(target: Path, ident: dict[str, object], root: Path | None = None) -> None:
-    """Write the deterministic archive: sorted names, fixed timestamps, fixed mode bits."""
-    target.parent.mkdir(parents=True, exist_ok=True)
+def zip_bytes(ident: dict[str, object], root: Path | None = None) -> bytes:
+    """The deterministic archive as bytes: sorted names, fixed timestamps, fixed mode bits.
+
+    ``compresslevel`` goes on each ``writestr`` and not on the ``ZipFile``.  The constructor's
+    level is only copied onto an entry when ``writestr`` builds the ZipInfo itself; here
+    :func:`_entry` hands it a ready-made one, whose ``_compresslevel`` is None, so a level set
+    on the ZipFile is silently ignored and every member is deflated at zlib's default 6.
+    Measured on this tree: 7,567,468 bytes that way against 7,443,566 with the level applied --
+    123,902 bytes of download that the code already claimed to be saving.  (The same no-op is
+    in ``ci/lib/addon_build.py`` and ``tools/install.py`` in the platform repository, which is
+    where it was copied from; fixing it there is that repository's change to make.)
+    """
+    buffer = io.BytesIO()
     content = entries(ident, root)
-    with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for name in sorted(content):
-            archive.writestr(_entry(name), content[name])
+            archive.writestr(_entry(name), content[name], compresslevel=ZIP_COMPRESS_LEVEL)
         archive.comment = json.dumps(ident, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return buffer.getvalue()
 
 
-def package(target: Path | None = None, allow_shallow: bool = False) -> tuple[Path, dict[str, object]]:
+def write_zip(target: Path, ident: dict[str, object], root: Path | None = None) -> None:
+    """Write :func:`zip_bytes` to disk.  One construction, so check.py cannot test a second one."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(zip_bytes(ident, root))
+
+
+def package(
+    target: Path | None = None,
+    allow_shallow: bool = False,
+    allow_no_git: bool = False,
+) -> tuple[Path, dict[str, object]]:
     """Build the stamped addon zip.  Returns where it landed and the identity it carries."""
+    if commit_count() is None and not allow_no_git:
+        # The quieter sibling of the shallow case, and the worse one. Without git,
+        # release_version falls back to the TOC's declared series -- measured here, 0.2.0:
+        # digits and dots, matching the hub's pattern, and a number that never moves again, so
+        # every later release publishes under the same tag. Refusing is the only outcome a
+        # human notices, exactly as for the shallow case below.
+        raise SystemExit(
+            f"git could not answer here, so the version would be {release_version()} -- the "
+            "TOC's declared series and not this repository's commit count. That name matches "
+            "the hub's pattern, so nothing downstream reports it, and it does not move when "
+            "the next commit lands. Build from a git checkout with git installed. "
+            "--allow-no-git builds anyway, for a source tarball nobody publishes."
+        )
     if is_shallow() and not allow_shallow:
         raise SystemExit(
             f"this checkout is shallow, so the version would be {release_version()} instead of "
@@ -421,12 +471,26 @@ def package(target: Path | None = None, allow_shallow: bool = False) -> tuple[Pa
         )
     ident = identity()
     target = target or DIST_DIR / package_name(str(ident["version"]))
-    if not HUB_PACKAGE_PATTERN.match(target.name):
+    named = HUB_PACKAGE_PATTERN.match(target.name)
+    if not named:
         # The hub lists dist/ and matches this pattern; a name it does not match is a package
         # no player is ever offered, and nothing downstream reports the omission.
         raise SystemExit(
             f"{target.name} is not a name the hub can see. It must match "
             f"{HUB_PACKAGE_PATTERN.pattern} -- digits and dots only, no 'v' and no sha."
+        )
+    if named.group(1) != ident["version"]:
+        # The shape being right is not enough. The hub reads the version twice and from two
+        # places: find_package orders candidates by the number in the FILE NAME, and
+        # index_package takes the manifest's version from the ARCHIVE COMMENT, which wins. A
+        # file whose name and comment disagree makes the hub disagree with itself -- it sorts
+        # the package at one version and advertises another -- and one mistyped digit is
+        # enough. Both numbers are in hand right here, so compare them.
+        raise SystemExit(
+            f"{target.name} says version {named.group(1)}, but this tree builds "
+            f"{ident['version']}. The hub sorts packages by the name and reads the version out "
+            f"of the archive comment, so the two must agree. Use "
+            f"{package_name(str(ident['version']))}."
         )
     write_zip(target, ident)
     return target, ident
@@ -454,6 +518,11 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="build from a truncated history anyway; the version will be wrong (see is_shallow)",
     )
+    packaged.add_argument(
+        "--allow-no-git",
+        action="store_true",
+        help="build without git anyway; the version falls back to the TOC's series and stops moving",
+    )
     args = parser.parse_args(argv)
 
     if args.command == "version":
@@ -469,7 +538,9 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"{key.upper()}={value}")
         return 0
 
-    target, ident = package(args.out, allow_shallow=args.allow_shallow)
+    target, ident = package(
+        args.out, allow_shallow=args.allow_shallow, allow_no_git=args.allow_no_git
+    )
     size = target.stat().st_size
     print(f"wrote {target} ({size} bytes, {size / 1024 / 1024:.1f} MiB) as {ident['build']}")
     return 0
