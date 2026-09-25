@@ -104,7 +104,7 @@ No toolchain, no install step. Python 3.9 or newer, and git for the version:
 
 ```sh
 python3 check.py                  # the checks; -v names each one
-python3 build.py version          # 0.2.84
+python3 build.py version          # 0.2.<count>, whatever this checkout reaches
 python3 build.py identity         # the build identity as shell lines, or --json
 python3 build.py package --out "dist/PandaQuest-$(python3 build.py version).zip"
 ```
@@ -124,7 +124,7 @@ Unzip the release asset into your WoW AddOns directory, so that the addon ends u
 `World of Warcraft/_classic_/Interface/AddOns/PandaQuest`:
 
 ```sh
-unzip PandaQuest-0.2.84.zip -d "/path/to/World of Warcraft/_classic_/Interface/AddOns"
+unzip PandaQuest-<version>.zip -d "/path/to/World of Warcraft/_classic_/Interface/AddOns"
 ```
 
 MoP Classic uses the `_classic_` flavor folder. There is no installer script here — the platform
