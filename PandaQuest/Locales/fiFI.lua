@@ -42,6 +42,9 @@ local T = {
     ["No target found for quest %d."] = "Tehtävälle %d ei löytynyt kohdetta.",
     ["Not found: %s %d"] = "Ei löytynyt: %s %d",
     ["Version %s"] = "Versio %s",
+    ["Built %s from %s"] = "Koottu %s commitista %s",
+    ["This is a build from a modified working tree; it is not a release."] =
+        "Tämä on koottu muokatusta työhakemistosta; se ei ole julkaisu.",
     ["Database: %s"] = "Tietokanta: %s",
     ["ready"] = "valmis",
     ["loading"] = "latautuu",
