@@ -176,15 +176,21 @@ class TheVersion(unittest.TestCase):
         self.assertEqual(build.release_version(), ".".join([*series, str(count)]))
 
     def test_it_is_not_the_declared_version_in_a_real_checkout(self) -> None:
-        """The one way this goes wrong quietly: a shallow clone, or no git, falls back.
-
-        A fallback ships ``PandaQuest-0.2.0.zip`` -- a number the hub sorts below every
-        release already published -- and nothing anywhere says so.  See fetch-depth in
-        .github/workflows/release.yml.
-        """
+        """No git at all falls back to the TOC's series, which sorts below every release."""
         if build.commit_count() is None:
             self.skipTest("not a git checkout")
         self.assertNotEqual(build.release_version(), build.read_toc_version())
+
+    def test_the_history_is_whole(self) -> None:
+        """A shallow checkout is the quiet one, and it is not the fallback above.
+
+        Measured, not assumed: ``git clone --depth 1`` of this repository answers
+        ``rev-list --count HEAD`` with 1, so release_version returns ``0.2.1`` -- digits and
+        dots, matching the hub's pattern, passing every other case here, and sorting below
+        every package the hub holds.  So this case exists, and build.py's ``package`` refuses
+        as well.  If it fails on a runner, the checkout lost ``fetch-depth: 0``.
+        """
+        self.assertFalse(build.is_shallow(), "shallow checkout: the commit count is not the count")
 
     def test_the_hub_can_see_the_file_name_it_produces(self) -> None:
         name = build.package_name(build.release_version())

@@ -43,11 +43,16 @@ jobs:
     steps:
       # fetch-depth: 0 is load-bearing, and it fails silently without it. The shipped version is
       # this repository's commit count (build.py: release_version), and a shallow clone counts
-      # what it was given: the default depth of 1 would build PandaQuest-0.2.1.zip, a version the
-      # hub sorts below every package it already has, so /setup would go on offering the old
-      # build while this run stayed green. The platform repository learned that the hard way and
-      # left the same comment on its own checkout. check.py's TheVersion cases fail loudly here
-      # if the fallback ever kicks in, which is the backstop for this line being deleted.
+      # what it was given rather than failing: measured here, a depth-1 clone of this repository
+      # builds PandaQuest-0.2.1.zip -- well formed, matching the hub's pattern, and sorting below
+      # every package the hub already has, so /setup would go on offering the old build while
+      # this run stayed green. The platform repository learned that the hard way and left the
+      # same comment on its own checkout.
+      #
+      # Because that number is wrong rather than missing, the backstop is an explicit one:
+      # check.py's TheVersion.test_the_history_is_whole and build.py's `package` both ask
+      # `git rev-parse --is-shallow-repository` and refuse. Deleting this line fails the run at
+      # the check step, not in the hub a week later.
       - name: Check out the repository, with all of its history
         uses: actions/checkout@v4.2.2
         with:

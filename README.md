@@ -137,9 +137,11 @@ Merging into `main` runs `.github/workflows/release.yml` on a GitHub-hosted runn
 tagged `v<version>`. A pull request runs everything except the publish, and attaches the zip it
 built as a run artifact, so a change can be installed and played before it is merged.
 
-The checkout uses `fetch-depth: 0` and must keep doing so: a shallow clone counts one commit, the
-version falls back, and the release goes backwards. `check.py` fails loudly if the fallback ever
-happens and asserts that line is still in the workflow.
+The checkout uses `fetch-depth: 0` and must keep doing so. A shallow clone does not fail and does
+not fall back — measured, a depth-1 clone of this repository builds `PandaQuest-0.2.1.zip`, a name
+the hub's pattern matches happily and sorts below every package it holds. So both `check.py` and
+`build.py package` ask `git rev-parse --is-shallow-repository` and refuse, and `check.py` also
+asserts the `fetch-depth: 0` line is still in the workflow.
 
 ## Checks, and what they cannot tell you
 
@@ -153,7 +155,8 @@ the addon *works*; they tell you the package is not obviously broken:
 * every file `embeds.xml` pulls in exists too, recursively, since the TOC lists the XML and not
   its twenty libraries;
 * the four points of the contract above, against a freshly built zip;
-* the version is the series plus the measured commit count, and is not the declared fallback.
+* the version is the series plus the measured commit count, the history behind it is not
+  truncated, and the name it produces matches the hub's own regex.
 
 ## Licence and credit
 

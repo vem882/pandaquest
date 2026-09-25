@@ -190,20 +190,34 @@ def commit_count(repo: Path | None = None) -> int | None:
 
     Reachable commits, not first-parent ones: merging a branch of three adds four, and what
     matters is only that the number never goes down while commits are only ever added.  A
-    shallow clone counts what it was given rather than what exists, which is why the workflow
-    checks out with ``fetch-depth: 0`` -- see .github/workflows/release.yml.
+    shallow clone counts what it was *given*, which is a smaller number and not a missing one
+    -- see :func:`is_shallow`, which is the check that catches it.
     """
     count = _git("rev-list", "--count", "HEAD", repo=repo)
     return int(count) if _is_number(count) else None
 
 
+def is_shallow(repo: Path | None = None) -> bool:
+    """True when the checkout's history is truncated, so its commit count is not the count.
+
+    This is the failure ``fetch-depth: 0`` exists to prevent, and it is worth its own function
+    because it does *not* show up as the fallback in :func:`release_version`.  Measured: a
+    ``git clone --depth 1`` of this repository answers ``rev-list --count HEAD`` with ``1``,
+    so the version is ``0.2.1`` -- well formed, digits and dots, passing every other check
+    here, and sorting below every package the hub already has.  The hub does not fail on that;
+    it goes on offering the previous build.  So :func:`package` refuses outright rather than
+    producing a number nobody can tell is wrong by looking at it.
+    """
+    return _git("rev-parse", "--is-shallow-repository", repo=repo) == "true"
+
+
 def release_version(toc: Path | None = None, repo: Path | None = None) -> str:
     """The number a release ships under: the TOC's series, then this commit's count.
 
-    Falls back to the declared version when there is no usable git history, so a source
-    tarball builds a package named for what its TOC says rather than failing or inventing a
-    count.  That fallback is also the one way a shallow clone can go wrong quietly, so
-    check.py asserts the two disagree in a real checkout.
+    Falls back to the declared version when there is no git and no repository at all, so a
+    source tarball builds a package named for what its TOC says rather than failing or
+    inventing a count.  It does *not* fall back for a shallow clone, which answers with a real
+    but wrong number; :func:`is_shallow` is that check.
     """
     declared = read_toc_version(toc)
     series = declared.split(".")[:SERIES_PARTS]
@@ -395,8 +409,16 @@ def write_zip(target: Path, ident: dict[str, object], root: Path | None = None) 
         archive.comment = json.dumps(ident, sort_keys=True, separators=(",", ":")).encode("utf-8")
 
 
-def package(target: Path | None = None) -> tuple[Path, dict[str, object]]:
+def package(target: Path | None = None, allow_shallow: bool = False) -> tuple[Path, dict[str, object]]:
     """Build the stamped addon zip.  Returns where it landed and the identity it carries."""
+    if is_shallow() and not allow_shallow:
+        raise SystemExit(
+            f"this checkout is shallow, so the version would be {release_version()} instead of "
+            "the real commit count -- a package the hub sorts below every one it already has, "
+            "and it reports nothing when that happens. Fetch the whole history "
+            "(git fetch --unshallow, or fetch-depth: 0 in the workflow). --allow-shallow builds "
+            "anyway, for a local experiment whose file name is wrong on purpose."
+        )
     ident = identity()
     target = target or DIST_DIR / package_name(str(ident["version"]))
     if not HUB_PACKAGE_PATTERN.match(target.name):
@@ -427,6 +449,11 @@ def main(argv: list[str] | None = None) -> int:
     shown.add_argument("--json", action="store_true", help="one JSON object instead of shell lines")
     packaged = commands.add_parser("package", help="build the stamped addon zip")
     packaged.add_argument("--out", type=Path, help=f"default: dist/{package_name('<version>')}")
+    packaged.add_argument(
+        "--allow-shallow",
+        action="store_true",
+        help="build from a truncated history anyway; the version will be wrong (see is_shallow)",
+    )
     args = parser.parse_args(argv)
 
     if args.command == "version":
@@ -442,7 +469,7 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"{key.upper()}={value}")
         return 0
 
-    target, ident = package(args.out)
+    target, ident = package(args.out, allow_shallow=args.allow_shallow)
     size = target.stat().st_size
     print(f"wrote {target} ({size} bytes, {size / 1024 / 1024:.1f} MiB) as {ident['build']}")
     return 0
