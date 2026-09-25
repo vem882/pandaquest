@@ -1,0 +1,198 @@
+# Build PandaQuest-<version>.zip and publish it as a GitHub release asset.
+#
+# This repository has no self-hosted runner, so everything here runs on a GitHub-hosted one and
+# may depend on nothing installed on anybody's machine: build.py and check.py are stdlib Python,
+# there is no Lua and no luacheck (those stayed in the platform repository,
+# github.com/vem882/pandawow), and nothing is pip-installed.
+#
+# What the platform repository does with the result: it downloads the release asset. Not a
+# submodule and not a checkout. So the file name and the paths inside the zip are an interface
+# between two repositories, and README.md, "The contract", is the definition. Break it and the
+# hub does not fail -- it goes on offering the previous build, with nothing anywhere saying why.
+name: Release
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  # For re-publishing a release whose upload failed after a green build. The version comes from
+  # the commit count, so a dispatch on the same commit rebuilds the same version, and the
+  # publish step below replaces that release's asset rather than failing on the existing tag.
+  workflow_dispatch:
+
+# Read by default. Only the release job widens this, and only to contents: write.
+permissions:
+  contents: read
+
+concurrency:
+  # A second push to a pull request makes the first run's answer irrelevant. A run on main is
+  # never cancelled: it may be between creating a release and uploading its asset, which would
+  # leave a tagged release with nothing attached -- and the hub reads the asset, not the tag.
+  group: release-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: check and build the package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      version: ${{ steps.build.outputs.version }}
+      package: ${{ steps.build.outputs.package }}
+      sha256: ${{ steps.build.outputs.sha256 }}
+    steps:
+      # fetch-depth: 0 is load-bearing, and it fails silently without it. The shipped version is
+      # this repository's commit count (build.py: release_version), and a shallow clone counts
+      # what it was given: the default depth of 1 would build PandaQuest-0.2.1.zip, a version the
+      # hub sorts below every package it already has, so /setup would go on offering the old
+      # build while this run stayed green. The platform repository learned that the hard way and
+      # left the same comment on its own checkout. check.py's TheVersion cases fail loudly here
+      # if the fallback ever kicks in, which is the backstop for this line being deleted.
+      - name: Check out the repository, with all of its history
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      # No setup-python: build.py and check.py are stdlib only, so the runner image's python3 is
+      # exactly enough. The version is printed so a run records which one built the zip, and the
+      # guard fails loudly rather than letting an old image fail on a syntax error further down.
+      - name: Check the runner's python
+        run: |
+          set -euo pipefail
+          python3 --version
+          python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 9) else "python3 >= 3.9 required")'
+
+      - name: Run the checks
+        run: python3 check.py -v
+
+      - name: Build the package
+        id: build
+        run: |
+          set -euo pipefail
+          version="$(python3 build.py version)"
+          package="PandaQuest-${version}.zip"
+          python3 build.py package --out "dist/${package}"
+
+          # Built a second time, into a different directory, and compared. Determinism is part of
+          # the contract, and the cheapest honest test of it is to do it twice in one job: it
+          # catches a clock, a umask or a directory order leaking into the archive. It does NOT
+          # claim the same bytes on a different machine or a different zlib -- README.md says so.
+          python3 build.py package --out "second/${package}"
+          first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
+          again="$(sha256sum "second/${package}" | cut -d' ' -f1)"
+          if [ "${first}" != "${again}" ]; then
+            echo "::error::Two builds of the same tree differ: ${first} vs ${again}"
+            exit 1
+          fi
+          rm -rf second
+
+          {
+            echo "version=${version}"
+            echo "package=${package}"
+            echo "sha256=${first}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Say what was built
+        run: |
+          set -euo pipefail
+          {
+            echo "## ${{ steps.build.outputs.package }}"
+            echo
+            echo "| fact | value |"
+            echo "|------|-------|"
+            echo "| version | \`${{ steps.build.outputs.version }}\` |"
+            echo "| sha256 | \`${{ steps.build.outputs.sha256 }}\` |"
+            echo "| bytes | $(stat -c%s "dist/${{ steps.build.outputs.package }}") |"
+            echo "| entries | $(python3 -c "import zipfile,sys;print(len(zipfile.ZipFile(sys.argv[1]).infolist()))" "dist/${{ steps.build.outputs.package }}") |"
+            echo "| build identity | \`$(python3 build.py identity --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["build"])')\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Uploaded from every run, pull requests included: a reviewer can download the zip a branch
+      # would ship and install it, without a release existing. The release job takes its bytes
+      # from here rather than rebuilding, so what is published is what was checked.
+      - name: Keep the package
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: PandaQuest-${{ steps.build.outputs.version }}
+          path: dist/${{ steps.build.outputs.package }}
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: publish the release asset
+    needs: build
+    # Only main, and only a real push or a deliberate dispatch. A pull request builds and checks;
+    # it does not publish, and its token stays read-only.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      # The one job that needs it, and the only reason it exists: creating a release and
+      # attaching a file to it.
+      contents: write
+    concurrency:
+      # Two merges in a row publish one after the other. Never cancelled: see above.
+      group: release-publish
+      cancel-in-progress: false
+    steps:
+      - name: Take the package the build job checked
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: PandaQuest-${{ needs.build.outputs.version }}
+          path: dist
+
+      # The artifact is re-zipped by upload-artifact and unpacked again by download-artifact.
+      # This asserts that round trip gave back the same bytes, so the sha256 in the release notes
+      # is a fact about the file players download and not about a file that no longer exists.
+      - name: Check the bytes are the ones that were built
+        run: |
+          set -euo pipefail
+          echo "${{ needs.build.outputs.sha256 }}  dist/${{ needs.build.outputs.package }}" | sha256sum --check --strict
+
+      # gh is preinstalled on GitHub-hosted runners, so this needs no action from anybody's
+      # marketplace and no token beyond the run's own.
+      #
+      # The tag carries a "v" and the asset does not. That is deliberate and it is the whole
+      # contract: the hub matches ^PandaQuest-(\d+(?:\.\d+)*)\.zip$ against the *file name*, so a
+      # "v" there makes the package invisible. Tags are read by humans and by nothing else here.
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+        run: |
+          set -euo pipefail
+          tag="v${VERSION}"
+          notes="$(printf '%s\n' \
+            "PandaQuest ${VERSION} for Mists of Pandaria Classic 5.5.4." \
+            "" \
+            "| | |" \
+            "|---|---|" \
+            "| commit | \`${GITHUB_SHA}\` |" \
+            "| asset | \`${PACKAGE}\` |" \
+            "| sha256 | \`${SHA256}\` |" \
+            "" \
+            "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
+            "The hub at github.com/vem882/pandawow downloads this asset; see that repository for" \
+            "the site, the sync engine and the companion app.")"
+
+          # A re-run of the same commit finds its own release already there. Replacing the asset
+          # is right and failing is not: the version is the commit count, so the same tag on the
+          # same commit means the same package, and a half-published release with no asset is
+          # exactly what a re-run is for.
+          if gh release view "${tag}" >/dev/null 2>&1; then
+            echo "release ${tag} exists; replacing its asset"
+            gh release upload "${tag}" "dist/${PACKAGE}" --clobber
+          else
+            gh release create "${tag}" "dist/${PACKAGE}" \
+              --title "PandaQuest ${VERSION}" \
+              --notes "${notes}" \
+              --latest
+          fi
+
+          gh release view "${tag}" --json tagName,assets \
+            --jq '"published \(.tagName): " + ([.assets[] | "\(.name) (\(.size) bytes)"] | join(", "))' \
+            >> "$GITHUB_STEP_SUMMARY"
