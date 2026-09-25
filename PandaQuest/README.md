@@ -7,7 +7,7 @@ PandaQuest shows an on-screen arrow that always points to the next sensible ques
 minimap, adds quest information to NPC and item tooltips, and links to Wowhead in game. The quest
 database is derived from Questie's MoP data with its corrections applied.
 
-## What works in 0.1.0
+## What works in the 0.1 series
 
 - **Database** – 17 693 quests, 60 224 NPCs, 20 326 objects and 80 049 items, decoded in a
   coroutine at login (about half a second) so the game never freezes. Zone/area mapping,
