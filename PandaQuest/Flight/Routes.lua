@@ -134,6 +134,52 @@ local CLICK_WINDOW = 8
 -- this count: a printed number can carry its sample count beside it, a bar's fill cannot.
 M.MIN_SAMPLES = 2
 
+--- The Mists perk that makes every flight path 25% faster, and the factor that takes it back out.
+--
+-- "Ride Like the Wind" (spell 117983) is trained in Pandaria and is not a buff a player can see on
+-- themselves: it simply makes taxi flights quicker from then on. Two characters on one account can
+-- therefore fly the same route in visibly different times -- and until now this module filed both
+-- under one key and took a median of the mixture, which is a number that describes neither of them.
+--
+-- The factor is 0.8 rather than 1/1.25 written out because that is what it is: the spell says
+-- "increases flight path speed by 25%", and the *slow* flight is 1.25 times the fast one, so a fast
+-- flight is 0.8 of a slow one. A sample is divided by this before it is stored and multiplied by it
+-- again when it is shown, so the store holds one thing -- the time without the perk -- and every
+-- character reads back the time it will actually experience.
+--
+-- This is the shape InFlight uses, and its comment for the same spell says the same thing: "Stored
+-- times are always without speed boosts, while measured times include them."
+local RIDE_LIKE_THE_WIND = 117983
+local RIDE_LIKE_THE_WIND_FACTOR = 0.8
+
+--- SpeedFactor() -> what this character's flights are multiplied by against a stored time.
+--
+-- 1 for a character without the perk, RIDE_LIKE_THE_WIND_FACTOR for one with it. Wrapped in pcall
+-- like every other client call in this file: IsSpellKnown is present on this client
+-- (_reference/misc/ketho/GlobalAPI_classic.lua) but a refusal here must cost the measurement, not
+-- the session.
+function M.SpeedFactor()
+    -- C_SpellBook.IsSpellKnown is what this client declares; the bare IsSpellKnown is not in its
+    -- API list at all (tools/wowapi/wow_std.lua puts the name under C_SpellBook, and luacheck
+    -- refuses the global). InFlight calls the bare one and works, so it evidently still answers --
+    -- but a name the client does not declare is not one this addon leans on, so the namespaced
+    -- call is tried first and the old global only if it is somehow the one that exists.
+    local known
+    if C_SpellBook and type(C_SpellBook.IsSpellKnown) == "function" then
+        local ok, answer = pcall(C_SpellBook.IsSpellKnown, RIDE_LIKE_THE_WIND)
+        if ok then known = answer end
+    end
+    if known == nil then
+        local legacy = _G["IsSpellKnown"]
+        if type(legacy) == "function" then
+            local ok, answer = pcall(legacy, RIDE_LIKE_THE_WIND)
+            if ok then known = answer end
+        end
+    end
+    if known then return RIDE_LIKE_THE_WIND_FACTOR end
+    return 1
+end
+
 ---------------------------------------------------------------------------
 -- State (all of it session state; only `routes` is saved)
 ---------------------------------------------------------------------------
@@ -305,7 +351,9 @@ function M.GetEstimate(srcNodeID, dstNodeID)
     end
     for i = kept + 1, #scratch do scratch[i] = nil end
     if kept == 0 then return nil, 0 end
-    return medianOf(scratch, kept), kept
+    -- Multiplied back on the way out: the store holds the time without the perk, and what a caller
+    -- wants is the time THIS character will actually spend in the air.
+    return medianOf(scratch, kept) * M.SpeedFactor(), kept
 end
 
 --- Record(srcNodeID, dstNodeID, seconds) -> samples|nil. Public so a test can put a measurement in
@@ -313,7 +361,12 @@ end
 function M.Record(srcNodeID, dstNodeID, seconds)
     local key = M.RouteKey(srcNodeID, dstNodeID)
     if not key then return nil end
-    local value = tonumber(seconds)
+    -- Divided by this character's speed factor before anything else touches it, so the store holds
+    -- one comparable thing: the time a character without Ride Like the Wind would fly. The bounds
+    -- below then judge that same normalised figure, which is what MIN_FLIGHT and MAX_FLIGHT were
+    -- written against.
+    local measured = tonumber(seconds)
+    local value = measured and (measured / M.SpeedFactor()) or nil
     -- The NaN check is the `value ~= value` one Core/Util.lua uses: a subtraction of two clocks
     -- that disagreed can produce one, and it would sort into the middle of the median.
     if not value or value ~= value then return nil end
@@ -331,7 +384,8 @@ function M.Record(srcNodeID, dstNodeID, seconds)
     end
     local count = addSample(entry, value)
     entry.t = Util.UnixNow()
-    Log.Debug("Flight", "%s measured at %.1f s (%d samples)", key, value, count)
+    Log.Debug("Flight", "%s measured at %.1f s, stored as %.1f s without the perk (%d samples)",
+        key, measured, value, count)
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_MEASURED", srcNodeID, dstNodeID, value, count) end
     return count
