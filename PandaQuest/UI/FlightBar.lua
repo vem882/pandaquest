@@ -1,0 +1,513 @@
+-- UI/FlightBar.lua: the bar that runs while the taxi does.
+--
+-- The player asked for "a small bar with progress and remaining time" during the flight. There is
+-- only one honest way to fill it, and on most routes there is nothing to fill it with yet:
+--
+--   * with a measured time for the route -- at least ns.FlightRoutes.MIN_SAMPLES flights of it --
+--     the bar shows how far along the flight is and how much is left;
+--   * without one it shows the time in the air and nothing else. No fill, no remaining. A
+--     fraction needs a whole, and an unflown route has no whole; a bar drawn 40% across would be
+--     this addon inventing the other 60%;
+--   * and once the player has pressed "land here", the same elapsed-only face whatever the route
+--     was measured at. The taxi is not going there any more, so neither the remainder nor the
+--     name is about the flight still happening.
+--
+-- **Why one measured flight is not enough to draw a fill.** A median of one sample is that
+-- sample. platform/server/pandaquest_hub/respawn.py:69-71 fixes MIN_SAMPLES = 2 in so many words
+-- -- "a median of one is that measurement" -- and Nodes/Respawn.lua's MIN_OWN_OBSERVATIONS is the
+-- same 2. The flight master's tooltip does print a one-flight figure, because a printed number can
+-- carry "(1 flight)" beside it and the player can weigh it; a bar's fill carries no such caption.
+-- So below MIN_SAMPLES this bar stays on its elapsed-only face.
+--
+-- **Why there is no position-based progress bar here.** It was considered: the player's own world
+-- position against the route's hop endpoints would be a real fraction of the way flown, needing no
+-- timing at all. It cannot be built honestly on this client. The hop endpoints exist only as
+-- normalised positions on the taxi map TEXTURE (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:68-69
+-- multiplies them by 580x580 and flips y purely to place a button), while ns.Player.GetPosition()
+-- answers a UI map position and world yards (Quest/Player.lua:144-175). Relating the two means
+-- choosing a scale between a texture and a world -- exactly the invention Flight/Routes.lua's
+-- header refuses -- and the result would be a fill that is confidently wrong rather than absent.
+-- Whether the client even updates the player's position during a taxi flight could not be settled
+-- from the reference tree either, so the channel would have needed a degradation path for a
+-- question it could not answer. It is not built, and this comment is here so the next reader knows
+-- it was weighed rather than missed.
+--
+-- The frame is shaped the way Nav/Arrow.lua's is: a movable, clamped frame with a lock, a scale
+-- slider, and the anchor it was dragged to kept in the profile (Nav/Arrow.lua's savePosition at
+-- :261-267, and ns.DEFAULTS.profile.arrow in Core/Const.lua:48 for the key shape). Two draggable
+-- frames in one addon that behaved differently would be two answers to one question the player
+-- already answered once.
+--
+-- Its four geometry numbers, though -- TICK aside -- are this file's own choice and are not
+-- measured. They are named and argued for below, and every one of them is on docs/12's
+-- in-game-only list, because how wide 240 px is against the strings that go in it is a question
+-- only a client can answer. None of them decides a number the player reads: nothing this file
+-- prints changes if they change.
+local _, ns = ...
+local L = ns.L
+
+local Log, Util = ns.Log, ns.Util
+
+local M = {}
+ns.FlightBar = M
+
+local type, tonumber, format = type, tonumber, string.format
+local floor, min = math.floor, math.min
+
+--- How often the bar redraws itself. Blizzard's own progress bar for a timed, moment-to-moment
+-- reading checks at exactly this interval -- LEFT_DIGSITE_CHECK_TIME = 0.5 at
+-- _reference/wow-ui-source-classic/Interface/AddOns/Blizzard_FrameXML/Cata/ArchaeologyProgressBar
+-- .lua:2 -- and so does this addon's own UI/Tracker.lua (REFRESH_INTERVAL, :20). Half a second is
+-- therefore the established budget here for "the only per-frame work in a frame". The consequence
+-- is that the seconds digit can be up to half a second behind the clock, which is why it is
+-- floored rather than rounded: a rounded digit would sometimes name a second the flight has not
+-- reached, and a second the flight has not reached is a number nothing measured.
+local TICK = 0.5
+
+--- How long M.Preview() leaves an empty bar on screen for the player to drag. This file's own
+-- choice, and not a measurement: nothing has timed how long a player takes to find a bar and drag
+-- it. It prints no number -- the preview's text is the fixed word "Flight progress" -- so the only
+-- thing it trades off is a player who did not find the bar in time against a bar that sits on
+-- screen after they have stopped looking. Twenty seconds leans towards the first, because `/pq
+-- flight` and the options button can both be pressed again and a bar that will not go away cannot.
+local PREVIEW_HOLD = 20
+
+--- The bar at "Bar size" 1.0. This file's own choice, unmeasured on a screen and on docs/12's
+-- in-game-only list, with one thing that is checkable here: at the smallest scale the slider
+-- offers, 0.5, the frame is 17 px and has to hold a 7 px fill and one line of text, which
+-- GetLayout() shows it does. Everything drawn inside is a fraction of these and is recomputed in
+-- applyLayout, because a slider that moved the frame and left its contents at 1.0 would break it:
+-- at 0.5 an unscaled 14 px fill is taller than the whole 17 px frame.
+local BASE_WIDTH, BASE_HEIGHT = 240, 34
+local BASE_FILL_HEIGHT = 14
+
+--- The destination name is cut to this many characters so that a flight master with a long name
+-- does not run under the reading on the right. This is a provisional width, not a measurement:
+-- how many characters fit beside the right-hand string in BASE_WIDTH px is a pixel question only
+-- a client can answer, and it is on docs/12's in-game-only list with the rest of the geometry.
+-- What is known is the widest string that can stand beside it, because Util.FormatTime's own
+-- branches bound it: it drops the seconds part at 600 s and above (Core/Util.lua:101-109), and
+-- MAX_FLIGHT stops the store at two hours. Walked over those branches, the longest readings the
+-- bar can produce are 28 characters -- "~9 min 59 s left (8 flights)" just under ten minutes, and
+-- "~1 h 59 min left (8 flights)" at the top of the range. Map/NodeTooltip.lua cuts at 42 (:35),
+-- for a tooltip: a wider surface with no second column beside the name. This is not that cut.
+local MAX_NAME_CHARS = 22
+
+local frame, fillBar, nameText, timeText
+--- The font size the template gave the two font strings, read once before anything scaled them.
+-- Read once rather than on every applyLayout: reading it back after a SetFont would multiply the
+-- last scale by the new one, and the bar would grow every time the slider moved.
+local baseFontSize
+local accum = 0
+--- GetTime() at which the bar hides itself, or nil. While it is set it is the ONLY thing that
+-- hides the bar: a preview outlives the flight it was drawn without.
+local hideAt
+local visible = false
+local dragging = false
+--- What the last draw put on screen, for GetState(). The tests cannot look at a screen, and
+-- reading it back off the StatusBar would only tell us what was legal to draw, not what was true.
+local shown = {}
+
+-- Own AceEvent object: AceEvent keys its registry by target, so registering PQ_FLIGHT_* on ns.PQ
+-- would collide with whichever other module wants the same message (the same note is on
+-- Nodes/Respawn.lua's listener and on Flight/Routes.lua's).
+local listener = {}
+do
+    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
+    if AceEvent then AceEvent:Embed(listener) end
+end
+M.listener = listener
+
+local function now()
+    return (GetTime and GetTime()) or 0
+end
+
+local function settings()
+    local PQ = ns.PQ
+    local profile = PQ and PQ.db and PQ.db.profile
+    return (profile and profile.flight) or ns.DEFAULTS.profile.flight
+end
+
+---------------------------------------------------------------------------
+-- The frame
+---------------------------------------------------------------------------
+
+--- savePosition(): store the anchor GetPoint really reported, its relative point included.
+-- GetPoint returns point, relativeTo, relativePoint, xOfs, yOfs. Keeping only the first and
+-- rebuilding the anchor as SetPoint(point, UIParent, point, x, y) round-trips the drag only if the
+-- client leaves point == relativePoint after StopMovingOrSizing, and nothing on this box can say
+-- whether it does: tools/wowstub/api/20_frames.lua's StartMoving and StopMovingOrSizing set a flag
+-- and never touch the anchor list, so the harness re-derives nothing and would agree with either
+-- answer. Rather than assume, the third return is stored and handed back verbatim. What is still
+-- assumed, and is on docs/12's in-game-only list, is that relativeTo stays UIParent.
+local function savePosition()
+    if not frame then return end
+    local point, _, relPoint, x, y = frame:GetPoint(1)
+    if not point then return end
+    local p = settings()
+    p.barPoint, p.barRelPoint, p.barX, p.barY = point, relPoint, x, y
+end
+
+local function onDragStart(self)
+    if settings().barLocked then return end
+    dragging = true
+    self:StartMoving()
+end
+
+local function onDragStop(self)
+    if not dragging then return end
+    dragging = false
+    self:StopMovingOrSizing()
+    savePosition()
+end
+
+local function scaleFont(fontString, size)
+    if not (fontString and fontString.GetFont and fontString.SetFont and size) then return end
+    local path, _, flags = fontString:GetFont()
+    if path then fontString:SetFont(path, size, flags) end
+end
+
+--- applyLayout(): "Bar size" moves the frame AND everything drawn in it. Nav/Arrow.lua does the
+-- same for its textures (:429-438), for the reason it gives: the fill height and the font sizes
+-- are set once at creation, so a frame that scaled alone would leave them behind -- at 0.5 the
+-- 14 px fill is taller than the 17 px frame.
+local function applyLayout()
+    if not frame then return end
+    local p = settings()
+    local scale = tonumber(p.barScale) or 1
+    -- A profile edited by hand could hold a zero or a negative, which would collapse the frame to
+    -- something the player could never click again. The slider itself only offers 0.5 to 2.0.
+    if scale <= 0 then scale = 1 end
+    frame:SetSize(BASE_WIDTH * scale, BASE_HEIGHT * scale)
+    frame:SetMovable(not p.barLocked)
+    -- Locked, the bar has nothing left to do with the mouse: onDragStart returns immediately while
+    -- barLocked is set, and this frame has no click, no tooltip and no menu. Leaving the mouse on
+    -- would make its 240x34 rectangle swallow every click on the ground, the mob or the map behind
+    -- it for the whole of every flight and for the whole of every preview, in exchange for a drag
+    -- the lock refuses anyway. (Nav/Arrow.lua has the same pair and keeps its mouse on purpose:
+    -- that frame is a Button with a right-click menu.)
+    frame:EnableMouse(not p.barLocked)
+    if fillBar then fillBar:SetHeight(BASE_FILL_HEIGHT * scale) end
+    if baseFontSize then
+        scaleFont(nameText, baseFontSize * scale)
+        scaleFont(timeText, baseFontSize * scale)
+    end
+end
+
+local function applyPosition()
+    if not frame then return end
+    local p = settings()
+    frame:ClearAllPoints()
+    -- barRelPoint falls back to barPoint, which is what a hand-edited profile may hold and what
+    -- every profile written before this key existed holds.
+    local point = p.barPoint or "CENTER"
+    frame:SetPoint(point, UIParent, p.barRelPoint or point,
+        tonumber(p.barX) or 0, tonumber(p.barY) or -200)
+end
+
+--- The only per-frame work in this file, and it does arithmetic on two numbers until TICK has gone
+-- by. A pending deadline wins over the flight check rather than being one more reason to hide on
+-- top of it, because a preview is shown precisely when there is no flight at all: letting the
+-- flight check run underneath one would hide it on the frame after it was drawn.
+local function onUpdate(_, elapsed)
+    accum = accum + (tonumber(elapsed) or 0)
+    if accum < TICK then return end
+    accum = 0
+    if hideAt then
+        -- The preview ends by reading the world again, not by hiding. Hiding stops the OnUpdate --
+        -- the client only runs it while the frame is shown -- and PQ_FLIGHT_STARTED has already
+        -- fired, so nothing would ever bring the bar back for the rest of a flight that is still
+        -- running. Refresh() draws the flight when there is one and hides when there is not, so
+        -- the preview expires into the live bar mid-air and into nothing on the ground.
+        if now() >= hideAt then
+            hideAt = nil
+            M.Refresh()
+        end
+        return
+    end
+    M.Refresh()
+end
+
+local function createFrame()
+    if frame or not CreateFrame then return frame end
+    frame = CreateFrame("Frame", "PandaQuestFlightBar", UIParent)
+    if frame.SetFrameStrata then frame:SetFrameStrata("MEDIUM") end
+    if frame.SetClampedToScreen then frame:SetClampedToScreen(true) end
+    frame:SetMovable(true)
+    frame:EnableMouse(true)
+    if frame.RegisterForDrag then frame:RegisterForDrag("LeftButton") end
+
+    fillBar = CreateFrame("StatusBar", nil, frame)
+    fillBar:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 0, 0)
+    fillBar:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 0)
+    fillBar:SetHeight(BASE_FILL_HEIGHT)
+    fillBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+    -- The dig site bar's gold says "you are digging"; this blue says "you are in the air". One
+    -- shape, two colours, so a player who has both on screen can tell them apart at a glance.
+    fillBar:SetStatusBarColor(0.37, 0.61, 0.85)
+    fillBar:SetMinMaxValues(0, 1)
+    fillBar:SetValue(0)
+
+    local background = fillBar:CreateTexture(nil, "BACKGROUND")
+    background:SetAllPoints(fillBar)
+    background:SetTexture("Interface\\TargetingFrame\\UI-StatusBar")
+    background:SetVertexColor(0, 0, 0, 0.6)
+
+    nameText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    nameText:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+    timeText = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    timeText:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+    if nameText.GetFont then
+        local _, size = nameText:GetFont()
+        baseFontSize = tonumber(size)
+    end
+
+    frame:SetScript("OnDragStart", onDragStart)
+    frame:SetScript("OnDragStop", onDragStop)
+    frame:SetScript("OnUpdate", onUpdate)
+    frame:Hide()
+
+    applyLayout()
+    applyPosition()
+    M.frame = frame
+    return frame
+end
+
+---------------------------------------------------------------------------
+-- Drawing
+---------------------------------------------------------------------------
+
+--- TimeText(elapsed, seconds, samples) -> text, fraction|nil
+-- The one place that decides what the bar is allowed to say. `fraction` nil means "draw no fill".
+--
+-- Three cases, and only the first of them knows a whole:
+--   * a route measured at least MIN_SAMPLES times, still inside its measured time -> how much is
+--     left, with the count it rests on, and a fill;
+--   * the same route once the flight has run past that time -> the time in the air and a full
+--     fill. We knew a whole and this flight is not obeying it, so the remaining figure stops
+--     being something we measured. Saying "0 s left" while the ground is still moving underneath
+--     would be a number nothing measured;
+--   * everything else -- no samples, or one -> the time in the air and no fill at all.
+function M.TimeText(elapsed, seconds, samples)
+    local spent = tonumber(elapsed) or 0
+    if spent < 0 then spent = 0 end
+    local Routes = ns.FlightRoutes
+    local minimum = (Routes and tonumber(Routes.MIN_SAMPLES)) or 2
+    local total, count = tonumber(seconds), tonumber(samples) or 0
+    if total and total > 0 and count >= minimum then
+        if spent < total then
+            -- Floored, not rounded: the redraw is TICK apart, and a rounded figure would
+            -- sometimes name a second the flight has not reached yet.
+            -- No singular wording here on purpose: this branch is inside `count >= minimum`, and
+            -- minimum is MIN_SAMPLES = 2, so one flight never reaches it. A "(1 flight)" string
+            -- carried for a case the gate above rules out is a line the bar cannot print and a
+            -- reader cannot check. The tooltip's singular is a different matter and stays: that
+            -- surface does print a one-flight figure, with the count beside it.
+            local left = Util.FormatTime(floor(total - spent))
+            return format(L["~%s left (%d flights)"], left, count), spent / total
+        end
+        return format(L["%s in the air"], Util.FormatTime(floor(spent))), 1
+    end
+    return format(L["%s in the air"], Util.FormatTime(floor(spent))), nil
+end
+
+--- draw(destination, elapsed, seconds, samples [, label]): put one reading on screen.
+-- The StatusBar needs a legal, non-empty range, so its numbers are clamped. The player's are not:
+-- what `timeText` says is what M.TimeText decided, and when that decided there is no fraction the
+-- bar is drawn empty rather than filled to some plausible place.
+local function draw(destination, elapsed, seconds, samples, label)
+    local f = createFrame()
+    if not f then return end
+    local text, fraction
+    if label then
+        text, fraction = label, nil
+    else
+        text, fraction = M.TimeText(elapsed, seconds, samples)
+    end
+    fillBar:SetMinMaxValues(0, 1)
+    fillBar:SetValue(fraction and min(fraction, 1) or 0)
+    local name = destination and Util.Truncate(destination, MAX_NAME_CHARS) or ""
+    nameText:SetText(name)
+    timeText:SetText(text)
+    shown = { destination = destination, elapsed = tonumber(elapsed), seconds = tonumber(seconds),
+              samples = tonumber(samples), fraction = fraction, text = text }
+    f:Show()
+    visible = true
+end
+
+--- Refresh(): redraw from whatever ns.FlightRoutes is measuring, or hide when it is measuring
+-- nothing. One authority for "is a flight happening": the module that confirms it against
+-- UnitOnTaxi. This bar never asks the client that question itself, so the two can never disagree.
+function M.Refresh()
+    if not M.Enabled() then
+        M.Hide()
+        return false
+    end
+    local Routes = ns.FlightRoutes
+    local flight = Routes and type(Routes.GetFlight) == "function" and Routes.GetFlight() or nil
+    if not flight then
+        M.Hide()
+        return false
+    end
+    if flight.discarded then
+        -- "Land here" was pressed. The taxi is coming down somewhere that is not the destination,
+        -- so the remaining time is no longer a remainder of anything and the name on the bar is no
+        -- longer where the player is going. Flight/Routes.lua already refuses to record this
+        -- flight (:595); the bar has to stop drawing it as that route too, rather than counting
+        -- down to a place the player has just cancelled. The time in the air is still true, so
+        -- that is what is left: elapsed only, no fill, no name.
+        draw(nil, flight.elapsed, nil, nil)
+        return true
+    end
+    draw(flight.name, flight.elapsed, flight.seconds, flight.samples)
+    return true
+end
+
+--- GetState() -> what the bar is drawing: { shown, destination, elapsed, seconds, samples,
+-- fraction, text, locked }. Fields the bar does not have are absent rather than blank, and
+-- `fraction` absent is the honest answer for a route with nothing to divide by.
+function M.GetState()
+    return {
+        shown = visible and frame ~= nil and frame:IsShown() == true,
+        destination = shown.destination,
+        elapsed = shown.elapsed,
+        seconds = shown.seconds,
+        samples = shown.samples,
+        fraction = shown.fraction,
+        text = shown.text,
+        value = fillBar and fillBar:GetValue() or nil,
+        locked = settings().barLocked and true or false,
+    }
+end
+
+--- GetLayout() -> { width, height, fillHeight, fontSize }, or nil before the frame exists.
+-- Like GetState(), it is here because the tests cannot look at a screen, and because "Bar size"
+-- has to move all four together or the pieces come apart inside the frame.
+function M.GetLayout()
+    if not frame then return nil end
+    local fontSize
+    if nameText and nameText.GetFont then
+        local _, size = nameText:GetFont()
+        fontSize = size
+    end
+    return {
+        width = frame:GetWidth(), height = frame:GetHeight(),
+        fillHeight = fillBar and fillBar:GetHeight() or nil,
+        fontSize = fontSize,
+    }
+end
+
+function M.IsShown()
+    return visible and frame ~= nil and frame:IsShown() == true
+end
+
+function M.Hide()
+    hideAt = nil
+    if frame and visible then frame:Hide() end
+    visible = false
+end
+
+function M.Enabled()
+    return settings().bar ~= false
+end
+
+---------------------------------------------------------------------------
+-- Preview (so a bar nobody has seen can still be dragged)
+---------------------------------------------------------------------------
+
+--- WhyNoPreview() -> the line to print instead of a preview, or nil. Both entry points ask this
+-- one question, because a switch the command obeys and the button beside it ignores is two answers
+-- to one question.
+function M.WhyNoPreview()
+    if not M.Enabled() then return L["The flight bar is switched off in /pq options."] end
+    return nil
+end
+
+--- Preview(): show the bar where it is, with no numbers in it, so the player can find it and drag
+-- it. It says "flight" and nothing else on purpose: a preview filled with a plausible "~4 min
+-- left" would be this addon showing a number it had not measured.
+function M.Preview()
+    if M.WhyNoPreview() then return false end
+    createFrame()
+    if not frame then return false end
+    draw(nil, nil, nil, nil, L["Flight progress"])
+    hideAt = now() + PREVIEW_HOLD
+    return true
+end
+
+--- PreviewWithReply() -> true when the bar was drawn. The preview plus the one line of chat that
+-- goes with it. Telling a player to drag a bar that is locked would be this addon asking for
+-- something its own settings forbid: onDragStart returns immediately while barLocked is set, and
+-- nothing on screen would say why the dragging did nothing.
+function M.PreviewWithReply()
+    local refusal = M.WhyNoPreview()
+    if refusal then
+        Log.Print("%s", refusal)
+        return false
+    end
+    M.Preview()
+    if settings().barLocked then
+        Log.Print("%s", L["The flight bar is locked. Unlock it in /pq options to move it."])
+    else
+        Log.Print("%s", L["Drag the flight bar where you want it. It hides itself again in a moment."])
+    end
+    return true
+end
+
+---------------------------------------------------------------------------
+-- Settings
+---------------------------------------------------------------------------
+
+--- ApplySettings(): re-reads the settings. UI/Options.lua calls it after any flight.* change.
+function M.ApplySettings()
+    if not M.Enabled() then
+        M.Hide()
+        return
+    end
+    if frame then
+        applyLayout()
+        applyPosition()
+    end
+    -- Switching the bar back on has to be able to show it, and only this call can: a hidden frame
+    -- runs no OnUpdate, and the flight's own PQ_FLIGHT_STARTED went by while the bar was off. A
+    -- player who notices mid-flight that there is no bar, ticks the box and then sees nothing for
+    -- the rest of the flight reads that as a broken switch. Refresh() hides when there is nothing
+    -- to draw, so this costs nothing on the ground -- but not during a preview, which is the one
+    -- thing allowed to hold an empty bar up (see hideAt).
+    if not hideAt then M.Refresh() end
+end
+
+--- ResetPosition(): put the bar back where the defaults put it.
+function M.ResetPosition()
+    local p, d = settings(), ns.DEFAULTS.profile.flight
+    p.barPoint, p.barRelPoint, p.barX, p.barY = d.barPoint, d.barRelPoint, d.barX, d.barY
+    applyPosition()
+end
+
+function M.OnProfileChanged()
+    M.ApplySettings()
+end
+
+---------------------------------------------------------------------------
+-- Module lifecycle
+---------------------------------------------------------------------------
+
+function M.Enable()
+    if not listener.RegisterMessage then return end
+    -- The start message only saves the bar half a second of waiting for its own OnUpdate; the
+    -- OnUpdate is what keeps it right, and Refresh() is the same call either way.
+    listener:RegisterMessage("PQ_FLIGHT_STARTED", function()
+        hideAt = nil
+        M.Refresh()
+    end)
+    listener:RegisterMessage("PQ_FLIGHT_ENDED", function()
+        if not hideAt then M.Hide() end
+    end)
+end
+
+function M.Init()
+    local PQ = ns.PQ
+    if not (PQ and PQ.commands) then return end
+    -- `/pq flight` -- show the bar where it is so it can be dragged, or say why there is none.
+    PQ.commands.flight = function() M.PreviewWithReply() end
+end

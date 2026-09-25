@@ -44,6 +44,15 @@ database is derived from Questie's MoP data with its corrections applied.
   skill` brings the rest back faded). Pandaria's veins are in no source anybody can download, so
   they are learned from play: looting one teaches the addon where it is and starts its timer.
 - **Tooltips** – NPC and item tooltips list the quests they start, end or count towards.
+- **Flight times** – the flight master's tooltip says how long the flight takes and how many of
+  your own flights that rests on (`~2 min 5 s (3 flights)`), and a small bar runs during the
+  flight with the progress and what is left. **A route you have never flown shows nothing at
+  all.** Nothing on this client can turn a taxi map into a distance: those coordinates are
+  positions on the map *texture*, which Blizzard scales by 580x580 only to place a 16 px pin, and
+  no source names a taxi's speed. So the times are measured by flying, the way the respawn timers
+  are measured by killing, and an unmeasured route gets an empty line rather than a plausible one.
+  Until a route has been flown twice the bar shows the time in the air and draws no fill: a
+  fraction needs a whole. Requirements: [`docs/12-lentoajat.md`](../docs/12-lentoajat.md).
 - **Tracker / notifications** – distance and a "navigate here" button on the Blizzard tracker,
   and a short centre-screen message when a quest completes or the target changes.
 - **Options** – a full AceConfig panel in the Blizzard settings window, plus AceDB profiles.
@@ -87,6 +96,7 @@ Optional: **TomTom** (waypoint mirroring) and **Questie** are detected automatic
 | `/pq dump quest\|npc\|object\|item <id>` | print a database entry |
 | `/pq status` | addon status |
 | `/pq sync` | telemetry and community data status |
+| `/pq flight` | show the flight bar where it is so you can drag it |
 | `/pq lang auto\|enUS\|fiFI` | interface language |
 
 ## Settings
@@ -102,6 +112,7 @@ Everything has a working default; the panel (`/pq`) is optional. Groups and the 
 | Map | objective / turn-in / available pins, minimap pins, edge pins, spawn merging, pin sizes, node size, how many nodes the minimap carries and how far in they start fading, which quests to show (low level, repeatable, dungeon, raid, PvP, pet battle) |
 | Gathering | the whole node layer on/off, mining / herbalism / fishing / chests / rares separately, only my professions, show nodes above my skill, fade nodes and mobs until they respawn |
 | Tooltips | quest info in tooltips, quest IDs |
+| Flight master | the flight time line in the taxi tooltip, the in-flight bar, its lock, its size, preview and reset position |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound, preview |
 | Synchronisation | record quest data, movement breadcrumbs and their interval, sessions kept, events per session |

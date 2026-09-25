@@ -369,6 +369,23 @@ L["PandaQuest reads an open profession window once and puts your filters and col
 L["Read my recipes when I open a profession"] = true
 L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] = true
 
+-- Flight master (docs/06 10c)
+L["Flight time:"] = true
+L["~%s (%d flight)"] = true
+L["~%s (%d flights)"] = true
+L["~%s left (%d flights)"] = true
+L["%s in the air"] = true
+L["Flight progress"] = true
+L["The flight bar is switched off in /pq options."] = true
+L["The flight bar is locked. Unlock it in /pq options to move it."] = true
+L["Drag the flight bar where you want it. It hides itself again in a moment."] = true
+L["/pq flight - show the flight bar so you can drag it"] = true
+L["Flight master"] = true
+L["PandaQuest times your own flights and shows what it measured. A route you have never flown shows nothing at all."] = true
+L["Show the flight time at the flight master"] = true
+L["One line in the destination's tooltip, with how many of your own flights it rests on."] = true
+L["Show the progress bar while flying"] = true
+L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] = true
 -- Archaeology (docs/11 B5 and B6)
 L["This client does not offer the archaeology data PandaQuest reads."] = true
 L["This character has no archaeology races to read yet."] = true
