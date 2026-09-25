@@ -325,6 +325,17 @@ end
 
 commands.status = function()
     Log.Print(L["Version %s"], Const.VERSION)
+    -- ns.Build is generated INTO THE PACKAGE by ci/lib/addon_build.py and is absent from the
+    -- repository, so a developer running from a checkout simply gets one line less.  It is printed
+    -- here because it carries the one fact ## Version cannot: when the commit this copy was built
+    -- from was made.  A player comparing their game with what /setup offers is comparing dates.
+    local build = ns.Build
+    if build and build.committed then
+        Log.Print(L["Built %s from %s"], build.committed, build.commit or "?")
+        if build.dirty then
+            Log.Print(L["This is a build from a modified working tree; it is not a release."])
+        end
+    end
     local ready = ns.DB and ns.DB.IsReady and ns.DB.IsReady()
     Log.Print(L["Database: %s"], L[ready and "ready" or "loading"])
     if ns.QuestLog and ns.QuestLog.GetAll then
