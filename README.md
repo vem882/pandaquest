@@ -61,8 +61,8 @@ The player watched /setup say "newest build: 0.1.0" for six months. A number tha
 is the fix, and the commit count is the only such number that is digits, monotonic, and free.
 
 **Why `0.2` and not `0.1`.** The commit count is a per-repository counter, and the two
-repositories' counters are not comparable. Measured on 2026-09-25: this repository reaches **84**
-commits, the platform repository reaches **390**. The platform repository was building
+repositories' counters are not comparable. Measured at the split, with this repository's `main` at
+`082c57d`: **84** commits here, **390** in the platform repository. It was building
 `PandaQuest-0.1.390.zip`. Publishing `0.1.84` from here would have handed the hub a package that
 sorts *below* the one it already had — `(0, 1, 84) < (0, 1, 390)` — and the hub would have kept
 offering the old build, silently, exactly the failure mode point 2 warns about. Bumping the minor
