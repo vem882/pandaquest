@@ -11,6 +11,11 @@
 ## OptionalDeps: TomTom, Questie
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/PandaQuest
+# Category is what the in-game AddOns list groups by; "Quests" is Questie's own value, so a player
+# with both installed finds them under one heading.  X-Category stays beside it: nothing here reads
+# it, but it is the TOC's namespace for third-party metadata and dropping it would be silent.
+## Category: Quests
+## Category-fiFI: Tehtävät
 ## X-Category: Quests & Leveling
 
 embeds.xml
