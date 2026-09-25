@@ -11,9 +11,13 @@
 ## OptionalDeps: TomTom, Questie
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/PandaQuest
-# Category is what the in-game AddOns list groups by; "Quests" is Questie's own value, so a player
-# with both installed finds them under one heading.  X-Category stays beside it: nothing here reads
-# it, but it is the TOC's namespace for third-party metadata and dropping it would be silent.
+# Category is set because Questie sets it, and "Quests" is Questie's own value, so if the client
+# does group by it a player with both installed finds them under one heading.  What 5.5.4 actually
+# does with the field is NOT verified: the only AddOns-list source in the reference trees
+# (Blizzard_AddOnList/Classic_AddonList.lua) builds one flat list from C_AddOns.GetAddOnInfo and
+# never reads Category, and no Blizzard TOC in those trees declares it.  docs/06 has the evidence.
+# X-Category stays beside it: nothing here reads it either, but it is the TOC's namespace for
+# third-party metadata and dropping it would be silent.
 ## Category: Quests
 ## Category-fiFI: Tehtävät
 ## X-Category: Quests & Leveling
