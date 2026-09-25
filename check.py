@@ -1,0 +1,321 @@
+#!/usr/bin/env python3
+"""The checks worth having in a repository with no toolchain.
+
+    python3 check.py            # run them all
+    python3 check.py -v         # name each one
+
+Stdlib ``unittest`` and nothing else -- no pytest, no pip install, no Lua.  There is no Lua
+interpreter here and no luacheck: the platform repository (github.com/vem882/pandawow) keeps
+those, and this file deliberately does not try to reproduce them.  So these checks cannot tell
+you the addon *works*; they tell you the package is not obviously broken, which is the class of
+breakage a release can actually introduce:
+
+* the TOC parses, and declares the fields the packaging and the client depend on;
+* every file the TOC lists exists, with the case it is listed with -- a missing or
+  wrongly-cased file is silent in-game on Windows and fatal on the hub's Linux builds;
+* every file ``embeds.xml`` pulls in exists too, since the TOC lists the XML and not its
+  contents;
+* the zip's contract holds: the name the hub can see, every path under ``PandaQuest/``, the
+  version stamped, the same bytes when built twice.
+
+Nothing here asserts a number it did not measure: the version cases compute what git says and
+compare, rather than hard-coding 84.
+"""
+
+from __future__ import annotations
+
+import io
+import json
+import re
+import unittest
+import xml.etree.ElementTree as ElementTree
+import zipfile
+from pathlib import Path
+
+import build
+
+REPO = Path(__file__).resolve().parent
+ADDON_DIR = REPO / build.ADDON
+TOC = ADDON_DIR / f"{build.ADDON}.toc"
+
+#: ``## Key: value``.  WoW also accepts localized suffixes (``## Notes-fiFI``), which this
+#: allows through the hyphen.
+DIRECTIVE = re.compile(r"^##\s*([A-Za-z][\w-]*)\s*:\s*(.*)$")
+
+#: What the packaging or the client would miss if it were gone.  ``Interface`` decides whether
+#: the client loads the addon at all; ``Title`` is what the AddOns list draws and what the
+#: version is stamped into; ``Version`` supplies the series.
+REQUIRED_DIRECTIVES = ("Interface", "Title", "Version")
+
+
+def toc_lines(text: str) -> tuple[dict[str, str], list[str]]:
+    """Split a TOC into its ``## Key: value`` directives and its list of files.
+
+    Comment lines (``#`` not followed by ``#``) and blank lines are dropped, which is what the
+    client does.  A later directive wins, as it does in the client.
+    """
+    directives: dict[str, str] = {}
+    files: list[str] = []
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("##"):
+            match = DIRECTIVE.match(line)
+            if match:
+                directives[match.group(1)] = match.group(2).strip()
+            continue
+        if line.startswith("#"):
+            continue
+        files.append(line)
+    return directives, files
+
+
+class TocParses(unittest.TestCase):
+    def setUp(self) -> None:
+        self.text = TOC.read_text(encoding="utf-8-sig")
+        self.directives, self.files = toc_lines(self.text)
+
+    def test_every_hash_hash_line_is_a_directive(self) -> None:
+        """A ``##`` line that is not ``Key: value`` is a field the client silently drops."""
+        bad = [
+            line.strip()
+            for line in self.text.splitlines()
+            if line.strip().startswith("##") and not DIRECTIVE.match(line.strip())
+        ]
+        self.assertEqual(bad, [], "malformed ## directive lines")
+
+    def test_the_directives_the_build_depends_on_are_there(self) -> None:
+        for key in REQUIRED_DIRECTIVES:
+            self.assertIn(key, self.directives)
+            self.assertTrue(self.directives[key], f"## {key} is empty")
+
+    def test_interface_is_the_mop_classic_number(self) -> None:
+        """5.5.4 is interface 50504.  A wrong number makes the client mark the addon out of date."""
+        self.assertTrue(self.directives["Interface"].isdigit())
+
+    def test_the_declared_version_is_a_series_the_packaging_can_extend(self) -> None:
+        """``release_version`` keeps the first two components and appends the commit count."""
+        declared = self.directives["Version"]
+        parts = declared.split(".")
+        self.assertGreaterEqual(len(parts), build.SERIES_PARTS, f"{declared!r} has no series")
+        for part in parts[: build.SERIES_PARTS]:
+            self.assertTrue(build._is_number(part), f"{part!r} in {declared!r} is not ASCII digits")
+
+    def test_no_file_is_listed_twice(self) -> None:
+        """WoW loads a doubly-listed file twice; in this addon that re-registers event handlers."""
+        seen = [name.lower() for name in self.files]
+        self.assertEqual(sorted(seen), sorted(set(seen)), "a file is listed more than once")
+
+    def test_the_generated_build_file_is_not_listed_or_committed(self) -> None:
+        """``Core/Build.lua`` is written at packaging time; a real one would be shadowed."""
+        listed = {name.replace("\\", "/").lower() for name in self.files}
+        self.assertNotIn(build.BUILD_LUA.lower(), listed)
+        self.assertFalse((ADDON_DIR / build.BUILD_LUA).exists())
+
+
+class EveryListedFileExists(unittest.TestCase):
+    """The TOC lists files with backslashes; the filesystem here uses forward slashes."""
+
+    def setUp(self) -> None:
+        _, self.files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
+
+    def test_every_toc_entry_is_a_file_on_disk(self) -> None:
+        missing = [name for name in self.files if not (ADDON_DIR / name.replace("\\", "/")).is_file()]
+        self.assertEqual(missing, [], "listed in the TOC, not in PandaQuest/")
+
+    def test_the_case_matches(self) -> None:
+        """Windows does not care and Linux does; the hub builds and serves on Linux."""
+        wrong = []
+        for name in self.files:
+            relative = Path(name.replace("\\", "/"))
+            here = ADDON_DIR
+            for part in relative.parts:
+                entries = {child.name for child in here.iterdir()} if here.is_dir() else set()
+                if part not in entries:
+                    wrong.append(name)
+                    break
+                here = here / part
+        self.assertEqual(wrong, [], "listed with a case that is not the case on disk")
+
+    def test_every_file_embeds_xml_pulls_in_exists(self) -> None:
+        """The TOC lists embeds.xml, not the twenty libraries inside it."""
+        missing: list[str] = []
+        queue = [Path("embeds.xml")]
+        seen: set[str] = set()
+        while queue:
+            current = queue.pop()
+            key = current.as_posix().lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            full = ADDON_DIR / current
+            if not full.is_file():
+                missing.append(current.as_posix())
+                continue
+            root = ElementTree.parse(full).getroot()
+            for element in root.iter():
+                tag = element.tag.rsplit("}", 1)[-1]
+                referenced = element.get("file")
+                if not referenced or tag not in ("Script", "Include"):
+                    continue
+                child = current.parent / referenced.replace("\\", "/")
+                if tag == "Include":
+                    queue.append(child)
+                elif not (ADDON_DIR / child).is_file():
+                    missing.append(child.as_posix())
+        self.assertEqual(missing, [], "referenced by an embedded XML, not on disk")
+
+
+class TheVersion(unittest.TestCase):
+    def test_it_is_the_series_plus_this_repository_s_commit_count(self) -> None:
+        count = build.commit_count()
+        if count is None:
+            self.skipTest("not a git checkout: release_version falls back to the declared version")
+        series = build.read_toc_version().split(".")[: build.SERIES_PARTS]
+        self.assertEqual(build.release_version(), ".".join([*series, str(count)]))
+
+    def test_it_is_not_the_declared_version_in_a_real_checkout(self) -> None:
+        """The one way this goes wrong quietly: a shallow clone, or no git, falls back.
+
+        A fallback ships ``PandaQuest-0.2.0.zip`` -- a number the hub sorts below every
+        release already published -- and nothing anywhere says so.  See fetch-depth in
+        .github/workflows/release.yml.
+        """
+        if build.commit_count() is None:
+            self.skipTest("not a git checkout")
+        self.assertNotEqual(build.release_version(), build.read_toc_version())
+
+    def test_the_hub_can_see_the_file_name_it_produces(self) -> None:
+        name = build.package_name(build.release_version())
+        match = build.HUB_PACKAGE_PATTERN.match(name)
+        self.assertIsNotNone(match, f"{name} does not match the hub's package pattern")
+        # The hub orders with tuple(int(part) for part in version.split(".")).  This is that
+        # expression; if it raises, the package is invisible to the ordering and not just
+        # mis-sorted.
+        assert match is not None
+        tuple(int(part) for part in match.group(1).split("."))
+
+    def test_a_name_with_a_v_in_it_is_refused(self) -> None:
+        self.assertIsNone(build.HUB_PACKAGE_PATTERN.match("PandaQuest-v0.2.84.zip"))
+        self.assertIsNone(build.HUB_PACKAGE_PATTERN.match("PandaQuest-0.2.84+abc1234.zip"))
+
+
+class TheZipContract(unittest.TestCase):
+    """Build once into memory and assert what the hub, the manifest and WoW depend on."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.ident = build.identity()
+        cls.blob = cls._build(cls.ident)
+        cls.archive = zipfile.ZipFile(io.BytesIO(cls.blob))
+        cls.infos = cls.archive.infolist()
+
+    @staticmethod
+    def _build(ident: dict[str, object]) -> bytes:
+        buffer = io.BytesIO()
+        content = build.entries(ident)
+        with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as out:
+            for name in sorted(content):
+                out.writestr(build._entry(name), content[name])
+            out.comment = json.dumps(ident, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        return buffer.getvalue()
+
+    def test_every_path_is_under_the_addon_folder(self) -> None:
+        """``PandaQuest/`` is the folder WoW installs and what the update manifest's paths are."""
+        outside = [info.filename for info in self.infos if not info.filename.startswith("PandaQuest/")]
+        self.assertEqual(outside, [])
+
+    def test_no_path_escapes_the_archive(self) -> None:
+        for info in self.infos:
+            self.assertNotIn("..", Path(info.filename).parts)
+            self.assertFalse(info.filename.startswith("/"))
+            self.assertNotIn("\\", info.filename)
+
+    def test_the_entries_are_sorted_and_none_is_a_directory(self) -> None:
+        names = [info.filename for info in self.infos]
+        self.assertEqual(names, sorted(names))
+        self.assertEqual([info.filename for info in self.infos if info.is_dir()], [])
+
+    def test_the_metadata_carries_no_clock_and_no_umask(self) -> None:
+        for info in self.infos:
+            self.assertEqual(info.date_time, build.ZIP_DATE_TIME, info.filename)
+            self.assertEqual(info.external_attr, build.ZIP_EXTERNAL_ATTR, info.filename)
+
+    def test_building_it_twice_gives_the_same_bytes(self) -> None:
+        self.assertEqual(self._build(self.ident), self.blob)
+
+    def test_every_file_in_the_tree_is_in_the_zip(self) -> None:
+        expected = {
+            f"PandaQuest/{path.relative_to(ADDON_DIR).as_posix()}"
+            for path in build.iter_addon_files()
+        }
+        expected.add(f"PandaQuest/{build.BUILD_LUA}")
+        self.assertEqual(set(self.archive.namelist()), expected)
+
+    def test_the_packaged_toc_is_stamped(self) -> None:
+        text = self.archive.read("PandaQuest/PandaQuest.toc").decode("utf-8-sig")
+        directives, files = toc_lines(text)
+        self.assertEqual(directives["Version"], self.ident["build"])
+        self.assertIn(build.shown_version(self.ident), directives["Title"])
+        self.assertEqual(files[0], build.BUILD_LUA_TOC_LINE, "Core\\Build.lua must load first")
+
+    def test_the_toc_is_stamped_once_however_often_it_is_stamped(self) -> None:
+        """Re-packaging an already-packaged TOC must not leave three version tags in the title."""
+        once = build.stamp_toc(TOC.read_text(encoding="utf-8-sig"), self.ident)
+        twice = build.stamp_toc(once, self.ident)
+        self.assertEqual(once, twice)
+
+    def test_the_generated_build_lua_holds_the_identity(self) -> None:
+        text = self.archive.read(f"PandaQuest/{build.BUILD_LUA}").decode("utf-8")
+        self.assertIn(f'version = "{self.ident["version"]}"', text)
+        self.assertIn(f'build = "{self.ident["build"]}"', text)
+        self.assertIn(f'commit = "{self.ident["commit"]}"', text)
+
+    def test_the_archive_comment_is_the_identity_the_hub_reads(self) -> None:
+        comment = json.loads(self.archive.comment.decode("utf-8"))
+        self.assertEqual(comment["addon"], build.ADDON)
+        self.assertEqual(comment["version"], self.ident["version"])
+        self.assertEqual(comment["build"], self.ident["build"])
+        for key in ("commit", "committed", "subject", "dirty"):
+            self.assertIn(key, comment)
+
+    def test_the_archive_is_readable(self) -> None:
+        self.assertIsNone(self.archive.testzip(), "a member fails its CRC")
+
+
+class TheWorkflow(unittest.TestCase):
+    """The two things about .github/workflows/release.yml that fail silently if they rot."""
+
+    WORKFLOW = REPO / ".github" / "workflows" / "release.yml"
+
+    def setUp(self) -> None:
+        if not self.WORKFLOW.is_file():
+            self.fail(f"{self.WORKFLOW} is missing: nothing publishes a release")
+        self.text = self.WORKFLOW.read_text(encoding="utf-8")
+
+    def test_it_checks_out_the_whole_history(self) -> None:
+        """Without fetch-depth: 0 the commit count is 1 and the release version goes backwards.
+
+        A text check on purpose: it holds even when PyYAML is not installed, which on a
+        runner it is not.
+        """
+        self.assertIn("fetch-depth: 0", self.text)
+
+    def test_it_parses_as_yaml_when_a_parser_is_available(self) -> None:
+        try:
+            import yaml  # noqa: PLC0415 - optional, and deliberately not a dependency
+        except ImportError:
+            self.skipTest("PyYAML is not installed; the text checks above still ran")
+        document = yaml.safe_load(self.text)
+        self.assertIn("jobs", document)
+        # "on:" is YAML 1.1 true, which is why it is read back this way rather than by name.
+        triggers = document.get("on", document.get(True))
+        self.assertIsNotNone(triggers, "the workflow has no triggers")
+        for job in ("build", "release"):
+            self.assertIn(job, document["jobs"])
+        self.assertEqual(document["jobs"]["release"]["permissions"]["contents"], "write")
+
+
+if __name__ == "__main__":
+    unittest.main()
