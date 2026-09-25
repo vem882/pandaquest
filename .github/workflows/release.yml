@@ -164,6 +164,14 @@ jobs:
       # "v" there makes the package invisible. Tags are read by humans and by nothing else here.
       - name: Publish the release
         env:
+          # gh resolves which repository to talk to from --repo, from GH_REPO, or from a git
+          # remote in the working directory. It does NOT read GITHUB_REPOSITORY. This job has no
+          # checkout -- it downloads the artifact and nothing else -- so without GH_REPO every gh
+          # call below dies with "failed to run git: not a git repository", the release is never
+          # created, and the hub goes on offering the previous build. Measured with gh 2.100.0:
+          # with GITHUB_REPOSITORY set and GH_REPO unset, `gh release view` fails that way; with
+          # GH_REPO set it resolves and reaches the API.
+          GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.build.outputs.version }}
           PACKAGE: ${{ needs.build.outputs.package }}
@@ -171,6 +179,7 @@ jobs:
         run: |
           set -euo pipefail
           tag="v${VERSION}"
+          bytes="$(stat -c%s "dist/${PACKAGE}")"
           notes="$(printf '%s\n' \
             "PandaQuest ${VERSION} for Mists of Pandaria Classic 5.5.4." \
             "" \
@@ -184,20 +193,122 @@ jobs:
             "The hub at github.com/vem882/pandawow downloads this asset; see that repository for" \
             "the site, the sync engine and the companion app.")"
 
-          # A re-run of the same commit finds its own release already there. Replacing the asset
-          # is right and failing is not: the version is the commit count, so the same tag on the
-          # same commit means the same package, and a half-published release with no asset is
-          # exactly what a re-run is for.
-          if gh release view "${tag}" >/dev/null 2>&1; then
-            echo "release ${tag} exists; replacing its asset"
-            gh release upload "${tag}" "dist/${PACKAGE}" --clobber
+          # One listing, used for two things. Asking for the list rather than for this one
+          # release means "the release is not there yet" is read off data instead of off an
+          # error message: the old code ran `gh release view >/dev/null 2>&1` and took any
+          # failure as "does not exist", so a repository it could not resolve looked exactly
+          # like a first release. If this call fails, the step fails here.
+          gh release list --limit 200 --json tagName,isDraft > releases.json
+
+          # The version must sort above everything already published. The hub takes the highest
+          # version it can see and reports nothing when a package sorts below it -- it simply
+          # goes on offering the older build. build.py's shallow and no-git guards stop the two
+          # known ways to produce a low number; this is the backstop that says so out loud.
+          python3 - "${tag}" "${VERSION}" releases.json exists.txt <<'GUARD'
+          import json
+          import re
+          import sys
+
+          tag, version, listing, answer = sys.argv[1:5]
+          releases = json.loads(open(listing, encoding="utf-8").read())
+
+          # The hub's own ordering: tuple(int(part) for part in version.split(".")).
+          def key(value):
+              return tuple(int(part) for part in value.split("."))
+
+          published = [
+              match.group(1)
+              for release in releases
+              if release["tagName"] != tag
+              for match in [re.fullmatch(r"v(\d+(?:\.\d+)*)", release["tagName"])]
+              if match
+          ]
+          if published:
+              highest = max(published, key=key)
+              if key(version) <= key(highest):
+                  raise SystemExit(
+                      f"::error::{version} does not sort above {highest}, which this repository "
+                      "has already published. The hub offers the highest version it can see, so "
+                      "this release would never reach a player and nothing would report it."
+                  )
+              print(f"{version} sorts above {highest}, the highest already published")
+          else:
+              print(f"{version} is the first release here with a version-shaped tag")
+
+          found = any(release["tagName"] == tag for release in releases)
+          open(answer, "w", encoding="utf-8").write("yes" if found else "no")
+          GUARD
+
+          if [ "$(cat exists.txt)" = "yes" ]; then
+            gh release view "${tag}" --json isDraft,assets > release.json
+            same="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1], encoding="utf-8")); print(any(a["name"] == sys.argv[2] and a["size"] == int(sys.argv[3]) for a in r["assets"]))' \
+              release.json "${PACKAGE}" "${bytes}")"
+            if [ "${same}" = "True" ]; then
+              echo "${tag} already carries ${PACKAGE} at ${bytes} bytes; leaving it alone"
+            else
+              # --clobber deletes the existing asset BEFORE uploading, and gh's own help says
+              # that a failed upload then loses the original. That is the one branch that turns
+              # a working release into an empty one, so it is reached only when there is nothing
+              # working to lose: the case above skips the upload when the asset is already these
+              # exact bytes, which is what a re-run of an unchanged main actually hits.
+              echo "${tag} exists without these bytes; uploading ${PACKAGE}"
+              gh release upload "${tag}" "dist/${PACKAGE}" --clobber
+            fi
+            # `gh release create` with an asset is three API calls: create as a draft, upload,
+            # publish. A run that died after the first leaves a draft holding the tag, and a
+            # draft is not served by the public releases API -- the hub sees nothing at all
+            # while the run is green. Finish that publish rather than parking the asset on it.
+            draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
+            if [ "${draft}" = "True" ]; then
+              echo "::warning::${tag} was left as a draft; publishing it now"
+              gh release edit "${tag}" --draft=false --latest
+            fi
           else
+            # --target pins the tag to the commit this zip was built from. Without it gh creates
+            # the tag from the latest state of the default branch at publish time, which on a
+            # busy main is a different commit from the one the notes and the archive comment
+            # both name -- and `git checkout v<version>` then gives the wrong tree.
             gh release create "${tag}" "dist/${PACKAGE}" \
+              --target "${GITHUB_SHA}" \
               --title "PandaQuest ${VERSION}" \
               --notes "${notes}" \
               --latest
           fi
 
-          gh release view "${tag}" --json tagName,assets \
-            --jq '"published \(.tagName): " + ([.assets[] | "\(.name) (\(.size) bytes)"] | join(", "))' \
-            >> "$GITHUB_STEP_SUMMARY"
+      # The old version of this step printed whatever it found and exited 0, so a draft release
+      # with an asset attached, or a release carrying a different file, both read as success.
+      # It asserts now: a green run means a player can download exactly these bytes.
+      - name: Check the release a player would download
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+        run: |
+          set -euo pipefail
+          tag="v${VERSION}"
+          bytes="$(stat -c%s "dist/${PACKAGE}")"
+          gh release view "${tag}" --json tagName,isDraft,assets > published.json
+
+          python3 - "${tag}" "${PACKAGE}" "${bytes}" published.json <<'CONFIRM'
+          import json
+          import sys
+
+          tag, package, size, path = sys.argv[1:5]
+          release = json.loads(open(path, encoding="utf-8").read())
+          assets = {asset["name"]: asset["size"] for asset in release["assets"]}
+
+          if release["isDraft"]:
+              raise SystemExit(
+                  f"::error::{tag} is still a draft. The public releases API does not serve a "
+                  "draft, so the hub would download nothing."
+              )
+          if assets.get(package) != int(size):
+              raise SystemExit(
+                  f"::error::{tag} does not carry {package} at {size} bytes. It carries: "
+                  + (", ".join(f"{name} ({n} bytes)" for name, n in sorted(assets.items())) or "nothing")
+              )
+          print(f"published {tag}: {package} ({size} bytes)")
+          CONFIRM
+
+          echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
