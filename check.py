@@ -213,7 +213,14 @@ class TheZipContract(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.ident = build.identity()
-        cls.blob = cls._build(cls.ident)
+        try:
+            cls.blob = cls._build(cls.ident)
+        except SystemExit as refused:
+            # build.py refuses rather than packaging something wrong -- a committed
+            # Core/Build.lua, a missing TOC.  Re-raised as a failure so it is reported as one
+            # and the rest of this file still runs; a bare SystemExit ends the process here and
+            # takes every case after it with it.
+            raise AssertionError(f"the package could not be built: {refused}") from refused
         cls.archive = zipfile.ZipFile(io.BytesIO(cls.blob))
         cls.infos = cls.archive.infolist()
 
@@ -304,9 +311,13 @@ class TheWorkflow(unittest.TestCase):
         """Without fetch-depth: 0 the commit count is 1 and the release version goes backwards.
 
         A text check on purpose: it holds even when PyYAML is not installed, which on a
-        runner it is not.
+        runner it is not.  ``assertTrue`` and not ``assertIn`` because the failure message of
+        the latter is the whole workflow file.
         """
-        self.assertIn("fetch-depth: 0", self.text)
+        self.assertTrue(
+            "fetch-depth: 0" in self.text,
+            f"{self.WORKFLOW} no longer says fetch-depth: 0, so the release version would be 1",
+        )
 
     def test_it_parses_as_yaml_when_a_parser_is_available(self) -> None:
         try:
