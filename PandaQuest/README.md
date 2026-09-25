@@ -7,7 +7,7 @@ PandaQuest shows an on-screen arrow that always points to the next sensible ques
 minimap, adds quest information to NPC and item tooltips, and links to Wowhead in game. The quest
 database is derived from Questie's MoP data with its corrections applied.
 
-## What works in the 0.1 series
+## What works
 
 - **Database** – 17 693 quests, 60 224 NPCs, 20 326 objects and 80 049 items, decoded in a
   coroutine at login (about half a second) so the game never freezes. Zone/area mapping,
@@ -129,17 +129,23 @@ PandaQuest Hub; turn it off under Synchronisation).
 
 ## Development
 
-See `docs/` (Finnish) for the module contract and `tools/` for the database builder, the texture
-generator, the WoW API stub test harness and the luacheck runner:
+The addon itself lives at <https://github.com/vem882/pandawow_addon>, which packages and publishes
+it and whose `README.md` describes the release.
+
+The toolchain is in the platform repository, <https://github.com/vem882/pandawow>: `docs/`
+(Finnish) for the module contract, and `tools/` for the database builder, the texture generator,
+the WoW API stub test harness and the luacheck runner. Every `docs/…` and `tools/…` path in this
+addon's comments and in `Textures/README.md` is a path in *that* repository, including the
+commands below — they are run from its root, not from this folder.
 
 ```sh
-python3 -m pytest tools/tests -q -p no:cacheprovider   # 584 tests, no game client needed
+python3 -m pytest tools/tests -q -p no:cacheprovider   # no game client needed
 python3 tools/luacheck_runner.py                       # lint every Lua file
 python3 tools/syntax_check.py PandaQuest/**/*.lua      # Lua 5.1 syntax only
 ```
 
 ## License
 
-Addon code: see the repository license. Embedded libraries keep their own licenses
-(`Libs/README.md`), and the map icons copied from Questie/pfQuest keep theirs
-(`Textures/Icons/LICENSE.md`).
+The addon repository declares no licence of its own at the root, which is a statement about what
+is in the tree and not a grant. Embedded libraries keep their own licenses (`Libs/README.md`), and
+the map icons copied from Questie/pfQuest keep theirs (`Textures/Icons/LICENSE.md`).

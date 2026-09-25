@@ -325,7 +325,7 @@ end
 
 commands.status = function()
     Log.Print(L["Version %s"], Const.VERSION)
-    -- ns.Build is generated INTO THE PACKAGE by ci/lib/addon_build.py and is absent from the
+    -- ns.Build is generated INTO THE PACKAGE by build.py and is absent from the
     -- repository, so a developer running from a checkout simply gets one line less.  It is printed
     -- here because it carries the one fact ## Version cannot: when the commit this copy was built
     -- from was made.  A player comparing their game with what /setup offers is comparing dates.

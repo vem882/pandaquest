@@ -16,13 +16,18 @@ This repository is the addon and the two scripts that turn it into a release. Th
 | `check.py` | the checks, stdlib `unittest` only. |
 | `.github/workflows/release.yml` | builds the zip and publishes it as a release asset. |
 
+`PandaQuest/README.md`, `PandaQuest/CHANGELOG.md` and `PandaQuest/Textures/README.md` ship inside
+the release zip — they are the addon's own documentation and they go where the addon goes. This
+file is about the repository; that one is about the addon.
+
 ## What is not here, and where it is
 
 Everything else lives in the platform repository, **<https://github.com/vem882/pandawow>**: the
 hub (FastAPI, the site players log in to), the Go sync engine, the Electron companion app, the
-deploy, the CI pipeline, the database tooling in `tools/`, and the docs. Nothing in this
-repository imports from there and nothing there imports from here. The two are joined by one
-thing only, and it is a file:
+deploy, the CI pipeline, the database tooling in `tools/`, the docs, and `.luacheckrc` — which is
+not a standalone file, since it reads the WoW global list out of `tools/wowapi/wow_std.lua`, so it
+stayed with the linter it configures. Nothing in this repository imports from there and nothing
+there imports from here. The two are joined by one thing only, and it is a file:
 
 ## The contract
 
@@ -37,8 +42,10 @@ whole of it:
    the *file name* makes the package invisible — and the hub does not fail when that happens, it
    goes on offering the previous build with nothing anywhere saying why.
 3. Every path inside the zip begins **`PandaQuest/`**. That is the folder name WoW installs, and
-   the hub's update manifest lists the paths straight out of the archive, so the installed folder
-   and the manifest both depend on it.
+   it is also what the hub's update manifest is built from: `_safe_member` drops every entry that
+   does not start with that prefix, and `index_package` then answers `503 … has no
+   PandaQuest.toc in it` because the TOC was one of the entries it dropped. So a zip packed
+   without the folder does not produce a wrong manifest — it produces no package at all.
 4. The zip is **deterministic**: entries sorted by name, every timestamp `1980-01-01 00:00:00`,
    every mode bit `0644`, no directory entries.
 
@@ -55,24 +62,30 @@ is read by the hub.
 time. Nothing writes the third component down, because writing it down would change it: the
 commit that recorded 84 would be commit 85.
 
-Why the count, and not a number somebody bumps: the platform repository shipped `0.1.0` for every
-release it had ever made, because the patch component lived in a file and no one remembered it.
-The player watched /setup say "newest build: 0.1.0" for six months. A number that moves by itself
-is the fix, and the commit count is the only such number that is digits, monotonic, and free.
+Why the count, and not a number somebody bumps: the patch component used to live in a file, which
+means somebody had to remember it. The only package in the platform repository's `dist/` is
+`PandaQuest-0.1.0.zip`, built from commit `0f19433` — the version that is written down, not one
+that moved. (How long it had been that way is not measured here, and neither is whether every
+earlier release said the same; what is measured is that the newest one did.) A number that moves
+by itself is the fix, and the commit count is the only such number that is digits, monotonic, and
+free.
 
 **Why `0.2` and not `0.1`.** The commit count is a per-repository counter, and the two
 repositories' counters are not comparable. Measured at the split, with this repository's `main` at
-`082c57d`: **84** commits here, **390** in the platform repository. It was building
-`PandaQuest-0.1.390.zip`. Publishing `0.1.84` from here would have handed the hub a package that
-sorts *below* the one it already had — `(0, 1, 84) < (0, 1, 390)` — and the hub would have kept
-offering the old build, silently, exactly the failure mode point 2 warns about. Bumping the minor
-once, at the split, makes every number this repository will ever produce sort above every number
-the old one did: `(0, 2, 84) > (0, 1, 390)`, and it stays true for as long as the series does. It
-is also honest — moving the addon into its own repository is a minor-version event if anything is.
+`082c57d`: **84** commits here, **390** in the platform repository, whose next build would
+therefore produce `PandaQuest-0.1.390.zip` (`python3 ci/lib/addon_build.py version` prints
+`0.1.390`). Publishing `0.1.84` from here would hand the hub a package that sorts *below* that one
+— `(0, 1, 84) < (0, 1, 390)` — and the hub does not fail on that; it goes on offering whatever
+sorts highest, silently, exactly the failure mode point 2 warns about. Bumping the minor once, at
+the split, makes every number this repository will ever produce sort above every number the other
+one can: `(0, 2, 84) > (0, 1, 390)`, and it stays true for as long as the series does. It is also
+honest — moving the addon into its own repository is a minor-version event if anything is.
 
-One property came free with the split and is worth naming: this repository's history was filtered
-to the commits that touched `PandaQuest/`, so its count moves when *the addon* changes. In the
-platform repository a documentation commit bumped the addon's version.
+The counter restarts at a small number because this repository's history was filtered to the
+commits that touched `PandaQuest/`. That is a fact about the past and not a promise about the
+future: every commit that lands here from now on bumps the version, whether or not it changes a
+file a player downloads — a change to `build.py`, to `check.py`, to the workflow or to this README
+counts exactly as much as a change to the addon.
 
 The number is only required to move and never to go backwards. It does not encode how much
 changed, and a commit here that leaves `PandaQuest/` untouched still produces a new version — the
@@ -109,8 +122,12 @@ python3 build.py identity         # the build identity as shell lines, or --json
 python3 build.py package --out "dist/PandaQuest-$(python3 build.py version).zip"
 ```
 
-`build.py package` refuses an `--out` name the hub could not see, so the contract cannot be broken
-by a typo at the command line.
+`build.py package` refuses an `--out` name the hub could not see, **and** one whose version is not
+the version this tree builds. Both halves are needed. The shape alone would let
+`PandaQuest-0.2.9.zip` through for a tree that builds `0.2.94`: the hub orders packages by the
+number in the *file name* and reads the manifest's version out of the *archive comment*, so a
+single mistyped digit produces a package it sorts at one version and advertises as another. It
+also refuses to build at all from a shallow clone, or with no git — see "Releasing".
 
 **On determinism.** Two builds of the same tree produce the same bytes, and the workflow proves it
 on every run by building twice and comparing sha256. That is a claim about one machine and one
@@ -139,9 +156,19 @@ built as a run artifact, so a change can be installed and played before it is me
 
 The checkout uses `fetch-depth: 0` and must keep doing so. A shallow clone does not fail and does
 not fall back — measured, a depth-1 clone of this repository builds `PandaQuest-0.2.1.zip`, a name
-the hub's pattern matches happily and sorts below every package it holds. So both `check.py` and
-`build.py package` ask `git rev-parse --is-shallow-repository` and refuse, and `check.py` also
-asserts the `fetch-depth: 0` line is still in the workflow.
+the hub's pattern matches happily and sorts below every package it holds. A checkout with no git at
+all is quieter still: `release_version` then falls back to the TOC's declared series and builds
+`PandaQuest-0.2.0.zip`, a number that also matches the pattern and never moves again. So
+`build.py package` refuses both — `--allow-shallow` and `--allow-no-git` build anyway, for a local
+experiment whose file name is wrong on purpose — and `check.py` asserts both refusals and that the
+`fetch-depth: 0` line is still in the workflow.
+
+The publish itself is checked rather than announced. Before uploading, the workflow lists the
+releases that already exist and fails if this version does not sort above the highest of them; the
+upload is skipped entirely when the release already carries this asset at this byte count, so the
+destructive `--clobber` path is only reached when there is nothing working to lose; and afterwards
+it reads the release back and fails unless it is published (not a draft) and carries
+`PandaQuest-<version>.zip` at exactly the size that was built.
 
 ## Checks, and what they cannot tell you
 
@@ -149,14 +176,24 @@ There is no Lua interpreter and no luacheck in this repository. The platform rep
 those, and `check.py` deliberately does not try to reproduce them. So the checks cannot tell you
 the addon *works*; they tell you the package is not obviously broken:
 
-* the TOC parses and declares `## Interface`, `## Title` and `## Version`;
+* the TOC parses and declares `## Interface`, `## Title` and `## Version`, and `## Interface` is
+  `50504` by value and not merely by shape;
 * every file the TOC lists exists, **with the case it is listed with** — Windows does not care and
   the Linux machines that build and serve this do;
 * every file `embeds.xml` pulls in exists too, recursively, since the TOC lists the XML and not
-  its twenty libraries;
+  the libraries inside it;
+* nothing in the zip is unreachable from the packaged TOC's include graph, zero bytes, or from the
+  development tree (`.py`, `.pyc`, `__pycache__`), and `Database/Data/` and `Libs/LibStub` are
+  there — a tree checked out without the generated database still packages happily;
 * the four points of the contract above, against a freshly built zip;
 * the version is the series plus the measured commit count, the history behind it is not
   truncated, and the name it produces matches the hub's own regex.
+
+**What is genuinely given up by the split**, and is not checked anywhere in this repository: that
+every Lua file parses as Lua 5.1 (`tools/syntax_check.py`), that it lints clean against the
+addon's globals (`tools/luacheck_runner.py` and `.luacheckrc`), and that it loads and runs against
+the WoW API stubs (`tools/tests`). All three need the toolchain, and the toolchain stayed in the
+platform repository. Until something here can run them, a Lua syntax error reaches a player.
 
 ## Licence and credit
 

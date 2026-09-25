@@ -6,9 +6,10 @@
 # and stamped into this file and into ## Title (build.py: release_version, stamp_toc); a third
 # component written down here would be one nobody remembers to bump.
 # 0.2 and not 0.1 because the counter changed meaning when the addon moved into its own repository:
-# at the split (082c57d) this repository counted 84 commits and the platform repository 390, so
-# keeping 0.1 would have shipped 0.1.84 after 0.1.390 -- and the hub, which orders packages by
-# int() on each component, would have gone on offering the older build.  README.md, "The version".
+# at the split (082c57d) this repository counted 84 commits and the platform repository 390, whose
+# next build would therefore be 0.1.390, so keeping 0.1 would have published 0.1.84 against it --
+# and the hub, which orders packages by int() on each component and offers the highest, would have
+# gone on serving the other one.  README.md, "The version".
 ## Version: 0.2.0
 ## Author: vem882
 ## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
