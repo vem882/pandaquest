@@ -1,0 +1,10 @@
+# Build output. The release asset is built in a runner and published from there; a zip in a
+# working tree is a local experiment and never the thing players get.
+/dist/
+/second/
+
+# Generated at packaging time and refused by build.py if it is ever committed -- see check.py.
+/PandaQuest/Core/Build.lua
+
+__pycache__/
+*.py[cod]
