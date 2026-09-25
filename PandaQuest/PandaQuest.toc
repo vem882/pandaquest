@@ -2,6 +2,9 @@
 ## Title: |cff5fd7ffPanda|rQuest
 ## Notes: Quest helper and navigator for Mists of Pandaria Classic
 ## Notes-fiFI: Tehtäväapuri ja navigaattori Mists of Pandaria Classiciin
+# The series only.  What ships is 0.1.<commits on main>, computed at package time and stamped into
+# this file and into ## Title (tools/install.py: release_version, ci/lib/addon_build.py: stamp_toc);
+# a third component written down here would be one nobody remembers to bump.
 ## Version: 0.1.0
 ## Author: vem882
 ## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
