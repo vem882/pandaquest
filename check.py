@@ -15,11 +15,16 @@ breakage a release can actually introduce:
   wrongly-cased file is silent in-game on Windows and fatal on the hub's Linux builds;
 * every file ``embeds.xml`` pulls in exists too, since the TOC lists the XML and not its
   contents;
+* nothing packaged is unreachable, empty or from the development tree: a ``.lua`` no TOC line
+  or XML include names is either a module the game never runs or a download nobody uses, a
+  zero-byte entry is a generator that failed halfway, and a ``.py`` in an AddOns folder is how
+  somebody comes to believe the addon needs Python;
 * the zip's contract holds: the name the hub can see, every path under ``PandaQuest/``, the
   version stamped, the same bytes when built twice.
 
 Nothing here asserts a number it did not measure: the version cases compute what git says and
-compare, rather than hard-coding 84.
+compare, rather than hard-coding 84.  The one hard-coded number is the interface version, which
+is not measurable from this repository -- it is what the 5.5.4 client expects.
 """
 
 from __future__ import annotations
@@ -27,10 +32,12 @@ from __future__ import annotations
 import io
 import json
 import re
+import tempfile
 import unittest
 import xml.etree.ElementTree as ElementTree
 import zipfile
 from pathlib import Path
+from unittest import mock
 
 import build
 
@@ -46,6 +53,20 @@ DIRECTIVE = re.compile(r"^##\s*([A-Za-z][\w-]*)\s*:\s*(.*)$")
 #: the client loads the addon at all; ``Title`` is what the AddOns list draws and what the
 #: version is stamped into; ``Version`` supplies the series.
 REQUIRED_DIRECTIVES = ("Interface", "Title", "Version")
+
+#: The interface version Mists of Pandaria Classic 5.5.4 expects, asserted by value and not by
+#: shape.  The client compares ``## Interface`` against its own build number and anything else
+#: leaves the addon greyed out under "Load out of date AddOns" -- no error, no chat line,
+#: nothing in the log, and every bug report that follows says "the addon does nothing".  This
+#: is the same constant the platform repository's ``tools/tests/test_release_artifacts.py``
+#: asserts (``MOP_CLASSIC_INTERFACE = 50504``); it moves when the game's patch level does.
+MOP_CLASSIC_INTERFACE = "50504"
+
+#: Nothing from the workshop reaches a player's AddOns folder.  ``build.py``'s exclusion lists
+#: are supposed to keep these out; this is the independent statement of the same rule, so that
+#: an exclusion list edited wrongly is caught by something that does not share it.
+DEVELOPMENT_SUFFIXES = (".py", ".pyc", ".pyo")
+DEVELOPMENT_PARTS = ("__pycache__", ".git", ".pytest_cache")
 
 
 def toc_lines(text: str) -> tuple[dict[str, str], list[str]]:
@@ -91,8 +112,13 @@ class TocParses(unittest.TestCase):
             self.assertTrue(self.directives[key], f"## {key} is empty")
 
     def test_interface_is_the_mop_classic_number(self) -> None:
-        """5.5.4 is interface 50504.  A wrong number makes the client mark the addon out of date."""
-        self.assertTrue(self.directives["Interface"].isdigit())
+        """5.5.4 is interface 50504.  A wrong number makes the client mark the addon out of date.
+
+        The value, not its shape: ``isdigit()`` alone passes 11507 and 99999 as happily as the
+        right number, and a wrong interface version is silent in-game.  ``TheZipContract``
+        asserts the same constant against the *packaged* TOC, which is the copy a player runs.
+        """
+        self.assertEqual(self.directives["Interface"], MOP_CLASSIC_INTERFACE)
 
     def test_the_declared_version_is_a_series_the_packaging_can_extend(self) -> None:
         """``release_version`` keeps the first two components and appends the commit count."""
@@ -139,7 +165,7 @@ class EveryListedFileExists(unittest.TestCase):
         self.assertEqual(wrong, [], "listed with a case that is not the case on disk")
 
     def test_every_file_embeds_xml_pulls_in_exists(self) -> None:
-        """The TOC lists embeds.xml, not the twenty libraries inside it."""
+        """The TOC lists embeds.xml, not the libraries inside it."""
         missing: list[str] = []
         queue = [Path("embeds.xml")]
         seen: set[str] = set()
@@ -207,6 +233,59 @@ class TheVersion(unittest.TestCase):
         self.assertIsNone(build.HUB_PACKAGE_PATTERN.match("PandaQuest-0.2.84+abc1234.zip"))
 
 
+class ThePublishGuards(unittest.TestCase):
+    """``package`` refuses three things outright.  Asserted here, not left to a runner to find.
+
+    Every case forces the state rather than reading the environment, so none of them skips: a
+    check that skips on the machine where the fault occurs is not a check.  The version cases
+    above do skip outside a git checkout, and these are what covers that gap -- with git gone,
+    ``commit_count`` returns None and the first guard below is the one that fires.
+    """
+
+    COUNT = 7  # any number; these cases are about the refusal, not about the count
+
+    def _refuses(self, name: str) -> str:
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / name
+            with self.assertRaises(SystemExit) as refused:
+                build.package(target)
+            self.assertFalse(target.exists(), "it refused but wrote the file anyway")
+        return str(refused.exception)
+
+    def test_it_refuses_when_git_cannot_answer(self) -> None:
+        """No git means release_version falls back to the TOC's series and never moves again."""
+        with mock.patch.object(build, "commit_count", return_value=None):
+            message = self._refuses(f"PandaQuest-{build.read_toc_version()}.zip")
+        self.assertIn("git could not answer", message)
+
+    def test_it_refuses_a_shallow_checkout(self) -> None:
+        with mock.patch.object(build, "commit_count", return_value=self.COUNT), mock.patch.object(
+            build, "is_shallow", return_value=True
+        ):
+            message = self._refuses("PandaQuest-0.2.1.zip")
+        self.assertIn("shallow", message)
+
+    def test_it_refuses_a_name_the_hub_cannot_see(self) -> None:
+        with mock.patch.object(build, "commit_count", return_value=self.COUNT), mock.patch.object(
+            build, "is_shallow", return_value=False
+        ):
+            message = self._refuses("PandaQuest-v0.2.7.zip")
+        self.assertIn("not a name the hub can see", message)
+
+    def test_it_refuses_a_name_whose_version_is_not_the_one_it_builds(self) -> None:
+        """Right shape, wrong number: the hub then sorts by the name and advertises the comment.
+
+        ``find_package`` orders candidates by the version in the file name and ``index_package``
+        takes the manifest's version from the archive comment, so a mistyped digit produces a
+        package the hub sorts at one version and serves as another -- and nothing reports it.
+        """
+        with mock.patch.object(build, "commit_count", return_value=self.COUNT), mock.patch.object(
+            build, "is_shallow", return_value=False
+        ):
+            message = self._refuses("PandaQuest-9.9.9.zip")
+        self.assertIn("says version 9.9.9", message)
+
+
 class TheZipContract(unittest.TestCase):
     """Build once into memory and assert what the hub, the manifest and WoW depend on."""
 
@@ -214,7 +293,10 @@ class TheZipContract(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.ident = build.identity()
         try:
-            cls.blob = cls._build(cls.ident)
+            # build.zip_bytes and not a second construction here: a copy of the packing code in
+            # the test is a test of the copy. Everything below is then an assertion about the
+            # bytes build.py actually writes.
+            cls.blob = build.zip_bytes(cls.ident)
         except SystemExit as refused:
             # build.py refuses rather than packaging something wrong -- a committed
             # Core/Build.lua, a missing TOC.  Re-raised as a failure so it is reported as one
@@ -224,15 +306,36 @@ class TheZipContract(unittest.TestCase):
         cls.archive = zipfile.ZipFile(io.BytesIO(cls.blob))
         cls.infos = cls.archive.infolist()
 
-    @staticmethod
-    def _build(ident: dict[str, object]) -> bytes:
-        buffer = io.BytesIO()
-        content = build.entries(ident)
-        with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as out:
-            for name in sorted(content):
-                out.writestr(build._entry(name), content[name])
-            out.comment = json.dumps(ident, sort_keys=True, separators=(",", ":")).encode("utf-8")
-        return buffer.getvalue()
+    def _reachable(self) -> set[str]:
+        """Every archive path the packaged TOC reaches, directly or through an XML include.
+
+        The client's own load order: the TOC names files and XML files, an XML names scripts
+        and further XML.  Anything outside the closure is never run.
+        """
+        names = {name.lower(): name for name in self.archive.namelist()}
+        prefix = f"{build.ADDON}/"
+        _directives, listed = toc_lines(
+            self.archive.read(f"{prefix}{build.ADDON}.toc").decode("utf-8-sig")
+        )
+        reached: set[str] = set()
+        queue = [prefix + entry.replace("\\", "/") for entry in listed]
+        while queue:
+            current = queue.pop()
+            key = current.lower()
+            if key in reached:
+                continue
+            reached.add(key)
+            actual = names.get(key)
+            if actual is None or not key.endswith(".xml"):
+                continue
+            root = ElementTree.fromstring(self.archive.read(actual).decode("utf-8-sig"))
+            parent = actual.rsplit("/", 1)[0]
+            for element in root.iter():
+                tag = element.tag.rsplit("}", 1)[-1]
+                referenced = element.get("file")
+                if referenced and tag in ("Script", "Include"):
+                    queue.append(parent + "/" + referenced.replace("\\", "/"))
+        return reached
 
     def test_every_path_is_under_the_addon_folder(self) -> None:
         """``PandaQuest/`` is the folder WoW installs and what the update manifest's paths are."""
@@ -256,15 +359,85 @@ class TheZipContract(unittest.TestCase):
             self.assertEqual(info.external_attr, build.ZIP_EXTERNAL_ATTR, info.filename)
 
     def test_building_it_twice_gives_the_same_bytes(self) -> None:
-        self.assertEqual(self._build(self.ident), self.blob)
+        self.assertEqual(build.zip_bytes(self.ident), self.blob)
 
-    def test_every_file_in_the_tree_is_in_the_zip(self) -> None:
+    def test_every_shipped_file_in_the_tree_is_in_the_zip(self) -> None:
+        """Walked here with rglob, deliberately, and not with ``build.iter_addon_files``.
+
+        Building the expected set from the packer's own walk makes this case unable to fail on
+        the thing it looks like it guards: a wrong entry in EXCLUDED_SUFFIXES that drops a
+        shipped file moves both sides of the comparison together and the case stays green. So
+        the expected set is stated independently -- every file with an extension the addon
+        actually loads or draws, whatever build.py thinks about it.
+        """
+        shipped = {".lua", ".xml", ".toc", ".tga", ".blp", ".ttf", ".otf", ".md", ".txt"}
+        packaged = set(self.archive.namelist())
         expected = {
-            f"PandaQuest/{path.relative_to(ADDON_DIR).as_posix()}"
-            for path in build.iter_addon_files()
+            f"{build.ADDON}/{path.relative_to(ADDON_DIR).as_posix()}"
+            for path in ADDON_DIR.rglob("*")
+            if path.is_file() and path.suffix.lower() in shipped
         }
-        expected.add(f"PandaQuest/{build.BUILD_LUA}")
-        self.assertEqual(set(self.archive.namelist()), expected)
+        self.assertEqual(sorted(expected - packaged), [], "in PandaQuest/, not in the zip")
+
+    def test_the_zip_holds_nothing_from_the_development_tree(self) -> None:
+        """The player gets the addon, not the workshop.
+
+        A stray ``.py`` in an AddOns folder is how somebody comes to believe the addon needs
+        Python installed. Stated against literal patterns rather than against build.py's
+        exclusion lists, so that an exclusion list edited wrongly is caught by something that
+        does not share it.
+        """
+        strays = sorted(
+            name
+            for name in self.archive.namelist()
+            if name.lower().endswith(DEVELOPMENT_SUFFIXES)
+            or any(part in DEVELOPMENT_PARTS for part in name.split("/"))
+        )
+        self.assertEqual(strays, [], "packaged, and no player has any use for it")
+
+    def test_the_zip_ships_the_generated_database_and_the_embedded_libraries(self) -> None:
+        """Neither is hand-written, which is exactly why they go missing.
+
+        ``Database/Data/*.lua`` is generated by the platform repository's tooling and ``Libs/``
+        is vendored Ace3. A tree checked out without them still parses and still packages, and
+        the result is an addon with no quest data and no AceAddon, which errors on the first
+        line it runs.
+        """
+        names = set(self.archive.namelist())
+        prefix = f"{build.ADDON}/"
+        data = sorted(name for name in names if name.startswith(f"{prefix}Database/Data/"))
+        self.assertNotEqual(data, [], "the zip has no Database/Data/: the addon has no quests")
+        self.assertIn(
+            f"{prefix}Libs/LibStub/LibStub.lua",
+            names,
+            "every embedded library loads through LibStub, so embeds.xml fails on its first Script",
+        )
+
+    def test_no_entry_is_empty(self) -> None:
+        """A generator that fails halfway writes a zero-byte file, and packaging includes it."""
+        empty = sorted(info.filename for info in self.infos if info.file_size == 0)
+        self.assertEqual(empty, [], "zero bytes in the package")
+
+    def test_nothing_packaged_is_unreachable(self) -> None:
+        """A .lua no TOC line and no XML include names is never run by the game.
+
+        Either somebody wrote a module and forgot the TOC line -- in which case the feature is
+        simply absent in game and nothing else notices -- or the file is obsolete and is
+        costing every player its bytes on every download.
+        """
+        reached = self._reachable()
+        orphans = sorted(
+            name
+            for name in self.archive.namelist()
+            if name.lower().endswith(".lua") and name.lower() not in reached
+        )
+        self.assertEqual(orphans, [], "in the zip, reached by no TOC line and no XML include")
+
+    def test_everything_the_packaged_toc_names_is_packaged(self) -> None:
+        """The other direction, against the zip rather than against the working tree."""
+        packaged = {name.lower() for name in self.archive.namelist()}
+        missing = sorted(name for name in self._reachable() if name not in packaged)
+        self.assertEqual(missing, [], "named by the packaged TOC or an XML, not in the zip")
 
     def test_the_packaged_toc_is_stamped(self) -> None:
         text = self.archive.read("PandaQuest/PandaQuest.toc").decode("utf-8-sig")
@@ -272,6 +445,12 @@ class TheZipContract(unittest.TestCase):
         self.assertEqual(directives["Version"], self.ident["build"])
         self.assertIn(build.shown_version(self.ident), directives["Title"])
         self.assertEqual(files[0], build.BUILD_LUA_TOC_LINE, "Core\\Build.lua must load first")
+
+    def test_the_packaged_toc_declares_the_interface_the_client_expects(self) -> None:
+        """Asserted against the packaged copy too: stamping rewrites this file."""
+        text = self.archive.read("PandaQuest/PandaQuest.toc").decode("utf-8-sig")
+        directives, _files = toc_lines(text)
+        self.assertEqual(directives.get("Interface"), MOP_CLASSIC_INTERFACE)
 
     def test_the_toc_is_stamped_once_however_often_it_is_stamped(self) -> None:
         """Re-packaging an already-packaged TOC must not leave three version tags in the title."""
@@ -298,7 +477,12 @@ class TheZipContract(unittest.TestCase):
 
 
 class TheWorkflow(unittest.TestCase):
-    """The two things about .github/workflows/release.yml that fail silently if they rot."""
+    """The things about .github/workflows/release.yml that fail silently if they rot.
+
+    Text checks on purpose: they hold even when PyYAML is not installed, which on a
+    GitHub-hosted runner it is not.  ``assertIn`` would print the whole workflow on failure,
+    so each one carries its own message instead.
+    """
 
     WORKFLOW = REPO / ".github" / "workflows" / "release.yml"
 
@@ -308,15 +492,47 @@ class TheWorkflow(unittest.TestCase):
         self.text = self.WORKFLOW.read_text(encoding="utf-8")
 
     def test_it_checks_out_the_whole_history(self) -> None:
-        """Without fetch-depth: 0 the commit count is 1 and the release version goes backwards.
-
-        A text check on purpose: it holds even when PyYAML is not installed, which on a
-        runner it is not.  ``assertTrue`` and not ``assertIn`` because the failure message of
-        the latter is the whole workflow file.
-        """
+        """Without fetch-depth: 0 the commit count is 1 and the release version goes backwards."""
         self.assertTrue(
             "fetch-depth: 0" in self.text,
             f"{self.WORKFLOW} no longer says fetch-depth: 0, so the release version would be 1",
+        )
+
+    def test_gh_is_told_which_repository_to_talk_to(self) -> None:
+        """The release job has no checkout, and gh does not read GITHUB_REPOSITORY.
+
+        gh resolves the repository from --repo, from GH_REPO, or from a git remote in the
+        working directory.  The release job downloads an artifact and nothing else, so with
+        none of those every gh call fails with "not a git repository", no asset is published,
+        and the hub goes on offering the previous build.
+        """
+        self.assertTrue(
+            "GH_REPO:" in self.text,
+            f"{self.WORKFLOW} no longer sets GH_REPO, so gh cannot find the repository at all",
+        )
+
+    def test_the_tag_is_pinned_to_the_commit_that_was_built(self) -> None:
+        """Without --target, gh tags the default branch's latest state at publish time.
+
+        The release notes and the zip's archive comment both name GITHUB_SHA, so a tag created
+        from whatever main happens to be makes the three disagree, and `git checkout v<version>`
+        gives a tree that is not the one a player downloaded.
+        """
+        self.assertTrue(
+            "--target" in self.text,
+            f"{self.WORKFLOW} no longer passes --target, so the tag can name a different commit",
+        )
+
+    def test_the_publish_is_checked_and_not_merely_printed(self) -> None:
+        """A draft release with an asset attached is not served by the public releases API.
+
+        `gh release create` with an asset creates a draft, uploads, then publishes, so a run
+        that dies in the middle leaves one. isDraft has to be asserted, or the step summary
+        says "published" about something no player can download.
+        """
+        self.assertTrue(
+            "isDraft" in self.text,
+            f"{self.WORKFLOW} no longer asks about isDraft, so a draft release reads as published",
         )
 
     def test_it_parses_as_yaml_when_a_parser_is_available(self) -> None:
