@@ -2,6 +2,13 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2] - unreleased
+
+The addon moved into its own repository, <https://github.com/vem882/pandawow_addon>, which
+packages and publishes it. The shipped version is now `0.2.<commits in that repository>`, computed
+at packaging time; the series bumped from 0.1 to 0.2 because the commit counter changed meaning
+when the addon moved. That repository's `README.md`, "The version", is the argument.
+
 ## [0.1.0] - unreleased
 
 First working version: the whole chain from login to a moving arrow runs end to end.

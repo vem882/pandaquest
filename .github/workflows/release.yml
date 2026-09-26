@@ -1,0 +1,314 @@
+# Build PandaQuest-<version>.zip and publish it as a GitHub release asset.
+#
+# This repository has no self-hosted runner, so everything here runs on a GitHub-hosted one and
+# may depend on nothing installed on anybody's machine: build.py and check.py are stdlib Python,
+# there is no Lua and no luacheck (those stayed in the platform repository,
+# github.com/vem882/pandawow), and nothing is pip-installed.
+#
+# What the platform repository does with the result: it downloads the release asset. Not a
+# submodule and not a checkout. So the file name and the paths inside the zip are an interface
+# between two repositories, and README.md, "The contract", is the definition. Break it and the
+# hub does not fail -- it goes on offering the previous build, with nothing anywhere saying why.
+name: Release
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  # For re-publishing a release whose upload failed after a green build. The version comes from
+  # the commit count, so a dispatch on the same commit rebuilds the same version, and the
+  # publish step below replaces that release's asset rather than failing on the existing tag.
+  workflow_dispatch:
+
+# Read by default. Only the release job widens this, and only to contents: write.
+permissions:
+  contents: read
+
+concurrency:
+  # A second push to a pull request makes the first run's answer irrelevant. A run on main is
+  # never cancelled: it may be between creating a release and uploading its asset, which would
+  # leave a tagged release with nothing attached -- and the hub reads the asset, not the tag.
+  group: release-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: check and build the package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      version: ${{ steps.build.outputs.version }}
+      package: ${{ steps.build.outputs.package }}
+      sha256: ${{ steps.build.outputs.sha256 }}
+    steps:
+      # fetch-depth: 0 is load-bearing, and it fails silently without it. The shipped version is
+      # this repository's commit count (build.py: release_version), and a shallow clone counts
+      # what it was given rather than failing: measured here, a depth-1 clone of this repository
+      # builds PandaQuest-0.2.1.zip -- well formed, matching the hub's pattern, and sorting below
+      # every package the hub already has, so /setup would go on offering the old build while
+      # this run stayed green. The platform repository learned that the hard way and left the
+      # same comment on its own checkout.
+      #
+      # Because that number is wrong rather than missing, the backstop is an explicit one:
+      # check.py's TheVersion.test_the_history_is_whole and build.py's `package` both ask
+      # `git rev-parse --is-shallow-repository` and refuse. Deleting this line fails the run at
+      # the check step, not in the hub a week later.
+      - name: Check out the repository, with all of its history
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      # No setup-python: build.py and check.py are stdlib only, so the runner image's python3 is
+      # exactly enough. The version is printed so a run records which one built the zip, and the
+      # guard fails loudly rather than letting an old image fail on a syntax error further down.
+      - name: Check the runner's python
+        run: |
+          set -euo pipefail
+          python3 --version
+          python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 9) else "python3 >= 3.9 required")'
+
+      - name: Run the checks
+        run: python3 check.py -v
+
+      - name: Build the package
+        id: build
+        run: |
+          set -euo pipefail
+          version="$(python3 build.py version)"
+          package="PandaQuest-${version}.zip"
+          python3 build.py package --out "dist/${package}"
+
+          # Built a second time, into a different directory, and compared. Determinism is part of
+          # the contract, and the cheapest honest test of it is to do it twice in one job: it
+          # catches a clock, a umask or a directory order leaking into the archive. It does NOT
+          # claim the same bytes on a different machine or a different zlib -- README.md says so.
+          python3 build.py package --out "second/${package}"
+          first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
+          again="$(sha256sum "second/${package}" | cut -d' ' -f1)"
+          if [ "${first}" != "${again}" ]; then
+            echo "::error::Two builds of the same tree differ: ${first} vs ${again}"
+            exit 1
+          fi
+          rm -rf second
+
+          {
+            echo "version=${version}"
+            echo "package=${package}"
+            echo "sha256=${first}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Say what was built
+        run: |
+          set -euo pipefail
+          {
+            echo "## ${{ steps.build.outputs.package }}"
+            echo
+            echo "| fact | value |"
+            echo "|------|-------|"
+            echo "| version | \`${{ steps.build.outputs.version }}\` |"
+            echo "| sha256 | \`${{ steps.build.outputs.sha256 }}\` |"
+            echo "| bytes | $(stat -c%s "dist/${{ steps.build.outputs.package }}") |"
+            echo "| entries | $(python3 -c "import zipfile,sys;print(len(zipfile.ZipFile(sys.argv[1]).infolist()))" "dist/${{ steps.build.outputs.package }}") |"
+            echo "| build identity | \`$(python3 build.py identity --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["build"])')\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Uploaded from every run, pull requests included: a reviewer can download the zip a branch
+      # would ship and install it, without a release existing. The release job takes its bytes
+      # from here rather than rebuilding, so what is published is what was checked.
+      - name: Keep the package
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: PandaQuest-${{ steps.build.outputs.version }}
+          path: dist/${{ steps.build.outputs.package }}
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: publish the release asset
+    needs: build
+    # Only main, and only a real push or a deliberate dispatch. A pull request builds and checks;
+    # it does not publish, and its token stays read-only.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      # The one job that needs it, and the only reason it exists: creating a release and
+      # attaching a file to it.
+      contents: write
+    concurrency:
+      # Two merges in a row publish one after the other. Never cancelled: see above.
+      group: release-publish
+      cancel-in-progress: false
+    steps:
+      - name: Take the package the build job checked
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: PandaQuest-${{ needs.build.outputs.version }}
+          path: dist
+
+      # The artifact is re-zipped by upload-artifact and unpacked again by download-artifact.
+      # This asserts that round trip gave back the same bytes, so the sha256 in the release notes
+      # is a fact about the file players download and not about a file that no longer exists.
+      - name: Check the bytes are the ones that were built
+        run: |
+          set -euo pipefail
+          echo "${{ needs.build.outputs.sha256 }}  dist/${{ needs.build.outputs.package }}" | sha256sum --check --strict
+
+      # gh is preinstalled on GitHub-hosted runners, so this needs no action from anybody's
+      # marketplace and no token beyond the run's own.
+      #
+      # The tag carries a "v" and the asset does not. That is deliberate and it is the whole
+      # contract: the hub matches ^PandaQuest-(\d+(?:\.\d+)*)\.zip$ against the *file name*, so a
+      # "v" there makes the package invisible. Tags are read by humans and by nothing else here.
+      - name: Publish the release
+        env:
+          # gh resolves which repository to talk to from --repo, from GH_REPO, or from a git
+          # remote in the working directory. It does NOT read GITHUB_REPOSITORY. This job has no
+          # checkout -- it downloads the artifact and nothing else -- so without GH_REPO every gh
+          # call below dies with "failed to run git: not a git repository", the release is never
+          # created, and the hub goes on offering the previous build. Measured with gh 2.100.0:
+          # with GITHUB_REPOSITORY set and GH_REPO unset, `gh release view` fails that way; with
+          # GH_REPO set it resolves and reaches the API.
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+        run: |
+          set -euo pipefail
+          tag="v${VERSION}"
+          bytes="$(stat -c%s "dist/${PACKAGE}")"
+          notes="$(printf '%s\n' \
+            "PandaQuest ${VERSION} for Mists of Pandaria Classic 5.5.4." \
+            "" \
+            "| | |" \
+            "|---|---|" \
+            "| commit | \`${GITHUB_SHA}\` |" \
+            "| asset | \`${PACKAGE}\` |" \
+            "| sha256 | \`${SHA256}\` |" \
+            "" \
+            "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
+            "The hub at github.com/vem882/pandawow downloads this asset; see that repository for" \
+            "the site, the sync engine and the companion app.")"
+
+          # One listing, used for two things. Asking for the list rather than for this one
+          # release means "the release is not there yet" is read off data instead of off an
+          # error message: the old code ran `gh release view >/dev/null 2>&1` and took any
+          # failure as "does not exist", so a repository it could not resolve looked exactly
+          # like a first release. If this call fails, the step fails here.
+          gh release list --limit 200 --json tagName,isDraft > releases.json
+
+          # The version must sort above everything already published. The hub takes the highest
+          # version it can see and reports nothing when a package sorts below it -- it simply
+          # goes on offering the older build. build.py's shallow and no-git guards stop the two
+          # known ways to produce a low number; this is the backstop that says so out loud.
+          python3 - "${tag}" "${VERSION}" releases.json exists.txt <<'GUARD'
+          import json
+          import re
+          import sys
+
+          tag, version, listing, answer = sys.argv[1:5]
+          releases = json.loads(open(listing, encoding="utf-8").read())
+
+          # The hub's own ordering: tuple(int(part) for part in version.split(".")).
+          def key(value):
+              return tuple(int(part) for part in value.split("."))
+
+          published = [
+              match.group(1)
+              for release in releases
+              if release["tagName"] != tag
+              for match in [re.fullmatch(r"v(\d+(?:\.\d+)*)", release["tagName"])]
+              if match
+          ]
+          if published:
+              highest = max(published, key=key)
+              if key(version) <= key(highest):
+                  raise SystemExit(
+                      f"::error::{version} does not sort above {highest}, which this repository "
+                      "has already published. The hub offers the highest version it can see, so "
+                      "this release would never reach a player and nothing would report it."
+                  )
+              print(f"{version} sorts above {highest}, the highest already published")
+          else:
+              print(f"{version} is the first release here with a version-shaped tag")
+
+          found = any(release["tagName"] == tag for release in releases)
+          open(answer, "w", encoding="utf-8").write("yes" if found else "no")
+          GUARD
+
+          if [ "$(cat exists.txt)" = "yes" ]; then
+            gh release view "${tag}" --json isDraft,assets > release.json
+            same="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1], encoding="utf-8")); print(any(a["name"] == sys.argv[2] and a["size"] == int(sys.argv[3]) for a in r["assets"]))' \
+              release.json "${PACKAGE}" "${bytes}")"
+            if [ "${same}" = "True" ]; then
+              echo "${tag} already carries ${PACKAGE} at ${bytes} bytes; leaving it alone"
+            else
+              # --clobber deletes the existing asset BEFORE uploading, and gh's own help says
+              # that a failed upload then loses the original. That is the one branch that turns
+              # a working release into an empty one, so it is reached only when there is nothing
+              # working to lose: the case above skips the upload when the asset is already these
+              # exact bytes, which is what a re-run of an unchanged main actually hits.
+              echo "${tag} exists without these bytes; uploading ${PACKAGE}"
+              gh release upload "${tag}" "dist/${PACKAGE}" --clobber
+            fi
+            # `gh release create` with an asset is three API calls: create as a draft, upload,
+            # publish. A run that died after the first leaves a draft holding the tag, and a
+            # draft is not served by the public releases API -- the hub sees nothing at all
+            # while the run is green. Finish that publish rather than parking the asset on it.
+            draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
+            if [ "${draft}" = "True" ]; then
+              echo "::warning::${tag} was left as a draft; publishing it now"
+              gh release edit "${tag}" --draft=false --latest
+            fi
+          else
+            # --target pins the tag to the commit this zip was built from. Without it gh creates
+            # the tag from the latest state of the default branch at publish time, which on a
+            # busy main is a different commit from the one the notes and the archive comment
+            # both name -- and `git checkout v<version>` then gives the wrong tree.
+            gh release create "${tag}" "dist/${PACKAGE}" \
+              --target "${GITHUB_SHA}" \
+              --title "PandaQuest ${VERSION}" \
+              --notes "${notes}" \
+              --latest
+          fi
+
+      # The old version of this step printed whatever it found and exited 0, so a draft release
+      # with an asset attached, or a release carrying a different file, both read as success.
+      # It asserts now: a green run means a player can download exactly these bytes.
+      - name: Check the release a player would download
+        env:
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+        run: |
+          set -euo pipefail
+          tag="v${VERSION}"
+          bytes="$(stat -c%s "dist/${PACKAGE}")"
+          gh release view "${tag}" --json tagName,isDraft,assets > published.json
+
+          python3 - "${tag}" "${PACKAGE}" "${bytes}" published.json <<'CONFIRM'
+          import json
+          import sys
+
+          tag, package, size, path = sys.argv[1:5]
+          release = json.loads(open(path, encoding="utf-8").read())
+          assets = {asset["name"]: asset["size"] for asset in release["assets"]}
+
+          if release["isDraft"]:
+              raise SystemExit(
+                  f"::error::{tag} is still a draft. The public releases API does not serve a "
+                  "draft, so the hub would download nothing."
+              )
+          if assets.get(package) != int(size):
+              raise SystemExit(
+                  f"::error::{tag} does not carry {package} at {size} bytes. It carries: "
+                  + (", ".join(f"{name} ({n} bytes)" for name, n in sorted(assets.items())) or "nothing")
+              )
+          print(f"published {tag}: {package} ({size} bytes)")
+          CONFIRM
+
+          echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
