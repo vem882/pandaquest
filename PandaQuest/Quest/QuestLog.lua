@@ -17,7 +17,8 @@ ns.QuestLog = M
 local Log = ns.Log
 
 local type, pairs, ipairs, next, pcall, tonumber, tostring = type, pairs, ipairs, next, pcall, tonumber, tostring
-local gsub, match = string.gsub, string.match
+local gsub, match, sub = string.gsub, string.match, string.sub
+local concat = table.concat
 local wipe = wipe or table.wipe
 
 -- Own AceEvent/AceTimer/AceBucket object: AceEvent keys its registry by target, so registering
@@ -43,19 +44,48 @@ local TURNIN_MEMORY = 30                -- how long a QUEST_TURNED_IN stays pend
 -- Objective text parsing
 ---------------------------------------------------------------------------
 
--- pfQuest's SanitizePattern (compat/pfUI.lua:78): turn a Blizzard format string such as
--- "%s slain: %d/%d" into a Lua capture pattern "(.+) slain: (%d+)/(%d+)".
+-- Turns a Blizzard format string such as "%s slain: %d/%d" into a Lua capture pattern
+-- "(.+) slain: (%d+)/(%d+)". The string is read once, left to right: a conversion (`%s`, `%d`,
+-- optionally positional as `%1$s`) becomes a capture, a character that is magic in a Lua pattern
+-- is escaped, anything else is copied.
+local MAGIC = {}
+for ch in ("^$()%.[]*+-?"):gmatch(".") do MAGIC[ch] = true end
+
 local sanitizeCache = {}
 local function sanitizePattern(pattern)
     if type(pattern) ~= "string" then return nil end
     local cached = sanitizeCache[pattern]
     if cached then return cached end
-    local result = pattern
-    result = gsub(result, "%%(%d)%$", "%%")          -- drop capture indexes ("%1$s" -> "%s")
-    result = gsub(result, "([%+%-%*%(%)%?%[%]%^%$%.])", "%%%1")  -- escape magic chars, keep "%"
-    result = gsub(result, "(%%%a)", "(%1+)")         -- %s -> (%s+), %d -> (%d+)
-    result = gsub(result, "%%s%+", ".+")             -- (%s+) -> (.+)
-    result = gsub(result, "%(%.%+%)%(%%d%+%)", "(.-)(%%d+)")  -- numbers win over greedy text
+
+    local out, i, n = {}, 1, #pattern
+    while i <= n do
+        local ch = sub(pattern, i, i)
+        if ch == "%" then
+            local j = i + 1
+            local position = match(pattern, "^%d+%$", j)
+            if position then j = j + #position end
+            local conversion = sub(pattern, j, j)
+            if conversion == "s" then
+                out[#out + 1] = "(.+)"
+            elseif conversion == "d" then
+                out[#out + 1] = "(%d+)"
+            elseif conversion == "%" then
+                out[#out + 1] = "%%"
+            elseif match(conversion, "%a") then
+                out[#out + 1] = "(%" .. conversion .. "+)"
+            else
+                out[#out + 1] = "%%"
+                j = j - 1
+            end
+            i = j + 1
+        else
+            out[#out + 1] = MAGIC[ch] and ("%" .. ch) or ch
+            i = i + 1
+        end
+    end
+
+    -- "(.+)(%d+)" would let the text swallow the digits; make the text give way to the number.
+    local result = concat(out):gsub("%(%.%+%)%(%%d%+%)", "(.-)(%%d+)")
     sanitizeCache[pattern] = result
     return result
 end
@@ -82,7 +112,7 @@ local function buildPatterns()
 end
 M.BuildPatterns = buildPatterns
 
--- Some locales use a fullwidth colon; normalise it so one pattern set is enough (pfQuest does the same).
+-- Some locales use a fullwidth colon; normalise it so one pattern set is enough.
 local function normalize(text)
     if type(text) ~= "string" then return nil end
     return (gsub(text, "\239\188\154", ":"))
