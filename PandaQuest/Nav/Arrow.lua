@@ -42,7 +42,7 @@ local PI2 = pi * 2
 -- The arrow texture is rotated with Texture:SetRotation, which spins the texture coordinates INSIDE
 -- the region's rect. A non-square rect therefore stretches the image differently at every angle
 -- (worst at 90/270 degrees) and clips the tip on the diagonals, so the region is square and the
--- artwork in arrow.tga fits inside its inscribed circle (tools/make_textures.py).
+-- artwork in arrow.tga fits inside its inscribed circle.
 local BASE_SIZE = 56
 local TEXT_BLOCK = 56                   -- room under the arrow for the four text lines
 local NO_TARGET_GRACE = 1.0             -- keep the arrow up for a second before hiding

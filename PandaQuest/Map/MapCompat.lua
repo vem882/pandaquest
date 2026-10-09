@@ -19,7 +19,7 @@
 --      Blizzard_MapCanvas exists to offer.
 --   5. Fade-while-moving is free as long as every pin is a child of the canvas: IsDetached() is
 --      what the tests assert against, so a pin parented to UIParent cannot pass unnoticed.
---   6. Simulated in tools/tests/test_pins.py. The real Leatrix_Maps was never loaded (CurseForge
+--   6. Simulated in the stub test harness. The real Leatrix_Maps was never loaded (CurseForge
 --      wants an authenticated download), so what the harness proves is that the maths survives
 --      those operations -- NOT that the addon combination works. That is an in-game check.
 --

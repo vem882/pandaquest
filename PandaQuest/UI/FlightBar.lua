@@ -13,7 +13,7 @@
 --     name is about the flight still happening.
 --
 -- **Why one measured flight is not enough to draw a fill.** A median of one sample is that
--- sample. platform/server/pandaquest_hub/respawn.py:69-71 fixes MIN_SAMPLES = 2 in so many words
+-- sample. The portal fixes its minimum at 2 samples in so many words
 -- -- "a median of one is that measurement" -- and Nodes/Respawn.lua's MIN_OWN_OBSERVATIONS is the
 -- same 2. The flight master's tooltip does print a one-flight figure, because a printed number can
 -- carry "(1 flight)" beside it and the player can weigh it; a bar's fill carries no such caption.
@@ -136,8 +136,8 @@ end
 -- GetPoint returns point, relativeTo, relativePoint, xOfs, yOfs. Keeping only the first and
 -- rebuilding the anchor as SetPoint(point, UIParent, point, x, y) round-trips the drag only if the
 -- client leaves point == relativePoint after StopMovingOrSizing, and nothing on this box can say
--- whether it does: tools/wowstub/api/20_frames.lua's StartMoving and StopMovingOrSizing set a flag
--- and never touch the anchor list, so the harness re-derives nothing and would agree with either
+-- whether it does: the test stub's StartMoving and StopMovingOrSizing set a flag
+-- and never touch the anchor list, so the stub re-derives nothing and would agree with either
 -- answer. Rather than assume, the third return is stored and handed back verbatim. What is still
 -- assumed, and is on the in-game-only list, is that relativeTo stays UIParent.
 local function savePosition()

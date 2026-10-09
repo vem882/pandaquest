@@ -477,7 +477,7 @@ function M.BuildLines(node, lines)
     -- A community place is one other players reported, and how many reports are behind it is
     -- the difference between "forty people gather here" and "one loot window was misread once".
     -- It is labelled "Sightings" rather than "players" because that is what the hub counts
-    -- (platform/server/pandaquest_hub/nodes.py counts NODE events). Only the hub's export carries
+    -- (the portal counts NODE events). Only the portal's export carries
     -- a sighting count, so the line follows the count rather than the node's source: a place this
     -- character gathered and the hub also reported is drawn once, and keeps both lines.
     if type(node.sightings) == "number" and node.sightings > 0 then

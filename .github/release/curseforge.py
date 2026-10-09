@@ -9,7 +9,7 @@ not end up in a process list or a log.
 
 Why this and not CurseForge's own packager: the zip that goes to CurseForge is the zip the
 GitHub release carries -- the same bytes, built and checked once by ``build.py`` -- and the
-platform hub's contract depends on that file's name and layout.  A second packer would produce a
+portal's contract depends on that file's name and layout.  A second packer would produce a
 second, different zip of the same tree.
 
 What is NOT verified, because it needs a real project and token: the exact name CurseForge gives

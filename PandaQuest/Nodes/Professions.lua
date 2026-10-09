@@ -130,8 +130,8 @@ local MAX_LEARNED_NODES = 500       -- caps on what play teaches us, so the save
 -- the second zone. 400 places at about twenty bytes each is still a few kilobytes per id.
 local MAX_LEARNED_SPAWNS = 400
 
---- How close two records have to be, in map percent, to be the same node. 2% is the hub's cell
--- (platform/server/pandaquest_hub/nodes.py GRID = 0.02) and ns.Respawn's MATCH_RADIUS, so the
+--- How close two records have to be, in map percent, to be the same node. 2% is the portal's cell
+-- size (GRID = 0.02) and ns.Respawn's MATCH_RADIUS, so the
 -- player's own records, the community's and the respawn countdown all agree on what "the same
 -- place" is. It has to be that coarse because a record is where the *player* stood when the loot
 -- window opened, which is a few yards off the vein and a different few yards every time: keyed on
@@ -188,8 +188,8 @@ local function rankFromProfessionInfo(profession)
     -- Counted to six, never with the length operator. GetProfessions() hands back six slots and any
     -- of them may be nil, so `{ a, b, c, d, e, f }` is a table with holes, and `#` on such a table
     -- returns *a* border rather than the count -- which one is unspecified. Measured on this box's
-    -- Lua 5.1 over all 64 shapes the six slots can take (tools/tests/test_professions.py names the
-    -- test): 24 (slot, shape) pairs come out past the length and would go unread, among them
+    -- Lua 5.1 over all 64 shapes the six slots can take (the profession tests name it): 24
+    -- (slot, shape) pairs come out past the length and would go unread, among them
     -- `{1, nil, nil, 4, nil, nil}` whose length is 1 -- a character with one primary profession and
     -- fishing, whose fishing is then invisible. Slot 3, archaeology
     -- (Blizzard_UIPanels_Game/Mists/SpellBookFrame.lua:700), is in none of the 24 on this build,

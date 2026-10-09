@@ -1,14 +1,12 @@
 # Build PandaQuest-<version>.zip and publish it as a GitHub release asset.
 #
-# This repository has no self-hosted runner, so everything here runs on a GitHub-hosted one and
-# may depend on nothing installed on anybody's machine: build.py and check.py are stdlib Python,
-# there is no Lua and no luacheck (those stayed in the platform repository,
-# github.com/vem882/pandawow), and nothing is pip-installed.
+# Everything here runs on a GitHub-hosted runner and may depend on nothing installed on anybody's
+# machine: build.py and check.py are stdlib Python, there is no Lua interpreter and no luacheck,
+# and nothing is pip-installed.
 #
-# What the platform repository does with the result: it downloads the release asset. Not a
-# submodule and not a checkout. So the file name and the paths inside the zip are an interface
-# between two repositories, and README.md, "The contract", is the definition. Break it and the
-# hub does not fail -- it goes on offering the previous build, with nothing anywhere saying why.
+# The PandaQuest portal downloads the release asset, so the file name and the paths inside the
+# zip are an interface, and README.md, "Release asset rules", is the definition. Break it and the
+# portal does not fail -- it goes on offering the previous build, with nothing anywhere saying why.
 name: Release
 
 on:
@@ -27,7 +25,7 @@ permissions:
 concurrency:
   # A second push to a pull request makes the first run's answer irrelevant. A run on main is
   # never cancelled: it may be between creating a release and uploading its asset, which would
-  # leave a tagged release with nothing attached -- and the hub reads the asset, not the tag.
+  # leave a tagged release with nothing attached -- and the portal reads the asset, not the tag.
   group: release-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
@@ -44,15 +42,14 @@ jobs:
       # fetch-depth: 0 is load-bearing, and it fails silently without it. The shipped version is
       # this repository's commit count (build.py: release_version), and a shallow clone counts
       # what it was given rather than failing: measured here, a depth-1 clone of this repository
-      # builds PandaQuest-0.2.1.zip -- well formed, matching the hub's pattern, and sorting below
-      # every package the hub already has, so /setup would go on offering the old build while
-      # this run stayed green. The platform repository learned that the hard way and left the
-      # same comment on its own checkout.
+      # builds PandaQuest-0.2.1.zip -- well formed, matching the portal's pattern, and sorting below
+      # every package the portal already has, so /setup would go on offering the old build while
+      # this run stayed green.
       #
       # Because that number is wrong rather than missing, the backstop is an explicit one:
       # check.py's TheVersion.test_the_history_is_whole and build.py's `package` both ask
       # `git rev-parse --is-shallow-repository` and refuse. Deleting this line fails the run at
-      # the check step, not in the hub a week later.
+      # the check step, not in the portal a week later.
       - name: Check out the repository, with all of its history
         uses: actions/checkout@v4.2.2
         with:
@@ -160,7 +157,7 @@ jobs:
       # marketplace and no token beyond the run's own.
       #
       # The tag carries a "v" and the asset does not. That is deliberate and it is the whole
-      # contract: the hub matches ^PandaQuest-(\d+(?:\.\d+)*)\.zip$ against the *file name*, so a
+      # contract: the portal matches ^PandaQuest-(\d+(?:\.\d+)*)\.zip$ against the *file name*, so a
       # "v" there makes the package invisible. Tags are read by humans and by nothing else here.
       - name: Publish the release
         env:
@@ -168,7 +165,7 @@ jobs:
           # remote in the working directory. It does NOT read GITHUB_REPOSITORY. This job has no
           # checkout -- it downloads the artifact and nothing else -- so without GH_REPO every gh
           # call below dies with "failed to run git: not a git repository", the release is never
-          # created, and the hub goes on offering the previous build. Measured with gh 2.100.0:
+          # created, and the portal goes on offering the previous build. Measured with gh 2.100.0:
           # with GITHUB_REPOSITORY set and GH_REPO unset, `gh release view` fails that way; with
           # GH_REPO set it resolves and reaches the API.
           GH_REPO: ${{ github.repository }}
@@ -190,8 +187,7 @@ jobs:
             "| sha256 | \`${SHA256}\` |" \
             "" \
             "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
-            "The hub at github.com/vem882/pandawow downloads this asset; see that repository for" \
-            "the site, the sync engine and the companion app.")"
+            "Licence: GPLv3. The PandaQuest portal (pd.zroot.it) downloads this asset.")"
 
           # One listing, used for two things. Asking for the list rather than for this one
           # release means "the release is not there yet" is read off data instead of off an
@@ -200,7 +196,7 @@ jobs:
           # like a first release. If this call fails, the step fails here.
           gh release list --limit 200 --json tagName,isDraft > releases.json
 
-          # The version must sort above everything already published. The hub takes the highest
+          # The version must sort above everything already published. The portal takes the highest
           # version it can see and reports nothing when a package sorts below it -- it simply
           # goes on offering the older build. build.py's shallow and no-git guards stop the two
           # known ways to produce a low number; this is the backstop that says so out loud.
@@ -212,7 +208,7 @@ jobs:
           tag, version, listing, answer = sys.argv[1:5]
           releases = json.loads(open(listing, encoding="utf-8").read())
 
-          # The hub's own ordering: tuple(int(part) for part in version.split(".")).
+          # The portal's own ordering: tuple(int(part) for part in version.split(".")).
           def key(value):
               return tuple(int(part) for part in value.split("."))
 
@@ -228,7 +224,7 @@ jobs:
               if key(version) <= key(highest):
                   raise SystemExit(
                       f"::error::{version} does not sort above {highest}, which this repository "
-                      "has already published. The hub offers the highest version it can see, so "
+                      "has already published. The portal offers the highest version it can see, so "
                       "this release would never reach a player and nothing would report it."
                   )
               print(f"{version} sorts above {highest}, the highest already published")
@@ -256,7 +252,7 @@ jobs:
             fi
             # `gh release create` with an asset is three API calls: create as a draft, upload,
             # publish. A run that died after the first leaves a draft holding the tag, and a
-            # draft is not served by the public releases API -- the hub sees nothing at all
+            # draft is not served by the public releases API -- the portal sees nothing at all
             # while the run is green. Finish that publish rather than parking the asset on it.
             draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
             if [ "${draft}" = "True" ]; then
@@ -301,7 +297,7 @@ jobs:
           if release["isDraft"]:
               raise SystemExit(
                   f"::error::{tag} is still a draft. The public releases API does not serve a "
-                  "draft, so the hub would download nothing."
+                  "draft, so the portal would download nothing."
               )
           if assets.get(package) != int(size):
               raise SystemExit(
@@ -317,9 +313,9 @@ jobs:
   # (Actions > Release > Run workflow) once there is something worth a new file. CurseForge's
   # rules forbid file updates made to boost visibility and want a changelog that describes what
   # changed, so an upload on every merge would be the wrong default. It also needs a
-  # CURSEFORGE_PROJECT_ID variable and a CF_API_TOKEN secret (curseforge/PUBLISHING.md); without
+  # CURSEFORGE_PROJECT_ID variable and a CF_API_TOKEN secret (CurseForge notes kept outside the repository); without
   # them nothing happens. It runs after the GitHub release is confirmed, so a failure here never
-  # stops the hub from getting its build.
+  # stops the portal from getting its build.
   curseforge:
     name: upload to CurseForge
     needs: [build, release]

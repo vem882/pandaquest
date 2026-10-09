@@ -127,8 +127,8 @@ local MAX_ROUTES = 400
 -- this file's header says it wants to err on.
 local CLICK_WINDOW = 8
 
---- Below this the median of the samples is the samples. platform/server/pandaquest_hub/respawn.py
--- :69-71 fixes MIN_SAMPLES = 2 for exactly this reason -- "a median of one is that measurement" --
+--- Below this the median of the samples is the samples. The portal fixes its
+-- minimum at 2 samples for exactly this reason -- "a median of one is that measurement" --
 -- and Nodes/Respawn.lua's MIN_OWN_OBSERVATIONS is the same 2. Neither screen hides a one-sample
 -- figure, but both have to say it rests on one flight, and UI/FlightBar.lua draws no fill below
 -- this count: a printed number can carry its sample count beside it, a bar's fill cannot.
@@ -160,7 +160,7 @@ local RIDE_LIKE_THE_WIND_FACTOR = 0.8
 -- the session.
 function M.SpeedFactor()
     -- C_SpellBook.IsSpellKnown is what this client declares; the bare IsSpellKnown is not in its
-    -- API list at all (tools/wowapi/wow_std.lua puts the name under C_SpellBook, and luacheck
+    -- API list at all (the lint globals list puts the name under C_SpellBook, and luacheck
     -- refuses the global). InFlight calls the bare one and works, so it evidently still answers --
     -- but a name the client does not declare is not one this addon leans on, so the namespaced
     -- call is tried first and the old global only if it is somehow the one that exists.

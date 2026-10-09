@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package PandaQuest as the release asset the hub downloads.
+"""Package PandaQuest as the release asset the portal downloads.
 
     python3 .github/release/build.py version                 # 0.2.84 -- the release number, alone
     python3 .github/release/build.py identity                # BUILD=0.2.84+082c57d ... as shell lines
@@ -7,52 +7,25 @@
     python3 .github/release/build.py package --out dist/PandaQuest-0.2.84.zip
 
 Stdlib only, and no argument that points outside this repository: it has to run on a
-GitHub-hosted runner with nothing installed on it, because unlike the platform repository
-this one has no self-hosted runner to lean on.
+GitHub-hosted runner with nothing installed on it.
 
-Where this came from
---------------------
-This is a deliberate *copy*, not an import, of two files in the platform repository
-github.com/vem882/pandawow:
-
-* ``ci/lib/addon_build.py`` -- the build identity, ``stamp_toc``, ``build_lua``,
-  ``title_with_version``, ``shown_version``, the fixed per-entry zip metadata, and the JSON
-  archive comment.
-* ``tools/install.py`` -- ``iter_addon_files`` and its exclusion lists, ``read_toc_version``,
-  ``commit_count``, ``release_version``, and the deterministic-zip half of ``make_zip``.
-
-Copied because the split moved ``PandaQuest/`` here and left the toolchain -- ``tools/``,
-``ci/``, ``docs/`` -- in the platform repository.  There is nothing here to import, and
-importing across two repositories is the coupling the split exists to remove.  The two copies
-are held together by the contract in README.md, not by a shared file, so a change to either
-side has to be made on both sides on purpose.
-
-What was left behind, on purpose
---------------------------------
-* The atomic publish (``publish_with``, ``publish``, ``_sync_directory``).  That exists
-  because the platform repository writes into a directory nginx and the hub container are
-  serving *right now*.  Here the publish is a GitHub release asset upload, which is atomic
-  on GitHub's side, and ``dist/`` is a scratch directory in a runner that is thrown away.
-* Everything in ``tools/install.py`` about installing into a WoW directory: the flavor map,
-  ``resolve_addons_dir``, symlinking, the dry run.  A player installs a release by unzipping
-  it; see README.md.
-* The Windows companion app's identity paths.  The app is not in this repository.
-* The lint configuration.  ``.luacheckrc`` stayed with the linter it configures: it is not a
-  standalone file -- it ``dofile``s ``tools/wowapi/wow_std.lua`` for the WoW global list and its
-  ``exclude_files`` names ``tools/luacheck/``, ``tools/wowstub/`` and ``_reference/``.  A copy
-  here would be a configuration no file in this repository can satisfy, for a linter this
-  repository does not have.
+What this is, and is not
+------------------------
+Packaging only: the version, the build identity and the deterministic zip.  There is no
+installer here -- a player installs a release by unzipping it (README.md) -- and no publish
+step of its own: the release is a GitHub release asset upload, which is atomic on GitHub's
+side, and ``dist/`` is a scratch directory in a runner that is thrown away.
 
 The version: 0.2.<commits reachable from HEAD>
 ---------------------------------------------
 The series comes from ``## Version`` in the TOC; the last component is this repository's own
 commit count, so it moves whenever a commit lands and nobody has to remember to bump it.
-README.md, "The version", argues why the series had to go from 0.1 to 0.2 at the split.
+README.md, "The version", says how the number is formed.
 
-Digits and dots only, which is a hard requirement and not a preference: the hub finds packages
+Digits and dots only, which is a hard requirement and not a preference: the portal finds packages
 with ``^PandaQuest-(\\d+(?:\\.\\d+)*)\\.zip$`` and orders them with
 ``tuple(int(part) for part in version.split("."))``.  A ``v``, a hyphen or a short sha
-anywhere in the file name produces a zip the hub cannot see at all, and /setup then offers
+anywhere in the file name produces a zip the portal cannot see at all, and /setup then offers
 nothing while looking perfectly healthy.  The commit sha still reaches the package -- it is
 appended to the *build* identity, which goes into the TOC, into ``Core/Build.lua`` and into
 the archive comment, none of which is a file name.
@@ -75,7 +48,7 @@ never the clock -- so that building the same commit twice produces the same byte
   ``ns.Build`` -- including the commit's *date*, the one fact of the four that ``## Version``
   cannot carry;
 * the zip's archive comment, a JSON object with the commit subject and date, which is where
-  the hub reads what /setup shows.  A comment rather than a second file beside the zip,
+  the portal reads what /setup shows.  A comment rather than a second file beside the zip,
   because a release asset arrives alone.
 """
 
@@ -104,12 +77,14 @@ SERIES_PARTS = 2
 #: Where the generated file lands inside the addon, and how the TOC names it (WoW's TOC uses
 #: backslashes; the zip entry does not).
 BUILD_LUA = "Core/Build.lua"
+
+#: The game-specific TOC suffix the Mists of Pandaria Classic client looks for first.
+MISTS_SUFFIX = "_Mists"
 BUILD_LUA_TOC_LINE = "Core\\Build.lua"
 
-#: The hub's own pattern, copied verbatim from
-#: platform/server/pandaquest_hub/routers/addon.py in the platform repository.  check.py
-#: asserts the built file name matches it, so the contract is tested here and not only there.
-HUB_PACKAGE_PATTERN = re.compile(r"^PandaQuest-(\d+(?:\.\d+)*)\.zip$")
+#: The portal's package pattern, which it uses to find the release asset.  check.py asserts the
+#: built file name matches it, so the contract is tested where the file is made.
+PORTAL_PACKAGE_PATTERN = re.compile(r"^PandaQuest-(\d+(?:\.\d+)*)\.zip$")
 
 #: The archive comment is limited to 65535 bytes by the zip format; a commit subject is one
 #: line and this bound only exists so a pathological one cannot make the write fail.
@@ -170,10 +145,10 @@ def _git(*args: str, repo: Path | None = None) -> str:
 
 
 def _is_number(part: str) -> bool:
-    """A component the hub can turn back into an int: ASCII digits, nothing else.
+    """A component the portal can turn back into an int: ASCII digits, nothing else.
 
     ``str.isdigit`` alone would accept ``'٣'``, which ``int()`` also accepts -- so a version
-    built from it would pass every check here and produce a file name the hub's ``\\d``
+    built from it would pass every check here and produce a file name the portal's ``\\d``
     pattern rejects.
     """
     return bool(part) and part.isascii() and part.isdigit()
@@ -215,7 +190,7 @@ def is_shallow(repo: Path | None = None) -> bool:
     because it does *not* show up as the fallback in :func:`release_version`.  Measured: a
     ``git clone --depth 1`` of this repository answers ``rev-list --count HEAD`` with ``1``,
     so the version is ``0.2.1`` -- well formed, digits and dots, passing every other check
-    here, and sorting below every package the hub already has.  The hub does not fail on that;
+    here, and sorting below every package the portal already has.  The portal does not fail on that;
     it goes on offering the previous build.  So :func:`package` refuses outright rather than
     producing a number nobody can tell is wrong by looking at it.
 
@@ -243,7 +218,7 @@ def release_version(toc: Path | None = None, repo: Path | None = None) -> str:
 
 
 def package_name(version: str) -> str:
-    """The one file name the hub will look at.  See :data:`HUB_PACKAGE_PATTERN`."""
+    """The one file name the portal will look at.  See :data:`PORTAL_PACKAGE_PATTERN`."""
     return f"{ADDON}-{version}.zip"
 
 
@@ -339,8 +314,7 @@ def stamp_toc(text: str, ident: dict[str, object]) -> str:
     appended to, and an existing ``Core\\Build.lua`` line is dropped before the new one goes
     in.  Without the second of those, stamping a packaged TOC a second time -- a re-package, a
     copy somebody stamped by hand -- lists the generated file twice, and WoW runs a doubly
-    listed file twice.  (The platform repository's ``ci/lib/addon_build.py``, which this was
-    copied from, replaced the title tag but not the file line; check.py holds this down here.)
+    listed file twice.  (check.py holds this down.)
     """
     build = str(ident["build"])
     shown = shown_version(ident)
@@ -386,7 +360,7 @@ def _entry(name: str) -> zipfile.ZipInfo:
 def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, bytes]:
     """Every zip entry, by its path inside the archive.  Every key starts with ``PandaQuest/``.
 
-    That prefix is the folder name WoW installs, and it is what the hub's update manifest is
+    That prefix is the folder name WoW installs, and it is what the portal's update manifest is
     built from: its ``_safe_member`` drops every entry that does not begin with ``PandaQuest/``
     and ``index_package`` then refuses the package outright, because the TOC was one of the
     entries dropped.  It is built from :data:`ADDON` rather than from the checkout's directory
@@ -410,7 +384,19 @@ def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, byt
             f"{root} already contains {BUILD_LUA}. That name is generated at packaging time; "
             "rename the file or change BUILD_LUA in build.py."
         )
+    # The client looks for ``<Addon>_Mists.toc`` before ``<Addon>.toc`` on Mists of Pandaria
+    # Classic, and CurseForge reads the same suffix to tag the file's game version.  The plain TOC
+    # stays because the portal indexes the package through it and every other client falls back
+    # to it.  The Mists file is not kept in the repository: two copies in a tree drift, so it is
+    # this very TOC, stamped once, written under the second name.
+    mists_name = f"{ADDON}/{ADDON}{MISTS_SUFFIX}.toc"
+    if mists_name in found:
+        raise SystemExit(
+            f"{root} already contains {ADDON}{MISTS_SUFFIX}.toc. It is generated at packaging "
+            "time from the plain TOC; delete the file from the tree."
+        )
     found[toc_name] = stamp_toc(found[toc_name].decode("utf-8-sig"), ident).encode("utf-8")
+    found[mists_name] = found[toc_name]
     found[build_name] = build_lua(ident).encode("utf-8")
     return found
 
@@ -423,9 +409,7 @@ def zip_bytes(ident: dict[str, object], root: Path | None = None) -> bytes:
     :func:`_entry` hands it a ready-made one, whose ``_compresslevel`` is None, so a level set
     on the ZipFile is silently ignored and every member is deflated at zlib's default 6.
     Measured on this tree: 7,567,468 bytes that way against 7,443,566 with the level applied --
-    123,902 bytes of download that the code already claimed to be saving.  (The same no-op is
-    in ``ci/lib/addon_build.py`` and ``tools/install.py`` in the platform repository, which is
-    where it was copied from; fixing it there is that repository's change to make.)
+    123,902 bytes of download that the code already claimed to be saving.  
     """
     buffer = io.BytesIO()
     content = entries(ident, root)
@@ -451,44 +435,44 @@ def package(
     if commit_count() is None and not allow_no_git:
         # The quieter sibling of the shallow case, and the worse one. Without git,
         # release_version falls back to the TOC's declared series -- measured here, 0.2.0:
-        # digits and dots, matching the hub's pattern, and a number that never moves again, so
+        # digits and dots, matching the portal's pattern, and a number that never moves again, so
         # every later release publishes under the same tag. Refusing is the only outcome a
         # human notices, exactly as for the shallow case below.
         raise SystemExit(
             f"git could not answer here, so the version would be {release_version()} -- the "
             "TOC's declared series and not this repository's commit count. That name matches "
-            "the hub's pattern, so nothing downstream reports it, and it does not move when "
+            "the portal's pattern, so nothing downstream reports it, and it does not move when "
             "the next commit lands. Build from a git checkout with git installed. "
             "--allow-no-git builds anyway, for a source tarball nobody publishes."
         )
     if is_shallow() and not allow_shallow:
         raise SystemExit(
             f"this checkout is shallow, so the version would be {release_version()} instead of "
-            "the real commit count -- a package the hub sorts below every one it already has, "
+            "the real commit count -- a package the portal sorts below every one it already has, "
             "and it reports nothing when that happens. Fetch the whole history "
             "(git fetch --unshallow, or fetch-depth: 0 in the workflow). --allow-shallow builds "
             "anyway, for a local experiment whose file name is wrong on purpose."
         )
     ident = identity()
     target = target or DIST_DIR / package_name(str(ident["version"]))
-    named = HUB_PACKAGE_PATTERN.match(target.name)
+    named = PORTAL_PACKAGE_PATTERN.match(target.name)
     if not named:
-        # The hub lists dist/ and matches this pattern; a name it does not match is a package
+        # The portal lists dist/ and matches this pattern; a name it does not match is a package
         # no player is ever offered, and nothing downstream reports the omission.
         raise SystemExit(
-            f"{target.name} is not a name the hub can see. It must match "
-            f"{HUB_PACKAGE_PATTERN.pattern} -- digits and dots only, no 'v' and no sha."
+            f"{target.name} is not a name the portal can see. It must match "
+            f"{PORTAL_PACKAGE_PATTERN.pattern} -- digits and dots only, no 'v' and no sha."
         )
     if named.group(1) != ident["version"]:
-        # The shape being right is not enough. The hub reads the version twice and from two
+        # The shape being right is not enough. The portal reads the version twice and from two
         # places: find_package orders candidates by the number in the FILE NAME, and
         # index_package takes the manifest's version from the ARCHIVE COMMENT, which wins. A
-        # file whose name and comment disagree makes the hub disagree with itself -- it sorts
+        # file whose name and comment disagree makes the portal disagree with itself -- it sorts
         # the package at one version and advertises another -- and one mistyped digit is
         # enough. Both numbers are in hand right here, so compare them.
         raise SystemExit(
             f"{target.name} says version {named.group(1)}, but this tree builds "
-            f"{ident['version']}. The hub sorts packages by the name and reads the version out "
+            f"{ident['version']}. The portal sorts packages by the name and reads the version out "
             f"of the archive comment, so the two must agree. Use "
             f"{package_name(str(ident['version']))}."
         )
@@ -507,7 +491,7 @@ def main(argv: list[str] | None = None) -> int:
     # Its own subcommand rather than a field of `identity`, because the workflow wants one word
     # on stdout and nothing else: VERSION="$(python3 .github/release/build.py version)" cannot go wrong the way
     # grepping a KEY=value block for the right line can, and the number goes into a file name
-    # where a stray space is a zip the hub's pattern does not match.
+    # where a stray space is a zip the portal's pattern does not match.
     commands.add_parser("version", help="print the release version and nothing else")
     shown = commands.add_parser("identity", help="print the build identity of the current tree")
     shown.add_argument("--json", action="store_true", help="one JSON object instead of shell lines")
