@@ -1,5 +1,5 @@
 -- Sync/Community.lua: reads the guide the PandaQuest hub produced from everybody's telemetry
--- (docs/06 section 13). The companion tool overwrites Database/Overrides/Community.lua, which sets
+-- The companion tool overwrites Database/Overrides/Community.lua, which sets
 --
 --   ns.Overrides.community = { generated = "2026-09-06T12:00:00Z", version = 1,
 --                              ackUploadedThrough = 1725600000, quests = { [questID] = {...} } }
@@ -183,7 +183,7 @@ function M.GetTips(questID)
     return tips
 end
 
---- ApplyToTarget(target): fills the community fields of a Target (docs/06 section 9.1).
+--- ApplyToTarget(target): fills the community fields of a Target.
 -- Returns true when anything was attached.
 function M.ApplyToTarget(target)
     if type(target) ~= "table" or type(target.questID) ~= "number" then return false end

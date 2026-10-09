@@ -1,5 +1,4 @@
 -- Core/Compat.lua: guarded wrappers around APIs that moved to C_* namespaces in 5.5.4
--- (docs/02 section B8: the old globals IsAddOnLoaded/GetAddOnMetadata/GetItemInfo... are nil).
 -- Every wrapper checks that the underlying function exists before calling it.
 local _, ns = ...
 

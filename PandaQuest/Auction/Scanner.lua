@@ -1,4 +1,4 @@
--- Auction/Scanner.lua: the auction house price scan (docs/08 B1, amended 2026-09-14).
+-- Auction/Scanner.lua: the auction house price scan.
 --
 -- Nothing here runs on its own. A scan costs the player a minute at the auctioneer and the realm
 -- a full listing, so it starts only from the button this module puts on the auction house window
@@ -8,12 +8,12 @@
 -- IsUsingLegacyAuctionClient() (Blizzard_UIParent/Mists/UIParent.lua:215-221). The source does not
 -- say which answer the live client gives, so the scanner asks the same question Blizzard's loader
 -- asks and follows the answer: the modern client is read with C_AuctionHouse.ReplicateItems, the
--- legacy one is paged with QueryAuctionItems exactly as Blizzard_AuctionUI.lua pages it. docs/08
--- section 0 has the evidence and what only a scan on Hoptallus can settle.
+-- legacy one is paged with QueryAuctionItems exactly as Blizzard_AuctionUI.lua pages it. Which of the two the live client takes is
+-- what only a scan on Hoptallus can settle.
 --
 -- The seller: GetReplicateItemInfo and GetAuctionItemInfo both return the owner's name (returns
 -- 14 and 15, AuctionHouseDocumentation.lua:603-604, Blizzard_AuctionUI.lua:976). Those positions
--- are discarded into `_` at the call and never reach a table (docs/08 E).
+-- are discarded into `_` at the call and never reach a table.
 local _, ns = ...
 local L = ns.L
 
@@ -35,9 +35,9 @@ local PAGE_TIMEOUT = 30
 local INFO_RETRY_DELAY = 1          -- a legacy page whose item data is still loading is re-read
 local INFO_RETRIES = 3
 local SETTLE_DELAY = 2              -- replicate rows without item data get this long to load
-local PLAYER_QUERY_PAUSE = 10       -- docs/08 A: the player's own search always goes first
+local PLAYER_QUERY_PAUSE = 10       -- The player's own search always goes first
 
--- The market value's shape (docs/08 D2).
+-- The market value's shape.
 local OUTLIER_LOW, OUTLIER_HIGH = 0.1, 10
 local MARKET_SHARE = 0.15
 
@@ -64,7 +64,7 @@ local function setting(key)
 end
 
 ---------------------------------------------------------------------------
--- Aggregation (docs/08 D2)
+-- Aggregation
 ---------------------------------------------------------------------------
 
 -- Per item key: auctions with the same unit price are collapsed into one step, which is how a
@@ -92,7 +92,7 @@ local function addRow(acc, itemID, link, count, buyout)
     entry.auctions = entry.auctions + 1
     acc.rows = acc.rows + 1
     if buyout <= 0 then
-        -- Bid-only auctions are counted but kept out of the price (docs/08 B1).
+        -- Bid-only auctions are counted but kept out of the price.
         entry.noBuyout = entry.noBuyout + 1
         return
     end
@@ -522,7 +522,7 @@ local function onLegacyList()
     end
 end
 
--- docs/08 A: the scan never competes with the player. A search the player makes while a legacy
+-- The scan never competes with the player. A search the player makes while a legacy
 -- scan is paging would be answered with the scan's page (or the scan would read the player's), so
 -- a query the scanner did not send pauses the scan and re-requests its page afterwards.
 local function hookPlayerQueries()
@@ -698,7 +698,7 @@ function M.ChatCommand(arg)
         end
         local last = M.GetLastScan()
         if last then
-            -- The method is printed because it is the one thing docs/08 section 0 could not settle
+            -- The method is printed because it is the one thing the source could not settle
             -- from the source: which auction API the live client answered.
             Log.Print(L["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."], last.realm, last.faction,
                 tostring(last.method), last.rows or 0, last.itemCount or 0,

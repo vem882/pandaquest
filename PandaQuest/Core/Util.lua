@@ -1,4 +1,4 @@
--- Core/Util.lua: small pure helpers shared by every module (docs/06 section 5).
+-- Core/Util.lua: small pure helpers shared by every module.
 local _, ns = ...
 
 local Util = {}
@@ -110,7 +110,7 @@ function Util.FormatTime(seconds)
 end
 
 -- FormatRespawn(seconds) -> "45 Secs" | "6 Mins 53 Secs" | "1 Hour 5 Mins"; nil for a value we do
--- not have (docs/10 B3: an unknown line is left out, never rendered as "?" or 0).
+-- not have.
 --
 -- This is deliberately not FormatTime: the respawn line copies pfQuest's wording from the owner's
 -- screenshot, where the units are spelled out and pluralised. ns.L is read at call time because

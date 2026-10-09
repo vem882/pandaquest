@@ -1,5 +1,4 @@
 -- Quest/Availability.lua: which of the ~17 700 quests in the database could the player pick up now
--- (docs/06 section 8, docs/liitteet/A section 4).
 --
 -- The whole database is scanned, so the order of the checks IS the performance story: table lookups
 -- and raw positional fields first, the decoded quest (and its chain of pre-quests) only for the few
@@ -304,7 +303,7 @@ function M.IsDoable(questID, verbose)
 end
 
 ---------------------------------------------------------------------------
--- Option filters (docs/06 section 8)
+-- Option filters
 ---------------------------------------------------------------------------
 
 local DUNGEON_TAGS = { [81] = true, [85] = true }

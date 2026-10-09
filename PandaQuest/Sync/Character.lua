@@ -1,4 +1,4 @@
--- Sync/Character.lua: what the player is wearing and how strong they are (docs/06 section 13).
+-- Sync/Character.lua: what the player is wearing and how strong they are.
 --
 -- One snapshot of the character sheet, written into the SavedVariable as the telemetry event
 -- `GEAR`. Four rules shape this file:

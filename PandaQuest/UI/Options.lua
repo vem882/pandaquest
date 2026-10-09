@@ -1,4 +1,4 @@
--- UI/Options.lua: the AceConfig-3.0 options table (docs/06 sections 11 and 12).
+-- UI/Options.lua: the AceConfig-3.0 options table.
 --
 -- Every option addresses a settings key by path ("arrow.scale"); paths that start with "global."
 -- live under db.global, the rest under db.profile. Setting one writes the value, fires
@@ -100,7 +100,7 @@ local APPLIERS = {
     ["map.showPvP"] = recalcAvailability,
     ["map.showPetBattle"] = recalcAvailability,
     ["map"] = refreshPins,
-    -- docs/10 D2: a profession toggle changes which nodes exist, not just which pins are shown, so
+    -- A profession toggle changes which nodes exist, not just which pins are shown, so
     -- the per-map node lists are dropped before the pins are rebuilt.
     ["professions"] = function()
         if ns.Professions and ns.Professions.Redraw then ns.Professions.Redraw() else refreshPins() end
@@ -114,7 +114,7 @@ local APPLIERS = {
     ["global.telemetry"] = function()
         if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
     end,
-    -- docs/08 B3: the tooltip and the mailbox read their switch every time, so only the button on
+    -- The tooltip and the mailbox read their switch every time, so only the button on
     -- an already open auction house window has to be told.
     ["auction"] = function()
         if ns.AuctionScanner and ns.AuctionScanner.RefreshButton then ns.AuctionScanner.RefreshButton() end
@@ -124,7 +124,7 @@ local APPLIERS = {
     ["flight"] = function()
         if ns.FlightBar and ns.FlightBar.ApplySettings then ns.FlightBar.ApplySettings() end
     end,
-    -- docs/11 B6: the snapshot switch is read every time the window toggles, so only the bar has to
+    -- The snapshot switch is read every time the window toggles, so only the bar has to
     -- be told - its size, its lock and its switch all live on a frame that is already built.
     ["archaeology"] = function()
         if ns.DigSiteBar and ns.DigSiteBar.Refresh then ns.DigSiteBar.Refresh() end
@@ -200,7 +200,7 @@ local function header(order, name)
 end
 
 ---------------------------------------------------------------------------
--- The table (docs/06 section 11 group order)
+-- The table
 ---------------------------------------------------------------------------
 
 local function buildTable()
@@ -378,7 +378,7 @@ local function buildTable()
                         "global.telemetry.maxEventsPerSession", 100, 50000, 100),
                 },
             },
-            -- docs/08 B3. There is no "scan when the window opens" switch: a scan is the player's
+            -- There is no "scan when the window opens" switch: a scan is the player's
             -- time and the realm's load, so it only ever starts from the button or /pq scan.
             auction = {
                 type = "group", order = 10, name = L["Auction house"], args = {
@@ -393,7 +393,7 @@ local function buildTable()
                         "auction.recordSales"),
                 },
             },
-            -- docs/11 B3. On by default, unlike the auction scan: reading a window the player has
+            -- On by default, unlike the auction scan: reading a window the player has
             -- already opened costs them a fraction of a second and the realm nothing at all, and
             -- the only visible cost -- the list redrawing while the filters are off -- is over
             -- before it is noticed. The linked-window refusal is named here because it is the
@@ -407,7 +407,7 @@ local function buildTable()
                         "recipes.scanOnOpen"),
                 },
             },
-            -- docs/06 10c. The description says out loud what the two switches cannot do, because
+            -- The description says out loud what the two switches cannot do, because
             -- a player who turns them on and sees nothing at their first flight master would
             -- otherwise reasonably conclude the addon is broken.
             flight = {
@@ -429,7 +429,7 @@ local function buildTable()
                         func = function() if ns.FlightBar then ns.FlightBar.ResetPosition() end end },
                 },
             },
-            -- docs/11 B5 and B6. Two unrelated things under one heading because they are one
+            -- Two unrelated things under one heading because they are one
             -- profession to the player: what PandaQuest writes down about their digging, and the
             -- progress bar Mists never shipped.
             archaeology = {

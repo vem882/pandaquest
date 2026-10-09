@@ -1,4 +1,4 @@
--- Map/Tooltips.lua: quest information on unit and item tooltips (docs/06 section 10).
+-- Map/Tooltips.lua: quest information on unit and item tooltips.
 --
 -- C_TooltipInfo does not exist on 5.5.4, so the only way in is the classic script hook:
 -- GameTooltip fires OnTooltipSetUnit / OnTooltipSetItem after it has filled itself, and
@@ -234,14 +234,14 @@ function M.OnTooltipSetUnit(tooltip)
     local guid = UnitGUID and UnitGUID(unit)
     local npcID = guid and Util.NpcIdFromGuid(guid) or nil
     if not npcID then return end
-    -- Blizzard's unit tooltip already carries the name, the level and the type of docs/10 B3's
+    -- Blizzard's unit tooltip already carries the name, the level and the type of the node tooltip's
     -- block, so the only header line missing here is the respawn. No spawn key: a hovered unit is
     -- where it stands now, not necessarily where it died, so ns.Respawn answers for the creature
     -- as a whole.
     --
     -- The countdown is allowed only over a corpse. Without that check, killing one Dappled Moth
     -- labelled every *living* moth in the zone "Respawn in: 5 Mins" until the estimate ran out --
-    -- an invented fact (docs/10 B3), printed on Blizzard's own tooltip where it reads as
+    -- an invented fact, printed on Blizzard's own tooltip where it reads as
     -- authoritative. The static "Respawn:" line is about the creature and stays either way.
     local NodeTooltip = ns.NodeTooltip
     if NodeTooltip and NodeTooltip.AppendRespawn then

@@ -1,11 +1,10 @@
 -- Map/MapCompat.lua: living with Leatrix_Maps, Mapster, ElvUI and every other map addon
--- (docs/10 section E).
 --
 -- What those addons do to WorldMapFrame, counted in Leatrix_Maps' own source: `WorldMapFrame`
 -- appears 98 times, `SetPoint`/`ClearAllPoints` 122, `SetSize`/`SetWidth` 43, `SetScale` 7 and
 -- `SetParent` 6. They scale the map, resize it, re-anchor it, strip its border and fade it while
 -- it moves. None of that is a bug for us to work around -- it is what the player installed the
--- addon for -- so the six rules of docs/10 E are about not standing in its way:
+-- addon for -- so the six rules below are about not standing in its way:
 --
 --   1. No assumption about the canvas' size or scale. A pin's size is derived from the effective
 --      scale of the frame it hangs under, so a 1.5x map does not give 1.5x pins (GetPinScaleFactor).
@@ -93,7 +92,7 @@ function M.GetUIScale()
     return effectiveScaleOf(_G and _G.UIParent) or 1
 end
 
---- MapCompat.GetMapScale() -> WorldMapFrame:GetEffectiveScale() (docs/10 E1), or the UI scale.
+--- MapCompat.GetMapScale() -> WorldMapFrame:GetEffectiveScale(), or the UI scale.
 function M.GetMapScale()
     return effectiveScaleOf(M.GetWorldMap()) or M.GetUIScale()
 end
@@ -105,8 +104,8 @@ end
 -- and then `GetMap():OnCanvasScaleChanged()` (Blizzard_MapCanvas/MapCanvas_ScrollContainerMixin
 -- .lua:326,332), so the frame's effective scale is unchanged while everything the pins sit on has
 -- moved. Watching only the frame meant the provider callback fired, two unchanged numbers were
--- read, and no pin was ever re-sized or re-anchored for a zoom -- which is precisely the docs/10
--- E1 case a map addon that scales the canvas rather than the frame also lands in.
+-- read, and no pin was ever re-sized or re-anchored for a zoom -- which is precisely the case
+-- a map addon that scales the canvas rather than the frame also lands in.
 --
 -- The canvas' own effective scale is read rather than `WorldMapFrame:GetCanvasScale()` (which does
 -- exist on 5.5.4, Blizzard_MapCanvas.lua:588) because the effective scale is the ground truth:
@@ -122,7 +121,7 @@ end
 -- The pin is a child of whatever HereBeDragons parented it to (a canvas pin on the world map, the
 -- Minimap on the minimap), so its own effective scale already carries every SetScale between it
 -- and the screen -- including the canvas zoom, which Blizzard's pin scaling does not fully undo
--- for a child frame. Falling back to WorldMapFrame keeps docs/10 E1 literally true for a pin that
+-- for a child frame. Falling back to WorldMapFrame keeps the first rule literally true for a pin that
 -- is still sitting in the pool with UIParent as its parent.
 function M.GetPinScaleFactor(pin)
     local scale
@@ -139,7 +138,7 @@ function M.GetPinScaleFactor(pin)
 end
 
 --- MapCompat.IsDetached(pin) -> bool. True when a pin is on the map but hanging off UIParent
--- instead of the canvas, which is docs/10 E5's failure mode: the map's fade would not reach it.
+-- instead of the canvas, which is the failure mode of the fifth rule: the map's fade would not reach it.
 function M.IsDetached(pin)
     if not pin or not pin.GetParent then return false end
     local parent = pin:GetParent()

@@ -1,4 +1,4 @@
--- Nav/Arrow.lua: the navigation arrow (docs/06 section 9.5).
+-- Nav/Arrow.lua: the navigation arrow.
 --
 -- Rotation convention, verified against the stub world and Blizzard's own code:
 --   * HBD:GetWorldVector and GetPlayerFacing() both measure radians from north, growing the same
@@ -10,7 +10,7 @@
 --   bearing: target to the left of the player -> positive bearing -> texture turns left. No sign
 --   flip anywhere. `/pq debug arrow` prints angle/facing/bearing to double-check it in game.
 --
--- Performance rule for OnUpdate (docs/06 9.5): rotation and colour are recomputed every frame -
+-- Performance rule for OnUpdate: rotation and colour are recomputed every frame -
 -- those are three arithmetic calls and two setters, no allocation - while the text lines are only
 -- rebuilt when a *rounded* value actually changed. Standing still therefore allocates nothing.
 local _, ns = ...
@@ -24,7 +24,7 @@ local Const, Util, Log, Compat = ns.Const, ns.Util, ns.Log, ns.Compat
 -- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
 -- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
 -- handler another module installed for the same message, so every module listens through its own
--- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+-- embedded object instead.
 local listener = {}
 M.listener = listener
 do
@@ -45,7 +45,7 @@ local PI2 = pi * 2
 -- artwork in arrow.tga fits inside its inscribed circle (tools/make_textures.py).
 local BASE_SIZE = 56
 local TEXT_BLOCK = 56                   -- room under the arrow for the four text lines
-local NO_TARGET_GRACE = 1.0             -- keep the arrow up for a second before hiding (docs 9.5)
+local NO_TARGET_GRACE = 1.0             -- keep the arrow up for a second before hiding
 local TEXT_INTERVAL = 0.1               -- how often the text values are re-examined
 local EVALUATE_INTERVAL = 0.2           -- show/hide heartbeat (a hidden frame has no OnUpdate)
 local FLASH_TIME = 0.6                  -- arrival glow duration
@@ -506,7 +506,7 @@ local function createFrame()
 end
 
 ---------------------------------------------------------------------------
--- Public API (docs/06 9.5)
+-- Public API
 ---------------------------------------------------------------------------
 
 function M.Show()

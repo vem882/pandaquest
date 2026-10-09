@@ -1,4 +1,4 @@
--- Core/Thread.lua: cooperative coroutine driver (docs/06 section 5).
+-- Core/Thread.lua: cooperative coroutine driver.
 -- One OnUpdate frame resumes queued jobs with a per-frame time budget of 8 ms. Jobs call Thread.Yield()
 -- inside loops; the driver decides whether the call actually suspends (every ticksPerYield calls, or as
 -- soon as the frame budget is spent). A job that raises an error is reported through geterrorhandler()
@@ -105,7 +105,7 @@ function Thread.Step(budget)
             -- Keep resuming the SAME job until the frame budget is spent. ticksPerYield is the
             -- granularity of a yield, not a per-frame quota: resuming every job only once per frame
             -- would leave almost all of the 8 ms unused and stretch a full database pass over
-            -- thousands of frames (docs/06 section 5).
+            -- thousands of frames.
             local alive = resume(handle)
             local resumes = 1
             while alive and resumes < MAX_RESUMES_PER_JOB and (nowMs() - frameStart) < budgetMs do

@@ -1,4 +1,4 @@
--- Map/NodeTooltip.lua: the pfQuest-style node tooltip block (docs/10 section B3).
+-- Map/NodeTooltip.lua: the pfQuest-style node tooltip block.
 --
 -- The structure copied from the owner's screenshot:
 --
@@ -10,8 +10,7 @@
 --      - Grizzled Bear Heart: 0/6 (80%)        <- objective, live progress, drop rate if known
 --
 -- Two rules outrank the layout. A line whose value we do not have is left out entirely - never
--- "?", never "-", never 0 (docs/10 A1/A2: respawn times and drop rates exist only for the ids
--- pfQuest's Vanilla/TBC data covers, so most MoP nodes have neither). And progress comes from the
+-- "?", never "-", never 0. And progress comes from the
 -- live quest log, not from the database, so a finished objective reads as finished.
 --
 -- The countdown is the one moving part: when ns.Respawn saw this spawn die, the respawn line
@@ -151,7 +150,7 @@ end
 ---------------------------------------------------------------------------
 
 -- Levels are missing far more often than they are present (Questie stores 0 for "unknown"), and a
--- "Level: 0" line would be exactly the guess docs/10 forbids.
+-- "Level: 0" line would be exactly the guess this tooltip never makes.
 local function levelText(kind, id, node)
     local level = node.level
     if type(level) == "number" and level > 0 then return format("%d", level) end
@@ -274,7 +273,7 @@ end
 local gradient = { 1, 1, 1 }
 
 --- NodeTooltip.DropRate(itemID, sourceKind, sourceID) -> percent|nil. Absent is absent: the
--- contract's ns.Data.dropRates only carries what pfQuest's db/items.lua measured (docs/10 A2).
+-- contract's ns.Data.dropRates only carries what pfQuest's db/items.lua measured.
 function M.DropRate(itemID, sourceKind, sourceID)
     local Data = ns.Data
     local rates = Data and Data.dropRates
@@ -357,7 +356,7 @@ local function addObjective(lines, target, headerKind, headerID)
             -- Never the digit 0. Eight thousand of the seeded cells are below half a percent
             -- (Burning Charm is 0.32% off a Drywhisker Kobold), and rounding those to an integer
             -- printed "(0%)" - an assertion that the mob cannot drop the item, built out of data
-            -- that says it does, which is exactly what docs/10 A2 forbids.
+            -- that says it does, which is exactly what this tooltip never does.
             if pct < 1 then
                 text = text .. format(" (%.2f%%)", pct)
             else
@@ -459,7 +458,7 @@ function M.BuildLines(node, lines)
     local typeKey = TYPE_KEY[kind]
     if typeKey then addDouble(lines, tr("Type:"), tr(typeKey), COLOR_VALUE, "type") end
 
-    -- Profession nodes carry the skill their vein or herb needs (docs/10 D2); a node with no
+    -- Profession nodes carry the skill their vein or herb needs; a node with no
     -- requirement recorded simply has no line.
     if type(node.skill) == "number" and node.skill > 0 then
         addDouble(lines, tr("Skill:"), format("%d", node.skill),
@@ -690,7 +689,7 @@ end
 -- tooltip already has the name, the level and the type from Blizzard, so only the respawn line is
 -- missing there. Pass `allowCountdown = false` for a unit that is alive under the cursor: the
 -- static line is about the creature, but "Respawn in: 5 Mins" over a mob that is standing there is
--- an invented fact (docs/10 B3).
+-- an invented fact.
 function M.AppendRespawn(tooltip, kind, id, spawnKey, allowCountdown)
     if type(tooltip) ~= "table" or not tooltip.AddDoubleLine then return false end
     local lines = wipe(sharedLines)

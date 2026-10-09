@@ -1,4 +1,4 @@
--- Recipes/Scanner.lua: reading the open profession window (docs/11 B1).
+-- Recipes/Scanner.lua: reading the open profession window.
 --
 -- What it collects, per window: the profession and its rank, and per recipe the spell id, the
 -- produced item id and how many are made, every reagent's item id and count, and the difficulty
@@ -42,7 +42,7 @@
 --
 -- Item ids come out of links, and a link that has not arrived is asked for by name through
 -- ns.Compat.GetItemInfo -- never _G.GetItemInfo, which does not exist on this client
--- (Core/Compat.lua, docs/02 B8).
+-- (Core/Compat.lua).
 local _, ns = ...
 local L = ns.L
 
@@ -74,7 +74,7 @@ local PROFESSION_WORDS = { professions = true, profession = true, prof = true }
 -- link type on this client (Blizzard_UIPanels_Game/Classic/ItemRef.lua:38) and is what the call is
 -- documented to give. `spell` and `trade` are accepted as well, so a profession that answers
 -- differently is read rather than dropped -- which of the three each one really uses is something
--- only the live game can settle (docs/11 A3).
+-- only the live game can settle.
 local SPELL_LINK_TYPES = { enchant = true, spell = true, trade = true }
 
 --- Every SkillLineID, from Blizzard's own constants
@@ -85,7 +85,7 @@ local SKILL_LINES = { 129, 164, 165, 171, 182, 185, 186, 197, 202, 333, 356, 393
 M.SKILL_LINES = SKILL_LINES
 
 --- The filters a scan has to be able to put back, each as the pair of calls that reads and writes
--- it. A pair with one half missing is the refusal of docs/11 B1: the scan would be able to clear
+-- it. A pair with one half missing is refused: the scan would be able to clear
 -- something it could not restore, so it does not start.
 local FILTER_CALLS = {
     { "GetTradeSkillItemNameFilter", "SetTradeSkillItemNameFilter" },
@@ -173,7 +173,7 @@ end
 --
 -- It can legitimately fail, and then the entry has no id. Mining's window is called Smelting: its
 -- name matches no profession and no display name, and guessing from the rank would be inventing a
--- fact. docs/11 C1.1 says what the hub does with a book that has a name and no id.
+-- fact. The hub decides what to do with a book that has a name and no id.
 function M.ResolveSkillLine(want)
     if type(want) ~= "string" or want == "" then return nil end
     if type(GetProfessions) == "function" and type(GetProfessionInfo) == "function" then
@@ -340,7 +340,7 @@ local function expandAll(scan)
             -- round: this loop yields (headerRows does), so the player closing the window or a
             -- client call raising can end the job here. A scan that ends mid-expand still has to
             -- know what it opened, or the restore closes nothing, finds nothing to disagree about
-            -- and reports success over a window left standing open (docs/11 B1 point 5).
+            -- and reports success over a window left standing open.
             scan.collapsed[#scan.collapsed + 1] = found[i].name
             ExpandTradeSkillSubClass(found[i].index)
         end
@@ -398,7 +398,7 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
         return nil
     end
     if scan.seen[spellID] then
-        -- One spellID appears once in a book (docs/11 C1.1). A second row for the same recipe is
+        -- One spellID appears once in a book. A second row for the same recipe is
         -- the client repeating itself, not a second sample of anything.
         scan.skipped = scan.skipped + 1
         return nil
@@ -418,7 +418,7 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
     maxMade = Store.Amount(maxMade, minMade)
     if maxMade < minMade then maxMade = minMade end
     if maxMade > Store.MAX_AMOUNT then
-        -- Out of the range the contract's grammar can carry (docs/11 C1.1). Dropped rather than
+        -- Out of the range the contract's grammar can carry. Dropped rather than
         -- clamped, for the reason the missing reagent below is dropped: a number the client made
         -- up, written down as if it were the recipe, is a crafting cost that is wrong and looks
         -- right -- and one bad row is the whole book rejected at ingest.
@@ -437,7 +437,7 @@ local function readRecipe(scan, index, skillName, skillType, altVerb)
     local reagents, alreadyUsed = {}, {}
     for n = 1, numReagents do
         -- Return 4 is playerReagentCount: how many of it are in the player's bags right now. It is
-        -- dropped at the call rather than at ingest, because docs/07 B2 puts minimisation where
+        -- dropped at the call rather than at ingest, because data minimisation belongs where
         -- the data is created and not where it is used.
         local reagentName, _, reagentCount = GetTradeSkillReagentInfo(index, n)
         local reagentID = M.ParseItemID(GetTradeSkillReagentItemLink(index, n), reagentName)
@@ -507,7 +507,7 @@ end
 --
 -- The scan after a fresh login is the one with the coldest item cache, and readRecipe drops every
 -- row whose reagent or product has not arrived: 350 recipes can come back as 200, and the 200 is
--- what the companion then uploads. docs/11 B2's "replace, never merge" is about a rescan of the
+-- what the companion then uploads. The "replace, never merge" rule is about a rescan of the
 -- same book being the same book -- it was never an argument for a worse reading winning.
 --
 -- Only at the same rank. A different rank is a genuinely new (rank, difficulty) sample, which is
@@ -525,7 +525,7 @@ end
 -- Everything here comes from the line Start() read, never from a second call: the job body runs
 -- frames later, and the id is derived from the profession (or from the SkillLineID resolved from
 -- it) while the name was being read again beside it. Two reads meant a book whose id the hub
--- cannot derive from its own fields -- a final `rejected` under docs/11 C1.5, and an id it will
+-- cannot derive from its own fields -- a final `rejected`, and an id it will
 -- never accept again -- or, worse, a real SkillLineID sitting next to another profession's name.
 local function buildEntry(scan)
     local name, realm, faction = Store.CurrentCharacter()
@@ -535,7 +535,7 @@ local function buildEntry(scan)
         id = Store.ScanId(realm, scan.skillLine, scan.profession, scan.startedAt),
         realm = realm, faction = faction,
         -- Local only. The companion does not send it and the hub has no field for it
-        -- (docs/11 C1.2); it is here because two characters of one account own two different books
+        --; it is here because two characters of one account own two different books
         -- of the same profession, and without it the second would overwrite the first.
         character = name,
         profession = scan.profession, skillLine = scan.skillLine,
@@ -592,7 +592,7 @@ end
 local function restore(scan)
     if not scan.touched then return true end
     local ok, err = pcall(function()
-        -- Categories first and filters second, which is the reading order of docs/11 B1 point 2
+        -- Categories first and filters second, which is the reading order of the profession window
         -- run backwards. A category is found by name in 1..GetNumTradeSkills(), and a filter
         -- decides what is in that list: with the player's filter already back on, a category it
         -- hides is not there to be closed, so it would be left open and the scan would say so on
@@ -720,7 +720,7 @@ function M.Start()
         if #scan.rows == 0 then
             -- Not one row survived. Stored, that would be a profession with no recipes -- a claim
             -- about the game rather than about this read, and the auction scanner refuses an empty
-            -- listing for the same reason (docs/08 B1). The rule holds however the rows were lost,
+            -- listing for the same reason. The rule holds however the rows were lost,
             -- counted failures or not: a list whose names have not arrived produces no recipe and
             -- no failure either, and is exactly the case that used to be stored as a real book.
             if scan.unnamed > 0 and (scan.skipped + scan.incomplete) == 0 then
@@ -729,7 +729,7 @@ function M.Start()
                 return "pending"
             end
             -- The one client behaviour that would fail every row at once is a reagent read that
-            -- needs its recipe selected first, which is docs/11 A3's open question.
+            -- needs its recipe selected first, which is still an open question.
             return "nothing"
         end
         scan.entry = buildEntry(scan)
@@ -899,7 +899,7 @@ end
 function M.Init()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
-    -- `/pq scan` is the auction scanner's command (docs/08 B1). Rather than move it, this module
+    -- `/pq scan` is the auction scanner's command. Rather than move it, this module
     -- takes the one word it owns off the front and hands everything else straight back, so
     -- /pq scan, /pq scan stop and /pq scan status still reach the auction house unchanged.
     local previous = PQ.commands.scan

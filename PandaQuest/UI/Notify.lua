@@ -1,4 +1,4 @@
--- UI/Notify.lua: the centre-screen notification (docs/06 section 11).
+-- UI/Notify.lua: the centre-screen notification.
 --
 -- Rate limiting is the whole point of this module: quest events arrive in bursts (QUEST_TURNED_IN
 -- plus three QUEST_LOG_UPDATEs), and a helper that shouts four times per quest is worse than one

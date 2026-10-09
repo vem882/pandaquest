@@ -57,7 +57,7 @@ local T = {
     ["Arrow position and pins reset."] = "Nuolen sijainti ja pinnit palautettu.",
     ["Profile changed: %s"] = "Profiili vaihdettu: %s",
 
-    -- Action texts (docs/06 section 9.3)
+    -- Action texts
     ["Kill %s (%d/%d)"] = "Tapa %s (%d/%d)",
     ["Talk to %s"] = "Puhu: %s",
     ["Loot %s from %s (%d/%d)"] = "Kerää %s: %s (%d/%d)",
@@ -114,7 +114,7 @@ local T = {
     ["Turn in: %s"] = "Palauta: %s",
     ["Ends: %s"] = "Päättyy: %s",
 
-    -- Map/NodeTooltip (docs/10 B3)
+    -- Map/NodeTooltip
     ["Level:"] = "Taso:",
     ["Type:"] = "Tyyppi:",
     ["Skill:"] = "Taito:",
@@ -216,7 +216,7 @@ local T = {
     ["Pin size"] = "Merkin koko",
     ["Map pin size"] = "Kartan merkin koko",
     ["Minimap pin size"] = "Minikartan merkin koko",
-    -- Map/Pins, Map/Icons (docs/10 B1-B2)
+    -- Map/Pins, Map/Icons
     ["Objective dot size"] = "Tavoitepisteen koko",
     ["Objectives and gathering nodes are small dots, coloured per quest or per kind; quest givers keep their icons."] =
         "Tavoitteet ja keräilykohteet ovat pieniä pisteitä, väri tehtävän tai lajin mukaan; tehtävänantajat pitävät ikoninsa.",
@@ -234,7 +234,7 @@ local T = {
     ["Show PvP quests"] = "Näytä PvP-tehtävät",
     ["Show pet battle quests"] = "Näytä lemmikkitaistelutehtävät",
 
-    -- Nodes/Professions (docs/10 D: ammattikohteet kartalla)
+    -- Nodes/Professions
     ["Gathering"] = "Keräily",
     ["Ore, herbs, fishing pools, chests and rare spawns, drawn only where you or the community really found one."] =
         "Malmit, yrtit, kalastuspaikat, arkut ja harvinaiset spawnit, vain siellä missä sinä tai yhteisö on oikeasti löytänyt sellaisen.",
@@ -337,7 +337,7 @@ local T = {
     ["Last gear snapshot: %s"] = "Viimeisin varustetilanne: %s",
     ["Gear snapshots: off."] = "Varustetilanteen tallennus: pois päältä.",
 
-    -- Sync / Consent (docs/07 B1: telemetria on pois päältä kunnes pelaaja sallii sen)
+    -- Sync / Consent
     ["/pq consent - ask the data sharing question again"] = "/pq consent - kysy tiedonjakokysymys uudelleen",
     ["PandaQuest can send what you do while questing to the community hub."] =
         "PandaQuest voi lähettää yhteisöpalvelimelle sen, mitä teet tehtäviä suorittaessasi.",
@@ -356,7 +356,7 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "Mitään ei kerätä. Voit ottaa keruun käyttöön milloin tahansa asetuksista (/pq).",
 
-    -- Auction house (docs/08)
+    -- Auction house
     ["Scan prices"] = "Skannaa hinnat",
     ["Stop scan (%d%%)"] = "Pysäytä skannaus (%d %%)",
     ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
@@ -396,7 +396,7 @@ local T = {
     ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
         "Luetaan postilaatikon huutokauppakuiteista. Talteen jäävät esine, määrä ja hinta, ei koskaan toisen pelaajan nimeä.",
 
-    -- Ammattireseptit (docs/11)
+    -- Ammattireseptit
     ["/pq scan professions - read the open profession window"] =
         "/pq scan professions - lue auki oleva ammatti-ikkuna",
     ["/pq scan archaeology - read your archaeology window"] =
@@ -443,7 +443,7 @@ local T = {
     ["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] =
         "Reseptit, ainesosat ja kunkin vaikeus tälle hahmolle. Ei koskaan kirjaa, joka avattiin linkistä.",
 
-    -- Flight master (docs/06 10c)
+    -- Flight master
     ["Flight time:"] = "Lentoaika:",
     ["~%s (%d flight)"] = "~%s (%d lento)",
     ["~%s (%d flights)"] = "~%s (%d lentoa)",
@@ -465,7 +465,7 @@ local T = {
     ["Show the progress bar while flying"] = "Näytä edistymispalkki lennon aikana",
     ["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] =
         "Eteneminen ja jäljellä oleva aika, kun reitti on lennetty kahdesti; sitä ennen vain ilmassa kulunut aika.",
-    -- Arkeologia (docs/11 B5 ja B6)
+    -- Arkeologia
     ["This client does not offer the archaeology data PandaQuest reads."] =
         "Tämä asiakas ei tarjoa arkeologiatietoja, joita PandaQuest lukee.",
     ["This character has no archaeology races to read yet."] =

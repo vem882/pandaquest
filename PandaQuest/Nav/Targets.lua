@@ -1,9 +1,9 @@
--- Nav/Targets.lua: collects every place the player could usefully walk to (docs/06 section 9.2).
+-- Nav/Targets.lua: collects every place the player could usefully walk to.
 --
 -- The list is assembled in a ns.Thread coroutine because a full rebuild touches every quest in the
 -- log plus every available quest, and each of those hits the database. Nothing here talks to the
 -- Blizzard quest log directly: Quest/QuestLog owns that, Quest/Objectives turns a quest into
--- Target tables (docs/06 section 9.1) and Quest/Availability decides what is pickable.
+-- Target tables and Quest/Availability decides what is pickable.
 --
 -- Rebuild triggers: PQ_QUESTLOG_CHANGED, PQ_AVAILABLE_UPDATED, PQ_DB_READY, PQ_PLAYER_ZONE_CHANGED.
 -- Result: PQ_TARGETS_UPDATED with the new array. Router is the only consumer that matters for the
@@ -19,7 +19,7 @@ local Const, Log, Thread = ns.Const, ns.Log, ns.Thread
 -- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
 -- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
 -- handler another module installed for the same message, so every module listens through its own
--- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+-- embedded object instead.
 local listener = {}
 M.listener = listener
 do
@@ -36,7 +36,7 @@ local format = string.format
 local wipe = wipe or table.wipe
 
 local CLUSTER_BOX = 5           -- pfQuest getcluster: +-5 % of the zone map counts as one cluster
-local MAX_SPAWNS = 60           -- Target.spawns is capped (docs/06 section 9.1)
+local MAX_SPAWNS = 60           -- Target.spawns is capped
 local REBUILD_DELAY = 0.25      -- debounce: several messages in one frame produce one rebuild
 
 ---------------------------------------------------------------------------

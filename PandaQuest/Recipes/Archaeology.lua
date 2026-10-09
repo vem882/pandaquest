@@ -1,4 +1,4 @@
--- Recipes/Archaeology.lua: reading the archaeology window (docs/11 B5).
+-- Recipes/Archaeology.lua: reading the archaeology window.
 --
 -- What it collects, per reading: the character's archaeology rank, and per race the keystone item
 -- id, the localised race name, the three fragment counts the client reports, and the artifacts that
@@ -243,7 +243,7 @@ function M.Snapshot()
         -- Not one race could be read. Stored, that would be "this character has no archaeology",
         -- which is a claim about the character rather than about this reading -- the same refusal
         -- Recipes/Scanner.lua makes for a book whose every row failed, and the auction scanner for
-        -- an empty listing (docs/08 B1).
+        -- an empty listing.
         lastResult = { ok = false, reason = "empty", at = unixNow() }
         return nil, "empty"
     end
@@ -263,7 +263,7 @@ function M.Snapshot()
     local entry = {
         id = Store.ScanId(realm, Store.ARCHAEOLOGY_SKILL_LINE, "Archaeology", scannedAt),
         realm = realm, faction = faction,
-        -- Local only, for the recipe book's reason (docs/11 C1.2): two characters of one account
+        -- Local only, for the recipe book's reason: two characters of one account
         -- dig separately, and without the name the second would overwrite the first.
         character = name,
         skillLine = Store.ARCHAEOLOGY_SKILL_LINE,

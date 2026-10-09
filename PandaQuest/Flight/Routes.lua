@@ -244,7 +244,7 @@ end
 -- which intermediate points a character flies through depends on which of them that character has
 -- discovered. So if the chain for a pair changes, the ring mixes samples of two paths under one
 -- median until it has turned over. The sample count is printed beside every figure, the leg count
--- goes to the log on every landing, and docs/12 B4 says this out loud. What is NOT claimed
+-- goes to the log on every landing, and this is said out loud. What is NOT claimed
 -- anywhere is that a route takes the same time on every character: nothing here measured that.
 function M.RouteKey(srcNodeID, dstNodeID)
     local src, dst = tonumber(srcNodeID), tonumber(dstNodeID)
@@ -693,7 +693,7 @@ local function onControlGained()
     -- The leg count is logged and not stored. Two samples of one node-id pair flown over different
     -- hop chains -- because the character has since found an intermediate flight point -- go into
     -- one median, and the store has no field that would tell them apart. That is stated in
-    -- docs/12 B4 rather than papered over; this line is what a reader chasing a route whose median
+    -- said plainly rather than papered over; this line is what a reader chasing a route whose median
     -- moved has to go on.
     Log.Debug("Flight", "%d-%d landed after %s legs", f.src, f.dst,
         tostring(f.legs or "an unread number of"))
@@ -748,7 +748,7 @@ local function hookTaxiGlobals()
     -- _reference/misc/WoW-API/WoW-API/_UI/Blizzard_ActionBar/Classic_PossessActionBar.lua:65 --
     -- whose own first lines say it is an auto-generated LuaLS annotation stub, not shipped 5.5.4
     -- UI code. The function itself is in _reference/misc/ketho/GlobalAPI_classic.lua, so it exists
-    -- on this client; whether the cancel button really calls it is on docs/12's in-game-only list.
+    -- on this client; whether the cancel button really calls it is on the in-game-only list.
     -- If it does not, an early landing is recorded as a normal flight of the wrong duration, which
     -- is why the type check below is the guard and not the citation.
     if type(_G.TaxiRequestEarlyLanding) == "function" then

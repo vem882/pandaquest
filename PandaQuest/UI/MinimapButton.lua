@@ -1,4 +1,4 @@
--- UI/MinimapButton.lua: LibDataBroker launcher on the minimap (docs/06 section 11).
+-- UI/MinimapButton.lua: LibDataBroker launcher on the minimap.
 -- Left click toggles the arrow, right click opens the options, and the tooltip answers the one
 -- question the button exists for: where am I going and how far is it.
 local _, ns = ...

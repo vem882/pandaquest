@@ -1,4 +1,4 @@
--- Auction/Store.lua: the account-wide SavedVariable PandaQuestAH (docs/08 B2, amended 2026-09-14).
+-- Auction/Store.lua: the account-wide SavedVariable PandaQuestAH.
 --
 -- Auction data is kept apart from PandaQuestSync on purpose: one scan is an order of magnitude
 -- bigger than a questing session, and losing or resetting it must never take the quest log with
@@ -19,7 +19,7 @@ local tremove, tsort = table.remove, table.sort
 
 M.VERSION = 1
 
--- docs/08 B2. `maxScans` full scans are kept for the companion to upload; an older one is rolled
+-- `maxScans` full scans are kept for the companion to upload; an older one is rolled
 -- up into `known`, which keeps only the newest figures per item per auction house and forgets an
 -- item `maxKnownAge` seconds after that house last saw it. `maxRowsPerScan` stops a scan reading
 -- more auctions than the file budget allows and marks it truncated instead of dropping silently.
@@ -32,10 +32,10 @@ M.LIMITS = {
     maxSales = 500,
 }
 
--- docs/08 B3. The defaults live with the module that owns them because Core/Const.lua is the
+-- The defaults live with the module that owns them because Core/Const.lua is the
 -- core's contract; this file loads before Core/Init.lua creates AceDB, so the key is in place
 -- when the profile is built. Nothing here can start a scan: there is deliberately no
--- autoScanOnOpen any more (docs/08 section 0).
+-- autoScanOnOpen any more.
 ns.DEFAULTS.profile.auction = {
     scanButton = true,          -- the "Scan prices" button on the auction house window
     showTooltipPrices = true,   -- the last known price on item tooltips
@@ -81,7 +81,7 @@ end
 ---------------------------------------------------------------------------
 
 --- ItemKey(itemID, suffixID) -> "72092" or "72092:-37". The same item with a different random
--- suffix is a different thing to buy (docs/08 B1), so the suffix is part of the key; the unique
+-- suffix is a different thing to buy, so the suffix is part of the key; the unique
 -- id is not, because it only scales the suffix's stats for one copy.
 function M.ItemKey(itemID, suffixID)
     suffixID = tonumber(suffixID) or 0

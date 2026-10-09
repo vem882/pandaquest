@@ -56,7 +56,7 @@ L["none"] = true
 L["Arrow position and pins reset."] = true
 L["Profile changed: %s"] = true
 
--- Action texts (docs/06 section 9.3), used by Objectives.DescribeTarget
+-- Action texts, used by Objectives.DescribeTarget
 L["Kill %s (%d/%d)"] = true
 L["Talk to %s"] = true
 L["Loot %s from %s (%d/%d)"] = true
@@ -111,7 +111,7 @@ L["Starts: %s"] = true
 L["Turn in: %s"] = true
 L["Ends: %s"] = true
 
--- Map/NodeTooltip (docs/10 B3: the pfQuest-style node block)
+-- Map/NodeTooltip
 L["Level:"] = true
 L["Type:"] = true
 L["Skill:"] = true
@@ -201,7 +201,7 @@ L["One pin for a pack of mobs instead of a dozen."] = true
 L["Pin size"] = true
 L["Map pin size"] = true
 L["Minimap pin size"] = true
--- Map/Pins, Map/Icons (docs/10 B1-B2: coloured dots, the minimap cap and the edge fade)
+-- Map/Pins, Map/Icons
 L["Objective dot size"] = true
 L["Objectives and gathering nodes are small dots, coloured per quest or per kind; quest givers keep their icons."] = true
 L["Maximum minimap pins"] = true
@@ -217,7 +217,7 @@ L["Show raid quests"] = true
 L["Show PvP quests"] = true
 L["Show pet battle quests"] = true
 
--- Nodes/Professions (docs/10 D: gathering nodes on the map)
+-- Nodes/Professions
 L["Gathering"] = true
 L["Ore, herbs, fishing pools, chests and rare spawns, drawn only where you or the community really found one."] = true
 L["Show gathering nodes"] = true
@@ -304,7 +304,7 @@ L["Community data from %s"] = true
 L["Last gear snapshot: %s"] = true
 L["Gear snapshots: off."] = true
 
--- Sync / Consent (docs/07 B1: telemetry is off until the player turns it on; nothing is asked at login)
+-- Sync / Consent
 L["/pq consent - ask the data sharing question again"] = true
 L["PandaQuest can send what you do while questing to the community hub."] = true
 L["That means the quests you accept and finish, what you kill and loot, where you die, and your map position with the time."] = true
@@ -316,7 +316,7 @@ L["No thanks"] = true
 L["Thank you. PandaQuest will share your quest data. Turn it off any time with /pq sync."] = true
 L["Nothing will be collected. Turn it on any time in /pq options."] = true
 
--- Auction house (docs/08): the scan, the invoices, the tooltip and the options section
+-- Auction house: the scan, the invoices, the tooltip and the options section
 L["Scan prices"] = true
 L["Stop scan (%d%%)"] = true
 L["Scanning the auction house. Keep the window open; closing it cancels the scan."] = true
@@ -344,7 +344,7 @@ L["Show auction prices on item tooltips"] = true
 L["The lowest buyout and the market value from your last scan on this realm, with how old it is."] = true
 L["Record my auction sales and purchases"] = true
 L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] = true
--- Professions (docs/11): the recipe scan, its refusals and the options section
+-- Professions: the recipe scan, its refusals and the options section
 L["/pq scan professions - read the open profession window"] = true
 L["/pq scan archaeology - read your archaeology window"] = true
 L["/pq digsite - show the dig site bar so you can move it"] = true
@@ -371,7 +371,7 @@ L["PandaQuest reads an open profession window once and puts your filters and col
 L["Read my recipes when I open a profession"] = true
 L["The recipes, their reagents and how hard each is for this character. Never a book opened from a link."] = true
 
--- Flight master (docs/06 10c)
+-- Flight master
 L["Flight time:"] = true
 L["~%s (%d flight)"] = true
 L["~%s (%d flights)"] = true
@@ -388,7 +388,7 @@ L["Show the flight time at the flight master"] = true
 L["One line in the destination's tooltip, with how many of your own flights it rests on."] = true
 L["Show the progress bar while flying"] = true
 L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] = true
--- Archaeology (docs/11 B5 and B6)
+-- Archaeology
 L["This client does not offer the archaeology data PandaQuest reads."] = true
 L["This character has no archaeology races to read yet."] = true
 L["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] = true

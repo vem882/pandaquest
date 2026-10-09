@@ -1,4 +1,4 @@
--- Database/Schema.lua: Questie-compatible key tables (docs/06 section 7).
+-- Database/Schema.lua: Questie-compatible key tables.
 -- The generated Database/Data/*.lua rows are positional arrays; these tables name the positions.
 -- Everything here is data only: the module has no lifecycle methods and never touches the game API.
 -- Numbers are cross-checked against _reference/Questie/Database/{questDB,npcDB,objectDB,itemDB,QuestieDB}.lua.
@@ -13,7 +13,7 @@ local pairs = pairs
 -- Positional key tables (Questie QuestieDB.*Keys, unchanged)
 ---------------------------------------------------------------------------
 
--- 36 fields. See Quest struct in docs/06 section 7 for the decoded shape.
+-- 36 fields.
 Schema.questKeys = {
     name = 1,                       -- string
     startedBy = 2,                  -- {creatureStart, objectStart, itemStart}

@@ -1,4 +1,4 @@
--- Quest/Objectives.lua: turns a quest into navigable Targets (docs/06 sections 8, 9.1 and 9.3).
+-- Quest/Objectives.lua: turns a quest into navigable Targets.
 --
 -- The quest log tells us WHAT is missing ("Dappled Moth slain: 3/8"); the database tells us WHERE
 -- ("npc 57232 spawns at areaID 5785, 56.2/60.8"). This module joins the two and produces the Target
@@ -23,7 +23,7 @@ local tsort = table.sort
 
 local CLUSTER_BOX = 5                   -- +-5 % of the zone
 local CLUSTER_SCAN_MAX = 240            -- cap the O(n^2) neighbour scan; larger lists are strided
-local MAX_SPAWNS = 60                   -- docs/06 section 9.1: the pin list is thinned to 60 points
+local MAX_SPAWNS = 60                   -- The pin list is thinned to 60 points
 local MAX_ITEM_SOURCES = 12             -- one target per drop source, but not for a 200-mob item
 local MAX_TARGETS_PER_QUEST = 24
 local OTHER_CONTINENT_PENALTY = 500000  -- a target on another continent always sorts after a local one
@@ -242,7 +242,7 @@ local function placeTarget(target, points)
 end
 
 ---------------------------------------------------------------------------
--- Action texts (docs/06 section 9.3)
+-- Action texts
 ---------------------------------------------------------------------------
 
 local function counts(target)
@@ -565,7 +565,7 @@ local function questPoiList(uiMapID)
 end
 M.InvalidatePoiCache = function() poiCache.uiMapID, poiCache.at, poiCache.list = nil, -1, nil end
 
---- Blizzard POI fallback (docs/06 section 8): when the database knows no spawn we still know the
+--- Blizzard POI fallback: when the database knows no spawn we still know the
 -- blob the Blizzard map draws for this quest.
 local function buildPoiTarget(questID, entry, objective)
     if not (C_QuestLog and C_QuestLog.GetQuestsOnMap) then return nil end
