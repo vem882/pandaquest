@@ -1,0 +1,18 @@
+# Read by CurseForge's automatic packaging (the repository webhook). The addon lives in the
+# PandaQuest/ subfolder, so the folder is moved up and everything else in the root is left out;
+# without this the package would be the whole repository inside a PandaQuest/ folder.
+#
+# The GitHub release zip (build.py) is the reference package. This one is made by CurseForge's
+# packager, which does not run build.py: the TOC keeps its declared "## Version: 0.2.0" and there is
+# no Core/Build.lua, so /pq status shows 0.2.0 in a package that came from here.
+package-as: PandaQuest
+manual-changelog:
+  filename: PandaQuest/changelog.txt
+  markup-type: text
+move-folders:
+  PandaQuest/PandaQuest: PandaQuest
+ignore:
+  - .github
+  - assets
+  - README.md
+  - LICENSE
