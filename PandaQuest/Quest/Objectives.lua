@@ -6,8 +6,8 @@
 -- Nav/Targets.lua owns the lifecycle.
 --
 -- Spawn lists can hold thousands of points, so every entity is reduced to ONE representative point
--- with the pfQuest getcluster idea (database.lua:37): the coordinate with the most neighbours inside
--- a +-5 % box wins, and the neighbour count becomes the arrival radius hint (`count`).
+-- by density: the coordinate with the most neighbours inside a +-5 % box wins, and the neighbour
+-- count becomes the arrival radius hint (`count`). Map addons commonly cluster this way.
 local _, ns = ...
 local L = ns.L
 
@@ -21,12 +21,12 @@ local format, lower = string.format, string.lower
 local ceil, huge = math.ceil, math.huge
 local tsort = table.sort
 
-local CLUSTER_BOX = 5                   -- +-5 % of the zone, as pfQuest does
+local CLUSTER_BOX = 5                   -- +-5 % of the zone
 local CLUSTER_SCAN_MAX = 240            -- cap the O(n^2) neighbour scan; larger lists are strided
 local MAX_SPAWNS = 60                   -- docs/06 section 9.1: the pin list is thinned to 60 points
 local MAX_ITEM_SOURCES = 12             -- one target per drop source, but not for a 200-mob item
 local MAX_TARGETS_PER_QUEST = 24
-local OTHER_CONTINENT_PENALTY = 500000  -- Questie's DistanceUtils weighting
+local OTHER_CONTINENT_PENALTY = 500000  -- a target on another continent always sorts after a local one
 
 local PRIORITY = Const.TARGET_PRIORITY or
     { OBJECTIVE = 10, ITEMUSE = 10, EXPLORE = 10, TURNIN = 5, PICKUP = 30, CUSTOM = 10 }
@@ -98,7 +98,7 @@ end
 M.WorldFor = worldFor
 
 --- pickCluster(points, from, to) -> representative point, neighbour count
--- Straight pfQuest getcluster: the point with the most neighbours inside a +-CLUSTER_BOX square.
+-- The point with the most neighbours inside a +-CLUSTER_BOX square; a stride thins very long lists.
 local function pickCluster(points, from, to)
     local n = to - from + 1
     if n <= 0 then return nil, 0 end

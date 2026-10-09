@@ -1,4 +1,4 @@
--- Nav/Arrow.lua: the TomTom-style navigation arrow (docs/06 section 9.5).
+-- Nav/Arrow.lua: the navigation arrow (docs/06 section 9.5).
 --
 -- Rotation convention, verified against the stub world and Blizzard's own code:
 --   * HBD:GetWorldVector and GetPlayerFacing() both measure radians from north, growing the same

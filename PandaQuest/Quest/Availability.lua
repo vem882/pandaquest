@@ -4,8 +4,8 @@
 -- The whole database is scanned, so the order of the checks IS the performance story: table lookups
 -- and raw positional fields first, the decoded quest (and its chain of pre-quests) only for the few
 -- percent of quests that survive. The pass runs in a Core/Thread coroutine at 24 quests per yield and
--- a second request while a pass is running is QUEUED, never cancelled - exactly like Questie, whose
--- cancel-and-restart behaviour used to drop updates on a busy login.
+-- a second request while a pass is running is QUEUED, never cancelled, so no update is dropped on a
+-- busy login.
 local _, ns = ...
 
 local M = {}
@@ -86,7 +86,7 @@ end
 M.MasksOverlap = masksOverlap
 
 -- Profession skillLine -> the spell that teaches it, so the localized skill name can be resolved
--- with GetSpellInfo instead of shipping a translation table (Questie does the same).
+-- with GetSpellInfo instead of shipping a translation table.
 local PROFESSION_SPELLS = {
     [129] = 3273,     -- First Aid
     [164] = 2018,     -- Blacksmithing
@@ -170,7 +170,7 @@ local function allCompleted(list, completed)
 end
 
 --- IsDoable(questID, verbose) -> bool, reasonCode|nil
--- Follows Questie's IsDoable chain (docs/liitteet/A section 4) but ordered cheapest-first.
+-- The checks run cheapest-first: level, race and class before prerequisites, reputation and skill.
 function M.IsDoable(questID, verbose)
     local function fail(code)
         if verbose then

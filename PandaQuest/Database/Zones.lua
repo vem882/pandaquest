@@ -192,7 +192,7 @@ function Zones.GetAreaIdByUiMapId(uiMapID)
     local areaID = data("uiMapIdToAreaId")[uiMapID]
 
     if not areaID and C_Map and C_Map.GetMapInfo then
-        -- Match by name as Questie does, but against the shipped enUS names instead of scanning
+        -- Match by name against the shipped enUS names instead of scanning
         -- C_Map.GetAreaInfo for every known areaID (that is thousands of API calls).
         local info = C_Map.GetMapInfo(uiMapID)
         if info and type(info.name) == "string" then
