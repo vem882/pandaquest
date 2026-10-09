@@ -63,14 +63,30 @@ timers and flight times exist in no downloadable source, so they are collected f
 and where anyone can join in and help fill the gaps. What the portal collects is meant to flow back into
 the addon's data.
 
-## Install
+## Download and install
 
-1. Download the release zip and unzip it into `World of Warcraft/_classic_/Interface/AddOns/`
-   (or install it with the CurseForge app).
-2. Make sure the folder is named exactly `PandaQuest` and contains `PandaQuest.toc`.
-3. Restart the game, or `/reload` if it was already running.
+- **CurseForge app** (recommended): search for *PandaQuest* and install it.
+- **GitHub**: download the latest `PandaQuest-<version>.zip` from
+  <https://github.com/vem882/pandawow_addon/releases> and unzip it into
+  `World of Warcraft/_classic_/Interface/AddOns/`. The folder must be named exactly `PandaQuest` and
+  contain `PandaQuest.toc`.
+- Restart the game, or `/reload` if it was already running.
 
-Optional: **TomTom** is detected automatically when present.
+PandaQuest is built for **Mists of Pandaria Classic 5.5.4** only. It does not load on other game
+versions. Optional: **TomTom** is detected automatically when present.
+
+## Getting help and reporting problems
+
+- **Issues:** <https://github.com/vem882/pandawow_addon/issues>
+- **Questions and content:** the portal at <https://pd.zroot.it>.
+
+A good report says what you did, what you expected and what happened. Please include:
+
+1. The output of `/pq status` (it prints the version and the build it came from).
+2. The Lua error text, if there is one. Turn error display on with `/console scriptErrors 1`, then
+   `/reload`.
+3. `/pq debug 3` before reproducing the problem raises the addon's log level (`0` errors only up to
+   `4` trace); `/pq debug 1` puts it back.
 
 ## Slash commands
 
@@ -125,6 +141,68 @@ PandaQuest follows the game locale and ships English and Finnish. The WoW client
 `PandaQuestDB` (settings and profiles), `PandaQuestSync` (optional synchronisation data),
 `PandaQuestAH` (auction scans) and `PandaQuestProf` (recipe books).
 
+## Frequently asked questions
+
+**Do I need the portal or the companion program?** No. PandaQuest works fully on its own. The
+portal is where the shared content is completed; using it is optional.
+
+**Is anything sent anywhere?** No. The addon cannot send anything: the WoW client does not allow
+it. Synchronisation only writes a file on your computer, and only if you switch it on. A separate
+companion program, run by you, can read that file.
+
+**Why does a node or a flight show no time?** Because the number is unknown, and PandaQuest leaves
+a line out rather than print a guess. Respawn timers and flight times are measured from play: kill
+the mob, gather the node or fly the route once and it appears.
+
+**The arrow points at something odd.** `/pq next` skips the current target, `/pq target <questID>`
+pins a quest, and the Navigation options switch between automatic, focused and nearest. If the arrow
+looks rotated the wrong way, please report it with `/pq status` — the rotation has not yet been
+confirmed on a live client.
+
+**A quest is missing or wrong.** The database is built from Questie's Mists of Pandaria data with
+corrections on top, and it is not perfect. Report the quest ID (`/pq dump quest <id>` prints the
+entry) and the portal can correct it.
+
+**Can I use it with Questie?** PandaQuest does not read from or change Questie, and the two have
+not been tested together in game. If you see two sets of pins, switch one addon's map pins off.
+
+**How do I reset everything?** `/pq reset` resets the arrow position and map pins. Settings live in
+the options panel's *Profiles* tab. Deleting `PandaQuestDB.lua` from your SavedVariables folder
+(with the game closed) resets all settings.
+
+**Does it work on Retail, Classic Era or other Classic versions?** No. It targets interface
+50504, Mists of Pandaria Classic 5.5.4.
+
+## Compatibility
+
+| Addon | Relationship |
+|---|---|
+| TomTom | optional: PandaQuest can send its current target to TomTom as a waypoint |
+| Questie | not used and not modified; not tested together in game |
+| Leatrix Maps, Mapster, ElvUI map module | PandaQuest's pins are built to survive another addon rescaling or re-anchoring the world map; tested against a simulated client, not yet confirmed on a live one |
+| HereBeDragons | embedded, shared with other addons that embed the same library |
+
+## Languages
+
+PandaQuest follows the game locale and ships **English** and **Finnish** (`Locales/enUS.lua`,
+`Locales/fiFI.lua`). The WoW client never reports `fiFI`, so Finnish is selected with
+`/pq lang fiFI` and a reload.
+
+Adding a language is a small pull request: copy `Locales/enUS.lua`, translate the values, register
+the table the way `Locales/fiFI.lua` does and add the locale name to the `/pq lang` command. A key
+you leave out falls back to English, so a partial translation is fine.
+
+## Contributing
+
+- **Play with synchronisation on** and use the portal: respawn timers, node positions and flight
+  times for Pandaria only exist because somebody measured them.
+- **Report wrong or missing data** with the quest, NPC or object ID.
+- **Translate** (see above) or fix an English string.
+- **Code:** pull requests are welcome at <https://github.com/vem882/pandawow_addon>. The addon is
+  plain Lua 5.1 with Ace3; its test harness and linter live in the platform repository
+  (<https://github.com/vem882/pandawow>, `tools/`), run against this tree with
+  `PQ_ADDON_DIR=<path to PandaQuest>`.
+
 ## Roadmap
 
 Not done yet:
@@ -159,6 +237,7 @@ Data and assets from other projects keep their own terms:
 - Embedded libraries (Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons)
   keep their own licences (`Libs/README.md`).
 
-## Source
+## Author and source
 
-<https://github.com/vem882/pandawow_addon> — issues and pull requests welcome.
+Written by **vem882**. Source, issues and releases: <https://github.com/vem882/pandawow_addon>.
+The PandaQuest portal: <https://pd.zroot.it>.

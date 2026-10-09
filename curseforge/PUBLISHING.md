@@ -15,7 +15,10 @@ steps below are done, so merging it changes nothing for anybody.
 3. **Summary** (one line, English): paste `curseforge/summary.txt`.
 4. **Description**: paste `curseforge/description.md` (CurseForge renders Markdown).
 5. **Logo**: upload `assets/logo/panda-quest-512.png` (`-1024.png` for a larger avatar).
-6. Put the project's numeric id in the TOC as `## X-Curse-Project-ID: <id>`. Do not add the line
+6. **Screenshots**: the project page has a gallery and this repository has none, because they have
+   to be taken in game: the arrow, the map pins, a node tooltip, the flight bar and the options
+   panel are the five that explain the addon.
+7. Put the project's numeric id in the TOC as `## X-Curse-Project-ID: <id>`. Do not add the line
    with a made-up number.
 
 ## Turn the upload on
