@@ -1,0 +1,121 @@
+# Upload an EXISTING GitHub release to CurseForge.
+#
+# It does not build anything and does not create a GitHub release: release.yml did that, and this
+# distributes the zip it published, byte for byte, with the changelog.txt that release was made
+# from. Start it by hand (Actions > Upload existing release to CurseForge > Run workflow) once
+# there is something worth a new file -- CurseForge's rules forbid file updates made to boost
+# visibility, so nothing here runs on its own.
+#
+# One-time setup, outside this file: the CF_API_TOKEN repository secret. The project is the one
+# the package's own TOC names (## X-Curse-Project-ID), and the upload is refused when that is not
+# the project it was told to send to.
+#
+# Uploading twice is prevented by a reservation tag, curseforge/<release tag>, pushed before the
+# upload starts. If an upload fails after that, the tag stays: check CurseForge first, and only if
+# no file was accepted delete the tag (the failing step prints the command) and run this again.
+name: Upload existing release to CurseForge
+run-name: "Upload to CurseForge (${{ inputs.release_tag }})"
+
+on:
+  workflow_call:
+    inputs:
+      release_tag:
+        description: Existing GitHub release tag, such as v0.2.125
+        type: string
+        required: true
+      release_type:
+        description: alpha, beta or release
+        type: string
+        default: beta
+    secrets:
+      CF_API_TOKEN:
+        required: true
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing release tag, or latest for the latest release
+        type: string
+        required: true
+        default: latest
+      release_type:
+        description: How CurseForge labels the file
+        type: choice
+        options: [beta, release, alpha]
+        default: beta
+
+# contents: write is for the reservation tag and nothing else.
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-curseforge
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Upload
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      RELEASE_TYPE: ${{ inputs.release_type }}
+      DOWNLOAD_DIR: upload
+    steps:
+      # All history and tags: the reservation tag is made on the release's own commit.
+      - name: Check out the repository, with its history and tags
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Resolve the release and download its zip
+        run: |
+          set -euo pipefail
+          # "latest" is resolved once, so the zip, the notes and the reservation name one release.
+          if [[ "${RELEASE_TAG}" == "latest" ]]; then
+            RELEASE_TAG="$(gh api "repos/${GH_REPO}/releases/latest" --jq '.tag_name')"
+          fi
+          if ! [[ "${RELEASE_TAG}" =~ ^v[0-9]+(\.[0-9]+)+$ ]]; then
+            echo "::error::${RELEASE_TAG} is not a release tag of the form v0.2.125"
+            exit 1
+          fi
+          VERSION="${RELEASE_TAG#v}"
+          PACKAGE="PandaQuest-${VERSION}.zip"
+          mkdir -p "${DOWNLOAD_DIR}"
+          gh release download "${RELEASE_TAG}" --pattern "${PACKAGE}" --dir "${DOWNLOAD_DIR}"
+          # The notes are changelog.txt as it was when the release was made, not as it is now.
+          git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > "${DOWNLOAD_DIR}/changelog.txt"
+          {
+            echo "RELEASE_TAG=${RELEASE_TAG}"
+            echo "PACKAGE=${PACKAGE}"
+          } >> "${GITHUB_ENV}"
+
+      - name: Reserve the upload
+        run: |
+          set -euo pipefail
+          RESERVATION="curseforge/${RELEASE_TAG}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${RESERVATION}" >/dev/null 2>&1; then
+            echo "::error::${RESERVATION} exists: ${RELEASE_TAG} was already sent, or an attempt failed."
+            echo "Check CurseForge first. Only if no file was accepted and no run is in progress:"
+            echo "  git push origin --delete ${RESERVATION}"
+            exit 1
+          fi
+          git tag "${RESERVATION}" "${RELEASE_TAG}^{commit}"
+          git push origin "refs/tags/${RESERVATION}"
+          echo "RESERVATION=${RESERVATION}" >> "${GITHUB_ENV}"
+
+      - name: Upload to CurseForge
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          if ! python3 .github/release/curseforge.py upload \
+              --zip "${DOWNLOAD_DIR}/${PACKAGE}" \
+              --changelog-txt "${DOWNLOAD_DIR}/changelog.txt" \
+              --release-type "${RELEASE_TYPE}"; then
+            echo "::error::The upload did not complete. ${RESERVATION} still reserves ${RELEASE_TAG}."
+            echo "Check CurseForge and this run first. Only if no file was accepted:"
+            echo "  git push origin --delete ${RESERVATION}"
+            exit 1
+          fi

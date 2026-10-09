@@ -35,7 +35,8 @@ This repository is the addon and the release tooling that turns it into a zip. N
 | `LICENSE` | GPLv3. A copy also ships in `PandaQuest/`. |
 | `assets/logo/` | the logo as SVG and PNG, 16 to 1024 px (400 px is the CurseForge avatar). Not part of the addon. |
 | `.github/release/` | `build.py` (version, build identity, deterministic zip), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
-| `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset and, when configured and started by hand, uploads it to CurseForge. |
+| `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset. |
+| `.github/workflows/publish-curseforge.yml` | uploads an existing release to CurseForge, by hand. |
 
 `PandaQuest/README.md`, `PandaQuest/changelog.txt`, `PandaQuest/CHANGELOG.md`, `PandaQuest/LICENSE` and
 `PandaQuest/Textures/README.md` ship inside the release zip.
@@ -145,10 +146,13 @@ does not sort above the highest existing release; the upload is skipped when the
 carries this asset at this byte count; and afterwards it reads the release back and fails unless it
 is published (not a draft) and carries `PandaQuest-<version>.zip` at exactly the size that was built.
 
-**CurseForge** is a separate, manual step. Run the *Release* workflow by hand on `main` once there is
-something worth a new file; it uploads the same zip, with a changelog made from the commits since the
-previous release. It needs a `CURSEFORGE_PROJECT_ID` repository variable and a `CF_API_TOKEN` secret
-and does nothing without them.
+**CurseForge** is a separate, manual step with its own workflow,
+`.github/workflows/publish-curseforge.yml`. It uploads an *existing* release — the zip the GitHub
+release carries, with `changelog.txt` as it was at that release — and builds nothing. Start it by
+hand (Actions → *Upload existing release to CurseForge*, tag `latest` or e.g. `v0.2.125`) once there
+is something worth a new file. It needs the `CF_API_TOKEN` repository secret; the project is the one
+the package's TOC names (`## X-Curse-Project-ID`). A `curseforge/<tag>` reservation tag stops the
+same release being sent twice.
 
 ## What the checks cannot tell you
 

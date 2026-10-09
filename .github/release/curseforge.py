@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Upload the release zip to CurseForge, with nothing but the standard library.
 
-    python3 .github/release/curseforge.py upload --zip dist/PandaQuest-0.2.99.zip --project 1234567
+    python3 .github/release/curseforge.py upload --zip dist/PandaQuest-0.2.125.zip
     python3 .github/release/curseforge.py game-version      # 5.5.4, from ## Interface in the TOC
 
 The token is read from the environment (``CF_API_TOKEN``) and never from an argument, so it does
@@ -28,6 +28,7 @@ import subprocess
 import sys
 import urllib.request
 import uuid
+import zipfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
@@ -93,6 +94,18 @@ def commit_subjects(previous) -> list:
     return [line.strip() for line in out.splitlines() if line.strip()]
 
 
+def toc_project_id(text: str):
+    """``## X-Curse-Project-ID: 1735809`` -> "1735809", or None."""
+    match = re.search(r"^##\s*X-Curse-Project-ID\s*:\s*(\d+)\s*$", text, re.M)
+    return match.group(1) if match else None
+
+
+def zip_project_id(zip_path: Path):
+    """The project id the package's own TOC names, or None."""
+    with zipfile.ZipFile(zip_path) as archive:
+        return toc_project_id(archive.read("PandaQuest/PandaQuest.toc").decode("utf-8-sig"))
+
+
 def txt_section(text: str, version: str) -> str:
     """The lines under ``version`` in changelog.txt, or "" when that version has no section."""
     section = []
@@ -139,13 +152,22 @@ def _call(request: urllib.request.Request):
         return json.loads(response.read().decode("utf-8"))
 
 
-def upload(zip_path: Path, project: str, release_type: str) -> int:
+def upload(zip_path: Path, project, release_type: str, changelog_txt=None) -> int:
     token = os.environ.get("CF_API_TOKEN", "")
     if not token:
         print("CF_API_TOKEN is not set; nothing uploaded.", file=sys.stderr)
         return 2
-    if not re.fullmatch(r"\d+", project):
-        print("the project id is the number on the project page, got %r" % project, file=sys.stderr)
+    in_package = zip_project_id(zip_path)
+    project = project or in_package
+    if not project or not re.fullmatch(r"\d+", project):
+        print("no project id: pass --project or ship ## X-Curse-Project-ID in the TOC", file=sys.stderr)
+        return 2
+    if in_package != project:
+        # The id in the URL decides where the file lands; the one in the package says where it was
+        # meant to go. A mismatch is a package built for another project, or one built before the
+        # id was in the TOC -- neither is something to send.
+        print("the package's TOC names project %s, not %s; nothing uploaded." % (in_package, project),
+              file=sys.stderr)
         return 2
     wanted = game_version(toc_interface(TOC.read_text(encoding="utf-8")))
 
@@ -163,7 +185,8 @@ def upload(zip_path: Path, project: str, release_type: str) -> int:
         return 2
     version = match.group(1)
     previous = previous_tag(release_tags(), version)
-    own = txt_section(CHANGELOG_TXT.read_text(encoding="utf-8"), version) if CHANGELOG_TXT.is_file() else ""
+    notes = changelog_txt or CHANGELOG_TXT
+    own = txt_section(notes.read_text(encoding="utf-8"), version) if notes.is_file() else ""
     changelog = own \
         or format_changelog(version, previous, commit_subjects(previous)) \
         or latest_changelog(CHANGELOG.read_text(encoding="utf-8"))
@@ -183,13 +206,15 @@ def main(argv=None) -> int:
     sub.add_parser("game-version")
     up = sub.add_parser("upload")
     up.add_argument("--zip", required=True, type=Path)
-    up.add_argument("--project", required=True)
+    up.add_argument("--project", help="default: ## X-Curse-Project-ID from the package's TOC")
     up.add_argument("--release-type", default="beta", choices=RELEASE_TYPES)
+    up.add_argument("--changelog-txt", type=Path,
+                    help="changelog.txt as it was at the release (default: this checkout's)")
     args = parser.parse_args(argv)
     if args.command == "game-version":
         print(game_version(toc_interface(TOC.read_text(encoding="utf-8"))))
         return 0
-    return upload(args.zip, args.project, args.release_type)
+    return upload(args.zip, args.project, args.release_type, args.changelog_txt)
 
 
 if __name__ == "__main__":

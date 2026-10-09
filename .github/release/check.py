@@ -588,12 +588,24 @@ class CurseForgeReadiness(unittest.TestCase):
         with self.assertRaises(ValueError):
             curseforge.metadata("0.2.1", "n", [7], "stable")
 
-    def test_the_upload_job_is_off_without_a_project_and_never_writes(self) -> None:
-        text = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
-        job = text[text.index("\n  curseforge:"):]
-        self.assertIn("vars.CURSEFORGE_PROJECT_ID != ''", job)
-        self.assertIn("contents: read", job)
-        self.assertNotIn("contents: write", job)
+    def test_an_upload_to_another_project_is_refused_before_anything_is_sent(self) -> None:
+        import os  # noqa: PLC0415
+        from unittest import mock  # noqa: PLC0415
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "PandaQuest-0.2.1.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("PandaQuest/PandaQuest.toc", "## X-Curse-Project-ID: 111\n")
+            self.assertEqual(curseforge.zip_project_id(path), "111")
+            with mock.patch.dict(os.environ, {"CF_API_TOKEN": "x"}), \
+                    mock.patch.object(curseforge, "_call", side_effect=AssertionError("must not call")):
+                self.assertEqual(curseforge.upload(path, "222", "beta"), 2)
+
+    def test_the_package_names_the_project_it_is_for(self) -> None:
+        self.assertEqual(curseforge.toc_project_id("## Title: x\n## X-Curse-Project-ID: 1735809\n"), "1735809")
+        self.assertIsNone(curseforge.toc_project_id("## Title: x\n"))
+        toc = TOC.read_text(encoding="utf-8")
+        self.assertRegex(toc, r"(?m)^## X-Curse-Project-ID: \d+$")
 
     def test_a_file_update_says_what_changed_since_the_last_one(self) -> None:
         tags = ["v0.2.113", "v0.2.111", "v0.2.99"]
@@ -605,13 +617,18 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn("- Fix the arrow", text)
         self.assertEqual(curseforge.format_changelog("0.2.120", "v0.2.113", []), "")
 
-    def test_the_upload_is_by_hand_only(self) -> None:
-        """CurseForge forbids updates made to boost visibility, so a merge must not upload."""
-        text = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
-        job = text[text.index("\n  curseforge:"):]
-        self.assertIn("github.event_name == 'workflow_dispatch'", job)
-        self.assertNotIn("github.event_name == 'push'", job)
-        self.assertIn("fetch-depth: 0", job)
+    def test_the_upload_is_its_own_workflow_and_only_by_hand(self) -> None:
+        """CurseForge forbids updates made to boost visibility, so nothing uploads by itself."""
+        text = (REPO / ".github" / "workflows" / "publish-curseforge.yml").read_text(encoding="utf-8")
+        triggers = text[text.index("\non:"):text.index("\npermissions:")]
+        self.assertIn("workflow_dispatch:", triggers)
+        for automatic in ("push:", "pull_request:", "schedule:", "release:"):
+            self.assertNotIn(automatic, triggers)
+        self.assertIn("fetch-depth: 0", text)
+        self.assertIn("curseforge/${RELEASE_TAG}", text, "the reservation tag that stops a second upload")
+        self.assertIn("gh release download", text, "it uploads the published zip, it does not build one")
+        release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+        self.assertNotIn("CF_API_TOKEN", release, "the release workflow must not hold the token")
 
     def test_the_avatar_is_the_size_curseforge_asks_for(self) -> None:
         data = (REPO / "assets" / "logo" / "panda-quest-400.png").read_bytes()
