@@ -40,6 +40,7 @@ from pathlib import Path
 from unittest import mock
 
 import build
+import curseforge
 
 REPO = Path(__file__).resolve().parents[2]
 ADDON_DIR = REPO / build.ADDON
@@ -548,6 +549,50 @@ class TheWorkflow(unittest.TestCase):
         for job in ("build", "release"):
             self.assertIn(job, document["jobs"])
         self.assertEqual(document["jobs"]["release"]["permissions"]["contents"], "write")
+
+
+class CurseForgeReadiness(unittest.TestCase):
+    """The CurseForge upload is off until a project exists, so nothing else would notice it rot."""
+
+    SUMMARY = REPO / "curseforge" / "summary.txt"
+
+    def test_the_game_version_is_what_the_toc_says(self) -> None:
+        self.assertEqual(curseforge.game_version(50504), "5.5.4")
+        interface = curseforge.toc_interface(TOC.read_text(encoding="utf-8"))
+        self.assertEqual(interface, 50504)
+
+    def test_only_an_exact_name_is_a_game_version(self) -> None:
+        versions = [{"id": 1, "name": "5.5.4"}, {"id": 2, "name": "5.5.40"}, {"id": 3, "name": "5.4.8"}]
+        self.assertEqual(curseforge.pick_version_ids(versions, "5.5.4"), [1])
+        self.assertEqual(curseforge.pick_version_ids(versions, "9.9.9"), [])
+
+    def test_the_changelog_is_the_newest_section(self) -> None:
+        text = "# Changelog\n\n## [0.3] - x\nnew\n\n## [0.2] - y\nold\n"
+        self.assertEqual(curseforge.latest_changelog(text), "## [0.3] - x\nnew")
+
+    def test_the_upload_body_carries_metadata_and_the_file_unchanged(self) -> None:
+        meta = curseforge.metadata("0.2.1", "notes", [7], "beta")
+        content_type, body = curseforge.multipart({"metadata": json.dumps(meta)}, "a.zip", b"PK\x03\x04")
+        boundary = content_type.split("boundary=")[1].encode()
+        self.assertTrue(body.endswith(b"--" + boundary + b"--\r\n"))
+        self.assertIn(b"PK\x03\x04", body)
+        self.assertIn(b'"gameVersions": [7]', body)
+        with self.assertRaises(ValueError):
+            curseforge.metadata("0.2.1", "n", [7], "stable")
+
+    def test_the_summary_is_one_english_line_within_the_limit(self) -> None:
+        text = self.SUMMARY.read_text(encoding="utf-8").rstrip("\n")
+        self.assertNotIn("\n", text)
+        self.assertTrue(text.isascii(), "the summary must be English")
+        self.assertLessEqual(len(text), 250)
+        self.assertGreaterEqual(len(text), 40)
+
+    def test_the_upload_job_is_off_without_a_project_and_never_writes(self) -> None:
+        text = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+        job = text[text.index("\n  curseforge:"):]
+        self.assertIn("vars.CURSEFORGE_PROJECT_ID != ''", job)
+        self.assertIn("contents: read", job)
+        self.assertNotIn("contents: write", job)
 
 
 if __name__ == "__main__":

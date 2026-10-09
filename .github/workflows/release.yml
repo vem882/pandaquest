@@ -312,3 +312,47 @@ jobs:
           CONFIRM
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
+
+  # Sends the same zip to CurseForge. Off until the repository has a CURSEFORGE_PROJECT_ID
+  # variable and a CF_API_TOKEN secret (curseforge/PUBLISHING.md), so merging this changes
+  # nothing for anybody until the project exists. It runs after the GitHub release is confirmed:
+  # a failure here never stops the hub from getting its build.
+  curseforge:
+    name: upload to CurseForge
+    needs: [build, release]
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      vars.CURSEFORGE_PROJECT_ID != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    concurrency:
+      group: release-curseforge
+      cancel-in-progress: false
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Take the package the build job checked
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: PandaQuest-${{ needs.build.outputs.version }}
+          path: dist
+
+      - name: Check the bytes are the ones that were built
+        run: |
+          set -euo pipefail
+          echo "${{ needs.build.outputs.sha256 }}  dist/${{ needs.build.outputs.package }}" | sha256sum --check --strict
+
+      - name: Upload
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          PROJECT: ${{ vars.CURSEFORGE_PROJECT_ID }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+          # beta while the addon is 0.x and unverified in game; set the variable to "release" to promote.
+          RELEASE_TYPE: ${{ vars.CURSEFORGE_RELEASE_TYPE || 'beta' }}
+        run: |
+          set -euo pipefail
+          python3 .github/release/curseforge.py upload --zip "dist/${PACKAGE}" --project "${PROJECT}" --release-type "${RELEASE_TYPE}"

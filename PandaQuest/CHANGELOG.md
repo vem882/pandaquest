@@ -4,6 +4,14 @@ All notable changes to PandaQuest are documented here.
 
 ## [0.2] - unreleased
 
+### Changed
+- Synchronisation is optional: nothing is asked at login any more. It stays off until you turn it on
+  in the options or type `/pq consent`, and the options say the addon works fully without it.
+- The objective-text pattern converter is written from scratch (same results); comments no longer
+  describe code as following another addon.
+- Documentation rewritten for players: features, roadmap, the PandaQuest portal at
+  <https://pd.zroot.it>, and credits.
+
 The addon moved into its own repository, <https://github.com/vem882/pandawow_addon>, which
 packages and publishes it. The shipped version is now `0.2.<commits in that repository>`, computed
 at packaging time; the series bumped from 0.1 to 0.2 because the commit counter changed meaning
