@@ -12,6 +12,7 @@
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/pandaquest
 ## X-License: GPL-3.0
+## X-Curse-Project-ID: 1735809
 # Mists of Pandaria Classic only (documented at warcraft.wiki.gg/wiki/TOC_format). The release also
 # carries this file under the name PandaQuest_Mists.toc, which the Mists client reads first.
 ## AllowLoadGameType: mists
