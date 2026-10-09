@@ -620,7 +620,7 @@ class CurseForgeReadiness(unittest.TestCase):
 
 
 class TheChangelogMoves(unittest.TestCase):
-    """A pull request that changes the addon says so in PandaQuest/CHANGELOG.md.
+    """A pull request that changes the addon says so in PandaQuest/changelog.txt.
 
     The version is the commit count, so it moves by itself; what does not move by itself is the
     sentence a player reads about it.  Only a pull request is judged: on main there is nothing
@@ -643,10 +643,31 @@ class TheChangelogMoves(unittest.TestCase):
         if not changed:
             self.skipTest("nothing under PandaQuest/ differs from origin/main")
         self.assertIn(
-            "PandaQuest/CHANGELOG.md", changed,
-            "PandaQuest/ changed (%s ...) but PandaQuest/CHANGELOG.md did not: say what changed"
-            % ", ".join(changed[:3]),
+            "PandaQuest/changelog.txt", changed,
+            "PandaQuest/ changed (%s ...) but PandaQuest/changelog.txt did not: add a line under "
+            "the version this change ships as" % ", ".join(changed[:3]),
         )
+
+    def test_the_changelog_file_is_short_english_lines_newest_first(self) -> None:
+        text = (ADDON_DIR / "changelog.txt").read_text(encoding="utf-8")
+        self.assertTrue(text.isascii(), "changelog.txt must be plain English")
+        versions, lines = [], 0
+        for line in text.splitlines():
+            if re.fullmatch(r"\d+(?:\.\d+)+", line):
+                versions.append(tuple(int(part) for part in line.split(".")))
+                lines = 0
+            elif line.startswith("- "):
+                lines += 1
+                self.assertLessEqual(len(line), 100, "keep each change to one short line: " + line)
+        self.assertTrue(versions, "no version section in changelog.txt")
+        self.assertEqual(versions, sorted(versions, reverse=True), "newest version first")
+        self.assertEqual(len(versions), len(set(versions)), "a version appears once")
+
+    def test_the_upload_takes_its_changelog_from_the_versions_own_section(self) -> None:
+        text = "header\n\n0.2.121\n- a - added\n- b - updated\n\n0.2.119\n- c - added\n"
+        self.assertEqual(curseforge.txt_section(text, "0.2.121"), "- a - added\n- b - updated")
+        self.assertEqual(curseforge.txt_section(text, "0.2.119"), "- c - added")
+        self.assertEqual(curseforge.txt_section(text, "0.2.5"), "")
 
 
 if __name__ == "__main__":

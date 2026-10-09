@@ -37,7 +37,7 @@ This repository is the addon and the release tooling that turns it into a zip. N
 | `.github/release/` | `build.py` (version, build identity, deterministic zip), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
 | `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset and, when configured and started by hand, uploads it to CurseForge. |
 
-`PandaQuest/README.md`, `PandaQuest/CHANGELOG.md`, `PandaQuest/LICENSE` and
+`PandaQuest/README.md`, `PandaQuest/changelog.txt`, `PandaQuest/CHANGELOG.md`, `PandaQuest/LICENSE` and
 `PandaQuest/Textures/README.md` ship inside the release zip.
 
 ## Install
@@ -83,8 +83,10 @@ would have two to keep in step — and `build.py` refuses a tree that contains o
 the third component down, because writing it down would change it. Every commit that lands on `main`
 makes a new version, whether or not it touches a file a player downloads.
 
-A pull request that changes `PandaQuest/` must also change `PandaQuest/CHANGELOG.md`; `check.py`
-fails otherwise, so the number moving always comes with a sentence about why.
+A pull request that changes `PandaQuest/` must also add a line to `PandaQuest/changelog.txt`
+(newest version first, one short line per change, e.g. `quest 123 - Name - added`); `check.py`
+fails otherwise, so the number moving always comes with a line about why. The section header is the
+version the merge will produce: this repository's commit count after the merge commit.
 
 The number is only required to move and never to go backwards. It does not encode how much changed.
 To start a new series, change `## Version` in the TOC (`0.3.0` sorts above every `0.2.N`).
@@ -163,7 +165,7 @@ addon *works*; it tells you the package is not obviously broken:
 * the four points of the release asset rules, against a freshly built zip, and both TOC files;
 * the version is the series plus the measured commit count, the history behind it is not truncated,
   and the name it produces matches the portal's pattern;
-* the changelog moved when the addon did.
+* `changelog.txt` moved when the addon did, and is short English lines, newest version first.
 
 Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, that it lints clean,
 and that it loads against the WoW API. A Lua syntax error would reach a player.
