@@ -67,7 +67,7 @@ the addon's data.
 
 - **CurseForge app** (recommended): search for *PandaQuest* and install it.
 - **GitHub**: download the latest `PandaQuest-<version>.zip` from
-  <https://github.com/vem882/pandawow_addon/releases> and unzip it into
+  <https://github.com/vem882/pandaquest/releases> and unzip it into
   `World of Warcraft/_classic_/Interface/AddOns/`. The folder must be named exactly `PandaQuest` and
   contain `PandaQuest.toc`.
 - Restart the game, or `/reload` if it was already running.
@@ -77,7 +77,7 @@ versions. Optional: **TomTom** is detected automatically when present.
 
 ## Getting help and reporting problems
 
-- **Issues:** <https://github.com/vem882/pandawow_addon/issues>
+- **Issues:** <https://github.com/vem882/pandaquest/issues>
 - **Questions and content:** the portal at <https://pd.zroot.it>.
 
 A good report says what you did, what you expected and what happened. Please include:
@@ -198,7 +198,7 @@ you leave out falls back to English, so a partial translation is fine.
   times for Pandaria only exist because somebody measured them.
 - **Report wrong or missing data** with the quest, NPC or object ID.
 - **Translate** (see above) or fix an English string.
-- **Code:** pull requests are welcome at <https://github.com/vem882/pandawow_addon>. The addon is
+- **Code:** pull requests are welcome at <https://github.com/vem882/pandaquest>. The addon is
   plain Lua 5.1 with Ace3, and the package checks are `python3 .github/release/check.py`.
 
 ## Roadmap
@@ -248,5 +248,5 @@ they are the form this repository distributes.
 
 ## Author and source
 
-Written by **vem882**. Source, issues and releases: <https://github.com/vem882/pandawow_addon>.
+Written by **vem882**. Source, issues and releases: <https://github.com/vem882/pandaquest>.
 The PandaQuest portal: <https://pd.zroot.it>.
