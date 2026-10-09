@@ -366,9 +366,8 @@ local function buildTable()
                 },
             },
             sync = {
-                type = "group", order = 9, name = L["Synchronisation"], args = {
-                    info = { type = "description", order = 0,
-                        name = L["Questing data is stored in your SavedVariables and never uploaded on its own."] },
+                type = "group", order = 9, name = L["Synchronisation (optional)"], args = {
+                    info = { type = "description", order = 0, name = L["Optional. PandaQuest works fully without it, and never uploads anything itself."] },
                     enabled = toggle(1, L["Record quest data"], nil, "global.telemetry.enabled"),
                     breadcrumbs = toggle(2, L["Record movement breadcrumbs"],
                         L["Occasional position samples that improve community routes."], "global.telemetry.breadcrumbs"),

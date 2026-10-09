@@ -287,9 +287,9 @@ local T = {
     ["Play a sound"] = "Toista ääni",
     ["Preview"] = "Esikatselu",
     ["PandaQuest is ready."] = "PandaQuest on valmis.",
-    ["Synchronisation"] = "Synkronointi",
-    ["Questing data is stored in your SavedVariables and never uploaded on its own."] =
-        "Tehtävätiedot tallennetaan SavedVariables-tiedostoon eikä niitä lähetetä itsestään.",
+    ["Synchronisation (optional)"] = "Synkronointi (valinnainen)",
+    ["Optional. PandaQuest works fully without it, and never uploads anything itself."] =
+        "Valinnainen. PandaQuest toimii täysin ilman sitä, eikä lähetä itse mitään.",
     ["Record quest data"] = "Tallenna tehtävätietoja",
     ["Record movement breadcrumbs"] = "Tallenna liikkumisen välipisteitä",
     ["Occasional position samples that improve community routes."] =
