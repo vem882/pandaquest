@@ -302,8 +302,8 @@ function M.HasSpell(spellID)
 end
 
 --- GetReputation(factionID) -> value, standingID
--- `value` is the raw reputation total the quest database compares against (Questie's barValue).
--- nil means "faction not discovered"; callers treat that as 0 like Questie does.
+-- `value` is the raw reputation total the quest database compares against.
+-- nil means "faction not discovered"; callers treat that as 0.
 -- 5.5.4 has no C_Reputation, so GetFactionInfoByID is the only source (docs/02).
 function M.GetReputation(factionID)
     if type(factionID) ~= "number" then return nil end

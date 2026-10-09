@@ -110,7 +110,7 @@ Schema.objectiveKeys = { creature = 1, object = 2, item = 3, reputation = 4, kil
 Schema.triggerEndKeys = { text = 1, coords = 2 }
 
 ---------------------------------------------------------------------------
--- Reversed maps: index -> key name, built programmatically like Questie does.
+-- Reversed maps: index -> key name, built programmatically.
 ---------------------------------------------------------------------------
 
 local function reverse(keys)
