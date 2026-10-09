@@ -20,7 +20,7 @@ All notable changes to PandaQuest are documented here.
 - Documentation rewritten for players: features, roadmap, the PandaQuest portal at
   <https://pd.zroot.it>, and credits.
 
-The addon moved into its own repository, <https://github.com/vem882/pandawow_addon>, which
+The addon moved into its own repository, <https://github.com/vem882/pandaquest>, which
 packages and publishes it. The shipped version is now `0.2.<commits in that repository>`, computed
 at packaging time; the series bumped from 0.1 to 0.2 because the commit counter changed meaning
 when the addon moved. That repository's `README.md`, "The version", is the argument.
