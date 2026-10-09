@@ -5,6 +5,8 @@ All notable changes to PandaQuest are documented here.
 ## [0.2] - unreleased
 
 ### Changed
+- CurseForge preparation: avatar at 400x400, upload only by hand, changelog taken from the commits
+  since the previous release (nothing in the addon itself changed).
 - Synchronisation is optional: nothing is asked at login any more. It stays off until you turn it on
   in the options or type `/pq consent`, and the options say the addon works fully without it.
 - The objective-text pattern converter is written from scratch (same results); comments no longer

@@ -14,7 +14,8 @@ steps below are done, so merging it changes nothing for anybody.
    *Mists of Pandaria Classic*.
 3. **Summary** (one line, English): paste `curseforge/summary.txt`.
 4. **Description**: paste `curseforge/description.md` (CurseForge renders Markdown).
-5. **Logo**: upload `assets/logo/panda-quest-512.png` (`-1024.png` for a larger avatar).
+5. **Avatar**: upload `assets/logo/panda-quest-400.png`. CurseForge's moderation policy asks for
+   exactly 400x400 px and warns against WebP; the larger PNGs are for everything else.
 6. **Screenshots**: the project page has a gallery and this repository has none, because they have
    to be taken in game: the arrow, the map pins, a node tooltip, the flight bar and the options
    panel are the five that explain the addon.
@@ -23,7 +24,8 @@ steps below are done, so merging it changes nothing for anybody.
 
 ## Turn the upload on
 
-In the repository settings:
+In the repository settings (the upload then runs only when you start the *Release* workflow
+by hand, on `main`):
 
 | Where | Name | Value |
 |---|---|---|
@@ -52,3 +54,18 @@ is named after the addon folder (`PandaQuest.toc`, or `PandaQuest_Mists.toc` for
 one) and carries its own `## Interface`. PandaQuest targets only Mists of Pandaria Classic, so it
 ships a single `PandaQuest.toc` with `## Interface: 50504`; CurseForge reads the game version from
 that number.
+
+## CurseForge's moderation policy, and where this repository meets it
+
+(<https://support.curseforge.com/support/solutions/articles/9000197279-moderation-policies>)
+
+| Rule | How it is met |
+|---|---|
+| Name in English, without the game name or a version | "PandaQuest" |
+| Summary is one sentence and is not the description | `summary.txt` |
+| Description explains functionality; English first, other languages after | `description.md`: English, then a short Finnish section |
+| No external download links | the description links to the issue tracker and the portal, not to a release |
+| Donation and personal links at the bottom | there are none; the source link is last |
+| Avatar 400x400, not a solid colour | `panda-quest-400.png` |
+| Third-party content permitted and credited | **open**: see "Before the first upload", point 1 |
+| No file updates made to boost visibility; every update has a changelog | the upload job runs only when started by hand, and its changelog is the commits to `PandaQuest/` since the previous release |
