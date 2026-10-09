@@ -199,9 +199,7 @@ you leave out falls back to English, so a partial translation is fine.
 - **Report wrong or missing data** with the quest, NPC or object ID.
 - **Translate** (see above) or fix an English string.
 - **Code:** pull requests are welcome at <https://github.com/vem882/pandawow_addon>. The addon is
-  plain Lua 5.1 with Ace3; its test harness and linter live in the platform repository
-  (<https://github.com/vem882/pandawow>, `tools/`), run against this tree with
-  `PQ_ADDON_DIR=<path to PandaQuest>`.
+  plain Lua 5.1 with Ace3, and the package checks are `python3 .github/release/check.py`.
 
 ## Roadmap
 
@@ -230,12 +228,23 @@ PandaQuest is its own code. It is **inspired by** other addons, and it does not 
 
 Data and assets from other projects keep their own terms:
 
-- The quest/NPC/object/item database is built from Questie's Mists of Pandaria data.
+- The quest/NPC/object/item database is built from Questie's Mists of Pandaria data. Questie is
+  published under GPLv3, which is why PandaQuest is too.
 - Respawn timers and drop rates for Vanilla and Burning Crusade come from pfQuest's database (MIT).
 - Map icons in `Textures/Icons/` are the MIT-licensed icons from pfQuest/Questie
   (`Textures/Icons/LICENSE.md`).
 - Embedded libraries (Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons)
   keep their own licences (`Libs/README.md`).
+
+## Licence
+
+PandaQuest is free software under the **GNU General Public License, version 3** (`LICENSE`). Copyright
+(C) 2026 vem882. You may use, study, change and share it under those terms; a changed copy must be
+shared under the same licence, with its source. The embedded libraries and the third-party icons keep
+their own, GPL-compatible licences (`Libs/README.md`, `Textures/Icons/LICENSE.md`).
+
+The database files under `Database/Data/` are generated, from Questie's data with corrections on top;
+they are the form this repository distributes.
 
 ## Author and source
 

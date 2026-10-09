@@ -5,6 +5,12 @@ All notable changes to PandaQuest are documented here.
 ## [0.2] - unreleased
 
 ### Changed
+- TOC: the package carries `PandaQuest_Mists.toc` beside `PandaQuest.toc` (the Mists client reads it
+  first) and the TOC declares `## AllowLoadGameType: mists` and `## X-License: GPL-3.0`.
+- Licence: PandaQuest is GPLv3 (`LICENSE`, `## X-License` in the TOC). Questie, whose Mists of
+  Pandaria data the database is built from, is published under the same licence.
+- The repository is only the addon: references to anything outside it were removed from the
+  documentation, comments and generated-file headers.
 - CurseForge preparation: avatar at 400x400, upload only by hand, changelog taken from the commits
   since the previous release (nothing in the addon itself changed).
 - Synchronisation is optional: nothing is asked at login any more. It stays off until you turn it on

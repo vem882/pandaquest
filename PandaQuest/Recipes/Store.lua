@@ -250,8 +250,7 @@ end
 
 --- The SkillLineID archaeology is, from Blizzard's own constants
 -- (Blizzard_FrameXMLBase/Classic/Constants.lua:14-30) -- the same id SKILL_LINES above lists and
--- the same one the hub already maps to "Archaeology"
--- (platform/server/pandaquest_hub/questdb.py:190).
+-- the same one the portal already maps to "Archaeology".
 M.ARCHAEOLOGY_SKILL_LINE = 794
 
 --- ArchaeologyKey(name, realm) -> the key one character's snapshot is stored under.

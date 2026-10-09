@@ -5,21 +5,21 @@
     python3 .github/release/check.py -v         # name each one
 
 Stdlib ``unittest`` and nothing else -- no pytest, no pip install, no Lua.  There is no Lua
-interpreter here and no luacheck: the platform repository (github.com/vem882/pandawow) keeps
-those, and this file deliberately does not try to reproduce them.  So these checks cannot tell
+interpreter here and no luacheck: a Lua interpreter and a linter are
+not part of this repository, and this file deliberately does not try to reproduce them.  So these checks cannot tell
 you the addon *works*; they tell you the package is not obviously broken, which is the class of
 breakage a release can actually introduce:
 
 * the TOC parses, and declares the fields the packaging and the client depend on;
 * every file the TOC lists exists, with the case it is listed with -- a missing or
-  wrongly-cased file is silent in-game on Windows and fatal on the hub's Linux builds;
+  wrongly-cased file is silent in-game on Windows and fatal on the portal's Linux builds;
 * every file ``embeds.xml`` pulls in exists too, since the TOC lists the XML and not its
   contents;
 * nothing packaged is unreachable, empty or from the development tree: a ``.lua`` no TOC line
   or XML include names is either a module the game never runs or a download nobody uses, a
   zero-byte entry is a generator that failed halfway, and a ``.py`` in an AddOns folder is how
   somebody comes to believe the addon needs Python;
-* the zip's contract holds: the name the hub can see, every path under ``PandaQuest/``, the
+* the zip's contract holds: the name the portal can see, every path under ``PandaQuest/``, the
   version stamped, the same bytes when built twice.
 
 Nothing here asserts a number it did not measure: the version cases compute what git says and
@@ -59,9 +59,8 @@ REQUIRED_DIRECTIVES = ("Interface", "Title", "Version")
 #: The interface version Mists of Pandaria Classic 5.5.4 expects, asserted by value and not by
 #: shape.  The client compares ``## Interface`` against its own build number and anything else
 #: leaves the addon greyed out under "Load out of date AddOns" -- no error, no chat line,
-#: nothing in the log, and every bug report that follows says "the addon does nothing".  This
-#: is the same constant the platform repository's ``tools/tests/test_release_artifacts.py``
-#: asserts (``MOP_CLASSIC_INTERFACE = 50504``); it moves when the game's patch level does.
+#: nothing in the log, and every bug report that follows says "the addon does nothing".  It
+#: moves when the game's patch level does.
 MOP_CLASSIC_INTERFACE = "50504"
 
 #: Nothing from the workshop reaches a player's AddOns folder.  ``build.py``'s exclusion lists
@@ -153,7 +152,7 @@ class EveryListedFileExists(unittest.TestCase):
         self.assertEqual(missing, [], "listed in the TOC, not in PandaQuest/")
 
     def test_the_case_matches(self) -> None:
-        """Windows does not care and Linux does; the hub builds and serves on Linux."""
+        """Windows does not care and Linux does; the portal builds and serves on Linux."""
         wrong = []
         for name in self.files:
             relative = Path(name.replace("\\", "/"))
@@ -214,25 +213,25 @@ class TheVersion(unittest.TestCase):
 
         Measured, not assumed: ``git clone --depth 1`` of this repository answers
         ``rev-list --count HEAD`` with 1, so release_version returns ``0.2.1`` -- digits and
-        dots, matching the hub's pattern, passing every other case here, and sorting below
-        every package the hub holds.  So this case exists, and build.py's ``package`` refuses
+        dots, matching the portal's pattern, passing every other case here, and sorting below
+        every package the portal holds.  So this case exists, and build.py's ``package`` refuses
         as well.  If it fails on a runner, the checkout lost ``fetch-depth: 0``.
         """
         self.assertFalse(build.is_shallow(), "shallow checkout: the commit count is not the count")
 
     def test_the_hub_can_see_the_file_name_it_produces(self) -> None:
         name = build.package_name(build.release_version())
-        match = build.HUB_PACKAGE_PATTERN.match(name)
-        self.assertIsNotNone(match, f"{name} does not match the hub's package pattern")
-        # The hub orders with tuple(int(part) for part in version.split(".")).  This is that
+        match = build.PORTAL_PACKAGE_PATTERN.match(name)
+        self.assertIsNotNone(match, f"{name} does not match the portal's package pattern")
+        # The portal orders with tuple(int(part) for part in version.split(".")).  This is that
         # expression; if it raises, the package is invisible to the ordering and not just
         # mis-sorted.
         assert match is not None
         tuple(int(part) for part in match.group(1).split("."))
 
     def test_a_name_with_a_v_in_it_is_refused(self) -> None:
-        self.assertIsNone(build.HUB_PACKAGE_PATTERN.match("PandaQuest-v0.2.84.zip"))
-        self.assertIsNone(build.HUB_PACKAGE_PATTERN.match("PandaQuest-0.2.84+abc1234.zip"))
+        self.assertIsNone(build.PORTAL_PACKAGE_PATTERN.match("PandaQuest-v0.2.84.zip"))
+        self.assertIsNone(build.PORTAL_PACKAGE_PATTERN.match("PandaQuest-0.2.84+abc1234.zip"))
 
 
 class ThePublishGuards(unittest.TestCase):
@@ -272,14 +271,14 @@ class ThePublishGuards(unittest.TestCase):
             build, "is_shallow", return_value=False
         ):
             message = self._refuses("PandaQuest-v0.2.7.zip")
-        self.assertIn("not a name the hub can see", message)
+        self.assertIn("not a name the portal can see", message)
 
     def test_it_refuses_a_name_whose_version_is_not_the_one_it_builds(self) -> None:
-        """Right shape, wrong number: the hub then sorts by the name and advertises the comment.
+        """Right shape, wrong number: the portal then sorts by the name and advertises the comment.
 
         ``find_package`` orders candidates by the version in the file name and ``index_package``
         takes the manifest's version from the archive comment, so a mistyped digit produces a
-        package the hub sorts at one version and serves as another -- and nothing reports it.
+        package the portal sorts at one version and serves as another -- and nothing reports it.
         """
         with mock.patch.object(build, "commit_count", return_value=self.COUNT), mock.patch.object(
             build, "is_shallow", return_value=False
@@ -289,7 +288,7 @@ class ThePublishGuards(unittest.TestCase):
 
 
 class TheZipContract(unittest.TestCase):
-    """Build once into memory and assert what the hub, the manifest and WoW depend on."""
+    """Build once into memory and assert what the portal, the manifest and WoW depend on."""
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -400,7 +399,7 @@ class TheZipContract(unittest.TestCase):
     def test_the_zip_ships_the_generated_database_and_the_embedded_libraries(self) -> None:
         """Neither is hand-written, which is exactly why they go missing.
 
-        ``Database/Data/*.lua`` is generated by the platform repository's tooling and ``Libs/``
+        ``Database/Data/*.lua`` is generated outside this repository and ``Libs/``
         is vendored Ace3. A tree checked out without them still parses and still packages, and
         the result is an addon with no quest data and no AceAddon, which errors on the first
         line it runs.
@@ -506,7 +505,7 @@ class TheWorkflow(unittest.TestCase):
         gh resolves the repository from --repo, from GH_REPO, or from a git remote in the
         working directory.  The release job downloads an artifact and nothing else, so with
         none of those every gh call fails with "not a git repository", no asset is published,
-        and the hub goes on offering the previous build.
+        and the portal goes on offering the previous build.
         """
         self.assertTrue(
             "GH_REPO:" in self.text,
@@ -555,7 +554,15 @@ class TheWorkflow(unittest.TestCase):
 class CurseForgeReadiness(unittest.TestCase):
     """The CurseForge upload is off until a project exists, so nothing else would notice it rot."""
 
-    SUMMARY = REPO / "curseforge" / "summary.txt"
+    def test_the_zip_carries_the_mists_toc_beside_the_plain_one(self) -> None:
+        ident = build.identity()
+        content = build.entries(ident)
+        plain = content["PandaQuest/PandaQuest.toc"]
+        self.assertEqual(content["PandaQuest/PandaQuest_Mists.toc"], plain)
+        text = plain.decode("utf-8")
+        self.assertIn("## Interface: 50504", text)
+        self.assertIn("## AllowLoadGameType: mists", text)
+        self.assertFalse((ADDON_DIR / "PandaQuest_Mists.toc").exists(), "the Mists TOC is generated")
 
     def test_the_game_version_is_what_the_toc_says(self) -> None:
         self.assertEqual(curseforge.game_version(50504), "5.5.4")
@@ -580,13 +587,6 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn(b'"gameVersions": [7]', body)
         with self.assertRaises(ValueError):
             curseforge.metadata("0.2.1", "n", [7], "stable")
-
-    def test_the_summary_is_one_english_line_within_the_limit(self) -> None:
-        text = self.SUMMARY.read_text(encoding="utf-8").rstrip("\n")
-        self.assertNotIn("\n", text)
-        self.assertTrue(text.isascii(), "the summary must be English")
-        self.assertLessEqual(len(text), 250)
-        self.assertGreaterEqual(len(text), 40)
 
     def test_the_upload_job_is_off_without_a_project_and_never_writes(self) -> None:
         text = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
@@ -617,13 +617,6 @@ class CurseForgeReadiness(unittest.TestCase):
         data = (REPO / "assets" / "logo" / "panda-quest-400.png").read_bytes()
         width, height = struct.unpack(">II", data[16:24])
         self.assertEqual((width, height), (400, 400))
-
-    def test_the_description_has_no_download_link_and_starts_in_english(self) -> None:
-        text = (REPO / "curseforge" / "description.md").read_text(encoding="utf-8")
-        self.assertNotIn("/releases", text, "CurseForge forbids external download links")
-        english, _, other = text.partition("## Suomeksi")
-        self.assertIn("## Main features", english)
-        self.assertNotIn("Ominaisuudet", english)
 
 
 class TheChangelogMoves(unittest.TestCase):

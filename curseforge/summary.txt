@@ -1,1 +1,0 @@
-Quest helper and navigator for Mists of Pandaria Classic: an arrow to your next objective, quest pins on the map and minimap, gathering nodes, flight times and Wowhead links.
