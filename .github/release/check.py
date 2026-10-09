@@ -622,7 +622,7 @@ class CurseForgeReadiness(unittest.TestCase):
         text = (REPO / "curseforge" / "description.md").read_text(encoding="utf-8")
         self.assertNotIn("/releases", text, "CurseForge forbids external download links")
         english, _, other = text.partition("## Suomeksi")
-        self.assertIn("## Features", english)
+        self.assertIn("## Main features", english)
         self.assertNotIn("Ominaisuudet", english)
 
 
