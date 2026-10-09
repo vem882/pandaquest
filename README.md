@@ -34,6 +34,7 @@ This repository is the addon and the release tooling that turns it into a zip. N
 | `PandaQuest/` | the addon. This directory *is* what WoW installs, under exactly this name. |
 | `LICENSE` | GPLv3. A copy also ships in `PandaQuest/`. |
 | `assets/logo/` | the logo as SVG and PNG, 16 to 1024 px (400 px is the CurseForge avatar). Not part of the addon. |
+| `.pkgmeta` | tells CurseForge's automatic packaging (the repository webhook) to take the `PandaQuest/` folder. |
 | `.github/release/` | `build.py` (version, build identity, deterministic zip), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
 | `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset. |
 | `.github/workflows/publish-curseforge.yml` | uploads an existing release to CurseForge, by hand. |
@@ -153,6 +154,11 @@ hand (Actions → *Upload existing release to CurseForge*, tag `latest` or e.g. 
 is something worth a new file. It needs the `CF_API_TOKEN` repository secret; the project is the one
 the package's TOC names (`## X-Curse-Project-ID`). A `curseforge/<tag>` reservation tag stops the
 same release being sent twice.
+
+CurseForge also packages the repository itself through its webhook, using `.pkgmeta`. That package
+is made by CurseForge's packager, not by `build.py`, so it is not the reference one: its TOC keeps the
+declared `## Version: 0.2.0` and there is no `Core/Build.lua`. The release asset and the file the
+workflow above uploads are the stamped, deterministic ones.
 
 ## What the checks cannot tell you
 

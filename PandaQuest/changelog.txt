@@ -2,6 +2,9 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.129
+- toc - X-Wago-ID n6VYMQNd added
+
 0.2.125
 - toc - X-Curse-Project-ID 1735809 added
 

@@ -601,6 +601,18 @@ class CurseForgeReadiness(unittest.TestCase):
                     mock.patch.object(curseforge, "_call", side_effect=AssertionError("must not call")):
                 self.assertEqual(curseforge.upload(path, "222", "beta"), 2)
 
+    def test_the_automatic_packaging_gets_the_addon_and_nothing_around_it(self) -> None:
+        """CurseForge's webhook packages the repository root, and the addon is a subfolder."""
+        meta = (REPO / ".pkgmeta").read_text(encoding="utf-8")
+        self.assertRegex(meta, r"(?m)^package-as: PandaQuest$")
+        self.assertRegex(meta, r"(?m)^  PandaQuest/PandaQuest: PandaQuest$")
+        self.assertIn("filename: PandaQuest/changelog.txt", meta)
+        self.assertTrue((ADDON_DIR / "changelog.txt").is_file())
+
+    def test_the_toc_names_the_sites_it_is_published_on(self) -> None:
+        toc = TOC.read_text(encoding="utf-8")
+        self.assertRegex(toc, r"(?m)^## X-Wago-ID: [A-Za-z0-9]+$")
+
     def test_the_package_names_the_project_it_is_for(self) -> None:
         self.assertEqual(curseforge.toc_project_id("## Title: x\n## X-Curse-Project-ID: 1735809\n"), "1735809")
         self.assertIsNone(curseforge.toc_project_id("## Title: x\n"))
