@@ -1,5 +1,5 @@
 -- Sync/Telemetry.lua: records what the player did while questing into the SavedVariable
--- PandaQuestSync (docs/06 section 13). The companion tool uploads it, the hub analyses it and
+-- PandaQuestSync. The companion tool uploads it, the hub analyses it and
 -- writes the result back into Database/Overrides/Community.lua, which Sync/Community.lua reads.
 --
 -- Three rules shape this file:
@@ -25,12 +25,12 @@ local wipe = wipe or table.wipe
 
 local L = ns.L
 
--- Event codes (docs/06 section 13). Exposed so tests and the companion share one spelling.
+-- Event codes. Exposed so tests and the companion share one spelling.
 local CODES = {
     ACCEPT = "QA", TURNIN = "QT", REMOVED = "QR", OBJECTIVE = "OBJ", COMPLETE = "QC",
     KILL = "KILL", LOOT = "LOOT", POS = "POS", LEVEL = "LVL", ZONE = "ZONE", DIE = "DIE",
     ARRIVED = "ARR", NAVTARGET = "NAV",
-    -- One measured respawn interval (docs/10 C2/C3). Nodes/Respawn.lua observes a death and the
+    -- One measured respawn interval. Nodes/Respawn.lua observes a death and the
     -- reappearance of the same id at the same spawn point; this is that interval, one event per
     -- observation, so the hub can take a median over raw samples rather than over other people's
     -- medians. Not personal data -- a respawn timer is a property of the world -- but it travels
@@ -567,7 +567,7 @@ local function onCombatLogEvent()
     if not npcID then return end
 
     -- Hand the kill to the respawn measurement before the quest filter, and before the dedupe:
-    -- docs/10 C2 times every creature the player kills, not only the ones a quest wants, and
+    -- The respawn timer times every creature the player kills, not only the ones a quest wants, and
     -- Nodes/Respawn.lua does its own de-duplication by spawn point.
     --
     -- It is done from here rather than from a second frame of its own because
@@ -577,7 +577,7 @@ local function onCombatLogEvent()
     local Respawn = ns.Respawn
     if Respawn and Respawn.NoteKill then Respawn.NoteKill(npcID) end
 
-    -- Only NPCs a quest in the log actually cares about (docs/06 section 13).
+    -- Only NPCs a quest in the log actually cares about.
     local questID = questNpcs[npcID]
     if not questID then return end
 
@@ -655,7 +655,7 @@ end
 -- One RESP event: "this npc/object at this place took `seconds` to come back, and it is my
 -- `sample`th measurement of that spawn point". Called by Nodes/Respawn.lua whenever it closes an
 -- interval; `active` is checked by Record, so with telemetry off nothing at all is written and the
--- measurement stays on the player's own machine (docs/10 C2).
+-- measurement stays on the player's own machine.
 --
 -- The addon works in 0..100 map percentages (Nav/Targets.lua) and every event in this file is in
 -- the 0..1 the hub stores, so the conversion happens here rather than in four call sites.

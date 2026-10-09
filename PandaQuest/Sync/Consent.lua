@@ -1,5 +1,4 @@
 -- Sync/Consent.lua: the question PandaQuest asks about itself, and only when it is asked for
--- (docs/07 B1).
 --
 -- Synchronisation is optional. Nothing in PandaQuest needs it: the quest database, the arrow, the
 -- map and every other feature work with it off, and it is off by default. This file therefore does

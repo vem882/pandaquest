@@ -1,4 +1,4 @@
--- Quest/QuestLog.lua: the ONE reader of the Blizzard quest log (docs/06 section 8).
+-- Quest/QuestLog.lua: the ONE reader of the Blizzard quest log.
 -- Nothing else in the addon calls GetQuestLogTitle / C_QuestLog.GetQuestObjectives; every module
 -- consumes the Entry tables published here and the PQ_QUESTLOG_CHANGED message.
 --
@@ -35,7 +35,7 @@ do
 end
 M.listener = listener
 
-local BUCKET_SECONDS = 0.3              -- QUEST_LOG_UPDATE bucket (docs/06 section 8)
+local BUCKET_SECONDS = 0.3              -- QUEST_LOG_UPDATE bucket
 local RETRY_SECONDS = 1                 -- zone-transition retry delay
 local MAX_RETRIES = 5
 local TURNIN_MEMORY = 30                -- how long a QUEST_TURNED_IN stays pending before it expires
@@ -478,7 +478,7 @@ function M.Enable()
     end)
     listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Refresh("PLAYER_ENTERING_WORLD") end)
 
-    -- QUEST_LOG_UPDATE fires in bursts; one refresh per 0.3 s is plenty (docs/06 section 8).
+    -- QUEST_LOG_UPDATE fires in bursts; one refresh per 0.3 s is plenty.
     if listener.RegisterBucketEvent then
         listener:RegisterBucketEvent("QUEST_LOG_UPDATE", BUCKET_SECONDS,
             function() M.Refresh("QUEST_LOG_UPDATE") end)

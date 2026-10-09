@@ -1,4 +1,4 @@
--- Nodes/Professions.lua: mines, herbs, fishing pools, chests and rares on the map (docs/10 D).
+-- Nodes/Professions.lua: mines, herbs, fishing pools, chests and rares on the map.
 --
 -- Three jobs, in the order the document puts them:
 --
@@ -29,7 +29,7 @@
 -- time, so a table of all of them is a map of where a vein could be, drawn as if one were there.
 -- Nothing in it says which, and play does: so play is the only thing that places a node now.
 --
--- Two rules from docs/10 apply throughout. A node we cannot classify is not recorded at all (an
+-- Two rules apply throughout. A node we cannot classify is not recorded at all (an
 -- "unknown" kind would poison the hub's aggregate), and a skill requirement we do not have is
 -- absent rather than zero - a node with no `skill` is gatherable by anyone who has the profession.
 --
@@ -39,7 +39,7 @@
 --     .lua calls both, and unpacks `skillLine` as the 7th return. That id is locale independent,
 --     which the skill *name* is not, so it is the primary way we find Mining and Herbalism.
 --   * `GetNumSkillLines()` / `GetSkillLineInfo(index)` - Blizzard_UIPanels_Game/Classic/SkillFrame
---     .lua: `name, header, isExpanded, skillRank, ...`. The fallback, and the one docs/10 D2 names.
+--     .lua: `name, header, isExpanded, skillRank, ...`. The fallback.
 --   * `GetLootSourceInfo(slot) -> guid, quantity` - in Ketho's 5.5.4 global dump and in Questie's
 --     WoW-API annotations. Blizzard's own LootFrame.lua never calls it (it titles the window from
 --     the loot itself), so the GUID is the only handle we have on *which* object was looted.
@@ -97,7 +97,7 @@ local SKILL_NAME = { mining = "mining", herbalism = "herbalism", fishing = "fish
 local PROFESSIONS = { "mining", "herbalism", "fishing" }
 M.PROFESSIONS = PROFESSIONS
 
--- Telemetry event code for one observed node (docs/10 A4/D3). Kept as a constant so the hub and
+-- Telemetry event code for one observed node. Kept as a constant so the hub and
 -- the tests share one spelling even before ns.Telemetry lists it in CODES.
 local NODE_CODE = "NODE"
 M.NODE_CODE = NODE_CODE
@@ -174,7 +174,7 @@ local function globalStore()
 end
 
 ---------------------------------------------------------------------------
--- Skill (docs/10 D2)
+-- Skill
 ---------------------------------------------------------------------------
 
 -- GetProfessions() -> prof1, prof2, archaeology, fishing, cooking, firstAid: spell-book indices,
@@ -210,7 +210,7 @@ local function rankFromProfessionInfo(profession)
     return nil
 end
 
--- The fallback docs/10 D2 names. GetSkillLineInfo(index) -> name, isHeader, isExpanded, skillRank,
+-- The fallback. GetSkillLineInfo(index) -> name, isHeader, isExpanded, skillRank,
 -- numTempPoints, skillModifier, skillMaxRank, ... (Blizzard_UIPanels_Game/Classic/SkillFrame.lua:26
 -- names all seven). Header rows carry no rank and are skipped.
 local function rankFromSkillLines(profession)
@@ -301,7 +301,7 @@ function M.IsEnabled()
     return settingOn("enabled", true)
 end
 
---- Professions.KindEnabled(kind) -> bool. One toggle per kind (docs/10 D2).
+--- Professions.KindEnabled(kind) -> bool. One toggle per kind.
 function M.KindEnabled(kind)
     local key = KIND_SETTING[kind]
     if not key then return false end
@@ -393,7 +393,7 @@ function M.ResetMapCache()
 end
 
 -- What play has taught us, kept in the saved variable so a node is on the map again the next time
--- the player opens it - hub or no hub (docs/10 A4). `PQ.db.global.nodes` is AceDB's global section
+-- the player opens it - hub or no hub. `PQ.db.global.nodes` is AceDB's global section
 -- of PandaQuestDB, which PandaQuest.toc declares under `## SavedVariables`, so it outlives /reload
 -- and logout.
 local function learnedStore()
@@ -547,7 +547,7 @@ local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings, gat
     if x < 0 or x > 100 or y < 0 or y > 100 then return true end
     -- Absent, not zero. pfQuest's meta stores "requires skill 1" as 0 and the seed copies that
     -- through (Silverleaf and nine other starter herbs); a `skill` of 0 on a node would put
-    -- "Skill: 0" one careless caller away from the tooltip docs/10 B3 forbids.
+    -- "Skill: 0" one careless caller away from the tooltip rule against a made-up value.
     local skill = def.skill
     if type(skill) ~= "number" or skill <= 0 then skill = nil end
     local node = {
@@ -568,7 +568,7 @@ local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings, gat
         node.entityType, node.entityID = "object", id
     end
     local gatherable, reason = M.IsGatherable(node)
-    -- docs/10 D2 and Const.lua's own words: `onlyMyProfessions` "draws nothing rather than a zone
+    -- Const.lua's own words: `onlyMyProfessions` "draws nothing rather than a zone
     -- full of veins nobody here can touch". That has to be decided here, before the node takes a
     -- place in the map's budget and before `showUngatherable` gets a say - the two settings are
     -- about different things. "Show nodes above my skill" is for planning where to level a skill
@@ -614,7 +614,7 @@ local function appendLearned(buckets, uiMapID)
 end
 
 -- The second source, after this character's own gathers: everybody else's, aggregated by the hub
--- (docs/10 D3; platform/server/pandaquest_hub/nodes.py builds it). Shape:
+-- Shape:
 --
 --   ns.Overrides.community.nodes[objectId] = { k = kind, n = sightings,
 --                                              p = { { m = uiMapID, x = 0..1, y = 0..1, n = 4 } } }
@@ -851,11 +851,11 @@ function M.GetLearned()
 end
 
 ---------------------------------------------------------------------------
--- The pin layer (docs/10 D1)
+-- The pin layer
 ---------------------------------------------------------------------------
 
 -- Faded, and why. A node out of reach is dim because the player cannot take it; a node this
--- session already emptied is dim because it is not there. Both are docs/10: "the node is drawn
+-- session already emptied is dim because it is not there. Both follow one rule: "the node is drawn
 -- faint until it comes back". A place several ores were gathered at is emptied when any of them
 -- was: the spawn point is one, whichever ore the server put in it.
 local function alphaFor(node, spawnKey)
@@ -888,7 +888,7 @@ local function addSpecsForMap(specs, byKey, maxPins, uiMapID, showUngatherable)
                     key = key, uiMapID = uiMapID, x = node.x, y = node.y,
                     layer = LAYER, rank = 5, count = 1,
                     targets = { node }, keys = { [key] = true },
-                    -- What ns.NodeTooltip.Fill reads straight off the spec (docs/10 B3).
+                    -- What ns.NodeTooltip.Fill reads straight off the spec.
                     kind = node.kind, skill = node.skill, name = node.name,
                     gatherable = node.gatherable, spawnKey = spawnKey,
                     source = node.source, sightings = node.sightings,
@@ -975,7 +975,7 @@ function M.OnPinClick(spec, button)
 end
 
 ---------------------------------------------------------------------------
--- Collection (docs/10 D3)
+-- Collection
 ---------------------------------------------------------------------------
 
 local function now()
@@ -1054,7 +1054,7 @@ end
 --- Professions.ClassifyLoot(objectId) -> kind|nil, skill|nil, name|nil
 -- The dictionary first (it knows the skill and the name), then an earlier record of the same
 -- object, then the gathering cast, then the fishing flag. Nothing else: an unclassifiable game
--- object is a quest crate as often as it is a treasure, and docs/10's rule is that a value we do
+-- object is a quest crate as often as it is a treasure, and the rule is that a value we do
 -- not have is absent rather than guessed. Every lookup asks for a game object, never a creature:
 -- that is the Giant Clam that was saved as a rare (dictionaryFor).
 function M.ClassifyLoot(objectId)
@@ -1145,7 +1145,7 @@ end
 --
 -- One gather: one local record, one respawn measurement, one telemetry event. The respawn
 -- bookkeeping is deliberately not repeated here - ns.Respawn.NoteDeath is the single place a
--- "this is gone, start the clock" fact lives (docs/10 C2/D3), and this calls it.
+-- "this is gone, start the clock" fact lives, and this calls it.
 --
 -- x and y are percentages (0-100), the same scale ns.Pins and ns.Util.SpawnKey use.
 function M.RecordGather(id, kind, uiMapID, x, y, unit, skill, name)
@@ -1170,7 +1170,7 @@ function M.RecordGather(id, kind, uiMapID, x, y, unit, skill, name)
         observation.forwarded = true
     end
 
-    -- The consent gate. Telemetry.Record is itself a no-op while telemetry is off (docs/07 B1),
+    -- The consent gate. Telemetry.Record is itself a no-op while telemetry is off,
     -- but asking first keeps the event table from being built at all for a player who said no.
     local Telemetry = ns.Telemetry
     if Telemetry and Telemetry.IsEnabled and Telemetry.IsEnabled() and Telemetry.Record then
@@ -1291,7 +1291,7 @@ end
 function M.Enable()
     local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
     if not AceEvent then return end
-    -- One AceEvent object per module (docs/06): ns.PQ holds a single callback per message, so a
+    -- One AceEvent object per module: ns.PQ holds a single callback per message, so a
     -- module that shares it silently overwrites another module's handler.
     AceEvent:Embed(M)
     M:RegisterEvent("LOOT_OPENED", function()
@@ -1314,7 +1314,7 @@ function M.Enable()
     -- The nodes are built for the map the player is on and the map that is open, so both of those
     -- moving is a redraw. ZONE_CHANGED_NEW_AREA covers walking; the two hooks below cover opening
     -- the map and paging to another zone in it. Neither replaces a Blizzard script (HookScript and
-    -- hooksecurefunc both run *after* the original), which is docs/10 E4's rule: we do not compete
+    -- hooksecurefunc both run *after* the original), which is the rule: we do not compete
     -- with a map addon for the same hook.
     M:RegisterEvent("ZONE_CHANGED_NEW_AREA", mapMoved)
     local frame = _G and _G.WorldMapFrame

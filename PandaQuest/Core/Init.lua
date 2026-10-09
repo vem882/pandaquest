@@ -1,4 +1,4 @@
--- Core/Init.lua: AceAddon object, AceDB, module lifecycle and slash commands (docs/06 section 5).
+-- Core/Init.lua: AceAddon object, AceDB, module lifecycle and slash commands.
 -- Loaded last: every module table already exists on ns when this file runs.
 local ADDON_NAME, ns = ...
 local L = ns.L
@@ -12,7 +12,7 @@ local PQ = AceAddon:NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBuc
 ns.PQ = PQ
 _G.PandaQuest = PQ
 
--- Module lifecycle order = TOC order (docs/06 section 2). Core files have no lifecycle.
+-- Module lifecycle order = TOC order. Core files have no lifecycle.
 ns.MODULE_ORDER = {
     "Schema", "Zones", "DB",
     "Player", "QuestLog", "Objectives", "Availability",
@@ -23,8 +23,8 @@ ns.MODULE_ORDER = {
     "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
-    -- and hands the rest back (docs/11 B4). Archaeology does the same to RecipeScanner's wrapper,
-    -- so it comes after that one for the same reason (docs/11 B5).
+    -- and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,
+    -- so it comes after that one for the same reason.
     "RecipeStore", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
@@ -75,12 +75,12 @@ function PQ:OnInitialize()
     _G.PandaQuestSync = _G.PandaQuestSync or {}
     ns.Sync = _G.PandaQuestSync
 
-    -- docs/08 B2: auction house scans and sales are their own SavedVariable, so a scan an order
+    -- Auction house scans and sales are their own SavedVariable, so a scan an order
     -- of magnitude bigger than the quest log can be lost or reset without taking telemetry with
     -- it. Auction/Store.lua gives the table its shape.
     _G.PandaQuestAH = _G.PandaQuestAH or {}
 
-    -- docs/11 B2: the same argument for profession recipes. A book read off one window is larger
+    -- The same argument for profession recipes. A book read off one window is larger
     -- than a questing session, and it must be droppable without the quest log going with it.
     -- Recipes/Store.lua gives the table its shape.
     _G.PandaQuestProf = _G.PandaQuestProf or {}
@@ -354,7 +354,7 @@ commands.status = function()
 end
 
 commands.sync = function()
-    -- Telemetry owns the wording (docs/06 section 13); the fallback keeps /pq sync useful if the
+    -- Telemetry owns the wording; the fallback keeps /pq sync useful if the
     -- module failed to load.
     if ns.Telemetry and ns.Telemetry.GetStatusLines then
         -- The last line of GetStatusLines() is already the community data freshness.
@@ -367,7 +367,7 @@ commands.sync = function()
     Log.Print(L["Community data: %s"], text or L["none"])
 end
 
--- docs/07 B1: the first-run telemetry question, on demand.  Somebody who clicked past it, or who
+-- The first-run telemetry question, on demand.  Somebody who clicked past it, or who
 -- wants to change their mind and would rather be asked than hunt through the options panel, gets
 -- the same dialog with the same wording.
 commands.consent = function()

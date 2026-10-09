@@ -1,4 +1,4 @@
--- UI/DigSiteBar.lua: the dig-site progress bar Mists never shipped (docs/11 B6).
+-- UI/DigSiteBar.lua: the dig-site progress bar Mists never shipped.
 --
 -- While a player surveys a dig site the server tells the client how many finds of that site are
 -- done and how many there are, on every survey and on every find. Cataclysm's UI drew that as a
@@ -356,7 +356,7 @@ end
 -- answers to one question.
 --
 -- The switch wins over an explicit request here, which is the opposite of the rule `/pq scan
--- archaeology` follows (docs/11 B5: a player's own request is not the addon's decision). The two
+-- archaeology` follows. The two
 -- settings are different shapes. `snapshotOnOpen` is an automation switch -- "read it when I open
 -- the window" -- and a typed command is not that automation, so obeying the command contradicts
 -- nothing. `digSiteBar` says "Show the dig site progress bar", and a bar drawn after the player

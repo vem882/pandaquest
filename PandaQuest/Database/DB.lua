@@ -1,4 +1,4 @@
--- Database/DB.lua: loader and query API for the generated Questie-derived database (docs/06 section 7).
+-- Database/DB.lua: loader and query API for the generated Questie-derived database.
 --
 -- Loading (DB.Load) runs as an ns.Thread coroutine job so the client keeps rendering:
 --   1. loadstring() each ns.Data.* long string into a positional table, then drop the string (~27 MB saved)
@@ -503,7 +503,7 @@ function DB.IsItemHidden(itemID)
 end
 
 ---------------------------------------------------------------------------
--- Decoding: positional row -> named struct (docs/06 section 7)
+-- Decoding: positional row -> named struct
 ---------------------------------------------------------------------------
 
 -- {{id, text, icon}, ...} -> { {id=, text=, icon=}, ... }

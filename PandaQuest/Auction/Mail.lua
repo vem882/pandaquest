@@ -1,5 +1,4 @@
 -- Auction/Mail.lua: what this character sold and bought, read from auction invoices in the mailbox
--- (docs/08 B4, added 2026-09-14).
 --
 -- The API is the one Blizzard's own mail frame reads (Blizzard_UIPanels_Game/Classic/MailFrame.lua):
 --   GetInboxInvoiceInfo(i) -> invoiceType, itemName, playerName, bid, buyout, deposit, consignment,
@@ -9,7 +8,7 @@
 -- call is guarded and a missing function simply records nothing.
 --
 -- playerName is the other side of the trade -- another player's character -- and is discarded at
--- the call (docs/08 E). The sender of the mail is discarded the same way. GetInboxText is never
+-- the call. The sender of the mail is discarded the same way. GetInboxText is never
 -- called: reading a letter's text is what opening it does, and it would mark every invoice read
 -- behind the player's back.
 local _, ns = ...

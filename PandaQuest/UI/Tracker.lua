@@ -1,4 +1,4 @@
--- UI/Tracker.lua: enhances the Blizzard WatchFrame (docs/06 section 11).
+-- UI/Tracker.lua: enhances the Blizzard WatchFrame.
 --
 -- v0.1 has no tracker of its own. Under each tracked quest title that has a distance we open one row
 -- inside Blizzard's own layout and write the distance into it; beside the title sits a "set as

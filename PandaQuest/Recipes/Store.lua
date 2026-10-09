@@ -1,4 +1,4 @@
--- Recipes/Store.lua: the account-wide SavedVariable PandaQuestProf (docs/11 B2).
+-- Recipes/Store.lua: the account-wide SavedVariable PandaQuestProf.
 --
 -- A recipe book is kept apart from PandaQuestSync for the reason the auction data is
 -- (Auction/Store.lua): a scan is an order of magnitude bigger than a questing session, and losing
@@ -16,9 +16,9 @@
 -- One entry per profession per character, replaced rather than appended: a rescan of the same
 -- book is the same book. What the hub wants from a second scan is not a second copy but a second
 -- (rank, difficulty) sample, and that is carried by the entry's own rank -- so the newest scan
--- wins locally and the hub keeps the history (docs/11 C1.6).
+-- wins locally and the hub keeps the history.
 --
--- Archaeology (docs/11 B5) lives in the same file under its own `archaeology` table, and not in
+-- Archaeology lives in the same file under its own `archaeology` table, and not in
 -- `professions`, because it is not a recipe book: it has no recipe list, no reagents and no
 -- difficulty, and forcing it into the recipe shape would mean writing empty fields that a reader
 -- would take for measurements. One entry per character, replaced the same way and for the same
@@ -37,7 +37,7 @@ local floor, gmatch, concat = math.floor, string.gmatch, table.concat
 -- same books it always did and ignores a table it never asked for.
 M.VERSION = 1
 
--- docs/11 B2.
+-- Limits.
 --   maxProfessions  how many (character, profession) entries the file keeps at all. Six professions
 --                   per character (two primaries and four secondaries) times four characters is
 --                   the shape of an account that plays; past that the oldest scan goes.
@@ -65,7 +65,7 @@ M.LIMITS = {
     maxArtifacts = 60,
 }
 
---- The largest quantity docs/11 C1.1's grammar carries: minMade, maxMade and a reagent's count are
+--- The largest quantity the recipe grammar carries: minMade, maxMade and a reagent's count are
 -- all 1...1000. Nothing craftable in the game comes near it, so this is not a cap anything real
 -- meets -- it is the line past which the client is answering something the contract cannot hold,
 -- and Recipes/Scanner.lua drops such a row rather than trimming it, because one row that breaks
@@ -76,14 +76,14 @@ M.MAX_AMOUNT = 1000
 -- .lua:19-25) -> the letter the encoding uses. This is the difficulty THIS character sees at THIS
 -- rank, never the breakpoint: the orange/yellow/green/grey thresholds are the hub's to bracket
 -- across ranks and players, the same way it takes a respawn median over raw samples rather than
--- over other people's medians (docs/10 C3, docs/11 A2).
+-- over other people's medians.
 M.DIFFICULTY = { optimal = "o", medium = "m", easy = "e", trivial = "t" }
 M.DIFFICULTY_NAME = { o = "optimal", m = "medium", e = "easy", t = "trivial" }
 
 -- The two row types that are categories rather than recipes.
 M.HEADER_TYPE = { header = true, subheader = true }
 
--- docs/11 B3. The default lives with the module that owns it because Core/Const.lua is the core's
+-- The default lives with the module that owns it because Core/Const.lua is the core's
 -- contract, and this file loads before Core/Init.lua builds AceDB, so the key is in place when the
 -- profile is created.
 ns.DEFAULTS.profile.recipes = {
@@ -123,13 +123,13 @@ end
 --- EntryKey(name, realm, skillLine, profession) -> the key one book is stored under.
 -- The character is part of the key because two characters of one account have two different books
 -- of the same profession at two different ranks -- which is exactly the pair of samples the hub
--- needs. It is a local key only: the character never leaves this file (docs/11 C1.2).
+-- needs. It is a local key only: the character never leaves this file.
 function M.EntryKey(name, realm, skillLine, profession)
     return format("%s-%s-%s", tostring(name), tostring(realm), tostring(skillLine or profession))
 end
 
 --- ScanId(realm, skillLine, profession, scannedAt) -> the id the hub checks against the fields it
--- was derived from (docs/11 C1.4), and which carries no character name.
+-- was derived from, and which carries no character name.
 function M.ScanId(realm, skillLine, profession, scannedAt)
     return format("%s-%s-%d", tostring(realm), tostring(skillLine or profession), scannedAt or 0)
 end
@@ -245,7 +245,7 @@ function M.NewestFor(name, realm)
 end
 
 ---------------------------------------------------------------------------
--- Archaeology (docs/11 B5)
+-- Archaeology
 ---------------------------------------------------------------------------
 
 --- The SkillLineID archaeology is, from Blizzard's own constants
@@ -256,7 +256,7 @@ M.ARCHAEOLOGY_SKILL_LINE = 794
 
 --- ArchaeologyKey(name, realm) -> the key one character's snapshot is stored under.
 -- The character is in the key for the recipe book's reason: two characters of one account dig
--- separately and neither one's fragments are the other's. It is local only (docs/11 C1.2).
+-- separately and neither one's fragments are the other's. It is local only.
 function M.ArchaeologyKey(name, realm)
     return format("%s-%s", tostring(name), tostring(realm))
 end

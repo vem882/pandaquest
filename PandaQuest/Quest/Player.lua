@@ -1,4 +1,4 @@
--- Quest/Player.lua: everything the navigator needs to know about the player (docs/06 section 8).
+-- Quest/Player.lua: everything the navigator needs to know about the player.
 -- Position, movement speed, level, race/class bitmasks, completed quests, skills, spells and reputation.
 --
 -- Two things matter for the rest of the addon:
@@ -16,7 +16,7 @@ local type, pcall = type, pcall
 local wipe = wipe or table.wipe
 
 local RUN_SPEED = Const.RUN_SPEED or 7
-local POS_CACHE_SECONDS = 0.05          -- docs/06 section 8: the position is cached for at most 0.05 s
+local POS_CACHE_SECONDS = 0.05          -- The position is cached for at most 0.05 s
 local SPEED_TAU = 0.5                   -- EMA time constant for GetSpeed
 local COMPLETED_REFRESH_DELAY = 2       -- QUEST_TURNED_IN + 2 s (the server updates the flag late)
 
@@ -304,7 +304,7 @@ end
 --- GetReputation(factionID) -> value, standingID
 -- `value` is the raw reputation total the quest database compares against.
 -- nil means "faction not discovered"; callers treat that as 0.
--- 5.5.4 has no C_Reputation, so GetFactionInfoByID is the only source (docs/02).
+-- 5.5.4 has no C_Reputation, so GetFactionInfoByID is the only source.
 function M.GetReputation(factionID)
     if type(factionID) ~= "number" then return nil end
     if GetFactionInfoByID then
@@ -365,7 +365,7 @@ function M.Enable()
     end)
 
     -- The completed-quest flags are set server side a moment after the turn-in, so the immediate
-    -- optimistic mark is followed by a real refresh two seconds later (docs/06 section 8).
+    -- optimistic mark is followed by a real refresh two seconds later.
     safeRegister("QUEST_TURNED_IN", function(_, questID)
         if type(questID) == "number" then
             M.GetCompleted()[questID] = true
@@ -379,7 +379,7 @@ function M.Enable()
 
     safeRegister("PLAYER_LEVEL_UP", function() M.InvalidateSkills() end)
     safeRegister("SKILL_LINES_CHANGED", function() M.InvalidateSkills() end)
-    -- 5.5.4 spelling (docs/02 A5): LEARNED_SPELL_IN_TAB is a Retail-only event and errors here.
+    -- 5.5.4 spelling: LEARNED_SPELL_IN_TAB is a Retail-only event and errors here.
     safeRegister("LEARNED_SPELL_IN_SKILL_LINE", function() M.InvalidateSkills() end)
 end
 

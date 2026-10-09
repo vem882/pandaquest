@@ -1,4 +1,4 @@
--- Nav/TomTom.lua: optional TomTom integration (docs/06 section 9.6).
+-- Nav/TomTom.lua: optional TomTom integration.
 --
 -- TomTom's modern API is `TomTom:AddWaypoint(uiMapID, x, y, opts)` with x/y in 0..1, so a Target
 -- (0..100) is divided by 100. `crazy = true` asks TomTom for its own crazy-taxi arrow, which is
@@ -19,7 +19,7 @@ local Log, Compat = ns.Log, ns.Compat
 -- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
 -- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
 -- handler another module installed for the same message, so every module listens through its own
--- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+-- embedded object instead.
 local listener = {}
 M.listener = listener
 do

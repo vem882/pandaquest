@@ -1,5 +1,4 @@
--- Auction/Tooltip.lua: this realm's last known auction price on item tooltips (docs/08 B5, added
--- 2026-09-14).
+-- Auction/Tooltip.lua: this realm's last known auction price on item tooltips.
 --
 -- Same way in as Map/Tooltips.lua: C_TooltipInfo does not exist on 5.5.4, so the price is added
 -- from an OnTooltipSetItem hook. The figures come only from scans of the auction house this

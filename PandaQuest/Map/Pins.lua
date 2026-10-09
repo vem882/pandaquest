@@ -1,6 +1,6 @@
--- Map/Pins.lua: world-map and minimap pins through HereBeDragons-Pins-2.0 (docs/06 section 10).
+-- Map/Pins.lua: world-map and minimap pins through HereBeDragons-Pins-2.0.
 --
--- Model (Questie's QuestieMap, see docs/liitteet/A section 5): targets are folded into "specs",
+-- Model (inspired by Questie's QuestieMap): targets are folded into "specs",
 -- one per coordinate, so several quests that share a spawn become a single pin with one tooltip.
 -- The specs are then drained by a draw queue that creates at most PINS_PER_FRAME frames per
 -- OnUpdate, which keeps a 300-pin zone from freezing the client for a second.
@@ -16,12 +16,12 @@ local type, pairs, tostring, format = type, pairs, tostring, string.format
 local tremove, tsort, floor, sqrt, huge = table.remove, table.sort, math.floor, math.sqrt, math.huge
 local wipe = wipe or function(t) for k in pairs(t) do t[k] = nil end return t end
 
-local PINS_PER_FRAME = 24           -- docs/06 section 10: max 24 pins drawn per frame
+local PINS_PER_FRAME = 24           -- Max 24 pins drawn per frame
 local MAX_PINS = 300                -- hard cap; a zone with more spawns than this is unreadable anyway
 local REDRAW_DELAY = 0.2            -- coalesce redraw bursts (three messages can arrive in one frame)
 local HBD_REF = "PandaQuest"
 
--- docs/10 B2: the minimap. The pins are re-ranked and re-faded four times a second rather than
+-- The minimap. The pins are re-ranked and re-faded four times a second rather than
 -- every frame -- the player cannot move far enough in 250 ms for it to show, and the work is
 -- proportional to the number of pins.
 local MINIMAP_TICK = 0.25
@@ -30,11 +30,11 @@ local DEFAULT_MINIMAP_FADE = 0.6    -- pins inside this fraction of the minimap 
 local EDGE_MIN_ALPHA = 0.30         -- how faint a pin gets right on the edge
 local EDGE_MIN_SCALE = 0.65         -- and how much it shrinks (pfQuest's fade_range does both)
 
--- docs/10 C2: a spawn this session watched die is drawn faint until it is back. The same value
+-- A spawn this session watched die is drawn faint until it is back. The same value
 -- Nodes/Professions.lua uses for an emptied vein, so the two layers fade alike.
 local RESPAWN_PENDING_ALPHA = 0.35
 
--- Layer per Target.kind (docs/06 section 10).
+-- Layer per Target.kind.
 local KIND_LAYER = {
     OBJECTIVE = "objective", ITEMUSE = "objective", EXPLORE = "objective",
     TURNIN = "turnin", PICKUP = "available", CUSTOM = "custom",
@@ -44,7 +44,7 @@ local LAYERS = { "available", "objective", "turnin", "custom", "profession" }
 local LAYER_PROFILE_KEY = { available = "showAvailable", objective = "showObjectives", turnin = "showTurnIn" }
 -- Which icon wins when two targets share a coordinate: turn-ins first, then objectives.
 -- "profession" sorts last: an ore vein must never take a pin slot from a quest objective when the
--- MAX_PINS cap bites (docs/10 D1). Nodes/Professions.lua owns its own visibility (the whole
+-- MAX_PINS cap bites. Nodes/Professions.lua owns its own visibility (the whole
 -- profile.professions block), so it has no LAYER_PROFILE_KEY entry - only a runtime override.
 local LAYER_RANK = { turnin = 1, objective = 2, custom = 3, available = 4, profession = 5 }
 
@@ -145,7 +145,7 @@ local function acquirePin()
     pinCount = pinCount + 1
     pin = CreateFrame("Button", "PandaQuestPin" .. pinCount, UIParent)
     pin:SetSize(16, 16)
-    -- The three layers of a dot (docs/10 B1), back to front: the highlight glow, the dark ring
+    -- The three layers of a dot, back to front: the highlight glow, the dark ring
     -- that makes the dot readable on snow, sand and grass alike, and the dot (or glyph) itself.
     -- The ring is a texture of its own rather than part of node.tga because the dot is tinted per
     -- quest (or per gathering kind, Icons.KIND_COLORS) and a baked-in rim would be tinted with it.
@@ -195,7 +195,7 @@ local function applyLook(pin, spec, minimap)
     elseif Icons.Apply then
         Icons.Apply(pin.texture, spec and spec.targets and spec.targets[1], minimap, pin)
     end
-    -- A spec may ask to be drawn faint: docs/10 D2's ungatherable node, and a profession node this
+    -- A spec may ask to be drawn faint: an ungatherable node, and a profession node this
     -- session already emptied. Written on every apply, not only when it is below 1, so a node that
     -- has come back stops being faint without waiting for a fresh frame out of the pool.
     if pin.SetAlpha then pin:SetAlpha((spec and spec.alpha) or 1) end
@@ -294,7 +294,7 @@ local function buildSpecs()
             end
         end
     end
-    -- docs/10 D1: the profession layer contributes specs of its own (mines, herbs, fishing pools,
+    -- The profession layer contributes specs of its own (mines, herbs, fishing pools,
     -- chests, rares). It is added last so the quest pins have already claimed their slots, and it
     -- does its own filtering - Pins only places what it is handed.
     local Professions = ns.Professions
@@ -302,7 +302,7 @@ local function buildSpecs()
         local ok, err = pcall(Professions.BuildSpecs, specs, byKey, MAX_PINS)
         if not ok then Log.Debug("Pins", "profession specs failed: %s", tostring(err)) end
     end
-    -- docs/10 C2 and acceptance criterion 3: a spawn this session watched die is drawn faint until
+    -- A spawn this session watched die is drawn faint until
     -- ns.Respawn says it is back. The profession layer has already stamped its own alpha (it also
     -- fades a node the character cannot gather), so this only fills in the quest layers.
     M.ApplyRespawnFade(specs)
@@ -310,7 +310,7 @@ local function buildSpecs()
 end
 
 ---------------------------------------------------------------------------
--- The respawn fade (docs/10 C2)
+-- The respawn fade
 ---------------------------------------------------------------------------
 
 --- Pins.RespawnFadeEnabled() -> bool. The same switch that dims an emptied ore vein
@@ -385,7 +385,7 @@ function M.CheckRespawnExpiry()
 end
 
 ---------------------------------------------------------------------------
--- Minimap: nearest-first cap and edge fade (docs/10 B2)
+-- Minimap: nearest-first cap and edge fade
 ---------------------------------------------------------------------------
 
 --- Pins.GetMinimapMaxNodes() -> how many pins the minimap may carry at once.
@@ -471,7 +471,7 @@ local function rankMinimapSpecs()
 end
 M.RankMinimapSpecs = rankMinimapSpecs
 
---- Pins.WantsMinimapPin(spec) -> bool. The cap of docs/10 B2, applied nearest first: a spec with
+--- Pins.WantsMinimapPin(spec) -> bool. The minimap cap, applied nearest first: a spec with
 -- no rank yet (a fresh redraw before the first tick) is allowed, or nothing would ever be drawn.
 function M.WantsMinimapPin(spec)
     if not spec then return false end
@@ -724,7 +724,7 @@ function M.Redraw(immediate)
     local count = buildSpecs()
     local map = mapProfile()
     local wantMinimap = not map or map.showOnMinimap ~= false
-    -- docs/10 B2: which minimap pins survive the cap is decided here, nearest first, before a
+    -- Which minimap pins survive the cap is decided here, nearest first, before a
     -- single frame is taken out of the pool -- an arbitrary slice of the spec list would drop the
     -- spawn the player is standing next to as readily as the one across the zone.
     if wantMinimap then rankMinimapSpecs() end
@@ -784,7 +784,7 @@ function M.Redraw(immediate)
     local mini = select(2, M.GetPinCount())
     local ticker = ensureMinimapDriver()
     if ticker then
-        -- The tick also polls the respawn countdown (docs/10 C2), so it has to run while one is
+        -- The tick also polls the respawn countdown, so it has to run while one is
         -- outstanding even when the minimap layer itself is off.
         if (wantMinimap and (mini > 0 or pending > 0)) or nextRespawnAt then
             ticker:Show()
@@ -831,7 +831,7 @@ function M.ShowTarget(target)
 end
 
 ---------------------------------------------------------------------------
--- Map geometry (docs/10 section E)
+-- Map geometry
 ---------------------------------------------------------------------------
 
 --- Pins.RefreshSizes() -> how many pins were resized. Re-applies every pin's look at the map's
@@ -860,7 +860,7 @@ end
 -- through Blizzard -- which is exactly what a `WorldMapFrame:SetSize` from another addon does,
 -- since WorldMapFrame has no OnSizeChanged script in 5.5.4 -- those positions are left behind.
 -- Handing the same frame back to HereBeDragons makes the provider acquire it again against the
--- canvas as it is now. Nothing here touches a Blizzard frame (docs/10 E4).
+-- canvas as it is now. Nothing here touches a Blizzard frame.
 function M.ReanchorWorld()
     local lib = hbdPins()
     if not lib then return 0 end
@@ -900,9 +900,9 @@ function M.GetQueueLength() return #queue - (queueIndex - 1) end
 function M.GetCurrentKey() return currentKey end
 function M.GetPoolSize() return #pool end
 --- Pins.GetCreatedCount() -> how many pin frames have ever been created. Constant across a
--- rescale/redraw cycle is what "does not leak frames" means (docs/10 E6).
+-- rescale/redraw cycle is what "does not leak frames" means.
 function M.GetCreatedCount() return pinCount end
---- Pins.GetDetachedCount() -> how many pins ON a map still hang off UIParent (docs/10 E5). Zero.
+--- Pins.GetDetachedCount() -> how many pins ON a map still hang off UIParent. Zero.
 function M.GetDetachedCount()
     local Compat = ns.MapCompat
     if not Compat or not Compat.IsDetached then return 0 end
@@ -976,7 +976,7 @@ function onEnter(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
     GameTooltip:ClearLines()
     GameTooltip:AddLine(Const.CHAT_PREFIX)
-    -- docs/10 B3: the pfQuest-style block (name, level, type, respawn, quests with their drop
+    -- The pfQuest-style block (name, level, type, respawn, quests with their drop
     -- rates) is Map/NodeTooltip's job. It takes a spec directly. When it has nothing to say --
     -- a custom waypoint, say -- the plain line list below is still the right answer.
     local NodeTooltip = ns.NodeTooltip
@@ -1002,7 +1002,7 @@ end
 -- Clicks
 ---------------------------------------------------------------------------
 
---- Builds the right-click menu for a spec (docs/06 section 10: hide quest, Wowhead).
+--- Builds the right-click menu for a spec.
 function M.BuildMenu(spec)
     local target = spec and spec.targets[1]
     local menu = {
@@ -1051,7 +1051,7 @@ end
 function onClick(self, button)
     local spec = self.spec
     -- A profession node is not a quest target, so there is nothing for the router to route to and
-    -- Nodes/Professions.lua decides what a click means (docs/10 D1).
+    -- Nodes/Professions.lua decides what a click means.
     if spec and spec.layer == "profession" then
         local Professions = ns.Professions
         if Professions and Professions.OnPinClick then pcall(Professions.OnPinClick, spec, button) end
@@ -1090,7 +1090,7 @@ function M.Init()
 end
 
 function M.Enable()
-    -- docs/10 E2: a scale or canvas-size change has to reach the pins that are already drawn.
+    -- A scale or canvas-size change has to reach the pins that are already drawn.
     -- ns.MapCompat owns the detection; Pins only says what to do about it.
     local Compat = ns.MapCompat
     if Compat and Compat.RegisterListener then Compat.RegisterListener(M.OnMapGeometryChanged) end
@@ -1103,7 +1103,7 @@ function M.Enable()
     M:RegisterMessage("PQ_TARGETS_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_AVAILABLE_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", function(_, target) M.SetCurrent(target) end)
-    -- docs/10 C2: ns.Respawn announces a death and a return once, from the event that noticed it,
+    -- Ns.Respawn announces a death and a return once, from the event that noticed it,
     -- and this is what turns that into a fade appearing and going away again. It goes through the
     -- same coalescing redraw as everything else, so a pull that kills six mobs is one rebuild.
     --

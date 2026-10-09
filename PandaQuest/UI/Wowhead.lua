@@ -1,4 +1,4 @@
--- UI/Wowhead.lua: Wowhead URL builders and the copy dialog (docs/06 section 11).
+-- UI/Wowhead.lua: Wowhead URL builders and the copy dialog.
 -- An in-game addon cannot open a browser, so the best we can do is hand the player a
 -- pre-selected edit box and tell them to press Ctrl+C.
 local _, ns = ...

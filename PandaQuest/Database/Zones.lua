@@ -1,4 +1,4 @@
--- Database/Zones.lua: areaID <-> uiMapID translation and dungeon entrances (docs/06 section 7).
+-- Database/Zones.lua: areaID <-> uiMapID translation and dungeon entrances.
 -- The database stores coordinates as areaID + x,y in 0..100; every map-facing module needs a uiMapID,
 -- so this is the single place that bridges the two id spaces.
 --

@@ -1,7 +1,7 @@
--- Nodes/Respawn.lua: how long a thing takes to come back (docs/10 section C).
+-- Nodes/Respawn.lua: how long a thing takes to come back.
 --
 -- Three sources answer that question and they are not equally good, so every answer says which
--- one it came from (docs/10 C1):
+-- one it came from:
 --
 --   "static"    the pfQuest seed in Database/Data/Seed.lua. Vanilla and TBC ids only -- of our
 --               37,875 MoP-era NPC ids it covers two -- so for Pandaria it answers almost nothing.
@@ -18,15 +18,15 @@
 --     is the highest frequency event in the game and one addon has no business asking the client
 --     to dispatch it to two frames. With telemetry off nobody registers it at all, and a kill is
 --     then noticed from UNIT_HEALTH on the unit the player is actually fighting -- less precise
---     attribution, no extra cost, and the measurement still happens locally (docs/10 C2).
+--     attribution, no extra cost, and the measurement still happens locally.
 --   * A gathering node has no death event and no nameplate. Looting it is both halves at once: the
---     loot closes the previous interval and opens the next one, which is why docs/10 D3 says one
+--     loot closes the previous interval and opens the next one, which is why one
 --     record serves both C and D.
 --
 -- Four rules shape the file:
 --
 -- **The median, never the mean.** One observation made while the player was away for ten minutes
--- must not stretch the estimate (docs/10 C2). Observations are kept per spawn point in a small
+-- must not stretch the estimate. Observations are kept per spawn point in a small
 -- ring and reduced with a median every time they are read.
 --
 -- **Two spawn points of one creature never contaminate each other.** An observation is keyed by
@@ -329,7 +329,7 @@ local function staticEstimate(kind, id)
 end
 
 --- Respawn.Get(kind, id) -> seconds|nil, source, sampleCount|nil
--- source is "static", "community" or "observed". nil means we do not know, and docs/10 B3 then
+-- source is "static", "community" or "observed". nil means we do not know, and the tooltip then
 -- leaves the tooltip line out entirely rather than printing a question mark or a zero.
 function M.Get(kind, id)
     if not (validKind(kind) and validId(id)) then return nil end
@@ -414,8 +414,7 @@ function M.GetRemaining(kind, id, spawnKey)
 end
 
 --- Respawn.IsPending(kind, id, spawnKey) -> true while GetRemaining would answer.
--- The pin drawing code wants a boolean and not a number (docs/10 C2: the node is drawn faded until
--- it is back), and asking for one should not make it do the arithmetic twice.
+-- The pin drawing code wants a boolean and not a number, and asking for one should not make it do the arithmetic twice.
 function M.IsPending(kind, id, spawnKey)
     return M.GetRemaining(kind, id, spawnKey) ~= nil
 end
@@ -482,7 +481,7 @@ function M.NoteSeen(kind, id, uiMapID, x, y)
     local Telemetry = ns.Telemetry
     if Telemetry and Telemetry.RecordRespawn then
         -- The consent gate lives in Telemetry.Record: with telemetry off this writes nothing and
-        -- the observation stays local (docs/10 C2).
+        -- the observation stays local.
         Telemetry.RecordRespawn(kind, id, spawn.map, spawn.x, spawn.y, seconds, samples)
     end
 
@@ -532,7 +531,7 @@ end
 --- Respawn.NoteKill(npcID) -> spawnKey|nil
 -- "The combat log says the player (or their pet) killed this." Called by Sync/Telemetry.lua's
 -- combat log handler after it has done the attribution -- PARTY_KILL by the player or the pet, or
--- UNIT_DIED for what the player had targeted (docs/10 C2's filter).
+-- UNIT_DIED for what the player had targeted.
 --
 -- Why this module does not read the combat log itself: COMBAT_LOG_EVENT_UNFILTERED is the highest
 -- frequency event in the game, and there is no reason for one addon to ask the client to dispatch
@@ -644,7 +643,7 @@ local function onUnitHealth(_, event, unit)
 end
 
 --- LOOT_OPENED over a game object: the one event that is both halves of a gathering interval
--- (docs/10 D3). GetLootSourceInfo gives the GUID of what is being looted, which is how the object
+-- GetLootSourceInfo gives the GUID of what is being looted, which is how the object
 -- id is recovered -- there is no "target" for a herb.
 --
 -- Every looted object opens an interval, not only the ones ns.Professions can classify as a

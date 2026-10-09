@@ -1,4 +1,4 @@
--- Nav/Router.lua: picks the target the arrow points at, and measures the way there (docs/06 9.4).
+-- Nav/Router.lua: picks the target the arrow points at, and measures the way there.
 --
 -- Everything is measured in real world yards through HereBeDragons. pfQuest compared zone map
 -- percentages with a hard coded 1.5 aspect fudge (route.lua:186) which is wrong by up to a factor
@@ -9,7 +9,7 @@
 -- same convention, the relative bearing is simply worldAngle - playerFacing; Arrow.lua feeds that
 -- straight into Texture:SetRotation.
 --
--- Update rate (docs/06 9.4): the ticker runs at 10 Hz, but the body throttles itself to 1 Hz while
+-- Update rate: the ticker runs at 10 Hz, but the body throttles itself to 1 Hz while
 -- the player stands still. The list is re-sorted at most once a second and the greedy route is
 -- re-planned only when the identity of the nearest target changes, exactly like pfQuest.
 local _, ns = ...
@@ -22,7 +22,7 @@ local Util, Log = ns.Util, ns.Log
 -- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
 -- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
 -- handler another module installed for the same message, so every module listens through its own
--- embedded object instead (docs/06 section 3 allows a module to use its own frame).
+-- embedded object instead.
 local listener = {}
 M.listener = listener
 do
@@ -231,7 +231,7 @@ end
 -- Weighting and sorting
 ---------------------------------------------------------------------------
 
--- docs/06 9.4: auto weight = priority * 100 + distance; a target on another continent is pushed
+-- Auto weight = priority * 100 + distance; a target on another continent is pushed
 -- past everything else. HBD cannot measure across continents, so the penalty replaces the distance
 -- term rather than scaling it (see the deviation note in the agent report).
 local function weightOf(target, mode)
@@ -368,7 +368,7 @@ local function pickCurrent()
     return nil
 end
 
---- Arrival radius in yards: docs/06 9.4 clamp(count,1,20)/10*10 + arriveRadius. A big spawn cluster
+--- Arrival radius in yards: clamp(count,1,20)/10*10 + arriveRadius. A big spawn cluster
 -- gets a bigger circle, because "you are in the right place" is a wider area there.
 function M.GetArriveRadius(target)
     local base = tonumber((profile().nav or {}).arriveRadius) or 15
@@ -401,7 +401,7 @@ function M.Update(force)
     local Player = ns.Player
     local pos = playerPosition()
     if not pos then
-        -- Inside an instance UnitPosition() and C_Map both go dark: stop navigating (docs/06 9.4).
+        -- Inside an instance UnitPosition() and C_Map both go dark: stop navigating.
         wipe(sorted)
         wipe(route)
         setCurrent(nil)
@@ -510,7 +510,7 @@ local function onTargetsUpdated()
     local getByKey = Targets and Targets.GetByKey or nil
     -- PQ_TARGETS_UPDATED arrives on every objective tick (a rebuild follows PQ_QUESTLOG_CHANGED),
     -- so wiping the state here would re-fire PQ_TARGET_REACHED for a target the player is still
-    -- standing on - docs/06 9.4 says once per target - and would undo an explicit Skip within a
+    -- standing on - once per target - and would undo an explicit Skip within a
     -- second. Both are instead reconciled against the new list: only keys that really disappeared
     -- are forgotten.
     if getByKey then

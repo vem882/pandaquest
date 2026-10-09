@@ -39,7 +39,7 @@
 -- already answered once.
 --
 -- Its four geometry numbers, though -- TICK aside -- are this file's own choice and are not
--- measured. They are named and argued for below, and every one of them is on docs/12's
+-- measured. They are named and argued for below, and every one of them is on the
 -- in-game-only list, because how wide 240 px is against the strings that go in it is a question
 -- only a client can answer. None of them decides a number the player reads: nothing this file
 -- prints changes if they change.
@@ -72,7 +72,7 @@ local TICK = 0.5
 -- flight` and the options button can both be pressed again and a bar that will not go away cannot.
 local PREVIEW_HOLD = 20
 
---- The bar at "Bar size" 1.0. This file's own choice, unmeasured on a screen and on docs/12's
+--- The bar at "Bar size" 1.0. This file's own choice, unmeasured on a screen and on the
 -- in-game-only list, with one thing that is checkable here: at the smallest scale the slider
 -- offers, 0.5, the frame is 17 px and has to hold a 7 px fill and one line of text, which
 -- GetLayout() shows it does. Everything drawn inside is a fraction of these and is recomputed in
@@ -84,7 +84,7 @@ local BASE_FILL_HEIGHT = 14
 --- The destination name is cut to this many characters so that a flight master with a long name
 -- does not run under the reading on the right. This is a provisional width, not a measurement:
 -- how many characters fit beside the right-hand string in BASE_WIDTH px is a pixel question only
--- a client can answer, and it is on docs/12's in-game-only list with the rest of the geometry.
+-- a client can answer, and it is on the in-game-only list with the rest of the geometry.
 -- What is known is the widest string that can stand beside it, because Util.FormatTime's own
 -- branches bound it: it drops the seconds part at 600 s and above (Core/Util.lua:101-109), and
 -- MAX_FLIGHT stops the store at two hours. Walked over those branches, the longest readings the
@@ -139,7 +139,7 @@ end
 -- whether it does: tools/wowstub/api/20_frames.lua's StartMoving and StopMovingOrSizing set a flag
 -- and never touch the anchor list, so the harness re-derives nothing and would agree with either
 -- answer. Rather than assume, the third return is stored and handed back verbatim. What is still
--- assumed, and is on docs/12's in-game-only list, is that relativeTo stays UIParent.
+-- assumed, and is on the in-game-only list, is that relativeTo stays UIParent.
 local function savePosition()
     if not frame then return end
     local point, _, relPoint, x, y = frame:GetPoint(1)
