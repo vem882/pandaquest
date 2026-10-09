@@ -1,23 +1,40 @@
 # PandaQuest
 
-The World of Warcraft addon: a quest helper and navigator for **Mists of Pandaria Classic
-(5.5.4, interface 50504)**. Quest objectives on the map and in a tracker, an arrow to the next
-one, flight-path routing, auction and recipe scanning, archaeology dig sites, English and
-Finnish.
+**Quest helper and navigator for Mists of Pandaria Classic (5.5.4, interface 50504).**
 
-This repository is the addon, and the release tooling under `.github/` that turns it into a zip. That is all it is.
+An arrow to your next quest objective, quest pins on the world map and minimap, gathering nodes
+with respawn timers, flight times, archaeology and profession tools, and Wowhead links — English
+and Finnish. It works fully on its own; synchronisation with the community portal is optional and
+off by default.
+
+The player-facing documentation — features, slash commands, settings, roadmap and credits — is
+[`PandaQuest/README.md`](PandaQuest/README.md). This file is about the repository.
+
+## Content and community
+
+Much of Mists of Pandaria's data exists in no downloadable source, so PandaQuest's content is
+completed from play and from contributors. The **PandaQuest portal, <https://pd.zroot.it>**, is
+where that content is filled in and corrected, and where you can join in and help complete the
+addon's data.
+
+## Inspiration
+
+PandaQuest is its own code, **inspired by** Questie, pfQuest, TomTom and the map addons it is built
+to coexist with — it does not copy their code. Data and assets taken from other projects keep their
+own terms; `PandaQuest/README.md`, "Credits and inspiration", lists exactly what.
 
 ## What is here
 
 | | |
 |---|---|
 | `PandaQuest/` | the addon. This directory *is* what WoW installs, under exactly this name. |
-| `.github/release/` | `.github/release/build.py` (version, build identity, deterministic zip) and `.github/release/check.py` (the checks). Release tooling; not part of the addon and not in the zip. |
-| `.github/workflows/release.yml` | builds the zip and publishes it as a release asset. |
+| `assets/logo/` | the logo as SVG and PNG at 16 to 1024 px. Not part of the addon. |
+| `curseforge/` | the CurseForge summary, project description and the publishing checklist. |
+| `.github/release/` | release tooling (`build.py`, `check.py`, `curseforge.py`). Not part of the addon and not in the zip. |
+| `.github/workflows/release.yml` | builds the zip, publishes it as a release asset and, once configured, uploads it to CurseForge. |
 
 `PandaQuest/README.md`, `PandaQuest/CHANGELOG.md` and `PandaQuest/Textures/README.md` ship inside
-the release zip — they are the addon's own documentation and they go where the addon goes. This
-file is about the repository; that one is about the addon.
+the release zip — they are the addon's own documentation and they go where the addon goes.
 
 ## What is not here, and where it is
 
@@ -196,7 +213,8 @@ platform repository. Until something here can run them, a Lua syntax error reach
 
 ## Licence and credit
 
-Author: vem882 (`## Author` in the TOC).
+Author: vem882 (`## Author` in the TOC). Inspiration and third-party data are listed in
+`PandaQuest/README.md`.
 
 The embedded libraries under `PandaQuest/Libs/` — Ace3, LibStub, CallbackHandler, LibDataBroker,
 LibDBIcon and HereBeDragons — are other people's work and keep their own terms. What is written
