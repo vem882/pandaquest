@@ -33,6 +33,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 TOC = REPO / "PandaQuest" / "PandaQuest.toc"
 CHANGELOG = REPO / "PandaQuest" / "CHANGELOG.md"
+CHANGELOG_TXT = REPO / "PandaQuest" / "changelog.txt"
 API = "https://wow.curseforge.com/api"
 RELEASE_TYPES = ("alpha", "beta", "release")
 
@@ -92,6 +93,21 @@ def commit_subjects(previous) -> list:
     return [line.strip() for line in out.splitlines() if line.strip()]
 
 
+def txt_section(text: str, version: str) -> str:
+    """The lines under ``version`` in changelog.txt, or "" when that version has no section."""
+    section = []
+    inside = False
+    for line in text.splitlines():
+        if re.fullmatch(r"\d+(?:\.\d+)+", line.strip()):
+            if inside:
+                break
+            inside = line.strip() == version
+            continue
+        if inside and line.strip():
+            section.append(line.strip())
+    return "\n".join(section)
+
+
 def metadata(version: str, changelog: str, game_version_ids: list, release_type: str) -> dict:
     if release_type not in RELEASE_TYPES:
         raise ValueError("release type must be one of %s" % (RELEASE_TYPES,))
@@ -147,7 +163,9 @@ def upload(zip_path: Path, project: str, release_type: str) -> int:
         return 2
     version = match.group(1)
     previous = previous_tag(release_tags(), version)
-    changelog = format_changelog(version, previous, commit_subjects(previous)) \
+    own = txt_section(CHANGELOG_TXT.read_text(encoding="utf-8"), version) if CHANGELOG_TXT.is_file() else ""
+    changelog = own \
+        or format_changelog(version, previous, commit_subjects(previous)) \
         or latest_changelog(CHANGELOG.read_text(encoding="utf-8"))
     meta = metadata(version, changelog, ids, release_type)
     content_type, body = multipart({"metadata": json.dumps(meta)}, zip_path.name, zip_path.read_bytes())
