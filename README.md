@@ -5,15 +5,14 @@ The World of Warcraft addon: a quest helper and navigator for **Mists of Pandari
 one, flight-path routing, auction and recipe scanning, archaeology dig sites, English and
 Finnish.
 
-This repository is the addon and the two scripts that turn it into a release. That is all it is.
+This repository is the addon, and the release tooling under `.github/` that turns it into a zip. That is all it is.
 
 ## What is here
 
 | | |
 |---|---|
 | `PandaQuest/` | the addon. This directory *is* what WoW installs, under exactly this name. |
-| `build.py` | packaging: the version, the build identity, the deterministic zip. |
-| `check.py` | the checks, stdlib `unittest` only. |
+| `.github/release/` | `.github/release/build.py` (version, build identity, deterministic zip) and `.github/release/check.py` (the checks). Release tooling; not part of the addon and not in the zip. |
 | `.github/workflows/release.yml` | builds the zip and publishes it as a release asset. |
 
 `PandaQuest/README.md`, `PandaQuest/CHANGELOG.md` and `PandaQuest/Textures/README.md` ship inside
@@ -49,7 +48,7 @@ whole of it:
 4. The zip is **deterministic**: entries sorted by name, every timestamp `1980-01-01 00:00:00`,
    every mode bit `0644`, no directory entries.
 
-`check.py` asserts all four against a zip it builds, and it carries the hub's regex verbatim so
+`.github/release/check.py` asserts all four against a zip it builds, and it carries the hub's regex verbatim so
 that the assertion is about the hub's rule and not about a paraphrase of it.
 
 The tag carries a `v` (`v0.2.84`) and the asset does not. Tags are read by humans; the file name
@@ -58,7 +57,7 @@ is read by the hub.
 ## The version
 
 **`0.2.<number of commits reachable from HEAD>`** — `0.2.84` at the split. The series comes from
-`## Version` in `PandaQuest/PandaQuest.toc`; `build.py` appends the commit count at packaging
+`## Version` in `PandaQuest/PandaQuest.toc`; `.github/release/build.py` appends the commit count at packaging
 time. Nothing writes the third component down, because writing it down would change it: the
 commit that recorded 84 would be commit 85.
 
@@ -84,7 +83,7 @@ honest — moving the addon into its own repository is a minor-version event if 
 The counter restarts at a small number because this repository's history was filtered to the
 commits that touched `PandaQuest/`. That is a fact about the past and not a promise about the
 future: every commit that lands here from now on bumps the version, whether or not it changes a
-file a player downloads — a change to `build.py`, to `check.py`, to the workflow or to this README
+file a player downloads — a change to `.github/release/build.py`, to `.github/release/check.py`, to the workflow or to this README
 counts exactly as much as a change to the addon.
 
 The number is only required to move and never to go backwards. It does not encode how much
@@ -95,7 +94,7 @@ a counter that nobody has to maintain.
 ## The build identity
 
 `0.2.84+<short sha>`, and `+dirty` when `PandaQuest/` differs from that commit — tracked changes
-*or* untracked files, because `build.py` packages the tree as it stands and a package claiming a
+*or* untracked files, because `.github/release/build.py` packages the tree as it stands and a package claiming a
 commit it does not contain is a lie a bug report cannot see through. Only `PandaQuest/` counts:
 editing this README does not change a byte a player downloads.
 
@@ -107,7 +106,7 @@ It reaches the package four ways, all of them derived from the commit and never 
   prints;
 * `PandaQuest/Core/Build.lua`, generated at packaging time and listed first in the packaged TOC.
   It sets `ns.Build` and carries the commit *date*, the one fact `## Version` cannot hold. It is
-  not in the repository, and `check.py` fails if anybody commits one;
+  not in the repository, and `.github/release/check.py` fails if anybody commits one;
 * the zip's archive comment, a JSON object with the commit subject and date, which is where the
   hub reads what /setup shows.
 
@@ -116,10 +115,10 @@ It reaches the package four ways, all of them derived from the commit and never 
 No toolchain, no install step. Python 3.9 or newer, and git for the version:
 
 ```sh
-python3 check.py                  # the checks; -v names each one
-python3 build.py version          # 0.2.<count>, whatever this checkout reaches
-python3 build.py identity         # the build identity as shell lines, or --json
-python3 build.py package --out "dist/PandaQuest-$(python3 build.py version).zip"
+python3 .github/release/check.py                  # the checks; -v names each one
+python3 .github/release/build.py version          # 0.2.<count>, whatever this checkout reaches
+python3 .github/release/build.py identity         # the build identity as shell lines, or --json
+python3 .github/release/build.py package --out "dist/PandaQuest-$(python3 .github/release/build.py version).zip"
 ```
 
 `build.py package` refuses an `--out` name the hub could not see, **and** one whose version is not
@@ -150,7 +149,7 @@ repository has one (`tools/install.py`), and it stayed there with the rest of th
 ## Releasing
 
 Merging into `main` runs `.github/workflows/release.yml` on a GitHub-hosted runner: it runs
-`check.py`, builds the zip twice and compares them, and publishes it as the asset of a release
+`.github/release/check.py`, builds the zip twice and compares them, and publishes it as the asset of a release
 tagged `v<version>`. A pull request runs everything except the publish, and attaches the zip it
 built as a run artifact, so a change can be installed and played before it is merged.
 
@@ -160,7 +159,7 @@ the hub's pattern matches happily and sorts below every package it holds. A chec
 all is quieter still: `release_version` then falls back to the TOC's declared series and builds
 `PandaQuest-0.2.0.zip`, a number that also matches the pattern and never moves again. So
 `build.py package` refuses both — `--allow-shallow` and `--allow-no-git` build anyway, for a local
-experiment whose file name is wrong on purpose — and `check.py` asserts both refusals and that the
+experiment whose file name is wrong on purpose — and `.github/release/check.py` asserts both refusals and that the
 `fetch-depth: 0` line is still in the workflow.
 
 The publish itself is checked rather than announced. Before uploading, the workflow lists the
@@ -173,7 +172,7 @@ it reads the release back and fails unless it is published (not a draft) and car
 ## Checks, and what they cannot tell you
 
 There is no Lua interpreter and no luacheck in this repository. The platform repository keeps
-those, and `check.py` deliberately does not try to reproduce them. So the checks cannot tell you
+those, and `.github/release/check.py` deliberately does not try to reproduce them. So the checks cannot tell you
 the addon *works*; they tell you the package is not obviously broken:
 
 * the TOC parses and declares `## Interface`, `## Title` and `## Version`, and `## Interface` is
