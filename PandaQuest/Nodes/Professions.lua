@@ -188,7 +188,8 @@ local function rankFromProfessionInfo(profession)
     -- Counted to six, never with the length operator. GetProfessions() hands back six slots and any
     -- of them may be nil, so `{ a, b, c, d, e, f }` is a table with holes, and `#` on such a table
     -- returns *a* border rather than the count -- which one is unspecified. Measured on this box's
-    -- Lua 5.1 over all 64 shapes the six slots can take (the profession tests name it): 24 (slot, shape) pairs come out past the length and would go unread, among them
+    -- Lua 5.1 over all 64 shapes the six slots can take (the profession tests name it): 24
+    -- (slot, shape) pairs come out past the length and would go unread, among them
     -- `{1, nil, nil, 4, nil, nil}` whose length is 1 -- a character with one primary profession and
     -- fishing, whose fishing is then invisible. Slot 3, archaeology
     -- (Blizzard_UIPanels_Game/Mists/SpellBookFrame.lua:700), is in none of the 24 on this build,
