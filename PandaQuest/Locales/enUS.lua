@@ -258,8 +258,8 @@ L["Next objective"] = true
 L["Play a sound"] = true
 L["Preview"] = true
 L["PandaQuest is ready."] = true
-L["Synchronisation"] = true
-L["Questing data is stored in your SavedVariables and never uploaded on its own."] = true
+L["Synchronisation (optional)"] = true
+L["Optional. PandaQuest works fully without it, and never uploads anything itself."] = true
 L["Record quest data"] = true
 L["Record movement breadcrumbs"] = true
 L["Occasional position samples that improve community routes."] = true
@@ -304,7 +304,7 @@ L["Community data from %s"] = true
 L["Last gear snapshot: %s"] = true
 L["Gear snapshots: off."] = true
 
--- Sync / Consent (docs/07 B1: telemetry is off until the player says otherwise)
+-- Sync / Consent (docs/07 B1: telemetry is off until the player turns it on; nothing is asked at login)
 L["/pq consent - ask the data sharing question again"] = true
 L["PandaQuest can send what you do while questing to the community hub."] = true
 L["That means the quests you accept and finish, what you kill and loot, where you die, and your map position with the time."] = true
