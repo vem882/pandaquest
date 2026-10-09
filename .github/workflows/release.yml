@@ -68,21 +68,21 @@ jobs:
           python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 9) else "python3 >= 3.9 required")'
 
       - name: Run the checks
-        run: python3 check.py -v
+        run: python3 .github/release/check.py -v
 
       - name: Build the package
         id: build
         run: |
           set -euo pipefail
-          version="$(python3 build.py version)"
+          version="$(python3 .github/release/build.py version)"
           package="PandaQuest-${version}.zip"
-          python3 build.py package --out "dist/${package}"
+          python3 .github/release/build.py package --out "dist/${package}"
 
           # Built a second time, into a different directory, and compared. Determinism is part of
           # the contract, and the cheapest honest test of it is to do it twice in one job: it
           # catches a clock, a umask or a directory order leaking into the archive. It does NOT
           # claim the same bytes on a different machine or a different zlib -- README.md says so.
-          python3 build.py package --out "second/${package}"
+          python3 .github/release/build.py package --out "second/${package}"
           first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
           again="$(sha256sum "second/${package}" | cut -d' ' -f1)"
           if [ "${first}" != "${again}" ]; then
@@ -109,7 +109,7 @@ jobs:
             echo "| sha256 | \`${{ steps.build.outputs.sha256 }}\` |"
             echo "| bytes | $(stat -c%s "dist/${{ steps.build.outputs.package }}") |"
             echo "| entries | $(python3 -c "import zipfile,sys;print(len(zipfile.ZipFile(sys.argv[1]).infolist()))" "dist/${{ steps.build.outputs.package }}") |"
-            echo "| build identity | \`$(python3 build.py identity --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["build"])')\` |"
+            echo "| build identity | \`$(python3 .github/release/build.py identity --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["build"])')\` |"
           } >> "$GITHUB_STEP_SUMMARY"
 
       # Uploaded from every run, pull requests included: a reviewer can download the zip a branch

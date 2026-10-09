@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Package PandaQuest as the release asset the hub downloads.
 
-    python3 build.py version                 # 0.2.84 -- the release number, alone
-    python3 build.py identity                # BUILD=0.2.84+082c57d ... as shell lines
-    python3 build.py identity --json         # the same facts as one JSON object
-    python3 build.py package --out dist/PandaQuest-0.2.84.zip
+    python3 .github/release/build.py version                 # 0.2.84 -- the release number, alone
+    python3 .github/release/build.py identity                # BUILD=0.2.84+082c57d ... as shell lines
+    python3 .github/release/build.py identity --json         # the same facts as one JSON object
+    python3 .github/release/build.py package --out dist/PandaQuest-0.2.84.zip
 
 Stdlib only, and no argument that points outside this repository: it has to run on a
 GitHub-hosted runner with nothing installed on it, because unlike the platform repository
@@ -91,7 +91,7 @@ import zipfile
 from collections.abc import Iterator, Sequence
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]
 ADDON = "PandaQuest"
 ADDON_DIR = REPO / ADDON
 TOC = ADDON_DIR / f"{ADDON}.toc"
@@ -505,7 +505,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     commands = parser.add_subparsers(dest="command", required=True)
     # Its own subcommand rather than a field of `identity`, because the workflow wants one word
-    # on stdout and nothing else: VERSION="$(python3 build.py version)" cannot go wrong the way
+    # on stdout and nothing else: VERSION="$(python3 .github/release/build.py version)" cannot go wrong the way
     # grepping a KEY=value block for the right line can, and the number goes into a file name
     # where a stray space is a zip the hub's pattern does not match.
     commands.add_parser("version", help="print the release version and nothing else")

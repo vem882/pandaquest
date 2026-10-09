@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """The checks worth having in a repository with no toolchain.
 
-    python3 check.py            # run them all
-    python3 check.py -v         # name each one
+    python3 .github/release/check.py            # run them all
+    python3 .github/release/check.py -v         # name each one
 
 Stdlib ``unittest`` and nothing else -- no pytest, no pip install, no Lua.  There is no Lua
 interpreter here and no luacheck: the platform repository (github.com/vem882/pandawow) keeps
@@ -41,7 +41,7 @@ from unittest import mock
 
 import build
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]
 ADDON_DIR = REPO / build.ADDON
 TOC = ADDON_DIR / f"{build.ADDON}.toc"
 
