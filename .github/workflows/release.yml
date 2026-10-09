@@ -313,16 +313,19 @@ jobs:
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
 
-  # Sends the same zip to CurseForge. Off until the repository has a CURSEFORGE_PROJECT_ID
-  # variable and a CF_API_TOKEN secret (curseforge/PUBLISHING.md), so merging this changes
-  # nothing for anybody until the project exists. It runs after the GitHub release is confirmed:
-  # a failure here never stops the hub from getting its build.
+  # Sends the same zip to CurseForge, and only when somebody asks: run the workflow by hand
+  # (Actions > Release > Run workflow) once there is something worth a new file. CurseForge's
+  # rules forbid file updates made to boost visibility and want a changelog that describes what
+  # changed, so an upload on every merge would be the wrong default. It also needs a
+  # CURSEFORGE_PROJECT_ID variable and a CF_API_TOKEN secret (curseforge/PUBLISHING.md); without
+  # them nothing happens. It runs after the GitHub release is confirmed, so a failure here never
+  # stops the hub from getting its build.
   curseforge:
     name: upload to CurseForge
     needs: [build, release]
     if: >-
       github.ref == 'refs/heads/main' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      github.event_name == 'workflow_dispatch' &&
       vars.CURSEFORGE_PROJECT_ID != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -332,8 +335,11 @@ jobs:
       group: release-curseforge
       cancel-in-progress: false
     steps:
-      - name: Check out the repository
+      # All of the history and the tags: the changelog is the commits since the previous release.
+      - name: Check out the repository, with its history and tags
         uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
 
       - name: Take the package the build job checked
         uses: actions/download-artifact@v4.1.8

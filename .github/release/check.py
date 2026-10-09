@@ -32,6 +32,7 @@ from __future__ import annotations
 import io
 import json
 import re
+import struct
 import tempfile
 import unittest
 import xml.etree.ElementTree as ElementTree
@@ -593,6 +594,66 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn("vars.CURSEFORGE_PROJECT_ID != ''", job)
         self.assertIn("contents: read", job)
         self.assertNotIn("contents: write", job)
+
+    def test_a_file_update_says_what_changed_since_the_last_one(self) -> None:
+        tags = ["v0.2.113", "v0.2.111", "v0.2.99"]
+        self.assertEqual(curseforge.previous_tag(tags, "0.2.113"), "v0.2.111")
+        self.assertEqual(curseforge.previous_tag(tags, "0.2.120"), "v0.2.113")
+        self.assertIsNone(curseforge.previous_tag(tags, "0.2.99"))
+        text = curseforge.format_changelog("0.2.120", "v0.2.113", ["Fix the arrow", "Add a bar"])
+        self.assertIn("since v0.2.113", text)
+        self.assertIn("- Fix the arrow", text)
+        self.assertEqual(curseforge.format_changelog("0.2.120", "v0.2.113", []), "")
+
+    def test_the_upload_is_by_hand_only(self) -> None:
+        """CurseForge forbids updates made to boost visibility, so a merge must not upload."""
+        text = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+        job = text[text.index("\n  curseforge:"):]
+        self.assertIn("github.event_name == 'workflow_dispatch'", job)
+        self.assertNotIn("github.event_name == 'push'", job)
+        self.assertIn("fetch-depth: 0", job)
+
+    def test_the_avatar_is_the_size_curseforge_asks_for(self) -> None:
+        data = (REPO / "assets" / "logo" / "panda-quest-400.png").read_bytes()
+        width, height = struct.unpack(">II", data[16:24])
+        self.assertEqual((width, height), (400, 400))
+
+    def test_the_description_has_no_download_link_and_starts_in_english(self) -> None:
+        text = (REPO / "curseforge" / "description.md").read_text(encoding="utf-8")
+        self.assertNotIn("/releases", text, "CurseForge forbids external download links")
+        english, _, other = text.partition("## Suomeksi")
+        self.assertIn("## Main features", english)
+        self.assertNotIn("Ominaisuudet", english)
+
+
+class TheChangelogMoves(unittest.TestCase):
+    """A pull request that changes the addon says so in PandaQuest/CHANGELOG.md.
+
+    The version is the commit count, so it moves by itself; what does not move by itself is the
+    sentence a player reads about it.  Only a pull request is judged: on main there is nothing
+    to compare with, and without git or an origin/main the case is skipped, not failed.
+    """
+
+    def test_addon_changes_come_with_a_changelog_entry(self) -> None:
+        import subprocess  # noqa: PLC0415
+
+        def git(*args):
+            return subprocess.run(["git", "-C", str(REPO), *args], capture_output=True, text=True)
+
+        base = git("merge-base", "origin/main", "HEAD")
+        if base.returncode != 0:
+            self.skipTest("no origin/main to compare with")
+        diff = git("diff", "--name-only", base.stdout.strip(), "HEAD")
+        if diff.returncode != 0:
+            self.skipTest("git could not produce a diff")
+        changed = [line for line in diff.stdout.splitlines() if line.startswith("PandaQuest/")]
+        if not changed:
+            self.skipTest("nothing under PandaQuest/ differs from origin/main")
+        self.assertIn(
+            "PandaQuest/CHANGELOG.md", changed,
+            "PandaQuest/ changed (%s ...) but PandaQuest/CHANGELOG.md did not: say what changed"
+            % ", ".join(changed[:3]),
+        )
 
 
 if __name__ == "__main__":

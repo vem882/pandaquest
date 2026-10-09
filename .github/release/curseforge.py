@@ -24,6 +24,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import urllib.request
 import uuid
@@ -58,6 +59,37 @@ def latest_changelog(text: str) -> str:
     parts = re.split(r"(?m)^(?=## \[)", text)
     sections = [part for part in parts if part.startswith("## [")]
     return (sections[0] if sections else text).strip()
+
+
+def release_tags() -> list:
+    """The ``v<digits>`` tags of this checkout, newest first."""
+    out = subprocess.run(["git", "-C", str(REPO), "tag", "--list", "v*", "--sort=-version:refname"],
+                         capture_output=True, text=True, check=False).stdout
+    return [tag for tag in out.split() if re.fullmatch(r"v\d+(?:\.\d+)*", tag)]
+
+
+def previous_tag(tags: list, version: str):
+    """The newest tag below ``v<version>``, or None."""
+    key = lambda tag: tuple(int(part) for part in tag[1:].split("."))  # noqa: E731
+    below = [tag for tag in tags if key(tag) < key("v" + version)]
+    return below[0] if below else None
+
+
+def format_changelog(version: str, previous, subjects: list) -> str:
+    """What changed in this file, as CurseForge's rules ask of every upload."""
+    if not subjects:
+        return ""
+    since = "since %s" % previous if previous else "in this release"
+    return "## PandaQuest %s\n\nChanges %s:\n\n%s" % (
+        version, since, "\n".join("- %s" % subject for subject in subjects))
+
+
+def commit_subjects(previous) -> list:
+    """Subjects of the non-merge commits that touched PandaQuest/ since ``previous``."""
+    span = ["%s..HEAD" % previous] if previous else ["HEAD"]
+    out = subprocess.run(["git", "-C", str(REPO), "log", "--no-merges", "--format=%s", *span, "--", "PandaQuest"],
+                         capture_output=True, text=True, check=False).stdout
+    return [line.strip() for line in out.splitlines() if line.strip()]
 
 
 def metadata(version: str, changelog: str, game_version_ids: list, release_type: str) -> dict:
@@ -113,8 +145,11 @@ def upload(zip_path: Path, project: str, release_type: str) -> int:
     if not match:
         print("%s is not a PandaQuest-<version>.zip" % zip_path.name, file=sys.stderr)
         return 2
-    meta = metadata(match.group(1), latest_changelog(CHANGELOG.read_text(encoding="utf-8")),
-                    ids, release_type)
+    version = match.group(1)
+    previous = previous_tag(release_tags(), version)
+    changelog = format_changelog(version, previous, commit_subjects(previous)) \
+        or latest_changelog(CHANGELOG.read_text(encoding="utf-8"))
+    meta = metadata(version, changelog, ids, release_type)
     content_type, body = multipart({"metadata": json.dumps(meta)}, zip_path.name, zip_path.read_bytes())
     answer = _call(urllib.request.Request(
         "%s/projects/%s/upload-file" % (API, project), data=body, method="POST",
