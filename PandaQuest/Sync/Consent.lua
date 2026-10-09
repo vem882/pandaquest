@@ -1,24 +1,22 @@
--- Sync/Consent.lua: the one question PandaQuest asks about itself (docs/07 B1).
+-- Sync/Consent.lua: the question PandaQuest asks about itself, and only when it is asked for
+-- (docs/07 B1).
 --
--- Telemetry is off in Core/Const.lua and stays off until the player says otherwise. This file is
--- the "otherwise": on the first login after installing, it puts one dialog on screen with two
--- equally plain buttons, records whichever was pressed, and never asks again.
+-- Synchronisation is optional. Nothing in PandaQuest needs it: the quest database, the arrow, the
+-- map and every other feature work with it off, and it is off by default. This file therefore does
+-- NOT put a dialog on screen at login. A player who wants to take part turns it on under
+-- /pq > Synchronisation, or types `/pq consent` to get the question below.
 --
 -- Four rules, and they are the whole module:
 --
---   * **Off is the answer if nobody answers.** Closing the dialog, pressing Escape, or logging out
---     without touching it leaves `enabled` false. Nothing is recorded in the meantime, because
---     Telemetry's `active` switch mirrors the setting and not the question.
---   * **Asked once, either way.** `global.telemetry.asked` is set by both buttons and by the
---     dismissal, so "no" is remembered exactly as firmly as "yes". A privacy question that
---     reappears until it is answered the way the author wanted is a dark pattern.
+--   * **Off is the answer if nobody answers.** Closing the dialog, pressing Escape, or never
+--     opening it leaves `enabled` false. Nothing is recorded in the meantime, because Telemetry's
+--     `active` switch mirrors the setting and not the question.
+--   * **Asked once per request, remembered either way.** `global.telemetry.asked` is set by both
+--     buttons and by the dismissal, so "no" is remembered exactly as firmly as "yes".
 --   * **The dialog says what is collected, in the words a player would use.** Coordinates and
 --     times, per character. Not "usage data".
 --   * **It changes nothing else.** Turning it on is `Telemetry.SetEnabled(true)`, the same call
 --     the options panel makes, so there is one code path that starts the recorder.
---
--- `/pq consent` re-opens it, which is how somebody who clicked too fast gets the question back
--- without editing a saved variable.
 local _, ns = ...
 
 local M = {}
@@ -27,15 +25,7 @@ ns.Consent = M
 local Log = ns.Log
 local L = ns.L
 
-local tostring = tostring
-
 local POPUP = "PANDAQUEST_TELEMETRY_CONSENT"
-
--- Long enough that the question is not competing with the loading screen and the guild MOTD, short
--- enough that it is still obviously about the addon that just loaded.
-local ASK_DELAY = 8
-
-local asked = false             -- guard against asking twice inside one session
 
 local function telemetrySettings()
     local PQ = ns.PQ
@@ -107,17 +97,13 @@ function M.Ask()
         dialog.button1 = L["Share my quest data"]
         dialog.button2 = L["No thanks"]
         local shown = StaticPopup_Show(POPUP, M.QuestionText())
-        if shown then
-            asked = true
-            return true
-        end
+        if shown then return true end
     end
 
     -- No StaticPopup: ask in chat instead, and leave it off until the player turns it on.
     Log.Print("%s", L["PandaQuest can share your quest data to build the community routes."])
     Log.Print("%s", L["It is off. Turn it on in /pq options if you want to take part."])
     markAsked()
-    asked = true
     return false
 end
 
@@ -132,25 +118,11 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
-    asked = false
-end
+function M.Init() end
 
-function M.Enable()
-    if not M.NeedsAsking() then return end
-
-    local function askOnce()
-        if asked or not M.NeedsAsking() then return end
-        local ok, err = pcall(M.Ask)
-        if not ok then Log.Error("Consent", "could not ask: %s", tostring(err)) end
-    end
-
-    if C_Timer and C_Timer.After then
-        C_Timer.After(ASK_DELAY, askOnce)
-    else                                    -- pragma: no C_Timer means ask straight away
-        askOnce()
-    end
-end
+--- Nothing is asked at login: synchronisation is optional, and a dialog nobody requested is a
+-- nag. `/pq consent` and the options panel are the two ways in.
+function M.Enable() end
 
 --- A profile change cannot un-ask the question: `asked` is global, not per profile.
 function M.OnProfileChanged() end
