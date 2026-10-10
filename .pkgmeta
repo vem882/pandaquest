@@ -5,10 +5,11 @@
 # The GitHub release zip (build.py) is the reference package. This one is made by CurseForge's
 # packager, which does not run build.py: the TOC keeps its declared "## Version: 0.2.0" and there is
 # no Core/Build.lua, so /pq status shows 0.2.0 in a package that came from here.
+# markup-type is left out: CurseForge's validator rejects "text" ("Unknown markup type 'text'"),
+# and the packager reads a .txt file as plain text without being told.
 package-as: PandaQuest
 manual-changelog:
   filename: PandaQuest/changelog.txt
-  markup-type: text
 move-folders:
   PandaQuest/PandaQuest: PandaQuest
 ignore:

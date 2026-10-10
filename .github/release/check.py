@@ -607,6 +607,9 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertRegex(meta, r"(?m)^package-as: PandaQuest$")
         self.assertRegex(meta, r"(?m)^  PandaQuest/PandaQuest: PandaQuest$")
         self.assertIn("filename: PandaQuest/changelog.txt", meta)
+        # CurseForge's validator answered "Unknown markup type 'text'" to this key; what the
+        # local packager accepts is not what CurseForge accepts, so the key stays out.
+        self.assertNotRegex(meta, r"(?m)^\s*markup-type:")
         self.assertTrue((ADDON_DIR / "changelog.txt").is_file())
 
     def test_the_toc_names_the_sites_it_is_published_on(self) -> None:
