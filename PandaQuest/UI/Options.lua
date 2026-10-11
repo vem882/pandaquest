@@ -217,6 +217,18 @@ local function buildTable()
                         desc = L["Metres are shown as '123 m', yards as '135 yd'."],
                         values = { meters = L["meters"], yards = L["yards"] },
                         arg = "units", get = get, set = set },
+                    questieDB = { type = "select", order = 3, name = L["Quest database source"],
+                        desc = L["Uses the QuestieDB addon, if it is installed and enabled, to complete "
+                            .. "PandaQuest's own database. Takes effect after /reload."],
+                        values = function()
+                            local QuestieDB = ns.QuestieDB
+                            return {
+                                off = QuestieDB.GetModeLabel("off"),
+                                gaps = QuestieDB.GetModeLabel("gaps"),
+                                prefer = QuestieDB.GetModeLabel("prefer"),
+                            }
+                        end,
+                        arg = "global.questieDB.mode", get = get, set = set },
                     minimapButton = toggle(2, L["Show minimap button"],
                         L["Left-click the minimap button to toggle the arrow, right-click for these options."],
                         "minimapButton.hide", {

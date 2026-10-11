@@ -245,6 +245,9 @@ commands.units = function(arg)
         return
     end
     Log.Print(L["Units: %s"], L[PQ.db.profile.units])
+    if ns.QuestieDB and ns.QuestieDB.GetStatusLines then
+        for _, line in ipairs(ns.QuestieDB.GetStatusLines()) do Log.Print("%s", line) end
+    end
 end
 
 commands.wh = function(arg)

@@ -8,7 +8,7 @@
 ## Version: 0.2.0
 ## Author: vem882
 ## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
-## OptionalDeps: TomTom, Questie
+## OptionalDeps: TomTom, Questie, QuestieDB
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/pandaquest
 ## X-License: GPL-3.0
@@ -47,6 +47,7 @@ Database\Data\Items.lua
 Database\Data\Seed.lua
 Database\Overrides\Wowhead.lua
 Database\Overrides\Community.lua
+Database\QuestieDB.lua
 Database\DB.lua
 Quest\Player.lua
 Quest\QuestLog.lua

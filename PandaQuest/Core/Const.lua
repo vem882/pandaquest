@@ -130,6 +130,9 @@ ns.DEFAULTS = {
                -- p = { [spawnKey] = timesSeen } }`. Local and unconditional - writing to one's own
                -- disk is not the hub's processing - while *sending* it is gated by telemetry.
                nodes = {},
+               -- Whether the QuestieDB addon, if installed, completes our database (Database/QuestieDB.lua):
+               -- "off", "gaps" or "prefer". Read once, while the database loads.
+               questieDB = { mode = "gaps" },
                -- What play taught us about flight times. Nothing on this client can
                -- convert a taxi map position into yards and nothing names a taxi's speed, so a
                -- route's duration exists only once somebody has flown it and we timed it.

@@ -312,6 +312,15 @@ local function runLoad()
 
     tables.quests, tables.npcs, tables.objects, tables.items = quests, npcs, objects, items
 
+    -- The QuestieDB addon, when it is installed, before the fixes and overrides below so that those
+    -- still have the last word. Database/QuestieDB.lua never raises; the pcall is for a bug in it.
+    local bridge = ns.QuestieDB
+    if bridge and bridge.Merge then
+        local ok, err = pcall(bridge.Merge, tables, yieldEvery)
+        if not ok then Log.Error("DB", "QuestieDB bridge failed: %s", tostring(err)) end
+    end
+    yield()
+
     applyFactionFixes(); yield()
 
     local Overrides = ns.Overrides

@@ -44,8 +44,9 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Wowhead links** – `/pq wh` gives a copyable link for a quest.
 - **Options** – a full options panel (`/pq`) with profiles.
 - **Languages** – English and Finnish.
-- **Optional integration** – mirrors the current target into the TomTom addon when you have it
-  installed.
+- **Optional integrations** – mirrors the current target into the TomTom addon when you have it
+  installed, and uses the **QuestieDB** addon, when it is installed and enabled, to complete the
+  built-in quest database (see "Compatibility").
 
 ### Optional synchronisation
 
@@ -119,7 +120,7 @@ Everything has a working default; the panel (`/pq`) is optional.
 
 | Group | What you can change |
 |---|---|
-| General | distance units (metres/yards), minimap button, language |
+| General | distance units (metres/yards), quest database source (PandaQuest only / fill gaps from QuestieDB / QuestieDB values first), minimap button, language |
 | Arrow | show/lock, quest text, ETA, community timings, hide in instances, arrival flash, size, opacity, text size, reset position |
 | Navigation | target selection (auto / focused quest / nearest), route to turn-ins and new quests, arrival radius |
 | TomTom | off, or mirror the current target |
@@ -163,7 +164,7 @@ confirmed on a live client.
 corrections on top, and it is not perfect. Report the quest ID (`/pq dump quest <id>` prints the
 entry) and the portal can correct it.
 
-**Can I use it with Questie?** PandaQuest does not read from or change Questie, and the two have
+**Can I use it with Questie or QuestieDB?** Questie itself is not read or changed by PandaQuest. The separate QuestieDB addon (the database Questie reads) is used when it is installed — see "Compatibility". PandaQuest does not change Questie either way, and the two have
 not been tested together in game. If you see two sets of pins, switch one addon's map pins off.
 
 **How do I reset everything?** `/pq reset` resets the arrow position and map pins. Settings live in
@@ -178,6 +179,7 @@ the options panel's *Profiles* tab. Deleting `PandaQuestDB.lua` from your SavedV
 | Addon | Relationship |
 |---|---|
 | TomTom | optional: PandaQuest can send its current target to TomTom as a waypoint |
+| QuestieDB | optional: when the QuestieDB addon is installed and enabled, PandaQuest reads its public API (`LibQuestieDB`) while its own database loads. Default: it **fills gaps** — a quest, NPC, object or item PandaQuest does not know is built from QuestieDB. `/pq` → General → *Quest database source* can switch it off or make QuestieDB's values win (takes effect after `/reload`). PandaQuest's own overrides are applied afterwards and still win. Nothing from QuestieDB is copied into this addon's files: it is read at run time and kept in memory. `/pq status` says what it did. |
 | Questie | not used and not modified; not tested together in game |
 | Leatrix Maps, Mapster, ElvUI map module | PandaQuest's pins are built to survive another addon rescaling or re-anchoring the world map; tested against a simulated client, not yet confirmed on a live one |
 | HereBeDragons | embedded, shared with other addons that embed the same library |
