@@ -512,6 +512,20 @@ local T = {
         "Raahaa kaivauspalkki haluamaasi kohtaan. Se piiloutuu itsestään hetken kuluttua.",
     ["The dig site bar is locked. Unlock it in /pq options to move it."] =
         "Kaivauspalkki on lukittu. Avaa lukitus asetuksissa (/pq), jos haluat siirtää sitä.",
+
+    -- Database/QuestieDB (valinnainen QuestieDB-lisäosa)
+    ["Quest database source"] = "Tehtävätietokannan lähde",
+    ["Uses the QuestieDB addon, if it is installed and enabled, to complete PandaQuest's own database. Takes effect after /reload."] =
+        "Täydentää PandaQuestin omaa tietokantaa QuestieDB-lisäosalla, jos se on asennettu ja käytössä. Tulee voimaan /reload-komennon jälkeen.",
+    ["PandaQuest only"] = "Vain PandaQuest",
+    ["Fill gaps from QuestieDB"] = "Täytä aukot QuestieDB:stä",
+    ["QuestieDB values first"] = "QuestieDB:n arvot ensin",
+    ["QuestieDB: %s"] = "QuestieDB: %s",
+    ["QuestieDB: %s (%d entries added, %d refreshed)"] = "QuestieDB: %s (%d lisätty, %d päivitetty)",
+    ["not used (off)"] = "ei käytössä (pois)",
+    ["not installed"] = "ei asennettu",
+    ["cannot be used (%s)"] = "ei käytettävissä (%s)",
+    ["not read yet"] = "ei vielä luettu",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

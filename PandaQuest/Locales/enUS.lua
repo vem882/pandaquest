@@ -420,3 +420,16 @@ L["The dig site bar is locked. Unlock it in /pq options to move it."] = true
 
 -- The locale table is shared by every module: ns.L
 ns.L = AceLocale:GetLocale("PandaQuest")
+
+-- Database/QuestieDB (the optional QuestieDB addon)
+L["Quest database source"] = true
+L["Uses the QuestieDB addon, if it is installed and enabled, to complete PandaQuest's own database. Takes effect after /reload."] = true
+L["PandaQuest only"] = true
+L["Fill gaps from QuestieDB"] = true
+L["QuestieDB values first"] = true
+L["QuestieDB: %s"] = true
+L["QuestieDB: %s (%d entries added, %d refreshed)"] = true
+L["not used (off)"] = true
+L["not installed"] = true
+L["cannot be used (%s)"] = true
+L["not read yet"] = true
