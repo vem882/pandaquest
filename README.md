@@ -3,9 +3,9 @@
 **Quest helper and navigator for Mists of Pandaria Classic (5.5.4, interface 50504).**
 
 An arrow to your next quest objective, quest pins on the world map and minimap, gathering nodes
-with respawn timers, flight times, archaeology and profession tools, and Wowhead links — English
-and Finnish. It works fully on its own; synchronisation with the community portal is optional and
-off by default.
+with respawn timers, flight times, archaeology and profession tools, and Wowhead links — in English,
+every other language the WoW client supports, and Finnish. It works fully on its own;
+synchronisation with the community portal is optional and off by default.
 
 The player-facing documentation — features, slash commands, settings, roadmap and credits — is
 [`PandaQuest/README.md`](PandaQuest/README.md). This file is about the repository.

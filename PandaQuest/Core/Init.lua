@@ -179,7 +179,7 @@ commands.help = function()
         "/pq digsite - show the dig site bar so you can move it",
         "/pq consent - ask the data sharing question again",
         "/pq flight - show the flight bar so you can drag it",
-        "/pq lang auto|enUS|fiFI - interface language",
+        "/pq lang auto|<locale> - interface language",
     }
     for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end
 end
@@ -381,15 +381,33 @@ commands.consent = function()
     Log.Print(L["%s is not available yet."], "consent")
 end
 
+-- Every language the addon ships, "enUS" first, in a stable order for printing.
+local function availableLanguages()
+    local codes = { "enUS" }
+    for code in pairs(ns.LOCALE_TABLES or {}) do
+        if code ~= "enUS" then codes[#codes + 1] = code end
+    end
+    table.sort(codes, function(a, b)
+        if a == "enUS" then return b ~= "enUS" end
+        if b == "enUS" then return false end
+        return a < b
+    end)
+    return codes
+end
+
 commands.lang = function(arg)
-    if arg == "auto" or arg == "enUS" or arg == "fiFI" then
+    local known = {}
+    for _, code in ipairs(availableLanguages()) do known[code] = true end
+    if arg == "auto" or known[arg] then
         PQ.db.global.language = (arg ~= "auto") and arg or nil
         ApplyLanguage()
     elseif arg ~= "" then
-        Log.Print(L["Usage: %s"], L["/pq lang auto|enUS|fiFI - interface language"])
+        Log.Print(L["Usage: %s"], L["/pq lang auto|<locale> - interface language"])
+        Log.Print(L["Available languages: %s"], table.concat(availableLanguages(), ", "))
         return
     end
     Log.Print(L["Language: %s (reload the UI to apply everywhere)"], PQ.db.global.language or "auto")
+    Log.Print(L["Available languages: %s"], table.concat(availableLanguages(), ", "))
 end
 
 -- Entry point for /pq and /pandaquest.

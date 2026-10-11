@@ -43,7 +43,9 @@ is where the addon's content is completed and corrected — and you are welcome 
   and a short centre-screen message when a quest completes or the target changes.
 - **Wowhead links** – `/pq wh` gives a copyable link for a quest.
 - **Options** – a full options panel (`/pq`) with profiles.
-- **Languages** – English and Finnish.
+- **Languages** – English, and German, Spanish (Spain and Mexico), French, Italian, Brazilian
+  Portuguese, Russian, Korean, Simplified and Traditional Chinese — every language the WoW client
+  supports — plus Finnish. The addon follows the game's language.
 - **Optional integrations** – mirrors the current target into the TomTom addon when you have it
   installed, and uses the **QuestieDB** addon, when it is installed and enabled, to complete the
   built-in quest database (see "Compatibility").
@@ -109,7 +111,7 @@ A good report says what you did, what you expected and what happened. Please inc
 | `/pq scan professions\|archaeology` | read the open profession or archaeology window |
 | `/pq sync` | synchronisation and community data status |
 | `/pq consent` | the question about sharing quest data (synchronisation is off until you say yes) |
-| `/pq lang auto\|enUS\|fiFI` | interface language |
+| `/pq lang auto\|<locale>` | interface language (`/pq lang` lists the codes: `enUS deDE esES esMX fiFI frFR itIT koKR ptBR ruRU zhCN zhTW`) |
 | `/pq status` | addon status |
 | `/pq dump quest\|npc\|object\|item <id>` | print a database entry |
 | `/pq debug [0-4\|arrow]` | log level (0 error ... 4 trace) or arrow debug values |
@@ -134,8 +136,8 @@ Everything has a working default; the panel (`/pq`) is optional.
 | Advanced | log level, arrow debug output, redraw pins |
 | Profiles | standard profile management |
 
-PandaQuest follows the game locale and ships English and Finnish. The WoW client never reports
-`fiFI`, so Finnish is selected with `/pq lang fiFI` (reload the UI afterwards).
+PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks another one, and
+`/pq lang auto` goes back to the game's; reload the UI afterwards.
 
 ## Saved variables
 
@@ -186,13 +188,30 @@ the options panel's *Profiles* tab. Deleting `PandaQuestDB.lua` from your SavedV
 
 ## Languages
 
-PandaQuest follows the game locale and ships **English** and **Finnish** (`Locales/enUS.lua`,
-`Locales/fiFI.lua`). The WoW client never reports `fiFI`, so Finnish is selected with
-`/pq lang fiFI` and a reload.
+PandaQuest follows the game locale and ships **English** (`enUS`) and these translations, one file
+each in `Locales/`:
 
-Adding a language is a small pull request: copy `Locales/enUS.lua`, translate the values, register
-the table the way `Locales/fiFI.lua` does and add the locale name to the `/pq lang` command. A key
-you leave out falls back to English, so a partial translation is fine.
+| Code | Language | | Code | Language |
+|---|---|---|---|---|
+| `deDE` | German | | `koKR` | Korean |
+| `esES` | Spanish (Spain) | | `ptBR` | Brazilian Portuguese |
+| `esMX` | Spanish (Latin America) | | `ruRU` | Russian |
+| `frFR` | French | | `zhCN` | Simplified Chinese |
+| `itIT` | Italian | | `zhTW` | Traditional Chinese |
+| `fiFI` | Finnish | | | |
+
+`fiFI` is not a language the WoW client offers, so Finnish is chosen with `/pq lang fiFI` and a
+reload. The others are picked automatically from the game's language, or with `/pq lang <code>`.
+
+**The translations other than Finnish were produced with AI assistance and have not been reviewed
+by native speakers.** They use the terms of the official game clients as closely as that allows, but
+expect awkward wording and the odd wrong term. Corrections are welcome as issues or pull requests:
+each file is a plain table of `["English text"] = "translation"` lines. A string a translation does
+not have appears in English, so a partial translation is fine. The repository checks refuse a key
+that does not exist, and a translation that drops or reorders a `%s` / `%d` the addon fills in.
+
+Adding a language the client has is a new file in `Locales/` (copy a small one such as
+`Locales/itIT.lua`), a line for it in `PandaQuest.toc` and `/pq lang` picks it up by itself.
 
 ## Contributing
 
