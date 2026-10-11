@@ -2,6 +2,11 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.135
+- languages - deDE esES esMX frFR itIT koKR ptBR ruRU zhCN zhTW added (AI-assisted, not reviewed)
+- command - /pq lang accepts every shipped language and lists them
+- toc - Notes-<locale> for the new languages
+
 0.2.133
 - database - QuestieDB addon used when installed: fills gaps (default), or its values first
 - options - quest database source (General), /pq status line

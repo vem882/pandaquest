@@ -651,6 +651,59 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertEqual((width, height), (400, 400))
 
 
+class TheTranslations(unittest.TestCase):
+    """Every locale file translates keys that exist, and keeps what the code formats into them.
+
+    Coverage is not asserted: a key a locale has not translated reads as English, which is the
+    designed fallback and what a new string looks like until somebody translates it. What would
+    break the game is the other half: a key nobody reads (a typo that silently translates nothing),
+    or a translation that drops or reorders a %s/%d the code passes a value for.
+    """
+
+    LOCALES = ADDON_DIR / "Locales"
+    KEY = re.compile(r'^L\["((?:[^"\\]|\\.)*)"\] = true', re.M)
+    PAIR = re.compile(r'\["((?:[^"\\]|\\.)*)"\]\s*=\s*"((?:[^"\\]|\\.)*)"')
+    FORMAT = re.compile(r"%(?:\d+\$)?[-+ #0]*\d*(?:\.\d+)?[sdfgxXcoiu%]")
+
+    def english(self) -> set:
+        return set(self.KEY.findall((self.LOCALES / "enUS.lua").read_text(encoding="utf-8")))
+
+    def files(self):
+        return sorted(path for path in self.LOCALES.glob("*.lua") if path.name != "enUS.lua")
+
+    def test_there_are_translations_to_check(self) -> None:
+        self.assertGreater(len(self.english()), 300)
+        names = {path.stem for path in self.files()}
+        for locale in ("fiFI", "deDE", "frFR", "esES", "esMX", "itIT", "ptBR", "ruRU", "koKR", "zhCN", "zhTW"):
+            self.assertIn(locale, names)
+
+    def test_every_translated_key_is_an_english_key(self) -> None:
+        english = self.english()
+        for path in self.files():
+            keys = {key for key, _ in self.PAIR.findall(path.read_text(encoding="utf-8"))}
+            unknown = sorted(keys - english)
+            self.assertEqual(unknown, [], f"{path.name} translates keys enUS.lua does not have: {unknown[:3]}")
+
+    def test_a_translation_keeps_the_formats_colours_and_line_breaks_of_its_key(self) -> None:
+        for path in self.files():
+            for key, value in self.PAIR.findall(path.read_text(encoding="utf-8")):
+                where = f"{path.name}: {key[:60]!r}"
+                self.assertEqual(sorted(self.FORMAT.findall(key)), sorted(self.FORMAT.findall(value)),
+                                 f"{where} changes the % formats")
+                self.assertEqual(key.count("|c"), value.count("|c"), f"{where} changes colour codes")
+                self.assertEqual(key.count("|r"), value.count("|r"), f"{where} changes colour resets")
+                self.assertEqual(key.count("\\n"), value.count("\\n"), f"{where} changes line breaks")
+                self.assertTrue(value.strip(), f"{where} is empty")
+
+    def test_each_locale_file_registers_itself_under_its_own_name(self) -> None:
+        toc = TOC.read_text(encoding="utf-8")
+        for path in self.files():
+            text = path.read_text(encoding="utf-8")
+            self.assertIn(f"ns.LOCALE_TABLES.{path.stem} = T", text, path.name)
+            self.assertIn(f'NewLocale("PandaQuest", "{path.stem}")', text, path.name)
+            self.assertIn("Locales\\" + path.stem + ".lua", toc, f"{path.name} is not in the TOC")
+
+
 class TheChangelogMoves(unittest.TestCase):
     """A pull request that changes the addon says so in PandaQuest/changelog.txt.
 
