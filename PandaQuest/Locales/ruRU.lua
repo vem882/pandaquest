@@ -535,6 +535,67 @@ local T = {
     ["not installed"] = "не установлен",
     ["cannot be used (%s)"] = "использовать нельзя (%s)",
     ["not read yet"] = "ещё не прочитано",
+
+    -- Quest browser, quest database source, language selection
+    ["/pq quests [questID] - browse every quest in the database"] =
+        "/pq quests [questID] - просмотреть все задания в базе данных",
+    ["Name"] = "Название",
+    ["Level"] = "Ур.",
+    ["to"] = "до",
+    ["My level"] = "Мой уровень",
+    ["My side"] = "Моя фракция",
+    ["Alliance"] = "Альянс",
+    ["Horde"] = "Орда",
+    ["Both"] = "Обе фракции",
+    ["both factions"] = "обе фракции",
+    ["Dungeon"] = "Подзем.",
+    ["Raid"] = "Рейд",
+    ["Group"] = "Группа",
+    ["PvP"] = "PvP",
+    ["Daily"] = "Ежедн.",
+    ["Event"] = "Событие",
+    ["Reset"] = "Сброс",
+    ["All quests"] = "Все задания",
+    ["%d quests"] = "Заданий: %d",
+    ["No quest matches these filters."] = "Нет заданий, подходящих под эти фильтры.",
+    ["Reading the quest database..."] = "Чтение базы данных заданий...",
+    ["Quest"] = "Задание",
+    ["Zone"] = "Зона",
+    ["Req."] = "Треб.",
+    ["XP"] = "Опыт",
+    ["A level %d quest for %s, from level %d."] = "Задание уровня %d (%s). Доступно с уровня %d.",
+    ["%d experience"] = "Опыт: %d",
+    ["Not in the database."] = "Нет в базе данных.",
+    ["requires level"] = "требуется уровень",
+    ["Yes"] = "Да",
+    ["No"] = "Нет",
+    ["No location is known for this quest."] = "Для этого задания местоположение неизвестно.",
+    ["Navigating to: %s"] = "Прокладывается путь: %s",
+    ["Start"] = "Начинает",
+    ["End"] = "Завершает",
+    ["Difficulty"] = "Сложность",
+    ["Side"] = "Фракция",
+    ["Shareable"] = "Делиться",
+    ["Quest ID"] = "ID задания",
+    ["Rewards"] = "Награды",
+    ["Navigate"] = "Проложить путь",
+    ["Pick a quest from the list to see its page."] =
+        "Выберите задание в списке, чтобы увидеть его страницу.",
+    ["Quests"] = "Задания",
+    ["Shift-click: browse all quests"] = "Shift+щелчок: просмотреть все задания",
+    -- Beta notice and animation options
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "Это бета-версия: новые функции ещё не подтверждены в игре.",
+    ["Animations"] =
+        "Анимации",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "Окна плавно появляются и встают на место, сообщения выезжают, полосы заполняются плавно. Отключите ради более спокойного интерфейса.",
+    ["Turn all interface motion on or off."] =
+        "Включает или отключает все движения интерфейса.",
+    ["Animation speed"] =
+        "Скорость анимации",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1 — обычная; 2 — вдвое быстрее, 0,5 — вдвое медленнее.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

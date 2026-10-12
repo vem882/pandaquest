@@ -477,6 +477,65 @@ local T = {
     ["not installed"] = "未安装",
     ["cannot be used (%s)"] = "无法使用（%s）",
     ["not read yet"] = "尚未读取",
+
+    -- Quest browser, quest database source, language selection
+    ["/pq quests [questID] - browse every quest in the database"] = "/pq quests [questID] - 浏览数据库中的所有任务",
+    ["Name"] = "名称",
+    ["Level"] = "等级",
+    ["to"] = "至",
+    ["My level"] = "我的等级",
+    ["My side"] = "我的阵营",
+    ["Alliance"] = "联盟",
+    ["Horde"] = "部落",
+    ["Both"] = "双方",
+    ["both factions"] = "双方阵营",
+    ["Dungeon"] = "地下城",
+    ["Raid"] = "团队",
+    ["Group"] = "队伍",
+    ["PvP"] = "PvP",
+    ["Daily"] = "日常",
+    ["Event"] = "活动",
+    ["Reset"] = "重置",
+    ["All quests"] = "全部任务",
+    ["%d quests"] = "%d个任务",
+    ["No quest matches these filters."] = "没有任务符合这些筛选条件。",
+    ["Reading the quest database..."] = "正在读取任务数据库……",
+    ["Quest"] = "任务",
+    ["Zone"] = "区域",
+    ["Req."] = "要求",
+    ["XP"] = "经验",
+    ["A level %d quest for %s, from level %d."] = "%d级任务，适用于%s，%d级起可接取。",
+    ["%d experience"] = "%d点经验值",
+    ["Not in the database."] = "数据库中没有记录。",
+    ["requires level"] = "需要等级",
+    ["Yes"] = "是",
+    ["No"] = "否",
+    ["No location is known for this quest."] = "此任务的位置未知。",
+    ["Navigating to: %s"] = "正在导航到：%s",
+    ["Start"] = "起始",
+    ["End"] = "结束",
+    ["Difficulty"] = "难度",
+    ["Side"] = "阵营",
+    ["Shareable"] = "可共享",
+    ["Quest ID"] = "任务ID",
+    ["Rewards"] = "奖励",
+    ["Navigate"] = "导航",
+    ["Pick a quest from the list to see its page."] = "从列表中选择一个任务以查看其页面。",
+    ["Quests"] = "任务",
+    ["Shift-click: browse all quests"] = "Shift+点击：浏览所有任务",
+    -- Beta notice and animation options
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "这是测试版：新功能尚未在游戏中得到确认。",
+    ["Animations"] =
+        "动画",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "窗口淡入并落定，消息滑入，进度条平滑移动。关闭后界面更安静。",
+    ["Turn all interface motion on or off."] =
+        "开启或关闭所有界面动效。",
+    ["Animation speed"] =
+        "动画速度",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1 为正常；2 为两倍速，0.5 为半速。",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
