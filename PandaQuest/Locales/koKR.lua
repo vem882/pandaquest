@@ -568,6 +568,57 @@ local T = {
         "애니메이션 속도",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1은 보통, 2는 두 배 빠르게, 0.5는 절반 속도입니다.",
+    -- Options: language, tools
+    ["Categories"] =
+        "분류",
+    ["Loosen a filter, or press Reset."] =
+        "필터를 완화하거나 초기화를 누르세요.",
+    ["Open the quest browser"] =
+        "퀘스트 둘러보기 열기",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "데이터베이스의 모든 퀘스트를 둘러봅니다. 퀘스트마다 상세 정보 페이지와 지도가 있습니다.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "PandaQuest 문구에 쓸 언어를 고릅니다. 자동을 선택하면 게임 언어를 따릅니다.",
+    ["Automatic (game language)"] =
+        "자동 (게임 언어)",
+    ["Reload the interface"] =
+        "인터페이스 다시 불러오기",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "게임 인터페이스를 다시 불러와 바꾼 언어가 모든 곳에 적용되게 합니다.",
+    ["Tools"] =
+        "도구",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "대화창 명령어가 하는 일을 버튼으로 모았습니다. 여기서는 명령어를 입력할 필요가 없습니다.",
+    ["Skip the current target"] =
+        "현재 대상 건너뛰기",
+    ["Moves the arrow on to the next target."] =
+        "화살표를 다음 대상으로 넘깁니다.",
+    ["Stop following the pinned quest"] =
+        "고정한 퀘스트 따라가기 중지",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "집중 퀘스트 설정이나 지도의 오른쪽 클릭 메뉴로 고정한 퀘스트를 해제합니다.",
+    ["Reset arrow position and map pins"] =
+        "화살표 위치와 지도 핀 초기화",
+    ["Wowhead link for the current target"] =
+        "현재 대상의 Wowhead 링크",
+    ["%d quests are hidden from the navigator."] =
+        "퀘스트 %d개가 길 안내에서 숨겨져 있습니다.",
+    ["Show all hidden quests again"] =
+        "숨긴 퀘스트 모두 다시 표시",
+    ["Reading windows"] =
+        "창 읽기",
+    ["Read my professions now"] =
+        "내 전문 기술 지금 읽기",
+    ["Open the profession window first."] =
+        "먼저 전문 기술 창을 여세요.",
+    ["Read my archaeology now"] =
+        "내 고고학 정보 지금 읽기",
+    ["Open the archaeology window first."] =
+        "먼저 고고학 창을 여세요.",
+    ["Show synchronisation status"] =
+        "동기화 상태 표시",
+    ["Ask the data sharing question"] =
+        "데이터 공유 질문 표시",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

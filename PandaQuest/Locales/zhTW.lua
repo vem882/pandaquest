@@ -546,6 +546,57 @@ local T = {
         "動畫速度",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 為正常；2 為兩倍速，0.5 為半速。",
+    -- Options: language, tools
+    ["Categories"] =
+        "分類",
+    ["Loosen a filter, or press Reset."] =
+        "請放寬篩選條件，或按下「重設」。",
+    ["Open the quest browser"] =
+        "開啟任務瀏覽器",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "瀏覽資料庫中的所有任務，每個任務都有專屬頁面與地圖。",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "選擇 PandaQuest 文字使用的語言。選擇「自動」則跟隨遊戲語言。",
+    ["Automatic (game language)"] =
+        "自動（遊戲語言）",
+    ["Reload the interface"] =
+        "重新載入介面",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "重新載入遊戲介面，讓更改後的語言全面套用。",
+    ["Tools"] =
+        "工具",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "聊天指令能做的事，這裡都以按鈕提供，不需要輸入任何指令。",
+    ["Skip the current target"] =
+        "略過目前的目標",
+    ["Moves the arrow on to the next target."] =
+        "讓箭頭指向下一個目標。",
+    ["Stop following the pinned quest"] =
+        "停止追隨已固定的任務",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "清除透過「專注任務」設定或地圖右鍵選單所固定的任務。",
+    ["Reset arrow position and map pins"] =
+        "重設箭頭位置與地圖標記",
+    ["Wowhead link for the current target"] =
+        "目前目標的 Wowhead 連結",
+    ["%d quests are hidden from the navigator."] =
+        "有 %d 個任務已從導航中隱藏。",
+    ["Show all hidden quests again"] =
+        "重新顯示所有已隱藏的任務",
+    ["Reading windows"] =
+        "讀取視窗",
+    ["Read my professions now"] =
+        "立即讀取我的專業技能",
+    ["Open the profession window first."] =
+        "請先開啟專業技能視窗。",
+    ["Read my archaeology now"] =
+        "立即讀取我的考古學資料",
+    ["Open the archaeology window first."] =
+        "請先開啟考古學視窗。",
+    ["Show synchronisation status"] =
+        "顯示同步狀態",
+    ["Ask the data sharing question"] =
+        "詢問是否分享資料",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

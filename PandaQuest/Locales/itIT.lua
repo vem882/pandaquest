@@ -593,6 +593,37 @@ local T = {
         "Velocità delle animazioni",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 è normale; 2 è il doppio più veloce, 0,5 la metà.",
+    -- Options: language, tools
+    ["Categories"] = "Categorie",
+    ["Loosen a filter, or press Reset."] = "Allenta un filtro o premi Azzera.",
+    ["Open the quest browser"] = "Apri il browser delle missioni",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Sfoglia tutte le missioni del database, con una pagina e una mappa per ciascuna.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Scegli la lingua dei testi di PandaQuest. Automatico segue la lingua del gioco.",
+    ["Automatic (game language)"] = "Automatico (lingua del gioco)",
+    ["Reload the interface"] = "Ricarica l'interfaccia",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Ricarica l'interfaccia del gioco in modo che il cambio di lingua si applichi ovunque.",
+    ["Tools"] = "Strumenti",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Tutto ciò che fanno i comandi della chat, sotto forma di pulsanti. Qui non serve alcun comando.",
+    ["Skip the current target"] = "Salta la destinazione attuale",
+    ["Moves the arrow on to the next target."] = "Sposta la freccia sulla destinazione successiva.",
+    ["Stop following the pinned quest"] = "Smetti di seguire la missione fissata",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Rimuove la missione fissata con l'impostazione 'Missione scelta' o con il menu del clic destro sulla mappa.",
+    ["Reset arrow position and map pins"] = "Reimposta freccia e segnaposto",
+    ["Wowhead link for the current target"] = "Link Wowhead: destinazione attuale",
+    ["%d quests are hidden from the navigator."] = "%d missioni sono nascoste dal navigatore.",
+    ["Show all hidden quests again"] = "Mostra di nuovo le missioni nascoste",
+    ["Reading windows"] = "Lettura delle finestre",
+    ["Read my professions now"] = "Leggi ora le mie professioni",
+    ["Open the profession window first."] = "Apri prima la finestra della professione.",
+    ["Read my archaeology now"] = "Leggi ora la mia Archeologia",
+    ["Open the archaeology window first."] = "Apri prima la finestra di Archeologia.",
+    ["Show synchronisation status"] = "Mostra lo stato di sincronizzazione",
+    ["Ask the data sharing question"] = "Ripeti la domanda sulla condivisione",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

@@ -561,6 +561,37 @@ local T = {
         "Vitesse des animations",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 est normal ; 2 est deux fois plus rapide, 0,5 deux fois plus lent.",
+    -- Options: language, tools
+    ["Open the quest browser"] = "Ouvrir l'explorateur de quêtes",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Parcourir toutes les quêtes de la base de données, avec une page et une carte pour chacune.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Choisir la langue des textes de PandaQuest. Automatique suit la langue du jeu.",
+    ["Automatic (game language)"] = "Automatique (langue du jeu)",
+    ["Reload the interface"] = "Recharger l'interface",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Recharge l'interface du jeu afin qu'une langue modifiée s'applique partout.",
+    ["Tools"] = "Outils",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Tout ce que font les commandes du chat, sous forme de boutons. Aucune commande n'est nécessaire ici.",
+    ["Skip the current target"] = "Passer la cible actuelle",
+    ["Moves the arrow on to the next target."] = "Fait passer la flèche à la cible suivante.",
+    ["Stop following the pinned quest"] = "Ne plus suivre la quête épinglée",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Efface la quête épinglée avec le réglage de focalisation ou avec le menu clic droit de la carte.",
+    ["Reset arrow position and map pins"] = "Réinitialiser flèche et marqueurs",
+    ["Wowhead link for the current target"] = "Lien Wowhead pour la cible actuelle",
+    ["%d quests are hidden from the navigator."] = "%d quêtes sont masquées du navigateur.",
+    ["Show all hidden quests again"] = "Réafficher toutes les quêtes masquées",
+    ["Reading windows"] = "Lecture des fenêtres",
+    ["Read my professions now"] = "Lire mes métiers maintenant",
+    ["Open the profession window first."] = "Ouvrir d'abord la fenêtre de métier.",
+    ["Read my archaeology now"] = "Lire mon archéologie maintenant",
+    ["Open the archaeology window first."] = "Ouvrir d'abord la fenêtre d'archéologie.",
+    ["Show synchronisation status"] = "Afficher l'état de la synchronisation",
+    ["Ask the data sharing question"] = "Question sur le partage des données",
+    ["Categories"] = "Catégories",
+    ["Loosen a filter, or press Reset."] = "Assouplir un filtre ou cliquer sur « Réinit. ».",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

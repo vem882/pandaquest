@@ -547,6 +547,57 @@ local T = {
         "Velocidade da animação",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 é normal; 2 é o dobro da velocidade, 0,5 a metade.",
+    -- Options: language, tools
+    ["Categories"] =
+        "Categorias",
+    ["Loosen a filter, or press Reset."] =
+        "Afrouxe um filtro ou clique em Limpar.",
+    ["Open the quest browser"] =
+        "Abrir o explorador de missões",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Explore todas as missões do banco de dados, com uma página e um mapa para cada uma.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Escolha o idioma dos textos do PandaQuest. Automático usa o idioma do jogo.",
+    ["Automatic (game language)"] =
+        "Automático (idioma do jogo)",
+    ["Reload the interface"] =
+        "Recarregar a interface",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Recarrega a interface do jogo para que a mudança de idioma seja aplicada em todos os lugares.",
+    ["Tools"] =
+        "Ferramentas",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Tudo o que os comandos de chat fazem, em forma de botões. Nada aqui exige um comando.",
+    ["Skip the current target"] =
+        "Pular o destino atual",
+    ["Moves the arrow on to the next target."] =
+        "Move a seta para o próximo destino.",
+    ["Stop following the pinned quest"] =
+        "Parar de seguir a missão fixada",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Limpa a missão fixada pela opção 'Missão em foco' ou pelo menu de clique direito do mapa.",
+    ["Reset arrow position and map pins"] =
+        "Redefinir posição da seta e marcadores",
+    ["Wowhead link for the current target"] =
+        "Link do Wowhead para o destino atual",
+    ["%d quests are hidden from the navigator."] =
+        "Missões ocultas do navegador: %d.",
+    ["Show all hidden quests again"] =
+        "Mostrar novamente as missões ocultas",
+    ["Reading windows"] =
+        "Leitura de janelas",
+    ["Read my professions now"] =
+        "Ler minhas profissões agora",
+    ["Open the profession window first."] =
+        "Abra primeiro a janela de profissão.",
+    ["Read my archaeology now"] =
+        "Ler minha Arqueologia agora",
+    ["Open the archaeology window first."] =
+        "Abra primeiro a janela de Arqueologia.",
+    ["Show synchronisation status"] =
+        "Mostrar status da sincronização",
+    ["Ask the data sharing question"] =
+        "Perguntar sobre compartilhar dados",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

@@ -596,6 +596,57 @@ local T = {
         "Скорость анимации",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 — обычная; 2 — вдвое быстрее, 0,5 — вдвое медленнее.",
+    -- Options: language, tools
+    ["Categories"] =
+        "Категории",
+    ["Loosen a filter, or press Reset."] =
+        "Ослабьте фильтр или нажмите «Сброс».",
+    ["Open the quest browser"] =
+        "Открыть каталог заданий",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Просмотр всех заданий из базы данных: у каждого есть своя страница и карта.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Выберите язык текстов PandaQuest. Вариант «Автоматически» использует язык игры.",
+    ["Automatic (game language)"] =
+        "Автоматически (язык игры)",
+    ["Reload the interface"] =
+        "Перезагрузить интерфейс",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Перезагружает интерфейс игры, чтобы смена языка применилась везде.",
+    ["Tools"] =
+        "Инструменты",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Всё, что делают команды чата, в виде кнопок. Вводить команды здесь не нужно.",
+    ["Skip the current target"] =
+        "Пропустить текущую цель",
+    ["Moves the arrow on to the next target."] =
+        "Переводит стрелку на следующую цель.",
+    ["Stop following the pinned quest"] =
+        "Снять закреплённое задание",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Сбрасывает задание, закреплённое настройкой «Выбранное задание» или через контекстное меню карты (ПКМ).",
+    ["Reset arrow position and map pins"] =
+        "Сбросить положение стрелки и метки",
+    ["Wowhead link for the current target"] =
+        "Ссылка Wowhead для текущей цели",
+    ["%d quests are hidden from the navigator."] =
+        "Скрыто из навигатора заданий: %d.",
+    ["Show all hidden quests again"] =
+        "Снова показать все скрытые задания",
+    ["Reading windows"] =
+        "Чтение окон",
+    ["Read my professions now"] =
+        "Прочитать мои профессии сейчас",
+    ["Open the profession window first."] =
+        "Сначала откройте окно профессии.",
+    ["Read my archaeology now"] =
+        "Прочитать мою археологию сейчас",
+    ["Open the archaeology window first."] =
+        "Сначала откройте окно археологии.",
+    ["Show synchronisation status"] =
+        "Показать состояние синхронизации",
+    ["Ask the data sharing question"] =
+        "Задать вопрос об обмене данными",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

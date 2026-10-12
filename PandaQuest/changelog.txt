@@ -2,6 +2,9 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.156
+- locales - options and quest browser strings in deDE esES esMX frFR itIT koKR ptBR ruRU zhCN zhTW
+
 0.2.152
 - release - stable: the beta channel is switched off; the quest browser, motion and languages ship
 

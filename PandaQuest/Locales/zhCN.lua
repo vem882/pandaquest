@@ -536,6 +536,57 @@ local T = {
         "动画速度",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 为正常；2 为两倍速，0.5 为半速。",
+    -- Options: language, tools
+    ["Categories"] =
+        "分类",
+    ["Loosen a filter, or press Reset."] =
+        "放宽筛选条件，或点击“重置”。",
+    ["Open the quest browser"] =
+        "打开任务浏览器",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "浏览数据库中的所有任务，每个任务都有独立页面和地图。",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "选择PandaQuest文字使用的语言。选择“自动”则跟随游戏语言。",
+    ["Automatic (game language)"] =
+        "自动（游戏语言）",
+    ["Reload the interface"] =
+        "重新加载界面",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "重新加载游戏界面，使更改后的语言在各处生效。",
+    ["Tools"] =
+        "工具",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "聊天命令的所有功能都以按钮提供，无需输入任何命令。",
+    ["Skip the current target"] =
+        "跳过当前目标",
+    ["Moves the arrow on to the next target."] =
+        "让箭头指向下一个目标。",
+    ["Stop following the pinned quest"] =
+        "停止跟随固定的任务",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "清除通过“指定任务”设置或地图右键菜单固定的任务。",
+    ["Reset arrow position and map pins"] =
+        "重置箭头位置和地图标记",
+    ["Wowhead link for the current target"] =
+        "当前目标的Wowhead链接",
+    ["%d quests are hidden from the navigator."] =
+        "有%d个任务已从导航中隐藏。",
+    ["Show all hidden quests again"] =
+        "重新显示所有已隐藏的任务",
+    ["Reading windows"] =
+        "读取窗口",
+    ["Read my professions now"] =
+        "立即读取我的专业技能",
+    ["Open the profession window first."] =
+        "请先打开专业技能窗口。",
+    ["Read my archaeology now"] =
+        "立即读取我的考古学数据",
+    ["Open the archaeology window first."] =
+        "请先打开考古学窗口。",
+    ["Show synchronisation status"] =
+        "显示同步状态",
+    ["Ask the data sharing question"] =
+        "询问是否共享数据",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
