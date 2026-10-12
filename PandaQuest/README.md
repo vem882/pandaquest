@@ -85,10 +85,11 @@ the addon's data.
   newest stable build.
 - Restart the game, or `/reload` if it was already running.
 
-**Beta.** New features — the quest browser, the QuestieDB bridge, the translations and the
-animations — are published as betas until somebody has seen them work in the game. A beta says so in
-the AddOns list (an orange *beta* after the version) and in `/pq status`. Please report what you see:
-what works is how a feature leaves beta.
+**Not yet confirmed in the game.** The quest browser, the QuestieDB bridge, the translations and the
+animations have been tested only against a simulated client: how the windows fit real font metrics,
+how the map art loads and how the motion feels are still open. Please report what you see — with
+`/pq status` and the Lua error text if there is one. A build made for testing says *beta* after the
+version in the AddOns list and in `/pq status`.
 
 PandaQuest is built for **Mists of Pandaria Classic 5.5.4** only. It does not load on other game
 versions. Optional: **TomTom** is detected automatically when present.
