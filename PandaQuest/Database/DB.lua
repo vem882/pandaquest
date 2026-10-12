@@ -313,12 +313,10 @@ local function runLoad()
     tables.quests, tables.npcs, tables.objects, tables.items = quests, npcs, objects, items
 
     -- The QuestieDB addon, when it is installed, before the fixes and overrides below so that those
-    -- still have the last word. Database/QuestieDB.lua never raises; the pcall is for a bug in it.
+    -- still have the last word. NOT under a pcall: Merge yields to keep the frame rate, and Lua 5.1
+    -- cannot yield across a pcall. Database/QuestieDB.lua guards what can raise itself.
     local bridge = ns.QuestieDB
-    if bridge and bridge.Merge then
-        local ok, err = pcall(bridge.Merge, tables, yieldEvery)
-        if not ok then Log.Error("DB", "QuestieDB bridge failed: %s", tostring(err)) end
-    end
+    if bridge and bridge.Merge then bridge.Merge(tables, yieldEvery) end
     yield()
 
     applyFactionFixes(); yield()
