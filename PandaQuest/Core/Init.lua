@@ -340,6 +340,9 @@ commands.status = function()
             Log.Print(L["This is a build from a modified working tree; it is not a release."])
         end
     end
+    if build and build.channel == "beta" then
+        Log.Print(L["This is a beta build: new features are not yet confirmed in the game."])
+    end
     local ready = ns.DB and ns.DB.IsReady and ns.DB.IsReady()
     Log.Print(L["Database: %s"], L[ready and "ready" or "loading"])
     if ns.QuestLog and ns.QuestLog.GetAll then

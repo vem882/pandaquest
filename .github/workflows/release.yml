@@ -4,9 +4,10 @@
 # machine: build.py and check.py are stdlib Python, there is no Lua interpreter and no luacheck,
 # and nothing is pip-installed.
 #
-# The PandaQuest portal downloads the release asset, so the file name and the paths inside the
-# zip are an interface, and README.md, "Release asset rules", is the definition. Break it and the
-# portal does not fail -- it goes on offering the previous build, with nothing anywhere saying why.
+# The asset keeps a digits-only name, PandaQuest-<version>.zip, with every path under PandaQuest/;
+# README.md, "The release asset", is the definition and check.py asserts it. Players get the addon
+# from CurseForge (publish-curseforge.yml, started by hand, or the repository webhook); the GitHub
+# release is where that zip is built and checked once.
 name: Release
 
 on:
@@ -38,6 +39,8 @@ jobs:
       version: ${{ steps.build.outputs.version }}
       package: ${{ steps.build.outputs.package }}
       sha256: ${{ steps.build.outputs.sha256 }}
+      tag: ${{ steps.build.outputs.tag }}
+      channel: ${{ steps.build.outputs.channel }}
     steps:
       # fetch-depth: 0 is load-bearing, and it fails silently without it. The shipped version is
       # this repository's commit count (build.py: release_version), and a shallow clone counts
@@ -73,6 +76,11 @@ jobs:
           set -euo pipefail
           version="$(python3 .github/release/build.py version)"
           package="PandaQuest-${version}.zip"
+          # The tag and the channel are worked out once, here, from the TOC: v0.2.140 for a stable
+          # build and v0.2.140-beta for a beta. Every later step reads them from this job's outputs
+          # instead of building the string again.
+          tag="$(python3 .github/release/build.py tag)"
+          channel="$(python3 .github/release/build.py channel)"
           python3 .github/release/build.py package --out "dist/${package}"
 
           # Built a second time, into a different directory, and compared. Determinism is part of
@@ -92,6 +100,8 @@ jobs:
             echo "version=${version}"
             echo "package=${package}"
             echo "sha256=${first}"
+            echo "tag=${tag}"
+            echo "channel=${channel}"
           } >> "$GITHUB_OUTPUT"
 
       - name: Say what was built
@@ -156,9 +166,11 @@ jobs:
       # gh is preinstalled on GitHub-hosted runners, so this needs no action from anybody's
       # marketplace and no token beyond the run's own.
       #
-      # The tag carries a "v" and the asset does not. That is deliberate and it is the whole
-      # contract: the portal matches ^PandaQuest-(\d+(?:\.\d+)*)\.zip$ against the *file name*, so a
-      # "v" there makes the package invisible. Tags are read by humans and by nothing else here.
+      # The tag carries a "v" (and "-beta" for a beta) and the asset does not: the asset keeps the
+      # digits-only name PandaQuest-<version>.zip that build.py and check.py enforce. Tags are read
+      # by people and by CurseForge's packaging, which labels a file a beta from the word in the tag.
+      # A beta is created as a prerelease and never as "Latest", so GitHub's Latest stays the newest
+      # stable build until one is published.
       - name: Publish the release
         env:
           # gh resolves which repository to talk to from --repo, from GH_REPO, or from a git
@@ -173,12 +185,24 @@ jobs:
           VERSION: ${{ needs.build.outputs.version }}
           PACKAGE: ${{ needs.build.outputs.package }}
           SHA256: ${{ needs.build.outputs.sha256 }}
+          TAG: ${{ needs.build.outputs.tag }}
+          CHANNEL: ${{ needs.build.outputs.channel }}
         run: |
           set -euo pipefail
-          tag="v${VERSION}"
+          tag="${TAG}"
           bytes="$(stat -c%s "dist/${PACKAGE}")"
+          if [ "${CHANNEL}" = "beta" ]; then
+            label="${VERSION} (beta)"
+            kind="Pre-release: new features here have not yet been confirmed in the game."
+            prerelease="true"
+          else
+            label="${VERSION}"
+            kind="Stable release."
+            prerelease="false"
+          fi
           notes="$(printf '%s\n' \
-            "PandaQuest ${VERSION} for Mists of Pandaria Classic 5.5.4." \
+            "PandaQuest ${label} for Mists of Pandaria Classic 5.5.4." \
+            "${kind}" \
             "" \
             "| | |" \
             "|---|---|" \
@@ -187,19 +211,19 @@ jobs:
             "| sha256 | \`${SHA256}\` |" \
             "" \
             "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
-            "Licence: GPLv3. The PandaQuest portal (pd.zroot.it) downloads this asset.")"
+            "Licence: GPLv3. Content is completed at the PandaQuest portal, pd.zroot.it.")"
 
           # One listing, used for two things. Asking for the list rather than for this one
           # release means "the release is not there yet" is read off data instead of off an
           # error message: the old code ran `gh release view >/dev/null 2>&1` and took any
           # failure as "does not exist", so a repository it could not resolve looked exactly
           # like a first release. If this call fails, the step fails here.
-          gh release list --limit 200 --json tagName,isDraft > releases.json
+          gh release list --limit 200 --json tagName,isDraft,isPrerelease > releases.json
 
-          # The version must sort above everything already published. The portal takes the highest
-          # version it can see and reports nothing when a package sorts below it -- it simply
-          # goes on offering the older build. build.py's shallow and no-git guards stop the two
-          # known ways to produce a low number; this is the backstop that says so out loud.
+          # The version must sort above everything already published, betas included. A number
+          # that goes backwards is invisible to anything that picks the highest version, and
+          # nothing reports it. build.py's shallow and no-git guards stop the two known ways to
+          # produce a low number; this is the backstop that says so out loud.
           python3 - "${tag}" "${VERSION}" releases.json exists.txt <<'GUARD'
           import json
           import re
@@ -208,24 +232,24 @@ jobs:
           tag, version, listing, answer = sys.argv[1:5]
           releases = json.loads(open(listing, encoding="utf-8").read())
 
-          # The portal's own ordering: tuple(int(part) for part in version.split(".")).
+          # The ordering the version is defined by: tuple(int(part) for part in version.split(".")).
+          # A "-beta" suffix on a tag is ignored, so v0.2.140-beta counts as 0.2.140.
           def key(value):
               return tuple(int(part) for part in value.split("."))
 
           published = [
               match.group(1)
               for release in releases
-              if release["tagName"] != tag
-              for match in [re.fullmatch(r"v(\d+(?:\.\d+)*)", release["tagName"])]
-              if match
+              for match in [re.fullmatch(r"v(\d+(?:\.\d+)*)(?:-beta)?", release["tagName"])]
+              if match and match.group(1) != version
           ]
           if published:
               highest = max(published, key=key)
               if key(version) <= key(highest):
                   raise SystemExit(
                       f"::error::{version} does not sort above {highest}, which this repository "
-                      "has already published. The portal offers the highest version it can see, so "
-                      "this release would never reach a player and nothing would report it."
+                      "has already published. Anything that picks the highest version would keep "
+                      "offering that one, and nothing would report it."
                   )
               print(f"{version} sorts above {highest}, the highest already published")
           else:
@@ -252,23 +276,38 @@ jobs:
             fi
             # `gh release create` with an asset is three API calls: create as a draft, upload,
             # publish. A run that died after the first leaves a draft holding the tag, and a
-            # draft is not served by the public releases API -- the portal sees nothing at all
-            # while the run is green. Finish that publish rather than parking the asset on it.
+            # draft is not served by the public releases API -- nobody sees it at all while the
+            # run is green. Finish that publish rather than parking the asset on it.
             draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
             if [ "${draft}" = "True" ]; then
               echo "::warning::${tag} was left as a draft; publishing it now"
-              gh release edit "${tag}" --draft=false --latest
+              if [ "${prerelease}" = "true" ]; then
+                gh release edit "${tag}" --draft=false --prerelease
+              else
+                gh release edit "${tag}" --draft=false --prerelease=false --latest
+              fi
+            elif [ "${prerelease}" = "true" ]; then
+              gh release edit "${tag}" --prerelease
+            else
+              gh release edit "${tag}" --prerelease=false
             fi
           else
             # --target pins the tag to the commit this zip was built from. Without it gh creates
             # the tag from the latest state of the default branch at publish time, which on a
             # busy main is a different commit from the one the notes and the archive comment
             # both name -- and `git checkout v<version>` then gives the wrong tree.
+            # --prerelease and --latest are never sent together: a prerelease cannot be "Latest",
+            # and whether the API rejects or ignores the pair was not tested.
+            if [ "${prerelease}" = "true" ]; then
+              flags=(--prerelease --latest=false)
+            else
+              flags=(--latest)
+            fi
             gh release create "${tag}" "dist/${PACKAGE}" \
               --target "${GITHUB_SHA}" \
-              --title "PandaQuest ${VERSION}" \
+              --title "PandaQuest ${label}" \
               --notes "${notes}" \
-              --latest
+              "${flags[@]}"
           fi
 
       # The old version of this step printed whatever it found and exited 0, so a draft release
@@ -280,17 +319,19 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.build.outputs.version }}
           PACKAGE: ${{ needs.build.outputs.package }}
+          TAG: ${{ needs.build.outputs.tag }}
+          CHANNEL: ${{ needs.build.outputs.channel }}
         run: |
           set -euo pipefail
-          tag="v${VERSION}"
+          tag="${TAG}"
           bytes="$(stat -c%s "dist/${PACKAGE}")"
-          gh release view "${tag}" --json tagName,isDraft,assets > published.json
+          gh release view "${tag}" --json tagName,isDraft,isPrerelease,assets > published.json
 
-          python3 - "${tag}" "${PACKAGE}" "${bytes}" published.json <<'CONFIRM'
+          python3 - "${tag}" "${PACKAGE}" "${bytes}" published.json "${CHANNEL}" <<'CONFIRM'
           import json
           import sys
 
-          tag, package, size, path = sys.argv[1:5]
+          tag, package, size, path, channel = sys.argv[1:6]
           release = json.loads(open(path, encoding="utf-8").read())
           assets = {asset["name"]: asset["size"] for asset in release["assets"]}
 
@@ -298,6 +339,12 @@ jobs:
               raise SystemExit(
                   f"::error::{tag} is still a draft. The public releases API does not serve a "
                   "draft, so the portal would download nothing."
+              )
+          if release["isPrerelease"] != (channel == "beta"):
+              raise SystemExit(
+                  f"::error::{tag} is {'a prerelease' if release['isPrerelease'] else 'not a prerelease'} "
+                  f"but the build's channel is {channel}. A beta must not go out as the stable release, "
+                  "or the other way round."
               )
           if assets.get(package) != int(size):
               raise SystemExit(

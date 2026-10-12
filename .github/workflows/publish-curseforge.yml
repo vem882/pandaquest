@@ -20,28 +20,28 @@ on:
   workflow_call:
     inputs:
       release_tag:
-        description: Existing GitHub release tag, such as v0.2.125
+        description: Existing GitHub release tag, such as v0.2.125 or v0.2.140-beta
         type: string
         required: true
       release_type:
-        description: alpha, beta or release
+        description: auto (the tag decides), alpha, beta or release
         type: string
-        default: beta
+        default: auto
     secrets:
       CF_API_TOKEN:
         required: true
   workflow_dispatch:
     inputs:
       release_tag:
-        description: Existing release tag, or latest for the latest release
+        description: Existing release tag, or latest for the highest published version (a beta included)
         type: string
         required: true
         default: latest
       release_type:
-        description: How CurseForge labels the file
+        description: How CurseForge labels the file; auto = the tag decides (-beta is a beta)
         type: choice
-        options: [beta, release, alpha]
-        default: beta
+        options: [auto, beta, release, alpha]
+        default: auto
 
 # contents: write is for the reservation tag and nothing else.
 permissions:
@@ -73,14 +73,28 @@ jobs:
         run: |
           set -euo pipefail
           # "latest" is resolved once, so the zip, the notes and the reservation name one release.
+          # It means the highest version published, a beta included: GitHub's own "latest" skips
+          # prereleases, and a beta that could not be sent to CurseForge would defeat its purpose.
           if [[ "${RELEASE_TAG}" == "latest" ]]; then
-            RELEASE_TAG="$(gh api "repos/${GH_REPO}/releases/latest" --jq '.tag_name')"
+            RELEASE_TAG="$(gh release list --exclude-drafts --limit 100 --json tagName --jq '.[].tagName' \
+              | python3 -c '
+          import re, sys
+          tags = [t.strip() for t in sys.stdin if re.fullmatch(r"v\d+(?:\.\d+)*(?:-beta)?", t.strip())]
+          key = lambda t: (tuple(int(p) for p in t[1:].split("-")[0].split(".")), not t.endswith("-beta"))
+          print(max(tags, key=key) if tags else "")
+          ')"
+            if [[ -z "${RELEASE_TAG}" ]]; then
+              echo "::error::there is no published release to send"
+              exit 1
+            fi
           fi
-          if ! [[ "${RELEASE_TAG}" =~ ^v[0-9]+(\.[0-9]+)+$ ]]; then
-            echo "::error::${RELEASE_TAG} is not a release tag of the form v0.2.125"
+          if ! [[ "${RELEASE_TAG}" =~ ^v[0-9]+(\.[0-9]+)+(-beta)?$ ]]; then
+            echo "::error::${RELEASE_TAG} is not a release tag of the form v0.2.125 or v0.2.140-beta"
             exit 1
           fi
+          # The asset name is digits only whatever the tag says.
           VERSION="${RELEASE_TAG#v}"
+          VERSION="${VERSION%-beta}"
           PACKAGE="PandaQuest-${VERSION}.zip"
           mkdir -p "${DOWNLOAD_DIR}"
           gh release download "${RELEASE_TAG}" --pattern "${PACKAGE}" --dir "${DOWNLOAD_DIR}"
@@ -89,6 +103,10 @@ jobs:
           {
             echo "RELEASE_TAG=${RELEASE_TAG}"
             echo "PACKAGE=${PACKAGE}"
+            # "auto" labels the file the way the tag does: -beta is a beta, anything else a release.
+            if [[ "${RELEASE_TYPE}" == "auto" ]]; then
+              if [[ "${RELEASE_TAG}" == *-beta ]]; then echo "RELEASE_TYPE=beta"; else echo "RELEASE_TYPE=release"; fi
+            fi
           } >> "${GITHUB_ENV}"
 
       - name: Reserve the upload

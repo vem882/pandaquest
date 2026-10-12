@@ -2,6 +2,12 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.142
+- release - beta channel: TOC X-Release-Channel; beta in the title, /pq status and the v...-beta tag
+- release - betas are GitHub prereleases, never Latest; CurseForge files are labelled by the tag
+- motion - animation toolkit (fade, rise, pop, sheen, pulse, smoothing)
+- options - Animations: on/off and speed
+
 0.2.139
 - database - fixed: QuestieDB merge failed with 'attempt to yield across metamethod/C-call boundary'
 

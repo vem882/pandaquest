@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package PandaQuest as the release asset the portal downloads.
+"""Package PandaQuest as the release asset.
 
     python3 .github/release/build.py version                 # 0.2.84 -- the release number, alone
     python3 .github/release/build.py identity                # BUILD=0.2.84+082c57d ... as shell lines
@@ -22,10 +22,10 @@ The series comes from ``## Version`` in the TOC; the last component is this repo
 commit count, so it moves whenever a commit lands and nobody has to remember to bump it.
 README.md, "The version", says how the number is formed.
 
-Digits and dots only, which is a hard requirement and not a preference: the portal finds packages
+Digits and dots only, which is a hard requirement and not a preference: a consumer finds packages
 with ``^PandaQuest-(\\d+(?:\\.\\d+)*)\\.zip$`` and orders them with
 ``tuple(int(part) for part in version.split("."))``.  A ``v``, a hyphen or a short sha
-anywhere in the file name produces a zip the portal cannot see at all, and /setup then offers
+anywhere in the file name produces a zip a consumer cannot see at all, and anything that lists packages by that pattern then offers
 nothing while looking perfectly healthy.  The commit sha still reaches the package -- it is
 appended to the *build* identity, which goes into the TOC, into ``Core/Build.lua`` and into
 the archive comment, none of which is a file name.
@@ -48,7 +48,7 @@ never the clock -- so that building the same commit twice produces the same byte
   ``ns.Build`` -- including the commit's *date*, the one fact of the four that ``## Version``
   cannot carry;
 * the zip's archive comment, a JSON object with the commit subject and date, which is where
-  the portal reads what /setup shows.  A comment rather than a second file beside the zip,
+  it records what the build was.  A comment rather than a second file beside the zip,
   because a release asset arrives alone.
 """
 
@@ -82,7 +82,7 @@ BUILD_LUA = "Core/Build.lua"
 MISTS_SUFFIX = "_Mists"
 BUILD_LUA_TOC_LINE = "Core\\Build.lua"
 
-#: The portal's package pattern, which it uses to find the release asset.  check.py asserts the
+#: The asset-name pattern the release asset rules require.  check.py asserts the
 #: built file name matches it, so the contract is tested where the file is made.
 PORTAL_PACKAGE_PATTERN = re.compile(r"^PandaQuest-(\d+(?:\.\d+)*)\.zip$")
 
@@ -94,7 +94,16 @@ SUBJECT_LIMIT = 300
 #: than appends to -- so stamping an already-stamped TOC leaves one tag and not three.  Green
 #: because Questie's is green and players already read it there.
 TITLE_TAG = "|cff00ff00v%s|r"
-TITLE_TAG_PATTERN = re.compile(r"\s*\|cff00ff00v[^|]*\|r\s*$", re.IGNORECASE)
+BETA_TAG = "|cffff9900beta|r"
+TITLE_TAG_PATTERN = re.compile(r"\s*\|cff00ff00v[^|]*\|r(?:\s*\|cffff9900beta\|r)?\s*$", re.IGNORECASE)
+
+#: The release channel. ``## X-Release-Channel: beta`` in the TOC marks a build as a beta: the title
+#: says so, ``/pq status`` says so, the release tag gets ``-beta`` (CurseForge's packaging reads the
+#: word to label the file) and the GitHub release is flagged prerelease. The asset name and
+#: ``## Version`` stay digits only, because the asset-name pattern requires it. No line means stable.
+CHANNELS = ("stable", "beta")
+DEFAULT_CHANNEL = "stable"
+CHANNEL_DIRECTIVE = "## x-release-channel:"
 
 #: Never shipped to the client: development leftovers and editor droppings.
 EXCLUDED_NAMES = {".git", ".gitignore", "__pycache__", ".DS_Store", "Thumbs.db", ".pytest_cache"}
@@ -144,11 +153,37 @@ def _git(*args: str, repo: Path | None = None) -> str:
     return result.stdout.strip()
 
 
+def read_toc_channel(toc: Path | None = None) -> str:
+    """The channel the TOC declares: "stable" or "beta". An unknown word is an error, not a guess."""
+    path = toc or TOC
+    try:
+        text = path.read_text(encoding="utf-8-sig")
+    except OSError:
+        return DEFAULT_CHANNEL
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.lower().startswith(CHANNEL_DIRECTIVE):
+            value = stripped.split(":", 1)[1].strip().lower()
+            if value not in CHANNELS:
+                raise SystemExit(f"{path.name}: ## X-Release-Channel is {value!r}; it must be one of {CHANNELS}")
+            return value
+    return DEFAULT_CHANNEL
+
+
+def release_tag(version: str, channel: str = DEFAULT_CHANNEL) -> str:
+    """The git tag of a release: ``v0.2.140``, or ``v0.2.140-beta`` for a beta.
+
+    Tags are read by people and by CurseForge's packager, which decides alpha/beta/release from
+    the words in the name. Nothing reads them to find the asset: that is the file name's job.
+    """
+    return f"v{version}" + ("-beta" if channel == "beta" else "")
+
+
 def _is_number(part: str) -> bool:
-    """A component the portal can turn back into an int: ASCII digits, nothing else.
+    """A component a consumer can turn back into an int: ASCII digits, nothing else.
 
     ``str.isdigit`` alone would accept ``'٣'``, which ``int()`` also accepts -- so a version
-    built from it would pass every check here and produce a file name the portal's ``\\d``
+    built from it would pass every check here and produce a file name a consumer's ``\\d``
     pattern rejects.
     """
     return bool(part) and part.isascii() and part.isdigit()
@@ -190,7 +225,7 @@ def is_shallow(repo: Path | None = None) -> bool:
     because it does *not* show up as the fallback in :func:`release_version`.  Measured: a
     ``git clone --depth 1`` of this repository answers ``rev-list --count HEAD`` with ``1``,
     so the version is ``0.2.1`` -- well formed, digits and dots, passing every other check
-    here, and sorting below every package the portal already has.  The portal does not fail on that;
+    here, and sorting below every package a consumer already has.  Nothing fails on that;
     it goes on offering the previous build.  So :func:`package` refuses outright rather than
     producing a number nobody can tell is wrong by looking at it.
 
@@ -218,7 +253,7 @@ def release_version(toc: Path | None = None, repo: Path | None = None) -> str:
 
 
 def package_name(version: str) -> str:
-    """The one file name the portal will look at.  See :data:`PORTAL_PACKAGE_PATTERN`."""
+    """The one file name a release asset may have.  See :data:`PORTAL_PACKAGE_PATTERN`."""
     return f"{ADDON}-{version}.zip"
 
 
@@ -235,6 +270,7 @@ def identity(repo: Path | None = None, paths: Sequence[str] = (ADDON,)) -> dict[
     return {
         "addon": ADDON,
         "version": version,
+        "channel": read_toc_channel(),
         "build": build,
         "commit": commit,
         "dirty": dirty,
@@ -265,6 +301,7 @@ def build_lua(ident: dict[str, object]) -> str:
     """The generated ``Core/Build.lua``.  Data only: one table on the addon's own namespace."""
     fields = [
         ("version", _lua_string(str(ident["version"]))),
+        ("channel", _lua_string(str(ident.get("channel", DEFAULT_CHANNEL)))),
         ("build", _lua_string(str(ident["build"]))),
         ("commit", _lua_string(str(ident["commit"]))),
         ("dirty", "true" if ident["dirty"] else "false"),
@@ -293,9 +330,11 @@ def shown_version(ident: dict[str, object]) -> str:
     return str(ident["version"]) + ("+dirty" if ident["dirty"] else "")
 
 
-def title_with_version(title: str, shown: str) -> str:
-    """``|cff5fd7ffPanda|rQuest`` -> ``|cff5fd7ffPanda|rQuest |cff00ff00v0.2.84|r``."""
-    return f"{TITLE_TAG_PATTERN.sub('', title).rstrip()} {TITLE_TAG % shown}"
+def title_with_version(title: str, shown: str, channel: str = DEFAULT_CHANNEL) -> str:
+    """``|cff5fd7ffPanda|rQuest`` -> ``|cff5fd7ffPanda|rQuest |cff00ff00v0.2.84|r``, plus an orange
+    ``beta`` after it when the build is one."""
+    tagged = f"{TITLE_TAG_PATTERN.sub('', title).rstrip()} {TITLE_TAG % shown}"
+    return tagged + (f" {BETA_TAG}" if channel == "beta" else "")
 
 
 def stamp_toc(text: str, ident: dict[str, object]) -> str:
@@ -332,7 +371,8 @@ def stamp_toc(text: str, ident: dict[str, object]) -> str:
             versioned = True
             continue
         if stripped.lower().startswith("## title:"):
-            out.append(f"## Title: {title_with_version(stripped.split(':', 1)[1].strip(), shown)}")
+            out.append("## Title: " + title_with_version(
+                stripped.split(":", 1)[1].strip(), shown, str(ident.get("channel", DEFAULT_CHANNEL))))
             continue
         if not inserted and stripped and not stripped.startswith("#"):
             out.append(BUILD_LUA_TOC_LINE)
@@ -360,7 +400,7 @@ def _entry(name: str) -> zipfile.ZipInfo:
 def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, bytes]:
     """Every zip entry, by its path inside the archive.  Every key starts with ``PandaQuest/``.
 
-    That prefix is the folder name WoW installs, and it is what the portal's update manifest is
+    That prefix is the folder name WoW installs, and it is what an update manifest is
     built from: its ``_safe_member`` drops every entry that does not begin with ``PandaQuest/``
     and ``index_package`` then refuses the package outright, because the TOC was one of the
     entries dropped.  It is built from :data:`ADDON` rather than from the checkout's directory
@@ -386,7 +426,7 @@ def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, byt
         )
     # The client looks for ``<Addon>_Mists.toc`` before ``<Addon>.toc`` on Mists of Pandaria
     # Classic, and CurseForge reads the same suffix to tag the file's game version.  The plain TOC
-    # stays because the portal indexes the package through it and every other client falls back
+    # stays because a package index reads the plain name and every other client falls back
     # to it.  The Mists file is not kept in the repository: two copies in a tree drift, so it is
     # this very TOC, stamped once, written under the second name.
     mists_name = f"{ADDON}/{ADDON}{MISTS_SUFFIX}.toc"
@@ -435,20 +475,20 @@ def package(
     if commit_count() is None and not allow_no_git:
         # The quieter sibling of the shallow case, and the worse one. Without git,
         # release_version falls back to the TOC's declared series -- measured here, 0.2.0:
-        # digits and dots, matching the portal's pattern, and a number that never moves again, so
+        # digits and dots, matching the asset-name pattern, and a number that never moves again, so
         # every later release publishes under the same tag. Refusing is the only outcome a
         # human notices, exactly as for the shallow case below.
         raise SystemExit(
             f"git could not answer here, so the version would be {release_version()} -- the "
             "TOC's declared series and not this repository's commit count. That name matches "
-            "the portal's pattern, so nothing downstream reports it, and it does not move when "
+            "the asset-name pattern, so nothing downstream reports it, and it does not move when "
             "the next commit lands. Build from a git checkout with git installed. "
             "--allow-no-git builds anyway, for a source tarball nobody publishes."
         )
     if is_shallow() and not allow_shallow:
         raise SystemExit(
             f"this checkout is shallow, so the version would be {release_version()} instead of "
-            "the real commit count -- a package the portal sorts below every one it already has, "
+            "the real commit count -- a package a consumer sorts below every one it already has, "
             "and it reports nothing when that happens. Fetch the whole history "
             "(git fetch --unshallow, or fetch-depth: 0 in the workflow). --allow-shallow builds "
             "anyway, for a local experiment whose file name is wrong on purpose."
@@ -457,22 +497,22 @@ def package(
     target = target or DIST_DIR / package_name(str(ident["version"]))
     named = PORTAL_PACKAGE_PATTERN.match(target.name)
     if not named:
-        # The portal lists dist/ and matches this pattern; a name it does not match is a package
+        # A consumer lists dist/ and matches this pattern; a name it does not match is a package
         # no player is ever offered, and nothing downstream reports the omission.
         raise SystemExit(
-            f"{target.name} is not a name the portal can see. It must match "
+            f"{target.name} is not a name the release asset rules allow. It must match "
             f"{PORTAL_PACKAGE_PATTERN.pattern} -- digits and dots only, no 'v' and no sha."
         )
     if named.group(1) != ident["version"]:
-        # The shape being right is not enough. The portal reads the version twice and from two
+        # The shape being right is not enough. A consumer reads the version twice and from two
         # places: find_package orders candidates by the number in the FILE NAME, and
         # index_package takes the manifest's version from the ARCHIVE COMMENT, which wins. A
-        # file whose name and comment disagree makes the portal disagree with itself -- it sorts
+        # file whose name and comment disagree makes a consumer disagree with itself -- it sorts
         # the package at one version and advertises another -- and one mistyped digit is
         # enough. Both numbers are in hand right here, so compare them.
         raise SystemExit(
             f"{target.name} says version {named.group(1)}, but this tree builds "
-            f"{ident['version']}. The portal sorts packages by the name and reads the version out "
+            f"{ident['version']}. A consumer sorts packages by the name and reads the version out "
             f"of the archive comment, so the two must agree. Use "
             f"{package_name(str(ident['version']))}."
         )
@@ -491,8 +531,10 @@ def main(argv: list[str] | None = None) -> int:
     # Its own subcommand rather than a field of `identity`, because the workflow wants one word
     # on stdout and nothing else: VERSION="$(python3 .github/release/build.py version)" cannot go wrong the way
     # grepping a KEY=value block for the right line can, and the number goes into a file name
-    # where a stray space is a zip the portal's pattern does not match.
+    # where a stray space is a zip the asset-name pattern does not match.
     commands.add_parser("version", help="print the release version and nothing else")
+    commands.add_parser("channel", help="print the release channel (stable or beta) and nothing else")
+    commands.add_parser("tag", help="print the git tag of this release (v0.2.140 or v0.2.140-beta)")
     shown = commands.add_parser("identity", help="print the build identity of the current tree")
     shown.add_argument("--json", action="store_true", help="one JSON object instead of shell lines")
     packaged = commands.add_parser("package", help="build the stamped addon zip")
@@ -512,12 +554,18 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "version":
         print(release_version())
         return 0
+    if args.command == "channel":
+        print(read_toc_channel())
+        return 0
+    if args.command == "tag":
+        print(release_tag(release_version(), read_toc_channel()))
+        return 0
     if args.command == "identity":
         ident = identity()
         if args.json:
             print(json.dumps(ident, sort_keys=True))
         else:
-            for key in ("build", "version", "commit", "dirty", "committed"):
+            for key in ("build", "version", "channel", "commit", "dirty", "committed"):
                 value = str(ident[key]).lower() if key == "dirty" else ident[key]
                 print(f"{key.upper()}={value}")
         return 0

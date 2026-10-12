@@ -9,7 +9,7 @@ not end up in a process list or a log.
 
 Why this and not CurseForge's own packager: the zip that goes to CurseForge is the zip the
 GitHub release carries -- the same bytes, built and checked once by ``build.py`` -- and the
-portal's contract depends on that file's name and layout.  A second packer would produce a
+the release asset's contract depends on that file's name and layout.  A second packer would produce a
 second, different zip of the same tree.
 
 What is NOT verified, because it needs a real project and token: the exact name CurseForge gives
@@ -63,18 +63,37 @@ def latest_changelog(text: str) -> str:
     return (sections[0] if sections else text).strip()
 
 
+TAG_PATTERN = re.compile(r"v(\d+(?:\.\d+)*)(?:-beta)?")
+
+
+def tag_key(tag: str):
+    """The numeric version of a release tag, ``v0.2.140-beta`` and ``v0.2.140`` both (0, 2, 140)."""
+    match = TAG_PATTERN.fullmatch(tag)
+    return tuple(int(part) for part in match.group(1).split(".")) if match else None
+
+
+def tag_release_type(tag: str) -> str:
+    """What CurseForge should call the file: ``-beta`` in the tag is a beta, anything else a release."""
+    return "beta" if tag.endswith("-beta") else "release"
+
+
 def release_tags() -> list:
-    """The ``v<digits>`` tags of this checkout, newest first."""
-    out = subprocess.run(["git", "-C", str(REPO), "tag", "--list", "v*", "--sort=-version:refname"],
+    """The release tags (``v0.2.140``, ``v0.2.140-beta``) of this checkout, newest first.
+
+    Sorted here by the number and not by git: git's version sort puts ``v0.2.140-beta`` after
+    ``v0.2.140``, and a number is what "newest" means.
+    """
+    out = subprocess.run(["git", "-C", str(REPO), "tag", "--list", "v*"],
                          capture_output=True, text=True, check=False).stdout
-    return [tag for tag in out.split() if re.fullmatch(r"v\d+(?:\.\d+)*", tag)]
+    tags = [tag for tag in out.split() if tag_key(tag) is not None]
+    return sorted(tags, key=lambda tag: (tag_key(tag), not tag.endswith("-beta")), reverse=True)
 
 
 def previous_tag(tags: list, version: str):
-    """The newest tag below ``v<version>``, or None."""
-    key = lambda tag: tuple(int(part) for part in tag[1:].split("."))  # noqa: E731
-    below = [tag for tag in tags if key(tag) < key("v" + version)]
-    return below[0] if below else None
+    """The newest tag whose number is below ``version``, or None. The suffix plays no part."""
+    wanted = tuple(int(part) for part in version.split("."))
+    below = [tag for tag in tags if tag_key(tag) is not None and tag_key(tag) < wanted]
+    return max(below, key=lambda tag: (tag_key(tag), not tag.endswith("-beta"))) if below else None
 
 
 def format_changelog(version: str, previous, subjects: list) -> str:

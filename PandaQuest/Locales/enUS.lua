@@ -480,3 +480,11 @@ L["Navigate"] = true
 L["Pick a quest from the list to see its page."] = true
 L["Quests"] = true
 L["Shift-click: browse all quests"] = true
+L["This is a beta build: new features are not yet confirmed in the game."] = true
+
+-- Motion (UI/Motion.lua)
+L["Animations"] = true
+L["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] = true
+L["Turn all interface motion on or off."] = true
+L["Animation speed"] = true
+L["1 is normal; 2 is twice as fast, 0.5 half as fast."] = true

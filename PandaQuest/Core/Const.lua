@@ -100,6 +100,9 @@ ns.DEFAULTS = {
         -- No radius here: LibDBIcon only offers a library-wide button radius, so exposing one
         -- would move every other addon's minimap button too (see UI/MinimapButton.lua).
         minimapButton = { hide = false, minimapPos = 220 },
+        -- Motion (UI/Motion.lua): windows fade and settle, messages slide, bars glide. `enabled = false`
+        -- shows every final state at once; `speed` is a multiplier, 0.5 (slow) to 2 (fast).
+        motion = { enabled = true, speed = 1 },
         debug = { level = 1, arrowDebug = false },
     },
     char = { hiddenQuests = {}, manualTargetKey = nil, tomtomWaypoint = nil, questAcceptedAt = {}, customTargets = {} },
