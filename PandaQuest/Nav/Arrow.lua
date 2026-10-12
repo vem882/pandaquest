@@ -13,6 +13,17 @@
 -- Performance rule for OnUpdate: rotation and colour are recomputed every frame -
 -- those are three arithmetic calls and two setters, no allocation - while the text lines are only
 -- rebuilt when a *rounded* value actually changed. Standing still therefore allocates nothing.
+--
+-- Motion (ns.Motion; Motion.lua loads after this file, so it is looked up when used):
+--   * The turning is smoothed. The bearing above stays the truth (colour, text and the router's
+--     numbers never lag); only the rotation that is DRAWN follows it, along the shorter way round
+--     the +-pi seam, at about 12 e-foldings per second. A jump of more than a quarter turn means a
+--     different target was picked, and the arrow is simply there rather than swinging across.
+--   * A new target pops the arrow (it settles back to its size around its own centre).
+--   * Between the arrival circle and three times its radius the glow breathes softly; the arrival
+--     flash takes over inside the circle and the glow is quiet again afterwards.
+--   * The pulse is the one tween that does not end by itself, so it is stopped whenever the arrow
+--     is hidden, has no target, or the player switches motion off.
 local _, ns = ...
 local L = ns.L
 
@@ -35,7 +46,7 @@ do
 end
 
 local tonumber, tostring = tonumber, tostring
-local abs, floor, pi = math.abs, math.floor, math.pi
+local abs, floor, cos, pi = math.abs, math.floor, math.cos, math.pi
 local format = string.format
 
 local PI2 = pi * 2
@@ -49,6 +60,13 @@ local NO_TARGET_GRACE = 1.0             -- keep the arrow up for a second before
 local TEXT_INTERVAL = 0.1               -- how often the text values are re-examined
 local EVALUATE_INTERVAL = 0.2           -- show/hide heartbeat (a hidden frame has no OnUpdate)
 local FLASH_TIME = 0.6                  -- arrival glow duration
+local TURN_RATE = 12                    -- smoothing of the drawn rotation, per second (Motion.Approach)
+local SNAP_ANGLE = pi / 2               -- a bigger change than this is a new target: no glide
+local NEAR_FACTOR = 3                   -- the glow breathes within this many arrival radii ...
+local NEAR_HYSTERESIS = 1.1             -- ... and keeps doing so a little further out (no flicker)
+local GLOW_LOW, GLOW_HIGH, GLOW_PERIOD = 0.10, 0.42, 1.8
+local POP_FROM, POP_TIME = 1.18, 0.25
+local POP_OWNER, GLOW_OWNER = "pq:arrow:pop", "pq:arrow:glow"
 local TEXTURE_PATH = "Interface\\AddOns\\PandaQuest\\Textures\\"
 
 ---------------------------------------------------------------------------
@@ -61,6 +79,9 @@ local lastTargetAt = 0                  -- GetTime() when a target was last avai
 local textAccum = 0
 local lastDistanceStep, lastEtaStep = nil, nil
 local flashUntil = 0
+local shownAngle = nil                      -- the rotation on screen; nil = take the next bearing as it is
+local glowPulsing = false
+local popKey = nil                          -- key of the target the arrow last popped for
 local visible = false
 local dragging = false
 
@@ -142,6 +163,56 @@ local function distanceStep(distance)
 end
 
 ---------------------------------------------------------------------------
+-- Motion helpers (nothing here runs per frame except through the OnUpdate below)
+---------------------------------------------------------------------------
+
+-- One breath per loop of v (0 -> 1): up from GLOW_LOW to GLOW_HIGH and back down, smooth at both ends.
+-- Motion.Pulse eases a loop one way only (it rises, then falls back in a single frame), which on a
+-- glow reads as a tick rather than a breath, so the loop is a plain looping tween with its own shape.
+local function glowApply(v)
+    if glowTex then glowTex:SetAlpha(GLOW_LOW + (GLOW_HIGH - GLOW_LOW) * (0.5 - 0.5 * cos(PI2 * v))) end
+end
+
+local function startGlowPulse()
+    local Motion = ns.Motion
+    if not (Motion and glowTex) then return end
+    glowPulsing = true
+    Motion.Tween{ owner = GLOW_OWNER, loop = true, duration = GLOW_PERIOD, from = 0, to = 1, ease = "linear",
+        apply = glowApply }
+end
+
+local function stopGlowPulse()
+    if not glowPulsing then return end
+    glowPulsing = false
+    local Motion = ns.Motion
+    if Motion then Motion.Cancel(GLOW_OWNER) end
+    if glowTex then glowTex:SetAlpha(0) end
+end
+
+-- The pop resizes the texture around its centre; the size comes from the profile on every step, so a
+-- scale change or a second pop in flight can never leave it at a size somebody else made.
+local function popApply(s)
+    if not arrowTex then return end
+    local size = BASE_SIZE * (tonumber(arrowProfile().scale) or 1) * s
+    arrowTex:SetSize(size, size)
+end
+
+local function popArrow()
+    local Motion = ns.Motion
+    if not (Motion and arrowTex) then return end
+    Motion.Tween{ owner = POP_OWNER, duration = POP_TIME, from = POP_FROM, to = 1, ease = "outBack", apply = popApply }
+end
+
+-- Hiding stops everything that would keep ticking behind a hidden frame.
+local function hideFrame()
+    frame:Hide()
+    visible = false
+    stopGlowPulse()
+    local Motion = ns.Motion
+    if Motion then Motion.Cancel(POP_OWNER, true) end
+end
+
+---------------------------------------------------------------------------
 -- Visibility
 ---------------------------------------------------------------------------
 
@@ -165,19 +236,20 @@ function M.Evaluate()
     local Router = ns.Router
     local hasTarget = (Router and Router.GetCurrent and Router.GetCurrent()) ~= nil
     if shouldHide() then
-        if visible then frame:Hide(); visible = false end
+        if visible then hideFrame() end
         return false
     end
     if hasTarget then
         lastTargetAt = now()
     elseif (now() - lastTargetAt) > NO_TARGET_GRACE then
-        if visible then frame:Hide(); visible = false end
+        if visible then hideFrame() end
         return false
     end
     if not visible then
         frame:Show()
         visible = true
         shownTarget = nil
+        shownAngle = nil            -- appearing: no glide from wherever it pointed last time
         lastDistanceStep, lastEtaStep = nil, nil
     end
     return true
@@ -194,20 +266,19 @@ local function onUpdate(self, elapsed)
 
     if not target then
         if arrowTex then arrowTex:SetVertexColor(0.55, 0.55, 0.55) end
+        stopGlowPulse()
         return
     end
 
     -- Rotation, colour and the arrival fade: every frame, arithmetic only.
     local distance = Router.GetDistanceTo(target)
+    local radius = distance and (Router.GetArriveRadius and Router.GetArriveRadius(target) or 15) or nil
     if arrowTex then
         -- pfQuest's arrival feedback (route.lua:373): the arrow fades as you enter the objective
         -- circle, so "you are there" reads without looking at the numbers.
         local alpha = 1
-        if distance then
-            local radius = Router.GetArriveRadius and Router.GetArriveRadius(target) or 15
-            if distance < radius * 2 then
-                alpha = 0.45 + 0.55 * Util.Clamp((distance - radius) / radius, 0, 1)
-            end
+        if distance and distance < radius * 2 then
+            alpha = 0.45 + 0.55 * Util.Clamp((distance - radius) / radius, 0, 1)
         end
         arrowTex:SetAlpha(alpha)
     end
@@ -218,7 +289,23 @@ local function onUpdate(self, elapsed)
         while bearing > pi do bearing = bearing - PI2 end
         while bearing <= -pi do bearing = bearing + PI2 end
         if arrowTex then
-            arrowTex:SetRotation(bearing)
+            -- What is drawn follows the bearing along the shorter arc; what is measured (colour,
+            -- below) does not lag. Motion.Approach hands back the whole step when motion is off.
+            local drawn = bearing
+            local Motion = ns.Motion
+            if Motion and shownAngle and shownAngle ~= bearing then
+                local delta = bearing - shownAngle
+                if delta > pi then delta = delta - PI2 elseif delta <= -pi then delta = delta + PI2 end
+                if delta <= SNAP_ANGLE and delta >= -SNAP_ANGLE then
+                    local step = Motion.Approach(0, delta, elapsed, TURN_RATE)
+                    if step ~= delta then
+                        drawn = shownAngle + step
+                        if drawn > pi then drawn = drawn - PI2 elseif drawn <= -pi then drawn = drawn + PI2 end
+                    end
+                end
+            end
+            shownAngle = drawn
+            arrowTex:SetRotation(drawn)
             local ahead = 1 - abs(bearing) / pi
             local r, g, b = gradient(ahead)
             arrowTex:SetVertexColor(r, g, b)
@@ -227,17 +314,32 @@ local function onUpdate(self, elapsed)
         -- No bearing: the target sits in another instance group, or HBD cannot resolve the map
         -- right now. Keeping the last rotation would point the player confidently in a direction
         -- that is no longer meaningful, so the arrow is reset and greyed out instead.
+        shownAngle = nil
         arrowTex:SetRotation(0)
         arrowTex:SetVertexColor(0.55, 0.55, 0.55)
     end
 
-    -- Arrival glow (numbers only; the texture alpha is a scalar setter).
+    -- Arrival glow (numbers only; the texture alpha is a scalar setter). The flash owns the glow
+    -- while it lasts; outside it the glow breathes on the way in (arrival circle .. 3x) and is
+    -- dark otherwise.
     if glowTex then
         local remaining = flashUntil - now()
         if remaining > 0 then
+            stopGlowPulse()
             glowTex:SetAlpha(remaining / FLASH_TIME)
-        elseif glowTex:GetAlpha() > 0 then
-            glowTex:SetAlpha(0)
+        else
+            local near = false
+            if distance and distance >= radius then
+                -- "Flash on arrival" off means the glow stays dark: the breathing is that same glow.
+                near = distance < radius * (glowPulsing and (NEAR_FACTOR * NEAR_HYSTERESIS) or NEAR_FACTOR)
+                    and ns.Motion ~= nil and ns.Motion.IsEnabled() and arrowProfile().arrivalFlash and true or false
+            end
+            if near then
+                if not glowPulsing then startGlowPulse() end
+            else
+                stopGlowPulse()
+                if glowTex:GetAlpha() > 0 then glowTex:SetAlpha(0) end
+            end
         end
     end
 
@@ -434,7 +536,18 @@ local function applyLayout()
     local size = BASE_SIZE * scale
     frame:SetSize(size, size + TEXT_BLOCK)
     frame:SetAlpha(tonumber(p.alpha) or 1)
-    if arrowTex then arrowTex:SetSize(size, size) end
+    if arrowTex then
+        -- Anchored by its centre, with the title hanging from the frame rather than from the arrow:
+        -- when the arrow pops it grows around itself and the text underneath does not jump.
+        if ns.Motion then ns.Motion.Cancel(POP_OWNER) end
+        arrowTex:SetSize(size, size)
+        arrowTex:ClearAllPoints()
+        arrowTex:SetPoint("CENTER", frame, "TOP", 0, -size / 2)
+        if titleText then
+            titleText:ClearAllPoints()
+            titleText:SetPoint("TOP", frame, "TOP", 0, -(size + 4))
+        end
+    end
     if glowTex then glowTex:SetSize(size * 1.6, size * 1.6) end
     frame:SetMovable(not p.locked)
     frame:EnableMouse(true)
@@ -519,10 +632,7 @@ end
 
 function M.Hide()
     arrowProfile().enabled = false
-    if frame and visible then
-        frame:Hide()
-        visible = false
-    end
+    if frame and visible then hideFrame() end
 end
 
 function M.Toggle()
@@ -604,17 +714,24 @@ local evaluateTicker
 local function onTargetReached(_, target)
     if not arrowProfile().arrivalFlash then return end
     flashUntil = now() + FLASH_TIME
+    stopGlowPulse()
     if glowTex then glowTex:SetAlpha(1) end
     if target then
         Log.Debug("Arrow", "arrival flash for %s", tostring(target.key))
     end
 end
 
-local function onCurrentTargetChanged()
+local function onCurrentTargetChanged(_, target)
     shownTarget = nil
     lastDistanceStep, lastEtaStep = nil, nil
     textAccum = TEXT_INTERVAL
     M.Evaluate()
+    -- Pop once per target: the router also announces a rebuilt copy of the same one.
+    local key = target and target.key or nil
+    if key ~= popKey then
+        popKey = key
+        if key and visible then popArrow() end
+    end
 end
 
 function M.Init()
