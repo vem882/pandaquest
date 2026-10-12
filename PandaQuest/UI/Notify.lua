@@ -4,6 +4,17 @@
 -- plus three QUEST_LOG_UPDATEs), and a helper that shouts four times per quest is worse than one
 -- that stays quiet. The same text is never repeated inside REPEAT_WINDOW, and two notifications
 -- are never shown closer together than MIN_GAP.
+--
+-- What passes the rate limit is PLAYED, one message at a time: it slides up into place while it
+-- fades in, a glint crosses the text and a gold line draws in beneath it, it is held for reading and
+-- then fades out. A message that arrives while another is on screen waits in a short queue instead of
+-- overwriting it (MAX_QUEUE deep; a full queue drops its oldest non-forced entry), and a waiting
+-- message shortens the reading time of the one in front of it so the backlog never goes stale. The
+-- same words forced again (the options Preview button) lengthen the message on screen, or are
+-- absorbed by the identical one that is waiting, instead of queueing copies.
+-- Everything that moves goes through ns.Motion; the hold is a C_Timer, so this file has no OnUpdate
+-- of its own and a hidden notification costs nothing. With motion off a message appears whole and
+-- is removed after the same hold as before.
 local _, ns = ...
 local L = ns.L
 
@@ -13,19 +24,40 @@ local M = {}
 ns.Notify = M
 
 local type, pairs, tostring, format = type, pairs, tostring, string.format
+local max = math.max
 
-local HOLD_TIME = 3.0           -- seconds fully visible
-local FADE_TIME = 1.0           -- seconds fading out
+local HOLD_TIME = 3.0           -- seconds fully visible (reading time: the speed multiplier leaves it alone)
+local BACKLOG_HOLD = 1.6        -- ... when another message is waiting behind it
 local MIN_GAP = 1.5             -- minimum seconds between two notifications
 local REPEAT_WINDOW = 10.0      -- the same text is suppressed for this long
 local MAX_HISTORY = 24
+local MAX_QUEUE = 3             -- messages waiting behind the one on screen
 
-local frame, fontString
+local IN_TIME = 0.22            -- fade + slide in
+local OUT_TIME = 0.35           -- fade out
+local SLIDE = 14                -- pixels the message rises into its place
+local SHEEN_TIME = 0.7          -- the glint across the text
+local LINE_TIME = 0.35          -- the underline drawing in
+local LINE_DELAY = 0.08
+local LINE_HEIGHT = 2
+local TEXT_PAD = 24             -- room either side of the text for the glint and the underline
+local BASE_Y = -180             -- the message's resting offset below the top of the screen
+local LINE_COLOR = { 1.0, 0.82, 0.0, 0.85 }   -- the addon's gold
+
+-- owners of the tweens, so one of them can be stopped without touching the others
+local IN_OWNER, OUT_OWNER, LINE_OWNER = "pq:notify:in", "pq:notify:out", "pq:notify:line"
+
+local frame, fontString, holder, underline
 local lastShown = {}            -- text -> GetTime() when it was last shown
 local lastAny = 0
-local shownUntil = 0
 local history = {}              -- ring of the last messages (tests, /pq status)
 local lastQuestID = nil         -- for PQ_CURRENT_TARGET_CHANGED: only speak when the quest changes
+local current = nil             -- the entry on screen, nil between messages
+local queue = {}                -- entries waiting for their turn, oldest first
+local holdTimer = nil           -- C_Timer that ends the reading time of `current`
+local holdDue = 0               -- GetTime() at which that timer fires
+local shownAt = 0               -- GetTime() when `current` arrived
+local present, endHold          -- forward declarations (they call each other through the queue)
 
 local KIND_COLOR = {
     questComplete = { 0.2, 1, 0.2 },
@@ -53,33 +85,167 @@ end
 -- Frame
 ---------------------------------------------------------------------------
 
-local function onUpdate(self)
-    local t = now()
-    if t <= shownUntil then
-        self:SetAlpha(1)
-        return
-    end
-    local fade = 1 - (t - shownUntil) / FADE_TIME
-    if fade <= 0 then
-        self:SetAlpha(0)
-        self:Hide()
-        self:SetScript("OnUpdate", nil)
-        return
-    end
-    self:SetAlpha(fade)
+-- v runs 0 -> 1 as a message arrives: transparent and `SLIDE` pixels low, then opaque and in place.
+local function setReveal(v)
+    frame:SetAlpha(v)
+    frame:ClearAllPoints()
+    frame:SetPoint("TOP", UIParent, "TOP", 0, BASE_Y - SLIDE * (1 - v))
+end
+
+local function setFade(v)
+    frame:SetAlpha(v)
+end
+
+local function setLine(width)
+    underline:SetWidth(width)
 end
 
 local function ensureFrame()
     if frame or not CreateFrame then return frame end
     frame = CreateFrame("Frame", "PandaQuestNotify", UIParent)
     frame:SetSize(600, 40)
-    frame:SetPoint("TOP", UIParent, "TOP", 0, -180)
+    frame:SetPoint("TOP", UIParent, "TOP", 0, BASE_Y)
     if frame.SetFrameStrata then frame:SetFrameStrata("HIGH") end
     fontString = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     fontString:SetPoint("CENTER", frame, "CENTER", 0, 0)
     if fontString.SetJustifyH then fontString:SetJustifyH("CENTER") end
+    -- A frame exactly as wide as the text: the glint sweeps across the words and not across the
+    -- 600 pixels of empty frame around them.
+    holder = CreateFrame("Frame", nil, frame)
+    holder:SetSize(TEXT_PAD, 26)
+    holder:SetPoint("CENTER", frame, "CENTER", 0, 0)
+    underline = holder:CreateTexture(nil, "ARTWORK")
+    underline:SetPoint("TOP", fontString, "BOTTOM", 0, -3)
+    underline:SetSize(1, LINE_HEIGHT)
+    if underline.SetColorTexture then
+        underline:SetColorTexture(LINE_COLOR[1], LINE_COLOR[2], LINE_COLOR[3], LINE_COLOR[4])
+    end
     frame:Hide()
     return frame
+end
+
+---------------------------------------------------------------------------
+-- Playing a message
+---------------------------------------------------------------------------
+
+local function playSound(kind)
+    local p = notifyProfile()
+    if (not p or p.sound ~= false) and PlaySound then
+        local soundKey = KIND_SOUND[kind]
+        local kit = _G and _G.SOUNDKIT
+        local id = soundKey and kit and kit[soundKey]
+        if id then pcall(PlaySound, id, "Master") end
+    end
+end
+
+local function textWidth(text)
+    local w = fontString.GetStringWidth and fontString:GetStringWidth()
+    if type(w) ~= "number" or w <= 0 then w = #text * 9 end
+    return w
+end
+
+local function cancelHold()
+    if holdTimer and holdTimer.Cancel then holdTimer:Cancel() end
+    holdTimer = nil
+end
+
+local function scheduleHold(seconds)
+    cancelHold()
+    holdDue = now() + seconds
+    if C_Timer and C_Timer.NewTimer then
+        holdTimer = C_Timer.NewTimer(seconds, endHold)
+    else
+        endHold()       -- no timers at all (a bare runtime): do not leave a message up for ever
+    end
+end
+
+-- The fade-out is over: hand the screen to the next waiting message, if there is one.
+local function finish()
+    current = nil
+    frame:Hide()
+    setReveal(1)        -- alpha back to 1 and the anchor back in place for the next arrival
+    local entry = table.remove(queue, 1)
+    if entry then present(entry) end
+end
+
+endHold = function()
+    holdTimer = nil
+    if not current then return end
+    local Motion = ns.Motion
+    if Motion then
+        Motion.Cancel(IN_OWNER)
+        Motion.Tween{ owner = OUT_OWNER, duration = OUT_TIME, from = frame:GetAlpha() or 1, to = 0,
+            ease = "outQuad", apply = setFade, onDone = finish }
+    else
+        finish()
+    end
+end
+
+present = function(entry)
+    current = entry
+    shownAt = now()
+    local color = KIND_COLOR[entry.kind] or KIND_COLOR.info
+    fontString:SetText(entry.text)
+    fontString:SetTextColor(color[1], color[2], color[3])
+    local width = textWidth(entry.text) + TEXT_PAD
+    holder:SetWidth(width)
+    underline:SetWidth(1)
+    playSound(entry.kind)
+
+    frame:Show()
+    local Motion = ns.Motion
+    if Motion then
+        Motion.Cancel(OUT_OWNER)
+        Motion.Tween{ owner = IN_OWNER, duration = IN_TIME, from = 0, to = 1, ease = "outCubic", apply = setReveal }
+        Motion.Tween{ owner = LINE_OWNER, duration = LINE_TIME, delay = LINE_DELAY, from = 1, to = width,
+            ease = "outCubic", apply = setLine }
+        if Motion.IsEnabled() then Motion.Sheen(holder, SHEEN_TIME) end
+    else
+        setReveal(1)
+        setLine(width)
+    end
+    scheduleHold(#queue > 0 and BACKLOG_HOLD or HOLD_TIME)
+end
+
+local function sameMessage(a, b)
+    return a.text == b.text and a.kind == b.kind
+end
+
+-- A message that passed the rate limit: play it now, or wait for the one on screen.
+local function enqueue(entry)
+    if not current then
+        present(entry)
+        return
+    end
+    -- The same words again (a forced repeat: the options Preview button pressed twice) are not a second
+    -- copy to sit through. The one being read stays for a full reading time from now, which is what a
+    -- re-show did before there was a queue; a copy that is already waiting absorbs the new one, so a
+    -- burst of identical previews never plays more than twice in a row (the message, and one more if
+    -- it was already on its way out).
+    if holdTimer and sameMessage(current, entry) then
+        shownAt = now()
+        scheduleHold(#queue > 0 and BACKLOG_HOLD or HOLD_TIME)
+        return
+    end
+    for i = 1, #queue do
+        if sameMessage(queue[i], entry) then
+            if entry.force then queue[i].force = true end   -- it was asked for: not the first to be dropped
+            return
+        end
+    end
+    if #queue >= MAX_QUEUE then
+        local drop = 1          -- everything waiting is forced: the oldest goes after all
+        for i = 1, #queue do
+            if not queue[i].force then drop = i; break end
+        end
+        table.remove(queue, drop)
+    end
+    queue[#queue + 1] = entry
+    -- A backlog shortens the reading time of what is on screen, but never below BACKLOG_HOLD.
+    if holdTimer then
+        local due = shownAt + BACKLOG_HOLD
+        if due < holdDue then scheduleHold(max(0, due - now())) end
+    end
 end
 
 ---------------------------------------------------------------------------
@@ -120,34 +286,41 @@ function M.Show(text, kind, force, dedupeKey)
         end
     end
 
+    local entry = { text = text, kind = kind, force = force and true or nil }
     local f = ensureFrame()
     if f and fontString then
-        local color = KIND_COLOR[kind] or KIND_COLOR.info
-        fontString:SetText(text)
-        fontString:SetTextColor(color[1], color[2], color[3])
-        shownUntil = t + HOLD_TIME
-        f:SetAlpha(1)
-        f:Show()
-        f:SetScript("OnUpdate", onUpdate)
-    end
-
-    if (not p or p.sound ~= false) and PlaySound then
-        local soundKey = KIND_SOUND[kind]
-        local kit = _G and _G.SOUNDKIT
-        local id = soundKey and kit and kit[soundKey]
-        if id then pcall(PlaySound, id, "Master") end
+        enqueue(entry)
+    else
+        playSound(kind)
     end
     Log.Debug("Notify", "%s: %s", kind, text)
     return true
 end
 
---- Notify.Hide(): clears the frame immediately.
+--- Notify.Hide(): clears the frame immediately, and whatever was waiting behind the message.
 function M.Hide()
-    if frame then
-        frame:SetScript("OnUpdate", nil)
-        frame:Hide()
+    cancelHold()
+    for i = #queue, 1, -1 do queue[i] = nil end
+    current = nil
+    local Motion = ns.Motion
+    if Motion then
+        Motion.Cancel(IN_OWNER)
+        Motion.Cancel(OUT_OWNER)
+        Motion.Cancel(LINE_OWNER)
+        -- Finished, not just dropped: a glint cancelled half way across stays shown at whatever alpha it
+        -- had reached, and the next message (with motion switched off, nothing restarts the glint)
+        -- would arrive with that band stuck over its text.
+        if holder then Motion.Cancel(tostring(holder) .. ":sheen", true) end
     end
-    shownUntil = 0
+    if frame then
+        frame:Hide()
+        setReveal(1)
+    end
+end
+
+--- Notify.GetQueue() -> the entries waiting behind the message on screen (oldest first).
+function M.GetQueue()
+    return queue
 end
 
 function M.IsShown()
@@ -170,6 +343,10 @@ function M.ResetRateLimit()
 end
 
 M.HOLD_TIME = HOLD_TIME
+M.BACKLOG_HOLD = BACKLOG_HOLD
+M.MAX_QUEUE = MAX_QUEUE
+M.IN_TIME = IN_TIME
+M.OUT_TIME = OUT_TIME
 M.MIN_GAP = MIN_GAP
 M.REPEAT_WINDOW = REPEAT_WINDOW
 
