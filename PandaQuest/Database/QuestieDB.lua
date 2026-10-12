@@ -136,9 +136,38 @@ local function sharedFields(kind, provided)
     return fields
 end
 
+-- One batch of entities: no yielding in here. This runs under pcall, and Lua 5.1 cannot yield across a
+-- pcall -- "attempt to yield across metamethod/C-call boundary" -- so the loader's yield happens
+-- between batches, in Merge itself, which therefore must not be called under a pcall either.
+local function mergeBatch(entity, ids, first, last, target, fields, nameIndex, preferProvider)
+    local added, refreshed = 0, 0
+    for i = first, last do
+        local id = ids[i]
+        if type(id) == "number" then
+            local row = target[id]
+            if row == nil then
+                local fresh = {}
+                local ok, touched = pcall(readInto, entity, id, fields, fresh)
+                -- A row needs a name to be a thing the addon can show; a bare id is not one.
+                if ok and touched and fresh[nameIndex] ~= nil then
+                    target[id] = fresh
+                    added = added + 1
+                end
+            elseif preferProvider then
+                local ok, touched = pcall(readInto, entity, id, fields, row)
+                if ok and touched then refreshed = refreshed + 1 end
+            end
+        end
+    end
+    return added, refreshed
+end
+
+local BATCH = 100               -- entities between two chances to yield
+
 --- Merge(tables, step) -> nil
 -- `tables` is DB.lua's { quests=, npcs=, objects=, items= } of positional rows, `step` the loader's
--- cheap "yield every so often" call. Never raises.
+-- cheap "yield every so often" call. Called from the loader's coroutine and NOT under a pcall (see
+-- mergeBatch); every operation that can raise is guarded here, so it does not raise.
 function M.Merge(tables, step)
     status.mode = M.GetMode()
     status.added, status.refreshed, status.detail = {}, {}, nil
@@ -165,24 +194,19 @@ function M.Merge(tables, step)
             if called and type(ids) == "table" then
                 local count = #ids
                 if count > MAX_ENTITIES_PER_KIND then count = MAX_ENTITIES_PER_KIND end
-                for i = 1, count do
-                    local id = ids[i]
-                    if type(id) == "number" then
-                        local row = target[id]
-                        if row == nil then
-                            local fresh = {}
-                            local ok, touched = pcall(readInto, entity, id, fields, fresh)
-                            -- A row needs a name to be a thing the addon can show; a bare id is not one.
-                            if ok and touched and fresh[nameIndex] ~= nil then
-                                target[id] = fresh
-                                added = added + 1
-                            end
-                        elseif status.mode == "prefer" then
-                            local ok, touched = pcall(readInto, entity, id, fields, row)
-                            if ok and touched then refreshed = refreshed + 1 end
-                        end
-                        if step then step() end
+                local first = 1
+                while first <= count do
+                    local last = first + BATCH - 1
+                    if last > count then last = count end
+                    local ok, a, r = pcall(mergeBatch, entity, ids, first, last, target, fields, nameIndex,
+                        status.mode == "prefer")
+                    if ok then
+                        added, refreshed = added + a, refreshed + r
+                    else
+                        status.detail = tostring(a)
                     end
+                    first = last + 1
+                    if step then step() end         -- outside the pcall: free to yield
                 end
             end
             status.added[kind.table], status.refreshed[kind.table] = added, refreshed
