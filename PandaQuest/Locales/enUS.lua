@@ -490,3 +490,28 @@ L["Windows fade and settle, messages slide in, bars glide. Switch it off for a c
 L["Turn all interface motion on or off."] = true
 L["Animation speed"] = true
 L["1 is normal; 2 is twice as fast, 0.5 half as fast."] = true
+
+-- Options: language, tools
+L["Open the quest browser"] = true
+L["Browse every quest in the database, with a page and a map for each."] = true
+L["Choose the language of PandaQuest's texts. Automatic follows the game's language."] = true
+L["Automatic (game language)"] = true
+L["Reload the interface"] = true
+L["Reloads the game's interface so a changed language applies everywhere."] = true
+L["Tools"] = true
+L["Everything the chat commands do, as buttons. Nothing here needs a command."] = true
+L["Skip the current target"] = true
+L["Moves the arrow on to the next target."] = true
+L["Stop following the pinned quest"] = true
+L["Clears the quest pinned with the focus setting or the map's right-click menu."] = true
+L["Reset arrow position and map pins"] = true
+L["Wowhead link for the current target"] = true
+L["%d quests are hidden from the navigator."] = true
+L["Show all hidden quests again"] = true
+L["Reading windows"] = true
+L["Read my professions now"] = true
+L["Open the profession window first."] = true
+L["Read my archaeology now"] = true
+L["Open the archaeology window first."] = true
+L["Show synchronisation status"] = true
+L["Ask the data sharing question"] = true

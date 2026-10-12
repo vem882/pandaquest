@@ -584,6 +584,53 @@ local T = {
     ["Animation speed"] = "Animaation nopeus",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 on normaali; 2 on kaksi kertaa nopeampi, 0,5 puolet hitaampi.",
+    -- Options: language, tools
+    ["Open the quest browser"] =
+        "Avaa tehtäväselain",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Selaa kaikkia tietokannan tehtäviä: jokaiselle oma sivu ja kartta.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Valitse PandaQuestin tekstien kieli. Automaattinen seuraa pelin kieltä.",
+    ["Automatic (game language)"] =
+        "Automaattinen (pelin kieli)",
+    ["Reload the interface"] =
+        "Lataa käyttöliittymä uudelleen",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Lataa pelin käyttöliittymän uudelleen, jotta kielen vaihto tulee voimaan kaikkialla.",
+    ["Tools"] =
+        "Työkalut",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Kaikki, mitä chat-komennot tekevät, painikkeina. Mikään tässä ei vaadi komentoa.",
+    ["Skip the current target"] =
+        "Ohita nykyinen kohde",
+    ["Moves the arrow on to the next target."] =
+        "Siirtää nuolen seuraavaan kohteeseen.",
+    ["Stop following the pinned quest"] =
+        "Lopeta kiinnitetyn tehtävän seuraaminen",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Poistaa tehtävän, joka on kiinnitetty kohdeasetuksella tai kartan oikean klikkauksen valikolla.",
+    ["Reset arrow position and map pins"] =
+        "Nollaa nuolen sijainti ja karttapinnit",
+    ["Wowhead link for the current target"] =
+        "Wowhead-linkki nykyiselle kohteelle",
+    ["%d quests are hidden from the navigator."] =
+        "%d tehtävää on piilotettu navigaattorista.",
+    ["Show all hidden quests again"] =
+        "Näytä kaikki piilotetut tehtävät uudelleen",
+    ["Reading windows"] =
+        "Ikkunoiden lukeminen",
+    ["Read my professions now"] =
+        "Lue ammattini nyt",
+    ["Open the profession window first."] =
+        "Avaa ensin ammatti-ikkuna.",
+    ["Read my archaeology now"] =
+        "Lue arkeologiani nyt",
+    ["Open the archaeology window first."] =
+        "Avaa ensin arkeologia-ikkuna.",
+    ["Show synchronisation status"] =
+        "Näytä synkronoinnin tila",
+    ["Ask the data sharing question"] =
+        "Kysy tiedonjakokysymys",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

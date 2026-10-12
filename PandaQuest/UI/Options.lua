@@ -203,6 +203,31 @@ end
 -- The table
 ---------------------------------------------------------------------------
 
+-- The chat command a button stands for: the same function, so the two can never disagree.
+local function command(order, name, desc, verb, argument)
+    return { type = "execute", order = order, name = name, desc = desc,
+        func = function()
+            local PQ = ns.PQ
+            local fn = PQ and PQ.commands and PQ.commands[verb]
+            if fn then fn(argument or "") end
+        end }
+end
+
+-- Languages: the English name first, because the native one needs a font the client may not
+-- have loaded for it; the native name is there for the player who reads it.
+local LANGUAGE_ORDER = { "auto", "enUS", "deDE", "esES", "esMX", "fiFI", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW" }
+local function languageValues()
+    return {
+        auto = L["Automatic (game language)"],
+        enUS = "English", deDE = "German (Deutsch)", esES = "Spanish, Spain (Espa\195\177ol)",
+        esMX = "Spanish, Latin America (Espa\195\177ol)", fiFI = "Finnish (Suomi)", frFR = "French (Fran\195\167ais)",
+        itIT = "Italian (Italiano)", koKR = "Korean (\237\149\156\234\181\173\236\150\180)",
+        ptBR = "Portuguese, Brazil (Portugu\195\170s)", ruRU = "Russian (\208\160\209\131\209\129\209\129\208\186\208\184\208\185)",
+        zhCN = "Chinese, Simplified (\231\174\128\228\189\147\228\184\173\230\150\135)",
+        zhTW = "Chinese, Traditional (\231\185\129\233\171\148\228\184\173\230\150\135)",
+    }
+end
+
 local function buildTable()
     local tbl = {
         type = "group",
@@ -235,9 +260,25 @@ local function buildTable()
                             get = function() return not M.GetValue("minimapButton.hide") end,
                             set = function(_, value) M.Set("minimapButton.hide", not value) end,
                         }),
+                    browser = { type = "execute", order = 4, name = L["Open the quest browser"],
+                        desc = L["Browse every quest in the database, with a page and a map for each."],
+                        func = function() if ns.QuestBrowser and ns.QuestBrowser.Show then ns.QuestBrowser.Show() end end },
                     languageHeader = header(10, L["Language"]),
                     languageInfo = { type = "description", order = 11,
-                        name = L["PandaQuest follows your game language; /pq lang overrides it."] },
+                        name = L["Choose the language of PandaQuest's texts. Automatic follows the game's language."] },
+                    language = { type = "select", order = 12, name = L["Language"],
+                        values = languageValues(), sorting = LANGUAGE_ORDER,
+                        get = function()
+                            local store = db()
+                            return store and store.global and store.global.language or "auto"
+                        end,
+                        set = function(_, value)
+                            local PQ = ns.PQ
+                            if PQ and PQ.commands and PQ.commands.lang then PQ.commands.lang(value) end
+                        end },
+                    reload = { type = "execute", order = 13, name = L["Reload the interface"],
+                        desc = L["Reloads the game's interface so a changed language applies everywhere."],
+                        func = function() if ReloadUI then ReloadUI() end end },
                 },
             },
             arrow = {
@@ -476,6 +517,48 @@ local function buildTable()
                         end },
                     reset = { type = "execute", order = 10, name = L["Reset bar position"],
                         func = function() if ns.DigSiteBar and ns.DigSiteBar.ResetPosition then ns.DigSiteBar.ResetPosition() end end },
+                },
+            },
+            tools = {
+                type = "group", order = 19, name = L["Tools"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["Everything the chat commands do, as buttons. Nothing here needs a command."] },
+                    browser = { type = "execute", order = 1, name = L["Open the quest browser"],
+                        desc = L["Browse every quest in the database, with a page and a map for each."],
+                        func = function() if ns.QuestBrowser and ns.QuestBrowser.Show then ns.QuestBrowser.Show() end end },
+                    navHeader = header(10, L["Navigation"]),
+                    skip = command(11, L["Skip the current target"], L["Moves the arrow on to the next target."], "next"),
+                    unpin = { type = "execute", order = 12, name = L["Stop following the pinned quest"],
+                        desc = L["Clears the quest pinned with the focus setting or the map's right-click menu."],
+                        func = function()
+                            if ns.Router and ns.Router.SetManualTarget then ns.Router.SetManualTarget(nil) end
+                        end },
+                    reset = command(13, L["Reset arrow position and map pins"], nil, "reset"),
+                    wowhead = command(14, L["Wowhead link for the current target"], nil, "wh"),
+                    hiddenInfo = { type = "description", order = 15,
+                        name = function()
+                            local store = db()
+                            local n = 0
+                            for _ in pairs(store and store.char and store.char.hiddenQuests or {}) do n = n + 1 end
+                            return format(L["%d quests are hidden from the navigator."], n)
+                        end },
+                    unhide = { type = "execute", order = 16, name = L["Show all hidden quests again"],
+                        func = function()
+                            local store = db()
+                            if store and store.char then
+                                for id in pairs(store.char.hiddenQuests or {}) do store.char.hiddenQuests[id] = nil end
+                            end
+                            if ns.Availability and ns.Availability.Recalculate then ns.Availability.Recalculate("hidden") end
+                            if ns.Targets and ns.Targets.Rebuild then ns.Targets.Rebuild("hidden") end
+                        end },
+                    readHeader = header(20, L["Reading windows"]),
+                    scanProfessions = command(21, L["Read my professions now"], L["Open the profession window first."],
+                        "scan", "professions"),
+                    scanArchaeology = command(22, L["Read my archaeology now"], L["Open the archaeology window first."],
+                        "scan", "archaeology"),
+                    shareHeader = header(30, L["Synchronisation (optional)"]),
+                    syncStatus = command(31, L["Show synchronisation status"], nil, "sync"),
+                    consent = command(32, L["Ask the data sharing question"], nil, "consent"),
                 },
             },
             advanced = {
