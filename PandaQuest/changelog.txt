@@ -2,6 +2,9 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.150
+- bars - fills glide, bars fade in and out, a finished dig site glints; the target's pin pulses
+
 0.2.148
 - messages - slide in with a glint and a gold line, and wait in turn instead of replacing each other
 - arrow - turns smoothly, pops on a new target, and its glow breathes on the way in
