@@ -597,6 +597,37 @@ local T = {
         "Velocidad de animación",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 es normal; 2 es el doble de rápido, 0,5 la mitad.",
+    -- Options: language, tools
+    ["Categories"] = "Categorías",
+    ["Loosen a filter, or press Reset."] = "Relaja algún filtro o presiona Limpiar.",
+    ["Open the quest browser"] = "Abrir el explorador de misiones",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Explora todas las misiones de la base de datos, con una página y un mapa para cada una.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Elige el idioma de los textos de PandaQuest. Automático sigue el idioma del juego.",
+    ["Automatic (game language)"] = "Automático (idioma del juego)",
+    ["Reload the interface"] = "Recargar la interfaz",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Recarga la interfaz del juego para que el cambio de idioma se aplique en todas partes.",
+    ["Tools"] = "Herramientas",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Todo lo que hacen los comandos del chat, en forma de botones. Aquí no se necesita ningún comando.",
+    ["Skip the current target"] = "Omitir el objetivo actual",
+    ["Moves the arrow on to the next target."] = "Pasa la flecha al siguiente objetivo.",
+    ["Stop following the pinned quest"] = "Dejar de seguir la misión fijada",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Quita la misión fijada con el ajuste 'Misión elegida' o con el menú de clic derecho del mapa.",
+    ["Reset arrow position and map pins"] = "Restablecer flecha y marcadores",
+    ["Wowhead link for the current target"] = "Enlace de Wowhead del objetivo actual",
+    ["%d quests are hidden from the navigator."] = "%d misiones están ocultas del navegador.",
+    ["Show all hidden quests again"] = "Mostrar de nuevo las misiones ocultas",
+    ["Reading windows"] = "Lectura de ventanas",
+    ["Read my professions now"] = "Leer mis profesiones ahora",
+    ["Open the profession window first."] = "Abre primero la ventana de profesión.",
+    ["Read my archaeology now"] = "Leer mi arqueología ahora",
+    ["Open the archaeology window first."] = "Abre primero la ventana de arqueología.",
+    ["Show synchronisation status"] = "Mostrar el estado de sincronización",
+    ["Ask the data sharing question"] = "Preguntar sobre compartir datos",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

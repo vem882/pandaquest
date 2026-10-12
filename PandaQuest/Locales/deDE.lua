@@ -588,6 +588,37 @@ local T = {
         "Animationsgeschwindigkeit",
     ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
         "1 ist normal; 2 ist doppelt so schnell, 0,5 halb so schnell.",
+    -- Options: language, tools
+    ["Open the quest browser"] = "Quest-Browser öffnen",
+    ["Browse every quest in the database, with a page and a map for each."] =
+        "Alle Quests der Datenbank durchsuchen, jeweils mit eigener Seite und Karte.",
+    ["Choose the language of PandaQuest's texts. Automatic follows the game's language."] =
+        "Wähle die Sprache der PandaQuest-Texte. Automatisch folgt der Spielsprache.",
+    ["Automatic (game language)"] = "Automatisch (Spielsprache)",
+    ["Reload the interface"] = "Benutzeroberfläche neu laden",
+    ["Reloads the game's interface so a changed language applies everywhere."] =
+        "Lädt die Benutzeroberfläche des Spiels neu, damit eine geänderte Sprache überall übernommen wird.",
+    ["Tools"] = "Werkzeuge",
+    ["Everything the chat commands do, as buttons. Nothing here needs a command."] =
+        "Alles, was die Chatbefehle tun, als Schaltflächen. Hier ist kein Befehl nötig.",
+    ["Skip the current target"] = "Aktuelles Ziel überspringen",
+    ["Moves the arrow on to the next target."] = "Setzt den Pfeil auf das nächste Ziel.",
+    ["Stop following the pinned quest"] = "Festgelegte Quest nicht mehr verfolgen",
+    ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
+        "Entfernt die Quest, die mit der Fokus-Einstellung oder dem Rechtsklickmenü der Karte festgelegt wurde.",
+    ["Reset arrow position and map pins"] = "Pfeil und Markierungen zurücksetzen",
+    ["Wowhead link for the current target"] = "Wowhead-Link für das aktuelle Ziel",
+    ["%d quests are hidden from the navigator."] = "%d Quests sind im Navigator ausgeblendet.",
+    ["Show all hidden quests again"] = "Ausgeblendete Quests wieder anzeigen",
+    ["Reading windows"] = "Fenster lesen",
+    ["Read my professions now"] = "Meine Berufe jetzt lesen",
+    ["Open the profession window first."] = "Öffne zuerst das Berufsfenster.",
+    ["Read my archaeology now"] = "Meine Archäologie jetzt lesen",
+    ["Open the archaeology window first."] = "Öffne zuerst das Archäologiefenster.",
+    ["Show synchronisation status"] = "Synchronisierungsstatus anzeigen",
+    ["Ask the data sharing question"] = "Frage zur Datenfreigabe stellen",
+    ["Categories"] = "Kategorien",
+    ["Loosen a filter, or press Reset."] = "Lockere einen Filter oder klicke auf 'Leeren'.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
