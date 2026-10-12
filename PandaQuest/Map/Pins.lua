@@ -34,6 +34,13 @@ local EDGE_MIN_SCALE = 0.65         -- and how much it shrinks (pfQuest's fade_r
 -- Nodes/Professions.lua uses for an emptied vein, so the two layers fade alike.
 local RESPAWN_PENDING_ALPHA = 0.35
 
+-- The glow of the current target breathes between these two opacities, once per PULSE_PERIOD
+-- seconds (before the player's animation speed). Soft on purpose: it is there to be found by a
+-- glance at the map, not to flash at it.
+local PULSE_LOW = 0.45
+local PULSE_PERIOD = 1.8
+local PULSE_OWNER = "PandaQuestPins:pulse"
+
 -- Layer per Target.kind.
 local KIND_LAYER = {
     OBJECTIVE = "objective", ITEMUSE = "objective", EXPLORE = "objective",
@@ -68,6 +75,9 @@ local minimapDriver                 -- OnUpdate frame for the minimap rank/fade 
 local minimapElapsed = 0
 local rankScratch = {}              -- reused by rankMinimapSpecs: an OnUpdate must not allocate
 local nextRespawnAt                 -- GetTime() at which the soonest drawn countdown runs out
+local pulsing = {}                  -- lit pin -> true: the pins on screen whose glow is breathing
+local pulsingCount = 0
+local pulseLevel = 1                -- the opacity the glows were last given, for a pin that joins
 local ensureDriver                  -- forward: the minimap tick queues single pins through it
 
 local function profile()
@@ -168,8 +178,114 @@ local function acquirePin()
     return pin
 end
 
+---------------------------------------------------------------------------
+-- The current target's glow
+---------------------------------------------------------------------------
+--
+-- Only the pins that carry the CURRENT target are ever "lit", and only they have anything in this
+-- section attached. Every other pin pays one nil check in applyHighlight and nothing else: no
+-- scripts, no tween, no table entry.
+--
+-- ONE tween drives all the lit pins, in step, instead of one Motion.Pulse per pin: a quest with
+-- forty spawns is still one record in the animation driver. The tween exists only while at least one
+-- lit pin is ON SCREEN. A lit pin tells us when it stops being drawn -- its own OnHide, which the
+-- client also sends when the map it hangs off closes, and when the minimap hides it for being out of
+-- range -- and when it comes back (OnShow), so a closed map costs nothing per frame. Those two
+-- scripts are set on a pin when it is lit and taken off again when it is not, because pins are
+-- pooled and a stale handler on a recycled frame would be a pin that pulses for no one.
+
+--- stopAllPulses(): every glow back at rest, no tween. The pins stay "lit" (they still carry the
+-- current target and still show the glow), they only stop breathing.
+local function stopAllPulses()
+    for pin in pairs(pulsing) do
+        if pin.glow then pin.glow:SetAlpha(1) end
+        pulsing[pin] = nil
+    end
+    pulsingCount = 0
+    pulseLevel = 1
+    if ns.Motion then ns.Motion.Cancel(PULSE_OWNER) end
+end
+
+local function pulseStep(value)
+    -- Motion switched off mid-session: put every glow back and leave nothing running. (A tween
+    -- started under motion=on is not stopped by the setting, so this is the one place that notices
+    -- on its own; M.RefreshPulse, below, is the same answer given the moment the switch is thrown.)
+    local Motion = ns.Motion
+    if Motion and not Motion.IsEnabled() then
+        stopAllPulses()
+        return
+    end
+    pulseLevel = value
+    for pin in pairs(pulsing) do pin.glow:SetAlpha(value) end
+end
+
+local function pulseAdd(pin)
+    if pulsing[pin] then return end
+    local Motion = ns.Motion
+    if not (Motion and Motion.Tween and Motion.IsEnabled()) then return end   -- motion off: a steady glow
+    pulsing[pin] = true
+    pulsingCount = pulsingCount + 1
+    if pulsingCount == 1 then
+        Motion.Tween{ owner = PULSE_OWNER, loop = true, duration = PULSE_PERIOD, from = PULSE_LOW, to = 1,
+            ease = "inOutSine", apply = pulseStep }
+    else
+        -- Joins a breath already under way: it takes the opacity the others have right now instead of
+        -- sitting at full glow until the next frame, so the pins that carry one target never differ.
+        pin.glow:SetAlpha(pulseLevel)
+    end
+end
+
+local function pulseRemove(pin)
+    if not pulsing[pin] then return end
+    pulsing[pin] = nil
+    pulsingCount = pulsingCount - 1
+    if pin.glow then pin.glow:SetAlpha(1) end
+    if pulsingCount <= 0 then
+        pulsingCount = 0
+        if ns.Motion then ns.Motion.Cancel(PULSE_OWNER) end
+    end
+end
+
+local function onLitShow(pin) pulseAdd(pin) end
+local function onLitHide(pin) pulseRemove(pin) end
+
+local function light(pin)
+    if not pin.lit then
+        pin.lit = true
+        pin:SetScript("OnShow", onLitShow)
+        pin:SetScript("OnHide", onLitHide)
+    end
+    -- A pin lit while its map is closed starts when the map opens (OnShow), not before.
+    if pin.IsVisible and pin:IsVisible() then pulseAdd(pin) end
+end
+
+local function unlight(pin)
+    pulseRemove(pin)
+    pin.lit = nil
+    pin:SetScript("OnShow", nil)
+    pin:SetScript("OnHide", nil)
+end
+
+--- Pins.RefreshPulse(): the player threw the Animations switch while pins were already lit. Off
+-- puts every glow back at once; on starts the breathing again for the lit pins that are on screen,
+-- which otherwise would wait for the target to change. Touches only lit pins (a handful).
+function M.RefreshPulse()
+    local Motion = ns.Motion
+    if Motion and not Motion.IsEnabled() then
+        stopAllPulses()
+        return
+    end
+    for pin in pairs(activeWorld) do
+        if pin.lit and pin.IsVisible and pin:IsVisible() then pulseAdd(pin) end
+    end
+    for pin in pairs(activeMinimap) do
+        if pin.lit and pin.IsVisible and pin:IsVisible() then pulseAdd(pin) end
+    end
+end
+
 local function releasePin(pin)
     if not pin then return end
+    if pin.lit then unlight(pin) end
     pin.spec = nil
     pin.data = nil
     pin.context = nil
@@ -212,7 +328,9 @@ local function applyHighlight(pin)
         local size = (pin:GetWidth() or 16) * 1.8
         pin.glow:SetSize(size, size)
         pin.glow:Show()
+        light(pin)
     else
+        if pin.lit then unlight(pin) end
         pin.glow:Hide()
     end
 end
@@ -1103,6 +1221,10 @@ function M.Enable()
     M:RegisterMessage("PQ_TARGETS_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_AVAILABLE_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", function(_, target) M.SetCurrent(target) end)
+    -- The glow breathes only while Animations are on; the switch has to reach pins already lit.
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+        if path == "motion.enabled" then M.RefreshPulse() end
+    end)
     -- Ns.Respawn announces a death and a return once, from the event that noticed it,
     -- and this is what turns that into a fade appearing and going away again. It goes through the
     -- same coalescing redraw as everything else, so a pull that kills six mobs is one rebuild.

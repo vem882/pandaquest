@@ -33,8 +33,10 @@
 --
 --   1. It swaps its own event registrations on show and hide -- SURVEY_CAST only while hidden,
 --      FIND_COMPLETE and DIGSITE_COMPLETE only while shown (:30-42). That dance exists to stop its
---      AnimIn replaying on every survey of the same site. There are no animations here, so all
---      three stay registered, and the bar simply redraws. It also fixes the case Blizzard's own
+--      AnimIn replaying on every survey of the same site. Nothing here replays: the bar's motion
+--      is a fade when it appears and goes, a fill that glides to the new count, and one
+--      celebration on the completion event, which the client sends once per site. So all three
+--      stay registered and the bar simply redraws. That also fixes the case Blizzard's own
 --      comment at :81-83 apologises for: a player walking from one dig site straight into another.
 --      On 5.5.4 every one of these events carries researchBranchID -- ResearchInfoDocumentation
 --      .lua declares it Nilable = false on all three (:43, :55, :72) -- so which race the count
@@ -64,6 +66,7 @@ local M = {}
 ns.DigSiteBar = M
 
 local type, tonumber, pcall, format = type, tonumber, pcall, string.format
+local Motion = ns.Motion
 
 -- Blizzard's LEFT_DIGSITE_CHECK_TIME (Cata/ArchaeologyProgressBar.lua:2): how often the bar asks
 -- whether the player is still standing in a dig site. Half a second is also the whole OnUpdate
@@ -86,7 +89,25 @@ local PREVIEW_HOLD = 20
 local BASE_WIDTH, BASE_HEIGHT = 240, 34
 local BASE_FILL_HEIGHT = 14
 
+--- How fast the fill closes the gap to the count, in 1/s (Motion.Approach's rate). Only the FILL
+-- is smoothed: the count beside it is written from the event the moment it arrives.
+local FILL_RATE = 8
+--- The bar fades in when it appears and out when it goes (seconds, before the player's speed).
+local FADE_IN, FADE_OUT = 0.18, 0.12
+local FADE_OWNER = "PandaQuestDigSiteBar:fade"
+--- A finished dig site: the fill swells to POP_FROM times its height and settles back over POP_TIME
+-- while a glint of SHEEN_TIME crosses the bar. The swell is the FILL's, not the frame's: the frame
+-- is anchored by its centre, and scaling it would slide the whole bar about the screen.
+local POP_FROM, POP_TIME, SHEEN_TIME = 1.35, 0.32, 0.7
+local POP_OWNER = "PandaQuestDigSiteBar:pop"
+
 local frame, fillBar, raceText, countText
+--- The fill the last event asked for (clamped to a legal range), the one on screen, and the range
+-- it was measured against. goal and shown differ only while the fill is gliding.
+local fillGoal, fillShown, fillTotal = 0, 0, 1
+--- True from the moment the bar was told to go until its fade-out has hidden the frame. `visible`
+-- is the logical answer ("is the bar drawn?") and goes false at once; this is the frame catching up.
+local leaving = false
 --- The font size the template gave the two font strings, read once before anything scaled them.
 -- Read once rather than on every applyLayout: reading it back after a SetFont would multiply the
 -- last scale by the new one, and the bar would grow every time the slider moved.
@@ -144,11 +165,17 @@ local function onDragStop(self)
     savePosition()
 end
 
---- The only per-frame work in this file, and it does arithmetic on two numbers until half a second
--- has gone by. Blizzard's own bar checks at exactly this interval and for exactly this reason: the
--- client sends no event for "you walked out of the dig site".
+--- The per-frame work in this file: one step of the fill's glide while it is still moving, and
+-- arithmetic on two numbers until half a second has gone by. Blizzard's own bar checks at exactly
+-- this interval and for exactly this reason: the client sends no event for "you walked out of the
+-- dig site". With motion off Approach answers the goal at once, so the glide is one frame long.
 local function onUpdate(self, elapsed)
-    accum = accum + (tonumber(elapsed) or 0)
+    elapsed = tonumber(elapsed) or 0
+    if fillShown ~= fillGoal then
+        fillShown = Motion and Motion.Approach(fillShown, fillGoal, elapsed, FILL_RATE) or fillGoal
+        fillBar:SetValue(fillShown)
+    end
+    accum = accum + elapsed
     if accum < LEAVE_CHECK then return end
     accum = 0
     local t = now()
@@ -222,6 +249,7 @@ local function createFrame()
     fillBar:SetStatusBarColor(0.9, 0.7, 0.2)
     fillBar:SetMinMaxValues(0, 1)
     fillBar:SetValue(0)
+    fillGoal, fillShown, fillTotal = 0, 0, 1
 
     local background = fillBar:CreateTexture(nil, "BACKGROUND")
     background:SetAllPoints(fillBar)
@@ -252,6 +280,47 @@ end
 -- Drawing
 ---------------------------------------------------------------------------
 
+local function setAlpha(value)
+    if frame then frame:SetAlpha(value) end
+end
+
+--- reveal(f): the bar appears. A bar that comes back while its fade-out is still running carries on
+-- from the opacity it had reached instead of blinking to nothing first.
+local function reveal(f)
+    local from = 0
+    if leaving then from = f:GetAlpha() or 0 end
+    leaving = false
+    f:SetAlpha(from)
+    f:Show()
+    if Motion then
+        Motion.Tween{ owner = FADE_OWNER, duration = FADE_IN, from = from, to = 1, ease = "outQuad", apply = setAlpha }
+    else
+        f:SetAlpha(1)
+    end
+end
+
+--- finishLeave(): the fade-out is over, so the frame stops being drawn and runs no more OnUpdate.
+local function finishLeave()
+    leaving = false
+    if frame and not visible then
+        frame:Hide()
+        frame:SetAlpha(1)
+    end
+end
+
+local function setFillScale(value)
+    if fillBar then fillBar:SetScale(value) end
+end
+
+--- celebrate(): the one flourish of this bar, for a dig site that is finished -- the fill swells and
+-- settles while a glint crosses the bar. Both go through ns.Motion, so with motion off neither is
+-- more than a call that puts everything back at its normal size, and neither is ever left running.
+local function celebrate()
+    if not (frame and fillBar and Motion) then return end
+    Motion.Tween{ owner = POP_OWNER, duration = POP_TIME, from = POP_FROM, to = 1, ease = "outBack", apply = setFillScale }
+    Motion.Sheen(frame, SHEEN_TIME)
+end
+
 --- RaceName(branch) -> the race's name, or nil when the client will not name it.
 -- GetArchaeologyRaceInfoByID is what Blizzard's own bar uses for exactly this
 -- (Cata/ArchaeologyProgressBar.lua:126). nil is an answer: a bar with no name is honest, and a bar
@@ -278,8 +347,18 @@ local function draw(found, total, label)
     local barFound = rawFound or 0
     if barFound < 0 then barFound = 0 end
     if barFound > barTotal then barFound = barTotal end
+    -- The fill glides to the count, and only FORWARD within one dig site: a bar that has only just
+    -- appeared, a different range (another site) or a smaller count (a new site began) starts where
+    -- it is going to be, because draining a bar slowly would read as progress running backwards.
+    -- With motion off every count is written at once, as it always was.
+    local appearing = not visible or not f:IsShown()
     fillBar:SetMinMaxValues(0, barTotal)
-    fillBar:SetValue(barFound)
+    fillGoal = barFound
+    if appearing or barTotal ~= fillTotal or barFound <= fillShown or not (Motion and Motion.IsEnabled()) then
+        fillShown = barFound
+        fillBar:SetValue(barFound)
+    end
+    fillTotal = barTotal
     raceText:SetText(M.RaceName(branchID) or "")
     local text = label
     if not text then
@@ -292,23 +371,29 @@ local function draw(found, total, label)
     -- nil rather than "": GetState() reports a field the bar does not have as absent, and "no
     -- count at all" is a different answer from "a count that happens to be blank".
     countText:SetText(text)
-    f:Show()
+    if appearing then reveal(f) end
     visible = true
 end
 
---- GetState() -> { shown, branchID, raceName, found, total, locked, text } - what the bar is
--- showing, for the tests, which cannot look at a screen. Fields the bar does not have are absent
--- rather than blank: outside a dig site there is no branchID, and a race the client will not name
--- has no raceName.
+--- GetState() -> { shown, branchID, raceName, found, total, fill, fillScale, locked, text } - what
+-- the bar is showing, for the tests, which cannot look at a screen. Fields the bar does not have are
+-- absent rather than blank: outside a dig site there is no branchID, and a race the client will not
+-- name has no raceName.
 --
 -- `found` and `total` are the StatusBar's own range, which draw() clamps to something legal to
 -- fill; `text` is the line the player reads, which is the client's numbers unclamped. On every
 -- payload a 5.5.4 client really sends the two agree, and where they do not it is `text` that is
--- the measurement.
+-- the measurement. `fill` is the value the StatusBar shows this frame -- it trails `found` while
+-- the fill glides and equals it once it has arrived (at once with motion off) -- and `fillScale`
+-- is 1 except during the celebration of a finished site.
 function M.GetState()
-    local found, total = 0, 0
+    local found, total, fill, fillScale = 0, 0, 0, 1
     if fillBar then
-        found = fillBar:GetValue() or 0
+        -- `found` is the count the fill is going to; `fill` is the fill as drawn this frame. They
+        -- are the same number once the glide is over, and always with motion off.
+        found = fillGoal
+        fill = fillBar:GetValue() or 0
+        fillScale = fillBar.GetScale and fillBar:GetScale() or 1
         local _, maximum = fillBar:GetMinMaxValues()
         total = maximum or 0
     end
@@ -316,7 +401,7 @@ function M.GetState()
         shown = visible and frame ~= nil and frame:IsShown() == true,
         branchID = branchID,
         raceName = M.RaceName(branchID),
-        found = found, total = total,
+        found = found, total = total, fill = fill, fillScale = fillScale,
         locked = settings().barLocked and true or false,
         text = countText and countText:GetText() or nil,
     }
@@ -344,10 +429,25 @@ function M.IsShown()
     return visible and frame ~= nil and frame:IsShown() == true
 end
 
+--- Hide(): the bar goes. It is "not shown" to every caller at once (IsShown, GetState); the frame
+-- itself fades out over FADE_OUT and then hides, so a bar that times out does not vanish between
+-- two frames. With motion off the frame hides at once, as it always did.
 function M.Hide()
     hideAt = nil
-    if frame and visible then frame:Hide() end
+    local wasVisible = visible
     visible = false
+    if not (frame and wasVisible) then return end
+    if Motion and Motion.IsEnabled() and frame:IsShown() then
+        leaving = true
+        Motion.Tween{ owner = FADE_OWNER, duration = FADE_OUT, from = frame:GetAlpha() or 1, to = 0,
+            ease = "outQuad", apply = setAlpha, onDone = finishLeave }
+    else
+        -- A fade still running (the player switched Animations off in the middle of it) goes with it.
+        if Motion then Motion.Cancel(FADE_OWNER) end
+        leaving = false
+        frame:Hide()
+        frame:SetAlpha(1)
+    end
 end
 
 --- WhyNoPreview() -> the line to print instead of a preview, or nil when nothing is in the way.
@@ -464,6 +564,7 @@ function M.OnDigsiteComplete(researchBranchID)
     end
     draw(total, total, L["Dig site complete"])
     hideAt = now() + COMPLETE_HOLD
+    celebrate()
 end
 
 ---------------------------------------------------------------------------

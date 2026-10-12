@@ -53,6 +53,7 @@ ns.FlightBar = M
 
 local type, tonumber, format = type, tonumber, string.format
 local floor, min = math.floor, math.min
+local Motion = ns.Motion
 
 --- How often the bar redraws itself. Blizzard's own progress bar for a timed, moment-to-moment
 -- reading checks at exactly this interval -- LEFT_DIGSITE_CHECK_TIME = 0.5 at
@@ -93,7 +94,22 @@ local BASE_FILL_HEIGHT = 14
 -- for a tooltip: a wider surface with no second column beside the name. This is not that cut.
 local MAX_NAME_CHARS = 22
 
+--- How fast the fill closes the gap to its value, in 1/s (Motion.Approach's rate): the bar redraws
+-- twice a second and a fill that jumped at each redraw would look like a ratchet. At 8 it has
+-- covered two thirds of the way in an eighth of a second and is level with the value well before
+-- the next reading. Only the FILL is smoothed -- the words are written from the reading itself.
+local FILL_RATE = 8
+--- The bar fades in when it appears and out when it goes (seconds, before the player's speed).
+local FADE_IN, FADE_OUT = 0.18, 0.12
+local FADE_OWNER = "PandaQuestFlightBar:fade"
+
 local frame, fillBar, nameText, timeText
+--- The fill the last reading asked for, and the one on screen. They differ only while the fill is
+-- gliding, which is the one thing the frame's OnUpdate does every frame.
+local fillGoal, fillShown = 0, 0
+--- True from the moment the bar was told to go until its fade-out has hidden the frame. `visible`
+-- is the logical answer ("is the bar drawn?") and goes false at once; this is the frame catching up.
+local leaving = false
 --- The font size the template gave the two font strings, read once before anything scaled them.
 -- Read once rather than on every applyLayout: reading it back after a SetFont would multiply the
 -- last scale by the new one, and the bar would grow every time the slider moved.
@@ -205,27 +221,42 @@ local function applyPosition()
         tonumber(p.barX) or 0, tonumber(p.barY) or -200)
 end
 
---- The only per-frame work in this file, and it does arithmetic on two numbers until TICK has gone
--- by. A pending deadline wins over the flight check rather than being one more reason to hide on
--- top of it, because a preview is shown precisely when there is no flight at all: letting the
--- flight check run underneath one would hide it on the frame after it was drawn.
+--- glide(elapsed): one frame of the fill's approach to its goal. Arithmetic on two numbers and one
+-- SetValue, and only while they differ; with motion off Approach hands back the goal at once.
+local function glide(elapsed)
+    fillShown = Motion and Motion.Approach(fillShown, fillGoal, elapsed, FILL_RATE) or fillGoal
+    fillBar:SetValue(fillShown)
+end
+
+--- The per-frame work in this file: the glide above while the fill is still moving, and arithmetic on
+-- two numbers until TICK has gone by. A pending deadline wins over the flight check rather than
+-- being one more reason to hide on top of it, because a preview is shown precisely when there is no
+-- flight at all: letting the flight check run underneath one would hide it on the frame after it
+-- was drawn.
+--
+-- The glide runs AFTER the reading, so a reading that arrives in this frame is already moving on
+-- the frame it arrived. A client that did not run a frame for a while (a loading screen, a hitch)
+-- hands over a large `elapsed`, and that is exactly the frame in which the fill should be level.
 local function onUpdate(_, elapsed)
-    accum = accum + (tonumber(elapsed) or 0)
-    if accum < TICK then return end
-    accum = 0
-    if hideAt then
-        -- The preview ends by reading the world again, not by hiding. Hiding stops the OnUpdate --
-        -- the client only runs it while the frame is shown -- and PQ_FLIGHT_STARTED has already
-        -- fired, so nothing would ever bring the bar back for the rest of a flight that is still
-        -- running. Refresh() draws the flight when there is one and hides when there is not, so
-        -- the preview expires into the live bar mid-air and into nothing on the ground.
-        if now() >= hideAt then
-            hideAt = nil
+    elapsed = tonumber(elapsed) or 0
+    accum = accum + elapsed
+    if accum >= TICK then
+        accum = 0
+        if hideAt then
+            -- The preview ends by reading the world again, not by hiding. Hiding stops the OnUpdate --
+            -- the client only runs it while the frame is shown -- and PQ_FLIGHT_STARTED has already
+            -- fired, so nothing would ever bring the bar back for the rest of a flight that is still
+            -- running. Refresh() draws the flight when there is one and hides when there is not, so
+            -- the preview expires into the live bar mid-air and into nothing on the ground.
+            if now() >= hideAt then
+                hideAt = nil
+                M.Refresh()
+            end
+        else
             M.Refresh()
         end
-        return
     end
-    M.Refresh()
+    if fillShown ~= fillGoal then glide(elapsed) end
 end
 
 local function createFrame()
@@ -247,6 +278,7 @@ local function createFrame()
     fillBar:SetStatusBarColor(0.37, 0.61, 0.85)
     fillBar:SetMinMaxValues(0, 1)
     fillBar:SetValue(0)
+    fillGoal, fillShown = 0, 0
 
     local background = fillBar:CreateTexture(nil, "BACKGROUND")
     background:SetAllPoints(fillBar)
@@ -311,6 +343,47 @@ function M.TimeText(elapsed, seconds, samples)
     return format(L["%s in the air"], Util.FormatTime(floor(spent))), nil
 end
 
+--- setFill(value, snap): the reading's fill. It glides to `value` from the frame's OnUpdate, but only
+-- FORWARD: a fill that fell back means the bar changed what it is measuring (the flight was
+-- cancelled, a new one began), and draining it slowly would read as progress running backwards.
+-- A bar that has only just appeared starts where it is going to be, and with motion off every
+-- value is written at once, as it always was.
+local function setFill(value, snap)
+    fillGoal = value
+    if snap or value <= fillShown or not (Motion and Motion.IsEnabled()) then
+        fillShown = value
+        fillBar:SetValue(value)
+    end
+end
+
+local function setAlpha(value)
+    if frame then frame:SetAlpha(value) end
+end
+
+--- reveal(f): the bar appears. A bar that comes back while its fade-out is still running carries on
+-- from the opacity it had reached instead of blinking to nothing first.
+local function reveal(f)
+    local from = 0
+    if leaving then from = f:GetAlpha() or 0 end
+    leaving = false
+    f:SetAlpha(from)
+    f:Show()
+    if Motion then
+        Motion.Tween{ owner = FADE_OWNER, duration = FADE_IN, from = from, to = 1, ease = "outQuad", apply = setAlpha }
+    else
+        f:SetAlpha(1)
+    end
+end
+
+--- finishLeave(): the fade-out is over, so the frame stops being drawn and runs no more OnUpdate.
+local function finishLeave()
+    leaving = false
+    if frame and not visible then
+        frame:Hide()
+        frame:SetAlpha(1)
+    end
+end
+
 --- draw(destination, elapsed, seconds, samples [, label]): put one reading on screen.
 -- The StatusBar needs a legal, non-empty range, so its numbers are clamped. The player's are not:
 -- what `timeText` says is what M.TimeText decided, and when that decided there is no fraction the
@@ -324,14 +397,17 @@ local function draw(destination, elapsed, seconds, samples, label)
     else
         text, fraction = M.TimeText(elapsed, seconds, samples)
     end
+    -- "Appearing" is every draw that finds the bar not on screen: that one starts from its value
+    -- and fades in, and the draws after it only move the fill.
+    local appearing = not visible or not f:IsShown()
     fillBar:SetMinMaxValues(0, 1)
-    fillBar:SetValue(fraction and min(fraction, 1) or 0)
+    setFill(fraction and min(fraction, 1) or 0, appearing)
     local name = destination and Util.Truncate(destination, MAX_NAME_CHARS) or ""
     nameText:SetText(name)
     timeText:SetText(text)
     shown = { destination = destination, elapsed = tonumber(elapsed), seconds = tonumber(seconds),
               samples = tonumber(samples), fraction = fraction, text = text }
-    f:Show()
+    if appearing then reveal(f) end
     visible = true
 end
 
@@ -375,7 +451,10 @@ function M.GetState()
         samples = shown.samples,
         fraction = shown.fraction,
         text = shown.text,
+        -- `value` is the fill as drawn this frame; `goal` is where the last reading sends it. They
+        -- are the same number once the glide is over and always with motion off.
         value = fillBar and fillBar:GetValue() or nil,
+        goal = fillBar and fillGoal or nil,
         locked = settings().barLocked and true or false,
     }
 end
@@ -401,10 +480,25 @@ function M.IsShown()
     return visible and frame ~= nil and frame:IsShown() == true
 end
 
+--- Hide(): the bar goes. It is "not shown" to every caller at once (IsShown, GetState); the frame
+-- itself fades out over FADE_OUT and then hides, so a flight that ends does not make the bar vanish
+-- between two frames. With motion off the frame hides at once, as it always did.
 function M.Hide()
     hideAt = nil
-    if frame and visible then frame:Hide() end
+    local wasVisible = visible
     visible = false
+    if not (frame and wasVisible) then return end
+    if Motion and Motion.IsEnabled() and frame:IsShown() then
+        leaving = true
+        Motion.Tween{ owner = FADE_OWNER, duration = FADE_OUT, from = frame:GetAlpha() or 1, to = 0,
+            ease = "outQuad", apply = setAlpha, onDone = finishLeave }
+    else
+        -- A fade still running (the player switched Animations off in the middle of it) goes with it.
+        if Motion then Motion.Cancel(FADE_OWNER) end
+        leaving = false
+        frame:Hide()
+        frame:SetAlpha(1)
+    end
 end
 
 function M.Enabled()
