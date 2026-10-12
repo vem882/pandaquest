@@ -534,6 +534,65 @@ local T = {
     ["not installed"] = "non installato",
     ["cannot be used (%s)"] = "non utilizzabile (%s)",
     ["not read yet"] = "non ancora letto",
+
+    -- Quest browser, quest database source, language selection
+    ["/pq quests [questID] - browse every quest in the database"] = "/pq quests [questID] - sfoglia tutte le missioni del database",
+    ["Name"] = "Nome",
+    ["Level"] = "Liv.",
+    ["to"] = "a",
+    ["My level"] = "Mio livello",
+    ["My side"] = "Mia fazione",
+    ["Alliance"] = "Alleanza",
+    ["Horde"] = "Orda",
+    ["Both"] = "Entrambe",
+    ["both factions"] = "entrambe le fazioni",
+    ["Dungeon"] = "Spediz.",
+    ["Raid"] = "Incurs.",
+    ["Group"] = "Gruppo",
+    ["PvP"] = "PvP",
+    ["Daily"] = "Giornal.",
+    ["Event"] = "Evento",
+    ["Reset"] = "Azzera",
+    ["All quests"] = "Tutte le missioni",
+    ["%d quests"] = "Missioni: %d",
+    ["No quest matches these filters."] = "Nessuna missione corrisponde a questi filtri.",
+    ["Reading the quest database..."] = "Lettura del database delle missioni...",
+    ["Quest"] = "Missione",
+    ["Zone"] = "Zona",
+    ["Req."] = "Min.",
+    ["XP"] = "XP",
+    ["A level %d quest for %s, from level %d."] = "Missione di livello %d (%s), disponibile dal livello %d.",
+    ["%d experience"] = "%d punti esperienza",
+    ["Not in the database."] = "Non presente nel database.",
+    ["requires level"] = "richiede il livello",
+    ["Yes"] = "Sì",
+    ["No"] = "No",
+    ["No location is known for this quest."] = "Nessuna posizione nota per questa missione.",
+    ["Navigating to: %s"] = "Navigazione verso: %s",
+    ["Start"] = "Inizio",
+    ["End"] = "Fine",
+    ["Difficulty"] = "Difficoltà",
+    ["Side"] = "Fazione",
+    ["Shareable"] = "Condivisib.",
+    ["Quest ID"] = "ID missione",
+    ["Rewards"] = "Ricompense",
+    ["Navigate"] = "Naviga",
+    ["Pick a quest from the list to see its page."] = "Scegli una missione dall'elenco per vederne la pagina.",
+    ["Quests"] = "Missioni",
+    ["Shift-click: browse all quests"] = "Maiusc-clic: sfoglia tutte le missioni",
+    -- Beta notice and animation options
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "Questa è una versione beta: le nuove funzioni non sono ancora confermate nel gioco.",
+    ["Animations"] =
+        "Animazioni",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "Le finestre appaiono in dissolvenza e si assestano, i messaggi scorrono e le barre avanzano con fluidità. Disattiva per un'interfaccia più calma.",
+    ["Turn all interface motion on or off."] =
+        "Attiva o disattiva tutto il movimento dell'interfaccia.",
+    ["Animation speed"] =
+        "Velocità delle animazioni",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1 è normale; 2 è il doppio più veloce, 0,5 la metà.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

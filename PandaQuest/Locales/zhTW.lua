@@ -487,6 +487,65 @@ local T = {
     ["not installed"] = "未安裝",
     ["cannot be used (%s)"] = "無法使用（%s）",
     ["not read yet"] = "尚未讀取",
+
+    -- Quest browser, quest database source, language selection
+    ["/pq quests [questID] - browse every quest in the database"] = "/pq quests [questID] - 瀏覽資料庫中的所有任務",
+    ["Name"] = "名稱",
+    ["Level"] = "等級",
+    ["to"] = "至",
+    ["My level"] = "我的等級",
+    ["My side"] = "我的陣營",
+    ["Alliance"] = "聯盟",
+    ["Horde"] = "部落",
+    ["Both"] = "雙方",
+    ["both factions"] = "雙方陣營",
+    ["Dungeon"] = "地城",
+    ["Raid"] = "團隊",
+    ["Group"] = "隊伍",
+    ["PvP"] = "PvP",
+    ["Daily"] = "每日",
+    ["Event"] = "活動",
+    ["Reset"] = "重設",
+    ["All quests"] = "所有任務",
+    ["%d quests"] = "%d 個任務",
+    ["No quest matches these filters."] = "沒有符合這些篩選條件的任務。",
+    ["Reading the quest database..."] = "正在讀取任務資料庫...",
+    ["Quest"] = "任務",
+    ["Zone"] = "區域",
+    ["Req."] = "需求",
+    ["XP"] = "經驗",
+    ["A level %d quest for %s, from level %d."] = "%d 級任務，適用於%s，%d 級起可接取。",
+    ["%d experience"] = "%d 點經驗值",
+    ["Not in the database."] = "資料庫中沒有資料。",
+    ["requires level"] = "需要等級",
+    ["Yes"] = "是",
+    ["No"] = "否",
+    ["No location is known for this quest."] = "此任務沒有已知的地點。",
+    ["Navigating to: %s"] = "導航至：%s",
+    ["Start"] = "起始",
+    ["End"] = "結束",
+    ["Difficulty"] = "難度",
+    ["Side"] = "陣營",
+    ["Shareable"] = "可共享",
+    ["Quest ID"] = "任務 ID",
+    ["Rewards"] = "獎勵",
+    ["Navigate"] = "導航",
+    ["Pick a quest from the list to see its page."] = "從列表中選擇一個任務，即可查看它的頁面。",
+    ["Quests"] = "任務",
+    ["Shift-click: browse all quests"] = "Shift+點擊：瀏覽所有任務",
+    -- Beta notice and animation options
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "這是測試版：新功能尚未在遊戲中確認。",
+    ["Animations"] =
+        "動畫",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "視窗淡入並定位，訊息滑入，進度條平滑移動。關閉後介面更安靜。",
+    ["Turn all interface motion on or off."] =
+        "開啟或關閉所有介面動態效果。",
+    ["Animation speed"] =
+        "動畫速度",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1 為正常；2 為兩倍速，0.5 為半速。",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

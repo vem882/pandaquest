@@ -508,6 +508,66 @@ local T = {
     ["not installed"] = "설치되지 않음",
     ["cannot be used (%s)"] = "사용할 수 없음 (%s)",
     ["not read yet"] = "아직 읽지 않음",
+
+    -- Quest browser, quest database source, language selection
+    ["/pq quests [questID] - browse every quest in the database"] =
+        "/pq quests [questID] - 데이터베이스의 모든 퀘스트 둘러보기",
+    ["Name"] = "이름",
+    ["Level"] = "레벨",
+    ["to"] = "~",
+    ["My level"] = "내 레벨",
+    ["My side"] = "내 진영",
+    ["Alliance"] = "얼라이언스",
+    ["Horde"] = "호드",
+    ["Both"] = "양 진영",
+    ["both factions"] = "양 진영",
+    ["Dungeon"] = "던전",
+    ["Raid"] = "공격대",
+    ["Group"] = "파티",
+    ["PvP"] = "PvP",
+    ["Daily"] = "일일",
+    ["Event"] = "이벤트",
+    ["Reset"] = "초기화",
+    ["All quests"] = "모든 퀘스트",
+    ["%d quests"] = "퀘스트 %d개",
+    ["No quest matches these filters."] = "이 필터에 맞는 퀘스트가 없습니다.",
+    ["Reading the quest database..."] = "퀘스트 데이터베이스를 읽는 중...",
+    ["Quest"] = "퀘스트",
+    ["Zone"] = "지역",
+    ["Req."] = "요구",
+    ["XP"] = "경험",
+    ["A level %d quest for %s, from level %d."] = "레벨 %d 퀘스트 (%s 대상), 레벨 %d부터 수락 가능.",
+    ["%d experience"] = "경험치 %d",
+    ["Not in the database."] = "데이터베이스에 없습니다.",
+    ["requires level"] = "요구 레벨",
+    ["Yes"] = "예",
+    ["No"] = "아니요",
+    ["No location is known for this quest."] = "이 퀘스트의 위치를 알 수 없습니다.",
+    ["Navigating to: %s"] = "길 안내 중: %s",
+    ["Start"] = "시작",
+    ["End"] = "종료",
+    ["Difficulty"] = "난이도",
+    ["Side"] = "진영",
+    ["Shareable"] = "공유 가능",
+    ["Quest ID"] = "퀘스트 ID",
+    ["Rewards"] = "보상",
+    ["Navigate"] = "길 안내",
+    ["Pick a quest from the list to see its page."] = "목록에서 퀘스트를 선택하면 상세 정보가 표시됩니다.",
+    ["Quests"] = "퀘스트",
+    ["Shift-click: browse all quests"] = "Shift-클릭: 모든 퀘스트 둘러보기",
+    -- Beta notice and animation options
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "이 빌드는 베타 버전입니다. 새 기능은 아직 게임에서 확인되지 않았습니다.",
+    ["Animations"] =
+        "애니메이션",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "창이 부드럽게 나타나 자리를 잡고, 메시지가 미끄러지듯 나오며, 막대가 매끄럽게 움직입니다. 끄면 더 차분한 인터페이스가 됩니다.",
+    ["Turn all interface motion on or off."] =
+        "모든 인터페이스 움직임을 켜거나 끕니다.",
+    ["Animation speed"] =
+        "애니메이션 속도",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1은 보통, 2는 두 배 빠르게, 0.5는 절반 속도입니다.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
