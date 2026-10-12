@@ -2,6 +2,10 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.146
+- browser - fade/rise on open, staggered panels, page crossfade and sheen, pin pops, parchment page
+- motion - a pulse is a smooth breath that starts at full strength and stops when animations go off
+
 0.2.144
 - locales - new strings in deDE esES esMX frFR itIT koKR ptBR ruRU zhCN zhTW
 

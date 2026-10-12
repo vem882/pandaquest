@@ -255,12 +255,26 @@ function M.Sheen(frame, duration, delay)
 end
 
 --- Pulse(region, low, high, period): breathing alpha until StopPulse(region).
+-- One breath per period: it starts at `high` (a region that is already opaque does not jump), is at `low`
+-- half a period later and back at `high` at the end, smooth at both turns. A loop tween only ever runs
+-- its ease one way and then starts over, so the way back is the cosine here, not a second tween. With
+-- motion off it is `high` and nothing runs, and the setting is looked at on every step, so switching
+-- animations off puts a breathing region back at once.
 function M.Pulse(region, low, high, period)
     if not (region and region.SetAlpha) then return end
     low, high = low or 0.55, high or 1
-    M.Tween{ owner = tostring(region) .. ":pulse", loop = true, duration = period or 1.6, from = low, to = high,
-        ease = "inOutSine",
-        apply = function(v) region:SetAlpha(v) end }
+    local half = (high - low) * 0.5
+    local middle = low + half
+    local owner = tostring(region) .. ":pulse"
+    M.Tween{ owner = owner, loop = true, duration = period or 1.6, from = 0, to = 1, ease = "linear",
+        apply = function(p)
+            if not M.IsEnabled() then           -- switched off while it was breathing: back to `high`, and done
+                M.Cancel(owner)
+                region:SetAlpha(high)
+                return
+            end
+            region:SetAlpha(middle + half * cos(2 * pi * p))
+        end }
 end
 
 function M.StopPulse(region, restoreAlpha)

@@ -4,8 +4,8 @@
 --
 -- Left: categories (continents, dungeons, raids, classes, professions, events) with counts. Middle: the
 -- quests that match the filters, sortable by clicking a column heading. Right: the selected quest as a
--- page: text, who starts and ends it, level, difficulty, side, and a map with the start (!), the end (?)
--- and the objectives marked.
+-- page: text on a sheet of parchment, who starts and ends it, level, difficulty, side, and a map with the
+-- start (!), the end (?) and the objectives marked.
 --
 -- Quests come from ns.QuestCatalog, which reads ns.DB: PandaQuest's own database plus, when the
 -- QuestieDB bridge is on, what that addon adds. The side filter starts as the player's faction, so an
@@ -13,25 +13,76 @@
 --
 -- Only plain frames, textures and font strings are used (no templates), so the window needs nothing
 -- from the game's UI that the rest of the addon does not already rely on.
+--
+-- Motion: everything that moves goes through ns.Motion (UI/Motion.lua). The window fades in and rises a
+-- few pixels, its three panels arrive one after another the first time, picking a quest crossfades the
+-- page and sweeps a glint over its title, the map's pins pop in and the ! and ? breathe while the page is
+-- on screen, rows brighten under the mouse and the counter eases to its number. With animations off
+-- every one of these is simply its final state, and a hidden window has nothing running at all.
 local _, ns = ...
 
 local M = {}
 ns.QuestBrowser = M
 
 local L = ns.L
-local Util, Log = ns.Util, ns.Log
+local Util, Log, Motion = ns.Util, ns.Log, ns.Motion
 
 local type, pairs, ipairs, tostring, tonumber, next = type, pairs, ipairs, tostring, tonumber, next
 local floor, ceil, max, min = math.floor, math.ceil, math.max, math.min
 local format = string.format
-local tconcat = table.concat
+local tconcat, tsort = table.concat, table.sort
 
-local WIDTH, HEIGHT = 960, 610
-local ROW_H, ROWS = 20, 19
-local TREE_ROWS = 22
-local MAP_W, MAP_H = 280, 187           -- 1002:668, the proportion of a zone map layer
+-- Layout ---------------------------------------------------------------------------------------
+local WIDTH = 960
+local ROW_H, ROWS = 20, 25                 -- list rows (and tree rows: the three panels are one height)
+local TREE_ROWS = ROWS
+local HEAD_H = 24                          -- the heading strip at the top of the tree and the list
+local PANEL_TOP = 78
+local PANEL_H = HEAD_H + ROWS * ROW_H + 4
+local HEIGHT = PANEL_TOP + PANEL_H + 30    -- the strip under the panels holds the counter
+local TREE_X, TREE_W = 12, 190
+local LIST_X, LIST_W = 210, 460
+local DETAIL_X, DETAIL_W = 678, 270
+local PAD = 10                             -- inner margin of the page
+local INNER_W = DETAIL_W - 2 * PAD
+local MAP_W, MAP_H = INNER_W, 167          -- 1002:668, the proportion of a zone map layer
 local MAX_TILES = 20
 local MAX_PINS = 60
+local PIN_SIZE = 16
+
+-- Text budgets: about as many characters as fit the width of their font string (10 px font, ~5 px a
+-- character). The client cuts what still does not fit with "..." because those strings do not wrap.
+local NAME_CHARS, ZONE_CHARS = 32, 21
+local TREE_CHARS, TREE_SUB_CHARS = 25, 22
+local TITLE_CHARS, SUBTITLE_CHARS = 56, 50
+local VALUE_CHARS = 38
+local TAB_CHARS = 10
+local OBJECTIVE_CHARS = 270
+
+-- Motion ---------------------------------------------------------------------------------------
+local OPEN_TIME, CLOSE_TIME, OPEN_RISE = 0.18, 0.12, 8
+local PANEL_STEP = 0.06                    -- Motion.Stagger step of the tree, list and page reveal
+local PAGE_FADE = 0.15
+local PIN_STEP, PIN_POP, MAX_STAGGERED = 0.05, 0.28, 12
+local HOVER_TIME, HOVER_ALPHA = 0.12, 0.10
+local COUNT_TIME, LIST_TIME = 0.25, 0.12
+
+-- Palette (shared by every PandaQuest window) ------------------------------------------------------
+local GOLD = { 1.0, 0.82, 0.0 }
+local TEXT = { 0.90, 0.90, 0.90 }
+local MUTED = { 0.62, 0.62, 0.66 }
+local PANEL = { 0.05, 0.05, 0.07, 0.94 }
+local HEADER = { 0.12, 0.10, 0.05, 1 }
+local EDGE = { 0.36, 0.30, 0.12, 1 }
+local ALLIANCE = { 0.25, 0.50, 1.0 }
+local HORDE = { 0.85, 0.20, 0.20 }
+local PARCHMENT = { 0.78, 0.67, 0.46, 1 }
+local INK = { 0.16, 0.11, 0.05 }
+local WINDOW_BG = { 0.07, 0.07, 0.10, 0.97 }
+local TOOLBAR_BG = { 0.09, 0.09, 0.12, 1 }
+local FIELD_BG = { 0.03, 0.03, 0.045, 1 }
+local BUTTON_BG = { 0.14, 0.14, 0.17, 0.95 }
+local BUTTON_ON = { 0.45, 0.35, 0.08, 1 }
 
 local frame, built
 local filter = { kinds = {} }
@@ -42,6 +93,9 @@ local treeData, treeRows, expandedKey = {}, {}, nil
 local scrollOffset, treeOffset = 0, 0
 local widgets = {}
 local mapAreas = {}
+local closing, revealed = false, false     -- fading out; the three panels have already arrived once
+local pulsing = {}                         -- pins that are breathing right now
+local shownCount                           -- the number the counter is displaying
 
 local KIND_LABELS = {
     dungeon = "Dungeon", raid = "Raid", group = "Group", pvp = "PvP", daily = "Daily", event = "Event",
@@ -49,7 +103,8 @@ local KIND_LABELS = {
 local SIDE_ORDER = { "mine", "alliance", "horde", "both" }
 local SIDE_LABELS = { mine = "My side", alliance = "Alliance", horde = "Horde", both = "Both" }
 
-local COLOR_GOLD = { 1.0, 0.82, 0.0 }
+-- The order the pins of a page arrive in: where it starts, where it ends, then what it asks for.
+local PIN_RANK = { available = 1, complete = 2, node = 3 }
 
 ---------------------------------------------------------------------------
 -- Small helpers
@@ -82,11 +137,29 @@ local function setColor(fontString, color)
     fontString:SetTextColor(color[1], color[2], color[3], color[4] or 1)
 end
 
-local function newText(parent, layer, template, point, relative, x, y, width, justify)
-    local fs = parent:CreateFontString(nil, layer or "OVERLAY", template or "GameFontHighlightSmall")
-    if point then fs:SetPoint(point, relative or parent, point, x or 0, y or 0) end
-    if width then fs:SetWidth(width) end
-    if justify then fs:SetJustifyH(justify) end
+local function sideColor(side)
+    if side == "alliance" then return ALLIANCE end
+    if side == "horde" then return HORDE end
+    return nil
+end
+
+local function ownerOf(object, suffix)
+    return tostring(object) .. ":" .. suffix
+end
+
+--- newText(parent, font, point, x, y, width, height, justify, color, lines) -> FontString
+-- Every string of the window has a width and a height. One line does not wrap: the client ends it with
+-- "..." where it runs out of room. More lines wrap and stop at `lines`.
+local function newText(parent, font, point, x, y, width, height, justify, color, lines)
+    local fs = parent:CreateFontString(nil, "OVERLAY", font or "GameFontHighlightSmall")
+    fs:SetPoint(point or "TOPLEFT", parent, point or "TOPLEFT", x or 0, y or 0)
+    fs:SetSize(width, height)
+    fs:SetJustifyH(justify or "LEFT")
+    fs:SetJustifyV("MIDDLE")
+    lines = lines or 1
+    if fs.SetWordWrap then fs:SetWordWrap(lines > 1) end
+    if lines > 1 and fs.SetMaxLines then fs:SetMaxLines(lines) end
+    if color then setColor(fs, color) end
     return fs
 end
 
@@ -99,32 +172,121 @@ local function fillColor(texture, r, g, b, a)
     end
 end
 
-local function newPanel(parent, r, g, b, a)
+local function paint(texture, color, alpha)
+    fillColor(texture, color[1], color[2], color[3], alpha or color[4] or 1)
+end
+
+--- A 1 px border of four textures on the frame's own border layer.
+local function addEdge(f, color, alpha)
+    local lines = {}
+    local function line(from, to, width, height)
+        local t = f:CreateTexture(nil, "BORDER")
+        t:SetPoint(from, f, from, 0, 0)
+        t:SetPoint(to, f, to, 0, 0)
+        if width then t:SetWidth(width) end
+        if height then t:SetHeight(height) end
+        paint(t, color, alpha)
+        return t
+    end
+    lines[1] = line("TOPLEFT", "TOPRIGHT", nil, 1)
+    lines[2] = line("BOTTOMLEFT", "BOTTOMRIGHT", nil, 1)
+    lines[3] = line("TOPLEFT", "BOTTOMLEFT", 1, nil)
+    lines[4] = line("TOPRIGHT", "BOTTOMRIGHT", 1, nil)
+    return lines
+end
+
+local function paintEdge(lines, color, alpha)
+    for _, t in ipairs(lines) do paint(t, color, alpha) end
+end
+
+--- A solid rectangle.
+local function newBar(parent, layer, color, alpha)
+    local t = parent:CreateTexture(nil, layer or "BACKGROUND")
+    paint(t, color, alpha)
+    return t
+end
+
+--- An inset panel: dark fill, 1 px edge.
+local function newPanel(parent, color, edge)
     local f = CreateFrame("Frame", nil, parent)
     local bg = f:CreateTexture(nil, "BACKGROUND")
     bg:SetAllPoints(f)
-    fillColor(bg, r, g, b, a)
+    paint(bg, color)
+    f.bg = bg
+    if edge then f.edge = addEdge(f, edge) end
     return f
 end
 
---- A flat text button: label, hover highlight, click handler.
-local function newButton(parent, label, width, height, onClick)
+--- A tooltip goes away with the frame that owns it. The client sends no OnLeave to a frame that hid under
+-- the mouse (a closed window, a quest picked with the cursor still over a tab), so it would stay up.
+local function dropTooltip(owner)
+    if GameTooltip and GameTooltip.IsOwned and GameTooltip:IsOwned(owner) then GameTooltip:Hide() end
+end
+
+--- Hover: a white sheet over `host` that brightens (an alpha tween, not an instant swap) while the
+-- mouse is on `target`. It is put away again when `target` hides.
+local function attachHover(target, host, peak)
+    local sheet = host:CreateTexture(nil, "ARTWORK")
+    sheet:SetAllPoints(host)
+    fillColor(sheet, 1, 1, 1, 1)
+    sheet:SetAlpha(0)
+    target.hover = sheet
+    local owner = ownerOf(sheet, "hover")
+    local function glide(to)
+        Motion.Tween{ owner = owner, duration = HOVER_TIME, from = sheet:GetAlpha() or 0, to = to, ease = "outQuad",
+            apply = function(v) sheet:SetAlpha(v) end }
+    end
+    target.glide = glide
+    target:SetScript("OnEnter", function() glide(peak or HOVER_ALPHA) end)
+    target:SetScript("OnLeave", function() glide(0) end)
+    target:SetScript("OnHide", function(self)
+        Motion.Cancel(owner)
+        sheet:SetAlpha(0)
+        dropTooltip(self)
+    end)
+end
+
+--- A flat text button: label, hover glow, click handler.
+local function newButton(parent, label, width, height, onClick, flat)
     local b = CreateFrame("Button", nil, parent)
     b:SetSize(width, height)
     local bg = b:CreateTexture(nil, "BACKGROUND")
     bg:SetAllPoints(b)
-    fillColor(bg, 0.18, 0.18, 0.2, 0.9)
+    if flat then paint(bg, BUTTON_BG, 0) else paint(bg, BUTTON_BG) end
     b.bg = bg
-    local hl = b:CreateTexture(nil, "HIGHLIGHT")
-    hl:SetAllPoints(b)
-    fillColor(hl, 1, 1, 1, 0.12)
-    b.text = newText(b, "OVERLAY", "GameFontHighlightSmall", "CENTER", b, 0, 0)
+    if not flat then b.edge = addEdge(b, EDGE, 0.55) end
+    attachHover(b, b, HOVER_ALPHA)
+    b.text = newText(b, "GameFontHighlightSmall", "CENTER", 0, 0, width - 6, height - 2, "CENTER")
     b.text:SetText(label or "")
     b:SetScript("OnClick", onClick)
     b.SetActive = function(self, active)
-        if active then fillColor(self.bg, 0.55, 0.42, 0.08, 0.95) else fillColor(self.bg, 0.18, 0.18, 0.2, 0.9) end
+        paint(self.bg, active and BUTTON_ON or BUTTON_BG)
     end
     return b
+end
+
+--- A one-line input box with a thin edge that turns gold while it has the keyboard.
+local function newInput(parent, name, x, y, width, numeric)
+    local box = CreateFrame("EditBox", name, parent)
+    box:SetSize(width, 20)
+    box:SetPoint("TOPLEFT", parent, "TOPLEFT", x, y)
+    box:SetAutoFocus(false)
+    box:SetFontObject("GameFontHighlightSmall")
+    box:SetTextInsets(5, 5, 0, 0)
+    local bg = box:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints(box)
+    paint(bg, FIELD_BG)
+    local edge = addEdge(box, EDGE, 0.7)
+    if numeric then
+        box:SetNumeric(true)
+        box:SetMaxLetters(3)
+        box:SetJustifyH("CENTER")
+    end
+    box:SetScript("OnEditFocusGained", function() paintEdge(edge, GOLD, 0.9) end)
+    box:SetScript("OnEditFocusLost", function() paintEdge(edge, EDGE, 0.7) end)
+    box:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
+    box:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
+    return box
 end
 
 ---------------------------------------------------------------------------
@@ -156,7 +318,7 @@ local function runQuery()
     local Catalog = catalog()
     results = Catalog.Query(currentFilter(), sortKey, sortDescending)
     scrollOffset = 0
-    if refreshList then refreshList() end
+    if refreshList then refreshList(true) end
 end
 
 local function rebuildTree()
@@ -183,6 +345,208 @@ local function refreshAll()
 end
 
 ---------------------------------------------------------------------------
+-- Motion
+---------------------------------------------------------------------------
+
+--- Is there a page on screen that may animate?
+local function pageVisible()
+    local d = widgets.detail
+    return frame ~= nil and frame:IsVisible() and not closing and d ~= nil and d.panel:IsShown()
+end
+
+local function canAnimate()
+    return Motion.IsEnabled() and frame ~= nil and frame:IsVisible() and not closing
+end
+
+local function stopPulses()
+    for i = #pulsing, 1, -1 do
+        Motion.StopPulse(pulsing[i])
+        pulsing[i] = nil
+    end
+end
+
+--- The ! and ? breathe; nothing else does. Off with animations off.
+local function pulsePin(pin)
+    if not Motion.IsEnabled() then return end
+    if pin.kind ~= "available" and pin.kind ~= "complete" then return end
+    if Motion.IsRunning(ownerOf(pin, "pulse")) then return end
+    Motion.Pulse(pin, 0.55, 1, 1.6)
+    pulsing[#pulsing + 1] = pin
+end
+
+--- A pin arrives: it is invisible until its turn, then grows from a fraction of its size with a small
+-- overshoot (Motion.Pop) while it fades up; a ! or ? then starts to breathe.
+local function popPin(pin, delay)
+    pin:SetSize(PIN_SIZE, PIN_SIZE)
+    pin:SetAlpha(0)
+    Motion.Pop(pin, 0.35, PIN_POP, delay)
+    Motion.Tween{ owner = ownerOf(pin, "arrive"), duration = PIN_POP * 0.5, delay = delay, from = 0, to = 1,
+        ease = "outQuad",
+        apply = function(v) pin:SetAlpha(v) end,
+        onDone = function()
+            if pageVisible() then pulsePin(pin) end
+        end }
+end
+
+--- Stop everything a pin was doing and put it back at full size.
+local function resetPin(pin)
+    Motion.Cancel(ownerOf(pin, "pop"))
+    Motion.Cancel(ownerOf(pin, "arrive"))
+    Motion.StopPulse(pin)
+    pin:SetSize(PIN_SIZE, PIN_SIZE)
+    pin:SetAlpha(1)
+end
+
+local function clearPins()
+    local map = widgets.map
+    if not (map and map.pins) then return end
+    stopPulses()
+    for _, pin in ipairs(map.pins) do
+        resetPin(pin)
+        pin:Hide()
+    end
+end
+
+--- The pins just drawn arrive one after another, the quest's start first. Only the first
+-- MAX_STAGGERED are spread out; the rest share the last one's moment.
+local function revealPins()
+    local map = widgets.map
+    if not (map and map.pins) then return end
+    local order = {}
+    for index, pin in ipairs(map.pins) do
+        if pin:IsShown() then order[#order + 1] = { pin = pin, rank = (PIN_RANK[pin.kind] or 4) * 1000 + index } end
+    end
+    tsort(order, function(a, b) return a.rank < b.rank end)
+    local animate = canAnimate()
+    for n, item in ipairs(order) do
+        if animate then
+            popPin(item.pin, Motion.Stagger(min(n, MAX_STAGGERED), PIN_STEP))
+        else
+            resetPin(item.pin)
+        end
+    end
+end
+
+--- The window is on screen again: the pins of the page that was open start breathing again. A pin that
+-- is still arriving is left to its own tween, which starts the breathing when it lands.
+local function resumePulses()
+    local map = widgets.map
+    if not (map and map.pins) or not pageVisible() then return end
+    for _, pin in ipairs(map.pins) do
+        if pin:IsShown() and not Motion.IsRunning(ownerOf(pin, "arrive")) then pulsePin(pin) end
+    end
+end
+
+--- The page changed under the mouse: the new content fades up from nearly nothing and a glint crosses
+-- the title.
+local function crossfadePage()
+    local d = widgets.detail
+    local owner = ownerOf(d.panel, "alpha")
+    if not canAnimate() then
+        Motion.Cancel(owner)
+        d.panel:SetAlpha(1)
+        return
+    end
+    Motion.Tween{ owner = owner, duration = PAGE_FADE, from = 0.15, to = 1, ease = "outQuad",
+        apply = function(v) d.panel:SetAlpha(v) end }
+    Motion.Sheen(d.titleFrame, 0.6, 0.05)
+end
+
+--- The list's rows settle after a filter or a sort changed them.
+local function easeList()
+    local host = widgets.rowHost
+    if not host then return end
+    local owner = "pqbrowser:list"
+    if not canAnimate() then
+        Motion.Cancel(owner)
+        host:SetAlpha(1)
+        return
+    end
+    Motion.Tween{ owner = owner, duration = LIST_TIME, from = 0.7, to = 1, ease = "outQuad",
+        apply = function(v) host:SetAlpha(v) end }
+end
+
+--- The "N quests" counter counts to its number instead of jumping.
+local function setCount(total)
+    local fs = widgets.count
+    if not fs then return end
+    local owner = "pqbrowser:count"
+    if shownCount == nil or shownCount == total or not canAnimate() then
+        Motion.Cancel(owner)
+        shownCount = total
+        fs:SetText(format(L["%d quests"], total))
+        return
+    end
+    Motion.Tween{ owner = owner, duration = COUNT_TIME, from = shownCount, to = total, ease = "outCubic",
+        apply = function(v)
+            shownCount = floor(v + 0.5)
+            fs:SetText(format(L["%d quests"], shownCount))
+        end }
+end
+
+--- Whatever is half way when the window goes away is finished, so the next time it opens from true
+-- states, and nothing is left running for a window nobody sees.
+local function settleMotion()
+    if not frame then return end
+    stopPulses()
+    Motion.Cancel(ownerOf(frame, "rise"), true)
+    Motion.Cancel(ownerOf(frame, "alpha"), true)
+    frame:SetAlpha(1)
+    for _, panel in ipairs({ widgets.treePanel, widgets.listPanel, widgets.detailPanel }) do
+        Motion.Cancel(ownerOf(panel, "rise"), true)
+        Motion.Cancel(ownerOf(panel, "alpha"), true)
+    end
+    local d = widgets.detail
+    if d then
+        Motion.Cancel(ownerOf(d.panel, "alpha"), true)
+        Motion.Cancel(ownerOf(d.titleFrame, "sheen"), true)
+        d.panel:SetAlpha(1)
+    end
+    local map = widgets.map
+    if map and map.pins then
+        for _, pin in ipairs(map.pins) do
+            Motion.Cancel(ownerOf(pin, "pop"), true)
+            Motion.Cancel(ownerOf(pin, "arrive"), true)
+        end
+    end
+    Motion.Cancel("pqbrowser:list", true)
+    Motion.Cancel("pqbrowser:count", true)
+    stopPulses()
+end
+
+--- The three panels arrive one after another: the tree, the list, the page.
+local function revealPanels()
+    local panels = { widgets.treePanel, widgets.listPanel, widgets.detailPanel }
+    for index, panel in ipairs(panels) do
+        local delay = Motion.Stagger(index, PANEL_STEP)
+        Motion.FadeIn(panel, OPEN_TIME, delay)
+        Motion.Rise(panel, -6, OPEN_TIME + 0.04, delay)
+    end
+end
+
+--- The window appears: it fades in and rises a few pixels. Opening again while it is still fading out
+-- turns it round from where it is.
+local function openFrame(f)
+    if f:IsShown() and not closing then return end
+    local wasClosing = closing
+    local from = closing and (f:GetAlpha() or 1) or 0
+    closing = false
+    Motion.Cancel(ownerOf(f, "rise"), true)
+    f:SetAlpha(from)
+    f:Show()
+    -- the frame never hid, so the client sends no OnShow: the breathing that stopped when the close began
+    -- has to be picked up here
+    if wasClosing then resumePulses() end
+    Motion.Tween{ owner = ownerOf(f, "alpha"), duration = OPEN_TIME, from = from, to = 1, ease = "outQuad",
+        apply = function(v) f:SetAlpha(v) end }
+    Motion.Rise(f, -OPEN_RISE, OPEN_TIME)
+    if not revealed then
+        revealed = true
+        revealPanels()
+    end
+end
+
+---------------------------------------------------------------------------
 -- Category tree
 ---------------------------------------------------------------------------
 
@@ -195,18 +559,22 @@ function refreshTree()
         local row, data = rows[i], treeRows[treeOffset + i]
         if data then
             row.data = data
-            row.text:SetText(data.label or "")
+            row.text:SetText(Util.Truncate(data.label or "", data.top and TREE_CHARS or TREE_SUB_CHARS))
             row.count:SetText(tostring(data.count or 0))
             local selected = (filter.category == data.key and filter.zone == data.zone)
                 and (data.key ~= nil or (filter.category == nil))
+            row.text:ClearAllPoints()
             if data.top then
-                row.text:SetPoint("LEFT", row, "LEFT", 6, 0)
-                setColor(row.text, selected and { 1, 1, 1 } or COLOR_GOLD)
+                row.text:SetPoint("LEFT", row, "LEFT", 8, 0)
+                row.text:SetWidth(128)
+                setColor(row.text, selected and { 1, 1, 1 } or GOLD)
             else
-                row.text:SetPoint("LEFT", row, "LEFT", 18, 0)
-                setColor(row.text, selected and { 1, 1, 1 } or { 0.85, 0.85, 0.85 })
+                row.text:SetPoint("LEFT", row, "LEFT", 20, 0)
+                row.text:SetWidth(116)
+                setColor(row.text, selected and { 1, 1, 1 } or TEXT)
             end
             row.sel:SetShown(selected and true or false)
+            row.accent:SetShown(selected and true or false)
             row:Show()
         else
             row.data = nil
@@ -233,7 +601,7 @@ end
 -- Quest list
 ---------------------------------------------------------------------------
 
-function refreshList()
+function refreshList(changed)
     if not frame then return end
     local Catalog = catalog()
     local rows = widgets.rows
@@ -245,24 +613,26 @@ function refreshList()
         if record then
             row.questId = record.id
             local hex = colorHex(record.level)
-            row.name:SetText(record.name)
-            row.zone:SetText(Catalog.ZoneLabel(nil, record.area) or "")
+            local selected = record.id == selectedId
+            row.name:SetText(Util.Truncate(record.name, NAME_CHARS))
+            setColor(row.name, selected and GOLD or TEXT)
+            row.zone:SetText(Util.Truncate(Catalog.ZoneLabel(nil, record.area) or "", ZONE_CHARS))
             row.level:SetText(format("|c%s%d|r", "ff" .. hex:sub(1, 6), record.level))
             row.req:SetText(record.minLevel > 0 and tostring(record.minLevel) or "-")
             row.xp:SetText(record.xp and tostring(record.xp) or "")
-            local icon
-            if record.side == "alliance" then icon = "Interface\\Icons\\INV_BannerPVP_02"
-            elseif record.side == "horde" then icon = "Interface\\Icons\\INV_BannerPVP_01" end
-            row.side:SetShown(icon ~= nil)
-            if icon then row.side:SetTexture(icon) end
-            row.sel:SetShown(record.id == selectedId)
+            local color = sideColor(record.side)
+            if color then paint(row.side, color) end
+            row.side:SetShown(color ~= nil)
+            row.sel:SetShown(selected)
+            row.accent:SetShown(selected)
             row:Show()
         else
             row.questId = nil
             row:Hide()
         end
     end
-    widgets.count:SetText(format(L["%d quests"], total))
+    setCount(total)
+    if changed then easeList() end
     if widgets.slider then
         widgets.sliderUpdating = true
         widgets.slider:SetMinMaxValues(0, maxOffset)
@@ -271,25 +641,30 @@ function refreshList()
     end
     if widgets.emptyText then
         if total == 0 then
-            local Catalog2 = catalog()
-            widgets.emptyText:SetText(Catalog2.IsReady() and L["No quest matches these filters."]
-                or L["Reading the quest database..."])
+            local ready = Catalog.IsReady()
+            widgets.emptyText:SetText(ready and L["No quest matches these filters."] or L["Reading the quest database..."])
             widgets.emptyText:Show()
+            widgets.emptyHint:SetShown(ready)
+            widgets.emptyIcon:SetShown(ready)
         else
             widgets.emptyText:Hide()
+            widgets.emptyHint:Hide()
+            widgets.emptyIcon:Hide()
         end
     end
     for key, button in pairs(widgets.sortButtons) do
         local suffix = ""
         if key == sortKey then suffix = sortDescending and " v" or " ^" end
         button.text:SetText(button.label .. suffix)
+        setColor(button.text, key == sortKey and { 1, 1, 1 } or GOLD)
     end
 end
 
 local function selectQuest(questId)
+    local changed = questId ~= selectedId
     selectedId = questId
     refreshList()
-    if refreshDetail then refreshDetail() end
+    if refreshDetail then refreshDetail(changed) end
 end
 M.Select = selectQuest
 
@@ -352,13 +727,32 @@ local function endpoints(quest, side)
     return out
 end
 
-local function pointText(entry)
+--- The Start / End text: two lines at most. A lone giver gets its name and, below it, its zone and
+-- coordinates; several givers get one line each (name and coordinates), and "+N" for the ones left out.
+local function pointText(entries)
+    if #entries == 0 then return "-" end
     local Catalog = catalog()
-    local zone = entry.area and (Catalog.ZoneLabel(nil, entry.area) or "") or ""
-    if entry.x and entry.y then
-        return format("%s |cffa0a0a0%s %.1f, %.1f|r", entry.name, zone, entry.x, entry.y)
+    local lines = {}
+    if #entries == 1 then
+        local e = entries[1]
+        lines[1] = Util.Truncate(e.name, VALUE_CHARS)
+        if e.x and e.y then
+            local zone = e.area and (Catalog.ZoneLabel(nil, e.area) or "") or ""
+            if zone ~= "" then zone = Util.Truncate(zone, 24) .. " " end
+            lines[2] = format("|cffa0a0a0%s%.1f, %.1f|r", zone, e.x, e.y)
+        end
+    else
+        for i = 1, min(#entries, 2) do
+            local e = entries[i]
+            if e.x and e.y then
+                lines[i] = format("%s |cffa0a0a0%.1f, %.1f|r", Util.Truncate(e.name, 22), e.x, e.y)
+            else
+                lines[i] = Util.Truncate(e.name, VALUE_CHARS)
+            end
+        end
+        if #entries > 2 then lines[2] = lines[2] .. format(" |cffa0a0a0+%d|r", #entries - 2) end
     end
-    return entry.name
+    return tconcat(lines, "\n")
 end
 
 --- Difficulty: the player levels at which the quest turns yellow, green and grey.
@@ -389,7 +783,7 @@ local function ensureMapTiles()
     map.pins = {}
     for i = 1, MAX_PINS do
         local p = map:CreateTexture(nil, "OVERLAY")
-        p:SetSize(16, 16)
+        p:SetSize(PIN_SIZE, PIN_SIZE)
         p:Hide()
         map.pins[i] = p
     end
@@ -427,6 +821,7 @@ local function placePin(map, index, kind, x, y)
     local pin = map.pins[index]
     if not pin or type(x) ~= "number" or type(y) ~= "number" then return false end
     local Icons = ns.Icons
+    pin.kind = kind
     pin:SetTexture(Icons.Get(kind))
     pin:ClearAllPoints()
     pin:SetPoint("CENTER", map, "TOPLEFT", (x / 100) * MAP_W, -(y / 100) * MAP_H)
@@ -436,7 +831,7 @@ end
 
 local function drawMapPins(quest, area)
     local map = widgets.map
-    for _, p in ipairs(map.pins) do p:Hide() end
+    clearPins()
     local n = 0
     local function add(kind, point, pointArea)
         if pointArea == area and n < MAX_PINS and point then
@@ -504,8 +899,10 @@ local function showMapArea(quest, index)
     ensureMapTiles()
     for i, button in ipairs(widgets.areaTabs) do
         if mapAreas[i] then
+            local full = Zones.GetAreaName(mapAreas[i])
+            button.fullName = full
             button:Show()
-            button.text:SetText(Zones.GetAreaName(mapAreas[i]))
+            button.text:SetText(Util.Truncate(full, TAB_CHARS))
             button:SetActive(i == index)
         else
             button:Hide()
@@ -513,37 +910,52 @@ local function showMapArea(quest, index)
     end
     if not area then
         drawMapArt(nil)
-        for _, p in ipairs(map.pins) do p:Hide() end
+        clearPins()
         map.fallbackText:SetText(L["No location is known for this quest."])
         return
     end
-    map.fallbackText:SetText(Zones.GetAreaName(area))
+    map.fallbackText:SetText(Util.Truncate(Zones.GetAreaName(area), 40))
     drawMapArt(Zones.GetUiMapIdByAreaId(area))
     drawMapPins(quest, area)
+    revealPins()
 end
 
-function refreshDetail()
+--- refreshDetail(animate): fill the page for the selected quest. `animate` is true when it is a
+-- different quest from the one that was showing, which is when the page crossfades.
+function refreshDetail(animate)
     if not frame then return end
     local d = widgets.detail
     local DB = ns.DB
     local quest = selectedId and DB.GetQuest(selectedId)
     if not quest then
+        Motion.Cancel(ownerOf(d.panel, "alpha"))
+        Motion.Cancel(ownerOf(d.titleFrame, "sheen"), true)
+        d.panel:SetAlpha(1)
+        clearPins()
         d.panel:Hide()
         d.hint:Show()
         return
     end
+    local wasShown = d.panel:IsShown()
     d.hint:Hide()
     d.panel:Show()
 
     local hex = colorHex(quest.questLevel or 0)
-    d.title:SetText(quest.name or ("Quest " .. selectedId))
+    d.title:SetText(Util.Truncate(quest.name or ("Quest " .. selectedId), TITLE_CHARS))
     local side = ns.QuestCatalog.SideOf(quest.requiredRaces)
-    d.subtitle:SetText(format(L["A level %d quest for %s, from level %d."], quest.questLevel or 0,
-        sideText(side), max(1, quest.requiredLevel or 1)))
+    d.subtitle:SetText(Util.Truncate(format(L["A level %d quest for %s, from level %d."], quest.questLevel or 0,
+        sideText(side), max(1, quest.requiredLevel or 1)), SUBTITLE_CHARS))
+    local accent = sideColor(side)
+    if accent then paint(d.accent, accent) else paint(d.accent, EDGE) end
 
-    -- objectives
+    -- objectives, on the parchment
     local text = quest.objectivesText
-    d.objectives:SetText(type(text) == "table" and tconcat(text, "\n\n") or tostring(text or ""))
+    local body = type(text) == "table" and tconcat(text, "\n") or tostring(text or "")
+    local shownText = Util.Truncate(body, OBJECTIVE_CHARS)       -- counts characters, not bytes
+    d.objectives:SetText(shownText)
+    d.paper.full = shownText ~= body and body or nil
+    dropTooltip(d.paper)                                        -- it would still show the last quest's text
+    d.paper:SetShown(body ~= "")
 
     -- rewards
     local rewards = {}
@@ -556,26 +968,24 @@ function refreshDetail()
             end
         end
     end
-    d.rewards:SetText(#rewards > 0 and tconcat(rewards, "\n") or L["Not in the database."])
+    d.rewards:SetText(#rewards > 0 and Util.Truncate(tconcat(rewards, ", "), 2 * VALUE_CHARS - 2) or L["Not in the database."])
 
     -- start / end
-    local startTexts, endTexts = {}, {}
-    for _, e in ipairs(endpoints(quest, "startedBy")) do startTexts[#startTexts + 1] = pointText(e) end
-    for _, e in ipairs(endpoints(quest, "finishedBy")) do endTexts[#endTexts + 1] = pointText(e) end
-    d.startText:SetText(#startTexts > 0 and tconcat(startTexts, "\n") or "-")
-    d.endText:SetText(#endTexts > 0 and tconcat(endTexts, "\n") or "-")
+    d.startText:SetText(pointText(endpoints(quest, "startedBy")))
+    d.endText:SetText(pointText(endpoints(quest, "finishedBy")))
 
-    d.level:SetText(format("|c%s%d|r, %s %d", "ff" .. hex:sub(1, 6), quest.questLevel or 0,
-        L["requires level"], quest.requiredLevel or 0))
+    d.level:SetText(format("|c%s%d|r", "ff" .. hex:sub(1, 6), quest.questLevel or 0))
+    d.required:SetText(tostring(quest.requiredLevel or 0))
     d.difficulty:SetText(difficultyText(quest.questLevel))
-    d.side:SetText(sideText(side))
+    d.side:SetText(Util.Truncate(sideText(side), 14))
     local shareable = quest.questFlags and bit and bit.band(quest.questFlags, ns.Schema.questFlags.SHARABLE) ~= 0
     d.shareable:SetText(shareable and L["Yes"] or L["No"])
     d.questId:SetText(tostring(selectedId))
 
     mapAreas = collectAreas(quest)
-    showMapArea(quest, 1)
     d.quest = quest
+    if animate or not wasShown then crossfadePage() end
+    showMapArea(quest, 1)
 end
 
 local function onAreaTab(index)
@@ -610,48 +1020,26 @@ end
 ---------------------------------------------------------------------------
 
 local function buildFilters(parent)
-    local top = -34
-    newText(parent, "OVERLAY", "GameFontNormalSmall", "TOPLEFT", parent, 12, top, nil):SetText(L["Name"])
-    local name = CreateFrame("EditBox", "PandaQuestBrowserName", parent)
-    name:SetSize(170, 20)
-    name:SetPoint("TOPLEFT", parent, "TOPLEFT", 12, top - 14)
-    name:SetAutoFocus(false)
-    name:SetFontObject("GameFontHighlightSmall")
-    name:SetTextInsets(4, 4, 0, 0)
-    local bg = name:CreateTexture(nil, "BACKGROUND")
-    bg:SetAllPoints(name)
-    fillColor(bg, 0.05, 0.05, 0.07, 0.95)
+    local labelY, boxY = -33, -47
+    newText(parent, "GameFontNormalSmall", "TOPLEFT", 12, labelY, 100, 12):SetText(L["Name"])
+    local name = newInput(parent, "PandaQuestBrowserName", 12, boxY, 170)
     name:SetScript("OnTextChanged", function(self)
         local text = self:GetText() or ""
         filter.text = text ~= "" and text:lower() or nil
         runQuery()
         rebuildTree()
     end)
-    name:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
-    name:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
     widgets.name = name
 
     local function levelBox(x, label, field)
-        newText(parent, "OVERLAY", "GameFontNormalSmall", "TOPLEFT", parent, x, top, nil):SetText(label)
-        local box = CreateFrame("EditBox", nil, parent)
-        box:SetSize(38, 20)
-        box:SetPoint("TOPLEFT", parent, "TOPLEFT", x, top - 14)
-        box:SetAutoFocus(false)
-        box:SetNumeric(true)
-        box:SetMaxLetters(3)
-        box:SetFontObject("GameFontHighlightSmall")
-        box:SetJustifyH("CENTER")
-        local b = box:CreateTexture(nil, "BACKGROUND")
-        b:SetAllPoints(box)
-        fillColor(b, 0.05, 0.05, 0.07, 0.95)
+        newText(parent, "GameFontNormalSmall", "TOPLEFT", x, labelY, 38, 12, "CENTER"):SetText(label)
+        local box = newInput(parent, nil, x, boxY, 38, true)
         box:SetScript("OnTextChanged", function(self)
             local value = tonumber(self:GetText())
             filter[field] = value and value > 0 and value or nil
             runQuery()
             rebuildTree()
         end)
-        box:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
-        box:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
         return box
     end
     widgets.minLevel = levelBox(196, L["Level"], "minLevel")
@@ -662,7 +1050,7 @@ local function buildFilters(parent)
         self:SetActive(filter.myLevel)
         refreshAll()
     end)
-    myLevel:SetPoint("TOPLEFT", parent, "TOPLEFT", 290, top - 14)
+    myLevel:SetPoint("TOPLEFT", parent, "TOPLEFT", 290, boxY)
     widgets.myLevel = myLevel
 
     local sideButton = newButton(parent, "", 90, 20, function(self)
@@ -676,7 +1064,7 @@ local function buildFilters(parent)
         self.text:SetText(L[SIDE_LABELS[filter.sideChoice]])
         refreshAll()
     end)
-    sideButton:SetPoint("TOPLEFT", parent, "TOPLEFT", 366, top - 14)
+    sideButton:SetPoint("TOPLEFT", parent, "TOPLEFT", 366, boxY)
     sideButton.text:SetText(L[SIDE_LABELS.mine])
     widgets.sideButton = sideButton
 
@@ -688,7 +1076,7 @@ local function buildFilters(parent)
             self:SetActive(filter.kinds[kind])
             refreshAll()
         end)
-        b:SetPoint("TOPLEFT", parent, "TOPLEFT", x, top - 14)
+        b:SetPoint("TOPLEFT", parent, "TOPLEFT", x, boxY)
         widgets.kindButtons[kind] = b
         x = x + 62
     end
@@ -705,29 +1093,53 @@ local function buildFilters(parent)
         expandedKey = nil
         refreshAll()
     end)
-    reset:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -12, top - 14)
+    reset:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -12, boxY)
+end
+
+--- A heading strip across the top of a panel: header colour and a thin line under it.
+local function addHeading(panel)
+    local strip = newBar(panel, "BORDER", HEADER)
+    strip:SetPoint("TOPLEFT", panel, "TOPLEFT", 1, -1)
+    strip:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -1, -1)
+    strip:SetHeight(HEAD_H - 1)
+    local line = newBar(panel, "BORDER", EDGE, 0.8)
+    line:SetPoint("TOPLEFT", panel, "TOPLEFT", 1, -HEAD_H)
+    line:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -1, -HEAD_H)
+    line:SetHeight(1)
+end
+
+--- The pieces every selectable row has: a zebra stripe, a selection wash, a 2 px gold bar, a hover sheet.
+local function newRow(parent, index, width)
+    local row = CreateFrame("Button", nil, parent)
+    row:SetSize(width, ROW_H)
+    local zebra = newBar(row, "BACKGROUND", { 1, 1, 1 }, index % 2 == 0 and 0.03 or 0)
+    zebra:SetAllPoints(row)
+    row.zebra = zebra
+    row.sel = newBar(row, "BACKGROUND", GOLD, 0.10)
+    row.sel:SetAllPoints(row)
+    row.sel:Hide()
+    row.accent = newBar(row, "ARTWORK", GOLD)
+    row.accent:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    row.accent:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 0, 0)
+    row.accent:SetWidth(2)
+    row.accent:Hide()
+    attachHover(row, row, HOVER_ALPHA)
+    return row
 end
 
 local function buildTree(parent)
-    local panel = newPanel(parent, 0.04, 0.04, 0.06, 0.9)
-    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", 12, -84)
-    panel:SetSize(190, TREE_ROWS * 21 + 4)
+    local panel = newPanel(parent, PANEL, EDGE)
+    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", TREE_X, -PANEL_TOP)
+    panel:SetSize(TREE_W, PANEL_H)
     widgets.treePanel = panel
+    addHeading(panel)
+    newText(panel, "GameFontNormalSmall", "TOPLEFT", 8, -6, TREE_W - 16, 12, "LEFT", MUTED):SetText(L["Categories"])
     widgets.treeRows = {}
     for i = 1, TREE_ROWS do
-        local row = CreateFrame("Button", nil, panel)
-        row:SetSize(186, 21)
-        row:SetPoint("TOPLEFT", panel, "TOPLEFT", 2, -2 - (i - 1) * 21)
-        local sel = row:CreateTexture(nil, "BACKGROUND")
-        sel:SetAllPoints(row)
-        fillColor(sel, 0.5, 0.4, 0.1, 0.35)
-        sel:Hide()
-        row.sel = sel
-        local hl = row:CreateTexture(nil, "HIGHLIGHT")
-        hl:SetAllPoints(row)
-        fillColor(hl, 1, 1, 1, 0.08)
-        row.text = newText(row, "OVERLAY", "GameFontNormalSmall", "LEFT", row, 6, 0, 130, "LEFT")
-        row.count = newText(row, "OVERLAY", "GameFontDisableSmall", "RIGHT", row, -6, 0, 40, "RIGHT")
+        local row = newRow(panel, i, TREE_W - 2)
+        row:SetPoint("TOPLEFT", panel, "TOPLEFT", 1, -HEAD_H - 1 - (i - 1) * ROW_H)
+        row.text = newText(row, "GameFontNormalSmall", "LEFT", 8, 0, 128, ROW_H - 4, "LEFT", GOLD)
+        row.count = newText(row, "GameFontDisableSmall", "RIGHT", -6, 0, 36, ROW_H - 4, "RIGHT")
         row:SetScript("OnClick", onTreeClick)
         widgets.treeRows[i] = row
     end
@@ -738,57 +1150,66 @@ local function buildTree(parent)
     end)
 end
 
+-- x is relative to the row; the heading buttons sit above the same columns. "field" is the font string
+-- of the row that shows the column.
 local COLUMNS = {
-    { key = "name", label = "Quest", x = 6, w = 190, justify = "LEFT" },
-    { key = "zone", label = "Zone", x = 200, w = 110, justify = "LEFT" },
-    { key = "level", label = "Level", x = 314, w = 34, justify = "CENTER" },
-    { key = "minLevel", label = "Req.", x = 350, w = 34, justify = "CENTER" },
-    { key = "xp", label = "XP", x = 386, w = 44, justify = "RIGHT" },
+    { key = "name", field = "name", label = "Quest", x = 10, w = 162, justify = "LEFT",
+        font = "GameFontNormalSmall", color = TEXT },
+    { key = "zone", field = "zone", label = "Zone", x = 176, w = 110, justify = "LEFT",
+        font = "GameFontHighlightSmall", color = MUTED },
+    { key = "level", field = "level", label = "Level", x = 290, w = 40, justify = "CENTER",
+        font = "GameFontHighlightSmall" },
+    { key = "minLevel", field = "req", label = "Req.", x = 334, w = 40, justify = "CENTER",
+        font = "GameFontHighlightSmall", color = MUTED },
+    { key = "xp", field = "xp", label = "XP", x = 378, w = 50, justify = "RIGHT",
+        font = "GameFontHighlightSmall", color = MUTED },
 }
 
 local function buildList(parent)
-    local panel = newPanel(parent, 0.04, 0.04, 0.06, 0.9)
-    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", 210, -84)
-    panel:SetSize(460, 24 + ROWS * ROW_H + 4)
+    local panel = newPanel(parent, PANEL, EDGE)
+    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", LIST_X, -PANEL_TOP)
+    panel:SetSize(LIST_W, PANEL_H)
     widgets.listPanel = panel
+    addHeading(panel)
 
     widgets.sortButtons = {}
     for _, col in ipairs(COLUMNS) do
         local label = L[col.label]
-        local b = newButton(panel, label, col.w, 20, function()
+        local b = newButton(panel, label, col.w + 4, HEAD_H - 4, function()
             if sortKey == col.key then
                 sortDescending = not sortDescending
             else
                 sortKey, sortDescending = col.key, false
             end
             runQuery()
-        end)
-        b:SetPoint("TOPLEFT", panel, "TOPLEFT", col.x, -2)
+        end, true)
+        b:SetPoint("TOPLEFT", panel, "TOPLEFT", col.x + 1 - 2, -2)
         b.label = label
+        b.text:ClearAllPoints()
+        b.text:SetPoint("LEFT", b, "LEFT", 2, 0)
+        b.text:SetWidth(col.w)
+        b.text:SetJustifyH(col.justify)
+        setColor(b.text, GOLD)
         widgets.sortButtons[col.key] = b
     end
 
+    local host = CreateFrame("Frame", nil, panel)
+    host:SetSize(430, ROWS * ROW_H)
+    host:SetPoint("TOPLEFT", panel, "TOPLEFT", 1, -HEAD_H - 1)
+    widgets.rowHost = host
+
     widgets.rows = {}
     for i = 1, ROWS do
-        local row = CreateFrame("Button", nil, panel)
-        row:SetSize(430, ROW_H)
-        row:SetPoint("TOPLEFT", panel, "TOPLEFT", 2, -24 - (i - 1) * ROW_H)
-        local sel = row:CreateTexture(nil, "BACKGROUND")
-        sel:SetAllPoints(row)
-        fillColor(sel, 0.5, 0.4, 0.1, 0.35)
-        sel:Hide()
-        row.sel = sel
-        local hl = row:CreateTexture(nil, "HIGHLIGHT")
-        hl:SetAllPoints(row)
-        fillColor(hl, 1, 1, 1, 0.08)
-        row.side = row:CreateTexture(nil, "ARTWORK")
-        row.side:SetSize(14, 14)
-        row.side:SetPoint("LEFT", row, "LEFT", 4, 0)
-        row.name = newText(row, "OVERLAY", "GameFontNormalSmall", "LEFT", row, 22, 0, 176, "LEFT")
-        row.zone = newText(row, "OVERLAY", "GameFontHighlightSmall", "LEFT", row, 200, 0, 110, "LEFT")
-        row.level = newText(row, "OVERLAY", "GameFontHighlightSmall", "LEFT", row, 314, 0, 34, "CENTER")
-        row.req = newText(row, "OVERLAY", "GameFontHighlightSmall", "LEFT", row, 350, 0, 34, "CENTER")
-        row.xp = newText(row, "OVERLAY", "GameFontHighlightSmall", "LEFT", row, 386, 0, 40, "RIGHT")
+        local row = newRow(host, i, 430)
+        row:SetPoint("TOPLEFT", host, "TOPLEFT", 0, -(i - 1) * ROW_H)
+        -- the faction stripe: Alliance blue, Horde red, nothing for a quest both sides share
+        row.side = newBar(row, "ARTWORK", ALLIANCE)
+        row.side:SetPoint("TOPLEFT", row, "TOPLEFT", 3, -2)
+        row.side:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 3, 2)
+        row.side:SetWidth(3)
+        for _, col in ipairs(COLUMNS) do
+            row[col.field] = newText(row, col.font, "LEFT", col.x, 0, col.w, ROW_H - 4, col.justify, col.color)
+        end
         row:SetScript("OnClick", function(self)
             if self.questId then selectQuest(self.questId) end
         end)
@@ -796,19 +1217,20 @@ local function buildList(parent)
     end
 
     local slider = CreateFrame("Slider", nil, panel)
-    slider:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -2, -24)
-    slider:SetSize(14, ROWS * ROW_H)
+    slider:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -3, -HEAD_H - 1)
+    slider:SetSize(12, ROWS * ROW_H)
     slider:SetOrientation("VERTICAL")
     slider:SetMinMaxValues(0, 0)
     slider:SetValueStep(1)
-    local track = slider:CreateTexture(nil, "BACKGROUND")
-    track:SetAllPoints(slider)
-    fillColor(track, 0.1, 0.1, 0.12, 0.9)
+    local track = newBar(slider, "BACKGROUND", { 0.12, 0.12, 0.15 }, 1)
+    track:SetPoint("TOP", slider, "TOP", 0, 0)
+    track:SetPoint("BOTTOM", slider, "BOTTOM", 0, 0)
+    track:SetWidth(4)
     slider:SetThumbTexture("Interface\\Buttons\\WHITE8X8")
     local thumb = slider:GetThumbTexture()
     if type(thumb) == "table" and thumb.SetSize then
-        thumb:SetSize(12, 24)
-        thumb:SetVertexColor(0.6, 0.5, 0.2, 1)
+        thumb:SetSize(8, 32)
+        thumb:SetVertexColor(0.55, 0.45, 0.18, 1)
     end
     slider:SetScript("OnValueChanged", function(_, value)
         if widgets.sliderUpdating then return end
@@ -823,84 +1245,159 @@ local function buildList(parent)
         refreshList()
     end)
 
-    widgets.count = newText(panel, "OVERLAY", "GameFontDisableSmall", "BOTTOMLEFT", panel, 8, -16, nil, "LEFT")
-    widgets.count:ClearAllPoints()
-    widgets.count:SetPoint("TOPLEFT", panel, "BOTTOMLEFT", 4, -4)
-    widgets.emptyText = newText(panel, "OVERLAY", "GameFontNormal", "CENTER", panel, 0, 0, 380, "CENTER")
+    widgets.count = newText(parent, "GameFontDisableSmall", "TOPLEFT", LIST_X + 4, -(PANEL_TOP + PANEL_H + 8), 200, 12, "LEFT")
+
+    -- the empty state: a dimmed mark, what is wrong, and what to do about it
+    local icon = panel:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(32, 32)
+    icon:SetPoint("CENTER", panel, "CENTER", -14, 36)
+    icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
+    icon:SetAlpha(0.35)
+    icon:Hide()
+    widgets.emptyIcon = icon
+    widgets.emptyText = newText(panel, "GameFontNormal", "CENTER", -14, 0, 380, 18, "CENTER", MUTED)
+    widgets.emptyHint = newText(panel, "GameFontDisableSmall", "CENTER", -14, -20, 380, 14, "CENTER")
+    widgets.emptyHint:SetText(L["Loosen a filter, or press Reset."])
+    widgets.emptyHint:Hide()
+end
+
+--- A labelled value: the label in gold, the text beside it.
+local function addLine(p, label, key, y, height, d)
+    local l = newText(p, "GameFontNormalSmall", "TOPLEFT", PAD, y, 52, 12, "LEFT", GOLD)
+    l:SetText(label)
+    d.labels[#d.labels + 1] = l
+    local lines = max(1, floor(height / 13))
+    local v = newText(p, "GameFontHighlightSmall", "TOPLEFT", PAD + 54, y, INNER_W - 54, height, "LEFT", TEXT, lines)
+    v:SetJustifyV("TOP")
+    d[key] = v
+    return y - height - 4
+end
+
+--- A small caption over a value, three to a row.
+local function addCell(p, label, key, column, y, d)
+    local width = floor((INNER_W - 6) / 3)
+    local x = PAD + (column - 1) * (width + 3)
+    local l = newText(p, "GameFontNormalSmall", "TOPLEFT", x, y, width, 12, "LEFT", GOLD)
+    l:SetText(label)
+    d.labels[#d.labels + 1] = l
+    d[key] = newText(p, "GameFontHighlightSmall", "TOPLEFT", x, y - 13, width, 13, "LEFT", TEXT)
 end
 
 local function buildDetail(parent)
-    local panel = newPanel(parent, 0.04, 0.04, 0.06, 0.9)
-    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", 678, -84)
-    panel:SetSize(270, 24 + ROWS * ROW_H + 4)
-    local d = { panel = CreateFrame("Frame", nil, panel) }
+    local panel = newPanel(parent, PANEL, EDGE)
+    panel:SetPoint("TOPLEFT", parent, "TOPLEFT", DETAIL_X, -PANEL_TOP)
+    panel:SetSize(DETAIL_W, PANEL_H)
+    widgets.detailPanel = panel
+    local d = { panel = CreateFrame("Frame", nil, panel), labels = {} }
     widgets.detail = d
     d.panel:SetAllPoints(panel)
 
-    d.hint = newText(panel, "OVERLAY", "GameFontNormal", "CENTER", panel, 0, 0, 230, "CENTER")
+    d.hint = newText(panel, "GameFontNormal", "CENTER", 0, 0, 220, 44, "CENTER", MUTED, 3)
     d.hint:SetText(L["Pick a quest from the list to see its page."])
-    setColor(d.hint, { 0.7, 0.7, 0.7 })
 
     local p = d.panel
-    d.title = newText(p, "OVERLAY", "GameFontNormalLarge", "TOPLEFT", p, 8, -8, 254, "LEFT")
-    setColor(d.title, COLOR_GOLD)
-    d.subtitle = newText(p, "OVERLAY", "GameFontHighlightSmall", "TOPLEFT", p, 8, -30, 254, "LEFT")
-    setColor(d.subtitle, { 0.85, 0.85, 0.85 })
+    -- a thin bar across the top in the quest's side colour
+    d.accent = newBar(p, "ARTWORK", EDGE)
+    d.accent:SetPoint("TOPLEFT", p, "TOPLEFT", 1, -1)
+    d.accent:SetPoint("TOPRIGHT", p, "TOPRIGHT", -1, -1)
+    d.accent:SetHeight(2)
+
+    local y = -9
+    d.titleFrame = CreateFrame("Frame", nil, p)
+    d.titleFrame:SetSize(INNER_W, 38)
+    d.titleFrame:SetPoint("TOPLEFT", p, "TOPLEFT", PAD, y)
+    d.title = newText(d.titleFrame, "GameFontNormalLarge", "TOPLEFT", 0, 0, INNER_W, 38, "LEFT", GOLD, 2)
+    y = y - 38 - 2
+    d.subtitle = newText(p, "GameFontHighlightSmall", "TOPLEFT", PAD, y, INNER_W, 14, "LEFT", MUTED)
+    y = y - 14 - 3
 
     -- map with its area tabs
     d.areaTabs = {}
     widgets.areaTabs = d.areaTabs
+    local tabW = floor((INNER_W - 9) / 4)
     for i = 1, 4 do
-        local b = newButton(p, "", 64, 16, function() onAreaTab(i) end)
-        b:SetPoint("TOPLEFT", p, "TOPLEFT", 8 + (i - 1) * 66, -52)
+        local b = newButton(p, "", tabW, 16, function() onAreaTab(i) end)
+        b:SetPoint("TOPLEFT", p, "TOPLEFT", PAD + (i - 1) * (tabW + 3), y)
         b.text:SetFontObject("GameFontDisableSmall")
+        b:SetScript("OnEnter", function(self)
+            self.glide(HOVER_ALPHA)
+            if self.fullName and GameTooltip then
+                GameTooltip:SetOwner(self, "ANCHOR_TOP")
+                GameTooltip:SetText(self.fullName)
+                GameTooltip:Show()
+            end
+        end)
+        b:SetScript("OnLeave", function(self)
+            self.glide(0)
+            dropTooltip(self)
+        end)
         b:Hide()
         d.areaTabs[i] = b
     end
+    y = y - 16 - 2
     local map = CreateFrame("Frame", nil, p)
     map:SetSize(MAP_W, MAP_H)
-    map:SetPoint("TOPLEFT", p, "TOPLEFT", 8, -72)
+    map:SetPoint("TOPLEFT", p, "TOPLEFT", PAD, y)
     local mapBg = map:CreateTexture(nil, "BACKGROUND")
     mapBg:SetAllPoints(map)
     fillColor(mapBg, 0.16, 0.13, 0.08, 1)
     map.fallback = CreateFrame("Frame", nil, map)
     map.fallback:SetAllPoints(map)
-    map.fallbackText = newText(map.fallback, "OVERLAY", "GameFontDisableSmall", "CENTER", map.fallback, 0, 0, 240, "CENTER")
+    map.fallbackText = newText(map.fallback, "GameFontDisableSmall", "CENTER", 0, 0, MAP_W - 20, 28, "CENTER", nil, 2)
+    map.frameEdge = CreateFrame("Frame", nil, map)
+    map.frameEdge:SetAllPoints(map)
+    addEdge(map.frameEdge, EDGE, 0.9)
     widgets.map = map
+    y = y - MAP_H - 6
 
-    local y = -72 - MAP_H - 8
-    local function line(label, key, height)
-        local l = newText(p, "OVERLAY", "GameFontNormalSmall", "TOPLEFT", p, 8, y, 60, "LEFT")
-        l:SetText(label)
-        setColor(l, COLOR_GOLD)
-        local v = newText(p, "OVERLAY", "GameFontHighlightSmall", "TOPLEFT", p, 72, y, 192, "LEFT")
-        v:SetHeight(height or 14)
-        d[key] = v
-        y = y - (height or 14) - 3
-    end
-    line(L["Start"], "startText", 26)
-    line(L["End"], "endText", 26)
-    line(L["Level"], "level")
-    line(L["Difficulty"], "difficulty")
-    line(L["Side"], "side")
-    line(L["Shareable"], "shareable")
-    line(L["Quest ID"], "questId")
+    y = addLine(p, L["Start"], "startText", y, 26, d)
+    y = addLine(p, L["End"], "endText", y - 1, 26, d) - 1
 
-    local rewardsLabel = newText(p, "OVERLAY", "GameFontNormalSmall", "TOPLEFT", p, 8, y, 60, "LEFT")
-    rewardsLabel:SetText(L["Rewards"])
-    setColor(rewardsLabel, COLOR_GOLD)
-    d.rewards = newText(p, "OVERLAY", "GameFontHighlightSmall", "TOPLEFT", p, 72, y, 192, "LEFT")
-    d.rewards:SetHeight(28)
-    y = y - 32
-    d.objectives = newText(p, "OVERLAY", "GameFontHighlightSmall", "TOPLEFT", p, 8, y, 254, "LEFT")
-    d.objectives:SetHeight(max(30, 24 + ROWS * ROW_H + 4 + y - 40))
+    local cell = 26
+    addCell(p, L["Level"], "level", 1, y, d)
+    addCell(p, L["Req."], "required", 2, y, d)
+    addCell(p, L["Difficulty"], "difficulty", 3, y, d)
+    y = y - cell - 4
+    addCell(p, L["Side"], "side", 1, y, d)
+    addCell(p, L["Shareable"], "shareable", 2, y, d)
+    addCell(p, L["Quest ID"], "questId", 3, y, d)
+    y = y - cell - 5
+
+    y = addLine(p, L["Rewards"], "rewards", y, 26, d) - 2
+
+    -- the quest text, on parchment, in ink
+    local paperBottom = -(PANEL_H - 34)
+    d.paper = CreateFrame("Frame", nil, p)
+    d.paper:SetPoint("TOPLEFT", p, "TOPLEFT", PAD, y)
+    d.paper:SetSize(INNER_W, y - paperBottom)
+    local sheet = d.paper:CreateTexture(nil, "BACKGROUND")
+    sheet:SetAllPoints(d.paper)
+    paint(sheet, PARCHMENT)
+    addEdge(d.paper, { 0.45, 0.36, 0.18 }, 1)
+    local lit = newBar(d.paper, "ARTWORK", { 0.90, 0.82, 0.62 })
+    lit:SetPoint("TOPLEFT", d.paper, "TOPLEFT", 1, -1)
+    lit:SetPoint("TOPRIGHT", d.paper, "TOPRIGHT", -1, -1)
+    lit:SetHeight(1)
+    local paperHeight = y - paperBottom
+    d.objectives = newText(d.paper, "GameFontHighlightSmall", "TOPLEFT", 6, -5, INNER_W - 12, paperHeight - 10, "LEFT",
+        INK, max(2, floor((paperHeight - 10) / 12)))
     d.objectives:SetJustifyV("TOP")
-    setColor(d.objectives, { 0.85, 0.8, 0.65 })
+    d.objectives:SetShadowOffset(0, 0)
+    d.paper:EnableMouse(true)
+    d.paper:SetScript("OnEnter", function(self)
+        if self.full and GameTooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+            GameTooltip:SetText(self.full, 1, 1, 1, 1, true)
+            GameTooltip:Show()
+        end
+    end)
+    d.paper:SetScript("OnLeave", function(self) dropTooltip(self) end)
+    d.paper:SetScript("OnHide", function(self) dropTooltip(self) end)
 
-    local nav = newButton(p, L["Navigate"], 120, 20, navigate)
-    nav:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", 8, 6)
-    local wh = newButton(p, L["Wowhead link"], 120, 20, showWowhead)
-    wh:SetPoint("BOTTOMRIGHT", p, "BOTTOMRIGHT", -8, 6)
+    d.navigate = newButton(p, L["Navigate"], 120, 20, navigate)
+    d.navigate:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", PAD, 8)
+    d.wowhead = newButton(p, L["Wowhead link"], 120, 20, showWowhead)
+    d.wowhead:SetPoint("BOTTOMRIGHT", p, "BOTTOMRIGHT", -PAD, 8)
 
     d.panel:Hide()
 end
@@ -921,16 +1418,30 @@ local function build()
 
     local bg = frame:CreateTexture(nil, "BACKGROUND")
     bg:SetAllPoints(frame)
-    fillColor(bg, 0.07, 0.07, 0.1, 0.97)
-    local header = frame:CreateTexture(nil, "BORDER")
-    header:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
-    header:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
-    header:SetHeight(26)
-    fillColor(header, 0.12, 0.1, 0.05, 1)
+    paint(bg, WINDOW_BG)
+    widgets.edge = addEdge(frame, EDGE)
 
-    local title = newText(frame, "OVERLAY", "GameFontNormal", "TOPLEFT", frame, 12, -7, nil, "LEFT")
+    -- header, a gold line under it, and a toolbar strip for the filters
+    local header = newBar(frame, "BORDER", HEADER)
+    header:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -1)
+    header:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -1)
+    header:SetHeight(25)
+    local gold = newBar(frame, "ARTWORK", GOLD, 0.9)
+    gold:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -26)
+    gold:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -26)
+    gold:SetHeight(1)
+    widgets.goldLine = gold
+    local toolbar = newBar(frame, "BORDER", TOOLBAR_BG)
+    toolbar:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -27)
+    toolbar:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -27)
+    toolbar:SetHeight(46)
+    local toolbarLine = newBar(frame, "BORDER", EDGE, 0.6)
+    toolbarLine:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -73)
+    toolbarLine:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -73)
+    toolbarLine:SetHeight(1)
+
+    local title = newText(frame, "GameFontNormal", "TOPLEFT", 12, -6, 400, 16, "LEFT", GOLD)
     title:SetText("PandaQuest - " .. L["Quests"])
-    setColor(title, COLOR_GOLD)
 
     local close = newButton(frame, "X", 22, 18, function() M.Hide() end)
     close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -4)
@@ -943,6 +1454,11 @@ local function build()
     frame:SetScript("OnShow", function()
         local Catalog = catalog()
         if Catalog and not Catalog.IsReady() then Catalog.Build() end
+        resumePulses()
+    end)
+    frame:SetScript("OnHide", function()
+        closing = false
+        settleMotion()
     end)
     frame:Hide()
     if UISpecialFrames then
@@ -961,7 +1477,8 @@ end
 -- Public
 ---------------------------------------------------------------------------
 
-function M.IsShown() return frame and frame:IsShown() or false end
+--- IsShown() -> true while the window is open; a window that is fading out is already closed.
+function M.IsShown() return frame and frame:IsShown() and not closing or false end
 
 --- GetResults() -> the quests the current filters leave, in the current order (shared; do not mutate).
 function M.GetResults() return results end
@@ -972,12 +1489,15 @@ function M.GetSelected() return selectedId end
 --- GetWidgets() -> the window's widget table (for tests and for other addons that want to anchor to it).
 function M.GetWidgets() return widgets end
 
+--- PulseCount() -> how many map pins are breathing right now (for tests).
+function M.PulseCount() return #pulsing end
+
 function M.Show()
     local f = build()
     if not f then return false end
     local Catalog = catalog()
     if Catalog and not Catalog.IsReady() then Catalog.Build() end
-    f:Show()
+    openFrame(f)
     if Catalog and Catalog.IsReady() then refreshAll() else
         results = {}
         if refreshList then refreshList() end
@@ -986,7 +1506,11 @@ function M.Show()
 end
 
 function M.Hide()
-    if frame then frame:Hide() end
+    if not frame or not frame:IsShown() or closing then return end
+    closing = true
+    stopPulses()
+    Motion.Cancel(ownerOf(frame, "rise"), true)
+    Motion.FadeOut(frame, CLOSE_TIME, function() closing = false end)
 end
 
 function M.Toggle()
