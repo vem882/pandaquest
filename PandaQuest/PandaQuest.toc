@@ -22,6 +22,9 @@
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/pandaquest
 ## X-License: GPL-3.0
+# beta: the package says so in its title, /pq status says so, and the release is flagged a
+# prerelease (README.md, "The release channel"). Remove the line, or write stable, to ship a stable one.
+## X-Release-Channel: beta
 ## X-Curse-Project-ID: 1735809
 ## X-Wago-ID: n6VYMQNd
 # Mists of Pandaria Classic only (documented at warcraft.wiki.gg/wiki/TOC_format). The release also
@@ -87,6 +90,7 @@ Nodes\Respawn.lua
 Nodes\Professions.lua
 Flight\Routes.lua
 Flight\Tooltip.lua
+UI\Motion.lua
 UI\Options.lua
 UI\MinimapButton.lua
 UI\FlightBar.lua

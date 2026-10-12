@@ -572,6 +572,16 @@ local T = {
     ["Pick a quest from the list to see its page."] = "Valitse tehtävä listasta nähdäksesi sen sivun.",
     ["Quests"] = "Tehtävät",
     ["Shift-click: browse all quests"] = "Vaihto+klikkaus: selaa kaikkia tehtäviä",
+    ["This is a beta build: new features are not yet confirmed in the game."] =
+        "Tämä on beta-versio: uusia ominaisuuksia ei ole vielä vahvistettu pelissä.",
+    -- Motion (UI/Motion.lua)
+    ["Animations"] = "Animaatiot",
+    ["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] =
+        "Ikkunat häivytetään ja asetetaan paikoilleen, viestit liukuvat sisään ja palkit liikkuvat pehmeästi. Kytke pois, jos haluat rauhallisen.",
+    ["Turn all interface motion on or off."] = "Kytke kaikki käyttöliittymän liike päälle tai pois.",
+    ["Animation speed"] = "Animaation nopeus",
+    ["1 is normal; 2 is twice as fast, 0.5 half as fast."] =
+        "1 on normaali; 2 on kaksi kertaa nopeampi, 0,5 puolet hitaampi.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

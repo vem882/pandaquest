@@ -704,6 +704,52 @@ class TheTranslations(unittest.TestCase):
             self.assertIn("Locales\\" + path.stem + ".lua", toc, f"{path.name} is not in the TOC")
 
 
+class TheReleaseChannel(unittest.TestCase):
+    """A beta says so in four places, and none of them is a file name the portal reads."""
+
+    def test_the_toc_declares_a_known_channel(self) -> None:
+        self.assertIn(build.read_toc_channel(), build.CHANNELS)
+
+    def test_an_unknown_channel_is_refused_not_guessed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            toc = Path(tmp) / "X.toc"
+            toc.write_text("## Interface: 50504\n## X-Release-Channel: nightly\n", encoding="utf-8")
+            with self.assertRaises(SystemExit):
+                build.read_toc_channel(toc)
+            toc.write_text("## Interface: 50504\n", encoding="utf-8")
+            self.assertEqual(build.read_toc_channel(toc), "stable")
+            toc.write_text("## Interface: 50504\n## X-Release-Channel: BETA\n", encoding="utf-8")
+            self.assertEqual(build.read_toc_channel(toc), "beta")
+
+    def test_the_tag_carries_the_channel_and_the_asset_does_not(self) -> None:
+        self.assertEqual(build.release_tag("0.2.140", "stable"), "v0.2.140")
+        self.assertEqual(build.release_tag("0.2.140", "beta"), "v0.2.140-beta")
+        self.assertIsNotNone(build.PORTAL_PACKAGE_PATTERN.match(build.package_name("0.2.140")))
+
+    def test_the_title_says_beta_once_however_often_it_is_stamped(self) -> None:
+        once = build.title_with_version("|cff5fd7ffPanda|rQuest", "0.2.140", "beta")
+        self.assertTrue(once.endswith("|cffff9900beta|r"))
+        twice = build.title_with_version(once, "0.2.141", "beta")
+        self.assertEqual(twice.count("beta"), 1)
+        self.assertIn("v0.2.141", twice)
+        self.assertNotIn("beta", build.title_with_version(once, "0.2.141", "stable"))
+
+    def test_the_package_carries_the_channel_in_its_toc_lua_and_comment(self) -> None:
+        ident = build.identity()
+        self.assertEqual(ident["channel"], build.read_toc_channel())
+        content = build.entries(ident)
+        lua = content["PandaQuest/Core/Build.lua"].decode("utf-8")
+        self.assertIn(f'channel = "{ident["channel"]}"', lua)
+        toc = content["PandaQuest/PandaQuest.toc"].decode("utf-8")
+        version_line = [line for line in toc.splitlines() if line.startswith("## Version:")][0]
+        self.assertNotIn("beta", version_line, "## Version stays digits")
+        if ident["channel"] == "beta":
+            title_line = [line for line in toc.splitlines() if line.startswith("## Title:")][0]
+            self.assertIn("beta", title_line)
+        comment = json.loads(zipfile.ZipFile(io.BytesIO(build.zip_bytes(ident))).comment.decode("utf-8"))
+        self.assertEqual(comment["channel"], ident["channel"])
+
+
 class TheChangelogMoves(unittest.TestCase):
     """A pull request that changes the addon says so in PandaQuest/changelog.txt.
 

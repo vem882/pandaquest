@@ -377,6 +377,15 @@ local function buildTable()
                         end },
                 },
             },
+            motion = {
+                type = "group", order = 8, name = L["Animations"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["Windows fade and settle, messages slide in, bars glide. Switch it off for a calmer interface."] },
+                    enabled = toggle(1, L["Animations"], L["Turn all interface motion on or off."], "motion.enabled"),
+                    speed = range(2, L["Animation speed"], L["1 is normal; 2 is twice as fast, 0.5 half as fast."],
+                        "motion.speed", 0.5, 2, 0.25),
+                },
+            },
             sync = {
                 type = "group", order = 9, name = L["Synchronisation (optional)"], args = {
                     info = { type = "description", order = 0, name = L["Optional. PandaQuest works fully without it, and never uploads anything itself."] },

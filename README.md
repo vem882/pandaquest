@@ -93,6 +93,24 @@ version the merge will produce: this repository's commit count after the merge c
 The number is only required to move and never to go backwards. It does not encode how much changed.
 To start a new series, change `## Version` in the TOC (`0.3.0` sorts above every `0.2.N`).
 
+## The release channel
+
+`## X-Release-Channel: beta` in `PandaQuest/PandaQuest.toc` marks every build from that tree as a
+**beta** — the state a new feature is in until somebody has seen it work in the game. A beta says so
+in four places, and none of them is the asset's file name, which the portal's pattern keeps digits-only:
+
+* the packaged `## Title` ends in an orange `beta`, which is what the AddOns list draws;
+* `ns.Build.channel` is `"beta"`, and `/pq status` prints that this is a beta build;
+* the release **tag** is `v<version>-beta` (CurseForge's packaging reads the word `beta` in a tag to
+  label the file a beta, and the changelog and the reservation tag follow the tag);
+* the GitHub release is created with the *prerelease* flag, so it is never "Latest".
+
+`## Version` and the asset name are unchanged: `0.2.140` and `PandaQuest-0.2.140.zip`. A beta's
+version sorts with the stable ones — the number is the commit count either way.
+
+To ship a stable build, delete the line (or write `stable`) in a pull request that also names, in
+`changelog.txt`, what has been seen to work.
+
 ## The build identity
 
 `0.2.84+<short sha>`, and `+dirty` when `PandaQuest/` differs from that commit — tracked changes

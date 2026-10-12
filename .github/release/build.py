@@ -94,7 +94,16 @@ SUBJECT_LIMIT = 300
 #: than appends to -- so stamping an already-stamped TOC leaves one tag and not three.  Green
 #: because Questie's is green and players already read it there.
 TITLE_TAG = "|cff00ff00v%s|r"
-TITLE_TAG_PATTERN = re.compile(r"\s*\|cff00ff00v[^|]*\|r\s*$", re.IGNORECASE)
+BETA_TAG = "|cffff9900beta|r"
+TITLE_TAG_PATTERN = re.compile(r"\s*\|cff00ff00v[^|]*\|r(?:\s*\|cffff9900beta\|r)?\s*$", re.IGNORECASE)
+
+#: The release channel. ``## X-Release-Channel: beta`` in the TOC marks a build as a beta: the title
+#: says so, ``/pq status`` says so, the release tag gets ``-beta`` (CurseForge's packaging reads the
+#: word to label the file) and the GitHub release is flagged prerelease. The asset name and
+#: ``## Version`` stay digits only, because the portal's pattern requires it. No line means stable.
+CHANNELS = ("stable", "beta")
+DEFAULT_CHANNEL = "stable"
+CHANNEL_DIRECTIVE = "## x-release-channel:"
 
 #: Never shipped to the client: development leftovers and editor droppings.
 EXCLUDED_NAMES = {".git", ".gitignore", "__pycache__", ".DS_Store", "Thumbs.db", ".pytest_cache"}
@@ -142,6 +151,32 @@ def _git(*args: str, repo: Path | None = None) -> str:
     except (OSError, subprocess.CalledProcessError):
         return ""
     return result.stdout.strip()
+
+
+def read_toc_channel(toc: Path | None = None) -> str:
+    """The channel the TOC declares: "stable" or "beta". An unknown word is an error, not a guess."""
+    path = toc or TOC
+    try:
+        text = path.read_text(encoding="utf-8-sig")
+    except OSError:
+        return DEFAULT_CHANNEL
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.lower().startswith(CHANNEL_DIRECTIVE):
+            value = stripped.split(":", 1)[1].strip().lower()
+            if value not in CHANNELS:
+                raise SystemExit(f"{path.name}: ## X-Release-Channel is {value!r}; it must be one of {CHANNELS}")
+            return value
+    return DEFAULT_CHANNEL
+
+
+def release_tag(version: str, channel: str = DEFAULT_CHANNEL) -> str:
+    """The git tag of a release: ``v0.2.140``, or ``v0.2.140-beta`` for a beta.
+
+    Tags are read by people and by CurseForge's packager, which decides alpha/beta/release from
+    the words in the name. The portal never reads them: it matches the asset's file name.
+    """
+    return f"v{version}" + ("-beta" if channel == "beta" else "")
 
 
 def _is_number(part: str) -> bool:
@@ -235,6 +270,7 @@ def identity(repo: Path | None = None, paths: Sequence[str] = (ADDON,)) -> dict[
     return {
         "addon": ADDON,
         "version": version,
+        "channel": read_toc_channel(),
         "build": build,
         "commit": commit,
         "dirty": dirty,
@@ -265,6 +301,7 @@ def build_lua(ident: dict[str, object]) -> str:
     """The generated ``Core/Build.lua``.  Data only: one table on the addon's own namespace."""
     fields = [
         ("version", _lua_string(str(ident["version"]))),
+        ("channel", _lua_string(str(ident.get("channel", DEFAULT_CHANNEL)))),
         ("build", _lua_string(str(ident["build"]))),
         ("commit", _lua_string(str(ident["commit"]))),
         ("dirty", "true" if ident["dirty"] else "false"),
@@ -293,9 +330,11 @@ def shown_version(ident: dict[str, object]) -> str:
     return str(ident["version"]) + ("+dirty" if ident["dirty"] else "")
 
 
-def title_with_version(title: str, shown: str) -> str:
-    """``|cff5fd7ffPanda|rQuest`` -> ``|cff5fd7ffPanda|rQuest |cff00ff00v0.2.84|r``."""
-    return f"{TITLE_TAG_PATTERN.sub('', title).rstrip()} {TITLE_TAG % shown}"
+def title_with_version(title: str, shown: str, channel: str = DEFAULT_CHANNEL) -> str:
+    """``|cff5fd7ffPanda|rQuest`` -> ``|cff5fd7ffPanda|rQuest |cff00ff00v0.2.84|r``, plus an orange
+    ``beta`` after it when the build is one."""
+    tagged = f"{TITLE_TAG_PATTERN.sub('', title).rstrip()} {TITLE_TAG % shown}"
+    return tagged + (f" {BETA_TAG}" if channel == "beta" else "")
 
 
 def stamp_toc(text: str, ident: dict[str, object]) -> str:
@@ -332,7 +371,8 @@ def stamp_toc(text: str, ident: dict[str, object]) -> str:
             versioned = True
             continue
         if stripped.lower().startswith("## title:"):
-            out.append(f"## Title: {title_with_version(stripped.split(':', 1)[1].strip(), shown)}")
+            out.append("## Title: " + title_with_version(
+                stripped.split(":", 1)[1].strip(), shown, str(ident.get("channel", DEFAULT_CHANNEL))))
             continue
         if not inserted and stripped and not stripped.startswith("#"):
             out.append(BUILD_LUA_TOC_LINE)
@@ -493,6 +533,8 @@ def main(argv: list[str] | None = None) -> int:
     # grepping a KEY=value block for the right line can, and the number goes into a file name
     # where a stray space is a zip the portal's pattern does not match.
     commands.add_parser("version", help="print the release version and nothing else")
+    commands.add_parser("channel", help="print the release channel (stable or beta) and nothing else")
+    commands.add_parser("tag", help="print the git tag of this release (v0.2.140 or v0.2.140-beta)")
     shown = commands.add_parser("identity", help="print the build identity of the current tree")
     shown.add_argument("--json", action="store_true", help="one JSON object instead of shell lines")
     packaged = commands.add_parser("package", help="build the stamped addon zip")
@@ -512,12 +554,18 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "version":
         print(release_version())
         return 0
+    if args.command == "channel":
+        print(read_toc_channel())
+        return 0
+    if args.command == "tag":
+        print(release_tag(release_version(), read_toc_channel()))
+        return 0
     if args.command == "identity":
         ident = identity()
         if args.json:
             print(json.dumps(ident, sort_keys=True))
         else:
-            for key in ("build", "version", "commit", "dirty", "committed"):
+            for key in ("build", "version", "channel", "commit", "dirty", "committed"):
                 value = str(ident[key]).lower() if key == "dirty" else ident[key]
                 print(f"{key.upper()}={value}")
         return 0
