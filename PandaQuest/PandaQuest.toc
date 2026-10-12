@@ -73,6 +73,7 @@ Quest\Player.lua
 Quest\QuestLog.lua
 Quest\Objectives.lua
 Quest\Availability.lua
+Quest\Catalog.lua
 Nav\Targets.lua
 Nav\Router.lua
 Nav\Arrow.lua
@@ -91,6 +92,7 @@ UI\MinimapButton.lua
 UI\FlightBar.lua
 UI\Wowhead.lua
 UI\Tracker.lua
+UI\QuestBrowser.lua
 UI\Notify.lua
 UI\DigSiteBar.lua
 Auction\Store.lua

@@ -19,6 +19,15 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Quest database** – quests, NPCs, objects and items with zone mapping, dungeon entrances and
   hidden-quest lists. Decoded in a coroutine at login (about half a second) so the game never
   freezes.
+- **Quest browser** – `/pq quests` (or Shift-click the minimap button) opens a window with every
+  quest in the database: categories with counts on the left (continents, dungeons, raids,
+  battlegrounds, classes, professions, events), a sortable list in the middle, and the selected
+  quest as a page on the right — its text, who starts and ends it with coordinates, level, difficulty,
+  side, shareable, quest ID and a map of the zone with the start (!), the end (?) and the objectives
+  marked. It lists your own side's quests (Alliance or Horde) and the neutral ones; one click
+  switches to the other side or to both. Quests only QuestieDB knows are included when that addon
+  is installed (see "Compatibility"). Filters: name, quest level, "my level", side, and kind
+  (dungeon, raid, group, PvP, daily, event).
 - **Quest availability** – works out which quests you can pick up: level, race, class,
   prerequisites, reputation, skill and exclusivity.
 - **Map pins** – objectives, turn-ins and available quests on the world map and minimap, merged per
@@ -106,6 +115,7 @@ A good report says what you did, what you expected and what happened. Please inc
 | `/pq wh [questID]` | Wowhead link for a quest (default: current target) |
 | `/pq hide <questID>` / `/pq unhide <questID>` | hide a quest from the navigator / show it again |
 | `/pq reset` | reset the arrow position and map pins |
+| `/pq quests [questID]` | open the quest browser, optionally on one quest's page |
 | `/pq flight` | show the flight bar where it is so you can drag it |
 | `/pq digsite` | show the dig-site bar so you can move it |
 | `/pq scan professions\|archaeology` | read the open profession or archaeology window |
@@ -228,6 +238,8 @@ Not done yet:
 
 - Flight-path routing between continents (a cross-continent target sorts last and shows no
   distance).
+- Reward items on the quest browser's page (the database has experience and reputation, not the items)
+- Localized names for the quest browser's event and profession categories
 - A PandaQuest quest tracker of its own (today it enhances Blizzard's).
 - Measured respawn timers, node positions and flight times for all of Pandaria — this is what the
   portal and your play fill in.

@@ -2,6 +2,12 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.137
+- browser - quest browser: /pq quests, Shift-click on the minimap button
+- browser - list, categories, filters, sort, quest page with map preview
+- database - quest catalog built from the database (and QuestieDB gap rows)
+- locales - new strings in enUS and fiFI; other languages show English until translated
+
 0.2.135
 - languages - deDE esES esMX frFR itIT koKR ptBR ruRU zhCN zhTW added (AI-assisted, not reviewed)
 - command - /pq lang accepts every shipped language and lists them
