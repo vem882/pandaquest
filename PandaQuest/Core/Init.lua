@@ -20,7 +20,7 @@ ns.MODULE_ORDER = {
     "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
     "Respawn", "Professions",
     "FlightRoutes", "FlightTooltip",
-    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar",
+    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
     -- and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,
@@ -179,6 +179,7 @@ commands.help = function()
         "/pq digsite - show the dig site bar so you can move it",
         "/pq consent - ask the data sharing question again",
         "/pq flight - show the flight bar so you can drag it",
+        "/pq quests [questID] - browse every quest in the database",
         "/pq lang auto|<locale> - interface language",
     }
     for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end
@@ -393,6 +394,20 @@ local function availableLanguages()
         return a < b
     end)
     return codes
+end
+
+commands.quests = function(arg)
+    local Browser = ns.QuestBrowser
+    if not (Browser and Browser.Show) then
+        notAvailable("QuestBrowser")
+        return
+    end
+    local questID = tonumber(arg)
+    if questID then
+        Browser.Open(questID)
+    else
+        Browser.Toggle()
+    end
 end
 
 commands.lang = function(arg)

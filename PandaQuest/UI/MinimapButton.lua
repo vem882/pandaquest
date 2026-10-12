@@ -51,6 +51,7 @@ function M.GetTooltipLines(out)
     out[#out + 1] = " "
     out[#out + 1] = L["Left-click: toggle the arrow"]
     out[#out + 1] = L["Right-click: open options"]
+    out[#out + 1] = L["Shift-click: browse all quests"]
     return out
 end
 
@@ -75,6 +76,10 @@ end
 local function onClick(_, button)
     if button == "RightButton" then
         if ns.Options and ns.Options.Open then ns.Options.Open() end
+        return
+    end
+    if IsShiftKeyDown and IsShiftKeyDown() then
+        if ns.QuestBrowser and ns.QuestBrowser.Toggle then ns.QuestBrowser.Toggle() end
         return
     end
     if ns.Arrow and ns.Arrow.Toggle then
