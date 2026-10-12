@@ -53,27 +53,28 @@ unzip PandaQuest-<version>.zip -d "/path/to/World of Warcraft/_classic_/Interfac
 
 Mists of Pandaria Classic uses the `_classic_` flavor folder.
 
-## Release asset rules
+## The release asset
 
-The portal downloads this repository's release asset, so these four facts are the interface:
+Every release carries one asset, and `build.py` and `check.py` hold it to four facts:
 
-1. The asset is named exactly **`PandaQuest-<version>.zip`**.
-2. `<version>` is **digits and dots only** (`^PandaQuest-(\d+(?:\.\d+)*)\.zip$`). A `v`, a hyphen
-   or a short sha in the *file name* makes the package invisible, and the portal does not fail when
-   that happens — it goes on offering the previous build. The tag carries a `v` (`v0.2.84`); the
-   asset does not.
-3. Every path inside the zip begins **`PandaQuest/`**, the folder WoW installs. The portal's
-   update manifest is built from it, and an entry outside it is dropped.
+1. The asset is named exactly **`PandaQuest-<version>.zip`**, digits and dots only. A `v`, a hyphen
+   or a short sha in the *file name* is refused. (The tag is another matter: `v0.2.84`, and
+   `v0.2.84-beta` for a beta — see "The release channel".)
+2. `<version>` is **`0.2.<commit count>`** — see "The version".
+3. Every path inside the zip begins **`PandaQuest/`**, the folder WoW installs.
 4. The zip is **deterministic**: entries sorted by name, every timestamp `1980-01-01 00:00:00`,
    every mode bit `0644`, no directory entries.
 
-`check.py` asserts all four against a zip it builds.
+Players get the addon from CurseForge. The GitHub release is where the zip is built, checked and
+published once; `publish-curseforge.yml` sends that same zip (see "Releasing"). The PandaQuest portal
+no longer downloads the addon, but the digits-only name is still enforced: it keeps the version
+unambiguous and anything that sorts releases by the number reads it the same way.
 
 ### The TOC files
 
 The packaged zip carries the addon's TOC twice, with identical bytes: `PandaQuest.toc` and
 `PandaQuest_Mists.toc`. The Mists of Pandaria Classic client reads the `_Mists` file first, CurseForge
-reads the suffix to tag the file's game version, and the plain file is the fallback the portal's
+reads the suffix to tag the file's game version, and the plain file is the fallback a consumer's
 package index reads. The second copy is generated at packaging time — a repository with two TOCs
 would have two to keep in step — and `build.py` refuses a tree that contains one.
 `## Interface: 50504` and `## AllowLoadGameType: mists` keep it from loading anywhere else.
@@ -97,7 +98,7 @@ To start a new series, change `## Version` in the TOC (`0.3.0` sorts above every
 
 `## X-Release-Channel: beta` in `PandaQuest/PandaQuest.toc` marks every build from that tree as a
 **beta** — the state a new feature is in until somebody has seen it work in the game. A beta says so
-in four places, and none of them is the asset's file name, which the portal's pattern keeps digits-only:
+in four places, and none of them is the asset's file name, which the asset-name pattern keeps digits-only:
 
 * the packaged `## Title` ends in an orange `beta`, which is what the AddOns list draws;
 * `ns.Build.channel` is `"beta"`, and `/pq status` prints that this is a beta build;
@@ -136,8 +137,8 @@ python3 .github/release/build.py identity # the build identity as shell lines, o
 python3 .github/release/build.py package --out "dist/PandaQuest-$(python3 .github/release/build.py version).zip"
 ```
 
-`build.py package` refuses an `--out` name the portal could not see, **and** one whose version is
-not the version this tree builds: the portal orders packages by the number in the *file name* and
+`build.py package` refuses an `--out` name a consumer could not see, **and** one whose version is
+not the version this tree builds: a consumer orders packages by the number in the *file name* and
 reads the manifest's version out of the *archive comment*, so a single mistyped digit would sort at
 one version and advertise another. It also refuses to build from a shallow clone, or with no git —
 see "Releasing".
@@ -155,7 +156,7 @@ Merging into `main` runs `.github/workflows/release.yml` on a GitHub-hosted runn
 run artifact, so a change can be installed and played before it is merged.
 
 The checkout uses `fetch-depth: 0` and must keep doing so. A shallow clone does not fail and does
-not fall back — a depth-1 clone builds `PandaQuest-0.2.1.zip`, a name the portal's pattern matches
+not fall back — a depth-1 clone builds `PandaQuest-0.2.1.zip`, a name the asset-name pattern matches
 happily and sorts below every package it holds. So `build.py package` refuses it (and a checkout
 with no git at all); `--allow-shallow` and `--allow-no-git` build anyway, for a local experiment
 whose file name is wrong on purpose.
@@ -192,7 +193,7 @@ addon *works*; it tells you the package is not obviously broken:
   development tree (`.py`, `.pyc`, `__pycache__`), and `Database/Data/` and `Libs/LibStub` are there;
 * the four points of the release asset rules, against a freshly built zip, and both TOC files;
 * the version is the series plus the measured commit count, the history behind it is not truncated,
-  and the name it produces matches the portal's pattern;
+  and the name it produces matches the asset-name pattern;
 * `changelog.txt` moved when the addon did, and is short English lines, newest version first.
 
 Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, that it lints clean,

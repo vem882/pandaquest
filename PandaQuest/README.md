@@ -78,11 +78,17 @@ the addon's data.
 ## Download and install
 
 - **CurseForge app** (recommended): search for *PandaQuest* and install it.
-- **GitHub**: download the latest `PandaQuest-<version>.zip` from
+- **GitHub**: download `PandaQuest-<version>.zip` from
   <https://github.com/vem882/pandaquest/releases> and unzip it into
   `World of Warcraft/_classic_/Interface/AddOns/`. The folder must be named exactly `PandaQuest` and
-  contain `PandaQuest.toc`.
+  contain `PandaQuest.toc`. Entries marked **Pre-release** are betas; the one marked **Latest** is the
+  newest stable build.
 - Restart the game, or `/reload` if it was already running.
+
+**Beta.** New features — the quest browser, the QuestieDB bridge, the translations and the
+animations — are published as betas until somebody has seen them work in the game. A beta says so in
+the AddOns list (an orange *beta* after the version) and in `/pq status`. Please report what you see:
+what works is how a feature leaves beta.
 
 PandaQuest is built for **Mists of Pandaria Classic 5.5.4** only. It does not load on other game
 versions. Optional: **TomTom** is detected automatically when present.

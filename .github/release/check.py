@@ -12,14 +12,14 @@ breakage a release can actually introduce:
 
 * the TOC parses, and declares the fields the packaging and the client depend on;
 * every file the TOC lists exists, with the case it is listed with -- a missing or
-  wrongly-cased file is silent in-game on Windows and fatal on the portal's Linux builds;
+  wrongly-cased file is silent in-game on Windows and fatal on Linux builds;
 * every file ``embeds.xml`` pulls in exists too, since the TOC lists the XML and not its
   contents;
 * nothing packaged is unreachable, empty or from the development tree: a ``.lua`` no TOC line
   or XML include names is either a module the game never runs or a download nobody uses, a
   zero-byte entry is a generator that failed halfway, and a ``.py`` in an AddOns folder is how
   somebody comes to believe the addon needs Python;
-* the zip's contract holds: the name the portal can see, every path under ``PandaQuest/``, the
+* the zip's contract holds: the name a consumer can see, every path under ``PandaQuest/``, the
   version stamped, the same bytes when built twice.
 
 Nothing here asserts a number it did not measure: the version cases compute what git says and
@@ -152,7 +152,7 @@ class EveryListedFileExists(unittest.TestCase):
         self.assertEqual(missing, [], "listed in the TOC, not in PandaQuest/")
 
     def test_the_case_matches(self) -> None:
-        """Windows does not care and Linux does; the portal builds and serves on Linux."""
+        """Windows does not care and Linux does; Linux, where the release is built, does."""
         wrong = []
         for name in self.files:
             relative = Path(name.replace("\\", "/"))
@@ -213,8 +213,8 @@ class TheVersion(unittest.TestCase):
 
         Measured, not assumed: ``git clone --depth 1`` of this repository answers
         ``rev-list --count HEAD`` with 1, so release_version returns ``0.2.1`` -- digits and
-        dots, matching the portal's pattern, passing every other case here, and sorting below
-        every package the portal holds.  So this case exists, and build.py's ``package`` refuses
+        dots, matching the asset-name pattern, passing every other case here, and sorting below
+        every package a consumer holds.  So this case exists, and build.py's ``package`` refuses
         as well.  If it fails on a runner, the checkout lost ``fetch-depth: 0``.
         """
         self.assertFalse(build.is_shallow(), "shallow checkout: the commit count is not the count")
@@ -222,8 +222,8 @@ class TheVersion(unittest.TestCase):
     def test_the_hub_can_see_the_file_name_it_produces(self) -> None:
         name = build.package_name(build.release_version())
         match = build.PORTAL_PACKAGE_PATTERN.match(name)
-        self.assertIsNotNone(match, f"{name} does not match the portal's package pattern")
-        # The portal orders with tuple(int(part) for part in version.split(".")).  This is that
+        self.assertIsNotNone(match, f"{name} does not match the asset-name pattern")
+        # A consumer orders with tuple(int(part) for part in version.split(".")).  This is that
         # expression; if it raises, the package is invisible to the ordering and not just
         # mis-sorted.
         assert match is not None
@@ -271,14 +271,14 @@ class ThePublishGuards(unittest.TestCase):
             build, "is_shallow", return_value=False
         ):
             message = self._refuses("PandaQuest-v0.2.7.zip")
-        self.assertIn("not a name the portal can see", message)
+        self.assertIn("not a name the release asset rules allow", message)
 
     def test_it_refuses_a_name_whose_version_is_not_the_one_it_builds(self) -> None:
-        """Right shape, wrong number: the portal then sorts by the name and advertises the comment.
+        """Right shape, wrong number: a consumer then sorts by the name and advertises the comment.
 
         ``find_package`` orders candidates by the version in the file name and ``index_package``
         takes the manifest's version from the archive comment, so a mistyped digit produces a
-        package the portal sorts at one version and serves as another -- and nothing reports it.
+        package a consumer sorts at one version and serves as another -- and nothing reports it.
         """
         with mock.patch.object(build, "commit_count", return_value=self.COUNT), mock.patch.object(
             build, "is_shallow", return_value=False
@@ -288,7 +288,7 @@ class ThePublishGuards(unittest.TestCase):
 
 
 class TheZipContract(unittest.TestCase):
-    """Build once into memory and assert what the portal, the manifest and WoW depend on."""
+    """Build once into memory and assert what a consumer, the manifest and WoW depend on."""
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -505,7 +505,7 @@ class TheWorkflow(unittest.TestCase):
         gh resolves the repository from --repo, from GH_REPO, or from a git remote in the
         working directory.  The release job downloads an artifact and nothing else, so with
         none of those every gh call fails with "not a git repository", no asset is published,
-        and the portal goes on offering the previous build.
+        and a consumer goes on offering the previous build.
         """
         self.assertTrue(
             "GH_REPO:" in self.text,
@@ -645,6 +645,24 @@ class CurseForgeReadiness(unittest.TestCase):
         release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
         self.assertNotIn("CF_API_TOKEN", release, "the release workflow must not hold the token")
 
+    def test_a_beta_tag_is_a_release_like_any_other_to_the_tools_that_read_tags(self) -> None:
+        tags = ["v0.2.140-beta", "v0.2.137", "v0.2.125"]
+        self.assertEqual(curseforge.tag_key("v0.2.140-beta"), (0, 2, 140))
+        self.assertIsNone(curseforge.tag_key("curseforge/v0.2.140-beta"))
+        self.assertEqual(curseforge.previous_tag(tags, "0.2.141"), "v0.2.140-beta")
+        self.assertEqual(curseforge.previous_tag(tags, "0.2.140"), "v0.2.137", "the same number is not older")
+        self.assertEqual(curseforge.tag_release_type("v0.2.140-beta"), "beta")
+        self.assertEqual(curseforge.tag_release_type("v0.2.137"), "release")
+
+    def test_the_workflows_know_the_beta_tag_and_the_prerelease_flag(self) -> None:
+        release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+        for needle in ("build.py tag", "--prerelease", "--latest=false", "isPrerelease", "(?:-beta)?"):
+            self.assertIn(needle, release, f"release.yml lost {needle!r}")
+        self.assertNotIn('tag="v${VERSION}"', release, "the tag is computed once, by build.py")
+        publish = (REPO / ".github" / "workflows" / "publish-curseforge.yml").read_text(encoding="utf-8")
+        for needle in ("(-beta)?", 'VERSION="${VERSION%-beta}"', "--exclude-drafts", "auto"):
+            self.assertIn(needle, publish, f"publish-curseforge.yml lost {needle!r}")
+
     def test_the_avatar_is_the_size_curseforge_asks_for(self) -> None:
         data = (REPO / "assets" / "logo" / "panda-quest-400.png").read_bytes()
         width, height = struct.unpack(">II", data[16:24])
@@ -705,7 +723,7 @@ class TheTranslations(unittest.TestCase):
 
 
 class TheReleaseChannel(unittest.TestCase):
-    """A beta says so in four places, and none of them is a file name the portal reads."""
+    """A beta says so in four places, and none of them is a file name a consumer reads."""
 
     def test_the_toc_declares_a_known_channel(self) -> None:
         self.assertIn(build.read_toc_channel(), build.CHANNELS)
