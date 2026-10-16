@@ -3,7 +3,7 @@
 -- Loading (DB.Load) runs as an ns.Thread coroutine job so the client keeps rendering:
 --   1. loadstring() each ns.Data.* long string into a positional table, then drop the string (~27 MB saved)
 --   2. apply ns.Data.factionFixes for the player's faction / class / race
---   3. apply ns.Overrides.wowhead and then ns.Overrides.community (named fields -> positional)
+--   3. apply ns.Overrides.wowhead, ns.Overrides.community and then ns.Overrides.portal (named fields -> positional)
 --   4. build the eager reverse indexes (questStarters / questEnders)
 --   5. flip ready and send PQ_DB_READY
 -- The job is idempotent: a second Load while running or after ready does nothing.
@@ -56,6 +56,18 @@ local tagCache = {}                         -- questID -> {tagID, tagName}; smal
 local OVERRIDE_KEYS = {
     quests = Schema.questKeys, npcs = Schema.npcKeys,
     objects = Schema.objectKeys, items = Schema.itemKeys,
+}
+
+-- The override sets in the order they are applied: a later one has the last word. The portal's
+-- corrections (Database/Overrides/Portal.lua) are what its moderators decided, so they come last.
+local OVERRIDE_SETS = { "wowhead", "community", "portal" }
+
+-- `hidden = true` in an override hides the entity the way Questie's blacklist does, and
+-- `hidden = false` shows one the blacklist hides. It is not a row field: DB.IsQuestHidden and the
+-- other three read it from the override sets themselves.
+local HIDDEN_FIELD = "hidden"
+local BLACKLISTS = {
+    quests = "hiddenQuests", npcs = "hiddenNpcs", objects = "hiddenObjects", items = "hiddenItems",
 }
 
 ---------------------------------------------------------------------------
@@ -216,7 +228,11 @@ local function applyOverrides(set, label)
                     local row = target[id]
                     for name, value in pairs(fields) do
                         local index = keys[name]
-                        if index then
+                        if name == HIDDEN_FIELD then
+                            -- Read by DB.Is*Hidden straight from the override set; never a column,
+                            -- and never a reason to create a row.
+                            applied = applied + 1
+                        elseif index then
                             -- A row is only created for an unknown id when there is real schema data
                             -- to put in it: a community guide entry (runs/avgSeconds/hotspots) must
                             -- not conjure an empty, nameless quest into the database.
@@ -323,8 +339,10 @@ local function runLoad()
 
     local Overrides = ns.Overrides
     if Overrides then
-        applyOverrides(Overrides.wowhead, "wowhead")
-        applyOverrides(Overrides.community, "community")
+        for i = 1, #OVERRIDE_SETS do
+            local label = OVERRIDE_SETS[i]
+            applyOverrides(Overrides[label], label)
+        end
     end
     yield()
 
@@ -483,11 +501,37 @@ function DB.GetQuestTagInfo(questID)
     return nil, nil
 end
 
---- DB.IsQuestHidden(questID) -> bool. Questie's blacklist: the quest does not exist for the player.
-function DB.IsQuestHidden(questID)
+-- overrideHidden(tableName, id) -> true | false | nil. What the override sets say about hiding the
+-- entity: the last set that says either way wins, nil when none says anything. Read from ns.Overrides
+-- on every call rather than copied at load, so it answers the same before DB.Load as after it.
+local function overrideHidden(tableName, id)
+    local Overrides = ns.Overrides
+    if type(Overrides) ~= "table" then return nil end
+    for i = #OVERRIDE_SETS, 1, -1 do
+        local set = Overrides[OVERRIDE_SETS[i]]
+        local byId = type(set) == "table" and set[tableName] or nil
+        local fields = type(byId) == "table" and byId[id] or nil
+        if type(fields) == "table" then
+            local value = fields[HIDDEN_FIELD]
+            if value == true or value == false then return value end
+        end
+    end
+    return nil
+end
+
+-- isHidden(tableName, id) -> bool. An override's `hidden`, else the generated blacklist.
+local function isHidden(tableName, id)
+    local override = overrideHidden(tableName, id)
+    if override ~= nil then return override end
     local Data = ns.Data
-    local hidden = Data and Data.hiddenQuests
-    return (hidden and hidden[questID]) and true or false
+    local list = Data and Data[BLACKLISTS[tableName]]
+    return (list and list[id]) and true or false
+end
+
+--- DB.IsQuestHidden(questID) -> bool. Questie's blacklist, or an override's `hidden`: the quest does
+-- not exist for the player.
+function DB.IsQuestHidden(questID)
+    return isHidden("quests", questID)
 end
 
 --- DB.IsQuestHiddenOnMap(questID) -> bool. Available, but no map icons (Questie HIDE_ON_MAP).
@@ -498,15 +542,16 @@ function DB.IsQuestHiddenOnMap(questID)
 end
 
 function DB.IsNpcHidden(npcID)
-    local Data = ns.Data
-    local hidden = Data and Data.hiddenNpcs
-    return (hidden and hidden[npcID]) and true or false
+    return isHidden("npcs", npcID)
+end
+
+--- DB.IsObjectHidden(objectID) -> bool. Questie has no object blacklist, so only an override hides one.
+function DB.IsObjectHidden(objectID)
+    return isHidden("objects", objectID)
 end
 
 function DB.IsItemHidden(itemID)
-    local Data = ns.Data
-    local hidden = Data and Data.hiddenItems
-    return (hidden and hidden[itemID]) and true or false
+    return isHidden("items", itemID)
 end
 
 ---------------------------------------------------------------------------

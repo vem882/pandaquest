@@ -17,3 +17,4 @@ ignore:
   - assets
   - README.md
   - LICENSE
+  - data-sync.json

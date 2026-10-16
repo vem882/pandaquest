@@ -35,6 +35,7 @@ This repository is the addon and the release tooling that turns it into a zip. N
 | `LICENSE` | GPLv3. A copy also ships in `PandaQuest/`. |
 | `assets/logo/` | the logo as SVG and PNG, 16 to 1024 px (400 px is the CurseForge avatar). Not part of the addon. |
 | `.pkgmeta` | tells CurseForge's automatic packaging (the repository webhook) to take the `PandaQuest/` folder. |
+| `data-sync.json` | where the PandaQuest portal's data sync left off (see "Data from the portal"). Not part of the addon. |
 | `.github/release/` | `build.py` (version, build identity, deterministic zip), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
 | `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset. |
 | `.github/workflows/publish-curseforge.yml` | uploads an existing release to CurseForge, by hand. |
@@ -178,6 +179,25 @@ CurseForge also packages the repository itself through its webhook, using `.pkgm
 is made by CurseForge's packager, not by `build.py`, so it is not the reference one: its TOC keeps the
 declared `## Version: 0.2.0` and there is no `Core/Build.lua`. The release asset and the file the
 workflow above uploads are the stamped, deterministic ones.
+
+## Data from the portal
+
+The quest database reaches this repository through the PandaQuest portal, never around it: whatever
+the addon ships has been on the portal first. Every two hours the portal's data sync compares the
+portal with `main` and, when something changed, opens a pull request from a `data/sync-<time>` branch
+and squash-merges it once the checks pass. It touches only:
+
+* `PandaQuest/Database/Data/` and `ZoneData.lua`, rebuilt only when the portal has imported a
+  different Questie release than the one the files were built from;
+* `PandaQuest/Database/Overrides/Wowhead.lua` — what the portal read off Wowhead for a quest the
+  database has nothing for (quest givers, hand-ins, the objective line);
+* `PandaQuest/Database/Overrides/Portal.lua` — the portal's moderator corrections, `hidden` included;
+* `PandaQuest/changelog.txt` and `PandaQuest/CHANGELOG.md` — one section per sync, under the version
+  the merge produces, listing the portal's changelog lines (`quest 123 - Name - added`);
+* `data-sync.json` — the last portal changelog line it has carried over, so none is listed twice.
+
+A sync that would change nothing commits nothing. It does not upload to CurseForge unless its
+operator turned that on, and then at most once a day.
 
 ## What the checks cannot tell you
 
