@@ -2,6 +2,10 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.159
+- database - an override can hide a quest, NPC, object or item (hidden = true), like the blacklist
+- database - Portal.lua: corrections from the PandaQuest portal, applied after the other overrides
+
 0.2.156
 - locales - options and quest browser strings in deDE esES esMX frFR itIT koKR ptBR ruRU zhCN zhTW
 
