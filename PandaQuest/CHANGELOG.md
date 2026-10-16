@@ -2,6 +2,41 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.160] - 2026-10-16
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.1.0+v1.0.6 (was 11.37.1)
+- database - Wowhead fill-ins as on the PandaQuest portal: 0 quests
+- quest 216 - Between a Rock and a Thistlefur - fixed
+- quest 488 - Zenn's Bidding - fixed
+- quest 876 - Serena Bloodfeather - fixed
+- quest 1222 - Stinky's Escape - fixed
+- quest 2751 - Barbaric Battlements - fixed
+- quest 2752 - On Iron Pauldrons - fixed
+- quest 2753 - Trampled Under Foot - fixed
+- quest 2754 - Horns of Frenzy - fixed
+- quest 7141 - The Battle of Alterac - fixed
+- quest 7142 - The Battle for Alterac - fixed
+- quest 7161 - Proving Grounds - fixed
+- quest 7162 - Proving Grounds - fixed
+- quest 7163 - Rise and Be Recognized - fixed
+- quest 7164 - Honored Amongst the Clan - fixed
+- quest 7165 - Earned Reverence - fixed
+- quest 7166 - Legendary Heroes - fixed
+- quest 7168 - Rise and Be Recognized - fixed
+- quest 7169 - Honored Amongst the Guard - fixed
+- quest 7170 - Earned Reverence - fixed
+- quest 7171 - Legendary Heroes - fixed
+- data - and 53 more fixed: 52 quests, 1 object
+- quest 6861 - Zinfizzlex's Portable Shredder Unit - removed
+- quest 6862 - Zinfizzlex's Portable Shredder Unit - removed
+- quest 6901 - Launch the Attack! - removed
+- quest 7281 - Brotherly Love - removed
+- quest 7282 - Brotherly Love - removed
+- quest 7301 - Fallen Sky Lords - removed
+- quest 7302 - Fallen Sky Lords - removed
+
 ## [0.2] - unreleased
 
 ### Added
