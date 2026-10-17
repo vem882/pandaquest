@@ -16,6 +16,9 @@
 --     per `gearInterval` seconds (default 60) reaches the saved variable.
 --   * Privacy: only the character sheet. No bag contents, no gold unless the operator turns
 --     `gearMoney` on (default off -- nothing the hub shows needs it), no names of anyone else.
+--     What the character looks like is its sex and the barber's choices (face, skin, hair), which
+--     the hub draws its 3D figure from; the choices can only be read in a barber's chair, so they
+--     are read there and kept on the character's row until the next visit.
 local _, ns = ...
 
 local M = {}
@@ -23,13 +26,14 @@ ns.CharacterSheet = M
 
 local Log = ns.Log
 
-local type, tonumber, tostring, pcall = type, tonumber, tostring, pcall
+local type, tonumber, tostring, pcall, pairs = type, tonumber, tostring, pcall, pairs
 local floor = math.floor
-local tconcat = table.concat
+local tconcat, tsort = table.concat, table.sort
 local wipe = wipe or table.wipe
 
 --- Bumped whenever the shape of the payload changes; the hub validates against it.
-local PAYLOAD_VERSION = 1
+-- 2: `sex` and `choices`, what the character looks like (see ReadBarberChoices).
+local PAYLOAD_VERSION = 2
 M.PAYLOAD_VERSION = PAYLOAD_VERSION
 
 --- Equipment slots 1..19 = INVSLOT_HEAD..INVSLOT_TABARD (Blizzard's Constants.lua). The INVSLOT_*
@@ -45,6 +49,11 @@ local ITEM_WAIT = 10
 local MAX_LINK = 160
 --- Most combat ratings recorded, so a future client that adds twenty more cannot grow the event.
 local MAX_RATINGS = 24
+--- Most barber options recorded. A Mists race has five to eight (skin, face, hair style, hair
+-- colour, facial hair or its race's own features); the cap is for a client that grows the list.
+local MAX_CHOICES = 32
+--- Seconds after BARBER_SHOP_OPEN the choices are read once more when the first read found none.
+local BARBER_RETRY = 0.5
 
 --- The combat rating constants this addon knows about. MoP defines these as engine globals and
 -- not every one of them exists on every build, so each is looked up by name and only the ones
@@ -68,7 +77,8 @@ local STAT_KEYS = { "str", "agi", "sta", "int", "spi" }
 
 local pendingItems = {}         -- itemID -> true, items whose data the client still owes us
 local pendingCount = 0
-local debounceTimer, waitTimer
+local debounceTimer, waitTimer, barberTimer
+local barberOpen = false        -- between BARBER_SHOP_OPEN and BARBER_SHOP_CLOSE
 local lastFingerprint           -- the gear half of the last recorded snapshot, as a string
 local lastRecordedAt = 0        -- GetTime() of the last recorded snapshot (0 = never)
 local lastSnapshot              -- the payload of the last recorded snapshot
@@ -376,6 +386,170 @@ local function collectSpec(payload)
     if type(role) == "string" and role ~= "" then payload.role = role:sub(1, 16) end
 end
 
+---------------------------------------------------------------------------
+-- What the character looks like
+---------------------------------------------------------------------------
+
+--- PlayerSex() -> 2 (male), 3 (female) or nil. UnitSex's 1 means "neither", which the client says
+-- of a unit it cannot tell, and is not data about the player.
+function M.PlayerSex()
+    if not UnitSex then return nil end
+    local ok, sex = pcall(UnitSex, "player")
+    sex = ok and tonumber(sex) or nil
+    if sex == 2 or sex == 3 then return sex end
+    return nil
+end
+
+local function playerRaceFile()
+    if not UnitRace then return nil end
+    local ok, _, raceFile = pcall(UnitRace, "player")
+    if ok and type(raceFile) == "string" and raceFile ~= "" then return raceFile end
+    return nil
+end
+
+local function choicesText(choices)
+    if type(choices) ~= "table" then return "" end
+    local parts = {}
+    for index = 1, #choices do
+        local entry = choices[index]
+        parts[index] = tostring(entry.o) .. "=" .. tostring(entry.c)
+    end
+    return tconcat(parts, ",")
+end
+
+local function collectChoices(categories, found, count, anyModel)
+    for ci = 1, #categories do
+        local category = categories[ci]
+        local options = type(category) == "table" and category.spellShapeshiftFormID == nil
+            and (anyModel or category.chrModelID == nil) and category.options
+        if type(options) == "table" then
+            for oi = 1, #options do
+                local option = options[oi]
+                local optionID = type(option) == "table" and positive(option.id) or nil
+                local index = optionID and tonumber(option.currentChoiceIndex)
+                local list = index and option.choices
+                local choice = type(list) == "table" and list[index] or nil
+                local choiceID = type(choice) == "table" and positive(choice.id) or nil
+                if choiceID and not found[optionID] and count < MAX_CHOICES then
+                    found[optionID] = choiceID
+                    count = count + 1
+                end
+            end
+        end
+    end
+    return count
+end
+
+--- ReadBarberChoices() -> { { o = optionID, c = choiceID }, ... } sorted by option, or nil.
+--
+-- The character's face, skin and hair, as the barber's option id -> choice id. Nothing else in the
+-- 5.5.4 client says what a face is: C_BarberShop.GetAvailableCustomizations() answers only while
+-- the barber UI is open ("MayReturnNothing", Blizzard_APIDocumentationGenerated/
+-- BarberShopDocumentation.lua), and UnitRace, UnitSex and the character frame say nothing about it.
+-- Each CharCustomizationOption (CharacterCustomizationSharedDocumentation.lua) carries its choices
+-- and `currentChoiceIndex`, a Lua index into them, so the choice id is
+-- option.choices[option.currentChoiceIndex].id -- the read Blizzard's own PTR report makes
+-- (Blizzard_Reports.lua). An option with no current choice is left out, and the hub draws its first.
+--
+-- Not read while a worgen views its human form, nor from a category that dresses a shapeshift form
+-- (`spellShapeshiftFormID`): those are another model's options. A category that names a model of
+-- its own (`chrModelID`) is passed over too, unless every category names one -- no client source
+-- of this build shows which way 5.5.4 fills that field, and reading nothing would be silent.
+function M.ReadBarberChoices()
+    local C = _G.C_BarberShop
+    if not (C and C.GetAvailableCustomizations) then return nil end
+    if C.IsViewingAlteredForm then
+        local ok, altered = pcall(C.IsViewingAlteredForm)
+        if ok and altered then return nil end
+    end
+    local ok, categories = pcall(C.GetAvailableCustomizations)
+    if not ok or type(categories) ~= "table" then return nil end
+
+    local found = {}
+    local count = collectChoices(categories, found, 0, false)
+    if count == 0 then count = collectChoices(categories, found, 0, true) end
+    if count == 0 then return nil end
+
+    local choices = {}
+    for optionID, choiceID in pairs(found) do
+        choices[#choices + 1] = { o = optionID, c = choiceID }
+    end
+    tsort(choices, function(a, b) return a.o < b.o end)
+    return choices
+end
+
+--- KnownChoices(sex) -> a copy of the barber's choices last read for this character, or nil.
+-- Only while they still describe it: a set read before a race or sex change is another model's.
+function M.KnownChoices(sex)
+    local Telemetry = ns.Telemetry
+    local row = Telemetry and Telemetry.GetCharacterRow and Telemetry.GetCharacterRow()
+    local look = type(row) == "table" and row.look or nil
+    if type(look) ~= "table" or type(look.choices) ~= "table" then return nil end
+    if look.sex ~= sex or look.race ~= playerRaceFile() then return nil end
+    local copy
+    for index = 1, #look.choices do
+        local entry = look.choices[index]
+        local optionID = type(entry) == "table" and positive(entry.o) or nil
+        local choiceID = optionID and positive(entry.c)
+        if choiceID and (not copy or #copy < MAX_CHOICES) then
+            copy = copy or {}
+            copy[#copy + 1] = { o = optionID, c = choiceID }
+        end
+    end
+    return copy
+end
+
+--- RememberBarberChoices(reason) -> "read" | "unchanged" | nil (nothing could be read).
+-- Keeps the choices on the character's row of the SavedVariable (`look`, with the race and sex
+-- they belong to) and asks for a snapshot when they changed. Nothing at all while telemetry is off.
+function M.RememberBarberChoices(reason)
+    if not M.IsEnabled() then return nil end
+    local choices = M.ReadBarberChoices()
+    if not choices then return nil end
+    local Telemetry = ns.Telemetry
+    local row = Telemetry and Telemetry.GetCharacterRow and Telemetry.GetCharacterRow()
+    if type(row) ~= "table" then return nil end
+    local look = { race = playerRaceFile(), sex = M.PlayerSex(), choices = choices }
+    local old = row.look
+    if type(old) == "table" and old.race == look.race and old.sex == look.sex
+        and choicesText(old.choices) == choicesText(choices) then
+        return "unchanged"
+    end
+    row.look = look
+    Log.Debug("CharacterSheet", "barber choices read (%d options, %s)", #choices, tostring(reason))
+    M.Request(reason)
+    return "read"
+end
+
+local function cancelBarberTimer()
+    if barberTimer and listener.CancelTimer then listener:CancelTimer(barberTimer, true) end
+    barberTimer = nil
+end
+
+--- OnBarberOpen(): the chair was just taken, so the choices on show are the character's own.
+-- The client may hand them over a moment after the event, hence the one retry.
+function M.OnBarberOpen()
+    barberOpen = true
+    cancelBarberTimer()
+    if M.RememberBarberChoices("BARBER_SHOP_OPEN") ~= nil then return end
+    if not listener.ScheduleTimer then return end
+    barberTimer = listener:ScheduleTimer(function()
+        barberTimer = nil
+        if barberOpen then M.RememberBarberChoices("BARBER_SHOP_OPEN retry") end
+    end, BARBER_RETRY)
+end
+
+--- OnBarberResult(_, success): a change was paid for, and the choices on show are now the
+-- character's. A change previewed and not bought is never read: nothing reads between the two.
+function M.OnBarberResult(_, success)
+    if success then M.RememberBarberChoices("BARBER_SHOP_RESULT") end
+end
+
+function M.OnBarberClose()
+    barberOpen = false
+    cancelBarberTimer()
+end
+
 --- Build() -> payload, missing
 -- The whole character sheet as one plain table. `missing` is non-nil when the client still owes
 -- item data; the caller decides whether to wait for it or to record what there is.
@@ -441,6 +615,11 @@ function M.Build()
     payload.ratings = M.CollectRatings()
     collectSpec(payload)
 
+    -- What the character looks like, for the hub's 3D figure: the sex always, the barber's choices
+    -- once the player has sat in a barber's chair with this version (ReadBarberChoices).
+    payload.sex = M.PlayerSex()
+    payload.choices = M.KnownChoices(payload.sex)
+
     -- Opt-in only. Everything above describes how strong the character is; this does not.
     if M.IsMoneyEnabled() and GetMoney then
         local ok, money = pcall(GetMoney)
@@ -453,13 +632,16 @@ function M.Build()
 end
 
 --- Fingerprint(payload) -> string. The *gear* half of a snapshot: what is equipped, at what item
--- level, and the character's level. Stats move with every buff and food, so they are deliberately
--- not part of it -- "when it changes" means the equipment changed, not that a flask ran out.
+-- level, the character's level, and what it looks like. Stats move with every buff and food, so
+-- they are deliberately not part of it -- "when it changes" means the equipment or the barber's
+-- choices changed, not that a flask ran out.
 function M.Fingerprint(payload)
     local parts = {
         "L", tostring(payload.lvl or 0),
         "I", tostring(payload.ilvlEq or payload.ilvl or 0),
         "P", payload.partial and "1" or "0",
+        "X", tostring(payload.sex or 0),
+        "C", choicesText(payload.choices),
     }
     local items = payload.items or {}
     for index = 1, #items do
@@ -702,6 +884,8 @@ function M.Init()
     lastFingerprint, lastSnapshot = nil, nil
     awaitingCorrection = nil
     lastRecordedAt, snapshotCount = 0, 0
+    barberOpen = false
+    cancelBarberTimer()
     clearPending()
 end
 
@@ -711,6 +895,13 @@ function M.Enable()
     listener:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function() M.Request("PLAYER_EQUIPMENT_CHANGED") end)
     listener:RegisterEvent("PLAYER_LEVEL_UP", function() M.Request("PLAYER_LEVEL_UP") end)
     listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Request("PLAYER_ENTERING_WORLD") end)
+    -- The barber's chair: the one place this client tells an addon what a face and hair are.
+    listener:RegisterEvent("BARBER_SHOP_OPEN", M.OnBarberOpen)
+    listener:RegisterEvent("BARBER_SHOP_RESULT", M.OnBarberResult)
+    listener:RegisterEvent("BARBER_SHOP_APPEARANCE_APPLIED", function()
+        M.RememberBarberChoices("BARBER_SHOP_APPEARANCE_APPLIED")
+    end)
+    listener:RegisterEvent("BARBER_SHOP_CLOSE", M.OnBarberClose)
 
     listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if type(path) ~= "string" or path:sub(1, 16) ~= "global.telemetry" then return end
@@ -741,3 +932,4 @@ end
 M.FIRST_SLOT, M.LAST_SLOT = FIRST_SLOT, LAST_SLOT
 M.RATING_NAMES = RATING_NAMES
 M.DEBOUNCE, M.ITEM_WAIT = DEBOUNCE, ITEM_WAIT
+M.MAX_CHOICES, M.BARBER_RETRY = MAX_CHOICES, BARBER_RETRY

@@ -2,6 +2,18 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.163] - 2026-10-17
+
+### Added
+- The gear snapshot (telemetry, `GEAR`, payload version 2) carries the character's sex (`UnitSex`)
+  and the barber's choices for its face, skin colour, hair and the race's other features, so the
+  PandaQuest portal can draw the character as a 3D figure the way it looks in game. This client
+  answers what a face is only while the barber UI is open, so the choices are read when you take the
+  barber's chair and again when a change is paid for -- never while you only preview one -- and kept
+  with the character in the saved variable until the next visit. A character that has not visited a
+  barber since this version sends its sex alone, and the portal draws the default face and hair.
+  Nothing is read or kept while telemetry is off.
+
 ## [0.2.161] - 2026-10-17
 
 Data from the PandaQuest portal.
