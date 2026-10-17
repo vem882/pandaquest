@@ -2,6 +2,31 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.164] - 2026-10-17
+
+Data from the PandaQuest portal.
+
+- database - Wowhead fill-ins as on the PandaQuest portal: 1 quest
+- quest 24702 - Here Lies Dadanga - updated
+- item 25505 - Carinda's Wedding Band - updated
+- item 25512 - Tribal Hauberk - updated
+- item 25567 - Cord of the Ring - updated
+- item 25575 - Thunderbringer's Guard - updated
+- item 25592 - Clefthoof Wristguards - updated
+- item 25776 - Ogre Slayer's Pendant - updated
+- item 27436 - Iron Band of the Unbreakable - updated
+- item 28041 - Bladefist's Breadth - updated
+- item 30019 - Area 52 Defender's Pants - updated
+- item 30364 - Resonating Axe - updated
+- item 35601 - Drakonid Arm Blade - updated
+- item 36559 - Prized Handscythes - updated
+- item 38221 - Shroud of Fluid Strikes - updated
+- item 42763 - Bindings of Sabotage - updated
+- item 42766 - Spiked Treads of Mutation - updated
+- item 43183 - Tundra Tracker's Shoulderguards - updated
+- item 64884 - Bilgewater Cartel Tabard - updated
+- item 65286 - Ancient Seed Casing - updated
+
 ## [0.2.163] - 2026-10-17
 
 ### Added

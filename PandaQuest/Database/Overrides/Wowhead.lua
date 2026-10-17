@@ -5,7 +5,9 @@
 local _, ns = ...
 ns.Overrides = ns.Overrides or {}
 ns.Overrides.wowhead = {
-    quests = {},
+    quests = {
+        [24702] = {objectivesText = {"Obtain 10 Bloodpetal Sprouts."}},
+    },
     npcs = {},
     objects = {},
     items = {},
