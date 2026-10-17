@@ -2,6 +2,12 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.165] - 2026-10-17
+
+Data from the PandaQuest portal.
+
+- npc 23003 - Joe Rumsey - updated
+
 ## [0.2.164] - 2026-10-17
 
 Data from the PandaQuest portal.
