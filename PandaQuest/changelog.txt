@@ -2,6 +2,13 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.166
+- item 21364 - Deathdealer's Vest - updated
+- item 21405 - Band of Veiled Shadows - updated
+- item 59047 - Free Body Belt - updated
+- item 59048 - Torque-Applying Gloves - updated
+- item 59049 - Inertial Bracers - updated
+
 0.2.165
 - npc 23003 - Joe Rumsey - updated
 
