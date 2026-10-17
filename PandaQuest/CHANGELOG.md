@@ -2,6 +2,15 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.167] - 2026-10-17
+
+Data from the PandaQuest portal.
+
+- quest 31140 - Lions for Lambs - updated
+- item 29278 - Violet Signet - updated
+- item 52889 - Blooded Darkspear Dagger - updated
+- item - More items filled in - updated
+
 ## [0.2.166] - 2026-10-17
 
 Data from the PandaQuest portal.
