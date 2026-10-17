@@ -2,6 +2,15 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.161] - 2026-10-17
+
+Data from the PandaQuest portal.
+
+- quest 13914 - Searing Roc Feathers - updated
+- quest 13915 - Hungry, Hungry Hatchling - updated
+- quest 13916 - Poached, Scrambled, Or Raw? - updated
+- quest 13917 - Gorishi Grub - updated
+
 ## [0.2.160] - 2026-10-16
 
 Data from the PandaQuest portal.
