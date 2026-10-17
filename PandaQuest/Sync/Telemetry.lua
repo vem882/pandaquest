@@ -224,6 +224,18 @@ local function updateCharacter(key, name, realm)
     return row
 end
 
+--- GetCharacterRow() -> the logged-in character's row of PandaQuestSync.characters, or nil while
+-- telemetry is off. Sync/Character.lua keeps the barber's last choices on it (`look`): they belong to
+-- one character and outlive the session they were read in. The companion uploads only the fields
+-- updateCharacter writes; `look` reaches the hub inside the GEAR snapshot.
+function M.GetCharacterRow()
+    if not M.IsEnabled() then return nil end
+    local key, name, realm = characterKey()
+    local row = M.GetStore().characters[key]
+    if type(row) ~= "table" then row = updateCharacter(key, name, realm) end
+    return row
+end
+
 ---------------------------------------------------------------------------
 -- Session lifecycle
 ---------------------------------------------------------------------------
