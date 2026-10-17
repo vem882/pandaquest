@@ -2,6 +2,16 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.166] - 2026-10-17
+
+Data from the PandaQuest portal.
+
+- item 21364 - Deathdealer's Vest - updated
+- item 21405 - Band of Veiled Shadows - updated
+- item 59047 - Free Body Belt - updated
+- item 59048 - Torque-Applying Gloves - updated
+- item 59049 - Inertial Bracers - updated
+
 ## [0.2.165] - 2026-10-17
 
 Data from the PandaQuest portal.
