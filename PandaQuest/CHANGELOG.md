@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.174] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,507 quests, 10 NPCs
+- quest 2 - Sharptalon's Claw - updated
+- quest 23 - Ursangous's Paw - updated
+- quest 24 - Shadumbra's Head - updated
+- quest 25 - Simmer Down Now - updated
+- quest 47 - Gold Dust Exchange - updated
+- quest 52 - Protect the Frontier - updated
+- quest 60 - Kobold Candles - updated
+- quest 62 - The Fargodeep Mine - updated
+- quest 76 - The Jasperlode Mine - updated
+- quest 123 - The Collector - updated
+- npc 1160 - Captain Halyndor - updated
+- npc 1748 - Highlord Bolvar Fordragon - updated
+- npc 3231 - Corrupted Dreadmaw Crocolisk - updated
+- npc 5296 - Rage Scar Yeti - updated
+- npc 5297 - Elder Rage Scar - updated
+- npc 9165 - Fledgling Pterrordax - updated
+- npc 14527 - Simone the Inconspicuous - updated
+- npc 39926 - Twilight Inciter - updated
+- npc 41009 - Krom'gar Hot Air Balloon - updated
+- npc 41098 - Gnaws - updated
+- quest - and 4,496 more quests updated
+
 ## [0.2.173] - 2026-10-18
 
 ### Added
