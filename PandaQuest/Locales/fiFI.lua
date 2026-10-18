@@ -275,6 +275,18 @@ local T = {
         "Näyttää, mitkä tehtävät NPC tai esine aloittaa tai päättää ja mihin se vaikuttaa.",
     ["Show quest IDs"] = "Näytä tehtävien ID:t",
     ["Useful when reporting missing data."] = "Hyödyllinen puuttuvista tiedoista raportoitaessa.",
+    ["Show quest rewards"] = "Näytä tehtävien palkinnot",
+    ["Money, experience and items under a quest you can pick up, on NPCs and map pins."] =
+        "Raha, kokemus ja esineet otettavissa olevan tehtävän alla, NPC:issä ja karttamerkeissä.",
+    ["Show NPC titles"] = "Näytä NPC:iden tittelit",
+    ["The title under an NPC's name on map pins, such as <Innkeeper>."] =
+        "Titteli NPC:n nimen alla karttamerkeissä, esimerkiksi <Innkeeper>.",
+    ["Quest text in the quest browser"] = "Tehtävän teksti tehtäväselaimessa",
+    ["What the quest giver says, under the objectives, as the PandaQuest portal read it off Wowhead."] =
+        "Mitä tehtävänantaja sanoo, tavoitteiden alla, niin kuin PandaQuest-portaali sen Wowheadista luki.",
+    ["Reward items and money in the quest browser"] = "Palkintoesineet ja raha tehtäväselaimessa",
+    ["What a quest gives besides experience, as the PandaQuest portal read it off Wowhead."] =
+        "Mitä tehtävästä saa kokemuksen lisäksi, niin kuin PandaQuest-portaali sen Wowheadista luki.",
     ["Tracker"] = "Seuranta",
     ["PandaQuest does not replace the Blizzard quest tracker; it only adds to it."] =
         "PandaQuest ei korvaa Blizzardin tehtäväseurantaa, vaan täydentää sitä.",
@@ -568,6 +580,12 @@ local T = {
     ["Shareable"] = "Jaettava",
     ["Quest ID"] = "Tehtävä-ID",
     ["Rewards"] = "Palkinnot",
+    ["You will receive:"] = "Saat:",
+    ["Choose one of:"] = "Valitse yksi:",
+    ["one of %d items"] = "yksi %d esineestä",
+    ["Item %d"] = "Esine %d",
+    ["%d XP"] = "%d XP",
+    ["Reward: %s"] = "Palkinto: %s",
     ["Navigate"] = "Navigoi",
     ["Pick a quest from the list to see its page."] = "Valitse tehtävä listasta nähdäksesi sen sivun.",
     ["Categories"] = "Luokat",

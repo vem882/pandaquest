@@ -94,7 +94,13 @@ ns.DEFAULTS = {
         archaeology = { snapshotOnOpen = true,
                         digSiteBar = true, barLocked = false, barScale = 1.0,
                         barPoint = "CENTER", barX = 0, barY = -260 },
-        tooltips = { enabled = true, showIds = false },
+        -- `npcTitles` is the <title> line on map pins, `questRewards` a quest's rewards under a quest the
+        -- player can pick up (unit tooltips and map pins alike).
+        tooltips = { enabled = true, showIds = false, npcTitles = true, questRewards = true },
+        -- The quest browser's page (UI/QuestBrowser.lua): `questText` is the quest giver's text under the
+        -- objectives, `rewards` the money and items in the Rewards line, both as the PandaQuest portal
+        -- read them off Wowhead.
+        browser = { questText = true, rewards = true },
         tracker = { enhanceBlizzard = true, showDistance = true },
         notify = { enabled = true, sound = true, questComplete = true, nextTarget = true },
         -- No radius here: LibDBIcon only offers a library-wide button radius, so exposing one
