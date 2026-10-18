@@ -2,6 +2,23 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.169] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- item 4907 - Woodland Tunic - updated
+- item 5395 - Woodland Shield - updated
+- item 11189 - Woodland Robes - updated
+- item 21359 - Deathdealer's Boots - updated
+- item 21362 - Deathdealer's Leggings - updated
+- item 25878 - Dusksteel Throwing Knife - updated
+- item 29280 - Violet Signet - updated
+- item 29288 - Violet Signet - updated
+- item 29291 - Violet Signet - updated
+- item 57254 - Runner's Boots - updated
+- item 73208 - Trainee's Dagger - updated
+- item 73212 - Trainee's Dagger - updated
+
 ## [0.2.168] - 2026-10-18
 
 Data from the PandaQuest portal.
