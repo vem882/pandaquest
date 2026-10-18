@@ -561,7 +561,15 @@ ns.Overrides.wowhead = {
         [9856] = {rewardMoney = 74000},
         [9857] = {rewardMoney = 33000},
         [9858] = {rewardMoney = 35000},
-        [9859] = {rewardMoney = 70000},
+        [9859] = {
+            description = "<Wracking cough.>\n\nDon't worry about...<cough>... me. I'll be fine. It's " ..
+                "just a...<cough>... scratch.\n\nJust the same, I think you'll... <cough>... have to fill " ..
+                "in for me one more... <cough>... time.\n\nYou must seek out the great Bach'lor, king " ..
+                "of...<cough>... the stags.\n\nBring me one of his hooves...<cough>, <cough>... as " ..
+                "confirmation.\n\nLook for him...<cough>... leading his herd in the far west of Nagrand.",
+            rewardChoices = {{25543, 1}, {25545, 1}, {25636, 1}},
+            rewardMoney = 70000,
+        },
         [9860] = {rewardMoney = 132000},
         [9869] = {rewardMoney = 35000},
         [9870] = {rewardMoney = 35000},
@@ -11035,28 +11043,341 @@ ns.Overrides.wowhead = {
         [26045] = {rewardMoney = 2200},
         [26046] = {rewardMoney = 2200},
         [26047] = {rewardMoney = 2200},
+        [26049] = {
+            description = "Myzrael's no innocent princess. She's a terribly dangerous force, and the " ..
+                "giants had every reason to chain her down there. I'm afraid you've been " ..
+                "had.\n\nAccording to Gerrig, you have to summon her at the Shards of Myzrael where you " ..
+                "first spoke with her. Defeat her and gather her Eldritch Shackles, then bind them to the " ..
+                "Shards.\n\nHere's the scroll you'll need. Be careful with it; I risked a few teeth to " ..
+                "get it. Good luck, <name>.",
+            rewardChoices = {{59208, 1}, {59209, 1}, {59210, 1}, {59211, 1}},
+            rewardMoney = 5000,
+        },
         [26050] = {rewardMoney = 2500},
         [26051] = {rewardMoney = 5000},
         [26053] = {rewardMoney = 2200},
         [26055] = {rewardMoney = 2500},
+        [26056] = {
+            description = "One of the Earthen Ring, Wavespeaker Valoren, swam down into the Nightmare " ..
+                "Depths to the northeast. We haven't heard from her in awhile.\n\nSwim out there and see " ..
+                "if you can find her.",
+        },
+        [26057] = {
+            description = "One of the Earthen Ring, Wavespeaker Valoren, swam down into the Nightmare " ..
+                "Depths to the northeast. We haven't heard from her in awhile.\n\nSwim out there and see " ..
+                "if you can find her.",
+        },
         [26058] = {rewardMoney = 6500},
         [26060] = {rewardMoney = 2500},
         [26061] = {rewardMoney = 2500},
         [26062] = {rewardMoney = 7000},
         [26063] = {rewardMoney = 2200},
         [26064] = {rewardMoney = 2500},
+        [26065] = {
+            description = "Those tentacle horrors rising from the depths have trapped that poor beast. " ..
+                "Please, <name>, can you save it by destroying those things?\n\nWill you free " ..
+                "Wil'hai?\n\nHere, take my totem and plant it near the tentacles. The cold it emanates " ..
+                "will cause major shrinkage on those monsters and then you'll be able to destroy them.",
+            rewardChoices = {{59627, 1}, {59628, 1}},
+            rewardMoney = 164000,
+        },
         [26066] = {rewardMoney = 2500},
         [26067] = {rewardMoney = 8000},
+        [26070] = {
+            description = "Our Earthen Ring friends here are wondering if we can lend them a hand. There " ..
+                "are faceless down below in the Scalding Chasm that are defiling all of the " ..
+                "wildlife.\n\nCan you take care of that for me?",
+            rewardChoices = {{59623, 1}, {59624, 1}, {59625, 1}},
+            rewardMoney = 82000,
+        },
+        [26071] = {
+            description = "These Earthen Ring want us to do their killing for them. There are faceless " ..
+                "down below in the Scalding Chasm that are defiling all of the wildlife.\n\nSwim down " ..
+                "there and take care of it.",
+            rewardChoices = {{59620, 1}, {59621, 1}, {59622, 1}},
+            rewardMoney = 82000,
+        },
+        [26072] = {
+            description = "You must take my totem down into the Scalding Chasm. Use it to capture the " ..
+                "energies of the faceless as they die. The totem will keep them from returning from " ..
+                "whence they came.\n\nWhen the totem is full, bring it back to me and we will use it to " ..
+                "lure their leader up from deep down below.",
+            rewardMoney = 82000,
+        },
         [26073] = {rewardMoney = 10700},
         [26075] = {rewardMoney = 5500},
         [26076] = {rewardMoney = 5500},
+        [26078] = {
+            description = "The Dark Iron attack took us by surprise. Their saboteurs managed to damage " ..
+                "most of our aircraft, steam tanks, and supplies. We were only able to get a few of our " ..
+                "bombers airborne.\n\nEvery technician, recruit, and guard I can spare is scrambling to " ..
+                "get the others repaired and flight-ready. Our infantry can only hold out for so long. " ..
+                "Take this equipment and help extinguish the burning bombers.",
+            rewardMoney = 350,
+        },
+        [26079] = {
+            description = "The Stromgarde Militia has placed bounties on the heads of Lord Falconcrest, " ..
+                "and his bodyguard Otto. Falconcrest heads the Syndicate's efforts in the Arathi " ..
+                "Highlands, and his death would cause a major disruption in those efforts.\n\nHis " ..
+                "bodyguard Otto, although not a strategic target, is a fierce opponent and has killed " ..
+                "dozens of our defenders.\n\nTheir bounties may be collected from Captain Nials.",
+            rewardChoices = {{59174, 1}, {59175, 1}, {59176, 1}, {59177, 1}},
+            rewardMoney = 5000,
+        },
+        [26080] = {
+            description = "<name>, I'm gonna need ya to bring this back to Captain Glovaal. With my " ..
+                "condition, it'll take me a week to get back to Darkbreak Cove, and we don't have any " ..
+                "time to waste.",
+            rewardChoices = {{59650, 1}, {59651, 1}, {59652, 1}},
+            rewardMoney = 7800,
+        },
         [26081] = {rewardMoney = 4500},
         [26082] = {rewardMoney = 5500},
         [26083] = {rewardMoney = 1100},
         [26084] = {rewardMoney = 1100},
+        [26085] = {
+            description = "While our engineers work on getting the bombers ready to fly again, our guards " ..
+                "and mountaineers continue to fight the invaders.\n\nThey've been out there since the " ..
+                "incursion began, without so much as a chance to catch some sleep or have a meal. " ..
+                "Ironforge's defenders are among the best on Azeroth, but even they have limits.\n\nTake " ..
+                "these banners and plant them in banks of loose snow. Remind the men what they are " ..
+                "fighting for and help keep their morale high.",
+            rewardMoney = 350,
+        },
+        [26086] = {
+            description = "<Captain Verne looks down at his watch.>\n\nWhere is that hunter? I sent Orako " ..
+                "to Underlight Canyon to prepare a recon report a week ago! Sure, he's a handful, and I " ..
+                "didn't mind getting him out of my hair, but I need his report.\n\nSay, what's your name? " ..
+                "<name>? Would you be willing to go track him down? It seems strange to send a <class> to " ..
+                "find a hunter, but I'm running out of options.",
+            rewardMoney = 7800,
+        },
+        [26087] = {
+            description = "Shooting fish in a barrel is easy. Shooting fish in an ocean is a little " ..
+                "harder.\n\nHave you seen the murlocs down in the canyon, <class>? They don't shoot at " ..
+                "all! They have little balls full of glow-juice on their heads that make the fish come to " ..
+                "THEM. Hey, we should try that!\n\nGo south, and kill the crabs and groupers in the " ..
+                "canyon. They have lots of glow-juice in their skin. I've seen it!",
+            rewardMoney = 78000,
+        },
+        [26088] = {
+            description = "< Orako rolls the glow-juice into a ball, then attaches it to a device that " ..
+                "he's clearly been working on for a long time.>\n\nHere, I got you this hat. It has a " ..
+                "light on it, and it will make fish follow you. Just like the murlocs!\n\nThe murlocs " ..
+                "like to hunt in the kelp and coral along the sides of the canyon. If you put on this hat " ..
+                "and swim in that kelp, you might catch some fish like they do.",
+            rewardMoney = 78000,
+        },
+        [26089] = {
+            description = "A fish ate my wolf, and murlocs look like fish. I'm going to make those " ..
+                "murlocs pay!\n\nHead back down to the canyon and kill the fishmen! My wolf will be " ..
+                "avenged!",
+            rewardMoney = 78000,
+        },
+        [26090] = {
+            description = "<This appears to be an egg from one of the devious great-eels that float up " ..
+                "above the canyon. You wonder whether or not Orako might be interested in something like " ..
+                "this.>",
+            rewardMoney = 39000,
+        },
+        [26091] = {
+            description = "< Orako removes an explosive trap from his sack and shoves it through the " ..
+                "egg's outer membrane.>\n\nThis will make the egg explode. Place the egg down next to one " ..
+                "of those giant eels, and wait for them to come close. When the egg explodes, the big " ..
+                "fish will be almost dead, and you can finish killing it.\n\nSave my wolf! With this egg, " ..
+                "you can do it.",
+            rewardChoices = {{59653, 1}, {59654, 1}, {59655, 1}},
+            rewardMoney = 156000,
+        },
+        [26092] = {
+            description = "<You remind Orako that he was supposed to send a report back to Captain " ..
+                "Verne.>\n\nRight, a report. All that I've seen here is fish. Lots and lots of fish.\n\n< " ..
+                "Orako looks over at the sack of fish that you brought for him.>\n\nBring this back to " ..
+                "the captain. This is my report.",
+            rewardChoices = {{59647, 1}, {59648, 1}, {59649, 1}},
+            rewardMoney = 7800,
+        },
+        [26093] = {
+            description = "We are fighting a war for Stromgarde, and we are losing. The ogres, the " ..
+                "Syndicate and we have divided our once great city, and each faction battles the other " ..
+                "into a bloody stalemate.\n\nBut our forces dwindle while our enemy grows.\n\nThough " ..
+                "Southshore has fallen, we must not let any further ground be yielded to our " ..
+                "enemies.\n\nGo to the Syndicate base in Northfold Manor and slay them. We must reclaim " ..
+                "the land for ourselves before the Horde has a chance to creep further.",
+            rewardMoney = 2000,
+        },
+        [26094] = {
+            description = "My chief engineer tells me that he's managed to get one of the bombers " ..
+                "repaired and airworthy. Take these bombs with you, and look for the repaired bomber at " ..
+                "the start of the runway.\n\nOnce you're airborne, use the bombs to do as much damage to " ..
+                "the attacking Dark Iron dwarves as you can. I've heard rumors that they're preparing to " ..
+                "deploy a new kind of war golem. Keep your eyes peeled for those golems and make them " ..
+                "your highest priority targets.",
+            rewardMoney = 350,
+        },
+        [26095] = {
+            description = "The Syndicate in Stromgarde do battle with our contingent of militia there. In " ..
+                "order to urge the rabble to fight our more disciplined troops, the Syndicate leaders " ..
+                "have placed a bounty on our soldiers, awarding gold for each Stromgarde Badge gathered " ..
+                "off killed militiamen.\n\nWe want those badges retrieved - we cannot allow the " ..
+                "cutthroats to take trophies from our brave fallen!\n\nEnter the Syndicate-controlled " ..
+                "area of Stromgarde and hunt them for our badges.",
+            rewardChoices = {{59190, 1}, {59191, 1}, {59192, 1}, {59193, 1}},
+            rewardMoney = 5000,
+        },
+        [26096] = {
+            description = "We think that we have a use for the merciless ones that your friend from the " ..
+                "cave delivered to us. But I need a preservative for it.\n\nDown below in the Scalding " ..
+                "Chasm are some mushrooms with the properties that I need. Bring some back up to me and " ..
+                "I'll see what I can do.",
+            rewardMoney = 82000,
+        },
+        [26102] = {
+            description = "With you leading the way, we've finally broken the momentum of the Dark Iron " ..
+                "attack. General Grimaxe, the Dark Iron leader, is attempting to rally his troops from " ..
+                "the center of their lines on the frozen lake to the south.\n\nHe stands atop one of " ..
+                "their new dark iron golems, shouting orders to his men. If he succeeds in rallying them, " ..
+                "they may still be able to overpower us. You must prevent that, <name>. Destroy the golem " ..
+                "guarding him, then kill General Grimaxe himself. He is the key to our victory.",
+            rewardChoices = {{57579, 1}, {57580, 1}, {57581, 1}, {57582, 1}},
+            rewardMoney = 350,
+        },
+        [26103] = {
+            description = "Submarine fuel is expensive!\n\nThe powers-that-be in Gnomeregan were generous " ..
+                "enough to deliver several fuel barrels, but we're burning through it faster than " ..
+                "expected. That means we're going to need to improvise.\n\nIt's a well-known fact that " ..
+                "sea creatures are full of all kinds of interesting chemicals... like oil. Take this " ..
+                "device up to Kothrun's End and stick it into the corpses of terrapins, remoras, and " ..
+                "hammerhead sharks. If we don't get more submarine fuel, their oil might be our only hope.",
+            rewardMoney = 78000,
+        },
+        [26105] = {
+            description = "The Horde has spies in this area? Darkbreak Cove is nearby, and inside lies " ..
+                "the Pincer X2! The Horde must not be allowed anywhere nearby!\n\nSomeone in Darkbreak " ..
+                "Cove will want to hear of this... after you finish slaying some more of these dirty " ..
+                "Horde spies.",
+            rewardMoney = 78000,
+        },
+        [26106] = {
+            description = "How much do you know about fuel, <name>? Constructing the perfect fuel is a " ..
+                "tricky job, as there's plenty of factors to balance: chrono-pyroxidation parameters, " ..
+                "tempero-incendiary variables, conflagrational siltification criteria... and that's only " ..
+                "naming a few.\n\nHopefully the samples you brought me can be combined in the right " ..
+                "proportions to create... the perfect bio-fuel. Use that table over there and try " ..
+                "combining some samples! Bring the result to me when you're done.",
+            rewardChoices = {{59644, 1}, {59645, 1}, {59646, 1}},
+            rewardMoney = 78000,
+        },
         [26107] = {rewardMoney = 2500},
         [26108] = {rewardMoney = 2500},
+        [26110] = {
+            description = "It's funny. Kin and I have been through so much together, and here we find " ..
+                "ourselves back in Arathi, like so many years ago.\n\nWe broke up a plot to create a new " ..
+                "plague right here, her and I. It doesn't look like the Horde learned their lesson, " ..
+                "because they're all over this farm yet again.\n\nTheir undead courier is shuffling " ..
+                "around as obvious as daylight. If you want to help, find the courier and bring back " ..
+                "whatever they're carrying.",
+            rewardMoney = 2500,
+        },
+        [26111] = {
+            description = "I now imbue you with the energies of the corrupting faceless.\n\nSwim down to " ..
+                "my luring totem in the trench to the northeast. Release the energies through it. Bring " ..
+                "back the brain of their leader.\n\nCall forth to Ick'thys the Unfathomable... it will " ..
+                "come!",
+            rewardChoices = {{59618, 1}, {59619, 1}, {59617, 1}},
+            rewardMoney = 164000,
+        },
+        [26112] = {
+            description = "So just how did all those Dark Iron warriors end up here, on the doorstep of " ..
+                "Ironforge, on the verge of invading our city?\n\nDoes not 'Empress' Moira, a member of " ..
+                "our esteemed Council of Three Hammers, rule the Dark Iron? This cannot have happened " ..
+                "without her knowledge and consent. This was no ragtag band of rebel dwarves, but a " ..
+                "well-organized and fully equipped invasion force.\n\nI have prepared a report on the " ..
+                "battle for the airfield. Take it to Ironforge, to the High Seat and confront her!",
+            rewardMoney = 700,
+        },
+        [26113] = {
+            description = "The Horde have held Go'shek Farm to the east for a long time; it's never been " ..
+                "of much concern compared to the rest of our problems here. But there's been reports of " ..
+                "undead activity in the area.\n\nAnything more alarming than shuffling peons over there " ..
+                "warrants investigation. This isn't the first time the undead have been up to no good at " ..
+                "the farm, so I've sent my best scouts there to check it out. Report to Quae and Kinelory " ..
+                "and they'll fill you in.",
+            rewardMoney = 1200,
+        },
+        [26114] = {
+            description = "< Quae begins to go through the folder.>\n\nExpansion...control of " ..
+                "territory... these undead aren't cooking up anything new, but they're planning to roll " ..
+                "over all of Arathi. We need to disrupt their plans.\n\nI'll keep a lookout from up here. " ..
+                "You go with Kin, and get those invasion plans. We're not going to let these walking " ..
+                "corpses even know what day it is out here.\n\nAnd keep her safe, you hear me?",
+            rewardMoney = 250,
+        },
         [26115] = {rewardMoney = 10700},
+        [26116] = {description = "All right, <name>. I'm ready if you are.\n\nShall we?", rewardMoney = 2500},
+        [26117] = {
+            description = "I've seen Kinelory look way worse after a night in the tavern than she does " ..
+                "now. You obviously did a good job protecting her.\n\nRefuge Pointe will want to know of " ..
+                "our success. I'm going to stay here with Kin and let her catch her breath. Go on ahead " ..
+                "without us.",
+            rewardChoices = {{59168, 1}, {59169, 1}, {59170, 1}},
+            rewardMoney = 5000,
+        },
+        [26118] = {
+            description = "The ambassador's betrayal will long haunt me. You must arrest him before he " ..
+                "can do further harm, or worse, before he can escape and start planning the next attack. " ..
+                "Ironforge is not safe with Ambassador Slaghammer free inside the city.\n\nTake these " ..
+                "manacles and go to the Dark Iron embassy. It's just to the north of the High Seat, " ..
+                "around the rim of the Great Forge. Arrest Ambassador Slaghammer and return with him.",
+            rewardChoices = {{57583, 1}, {57584, 1}, {57585, 1}},
+            rewardMoney = 350,
+        },
+        [26120] = {
+            description = "The Dragonmaw orcs nearby are fast becoming a nuisance. Their suicidal attacks " ..
+                "on the grove are merely annoying, though they provide my sentinels with some needed " ..
+                "practice.\n\nMy scouts, however, have seen them rounding up black dragon whelps in nets. " ..
+                "The last thing these lands need is a crude revival of dragon-taming. Strike out to the " ..
+                "east, <class>, and cut down the whelpstealers; make sure their folly does not come back " ..
+                "to haunt us later.",
+            rewardChoices = {{59116, 1}, {59115, 1}, {59114, 1}},
+            rewardMoney = 1800,
+        },
+        [26121] = {
+            description = "You are seeink spies up above? This is not good... not good at all, " ..
+                "comrade.\n\nReturn to Korthun's End and destroy them, my friend.",
+            rewardMoney = 78000,
+        },
+        [26122] = {
+            description = "Have you ever smelled submarine fuel, <name>? It's nasty stuff. Unfortunately, " ..
+                "we need to burn huge amounts of it to get the Verne to move, and it's both bad-smelling " ..
+                "AND deadly to the local wildlife. We need to be more environmentally conscious.\n\nThe " ..
+                "sea creatures nearby have particularly oily flesh. Take this device up to Seabrush - " ..
+                "just above this cave - and use it on the corpses of terrapins, remoras, and hammerhead " ..
+                "sharks. Their oil might save the lives of hundreds of other sea creatures.",
+            rewardMoney = 78000,
+        },
+        [26124] = {
+            description = "The Alliance has spies in this area? Tenebrous Cavern is nearby, and inside " ..
+                "lies the Horde's new submarine, the Verne! The Alliance must not be allowed anywhere " ..
+                "nearby!\n\nSomeone in the cavern will want to hear of this incursion... after you finish " ..
+                "slaying some more of these scheming Alliance spies.",
+            rewardMoney = 78000,
+        },
+        [26125] = {
+            description = "You saw spies up above? This is not good... I won't have it.\n\nReturn to " ..
+                "Seabrush and get rid of them before they start trickling into our hideout.",
+            rewardMoney = 78000,
+        },
+        [26126] = {
+            description = "How much do you know about fuel, <name>? Constructing the perfect fuel is a " ..
+                "tricky job, as there's plenty of factors to balance: chrono-pyroxidation parameters, " ..
+                "tempero-incendiary variables, conflagrational siltification criteria... and that's only " ..
+                "naming a few.\n\nHopefully the samples you brought me can be combined in the right " ..
+                "proportions to create... the perfect bio-fuel. Use that table over there and try " ..
+                "combining some samples! Bring the result to me when you're done.",
+            rewardChoices = {{59641, 1}, {59642, 1}, {59643, 1}},
+            rewardMoney = 78000,
+        },
         [26205] = {
             description = "If the multi-bot works, it will help us do all kinds of jobs that are " ..
                 "unpleasant or dangerous for us gnomes!\n\nAfter Thermaplugg detonated his irradiator at " ..
@@ -11817,6 +12138,11 @@ ns.Overrides.wowhead = {
             rewardMoney = 2,
         },
         [30147] = {rewardMoney = 114000},
+        [30508] = {
+            description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
+                "his people are upstairs.\n\nHe has requested your presence.",
+            rewardMoney = 10200,
+        },
         [30597] = {rewardXP = 69400},
         [30724] = {
             description = "They are attacking again!\n\n<Lin looks to the Ox Gate.>\n\nArchers... on the " ..
