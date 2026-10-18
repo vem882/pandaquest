@@ -2,6 +2,38 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.173] - 2026-10-18
+
+### Added
+- The addon now uses what the PandaQuest portal read off Wowhead, carried in
+  `Database/Overrides/Wowhead.lua` by the portal's data sync. From this version that file holds, only
+  where the generated (Questie) database has nothing of its own:
+  - for quests: the money (`rewardMoney`, copper), the reward items with their counts, given
+    (`rewardItems`) and "choose one of" (`rewardChoices`), the quest giver's text (`description`), the
+    experience where Questie's table has no figure (`rewardXP`), the zone or category (`zoneOrSort`),
+    and map points for objectives the database cannot place (`extraObjectives`), besides the givers,
+    hand-ins and objective line it already carried;
+  - for NPCs and objects: where they stand (`spawns`, `zoneID`) when the database has no place for
+    them -- so the arrow and the map pins reach them -- and a whole row for one a quest names that
+    the database lacks; for NPCs, the level range, rank and title from their own Wowhead page.
+- `DB.GetQuestRewards(questID)` (experience, money, items, choices) and `DB.GetQuestDescription(questID)`
+  read the new quest fields; `DB.GetExtra` documents them. A moderator's correction in
+  `Database/Overrides/Portal.lua` with the same field name wins.
+- The quest browser's page lists the money and the reward items in its Rewards line, with the whole
+  list ("You will receive", "Choose one of") on hover, and shows the quest giver's text under the
+  objectives on the parchment (`<name>`, `<race>` and `<class>` filled in). The XP column takes the
+  portal's figure for a quest Questie has none for.
+- A quest you can pick up shows its rewards -- money, experience, items -- under it on its giver's
+  tooltip ("Starts: ...") and on its map pin; an NPC's map pin shows its title under the name.
+- Four switches, all on by default: General > "Quest text in the quest browser" and "Reward items and
+  money in the quest browser"; Tooltips > "Show quest rewards" and "Show NPC titles".
+
+### Changed
+- The Wowhead set (`Wowhead.lua`) is applied gap-only when the database loads: it fills a field the
+  row has nothing in (nil, 0, blank) and never replaces a value of Questie's, also when the QuestieDB
+  bridge filled it first. The community guide and the moderators' corrections are applied after it,
+  as before. `Util.FormatMoney` is shared by the auction tooltip and the quest rewards.
+
 ## [0.2.172] - 2026-10-18
 
 Data from the PandaQuest portal.
