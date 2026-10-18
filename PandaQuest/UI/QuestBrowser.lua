@@ -1020,12 +1020,19 @@ end
 --- RewardLines(questID) -> { {text, r, g, b}, ... }: the rewards tooltip as data, for the tooltip and the tests.
 function M.RewardLines(questID)
     local DB, Catalog = ns.DB, catalog()
-    local info = DB and DB.GetQuestRewards and DB.GetQuestRewards(questID)
+    local info = DB and DB.GetQuestRewards and DB.GetQuestRewards(questID) or {}
+    local quest = DB and DB.GetQuest and DB.GetQuest(questID)
     local lines = {}
-    if not info then return lines end
     local function add(text, color) lines[#lines + 1] = { text, color[1], color[2], color[3] } end
     if info.money and browserOption("rewards") then add(Util.FormatMoney(info.money), TEXT) end
     if info.xp then add(format(L["%d experience"], info.xp), TEXT) end
+    if quest and type(quest.reputationReward) == "table" then
+        for _, entry in ipairs(quest.reputationReward) do
+            if type(entry) == "table" and entry[1] and entry[2] then
+                add(format("%+d %s", entry[2], tostring(entry[1])), TEXT)
+            end
+        end
+    end
     if browserOption("rewards") then
         if info.items then
             add(L["You will receive:"], GOLD)
