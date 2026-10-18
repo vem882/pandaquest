@@ -106,6 +106,8 @@ local APPLIERS = {
         if ns.Professions and ns.Professions.Redraw then ns.Professions.Redraw() else refreshPins() end
     end,
     ["tooltips"] = function() if ns.Tooltips and ns.Tooltips.InvalidateCache then ns.Tooltips.InvalidateCache() end end,
+    -- The page reads its switches as it is drawn, so an open one is drawn again.
+    ["browser"] = function() if ns.QuestBrowser and ns.QuestBrowser.Refresh then ns.QuestBrowser.Refresh() end end,
     ["tracker"] = refreshTracker,
     ["notify"] = function() end,
     ["minimapButton"] = refreshMinimapButton,
@@ -263,6 +265,12 @@ local function buildTable()
                     browser = { type = "execute", order = 4, name = L["Open the quest browser"],
                         desc = L["Browse every quest in the database, with a page and a map for each."],
                         func = function() if ns.QuestBrowser and ns.QuestBrowser.Show then ns.QuestBrowser.Show() end end },
+                    browserText = toggle(5, L["Quest text in the quest browser"],
+                        L["What the quest giver says, under the objectives, as the PandaQuest portal read it off Wowhead."],
+                        "browser.questText"),
+                    browserRewards = toggle(6, L["Reward items and money in the quest browser"],
+                        L["What a quest gives besides experience, as the PandaQuest portal read it off Wowhead."],
+                        "browser.rewards"),
                     languageHeader = header(10, L["Language"]),
                     languageInfo = { type = "description", order = 11,
                         name = L["Choose the language of PandaQuest's texts. Automatic follows the game's language."] },
@@ -394,6 +402,11 @@ local function buildTable()
                     enabled = toggle(1, L["Add quest info to tooltips"],
                         L["Shows which quests an NPC or item starts, ends or counts towards."], "tooltips.enabled"),
                     showIds = toggle(2, L["Show quest IDs"], L["Useful when reporting missing data."], "tooltips.showIds"),
+                    questRewards = toggle(3, L["Show quest rewards"],
+                        L["Money, experience and items under a quest you can pick up, on NPCs and map pins."],
+                        "tooltips.questRewards"),
+                    npcTitles = toggle(4, L["Show NPC titles"],
+                        L["The title under an NPC's name on map pins, such as <Innkeeper>."], "tooltips.npcTitles"),
                 },
             },
             tracker = {

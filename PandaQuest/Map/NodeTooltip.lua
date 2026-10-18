@@ -3,11 +3,13 @@
 -- The structure copied from the owner's screenshot:
 --
 --     Ferocious Grizzled Bear                  <- name, coloured by type
+--     <Bear Tamer>                             <- an NPC's title, when it has one (tooltips.npcTitles)
 --     Level:                           11-12   <- a range when the NPC has one, a single number otherwise
 --     Type:                             Unit   <- Unit | Object | Item | Area
 --     Respawn:                6 Mins 53 Secs   <- only when ns.Respawn knows it
 --     [!] A Recipe For Death                   <- quest name in its difficulty colour, status icon
 --      - Grizzled Bear Heart: 0/6 (80%)        <- objective, live progress, drop rate if known
+--     Reward: 1g 25s, 700 XP, one of 3 items   <- under a quest still to pick up (tooltips.questRewards)
 --
 -- Two rules outrank the layout. A line whose value we do not have is left out entirely - never
 -- "?", never "-", never 0. And progress comes from the
@@ -33,6 +35,7 @@ local MAX_QUESTS = 6                -- a busy spawn can serve a dozen quests; ke
 local MAX_OBJECTIVES = 6            -- per quest
 local MAX_NAME_CHARS = 42           -- long names wrap the tooltip into a paragraph otherwise
 local MAX_OBJECTIVE_CHARS = 38
+local MAX_REWARD_CHARS = 60         -- one wrapped line of money, experience and items
 local TICK = 0.2                    -- countdown OnUpdate throttle
 
 -- Line colours. The label/value pair matches the screenshot (plain white); the extras say where a
@@ -58,6 +61,17 @@ local TYPE_KEY = { npc = "Unit", object = "Object", item = "Item", area = "Area"
 local function tr(key)
     local L = ns.L
     return (L and L[key]) or key
+end
+
+--- tooltipOption(key) -> the profile's tooltips.<key>; on until a profile says otherwise.
+-- npcTitles: the <title> line under an NPC's name. questRewards: a quest's rewards under a quest you
+-- can pick up. Read on every build, so a changed option shows on the next hover.
+local function tooltipOption(key)
+    local PQ = ns.PQ
+    local profile = PQ and PQ.db and PQ.db.profile
+    local tooltips = profile and profile.tooltips
+    if type(tooltips) ~= "table" then return true end
+    return tooltips[key] ~= false
 end
 
 ---------------------------------------------------------------------------
@@ -413,6 +427,15 @@ local function addQuests(lines, node, headerKind, headerID)
         local complete = questIsComplete(questID)
         local head = addLine(lines, questLineText(bucket[1], complete), COLOR_QUEST, true, "quest")
         if head then head.questID = questID end
+        -- A quest still to be picked up: what it gives, so the choice can be made from the map.
+        if bucket[1].kind == "PICKUP" and tooltipOption("questRewards") then
+            local Catalog = ns.QuestCatalog
+            local summary = Catalog and Catalog.RewardSummary and Catalog.RewardSummary(questID)
+            if summary then
+                addLine(lines, format(tr("Reward: %s"), Util.Truncate(summary, MAX_REWARD_CHARS)),
+                    COLOR_ESTIMATE, true, "reward")
+            end
+        end
         -- One line per objective, not per Target: a quest item that drops off two mobs makes two
         -- Targets with the same objectiveIndex, and both stand on this node.
         wipe(seenObjectives)
@@ -450,6 +473,16 @@ function M.BuildLines(node, lines)
         local color = NAME_COLOR[kind] or COLOR_VALUE
         if node.gatherable == false then color = COLOR_DIM end
         addLine(lines, Util.Truncate(name, MAX_NAME_CHARS), color, false, "name")
+    end
+
+    -- An NPC's title, the way the game prints it under the name: <Innkeeper>. From the quest database,
+    -- or where it has none from the NPC's Wowhead page as the PandaQuest portal read it.
+    if kind == "npc" and type(id) == "number" and tooltipOption("npcTitles") then
+        local DB = ns.DB
+        local title = DB and DB.GetNpcField and DB.GetNpcField(id, "subName")
+        if type(title) == "string" and title:find("%S") then
+            addLine(lines, "<" .. Util.Truncate(title, MAX_NAME_CHARS - 2) .. ">", COLOR_ESTIMATE, false, "title")
+        end
     end
 
     local level = levelText(kind, id, node)

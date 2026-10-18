@@ -2,6 +2,14 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.173
+- browser - a quest's page shows its money and reward items, and the quest giver's text
+- tooltips - a quest you can pick up shows its rewards on its giver and on its map pin
+- tooltips - an NPC's map pin shows its title under the name, such as <Innkeeper>
+- database - reads the portal's Wowhead data: rewards, quest text, NPC and object places, levels
+- database - the Wowhead data fills gaps only and never replaces a value from Questie
+- options - four switches for the new lines: browser text, browser rewards, rewards, titles
+
 0.2.172
 - quest 25802 - Reclaiming Goods - updated
 - quest 25803 - The Search Continues - updated

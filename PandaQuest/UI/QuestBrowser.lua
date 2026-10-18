@@ -112,6 +112,17 @@ local PIN_RANK = { available = 1, complete = 2, node = 3 }
 
 local function catalog() return ns.QuestCatalog end
 
+--- browserOption(key) -> the profile's browser.<key>; on until a profile says otherwise.
+-- questText: the quest giver's text under the objectives. rewards: the money and the reward items the
+-- PandaQuest portal read off Wowhead. Both are read every time a page is drawn.
+local function browserOption(key)
+    local PQ = ns.PQ
+    local profile = PQ and PQ.db and PQ.db.profile
+    local browser = profile and profile.browser
+    if type(browser) ~= "table" then return true end
+    return browser[key] ~= false
+end
+
 local function playerSide()
     local Catalog = catalog()
     return Catalog and Catalog.PlayerSide and Catalog.PlayerSide() or nil
@@ -948,19 +959,25 @@ function refreshDetail(animate)
     local accent = sideColor(side)
     if accent then paint(d.accent, accent) else paint(d.accent, EDGE) end
 
-    -- objectives, on the parchment
+    -- objectives, on the parchment, and under them what the quest giver says (the PandaQuest portal's,
+    -- read off Wowhead) when it is known and wanted
+    local Catalog = catalog()
     local text = quest.objectivesText
     local body = type(text) == "table" and tconcat(text, "\n") or tostring(text or "")
+    local questText = browserOption("questText") and Catalog.QuestText and Catalog.QuestText(selectedId) or nil
+    if questText then body = body ~= "" and (body .. "\n\n" .. questText) or questText end
     local shownText = Util.Truncate(body, OBJECTIVE_CHARS)       -- counts characters, not bytes
     d.objectives:SetText(shownText)
     d.paper.full = shownText ~= body and body or nil
     dropTooltip(d.paper)                                        -- it would still show the last quest's text
     d.paper:SetShown(body ~= "")
 
-    -- rewards
+    -- rewards: money, experience, reputation, then the items; the whole list is the line's tooltip
     local rewards = {}
-    local xp = ns.Data and ns.Data.questXP and ns.Data.questXP[selectedId]
-    if type(xp) == "table" and xp[2] then rewards[#rewards + 1] = format(L["%d experience"], xp[2]) end
+    local info = DB.GetQuestRewards and DB.GetQuestRewards(selectedId) or nil
+    local withItems = browserOption("rewards")
+    if info and info.money and withItems then rewards[#rewards + 1] = Util.FormatMoney(info.money) end
+    if info and info.xp then rewards[#rewards + 1] = format(L["%d experience"], info.xp) end
     if type(quest.reputationReward) == "table" then
         for _, entry in ipairs(quest.reputationReward) do
             if type(entry) == "table" and entry[1] and entry[2] then
@@ -968,7 +985,19 @@ function refreshDetail(animate)
             end
         end
     end
-    d.rewards:SetText(#rewards > 0 and Util.Truncate(tconcat(rewards, ", "), 2 * VALUE_CHARS - 2) or L["Not in the database."])
+    local hasItems = withItems and info and (info.items or info.choices) and true or false
+    if hasItems then
+        for _, entry in ipairs(info.items or {}) do rewards[#rewards + 1] = Catalog.ItemText(entry) end
+        if info.choices then
+            rewards[#rewards + 1] = #info.choices == 1 and Catalog.ItemText(info.choices[1])
+                or format(L["one of %d items"], #info.choices)
+        end
+    end
+    local rewardText = tconcat(rewards, ", ")
+    local shownRewards = Util.Truncate(rewardText, 2 * VALUE_CHARS - 2)
+    d.rewards:SetText(#rewards > 0 and shownRewards or L["Not in the database."])
+    d.rewardHit.questID = (hasItems or shownRewards ~= rewardText) and selectedId or nil
+    dropTooltip(d.rewardHit)
 
     -- start / end
     d.startText:SetText(pointText(endpoints(quest, "startedBy")))
@@ -986,6 +1015,45 @@ function refreshDetail(animate)
     d.quest = quest
     if animate or not wasShown then crossfadePage() end
     showMapArea(quest, 1)
+end
+
+--- RewardLines(questID) -> { {text, r, g, b}, ... }: the rewards tooltip as data, for the tooltip and the tests.
+function M.RewardLines(questID)
+    local DB, Catalog = ns.DB, catalog()
+    local info = DB and DB.GetQuestRewards and DB.GetQuestRewards(questID) or {}
+    local quest = DB and DB.GetQuest and DB.GetQuest(questID)
+    local lines = {}
+    local function add(text, color) lines[#lines + 1] = { text, color[1], color[2], color[3] } end
+    if info.money and browserOption("rewards") then add(Util.FormatMoney(info.money), TEXT) end
+    if info.xp then add(format(L["%d experience"], info.xp), TEXT) end
+    if quest and type(quest.reputationReward) == "table" then
+        for _, entry in ipairs(quest.reputationReward) do
+            if type(entry) == "table" and entry[1] and entry[2] then
+                add(format("%+d %s", entry[2], tostring(entry[1])), TEXT)
+            end
+        end
+    end
+    if browserOption("rewards") then
+        if info.items then
+            add(L["You will receive:"], GOLD)
+            for _, entry in ipairs(info.items) do add("  " .. Catalog.ItemText(entry), TEXT) end
+        end
+        if info.choices then
+            add(L["Choose one of:"], GOLD)
+            for _, entry in ipairs(info.choices) do add("  " .. Catalog.ItemText(entry), TEXT) end
+        end
+    end
+    return lines
+end
+
+function M.ShowRewardTooltip(owner, questID)
+    if not (questID and GameTooltip) then return end
+    local lines = M.RewardLines(questID)
+    if #lines == 0 then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_LEFT")
+    GameTooltip:SetText(L["Rewards"], GOLD[1], GOLD[2], GOLD[3])
+    for _, line in ipairs(lines) do GameTooltip:AddLine(line[1], line[2], line[3], line[4]) end
+    GameTooltip:Show()
 end
 
 local function onAreaTab(index)
@@ -1364,6 +1432,13 @@ local function buildDetail(parent)
     y = y - cell - 5
 
     y = addLine(p, L["Rewards"], "rewards", y, 26, d) - 2
+    -- the whole reward list, when the line has items or had to be cut
+    d.rewardHit = CreateFrame("Frame", nil, p)
+    d.rewardHit:SetAllPoints(d.rewards)
+    d.rewardHit:EnableMouse(true)
+    d.rewardHit:SetScript("OnEnter", function(self) M.ShowRewardTooltip(self, self.questID) end)
+    d.rewardHit:SetScript("OnLeave", function(self) dropTooltip(self) end)
+    d.rewardHit:SetScript("OnHide", function(self) dropTooltip(self) end)
 
     -- the quest text, on parchment, in ink
     local paperBottom = -(PANEL_H - 34)
@@ -1515,6 +1590,11 @@ end
 
 function M.Toggle()
     if M.IsShown() then M.Hide() else M.Show() end
+end
+
+--- Refresh(): draw the open page again (an option it reads changed).
+function M.Refresh()
+    if frame and frame:IsShown() and refreshDetail then refreshDetail(false) end
 end
 
 --- Open(questID): show the window with that quest's page.

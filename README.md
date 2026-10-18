@@ -189,15 +189,28 @@ and squash-merges it once the checks pass. It touches only:
 
 * `PandaQuest/Database/Data/` and `ZoneData.lua`, rebuilt only when the portal has imported a
   different Questie release than the one the files were built from;
-* `PandaQuest/Database/Overrides/Wowhead.lua` — what the portal read off Wowhead for a quest the
-  database has nothing for (quest givers, hand-ins, the objective line);
+* `PandaQuest/Database/Overrides/Wowhead.lua` — what the portal read off Wowhead that the addon can
+  use, only where the generated database has nothing of its own (`Database/DB.lua` applies it
+  gap-only too, so it never replaces a value of Questie's):
+  - quests: givers, hand-ins, the objective line, the zone, map points for objectives the database
+    cannot place; and as fields Questie does not have, the money, the reward items (given and
+    "choose one", with counts), the quest giver's text, and the experience where Questie has no
+    figure — read with `DB.GetQuestRewards` and `DB.GetQuestDescription`;
+  - NPCs and objects: where they stand (`spawns`, `zoneID`) when the database has no place for them,
+    a whole row for one a quest names but the database lacks, and an NPC's level range, rank and title;
 * `PandaQuest/Database/Overrides/Portal.lua` — the portal's moderator corrections, `hidden` included;
-* `PandaQuest/changelog.txt` and `PandaQuest/CHANGELOG.md` — one section per sync, under the version
-  the merge produces, listing the portal's changelog lines (`quest 123 - Name - added`);
-* `data-sync.json` — the last portal changelog line it has carried over, so none is listed twice.
+  applied last, so a correction always wins;
+* `PandaQuest/changelog.txt` and `PandaQuest/CHANGELOG.md` — one section per release, under the
+  version the merge produces, listing every quest, NPC, object and item whose data in the addon
+  changed in it (`quest 123 - Name - updated`), up to twenty per status and "and N more";
+* `data-sync.json` — the last portal changelog line it looked at, and the portal's lines about an
+  entity whose data has not reached the addon yet (`pending_change_ids`), written with the release
+  that data arrives in or dropped after a week.
 
-A sync that would change nothing commits nothing. It does not upload to CurseForge unless its
-operator turned that on, and then at most once a day.
+There is no release without data: a sync that would change nothing under `PandaQuest/Database`
+commits nothing, however many lines the portal's own changelog gained — what happened only on the
+portal (an item's Wowhead tooltip, say) never appears here. It does not upload to CurseForge unless
+its operator turned that on, and then at most once a day.
 
 ## What the checks cannot tell you
 
@@ -214,7 +227,9 @@ addon *works*; it tells you the package is not obviously broken:
 * the four points of the release asset rules, against a freshly built zip, and both TOC files;
 * the version is the series plus the measured commit count, the history behind it is not truncated,
   and the name it produces matches the asset-name pattern;
-* `changelog.txt` moved when the addon did, and is short English lines, newest version first.
+* `changelog.txt` moved when the addon did, and is short English lines, newest version first;
+* the data files the portal's sync writes are loaded before `DB.lua`, build their tables, and stay
+  under the size the sync itself refuses to go past.
 
 Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, that it lints clean,
 and that it loads against the WoW API. A Lua syntax error would reach a player.

@@ -18,8 +18,8 @@ ns.QuestCatalog = M
 local Schema, Log = ns.Schema, ns.Log
 
 local type, pairs, ipairs, tostring, tonumber = type, pairs, ipairs, tostring, tonumber
-local lower, find = string.lower, string.find
-local tsort = table.sort
+local lower, find, format, gsub = string.lower, string.find, string.format, string.gsub
+local tsort, tconcat = table.sort, table.concat
 local band = bit and bit.band
 
 local QF, SF, SORT, RACE = Schema.questFlags, Schema.specialFlags, Schema.sortKeys, Schema.raceKeys
@@ -90,10 +90,17 @@ local records, byId = nil, nil
 local building, ready = false, false
 local generation = 0            -- bumped by Invalidate, so a running build can tell it is stale
 
-local function xpFor(id)
+-- Questie's figure first; where its table has none (or its 0, "not known"), the one the PandaQuest
+-- portal read off Wowhead (Database/Overrides/Wowhead.lua, rewardXP), as DB.GetQuestRewards does.
+local function xpFor(DB, id)
     local Data = ns.Data
     local entry = Data and Data.questXP and Data.questXP[id]
-    return type(entry) == "table" and tonumber(entry[2]) or nil
+    local xp = type(entry) == "table" and tonumber(entry[2]) or nil
+    if (xp == nil or xp == 0) and DB.GetExtra then
+        local filled = tonumber(DB.GetExtra("quests", id, "rewardXP"))
+        if filled and filled > 0 then xp = filled end
+    end
+    return xp
 end
 
 local function makeRecord(DB, id)
@@ -117,7 +124,7 @@ local function makeRecord(DB, id)
         sflags = sflags or 0,
         side = sideOf(races),
         kind = kindOf(area, qflags, sflags, tagID, hasFlag(qflags, QF.DAILY)),
-        xp = xpFor(id),
+        xp = xpFor(DB, id),
     }
 end
 
@@ -388,6 +395,56 @@ function M.Query(filter, sortKey, descending)
         tsort(out, compare)
     end
     return out
+end
+
+---------------------------------------------------------------------------
+-- Rewards and the quest text, as the quest browser and the tooltips show them
+---------------------------------------------------------------------------
+
+--- ItemText(entry) -> "Earthroot" or "2x Earthroot". entry = {itemID, count[, name]} (DB.GetQuestRewards).
+function M.ItemText(entry)
+    local DB, L = ns.DB, ns.L
+    local id, count = entry[1], tonumber(entry[2]) or 1
+    local name = (DB and DB.GetItemName and DB.GetItemName(id)) or entry[3] or format(L["Item %d"], id)
+    if count > 1 then return format("%dx %s", count, name) end
+    return name
+end
+
+--- RewardSummary(questID) -> "1g 25s, 700 XP, 2x Earthroot, one of 3 items" | nil.
+-- One short line for a tooltip: money, experience, the items given and how many to choose from.
+function M.RewardSummary(questID)
+    local DB, L, Util = ns.DB, ns.L, ns.Util
+    local info = DB and DB.GetQuestRewards and DB.GetQuestRewards(questID)
+    if not info then return nil end
+    local parts = {}
+    if info.money then parts[#parts + 1] = Util.FormatMoney(info.money) end
+    if info.xp then parts[#parts + 1] = format(L["%d XP"], info.xp) end
+    if info.items then
+        for i = 1, #info.items do parts[#parts + 1] = M.ItemText(info.items[i]) end
+    end
+    if info.choices then
+        if #info.choices == 1 then
+            parts[#parts + 1] = M.ItemText(info.choices[1])
+        else
+            parts[#parts + 1] = format(L["one of %d items"], #info.choices)
+        end
+    end
+    if #parts == 0 then return nil end
+    return tconcat(parts, ", ")
+end
+
+--- QuestText(questID) -> the quest giver's text with <name>, <race> and <class> filled in, or nil.
+function M.QuestText(questID)
+    local DB = ns.DB
+    local text = DB and DB.GetQuestDescription and DB.GetQuestDescription(questID)
+    if not text then return nil end
+    local name = UnitName and UnitName("player")
+    local race = UnitRace and UnitRace("player")
+    local class = UnitClass and UnitClass("player")
+    if type(name) == "string" then text = gsub(text, "<name>", name) end
+    if type(race) == "string" then text = gsub(text, "<race>", race) end
+    if type(class) == "string" then text = gsub(text, "<class>", class) end
+    return text
 end
 
 --- Players "side" filter default: the player's faction, or nil (any) for a neutral Pandaren.

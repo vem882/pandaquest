@@ -768,6 +768,57 @@ class TheReleaseChannel(unittest.TestCase):
         self.assertEqual(comment["channel"], ident["channel"])
 
 
+class TheSyncedData(unittest.TestCase):
+    """The files the PandaQuest portal's data sync writes (README.md, "Data from the portal").
+
+    Lua cannot be run here, so what is checked is their shape: each is listed before Database/DB.lua
+    (which applies them while it loads), each builds its ``ns.Overrides.<name>`` with the four tables
+    DB.lua walks, and none is past the size the sync itself refuses to write -- a file that large
+    means something upstream wrote far more than a quest page holds.
+    """
+
+    #: The file, the name of its set in ns.Overrides, and the most bytes it may have (the sync's own
+    #: MAX_WOWHEAD_BYTES for Wowhead.lua; Portal.lua is one row per moderator correction).
+    FILES = (
+        ("Database/Overrides/Wowhead.lua", "wowhead", 6 * 1024 * 1024),
+        ("Database/Overrides/Portal.lua", "portal", 1024 * 1024),
+    )
+
+    def setUp(self) -> None:
+        _, files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
+        self.order = [name.replace("\\", "/") for name in files]
+
+    def test_each_is_loaded_before_the_database_applies_it(self) -> None:
+        db = self.order.index("Database/DB.lua")
+        for relative, _name, _limit in self.FILES:
+            self.assertIn(relative, self.order, f"the TOC does not load {relative}")
+            self.assertLess(self.order.index(relative), db, f"{relative} must load before Database/DB.lua")
+
+    def test_each_builds_its_set_with_the_four_tables(self) -> None:
+        for relative, name, _limit in self.FILES:
+            text = (ADDON_DIR / relative).read_text(encoding="utf-8")
+            self.assertIn(f"ns.Overrides.{name} = {{", text, relative)
+            body = text.split(f"ns.Overrides.{name} = {{", 1)[1]
+            for table in ("quests", "npcs", "objects", "items"):
+                self.assertRegex(body, rf"(?m)^    {table} = \{{", f"{relative} lost its {table} table")
+            self.assertIn("DO NOT EDIT BY HAND", text.splitlines()[0] + text.splitlines()[1], relative)
+
+    def test_none_is_past_the_size_the_sync_refuses(self) -> None:
+        for relative, _name, limit in self.FILES:
+            size = (ADDON_DIR / relative).stat().st_size
+            self.assertLessEqual(size, limit, f"{relative} is {size} bytes")
+
+    def test_the_database_applies_the_wowhead_set_gap_only(self) -> None:
+        """The sync fills only what the generated database lacks; DB.lua keeps that rule at load time,
+        where the QuestieDB bridge may have filled the gap first, and the moderators' set comes last."""
+        text = (ADDON_DIR / "Database" / "DB.lua").read_text(encoding="utf-8")
+        self.assertIn('local OVERRIDE_SETS = { "wowhead", "community", "portal" }', text)
+        self.assertIn("local FILL_ONLY = { wowhead = true }", text)
+        self.assertIn("if not fillOnly or isBlank(row[index]) then", text)
+        for accessor in ("function DB.GetQuestRewards(", "function DB.GetQuestDescription(", "function DB.GetExtra("):
+            self.assertIn(accessor, text)
+
+
 class TheChangelogMoves(unittest.TestCase):
     """A pull request that changes the addon says so in PandaQuest/changelog.txt.
 
