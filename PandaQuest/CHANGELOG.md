@@ -2,6 +2,12 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.171] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- quest 30975 - The Taking of Dusklight Bridge - updated
+
 ## [0.2.170] - 2026-10-18
 
 Data from the PandaQuest portal.
