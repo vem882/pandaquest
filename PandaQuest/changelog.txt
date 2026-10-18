@@ -2,6 +2,17 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.168
+- item 29277 - Violet Signet - updated
+- item 29279 - Violet Signet of the Great Protector - updated
+- item 29283 - Violet Signet of the Master Assassin - updated
+- item 52879 - Sea Witch's Bracers - updated
+- item 52884 - Footsteps of the Fallen Friend - updated
+- item 52887 - Zuni's Family Heirloom - updated
+- item 57387 - Spymaster's Legs - updated
+- item 60260 - Sea Witch's Bag - updated
+- item 65624 - SI:7 Special Issue Facemask - updated
+
 0.2.167
 - quest 31140 - Lions for Lambs - updated
 - item 29278 - Violet Signet - updated
