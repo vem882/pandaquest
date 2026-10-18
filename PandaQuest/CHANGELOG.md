@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.175] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,548 quests, 10 NPCs
+- quest 9859 - Talbuk Mastery - updated
+- quest 26049 - The Princess Unleashed - updated
+- quest 26056 - The Wavespeaker - updated
+- quest 26057 - The Wavespeaker - updated
+- quest 26065 - Free Wil'hai - updated
+- quest 26070 - Clearing the Defiled - updated
+- quest 26071 - Clearing the Defiled - updated
+- quest 26072 - Into the Totem - updated
+- quest 26078 - Extinguish the Fires - updated
+- quest 26079 - Wanted! Otto and Falconcrest - updated
+- quest 26080 - One Last Favor - updated
+- quest 26085 - Rallying the Defenders - updated
+- quest 26086 - Orako - updated
+- quest 26087 - "Glow-Juice" - updated
+- quest 26088 - Here Fishie Fishie - updated
+- quest 26089 - Die Fishman Die - updated
+- quest 26090 - I Brought You This Egg - updated
+- quest 26091 - Here Fishie Fishie 2: Eel-Egg-Trick Boogaloo - updated
+- quest 26092 - Orako's Report - updated
+- quest 26093 - Northfold Manor - updated
+- quest - and 22 more quests updated
+
 ## [0.2.174] - 2026-10-18
 
 Data from the PandaQuest portal.
