@@ -13,7 +13,7 @@ local Store = ns.AuctionStore
 local M = {}
 ns.AuctionTooltip = M
 
-local type, tonumber, tostring, format, floor, pcall = type, tonumber, tostring, string.format, math.floor, pcall
+local type, tostring, format, pcall = type, tostring, string.format, pcall
 
 local COLOR_LABEL = { 1, 0.82, 0 }
 local COLOR_VALUE = { 1, 1, 1 }
@@ -28,22 +28,9 @@ local function enabled()
     return auction.showTooltipPrices ~= false
 end
 
---- FormatMoney(copper) -> "14g 50s", "3s 20c", "7c". Copper is left out once there is gold: nobody
--- prices a 14 gold item to the copper, and the line has to stay readable.
+--- FormatMoney(copper) -> "14g 50s", "3s 20c", "7c": Util.FormatMoney, which the quest rewards use too.
 function M.FormatMoney(copper)
-    copper = floor((tonumber(copper) or 0) + 0.5)
-    local gold = floor(copper / 10000)
-    local silver = floor(copper / 100) % 100
-    local rest = copper % 100
-    if gold > 0 then
-        if silver > 0 then return format("%dg %ds", gold, silver) end
-        return format("%dg", gold)
-    end
-    if silver > 0 then
-        if rest > 0 then return format("%ds %dc", silver, rest) end
-        return format("%ds", silver)
-    end
-    return format("%dc", rest)
+    return Util.FormatMoney(copper)
 end
 
 local function itemFromTooltip(tooltip)

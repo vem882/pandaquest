@@ -22,6 +22,24 @@ function Util.Round(x, decimals)
     return floor(x * mult + 0.5) / mult
 end
 
+--- Util.FormatMoney(copper) -> "14g 50s", "3s 20c", "7c". Copper is left out once there is gold: nobody
+-- prices a 14 gold item to the copper, and the line has to stay readable.
+function Util.FormatMoney(copper)
+    copper = floor((tonumber(copper) or 0) + 0.5)
+    local gold = floor(copper / 10000)
+    local silver = floor(copper / 100) % 100
+    local rest = copper % 100
+    if gold > 0 then
+        if silver > 0 then return format("%dg %ds", gold, silver) end
+        return format("%dg", gold)
+    end
+    if silver > 0 then
+        if rest > 0 then return format("%ds %dc", silver, rest) end
+        return format("%ds", silver)
+    end
+    return format("%dc", rest)
+end
+
 function Util.Clamp(x, lo, hi)
     if x < lo then return lo end
     if x > hi then return hi end

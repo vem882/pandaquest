@@ -3,7 +3,8 @@
 -- Loading (DB.Load) runs as an ns.Thread coroutine job so the client keeps rendering:
 --   1. loadstring() each ns.Data.* long string into a positional table, then drop the string (~27 MB saved)
 --   2. apply ns.Data.factionFixes for the player's faction / class / race
---   3. apply ns.Overrides.wowhead, ns.Overrides.community and then ns.Overrides.portal (named fields -> positional)
+--   3. apply ns.Overrides.wowhead, ns.Overrides.community and then ns.Overrides.portal (named fields -> positional);
+--      the wowhead set only fills what the row has nothing in, it never replaces a value of Questie's
 --   4. build the eager reverse indexes (questStarters / questEnders)
 --   5. flip ready and send PQ_DB_READY
 -- The job is idempotent: a second Load while running or after ready does nothing.
@@ -61,6 +62,11 @@ local OVERRIDE_KEYS = {
 -- The override sets in the order they are applied: a later one has the last word. The portal's
 -- corrections (Database/Overrides/Portal.lua) are what its moderators decided, so they come last.
 local OVERRIDE_SETS = { "wowhead", "community", "portal" }
+
+-- Sets that fill gaps only. Database/Overrides/Wowhead.lua is what the PandaQuest portal read off Wowhead
+-- for the places the generated database is empty; the sync that writes it checks that against the same
+-- data, and this is the same rule at load time, where the QuestieDB bridge may have filled the gap first.
+local FILL_ONLY = { wowhead = true }
 
 -- `hidden = true` in an override hides the entity the way Questie's blacklist does, and
 -- `hidden = false` shows one the blacklist hides. It is not a row field: DB.IsQuestHidden and the
@@ -214,10 +220,28 @@ local function applyFactionFixes()
     return applied
 end
 
+-- isBlank(value) -> true when a field holds nothing: nil, 0 (Questie's "unknown" level or zone), a string
+-- of spaces, or a table of nothing but blanks ({}, {nil, {}}, {" "}). The same test the data sync uses.
+local function isBlank(value)
+    local t = type(value)
+    if value == nil then return true end
+    if t == "number" then return value == 0 end
+    if t == "string" then return value:find("%S") == nil end
+    if t == "table" then
+        for _, item in pairs(value) do
+            if not isBlank(item) then return false end
+        end
+        return true
+    end
+    return false
+end
+DB.IsBlank = isBlank
+
 -- Overrides use Schema key NAMES; unknown names are kept aside in `extras` so community payloads can
 -- carry extra information (hotspots and the like) without corrupting a positional row.
 local function applyOverrides(set, label)
     if type(set) ~= "table" then return 0 end
+    local fillOnly = FILL_ONLY[label] or false
     local applied = 0
     for tableName, keys in pairs(OVERRIDE_KEYS) do
         local byId = set[tableName]
@@ -240,8 +264,10 @@ local function applyOverrides(set, label)
                                 row = {}
                                 target[id] = row
                             end
-                            row[index] = value
-                            applied = applied + 1
+                            if not fillOnly or isBlank(row[index]) then
+                                row[index] = value
+                                applied = applied + 1
+                            end
                         else
                             local bucket = extras[tableName][id]
                             if not bucket then
@@ -443,12 +469,60 @@ function DB.HasNpc(id) return npcs ~= nil and npcs[id] ~= nil end
 function DB.HasObject(id) return objects ~= nil and objects[id] ~= nil end
 function DB.HasItem(id) return items ~= nil and items[id] ~= nil end
 
---- DB.GetExtra(kind, id, field) -> value|nil. Non-schema fields carried by community overrides.
+--- DB.GetExtra(kind, id, field) -> value|nil. Non-schema fields carried by the override sets: the community
+-- guide's, and the quest fields Database/Overrides/Wowhead.lua adds (rewardMoney, rewardXP, rewardItems,
+-- rewardChoices, description). A later set's field wins, so a moderator's (Portal.lua) is the one read.
 function DB.GetExtra(kind, id, field)
     local bucket = extras[kind] and extras[kind][id]
     if not bucket then return nil end
     if field == nil then return bucket end
     return bucket[field]
+end
+
+-- A reward list as Wowhead.lua writes it: { {itemID, count[, name]}, ... }. Anything else reads as none.
+local function rewardList(value)
+    if type(value) ~= "table" or type(value[1]) ~= "table" or type(value[1][1]) ~= "number" then return nil end
+    return value
+end
+
+local rewardCache = {}                      -- questID -> struct | false; filled once the database is ready
+
+--- DB.GetQuestRewards(questID) -> { xp = n|nil, money = copper|nil, items = list|nil, choices = list|nil } | nil
+-- What a quest gives as far as the database knows. xp is Questie's figure (ns.Data.questXP), or where Questie
+-- has none the one the PandaQuest portal read off Wowhead; money and the reward items come from the portal
+-- (Wowhead.lua; a moderator's correction in Portal.lua wins). items are always given, choices are "choose one";
+-- each entry is {itemID, count[, name]}, the name only for an item the database does not have. nil when
+-- nothing is known. The tables are shared: do not mutate them.
+function DB.GetQuestRewards(questID)
+    if type(questID) ~= "number" then return nil end
+    local cached = rewardCache[questID]
+    if cached ~= nil then return cached or nil end
+    local bucket = extras.quests[questID]
+    local Data = ns.Data
+    local entry = Data and Data.questXP and Data.questXP[questID]
+    local xp = type(entry) == "table" and type(entry[2]) == "number" and entry[2] > 0 and entry[2] or nil
+    local money, given, choices
+    if bucket then
+        if not xp and type(bucket.rewardXP) == "number" and bucket.rewardXP > 0 then xp = bucket.rewardXP end
+        if type(bucket.rewardMoney) == "number" and bucket.rewardMoney > 0 then money = bucket.rewardMoney end
+        given, choices = rewardList(bucket.rewardItems), rewardList(bucket.rewardChoices)
+    end
+    local out = false
+    if xp or money or given or choices then
+        out = { xp = xp, money = money, items = given, choices = choices }
+    end
+    if ready then rewardCache[questID] = out end
+    return out or nil
+end
+
+--- DB.GetQuestDescription(questID) -> string|nil. The quest giver's text as the PandaQuest portal read it
+-- off Wowhead (Wowhead.lua, `description`), paragraphs separated by a blank line. "<name>", "<race>" and
+-- "<class>" are left for the caller to fill in.
+function DB.GetQuestDescription(questID)
+    local bucket = type(questID) == "number" and extras.quests[questID] or nil
+    local text = bucket and bucket.description
+    if type(text) == "string" and text:find("%S") then return text end
+    return nil
 end
 
 ---------------------------------------------------------------------------
@@ -868,6 +942,7 @@ function DB.Unload()
     for k in pairs(nameIndex) do nameIndex[k] = nil end
     for k in pairs(nameIndexJobs) do nameIndexJobs[k] = nil end
     for k in pairs(tagCache) do tagCache[k] = nil end
+    for k in pairs(rewardCache) do rewardCache[k] = nil end
     for _, bucket in pairs(extras) do
         for k in pairs(bucket) do bucket[k] = nil end
     end
