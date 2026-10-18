@@ -2,6 +2,15 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.172] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- quest 25802 - Reclaiming Goods - updated
+- quest 25803 - The Search Continues - updated
+- quest 30772 - Seeing Red - updated
+- quest 30893 - The Endless Swarm - updated
+
 ## [0.2.171] - 2026-10-18
 
 Data from the PandaQuest portal.
