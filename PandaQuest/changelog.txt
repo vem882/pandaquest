@@ -2,6 +2,14 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.170
+- quest 31138 - The Arts of a Monk - updated
+- item 21360 - Deathdealer's Helm - updated
+- item 85574 - Darkspear Monk's Staff - updated
+- item 89564 - Red Belt of Gentle Persuasion - updated
+- item 89565 - Red Belt of Unspoken Warning - updated
+- item - More items filled in - updated
+
 0.2.169
 - item 4907 - Woodland Tunic - updated
 - item 5395 - Woodland Shield - updated

@@ -2,6 +2,17 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.170] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- quest 31138 - The Arts of a Monk - updated
+- item 21360 - Deathdealer's Helm - updated
+- item 85574 - Darkspear Monk's Staff - updated
+- item 89564 - Red Belt of Gentle Persuasion - updated
+- item 89565 - Red Belt of Unspoken Warning - updated
+- item - More items filled in - updated
+
 ## [0.2.169] - 2026-10-18
 
 Data from the PandaQuest portal.
