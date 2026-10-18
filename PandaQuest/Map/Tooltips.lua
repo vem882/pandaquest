@@ -42,6 +42,14 @@ local function showIds()
     return p and p.tooltips and p.tooltips.showIds and true or false
 end
 
+-- A quest the NPC starts gets its rewards under it unless tooltips.questRewards is off.
+local function showRewards()
+    local p = profile()
+    return not p or not p.tooltips or p.tooltips.questRewards ~= false
+end
+
+local MAX_REWARD_CHARS = 60
+
 ---------------------------------------------------------------------------
 -- Cache
 ---------------------------------------------------------------------------
@@ -102,6 +110,11 @@ local function addStarters(lines, kind, id, count)
         if not onQuest and available then
             count = count + 1
             addLine(lines, decorate(format(L["Starts: %s"], questTitle(questID)), questID), COLOR_AVAILABLE)
+            local Catalog = ns.QuestCatalog
+            local summary = showRewards() and Catalog and Catalog.RewardSummary and Catalog.RewardSummary(questID)
+            if summary then
+                addLine(lines, "  " .. format(L["Reward: %s"], Util.Truncate(summary, MAX_REWARD_CHARS)), COLOR_OBJECTIVE)
+            end
         end
     end
     return count
