@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.176] - 2026-10-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,617 quests, 16 NPCs
+- quest 9852 - The Ultimate Bloodsport - updated
+- quest 14457 - The Sunreaver Plan - updated
+- quest 26127 - The Twilight's Hammer Revealed - updated
+- quest 26128 - The Battle of Thandol Span - updated
+- quest 26129 - Brothers In Arms - updated
+- quest 26130 - Unplug L'ghorek - updated
+- quest 26131 - Reinforcements for Loch Modan - updated
+- quest 26132 - Fiends from the Netherworld - updated
+- quest 26133 - Fiends from the Netherworld - updated
+- quest 26135 - Visions of the Past: Rise from the Deep - updated
+- quest 26137 - Checking on the Boys - updated
+- quest 26139 - Into Arathi - updated
+- quest 26140 - Communing with the Ancient - updated
+- quest 26141 - Runestones of Binding - updated
+- npc 1163 - Stonesplinter Skullthumper - updated
+- npc 1166 - Stonesplinter Seer - updated
+- npc 7665 - Grol the Destroyer - updated
+- npc 7666 - Archmage Allistarj - updated
+- npc 7667 - Lady Sevine - updated
+- npc 44490 - Captain Taylor - updated
+- quest - and 58 more quests updated
+
 ## [0.2.175] - 2026-10-18
 
 Data from the PandaQuest portal.
