@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.187] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,430 quests, 22 NPCs, 1 object
+- quest 27291 - Peace at Last - updated
+- quest 27298 - Seek Out Master Pyreanor - updated
+- quest 27299 - Torn Ground - updated
+- quest 27300 - Pushing Back - updated
+- quest 27301 - Unbroken - updated
+- quest 27302 - Simple Solutions - updated
+- quest 27303 - Mercy for the Bound - updated
+- quest 27304 - Follow the Sun - updated
+- quest 27305 - Of Love and Family - updated
+- quest 27310 - No Weapons For You! - updated
+- quest 27312 - Darkcloud Grimtotem - updated
+- quest 27314 - Grimtotem Chiefs: Isha Gloomaxe - updated
+- quest 27316 - The Rattle of Bones - updated
+- quest 27318 - Grimtotem Chiefs: Elder Stormhoof - updated
+- quest 27320 - The Writ of History - updated
+- quest 27322 - Korok the Colossus - updated
+- quest 27323 - Grimtotem Chiefs: Grundig Darkcloud - updated
+- quest 27325 - The Drums of War - updated
+- quest 27327 - Grimtotem Chiefs: The Chief of Chiefs - updated
+- npc 23768 - Lynn Hyal - updated
+- quest - and 55 more quests updated
+
 ## [0.2.186] - 2026-10-19
 
 Data from the PandaQuest portal.

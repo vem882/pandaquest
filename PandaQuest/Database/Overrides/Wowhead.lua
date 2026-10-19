@@ -18058,26 +18058,282 @@ ns.Overrides.wowhead = {
                 "your way.",
             rewardMoney = 600,
         },
+        [27291] = {
+            description = "I wish we had a way of letting James Hyal's wife and son know that we have " ..
+                "brought their murderers to justice.\n\n<Captain Vimes produces a small wreath decorated " ..
+                "with flowers.>\n\nThere are some who say that their spirits will know, even if we cannot " ..
+                "reach them. It's not much, but I'd like you to lay this wreath at the Hyal family " ..
+                "monument. It's one of the stones in the graveyard just north of Theramore's gates.",
+            rewardChoices = {{33271, 1}, {57829, 1}},
+            rewardMoney = 14000,
+        },
         [27292] = {rewardMoney = 2000},
         [27293] = {rewardMoney = 4500},
         [27294] = {rewardMoney = 8000},
         [27296] = {rewardMoney = 4500},
         [27297] = {rewardMoney = 13000},
+        [27298] = {
+            description = "Master Pyreanor, a senior Blood Knight and advisor to the warchief, requires " ..
+                "your presence in Orgrimmar. He has taken an interest in your training, <name>, and it is " ..
+                "imperative that you speak with him immediately.\n\nThe message I received didn't mention " ..
+                "the reason he requested your visit, but you should set out for Orgrimmar right away. " ..
+                "Master Pyreanor can be found in the keep in the center of the Valley of Strength.",
+        },
+        [27299] = {
+            description = "It won't be takin' much convincin' to turn us against da Twilight - dat's " ..
+                "already our goal. We've already come to battle here though, so we may be needin' ya help " ..
+                "before we can turn towards dere fortress.\n\nDa Twilight have already brought Iso'rath " ..
+                "up from da ground to the south, I'm sure ya noticed. Its tentacles have been burstin' " ..
+                "from da ground all around us. We could use a hand beatin' them down if you be willin'.",
+            rewardMoney = 90000,
+        },
+        [27300] = {
+            description = "Da Twilight's Hammer have destroyed a Dragonmaw town to the south and are " ..
+                "performin' dey're summonin' rituals from there. Offer dem no respite to continue wit " ..
+                "dey're incantations. Bring tha battle to dem!",
+            rewardMoney = 90000,
+        },
+        [27301] = {
+            description = "We are preparing a ritual that may be of use in destroying Iso'rath, the old " ..
+                "god bred abomination that the Twilight's Hammer have brought up from the depths. We are " ..
+                "delayed though, for one of our strongest was captured during an assault on their " ..
+                "encampment.\n\nEarthcaller Yevaa is within the ruins to the south. She is not dead. I am " ..
+                "sure of it. Please, rescue her. If any of us is deserving of your aid, it is her.",
+            rewardMoney = 90000,
+        },
+        [27302] = {
+            description = "I'm new to this gig. Very new. But ya know what? That gives me " ..
+                "perspective!\n\nThese shaman buddies of mine have come upon somethin' great, but they're " ..
+                "too single minded! They lean on the elements and they forget to make use of the common " ..
+                "materials all around them.\n\nIn the ruins to the south, I saw those Twilight goons tote " ..
+                "in barrels of flammable oil! They used it when they razed the town. I say we use it when " ..
+                "we raze them.",
+            rewardMoney = 90000,
+        },
+        [27303] = {
+            description = "It goes without saying that I had no desire to stay here, but there were " ..
+                "materials we needed for the ritual... I delayed to secure them, and that is what lead to " ..
+                "my capture.\n\nI will return to the circle, but I would be indebted to you if you would " ..
+                "finish what I could not. We need hearts from the bound fire elementals that the " ..
+                "Twilight's Hammer enslave in the western portion of the encampment.\n\nThe elementals " ..
+                "are without hope, but in this sacrifice they can extract their revenge.\n\nFind me at " ..
+                "camp.",
+            rewardChoices = {{63784, 1}, {63785, 1}, {63786, 1}},
+            rewardMoney = 90000,
+        },
+        [27304] = {
+            description = "Sunwalker Atohmo sends word from Orgrimmar -- he wishes to speak with you when " ..
+                "you're in the city. I needn't remind you that Atohmo is an honored member of our order " ..
+                "and his requests should not be ignored.\n\nNext time you are in Orgrimmar, travel to the " ..
+                "Valley of Wisdom and speak with him.",
+        },
+        [27305] = {
+            description = "Inside the Scarlet Bastion is a painting of great personal value to Highlord " ..
+                "Tirion Fordring. Search for a painting of our twin moons. Chip away at the paint until " ..
+                "you uncover the master work, ' Of Love and Family.'\n\nMay the Light guide your actions, " ..
+                "and please handle the painting with the utmost care.",
+            rewardMoney = 26700,
+        },
+        [27310] = {
+            description = "Alright, these cowards want to fight? Let's see how well they do without any " ..
+                "weapons.\n\nI'm sure you must have a torch, or something. Burn their weapon " ..
+                "racks.\n\nBurn them all!",
+            rewardMoney = 5500,
+        },
         [27311] = {rewardMoney = 5500},
+        [27312] = {
+            description = "There's no way around it. If you want to win a battle, you have to spill some " ..
+                "blood. In this case... a lot of it.\n\nYou know what we have to do.",
+            rewardChoices = {{63592, 1}, {63593, 1}, {63594, 1}, {63595, 1}},
+            rewardMoney = 5500,
+        },
         [27313] = {rewardMoney = 5500},
+        [27314] = {
+            description = "Sentinel training 101: take out their leaders and your enemy's forces will " ..
+                "soon fall apart. We're going to do just that, <class>.\n\nIsha Gloomaxe is the closest " ..
+                "of the Grimtotem chiefs. Let's see if we can't take her measure.",
+            rewardMoney = 11500,
+        },
         [27315] = {rewardMoney = 11500},
+        [27316] = {
+            description = "A tauren rattle lays here, exuding supernatural power. Its keepers slain, the " ..
+                "artifact is undefended.\n\nPerhaps the sentinel will have some insight into its " ..
+                "significance?",
+            rewardMoney = 5500,
+        },
         [27317] = {rewardMoney = 5500},
+        [27318] = {
+            description = "Elder Stormhoof is a shaman of immense power. Supposedly, he is a direct " ..
+                "disciple of Magatha Grimtotem, the Elder Crone, leader of the Grimtotem clan.\n\nWe know " ..
+                "that he's here and that he's been training their geomancers. We have to kill him, " ..
+                "<class>.",
+            rewardChoices = {{63600, 1}, {63601, 1}, {63602, 1}, {63603, 1}},
+            rewardMoney = 11500,
+        },
         [27319] = {rewardMoney = 11500},
+        [27320] = {
+            description = "In shu'halo myth, the Rattle of Bones is connected with the Writ of History " ..
+                "and the Drums of War. They are supposed to be powerful tauren artifacts.\n\nWe must keep " ..
+                "our eyes peeled if we're to find the other two. The writ will most likely look like some " ..
+                "kind of pictographic scroll if the stories are to be believed.",
+            rewardMoney = 5500,
+        },
         [27321] = {rewardMoney = 5500},
+        [27322] = {
+            description = "The monstrosity has fallen, granting a brief reprieve to the Forsaken soldiers " ..
+                "on the front lines.\n\nTake Korok's second head and return it to Forward Commander " ..
+                "Onslaught at Forsaken Forward Command.",
+            rewardChoices = {{62866, 1}, {62867, 1}, {62868, 1}},
+        },
+        [27323] = {
+            description = "One of the infamous Grimtotem leaders of the Stonetalon Mountains has returned " ..
+                "home.\n\nWe should take this opportunity to make sure that he doesn't go anywhere else.",
+            rewardMoney = 11500,
+        },
         [27324] = {rewardMoney = 11500},
+        [27325] = {
+            description = "Whatever the Grimtotem are doing with these Drums of War, we don't want them " ..
+                "to have them.\n\nDon't worry, <name>, we'll figure it all out. But first, we need to " ..
+                "gather all of the pieces of the puzzle.",
+            rewardMoney = 5500,
+        },
         [27326] = {rewardMoney = 5500},
+        [27327] = {
+            description = "And now the time has come to take out the leader of all of the Darkcloud " ..
+                "Pinnacle Grimtotem: Arnak Grimtotem.\n\nIt is said that he's the disgraced nephew of " ..
+                "Magatha Grimtotem, the Elder Crone and matriarch of the Grimtotem clan. Supposedly, his " ..
+                "indiscretions have left him in a state of disfavor with her.\n\nBut none of that matters " ..
+                "right now. All that matters is that we kill him. For good this time.",
+            rewardChoices = {{63634, 1}, {63635, 1}, {63636, 1}},
+            rewardMoney = 12000,
+        },
         [27328] = {rewardMoney = 12000},
+        [27329] = {
+            description = "I am familiar with these artifacts. I believe that they were brought here by " ..
+                "Magatha Grimtotem herself. But she's not amongst the Grimtotem on Darkcloud Pinnacle. " ..
+                "She disappeared right after she arrived, and no one knows where she is now.\n\nMaybe we " ..
+                "can find out.\n\nTake the rattle, the writ, and the drum out to Arikara 's Needle. If my " ..
+                "guess is correct, the wind serpent will appear again. You'll have to defeat it to gain " ..
+                "knowledge of where Magatha is hiding.",
+            rewardChoices = {{63640, 1}, {63641, 1}, {63642, 1}, {63643, 1}},
+            rewardMoney = 12000,
+        },
         [27330] = {rewardMoney = 12000},
+        [27331] = {
+            description = "I just received word that you are needed in Orgrimmar, <name>. Seer Liwatha " ..
+                "has asked for you to return to the city as quickly as you are able. Her message didn't " ..
+                "include any other information, and the matter seemed urgent.\n\nLook for Seer Liwatha in " ..
+                "Orgrimmar's Valley of Wisdom.",
+        },
+        [27332] = {
+            description = "Shadow-Walker Zuru requires your presence in Orgrimmar right away, <name>. Do " ..
+                "not keep him waiting, as it sounds like a matter of some importance.\n\nYou can find the " ..
+                "shadow-walker in the Valley of Spirits inside Orgrimmar.",
+        },
+        [27333] = {
+            description = "I don't know how much longer we can hold out for, <name>. Crowley and " ..
+                "Bloodfang's worgen know every hidey hole and safe spot in Gilneas. One minute they're " ..
+                "standing in front of you and the next minute they're gone! We're gonna lose this war to " ..
+                "attacks of opportunity, even though we have a superior military presence.\n\nBut momma " ..
+                "didn't raise no quitter! Forsaken until the end, my friend.\n\nHead west into the " ..
+                "headlands and help our soldiers on the front line. Kill the attacking worgen rebels!",
+            rewardMoney = 1300,
+        },
+        [27334] = {
+            description = "I just received a message from Dark Cleric Cecille in Orgrimmar. She requests " ..
+                "that you join her in the audience chamber in Grommash Hold, where you can find her with " ..
+                "the delegation from Undercity. The cleric didn't mention the purpose of your visit, but " ..
+                "it is clearly important. Make haste, <name>.",
+        },
+        [27335] = {
+            description = "A messenger just asked me to pass along an invitation. It is from Tyelis, a " ..
+                "priest trainer and emissary from Silvermoon.\n\nHe asks you to meet him inside Grommash " ..
+                "Hold in Orgrimmar. You should make your way there immediately, <name>. It sounds " ..
+                "important.",
+        },
         [27336] = {rewardMoney = 4500},
+        [27337] = {
+            description = "From your earliest days, <name>, your trainers identified you as a natural " ..
+                "talent. Your rapid progress and dedication have made you an example.\n\nIn recognition " ..
+                "of your service, King Wrynn has commissioned the royal armorer to forge a special " ..
+                "weapon.\n\nLegend has it that the cursed Shadowfang Keep in Silverpine Forest is home to " ..
+                "a variety of materials that you will need. Travel there and find the lost Silverlaine " ..
+                "family sword, a supply of moonsteel ingots, and sinew from ghouls and geists infesting " ..
+                "the keep.",
+            rewardChoices = {{65492, 1}, {65493, 1}},
+        },
+        [27338] = {
+            description = "The situation here in the Highlands changes by the minute. Our objective is to " ..
+                "storm the Bastion of Twilight, but I can't even secure a landing zone on the shore " ..
+                "without the blasted Horde creating trouble.\n\nWhile I scrape together the remains of " ..
+                "the fleet, I need men on the shore securing the beach head.\n\nReport to Lieutenant Emry " ..
+                "on the shore and help his marines to beat back the Horde!",
+            rewardMoney = 45000,
+        },
         [27339] = {rewardMoney = 4500},
         [27340] = {rewardMoney = 4500},
+        [27341] = {
+            description = "It's them or us, <class>. Only one of us can command this beach.\n\nNorth of " ..
+                "here you'll see a small hill with a commanding view of the shoreline. Whoever controls " ..
+                "that hill will have the upper hand up and down the shore!\n\nI need to know what the " ..
+                "current situation is. Scout the beach head control point, marked by that enormous flag, " ..
+                "and return to me.\n\nYou don't have to try to capture it, unless you're spoiling for a " ..
+                "fight...",
+            rewardMoney = 45000,
+        },
+        [27342] = {
+            description = "The Dark Lady has sent you and Arthura here for a very specific purpose. " ..
+                "Before I tell you more, we must make preparations.\n\nHead east into the forest of " ..
+                "Gilneas and search near the trees and rocks of the region for a special plant known as " ..
+                "wolfsbane. Gather as much of the wolfsbane as you can carry and return to me.\n\nOur " ..
+                "mission here goes far beyond the scope of the battlefield, <name>. In time, all will be " ..
+                "revealed.",
+            rewardChoices = {{62860, 1}, {62861, 1}, {62862, 1}},
+        },
+        [27343] = {
+            description = "I have been watching your progress, <name>, and I can only conclude that the " ..
+                "Light shines brightly upon you. You are becoming an exemplary <class>.\n\nTo honor your " ..
+                "dedication, King Wrynn has commissioned the royal armorer to forge a special " ..
+                "weapon.\n\nThe materials to make your weapon are unique, and only found in the cursed " ..
+                "Shadowfang Keep in Silverpine Forest. Travel there and recover the holy symbol of " ..
+                "Commander Springvale, a supply of moonsteel ingots, and sinew from the ghouls and geists " ..
+                "infesting the keep.",
+            rewardChoices = {{65475, 1}, {65476, 1}, {65477, 1}},
+        },
+        [27344] = {
+            description = "I am not the only one impressed by your progress <name>. Your mastery of bow " ..
+                "and pet and your dedication to the Alliance have reached the ears of King Wrynn.\n\nIn " ..
+                "recognition of your service, the king has commissioned the royal bowyer to craft a " ..
+                "special weapon.\n\nThe cursed Shadowfang Keep in Silverpine Forest is home to the unique " ..
+                "materials needed for your weapon. Travel there and obtain the scope from Lord Godfrey's " ..
+                "gun, a supply of moontouched wood, and sinew from the ghouls and geists infesting the " ..
+                "keep.",
+            rewardItems = {{65465, 1}},
+        },
+        [27345] = {
+            description = "Communications are down with all of our frontline outposts, <name>. As of " ..
+                "right now I don't have a damn clue as to the status of our troops in Gilneas. We need to " ..
+                "re-establish communications.\n\nI need you to head west into the headlands and find our " ..
+                "outpost on the coast. By now the soldiers there are likely all dead, but their F.C.D. " ..
+                "might be operational. Grab the device and get back to me.",
+            rewardMoney = 600,
+        },
         [27347] = {rewardMoney = 8500},
         [27348] = {rewardMoney = 8500},
+        [27349] = {
+            description = "I'm not gonna lie to you, <name>. What I'm about to ask you to do is suicide. " ..
+                "Chance of failure is about 95%.\n\nAll communication from Dreadwatch Outpost has been " ..
+                "severed. With the worgen constantly rushing us we have no means by which to get to " ..
+                "Dreadwatch to check on our soldiers. I need you to head south to the outpost and check " ..
+                "on our soldiers. I'll keep in contact through the Forsaken communication device - F.C.D. " ..
+                "- from here on out.\n\nKEEP CLEAR OF THE MAIN ROAD.",
+        },
+        [27350] = {
+            description = "<The F.C.D. hums.>\n\nOur next outpost is Rutsak's Guard, located due east of " ..
+                "Dreadwatch. Make your way to Rutsak's while avoiding the worgen rushers, <name>. You " ..
+                "don't want to deal with those monsters by yourself.\n\nIf you make it there in one " ..
+                "piece, look for Captain Rutsak.\n\nJust be prepared for the worst.",
+        },
         [27351] = {
             description = "SI:7 has been watching your progress with interest. You service to the " ..
                 "Alliance is well-known and tales of your deeds have reached the king's ears.\n\nIn " ..
@@ -18089,8 +18345,115 @@ ns.Overrides.wowhead = {
             rewardItems = {{65486, 1}},
         },
         [27352] = {rewardMoney = 29300},
+        [27353] = {
+            description = "Your talent has attracted much attention in shamanic circles, <name>. Word of " ..
+                "your mastery of the elements and dedication to the Alliance has even reached the " ..
+                "palace.\n\nIn recognition of your service, King Wrynn has commissioned the royal armorer " ..
+                "to forge a special weapon.\n\nThe materials for your weapon can only be found in " ..
+                "Silverpine Forest's cursed Shadowfang Keep. Travel there and retrieve Lord Walden's " ..
+                "talisman, the Book of Lost Souls, and the essence of the ghosts haunting the castle.",
+            rewardChoices = {{65488, 1}, {65489, 1}},
+        },
+        [27354] = {
+            description = "You have proven yourself a brilliant student and a dedicated servant of the " ..
+                "Alliance. Word of your accomplishments has even reached the ears of the king.\n\nIn " ..
+                "recognition of your service, King Wrynn has commissioned the royal enchanter to create a " ..
+                "special weapon.\n\nThe materials required for your staff are found only in Silverpine " ..
+                "Forest's cursed Shadowfang Keep. Travel there and find a lost heirloom of the " ..
+                "Silverlaine family, a supply of moontouched wood, and the essence of the ghosts haunting " ..
+                "the keep.",
+            rewardItems = {{65467, 1}},
+        },
+        [27355] = {
+            description = "The king is finally beginning to take note of our power and our value to the " ..
+                "Alliance, thanks to your deeds. Perhaps they are beginning to accept our kind.\n\nKing " ..
+                "Wrynn has commissioned the royal enchanter to create a powerful weapon in recognition of " ..
+                "your achievements.\n\nThe materials you will need come from Silverpine Forest's " ..
+                "Shadowfang Keep. Travel there and obtain the tenebrous orb held by Lord Godfrey, the " ..
+                "Book of Lost Souls, and the essence of the ghosts haunting the castle.",
+            rewardItems = {{65496, 1}},
+        },
+        [27356] = {
+            description = "The Cenarion Circle is pleased with your progress, <name>. You are a credit to " ..
+                "all druids and we look to you and your peers as the future of of our brotherhood.\n\nThe " ..
+                "circle has decided to honor you with the creation of unique staff.\n\nThe rare and " ..
+                "powerful materials needed for your staff can only be found in Shadowfang Keep inside " ..
+                "Silverpine Forest. Travel there and retrieve Lord Walden's collection of elixirs, a " ..
+                "supply of moontouched wood, and sinew from the ghouls and geists infesting the keep.",
+            rewardChoices = {{65461, 1}, {65462, 1}},
+        },
+        [27357] = {
+            description = "Of course! Lakota Windsong! Why didn't I think of this before?\n\nArnak " ..
+                "kidnapped Lakota years ago and tried to force her into being his bride. She managed to " ..
+                "escape, but in the chaos of the recent attack on Freewind Post, he took her " ..
+                "again.\n\nShe has to be around here somewhere. She's become quite the mystic in recent " ..
+                "years. I'm guessing she'll know what to do with these tauren artifacts.",
+            rewardMoney = 6000,
+        },
         [27358] = {rewardMoney = 6000},
         [27359] = {rewardMoney = 29300},
+        [27360] = {
+            description = "7th Legion... They rushed us in the dead of the night. Their captain barked " ..
+                "orders as the submariners slaughtered my men. Then he came to me, put his face in mine, " ..
+                "and said something I'll never forget:\n\n\"The name's Master Sergeant Pietro Zaren, " ..
+                "officer in the 7th Legion. When you see your soldiers being slaughtered in your " ..
+                "nightmares - if you even still dream - remember my name and tremble.\"\n\nAvenge my " ..
+                "soldiers! Kill the 7th Legion occupying the Cathedral Quarter of Gilneas City, southwest " ..
+                "of here.",
+            rewardChoices = {{62869, 1}, {62870, 1}, {62871, 1}},
+        },
+        [27361] = {
+            description = "The Light truly shines in you and your dedication to the Alliance, <name>. You " ..
+                "serve as an example to your fellow priests and comrades in arms.\n\nIn recognition of " ..
+                "your deeds, King Wrynn has commissioned the royal enchanter to create a special " ..
+                "staff.\n\nThe materials for such a weapon can only be found in the cursed Shadowfang " ..
+                "Keep in Silverpine Forest. Travel there and find the lost holy symbol of Commander " ..
+                "Springvale, a supply of moontouched wood, and ghostly essence from the spirits haunting " ..
+                "the keep.",
+            rewardItems = {{65482, 1}},
+        },
+        [27362] = {
+            description = "You are a true servant of Elune, an example to our people, and stalwart " ..
+                "servant of the Alliance. The Temple of the Moon and the court of Stormwind wish to honor " ..
+                "your achievements.\n\nWe have commissioned the royal enchanter to create a staff for " ..
+                "you.\n\nThe materials for your staff can only be found in the cursed Shadowfang Keep in " ..
+                "Silverpine Forest. Travel there and find the lost holy symbol of Commander Springvale, a " ..
+                "supply of moontouched wood, and ghostly essence from the spirits haunting the keep.",
+            rewardItems = {{65483, 1}},
+        },
+        [27363] = {
+            description = "You have shown yourself to be a capable priest and a credit to the people of " ..
+                "Gnomeregan. The high tinker and the king of Stormwind wish to honor your contribution to " ..
+                "the Alliance.\n\nThey have commissioned the royal enchanter to create a special " ..
+                "staff.\n\nThe materials for such a weapon can only be found in the cursed Shadowfang " ..
+                "Keep in Silverpine Forest. Travel there and find the lost holy symbol of Commander " ..
+                "Springvale, a supply of moontouched wood, and ghostly essence from the spirits haunting " ..
+                "the keep.",
+            rewardItems = {{65480, 1}},
+        },
+        [27364] = {
+            description = "<The F.C.D. buzzes.>\n\nThe 7th Legion are an elite special ops regiment. " ..
+                "They've been there, behind the scenes, for almost every major offensive and military " ..
+                "engagement the Alliance has ever done. This is bad news. How did they get past our " ..
+                "warships? And on whose orders are they here?\n\nWe need to get our hands on their " ..
+                "orders. This Pietro character will undoubtedly have vital information. Find him at the " ..
+                "Cathedral Quarter in Gilneas City and take him out. Search his corpse for clues.",
+        },
+        [27365] = {
+            description = "From your earliest days, your trainers always knew you would make your mark on " ..
+                "the Horde. You have fought bravely and given our enemies reason to fear.\n\nAs a reward " ..
+                "for your dedication, the warchief has commissioned his personal smith to forge a special " ..
+                "weapon.\n\nThe cursed Shadowfang Keep in Silverpine Forest is the only place to get the " ..
+                "materials you'll need. Travel there and find the lost Silverlaine family sword, a supply " ..
+                "of moonsteel ingots, and sinew from the ghouls and geists infesting the keep.",
+            rewardChoices = {{65494, 1}, {65495, 1}},
+        },
+        [27366] = {
+            description = "The Horde's Axebite Marines are all up in my precious, precious beach.\n\n<The " ..
+                "Lieutenant points north, along the shore.>\n\nKill them.",
+            rewardChoices = {{63892, 1}, {63893, 1}},
+            rewardMoney = 90000,
+        },
         [27367] = {rewardMoney = 500},
         [27368] = {rewardMoney = 5000},
         [27369] = {rewardMoney = 5000},
@@ -18098,6 +18461,184 @@ ns.Overrides.wowhead = {
         [27371] = {rewardMoney = 5000},
         [27372] = {rewardMoney = 5000},
         [27373] = {rewardMoney = 2500},
+        [27374] = {
+            description = "I can't believe it, <name>. Me own son - me own flesh and blood! Throwing his " ..
+                "lot in with those fiends from the Twilight's Hammer. Did you see what he became when he " ..
+                "tried to destroy the wedding? Oh... why? Why?\n\nIt's that beast, <name>. The enormous " ..
+                "mouth emerging from the earth to our west. \"The Maw of Madness!\" My son said it spoke " ..
+                "to him, but I thought it was just nightmares.\n\nThe Earthen Ring is trying to destroy " ..
+                "it. Go to Earthcaller Torunscar, west of here, and see how you can help!",
+            rewardMoney = 22500,
+        },
+        [27375] = {
+            description = "A beast, <name>! I saw a beast. A great maw, an even greater hungering. They " ..
+                "can't possibly know what they unleashed.\n\nIt is here. Its terrible shapeless body is " ..
+                "erupting right into the Highlands.\n\nI saw you in my vision, <name>. You struggle with " ..
+                "the Earthen Ring to contain the beast. You will face the darkness.\n\nGo now, before the " ..
+                "beast grows in power. Speak to Earthcaller Torunscar at the Circle of the Elements, " ..
+                "northwest of here atop the ridge beyond the ruined Drakgor Encampment. Hurry!",
+            rewardMoney = 22500,
+        },
+        [27376] = {
+            description = "We are ready to attack the beast. First, we need to destroy it's tentacles, " ..
+                "then Yevaa will perform a ritual to summon a powerful fire elemental that we will drop " ..
+                "into its maw.\n\nI want you to fly out with our first group attack. Hold steady until an " ..
+                "opportunity presents itself, then join the battle with the rest of the shaman in cutting " ..
+                "the tentacles down.\n\nTake any one of the gryphons when you're ready to join the " ..
+                "assault.",
+            rewardMoney = 90000,
+        },
+        [27377] = {
+            description = "We knew this was a possibility, but we had no idea how the beast would defend " ..
+                "itself. Iso'rath's body is reacting quickly to our threat.\n\nI can complete the " ..
+                "summoning from here, but only if you can hold back Iso'rath's defenses. Keep them busy! " ..
+                "We will survive this!",
+            rewardMoney = 90000,
+        },
+        [27378] = {
+            description = "There's no time! Deathwing struck before we could form against him. If you do " ..
+                "not stop him, the Earthen Ring will end this day!",
+            rewardMoney = 90000,
+        },
+        [27379] = {
+            description = "We need you! You were stuck in some kind of nightmare. So are many of the " ..
+                "other shaman.\n\nIt doesn't matter... our plan is falling apart. Some of our shaman are " ..
+                "channeling protective auras that should combat the digestive juices and keep you alive, " ..
+                "but we need you to rescue the other shaman from the tentacles. We won't be able to " ..
+                "defeat Iso'rath without them!\n\nDon't stay out in the stomach without the other shaman " ..
+                "for too long or you'll be digested alive!",
+            rewardMoney = 90000,
+        },
+        [27380] = {
+            description = "Iso'rath's brain is revealed! The shaman you've saved should keep you somewhat " ..
+                "safe amidst his defenses.\n\nStrike at the brain and destroy Iso'rath!",
+            rewardChoices = {{63782, 1}, {63783, 1}, {63781, 1}},
+            rewardMoney = 282000,
+        },
+        [27381] = {
+            description = "While we're waiting here at this tower, we might as well see if anybody else " ..
+                "is headed to Light's Hope Chapel. The more, the merrier, I say!\n\nAsk around to see if " ..
+                "anybody wants to join us on our trip. I'm sure you can find somebody who's headed to " ..
+                "Light's Hope.",
+            rewardMoney = 4000,
+        },
+        [27382] = {
+            description = "The Argent Crusade built these towers to be points of light in the darkness of " ..
+                "the Plaguelands. I walk the paths between these towers, protecting and maintaining " ..
+                "them.\n\nThe roads have been dangerous lately. Plagued wildlife runs rampant, and bats " ..
+                "swoop down upon unsuspecting travelers. It would make the next leg of my journey much " ..
+                "easier if you could clear some of this wildlife out of the way for me.",
+            rewardChoices = {{62944, 1}, {62945, 1}, {62946, 1}, {62947, 1}},
+            rewardMoney = 11000,
+        },
+        [27383] = {
+            description = "The battle for Darrowshire still haunts me, <race>. I wake up in cold sweats, " ..
+                "convinced that I'm still there; that it is happening all over again.\n\nI've coped with " ..
+                "the loss of my comrades, but the loss of my family members is still cripplingly painful. " ..
+                "One of my kin lost during the attack was my young niece, Pamela.\n\nIf you are brave " ..
+                "enough to enter Darrowshire, will you search for any sign of Pammy? Darrowshire's ruins " ..
+                "are due south of here.",
+            rewardMoney = 2500,
+        },
+        [27384] = {
+            description = "My auntie Marlene told me to stay here in our house because my father had to " ..
+                "go and fight. My father's the bravest man in the whole world!\n\nBut I've been here for " ..
+                "a long time, and he hasn't come for me. Sometimes bad people come and whisper to me and " ..
+                "I want my dad to make them go away, but he's not here!\n\nAnd sometimes when it gets " ..
+                "dark I want to play with my doll but I can't because I left it in town.\n\nWill you find " ..
+                "my doll for me?",
+            rewardMoney = 5500,
+        },
+        [27385] = {
+            description = "I'm going to play with dolly, but I don't want to play with daddy's sword " ..
+                "after all. You'd better keep it.\n\nEven better, can you give it to my uncle Carlin? I'm " ..
+                "not sure where he is, but sometimes I hear him crying. It sounds like he's nearby, to " ..
+                "the north.\n\nI hope he's not crying for me! <name>, will you find my uncle and tell him " ..
+                "I'm alright?\n\nIf you find him say I'm waiting for him, and I want to hear the story he " ..
+                "used to tell... the one about the rabbits and the berry jam! That story's so funny!",
+        },
+        [27386] = {
+            description = "That sword belonged to Joseph Redpath, Pamela's father - though you probably " ..
+                "already knew that. I wish Joseph could again be with his daughter, but it cannot be so. " ..
+                "His soul was twisted by the Scourge, and he became a monster.\n\nPamela's fate is " ..
+                "sealed, but perhaps we can change Joseph's fate.\n\nA strange gnome arrived here at this " ..
+                "tower not long ago. Her name is Chromie. Take that sword to her. I have a feeling she " ..
+                "will be able to help us.",
+        },
+        [27387] = {
+            description = "The Annals of Darrowshire tells of the villains of that battle. It tells how " ..
+                "the ghoul lord Horgus the Ravager was destroyed by Alliance forces during the battle. He " ..
+                "was slain among the foothills north of here, and his skull remains there.\n\nMarduk the " ..
+                "Black was never defeated, but his fabled sword now rusts, ownerless. It can be found " ..
+                "near the road to our southeast.\n\nRetrieve these items, <name>. I know not why, but I " ..
+                "am certain their fate lies with you.",
+            rewardChoices = {{62951, 1}, {62952, 1}, {62953, 1}, {62954, 1}},
+            rewardMoney = 5500,
+        },
+        [27388] = {
+            description = "The heroes of Darrowshire held relics of their own, and inside of those relics " ..
+                "lie more precious memories.\n\nFirst, speak with Carlin and obtain the Extended Annals " ..
+                "of Darrowshire. Within the tome lies the narrative that will drive our excursion through " ..
+                "time.\n\nThen, you will need to head west to the Marris Stead. The former owner of the " ..
+                "Marris farmhouse collected relics from the battle of Darrowshire - for what reason, I am " ..
+                "not certain.\n\nGather these relics, and return to me.",
+            rewardMoney = 5500,
+        },
+        [27389] = {
+            description = "I require a rare reagent for the powerful spell I intend to cast: skulls from " ..
+                "the scourge who took part in the battle of Darrowshire.\n\nTake this crystal and hunt " ..
+                "scourge champions for their skulls. The crystal is enchanted; if a champion took part in " ..
+                "the battle, then when you pass the crystal over its skull it will resonate. Bring me " ..
+                "those resonating skulls.\n\nGo, <name>. You'll find scourge champions in the Fungal Vale " ..
+                "to the north. Go.",
+        },
+        [27390] = {
+            description = "Now, <name>, you will take part in battle of Darrowshire, and you will save " ..
+                "Joseph Redpath.\n\nPlace this relic bundle in the Darrowshire town square, and the " ..
+                "spirits of Darrowshire will rise. Join their battle and assure that these two things " ..
+                "come to pass: Davil must survive beyond the death of Horgus, and Redpath must survive to " ..
+                "be corrupted, then defeated.\n\nAfter defeating the corrupted Redpath, his spirit will " ..
+                "be saved. Speak with him, then return to his daughter Pamela.",
+            rewardChoices = {{62955, 1}, {62956, 1}, {62957, 1}},
+            rewardItems = {{63023, 1}},
+            rewardMoney = 11000,
+        },
+        [27391] = {
+            description = "Daddy told me to give you this key. He said it opens a chest out back behind " ..
+                "the house.\n\nHe also wanted me to thank you. Did you do a favor for him? Did you tell " ..
+                "him you found my doll?\n\nWell here's the key. And thank you <name>. Thank you! You're a " ..
+                "very nice <man/lady>!",
+            rewardChoices = {{62958, 1}, {62960, 1}, {62961, 1}, {62959, 1}},
+        },
+        [27392] = {
+            description = "My daddy always kept two swords: one for fighting with men, and one for " ..
+                "hunting the animals. I wasn't supposed to touch his swords, but I knew where he hid " ..
+                "them.\n\nOne day, he told my mommy that he was going to fight a \"lone hunter\" in the " ..
+                "hills to the east, but he brought his animal sword with him! When he came back, he " ..
+                "didn't have his sword with him.\n\nWhen daddy comes back, he'll be so happy when I give " ..
+                "him his animal sword! Will you go and find it?",
+            rewardChoices = {{62948, 1}, {62949, 1}, {62950, 1}},
+        },
+        [27393] = {
+            description = "I sense a strong power calling to me from the ruins. Can you check again on " ..
+                "that southern battle site for me? I'm certain that there's something there.",
+            rewardMoney = 7800,
+        },
+        [27394] = {
+            description = "I sense a strong power calling to me from the ruins. Can you check again on " ..
+                "that southern battle site for me? I'm certain that there's something there.",
+            rewardMoney = 7800,
+        },
+        [27395] = {
+            description = "You have picked up the ways of the hunter quickly, <name>. Your skills have " ..
+                "made you a credit to the Horde and an example to the younglings.\n\nAs a reward for your " ..
+                "progress and hard work, the warchief has commissioned his personal bowyer to create a " ..
+                "unique weapon.\n\nThe cursed Shadowfang Keep in Silverpine Forest is the only place to " ..
+                "get the materials we'll need. Travel there and retrieve the scope from Lord Godfrey's " ..
+                "gun, a supply of moontouched wood, and sinew from the ghouls and geists infesting the " ..
+                "keep.",
+            rewardItems = {{65466, 1}},
+        },
         [27396] = {
             description = "Many members of the Shattered Hand do not survive their training, <name>. Not " ..
                 "only have you survived, but you will soon become a feared blade of the Horde.\n\nAs a " ..
@@ -18106,6 +18647,39 @@ ns.Overrides.wowhead = {
                 "materials you'll need. Travel there and recover Commander Springvale's sharpening stone, " ..
                 "a supply of moonsteel ingots, and sinew from the ghouls and geists infesting the keep.",
             rewardItems = {{65487, 1}},
+        },
+        [27397] = {
+            description = "The elements and spirits speak to you with clear voices, <name>. You have " ..
+                "become a powerful shaman and an example to others wishing to serve the Horde.\n\nWord " ..
+                "has even reached the warchief, and he has commissioned his personal smith to forge a " ..
+                "special weapon for you.\n\nThe cursed Shadowfang Keep in Silverpine Forest is the only " ..
+                "place to get the materials you'll need. Travel there and obtain Lord Walden's talisman, " ..
+                "the Book of Lost Souls, and essence from the ghosts haunting the keep.",
+            rewardChoices = {{65490, 1}, {65491, 1}},
+        },
+        [27398] = {
+            description = "We've defeated the enemy's forces here, <name>. But Hyjal is not the only " ..
+                "place where our foes are moving against us.\n\nI've been informed that our allies in the " ..
+                "Earthen Ring have put out a call for aid in a matter I've been assured is most " ..
+                "critical.\n\nSpeak to Naraat the Earthspeaker at the Eastern Earthshrine in Stormwind " ..
+                "City for further instructions.",
+        },
+        [27399] = {
+            description = "We've defeated the enemy's forces here, <name>. But Hyjal is not the only " ..
+                "place where our foes are moving against us.\n\nI've been informed that our allies in the " ..
+                "Earthen Ring have put out a call for aid in a matter I've been assured is most " ..
+                "critical.\n\nSpeak to Farseer Krogar at the Western Earthshrine in Orgrimmar for further " ..
+                "instructions.",
+        },
+        [27400] = {
+            description = "All of your trainers agree, <name>, you show an amazing amount of talent for a " ..
+                "journeyman. Even the warchief has heard of your rapid progress.\n\nAs a reward for " ..
+                "mastering your studies, the warchief has commissioned his master enchanter to create a " ..
+                "staff for you.\n\nThe cursed Shadowfang Keep in Silverpine Forest is the only place to " ..
+                "get the materials you'll need. Travel there and find a magical heirloom of the " ..
+                "Silverlaine family, a supply of moontouched wood, and the essence of the ghosts haunting " ..
+                "the keep.",
+            rewardItems = {{65468, 1}},
         },
         [27407] = {rewardMoney = 4500},
         [27408] = {rewardMoney = 4500},
@@ -18540,6 +19114,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{81175, 1}},
             rewardMoney = 114000,
         },
+        [30595] = {
+            description = "Let me guess, you're here to deal with the mogu statues that are being " ..
+                "reanimated. What a coincidence, I'm here to, um... conduct research on the mogu.\n\nI " ..
+                "tell you what, if you bring me as many of the mogu relics in there that you can carry, " ..
+                "I'll give you a cut. Of the research... funding.",
+            rewardMoney = 102000,
+        },
         [30597] = {rewardXP = 69400},
         [30603] = {
             description = "They took my luckydo! Their leader hozen here, Mo Mo, stole my " ..
@@ -18603,6 +19184,13 @@ ns.Overrides.wowhead = {
                 "Kota Peak and now they're nuts! Chargin' everything that moves.\n\nKota used to be safe " ..
                 "for Grummles to gather kafa. Not anymore. Not with them goots. Will you help?",
             rewardMoney = 106000,
+        },
+        [30882] = {
+            description = "Your next challenger is a Bramblestaff. Strength is in their blood. I remember " ..
+                "a full century of only Bramblestaff champions.\n\nNo pressure, little <race>.\n\nGo to " ..
+                "the eastern arena north of here and face this young challenger. See first hand if " ..
+                "strength is earned or inherited.",
+            rewardMoney = 114000,
         },
         [30889] = {
             description = "Good to meet you, <class>. We have traps all along the pass to help us catch " ..
@@ -19084,6 +19672,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 490,
         },
+        [23768] = {spawns = {[15] = {{63.6, 42.8}}}, zoneID = 15},
         [39926] = {
             spawns = {
                 [616] = {
