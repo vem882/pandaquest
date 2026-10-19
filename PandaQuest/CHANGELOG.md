@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.180] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,916 quests, 17 NPCs
+- quest 26549 - Madness - updated
+- quest 26556 - No Dumping Allowed - updated
+- quest 26557 - A Staggering Effort - updated
+- quest 26560 - Jorgensen - updated
+- quest 26561 - Krakauer - updated
+- quest 26562 - And Last But Not Least... Danforth - updated
+- quest 26563 - Return of the Bravo Company - updated
+- quest 26564 - Fixer Upper - updated
+- quest 26567 - John J. Keeshan - updated
+- quest 26568 - This Ain't My War - updated
+- quest 26569 - Surveying Equipment - updated
+- quest 26570 - Render's Army - updated
+- quest 26571 - Weapons of War - updated
+- quest 26572 - A Golden Opportunity - updated
+- quest 26573 - His Heart Must Be In It - updated
+- quest 26574 - Adella's Covert Camp - updated
+- quest 26575 - Rock Bottom - updated
+- quest 26576 - Steady Hand - updated
+- quest 26577 - Rocky Upheaval - updated
+- npc 565 - Rabid Dire Wolf - updated
+- quest - and 54 more quests updated
+
 ## [0.2.179] - 2026-10-19
 
 Data from the PandaQuest portal.
