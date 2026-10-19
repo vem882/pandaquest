@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.182] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,057 quests, 20 NPCs
+- quest 26762 - Reactivate the Constructs - updated
+- quest 26763 - Venture Company Mining - updated
+- quest 26765 - Return to Corporal Kaleb - updated
+- quest 26766 - Big Game, Big Bait - updated
+- quest 26768 - To Catch a Dragon - updated
+- quest 26769 - Raging River Ride - updated
+- quest 26770 - Mystic Masters - updated
+- quest 26771 - Testing the Trap - updated
+- quest 26772 - Mind Vision - updated
+- quest 26773 - See Raptor - updated
+- quest 26774 - Mind Control - updated
+- quest 26775 - Be Raptor - updated
+- quest 26776 - Ghaliri - updated
+- quest 26777 - Soothing Spirits - updated
+- quest 26778 - The Cries of the Dead - updated
+- quest 26779 - Zul'Mamwe Mambo - updated
+- quest 26780 - Nighttime in the Jungle - updated
+- npc 1506 - Scarlet Convert - updated
+- npc 1507 - Scarlet Initiate - updated
+- npc 1667 - Meven Korgal - updated
+- quest - and 55 more quests updated
+
 ## [0.2.181] - 2026-10-19
 
 Data from the PandaQuest portal.
