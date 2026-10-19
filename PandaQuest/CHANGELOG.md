@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.183] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,140 quests, 21 NPCs
+- quest 768 - Gathering Leather - updated
+- quest 8228 - Could I get a Fishing Flier? - updated
+- quest 8229 - Could I get a Fishing Flier? - updated
+- quest 11531 - Strange Engine Part - updated
+- quest 11665 - Crocolisks in the City - updated
+- quest 11666 - Bait Bandits - updated
+- quest 13830 - The Ghostfish - updated
+- quest 13832 - Jewel Of The Sewers - updated
+- quest 13834 - Dangerously Delicious - updated
+- quest 26842 - Out of Gnoll-where - updated
+- quest 26843 - A Tiny, Clever Commander - updated
+- quest 26844 - Kobold and Kobolder - updated
+- quest 26845 - Who's In Charge Here? - updated
+- quest 26846 - A Nasty Exploit - updated
+- quest 26854 - The Lost Pilot - updated
+- quest 26855 - A Pilot's Revenge - updated
+- quest 26857 - Abyssion's Minions - updated
+- quest 26860 - Thelsamar Blood Sausages - updated
+- quest 26861 - Block the Gates - updated
+- npc 1393 - Berserk Trogg - updated
+- quest - and 68 more quests updated
+
 ## [0.2.182] - 2026-10-19
 
 Data from the PandaQuest portal.
