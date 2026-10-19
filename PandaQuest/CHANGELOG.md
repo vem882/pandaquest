@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.181] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,985 quests, 17 NPCs
+- quest 26671 - The Fate of Stalvan Mistmantle - updated
+- quest 26672 - Clawing at the Truth - updated
+- quest 26674 - Mistmantle's Revenge - updated
+- quest 26676 - Juice Delivery - updated
+- quest 26677 - Ghoulish Effigy - updated
+- quest 26680 - Ogre Thieves - updated
+- quest 26681 - Note to the Mayor - updated
+- quest 26683 - Look To The Stars - updated
+- quest 26684 - The Insane Ghoul - updated
+- quest 26685 - Classy Glass - updated
+- quest 26686 - Bones That Walk - updated
+- quest 26687 - Reinforcements From Theramore - updated
+- quest 26688 - Worgen in the Woods - updated
+- quest 26689 - The Rotting Orchard - updated
+- quest 26690 - Vile and Tainted - updated
+- quest 26691 - Worgen in the Woods - updated
+- quest 26692 - Shadowhide Extinction - updated
+- quest 26693 - The Dark Tower - updated
+- quest 26694 - The Grand Magus Doane - updated
+- quest 26702 - Flight to Theramore - updated
+- quest - and 49 more quests updated
+
 ## [0.2.180] - 2026-10-19
 
 Data from the PandaQuest portal.
