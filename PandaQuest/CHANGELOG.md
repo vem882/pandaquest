@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.188] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,492 quests, 24 NPCs, 1 object
+- quest 27401 - What Tomorrow Brings - updated
+- quest 27402 - Token of Power - updated
+- quest 27403 - A True Sunwalker - updated
+- quest 27404 - The Circle's Future - updated
+- quest 27405 - Fall Back! - updated
+- quest 27406 - A Man Named Godfrey - updated
+- quest 27420 - Postponing the Inevitable - updated
+- quest 27421 - Amidst Death, Life - updated
+- quest 27422 - A City Under Siege - updated
+- quest 27423 - Resistance is Futile - updated
+- quest 27425 - A Grim Connection - updated
+- quest 27426 - Confirming the Suspicion - updated
+- quest 27427 - Arms of the Grimtotems - updated
+- quest 27428 - Tabetha's Assistance - updated
+- quest 27429 - Raze Direhorn Post! - updated
+- quest 27430 - Justice for the Hyals - updated
+- quest 27431 - Tipping the Balance - updated
+- quest 27432 - Zaeldarr the Outcast - updated
+- npc 12262 - Ziggurat Protector - updated
+- npc 45610 - Daschla - updated
+- quest - and 44 more quests updated
+
 ## [0.2.187] - 2026-10-19
 
 Data from the PandaQuest portal.
