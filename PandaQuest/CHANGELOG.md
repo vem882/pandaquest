@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.184] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,217 quests, 21 NPCs, 1 object
+- quest 26975 - Rallying the Fleet - updated
+- quest 26977 - Twilight Investigation - updated
+- quest 26980 - Swiftgear Station - updated
+- quest 26981 - Whelgar's Retreat - updated
+- quest 26989 - The Gilneas Liberation Front - updated
+- quest 26992 - Agony Abounds - updated
+- quest 26995 - Guts and Gore - updated
+- quest 26997 - The Usual Suspects - updated
+- quest 26998 - Iterating Upon Success - updated
+- quest 27003 - Easy Money - updated
+- quest 27004 - The Twilight Plot - updated
+- quest 27005 - The Twilight Plot - updated
+- quest 27006 - Fly Over - updated
+- quest 27007 - Silvermarsh Rendezvous - updated
+- quest 27008 - Fly Over - updated
+- quest 27009 - The Coldbringer - updated
+- quest 27010 - Quicksilver Submersion - updated
+- quest 27014 - Hallowed Note - updated
+- quest 27015 - Consecrated Note - updated
+- object 207381 - Deep Alabaster Crystal Chunk - updated
+- quest - and 58 more quests updated
+
 ## [0.2.183] - 2026-10-19
 
 Data from the PandaQuest portal.
