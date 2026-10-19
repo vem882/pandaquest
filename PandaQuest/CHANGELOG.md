@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.179] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,843 quests, 16 NPCs
+- quest 26453 - A Helping Hand - updated
+- quest 26454 - A Shameful Waste - updated
+- quest 26455 - The Lost Chalice - updated
+- quest 26456 - Report from the Northern Front - updated
+- quest 26457 - Agents of Destruction - updated
+- quest 26462 - The Wicked Revantusk - updated
+- quest 26463 - Finding Teronis - updated
+- quest 26464 - The Lost Gem - updated
+- quest 26465 - The Ancient Statuettes - updated
+- quest 26466 - Ruuzel - updated
+- quest 26467 - Vile Satyr! Dryads in Danger! - updated
+- quest 26468 - The Branch of Cenarius - updated
+- quest 26469 - Satyr Slaying! - updated
+- quest 26470 - Retaking Mystral Lake - updated
+- quest 26472 - Insane Druids - updated
+- quest 26473 - Bathran's Hair - updated
+- quest 26474 - Orendil's Cure - updated
+- quest 26475 - Elune's Tear - updated
+- quest 26476 - Dryad Delivery - updated
+- quest 26477 - Search the Bole - updated
+- quest - and 61 more quests updated
+
 ## [0.2.178] - 2026-10-19
 
 Data from the PandaQuest portal.
