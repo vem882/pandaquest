@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.185] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,283 quests, 21 NPCs, 1 object
+- quest 27095 - Skitterweb Menace - updated
+- quest 27096 - Orcs are in Order - updated
+- quest 27097 - Rise, Forsaken - updated
+- quest 27098 - Lordaeron - updated
+- quest 27099 - No Escape - updated
+- quest 27100 - Twilight Research - updated
+- quest 27101 - Maziel's Revelation - updated
+- quest 27102 - Maziel's Ascendancy - updated
+- quest 27103 - Shards of the Felvine - updated
+- quest 27104 - Alzzin the Wildshaper - updated
+- quest 27106 - A Villain Unmasked - updated
+- quest 27109 - The Warped Defender - updated
+- quest 27110 - The Madness Within - updated
+- quest 27111 - The Treasure of the Shen'dralar - updated
+- quest 27112 - The Cursed Remains - updated
+- quest 27113 - The Shen'dralar Ancient - updated
+- quest 27114 - The Gordok Taste Test - updated
+- quest 27115 - Ando's Call - updated
+- quest 27116 - The Winds of Loch Modan - updated
+- quest 27119 - The Gordok Ogre Suit - updated
+- quest - and 46 more quests updated
+
 ## [0.2.184] - 2026-10-19
 
 Data from the PandaQuest portal.
