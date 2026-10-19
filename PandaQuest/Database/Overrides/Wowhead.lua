@@ -17486,23 +17486,577 @@ ns.Overrides.wowhead = {
                 "Farthing, and CRUSH those rats.",
             rewardMoney = 1700,
         },
+        [27195] = {
+            description = "The mistress has put me in charge of this lot. Our primary mission is to get " ..
+                "in there, corner the rats, and kill 'em all, including Bloodfang.\n\nYou've done us a " ..
+                "solid service in gettin' the information, <name>. Join in the glory and help us drive a " ..
+                "sword through their miserable skulls!\n\nLet me know when you're ready and I'll call for " ..
+                "the charge.",
+            rewardChoices = {{62854, 1}, {62855, 1}, {62856, 1}},
+            rewardMoney = 1700,
+        },
+        [27196] = {
+            description = "This is remarkable work you've done! Especially for someone who hasn't taken " ..
+                "my courses.\n\nThese tablets provide new information on several subjects.\n\nThey " ..
+                "indicate that these obelisks are part of an enormous ancient mechanism that once kept " ..
+                "this whole region masked from the rest of the world.\n\nThey also depict how to recharge " ..
+                "the mechanism, which is where your Shaft of the Stars comes in...\n\nGet ready, <name>. " ..
+                "We have some history to make!",
+        },
+        [27197] = {
+            description = "Word is in from Andorhal, <name>. The battle has resumed.\n\nIt has become " ..
+                "somewhat well-known among the Alliance forces that you're a hero of the first battle of " ..
+                "Andorhal. Thassarian has requested your presence immediately.",
+            rewardMoney = 500,
+        },
+        [27198] = {
+            description = "I'm no military expert, but this battle looks to be in our favor. Our " ..
+                "defenders are equally matched with their deathguards, but the farmers' militia has taken " ..
+                "them by surprise from the rear. For the Alliance!\n\nStill, we should all do what we can " ..
+                "to make sure that we win. Travel east into Andorhal and slay the Forsaken deathguards " ..
+                "that are fighting with our men. The sooner they die, the quicker we can re-take Andorhal!",
+            rewardChoices = {{62202, 1}, {62203, 1}, {62204, 1}, {62205, 1}},
+            rewardMoney = 10000,
+        },
+        [27199] = {
+            description = "To the east, deep within Forsaken-held Andorhal, you will find their " ..
+                "commanders. They do not fight, but call out orders from horseback.\n\nHunt down and slay " ..
+                "these commanders, <name>. The Forsaken won't stand a chance.",
+            rewardMoney = 5000,
+        },
+        [27200] = {
+            description = "She's still out there... Ophelia, the Siren of the Highlands! Her terrible " ..
+                "song will lure you to the depths. I've vowed to stay behind and avenge my fallen " ..
+                "crewmates, <class>. If you want to join me, just say the word.\n\nWe'll lash ourselves " ..
+                "to the mast, we will. We'll shut our eyes. We'll stuff our ears with wax. And when her " ..
+                "beautiful illusion drops... we'll strike.\n\nAre you in?",
+            rewardChoices = {{63903, 1}, {63904, 1}, {63905, 1}},
+            rewardMoney = 90000,
+        },
+        [27201] = {
+            description = "The val'kyr were one of the Scourge's primary weapons. Not only were they " ..
+                "skilled in battle, but they could be used to convert corpses into Scourge minions. To " ..
+                "think that Sylvanas is stooping to such levels for the sake of the Forsaken...\n\nWe " ..
+                "need to stop the val'kyr before they wipe us out and turn our army against us. Slay as " ..
+                "many as you can find. And bring some of these minutemen with you. If they've survived " ..
+                "this long, then they must have some battle skill.",
+            rewardMoney = 10000,
+        },
+        [27202] = {
+            description = "Our militia has been nearly wiped out. Only I and these few farmers " ..
+                "remain.\n\nThose winged creatures... they took the bodies of our men and... and turned " ..
+                "them into walking, undead corpses! With every one of our men they took, they bolstered " ..
+                "their own ranks.\n\nIt pains me to admit it, but you will need to fight them too, along " ..
+                "with the deathguards and val'kyr. As they did in life, they hunt in packs, so take some " ..
+                "of my minutemen with you.",
+            rewardChoices = {{62211, 1}, {62212, 1}, {62213, 1}, {62210, 1}},
+            rewardMoney = 10000,
+        },
+        [27203] = {
+            description = "Thank the spirits you're here, <name>.\n\nWe're not sure how much longer we " ..
+                "can maintain the rift in the Maelstrom.\n\nOur most powerful members, led by Thrall, are " ..
+                "barely preventing the tear.\n\nLast I heard, our only hope was to go through the breach " ..
+                "and attempt to stabilize it from the other side.\n\nI will conjure a portal. Take it and " ..
+                "report to Thrall as soon as you can.",
+            rewardMoney = 8200,
+        },
+        [27204] = {
+            description = "Our last hope of victory lies in defeating the val'kyr. You've done well up " ..
+                "until now... but you're only one <man/woman> and there are literally dozens of them " ..
+                "raining destruction on the battlefield.\n\nOne enormous val'kyr sits atop the tower to " ..
+                "our south... you can see her from here. Perhaps if we eliminate her, the remaining " ..
+                "val'kyr will dissipate.\n\nThis is our only hope. Bring some of Grant's men with you. " ..
+                "You'll need their protection for this battle.",
+            rewardMoney = 15000,
+        },
+        [27205] = {
+            description = "We nearly have this battle won, <name>. I can taste victory. The Forsaken " ..
+                "never stood a...\n\nWhat the hell is that!?",
+            rewardMoney = 500,
+        },
+        [27206] = {
+            description = "Head south, to Chillwind Camp. Tell Commander Ashlam Valorfist everything that " ..
+                "happened here.\n\nMe? I'm going west, into Tirisfal.\n\nMy battle's not over yet. I've " ..
+                "got an appointment with that harpy that calls herself a Banshee Queen... and I'm finding " ..
+                "out what she did to Koltira.",
+            rewardChoices = {{62218, 1}, {62219, 1}, {62220, 1}, {62221, 1}, {62222, 1}},
+            rewardMoney = 5000,
+        },
+        [27208] = {
+            description = "With the fall of the Scarlet Crusade, their disguised demon leader, Balnazzar, " ..
+                "released the possessed body of Grand Crusader Dathrohan and went on a rampage, killing " ..
+                "every remaining crusader here. He then used his necromantic power to raise them all as " ..
+                "vile undead slaves.\n\nBalnazzar refers to his new army as the Risen. We cannot let him " ..
+                "grow this army - they are extremely powerful and, unlike Arthas' Scourge, Balnazzar will " ..
+                "not hold his forces back. Kill him while we still have a chance, <class>.",
+            rewardChoices = {{65928, 1}, {65953, 1}, {65977, 1}, {65998, 1}},
+            rewardMoney = 27300,
+        },
+        [27210] = {
+            description = "It's good to meet you, <class>. I've come to Theramore to help eliminate the " ..
+                "problem of the deserters. Not only have some of the men abandoned their posts, but some " ..
+                "have filtered back into the town.\n\nThese deserter agents are spreading lies and " ..
+                "propaganda, hoping to convince others to join their ranks.\n\nThey're at virtually every " ..
+                "guard post throughout the town and the docks. Find them, expose them, and discredit " ..
+                "them. At this point, anything more risks inspiring more sympathy for them.",
+            rewardMoney = 4000,
+        },
+        [27211] = {
+            description = "The deserter agents were doing far more than just chatting up the guards. " ..
+                "We've found a number of leaflets the deserters somehow managed to smuggle in on a ship " ..
+                "in the docks.\n\nThe ship used to transport the leaflets is still in Theramore, at the " ..
+                "farthest dock. If you can sneak aboard and capture the rest of their propaganda " ..
+                "documents, their agents will lose their most powerful tool. Be careful! The ship is " ..
+                "manned by seasoned privateers and the cargo is probably being kept in the captain's " ..
+                "quarters.",
+            rewardMoney = 4000,
+        },
+        [27212] = {
+            description = "I've altered the leaflets you captured from the deserters' mercenary friends " ..
+                "at the docks. Now, anyone who reads them will get an entirely different view of the " ..
+                "deserters and their aims.\n\nIf we distribute these to enough of the guards, the " ..
+                "deserters will be too embarrassed to ever reestablish their presence within our " ..
+                "walls.\n\n<Calia hands you a stack of the altered leaflets.>\n\nWhy don't you get " ..
+                "started while I plan our next move?",
+            rewardMoney = 4000,
+        },
+        [27213] = {
+            description = "Now that we've eliminated the deserters from Theramore, it's time to complete " ..
+                "this operation. My local contacts have reported that the deserters base their operations " ..
+                "in a ship moored on a small island to the southeast of the docks.\n\nArresting their " ..
+                "leader, Gavis Greyshield, should cause the others to lose their will to fight. Find him " ..
+                "within the ship and convince him to surrender. I wouldn't be surprised if he puts up a " ..
+                "bit of a fight for show, but then surrenders when he understands he can't win.",
+            rewardChoices = {{33249, 1}, {57832, 1}, {57853, 1}},
+            rewardMoney = 7500,
+        },
+        [27214] = {
+            description = "Reports from our scout patrols have recently taken a disturbing turn. They " ..
+                "tell of men wearing red Defias bandanas walking the Dreadmurk Shore north of Theramore's " ..
+                "walls.\n\nWreckage in the area suggests they may be survivors of a shipwreck, but our " ..
+                "information is limited. Captain Wymor at Sentry Point, a guard tower to the north of the " ..
+                "city, is looking for help in following up on the reports.",
+        },
+        [27215] = {
+            description = "There's a fellow the locals know as \"Swamp Eye\" Jarl, who lives alone out in " ..
+                "the swamp. Sometime ago he \"took over\" Swamplight Manor after the previous owners " ..
+                "disappeared under mysterious circumstances.\n\nI like to send someone to check up on him " ..
+                "every once in a while. He kind of reminds me of my grandfather, you know? Some say he's " ..
+                "not quite right in the head.\n\nIf you're headed northwest on the road out of Theramore, " ..
+                "you'll find Swamplight Manor in the Witch Hill area, before the road turns west.",
+        },
+        [27216] = {
+            description = "The old lighthouse out to the east hasn't worked for some time, but Babs " ..
+                "Fizzletorque has gotten it into her head to get it working again.\n\nI don't know how " ..
+                "she plans to do it by herself, but she claims that it'll make the movement of ships and " ..
+                "goods into the docks smoother, so I can't really object. Drawing duty on the docks is " ..
+                "really nothing to complain about when you could be on the front lines, you know?",
+        },
+        [27217] = {
+            description = "The old log in the lighthouse indicates that the lamp was fueled with oil from " ..
+                "the threshers that live along the coast here.\n\n<Babs wrinkles her nose at the mention " ..
+                "of such outdated technology.>\n\nI suppose it's a practical, if inelegant solution. The " ..
+                "log says that the oil taken from the youngest murk threshers works the best, and those " ..
+                "live right underneath the docks of Theramore.\n\nIf you're up for it, would you help " ..
+                "resupply the lighthouse with fuel?",
+            rewardMoney = 4000,
+        },
+        [27218] = {
+            description = "You know, it's amazing what you can find in that old lighthouse. After I lit " ..
+                "the lamp, I noticed this book in one of the old trunks up there.\n\n<Babs holds up the " ..
+                "book and reads the title dramatically.>\n\n\" Dastardly Denizens of the Deep!\"\n\nWhy, " ..
+                "I think I might swoon if I ever saw one of these! I'm sure it's good for a laugh or two, " ..
+                "but I simply don't have time for reading right now.\n\nYou know who might enjoy it, " ..
+                "though... that fishmonger on the docks, \"Dirty\" Michael Crowe. He collects old books.",
+        },
+        [27219] = {
+            description = "Oh, I'm sure you and Babs had a good laugh over the outlandish descriptions " ..
+                "and sketches in the book, but have you stopped to consider there might be some truth to " ..
+                "the legends?\n\nIf you listen closely enough, I bet you can still hear sailors talk " ..
+                "about Tethyr, the sea creature the book says lives right here! Of course, if you wanted " ..
+                "to know for sure, you could always ask old Nat Pagle.\n\nHe's got a small fishing camp " ..
+                "on a little island in Tidefury Cove, which is southwest across Dustwallow Bay.",
+        },
+        [27220] = {
+            description = "So you found a copy of Dastardly Denizens of the Deep, did you? Well, I can " ..
+                "tell you from experience, it's all true. I've even seen a few of 'em with my own " ..
+                "eyes.\n\nBut you want to know about Tethyr. I said I'd make you a deal, so here's what I " ..
+                "want you to do. I'm working on a new line of baits, but I haven't tested this one " ..
+                "yet.\n\nJust take this paste -- yeah, it smells a little foul -- smear it on yourself, " ..
+                "and swim into the deep part of Tidefury Cove to the southwest. Let me know how it works!",
+            rewardItems = {{19221, 1}},
+            rewardMoney = 4000,
+        },
+        [27221] = {
+            description = "Yes, Tethyr is certainly real, and he lives in the waters off " ..
+                "Theramore.\n\nHas a thing for bright lights. He's the reason they shut down the " ..
+                "lighthouse in the first place, you know...\n\nAnd if you light it up again, he'll come " ..
+                "right back. But no one in their right mind would do that.\n\nSo that must be your plan! " ..
+                "It's been good sharing a drink with you, but don't blame ol' Nat if Tethyr REALLY turns " ..
+                "you into fish bait. If you're going to do this, make sure you consult Major Mills at the " ..
+                "Theramore docks.",
+        },
+        [27222] = {
+            description = "Sea monster or no, we're not going to risk the safety of our shipping. I've " ..
+                "ordered our best marksmen to prepare for a confrontation with this Tethyr. The " ..
+                "artillerymen have augmented the dock's defenses with three mortars.\n\nI'm going to " ..
+                "order the lighthouse's lamp illuminated. If Tethyr does attack, it will be your job to " ..
+                "operate the mortars and take down the beast before it can kill all of the marksmen. I " ..
+                "wouldn't stand in one place too long, though. Using the mortars is likely to draw its " ..
+                "attention.",
+            rewardChoices = {{33247, 1}, {57842, 1}, {57849, 1}},
+            rewardMoney = 8000,
+        },
+        [27223] = {
+            description = "Where Market Row meets Festival Lane, you will encounter The Unforgiven. If " ..
+                "you slay the entirety of Crusaders' Square, you will coax out Timmy the Cruel. Both of " ..
+                "these former champions committed heinous acts against innocents here in the name of " ..
+                "gaining unholy power.\n\nYou must destroy both of them and rid Stratholme of their foul " ..
+                "presence. Take caution, for they were powerful fighters in life, and their new dark " ..
+                "powers will only have made them even more deadly.",
+            rewardMoney = 27300,
+        },
+        [27225] = {
+            description = "Ander Germaine has sent word that he wishes to honor you for your mastery of " ..
+                "arms and your dedication to the Alliance. Make your way to Stormwind, leave the Old Town " ..
+                "district through the south exit, and speak with him in his Command Center. I do not know " ..
+                "what he has planned, but it sounds like he has been impressed with your rapid progress.",
+        },
+        [27226] = {
+            description = "Thank the Warchief that you're here, <name>. I've made a critical error with " ..
+                "the sea dogs and need your help to rectify the situation.\n\nYou see, I sent them out " ..
+                "against the worgen coming from Fenris Isle stone cold sober. They attacked the beasts " ..
+                "and promptly got their butts handed to them. Many of them died, but a few still live, " ..
+                "barely clinging on to dear life.\n\nTake this barrel of ale to the Decrepit Fields, east " ..
+                "of here, and force it down the throats of fallen sea dogs.",
+            rewardChoices = {{62846, 1}, {62847, 1}, {62848, 1}},
+            rewardItems = {{62908, 1}},
+        },
         [27227] = {rewardMoney = 30000},
         [27228] = {rewardMoney = 29300},
         [27229] = {rewardMoney = 7500},
         [27230] = {rewardMoney = 29300},
+        [27231] = {
+            description = "Those that survived your assault on Fenris managed to drink the blood of the " ..
+                "wolf. They turned into ferocious worgen, hell-bent on vengeance. Now they paddle across " ..
+                "Lordamere Lake and assault my sea dogs. Many have already been killed. The worgen " ..
+                "monsters must be stopped!\n\nMake your way to the Decrepit Fields, east of here, and " ..
+                "kill the Hillsbrad worgen that infest the area. Once you've killed them all, make your " ..
+                "way to the Horde communication panel, located at the docks. I'll be in touch.",
+        },
+        [27232] = {
+            description = "<The communication console hums.>\n\nThose worgen you killed were the scouting " ..
+                "party. There are hundreds more incoming! Looks like Crowley and Bloodfang made the blood " ..
+                "offering to every human in Lordaeron.\n\nGet in one of those Horde cannons and send them " ..
+                "all back to their makers. Let the waters of Lordamere Lake run red with their blood!",
+            rewardChoices = {{62852, 1}, {62853, 1}},
+        },
+        [27233] = {
+            description = "I can handle training from here. If you're looking for something else to do, I " ..
+                "recommend heading up the road to the northwest. The Cenarion druids and Argent Crusade " ..
+                "have a small camp set up there, at Dalson's old farm. Maybe they can keep you busy until " ..
+                "we need your help again.",
+            rewardMoney = 400,
+        },
+        [27234] = {
+            description = "My scouts have reported a shipwreck just off the beach to the northeast. " ..
+                "Shipwrecks aren't all that unusual out here, but the reports also indicated the " ..
+                "survivors were all wearing red bandanas... the symbol of the Defias!\n\nThe reports " ..
+                "indicate their leader resides on a large island just off the coast to the northeast of " ..
+                "the tower. Kill him and retrieve any documents you find in his possession.",
+            rewardMoney = 4000,
+        },
+        [27235] = {
+            description = "From the wording of the orders you recovered, it looks like the first priority " ..
+                "of the Defias will be to locate and secure whatever cargo they possessed.\n\nSI:7 has " ..
+                "had a salvage diver named Renn McGill working out of Theramore for some time. When he " ..
+                "heard about the shipwreck, Renn went north to dive near the islands the Defias now " ..
+                "occupy.\n\nIf we're to beat the Defias to this cargo, we'll need his help. Look for him " ..
+                "in the waters northeast of a small island just north of the island you visited earlier.",
+        },
+        [27236] = {
+            description = "There's plenty of wreckage strewn across the bottom of the water from here to " ..
+                "Alcaz, and the Defias have already got divers out there looking around. With the help of " ..
+                "some of their gear, we can get you suited up and ready to join the hunt, but you'll have " ..
+                "to do some creative \"borrowing\" first.\n\nSearch this island for a crate of diving " ..
+                "gear and something to repair it with. When you've got them, bring them to me and I'll " ..
+                "have your gear ready in no time!",
+            rewardMoney = 4000,
+        },
+        [27237] = {
+            description = "Well, I was able to make enough repairs to this gear to let you dive for " ..
+                "awhile, anyway. I wouldn't count on it holding out for a long time, though.\n\nThe " ..
+                "wreckage of the ship is strewn along the bottom from the east coast of this island out " ..
+                "toward Alcaz Island. While that helm holds out, locate pieces of the wreckage on the " ..
+                "bottom between this island and Alcaz. Use this salvage kit to search the wreckage for " ..
+                "pieces of the cargo. Be careful not to venture too close to Alcaz Island. Those hydra " ..
+                "are fierce.",
+            rewardChoices = {{33259, 1}, {33267, 1}},
+            rewardMoney = 4000,
+        },
+        [27238] = {
+            description = "You must bring news of our findings to Lady Jaina without delay! If the Defias " ..
+                "were transporting a prisoner, there's no telling who it might be or if the person is " ..
+                "still alive!\n\nOne thing is for certain, <name>. The Defias wouldn't go to all this " ..
+                "trouble for some petty grudge. Their prisoner must have been someone of importance. Lady " ..
+                "Jaina would know better than anyone else what these findings mean. You'll find her at " ..
+                "the top of the mage tower at Theramore's center.",
+        },
+        [27239] = {
+            description = "It looks like Renn's hunch about Alcaz Island was right. We need to survey " ..
+                "that island, but it would take a whole brigade of troops to fight our way in " ..
+                "there.\n\nTheramore's defenses can't weather such a hit, so I've arranged with Cassa " ..
+                "Crimsonwing, the apprentice to Theramore's gryphon master, to allow you to use one of " ..
+                "her beasts to survey Alcaz from the air.\n\nAlcaz Island holds the key to the mystery of " ..
+                "the Defias' involvement in this kidnapping.",
+            rewardChoices = {{33250, 1}, {57851, 1}},
+            rewardMoney = 8000,
+        },
+        [27240] = {
+            description = "Although Onyxia has been exposed and removed from the court, the Defias who " ..
+                "carried out her plan must be punished. Carry word to King Varian Wrynn in Stormwind " ..
+                "castle that the Defias are the ones who carried out his kidnapping. I have little doubt " ..
+                "that the king will mete out swift and terrible justice to those involved.\n\nI can use " ..
+                "my magic to expedite your trip to Stormwind. Just speak to me when you're prepared to " ..
+                "go, <name>.",
+        },
+        [27241] = {
+            description = "I must make plans to destroy the remnants of the Defias. Please convey my " ..
+                "thanks to Lady Jaina, back in Theramore. She has ever been a loyal friend and steadfast " ..
+                "ally.\n\nGo to the Mage Quarter at the western end of the city and speak with Archmage " ..
+                "Malin at the foot of the tower there. He will speed your return to Theramore.",
+            rewardMoney = 8000,
+        },
+        [27242] = {
+            description = "The patch of swamp to the northeast is home to a particularly nasty breed of " ..
+                "raptors. We've lost more than one unwary soldier to them, but I think we can turn them " ..
+                "against our Grimtotem neighbors.\n\nTake this rope and use it to capture Bloodfen " ..
+                "raptors or Bloodfen screechers that you've subdued. I wouldn't try to capture one of the " ..
+                "beasts until you've weakened them quite a bit in combat. It's going to be quite a " ..
+                "struggle.",
+            rewardMoney = 4000,
+        },
+        [27243] = {
+            description = "Now that we've got our raptors, our next move is to \"encourage\" them to " ..
+                "attack the Grimtotems at Blackhoof Village to the northwest.\n\nI've got a leftover " ..
+                "haunch of... well, it doesn't really matter what it is. It'll be your bait. Set it down " ..
+                "on the ground in Blackhoof Village near the windmill in the center of the settlement. " ..
+                "The raptors should take care of the rest, if their training took.",
+            rewardChoices = {{33248, 1}, {33266, 1}, {33265, 1}},
+            rewardMoney = 4000,
+        },
         [27244] = {rewardMoney = 7500},
+        [27245] = {
+            description = "We're doing all we can to keep the Grimtotem raiders at bay, but they keep " ..
+                "launching assaults on the tower. Even worse, they've managed to discover and capture the " ..
+                "patrols the captain sends out to gather information and safeguard the road.\n\nI suspect " ..
+                "the captives are being held in Blackhoof Village, to the northwest. Knowing the " ..
+                "Grimtotems, the defenders of the village probably carry the keys to the prisoners' cages " ..
+                "with them. I don't care what you have to do, <class>, just bring back my men alive.",
+            rewardMoney = 4000,
+        },
+        [27246] = {
+            description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
+                "clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained " ..
+                "parchment.\n\nThe parchment is written in orcish... and it looks important.",
+        },
+        [27247] = {
+            description = "Captain Vimes should see the orc report you found, <name>. He knows the orcish " ..
+                "language better than most. And he should know that there are Horde spies near " ..
+                "Theramore!\n\nThe captain is in the barracks, on the northeastern side of Theramore Isle.",
+            rewardMoney = 4000,
+        },
+        [27248] = {
+            description = "The Steamwheedle Cartel has recently established a new outpost in the southern " ..
+                "part of Dustwallow Marsh. It's called Mudsprocket, if I recall, and it's located on the " ..
+                "main road south out of Tabetha's Farm and the Stonemaul Ruins.\n\nThis is an excellent " ..
+                "opportunity for us to establish new trade contacts and Lady Jaina wants me to send a " ..
+                "representative down there to establish contact. Would you be willing to go?",
+        },
+        [27249] = {
+            description = "Poor James never recovered from the destruction of the Shady Rest and the " ..
+                "murder of his family. The boys and I are doing what we can to find the monsters who did " ..
+                "this.\n\nI've sent our best investigator, Inspector Tarem, out to the ruins, but this is " ..
+                "too big a job for any one man. If you'd lend Tarem a hand, we'd appreciate it. Light " ..
+                "knows, we'd all like to be out there helping.\n\nThe main road will lead you to the inn, " ..
+                "but take care. Your journey will take you beyond the protection of my soldiers.",
+        },
+        [27251] = {
+            description = "I can't help it if I feel sorry for ol' Jim there. He wasn't always like that. " ..
+                "Ran an inn out in the marsh for a while, wonderful place.\n\nLook, I don't really want " ..
+                "to talk about it. Bring it up with Captain Vimes if you really have to. He's stationed " ..
+                "on the top floor of Foothold Citadel, the large barracks to the east of Lady Jaina's " ..
+                "tower.",
+        },
+        [27252] = {
+            description = "An iron shield, blackened by the fire that raged through the inn, is affixed " ..
+                "to the crumbling chimney, one of the few remaining parts of the structure that once made " ..
+                "up the Shady Rest Inn.\n\nThe shield can be removed from the brick of the chimney.",
+            rewardMoney = 4000,
+        },
         [27261] = {rewardMoney = 8000},
+        [27262] = {
+            description = "Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest " ..
+                "Inn. There are at least a few visible impressions, with more rows of prints almost " ..
+                "imperceptible in the soft mud of the marsh.",
+        },
+        [27263] = {
+            description = "A glint of light on the ground catches your eye from underneath the rubble. " ..
+                "Brushing away debris and ash caked onto the object reveals the insignia of a gold anchor " ..
+                "on white enameled on the surface: the sign of Theramore.\n\nUnderneath the anchor is " ..
+                "embossed the name \"Lieutenant Paval Reethe\".",
+        },
+        [27264] = {
+            description = "I don't recognize the name of Lieutenant Paval Reethe. Your best bet would be " ..
+                "to check with Adjutant Tesoran. He keeps track of all the records for the Theramore " ..
+                "guard, from personnel to their equipment.\n\nHe should be able to tell you who this " ..
+                "Reethe is with a quick check of his books.",
+        },
+        [27265] = {
+            description = "Lord Grayson Shadowbreaker, one of the foremost paladins in the realm, has " ..
+                "asked to speak with you personally. I do not know what he has planned, but it sounds " ..
+                "like he has been impressed with your rapid progress.\n\nYou should make your way to " ..
+                "Stormwind immediately and meet him inside the city's Cathedral of Light.",
+        },
+        [27266] = {
+            description = "Wulf Hansreim oversees the training and coordination of hunters in the service " ..
+                "of Stormwind. He has asked to speak to you personally. As soon as you are able, travel " ..
+                "to Stormwind and exit the Old Town district through the south gate to reach his " ..
+                "headquarters.\n\nI have no idea what he has planned, but it sounds like he has been " ..
+                "impressed with your rapid progress.",
+        },
         [27267] = {
             description = "It seems that the leaders of SI:7 have taken an interest in your progress and " ..
                 "your service to the Alliance. Osborne the Night Man, a high ranking member of SI:7, has " ..
                 "asked to speak with you. Look for him in the southern part of Stormwind's Old " ..
                 "Town.\n\nI'm not sure what Osborne wants with you, but it seemed important.",
         },
+        [27268] = {
+            description = "I have an urgent message for you from Stormwind, <name>. It seems that High " ..
+                "Priestess Laurena has asked to speak with you at the Cathedral of Light in Stormwind's " ..
+                "Cathedral Square. The messenger did not say what the matter concerned, but that you " ..
+                "should travel to Stormwind with all haste.",
+        },
+        [27269] = {
+            description = "I have an urgent message for you from Darnassus. The message is from the High " ..
+                "Priestess of Elune, Tyrande Whisperwind, herself! The messenger did not say what the " ..
+                "matter concerned, but that you should travel to the Temple of the Moon in Darnassus and " ..
+                "meet with the high priestess at once.",
+        },
+        [27270] = {
+            description = "I have an urgent message for you from Stormwind, <name>. It seems Farseer " ..
+                "Umbrua has asked to speak with you the next time you're in the city.\n\nThe messenger " ..
+                "gave no explanation for the farseer's invitation, but you should travel to Stormwind and " ..
+                "find Farseer Umbrua at the Golden Keg in the Dwarven District as soon as you can.",
+        },
+        [27271] = {
+            description = "I just received a message from Stormwind, <name>. One of Stormwind's most " ..
+                "renowned mages, Maginor Dumas, has requested that you visit him in the Mage Quarter " ..
+                "inside Stormwind. You will be able to find him inside the Wizard's Sanctum atop the " ..
+                "large tower in the heart of the Mage Quarter.\n\nI do not know what he has planned, but " ..
+                "it sounds like he has been impressed with your rapid progress.",
+        },
+        [27272] = {
+            description = "It seems that the elders in our ranks have taken notice of your progress and " ..
+                "dedication, <name>. Demisette Cloyce, one of the oldest and most respected members of " ..
+                "our circle, has sent word that she wishes to speak with you. You should not take such an " ..
+                "invitation lightly. Most only speak with her in the course of their lessons, but if she " ..
+                "has asked to see you personally, it must be an important matter.\n\nHurry back to " ..
+                "Stormwind and look for her beneath the Slaughtered Lamb in the Mage Quarter.",
+        },
+        [27273] = {
+            description = "You just missed the messenger from Moonglade, <name>. He said little, except " ..
+                "that he carried an urgent message from Loganaar, one of the honored trainers of the " ..
+                "Cenarion Circle. Head to Moonglade as quickly as you can, <name>. The matter sounds " ..
+                "important.\n\nLook for Loganaar in the village of Nighthaven.",
+        },
+        [27274] = {
+            description = "I have an urgent message for you from Stormwind, <name>. Chief Surgeon " ..
+                "Gashweld has asked to meet with you in Stormwind. The message didn't say what the chief " ..
+                "surgeon wanted to discuss, but you should make your way to Stormwind as quickly as you " ..
+                "can. Look for Chief Surgeon Gashweld in the Dwarven District of the city.",
+        },
+        [27275] = {
+            description = "We saw to it that the sentinel was healed and re-equipped. I already sent her " ..
+                "back into the field.\n\nHead back up and go to Darkcloud Pinnacle. She'll meet you there.",
+        },
+        [27277] = {
+            description = "I've received an urgent message from Orgrimmar for you, <name>. The renowned " ..
+                "mage, Ureda, wants you to meet with her in Orgrimmar. I'm not sure what this is about, " ..
+                "but if I was you, I would travel to the capital as fast as possible and seek out Ureda " ..
+                "in the Cleft of Shadow.",
+        },
+        [27278] = {
+            description = "A courier from Orgrimmar just delivered a message for you. I'm to tell you " ..
+                "that Ormak Grimshot, master of the hunters in Orgrimmar, has asked to meet with " ..
+                "you.\n\nTravel quickly to Orgrimmar and present yourself to Ormak in the Valley of Honor.",
+        },
         [27279] = {
             description = "A messenger just arrived from Orgrimmar bearing a communication for you. " ..
                 "Gordul, the senior rogue trainer in Orgrimmar, has sent for you. You must head to " ..
                 "Orgrimmar immediately and meet with him in the Cleft of Shadow.\n\nWhen Gordul summons " ..
                 "you, the prudent thing to do is obey. Do not keep him waiting, <name>.",
+        },
+        [27281] = {
+            description = "I just received word that you are needed in Orgrimmar, <name>. Grezz Ragefist, " ..
+                "the honored trainer of warriors in the city, has sent for you. It would not be wise to " ..
+                "ignore such a summons.\n\nTravel quickly to Orgrimmar and the Valley of Honor where " ..
+                "Grezz awaits your arrival.",
+        },
+        [27282] = {
+            description = "<name>, I have received word that you are needed back in Orgrimmar. Zevrost, " ..
+                "one of the senior warlock trainers in the Cleft of Shadow, has something important that " ..
+                "he wishes to discuss with you. It seems like the kind of thing that cannot wait.\n\nMake " ..
+                "your way back to Orgrimmar and speak with him as soon as you can.",
+        },
+        [27283] = {
+            description = "As you have heard, Moonglade is the home of the Cenarion Circle, the " ..
+                "brotherhood of druids. All who dwell there do so in the peace of Cenarius. It is in that " ..
+                "spirit that the trainer Loganaar has extended an invitation to visit him in " ..
+                "Moonglade.\n\nYou will find him in the village of Nighthaven.",
+        },
+        [27284] = {
+            description = "I'm sorry I can't be of much help, <name>, but I can refer you to someone who " ..
+                "would be. Caz Twosprocket, one of our best blacksmiths, works the forge at the " ..
+                "smithy.\n\nTake the shield to him, and see what he can tell you.",
+        },
+        [27285] = {
+            description = "Ah, I almost missed this... The leather strap on the back must have burned " ..
+                "off, but it seems like it was made to fit a large person. I'd guess a tauren, " ..
+                "actually.\n\nThat's about all I can tell you. Tell Captain Vimes I'm sorry I couldn't be " ..
+                "of more help.",
+        },
+        [27286] = {
+            description = "Reddon... Redpath... Ah, here it is! Lieutenant Paval Reethe.\n\nJoined the " ..
+                "Theramore guard along with most of the recruits that came across the sea with Lady " ..
+                "Proudmoore. Enlisted with the marines of Kul Tiras at the age of sixteen. Distinguished " ..
+                "service, promotions...\n\nListed as missing.",
+        },
+        [27287] = {
+            description = "It has been a struggle maintaining a presence in the marsh, but through " ..
+                "strength of our resolve, we have been able to maintain several defensive watchtowers " ..
+                "throughout the area.\n\nThe latest information and scouting reports I have received " ..
+                "indicate that a group of deserters has squatted in our abandoned tower at Lost Point, " ..
+                "southeast of the inn.\n\nThe local lieutenant seems to be Balos Jacken. See if you can " ..
+                "get some information out of him.\n\nBe warned, <name>. He may be a tough nut to crack.",
+        },
+        [27288] = {
+            description = "Reethe? That coward?\n\nWe threw him out of camp because he insisted on " ..
+                "raiding the supplies of the ogres up at Brackenwall Village. We're not so many in number " ..
+                "that we could stand up to those mindless brutes.\n\nHe crossed the line one too many " ..
+                "times, so we left him to fend for himself.\n\nNow, I helped you out... So, why don't you " ..
+                "help us out and forget you bumped into us?",
+            rewardMoney = 8000,
+        },
+        [27290] = {
+            description = "The time has come to destroy Crowley, Bloodfang and every dog at their " ..
+                "command. To do this, though, will require cunning and planning the likes of which they " ..
+                "would never dare dream!\n\nAs one of my most trusted soldiers, <name>, I need you to go " ..
+                "to Forsaken Forward Command, located in Gilneas, and report to Deathstalker Commander " ..
+                "Belmont. I have sent Belmont ahead with my plans. He awaits your arrival.\n\nArthura " ..
+                "will escort you to Forward Command. Tell me when you are ready and I will send you on " ..
+                "your way.",
+            rewardMoney = 600,
         },
         [27292] = {rewardMoney = 2000},
         [27293] = {rewardMoney = 4500},

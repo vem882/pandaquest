@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.186] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,356 quests, 21 NPCs, 1 object
+- quest 27195 - Nowhere to Run - updated
+- quest 27196 - On to Something - updated
+- quest 27197 - The Battle Resumes! - updated
+- quest 27198 - Supporting the Troops - updated
+- quest 27199 - Ashes to Ashes - updated
+- quest 27200 - Siren's Song - updated
+- quest 27201 - Val'kyr Incursion - updated
+- quest 27202 - Brother Against Brother - updated
+- quest 27203 - The Maelstrom - updated
+- quest 27204 - Aradne - updated
+- quest 27205 - The Depravity of the Forsaken - updated
+- quest 27206 - Alas, Andorhal - updated
+- quest 27208 - The Dreadlord Balnazzar - updated
+- quest 27210 - Traitors Among Us - updated
+- quest 27211 - Propaganda War - updated
+- quest 27212 - Discrediting the Deserters - updated
+- quest 27213 - The End of the Deserters - updated
+- quest 27214 - A Disturbing Development - updated
+- quest 27215 - The Hermit of Swamplight Manor - updated
+- quest 27216 - This Old Lighthouse - updated
+- quest - and 53 more quests updated
+
 ## [0.2.185] - 2026-10-19
 
 Data from the PandaQuest portal.
