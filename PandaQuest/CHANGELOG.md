@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.178] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,762 quests, 16 NPCs
+- quest 2752 - On Iron Pauldrons - updated
+- quest 26347 - Keeper of the Flame - updated
+- quest 26348 - The Coast Isn't Clear - updated
+- quest 26349 - The Coastal Menace - updated
+- quest 26353 - Captain Sanders' Hidden Treasure - updated
+- quest 26354 - Captain Sanders' Hidden Treasure - updated
+- quest 26355 - Captain Sanders' Hidden Treasure - updated
+- quest 26356 - Captain Sanders' Hidden Treasure - updated
+- quest 26358 - Ready the Air Force - updated
+- quest 26361 - Smoot's Samophlange - updated
+- quest 26365 - Hero's Call: Redridge Mountains! - updated
+- quest 26370 - Return to Sentinel Hill - updated
+- quest 26371 - The Legend of Captain Grayson - updated
+- quest 26372 - Pre-Flight Checklist - updated
+- quest 26373 - On to Kharanos - updated
+- quest 26374 - Ready the Ground Troops - updated
+- quest 26375 - Loose Stones - updated
+- quest 26376 - Hatred Runs Deep - updated
+- quest 26377 - Unsolid Ground - updated
+- quest 26378 - Hero's Call: Westfall! - updated
+- quest - and 44 more quests updated
+
 ## [0.2.177] - 2026-10-19
 
 Data from the PandaQuest portal.
