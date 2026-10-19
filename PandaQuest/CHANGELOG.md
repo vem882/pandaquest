@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.177] - 2026-10-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 4,698 quests, 16 NPCs
+- quest 26204 - The Arts of a Warrior - updated
+- quest 26206 - The Future of Gnomeregan - updated
+- quest 26209 - Murder Was The Case That They Gave Me - updated
+- quest 26213 - Hot On the Trail: The Riverpaw Clan - updated
+- quest 26214 - Hot On the Trail: Murlocs - updated
+- quest 26215 - Meet Two-Shoed Lou - updated
+- quest 26219 - Full Circle - updated
+- quest 26220 - Everything Is Better with Bacon - updated
+- quest 26221 - Full Circle - updated
+- quest 26226 - Crawfish Creole - updated
+- quest 26227 - Careful, This Fruit Bites Back - updated
+- quest 26228 - Livin' the Life - updated
+- quest 26229 - "I TAKE Candle!" - updated
+- quest 26230 - Feast or Famine - updated
+- quest 26232 - Lou's Parting Thoughts - updated
+- quest 26233 - Stealing From Our Own - updated
+- quest 26234 - Stealing From Our Own - updated
+- quest 26235 - Even Thieves Get Hungry - updated
+- quest 26236 - Shakedown at the Saldean's - updated
+- quest 26237 - Times are Tough - updated
+- quest - and 61 more quests updated
+
 ## [0.2.176] - 2026-10-18
 
 Data from the PandaQuest portal.
