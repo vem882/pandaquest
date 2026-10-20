@@ -2,6 +2,16 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.198
+- waypoints - the quest NPC is marked over its nameplate: quest name, Ready for turn-in, chevrons
+- waypoints - further out a light beam rises from that nameplate, with the distance under it
+- waypoints - distance and travel time to the waypoint ride on the arrow
+- waypoints - follows the tracked quest: its hand-in NPC at the nearest spot in your zone
+- waypoints - /way [zone] x y [label] in TomTom's syntax, only when no other addon owns /way
+- waypoints - with TomTom installed, the waypoint TomTom's arrow follows is shown instead
+- options - a Waypoints tab: every part on or off, size, beam colour, Pinpoint distance
+- saved data - new keys profile.waypoint and char.waypoint; nothing saved before is changed
+
 0.2.197
 - database - Wowhead data as the PandaQuest portal read it: 6,046 quests, 24 NPCs, 1 object
 - quest 28063 - Leave No Weapon Behind - updated
