@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.199] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,127 quests, 24 NPCs, 1 object
+- quest 28185 - Svarnos - updated
+- quest 28186 - Cursed Shackles - updated
+- quest 28187 - Missed Me By Zhat Much! - updated
+- quest 28188 - Prison Revolt - updated
+- quest 28189 - Do the Right Thing - updated
+- quest 28191 - A Fitting End - updated
+- quest 28192 - No One Here Gets Out Alive - updated
+- quest 28193 - Lockdown! - updated
+- quest 28194 - The Great Escape - updated
+- quest 28195 - Sending a Message - updated
+- quest 28196 - The Battle for Hillsbrad - updated
+- quest 28197 - Discretion is Key - updated
+- quest 28198 - The Weakest Link - updated
+- quest 28199 - For Science! - updated
+- quest 28200 - The Element of Supplies - updated
+- quest 28201 - Ploughshares to Swords - updated
+- quest 28202 - A Perfect Costume - updated
+- quest 28203 - A Perfect Costume - updated
+- quest 28204 - A Perfect Costume - updated
+- quest 28205 - A Perfect Costume - updated
+- quest - and 61 more quests updated
+
 ## [0.2.198] - 2026-10-20
 
 Waypoints you see in the world, as far as Mists of Pandaria Classic lets an addon show them.
