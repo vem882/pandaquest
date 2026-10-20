@@ -108,6 +108,104 @@ local T = {
     ["Unlock arrow"] = "Vapauta nuoli",
     ["Wowhead link"] = "Wowhead-linkki",
 
+    -- Nav/Waypoint (in-world waypoints, /way)
+    ["Waypoints"] =
+        "Reittipisteet",
+    ["Waypoint"] =
+        "Reittipiste",
+    ["Ready for turn-in"] =
+        "Valmis palautettavaksi",
+    ["Quest available"] =
+        "Tehtävä saatavilla",
+    ["X: %.1f, Y: %.1f"] =
+        "X: %.1f, Y: %.1f",
+    ["Arrived at %s."] =
+        "Perillä: %s.",
+    ["Waypoint set: %s"] =
+        "Reittipiste asetettu: %s",
+    ["Waypoint cleared."] =
+        "Reittipiste poistettu.",
+    ["Usage: /way [zone] x y [label]"] =
+        "Käyttö: /way [alue] x y [nimi]",
+    ["Coordinates must be between 0 and 100."] =
+        "Koordinaattien on oltava välillä 0-100.",
+    ["Unknown zone: %s"] =
+        "Tuntematon alue: %s",
+    ["Did you mean: %s"] =
+        "Tarkoititko: %s",
+    ["You are not on a map with coordinates. Name the zone: /way <zone> x y"] =
+        "Tässä ei ole koordinaatteja. Kerro alue: /way <alue> x y",
+    ["Current waypoint: %s"] =
+        "Nykyinen reittipiste: %s",
+    ["No waypoint."] =
+        "Ei reittipistettä.",
+    ["Not possible in combat."] =
+        "Ei onnistu taistelun aikana.",
+    ["Mists of Pandaria Classic gives addons no way to put a marker on a spot in the 3D world."] =
+        "Mists of Pandaria Classic ei anna lisäosille keinoa merkitä paikkaa 3D-maailmaan.",
+    ["PandaQuest marks the quest NPC itself, over its nameplate, and shows the distance on the arrow."] =
+        "PandaQuest merkitsee tehtävän NPC:n itse, sen nimikilven yläpuolelle, ja näyttää etäisyyden nuolessa.",
+    ["Show waypoints"] =
+        "Näytä reittipisteet",
+    ["What to mark"] =
+        "Mitä merkitään",
+    ["Follow the tracked quest"] =
+        "Seuraa seurattua tehtävää",
+    ["The quest you track (or else the arrow's target) gets the waypoint: where to hand it in once it is complete."] =
+        "Seuraamasi tehtävä (tai muuten nuolen kohde) saa reittipisteen: palautuspaikan, kun tehtävä on valmis.",
+    ["Also mark unfinished objectives"] =
+        "Merkitse myös keskeneräiset tavoitteet",
+    ["Without this, only hand-ins, quest givers and points you set get a waypoint."] =
+        "Ilman tätä reittipisteen saavat vain palautukset, tehtävänantajat ja itse asettamasi pisteet.",
+    ["Show TomTom's waypoint"] =
+        "Näytä TomTomin reittipiste",
+    ["With TomTom installed, the waypoint TomTom's arrow follows is shown in PandaQuest's style."] =
+        "Kun TomTom on asennettu, TomTomin nuolen reittipiste näytetään PandaQuestin tyylillä.",
+    ["What to show"] =
+        "Mitä näytetään",
+    ["Distance on the arrow"] =
+        "Etäisyys nuolessa",
+    ["A badge with the distance and the travel time, above the arrow."] =
+        "Merkki, etäisyys ja matka-aika nuolen yläpuolella.",
+    ["Pinpoint over the NPC"] =
+        "Tarkka merkki NPC:n yllä",
+    ["Up close, the quest and what to do there, framed over the NPC's head with chevrons pointing at it."] =
+        "Lähellä tehtävä ja mitä siellä tehdään, kehystettynä NPC:n pään yllä nuolenkärkien osoittaessa siihen.",
+    ["Pinpoint distance (yards)"] =
+        "Tarkan merkin etäisyys (jaardia)",
+    ["Closer than this, the beam gives way to the Pinpoint label."] =
+        "Tätä lähempänä valokeila vaihtuu tarkkaan merkkiin.",
+    ["Light beam over the NPC"] =
+        "Valokeila NPC:n yllä",
+    ["Further out, a column of light over the NPC's nameplate, drawn only where the nameplate really is: no nameplate, no beam."] =
+        "Kauempana valopylväs NPC:n nimikilven yllä, vain siellä missä nimikilpi todella on: ei nimikilpeä, ei valokeilaa.",
+    ["Beam colour"] =
+        "Valokeilan väri",
+    ["Remove a /way point when you reach it"] =
+        "Poista /way-piste, kun saavut perille",
+    ["Nameplates"] =
+        "Nimikilvet",
+    ["Friendly NPC nameplates are off. The Pinpoint label and the beam need them: turn them on here or in the game's options."] =
+        "NPC-nimikilvet ovat pois päältä. Tarkka merkki ja valokeila tarvitsevat ne: laita ne päälle tästä tai pelin asetuksista.",
+    ["Friendly NPC nameplates are on. Inside dungeons the game keeps them from addons, so there the arrow carries on alone."] =
+        "NPC-nimikilvet ovat päällä. Luolastoissa peli ei anna niitä lisäosille, joten siellä nuoli jatkaa yksin.",
+    ["Turn on friendly NPC nameplates"] =
+        "Laita ystävällisten NPC:iden nimikilvet päälle",
+    ["Changes the game's setting nameplateShowFriendlyNpcs, only when you press this."] =
+        "Muuttaa pelin asetusta nameplateShowFriendlyNpcs, vain kun painat tätä.",
+    ["Current waypoint"] =
+        "Nykyinen reittipiste",
+    ["Clear the waypoint"] =
+        "Poista reittipiste",
+    ["Forgets the point or quest you chose; the waypoint follows the tracked quest again."] =
+        "Unohtaa valitsemasi pisteen tai tehtävän; reittipiste seuraa taas seurattua tehtävää.",
+    ["/way belongs to another addon here (%s), so PandaQuest shows that addon's waypoint where it can."] =
+        "/way kuuluu täällä toiselle lisäosalle (%s), joten PandaQuest näyttää sen reittipisteen, kun voi.",
+    ["/way [zone] x y [label] sets a waypoint, written the way TomTom writes it."] =
+        "/way [alue] x y [nimi] asettaa reittipisteen TomTomin tapaan.",
+    ["For example /way 35 79, /way Eversong Woods 35.0 79.0 Windrunner Spire or /way #94 35 79. /way clear removes it."] =
+        "Esimerkiksi /way 35 79, /way Eversong Woods 35.0 79.0 Windrunner Spire tai /way #94 35 79. /way clear poistaa sen.",
+
     -- Map (pins, tooltips)
     ["%d spawns here"] = "%d esiintymää täällä",
     ["Left-click: navigate here"] = "Vasen klikkaus: navigoi tänne",

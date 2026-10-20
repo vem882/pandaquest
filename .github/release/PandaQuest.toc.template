@@ -112,3 +112,5 @@ Sync\Character.lua
 Sync\Consent.lua
 Sync\Community.lua
 Core\Init.lua
+# AceAddon modules that create themselves (ns.PQ:NewModule) come after Core\Init.lua, which made ns.PQ.
+Nav\Waypoint.lua
