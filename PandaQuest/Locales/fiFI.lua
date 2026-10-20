@@ -749,6 +749,25 @@ local T = {
         "Näytä synkronoinnin tila",
     ["Ask the data sharing question"] =
         "Kysy tiedonjakokysymys",
+    -- Minimap button and broker text (UI/MinimapButton.lua)
+    ["%d tracked quest"] =
+        "%d seurattu tehtävä",
+    ["%d tracked quests"] =
+        "%d seurattua tehtävää",
+    ["Flying to %s"] =
+        "Lento: %s",
+    ["Flying"] =
+        "Lennolla",
+    ["Last sync with the PandaQuest site: %s"] =
+        "Viimeisin synkronointi PandaQuest-sivuston kanssa: %s",
+    ["Lock the minimap button"] =
+        "Lukitse minikartan painike",
+    ["A locked button cannot be dragged around the minimap."] =
+        "Lukittua painiketta ei voi raahata minikartan reunalla.",
+    ["Show in the add-on compartment"] =
+        "Näytä lisäosalokerossa",
+    ["Adds PandaQuest to the add-on list under the minimap."] =
+        "Lisää PandaQuestin minikartan alla olevaan lisäosaluetteloon.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

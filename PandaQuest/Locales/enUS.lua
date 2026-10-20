@@ -549,6 +549,16 @@ L["Quests"] = true
 L["Shift-click: toggle the arrow"] = true
 L["This is a beta build: new features are not yet confirmed in the game."] = true
 
+-- Minimap button and broker text (UI/MinimapButton.lua)
+L["%d tracked quest"] = true
+L["%d tracked quests"] = true
+L["Flying to %s"] = true
+L["Flying"] = true
+L["Last sync with the PandaQuest site: %s"] = true
+L["Lock the minimap button"] = true
+L["A locked button cannot be dragged around the minimap."] = true
+L["Show in the add-on compartment"] = true
+L["Adds PandaQuest to the add-on list under the minimap."] = true
 
 -- Motion (UI/Motion.lua)
 L["Animations"] = true
