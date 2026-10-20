@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.197] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,046 quests, 24 NPCs, 1 object
+- quest 28063 - Leave No Weapon Behind - updated
+- quest 28064 - Welcome to the Brotherhood - updated
+- quest 28068 - Adventurers Wanted: Blackrock Depths - updated
+- quest 28069 - Adventurers Wanted: Blackrock Depths - updated
+- quest 28089 - Warchief's Command: Hillsbrad Foothills! - updated
+- quest 28090 - Precious Goods - updated
+- quest 28091 - Easy Pickings - updated
+- quest 28092 - If The Key Fits - updated
+- quest 28093 - Pressing Forward - updated
+- quest 28094 - Paving the Way - updated
+- quest 28096 - Welcome to the Machine - updated
+- quest 28097 - The Gates of Grim Batol - updated
+- quest 28099 - Rasha'krak - updated
+- quest 28101 - Mathias' Command - updated
+- quest 28103 - Easy Pickings - updated
+- quest 28104 - Precious Goods - updated
+- quest 28105 - Kavem the Callous - updated
+- quest 28107 - Paving the Way - updated
+- quest 28108 - If The Key Fits - updated
+- quest 28109 - Pressing Forward - updated
+- quest - and 51 more quests updated
+
 ## [0.2.196] - 2026-10-20
 
 Data from the PandaQuest portal.
