@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.200] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,197 quests, 24 NPCs, 1 object
+- quest 28289 - Moonglade Calls - updated
+- quest 28290 - Meet with Grezz Ragefist - updated
+- quest 28291 - Return to Camp - updated
+- quest 28292 - That's No Pyramid! - updated
+- quest 28293 - That's No Pyramid! - updated
+- quest 28294 - The Kirthaven Summit - updated
+- quest 28295 - Meetup with the Caravan - updated
+- quest 28296 - Meetup with the Caravan - updated
+- quest 28297 - Meet with Ormak Grimshot - updated
+- quest 28299 - Meet with Zevrost - updated
+- quest 28300 - Meet with Ureda - updated
+- quest 28302 - Meet with Sunwalker Atohmo - updated
+- quest 28303 - Meet with Master Pyreanor - updated
+- quest 28304 - Meet with Dark Cleric Cecille - updated
+- quest 28307 - Meet with Tyelis - updated
+- quest 28308 - Meet with Seer Liwatha - updated
+- quest 28309 - Meet with Shadow-Walker Zuru - updated
+- quest 28310 - Morgan's Vigil - updated
+- quest 28311 - Blackened Ashes - updated
+- quest 28312 - Latent Demons of the Land - updated
+- quest - and 50 more quests updated
+
 ## [0.2.199] - 2026-10-20
 
 Data from the PandaQuest portal.
