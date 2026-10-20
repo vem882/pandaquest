@@ -4,6 +4,208 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.203] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,338 quests, 26 NPCs, 1 object
+- quest 28466 - Weapons of Darkness - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward choices: +3
+- quest 28473 - Weapons of Darkness - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+  - reward choices: +3
+- quest 28474 - Twilight Scheming - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+- quest 28475 - Twilight Scheming - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+- quest 28476 - Twilight Scheming - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+- quest 28477 - Twilight Scheming - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+- quest 28478 - Twilight Scheming - updated
+  - description added
+  - reward money added (1g 45s)
+  - reward items: +1
+- quest 28480 - Lieutenants of Darkness - updated
+  - description added
+  - reward money added (9g)
+  - reward choices: +2
+- quest 28482 - Sullah's Gift - updated
+  - description added
+- quest 28483 - Bleeding the Enemy - updated
+  - description added
+  - reward money added (9g)
+- quest 28484 - The Heart of the Matter - updated
+  - description added
+  - reward items: +1
+  - reward choices: +3
+- quest 28486 - Salhet's Gambit - updated
+  - description added
+  - reward money added (9g)
+- quest 28487 - Humbert's Personal Problems - updated
+  - description added
+  - reward money added (15s)
+- quest 28488 - Beneath the Surface - updated
+  - description added
+  - reward money added (8g 60s)
+- quest 28489 - Stagwiches - updated
+  - description added
+  - reward money added (30s)
+  - reward items: +2
+- quest 28490 - Hero's Call: Darkshore! - updated
+  - description added
+- quest 28491 - Not Fireflies, Flameflies - updated
+  - description added
+  - reward money added (75s)
+  - reward items: +1
+  - reward choices: +3
+- quest 28492 - Hero's Call: Ashenvale! - updated
+  - description added
+- quest 28494 - Warchief's Command: Northern Barrens! - updated
+  - description added
+- quest 28495 - A Fighting Chance - updated
+  - description added
+  - reward money added (15s)
+- quest 28496 - Warchief's Command: Azshara! - updated
+  - description added
+- quest 28497 - Fire From the Sky - updated
+  - description added
+  - reward money added (8g 60s)
+  - reward choices: +3
+- quest 28498 - The Secret of Nahom - updated
+  - description added
+  - reward money added (9g)
+- quest 28499 - Punish the Trespassers - updated
+  - description added
+  - reward money added (9g)
+  - reward choices: +3
+- quest 28500 - The Cypher of Keset - updated
+  - description added
+  - reward money added (6g 80s)
+- quest 28501 - The Defense of Nahom - updated
+  - description added
+  - reward money added (18g)
+- quest 28502 - The Bandit Warlord - updated
+  - description added
+  - reward money added (9g)
+  - reward choices: +4
+- quest 28503 - Hero's Call: Thousand Needles! - updated
+  - description added
+- quest 28505 - The Battle for Andorhal - updated
+  - description added
+  - reward money added (9s)
+- quest 28506 - March of the Stormpike - updated
+  - description added
+- quest 28507 - Hero's Call: Tanaris! - updated
+  - description added
+- quest 28509 - Warchief's Command: Tanaris! - updated
+  - description added
+- quest 28511 - Hero's Call: Feralas! - updated
+  - description added
+- quest 28512 - To the Aid of the Thorium Brotherhood - updated
+  - description added
+  - reward money added (7s)
+- quest 28514 - Mouton Flamestar - updated
+  - description added
+  - reward money added (7s)
+- quest 28515 - Mouton Flamestar - updated
+  - description added
+  - reward money added (7s)
+- quest 28517 - The Howling Oak - updated
+  - description added
+  - reward money added (1s 75c)
+- quest 28520 - The Fall of Neferset City - updated
+  - description added
+  - reward money added (27g)
+  - reward choices: +4
+- quest 28523 - More Beads for Salfa - updated
+  - reward money added (40s)
+- quest 28524 - Delivery for Donova - updated
+  - description added
+  - reward money added (35s)
+- quest 28525 - Hero's Call: Un'Goro Crater! - updated
+  - description added
+- quest 28526 - Warchief's Command: Un'Goro Crater! - updated
+  - description added
+- quest 28527 - Warchief's Command: Silithus! - updated
+  - description added
+- quest 28528 - Hero's Call: Silithus! - updated
+  - description added
+- quest 28529 - Writings of the Void - updated
+  - description added
+  - reward money added (15s)
+- quest 28531 - Hero's Call: Desolace! - updated
+  - description added
+- quest 28533 - The High Council's Decision - updated
+  - description added
+  - reward money added (9g)
+- quest 28538 - Cry of the Banshee - updated
+  - description added
+- quest 28539 - Hero's Call: Stonetalon Mountains! - updated
+  - description added
+- quest 28543 - Hero's Call: Felwood! - updated
+  - description added
+- quest 28544 - Hero's Call: Winterspring! - updated
+  - description added
+- quest 28545 - Warchief's Command: Winterspring! - updated
+  - description added
+- quest 28550 - Hero's Call: Southern Barrens! - updated
+  - description added
+- quest 28551 - Hero's Call: Southern Barrens! - updated
+  - description added
+- quest 28552 - Hero's Call: Dustwallow Marsh! - updated
+  - description added
+- quest 28553 - Okrilla and the Blasted Lands - updated
+  - description added
+  - reward money added (8s)
+- quest 28556 - Breaking the Hand - updated
+  - description added
+  - reward choices: +3
+- quest 28557 - Warchief's Command: Uldum! - updated
+  - description added
+- quest 28558 - Hero's Call: Uldum! - updated
+  - description added
+- quest 28559 - Hero's Call: Bloodmyst Isle! - updated
+  - description added
+- quest 28560 - Warchief's Command: Ghostlands! - updated
+  - description added
+- quest 28561 - Nahom Must Hold - updated
+  - description added
+  - reward money added (9g)
+- quest 28562 - Hero's Call: Westfall! - updated
+  - description added
+- quest 28563 - Hero's Call: Redridge Mountains! - updated
+  - description added
+  - reward money added (7s)
+  - reward choices: +4
+- quest 28564 - Hero's Call: Duskwood! - updated
+  - description added
+- quest 28565 - Hero's Call: Wetlands! - updated
+  - description added
+- quest 28566 - Decimation - updated
+  - description added
+- quest 28567 - Hero's Call: Loch Modan! - updated
+  - description added
+- quest 28568 - Warchief's Command: Silverpine Forest! - updated
+  - description added
+- quest 28569 - The Bogpaddle Bullet - updated
+  - description added
+  - reward money added (8s)
+- npc 48533 - Enormous Gyreworm - updated
+  - coordinates: 8 spawn points added in Deepholm
+
 ## [0.2.202] - 2026-10-20
 
 Data from the PandaQuest portal.
@@ -569,33 +771,6 @@ Data from the PandaQuest portal.
 - quest 27587 - Maliciously Delicious - updated
 - quest 27588 - Signal the Attack - updated
 - quest - and 48 more quests updated
-
-## [0.2.189] - 2026-10-20
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 5,564 quests, 24 NPCs, 1 object
-- quest 27477 - The Corpulent One - updated
-- quest 27478 - Relios the Relic Keeper - updated
-- quest 27479 - Righteous Indignation - updated
-- quest 27480 - Ley Energies - updated
-- quest 27481 - Out of the Ziggurat - updated
-- quest 27482 - Into the Flames - updated
-- quest 27483 - Practical Vengeance - updated
-- quest 27484 - Only One May Enter - updated
-- quest 27485 - Warm Welcome - updated
-- quest 27486 - Warm Welcome - updated
-- quest 27487 - Ix'lar the Underlord - updated
-- quest 27488 - Impatience - updated
-- quest 27489 - Nobody to Blame but Myself - updated
-- quest 27490 - SI:7 Drop - updated
-- quest 27491 - Kor'kron Drop - updated
-- quest 27492 - Ogres & Ettins - updated
-- quest 27493 - Ogres & Ettins - updated
-- quest 27494 - Move the Mountain - updated
-- quest 27495 - Move the Mountain - updated
-- quest 27496 - Call in the Artillery - updated
-- quest - and 52 more quests updated
 
 ## [0.2.173] - 2026-10-18
 
