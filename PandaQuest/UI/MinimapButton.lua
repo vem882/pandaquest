@@ -1,6 +1,7 @@
 -- UI/MinimapButton.lua: LibDataBroker launcher on the minimap.
--- Left click toggles the arrow, right click opens the options, and the tooltip answers the one
--- question the button exists for: where am I going and how far is it.
+-- Left-click opens the quest browser -- the general list of quests -- Shift-left-click shows or
+-- hides the arrow, right-click opens the options, and the tooltip answers the one question the
+-- button exists for: where am I going and how far is it.
 local _, ns = ...
 local L = ns.L
 
@@ -49,9 +50,9 @@ function M.GetTooltipLines(out)
         out[#out + 1] = L["No current target."]
     end
     out[#out + 1] = " "
-    out[#out + 1] = L["Left-click: toggle the arrow"]
+    out[#out + 1] = L["Left-click: browse all quests"]
+    out[#out + 1] = L["Shift-click: toggle the arrow"]
     out[#out + 1] = L["Right-click: open options"]
-    out[#out + 1] = L["Shift-click: browse all quests"]
     return out
 end
 
@@ -79,12 +80,10 @@ local function onClick(_, button)
         return
     end
     if IsShiftKeyDown and IsShiftKeyDown() then
-        if ns.QuestBrowser and ns.QuestBrowser.Toggle then ns.QuestBrowser.Toggle() end
+        if ns.Arrow and ns.Arrow.Toggle then ns.Arrow.Toggle() end
         return
     end
-    if ns.Arrow and ns.Arrow.Toggle then
-        ns.Arrow.Toggle()
-    end
+    if ns.QuestBrowser and ns.QuestBrowser.Toggle then ns.QuestBrowser.Toggle() end
 end
 
 M.OnClick = onClick

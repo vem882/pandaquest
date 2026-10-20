@@ -191,7 +191,6 @@ L["PandaQuest works out of the box. Everything below is optional."] = true
 L["Distance units"] = true
 L["Metres are shown as '123 m', yards as '135 yd'."] = true
 L["Show minimap button"] = true
-L["Left-click the minimap button to toggle the arrow, right-click for these options."] = true
 L["Language"] = true
 L["PandaQuest follows your game language; /pq lang overrides it."] = true
 L["Arrow"] = true
@@ -344,7 +343,7 @@ L["Options are not available; use /pq help for chat commands."] = true
 
 -- UI (minimap button, tracker, notifications, Wowhead)
 L["Distance unknown"] = true
-L["Left-click: toggle the arrow"] = true
+L["Left-click: browse all quests"] = true
 L["Right-click: open options"] = true
 L["Press Ctrl+C to copy the link:"] = true
 L["Navigate to this quest"] = true
@@ -547,8 +546,9 @@ L["Pick a quest from the list to see its page."] = true
 L["Categories"] = true
 L["Loosen a filter, or press Reset."] = true
 L["Quests"] = true
-L["Shift-click: browse all quests"] = true
+L["Shift-click: toggle the arrow"] = true
 L["This is a beta build: new features are not yet confirmed in the game."] = true
+
 
 -- Motion (UI/Motion.lua)
 L["Animations"] = true

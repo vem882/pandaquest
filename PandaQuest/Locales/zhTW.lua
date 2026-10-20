@@ -142,8 +142,6 @@ local T = {
     ["Distance units"] = "距離單位",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "公尺顯示為「123 m」，碼顯示為「135 yd」。",
     ["Show minimap button"] = "顯示小地圖按鈕",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "左鍵點擊小地圖按鈕可切換箭頭，右鍵點擊可開啟這些選項。",
     ["Language"] = "語言",
     ["PandaQuest follows your game language; /pq lang overrides it."] = "PandaQuest 會跟隨遊戲語言；可用 /pq lang 改成其他語言。",
     ["Arrow"] = "箭頭",
@@ -302,7 +300,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "距離未知",
-    ["Left-click: toggle the arrow"] = "左鍵點擊：切換箭頭",
+    ["Left-click: browse all quests"] = "左鍵點擊：瀏覽所有任務",
     ["Right-click: open options"] = "右鍵點擊：開啟選項",
     ["Press Ctrl+C to copy the link:"] = "按 Ctrl+C 複製連結：",
     ["Navigate to this quest"] = "導航至此任務",
@@ -532,7 +530,7 @@ local T = {
     ["Navigate"] = "導航",
     ["Pick a quest from the list to see its page."] = "從列表中選擇一個任務，即可查看它的頁面。",
     ["Quests"] = "任務",
-    ["Shift-click: browse all quests"] = "Shift+點擊：瀏覽所有任務",
+    ["Shift-click: toggle the arrow"] = "Shift+點擊：切換箭頭",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "這是測試版：新功能尚未在遊戲中確認。",

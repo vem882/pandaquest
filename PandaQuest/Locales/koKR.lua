@@ -144,8 +144,6 @@ local T = {
     ["Distance units"] = "거리 단위",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "미터는 '123 m', 야드는 '135 yd'로 표시됩니다.",
     ["Show minimap button"] = "미니맵 버튼 표시",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "미니맵 버튼을 왼쪽 클릭하면 화살표를 켜고 끄며, 오른쪽 클릭하면 이 옵션이 열립니다.",
     ["Language"] = "언어",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest는 게임 언어를 따릅니다. /pq lang 명령으로 바꿀 수 있습니다.",
@@ -313,7 +311,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "거리 알 수 없음",
-    ["Left-click: toggle the arrow"] = "왼쪽 클릭: 화살표 켜기/끄기",
+    ["Left-click: browse all quests"] = "왼쪽 클릭: 모든 퀘스트 둘러보기",
     ["Right-click: open options"] = "오른쪽 클릭: 옵션 열기",
     ["Press Ctrl+C to copy the link:"] = "Ctrl+C를 눌러 링크를 복사하세요:",
     ["Navigate to this quest"] = "이 퀘스트로 안내",
@@ -554,7 +552,7 @@ local T = {
     ["Navigate"] = "길 안내",
     ["Pick a quest from the list to see its page."] = "목록에서 퀘스트를 선택하면 상세 정보가 표시됩니다.",
     ["Quests"] = "퀘스트",
-    ["Shift-click: browse all quests"] = "Shift-클릭: 모든 퀘스트 둘러보기",
+    ["Shift-click: toggle the arrow"] = "Shift-클릭: 화살표 켜기/끄기",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "이 빌드는 베타 버전입니다. 새 기능은 아직 게임에서 확인되지 않았습니다.",

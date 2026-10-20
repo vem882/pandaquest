@@ -258,7 +258,8 @@ local function buildTable()
                         end,
                         arg = "global.questieDB.mode", get = get, set = set },
                     minimapButton = toggle(2, L["Show minimap button"],
-                        L["Left-click the minimap button to toggle the arrow, right-click for these options."],
+                        L["Left-click: browse all quests"] .. "\n" .. L["Shift-click: toggle the arrow"]
+                            .. "\n" .. L["Right-click: open options"],
                         "minimapButton.hide", {
                             get = function() return not M.GetValue("minimapButton.hide") end,
                             set = function(_, value) M.Set("minimapButton.hide", not value) end,

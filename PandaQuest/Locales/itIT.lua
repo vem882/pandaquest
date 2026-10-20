@@ -143,8 +143,6 @@ local T = {
     ["Distance units"] = "Unità di distanza",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "I metri sono mostrati come '123 m', le yard come '135 yd'.",
     ["Show minimap button"] = "Mostra il pulsante della minimappa",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "Clic sinistro sul pulsante della minimappa per mostrare o nascondere la freccia, clic destro per queste opzioni.",
     ["Language"] = "Lingua",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest segue la lingua del gioco; /pq lang la sostituisce.",
@@ -321,7 +319,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Distanza sconosciuta",
-    ["Left-click: toggle the arrow"] = "Clic sinistro: mostra o nascondi la freccia",
+    ["Left-click: browse all quests"] = "Clic sinistro: sfoglia tutte le missioni",
     ["Right-click: open options"] = "Clic destro: apri le opzioni",
     ["Press Ctrl+C to copy the link:"] = "Premi Ctrl+C per copiare il link:",
     ["Navigate to this quest"] = "Naviga verso questa missione",
@@ -579,7 +577,7 @@ local T = {
     ["Navigate"] = "Naviga",
     ["Pick a quest from the list to see its page."] = "Scegli una missione dall'elenco per vederne la pagina.",
     ["Quests"] = "Missioni",
-    ["Shift-click: browse all quests"] = "Maiusc-clic: sfoglia tutte le missioni",
+    ["Shift-click: toggle the arrow"] = "Maiusc-clic: mostra o nascondi la freccia",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Questa è una versione beta: le nuove funzioni non sono ancora confermate nel gioco.",

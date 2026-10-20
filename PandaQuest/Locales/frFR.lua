@@ -143,8 +143,6 @@ local T = {
     ["Distance units"] = "Unités de distance",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "Les mètres s'affichent sous la forme '123 m', les yards sous la forme '135 yd'.",
     ["Show minimap button"] = "Afficher le bouton de la minicarte",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "Clic gauche sur le bouton de la minicarte : afficher/masquer la flèche ; clic droit : ces options.",
     ["Language"] = "Langue",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest suit la langue du jeu ; /pq lang permet de la modifier.",
@@ -309,7 +307,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Distance inconnue",
-    ["Left-click: toggle the arrow"] = "Clic gauche : afficher/masquer la flèche",
+    ["Left-click: browse all quests"] = "Clic gauche : parcourir toutes les quêtes",
     ["Right-click: open options"] = "Clic droit : ouvrir les options",
     ["Press Ctrl+C to copy the link:"] = "Appuyer sur Ctrl+C pour copier le lien :",
     ["Navigate to this quest"] = "Naviguer vers cette quête",
@@ -547,7 +545,7 @@ local T = {
     ["Navigate"] = "Naviguer",
     ["Pick a quest from the list to see its page."] = "Choisir une quête dans la liste pour afficher sa page.",
     ["Quests"] = "Quêtes",
-    ["Shift-click: browse all quests"] = "Maj-clic : parcourir toutes les quêtes",
+    ["Shift-click: toggle the arrow"] = "Maj-clic : afficher/masquer la flèche",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Ceci est une version bêta : les nouvelles fonctions ne sont pas encore confirmées en jeu.",

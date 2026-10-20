@@ -29,7 +29,7 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Quest database** – quests, NPCs, objects and items with zone mapping, dungeon entrances and
   hidden-quest lists. Decoded in a coroutine at login (about half a second) so the game never
   freezes.
-- **Quest browser** – `/pq quests` (or Shift-click the minimap button) opens a window with every
+- **Quest browser** – `/pq quests` (or left-click the minimap button) opens a window with every
   quest in the database: categories with counts on the left (continents, dungeons, raids,
   battlegrounds, classes, professions, events), a sortable list in the middle, and the selected
   quest as a page on the right — its text, who starts and ends it with coordinates, level, difficulty,
