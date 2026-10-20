@@ -2,6 +2,30 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.195
+- database - Wowhead data as the PandaQuest portal read it: 5,905 quests, 24 NPCs, 1 object
+- quest 27880 - Half-Ton Holdouts - updated
+- quest 27881 - Bloodwatcher Point - updated
+- quest 27882 - It's Not About History, It's About Power - updated
+- quest 27883 - The Warden's Pawn - updated
+- quest 27884 - The Sentinel's Pawn - updated
+- quest 27885 - The Warden's Game - updated
+- quest 27886 - The Sentinel's Game - updated
+- quest 27887 - Ancient Protectors - updated
+- quest 27888 - Return to Blam - updated
+- quest 27889 - New Kargath - updated
+- quest 27890 - The Bad Dogs - updated
+- quest 27891 - Amakkar, Jack of All Trades - updated
+- quest 27892 - Jurrix the Striker - updated
+- quest 27893 - Gargal, the Behemoth - updated
+- quest 27894 - The Wrath of a Dragonflight - updated
+- quest 27895 - Their Hunt Continues - updated
+- quest 27896 - The Sorrow and the Fury - updated
+- quest 27897 - The Hidden Clutch - updated
+- quest 27898 - Rheastrasza's Gift - updated
+- quest 27899 - That Gleam in his Eye - updated
+- quest - and 50 more quests updated
+
 0.2.194
 - core - the addon knows which game it runs in: Mists of Pandaria Classic, or later WoW Forever
 - database - a quest database made for another game is not loaded, and one chat line says why

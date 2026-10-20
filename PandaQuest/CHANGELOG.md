@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.195] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,905 quests, 24 NPCs, 1 object
+- quest 27880 - Half-Ton Holdouts - updated
+- quest 27881 - Bloodwatcher Point - updated
+- quest 27882 - It's Not About History, It's About Power - updated
+- quest 27883 - The Warden's Pawn - updated
+- quest 27884 - The Sentinel's Pawn - updated
+- quest 27885 - The Warden's Game - updated
+- quest 27886 - The Sentinel's Game - updated
+- quest 27887 - Ancient Protectors - updated
+- quest 27888 - Return to Blam - updated
+- quest 27889 - New Kargath - updated
+- quest 27890 - The Bad Dogs - updated
+- quest 27891 - Amakkar, Jack of All Trades - updated
+- quest 27892 - Jurrix the Striker - updated
+- quest 27893 - Gargal, the Behemoth - updated
+- quest 27894 - The Wrath of a Dragonflight - updated
+- quest 27895 - Their Hunt Continues - updated
+- quest 27896 - The Sorrow and the Fury - updated
+- quest 27897 - The Hidden Clutch - updated
+- quest 27898 - Rheastrasza's Gift - updated
+- quest 27899 - That Gleam in his Eye - updated
+- quest - and 50 more quests updated
+
 ## [0.2.194] - 2026-10-20
 
 Groundwork for a second game (WoW Forever). In Mists of Pandaria Classic nothing a player sees

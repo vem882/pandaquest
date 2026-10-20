@@ -21967,6 +21967,525 @@ ns.Overrides.wowhead = {
                 "meat and crafting supplies.\n\nThey may put up a fight. Be on your guard.",
             rewardMoney = 13500,
         },
+        [27880] = {
+            description = "My grunts have got this dragon problem under control. Besides, I can't have an " ..
+                "upstart <class> like you barging in and ruining our battle plans.\n\nYou want work? " ..
+                "Fine, I'll give you work. Investigate the ogre camp to our southwest. From what I've " ..
+                "heard, a small army of combatants seems to have appeared outside of their hovel.\n\nWe " ..
+                "can't sit and wait for them to flank us, soldier... especially while we're already " ..
+                "embroiled with black dragons. Thin their ranks before they thin ours.",
+            rewardChoices = {{63200, 1}, {63201, 1}, {63202, 1}, {63203, 1}, {63204, 1}},
+        },
+        [27881] = {
+            description = "I've got an idea, but it's a bit of a long shot. Thankfully, long shots happen " ..
+                "to be a specialty of mine.\n\nNorth of here, the Reliquary has uncovered a new set of " ..
+                "titan ruins beneath the sands. If there's anything older and wiser than dragons, it's " ..
+                "titans. Heck, I've heard rumors that the titans CREATED the dragons.\n\nTalk to High " ..
+                "Examiner Tae'thelan Bloodwatcher at their camp to the northeast. He'll have more " ..
+                "information than I do about these titans.\n\nWhat did I tell you? It's a long shot.",
+            rewardMoney = 700,
+        },
+        [27882] = {
+            description = "The Explorers' League may have a yeoman's knowledge of the actual act of " ..
+                "digging. What they lack, however, is the good sense to USE the artifacts that they dig " ..
+                "up. They stow their treasures in stagnant museums instead of using these items of power " ..
+                "for their true purpose.\n\nThe dwarves are fools. Fortunately, they die " ..
+                "easily.\n\nYou'll find them digging into canyon walls north of here. Take whatever you " ..
+                "can out of their stubby-fingered hands, then return it to me.",
+            rewardChoices = {{63187, 1}, {63188, 1}, {63189, 1}, {63190, 1}},
+            rewardMoney = 6500,
+        },
+        [27883] = {
+            description = "One of the few items of worth that we managed to loot from these ruins is this " ..
+                "small jade statue.\n\nWe believe it to be a key of some sort, but we're unable to " ..
+                "determine what it opens. As such, it is useless to me.\n\nPerhaps you'll have some " ..
+                "better luck with it.",
+        },
+        [27884] = {
+            description = "We found this small red statue on the corpse of one of those Explorers' League " ..
+                "archaeologists. Sadly, it wasn't us who killed him. The local wildlife had already taken " ..
+                "care of that.\n\nThe statue is well-crafted, but apparently bereft of magical power. You " ..
+                "may use it for whatever means you deem necessary.",
+        },
+        [27885] = {
+            description = "You see the statue split into two, then four, then eight identical statues in " ..
+                "a square formation.\n\nYou hear a voice, not through your ears, but in the back of your " ..
+                "mind:\n\n\"A true warden does not face OUTWARD, searching for signs of danger. A true " ..
+                "warden keeps his gaze INWARD, always focused on protecting his quarry.\"\n\nPerhaps this " ..
+                "is a riddle of some sort?",
+        },
+        [27886] = {
+            description = "As you place the statue in its place, several other stone statues appear in " ..
+                "the room. One more ruby-colored statue also appears, in a small enclosure on the far end " ..
+                "of the room. You hear a voice:\n\n\"The Sentinel watches. The Sentinel protects. The " ..
+                "Sentinel's vision never falters.\"\n\nThat red statue on the other side of the room " ..
+                "looks important. Perhaps you should try to connect the two red statues?",
+        },
+        [27887] = {
+            description = "You heard a good amount of rumbling happen in the tomb's central chamber. " ..
+                "Those two large statues did look awfully suspicious.",
+        },
+        [27888] = {
+            description = "Inside the chest, you find a small, circular device, resting upon a " ..
+                "cushion.\n\nIf there are any titan artifacts to be found here in the tomb, this is it. " ..
+                "You resolve to bring it back to Dr. Blam.",
+            rewardChoices = {{63177, 1}, {63178, 1}, {63179, 1}},
+            rewardMoney = 700,
+        },
+        [27889] = {
+            description = "<Dr. Blam stares at the egg in awed silence, blinks a few times, then looks up " ..
+                "at you.>\n\nD... did you see that? Incredible! My titan thing idea worked! With your " ..
+                "help, of course.\n\nWe'll want to get these back to Rhea. She's not at Lethlor Ravine " ..
+                "anymore; it sounds like she blew her cover when she transformed into her true form in " ..
+                "front of all those whelps. She's now in the west, staying at a large Horde establishment " ..
+                "dubbed \"New Kargath\".\n\nShe'll be waiting for you. And for that egg.",
+            rewardMoney = 3500,
+        },
+        [27890] = {
+            description = "In my haste to escape from Lethlor Ravine, I forgot to tie up one loose end: " ..
+                "Nyxondra. She's free, and she's sounded the alarm among the black dragonflight. Half the " ..
+                "flight is here in the western Badlands, combing for this egg.\n\nI'll take care of " ..
+                "hiding the egg. You're going to take care of some of the more troublesome dragons. And " ..
+                "you'll have help.\n\nI've paid off a couple of mercenaries to help you. You'll find them " ..
+                "inside this inn.",
+            rewardMoney = 700,
+        },
+        [27891] = {
+            description = "Before we get too crazy with the dragon-killing, let me tell you a little bit " ..
+                "about how I fight.\n\nI'm not terribly strong or stalwart like these other two, but I've " ..
+                "got a few tricks. At your command I'll stun your enemies to keep 'em held still. I also " ..
+                "make sure to keep a few potions around for tight spots.\n\nWhy don't we practice " ..
+                "fighting together? Head out into the field, and you can see what it's like to fight with " ..
+                "a real orc.",
+        },
+        [27892] = {
+            description = "Oh, you want to talk? Fine.\n\nI'm Jurrix, the only merc here with half a " ..
+                "brain. The only one with any bite to my attacks, too. The only reason I keep these meat " ..
+                "shields around is to keep myself from getting killed.\n\nListen, you're the boss of this " ..
+                "operation. You give the word, and I'll send a fireball right through your target's " ..
+                "heart. If things start getting hectic, I can even warp time a bit so you can fit in a " ..
+                "few extra attacks.\n\nWhy don't we go try fighting together?",
+        },
+        [27893] = {
+            description = "You may not have noticed, but I'm pretty big, as far as orcs go.\n\nI make " ..
+                "sure that my two pals here don't get into too much trouble. They're small, and they " ..
+                "don't have a big shield like me. I'm big, and I can handle a few monsters hitting me! " ..
+                "Plus, if I'm careful, I can usually get them to hit my shield instead!\n\nI can protect " ..
+                "you, too. Come on, let's go practice for a bit. I'll make sure the enemies attack me, " ..
+                "and not you.",
+        },
+        [27894] = {
+            description = "Hello, <name>. It looks like you four have had time to become " ..
+                "well-acquainted.\n\nI have my first assignment for you. Kalaran, an ancient black dragon " ..
+                "of considerable power, has joined in the hunt for the egg we are protecting. We need to " ..
+                "stop him before he gets too close.\n\nYou will find him and his minions at the Dustbowl, " ..
+                "east of New Kargath. Hunt him down and defeat him. You will likely need the help of your " ..
+                "new mercenary allies.",
+        },
+        [27895] = {
+            description = "The black dragonflight means business. As you've probably already noticed, " ..
+                "they've taken over a large portion of New Kargath. These troops are under the command of " ..
+                "General Jirakka and his champion, Moldarr. They must be stopped.",
+        },
+        [27896] = {
+            description = "My greatest regret is the treatment that we - no, I - gave to Nyxondra. I " ..
+                "forced her to lay eggs, then I performed experiments on them. Over, and over, and over " ..
+                "again.\n\nEven as a mother myself, I can only imagine her sorrow.\n\nNo... I mustn't be " ..
+                "weak. Our work is, after all, for the benefit of future generations of black dragons. " ..
+                "Her sacrifice was necessary.\n\nShe circles the Ruins of Kargath, northwest of New " ..
+                "Kargath, insane with fury. Please, heroes... put her out of her misery.",
+        },
+        [27897] = {
+            description = "With the major black dragons out of the Badlands, it is now safe to move the " ..
+                "egg again. You will find me on a small plateau, north of New Kargath.\n\nCome and find " ..
+                "me.",
+        },
+        [27898] = {description = "Wait here. I will retrieve the egg."},
+        [27899] = {
+            description = "If you're looking for Harrison, you just missed him.\n\nHe was going on and on " ..
+                "about his latest discovery, and how everything was beginning to make " ..
+                "sense.\n\nWhatever... he certainly wasn't making sense to me.\n\nI tried to convince him " ..
+                "to stay here and just enjoy a few desert sunsets with me, but there's no talking to him " ..
+                "when he gets that gleam in his eye.\n\nPerhaps you'd be willing to check in on " ..
+                "him?\n\nHe was headed to that big monolith, south of here.",
+        },
+        [27900] = {
+            description = "Good timing, <name>.\n\nSeems I'm not the only one interested in these " ..
+                "obelisks, and these fellas aren't inclined to compare notes...\n\nI think I can handle " ..
+                "this guy.\n\nMaybe you could take care of a few of his friends before they make their " ..
+                "way over here?",
+            rewardMoney = 86000,
+        },
+        [27901] = {
+            description = "Listen, <name>. I don't have a lot of time to talk here.\n\nThese guys are " ..
+                "excavating relics from this site and taking pieces of ancient technology that we " ..
+                "need!\n\nI need you to check their crates for pieces of an ancient activation device. " ..
+                "The officers should have the codes you'll need to open them.\n\nHurry!\n\nWe can't let " ..
+                "them load this stuff into their planes!",
+            rewardMoney = 86000,
+        },
+        [27902] = {
+            description = "Magtoor has told me of the shamanism that the Broken practice. The great " ..
+                "Nobundo once said that the path of the elements may, in a way, be another way to the " ..
+                "Light.\n\nI can only hope there is some truth in this. The elementals that gather near " ..
+                "Purespring Cavern to the south are a source of truly pristine water. They can be chaotic " ..
+                "and violent, but the pure water harvested from them will be the perfect conduit for the " ..
+                "blessing of the Light.\n\nPlease, bring me this water, <name>.",
+            rewardMoney = 8500,
+        },
+        [27903] = {
+            description = "This guy just won't go down!\n\nYou're doin' great, kid. Only one thing left " ..
+                "to do.\n\nAccording to my research, there should be a titan statue down below. Use the " ..
+                "device to activate it, then break it down.\n\nIf my theory is correct, that statue holds " ..
+                "the key to reactivating this obelisk.",
+            rewardMoney = 86000,
+        },
+        [27904] = {
+            description = "The Grell are forest spirits that wander the Misty Valley to the east. Though " ..
+                "they resemble imps, I have found no demonic traces among the ones I've studied. They " ..
+                "are, as far as I can tell, uncorrupted.\n\nThose that dwell in the valley move as one " ..
+                "with the wind, summoning gusts of breeze at their whim. This pure air may be " ..
+                "incorporated into my remedy for poor Magtoor.\n\nPlease, <name>, gather the smoky " ..
+                "crystals found within the grells' bodies for me. I must exhaust every potential cure.",
+            rewardMoney = 8500,
+        },
+        [27905] = {
+            description = "Okay, I've softened this guy up, how about you help me finish him off?\n\nI've " ..
+                "got a plan for our escape, but it'll require a lot of guts and a little luck.\n\nYou up " ..
+                "for it, <name>?\n\nJust follow my lead...",
+            rewardChoices = {{65881, 1}, {65882, 1}, {65883, 1}},
+            rewardMoney = 86000,
+        },
+        [27906] = {
+            description = "There is much work to do in recovering from the assault and bracing ourselves " ..
+                "for the next one. I will need coordination from all of our scouts.\n\nNeeka Bloodscar is " ..
+                "our finest tracker, trained in the harsh Badlands. She has been sent west to " ..
+                "Splinterspear Junction to watch for Alliance activity.\n\nGo to Neeka, <name>. Tell her " ..
+                "of what has occured in Stonard. Assist her in any way she requires.",
+            rewardMoney = 2100,
+        },
+        [27907] = {
+            description = "I have been ruined, <class>. I placed my strength in Helgrum, and now it " ..
+                "bleeds from his gaping wounds. Wounds too deep to heal, flesh that refuses to " ..
+                "knit.\n\nHe murmurs in fear, consumed by fever and pain. I cannot leave his side. Not " ..
+                "now. Please, I ask you in shame to gather herbs for me.\n\nThe prayerblossom that grows " ..
+                "in the swamp is an old remedy for soothing. With enough of it, his pain might be stilled.",
+            rewardMoney = 8500,
+        },
+        [27908] = {
+            description = "Helgrum's wounds fester in the swamp air. They swell and ooze, filling his " ..
+                "final moments with suffering. I must have something to coat them with.\n\nThe spirits " ..
+                "move through this mire. They inhabit the mud itself, pushing it along in clumps of fine " ..
+                "soil that take on lives of their own\n\nThe spirits of the cool, pure mud will offer him " ..
+                "some comfort. Please, gather it for me, for I cannot abandon his side.",
+            rewardMoney = 8500,
+        },
+        [27909] = {
+            description = "Helgrum's breathing slows. His time is near.\n\nI need water. Elementals roam " ..
+                "the ponds of Purespring Cavern. The water that flows from them is the purest in this " ..
+                "swamp.\n\nEven if I could risk leaving Helgrum's side, my axe would shudder in my hand. " ..
+                "I must beg you once again to pity me, for his comfort. Bring me the motes of the " ..
+                "elementals, that his final drink may be pure and refreshing.",
+            rewardMoney = 8500,
+        },
+        [27910] = {
+            description = "If I am reduced to groveling, I may as well ask everything I can. There is one " ..
+                "last favor I would ask of you, one more task a shamed orc pleads for.\n\nHelgrum had a " ..
+                "prized prey. Duskfang, eater of ogres, the great panther of Misty Valley. He would never " ..
+                "allow himself the leisure of stalking it. Though he wanted badly to hunt, our scouting " ..
+                "duties were too important.\n\nIf he cannot hunt Duskfang in this world, he can hunt the " ..
+                "beast in the next. Take up the hunt for him; bring Duskfang's pelt to me.",
+            rewardMoney = 8500,
+        },
+        [27911] = {
+            description = "He stirs...\n\nDo not leave, <name>. Please, honor Helgrum with me. You have " ..
+                "done so much for him.",
+            rewardItems = {{64627, 1}},
+            rewardMoney = 8500,
+        },
+        [27912] = {
+            description = "As the second defender falls to the ground, a chest appears in the back of the " ..
+                "chamber. Could this be what they were protecting?",
+        },
+        [27913] = {
+            description = "As the second defender falls to the ground, a chest appears in the back of the " ..
+                "chamber. Could this be what they were protecting?",
+        },
+        [27914] = {
+            description = "You have done well, <name>. Jammal'an may have escaped our grasp, but his " ..
+                "retreat paves the way for me to enter the temple as I desire.\n\nStay where you are and " ..
+                "do not move. I will hasten your return by pulling your spirit to me through the Emerald " ..
+                "Dream.\n\nThis may cause slight drowsiness.",
+            rewardChoices = {{64606, 1}, {64596, 1}, {64615, 1}},
+            rewardMoney = 16500,
+        },
+        [27915] = {
+            description = "I must confess I have a more personal involvement in this affair. One of the " ..
+                "first of the green dragons corrupted here was my brother, Eranikus.\n\nI thought " ..
+                "Eranikus gone, lost forever to the darkest rifts of nightmare, but I have heard that his " ..
+                "shade has emerged within the temple. I know not whether it is truly him, or an empty, " ..
+                "mournful echo.\n\nIf you wish to help me further, return to the Hall of Masks and " ..
+                "journey through the archway into the true sanctum of the temple. I will find you there.",
+            rewardMoney = 4000,
+        },
+        [27916] = {
+            description = "Here is Ruag's report, <name>. Let him know his scout is still here.\n\nDo not " ..
+                "speak of Helgrum. I will not distract others with news of tragedy.\n\nI have to be " ..
+                "strong. We all have to be strong.",
+            rewardMoney = 4000,
+        },
+        [27917] = {
+            description = "I could smell Godfrey and his companions a mile away from here. They did an " ..
+                "exceedingly poor job covering their tracks in flight. It will be the mistake that puts " ..
+                "the final nail in their coffins.\n\nOne of them is very close, and though the scent has " ..
+                "changed slightly in undeath, I'm fairly certain it's Ashbury's. Go inside and tear him " ..
+                "to pieces, we'll ensure the Forsaken do not intervene with our task.",
+            rewardMoney = 4000,
+        },
+        [27918] = {
+            description = "Anchorite Avuun is one of our uncorrupted bretheren, what other races know as " ..
+                "Draenei. He came to The Harborage to heal us, and try to find a cure. It is he who sent " ..
+                "me here to collect these crystals.\n\nHe watches over a very sick friend now... and " ..
+                "despite sending word to the Exodar itself, he has not found any aid so far. Could you " ..
+                "bring these crystals to him, <name>? You may be the only one able to assist him.",
+            rewardMoney = 4000,
+        },
+        [27919] = {
+            description = "We appreciate your assistance here in this swamp, <name>. I would like to " ..
+                "inform you that I have received correspondence from Nethergarde Keep.\n\nEnohar " ..
+                "Thunderbrew has requested help in investigating the shipwrecks of the Red Reaches, but " ..
+                "we have had none willing to make the journey, and I could not leave the " ..
+                "Harborage.\n\nNethergarde Keep sits in the Blasted Lands, south of the Swamp of Sorrows. " ..
+                "Do not journey too close to Stonard on your way.",
+            rewardMoney = 4000,
+        },
+        [27920] = {
+            description = "We've hit an unexpected snag in our assault on the keep, <name>. It seems the " ..
+                "servants that tended to Baron Silverlaine and Commander Springvale in life do so now in " ..
+                "death as well, and Godfrey has placed them directly between us and him.\n\nNot to worry, " ..
+                "we won't let them be anything more than a minor inconvenience. Eliminate Silverlaine and " ..
+                "Springvale both and not only will their guards no longer have masters to direct them, it " ..
+                "will place us that much closer to our final goal.",
+            rewardMoney = 4000,
+        },
+        [27921] = {
+            description = "It appears that Lord Walden has finally taken notice to our presence and has " ..
+                "heightened his defenses. It's worthless really... nothing will deter our pack.\n\nThe " ..
+                "path ahead to him is rife with powerful Scourge minions, but I trust that you will be " ..
+                "able to clear the path for the rest of us to follow in. Once we kill Walden, it should " ..
+                "be a straight shot to his cowardly leader.",
+            rewardMoney = 4700,
+        },
+        [27922] = {
+            description = "Please, stranger. You must help me.\n\nI came here to investigate the arrival " ..
+                "of a powerful ally to the Neferset, only to be betrayed by my closest allies and given " ..
+                "up to the enemy.\n\nGo to the terrace above us to the east and find the information I " ..
+                "failed to uncover. You'll need to hide from the Neferset. Perhaps you can hide behind " ..
+                "one of the large plants on the platform to conceal your presence.\n\nDo this for me and " ..
+                "I will help your friends find their way to safety.",
+            rewardMoney = 86000,
+        },
+        [27923] = {
+            description = "I'm not sure what knuckle-headed plan your friend is concocting, but we're " ..
+                "going to need a distraction if we're to stand a chance of escaping.\n\nTake the torch " ..
+                "from that brazier and go start some fires.\n\nPerhaps if we divert the Neferset scum's " ..
+                "attention away for a few minutes, we'll have the opportunity we need.",
+            rewardMoney = 86000,
+        },
+        [27924] = {
+            description = "I've an idea! Trust me, it's a good one this time!\n\nGet some of those shiny " ..
+                "armor pieces the cat-people wear.\n\nThis plan cannot fail. Trust me.",
+            rewardMoney = 86000,
+        },
+        [27926] = {
+            description = "The commander is quite busy now, I'm afraid.\n\nThe demands of an operation " ..
+                "such as this require much of his attention these days.\n\nWhile you wait to speak with " ..
+                "him, why don't you mingle with some of our guests?\n\nWe have invited a variety of " ..
+                "Azeroth's most illustrious figures to be present when we unlock the secrets of this " ..
+                "region.\n\nI am confident that you will find them most captivating.",
+            rewardMoney = 86000,
+        },
+        [27927] = {
+            description = "The Badlands are home to some unusual people, many of whom have been here for " ..
+                "quite a long time.\n\nFor example, there were three gentlemen who were staying here in " ..
+                "town. I forget their names... the dwarf was Theldurin, I think? Anyhow, they headed " ..
+                "south with a pack full of ale a couple of days ago, and haven't been heard from since. I " ..
+                "think they were headed to that big scar.\n\nWould you mind checking in on them? I'd like " ..
+                "to make sure that they're alright.",
+        },
+        [27928] = {
+            description = "The commander can be most generous to those who demonstrate their loyalty, and " ..
+                "I know of something that you can do to curry favor with him.\n\nBefore building up " ..
+                "his... ehh... workforce, he dealt in the furs of animals.\n\nHe is quite skilled in the " ..
+                "art of leatherworking. The furrier can do wonders with even the most tattered " ..
+                "pelts.\n\nThe dried oasis to the east is said to be home to a rare breed of " ..
+                "coyote.\n\nTheir furs would make a very thoughtful gift.",
+            rewardChoices = {{65865, 1}, {65866, 1}, {65867, 1}},
+            rewardMoney = 86000,
+        },
+        [27929] = {
+            description = "A single Dragonmaw drake is worth a dozen Wildhammer gryphon-riders. Take them " ..
+                "off of their lice-ridden birds and they're nothing.\n\nEven you can slay them easily, " ..
+                "Horde-<class>.\n\nHunt gryphon riders flying over the river north of Bloodgulch. Take " ..
+                "this hook and fling it at them as they fly by. Their momentum will hurl them from their " ..
+                "mount, right to your feet. Finish them! Kill a few Thundermar gryphon riders and I'll " ..
+                "believe your Horde is as mighty as you say.",
+            rewardMoney = 90000,
+        },
+        [27930] = {
+            description = "The coast is clear. If Rheastrasza or the egg were able to miraculously evade " ..
+                "Deathwing's flames, they would probably need your assistance as soon as possible.",
+            rewardMoney = 700,
+        },
+        [27931] = {
+            description = "Before you can help us here, you're going have to deal with Therazane, the " ..
+                "Stone Mother's, forces to the south. The elementals and giants upon the Quaking Fields " ..
+                "are being mustered.\n\nThey too are after the middle fragment of the World Pillar. " ..
+                "They'll attack us amidst our war with the stone troggs and we'll be unable to repel " ..
+                "them.\n\nI've sent the arch geomancer ahead. Get to Slate Quicksand and do as he asks.",
+        },
+        [27932] = {
+            description = "The emerald colossi are the greatest of the Stone Mother's creatures. They " ..
+                "must be the first to be removed from the field.\n\nI brought Stonefather Oremantle's axe " ..
+                "for just this task. Use it to sunder the giants.\n\nThat should bring them down to a " ..
+                "more manageable size for you to finish off.",
+            rewardChoices = {{61400, 1}},
+            rewardMoney = 82000,
+        },
+        [27933] = {
+            description = "You're going to have to deal with the leader of Therazane's forces here. " ..
+                "However, to get you to him quickly and safely, I'm going to need to perform a " ..
+                "ritual.\n\nGo out into the field and collect elemental ore from the ragers. With enough " ..
+                "of it, I should be able to make you one with the ground to get you where you need to go.",
+            rewardMoney = 82000,
+        },
+        [27934] = {
+            description = "The leader of the Stone Mother's forces here is the great earth elemental " ..
+                "lord, Avalanchion. Luckily for us, the Twilight's Hammer cultists have decided to invade " ..
+                "his lair. They're seeking to bind his elementals to their will.\n\nWe will take " ..
+                "advantage of the chaos. The earth ritual that I invoke will make you one with the " ..
+                "ground. It will take you near to Avalanchion without alerting him to your " ..
+                "presence.\n\nIt's up to you to finish him.",
+            rewardMoney = 82000,
+        },
+        [27935] = {
+            description = "Avalanchion stands before you. Slay him to keep Therazane's forces from " ..
+                "attacking Stonehearth.",
+            rewardMoney = 164000,
+        },
+        [27936] = {
+            description = "You have to go back and slay Avalanchion to keep Therazane's forces from " ..
+                "attacking Stonehearth!",
+            rewardMoney = 164000,
+        },
+        [27937] = {
+            description = "The Stonefather is waiting for you back south at Stonehearth.\n\nMake yourself " ..
+                "presentable. You've earned a hero's welcome!",
+            rewardItems = {{61398, 1}},
+        },
+        [27938] = {
+            description = "I present you with the key to Stonehearth. With it you may unlock the vault to " ..
+                "my home and recover the middle fragment of the World Pillar.\n\nKeep the fragment safe, " ..
+                "<name>. Make certain to get it to the Temple of Earth in the middle of Deepholm as " ..
+                "quickly as possible!\n\nKnow that you are always welcome here.",
+            rewardChoices = {{61395, 1}, {61396, 1}, {61397, 1}},
+            rewardMoney = 172000,
+        },
+        [27939] = {
+            description = "Zhere is much to be done in zhis region, <race>.\n\nVe bozh haf a burning " ..
+                "passion for zhe ancient technologies here, do ve not?\n\nPerhaps zhere is a vay for us " ..
+                "to vork togezher?\n\nLet us put zhe misunderstandinks of zhe past behind us zhen, " ..
+                "hmm?\n\nNow, zhere is an elusive animal in zhe region to zhe east zhat I have been " ..
+                "huntink. Brink me zhis creature as a token of your sincerity, hmm?\n\nZhen maybe I let " ..
+                "you in on my operation...",
+            rewardMoney = 86000,
+        },
+        [27940] = {
+            description = "The sky above the Shriveled Oasis is littered with these nasty " ..
+                "vultures.\n\nLike infectious rodents with wings, these creatures serve no great purpose " ..
+                "and inflict untold misery.\n\nRid the skies of this nuisance and leave the region better " ..
+                "than you found it.",
+        },
+        [27941] = {
+            description = "We have a strict policy among our ranks, one that we take most " ..
+                "seriously.\n\nOur troops are to dress in official uniform at all times. This helps with " ..
+                "organization, friendly fire incidents are reduced, and it keeps the troops looking " ..
+                "wonderful!\n\nWe call it, Fashionism.\n\nWe've been running low on uniforms lately. I " ..
+                "must ask that you recover them from the troopers that have fallen in the line of " ..
+                "duty.\n\nYou should find plenty of the poor fellows east of here, at the Ruins of Ammon.",
+            rewardChoices = {{65858, 1}, {65859, 1}, {65860, 1}},
+            rewardMoney = 86000,
+        },
+        [27942] = {
+            description = "Zhere is somezhink I need handled, <race>.\n\nMy most trusted advisor has run " ..
+                "afoul of an ancient curse. A hex zhat has transformed zhe man into a turkey, of all " ..
+                "zhings!\n\nI haff studied for days to discover a remedy for his condition, and finally I " ..
+                "am ready to conduct zhe ritual.\n\nI vill reqvire several idols from zhe nearby ruins. " ..
+                "You are to brink zhem to me at vonce!\n\nDismissed!",
+            rewardMoney = 86000,
+        },
+        [27943] = {
+            description = "Doctor Venkman vas vone of my greatest researchers, until he had to be put out " ..
+                "of my misery.\n\nHe did leave me vizh vone of his greatest accomplishments, zhough. " ..
+                "Against zhe properly attuned supernatural adversary, zhis veapon vill siphon zhe " ..
+                "target's essence.\n\nIt is of key importance in zhe ritual I vill be " ..
+                "attemptink.\n\nVhere do you come in, you ask? Simple. You have zhe priviledge of " ..
+                "collecting zhe material.\n\nZhe veapon is calibrated to vork on zhe Furious Specters in " ..
+                "zhe temple to zhe east.",
+            rewardMoney = 86000,
+        },
+        [27944] = {
+            description = "We have been trying to get a foothold in The Darkwood for weeks now but that " ..
+                "forest is infested with spiders. Do me a favor and see if you can thin them out enough " ..
+                "for us to set up an attack.\n\nCareful out there, I have heard reports of Horde troops " ..
+                "nearby earlier in the week.",
+            rewardMoney = 94000,
+        },
+        [27945] = {
+            description = "The ground bleeds, <class>. They tear it open, as one would gouge " ..
+                "flesh.\n\nThese cultists relish their secrecy but the very elementals they use for their " ..
+                "misdeeds can betray them. Seek out Obsidian Stoneslaves northeast of here, among the " ..
+                "ruined earth we have named the Black Breach.\n\nShatter their bodies and find for me a " ..
+                "perfect heart of black diamond. I will look into this heart. And I will bare its soul.",
+            rewardChoices = {{63809, 1}, {63810, 1}, {63811, 1}},
+            rewardMoney = 90000,
+        },
+        [27947] = {
+            description = "Cho'gall keeps track of his minions through powerful magical orbs: \"The Eyes " ..
+                "of Twilight.\"\n\nIn Mount Hyjal, the Guardians of Hyjal managed to find and manipulate " ..
+                "one to their own ends. We must do the same. I want one of those orbs, and I want to use " ..
+                "it to peer into the very heart of Cho'gall's lair.\n\nSearch the Black Breach, across " ..
+                "the river to the northeast, and find an Eye of Twilight. Do whatever you need to bring " ..
+                "it back to me!",
+        },
+        [27948] = {
+            description = "Finding supplies on the island has been difficult, to say the " ..
+                "least.\n\nFortunately, we have found a good supply of silk in The Darkwood, just west of " ..
+                "here. The bad part of this story is that the silk comes from the glands on Broodmother " ..
+                "spiders. I need you to gather 4 of these for me.\n\nThat should be just enough to finish " ..
+                "up this last set of shirts.",
+            rewardMoney = 94000,
+        },
+        [27949] = {
+            description = "Many soldiers died on this island <name>. It is only fair that we pay our " ..
+                "respects to them in any way that we can.\n\nI need you to travel to Forgotten Hill, due " ..
+                "west of here and release our brothers in arms' tortured souls away from this place. Do " ..
+                "be careful over there, reports of undead have been ongoing in the area.",
+            rewardMoney = 94000,
+        },
+        [27950] = {
+            description = "At last! Zhe time has come to set my Gobbles free of zhat nasty curse!\n\nPay " ..
+                "attention now, <race>, and stay on guard. Zhere can be no interruptions vhile I perform " ..
+                "zhe ritual.\n\nLet me know vhen you haf secured zhe perimeter!\n\nNow, move it!",
+        },
+        [27951] = {
+            description = "<The eye speaks to you, its 'voice' reverberating as if coming from everywhere " ..
+                "at once.>\n\nYou seek my sight, <race>? My powers come at a price. These disciples of " ..
+                "the Twilight have been honoring me with the blood of Wildhammer dwarves from the nearby " ..
+                "ruins, but still I thirst. Perhaps you can do better.\n\nSlay my old masters, and my " ..
+                "vision is yours. Honor me with the slaughter of the Shaman of the Black. Blood is blood, " ..
+                "after all.",
+        },
         [27989] = {rewardMoney = 6500},
         [27994] = {rewardMoney = 6500},
         [27995] = {rewardMoney = 6500},
