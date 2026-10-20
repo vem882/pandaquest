@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.191] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,702 quests, 24 NPCs, 1 object
+- quest 27641 - While Meeting The Family - updated
+- quest 27642 - Sifting Through The Wreckage - updated
+- quest 27643 - Donnelly Dunwald - updated
+- quest 27644 - Eoin Dunwald - updated
+- quest 27645 - Cayden Dunwald - updated
+- quest 27646 - Finding Beak - updated
+- quest 27647 - Anything But Water - updated
+- quest 27648 - Once More Into The Fire - updated
+- quest 27649 - A Steady Supply - updated
+- quest 27650 - Home Again - updated
+- quest 27651 - Doing It Like a Dunwald - updated
+- quest 27652 - Dark Assassins - updated
+- quest 27653 - Dark Assassins - updated
+- quest 27654 - Bring the Hammer Down - updated
+- quest 27655 - Bring the Hammer Down - updated
+- quest 27656 - Croc-Out - updated
+- quest 27657 - Help from the Earthcaller - updated
+- quest 27658 - Help from the Earthcaller - updated
+- quest 27659 - Portal Overload - updated
+- quest 27660 - Spirit of the Loch - updated
+- quest - and 50 more quests updated
+
 ## [0.2.190] - 2026-10-20
 
 Data from the PandaQuest portal.
