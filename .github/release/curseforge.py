@@ -2,7 +2,8 @@
 """Upload the release zip to CurseForge, with nothing but the standard library.
 
     python3 .github/release/curseforge.py upload --zip dist/PandaQuest-0.2.125.zip
-    python3 .github/release/curseforge.py game-version      # 5.5.4, from ## Interface in the TOC
+    python3 .github/release/curseforge.py game-version      # 5.5.4: the game versions the package is tagged with
+    python3 .github/release/curseforge.py game-version --zip dist/PandaQuest-0.2.125.zip
 
 The token is read from the environment (``CF_API_TOKEN``) and never from an argument, so it does
 not end up in a process list or a log.
@@ -12,9 +13,20 @@ GitHub release carries -- the same bytes, built and checked once by ``build.py``
 the release asset's contract depends on that file's name and layout.  A second packer would produce a
 second, different zip of the same tree.
 
-What is NOT verified, because it needs a real project and token: the exact name CurseForge gives
-Mists of Pandaria Classic 5.5.4 in ``/api/game/versions``.  This script looks for the version
-string derived from the TOC (``5.5.4``) and fails loudly, listing what it did find, when there is
+Which game versions a file is tagged with
+-----------------------------------------
+Every TOC the package carries is read (``PandaQuest.toc``, ``PandaQuest_Mists.toc``, and later
+``PandaQuest_Forever.toc``/``_Camelot.toc``), and each ``## Interface`` number is mapped to a game
+of games.py and to a game version: 50504 is Mists of Pandaria Classic "5.5.4", 16001 is Forever
+"1.60.1".  A CurseForge game version is then looked up by its name *and* its game version type
+(Mists of Pandaria Classic 79434, Forever 88568), because a name alone can belong to two games.
+The upload carries every id found, once.  A TOC whose suffix and interface name two different
+games, an interface no game claims, and a version CurseForge does not list are all refused before
+anything is sent.
+
+What is NOT verified, because it needs a real project and token: the exact names CurseForge gives
+those versions in ``/api/game/versions``.  This script looks for the version string derived from
+each TOC (``5.5.4``) with that game's type, and fails loudly, listing what it did find, when there is
 no match -- it never uploads against a guessed id.
 """
 
@@ -31,19 +43,28 @@ import uuid
 import zipfile
 from pathlib import Path
 
+import games
+
 REPO = Path(__file__).resolve().parents[2]
-TOC = REPO / "PandaQuest" / "PandaQuest.toc"
+ADDON = "PandaQuest"
 CHANGELOG = REPO / "PandaQuest" / "CHANGELOG.md"
 CHANGELOG_TXT = REPO / "PandaQuest" / "changelog.txt"
 API = "https://wow.curseforge.com/api"
 RELEASE_TYPES = ("alpha", "beta", "release")
 
 
-def toc_interface(text: str) -> int:
-    match = re.search(r"^##\s*Interface\s*:\s*(\d+)", text, re.M)
-    if not match:
+def toc_interfaces(text: str) -> list:
+    """Every number of ``## Interface``, which may list several (``50504, 16001``) since 10.2.7."""
+    match = re.search(r"^##[ \t]*Interface[ \t]*:[ \t]*([0-9][0-9, \t]*)\r?$", text, re.M)
+    numbers = [int(part) for part in re.split(r"[\s,]+", match.group(1)) if part] if match else []
+    if not numbers:
         raise ValueError("no ## Interface line in the TOC")
-    return int(match.group(1))
+    return numbers
+
+
+def toc_interface(text: str) -> int:
+    """The first ``## Interface`` number."""
+    return toc_interfaces(text)[0]
 
 
 def game_version(interface: int) -> str:
@@ -51,9 +72,74 @@ def game_version(interface: int) -> str:
     return "%d.%d.%d" % (interface // 10000, interface // 100 % 100, interface % 100)
 
 
-def pick_version_ids(versions: list, wanted: str) -> list:
-    """The ids of the entries named exactly ``wanted``; an empty list is the caller's failure."""
-    return [entry["id"] for entry in versions if entry.get("name") == wanted]
+def toc_suffix(name: str):
+    """``PandaQuest_Mists.toc`` -> "_Mists", ``PandaQuest.toc`` -> "", anything else None."""
+    match = re.fullmatch(re.escape(ADDON) + r"([-_][A-Za-z]+)?\.toc", name)
+    return (match.group(1) or "") if match else None
+
+
+def toc_targets(name: str, text: str) -> list:
+    """What one TOC tags the file with: ``[(game, "5.5.4"), ...]``, one per interface number.
+
+    The suffix says which game's client reads the file, and every interface in it has to be that
+    game's; the plain TOC may be any known game's.  Anything else is a package that would be tagged
+    for a game it does not load in, so it raises.
+    """
+    suffix = toc_suffix(name)
+    if suffix is None:
+        raise ValueError("%s is not a %s TOC" % (name, ADDON))
+    by_suffix = games.by_suffix(suffix) if suffix else None
+    if suffix and by_suffix is None:
+        raise ValueError("%s: no game in games.py reads the suffix %s" % (name, suffix))
+    targets = []
+    for interface in toc_interfaces(text):
+        game = games.by_interface(interface)
+        if game is None:
+            raise ValueError("%s: interface %d belongs to no game in games.py" % (name, interface))
+        if by_suffix is not None and game is not by_suffix:
+            raise ValueError("%s is read by %s's client, but interface %d is %s's"
+                             % (name, by_suffix.name, interface, game.name))
+        targets.append((game, game_version(interface)))
+    return targets
+
+
+def wanted_versions(tocs: dict) -> list:
+    """``{toc name: text}`` -> ``[(game version type, version name, game), ...]``, each pair once."""
+    seen = {}
+    for name in sorted(tocs):
+        for game, version in toc_targets(name, tocs[name]):
+            seen.setdefault((game.curseforge_type, version), game)
+    return [(type_id, version, game) for (type_id, version), game in sorted(seen.items())]
+
+
+def zip_tocs(zip_path: Path) -> dict:
+    """The TOC files at the top of the package's addon folder, by name."""
+    with zipfile.ZipFile(zip_path) as archive:
+        return {
+            entry.split("/", 1)[1]: archive.read(entry).decode("utf-8-sig")
+            for entry in archive.namelist()
+            if entry.startswith(ADDON + "/") and entry.count("/") == 1 and entry.lower().endswith(".toc")
+        }
+
+
+def pick_version_ids(versions: list, wanted: str, type_id=None) -> list:
+    """The ids of the entries named exactly ``wanted`` -- and of game version type ``type_id``, when
+    one is given; an empty list is the caller's failure."""
+    return [entry["id"] for entry in versions
+            if entry.get("name") == wanted and (type_id is None or entry.get("gameVersionTypeID") == type_id)]
+
+
+def pick_all_version_ids(versions: list, wanted: list) -> tuple:
+    """-> (ids, problems): the ids of every ``(type, name, game)`` wanted, and one line per missing one."""
+    ids, problems = [], []
+    for type_id, name, game in wanted:
+        found = pick_version_ids(versions, name, type_id)
+        if not found:
+            listed = sorted({str(entry.get("name")) for entry in versions if entry.get("gameVersionTypeID") == type_id})
+            problems.append("CurseForge lists no %s game version named %r (type %d). Of that type it lists: %s"
+                            % (game.name, name, type_id, ", ".join(listed) or "nothing"))
+        ids.extend(i for i in found if i not in ids)
+    return ids, problems
 
 
 def latest_changelog(text: str) -> str:
@@ -188,14 +274,23 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None) -> in
         print("the package's TOC names project %s, not %s; nothing uploaded." % (in_package, project),
               file=sys.stderr)
         return 2
-    wanted = game_version(toc_interface(TOC.read_text(encoding="utf-8")))
+    # The package's own TOCs, not this checkout's: the zip is the release's, and the checkout may
+    # be a later commit.
+    try:
+        wanted = wanted_versions(zip_tocs(zip_path))
+    except ValueError as problem:
+        print("%s; nothing uploaded." % problem, file=sys.stderr)
+        return 2
+    if not wanted:
+        print("%s carries no %s TOC; nothing uploaded." % (zip_path.name, ADDON), file=sys.stderr)
+        return 2
 
     versions = _call(urllib.request.Request(API + "/game/versions", headers={"X-Api-Token": token}))
-    ids = pick_version_ids(versions, wanted)
-    if not ids:
-        names = sorted({str(entry.get("name")) for entry in versions})
-        print("CurseForge lists no game version named %r. It lists: %s" % (wanted, ", ".join(names)),
-              file=sys.stderr)
+    ids, problems = pick_all_version_ids(versions, wanted)
+    if problems:
+        for line in problems:
+            print(line, file=sys.stderr)
+        print("nothing uploaded.", file=sys.stderr)
         return 1
 
     match = re.fullmatch(r"PandaQuest-(\d+(?:\.\d+)*)\.zip", zip_path.name)
@@ -222,7 +317,8 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None) -> in
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("game-version")
+    shown = sub.add_parser("game-version")
+    shown.add_argument("--zip", type=Path, help="read the TOCs of this package (default: the TOCs build.py writes)")
     up = sub.add_parser("upload")
     up.add_argument("--zip", required=True, type=Path)
     up.add_argument("--project", help="default: ## X-Curse-Project-ID from the package's TOC")
@@ -231,7 +327,14 @@ def main(argv=None) -> int:
                     help="changelog.txt as it was at the release (default: this checkout's)")
     args = parser.parse_args(argv)
     if args.command == "game-version":
-        print(game_version(toc_interface(TOC.read_text(encoding="utf-8"))))
+        if args.zip:
+            tocs = zip_tocs(args.zip)
+        else:
+            import build  # noqa: PLC0415 - only this command needs the packaging code
+
+            tocs = build.toc_texts()
+        for _type_id, version, _game in wanted_versions(tocs):
+            print(version)
         return 0
     return upload(args.zip, args.project, args.release_type, args.changelog_txt)
 

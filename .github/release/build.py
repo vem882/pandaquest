@@ -5,6 +5,8 @@
     python3 .github/release/build.py identity                # BUILD=0.2.84+082c57d ... as shell lines
     python3 .github/release/build.py identity --json         # the same facts as one JSON object
     python3 .github/release/build.py package --out dist/PandaQuest-0.2.84.zip
+    python3 .github/release/build.py tocs                    # write PandaQuest/PandaQuest.toc from the template
+    python3 .github/release/build.py tocs --check            # only say whether it is what the template makes
 
 Stdlib only, and no argument that points outside this repository: it has to run on a
 GitHub-hosted runner with nothing installed on it.
@@ -50,6 +52,19 @@ never the clock -- so that building the same commit twice produces the same byte
 * the zip's archive comment, a JSON object with the commit subject and date, which is where
   it records what the build was.  A comment rather than a second file beside the zip,
   because a release asset arrives alone.
+
+The TOC files
+-------------
+Every TOC the package carries is written from one template, ``PandaQuest.toc.template`` beside
+this script, filled from ``games.py``: the game's ``## Interface``, the lines only its TOC has,
+and the TOC lines of its database.  A shipped game gets one TOC per suffix its client reads
+(``PandaQuest_Mists.toc``), and the game marked ``fallback`` also gets the plain
+``PandaQuest.toc``.  Mists of Pandaria Classic is the only game shipped, so the package carries
+those two, with identical bytes.
+
+The plain TOC is also kept in the repository, because CurseForge's own packager (``.pkgmeta``)
+reads it as it is and runs nothing here.  ``tocs`` writes it; :func:`entries` refuses to package
+a tree whose copy is not byte for byte what the template makes, and so does check.py.
 """
 
 from __future__ import annotations
@@ -64,11 +79,24 @@ import zipfile
 from collections.abc import Iterator, Sequence
 from pathlib import Path
 
+import games
+
 REPO = Path(__file__).resolve().parents[2]
 ADDON = "PandaQuest"
 ADDON_DIR = REPO / ADDON
 TOC = ADDON_DIR / f"{ADDON}.toc"
 DIST_DIR = REPO / "dist"
+
+#: The one template every TOC is written from (see "The TOC files" above).
+TOC_TEMPLATE = Path(__file__).resolve().parent / f"{ADDON}.toc.template"
+
+#: A template line starting with this is a note about the template, and no TOC carries it.
+TEMPLATE_NOTE = "#~"
+
+#: The template's placeholders.  ``{{interface}}`` is replaced inside its line; the others stand on
+#: a line of their own, which becomes the game's lines -- or disappears, when the game has none.
+INTERFACE_PLACEHOLDER = "{{interface}}"
+LINE_PLACEHOLDERS = {"{{game-header}}": "header", "{{zone-data}}": "zone_data", "{{data}}": "data"}
 
 #: How many leading components of the TOC's ``## Version`` are kept by hand.  The rest is the
 #: commit count.  ``0.2`` + 84 commits is ``0.2.84``.
@@ -77,9 +105,6 @@ SERIES_PARTS = 2
 #: Where the generated file lands inside the addon, and how the TOC names it (WoW's TOC uses
 #: backslashes; the zip entry does not).
 BUILD_LUA = "Core/Build.lua"
-
-#: The game-specific TOC suffix the Mists of Pandaria Classic client looks for first.
-MISTS_SUFFIX = "_Mists"
 BUILD_LUA_TOC_LINE = "Core\\Build.lua"
 
 #: The asset-name pattern the release asset rules require.  check.py asserts the
@@ -386,6 +411,84 @@ def stamp_toc(text: str, ident: dict[str, object]) -> str:
     return newline.join(out) + newline
 
 
+# ------------------------------------------------------------------------------ the TOCs
+
+
+def render_toc(game: games.Game, template: str | None = None) -> str:
+    """One game's TOC, as text: the template with that game's lines in it.
+
+    Only whole lines are replaced, and the newlines between them are the template's own, so a
+    TOC that the template reproduces comes out byte for byte.  A placeholder left over, or one
+    the template does not have, is a template and a row that no longer fit each other, and that
+    is refused rather than written into a TOC.
+    """
+    if not game.data:
+        raise SystemExit(
+            f"{game.name} has no database lines in games.py, so there is no TOC to write for it."
+        )
+    text = TOC_TEMPLATE.read_text(encoding="utf-8") if template is None else template
+    out: list[str] = []
+    used: set[str] = set()
+    for line in text.split("\n"):
+        if line.startswith(TEMPLATE_NOTE):
+            continue
+        field = LINE_PLACEHOLDERS.get(line.strip())
+        if field is not None:
+            used.add(line.strip())
+            out.extend(getattr(game, field))
+            continue
+        if INTERFACE_PLACEHOLDER in line:
+            used.add(INTERFACE_PLACEHOLDER)
+            line = line.replace(INTERFACE_PLACEHOLDER, str(game.interface))
+        if "{{" in line:
+            raise SystemExit(f"{TOC_TEMPLATE.name}: unknown placeholder in {line!r}")
+        out.append(line)
+    missing = sorted({INTERFACE_PLACEHOLDER, *LINE_PLACEHOLDERS} - used)
+    if missing:
+        raise SystemExit(f"{TOC_TEMPLATE.name} has no {', '.join(missing)} line")
+    return "\n".join(out)
+
+
+def toc_texts(template: str | None = None) -> dict[str, str]:
+    """Every TOC the package carries, by file name, for the shipped games of games.py.
+
+    The fallback game's TOC is written twice, under the plain name and under each of its
+    suffixes; the client reads its own suffix first and every other client falls back to the
+    plain file.  Two games claiming one name is refused: the second would silently replace the
+    first.
+    """
+    found: dict[str, str] = {}
+    for game in games.shipped():
+        text = render_toc(game, template)
+        names = ([f"{ADDON}.toc"] if game.fallback else []) + [f"{ADDON}{suffix}.toc" for suffix in game.suffixes]
+        for name in names:
+            if name in found:
+                raise SystemExit(f"games.py gives {name} to two games")
+            found[name] = text
+    if f"{ADDON}.toc" not in found:
+        raise SystemExit(f"no shipped game in games.py is the fallback, so nothing writes {ADDON}.toc")
+    return found
+
+
+def write_tocs(check: bool = False, toc: Path | None = None) -> bool:
+    """Write the repository's ``PandaQuest.toc`` from the template; True when it already was that.
+
+    The suffixed TOCs are not written into the tree: they exist only in the package, where
+    :func:`entries` puts them, so there is one TOC in the repository and nothing to keep in step.
+    """
+    path = toc or TOC
+    wanted = toc_texts()[f"{ADDON}.toc"].encode("utf-8")
+    try:
+        current = path.read_bytes()
+    except OSError:
+        current = None
+    if current == wanted:
+        return True
+    if not check:
+        path.write_bytes(wanted)
+    return False
+
+
 # ----------------------------------------------------------------------------- packaging
 
 
@@ -424,19 +527,27 @@ def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, byt
             f"{root} already contains {BUILD_LUA}. That name is generated at packaging time; "
             "rename the file or change BUILD_LUA in build.py."
         )
-    # The client looks for ``<Addon>_Mists.toc`` before ``<Addon>.toc`` on Mists of Pandaria
-    # Classic, and CurseForge reads the same suffix to tag the file's game version.  The plain TOC
-    # stays because a package index reads the plain name and every other client falls back
-    # to it.  The Mists file is not kept in the repository: two copies in a tree drift, so it is
-    # this very TOC, stamped once, written under the second name.
-    mists_name = f"{ADDON}/{ADDON}{MISTS_SUFFIX}.toc"
-    if mists_name in found:
+    # Every TOC comes from the template (see "The TOC files").  The client looks for
+    # ``<Addon>_Mists.toc`` before ``<Addon>.toc`` on Mists of Pandaria Classic, and CurseForge reads
+    # the same suffix to tag the file's game version.  The plain TOC stays because a package index
+    # reads the plain name and every other client falls back to it.  The suffixed files are not
+    # kept in the repository: two copies in a tree drift, so each is written here from the template.
+    tocs = toc_texts()
+    if found[toc_name] != tocs[f"{ADDON}.toc"].encode("utf-8"):
+        # The repository's copy is what CurseForge's own packager ships, so a copy that is not what
+        # the template makes would be a second, different addon under the same version.
         raise SystemExit(
-            f"{root} already contains {ADDON}{MISTS_SUFFIX}.toc. It is generated at packaging "
-            "time from the plain TOC; delete the file from the tree."
+            f"{root}/{ADDON}.toc is not what {TOC_TEMPLATE.name} makes. Edit the template, not the "
+            "TOC, and run: python3 .github/release/build.py tocs"
         )
-    found[toc_name] = stamp_toc(found[toc_name].decode("utf-8-sig"), ident).encode("utf-8")
-    found[mists_name] = found[toc_name]
+    for name in sorted(tocs):
+        if name != f"{ADDON}.toc" and f"{ADDON}/{name}" in found:
+            raise SystemExit(
+                f"{root} already contains {name}. It is generated at packaging time from "
+                f"{TOC_TEMPLATE.name}; delete the file from the tree."
+            )
+    for name, text in tocs.items():
+        found[f"{ADDON}/{name}"] = stamp_toc(text, ident).encode("utf-8")
     found[build_name] = build_lua(ident).encode("utf-8")
     return found
 
@@ -535,6 +646,8 @@ def main(argv: list[str] | None = None) -> int:
     commands.add_parser("version", help="print the release version and nothing else")
     commands.add_parser("channel", help="print the release channel (stable or beta) and nothing else")
     commands.add_parser("tag", help="print the git tag of this release (v0.2.140 or v0.2.140-beta)")
+    tocs = commands.add_parser("tocs", help=f"write {ADDON}/{ADDON}.toc from {TOC_TEMPLATE.name}")
+    tocs.add_argument("--check", action="store_true", help="write nothing; exit 1 when the TOC differs")
     shown = commands.add_parser("identity", help="print the build identity of the current tree")
     shown.add_argument("--json", action="store_true", help="one JSON object instead of shell lines")
     packaged = commands.add_parser("package", help="build the stamped addon zip")
@@ -559,6 +672,15 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "tag":
         print(release_tag(release_version(), read_toc_channel()))
+        return 0
+    if args.command == "tocs":
+        if write_tocs(check=args.check):
+            print(f"{ADDON}/{ADDON}.toc is what {TOC_TEMPLATE.name} makes")
+            return 0
+        if args.check:
+            print(f"{ADDON}/{ADDON}.toc is not what {TOC_TEMPLATE.name} makes; run build.py tocs", file=sys.stderr)
+            return 1
+        print(f"wrote {ADDON}/{ADDON}.toc from {TOC_TEMPLATE.name}")
         return 0
     if args.command == "identity":
         ident = identity()
