@@ -19198,6 +19198,589 @@ ns.Overrides.wowhead = {
                 "down the protective wards surrounding this codex and pry its secrets loose.\n\nHurry, " ..
                 "<name>.",
         },
+        [27477] = {
+            description = "North of here and west of Northdale, you will find the corpulent maggot beast, " ..
+                "Borelgore.\n\nI've lost entire regiments to that monster. His size knows no bounds! The " ..
+                "more he eats the greater his girth becomes...\n\nWhile I would not suffer any emotional " ..
+                "harm should the beast devour you, I would prefer that you were the victor. Borelgore has " ..
+                "been known to devour others who tried to hunt him.",
+            rewardChoices = {{62985, 1}, {62986, 1}, {62987, 1}},
+            rewardMoney = 6000,
+        },
+        [27478] = {
+            description = "The Dark Lady is correct in her assertion that I am able to unlock the codex. " ..
+                "Unfortunately, I need a signet ring from a Dalaran archmage to do it. My own ring was " ..
+                "taken when I died many years ago, but there still might be a way.\n\nWhile Dalaran has " ..
+                "floated away, the outskirts of the city remain. Far to the east lie the ruins of " ..
+                "Dalaran. It is there that you will find an archmage known as Relios. \"Take\" his signet " ..
+                "ring and bring it back to me.\n\nYou may use the portal behind me to get to the crater.",
+            rewardChoices = {{62875, 1}, {62876, 1}, {62878, 1}},
+            rewardItems = {{62877, 1}},
+        },
+        [27479] = {
+            description = "The Mossflayers of Zul'Mashar spit in the face of the Light! They cannibalize, " ..
+                "they criminalize, they prioritize the forces of evil over good! I advise that you remove " ..
+                "their eyes, and give rise to the demise and the goodbyes of the unwise!\n\nYou will " ..
+                "travel north, and you will rain down on them with righteous justice and indignation, " ..
+                "<name>. The fury that they have wrought in the eyes of the Light shall be channeled " ..
+                "through you.",
+            rewardMoney = 6000,
+        },
+        [27480] = {
+            description = "The arcane remnant pulses with strange energy. Perhaps you should search for " ..
+                "more remnants. Surely Dalar would be interested in such a find.",
+            rewardMoney = 2000,
+        },
+        [27481] = {
+            description = "It is time that I asked a favor of you, <name>.\n\nFar to the north of " ..
+                "Eastwall Tower, hidden among the hills, is the Mossflayer capital city of Zul'Mashar. It " ..
+                "was here that I was born, and here that I died.\n\nThe traitor, Thresh'jin, sits atop " ..
+                "Zul'Mashar's ziggurat. It was my every right to be there, but he took the seat from me " ..
+                "with treachery and deceit. He is not strong. He is weak.\n\nI will meet you in " ..
+                "Zul'Mashar, and we will kill him. Your strength and mine. Together.",
+            rewardMoney = 6000,
+        },
+        [27482] = {
+            description = "This is the last time you will see me, <name>. I am leaving the caravan.\n\nIf " ..
+                "you want to continue fighting by my side, hang on to Thresh'jin's body. I can wait for a " ..
+                "while longer. When you are ready to say goodbye, throw the body into the bonfire atop " ..
+                "Zul'Mashar's ziggurat.\n\nThank you for your companionship, <name>. You were strong.",
+            rewardItems = {{62991, 1}},
+            rewardMoney = 6000,
+        },
+        [27483] = {
+            description = "Under ordinary circumstances I am not a vengeful man. In fact, I am somewhat " ..
+                "of a pragmatist. You see, practicality is a paradoxical notion to vengeance. Most " ..
+                "revenge ploys are highly impractical.\n\nBUT... in this case - since you're already " ..
+                "going to the ruins of Dalaran - you might as well kill every Dalaran affiliated human " ..
+                "that you see. The reasons that I want them dead range from hatred to anger to betrayal, " ..
+                "but I assure you they are all legitimate gripes. Do this for me and I will pay you " ..
+                "handsomely.",
+            rewardChoices = {{62879, 1}, {62880, 1}, {62881, 1}, {62882, 1}},
+        },
+        [27484] = {
+            description = "<Dalar flips through the codex.>\n\nHAHAH!\n\nOh... That's bad.\n\n<Dalar " ..
+                "closes the codex and looks up at you.>\n\nWith this ring only ONE may enter the pocket " ..
+                "dimension at Amber Mill. That person will then need to fight through an army of magi and " ..
+                "kill the archmage that is generating the phase from the inside. Only then will the " ..
+                "dimension fold, ejecting all of the magi.\n\nThe portal to entry is hidden at the back " ..
+                "of a cave in Beren's Peril.\n\nThat's all I know. Take the ring back to Sylvanas.",
+        },
+        [27485] = {
+            description = "I'm glad you're back! Saving the world or something, I'm sure.\n\nI was " ..
+                "dispatched to establish relations with the red dragons in the area, but I'm finding this " ..
+                "bunch somewhat less accommodating than the ones at Wyrmrest were. I have, however, been " ..
+                "told that you are the type that solves problems.\n\nA problem solver as it were.\n\nCare " ..
+                "to take a crack at earning a bit of trust with Lirastrasza at Vermillion Redoubt to the " ..
+                "southwest? Anything that might soften her up a bit for me would be lovely.",
+            rewardMoney = 71000,
+        },
+        [27486] = {
+            description = "Good. You're back. Saving the world again I assume.\n\nI was dispatched to " ..
+                "establish relations with the red dragons in the area, but I'm finding this bunch " ..
+                "somewhat less accommodating than the ones at Wyrmrest were. I have, however, been told " ..
+                "that you are the type that solves problems.\n\nA problem solver as it were.\n\nI need " ..
+                "you to gain the trust of Lirastrasza at Vermillion Redoubt to the southwest. Our " ..
+                "association with the Dragonmaw has complicated things, but I'm hoping you can ease " ..
+                "relations.",
+            rewardMoney = 71000,
+        },
+        [27487] = {
+            description = "I know we're supposed to head to Northdale, but that can wait, right? Besides, " ..
+                "this lovely little goblin was just telling me about some Scourge that are even closer " ..
+                "by.\n\nSo apparently there's this nerubian underlord named Ix'lar that has been trying " ..
+                "to make a name for himself ever since the Lich King was slain. He's set up a camp of " ..
+                "undead to our north.\n\nSure, Tyrosus wants us to kill banshees in Northdale. We'll get " ..
+                "to that. But let's kill this nerubian first, while we're close!",
+            rewardChoices = {{62993, 1}, {62994, 1}, {62995, 1}, {62992, 1}},
+            rewardMoney = 6000,
+        },
+        [27488] = {
+            description = "Damn that dwarf. He's always getting me in trouble with Fiona. Look at her! " ..
+                "She won't even TALK to me!\n\nI'm going to stay here and try to mend my friendship with " ..
+                "our worgen friend. Would you mind going out and making sure Gidwin is alright? I'm sure " ..
+                "he's fine; he knows how to take care of himself. He headed north, and he can't have gone " ..
+                "far.",
+            rewardMoney = 6000,
+        },
+        [27489] = {
+            description = "This is my fault. I... I ignored his warnings, his complaints, everything. I " ..
+                "couldn't help myself - I saw those Scourge just beyond the tower, and I... I HAD to go " ..
+                "kill them.\n\nArgus says that Gidwin was taken northwest, and that's our only lead, so " ..
+                "that's where we'll head.\n\nNorthdale and the Argent Crusade be damned! We're getting " ..
+                "Gidwin back from those Scourge trash.",
+            rewardMoney = 3000,
+        },
+        [27490] = {
+            description = "Mathias Shaw and the SI:7 are here to assist us with operations up top in the " ..
+                "Twilight Citadel. I need you to escort them there.\n\nThe Wildhammer are being kind " ..
+                "enough to give us a lift in. The agents have some things that they need to do down in " ..
+                "the Twilight Gate area first, though.\n\nSpeak with Angus Stillmountain and get yourself " ..
+                "a squad to drop off. You'll fly them in. A big blue X marks the spot.",
+            rewardMoney = 94000,
+        },
+        [27491] = {
+            description = "Garona and a detachment of the Kor'kron are here to assist us with operations " ..
+                "up top in the Twilight Citadel. I need you to escort them there.\n\nI've called upon a " ..
+                "local tribe of trolls to give us a lift in with their wind riders. The assassins have " ..
+                "some things that they need to do down in the Twilight Gate area first, though.\n\nSpeak " ..
+                "with the troll chief, Jon-Jon Jellyneck and get yourself a detachment of Kor'kron to " ..
+                "drop off. You'll fly them in. A big red X marks the spot.",
+            rewardMoney = 94000,
+        },
+        [27492] = {
+            description = "As with any offensive, you first need to soften them up. We've been having a " ..
+                "heck of a time getting in there. But someone like you... well, let's just say I have no " ..
+                "doubt in my mind that you can get into the Twilight Gate to the southwest and teach the " ..
+                "Bloodeye Clan ogres and ettins a thing or two!",
+            rewardMoney = 94000,
+        },
+        [27493] = {
+            description = "I want you to get in there past those boulders to the northwest at the " ..
+                "Twilight Gate. Kill every Bloodeye Clan ogre and ettin in sight. Think you can handle " ..
+                "that for me, <name>?",
+            rewardMoney = 94000,
+        },
+        [27494] = {
+            description = "If the Twilight Gate is to fall, we need to get Skullcrusher the Mountain out " ..
+                "of there!\n\nBefore they left, I saw to it that your SI:7 agents took some explosives " ..
+                "hidden in a Twilight's Hammer crate. By now, they will have planted them on the steps " ..
+                "leading up to the upper portion of the Citadel.\n\nI want you to set the explosives off " ..
+                "and then signal us when that monster's out of the way.\n\nThat's when we'll attack and " ..
+                "finish off the ogre compound!",
+            rewardMoney = 94000,
+        },
+        [27495] = {
+            description = "If the Twilight Gate is to fall, we must get Skullcrusher the Mountain out of " ..
+                "there!\n\nBefore they left, I saw to it that your Kor'kron assassins took some " ..
+                "explosives hidden in a Twilight's Hammer crate. By now, they will have planted them on " ..
+                "the steps leading up to the upper portion of the Citadel.\n\nI want you to set the " ..
+                "explosives off and then signal us when that monster's out of the way.\n\nThat's when " ..
+                "we'll attack and finish off the ogre compound!",
+            rewardMoney = 94000,
+        },
+        [27496] = {
+            description = "I prefer a stand up honorable fight. These monsters deserve nothing better " ..
+                "than to be destroyed by the weapons in our hands. However, this particular situation " ..
+                "calls for the use of more powerful measures.\n\nTake this flare and mark each of the " ..
+                "four buildings within the Twilight Gate to the southwest. Our cannons will handle the " ..
+                "rest.",
+            rewardChoices = {{63751, 1}, {63752, 1}, {63753, 1}},
+            rewardMoney = 94000,
+        },
+        [27497] = {
+            description = "A pity that we're no longer allowed to drop the Plague on our enemies. It " ..
+                "would prove quite effective in this situation. Oh well, at least we have war machines to " ..
+                "destroy their precious gates.\n\nI want you to take this flare. Use it to mark each of " ..
+                "the four buildings within the Twilight Gate to the northwest. The war machines will " ..
+                "handle the rest.",
+            rewardChoices = {{63748, 1}, {63749, 1}, {63750, 1}},
+            rewardMoney = 94000,
+        },
+        [27498] = {
+            description = "Now that you've lured Skullcrusher the Mountain away from the Twilight Gate, " ..
+                "it's time to signal your forces at Victor's Point to attack!",
+            rewardMoney = 94000,
+        },
+        [27499] = {
+            description = "Now that you've lured Skullcrusher the Mountain away from the Twilight Gate, " ..
+                "it's time to signal your forces at Crushblow to attack!",
+            rewardMoney = 94000,
+        },
+        [27500] = {
+            description = "Now while the attack upon the Twilight Gate is launched, there is one last " ..
+                "loose end to tie up: Za'brox and Beeble'phod, the disciples of Cho'gall.\n\nIntelligence " ..
+                "has placed them within the Den of the Disciples, a small ogre cave at the southwest " ..
+                "corner of the Twilight Gate.\n\nYou're fairly certain that Cassius and Kurdran will want " ..
+                "proof of their deaths.",
+            rewardChoices = {{63746, 1}, {63747, 1}, {63745, 1}},
+            rewardMoney = 94000,
+        },
+        [27501] = {
+            description = "Now while the attack upon the Twilight Gate is launched, there is one last " ..
+                "loose end to tie up: Za'brox and Beeble'phod, the disciples of Cho'gall.\n\nIntelligence " ..
+                "has placed them within the Den of the Disciples, a small ogre cave at the southwest " ..
+                "corner of the Twilight Gate.\n\nYou're fairly certain that Lady Cozwyn and Zaela will " ..
+                "want proof of their deaths.",
+            rewardChoices = {{63743, 1}, {63744, 1}, {63742, 1}},
+            rewardMoney = 94000,
+        },
+        [27502] = {
+            description = "Now that the attack is underway, it's time to deal with the Twilight Citadel. " ..
+                "If you don't mind, I'd like for you to escort the SI:7 forces to Master Mathias " ..
+                "Shaw.\n\nHe's hiding somewhere up top. The SI:7 squad commander can tell you " ..
+                "where.\n\nThank you, <name>. We look forward to joining you in the assault upon the " ..
+                "Citadel!",
+            rewardMoney = 94000,
+        },
+        [27503] = {
+            description = "Now that the attack is underway, it's time to deal with the Twilight Citadel. " ..
+                "If you don't mind, I'd like for you to escort the Kor'kron forces up to Garona.\n\nShe's " ..
+                "hiding somewhere up top. The Kor'kron squad commander can tell you where.\n\nThank you, " ..
+                "<name>. We look forward to joining you in the assault upon the Citadel!",
+            rewardMoney = 94000,
+        },
+        [27504] = {
+            description = "I won't be so impolite as to refuse your aid if you're offering it.\n\nWe're " ..
+                "locked in constant battle with the twilight drakes and dragons to the south. Our strikes " ..
+                "have not been entirely without success, but the dragons coming out of Grim Batol have " ..
+                "been breathing some kind of corruption upon us that takes time to " ..
+                "cleanse.\n\nVelastrasza and Baleflame are attending to our injured brothers. Go and see " ..
+                "if you can be of help to them.",
+            rewardMoney = 9400,
+        },
+        [27505] = {
+            description = "Our dragons are returning from battle covered in Twilight corrupted flame and " ..
+                "pursued by Twilight drakes.\n\nMy menders can tend to our dragons' wounds, but they must " ..
+                "be defended. Keep the drakes off of my menders. Lend your healing to our dragons as well " ..
+                "if you are able.\n\nThank you for your help with this. Our battles for Grim Batol are " ..
+                "never-ending. We need to get our strongest dragons back into the battle as soon as " ..
+                "possible.",
+            rewardChoices = {{63777, 1}, {63778, 1}, {63779, 1}},
+            rewardMoney = 94000,
+        },
+        [27506] = {
+            description = "<race>, I have a task for you.\n\nTake these ruby seeds and plant them at the " ..
+                "corpses of any dragonkin that you come across. Twilight or Vermillion, whelping or " ..
+                "dragon, it matters not. We need to see that their bodies are returned to the earth so " ..
+                "that life can continue to flourish.\n\nIn death, there should always be new life. This " ..
+                "may be our one consolation during times of war and great tragedy.",
+            rewardMoney = 94000,
+        },
+        [27507] = {
+            description = "Fragile Twilight invaders litter the redoubt. They're pouring in from " ..
+                "somewhere to the west.\n\nThere can be no mercy offered to them within this hallowed " ..
+                "place. Whatever violence grips your moral heart, release it upon them.",
+            rewardMoney = 94000,
+        },
+        [27508] = {
+            description = "Look... I know you have no reason to be fond of me, just as I'm not terribly " ..
+                "fond of you, but I need any help I can get.\n\nOur eggs are being stolen by these " ..
+                "Twilight invaders. I have no doubt that they want to take them back to Grim Batol to " ..
+                "experiment on and pervert. I will NOT let that happen.\n\nIf you truly do want to help " ..
+                "us, stop them! Recover the eggs. Bring them back to me.",
+            rewardMoney = 94000,
+        },
+        [27509] = {
+            description = "Every inch of air and every hill surrounding the redoubt is constantly under " ..
+                "the watchful eye of Lira's drakes. They must have found a way into the shrine from " ..
+                "beneath.\n\nTake this Flashgrowth mote. It should prove more than sufficient to close " ..
+                "any hole, tunnel, or portal they might have used to get inside our defenses.\n\nFind the " ..
+                "breach in our defenses. Close it.",
+            rewardChoices = {{63775, 1}, {63780, 1}},
+            rewardMoney = 94000,
+        },
+        [27510] = {
+            description = "These worgen take us for fools! One would think that only an idiot would " ..
+                "mistake one of their druids in bear form as a real bear. Unfortunately, there are many " ..
+                "idiots here at the Forsaken Front. We've already lost a few battalions to organized " ..
+                "worgen bear attacks. Yes, it's even more idiotic than it sounds.\n\nDirectly east of " ..
+                "here, heading towards Hillsbrad, you will find worgen druids roaming the woods, " ..
+                "masquerading as bears. Kill them and make our southern supply line safe again.",
+            rewardChoices = {{62883, 1}, {62884, 1}, {62885, 1}},
+            rewardItems = {{62909, 1}},
+        },
+        [27511] = {
+            description = "What a find! And somehow it's all remained untouched by " ..
+                "plunderers...\n\nListen, <name>. I need to document this site before we disturb " ..
+                "anything. While I do, why don't you have a look around - you know, explore a bit. You've " ..
+                "earned it.\n\nKeep your eyes open for anything unusual.\n\nOh! And please... don't break " ..
+                "anything, ok?",
+            rewardMoney = 65000,
+        },
+        [27512] = {
+            description = "<Sylvanas hands you the signet ring.>\n\nTake the ring and make your way to " ..
+                "Beren's Peril, southeast of here, located in a cave in the hills. Once there, search the " ..
+                "cave for the portal to the pocket dimension that conceals the Ambermill magi.\n\nI will " ..
+                "communicate with you through your thoughts, <name>. Once you have reached the portal I " ..
+                "will give you your marching orders.",
+        },
+        [27513] = {
+            description = "<The Banshee Queen's words float in your head.>\n\nYou are now ready to use " ..
+                "the portal. Be warned, <name>, once you step through you will appear in another " ..
+                "dimension at Ambermill. There will be a hundred, perhaps a thousand, magi waiting to " ..
+                "kill you.\n\nYou must persevere and kill all in your path.",
+        },
+        [27514] = {
+            description = "While you were fighting along the coast, I spotted a gryphon tumble out of the " ..
+                "clouds almost due west of here.\n\nIt wasn't one of ours.\n\nLikely it belonged to one " ..
+                "of the Wildhammer. I know that Kurdran wanted to establish contact with the lost " ..
+                "Wildhammer clans as one of his primary objectives after taking the beach.\n\nI can't " ..
+                "spare any more of my men to scout it out, but I can spare you. Find that downed " ..
+                "Wildhammer!",
+            rewardMoney = 45000,
+        },
+        [27515] = {
+            description = "Look here, mate. She's on her last legs! If me bird dies, I'm as good as " ..
+                "worthless.\n\nSo make yerself useful. Here on the peninsula you can dig up thorny " ..
+                "stankroots. Oh the smell will knock you on yer patoot but steeped in water it'll boil up " ..
+                "into a right powerful cure-all.\n\nGather some while I defend me bird. An' hurry! You " ..
+                "Alliance wanks don't have a reputation for timely intervention, right?",
+            rewardMoney = 90000,
+        },
+        [27516] = {
+            description = "Aye, look! I think she's perkin' up already.\n\nOkay <Mr./Miss> Alliance " ..
+                "fancy-pants <class>. Is that your base I see on the shore? \"Highbank\" you say. Can me " ..
+                "and my bird hunker down there until she's better?\n\nHop on! We'll fly together back to " ..
+                "Highbank!",
+            rewardMoney = 45000,
+        },
+        [27517] = {
+            description = "Every adventurer worth their salt knows never to step foot in a cave, dungeon, " ..
+                "crypt or tomb without an ample supply of rope... right?\n\nYou can never have too much " ..
+                "of this stuff!\n\nYou resolve to scrounging every scrap of it you can find from the " ..
+                "skeletons here.",
+            rewardChoices = {{65872, 1}, {65884, 1}, {65886, 1}},
+            rewardMoney = 86000,
+        },
+        [27518] = {
+            description = "<Sylvanas speaks directly through you.>\n\nYou must find the being responsible " ..
+                "for keeping this dimensional pocket active. Likely that fool, Ataeric... Search the " ..
+                "compound for him. Should you find him, do what you must to stop him from channeling his " ..
+                "magic. He is undoubtedly protected by a powerful arcane shield, and will send minions of " ..
+                "arcane energy after you. Defeat the minions while they are near him to unleash their " ..
+                "energies. No mage can handle that much power!",
+            rewardChoices = {{62889, 1}, {62890, 1}, {62891, 1}},
+        },
+        [27519] = {
+            description = "No... it cannot be.\n\nOrsis is all but buried beneath the desert " ..
+                "sands.\n\nThe enemy will pay for this.\n\nBut first we must aid my people. Quick, " ..
+                "<name>. We do not have much time before the last of my brethren are buried alive!",
+            rewardMoney = 86000,
+        },
+        [27520] = {
+            description = "Al'Akir has sent his minions to do Deathwing's bidding.\n\nThe message is " ..
+                "clear. We join them or they destroy us.\n\nI do not know much about you, <race>. But I " ..
+                "do know this. If you prove yourself to be an enemy of Al'Akir's, your aid will not go " ..
+                "unnoticed.\n\nWhat do you say, <class>?",
+            rewardChoices = {{65809, 1}, {65810, 1}, {65811, 1}},
+            rewardMoney = 86000,
+        },
+        [27521] = {
+            description = "<race>... please, I ask your help.\n\nSomething's happened to my people. Our " ..
+                "commander, Ranger Lord Hawkspear, came upon an item of magical energy, and my friends, " ..
+                "my family... they succumbed to its seductive power.\n\nThey're corrupted, <race>. All of " ..
+                "them.\n\nMy Ellaria wouldn't want to live like that, nor would any of my brothers. " ..
+                "Please, put them out of their misery. Quel'lithien Lodge is not far; it's just up the " ..
+                "hill, to the northwest.",
+            rewardMoney = 6500,
+        },
+        [27522] = {
+            description = "We paladins are normally taught to exercise judgment and control when dealing " ..
+                "with foes, but this is an emergency, and I never paid too much attention to my trainers " ..
+                "anyhow.\n\nI'm going to head into the Plaguewood and find out what I can about Giddy. " ..
+                "You deal with the Scourge just to our northeast, on the other side of this tower. The " ..
+                "undead don't fear death, but if you beat them enough, their tongues might slip, and we " ..
+                "may get some clues to Gidwin's location.",
+            rewardMoney = 6500,
+        },
+        [27523] = {
+            description = "I have seen many things in my day, <race>. The peaks of Mt. Hyjal... the " ..
+                "oddities of Outland... a wall of Scourge soldiers, proceeding into war. But I have never " ..
+                "seen a bat as big, or as shockingly white, as Duskwing.\n\nHow he taunts me from his " ..
+                "roost!\n\nThis albino demon bat circles to the southwest of here, due north of Blackwood " ..
+                "Lake. Track him down and destroy him. If he flies too high for you to reach, use my " ..
+                "flare to get his attention.",
+            rewardChoices = {{62990, 1}, {62999, 1}, {63000, 1}, {63001, 1}},
+            rewardMoney = 6500,
+        },
+        [27524] = {
+            description = "Tarenar wasn't joking when he said that he didn't care about judgment and " ..
+                "caution. He nearly took off that high elf's head as he ran into the Plaguewood, looking " ..
+                "for Gidwin. You should go after him.\n\nThe Plaguewood is a big place, <name>. Good " ..
+                "luck. I hope to see you <boys/three> come out of the woods in one piece.",
+            rewardMoney = 1600,
+        },
+        [27525] = {
+            description = "Baroness Anastar holds him? Here in the Plaguewood?\n\nThe Plaguewood is a big " ..
+                "place... but we will find him. We WILL find Gidwin.\n\nImmediately to our east and our " ..
+                "west are a pair of necropoli that flank the entrance to Stratholme. Inside them, you " ..
+                "will find a pair of death knights - Rivendare's lieutenants. I doubt either would have " ..
+                "any use for a paladin hostage, but perhaps they will have some information on his " ..
+                "location.",
+            rewardMoney = 13000,
+        },
+        [27526] = {
+            description = "Quickly - find an entrance to the slaughterhouse to our south. I will meet you " ..
+                "on the inside.\n\nBe ready for a fight!",
+            rewardMoney = 13000,
+        },
+        [27527] = {
+            description = "I've had just about enough of the funk of this place. Undead stink is bad " ..
+                "enough, and then you add mushrooms to the mix? I hate mushrooms!\n\nI'm going to head " ..
+                "back to Light's Hope Chapel, <name>... and I'm taking Tarenar and Fiona with me. I think " ..
+                "we've all earned a well-deserved break.\n\nLet me give you this. It's my hearthstone - " ..
+                "you can use it to travel instantly back to Light's Hope. I won't need it - I'm going to " ..
+                "be riding in the caravan.\n\nIn the FRONT SEAT.",
+            rewardChoices = {{63019, 1}, {63020, 1}, {63021, 1}, {63022, 1}, {63018, 1}},
+            rewardMoney = 6500,
+        },
+        [27528] = {
+            description = "You can't just kill the Scourge. They will come back. You must destroy the " ..
+                "vile matter that makes up their being... and even then, they may come back as " ..
+                "spectres.\n\nFew undead use up as much mass as the lumbering abominations. Kill them, " ..
+                "then burn their bodies. You will find them all over the Plaguewood.\n\nNever let your " ..
+                "rage dissipate, <race>. Remember: these abominations are sewn together from the bodies " ..
+                "of good people. Their crime is that they exist.",
+            rewardMoney = 6500,
+        },
+        [27529] = {
+            description = "The battle of Darrowshire was one of the many tragedies that we humans " ..
+                "suffered at the hands of the Scourge. Its effects are still felt even today.\n\nMany of " ..
+                "the town's valiant defenders now roam again as the ghastly servants of the Scourge. We " ..
+                "will end their misery.\n\nHunt cannibal ghouls here within the Plaguewood. Many of these " ..
+                "fiends were once the good folk of Darrowshire, and destroying their forms now will set " ..
+                "their souls free.",
+            rewardMoney = 6500,
+        },
+        [27530] = {
+            description = "To the south, gutless cultists are focused on a grim task: re-animating " ..
+                "enormous hunks of flesh, to create giants known as corpsebeasts. Luckily for us, these " ..
+                "giants are still lifeless and weak.\n\nTake this charm - using it will place a font of " ..
+                "holy energy on the ground. If you can manage to place three of them near one of the " ..
+                "corpsebeasts that the cultists are reanimating, the holy energy should overload it, " ..
+                "destroying its body forever.",
+            rewardChoices = {{63015, 1}, {63016, 1}, {63017, 1}},
+            rewardMoney = 13000,
+        },
+        [27531] = {
+            description = "I once worked for the so-called \"Banshee-Queen\", Sylvanas, as an apothecary. " ..
+                "I used to admire her, but something's changed within her. She's not herself " ..
+                "anymore.\n\nI broke my vows with the Forsaken and joined the Crusade. Now, I use my " ..
+                "knowledge of alchemy to seek a counter-plague agent. And the Plaguewood is the perfect " ..
+                "place to do so.\n\nI need to resupply a few reagents, any of which can be found within " ..
+                "the Plaguewood. I'll pay you if you can find any of these items.",
+            rewardChoices = {{63007, 1}, {63008, 1}, {63009, 1}, {63010, 1}},
+            rewardMoney = 6500,
+        },
+        [27532] = {
+            description = "With the recent, unfortunate developments involving Gidwin, it might not be " ..
+                "wise for a man my age to take the dangerous trip through the Plaguewood. This is fine - " ..
+                "I can visit the Plaguewood Tower on my next trip around the loop.\n\nI do, however, have " ..
+                "a delivery that I need to get to Judkins. You are younger than I, and stronger in " ..
+                "combat. Will you take this delivery to him?",
+            rewardMoney = 600,
+        },
+        [27533] = {
+            description = "The people of Terrordale, they were sick, then they turned bad. Definitely not " ..
+                "good times.\n\nThe pigs, though... they also got sick! What did pigs do to deserve to " ..
+                "get sick? Hah hah hah! Nothing!\n\nPeople I can forget about, but the bad pigs still " ..
+                "make me sad. If you kill them, though... I might get happy.",
+            rewardChoices = {{63003, 1}, {63004, 1}, {63005, 1}, {63006, 1}},
+            rewardMoney = 6500,
+        },
+        [27534] = {
+            description = "I'm ready for business! What do you want?\n\nOh wait... I can't open up shop " ..
+                "without my receipt book. How am I to keep track of things without my receipt book?\n\nI " ..
+                "must have left it in town somewhere. I had a room in the inn... the book must be " ..
+                "there.\n\nBring me my book. Please, bring it to me! Bring me my book and you'll see! " ..
+                "I'll set up shop and you'll see that my prices are INSANE!",
+            rewardMoney = 6500,
+        },
+        [27535] = {
+            description = "I like to check in on Augustus in Terrordale every once in a while, just to " ..
+                "make sure he's alright. Some of us undead cope with the plague better than others, I " ..
+                "suppose.\n\nTerrordale is west of here. Would you mind checking in on him for me?",
+            rewardMoney = 600,
+        },
+        [27536] = {
+            description = "Here's another favor you can do for me, pal.\n\nWe had a whole shipment of " ..
+                "Landmines come in from Booty Bay just the other day. But someone stole the whole lot of " ..
+                "'em in the night!\n\nWhoever it was must be sloppy, because they dropped them all over " ..
+                "the swamp to the east. No goblin I know would be that careless.\n\nI need you to go " ..
+                "gather those landmines up for me. I'm sure they're perfectly safe and disarmed. Every " ..
+                "single one. Yup.",
+            rewardChoices = {{64589, 1}, {64599, 1}, {64608, 1}},
+            rewardMoney = 7500,
+        },
+        [27537] = {
+            description = "Our friends in the Earthen Ring have been trying to open portals back to " ..
+                "Stormwind, with no luck. But Thordun here tells me he might just have the key.\n\nThe " ..
+                "crazed water elementals in the nearby Verrall River Delta have been sent into a frenzy. " ..
+                "Thordun tells me we can channel their energy into a portal.\n\nI don't understand all " ..
+                "this elemental-claptrap, but I understand one thing: killin' elementals and takin' their " ..
+                "whirlpool cores. Deliver them to Talaa in the courtyard!",
+            rewardChoices = {{63897, 1}, {63898, 1}, {63899, 1}},
+            rewardMoney = 90000,
+        },
+        [27538] = {
+            description = "Are you goin' by way of the Verrall river delta? I've got a tip that'll help " ..
+                "your men here... and my bird!\n\nWhen water elementals carve their way through rock, " ..
+                "they create a peculiar kind of muck. It dries hard as stone but carries with it the " ..
+                "rejuvenating power of water. You make a cast out of that muck and broken bones knit " ..
+                "together like iron.\n\nBring some of that muck to Talaa, your shaman downstairs. She'll " ..
+                "know what to do with it!",
+            rewardMoney = 90000,
+        },
+        [27539] = {
+            description = "I've been collecting the skulls of the skeletons I defeat. I've amassed a " ..
+                "small pile of them.\n\nIf you come across any skulls, you are welcome to add them to my " ..
+                "pile. The huge pile of skulls seems to keep the waves of undead at bay and... well... it " ..
+                "also just makes me happy to look at it.",
+            rewardChoices = {{62989, 1}, {63011, 1}, {63013, 1}, {63014, 1}},
+            rewardMoney = 12500,
+        },
+        [27541] = {
+            description = "This unfortunate explorer has clearly suffered a bit of bad luck in the recent " ..
+                "past.\n\nPrudence dictates that you perform the unenviable task of searching the corpse " ..
+                "for clues that might shed light on your surroundings...",
+            rewardMoney = 65000,
+        },
+        [27544] = {
+            description = "Those druids never give up, I swear. I'd given up on the Plaguelands years " ..
+                "ago, but the Cenarion Circle folks keep telling me that the land is not beyond " ..
+                "hope.\n\nThe most recent visitor was a night elf, on her way to the Fungal Vale, to the " ..
+                "north. She told me that these lands will make a full recovery, if we try hard enough. " ..
+                "I'm not sure I believe her.\n\nDo you buy this drivel? Maybe you and her should talk. " ..
+                "She should still be up there.",
+            rewardMoney = 500,
+        },
+        [27545] = {
+            description = "My fellow Shaman and I will stay here to keep the portal open.\n\nYou should " ..
+                "go upstairs and notify Kurdran that the work here is done. It'll please him to hear some " ..
+                "good news for once.",
+            rewardMoney = 45000,
+        },
+        [27547] = {
+            description = "Our forces in Pyrewood were recently taken by way of sneak attack. The 7th " ..
+                "Legion managed to infiltrate the town with their scouts, ultimately decimating our " ..
+                "troops.\n\nThe Dark Lady has tasked us with a rescue mission. We are to find survivors " ..
+                "and get them out of Pyrewood safely. If any soldiers live they are likely worthless, but " ..
+                "we do as the Dark Lady commands.\n\nLet's get this nonsense over with, <name>. Pyrewood " ..
+                "is directly southwest of the Forsaken Front.",
+        },
+        [27548] = {
+            description = "Our enemies are becoming smarter - adapting to our tactics. Recently an attack " ..
+                "was made upon Pyrewood Village, southwest of here. Our troops occupying the town were " ..
+                "decimated, of course, but what made the attack especially interesting was the racial " ..
+                "composition of the attacking force. No humans were used.\n\n<Walden " ..
+                "laughs.>\n\nRightfully, they fear being reanimated as Forsaken.\n\nLet us teach the " ..
+                "non-humans a lesson in fear. Together we will show them what happens to corpses that we " ..
+                "cannot use.",
+        },
+        [27549] = {
+            description = "Look at this, <name>.\n\n<Harrison holds up the dead scout's goggles.>\n\nI " ..
+                "tightened the clamp in the middle and crimped the wires on the edges. They may not be " ..
+                "the most comfortable, but they should hold together.\n\nIf I've translated your tablets " ..
+                "correctly, there's something hidden here - a final piece to our puzzle.\n\nI hope your " ..
+                "spectacles hold the key.\n\nLet me know what you find!",
+            rewardMoney = 86000,
+        },
+        [27550] = {
+            description = "The attacks against our front are a distraction. With our attention turned " ..
+                "towards the worgen onslaught, the Alliance has managed to take Pyrewood Village from our " ..
+                "occupying forces.\n\n<Godfrey hands you a bundle of torches.>\n\nIt must be " ..
+                "purged.\n\nWith these torches we will burn Pyrewood Village to the ground, leaving only " ..
+                "ashes for the enemy to hide behind.\n\nLet us not waste another minute. Pyrewood Village " ..
+                "is located southwest of the Forsaken Front. Lead us there, <name>.",
+        },
+        [27551] = {
+            description = "The note is from Baroness Anastari, and it describes a ritual that is about to " ..
+                "happen in the Plaguewood's central slaughterhouse - just south of where Tarenar is at. " ..
+                "This could be where they're holding Gidwin!\n\nTarenar will want to know about this... " ..
+                "and quickly, before it's too late!",
+            rewardMoney = 6500,
+        },
         [27579] = {rewardMoney = 800},
         [27582] = {rewardMoney = 800},
         [27596] = {rewardMoney = 33300},
@@ -19677,6 +20260,12 @@ ns.Overrides.wowhead = {
                 "Kon, forgive grummle. Let me go, I'll bring lots of kafa right away! Promise!\n\n<The " ..
                 "beast called Kota Kon answers with another meaty roar.>",
             rewardMoney = 106000,
+        },
+        [30766] = {
+            description = "<A relic drops off of the statue. Hmm, these could prove to be valuable to the " ..
+                "right person.>\n\n<There's a collector on the outskirts of the ruins. Perhaps he'd be " ..
+                "interested in purchasing them from you?>",
+            rewardMoney = 102000,
         },
         [30772] = {
             description = "Ahead of us is the main thrust of the yaungol army.\n\nHere, they prepare " ..

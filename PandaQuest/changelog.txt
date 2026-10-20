@@ -2,6 +2,30 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.189
+- database - Wowhead data as the PandaQuest portal read it: 5,564 quests, 24 NPCs, 1 object
+- quest 27477 - The Corpulent One - updated
+- quest 27478 - Relios the Relic Keeper - updated
+- quest 27479 - Righteous Indignation - updated
+- quest 27480 - Ley Energies - updated
+- quest 27481 - Out of the Ziggurat - updated
+- quest 27482 - Into the Flames - updated
+- quest 27483 - Practical Vengeance - updated
+- quest 27484 - Only One May Enter - updated
+- quest 27485 - Warm Welcome - updated
+- quest 27486 - Warm Welcome - updated
+- quest 27487 - Ix'lar the Underlord - updated
+- quest 27488 - Impatience - updated
+- quest 27489 - Nobody to Blame but Myself - updated
+- quest 27490 - SI:7 Drop - updated
+- quest 27491 - Kor'kron Drop - updated
+- quest 27492 - Ogres & Ettins - updated
+- quest 27493 - Ogres & Ettins - updated
+- quest 27494 - Move the Mountain - updated
+- quest 27495 - Move the Mountain - updated
+- quest 27496 - Call in the Artillery - updated
+- quest - and 52 more quests updated
+
 0.2.188
 - database - Wowhead data as the PandaQuest portal read it: 5,492 quests, 24 NPCs, 1 object
 - quest 27401 - What Tomorrow Brings - updated
