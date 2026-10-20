@@ -11,6 +11,7 @@ ns.Overrides = ns.Overrides or {}
 ns.Overrides.wowhead = {
     quests = {
         [2] = {rewardMoney = 1500},
+        [16] = {rewardItems = {{4536, 1}}},
         [23] = {rewardMoney = 1700},
         [24] = {rewardMoney = 1700},
         [25] = {rewardMoney = 1800},
@@ -24833,6 +24834,137 @@ ns.Overrides.wowhead = {
                 "without mercy... show them their greed has a price!",
             rewardMoney = 7000,
         },
+        [28389] = {
+            description = "With the goblins scattered and their equipment destroyed, they'll either get " ..
+                "the message and leave, or be easy pickings if they choose to stay. We've won " ..
+                "here.\n\nYou've fought as fiercely as any member of the pack, <name>. Return to the " ..
+                "Denmother and let her know of our success. I'll be maintaining my watch.",
+            rewardChoices = {{65292, 1}, {65311, 1}, {65330, 1}},
+            rewardMoney = 14000,
+        },
+        [28390] = {
+            description = "Glop had a son. In his grave hubris, he named it Glop. And so the line of " ..
+                "fungalmancers continues.\n\nI require you to slay this new fungalmancer. Your shaman " ..
+                "ally has already returned, and awaits you at his cave in the southwest of Verlok Stand.",
+            rewardMoney = 172000,
+        },
+        [28391] = {
+            description = "Aeosera is restless and stubborn. She scoffs at our dominance, and she needs " ..
+                "to be reminded of her place.\n\nI still have the mallet you retrieved for me. Return to " ..
+                "the western edge of the Pale Roost and strike the resonating crystal.\n\nI will meet you " ..
+                "there and lend what aid I can. Put her back in her place, <class>.",
+            rewardMoney = 172000,
+        },
+        [28392] = {
+            description = "The Timbermaw furbolg are the last known tribe of uncorrupted furbolg. They " ..
+                "huddle on the edge of these lands, ferociously defending their home of Timbermaw " ..
+                "Hold.\n\nThough they are proud creatures, they are in need of much assistance. Should " ..
+                "you wish to help, follow the road north from here, and seek them out at the entrance to " ..
+                "Timbermaw Hold.",
+            rewardMoney = 1800,
+        },
+        [28393] = {
+            description = "SI:7's latest report about Twilight's Hammer and Dark Iron activity worries " ..
+                "me, <name>. There's evidence that they are preparing a joint attack from within " ..
+                "Blackrock Mountain. We'll be hard-pressed to turn back such a combined force, but if we " ..
+                "act before they're ready to strike, we might be able to blunt the attack.\n\nYou must go " ..
+                "into Blackrock Depths and capture the Twilight's Hammer attack plans from General " ..
+                "Angerforge in the West Garrison. Do not hesitate to take out the elementals supporting " ..
+                "his forces.",
+            rewardChoices = {{65618, 1}, {65639, 1}},
+            rewardMoney = 14500,
+        },
+        [28394] = {
+            description = "The latest SI:7 intelligence on Blackrock Depths is troubling, <name>. It " ..
+                "appears Twilight's Hammer is working with the Dark Iron engineer, Argelmach, to create " ..
+                "war golems powered by elementals. These golems could prove to be a devastating weapon if " ..
+                "used against us.\n\nYou must prevent that from happening, <name>. Find the Manufactory " ..
+                "in Blackrock Depths, capture the blueprints he's using to make those golems, and recover " ..
+                "the elemental modules he's using to power them.",
+            rewardItems = {{65619, 1}},
+            rewardMoney = 14500,
+        },
+        [28397] = {
+            description = "They made a mistake by not killing me when they had the chance. Perhaps they " ..
+                "thought Orkus would drown. HAH! Now they will pay the price for their " ..
+                "carelessness.\n\nYou and I will tear this island apart, <name>. They will never expect " ..
+                "this! Once all of their soldiers are dead we will confront the leaders. Be on the " ..
+                "lookout for attack plans. If we can get our hands on their plans we will be able to put " ..
+                "a stop to their whole invasion!\n\nLet's go, <name>!",
+            rewardMoney = 1500,
+        },
+        [28398] = {
+            description = "The power of the Dark Iron forces and their Twilight's Hammer allies is " ..
+                "growing within Blackrock Mountain. Pyromancer Loregrain, a magus of renown, plays an " ..
+                "important role in leading the Twilight's Hammer forces there. If we could get our hands " ..
+                "on his grimoire, I might be able to devise counterspells and other ways of dampening " ..
+                "their elemental magics.\n\nYou must descend into Blackrock Depths, locate the Shrine of " ..
+                "Thaurissan, and capture the grimoire. Show Loregrain and his Twilight minions no mercy.",
+            rewardItems = {{65620, 1}},
+            rewardMoney = 14500,
+        },
+        [28399] = {
+            description = "I have it on good authority that SI:7 is concerned about collaboration between " ..
+                "Twilight's Hammer and the Dark Iron dwarves in Blackrock Depths. We can act on this " ..
+                "information, prove our value to the Alliance, and gain something for ourselves at the " ..
+                "same time.\n\nThe report mentions that the Twilight's Hammer followers have placed a " ..
+                "number of elemental binding stones throughout Shadowforge City, the Domicile, the Shrine " ..
+                "of Thaurissan, the West Garrison and the East Garrison. Find and capture those stones!",
+            rewardItems = {{65621, 1}},
+            rewardMoney = 14500,
+        },
+        [28400] = {
+            description = "Now to find their battle plans and take out their leaders! Should we succeed " ..
+                "there is an orc high warlord who served in the war in Silverpine that is now stationed " ..
+                "at Tarren Mill - located in the heart of Hillsbrad. He will grant both of us " ..
+                "commendations for this! We will be heroes of the Horde, <name>!\n\nOnward! Together we " ..
+                "will defeat the Alliance filth!",
+            rewardChoices = {{65680, 1}, {65701, 1}, {65719, 1}, {65728, 1}},
+            rewardMoney = 6000,
+        },
+        [28401] = {
+            description = "Within the halls of Blackrock Depths, the Twilight's Hammer cult and the Dark " ..
+                "Iron dwarves are gathering their forces. Backing up their legions are hordes of fire " ..
+                "elementals bound to the service of the firelord, Ragnaros.\n\nIf we can free those " ..
+                "elementals from their bonds, we can both weaken our enemies and honor the elements. Take " ..
+                "this totem with you and use it on subdued fireguards. It will free their spirits from " ..
+                "their bondage and restore them to their natural state.",
+            rewardChoices = {{65622, 1}, {65640, 1}},
+            rewardMoney = 14500,
+        },
+        [28402] = {
+            description = "I'm nearly ready, <name>.\n\nYour scrolls contained enough information to " ..
+                "discern their encryption method. Now all that's left is for me to translate the " ..
+                "codes.\n\nI need you to scout out the chamber beneath the Obelisk of the Moon. There are " ..
+                "likely to be a few of Schnottz's troops down there that escaped your blast.\n\nYou take " ..
+                "care of them and I'll meet you there when I'm finished.",
+            rewardMoney = 86000,
+        },
+        [28403] = {
+            description = "There should be two titan communication devices in this chamber.\n\nIf my " ..
+                "translations are correct, one is a death trap and the other will accept the codes and " ..
+                "activate the obelisk.\n\nLet's hope I get this right.\n\nLet me know when you're ready.",
+            rewardMoney = 21500,
+        },
+        [28404] = {
+            description = "Yes, this all looks familiar enough.\n\nThanks to all the information you " ..
+                "gathered for me, I'm sure that I can activate the mechanism. I'll just need some time " ..
+                "free from distraction.\n\nAs soon as I get started, you can count on that titan " ..
+                "construct to try and stop me.\n\nThat's where you come in.\n\nI don't need to remind you " ..
+                "of what's riding on this. Take down that guardian!",
+            rewardChoices = {{65871, 1}, {65873, 1}, {65885, 1}},
+            rewardMoney = 172000,
+        },
+        [28405] = {
+            description = "Blackrock Depths has long been home to our enemies, but now SI:7 sends word " ..
+                "that the Dark Irons and Twilight's Hammer are increasing their collaboration. Using the " ..
+                "knowledge of the cult, the Dark Iron dwarves are imbuing their weapons with elemental " ..
+                "powers. They've outfitted the Anvilrage legion with these fearsome new weapons.\n\nI " ..
+                "want you to go into Blackrock Depths and gather the weapons from the Anvilrage dwarves " ..
+                "there and break them over the Black Anvil in the heart of Shadowforge City.",
+            rewardChoices = {{65623, 1}, {65641, 1}, {65646, 1}},
+            rewardMoney = 14500,
+        },
         [28406] = {
             description = "Things are getting interesting in Blackrock Mountain, <name>. Our sources " ..
                 "report that the Dark Iron dwarves have formed closer ties with Twilight's Hammer and " ..
@@ -24843,7 +24975,456 @@ ns.Overrides.wowhead = {
             rewardItems = {{65624, 1}},
             rewardMoney = 14500,
         },
+        [28407] = {
+            description = "Firebeard? Marry my sister!? I swear the world's gone mad, <name>!\n\nStill, " ..
+                "maybe Kurdran is right. A nice normal wedding would ease everyone's mind... and maybe " ..
+                "cool off Firebeard a little. It was great to actually work together here against the " ..
+                "ogres.\n\nRight then! It's all up to Fanny. Something tells me she won't want to be tied " ..
+                "down.\n\nFly back to Kirthaven and see if she's game. I'll finish up the nasty business " ..
+                "with the ogres here.",
+            rewardMoney = 45000,
+        },
+        [28408] = {
+            description = "By tradition, Wildhammer brides wear white to show their purity. In addition, " ..
+                "they wear a crown of black feathers - to show their CHUTZPAH.\n\nOwl feathers make the " ..
+                "boldest statement, and Fanny deserves nothing less. Tawny owls are native to the " ..
+                "Highlands. Look for them circling near trees that grow along the cliffs, and take their " ..
+                "feathers.\n\nYou'll probably want to kill 'em, first.",
+            rewardMoney = 90000,
+        },
+        [28409] = {
+            description = "It would be an insult to celebrate a Wildhammer wedding without drink. Kurdran " ..
+                "himself called for a few kegs of rare Thunderbrew Lager to be sent ashore from Highbank, " ..
+                "but the caravan can't get through the pass.\n\nFollow the road east of here, around the " ..
+                "south side of Thunderstrike Mountain, and catch up with the caravan. Look for a fellow " ..
+                "named Hammelhand, and help him get the booze through the pass!",
+            rewardMoney = 90000,
+        },
+        [28410] = {
+            description = "Everyone's going to want to dress their best for this, and finery is in short " ..
+                "supply in the Highlands.\n\nI understand that those goblin wretches off the coast use " ..
+                "the finest silk for repairing their zeppelin air envelopes. A waste!\n\nFind a zeppelin " ..
+                "flying back and forth between Dragonmaw Port and the Krazzworks, and liberate some silk " ..
+                "from the cargo hold in the lower decks.",
+            rewardMoney = 90000,
+        },
+        [28411] = {
+            description = "Finally, we're going to need a feast. And none of that \"finger food\" stuff! " ..
+                "This crowd wants meat, and lots of it.\n\nGather up venison from Highland elk and does. " ..
+                "Highland worg are good eatin' too - bring back some ribs. We'll show you a feast like " ..
+                "you've never had in all the Eastern Kingdoms, friend.",
+            rewardMoney = 90000,
+        },
+        [28413] = {
+            description = "I've written many an epic tune in my lifetime, <name>, but this upcoming " ..
+                "wedding deserves a very special ballad. And fast!\n\nShould I write a love song? A " ..
+                "lighthearted ditty? A bawdy drinking song?\n\nI could use some help with the lyrics, if " ..
+                "you fancy a go at it.\n\nTalk to me and we'll write a song together!",
+            rewardMoney = 68000,
+        },
+        [28414] = {
+            description = "It's all up to you, kid. You demolished the Steamwheedle Sharks, so now all " ..
+                "that's left to do is to kick the winning goal.\n\n<The coach leans in close and whispers " ..
+                "in your ear.>\n\nNow, just between you and me, I think we should do this one right. I " ..
+                "don't want you to just kick a goal... I want you to kick it so far it sails between the " ..
+                "two smokestacks behind the goal!\n\nI've modified the footbomb to give you the extra " ..
+                "power that you'll need.\n\nNow get out there and make me proud!",
+            rewardChoices = {{54294, 1}, {54295, 1}},
+            rewardMoney = 50,
+        },
+        [28415] = {
+            description = "We have to take action. Winky and Gor'tesh were fighting, so I planned this " ..
+                "friendship ceremony to help the two of them make up. Everything was going well, " ..
+                "until...\n\nWell, you know the rest.\n\nI even bought drinks!\n\nWinky loves flameflies. " ..
+                "He runs off to chase them most every night. I'm thinking maybe that's where he " ..
+                "went.\n\nYou'll find flameflies to the west and north, wherever you find lava. Bring me " ..
+                "seven of them, and hurry!\n\nGor'tesh might leave next!",
+            rewardChoices = {{64552, 1}, {64553, 1}, {64554, 1}},
+            rewardItems = {{66080, 1}},
+            rewardMoney = 7500,
+        },
+        [28416] = {
+            description = "<name>... is that you? I thought you were dead, with the rest of them!\n\nNo, " ..
+                "you were always strong, even back then, even in Redridge.\n\nOur fight's not over, " ..
+                "<name>. They already attacked our homeland once. I'm here to make sure it doesn't happen " ..
+                "again.\n\nIf you can still fight like you did back in the day, then join me. You can " ..
+                "start by heading south, to the Whelping Downs, and slaying their whelpers and their " ..
+                "hatchling black dragons.\n\nIt'll be like old times.",
+            rewardMoney = 7500,
+        },
+        [28417] = {
+            description = "The Blackrock orcs of the steppes serve a dark master - one who performs " ..
+                "twisted experiments on living creatures to create his own menagerie of abominations. " ..
+                "Many of his test subjects are as corrupted as their master, but others are completely " ..
+                "innocent.\n\nIn the whelping downs to the south, they chain baby dragons to the ground, " ..
+                "preparing them for such experiments. I will not stand for this. Break their fetters and " ..
+                "return the hatchlings to me... to safety.",
+            rewardChoices = {{64498, 1}, {64499, 1}, {64500, 1}},
+            rewardMoney = 7500,
+        },
+        [28418] = {
+            description = "I am a Blackrock orc by birth. I spent a large part of my youth inside that " ..
+                "mountain.\n\n< Ariok motions towards Blackrock Mountain, to the north.>\n\nBut while I " ..
+                "share blood with them, I do not share their outlook. And I am seeking an ally to assist " ..
+                "me in stopping their upcoming attack.\n\nSo prove yourself. Travel south, to the " ..
+                "Whelping Downs, and slay their whelpers and the hatchling black dragons. Prove to me " ..
+                "that you're ready for this war.",
+            rewardMoney = 7500,
+        },
+        [28419] = {
+            description = "If we're going to wage war against the Blackrock clan, we're going to need to " ..
+                "plan ahead. My father has already put the plan together - now it's time to execute.\n\nI " ..
+                "need scorpid stingers... the sharpest ones you can find. Scorpids are all over the " ..
+                "steppes, but you can find most of them in the gulch to the west.\n\nDon't worry about " ..
+                "what they're for. You'll find out soon enough.",
+            rewardItems = {{64502, 1}},
+            rewardMoney = 7500,
+        },
+        [28420] = {
+            description = "According to my father, we'll need worg hides, and lots of them. It doesn't " ..
+                "matter if they're torn, burned, or bloody, but we need plenty of them.\n\nActually, it's " ..
+                "probably better if they're a little beat-up.\n\nYou'll find worgs both to the west and " ..
+                "to the east of here.",
+            rewardItems = {{64504, 1}},
+            rewardMoney = 7500,
+        },
+        [28421] = {
+            description = "Hope you're not afraid of getting dirty. Judging by the looks of you, that " ..
+                "won't be a problem.\n\nTo the north, at the lava's edge, you'll find piles of dark mud. " ..
+                "I need it.\n\nIt'd be best if you didn't ask questions, and focused your efforts on " ..
+                "following orders, <name>.",
+            rewardItems = {{64506, 1}},
+            rewardMoney = 7500,
+        },
+        [28422] = {
+            description = "My father is waiting for us to the east. Before we head out though, we need to " ..
+                "gather some more supplies. This time, you'll be taking it from a warlock by the name of " ..
+                "Gorzeeki Wildeyes.\n\nYou'll probably find him to the northwest, near the Altar of " ..
+                "Storms. Tell him he's going to help us out. We need the sand, the cider, and the " ..
+                "orb.\n\nHe'll know what it means.",
+        },
+        [28423] = {
+            description = "Ariok said he needs supplies? I've got plenty of supplies! Problem is, those " ..
+                "warlocks have kicked me out of my home, and they're not letting me back in.\n\n<Gorzeeki " ..
+                "sizes you up.>\n\nYou might be able to get in, though. Head north, and grab some of my " ..
+                "slumber sand, my fel slider cider, and a clear glass orb. I'm pretty sure that's what he " ..
+                "wants.\n\nOh, and if you happen to accidentally kill any of those orcs while you're up " ..
+                "there, I wouldn't be terribly upset.",
+            rewardMoney = 7500,
+        },
+        [28424] = {
+            description = "Ner'gosh the Shadow is the leader of those warlocks to our north. He's the " ..
+                "jerk that kicked me out of my home once those Blackrock orcs started showing up. Well, " ..
+                "they're all jerks, but he's the jerkiest.\n\nIf I'm ever going to move back in near the " ..
+                "Altar, Ner'gosh has to go.",
+            rewardMoney = 7500,
+        },
+        [28425] = {
+            description = "Well I suppose I'm done with you here. I'll go shoo those other warlocks out " ..
+                "when I build up the courage.\n\nHere, don't forget those supplies.",
+            rewardMoney = 700,
+        },
+        [28426] = {
+            description = "We're headed to Chiselgrip, right in the center of these steppes. We'll " ..
+                "rendezvous with the Thorium Brotherhood there, as well as with my father.\n\nAre you " ..
+                "familiar with the Brotherhood? Those dark iron dwarves have helped me out more than " ..
+                "once. We may need their help again.\n\nWe'll pass through Black Tooth Hovel on our way " ..
+                "there. What do you say we kill a few of the Blackrock while we travel? I'm getting a " ..
+                "little restless here in this camp.",
+            rewardChoices = {{64511, 1}, {64512, 1}, {64513, 1}, {64514, 1}},
+            rewardMoney = 7500,
+        },
+        [28427] = {
+            description = "Lok'tar, <class>. My name is Eitrigg, of the Argent Crusade... formerly of the " ..
+                "Warchief's Honor Guard. Before that, of the Blackrock orcs.\n\nI trust my son has " ..
+                "briefed you on our plan. He hasn't? That is probably for the better.\n\nThe next part of " ..
+                "the plan is going to require a bit of subtlety. Speak with Thelaron Direneedle, the " ..
+                "tailor here in town. I've already given him the hides and mud that you've collected. " ..
+                "He's going to need to size you.\n\nThat's right, <race>: you're going undercover.",
+            rewardMoney = 700,
+        },
+        [28428] = {
+            description = "Judging by your weight, build, and size, we're going to dress you as an orc. " ..
+                "Their army is made mostly of orcs, so you'll fit right in.\n\nDo you know much about " ..
+                "tailoring? If not, then consider this your first lesson. My crafting table over there " ..
+                "has all the necessary supplies on it.\n\nGo ahead and grab whatever you think is " ..
+                "necessary, then bring it here. Thelaron will fix you right up.",
+            rewardMoney = 14500,
+        },
+        [28429] = {
+            description = "Judging by your weight, build, and size, we're going to dress you as an ogre. " ..
+                "The firegut ogres have always worked for the Blackrocks, so you'll fit right in.\n\nDo " ..
+                "you know much about tailoring? If not, then consider this your first lesson. My crafting " ..
+                "table over there has all the necessary supplies on it.\n\nGo ahead and grab whatever you " ..
+                "think is necessary, then bring it here. Thelaron will fix you right up.",
+            rewardMoney = 14500,
+        },
+        [28430] = {
+            description = "Judging by your weight, build, and size, we're going to dress you as a goblin. " ..
+                "The Blackrocks have been known to hire goblin mercenaries to fill their ranks, so you'll " ..
+                "fit right in.\n\nDo you know much about tailoring? If not, then consider this your first " ..
+                "lesson. My crafting table over there has all the necessary supplies on it.\n\nGo ahead " ..
+                "and grab whatever you think is necessary, then bring it here. Thelaron will fix you " ..
+                "right up.",
+            rewardMoney = 14500,
+        },
+        [28431] = {
+            description = "Judging by your weight, build, and size, we're going to dress you as a troll. " ..
+                "The Smolderthorn trolls have always worked with the Blackrock orcs, so you'll fit right " ..
+                "in.\n\nDo you know much about tailoring? If not, then consider this your first lesson. " ..
+                "My crafting table over there has all the necessary supplies on it.\n\nGo ahead and grab " ..
+                "whatever you think is necessary, then bring it here. Thelaron will fix you right up.",
+            rewardMoney = 14500,
+        },
+        [28432] = {
+            description = "Undercover work is all about swagger. Just act like you're supposed to be " ..
+                "there, and you'll be fine.\n\nYour contact inside Black Tooth Hovel will be an orc by " ..
+                "the name of Quartermaster Kaoshin. He does NOT know you're a spy, so try and stay cool. " ..
+                "Do whatever he asks of you.\n\n< Eitrigg presses a small mechanical object into your " ..
+                "palm.>\n\nPlace this device in your ear. I will be in touch to give you any special " ..
+                "instructions.\n\nGood luck out there, soldier.",
+            rewardMoney = 3500,
+        },
+        [28433] = {
+            description = "Bah! You're lucky I'm short-handed today. Otherwise I'd make you my personal " ..
+                "whipping <boy/girl> for the week.\n\nThe officers and high-ranking soldiers need their " ..
+                "boots polished. They've left them out in front of their huts.\n\nI want to see my " ..
+                "reflection in those boots, grunt! Get to work!",
+            rewardMoney = 7500,
+        },
+        [28434] = {
+            description = "<You hear a buzzing in your ear.>\n\n<name>? It's Eitrigg.\n\nWe've just " ..
+                "received the final bit of information for your next mission. There are three marks that " ..
+                "we'd like you to take down. The first is Voodooist Timan, whom you'll find atop the " ..
+                "Pillar of Ash. Worgmistress Othana is in the central worg pens. Finally, Gorlop is near " ..
+                "the lava pools to the south.\n\nYou will find the scorpid barbs you harvested packed " ..
+                "along with your belongings. Use the barbs on the marks when the time is right.",
+        },
+        [28435] = {
+            description = "Alright, I've got some actual, legitimate, important work for you. We've got " ..
+                "to call the kodos in from the grazing lands to the south. General Thorg'izog says we'll " ..
+                "be moving out into Redridge soon, and I won't be caught with my kodos down.\n\nUse this " ..
+                "horn near a kodo. It will return to the camp when it hears the call.\n\nYou'll want to " ..
+                "watch out. Sometimes the kodos get a little feisty, so you need to knock them around a " ..
+                "bit before they listen to you.",
+        },
+        [28436] = {
+            description = "<name>, it's Eitrigg. I want you to hold onto that horn. I'm sure we can " ..
+                "improvise and find a way to work it into the plan.\n\nI'm more than a little concerned " ..
+                "about what Kaoshin said about attacking Redridge. We knew an attack was imminent, but " ..
+                "not this soon!\n\nReturn to me, with the horn. We will talk again here, in Chiselgrip. " ..
+                "And try not to ruin that disguise. You're not done with your undercover work yet.",
+            rewardChoices = {{64518, 1}, {64519, 1}, {64520, 1}},
+            rewardMoney = 7500,
+        },
+        [28437] = {
+            description = "Kaoshin turned out to be more helpful than I expected, but we're done with " ..
+                "him. It's time you spoke with the General. I think you're ready.\n\nGeneral Thorg'izog " ..
+                "is one of the \"Big Three\" that run the Blackrock forces here in Burning Steppes. He " ..
+                "leads from the Blackrock Stronghold to the northwest. Put on your disguise and go speak " ..
+                "with him. See if you can earn his trust. I will be in touch, should I need anything " ..
+                "further.",
+            rewardMoney = 4000,
+        },
+        [28438] = {
+            description = "I suppose I'll make the most of this situation. These goblin mercenaries " ..
+                "brought this enormous fire elemental to my stronghold as a \"thank you\" for hiring " ..
+                "them. What am I going to do with an elemental here in the steppes? That's like bringing " ..
+                "sand to the beach.\n\nIf you're looking for work, then prove yourself. Talk to this " ..
+                "goblin here, and challenge his elemental to a fight. The victor earns my respect, and my " ..
+                "time.",
+            rewardChoices = {{64529, 1}, {64530, 1}, {64531, 1}, {64532, 1}},
+            rewardMoney = 15000,
+        },
+        [28439] = {
+            description = "I've been looking for a good, strong soldier like you. I need someone to keep " ..
+                "my troops in line.\n\nOutside the stronghold, you will find orcs, ogres, and trolls " ..
+                "preparing for the assault on Redridge. My sergeants keep them in line, but I'd like you " ..
+                "to assist them.\n\nTake this cudgel and discipline a few of my soldiers. I don't care if " ..
+                "they're misbehaving or standing perfectly in line, I want them beaten. I want them " ..
+                "focused, battle-hardened, and obedient.\n\nNow go.",
+            rewardMoney = 15000,
+        },
+        [28440] = {
+            description = "<name>? Eitrigg here.\n\nIt sounds like you have earned Thorg'izog's trust, " ..
+                "and he's assigned you to discipline duty. This is fortunate.\n\nWe need you to take out " ..
+                "his sergeants. You'll find them on wolfback, outside of the Blackrock Stronghold in the " ..
+                "Fields of Honor. Use that cudgel on them, several times, until they die. You'll have to " ..
+                "act fast, because if they realize you're not one of them, they can unmask you. Strike " ..
+                "quickly and ferociously, <name>.",
+        },
+        [28441] = {
+            description = "We do not have any further strategic need for Thorg'izog or the Blackrock " ..
+                "ground troops. We must continue to the next phase of the plan.\n\nWhen you are finished " ..
+                "at the stronghold, return to my son and me, here in Chiselgrip.",
+            rewardChoices = {{64539, 1}, {64540, 1}, {64541, 1}, {64542, 1}, {64538, 1}},
+            rewardMoney = 7500,
+        },
+        [28442] = {
+            description = "Our work here in Chiselgrip is done, mostly thanks to you. We'll now be moving " ..
+                "on to the northeast, to Flame Crest.\n\nFlame Crest is in the cliffs, past the Ruins of " ..
+                "Thaurissan. It should serve as a sufficient base of operations for the final stages of " ..
+                "our plan.\n\nOf course, my son Ariok will be joining you on the road. As will I.",
+            rewardMoney = 4000,
+        },
+        [28443] = {
+            description = "I need you to do some more gathering before we can go take out the remainder " ..
+                "of the Blackrock army. If we're going to do this, we're going to do it right, and that " ..
+                "means being prepared.\n\nI need ash, <name>. Not just any ash... ash from the greater " ..
+                "obsidian elementals that roam the plains to the southeast. The stuff is deep, deep " ..
+                "black, which is what we need for our next disguise.\n\nDon't worry, you've already got a " ..
+                "disguise. This one is for someone... well, someTHING... else.",
+            rewardMoney = 7500,
+        },
+        [28444] = {
+            description = "The lava beds nearby - to the south - play host to flamekin, a brand of fire " ..
+                "demon that has long roamed the steppes. Situations are such in the Blackrock army that, " ..
+                "if we are careful, we may be able to sneak some of these flamekin behind enemy lines to " ..
+                "cause some havoc.\n\nBring me the bodies of several flamekin. As demons, they are easily " ..
+                "resurrected, and then we can use them for our own purposes.",
+            rewardMoney = 7500,
+        },
+        [28445] = {
+            description = "We're going to need fresh meat, which means you're going to be hunting worg. " ..
+                "The worg on this side of the steppes should be your target.\n\n< Eitrigg produces a " ..
+                "large blade, which he hands to you.>\n\nHunt the giant ember worgs. Once you've killed " ..
+                "them, use this saw to remove the choicest bits of meat from their bodies. You will find " ..
+                "these worgs all over the steppes, but the closest pack rules the land just to our " ..
+                "southeast.",
+            rewardMoney = 7500,
+        },
+        [28446] = {
+            description = "My legs are getting a little restless again. You interested in taking a little " ..
+                "tour, <name>?\n\nWe're going to take a trip around Dreadmaul Rock. I'd like to " ..
+                "investigate some of the Blackrock army before we make our move, and I figure we might as " ..
+                "well kill some of them while we're on the way.",
+        },
+        [28447] = {
+            description = "The Blackrock orcs don't come alone. You've already seen that they've got the " ..
+                "Firegut ogres and Smolderthorn trolls on their side. Unfortunately for us, they're also " ..
+                "teamed up with the black dragonflight.\n\nThe orcs and the dragons have already sent " ..
+                "some of their champions to stand guard at rally points, which are marked by a dragon " ..
+                "skull on a pike. You and I are going to find these rally points and take out this " ..
+                "vanguard before the battle starts.\n\nReady?",
+        },
+        [28448] = {
+            description = "While we are circling around Dreadmaul Rock, there's one more stop that we " ..
+                "need to make.\n\nYou remember the hatchlings that you freed from the Whelping Downs? " ..
+                "I've been watching over them, and now we're going to deliver them to someone who will " ..
+                "take care of them better than we can. He's staying in Slither Rock, to the northeast of " ..
+                "Dreadmaul Rock.\n\nHis name is Acride, and he might be the key to victory in the " ..
+                "upcoming battle.",
+            rewardMoney = 7500,
+        },
+        [28449] = {
+            description = "<You hear a buzzing in your ear.>\n\n<name>. It sounds like you and Ariok have " ..
+                "finished with your tasks. I've also finished mine.\n\nReturn to Flame Crest. I've " ..
+                "prepared a few packages to deliver to the Big Three: Thorg'izog, Neeralak, and Xi'lun. " ..
+                "You've already met General Thorg'izog. This will be your chance to meet the other " ..
+                "two.\n\nThat is, before you kill them.",
+            rewardChoices = {{64547, 1}, {64548, 1}, {64549, 1}, {64550, 1}},
+            rewardMoney = 7500,
+        },
+        [28450] = {
+            description = "General Thorg'izog is staying among the ogres in the Firegut Furnace, a cave " ..
+                "on the western edge of Dreadmaul Rock. I'd like you to deliver this to him and the " ..
+                "ogres.\n\nInside this package, you will find the worg cutlets you obtained, marinated in " ..
+                "the fel slider cider that we took from the Altar of Storms.\n\nI would avoid eating it " ..
+                "if I were you.\n\nBring it to General Thorg'izog. He will make sure that his troops are " ..
+                "fed and, with any luck, he will eat some himself.",
+            rewardMoney = 4000,
+        },
+        [28451] = {
+            description = "The warlocks of the Blackrock Clan often practice their magic in the Skull " ..
+                "Warren, a cave on the eastern side of Dreadmaul Rock. Their leader, Xi'lun, is busy " ..
+                "elsewhere, so the cave is currently being held by another of the Big Three: Dragon-Lord " ..
+                "Neeralak. And Neeralak's expertise is in dragons, not in necromancy.\n\nI've used the " ..
+                "slumber sand on those flamekin you captured. Try to convince Neeralak that they're " ..
+                "warlock imps, and not flamekin. When they wake up, they won't be happy.",
+            rewardMoney = 4000,
+        },
+        [28452] = {
+            description = "Intel tells us that High Warlock Xi'lun - the final member of the Big Three - " ..
+                "is within the cave atop Dreadmaul Peak, preparing for his big moment.\n\nHe is waiting " ..
+                "for a delivery: an Orb of Domination, with which he can perform a powerful summoning " ..
+                "ritual. I want you to give him this:\n\n< Eitrigg hands you a glass orb.>\n\nThis is the " ..
+                "clear glass orb that you freed from the Altar of Storms. It is powerless. Give it to " ..
+                "Xi'lun, and cross your fingers that he doesn't notice.",
+            rewardMoney = 4000,
+        },
+        [28453] = {
+            description = "<name>, come in. Can you read me?\n\nThe battle is about to start. I hope " ..
+                "you've delivered all of those packages.\n\nI need you here in Flame Crest, NOW.",
+            rewardChoices = {{64565, 1}, {64566, 1}, {64567, 1}, {64568, 1}, {64564, 1}},
+            rewardMoney = 1900,
+        },
+        [28454] = {
+            description = "This is it, <name>. A sad day... but a day in which the Blackrock orcs will " ..
+                "learn a powerful lesson. Today, our plan comes to fruition.\n\nCome with me. We're going " ..
+                "to go talk to Acride and call in that favor that he owes us. Then we'll stop this " ..
+                "invasion of Redridge before it even starts.",
+            rewardMoney = 23000,
+        },
+        [28455] = {
+            description = "You and my son are going back to that mountain. There's three orcs who " ..
+                "survived the attack, and we won't rest until they're dead.\n\nThat's right, I'm talking " ..
+                "about the Big Three.\n\nGeneral Thorg'izog crawled back into the Firegut Furnace, and " ..
+                "Dragon-Lord Neeralak is cowering in the cave on the mountain's peak. Xi'lun is in the " ..
+                "back of the Skull Warren, plotting with his fellow warlocks.\n\nLeave your mark, <name>. " ..
+                "Topple these corrupt Blackrock orcs once and for all.",
+            rewardMoney = 23000,
+        },
+        [28456] = {
+            description = "While the Blackrock orcs still swarm in their spire, I doubt their plans will " ..
+                "take them anywhere near the innocent people of Redridge anytime soon. You and Ariok saw " ..
+                "to that.\n\nI'd say we were fairly resourceful here in Burning Steppes - those warlock " ..
+                "supplies we collected certainly came in handy, as did the obsidian ash that we used to " ..
+                "conceal our dragon.\n\nThere were, however, some collected items left over. Please, take " ..
+                "your pick before you move on, beyond the steppes.",
+            rewardChoices = {{64575, 1}, {64578, 1}, {64579, 1}, {64580, 1}, {64577, 1}},
+            rewardItems = {{64576, 1}},
+        },
+        [28457] = {
+            description = "The Shattered Hand believes that the Dark Iron dwarves and Twilight's Hammer " ..
+                "are working together. There's evidence that they are preparing a joint attack from " ..
+                "within Blackrock Mountain. We can't allow such a force to depart Blackrock " ..
+                "Mountain.\n\nYou must go into Blackrock Depths and capture the Twilight's Hammer attack " ..
+                "plans from General Angerforge in the West Garrison. Eliminate the elementals Twilight's " ..
+                "Hammer has provided to support his forces.",
+            rewardChoices = {{65625, 1}, {65642, 1}},
+            rewardMoney = 14500,
+        },
+        [28458] = {
+            description = "The power of the Dark Iron forces and their Twilight's Hammer allies is " ..
+                "growing within Blackrock Mountain. Pyromancer Loregrain is a powerful and influential " ..
+                "magus in the Twilight's Hammer delegation. If we could get our hands on his grimoire, I " ..
+                "could develop counters for Twilight's Hammer spells and curses.\n\nYou must descend into " ..
+                "Blackrock Depths, locate the Shrine of Thaurissan, and capture the grimoire. Show " ..
+                "Loregrain and his Twilight minions no mercy.",
+            rewardItems = {{65626, 1}},
+            rewardMoney = 14500,
+        },
+        [28459] = {
+            description = "The Shattered Hand has discovered increased collaboration between Twilight's " ..
+                "Hammer and the Dark Iron dwarves in Blackrock Depths. We have an opportunity to strike " ..
+                "at our enemies and empower ourselves, <name>.\n\nTwilight's Hammer followers have placed " ..
+                "a number of elemental binding stones throughout Shadowforge City, the Domicile, the " ..
+                "Shrine of Thaurissan, the West Garrison and the East Garrison. Find and capture those " ..
+                "stones!",
+            rewardItems = {{65627, 1}},
+            rewardMoney = 14500,
+        },
         [28460] = {rewardMoney = 14500},
+        [28461] = {
+            description = "The Shattered Hand has discovered some disturbing information in Blackrock " ..
+                "Depths. It appears Twilight's Hammer is working with the Dark Iron engineer, Argelmach, " ..
+                "to create war golems powered by elementals. These golems could be a great advantage for " ..
+                "our enemies.\n\nIt is your duty to prevent that from happening. Find the Manufactory in " ..
+                "Blackrock Depths, capture the blueprints he's using to make those golems, and recover " ..
+                "the elemental modules he's using to power them.",
+            rewardItems = {{65628, 1}},
+            rewardMoney = 14500,
+        },
         [28463] = {
             description = "As a member of the Shattered Hand, you know that it is our job to watch the " ..
                 "Horde's enemies. We have discovered that the Dark Iron dwarves and their new allies, " ..
@@ -24852,6 +25433,16 @@ ns.Overrides.wowhead = {
                 "rations of grain in Blackrock Depths.\n\nThe rations for most of the Dark Iron army are " ..
                 "kept in the East and West Garrison of Blackrock Depths.",
             rewardItems = {{65629, 1}},
+            rewardMoney = 14500,
+        },
+        [28465] = {
+            description = "Within the halls of Blackrock Depths, the Twilight's Hammer cult and the Dark " ..
+                "Iron dwarves are gathering their forces. Backing up their legions are hordes of fire " ..
+                "elementals bound to the service of the firelord, Ragnaros.\n\nIf we can free those " ..
+                "elementals from their bonds, we can both weaken our enemies and honor the elements. Take " ..
+                "this totem with you and use it on subdued fireguards. It will free their spirits from " ..
+                "their bondage and restore them to their natural state.",
+            rewardChoices = {{65630, 1}, {65643, 1}},
             rewardMoney = 14500,
         },
         [28467] = {rewardMoney = 5500},
@@ -25301,6 +25892,11 @@ ns.Overrides.wowhead = {
                 "their presence.",
             rewardMoney = 114000,
         },
+        [31132] = {
+            description = "Oh, where have my manners gone? Technically, I suppose I am the host " ..
+                "here.\n\nAllow me to tell you a little bit about myself and my people before asking " ..
+                "questions of you.",
+        },
         [31138] = {
             description = "When you fight, you grow in skill. As you grow in skill, you will begin to " ..
                 "figure out new moves. Go, explore, learn, and show me what you figure out.",
@@ -25718,6 +26314,15 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 490,
+        },
+        [9464] = {
+            spawns = {
+                [361] = {
+                    {47.4, 93.2}, {47.4, 94}, {48, 94.8}, {48.2, 93.4}, {48.2, 94}, {48.6, 93.4},
+                    {48.6, 93.6}, {48.6, 94.6},
+                },
+            },
+            zoneID = 361,
         },
         [12262] = {
             spawns = {
