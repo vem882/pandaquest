@@ -1,9 +1,11 @@
--- Flight/Routes.lua: how long a flight takes, measured by flying it.
+-- Flight/Routes.lua: how long a flight takes and what it costs, measured by flying it.
 --
 -- The player asked for a time beside each destination at the flight master, and for a bar while
 -- the flight runs. There is exactly one honest way to produce that number on this client, and it
 -- is to fly the route and time it. This file is the measuring half; Flight/Tooltip.lua and
--- UI/FlightBar.lua are the two screens that read it.
+-- UI/FlightBar.lua are the two screens that read it. Every flight it can name is also handed to
+-- the PandaQuest site through PandaQuestSync.flights (see "The upload outbox" below), so the site
+-- can show routes, their times and their prices.
 --
 -- **Why there is nothing to show before the first flight.** TaxiNodePosition and
 -- TaxiGetSrcX/SrcY/DestX/DestY answer normalised positions on the taxi map TEXTURE, not on any
@@ -108,7 +110,7 @@ local Util, Log, Compat = ns.Util, ns.Log, ns.Compat
 
 local type, tonumber, tostring, pairs, ipairs, pcall, format = type, tonumber, tostring, pairs, ipairs, pcall,
     string.format
-local floor, sort, wipe = math.floor, table.sort, (wipe or table.wipe)
+local floor, sort, tremove, wipe = math.floor, table.sort, table.remove, (wipe or table.wipe)
 
 ---------------------------------------------------------------------------
 -- Bounds
@@ -170,6 +172,9 @@ local FARE_WINDOW = 30
 --- How long a /reload may take and still pick up the flight it interrupted (see persist()).
 local RELOAD_GAP = 300
 
+--- Newest flights kept in PandaQuestSync.flights waiting for the PandaQuest site to take them.
+local OUTBOX_MAX = 300
+
 --- Below this the median of the samples is the samples. The portal fixes its
 -- minimum at 2 samples for exactly this reason -- "a median of one is that measurement" --
 -- and Nodes/Respawn.lua's MIN_OWN_OBSERVATIONS is the same 2. Neither screen hides a one-sample
@@ -177,6 +182,7 @@ local RELOAD_GAP = 300
 -- this count: a printed number can carry its sample count beside it, a bar's fill cannot.
 M.MIN_SAMPLES = 2
 M.CLICK_WINDOW = CLICK_WINDOW
+M.OUTBOX_MAX = OUTBOX_MAX
 
 
 --- The Mists perk that makes every flight path 25% faster, and the factor that takes it back out.
@@ -706,8 +712,72 @@ function M.GetSlotPolarity()
 end
 
 ---------------------------------------------------------------------------
--- Saved across a reload
+-- The upload outbox
 ---------------------------------------------------------------------------
+--
+-- The companion app reads only PandaQuestSync, so a flight reaches the PandaQuest site as one more
+-- list in it:
+--
+--   PandaQuestSync.flights = { { id = , src = , dst = , hops = { src, ..., dst }, s = seconds,
+--                                cost = copper|nil, t = unix landing, char = , build = ,
+--                                speed = 0.8|nil }, ... }
+--
+-- `speed` is there only for a character with Ride Like the Wind, whose flights run at that factor
+-- (see SpeedFactor): `s` is what the character really spent in the air, and the site needs the
+-- factor to put a fast and a slow flight of one route on one scale.
+--
+-- Only flights this file can name go in -- never a quest taxi, never an early landing -- and only
+-- while the player has agreed to share data (global.telemetry.enabled, the same switch the rest of
+-- PandaQuestSync obeys: a flight with a character name and a landing time is a movement record).
+-- The list keeps the newest OUTBOX_MAX. The site writes `flightsAckedAt` into the community file
+-- once it has the flights up to that landing time, and SyncFlightAck below drops them -- the
+-- pattern Sync/Community.lua follows for sessions with `ackUploadedThrough`.
+
+local function syncStore()
+    local sync = ns.Sync or _G.PandaQuestSync
+    if type(sync) ~= "table" then return nil end
+    return sync
+end
+
+--- CharacterKey() -> "Name-Realm", the key PandaQuestSync.characters and the sessions use
+-- (Sync/Telemetry.lua: realm spaces and hyphens removed, matching the hub's /characters route).
+function M.CharacterKey()
+    local name = (UnitName and UnitName("player")) or "Unknown"
+    local realm
+    if GetNormalizedRealmName then realm = GetNormalizedRealmName() end
+    if not realm or realm == "" then
+        realm = (GetRealmName and GetRealmName()) or "Unknown"
+        realm = realm:gsub("[%s%-]", "")
+    end
+    return name .. "-" .. realm
+end
+
+--- ClientBuild() -> "5.5.4.70449", the first two returns of GetBuildInfo joined the way the
+-- sessions' clientBuild is.
+function M.ClientBuild()
+    if not GetBuildInfo then return "unknown" end
+    local version, build = GetBuildInfo()
+    if not version then return "unknown" end
+    if not build or build == "" then return version end
+    return version .. "." .. build
+end
+
+local function sharingAllowed()
+    local Telemetry = ns.Telemetry
+    if Telemetry and type(Telemetry.IsEnabled) == "function" then return Telemetry.IsEnabled() and true or false end
+    local PQ = ns.PQ
+    local global = PQ and PQ.db and PQ.db.global
+    local telemetry = global and global.telemetry
+    return type(telemetry) == "table" and telemetry.enabled == true
+end
+
+--- GetOutbox() -> PandaQuestSync.flights, or nil when nothing was ever put in it.
+function M.GetOutbox()
+    local sync = syncStore()
+    local flights = sync and sync.flights
+    if type(flights) ~= "table" then return nil end
+    return flights
+end
 
 local function copyList(list)
     if type(list) ~= "table" then return nil end
@@ -715,6 +785,86 @@ local function copyList(list)
     for i = 1, #list do out[i] = list[i] end
     return out
 end
+
+--- One finished flight into the outbox. Returns the entry, or nil when it was not added.
+local function addToOutbox(f, seconds, landedAt)
+    if not sharingAllowed() then return nil end
+    local sync = syncStore()
+    if not sync then return nil end
+    if type(sync.flights) ~= "table" then sync.flights = {} end
+    local flights = sync.flights
+    local char = M.CharacterKey()
+    local entry = {
+        id = format("%s-%d-%d-%d", char, landedAt, f.src, f.dst),
+        src = f.src, dst = f.dst,
+        hops = copyList(f.hops),
+        s = floor(seconds + 0.5),
+        cost = f.paid or f.cost,
+        t = landedAt,
+        char = char,
+        build = M.ClientBuild(),
+    }
+    local factor = f.speed or 1
+    if factor ~= 1 then entry.speed = factor end
+    flights[#flights + 1] = entry
+    while #flights > OUTBOX_MAX do tremove(flights, 1) end
+    return entry
+end
+
+--- PruneUploadedFlights(ack) -> number removed. Drops every flight that landed at or before `ack`:
+-- the site already has it. Anything that is not a flight record goes too.
+function M.PruneUploadedFlights(ack)
+    ack = tonumber(ack)
+    if not ack or ack <= 0 then return 0 end
+    local flights = M.GetOutbox()
+    if not flights then return 0 end
+    local n = #flights
+    local kept, removed = 0, 0
+    for i = 1, n do
+        local entry = flights[i]
+        local keep = type(entry) == "table"
+        if keep then
+            local landed = tonumber(entry.t)
+            if landed and landed <= ack then keep = false end
+        end
+        if keep then
+            kept = kept + 1
+            flights[kept] = entry
+        else
+            removed = removed + 1
+        end
+    end
+    for i = kept + 1, n do flights[i] = nil end
+    return removed
+end
+
+--- SyncFlightAck() -> ack|nil, removed
+-- Copies `flightsAckedAt` from the community file the site generated into PandaQuestSync (never
+-- backwards) and prunes the flights it covers -- Sync/Community.lua's SyncAck, for flights. A
+-- community file from before the site wrote the field has none, and then nothing happens.
+function M.SyncFlightAck()
+    local overrides = ns.Overrides
+    local community = overrides and overrides.community
+    local ack = type(community) == "table" and tonumber(community.flightsAckedAt) or nil
+    local sync = syncStore()
+    if not ack or ack <= 0 or not sync then return nil, 0 end
+
+    local previous = tonumber(sync.flightsAckedAt) or 0
+    if ack > previous then
+        sync.flightsAckedAt = ack
+    else
+        ack = previous
+    end
+    local removed = M.PruneUploadedFlights(ack)
+    if removed > 0 then
+        Log.Debug("Flight", "the site has flights up to %s; pruned %d uploaded flight(s)", tostring(ack), removed)
+    end
+    return ack, removed
+end
+
+---------------------------------------------------------------------------
+-- Saved across a reload
+---------------------------------------------------------------------------
 
 local function charStore()
     local PQ = ns.PQ
@@ -785,7 +935,7 @@ local function takeOff(click)
     -- the air watching it happen: a taxi from a quest script, a flight master whose map C_TaxiMap
     -- could not read, a click the takeoff came too late for. It is timed and drawn -- the time in
     -- the air is the one honest number it has -- and `src` and `dst` stay nil, which is what
-    -- M.Record refuses on, so nothing unnamed is ever filed.
+    -- M.Record and the outbox refuse on, so nothing unnamed is ever filed.
     if not (click and click.src and click.dst) then
         startFlight({ startedAt = now(), takeoff = serverNow(), discarded = false, identified = false,
                       speed = factor })
@@ -865,11 +1015,13 @@ local function land()
         Log.Debug("Flight", "%d-%d ended somewhere else; nothing recorded", f.src, f.dst)
         return nil
     end
-    -- The leg count goes to the log: two samples of one node-id pair flown
+    -- The leg count goes to the log as well as the outbox: two samples of one node-id pair flown
     -- over different hop chains -- because the character has since found an intermediate flight
     -- point -- go into one median in the local store, which has no field to tell them apart.
     Log.Debug("Flight", "%d-%d landed after %s legs", f.src, f.dst, tostring(f.legs or "an unread number of"))
-    return M.Record(f.src, f.dst, seconds)
+    local count = M.Record(f.src, f.dst, seconds)
+    if count then addToOutbox(f, seconds, serverNow()) end
+    return count
 end
 
 checkLanding = function()
@@ -1022,7 +1174,8 @@ function M.IsWaiting()
 end
 
 --- Reset(): forget every measurement. `/pq reset` does not call this -- a measurement is data, not
--- a window position -- but the tests and a future options button need one door to it.
+-- a window position -- but the tests and a future options button need one door to it. The upload
+-- outbox is left alone: what waits for the site is the player's data, not this store's.
 function M.Reset()
     local routes = M.GetRoutes()
     if routes then wipe(routes) end
@@ -1116,7 +1269,10 @@ end
 --- Init(): the hook is tried here as well as in Enable, because Blizzard_UIPanels_Game is
 -- LoadFirst rather than load-on-demand (Blizzard_UIPanels_Game_Classic.toc:5) and its globals are
 -- therefore already in place -- but an addon that cannot hook is one that measures nothing, so it
--- gets two chances rather than one.
+-- gets two chances rather than one. The site's acknowledgement is applied here too, as soon as the
+-- saved variable exists, the way Sync/Community.lua applies the sessions' one.
 function M.Init()
     hookTaxiGlobals()
+    local ok, err = pcall(M.SyncFlightAck)
+    if not ok then Log.Warn("Flight", "the flight acknowledgement is unusable: %s", tostring(err)) end
 end
