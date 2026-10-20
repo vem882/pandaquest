@@ -79,6 +79,8 @@ L["Community: avg %s"] = true
 -- Database
 L["Database ready: %d quests, %d NPCs, %d objects, %d items (%d ms)."] = true
 L["PandaQuest database not found. Reinstall the addon: the Database/Data files are missing."] = true
+L["This PandaQuest database is for %s, but this game is %s. Quest data is off; install PandaQuest for this game."] = true
+L["Saved data from %s was set aside, not deleted (%s); this game starts its own."] = true
 
 -- Nav (arrow, router, TomTom)
 L["Arrow locked."] = true

@@ -13,6 +13,7 @@
 
 local _, ns = ...
 ns.Data = ns.Data or {}
+ns.Data.game = "mop"
 ns.Data.meta = {
   ["built"] = "2026-10-16T23:14:25Z",
   ["contentPhase"] = 5,

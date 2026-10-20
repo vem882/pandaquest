@@ -2,6 +2,12 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.194
+- core - the addon knows which game it runs in: Mists of Pandaria Classic, or later WoW Forever
+- database - a quest database made for another game is not loaded, and one chat line says why
+- saved data - each saved variable is tagged with its game on load; nothing else in it changes
+- saved data - another game's saved data (a copied WTF folder) is set aside whole, never deleted
+
 0.2.193
 - database - Wowhead data as the PandaQuest portal read it: 5,835 quests, 24 NPCs, 1 object
 - quest 27803 - Welcome Relief - updated

@@ -67,6 +67,18 @@ local function OnProfileChanged(_, _, profileName)
 end
 
 function PQ:OnInitialize()
+    -- First, before AceDB or any module reads a saved variable: each one is tagged with the game it is
+    -- used in, and one written in another game is set aside whole (Core/Game.lua). A failure here is
+    -- reported and the addon carries on exactly as it did before this step existed.
+    if ns.Game and ns.Game.ClaimSavedVariables then
+        local ok, err = pcall(ns.Game.ClaimSavedVariables)
+        if not ok then
+            local handler = geterrorhandler and geterrorhandler()
+            if handler then pcall(handler, err) end
+            Log.Error("Init", "Game.ClaimSavedVariables failed: %s", tostring(err))
+        end
+    end
+
     self.db = AceDB:New("PandaQuestDB", ns.DEFAULTS, true)
     self.db.RegisterCallback(self, "OnProfileChanged", OnProfileChanged)
     self.db.RegisterCallback(self, "OnProfileCopied", OnProfileChanged)

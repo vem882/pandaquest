@@ -40,6 +40,7 @@
 ## Category-fiFI: Tehtävät
 ## X-Category: Quests & Leveling
 
+Core\Game.lua
 embeds.xml
 Core\Const.lua
 Core\Util.lua
