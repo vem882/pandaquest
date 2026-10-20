@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.196] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,975 quests, 24 NPCs, 1 object
+- quest 27952 - The Explorers - updated
+- quest 27953 - The Reliquary - updated
+- quest 27954 - The Eyes Have It - updated
+- quest 27955 - Eye Spy - updated
+- quest 27956 - Lunk's Task - updated
+- quest 27957 - Lunk No Kill - updated
+- quest 27958 - A Proper Antivenom - updated
+- quest 27959 - Lunk's Adventure: Spider Rider - updated
+- quest 27960 - The Fewer, the Better - updated
+- quest 27961 - Out of Place - updated
+- quest 27962 - A Lumbering Relic - updated
+- quest 27963 - A New Master... But Who? - updated
+- quest 27964 - Dig-Boss Dinwhisker - updated
+- quest 27965 - Thorium Point: The Seat of the Brotherhood - updated
+- quest 27966 - Salvaging the Remains - updated
+- quest 27967 - First Lieutenant Connor - updated
+- quest 27968 - Fury of the Pack - updated
+- quest 27969 - Make Yourself Useful - updated
+- quest 27970 - Captain P. Harris - updated
+- quest 27971 - Rattling Their Cages - updated
+- quest - and 50 more quests updated
+
 ## [0.2.195] - 2026-10-20
 
 Data from the PandaQuest portal.

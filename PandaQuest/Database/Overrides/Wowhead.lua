@@ -22486,17 +22486,563 @@ ns.Overrides.wowhead = {
                 "vision is yours. Honor me with the slaughter of the Shaman of the Black. Blood is blood, " ..
                 "after all.",
         },
+        [27952] = {
+            description = "We have a contingent of the Explorers' League in the chamber just to the " ..
+                "northwest inside the temple.\n\nThey've been making increasing noises about something " ..
+                "that the Twilight's Hammer is up to.\n\n<name>, would you be a dear and see what they " ..
+                "need?",
+        },
+        [27953] = {
+            description = "We have a contingent of the Reliquary in the chamber just to the northeast " ..
+                "inside the temple.\n\nThey've been making increasing noises about something that the " ..
+                "Twilight's Hammer is up to.\n\n<name>, would you be a dear and see what they need?",
+        },
+        [27954] = {
+            description = "Very well then, <race>. You have purchased my services in blood. Take me back " ..
+                "to Garona Halforcen.\n\nOh yes, I already know where you're taking me. Garona's " ..
+                "relentless quest for vengeance is no secret. It will be a delight to watch it unfold.",
+            rewardMoney = 180000,
+        },
+        [27955] = {
+            description = "This terrible thing makes my hair stand on end. Cho'gall uses these to control " ..
+                "his minions - now it's time to use it against him.\n\nLet me see... hmm, it's all " ..
+                "cloudy. All I can see is you. Why is it showing me you?\n\n<Garona sets the eye out in " ..
+                "front of her.>\n\nLook into the eye and tell me what you see. Peer into Cho'gall's lair! " ..
+                "What is he doing? Is he heavily guarded? Tell me!",
+            rewardChoices = {{63794, 1}, {63793, 1}},
+            rewardMoney = 45000,
+        },
+        [27956] = {
+            description = "Lunk came from the Badlands. Other ogres try to make Lunk fight.\n\nLunk hate " ..
+                "fighting. Lunk want to learn.\n\nLunk sees machines to the south. Machines made of " ..
+                "gears.\n\nMaybe if you ask nicely, machines will give you some gears? Then maybe Lunk " ..
+                "can have a gear, and learn about machines too.",
+            rewardMoney = 7000,
+        },
+        [27957] = {rewardMoney = 7000},
+        [27958] = {
+            description = "Shame that Lunk left. I was beginning to enjoy his company.\n\nOh well, back " ..
+                "to work!\n\nI'm the closest thing that this expedition has to a medical officer, and I'm " ..
+                "running low on antivenom. We tend to need a lot of antivenom.\n\nThe key to a proper " ..
+                "antivenom is ALWAYS to start with the poison itself. The glassweb spiders nearby should " ..
+                "be a good place to start. If you kill them, you can probably extract some venom from the " ..
+                "sacs within their jaws.",
+            rewardChoices = {{63209, 1}, {63210, 1}, {63211, 1}},
+            rewardMoney = 7000,
+        },
+        [27959] = {
+            description = "Lunk sees you like to kill things. Let Lunk teach you another way.\n\nLunk " ..
+                "always wanted to ride on spider's back. Looks like fun. Spiders move too fast, though. " ..
+                "Always slip away.\n\nWe work together. You fight spider until it gets weak and tired. " ..
+                "Then Lunk jump on spider's back and ride around.\n\nMaybe Lunk even gather some venom " ..
+                "for you! No have to kill!",
+        },
+        [27960] = {
+            description = "I'm not much of a fighter... I'm more of a mining dwarf. Same goes for Jack " ..
+                "and Pris. And Lunk... well, you'd think he'd be a big fighter, but he's the biggest wimp " ..
+                "of all of us.\n\nWhat I'm saying is, it's good that you came here when you did.\n\nIt " ..
+                "seems likely that we in the Thorium Brotherhood are going to be fighting the other Dark " ..
+                "Iron dwarves soon. I'm thinking we should pick off some of their finest before the war " ..
+                "starts in earnest. Start with the geologists and watchmen to the south.",
+            rewardMoney = 7000,
+        },
+        [27961] = {
+            description = "The gorge is an unforgiving place. We don't get a whole lot of fuzzy wildlife " ..
+                "wandering around here.\n\nWe tried bringing in some wild game, but they haven't fared " ..
+                "well at all. There's just no food for them to eat. Now the nearby spiders - which were " ..
+                "already dangerous - are getting big and fat on chicken meat.\n\nWe'll never get rid of " ..
+                "all the spiders, but we can salvage what few chickens remain. Not only will you be " ..
+                "feeding the Brotherhood, you'll be saving them a painful death by spider bite.",
+            rewardChoices = {{63212, 1}, {63213, 1}, {63214, 1}, {63215, 1}},
+            rewardMoney = 7000,
+        },
+        [27962] = {
+            description = "Margol the Rager's an old thunder lizard seen round these parts. Legend has it " ..
+                "that he's been here in the gorge since before it was even a gorge. Legend also has it " ..
+                "that he ate my brother Barnabas.\n\nI don't care how old he is or what kind of magic he " ..
+                "shoots out of his nose. I just want him dead. For Barnabas' sake.\n\nYou'll find him " ..
+                "wandering the cliffs to the south of here.",
+            rewardMoney = 7000,
+        },
+        [27963] = {
+            description = "You've arrived just in time.\n\nHere's the skinny: the Dark Iron dwarves in " ..
+                "the gorge have been acting strangely, and the Thorium Brotherhood intends to find out " ..
+                "why. Overseer Oilfist doesn't like surprises.\n\nWe suspect that they're following " ..
+                "orders from some new leader. I have reason to believe that Gravius Grimesilt, just south " ..
+                "of here, knows who it is.\n\nEven here in Searing Gorge, we've begun to hear tales of " ..
+                "your exploits, <name>. You should have no problem with Grimesilt.",
+            rewardChoices = {{63218, 1}, {63217, 1}, {63216, 1}},
+            rewardMoney = 7000,
+        },
+        [27964] = {
+            description = "Grimesilt wasn't as high up on the chain as I thought. We'll have to take out " ..
+                "his superior and find out what he knows.\n\nDig-Boss Dinwhisker's his name, and he runs " ..
+                "the Dark Iron digging operations within the Cauldron, just northwest of here. His " ..
+                "excavators and footmen patrol the eastern side of the Cauldron, digging downward, day " ..
+                "and night.\n\nHe's not known to show his face out in the field very often, but if you " ..
+                "slay enough of his men, he'll be forced to come out and deal with you.",
+            rewardMoney = 7000,
+        },
+        [27965] = {
+            description = "Did... did you see that? This is the missing piece we've been looking for! We " ..
+                "have to take this information back to someone at Thorium Point.\n\nThe Dark Irons have " ..
+                "been known to consort with the firelord in the past, but never before have they brought " ..
+                "their kind this far out into Searing Gorge.\n\nThorium Point is west and north of here. " ..
+                "You will find it nestled in the cliffs that overlook Pyrox Flats. Take this information " ..
+                "straight to Overseer Oilfist.",
+            rewardMoney = 700,
+        },
+        [27966] = {
+            description = "Forgotten Hill has been overrun with zombies and ghouls ever since we " ..
+                "reclaimed this wretched isle. We have tried to clear them out many times but they always " ..
+                "seem to come back.\n\nOne of our lieutenants recommended taking the ghouls' bones when " ..
+                "we kill them in hopes that they can't reincarnate overnight. Think you can help us out " ..
+                "with this one?",
+            rewardMoney = 94000,
+        },
+        [27967] = {
+            description = "The first time I heard about Lt. Connor, I was just a young recruit in the " ..
+                "Stormwind stockades. None of us could believe he ended up here on Tol Barad. Sadly, he " ..
+                "still roams these wretched islands, wreaking havoc on our troops morale.\n\nI need you " ..
+                "to put an end to his misery... and ours.",
+            rewardMoney = 94000,
+        },
+        [27968] = {
+            description = "Ah, the sweet scent of victory! My men should be tearing Godfrey to pieces " ..
+                "even as we speak. Go up to his domain and collect your share of the spoils - you've " ..
+                "earned it!\n\nYou'd think that he would have been more difficult to defeat...",
+            rewardChoices = {{65910, 1}, {65936, 1}, {65960, 1}, {65984, 1}, {66002, 1}},
+            rewardMoney = 5300,
+        },
+        [27969] = {
+            description = "Gobbles vill be sorely missed, but zhe mission must not suffer.\n\nPerhaps " ..
+                "zhere is somezhink you can do to redeem yourself.\n\nTake vone of zhe uniforms you " ..
+                "recovered. Vhile vearink it, my vorkers vill not behave so... aggressively.\n\nLately, " ..
+                "zheir morale has been a bit lackink. Some of zhe vorkers are refusing to perform zheir " ..
+                "labors.\n\nAuch, zhe audacity!\n\nFind zhese lazy imbeciles and convince zhem zhat zhey " ..
+                "must get to vork... or else!",
+            rewardChoices = {{65855, 1}, {65856, 1}, {65857, 1}},
+            rewardMoney = 86000,
+        },
+        [27970] = {
+            description = "The Cape of Lost Hope has been a sore in our side for weeks here on Tol Barad. " ..
+                "Half of our supply ships end up on the rocks down there.\n\nTo make matters worse, it's " ..
+                "been overrun by a gang of undead sailors. We have tried thinning the ranks, but they " ..
+                "just seem to keep coming back. Our last resort is to try and take out the captain that " ..
+                "they report to. You should be able to find him on a ship, just off the shoreline.\n\nOh, " ..
+                "and I hope you are not too scared of sharks.",
+            rewardMoney = 94000,
+        },
+        [27971] = {
+            description = "We have been having issues with the undead down at the Cape of Lost Hope for a " ..
+                "while now. Every time a new ship wrecks, they end up getting more undead to join their " ..
+                "ranks.\n\nCan you do us a favor and thin out the ranks up there? I know you won't be " ..
+                "able to kill them all, but anything you can do will help at this point.\n\nKeep an eye " ..
+                "out for horde, we have been getting reports of them ambushing the beach lately.",
+            rewardMoney = 94000,
+        },
+        [27972] = {
+            description = "Morale is low these days, <name>. We make every effort we can to keep the " ..
+                "troops in high spirits but we are running low on our main supply of morale booster... " ..
+                "rum.\n\nI have been getting reports from our infantry to the south that the shipwrecks " ..
+                "on the Cape of Lost Hope still have a good supply of southsea rum in their wrecked " ..
+                "hulls. Can you head up there and investigate?\n\nBring back any rum you can find.",
+            rewardMoney = 94000,
+        },
+        [27973] = {
+            description = "Have you been over to the Wellson Shipyard yet, <name>? Best to stay away from " ..
+                "there unless you have a good reason to venture in. Unfortunately, that is exactly what I " ..
+                "need you to do.\n\nYou see, we have been short on supplies ever since we recaptured the " ..
+                "island. That ghost ridden shipyard is overflowing with lumber but every time we send an " ..
+                "escort to recover the lumber, they never make it back.\n\nCan you help us out?",
+            rewardMoney = 94000,
+        },
+        [27974] = {
+            description = "Did you think that a handful of worgen vermin could stop me? " ..
+                "Hah!\n\nShadowfang Keep was part of the Lordaeron kingdom in life, so it is quite " ..
+                "fitting that it should belong to the Forsaken in death. Godfrey and his accomplices are " ..
+                "minor obstacles at best, and of course we're all happy to take them out for their " ..
+                "treachery against the Dark Lady.\n\nAshbury has positioned himself near the front of the " ..
+                "keep, leaving him wide open to attack. Start us out on the right foot, would you?",
+            rewardMoney = 4000,
+        },
+        [27975] = {
+            description = "Foreman Wellson has been a pain in our side since we got here. His shipyard " ..
+                "holds a large amount of supplies that would be extremely useful to us... if we could get " ..
+                "to them.\n\nHe keeps a close watch over his minions and makes it very difficult for us " ..
+                "to get a foothold on the shipyard. I need you to take out Wellson for good this time. Be " ..
+                "careful <name>, we have been receiving reports of filthy Horde all around the area.",
+            rewardMoney = 94000,
+        },
+        [27976] = {
+            description = "Unfortunately, I can't dish out the beats like I used to, due to this here fat " ..
+                "finger problem. Ye see, the climate out here combined with the lack o' air pressure " ..
+                "makes me fingers expand. They're like gigantic Thelsamar Blood Sausages, they " ..
+                "are...\n\nYe're gonna have to carry out me orders of business and what have ye.\n\nFirst " ..
+                "on me agenda: Poundin' the livin' daylights out o' the heavy war golems o' the Gorge. " ..
+                "Get crackin'.",
+            rewardChoices = {{63224, 1}, {63225, 1}, {63226, 1}, {63223, 1}},
+            rewardMoney = 7000,
+        },
+        [27977] = {
+            description = "We used to have more stuff around here. I think there was a spyglass somewhere " ..
+                "nearby, along with a smithing tuyere.\n\nI'm pretty certain that they've been stolen by " ..
+                "Dark Iron dwarves. Yes, I know that I'm a Dark Iron dwarf! I'm talking about the bad " ..
+                "ones that live down in that gorge.\n\nYou'd best check the steamsmiths that work just " ..
+                "south of here. They'd be most likely to use tools like these.",
+            rewardChoices = {{63219, 1}, {63220, 1}, {63221, 1}, {63222, 1}},
+            rewardMoney = 14000,
+        },
+        [27978] = {
+            description = "See that hill just beyond our base camp? That's Largo's Overlook and it's not " ..
+                "a fun place to setup camp next to. We have been dealing with those spirits and spectres " ..
+                "ever since we setup base camp.\n\nCan you head up there and let them know we don't plan " ..
+                "on leaving anytime soon? A few good kills on their ranks should put them in " ..
+                "line.\n\nThanks for your help on this, <name>.",
+            rewardMoney = 94000,
+        },
+        [27979] = {
+            description = "I got one more assignment for ye. This one comes straight down from the " ..
+                "Overseer himself. Seems he was pretty shook up once he heard about that \"Archduke\" ye " ..
+                "discovered.\n\nHe's asked for us to hunt down three Twilight ministers that work over in " ..
+                "Firewatch Ridge, to the west. Kiyuubi, Letherio, and Finister are their names, and they " ..
+                "each carry some sort o' special rock. Combine all three and bring 'em back " ..
+                "here.\n\nListen, when the Overseer gives orders, ye don't ask questions. Ye just do it.",
+            rewardMoney = 14000,
+        },
+        [27980] = {
+            description = "Normal-size spiders, I can handle.\n\nGiant glassweb spiders make me " ..
+                "uncomfortable, but they're far enough away that I don't worry too much.\n\nBut lava " ..
+                "spiders? <Lolo shudders.> Lava spiders are SCARY. They're enormous spiders. That live in " ..
+                "LAVA.\n\nI just got paid for my last week of work, and I'll pay you well to kill those " ..
+                "things. You'll find 'em all over Searing Gorge.",
+            rewardMoney = 21000,
+        },
+        [27981] = {
+            description = "We smith, we smelt, we roast up whatever spider meat we can get. Bush chicken " ..
+                "if we're lucky. Point is, all o' this work means we need lots and lots of fire.\n\nGood " ..
+                "thing we're smack dab in the middle of firetown.\n\nO' course, the best fire comes from " ..
+                "the elementals. You'll find 'em all over Searing Gorge, but always near lava. Here, take " ..
+                "these flasks and use 'em on the elementals.\n\nOh, did I mention the elementals gotta be " ..
+                "alive when you gather your sample?",
+            rewardMoney = 7000,
+        },
+        [27982] = {
+            description = "Have ye seen the ridiculous necklaces those Twilight's Hammer cultists all " ..
+                "wear? The gems on those things are bigger than Hansel's fist!\n\nA few hamburger-sized " ..
+                "jewels like that, and Burninate over there could really push his blacksmithing business " ..
+                "to the next level. Fetch those collars, and he'll make it worth your while.",
+            rewardMoney = 7000,
+        },
+        [27983] = {
+            description = "What you doing? Why you kill?\n\nYou need to get things from dwarfs? Ah, Lunk " ..
+                "understand. Lunk have a better way.\n\nListen: you go fight dwarf, but do not kill! Just " ..
+                "fight until dwarf get tired. Then Lunk will help dwarf fall asleep. Dwarfs probably just " ..
+                "cranky because they don't get sleep.\n\nCome on! Trust Lunk.",
+        },
+        [27984] = {description = "Will you assist me, mortal? Hear my tale."},
+        [27985] = {
+            description = "Will you assist me, mortal? Will you find the prayer to Elune?\n\nAs I stated, " ..
+                "the prayer was etched onto a golden tablet. I believe they hold it within one of their " ..
+                "vile chests, near the entrance to their cave at the bottom of the ridge.\n\nIf you do " ..
+                "recover my prayer, don't bring it back to me. Instead, take the time to read through " ..
+                "it.\n\nAbsolution may be asking too much, based on the sins I've committed. But that " ..
+                "won't stop me from holding out hope.",
+        },
+        [27986] = {
+            description = "The Thorium Brotherhood doesn't maintain a militia - just a few guards, and " ..
+                "me, and that's it. If we're to successfully strike against the Dark Irons of the gorge, " ..
+                "we're gonna need help.\n\nMountain-Lord Rendan sits atop that tower across the gorge, to " ..
+                "our south. He doesn't consort with Twilight folks or fire elementals, but he hasn't " ..
+                "joined the brotherhood either. Maybe it's time we paid him a visit. With his help, we " ..
+                "might just stand a chance.",
+        },
+        [27987] = {
+            description = "Largo and his minions have been stealing our supplies ever since we setup camp " ..
+                "here. It's frustrating to say the least.\n\nWe have heard reports that he is stockpiling " ..
+                "cannonballs in the towers overlooking the water up on his overlook. Can you head up " ..
+                "there and try to recover some of them for us?\n\n<name>, don't forget to keep a watch " ..
+                "out for horde too.",
+            rewardMoney = 94000,
+        },
+        [27988] = {
+            description = "The best part about this plague is that even when it visually fades away, the " ..
+                "remaining residue is still quite potent! However, we still have an enormous area to " ..
+                "cover before we're done, with plenty of Godfrey's defenses in the way.\n\nIt appears " ..
+                "that the spirits that served Baron Silverlaine and Commander Springvale in life now " ..
+                "guard them in death, and Godfrey is using them to deter us. Show them all the iron will " ..
+                "of the Forsaken!",
+            rewardMoney = 4000,
+        },
         [27989] = {rewardMoney = 6500},
+        [27990] = {
+            description = "It vould appear zhat anozher opportunity has arisen for you to redeem " ..
+                "yourself, <race>.\n\nZhis little emergency has set me back a few tank gunnahs.\n\nYou " ..
+                "zhink you have vhat it takes to fill in for vone of zhem?\n\nMy tanks are just vest of " ..
+                "zhe camp. Get out zhere and put an end to zhis silliness!",
+            rewardChoices = {{65852, 1}, {65853, 1}, {65854, 1}},
+            rewardMoney = 86000,
+        },
+        [27991] = {
+            description = "There is only one way for us to take Largo's Overlook back.\n\nI think you " ..
+                "know what we need to do <name>. Largo is pretty paranoid these days so you should be " ..
+                "able to find him on top of the tower, looking for his imaginary navy to finally arrive.",
+            rewardMoney = 94000,
+        },
+        [27992] = {
+            description = "Getting useful machine parts out here on the island has been difficult, " ..
+                "<name>. We have been trying to repair the broken siege engines here in camp but we keep " ..
+                "running out of useful parts.\n\nOur second regiment reported some wrecked out siege " ..
+                "engines in a old battlefield to the west. Maybe we could find some parts over " ..
+                "there?\n\nYou are going to have trouble finding anything in that old battlefield so take " ..
+                "this magnetized scrap collector and put it to some good use.",
+            rewardMoney = 94000,
+        },
+        [27993] = {
+            description = "We was lucky to escape, <class>. I'm not sure I'd feel right if we didn't take " ..
+                "care of them ambushers.\n\nHows about you git back up to Khartut's tomb and give them " ..
+                "little buggers what fer!\n\nIt's off to the northeast, just inside the entrance to Uldum " ..
+                "if'n I recollect correctly.\n\nWhat're you looking at? I sure ain't in no condition to " ..
+                "do it!",
+        },
         [27994] = {rewardMoney = 6500},
         [27995] = {rewardMoney = 6500},
+        [27996] = {
+            description = "Unsurprisingly, we aren't going to listen to Cromush about the plague. " ..
+                "However, his brute strength will come in handy for muscling my men through the many foes " ..
+                "ahead on the path to Godfrey, the most powerful being his right hand man, Lord " ..
+                "Walden.\n\nI'll meet you in Walden's chamber after you finish him off. Then, at long " ..
+                "last, we can completely take Shadowfang Keep for the Forsaken!",
+            rewardMoney = 4700,
+        },
         [27997] = {rewardMoney = 6500},
+        [27998] = {
+            description = "If all goes well you'll just be able to walk right into Godfrey's personal " ..
+                "domain and take a reward fitting for such an eager young <class>.\n\nGodfrey is a " ..
+                "cunning foe, though, so it may be wise to head up there quickly just in case you're " ..
+                "needed. He will pay for what he did to the Dark Lady!",
+            rewardChoices = {{66011, 1}, {66020, 1}, {66029, 1}, {66038, 1}, {66044, 1}},
+            rewardMoney = 5300,
+        },
+        [27999] = {
+            description = "It seems the Doyles already joined their last fight. Iain will want to know of " ..
+                "their fate.",
+            rewardMoney = 9000,
+        },
         [28000] = {rewardMoney = 6500},
+        [28001] = {
+            description = "We may be safe here, but there are a lot of Wildhammer who could still use " ..
+                "support. Our wing can offer that, but we need to keep bolsterin' our forces if we're " ..
+                "going to clear the Twilight completely.\n\nI'm going to have words with Colin " ..
+                "Thundermar. Only a coward turns down the callin' of his people, especially in a time " ..
+                "this dire.\n\nGo to Thundermar, find Colin and get a real explanation out of'm. I won't " ..
+                "be putting up with cowardice in a Wildhammer leader.",
+            rewardMoney = 45000,
+        },
+        [28002] = {
+            description = "There is a delicate situation that calls for the... objective discretion of an " ..
+                "outsider.\n\nYou see, an unfortunate incident has upset some of our guests. Rest " ..
+                "assured, our top men are sorting out the details.\n\nIn the meantime, it would be " ..
+                "wonderful if you could calm our more squeamish visitors.\n\nHandle this well, and the " ..
+                "furrier is sure to hear of it!",
+            rewardMoney = 86000,
+        },
+        [28028] = {
+            description = "That Overseer Oilfist couldn't'a picked a worse time to ask me to join a " ..
+                "fight. My summit's already under siege!\n\nIt's nothin' my guards can't handle, but " ..
+                "still, it won't be easy for me to just pick up and send some dwarves into that infernal " ..
+                "gorge.\n\nTell ya what: you take out their marksmen that're holding our fortress under " ..
+                "siege, and I'll consider your offer. Ye'll find 'em slinkin' around the flats to the " ..
+                "east.",
+            rewardMoney = 7000,
+        },
+        [28029] = {
+            description = "I'm not sure if ye've noticed, but my tower's much taller than any o' the " ..
+                "other towers here around the Gorge. Some dwarves pride themselves at how deep they can " ..
+                "dig, but not me. Sometimes I think I shoulda been born a Wildhammer.\n\nI still don't " ..
+                "like the sight o' those other towers, though. Reachin' up like that, ticklin' my tower's " ..
+                "feet. Here, take this torch, an' use it on the braziers atop those other towers. They'll " ..
+                "be sorry they ever built 'em to begin with.",
+            rewardMoney = 7000,
+        },
+        [28030] = {
+            description = "Those gorge-digging dwarves do at least one thing right: they make very " ..
+                "high-quality bullets. I've been unable to reproduce their results, so I've taken to " ..
+                "stealing whatever bullets of theirs that I can find.\n\nYe want my help? Get me a couple " ..
+                "hundred bullets from those marksmen below.\n\nI'm sure they'll be happy to give ye their " ..
+                "bullets one at a time, but you might find it faster just to look for the crates filled " ..
+                "with them.",
+            rewardChoices = {{63227, 1}, {63229, 1}, {63228, 1}},
+            rewardMoney = 7000,
+        },
+        [28031] = {
+            description = "I have a new business partner, my best buddy, Brivelthwerp. Even as we speak, " ..
+                "he's building up the infrastructure for our new ice cream empire!\n\nHe took our coolant " ..
+                "tug, inventory, and employees southwest to the Sunken Dig Site. Unfortunately, I don't " ..
+                "currently have a way to deliver something to him... something extremely important: our " ..
+                "super-secret I-Scream Cryocannon!\n\nYou don't mind taking it to him, do you, <name>?",
+        },
+        [28032] = {
+            description = "There's so much we don't know about the incendosaurs. Where did they come " ..
+                "from? How do they survive out here on the flats? And why do they taste so bad?\n\nThe " ..
+                "key to understanding these prehistoric beasts, I believe, starts with the fire-gizzard. " ..
+                "Every incendosaur has one. I'd like a few of them to study.\n\nYou'll find incendosaurs " ..
+                "circling the foot of Iron Summit, mostly to the west.",
+            rewardChoices = {{63230, 1}, {63231, 1}, {63232, 1}, {63233, 1}},
+            rewardMoney = 7000,
+        },
+        [28033] = {
+            description = "What? Why're you still here? Oh, did I promise that I'd help you and the " ..
+                "Thorium Brotherhood in yer fight?\n\nI lied.\n\nI just can't spare the men right now. I " ..
+                "know I said I'd help, but there's absolutely no way you can convince me to leave Iron " ..
+                "Summit right now. Absolutely no way.",
+            rewardMoney = 700,
+        },
+        [28034] = {
+            description = "Lunk not smart, but Lunk notice things. Today, Lunk notice that Mountain-Dwarf " ..
+                "likes to watch people dance.\n\nLunk like to dance! <name> like to dance! " ..
+                "Probably!\n\nMaybe we find some more dwarfs that like to dance. Then we go talk to " ..
+                "Mountain-Dwarf, and he will listen to <name>.",
+            rewardMoney = 3500,
+        },
+        [28035] = {
+            description = "Alright, alright! If I knew ye could dance like that, I wouldn't'a asked ye to " ..
+                "do all that stuff earlier.\n\nTell Overseer Oilfist that I'll be joinin' ye. I'll meet " ..
+                "ye in the slag pit, <lad/lass>! With the combined forces of Thorium Point and Iron " ..
+                "Summit, those gorge-dwarves won't know what hit 'em!",
+            rewardMoney = 700,
+        },
+        [28038] = {
+            description = "You've got some fight in you, <class>. You might do well in the " ..
+                "crucible.\n\nWhat!? You haven't heard of the Crucible of Carnage? That smarmy goblin " ..
+                "Gurgthock and his troll sidekick have been plastering us with leaflets ever since he set " ..
+                "up shop here in the Highlands. Champions from all over Azeroth fight to the death in " ..
+                "there. You should gather up some friends and see how you fare.\n\nThe Crucible is just " ..
+                "to the southwest. Look for Wodin the Troll-Servant somewhere in the middle of a ring of " ..
+                "bones.",
+            rewardMoney = 47000,
+        },
+        [28041] = {
+            description = "You can hold your own on the ground, <name>. I'll give you that.\n\nBut we " ..
+                "Dragonmaw dominate the skies as well as land. Until you can prove to me you can handle a " ..
+                "drake as well as a Dragonmaw, your Horde is nothing to me.\n\nLet's see if you can " ..
+                "wrangle one back to Bloodgulch.\n\nFirst you'll need bait. Go out and kill one of the " ..
+                "gryphons that wander the woods west or northeast of here. Make sure it's untamed! Drakes " ..
+                "hate the stink of dwarf on their food.\n\nGet the gryphon carcass and you'll know what " ..
+                "to do.",
+        },
+        [28043] = {
+            description = "<You sling the gore-spattered gryphon corpse over your shoulder, its wings " ..
+                "dragging to the ground.>\n\n<Highland Black Drakes roost just southwest of the Crucible " ..
+                "of Carnage, along a ring of low mountain peaks.>\n\n<If you drop the gryphon corpse " ..
+                "there, a drake is sure to start feeding. With its guard down, you should be able to " ..
+                "attack it until it is weak enough to mount and fly.>",
+            rewardMoney = 90000,
+        },
         [28044] = {rewardMoney = 6500},
         [28045] = {rewardMoney = 5500},
+        [28046] = {
+            description = "We have been trying to collect useful scraps from the front all week. Every " ..
+                "time we gather a batch to bring back to camp, we get assaulted by the restless infantry " ..
+                "in the area. Can you head over there and clear them out?",
+            rewardMoney = 94000,
+        },
         [28047] = {rewardMoney = 5500},
         [28048] = {rewardMoney = 11500},
         [28049] = {rewardMoney = 6500},
+        [28050] = {
+            description = "I hate sharks. All of my troops hate sharks too. This is where you come in, " ..
+                "<name>.\n\nI need you to head up to the Cape of Lost Hope and take out a huge shark " ..
+                "named Tank. Tank is not to be trifled with so I would bring a few friends if I were you.",
+            rewardMoney = 94000,
+        },
         [28051] = {rewardMoney = 5500},
+        [28052] = {
+            description = "I'm putting you on a flying machine, <name>.\n\nYou'll be responsible for " ..
+                "softening our landing into the slag pit. Speak with your flight master here in Thorium " ..
+                "Point, then fly down to the gorge.\n\nOnce you near your landing point, there will " ..
+                "undoubtedly be hordes of Dark Iron dwarves waiting for you. Use our flying machine's " ..
+                "guns to take out as many of them as you can, then land at the cavern's entrance. Rendan " ..
+                "should be waiting for you by the time you arrive.",
+            rewardChoices = {{63234, 1}, {63235, 1}, {63236, 1}},
+            rewardMoney = 14000,
+        },
+        [28053] = {rewardItems = {{63245, 1}}},
+        [28054] = {
+            description = "Much like Overseer Maltorius, I'm a rich dwarf. However, I earned my riches " ..
+                "through hard work and wise decisions, not through slavery.\n\nOK fine, very little " ..
+                "slavery. Hardly any.\n\nAnyhow, the first thing that I see inside these caverns are " ..
+                "slavedrivers and taskmasters. I won't stand for this! As you progress through the " ..
+                "cavern, kill as many as you can. Report your results to Evonice Sootsmoker, deeper " ..
+                "within the Slag Pit.",
+            rewardMoney = 7000,
+        },
+        [28055] = {
+            description = "Of course, we'll want to free as many slaves as we can while we're here. Most " ..
+                "of them will likely join forces with us, anxious to fight against their " ..
+                "captors.\n\nHowever, sometimes you will find that slaves are resistant to being freed. " ..
+                "It's a strange phenomenon, often called \"Durnholde Syndrome\".\n\nEither way, you " ..
+                "should try to free them. If they resist, treat them as enemies. Report your results to " ..
+                "Evonice Sootsmoker, deeper within the Slag Pit.",
+            rewardMoney = 7000,
+        },
+        [28056] = {
+            description = "Overseer Maltorius is in charge here, but he's not the only dwarf of power " ..
+                "within the Slag Pit. Lathoric the Black and his horrifying golem, Obsidion, loom just " ..
+                "down this corridor.\n\nInterfering with Lathoric's altar should summon both of them. " ..
+                "Find it, then summon Lathoric and kill him. Report to Evonice Sootsmoker when you're " ..
+                "finished.",
+            rewardChoices = {{63237, 1}, {63238, 1}, {63239, 1}, {63240, 1}},
+            rewardMoney = 7000,
+        },
+        [28057] = {
+            description = "It's a little known fact that dwarves, particularly of the Dark Iron variety, " ..
+                "need rest! Lots of rest!\n\nNow I ask you; How can they sleep without pillows? Exactly, " ..
+                "<name>, they can't. This is why you must steal their pillows.\n\nOnce you've finished " ..
+                "your cushion-thievery, talk with Taskmaster Scrange. He's a bit deeper in the cave, " ..
+                "working on a covert project with Hansel.",
+            rewardMoney = 7500,
+        },
+        [28058] = {
+            description = "Well, well, well... Isn't this a surprise. The Chambermaid had a gigantic " ..
+                "ornate pillow and now it's yours. Evonice Sootsmoker will definitely want to get her " ..
+                "grubby little hands all over this item. Take it to her and see if she'll offer you any " ..
+                "goodies for your trouble.",
+            rewardItems = {{18951, 1}},
+            rewardMoney = 7500,
+        },
+        [28059] = {
+            description = "Have you seen the keep on the north side of the island, <name>? That is where " ..
+                "Keep Lord Farson runs his operation from.\n\nFarson has a small group of dedicated " ..
+                "followers and they have been giving us trouble since we got here. We sent a small group " ..
+                "to investigate and they reported back on his exact position within the keep.\n\nCan you " ..
+                "finish him off for us?",
+            rewardMoney = 94000,
+        },
+        [28060] = {
+            description = "Hansel and I came here on a secret mission: kill Overseer Maltorius. While our " ..
+                "main goal still remains the same - defeating Archduke Calcinder - it can't hurt to take " ..
+                "out the infamous overseer of the Slag Pit while we're here.\n\nProblem is, Hansel was " ..
+                "only prepared to fight one dwarf, but it looks like Maltorius has a visitor... an " ..
+                "emissary from the Twilight's Hammer!\n\nSpeak with Hansel and help him out. Then proceed " ..
+                "down this corridor and along the balcony outside to find Overseer Oilfist.",
+            rewardMoney = 14500,
+        },
+        [28061] = {
+            description = "There is such a thing as digging too deep, <name>. While you'll find the " ..
+                "richest mineral veins deep below the surface, you'll also find the most evil " ..
+                "creatures.\n\nLike fire elementals.\n\nCalcinder's minions roam the cavern ahead. Every " ..
+                "one of them holds a piece of Calcinder's evil within it. Slay as many as you can, and " ..
+                "show no remorse.",
+        },
+        [28062] = {
+            description = "Archduke Calcinder squirms in the back of this very cavern. We are close to " ..
+                "killing him... but that is not what we are going to do.\n\nSlaying Calcinder here means " ..
+                "nothing. His acolytes can easily revive him. Instead, we are going to banish him.\n\nI " ..
+                "asked you to gather a precious stone from the Twilight's Hammer earlier. You will now " ..
+                "use it against Calcinder. Engage him, weaken him, then use this device on him. He will " ..
+                "be banished from this realm.\n\nGood luck, brave <name>.",
+        },
         [28086] = {rewardMoney = 6500},
         [28087] = {rewardMoney = 6500},
         [28088] = {rewardMoney = 12500},
