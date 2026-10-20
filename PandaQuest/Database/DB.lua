@@ -38,6 +38,7 @@ local extras = { quests = {}, npcs = {}, objects = {}, items = {} }  -- override
 
 local ready = false
 local loading = false
+local refusedGame = false                   -- the database is another game's: said once, never loaded
 local loadHandle
 local stats = { loadMs = 0, counts = {} }
 
@@ -402,6 +403,19 @@ function DB.Load()
     local Data = ns.Data
     if type(Data) ~= "table" or (Data.quests == nil and Data.npcs == nil) then
         Log.Error("DB", L["PandaQuest database not found. Reinstall the addon: the Database/Data files are missing."])
+        ready = false
+        return false
+    end
+
+    -- A database for another game (a copied folder, a renamed TOC) is never shown: no quest, NPC or
+    -- object of it reaches the arrow, the map or a tooltip. One line says why (Core/Game.lua).
+    local Game = ns.Game
+    if Game and Game.DataMatches and not Game.DataMatches() then
+        if not refusedGame then
+            refusedGame = true
+            Log.Print(L["This PandaQuest database is for %s, but this game is %s. Quest data is off; install PandaQuest for this game."],
+                Game.Name(Game.DataGame()), Game.Name(Game.id))
+        end
         ready = false
         return false
     end

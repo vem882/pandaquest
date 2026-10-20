@@ -82,6 +82,10 @@ local T = {
         "Tietokanta valmis: %d tehtävää, %d NPC:tä, %d objektia, %d esinettä (%d ms).",
     ["PandaQuest database not found. Reinstall the addon: the Database/Data files are missing."] =
         "PandaQuestin tietokantaa ei löytynyt. Asenna lisäosa uudelleen: Database/Data-tiedostot puuttuvat.",
+    ["This PandaQuest database is for %s, but this game is %s. Quest data is off; install PandaQuest for this game."] =
+        "Tämä PandaQuestin tietokanta on pelille %s, mutta tämä peli on %s. Tehtävätiedot ovat pois päältä; asenna PandaQuest tälle pelille.",
+    ["Saved data from %s was set aside, not deleted (%s); this game starts its own."] =
+        "Pelin %s tallennetut tiedot siirrettiin sivuun, niitä ei poistettu (%s); tämä peli aloittaa omansa.",
 
     -- Nav (arrow, router, TomTom)
     ["Arrow locked."] = "Nuoli lukittu.",

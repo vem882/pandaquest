@@ -2,6 +2,32 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.194] - 2026-10-20
+
+Groundwork for a second game (WoW Forever). In Mists of Pandaria Classic nothing a player sees
+changes.
+
+### Added
+- `Core/Game.lua`, the first file the addon loads, tells which game the client is: Mists of Pandaria
+  Classic (5.5.x, interface 505xx) or WoW Forever (interface 16000-16999, or project id 18). Other
+  clients are "unknown". The answer is `ns.Game.id`: `mop`, `forever` or `unknown`.
+- The quest database says which game it was built for: `ns.Data.game = "mop"` in
+  `Database/Data/Meta.lua`. A database that does not say is MoP's, as every database so far is. If it
+  is not the game being played, PandaQuest does not load it -- no quest, NPC or object of it reaches
+  the arrow, the map or a tooltip -- and prints one line naming both games.
+- Every saved variable (`PandaQuestDB`, `PandaQuestSync`, `PandaQuestAH`, `PandaQuestProf`) gets a
+  `game` key the first time this version loads it. Nothing else in it is changed, removed or
+  re-shaped: the saved file is what it was, plus one line in each.
+- Saved data written in another game -- for example a `WTF` folder copied from another install -- is
+  never deleted. It is moved, whole and unchanged, under `foreign.<game>` in the same saved variable
+  (`foreign.<game>-2` if that name is taken), this game starts with its own, and one chat line says so.
+
+### Changed
+- Release tooling, not part of the addon: every TOC is written from one template
+  (`.github/release/PandaQuest.toc.template`, with `games.py`), and the CurseForge upload maps every
+  TOC the package carries to a game version and its CurseForge game version type. The package is
+  unchanged: Mists of Pandaria Classic is the only game it carries.
+
 ## [0.2.193] - 2026-10-20
 
 Data from the PandaQuest portal.

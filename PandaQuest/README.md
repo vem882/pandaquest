@@ -161,6 +161,12 @@ PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks an
 `PandaQuestDB` (settings and profiles), `PandaQuestSync` (optional synchronisation data),
 `PandaQuestAH` (auction scans) and `PandaQuestProf` (recipe books).
 
+Each one carries a `game` key, the game it was written in (`mop` for Mists of Pandaria Classic),
+added the first time 0.2.194 or later loads it; nothing else in it is changed. If PandaQuest finds
+saved data from another game -- for example after a `WTF` folder was copied from another install --
+it does not delete it: the data is moved, unchanged, under `foreign` in the same saved variable, and
+one chat line says so.
+
 ## Frequently asked questions
 
 **Do I need the portal or the companion program?** No. PandaQuest works fully on its own. The

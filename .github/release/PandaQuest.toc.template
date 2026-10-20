@@ -1,0 +1,114 @@
+#~ The template of every TOC the package carries.  Lines starting with #~ are notes about the template
+#~ and are left out of the TOCs.  build.py fills the {{...}} lines from games.py, once per shipped game:
+#~   {{interface}}    ## Interface
+#~   {{game-header}}  lines only that game's TOC has (AllowLoadGameType for Mists of Pandaria Classic)
+#~   {{zone-data}}    that game's zone tables
+#~   {{data}}         that game's database: the generated data and the override files
+#~ PandaQuest/PandaQuest.toc is written from here and kept in the repository, because CurseForge's own
+#~ packager reads it as it is.  Edit this file, never that one, then run
+#~   python3 .github/release/build.py tocs
+#~ check.py fails while the two differ.
+## Interface: {{interface}}
+## Title: |cff5fd7ffPanda|rQuest
+## Notes: Quest helper and navigator for Mists of Pandaria Classic
+## Notes-fiFI: Tehtäväapuri ja navigaattori Mists of Pandaria Classiciin
+## Notes-deDE: Questhelfer und Navigator für Mists of Pandaria Classic
+## Notes-esES: Ayudante de misiones y navegador para Mists of Pandaria Classic
+## Notes-esMX: Asistente de misiones y navegador para Mists of Pandaria Classic
+## Notes-frFR: Assistant de quêtes et navigateur pour Mists of Pandaria Classic
+## Notes-itIT: Assistente per le missioni e navigatore per Mists of Pandaria Classic
+## Notes-koKR: 판다리아의 안개 클래식을 위한 퀘스트 도우미 및 내비게이터
+## Notes-ptBR: Assistente de missões e navegador para Mists of Pandaria Classic
+## Notes-ruRU: Помощник по заданиям и навигатор для Mists of Pandaria Classic
+## Notes-zhCN: 熊猫人之谜 经典版 任务助手与导航
+## Notes-zhTW: 潘達利亞之謎 經典版 任務助手與導航
+# The series only.  What ships is 0.2.<commits on this repository's main>, computed at package time
+# and stamped into this file and into ## Title (build.py: release_version, stamp_toc); a third
+# component written down here would be one nobody remembers to bump.
+## Version: 0.2.0
+## Author: vem882
+## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
+## OptionalDeps: TomTom, Questie, QuestieDB
+## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
+## X-Website: https://github.com/vem882/pandaquest
+## X-License: GPL-3.0
+# Release channel: stable. Write beta here to ship a beta (README.md, "The release channel").
+## X-Release-Channel: stable
+## X-Curse-Project-ID: 1735809
+## X-Wago-ID: n6VYMQNd
+{{game-header}}
+# Category is set because Questie sets it, and "Quests" is Questie's own value, so if the client
+# does group by it a player with both installed finds them under one heading.  What 5.5.4 actually
+# does with the field is NOT verified: the only AddOns-list source in the reference trees
+# (Blizzard_AddOnList/Classic_AddonList.lua) builds one flat list from C_AddOns.GetAddOnInfo and
+# never reads Category, and no Blizzard TOC in those trees declares it.
+# X-Category stays beside it: nothing here reads it either, but it is the TOC's namespace for
+# third-party metadata and dropping it would be silent.
+## Category: Quests
+## Category-fiFI: Tehtävät
+## X-Category: Quests & Leveling
+
+Core\Game.lua
+embeds.xml
+Core\Const.lua
+Core\Util.lua
+Core\Log.lua
+Core\Compat.lua
+Core\Thread.lua
+Locales\enUS.lua
+Locales\fiFI.lua
+Locales\deDE.lua
+Locales\esES.lua
+Locales\esMX.lua
+Locales\frFR.lua
+Locales\itIT.lua
+Locales\koKR.lua
+Locales\ptBR.lua
+Locales\ruRU.lua
+Locales\zhCN.lua
+Locales\zhTW.lua
+Database\Schema.lua
+{{zone-data}}
+Database\Zones.lua
+{{data}}
+Database\QuestieDB.lua
+Database\DB.lua
+Quest\Player.lua
+Quest\QuestLog.lua
+Quest\Objectives.lua
+Quest\Availability.lua
+Quest\Catalog.lua
+Nav\Targets.lua
+Nav\Router.lua
+Nav\Arrow.lua
+Nav\TomTom.lua
+Map\Icons.lua
+Map\MapCompat.lua
+Map\NodeTooltip.lua
+Map\Pins.lua
+Map\Tooltips.lua
+Nodes\Respawn.lua
+Nodes\Professions.lua
+Flight\Routes.lua
+Flight\Tooltip.lua
+UI\Motion.lua
+UI\Options.lua
+UI\MinimapButton.lua
+UI\FlightBar.lua
+UI\Wowhead.lua
+UI\Tracker.lua
+UI\QuestBrowser.lua
+UI\Notify.lua
+UI\DigSiteBar.lua
+Auction\Store.lua
+Auction\Scanner.lua
+Auction\Mail.lua
+Auction\Tooltip.lua
+Recipes\Store.lua
+Recipes\Scanner.lua
+Recipes\Archaeology.lua
+Sync\Telemetry.lua
+Sync\Character.lua
+Sync\Consent.lua
+Sync\Community.lua
+Core\Init.lua

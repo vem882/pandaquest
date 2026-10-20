@@ -36,7 +36,7 @@ This repository is the addon and the release tooling that turns it into a zip. N
 | `assets/logo/` | the logo as SVG and PNG, 16 to 1024 px (400 px is the CurseForge avatar). Not part of the addon. |
 | `.pkgmeta` | tells CurseForge's automatic packaging (the repository webhook) to take the `PandaQuest/` folder. |
 | `data-sync.json` | where the PandaQuest portal's data sync left off (see "Data from the portal"). Not part of the addon. |
-| `.github/release/` | `build.py` (version, build identity, deterministic zip), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
+| `.github/release/` | `build.py` (version, build identity, TOCs, deterministic zip), `PandaQuest.toc.template` and `games.py` (what the TOCs are written from), `check.py` (the checks) and `curseforge.py` (optional upload). Not in the zip. |
 | `.github/workflows/release.yml` | checks and builds the zip, publishes it as a release asset. |
 | `.github/workflows/publish-curseforge.yml` | uploads an existing release to CurseForge, by hand. |
 
@@ -76,9 +76,25 @@ unambiguous and anything that sorts releases by the number reads it the same way
 The packaged zip carries the addon's TOC twice, with identical bytes: `PandaQuest.toc` and
 `PandaQuest_Mists.toc`. The Mists of Pandaria Classic client reads the `_Mists` file first, CurseForge
 reads the suffix to tag the file's game version, and the plain file is the fallback a consumer's
-package index reads. The second copy is generated at packaging time — a repository with two TOCs
-would have two to keep in step — and `build.py` refuses a tree that contains one.
-`## Interface: 50504` and `## AllowLoadGameType: mists` keep it from loading anywhere else.
+package index reads. `## Interface: 50504` and `## AllowLoadGameType: mists` keep it from loading
+anywhere else.
+
+Every TOC is written from one template, `.github/release/PandaQuest.toc.template`, filled from
+`.github/release/games.py`: one row per game with its `## Interface`, the lines only its TOC has and
+the TOC lines of its database. Mists of Pandaria Classic is the only game shipped. Forever's row
+(interface 16001, the `_Forever` and `_Camelot` suffixes, CurseForge game version type 88568) is
+written down but has no TOC yet.
+
+`PandaQuest/PandaQuest.toc` stays in the repository, because CurseForge's own packager ships it as it
+is. **Edit the template, not the TOC**, then run `python3 .github/release/build.py tocs`; `check.py`
+and `build.py package` refuse a TOC that is not byte for byte what the template makes. The suffixed
+TOCs exist only in the package — a repository with two TOCs would have two to keep in step — and
+`build.py` refuses a tree that contains one.
+
+`curseforge.py` tags the uploaded file from the package's own TOCs: each `## Interface` number is
+mapped to its game and game version (50504 is Mists of Pandaria Classic `5.5.4`), and the CurseForge
+game version is looked up by its name and its game version type together, because a name alone can
+belong to two games.
 
 ## The version
 
@@ -215,7 +231,12 @@ its operator turned that on, and then at most once a day.
 ## What the checks cannot tell you
 
 There is no Lua interpreter and no luacheck in this repository, so `check.py` cannot tell you the
-addon *works*; it tells you the package is not obviously broken:
+addon *works*; it tells you the package is not obviously broken. The one exception is
+`.github/release/lua_checks.py`, which `check.py` runs when `lupa` (Lua 5.1 for Python) is
+installed and reports as skipped where it is not, as on the GitHub runner: it runs `Core/Game.lua`
+(which game a client is, the database check) and the saved-variable fixtures in
+`.github/release/fixtures/savedvariables/` (files written by 0.2.99, 0.2.191 and this version) and
+holds that each comes through with only `game` added, or set aside whole under `foreign`.
 
 * the TOC parses and declares `## Interface`, `## Title` and `## Version`, and `## Interface` is
   `50504` by value and not merely by shape;
@@ -225,6 +246,8 @@ addon *works*; it tells you the package is not obviously broken:
 * nothing in the zip is unreachable from the packaged TOC's include graph, zero bytes, or from the
   development tree (`.py`, `.pyc`, `__pycache__`), and `Database/Data/` and `Libs/LibStub` are there;
 * the four points of the release asset rules, against a freshly built zip, and both TOC files;
+* the repository's TOC is what the template makes, byte for byte, and every TOC maps to a game
+  version and a CurseForge game version type;
 * the version is the series plus the measured commit count, the history behind it is not truncated,
   and the name it produces matches the asset-name pattern;
 * `changelog.txt` moved when the addon did, and is short English lines, newest version first;
@@ -232,7 +255,9 @@ addon *works*; it tells you the package is not obviously broken:
   under the size the sync itself refuses to go past.
 
 Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, that it lints clean,
-and that it loads against the WoW API. A Lua syntax error would reach a player.
+and that it loads against the WoW API. A Lua syntax error would reach a player. (The portal
+repository's tools run those against this tree: `tools/syntax_check.py`, `tools/luacheck_runner.py`
+and the `tools/wowstub` tests.)
 
 ## Licence and credit
 
