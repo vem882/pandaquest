@@ -19781,10 +19781,519 @@ ns.Overrides.wowhead = {
                 "and quickly, before it's too late!",
             rewardMoney = 6500,
         },
+        [27564] = {
+            description = "Calen sent word - the Twilight are within the redoubt!\n\nIf there will ever " ..
+                "be a time when you can earn his favor, this is it!",
+            rewardMoney = 9400,
+        },
+        [27565] = {
+            description = "We've managed to infiltrate the Dark Iron Prison!\n\nWell...we may have, " ..
+                "anyway.\n\nKevin Dawson had the...honor...of seeing what was going on over there, and we " ..
+                "haven't heard back from him since. You look like the type that doesn't like to die, you " ..
+                "should go see if he's ok!\n\nHe's supposed to be inside the hall on the south end of the " ..
+                "cavern ahead...though something tells me he may not have made it quite that far.",
+            rewardMoney = 800,
+        },
+        [27567] = {
+            description = "This is a little hard to believe, but there are Twilight's Hammer members here " ..
+                "in Blackrock Depths! I don't know how many there are crawling throughout this place, but " ..
+                "I did hear that their lead interrogator, Gerstahn, is in this hallway.\n\nI don't know " ..
+                "what they're here torturing for, but maybe you can find out by confronting Gerstahn?",
+            rewardMoney = 33300,
+        },
+        [27568] = {
+            description = "Can ye keep a secret? I have a secret tae share with ye if ye " ..
+                "can.\n\nEverybody here is CRAZY!!!\n\nThere's goblins over there, Dark Irons right over " ..
+                "there, and a giant living fire thing right past this gate! An' that's just what I see in " ..
+                "this little cave!\n\nAnd ye! What're ye doin' here!?\n\nOh, I see. Winky sent ye, did " ..
+                "he? Sent ye tae talk t' Prospector Seymour, past this gate and t' the right, did he? " ..
+                "Well go! Oralius doesn't even care!\n\n...I'll GET YOU FOR THIS WINKY!!!\n\n< Oralius " ..
+                "begins to sob.>",
+            rewardMoney = 800,
+        },
+        [27569] = {
+            description = "General Angerforge and Golem Lord Argelmach lead the Dark Iron armies and " ..
+                "their golems against us. If we are to overcome them, the two must be slain.\n\nGo " ..
+                "through this door and unlock The Shadowforge Lock, which separates the East and West " ..
+                "Garrisons. Then, follow the stairs and keep to the left at the top until you reach the " ..
+                "West Garrison. It is there you will find the General and Golem Lord.\n\nKeep your wits " ..
+                "about you, they are both well-seasoned combatants. Find Mayara Brightwing should you " ..
+                "succeed.",
+            rewardMoney = 33300,
+        },
+        [27571] = {
+            description = "Some say that the Grim Guzzler is the secret to the Dark Iron war effort. " ..
+                "Their warriors recharge there and emerge thirsty for another innocent soul. I think we " ..
+                "can seriously hinder them by causing a bit of chaos here.\n\nI need you to start a fight " ..
+                "with three of the bar's infamous patrons. Damage the kegs and Hurley Blackbreath will " ..
+                "come running. Steal items off the tables near Plugger Spazzring and he'll fight. As for " ..
+                "Ribbly Screwspigot...just talk to the little hothead. Report to Orfus when you're done.",
+            rewardMoney = 34000,
+        },
+        [27573] = {
+            description = "Ahead is the creature known only as Ambassador Flamelash. He is the ambassador " ..
+                "to the Dark Iron Nation from Ragnaros the Firelord. Beyond that chamber is the " ..
+                "Summoners' Tomb, home to the spirits of the seven Dark Iron patriarchs who summoned " ..
+                "Ragnaros into our world.\n\nYou may not know of the Great Fire, but he will be the end " ..
+                "of Azeroth if he is not stopped, and these individuals are directly tied to his hold " ..
+                "over the Dark Iron. Slay them, so that this nation may perhaps one day be redeemed.",
+            rewardMoney = 34700,
+        },
+        [27574] = {
+            description = "You have discovered a partially digested head. Lord Godfrey perks up when he " ..
+                "sees it. Perhaps you should give it to him.",
+        },
+        [27575] = {
+            description = "I think we can rebuild him. Perhaps if we put him back together he can give us " ..
+                "information about Crowley.\n\nWe must kill every crocolisk in this marsh until we find " ..
+                "the rest of Sean Dempsey's body! From the belly of the beast this man will be reborn!",
+            rewardChoices = {{62886, 1}, {62887, 1}, {62888, 1}},
+            rewardMoney = 2000,
+        },
+        [27576] = {
+            description = "Recent events make it even more apparent that holing up here and making " ..
+                "sporadic attacks isn't enough to keep our kind safe, much less retake Grim Batol. We " ..
+                "need to be more aggressive, we need to strike into their heart.\n\nI've agreed to send " ..
+                "dragons to the aid of your commanders. They were already hatching a plan to strike at " ..
+                "Grim Batol, so you should focus your attention there first.\n\nYou should be able to " ..
+                "find Patch in Dragonmaw Pass, in the canyon below us to the south.",
+            rewardMoney = 47000,
+        },
+        [27577] = {
+            description = "While destroying Pyrewood will certainly garner us an advantage over the " ..
+                "Alliance upon the field of battle, our true purpose here is to leave them " ..
+                "crippled.\n\nSouthwest of here, near the Greymane Wall, lies the 7th Legion Base Camp. " ..
+                "We must search the base camp for battle plans. With the 7th Legion battle plans we will " ..
+                "be able to pinpoint all Alliance troop advancement in Silverpine Forest.",
+        },
+        [27578] = {
+            description = "Emperor Dagran Thaurissan has total control over the city from his throne " ..
+                "ahead. If we are to stop his armies, we're going to have to end their emperor's " ..
+                "reign.\n\nYou'll need to get past his personal guard, including the giant Magmus, to " ..
+                "reach him. Move as quickly as possible - if word gets out before you finish, the entire " ..
+                "city will descend upon his throne.\n\nNote that the doors across the Lyceum will only " ..
+                "open once you've lit the braziers with torches from the flamekeepers. Good luck.",
+            rewardChoices = {{65932, 1}, {65956, 1}, {65980, 1}},
+            rewardMoney = 35300,
+        },
         [27579] = {rewardMoney = 800},
+        [27580] = {
+            description = "The Alliance reinforcements have established a foothold in the southwest " ..
+                "region of Silverpine called 7th Legion Base Camp. Our primary goal at the base camp is " ..
+                "to sow discord amongst the troops. This is a lightning fast assassination mission to " ..
+                "kill their field commander, General Marstone. His death won't stop the Alliance advance, " ..
+                "but it will certainly soften their ranks.",
+        },
+        [27581] = {
+            description = "Gerstahn is too heavily guarded and too smart to leave her post, so I'm not " ..
+                "going to kill her.\n\nYou are.\n\nI'll throw in a little something I picked up off of a " ..
+                "guard to make it worth your while.",
+            rewardMoney = 33300,
+        },
         [27582] = {rewardMoney = 800},
+        [27583] = {
+            description = "I have ordered a defensive perimeter set up on our northern coast, at the " ..
+                "Slithering Cove. Our scouts reported that the naga were trying to make landfall " ..
+                "there.\n\nGralok is in charge of the operation - report to him and secure that beach!",
+            rewardMoney = 45000,
+        },
+        [27584] = {
+            description = "These naga scum think to move upriver to reinforce the Bastion of Twilight. We " ..
+                "will RIP off their fish heads and PULL OUT their SPINES.\n\n< Gralok drives his " ..
+                "broadsword into the dirt.>\n\nDestroy the Blackscale!",
+            rewardMoney = 90000,
+        },
+        [27585] = {
+            description = "General Angerforge and Golem Lord Argelmach are directly responsible for the " ..
+                "horrific slaughter of the 109th Division of the Kargath Expeditionary Force. There were " ..
+                "a lot of good trolls and orcs in that division, many of them my close friends.\n\nWell, " ..
+                "young <race>, it's time for our fallen brothers to at last have their revenge.\n\nUnlock " ..
+                "The Shadowforge Lock, go up the stairs and bear left until you reach the West Garrison. " ..
+                "Kill Angerforge and Argelmach, and don't you dare show them any mercy.",
+            rewardMoney = 33300,
+        },
+        [27586] = {
+            description = "I salvaged these mortars from the wreck of our airship when she detonated " ..
+                "above Dragonmaw Port. But ammunition is in short supply!\n\nWhile you're running along " ..
+                "the beach, do me a favor and pick up any unexploded mortar shells you " ..
+                "find.\n\nUnexploded shells are the best kind - you never know WHEN they're going to go " ..
+                "off. Perfect for surprising an enemy!",
+            rewardMoney = 90000,
+        },
+        [27587] = {
+            description = "You know, I've got a problem you might be able to help me out with, " ..
+                "here.\n\nSee, in addition to the fine pursuit of arms dealing, I'm trying to liven up " ..
+                "the entertainment here in Bogpaddle. Apparently there's a bunch of these makrura things " ..
+                "in the north waters that don't take kindly to the wild beach parties we've been " ..
+                "throwing.\n\nJoke's on them. I'm not gonna be pushed around by giant lobsters; they're " ..
+                "my next source of revenue! You bring me some of their tails and we'll turn a problem " ..
+                "into profit.",
+            rewardMoney = 7500,
+        },
+        [27588] = {
+            description = "Now that you've lured Skullcrusher the Mountain away from the Twilight Gate, I " ..
+                "need you to signal our forces to attack!",
+            rewardMoney = 94000,
+        },
+        [27589] = {
+            description = "Everyone inside the Grim Guzzler is absolutely hammered and, therefore, easily " ..
+                "angered. I think we can seriously hinder the Dark Irons by causing a bit of chaos " ..
+                "here.\n\nI need you to start a fight with three of the bar's infamous patrons. Damage " ..
+                "the kegs and Hurley Blackbreath will come running. Steal items off the tables near " ..
+                "Plugger Spazzring and he'll fight. As for Ribbly Screwspigot...just talk to the little " ..
+                "hothead. Report to Thunderheart when you're done.",
+            rewardMoney = 34000,
+        },
+        [27590] = {
+            description = "Now that you've lured Skullcrusher the Mountain away from the Twilight Gate, I " ..
+                "need you to signal our forces to attack!",
+            rewardMoney = 94000,
+        },
+        [27591] = {
+            description = "Inside this chamber lies Ambassador Flamelash. He is the ambassador to the " ..
+                "Dark Iron Nation from Ragnaros the Firelord. Beyond that chamber is the Summoners' Tomb, " ..
+                "home to the spirits of the seven Dark Iron patriarchs who summoned Ragnaros into our " ..
+                "world.\n\nYou may not know of the Great Fire, but he will be the end of Azeroth if he is " ..
+                "not stopped, and these individuals are directly tied to his hold over the Dark Iron. " ..
+                "Slay them all, and may this unholy union cease.",
+            rewardMoney = 34700,
+        },
+        [27592] = {
+            description = "What's up, \"bro\"! We were just in the middle of our completely spontaneous " ..
+                "beach party when something terrible happened, \"dude\"!\n\nI had a whole case of " ..
+                "Silversnap Ice, the Baron's own drink of choice, until the silt crawlers stole them! " ..
+                "I've never seen crawlers drink, but they took them right into the water and down the " ..
+                "beach! We need some sort of awesome hero who can help retrieve our specifically-branded " ..
+                "favorite beverage!\n\n<Brono stares at you a moment.>\n\nThat means you, \"brah\"!",
+            rewardChoices = {{64588, 1}, {64598, 1}, {64607, 1}, {64616, 1}, {64622, 1}},
+            rewardItems = {{64639, 1}},
+            rewardMoney = 7500,
+        },
+        [27593] = {
+            description = "Emperor Dagran Thaurissan has total control over the city from his throne " ..
+                "ahead. If we are to stop his armies, we're going to have to end their emperor's " ..
+                "reign.\n\nYou'll need to get past his personal guard, including the giant Magmus, to " ..
+                "reach him. Move as quickly as possible - if word gets out before you finish, the entire " ..
+                "city will descend upon his throne.\n\nNote that the doors across the Lyceum will only " ..
+                "open once you've lit the braziers with torches from the flamekeepers. Good luck.",
+            rewardChoices = {{68052, 1}, {68053, 1}, {68054, 1}},
+            rewardMoney = 35300,
+        },
+        [27594] = {
+            description = "Lorna Crowley, daughter of Lord Darius Crowley, is currently at the Gilneas " ..
+                "Liberation Front camp, located near the Greymane Wall, to the southeast.\n\nOur primary " ..
+                "mission is to infiltrate the camp and capture her alive. The Dark Lady believes that she " ..
+                "will be able to use Lorna as a bargaining chip against Crowley. I say we just kill her " ..
+                "and bring her back as Forsaken, but we must do as the Dark Lady commands.\n\nWe must " ..
+                "hurry before the rest of the Alliance forces arrive.",
+            rewardChoices = {{62894, 1}, {62893, 1}, {62892, 1}},
+            rewardMoney = 3500,
+        },
+        [27595] = {
+            description = "Prophet Hadassi is the wisest and eldest member of the Orsis tribe.\n\nHe has " ..
+                "not been accounted for and his well-being is of vital importance.\n\nGo into Orsis and " ..
+                "find him. A great day of reckoning will come to the Al'Akir's lackeys if he's been hurt.",
+            rewardMoney = 43000,
+        },
         [27596] = {rewardMoney = 33300},
+        [27597] = {
+            description = "You're gettin' it, <name>. You scratch my back, I scratch yours. Well, more " ..
+                "like I scratch the back of your whole army, and just a little harder than the backs of " ..
+                "the other side! Was that too complicated?\n\nWhat I'm sayin' is, that's a lot of backs. " ..
+                "So I'm gonna have to ask you to scratch mine a few more times. Whoever stole those " ..
+                "landmines may have just hit our boys on the eastern shore.\n\nHead to our camp to the " ..
+                "southeast and check on Crazy Larry; he'll fill you in when you get there.",
+            rewardMoney = 4000,
+        },
+        [27598] = {
+            description = "Gilblins!\n\n<Larry stares at you silently for a while.>\n\nYou never seen a " ..
+                "gilblin before? They're crazy! Crazier than me! I just blow stuff up for a living, these " ..
+                "guys are WHACKED!\n\nDunno where they came from, but they're like awful fish goblins! " ..
+                "Gills and everything! They wiped out all my men down at the beach, and they took our " ..
+                "shipping freighter!\n\nYou gotta help! They're just down to the east, go on and get rid " ..
+                "of those gilblins!",
+            rewardMoney = 7500,
+        },
+        [27599] = {
+            description = "Any shipping crew I had that you don't see hanging around this camp are DEAD! " ..
+                "Those were some fine goblins, but what's worse is they're all still out there! It's a " ..
+                "TRAGEDY!\n\nI mean, it's a tragedy they still have all their stuff! It's horrifying to " ..
+                "think of all the perfectly good materials and coins sitting out there in the " ..
+                "water.\n\nHey! You can do me a favor! If you're killing gilblins out there, go get the " ..
+                "ditty bags off my old crewmen!\n\nC'mon, they're not gonna need it anymore! Be real!",
+            rewardChoices = {{64590, 1}, {64600, 1}, {64609, 1}, {64617, 1}},
+            rewardMoney = 7500,
+        },
+        [27600] = {
+            description = "Our trade frigate's still all the way out there on the water, swarming with " ..
+                "Gilblins! AHH!\n\nSorry about that. But really! We need a way to get you out there and " ..
+                "get back our stuff. There's quality goods left on that ship! QUALITY! LIKE MY MIDDLE " ..
+                "NAME!\n\nLucky for you, I have an idea! Head right outside the camp and check along the " ..
+                "north wall... my son Jerry'll get you over there with our cannon! If he's been " ..
+                "practicing, that is!",
+            rewardChoices = {{64591, 1}, {64601, 1}, {64610, 1}, {64618, 1}},
+            rewardMoney = 15500,
+        },
+        [27601] = {
+            description = "Our armies clash across the battlefield. Crowley and his forces are losing " ..
+                "ground and they do not yet know the fate of Lorna Crowley. We will meet with Crowley and " ..
+                "his compatriots at mid field and I will present them with terms of their surrender. They " ..
+                "will either accept or we will kill them all and leave their cities in dust.\n\nAs my " ..
+                "most trusted soldier, you are to stand by my side during the exchange. Tell me when you " ..
+                "are prepared to leave.",
+            rewardChoices = {{62895, 1}, {62896, 1}, {62897, 1}},
+            rewardMoney = 4700,
+        },
+        [27602] = {
+            description = "We... are... bound by oath... to protect the scepter of Orsis.\n\nListen, " ..
+                "<class>, I don't have much time... left.\n\nFind the sacred receptacle... in the " ..
+                "southern end of the city.\n\nDo not... let it... fall into their... hands...",
+            rewardMoney = 43000,
+        },
         [27603] = {rewardMoney = 30700},
+        [27604] = {
+            description = "Jammal'an the Prophet, leader of the Atal'ai and Hakkari trolls, has obtained " ..
+                "a small amount of Hakkar the Soulflayer's blood. They are injecting it into the green " ..
+                "dragons to use their bodies to produce the massive quantities of blood necessary to " ..
+                "summon Hakkar into our world.\n\nWe cannot allow this to come to pass. Slaughter " ..
+                "Jammal'an and his priests before they get any further in their efforts!",
+            rewardMoney = 32700,
+        },
+        [27605] = {
+            description = "The Hakkar blood the Atal'ai have been injecting into the green dragons has " ..
+                "had devastating effects on the dragons themselves. It appears that these dragons, former " ..
+                "jailors of the Atal'ai, have been corrupted by its presence in their bodies and have " ..
+                "become creatures of Nightmare.\n\nEranikus, Ysera's primary consort and lead watcher " ..
+                "over the temple, was infused with the largest quantities of blood and has become twisted " ..
+                "beyond imagination. After Jammal'an is dead, find Eranikus and end him.",
+            rewardItems = {{65931, 1}},
+            rewardMoney = 32700,
+        },
+        [27606] = {
+            description = "Let's go fishing, <name>! Now that the mortars are ready, we can take out the " ..
+                "leader of this invasion.\n\nFathom-Lord Heth'Jatar rules over the Blackscale warrior " ..
+                "caste. Go to the Heth'Jatari Banners just northeast of here and honk this conch shell. " ..
+                "It's like a dog-whistle. For fish.\n\nWhen Heth'Jartar shows up, I'll order the mortars " ..
+                "to concentrate fire. You'll see the targets of the incoming shells.\n\nLure Heth'Jatar " ..
+                "into our mortar fire and pummel him into submission!",
+            rewardChoices = {{63906, 1}, {63907, 1}, {63908, 1}},
+            rewardMoney = 90000,
+        },
+        [27607] = {
+            description = "Our new arrangement with the Horde will put my people in direct conflict with " ..
+                "the Alliance.\n\nBring. Them. On.\n\nAs we speak, the Alliance moves up the peninsula to " ..
+                "threaten Dragonmaw Port.\n\nFind Rok'tar to the south - I believe he has set up a " ..
+                "command post on one of the shipwrecks - and ensure that the Twilight Shores remain in " ..
+                "our control.",
+            rewardMoney = 45000,
+        },
+        [27608] = {
+            description = "We're about to launch the attack upon the Twilight Gate, but there is one last " ..
+                "loose end to tie up: Za'brox and Beeble'phod, the disciples of Cho'gall.\n\nIntelligence " ..
+                "has placed them within the Den of the Disciples, a small ogre cave at the southwest " ..
+                "corner of the Twilight Gate.\n\nWould you go back in there and kill them?",
+            rewardChoices = {{63746, 1}, {63747, 1}, {63745, 1}},
+            rewardMoney = 94000,
+        },
+        [27609] = {
+            description = "Now, while we're about to launch the attack upon the Twilight Gate, there is " ..
+                "one last loose end to tie up: Za'brox and Beeble'phod, the disciples of " ..
+                "Cho'gall.\n\nIntelligence has placed them within the Den of the Disciples, a small ogre " ..
+                "cave at the southwest corner of the Twilight Gate.\n\nPlease head back in and kill them.",
+            rewardChoices = {{63743, 1}, {63744, 1}, {63742, 1}},
+            rewardMoney = 94000,
+        },
+        [27610] = {
+            description = "If the Alliance gains control of this peninsula, they will threaten Dragonmaw " ..
+                "Port. Not going to happen.\n\nSouth of here you'll see a small hill with a commanding " ..
+                "view of the shoreline. Whoever controls that hill will have the upper hand all along the " ..
+                "shore!\n\nRush over there and scout the beach head control point. It's marked by that " ..
+                "enormous flag. Then return to me.\n\nYou don't have to capture it, unless you're " ..
+                "spoiling for a fight with the Alliance.",
+            rewardMoney = 90000,
+        },
+        [27611] = {
+            description = "Our objective in the Twilight Highlands is to storm the Bastion of Twilight, " ..
+                "but the Alliance have decided to make war.\n\nSo we will give them war!\n\nSlay their " ..
+                "marines until the lesson is learned.",
+            rewardMoney = 90000,
+        },
+        [27612] = {
+            description = "A few of our men didn't make it through portals which were supposed to open " ..
+                "inside this very abbey. You've already proven your elusiveness and battlehardiness... " ..
+                "now I need you to do so again.\n\nThe abbey has two wings: a library, and a hall of " ..
+                "arms. In each wing, you should find a portal.\n\nUse this keystone on these portals. " ..
+                "Doing so should force them open, allowing our remaining shock troopers to take this " ..
+                "abbey.",
+            rewardMoney = 5500,
+        },
+        [27613] = {
+            description = "The fate of the Scarlet Crusade is tragic, if somewhat ironic. At one point, " ..
+                "they led the charge of humanity against the undead. Now, they resemble those corpses " ..
+                "that they once hunted. What caused their descent into undeath isn't certain, but it " ..
+                "doesn't make them any less dangerous.\n\nOne of their deadliest was an assassin who went " ..
+                "by the name of Rohan. We have intel that places him atop the bell tower in this very " ..
+                "abbey. Find him and kill him, <name>. And try not to die on the way.",
+            rewardChoices = {{62967, 1}, {62968, 1}, {62966, 1}},
+            rewardMoney = 5500,
+        },
+        [27614] = {
+            description = "This battle was won before it started. Right now, we're just shooting for " ..
+                "style points.\n\nWithin these barracks, the sniveling Scarlet Crusaders cling to their " ..
+                "priceless artifacts, even though some of the objects are too holy for their now-undead " ..
+                "hand to touch. So they keep them in chests, hidden from the world.\n\nYou will find " ..
+                "these artifacts, and bring them back to me. They belong to be among the Argent Crusade. " ..
+                "They belong in the hands of the righteous.",
+            rewardMoney = 5500,
+        },
+        [27615] = {
+            description = "One of the more vile members of the Scarlet Crusade, Mataus the Wrathcaster, " ..
+                "lurks within the barracks' dungeon. Undeath suits his dark manner.\n\nWere I younger and " ..
+                "on the front lines, I'd run him through myself. As things are, I'm left behind to lead " ..
+                "our forces from the rear. So I leave the pleasure to you.",
+            rewardMoney = 5500,
+        },
+        [27616] = {
+            description = "We've already lost half a dozen men to a hail of bullets and arrows coming " ..
+                "from atop this fortress. I haven't seen the face of the enemy that's firing, but I don't " ..
+                "need to. I know the name of the man up there.\n\nLeopold.\n\nThat's right, there's only " ..
+                "one man up there, picking off my men one-by-one. And from what I can see, there's only " ..
+                "one of you.\n\nSounds like a fair fight to me.",
+            rewardMoney = 5500,
+        },
+        [27617] = {
+            description = "Can you sense it? The taint is already lifting from this building.\n\nA holy " ..
+                "building wants to be holy, and villains like Rohan and the rest of his Scarlet scum only " ..
+                "hold it back.\n\nWith the abbey secure, we are a step closer to taking Tyr's Hand. " ..
+                "Report the results of our strike to Angela. She should be leading the charge on the " ..
+                "cathedral from somewhere in the center of town.",
+            rewardMoney = 600,
+        },
+        [27618] = {
+            description = "I'll say we've done enough damage to these barracks to call this a win. A " ..
+                "commander, a huntsman, and a warlock, all slain... not to mention the relics that we've " ..
+                "liberated. Or shall I say... YOU liberated.\n\nThe cathedral still remains, but not for " ..
+                "long. Talk with Archmage Angela Dosantos, in the central courtyard. The fate of Tyr's " ..
+                "Hand's cathedral falls in her able hands.",
+            rewardMoney = 600,
+        },
+        [27619] = {
+            description = "Scarlet Commander Marjhan is cunning, shrewd, and willing to do anything to " ..
+                "win a battle. Before all these things, however, she is loyal.\n\nI have no doubt you'll " ..
+                "find her in the barracks' central chamber, fighting under a crimson banner, until she " ..
+                "either wins or dies.\n\nMake sure it's the latter.",
+            rewardChoices = {{62970, 1}, {62971, 1}, {62969, 1}},
+            rewardMoney = 5500,
+        },
+        [27620] = {
+            description = "Well, I'm glad that Eligor and Korfax left some fun for me. It was a battle " ..
+                "unto itself to keep them from rushing headlong into the middle of this " ..
+                "cathedral.\n\nThat's YOUR job, after all.\n\nThe cathedral lies ahead of us, the last " ..
+                "real bastion of Scarlet power remaining. Within it, Crusader Lord Valdelmar sits atop " ..
+                "Tyr's Hand's crumbling pulpit of lies.\n\nThere will be no escape; there will be no " ..
+                "mercy. The last simpering vestiges of the Scarlet Crusade end here. Slay him.",
+            rewardChoices = {{62997, 1}, {62998, 1}, {62996, 1}},
+            rewardMoney = 18000,
+        },
+        [27621] = {
+            description = "I was on my way to join Firebeard's Patrol when my bird was shot " ..
+                "down.\n\nTwilight's Hammer launched surprise attacks all over the Highlands. Sometimes " ..
+                "their buildings crawled right out of the earth in the middle of our villages. It was a " ..
+                "nightmare!\n\nIn the chaos, Firebeard is one of the few who's kept his head on straight. " ..
+                "He's trying to piece together a full gryphon wing from the survivors.\n\nIf you want to " ..
+                "bring the Wildhammer into the Alliance, start by helping out Firebeard, to the west.",
+            rewardMoney = 45000,
+        },
+        [27622] = {
+            description = "<name>, I've got plans for a better shredder. But my engineers can't wade into " ..
+                "a combat zone alone.\n\nGo locate a salvageable shredder in the Twilight Shores, and use " ..
+                "it to signal one of my salvage experts to join you. Defend the shredder while we make " ..
+                "some \"upgrades.\"\n\nThe Alliance won't know what hit them! At least, not until my " ..
+                "marketing campaign kicks in!",
+            rewardChoices = {{63900, 1}, {63901, 1}, {63902, 1}},
+            rewardMoney = 90000,
+        },
+        [27623] = {
+            description = "The chest containing the scepter appears to be magically sealed and will not " ..
+                "budge.\n\nThe plaque above it depicts two giant statues holding star and moon-shaped " ..
+                "stones sockets at their center.\n\nThe two statues are pictured guarding pyramids that " ..
+                "look like the ones outside.\n\nPerhaps it's worth your while to investigate these.",
+            rewardMoney = 86000,
+        },
+        [27624] = {
+            description = "Aww, that was nothin', really.\n\nThose statues were teetering as it was - " ..
+                "just needed a little push is all.\n\nHow about you go and sort through that " ..
+                "rubble?\n\nI've got a feeling we're close to getting this all sorted out.",
+            rewardMoney = 86000,
+        },
+        [27625] = {
+            description = "The undead are here! The Forsaken! They've been moving closer and closer, but " ..
+                "to launch an all-out attack on us... those horrid abominations!\n\nThe young draenei I " ..
+                "was charged with have trained with the Highvale elves in combat. They are not " ..
+                "defenseless, but they need help!\n\nPlease, <name>, assist them! Drive back the Forsaken!",
+            rewardMoney = 7500,
+        },
+        [27626] = {
+            description = "The Highvale have kept detailed records here for years. Deaths, births, " ..
+                "seasons... but also vital scouting information and methods of contact with the rest of " ..
+                "the Alliance.\n\nThe documents will be scattered in the chaos. If they fall into the " ..
+                "hands of the Forsaken, more lives could be at risk! Please, you must retrieve the " ..
+                "documents before they are taken by the Horde...",
+            rewardMoney = 7500,
+        },
+        [27627] = {
+            description = "Evidently, the ancient statues were home to various species of " ..
+                "scarab.\n\nDetermined to leave this site in the best condition possible, you resolve to " ..
+                "ridding the chamber of these pests.",
+        },
+        [27628] = {
+            description = "Hurry, <name>. We must speak to my brother, the king.\n\nHe is bent on " ..
+                "averting war with Al'Akir and the Neferset. He has foolish hopes that there is a " ..
+                "diplomatic solution to this problem.\n\nMaybe once he hears what occurred here he will " ..
+                "see reason.",
+            rewardMoney = 65000,
+        },
+        [27629] = {
+            description = "Getting Vizier Tanotep to go against my brother's wishes is going to be " ..
+                "extremely difficult. His very position is based on enforcing the will of " ..
+                "Phaoris.\n\nI've had little luck making the case for open war against " ..
+                "Neferset.\n\nNevertheless you must speak to him. Perhaps he will listen to an outsider's " ..
+                "perspective.\n\nYou will find the Vizier at the Akhenet Fields on official business.",
+            rewardMoney = 45000,
+        },
+        [27630] = {
+            description = "High Priest Amet 's vote is the only one that is completely outside of our " ..
+                "control.\n\nHe will vote as his divinations tell him and nothing we do will dissuade " ..
+                "him.\n\nI figure that gives us even odds either way.\n\nThe only problem we face is that " ..
+                "his clairvoyance has failed him ever since the barriers around Uldum fell.\n\nHe will " ..
+                "not cast a vote unless he regains power over his divinations.\n\nTake the stairs at " ..
+                "either side of the Vir'naal Dam and Speak to him to see what you can do to help.",
+            rewardMoney = 8600,
+        },
+        [27631] = {
+            description = "If we're to pass a resolution for war, the high council's vote needs to be " ..
+                "unanimous.\n\nI'm certain High Commander Kamses will give us his vote once he hears " ..
+                "about what happened at Orsis.\n\nPlease speak to him in Ramkahen and make sure that's " ..
+                "the case. I must make preparations in case our plan fails.",
+        },
+        [27632] = {
+            description = "I have devoted my life to serving the King. That service is unrivaled in " ..
+                "importance by anything... with one exception: my son.\n\nTahet was captured by Neferset " ..
+                "sentries.\n\nThey claim my son was trespassing upon their territory. Phaoris is " ..
+                "attempting to negotiate his release... but I fear for the worst.\n\nIf you were to find " ..
+                "Tahet, I would pledge my vote to you.\n\nI do not know where they take the prisoners, " ..
+                "but I've seen the guards consult maps to guide them through the thick vegetation.",
+            rewardChoices = {{65793, 1}, {65794, 1}, {65795, 1}},
+            rewardMoney = 65000,
+        },
+        [27633] = {
+            description = "Hakkar... The mere mention of The Soulflayer's name will send many running. In " ..
+                "the Sanctum of the Fallen God the Atal'ai have recovered a significant portion of his " ..
+                "skeleton and seek to restore him to life. Already his children have begun to show up in " ..
+                "the area.\n\nPlace this egg in that sanctum, and it will force his summoning " ..
+                "prematurely. <name>, do not hesitate. Strike once his avatar appears!",
+            rewardMoney = 32700,
+        },
         [27635] = {
             description = "You've been down here in Gnomeregan for a long time, <name>, and it's amazing " ..
                 "that you've survived and kept your wits so long! We need to get you out.\n\nBefore we " ..
@@ -19793,6 +20302,31 @@ ns.Overrides.wowhead = {
                 "will do the rest! It shouldn't even hurt... much.\n\nWhen you're all done, check in with " ..
                 "Technician Braggle and he'll make sure you get some suitable gear.",
             rewardMoney = 25,
+        },
+        [27636] = {
+            description = "The SI:7 are all dead. Time to find Master Mathias Shaw.\n\nGood thing the " ..
+                "squad commander told you where he would be.",
+        },
+        [27637] = {
+            description = "That's a blow to our efforts. Damn Cho'gall!\n\nIt's a good thing that the " ..
+                "squad commander told you where to find Master Shaw.",
+        },
+        [27638] = {
+            description = "The Kor'kron are all dead. Time to find Garona Halforcen.\n\nGood thing the " ..
+                "squad commander told you where she would be.",
+        },
+        [27639] = {
+            description = "That's a heavy blow to our efforts. Damn that Cho'gall!\n\nIt's a good thing " ..
+                "that the squad commander told you where to find Garona.",
+        },
+        [27640] = {
+            description = "As I understand it, you're to be looking to bring the Wildhammer clans " ..
+                "together with the Alliance for war. Not sure you know what you're gettin' " ..
+                "into.\n\nAnyway, if it's battle you're preparin' for, there's definitely one family you " ..
+                "want by your side. Head southwest, to the opposite side of the Crucible of Carnage, and " ..
+                "there you'll find Clan Dunwald's ruins. They're rightly ravaged, but that's not likely " ..
+                "to be stoppin' the Dunwalds. It's just a matter of findin' them.",
+            rewardMoney = 45000,
         },
         [27671] = {
             description = "If we don't do something quick, neither Nevin nor the survivors will make it " ..
