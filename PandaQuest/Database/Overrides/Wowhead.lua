@@ -25445,24 +25445,594 @@ ns.Overrides.wowhead = {
             rewardChoices = {{65630, 1}, {65643, 1}},
             rewardMoney = 14500,
         },
+        [28466] = {
+            description = "Blackrock Depths has long been home to our enemies, but now the Shattered Hand " ..
+                "has discovered that the Dark Irons and Twilight's Hammer are increasing their " ..
+                "collaboration. Using the cult's knowledge, the Dark Iron dwarves are imbuing their " ..
+                "weapons with elemental powers. They've outfitted the Anvilrage legion with these " ..
+                "fearsome new weapons.\n\nI want you to go into Blackrock Depths and gather the weapons " ..
+                "from the Anvilrage dwarves there and break them over the Black Anvil in the heart of " ..
+                "Shadowforge City.",
+            rewardChoices = {{65631, 1}, {65644, 1}, {65647, 1}},
+            rewardMoney = 14500,
+        },
         [28467] = {rewardMoney = 5500},
         [28469] = {rewardMoney = 14500},
         [28470] = {rewardMoney = 14500},
         [28471] = {rewardMoney = 3500},
         [28472] = {rewardMoney = 3500},
+        [28473] = {
+            description = "Blackrock Depths has long been home to our enemies, but now the Shattered Hand " ..
+                "has discovered that the Dark Irons and Twilight's Hammer are increasing their " ..
+                "collaboration. Using the cult's knowledge, the Dark Iron dwarves are imbuing their " ..
+                "weapons with elemental powers. They've outfitted the Anvilrage legion with these " ..
+                "fearsome new weapons.\n\nI want you to go into Blackrock Depths and gather the weapons " ..
+                "from the Anvilrage dwarves there and break them over the Black Anvil in the heart of " ..
+                "Shadowforge City.",
+            rewardChoices = {{65632, 1}, {65645, 1}, {65648, 1}},
+            rewardItems = {{25549, 1}},
+            rewardMoney = 14500,
+        },
+        [28474] = {
+            description = "The influence of Twilight's Hammer grows within Blackrock Depths. They have " ..
+                "allied with the Dark Iron dwarves and seek to convince them to strike outside the " ..
+                "mountain.\n\nWe must destroy the instruments of the Twilight's Hammer agitation. Their " ..
+                "influence over the Dark Irons must be minimized.\n\nI want you to go into Domicile " ..
+                "portion of Blackrock Depths and use this torch to burn the books that the Twilight's " ..
+                "Hammer is distributing there.",
+            rewardItems = {{65633, 1}},
+            rewardMoney = 14500,
+        },
+        [28475] = {
+            description = "In Blackrock Depths, Twilight's Hammer has started to persuade the Dark Irons " ..
+                "to strengthen their alliance and prepare their armies for a campaign outside the " ..
+                "mountain.\n\nWe must not allow this manipulation to create a combined Dark " ..
+                "Iron-Twilight's Hammer force! We must destroy the tools of the cult's persuasion.\n\nI " ..
+                "want you to go into Domicile portion of Blackrock Depths and use this torch to burn the " ..
+                "books that the Twilight's Hammer is distributing there.",
+            rewardItems = {{65634, 1}},
+            rewardMoney = 14500,
+        },
+        [28476] = {
+            description = "In Blackrock Depths, Twilight's Hammer has started to persuade the Dark Irons " ..
+                "to strengthen their alliance and wage a campaign of conquest.\n\nWe have to act before " ..
+                "the cultists can whip up the bloodlust in the Dark Irons and their leadership. Perhaps " ..
+                "the best way to deal with this is to destroy the material the cultists are distributing " ..
+                "to the dwarves.\n\nI want you to go into Domicile portion of Blackrock Depths and use " ..
+                "this torch to burn the books that the Twilight's Hammer is distributing there.",
+            rewardItems = {{65635, 1}},
+            rewardMoney = 14500,
+        },
+        [28477] = {
+            description = "Our enemies be plottin' against us in the halls of Blackrock Depths. The " ..
+                "Twilight's Hammer cultists, they be busy preaching and handin' out books to the Dark " ..
+                "Irons, tellin' them that it's time for war. Wit' a Dark Iron army at their backs, the " ..
+                "Twilight's Hammer be a formidable force. We must put an end to the agitation!\n\nI be " ..
+                "wantin' you to go into Domicile of Blackrock Depths and use this torch to burn those " ..
+                "Twilight's Hammer books!",
+            rewardItems = {{65636, 1}},
+            rewardMoney = 14500,
+        },
+        [28478] = {
+            description = "It wasn't enough for their master to break the world, no! Twilight's Hammer is " ..
+                "doing its best to unite our enemies against us, particularly in Blackrock Depths. " ..
+                "They've got a whole team of emissaries down there spreading propaganda aimed at starting " ..
+                "a joint campaign.\n\nI've always heard that the medium's the message. Well, it's time to " ..
+                "destroy the message!\n\nI want you to go into the Domicile of Blackrock Depths and use " ..
+                "this torch to burn those Twilight's Hammer books!",
+            rewardItems = {{65637, 1}},
+            rewardMoney = 14500,
+        },
         [28479] = {rewardMoney = 4000},
+        [28480] = {
+            description = "The armies of Ramkahen are getting obliterated by Neferset's immortal " ..
+                "guardians.\n\nThe only way to defeat them is to slay the Dark Pharaoh of " ..
+                "Neferset.\n\nBefore we make our move, however, we're going to need to take care of his " ..
+                "lieutenants.\n\nGo behind the battle-lines and slay Scorpion-Lord Namkhare and High " ..
+                "Priest Sekhemet. Only then will we be ready to confront the Dark Pharaoh himself.",
+            rewardChoices = {{65813, 1}, {65814, 1}},
+            rewardMoney = 90000,
+        },
+        [28482] = {
+            description = "Jonesy tells me you two need to make it up that mountain.\n\nWell, you're not " ..
+                "going far with those troopers crawling all over it like ants on a carcass.\n\nSome of my " ..
+                "friends were able to confiscate a bit of the enemy's hardware. It should make your " ..
+                "journey a bit easier.\n\nMake your way up the ridgeline to the north, and you'll find it " ..
+                "waiting for you.\n\nGood luck, you two!",
+        },
+        [28483] = {
+            description = "I will not lie to you, <name>. We face a tremendous challenge ahead of " ..
+                "us.\n\nAs you go behind the enemy lines into Neferset City, I want you to bring back the " ..
+                "insignia of any Neferset scum you defeat.\n\nIt will be a boon to our armies to know " ..
+                "that you've dealt a crushing blow to the enemy.",
+            rewardMoney = 90000,
+        },
+        [28484] = {
+            description = "The magus has been idle for far too long and an idle magus often leads to " ..
+                "poorly thought out schemes. This time I am charged with collecting various beast organs " ..
+                "in order to power some type of control rod. I am far too frail to go out hunting beasts " ..
+                "- especially yetis!\n\nPerhaps if I were to offer you a reward of some kind you would do " ..
+                "it? All I need is for you to head west to the yeti caves and kill yetis. Rip their still " ..
+                "beating hearts from their chests and bring them back here.",
+            rewardChoices = {{65682, 1}, {65702, 1}, {65720, 1}},
+            rewardItems = {{65731, 1}},
+        },
+        [28486] = {
+            description = "Neferset City is too well defended. The mountain next to it, however, is " ..
+                "not.\n\nI've spoken to the ranger captain and he's willing to take a handful of his men " ..
+                "and secure the strategic mountaintop.\n\nThere is one catch, <name>. He agreed, but only " ..
+                "if you would spearhead the attack with them.\n\nIt must be a small group, else we'll " ..
+                "draw the enemy's attention too soon, but trust me... the rangers of Ramkahen are as " ..
+                "tough as they come. With you by their side we'll surely succeed.",
+            rewardMoney = 90000,
+        },
+        [28487] = {
+            description = "So this is pretty embarrassing. Where to begin?\n\nWell, you see, Melisara " ..
+                "sent me to investigate the yeti menace in the nearby caves, west of here. It was getting " ..
+                "late and my armor was weighing heavily on me. I took my gear off and decided to take a " ..
+                "stroll. Yes, I, erm, went for a walk. Anyway, when I returned I discovered that my gear " ..
+                "had been stolen! It was the yetis. I'm sure of it. They took my pants, sword and helm " ..
+                "and ran off into their cave. Get them back for me and I will reward you.",
+            rewardMoney = 1500,
+        },
+        [28488] = {
+            description = "Among the other precious gemstones hidden deep out of our reach in the " ..
+                "Crumbling Depths, there are enormous ruby crystal clusters. They are infused with " ..
+                "terrible energy.\n\nIt will not be easy to obtain such a thing, for they are well " ..
+                "guarded. But you, you are stubborn and brave. I think this is something you can " ..
+                "do.\n\nWithin the Crumbling Depths, look to where the tunnels end abruptly in stone. The " ..
+                "clusters are found in those passages when they are to be found at all. Should you find " ..
+                "one, return to me.",
+            rewardMoney = 86000,
+        },
+        [28489] = {
+            description = "Ever had a stagwich? Me neither. Apparently they're delicious. Now I'm not one " ..
+                "for eating, but I am a businessman. If my customers want stagwiches, who am I to " ..
+                "argue?\n\nYou're probably asking yourself, \"What does this have to do with me?\" I'll " ..
+                "tell you what, <class>, I need stag meat! You get me stag meat from the hill stags of " ..
+                "Hillsbrad and I will pay you. Sounds like a pretty good deal, doesn't it?\n\nGet going! " ..
+                "Stags are most plentiful to the west.",
+            rewardItems = {{65730, 1}, {65681, 1}},
+            rewardMoney = 3000,
+        },
+        [28490] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Priestess Dentaria at Lor'danel in Darkshore.\n\nThe " ..
+                "people of Lor'danel need your aid in caring for the survivors of Auberdine's destruction " ..
+                "and securing their town against Twilight's Hammer. Speak to Vesprystus, the hippograph " ..
+                "master at Rut'theran Village outside of Darnassus and he'll arrange a flight to " ..
+                "Darkshore.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28491] = {
+            description = "Most of my fellow residents here at Flame Crest seem to have left at some " ..
+                "point. I guess the Burning Steppes weren't INTERESTING enough for them.\n\nNot me, " ..
+                "though. I'm always finding new reasons to not leave, and the latest happens to be the " ..
+                "flameflies that have been appearing lately.\n\nThey appear near lava during the day. By " ..
+                "night, you'll find them almost anywhere.\n\nIf you wouldn't mind collecting some, I " ..
+                "might be able to make it worth your while.",
+            rewardChoices = {{64556, 1}, {64557, 1}, {64558, 1}},
+            rewardItems = {{66080, 1}},
+            rewardMoney = 7500,
+        },
+        [28492] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Sentinel Shyela at Orendil's Retreat in northwestern " ..
+                "Ashenvale.\n\nThe Horde's aggression in Ashenvale cannot be allowed to stand! Your help " ..
+                "is needed to repel the invaders and restore the sacred forest. Head south through the " ..
+                "Twilight Vale in Darkshore to reach the forest of Ashenvale.\n\nFor the glory and honor " ..
+                "of the Alliance!",
+        },
+        [28494] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to Kargal " ..
+                "Battlescar at Far Watch Post in the Northern Barrens.\n\nYour help is needed to secure " ..
+                "the Northern Barrens against the encroaching quilboars and centaurs.\n\nTo reach Far " ..
+                "Watch Post, travel west across Durotar's Southfury Watershed and cross the bridge into " ..
+                "the Northern Barrens.\n\nDestiny calls!",
+        },
+        [28495] = {
+            description = "Blessed be the Light! I need your help!\n\nOn my way into Hillsbrad I noticed " ..
+                "several families of adorable little deer. As I went out to pet one of the little fawns a " ..
+                "ravenous mountain cat leapt out and killed it. I fled to Tarren Mill and swore to solve " ..
+                "the plight of the hill fawn. Now, after many days of tinkering, I have created the hill " ..
+                "fawn's salvation!\n\nTake my wand into the fields to the west and use it to empower the " ..
+                "wee hill fawns. Once empowered they will be able to fend for themselves!",
+            rewardMoney = 1500,
+        },
+        [28496] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to Ag'tor " ..
+                "Bloodfist at the Orgrimmar Rear Gate in Azshara.\n\nAid in driving back the encroaching " ..
+                "Alliance forces and assist in securing Azshara for the glory of the Horde!\n\nDepart " ..
+                "Orgrimmar through its northern gate to reach the Orgrimmar Rear Gate in " ..
+                "Azshara.\n\nDestiny calls!",
+        },
+        [28497] = {
+            description = "Sullah wasn't kidding. That hill is crawling with troopers!\n\nJump on and " ..
+                "paint our targets for me.\n\nMake every shot count, <name>! We need to be able to get up " ..
+                "there.",
+            rewardChoices = {{65868, 1}, {65869, 1}, {65870, 1}},
+            rewardMoney = 86000,
+        },
+        [28498] = {
+            description = "There is an old story about Nahom. It speaks of how a powerful prophet named " ..
+                "Atulhet held off troves of enemies by channeling the power of the sun through this very " ..
+                "temple.\n\nMost believe the tale to be just a legend, but that power... would certainly " ..
+                "be useful to us now.\n\nThe vile Neferset have ransacked Atulhet's tomb. They've taken " ..
+                "any artifacts of power and shattered the tablets that encode his memories.\n\nGo to the " ..
+                "Tombs of the Precursors to the east and retrieve any fragments that you find.",
+            rewardMoney = 90000,
+        },
+        [28499] = {
+            description = "We, priests of Nahom, are guardians of the Tombs of the Precursors.\n\nEver " ..
+                "since the Neferset turned to their new masters, they've turned to great " ..
+                "heresies.\n\nThey rob the sacred tombs of our forefathers, seeking powerful artifacts " ..
+                "and destroying invaluable relics in the process.\n\nGo to the tombs, east of here and " ..
+                "punish the tomb-robbers for their transgressions, lest they join their brethren when the " ..
+                "Neferset attack on Nahom begins.",
+            rewardChoices = {{65816, 1}, {65817, 1}, {65818, 1}},
+            rewardMoney = 90000,
+        },
+        [28500] = {
+            description = "< Salhet spends some time going over the tablets with the priests around " ..
+                "him.>\n\nIt's all right here, <name>. Atulhet built a potent weapon into this temple and " ..
+                "the only way to access it is with the correct cypher.\n\nIt is reportedly hidden in the " ..
+                "Keset Pass. We must hope the Neferset looters haven't gotten to it yet. That's where " ..
+                "Raider Lord Havat is operating and he's the most ruthless of the lot.\n\nBut without " ..
+                "reinforcements, this might be our only hope for defending Nahom.",
+            rewardMoney = 68000,
+        },
+        [28501] = {
+            description = "The enemy is coming... and in great numbers.\n\nWe will get no further " ..
+                "reinforcements. Let us hope we can stop the Neferset advance.\n\nIf Nahom falls, " ..
+                "Ramkahen will follow.\n\nGo outside and speak to one of my sergeants when you're ready. " ..
+                "I will help you command the forces we have to the best of my ability.",
+            rewardMoney = 180000,
+        },
+        [28502] = {
+            description = "Our law demands that those behind this attack face proper retribution.\n\nThe " ..
+                "band of bandits' ringleader is a man known as Warlord Ihsenn.\n\nYou will find him in " ..
+                "the far west of the desert. Make sure his transgressions do not go unpunished.",
+            rewardChoices = {{65796, 1}, {65797, 1}, {65798, 1}, {65799, 1}},
+            rewardMoney = 90000,
+        },
+        [28503] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Caryssia Moonhunter at New Thalanaar at the border between " ..
+                "Feralas and Thousand Needles.\n\nThe sentinels need your help to turn back the marauding " ..
+                "Grimtotem raiders who dominate the area. To reach New Thalaanar, travel to eastern " ..
+                "Feralas, near the border with Thousand Needles.\n\nFor the glory and honor of the " ..
+                "Alliance!",
+        },
+        [28505] = {
+            description = "I just got word, <lad/lass>. It doesn't sound good.\n\nThe city of Andorhal is " ..
+                "in the middle of a three-way war between the Forsaken, the Alliance, and the Scourge. " ..
+                "King Wrynn has rolled the dice and sent a death knight to lead the charge for his cause, " ..
+                "but I'm sure he can use all the help he can get.\n\nI hate to see you go, but they've " ..
+                "asked for you by name, <name>. Speak with Guthrum Thunderfist outside. He'll put you on " ..
+                "the first gryphon out to Andorhal.",
+            rewardMoney = 900,
+        },
+        [28506] = {
+            description = "These plans you recovered weave an interesting tale, <name>. The Stormpike " ..
+                "have been moving their armies from Alterac Valley into the \"four fingers\" of Hillsbrad " ..
+                "for over a month. Somehow they have managed to secretly get their installations set up " ..
+                "without our forces knowing. Had we not received these plans they would have marched on " ..
+                "us in a week's time, annihilating everything in their path.\n\nWith these plans, though, " ..
+                "we can turn the tables.\n\nThis is what we must do...",
+        },
+        [28507] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Kelsey Steelspark in Gadgetzan.\n\nThe Alliance needs your " ..
+                "help to win concessions from the local baron and access to the area's priceless " ..
+                "resources. You can reach Gadgetzan by traveling south from the Shimmering Deep in " ..
+                "Thousand Needles.\n\nFor the glory and honor of the Alliance!",
+        },
         [28508] = {rewardMoney = 900},
+        [28509] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Megs " ..
+                "Dreadshredder in Gadgetzan. Help the Horde and the Bilgewater Cartel establish a " ..
+                "presence in Tanaris before the Alliance does!\n\nYou can reach Gadgetzan in Tanaris by " ..
+                "traveling south to the shore from Fizzle and Pozzik's Speedbarge in southeastern " ..
+                "Thousand Needles.\n\nDestiny calls!",
+        },
+        [28511] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Telaron Windflight at Dreamer's Rest in Feralas.\n\nThe " ..
+                "Alliance needs your help to overcome our enemies, the Horde and the Grimtotems. You can " ..
+                "reach Dreamer's Rest by traveling south from Desolace into Feralas.\n\nFor the glory and " ..
+                "honor of the Alliance!",
+        },
+        [28512] = {
+            description = "Dark Iron dwarves may be scheming and mischievous... but they're not all " ..
+                "enemies. I've spoken several times with the dwarves of the Thorium Brotherhood, and " ..
+                "they've never been anything but helpful.\n\nAn acquaintance of mine, Jack Rockleg, came " ..
+                "to town not long ago, asking if I could join him on an expedition of some sort. It " ..
+                "sounded important.\n\nI'm a little busy, but maybe you wouldn't mind going? Just travel " ..
+                "west, on the road to Searing Gorge. You'll see him soon after leaving the Badlands.",
+            rewardMoney = 700,
+        },
         [28513] = {rewardMoney = 7500},
+        [28514] = {
+            description = "I get precious little time away from Searing Gorge these days. I've been " ..
+                "meaning to visit a friend in Burning Steppes for the last several months, but haven't " ..
+                "had the chance.\n\nHis name is Mouton Flamestar. While he's not a member of the " ..
+                "Brotherhood, he's a trusted friend, and definitely trustworthy.\n\nWill you send him my " ..
+                "regards? You'll have to travel south, through the base of Blackrock Mountain. Just keep " ..
+                "heading south... you'll find him.\n\nThank you.",
+            rewardMoney = 700,
+        },
+        [28515] = {
+            description = "I get precious little time away from Searing Gorge these days. I've been " ..
+                "meaning to visit a friend in Burning Steppes for the last several months, but haven't " ..
+                "had the chance.\n\nHis name is Mouton Flamestar. While he's not a member of the " ..
+                "Brotherhood, he's a trusted friend, and definitely trustworthy.\n\nWill you send him my " ..
+                "regards? You'll have to travel south, through the base of Blackrock Mountain. Just keep " ..
+                "heading south... you'll find him.\n\nThank you.",
+            rewardMoney = 700,
+        },
+        [28517] = {
+            description = "So this is it... our new home. I'm not sure if I'll ever feel like I truly " ..
+                "have a home again.\n\nWe mustn't be unappreciative of what the night elves have offered " ..
+                "us though. Their race is not one to throw out idle welcomes to just anyone. It is a true " ..
+                "testament to faith and generosity that they've taken us in.\n\nGwen and Greymane are in " ..
+                "the city proper, at the Howling Oak. You should stop by. Take the portal beneath the " ..
+                "tree north of us, then seek out the Howling Oak in the northern portion of the city.",
+            rewardMoney = 175,
+        },
         [28518] = {rewardMoney = 7500},
         [28519] = {rewardMoney = 7500},
+        [28520] = {
+            description = "We are ready to strike now, <name>.\n\nIf we take down Dark Pharaoh Tekahn, " ..
+                "the immortal colossi will fall and our armies will be able to march into Neferset " ..
+                "City.\n\nSeek him out and engage him without fear. I will make sure you're not alone " ..
+                "when it's time to bring him down.",
+            rewardChoices = {{65740, 1}, {65741, 1}, {65742, 1}, {65739, 1}},
+            rewardMoney = 270000,
+        },
         [28521] = {rewardMoney = 3500},
         [28522] = {rewardMoney = 14500},
+        [28523] = {rewardMoney = 4000},
+        [28524] = {
+            description = "Donova Snowden is a kind dwarf who frequents the nearby hot springs. She " ..
+                "claims to be studying their magical properties.\n\nShe is a kind person and has good " ..
+                "relations with our tribe. As the Winterfall have become more and more aggressive, she " ..
+                "has begun researching the cause of their corruption.\n\nI must keep my post here, but I " ..
+                "have made a basket of refreshments for her. Please take it to her for me and tell her we " ..
+                "await her next visit.",
+            rewardMoney = 3500,
+        },
+        [28525] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Williden Marshal at Marshal's Stand.\n\nThe Alliance needs " ..
+                "you to provide support to the Marshal Expeditions as they uncover the secrets of Un'Goro " ..
+                "Crater 's ancient beasts, unique flora, and powerful crystals. You can reach the crater " ..
+                "by departing western Tanaris and following the road all the way to Marshal's " ..
+                "Stand.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28526] = {
+            description = "All able bodied members of the Horde are hereby ordered to report Williden " ..
+                "Marshal at Marshal's Stand. You are to provide aid to the Marshal Expeditions' personnel " ..
+                "as they uncover the secrets of Un'Goro Crater. The Horde may be able to find a use for " ..
+                "the unique beasts and crystals populating the crater.\n\nYou can reach Un'Goro Crater by " ..
+                "taking the road from western Tanaris down into the crater and toward Marshal's " ..
+                "Stand.\n\nDestiny calls!",
+        },
+        [28527] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to " ..
+                "Windcaller Proudhorn at Cenarion Hold. You are to aid our Cenarion allies in their " ..
+                "battle to turn back Twilight's Hammer. Cho'Gall's minions must not be allowed to " ..
+                "dominate Silithus!\n\nYou can reach Silithus by taking the northwestern road out of " ..
+                "Un'Goro Crater.\n\nDestiny calls!",
+        },
+        [28528] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Windcaller Proudhorn at Cenarion Hold.\n\nOur Cenarion " ..
+                "Circle allies require your assistance to fight back against the Twilight's Hammer " ..
+                "onslaught. You can reach Silithus by taking the northwestern road out of the Un'Goro " ..
+                "Crater.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28529] = {
+            description = "The scrolls are vague and appear to be a piece of a much larger puzzle, but if " ..
+                "you are not mistaken, they seem to reveal some of the steps on the path to becoming a " ..
+                "demon hunter.\n\nThe dark oaths and rituals necessary for becoming a demon hunter are " ..
+                "frowned on by most of the night elves, so this is likely something they would be very " ..
+                "interested in keeping quiet.\n\nRanger Glynda Nal'Shea will know what to do with these " ..
+                "scrolls.",
+            rewardMoney = 1500,
+        },
         [28530] = {rewardMoney = 14500},
+        [28531] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Officer Jankie on the road into Desolace at Tethris " ..
+                "Aran.\n\nThe brave soldiers of Nijel's Point are beset by demons and the armies of the " ..
+                "Horde, and they need your help. To reach Desolace, travel south on the road from the " ..
+                "Charred Vale in the Stonetalon Mountains.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28533] = {
+            description = "The High Council is ready to decide on the war with the Neferset tribe.",
+            rewardMoney = 90000,
+        },
         [28534] = {rewardMoney = 1900},
         [28535] = {rewardMoney = 1900},
         [28536] = {rewardMoney = 4000},
         [28537] = {rewardMoney = 15000},
+        [28538] = {
+            description = "So you are to be our savior? Very well then, I will bond myself with you. " ..
+                "Through this bond I will be able to see through your eyes and communicate with you in " ..
+                "the field.\n\nAccording to the plans you brought to us, the Stormpike have enlisted the " ..
+                "aid of SI:7 at Sofera's Naze, to the north. SI:7 are comprised solely of humans - humans " ..
+                "that we are able to use to our benefit.\n\nTake my mirror and travel north. Engage in " ..
+                "combat with the SI:7 and bring them near death. Once they are injured, use the mirror.",
+        },
+        [28539] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Huntress Jalin at Stardust Spire in Ashenvale.\n\nThe " ..
+                "Horde's forces are poised to push into Stonetalon and they must be opposed! You can " ..
+                "reach Stardust Spire by traveling to the southern part of Ashenvale Forest, near the " ..
+                "border with Stonetalon.\n\nFor the glory and honor of the Alliance!",
+        },
         [28540] = {rewardMoney = 15000},
+        [28543] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Tenell Leafrunner at the Emerald Sanctuary.\n\nHis order " ..
+                "requires your help to redeem Felwood from the demonic influences that rule the forest. " ..
+                "Head north from Ashenvale and follow the road into Felwood until you reach the Emerald " ..
+                "Sanctuary.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28544] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Donova Snowden at Frostfire Hotsprings.\n\nShe requires " ..
+                "your help to overcome the threat of the Winterfall furbolg. To reach Winterspring, you " ..
+                "must travel east from northern Felwood and traverse Timbermaw Hold.\n\nFor the glory and " ..
+                "honor of the Alliance!",
+        },
+        [28545] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to Donova " ..
+                "Snowden at Frostfire Hot Springs. Her discoveries about the Winterfall furbolg may be " ..
+                "the key to dealing with this threat once and for all.\n\nTo reach the Frostfire Hot " ..
+                "Springs in Winterspring, you must travel east from northern Felwood and traverse " ..
+                "Timbermaw Hold.\n\nDestiny calls!",
+        },
+        [28550] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Commander Walpole at Stonetalon Pass in the Southern " ..
+                "Barrens.\n\nOur brave soldiers have made tremendous gains in the Barrens, but they have " ..
+                "paid a heavy price! Your efforts are needed to consolidate our gains. You can reach the " ..
+                "Southern Barrens from the Stonetalon Mountains by traveling southeast through Greatwood " ..
+                "Vale.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28551] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Dockmaster Lewis near Northwatch Hold.\n\nOur brave " ..
+                "soldiers have made tremendous gains in the Barrens, but they have paid a heavy price! " ..
+                "Your efforts are needed to consolidate our gains. You can reach the docks outside " ..
+                "Northwatch Hold by taking a boat from Booty Bay to Ratchet and traveling south along the " ..
+                "coast.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28552] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Calia Hastings at Theramore Isle.\n\nYou must aid SI:7's " ..
+                "Calia Hastings in uncovering the threats to Theramore, both within the city and beyond " ..
+                "its walls. You can reach Theramore Isle by taking the boat from Menethil or traveling " ..
+                "across the marsh from the Southern Barrens.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28553] = {
+            description = "I have one final dispatch to deliver to you, <name>. It comes from Dreadmaul " ..
+                "Hold, to the south, in the Blasted Lands.\n\nWarmatron Okrilla is waging battle against " ..
+                "the Alliance forces of Nethergarde Keep, and she needs the assistance of a stout " ..
+                "<class>. You immediately sprung to mind.\n\nTravel south into the Blasted Lands, then " ..
+                "head west. Good luck, <name>.",
+            rewardMoney = 800,
+        },
+        [28556] = {
+            description = "We must break the fingers of the Stormpike if we are to stop their " ..
+                "incursion.\n\n<Cromush hands you a small package.>\n\nWithin this package are four " ..
+                "high-yield goblin explosives. You are to infiltrate each of the four fingers - Sofera's " ..
+                "Naze, Corrahn's Dagger, the Headland and Gavin's Naze - and plant a goblin pocket-nuke " ..
+                "at each.\n\nOnce you have done that - as well as all that Melisara asks of you - return " ..
+                "to me.",
+            rewardChoices = {{65683, 1}, {65703, 1}, {65721, 1}},
+        },
+        [28557] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to Adarrah " ..
+                "at the Thistleshrub Valley in Tanaris.\n\nAncient texts tell us that Uldum is home to " ..
+                "untold riches and treasures beyond compare. Go forth and claim these in the name of the " ..
+                "Horde!\n\nYou can reach Adarrah 's caravan by traveling to the southwestern part of " ..
+                "Tanaris and looking for her in Thistleshrub Valley.\n\nDestiny calls!",
+        },
+        [28558] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Adarrah at Thistleshrub Valley in Tanaris.\n\nBe one of " ..
+                "the first to enter glorious Uldum and claim its treasures in honor of the " ..
+                "Alliance!\n\nYou can reach Adarrah 's caravan by traveling to the western reaches of " ..
+                "Tanaris.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28559] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Vorkhan the Elekk Herder at Kessel's Crossing.\n\nThe " ..
+                "people of Bloodmyst need your help to deal with treacherous blood elves and dangerous " ..
+                "creatures loose on the island. You can reach Kessel's Crossing on Bloodmyst Isle by " ..
+                "taking the bridge north from Azuremyst Isle.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28560] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Arcanist " ..
+                "Vandril at Tranquillien in the Ghostlands.\n\nYour help is needed to turn back the " ..
+                "numberless Scourge invaders and secure the help of the Forsaken in fighting our common " ..
+                "enemy.\n\nTo reach Tranquillien, follow the road south from Fairbreeze Square and into " ..
+                "the Ghostlands.\n\nDestiny calls!",
+        },
+        [28561] = {
+            description = "As soon as we make our move west in order to attack Neferset City, the enemy " ..
+                "will strike us from the east, where we'll be weak.\n\nNahom will be the first to fall, " ..
+                "and if it does, Ramkahen will soon follow.\n\nA small detachment is there " ..
+                "already.\n\nGet a briefing from them. I want you to make sure that they hold Nahom until " ..
+                "I can send more troops there.",
+            rewardMoney = 90000,
+        },
+        [28562] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Lieutenant Horatio Laine at the Jansen Stead.\n\nWestfall " ..
+                "has been overrun by beggars and transients, leading to a massive increase in criminal " ..
+                "activity. Your help is needed to restore order to the populace. You can reach the Jansen " ..
+                "Stead in Westfall by traveling west from Elwynn Forest.\n\nFor the glory and honor of " ..
+                "the Alliance!",
+        },
+        [28563] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report Watch Captain Parker at Tower Watch in the Redridge " ..
+                "Mountains.\n\nCaptain Parker's forces have come under attack from marauding gnolls and " ..
+                "orcs. The people of Lakewood are in peril and your aid is needed to safeguard them. " ..
+                "Travel east from the border of Elwynn Forest and into the Three Corners area of Redridge " ..
+                "to reach Tower Watch.\n\nFor the glory and honor of the Alliance!",
+            rewardChoices = {{60688, 1}, {60689, 1}, {60690, 1}, {60691, 1}},
+            rewardMoney = 700,
+        },
+        [28564] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Commander Althea Ebonlocke in Darkshire.\n\nThe " ..
+                "commander's watchmen are stretched thin defending against marauding wolves and bands of " ..
+                "wild worgen. They cannot hold out for long without your help. You can reach Darkshire in " ..
+                "Duskwood by following the road south at the border between Elwynn Forest and the " ..
+                "Redridge Mountains.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28565] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Mountaineer Rharen at Dun Algaz.\n\nIn the wake of the " ..
+                "cataclysm's destruction, Wetlands has become overrun with wild beasts, orcish raiders, " ..
+                "and savage gnolls! To reach the Wetlands, you must travel north from Loch Modan through " ..
+                "the dwarven hold of Dun Algaz.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28566] = {
+            description = "<Melisara's image appears before you.>\n\nThe Stormpike forward camp sits atop " ..
+                "Corrahn's Dagger, west of Sofera's Naze. You must enter the camp and slaughter every " ..
+                "dwarf that you see. They must be taught what it means to fear and there is no finer " ..
+                "lesson than absolute decimation.\n\nNo survivors, <name>. Even their captain - " ..
+                "especially their captain - must die.\n\nI will be in contact.",
+        },
+        [28567] = {
+            description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
+                "the Alliance are to report to Pilot Hammerfoot at South Gate Outpost.\n\nThe destruction " ..
+                "of the Stonewrought Dam and the resurgence of the kobolds and troggs has the " ..
+                "mountaineers stretched thin. Reinforcements are desperately needed! Travel east through " ..
+                "South Gate Pass from eastern Dun Morogh to reach South Gate Outpost.\n\nFor the glory " ..
+                "and honor of the Alliance!",
+        },
+        [28568] = {
+            description = "All able-bodied members of the Horde are hereby ordered to report to Grand " ..
+                "Executor Mortuus at Forsaken High Command in Silverpine Forest.\n\nNow, more than ever, " ..
+                "your help is needed in routing the enemy infestation of the region and conquering the " ..
+                "port of Gilneas!\n\nTo reach Forsaken High Command you must travel south through " ..
+                "Tirisfal Glades and enter Silverpine Forest. From there, follow the road south until you " ..
+                "reach Forsaken High Command.\n\nDestiny calls!",
+        },
+        [28569] = {
+            description = "I've heard stories about a road to the Swamp of Sorrows. Mysterious tales of a " ..
+                "meandering mountain pathway that completely bypasses Redridge and poops you right out " ..
+                "into Bogpaddle!\n\nIf you run out of things to do, I suppose you'll have to leave. And " ..
+                "we'll all be sad. When you do leave, talk to Sharon Boomgetter in the southeastern " ..
+                "corner of the Steppes. She'll give you a ride.\n\n< Oralius tilts his head, as if " ..
+                "listening to something.>\n\nWinky? WINKY! NO!",
+            rewardMoney = 800,
+        },
         [28609] = {rewardMoney = 4000},
         [28610] = {rewardMoney = 7500},
         [28618] = {rewardMoney = 4000},
@@ -26366,6 +26936,14 @@ ns.Overrides.wowhead = {
         [41098] = {spawns = {[4815] = {{58.2, 49}, {60.2, 59.4}}}},
         [44490] = {spawns = {[5145] = {{69.6, 34.4}, {69.6, 34.6}}}, zoneID = 5145},
         [45610] = {spawns = {[130] = {{52, 66.4}}}, zoneID = 130},
+        [48533] = {
+            spawns = {
+                [5042] = {
+                    {61.4, 29.2}, {61.6, 29.2}, {64.2, 15.2}, {66, 28}, {67, 24.4}, {67, 24.6}, {68, 21.4},
+                    {68.2, 21.6},
+                },
+            },
+        },
     },
     objects = {
         [207381] = {
