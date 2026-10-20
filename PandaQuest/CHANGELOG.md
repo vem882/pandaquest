@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.192] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,766 quests, 24 NPCs, 1 object
+- quest 11014 - Enter the Taskmaster - updated
+- quest 24469 - Hold the Line! - updated
+- quest 27724 - Hero's Call: Vashj'ir! - updated
+- quest 27725 - Quel'Danil Lodge - updated
+- quest 27726 - Hero's Call: Mount Hyjal! - updated
+- quest 27727 - Hero's Call: Deepholm! - updated
+- quest 27729 - Once More, With Eeling - updated
+- quest 27733 - The Good Ol' Switcheroo - updated
+- quest 27737 - By Fire Be Saved! - updated
+- quest 27738 - The Pit of Scales - updated
+- quest 27739 - The Gnoll King - updated
+- quest 27740 - Baba Bogbrew - updated
+- quest 27742 - A Little on the Side - updated
+- quest 27743 - While We're Here - updated
+- quest 27744 - Rune Ruination - updated
+- quest 27745 - A Fiery Reunion - updated
+- quest 27746 - Empire of Dirt - updated
+- quest 27747 - Total War - updated
+- quest 27748 - Fortune and Glory - updated
+- quest 27750 - War Forage - updated
+- quest - and 46 more quests updated
+
 ## [0.2.191] - 2026-10-20
 
 Data from the PandaQuest portal.
