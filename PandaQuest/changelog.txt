@@ -2,6 +2,30 @@ PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
 
+0.2.193
+- database - Wowhead data as the PandaQuest portal read it: 5,835 quests, 24 NPCs, 1 object
+- quest 27803 - Welcome Relief - updated
+- quest 27804 - The Only Homes We Have - updated
+- quest 27805 - Small Comforts - updated
+- quest 27806 - Honorable Bearing - updated
+- quest 27807 - Clan Mullan - updated
+- quest 27808 - Stubborn as a Doyle - updated
+- quest 27809 - Firebeard Bellows - updated
+- quest 27810 - The Fighting Spirit - updated
+- quest 27811 - The Scent of Battle - updated
+- quest 27812 - The Loyalty of Clan Mullan - updated
+- quest 27813 - Death Worthy of a Dragonmaw - updated
+- quest 27814 - Anything We Can Get - updated
+- quest 27815 - Somethin' for the Boys - updated
+- quest 27816 - Personal Request - updated
+- quest 27817 - Dropping the Hammer - updated
+- quest 27818 - Slithering Signs - updated
+- quest 27821 - Orcs and Humans - updated
+- quest 27822 - Lumbering Oafs - updated
+- quest 27823 - A Dwarf's Got Needs - updated
+- quest 27824 - The Good Stuff - updated
+- quest - and 49 more quests updated
+
 0.2.192
 - database - Wowhead data as the PandaQuest portal read it: 5,766 quests, 24 NPCs, 1 object
 - quest 11014 - Enter the Taskmaster - updated

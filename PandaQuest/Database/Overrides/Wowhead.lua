@@ -21392,6 +21392,581 @@ ns.Overrides.wowhead = {
             rewardChoices = {{63715, 1}, {63716, 1}, {63717, 1}},
             rewardMoney = 188000,
         },
+        [27803] = {
+            description = "I've got boys formin' defensive lines on all sides of the town, keepin' back " ..
+                "the elementals streaming from the torn ground. They're good lads and they've been " ..
+                "holdin' firm, but even the sturdiest dwarf tires eventually.\n\nThey're split into " ..
+                "shifts: one hour of rest for every hour on the line. Best I can get'm with the men we " ..
+                "have.\n\nIf you want to be helpin', pick a line and take up a shift. Give some of my " ..
+                "boys a welcome breather. Report back in once you've killed several of the elementals.",
+            rewardMoney = 90000,
+        },
+        [27804] = {
+            description = "We've already been pushed back farther than I'd hoped, but I'm not about to " ..
+                "give up our homes to these mongrels. They may burn them, pillage them, and spit on the " ..
+                "rubbled remains, but we'll still fight to take them back.\n\nThat being said, I rather " ..
+                "like them not burnt. I have the boys running buckets from the well to try to keep the " ..
+                "fire down. If you'd join them, they can help out by tossing you buckets so you don't " ..
+                "have to make the runs.",
+            rewardMoney = 90000,
+        },
+        [27805] = {
+            description = "You're the new face that's meant to be helping Keegan out I take it? Pleasure " ..
+                "to meet you. Maybe you can lend a favor or two more to the troubled Wildhammer that have " ..
+                "made refuge here.\n\nWe were all forced to retreat to this building quickly, and some of " ..
+                "us left behind things of great value in our destroyed homes nearby. Would you mind " ..
+                "bringing them back after you go out there? You would bring happiness to some very " ..
+                "troubled souls.",
+            rewardChoices = {{63878, 1}, {63879, 1}, {63880, 1}, {63881, 1}},
+            rewardMoney = 90000,
+        },
+        [27806] = {
+            description = "Iain, my second in command, bore the body of one of our fallen heroes to the " ..
+                "cathedral to the west. He's the man I've put in charge of reforming a wing of gryphon " ..
+                "riders from whatever scattered forces he can find. I would like you to help him.\n\nI " ..
+                "should impress upon you the urgency of this task. We will not be able to hold here " ..
+                "forever; the Twilight's Hammer or the Dragonmaw orcs will eventually overwhelm us. " ..
+                "Putting together an active gryphon wing may be our only hope for surviving these " ..
+                "conflicts.",
+            rewardMoney = 22500,
+        },
+        [27807] = {
+            description = "If we're going to pull a full gryphon wing back together, we're going to need " ..
+                "to move fast to gather the survivors before they leave or get picked off. I've got a " ..
+                "bead on a few groups of riders that stuck together. I'm leavin' to find the Thundermar " ..
+                "riders and the Moore riders shortly.\n\nThe Mullans were heading up west to the Crucible " ..
+                "of Carnage last I saw. Go see if you can convince Duglas Mullan to join up with Keegan - " ..
+                "he should owe him a favor or three.",
+            rewardMoney = 45000,
+        },
+        [27808] = {
+            description = "The Doyle riders were last spotted convergin' in the trees to the south, on " ..
+                "the border of the Obsidian Forest. They're a stubborn bunch and are likely to take some " ..
+                "convincin' if they're going to join up with us.\n\nYour best bet with Keeland Doyle is " ..
+                "to tell'm Cailin Longfellow's taken up shelter with us back at the town. Keeland's got a " ..
+                "good soft spot for her and she just might be enough to convince him to drag all his boys " ..
+                "along.",
+            rewardMoney = 90000,
+        },
+        [27809] = {
+            description = "I also need ya to seek out Mackay and his men on the other side of the " ..
+                "Devouring Breach, at the Gorshak War Camp.\n\nThe Dragonmaw didn't survive the initial " ..
+                "onslaught, and Mackay's lookin' to ransack what he can of their camp to supply our " ..
+                "fight. There shouldn't be much convincin' necessary, but they'll likely want a hand " ..
+                "wrappin' things up there before they make their way back to Keegan.\n\nGive'm a boot in " ..
+                "the arse from ol' Iain if ya have to.",
+            rewardMoney = 45000,
+        },
+        [27810] = {
+            description = "Keegan wants the Mullans to take wing with'm eh? If there's a dwarf I'd fly " ..
+                "for, he'd be it. Still, I don't get why he'd be sendin' an outsider to be recruitin' me " ..
+                "- not right polite by my standards.\n\nI'm guessin' ya don't last 20 seconds with any of " ..
+                "my boys, at the bar or in the battlefield. Prove me wrong. Take one of'm down in a fight " ..
+                "and then I'll think about flyin' with ol' Keegan.",
+            rewardMoney = 90000,
+        },
+        [27811] = {
+            description = "Don't let Duglas fool you, the Mullans have been itchin' to take wing again, " ..
+                "and if there's anyone we'd do it for, it's Firebeard.\n\nWe left our gryphons in the " ..
+                "Highland Forest to the south to hunt and to get away from the sounds of battle for a " ..
+                "bit. They deserved a rest.\n\nIf you want us back in the air soon, you'd do well to help " ..
+                "us bring our gryphons back in.\n\nTake this piece of charred highland birch. We use it " ..
+                "during training - as soon as they smell it, they'll come straight back to us.",
+            rewardMoney = 90000,
+        },
+        [27812] = {
+            description = "Your point's made. Keegan can count on us. We'll meet'm back at town as soon " ..
+                "as all the boys are rallied up.\n\nYou're tough for not bein' a Wildhammer. Guess they " ..
+                "breed'm good where you come from too.\n\nStill, haven't seen ya drink yet. That'll be " ..
+                "the real test.",
+            rewardChoices = {{63871, 1}, {63872, 1}, {63873, 1}},
+            rewardMoney = 68000,
+        },
+        [27813] = {
+            description = "The Twilight sacked this town, killin' most of the Dragonmaw that lived in it. " ..
+                "A few survived though, and they're not right keen on us takin' liberties with their " ..
+                "supplies.\n\nNot that that matters much.\n\nWell, I'm not right keen on them attackin' " ..
+                "my boys. Kill'm off, chase'm out - I don't care, just get'm gone.",
+            rewardMoney = 90000,
+        },
+        [27814] = {
+            description = "Stay back and forge more weapons? Pah! A Forgehammer has ne'er been afraid of " ..
+                "battle! Who needs the safety of home to make weapons? Besides - there is oodles of raw " ..
+                "material out here. Those Dragonmaw weapons are worthless, but they can be smelted down " ..
+                "to make actual weapons. Bring me 8 Dragonmaw weapons so me daughter and I can forge real " ..
+                "weapons out of them.",
+            rewardMoney = 90000,
+        },
+        [27815] = {
+            description = "Cleaned up the camp and ran errands for Forgehammer? Not bad for a wee " ..
+                "<class>. Take these to Iain at Firebeard Cemetery, and he should reward you for a job " ..
+                "well done.",
+            rewardChoices = {{63865, 1}, {63866, 1}, {63867, 1}},
+            rewardMoney = 45000,
+        },
+        [27816] = {
+            description = "Shame about the Doyles. It's a fair miracle that as many of us made it out as " ..
+                "is though, so can't count it as much of a surprise.\n\nThose louts at Thundermar are " ..
+                "cowards. Even after tellin' them it was Keegan askin', they won't set foot outside of " ..
+                "their town. I did rope in the Moores though, so that's at least three clans' " ..
+                "worth.\n\nKeegan wanted to hear from ya personally when you returned. Go find'm in town.",
+            rewardMoney = 45000,
+        },
+        [27817] = {
+            description = "Thanks to you and Iain, we've got enough riders together that we can take the " ..
+                "fight back to the Twilight.\n\nWe're trained to fight while ridin', but a second rider " ..
+                "to handle the Stormhammer tends to be more efficient. I thought you might enjoy the " ..
+                "honor.\n\nPick your gryphon and join the fight. Best be quick about it though - we're " ..
+                "aimin' to clear every last one of those Twilight off of those floatin' rocks before the " ..
+                "hour's out.",
+            rewardChoices = {{63859, 1}, {63860, 1}, {63861, 1}},
+            rewardMoney = 180000,
+        },
+        [27818] = {
+            description = "I settled here well before Bogpaddle was founded, to brew my potions and find " ..
+                "some peace and quiet. I know this swamp like the back of my old, gnarly hand.\n\nThere's " ..
+                "been a change in the wildlife recently. Those winged snakes you may have seen in the " ..
+                "stagalbog are wind serpents, and they haven't been seen around here for ages.\n\nThey're " ..
+                "also prime for ingredients if they're the kind I'm thinking of. Be a dear and gather me " ..
+                "some of their hearts, will you?",
+            rewardMoney = 8000,
+        },
+        [27821] = {
+            description = "With war raging across the entire world, the last thing we need is a Horde " ..
+                "settlement right in our backyard. Redridge, Duskwood, even Elwynn itself are all a day's " ..
+                "march from here.\n\nWe've made the first strike, and I don't plan to give the Horde a " ..
+                "chance to catch their breath. So consider yourself deployed. Grab a weapon, join the " ..
+                "rest of the troops out in the Bloodmire, and start killing orcs.\n\nReport back here " ..
+                "after you've done some damage. I want you back alive...and that's an order. Dismissed!",
+            rewardMoney = 8000,
+        },
+        [27822] = {
+            description = "I want victory to be totally assured here. Having more resources isn't enough; " ..
+                "we need to make sure the enemy has nothing.\n\nStonard's forces depend on the lumber " ..
+                "gathered from the surrounding woods. The orcish peons that chop the lumber may not be " ..
+                "warriors, but they still know nothing but hate for humans.\n\nShow no mercy. I want " ..
+                "those peons killed and the supply of lumber to Stonard cut off completely.",
+            rewardChoices = {{64593, 1}, {64603, 1}, {64612, 1}},
+            rewardMoney = 8000,
+        },
+        [27823] = {
+            description = "I can appreciate a good diggin' as much as any other dwarf, don't get me " ..
+                "wrong. It's just that... well, we do so much diggin', and so little drinkin', that " ..
+                "sometimes I wonder if I should just hang up me shovel and head back to Ironforge.\n\nBut " ..
+                "not today. I've got some diggin' in me yet.\n\nThose Dark Iron dwarves at Hammertoe's " ..
+                "Digsite - just north of here - make some powerful fine beer, right here in the desert. " ..
+                "You think you could pick up a few for me?",
+            rewardMoney = 6500,
+        },
+        [27824] = {
+            description = "I've got a little proposition for you, if you're interested.\n\nThose Dark " ..
+                "Irons were here before Durdin and his crew arrived. That means that, once these titan " ..
+                "ruins opened up, the dark irons were the first ones in there, lootin' all the good " ..
+                "stuff. I'll bet they've still got those treasures locked up inside Angor Fortress, " ..
+                "northwest of here.\n\nYou've more than proven your ability to wallop a dwarf. Head on " ..
+                "into that fortress and wallop your way to titan treasure.\n\nI'd go with, but I'm drunk.",
+            rewardChoices = {{63164, 1}, {63165, 1}, {63166, 1}, {63167, 1}, {63168, 1}},
+            rewardMoney = 6500,
+        },
+        [27825] = {
+            description = "We're hard-up for supplies, stranger. With the black dragons raining " ..
+                "destruction on what would be our hunting grounds, we have no way to get food.\n\nThe " ..
+                "ogres to our southwest, however, have exactly what we need. Within their grotto you " ..
+                "should find plenty of meat and crafting supplies.\n\nThey may put up a fight. Be on your " ..
+                "guard.",
+            rewardMoney = 13500,
+        },
+        [27826] = {
+            description = "<Dr. Blam stares at the egg in awed silence, blinks a few times, then looks up " ..
+                "at you.>\n\nD... did you see that? Incredible! My titan thing idea worked! With your " ..
+                "help, of course.\n\nWe'll want to get this back to Rhea. She's not at Lethlor Ravine " ..
+                "anymore; it sounds like she blew her cover pretty well when she transformed into her " ..
+                "true form in front of all those whelps. She's now in the west, staying at an Alliance " ..
+                "camp called Dragon's Mouth.\n\nShe'll be waiting for you. And for that egg.",
+            rewardMoney = 3500,
+        },
+        [27827] = {
+            description = "In my haste to escape from Lethlor Ravine, I forgot to tie up one loose end: " ..
+                "Nyxondra. She's free, and she's sounded the alarm among the black dragonflight. Half the " ..
+                "flight is here in the western Badlands, combing for this egg.\n\nI'll take care of " ..
+                "hiding the egg. You're going to take care of some of the more troublesome dragons. And " ..
+                "you'll have help.\n\nTalk to Eric, over on the other side of camp. He and his brothers " ..
+                "will be joining you.",
+            rewardMoney = 700,
+        },
+        [27828] = {
+            description = "Before we get too crazy what with the dragon-killin', let me tell you a little " ..
+                "bit about how I fight.\n\n\"The Swift\" is what they call me, and here's why: I'll dash " ..
+                "straight into your enemies - helmet first, mind you - and stun 'em for a few seconds. I " ..
+                "also keep a few potions with me for tight spots.\n\nWhy don't we practice fightin' " ..
+                "together? Head out into the field, and try out my abilities.",
+        },
+        [27829] = {
+            description = "Hello, <name>. It looks like you four have had time to become " ..
+                "well-acquainted.\n\nI have my first assignment for you. Kalaran, an ancient black dragon " ..
+                "of considerable power, has joined in the hunt for the egg we are protecting. We need to " ..
+                "stop him before he gets too close.\n\nYou will find him and his minions at the Dustbowl, " ..
+                "northeast of Dragon's Mouth. Hunt him down and defeat him. You will likely need the help " ..
+                "of your new dwarven allies.",
+        },
+        [27830] = {
+            description = "The black dragonflight means business. It appears that they've taken over a " ..
+                "large portion of New Kargath, the large Horde settlement northwest of Dragon's Mouth. " ..
+                "Their troops are under the command of General Jirakka and his champion, Moldarr. They " ..
+                "must be stopped.\n\nWe dragons do not take part in the squabbles between Horde and " ..
+                "Alliance, but I do understand the risk you take in entering New Kargath. Please, " ..
+                "heroes... be careful.",
+        },
+        [27831] = {
+            description = "My greatest regret is the treatment that we - no, I - gave to Nyxondra. I " ..
+                "forced her to lay eggs, then I performed experiments on them. Over, and over, and over " ..
+                "again.\n\nEven as a mother myself, I can only imagine her sorrow.\n\nNo... I mustn't be " ..
+                "weak. Our work is, after all, for the benefit of future generations of black dragons. " ..
+                "Her sacrifice was necessary.\n\nShe circles the Ruins of Kargath, northwest of New " ..
+                "Kargath, insane with fury. Please, heroes... put her out of her misery.",
+        },
+        [27832] = {
+            description = "With the major black dragons out of the Badlands, it is now safe to move the " ..
+                "egg again. You will find me on a small plateau, north of New Kargath.\n\nCome and find " ..
+                "me.",
+        },
+        [27833] = {
+            description = "I'd say we have a dragon problem, but it seems like they're a little more " ..
+                "interested in New Kargath than they are in our small encampment. Nevertheless, I've got " ..
+                "top men focused on keeping the dragons at bay.\n\nOne problem that has gone unchecked, " ..
+                "however, is the ogre camp to our southwest. A small army of combatants seems to have " ..
+                "appeared outside of their hovel.\n\nWe can't sit and wait for them to flank us, soldier. " ..
+                "Thin their ranks before they thin ours.",
+            rewardChoices = {{63195, 1}, {63196, 1}, {63197, 1}, {63198, 1}, {63199, 1}},
+        },
+        [27834] = {
+            description = "Before I start droppin' arrows on those dragons, I'd better introduce " ..
+                "myself.\n\nI'm Baelog, the muscle of this group. My sword bites like a crocolisk, and my " ..
+                "arrows sing like banshees. I tend to wear down quickly, however, and can't take as much " ..
+                "punishment as either of my two brothers.\n\nYou give the word, and I'll send an aimed " ..
+                "shot right through your target's heart. I can also cheer my brothers on, sending 'em " ..
+                "into a battle-fueled frenzy.\n\nWhy don't we go try fighting together?",
+        },
+        [27835] = {
+            description = "You may not have noticed, but I'm pretty big, as far as dwarves go.\n\nI make " ..
+                "sure that my two brothers here don't get into too much trouble. They're small, and they " ..
+                "don't have a big shield like me. I'm big, and I can handle a few monsters hitting me! " ..
+                "Plus, if I'm careful, I can usually get them to hit my shield instead!\n\nI can protect " ..
+                "you, too. Come on, let's go practice for a bit. I'll make sure the enemies attack me, " ..
+                "and not you.",
+        },
+        [27836] = {
+            description = "Slaying the foul creatures that plague the river will not be enough, " ..
+                "<name>.\n\nA new generation of these monstrosities already threatens to spawn within our " ..
+                "holy waters.\n\nSeek their foul eggs and destroy them.",
+            rewardMoney = 86000,
+        },
+        [27837] = {
+            description = "Shortly after Uldum 's protective barriers fell, the Vir'naal river became " ..
+                "afflicted with a terrible corruption.\n\nWhether it was brought here maliciously or " ..
+                "accidentally is not of great significance.\n\nThe result is the same. As the river " ..
+                "becomes clouded so does our ability to peer into what the future holds for us.\n\nLook " ..
+                "outside, <class>. These foul creatures were never meant to live in the pristine waters " ..
+                "of our river.\n\nSlay them so that the river may grant us visions once again.",
+            rewardChoices = {{65825, 1}, {65826, 1}, {65827, 1}},
+            rewardMoney = 86000,
+        },
+        [27838] = {
+            description = "You might have dealt with the symptoms of our problem, <name>. But I've been " ..
+                "studying these foul beasts and the eggs are not laid here by them.\n\nThe stream from " ..
+                "the current carries their eggs to the dam, but whatever is laying them will be found " ..
+                "upstream.\n\nGo northeast, to the river's main source, and deal with the root of the " ..
+                "corruption.",
+            rewardChoices = {{65822, 1}, {65823, 1}, {65824, 1}},
+            rewardMoney = 86000,
+        },
+        [27839] = {
+            description = "Though we aren't formally at war yet, the Neferset do not hesitate to imprison " ..
+                "or kill all who trespass upon their territories.\n\nKing Phaoris refuses to reciprocate, " ..
+                "even when they use our lands to smuggle stolen relics from the tombs of our " ..
+                "ancestors.\n\nMy scouts report that the Neferset are about to move a major shipment of " ..
+                "looted weapons south of here.\n\nI've instructed the laborers you recruited to assist " ..
+                "you. Call upon them with this horn when you find the smugglers and recover the weapons.",
+            rewardChoices = {{65834, 1}, {65835, 1}, {65836, 1}},
+            rewardMoney = 86000,
+        },
+        [27840] = {
+            description = "The lost ones who live in the Fallow Sanctuary look as we look, but they are " ..
+                "monsters... driven mad by the rigors of our journey to Azeroth. Once our brethren, they " ..
+                "now live in the Fallow Sanctuary to the west, catching or killing any who wander " ..
+                "near.\n\nAnd they have stolen something sacred to us-- draenethyst crystals.\n\nWe lack " ..
+                "the force to enter the Fallow Sanctuary and reclaim our stolen draenethyst from among " ..
+                "their huts and campfires, but without those crystals... we too may lose our way.",
+            rewardMoney = 8000,
+        },
+        [27842] = {
+            description = "I miss the days when legions of powerful ogres marched by the Horde's side " ..
+                "into battle, the pathetic Alliance cowering at their ferocity. Perhaps those days will " ..
+                "return before I am gone to the ancestors.\n\nHowever, that is not the case now. An ogre " ..
+                "magi, Glubtok, has joined forces with the despicable Defias Brotherhood and acts as " ..
+                "Foreman over their mining operations. The pathetic fool! End his life for me, and for " ..
+                "the spirit and glory of the Horde!",
+            rewardMoney = 3300,
+        },
+        [27843] = {
+            description = "Just killing ogres won't be enough. The ogres themselves are being summoned " ..
+                "onto the battlefield far too rapidly.\n\nI need you to go far behind the enemy line and " ..
+                "seek out their summoners. The orcs are using warlocks to bring their reinforcements " ..
+                "in.\n\nCut down the warlocks, and the portals should close. There aren't many of them; a " ..
+                "quick, surgical strike should cripple the enemy.",
+            rewardMoney = 8000,
+        },
+        [27844] = {
+            description = "The goblins you'll find working with the Defias are officially traitors to the " ..
+                "Bilgewater Cartel, the Shattered Hand, and the Horde itself!\n\nI haven't yet been " ..
+                "initiated into the Shattered Hand, so my loyalties lie strongly with my people. Helix " ..
+                "Gearbreaker apparently has no time for such associations, and works on building a mast " ..
+                "for the Defias Juggernaut. On behalf of Miss Mayhem and myself, would you kindly " ..
+                "'dispose' of Helix?",
+            rewardMoney = 3300,
+        },
+        [27845] = {
+            description = "We've taken more than we've lost, but we've still lost too much. Too many " ..
+                "brave have given their lives for the Alliance out there. I want to make sure they're " ..
+                "given proper honors no matter how fierce this battle gets.\n\nTake these flags out with " ..
+                "you and place one on any fallen soldier you see. The protective wards on them won't " ..
+                "offer much protection against any defilement, but it's better than nothing. I'll be able " ..
+                "to better judge how many we've lost from a distance, as well.",
+            rewardMoney = 8000,
+        },
+        [27847] = {
+            description = "These prototypes are going to change the face of Horde warfare when I perfect " ..
+                "them! The issue I've been having is that their power sources don't allow for complicated " ..
+                "combat maneuvers or large frames, both highly desired traits when it comes to fighting " ..
+                "Alliance.\n\nThe Defias, with some help from goblin traitors like Helix, have almost " ..
+                "completed the Foe Reaper 5000, a massive golem that will actually work!\n\nWe can't have " ..
+                "that going public, can we? I'll lose customers!",
+            rewardMoney = 3300,
+        },
+        [27848] = {
+            description = "The Defias plan to finish their Juggernaut and use it to lay waste to " ..
+                "Stormwind. It is a noble cause any true orc warrior would embrace without a single " ..
+                "thought!\n\nVanessa's fault lies in her execution of their plan. The ship is poorly " ..
+                "constructed, the crew practically untrained, and, worst of all, there's a worgen in " ..
+                "their midst!\n\nHis name is Admiral Ripsnarl, and he must be mercilessly slain in the " ..
+                "name of the Warchief. Lok'tar ogar!",
+            rewardMoney = 3300,
+        },
+        [27849] = {
+            description = "This is it, <name>. We've made our final push into Stonard itself.\n\nI " ..
+                "shouldn't have to remind anyone, but I'll say it anyway: We're not orcs, and we're not " ..
+                "going to become them out of revenge or spite. Stonard will not be burned to the ground " ..
+                "for us to dance on the ashes.\n\nNo, I want this done right. I want this surgical. Hold " ..
+                "your head high and strike down any orc that picks up a weapon.",
+            rewardChoices = {{64595, 1}, {64605, 1}, {64614, 1}, {64621, 1}, {64623, 1}},
+            rewardMoney = 24500,
+        },
+        [27850] = {
+            description = "The Shattered Hand has laid mostly quiet for years now.\n\nNo more!\n\nYou " ..
+                "will be the instrument of our rebirth, <name>. Slay the Defias Kingpin and commandeer " ..
+                "her ship for the Horde! We will outfit it as a proper orc warship and use it to finally " ..
+                "lay waste to Stormwind\n\nAny survivors will spread word of our unstoppable power across " ..
+                "all of Azeroth, and all will tremble before our might!\n\nGo now, VanCleef's death will " ..
+                "be your greatest triumph yet hero.",
+            rewardChoices = {{66019, 1}, {66028, 1}, {66037, 1}},
+            rewardMoney = 3300,
+        },
+        [27851] = {
+            description = "We may not be flattening Stonard into dust, but I don't want to have to go in " ..
+                "there a second time.\n\nI want you to gather any supplies you see in the town while " ..
+                "you're there. Without food, they won't have any fighters after more than a day.\n\nThere " ..
+                "should be crates scattered all over town.",
+            rewardMoney = 24500,
+        },
+        [27852] = {
+            description = "War rages in the swamp, <name>. Vicious humans have settled north of the city " ..
+                "and brought an army to our doorstep.\n\nThere is nothing in this swamp for them. Their " ..
+                "sole reason for coming here is to attack us, unprovoked. We will not give them the " ..
+                "pleasure of victory!\n\nWe are undermanned and I need every able orc to take to the " ..
+                "battlefield. Go, and slay as many humans as you can.",
+            rewardMoney = 8000,
+        },
+        [27853] = {
+            description = "We are outnumbered by the Alliance. In their fear they send an army to crush a " ..
+                "single settlement. But we will not give!\n\nWithout resources, their soldiers will be at " ..
+                "a disadvantage. Human peasants busy themselves in the woods outside Marshtide Watch, " ..
+                "gathering lumber to rebuild their crumbling walls.\n\nDeny them the wood, and their " ..
+                "lives.",
+            rewardChoices = {{64624, 1}, {64628, 1}, {64631, 1}},
+            rewardMoney = 8000,
+        },
+        [27854] = {
+            description = "We have suffered many losses, <name>. Dreadmaul Hold has sent ogres from the " ..
+                "Blasted Lands as reinforcements, but they can only send so many; the Alliance attacks " ..
+                "them as well, even as we speak.\n\nThe Alliance has countered our ogres with mounted " ..
+                "knights, a strategy that served them well in the Second War. We will need our strongest " ..
+                "warriors to turn the tide of battle!\n\nReturn to the Bloodmire, <name>, and bring down " ..
+                "those knights!",
+            rewardChoices = {{64625, 1}, {64629, 1}, {64632, 1}, {64634, 1}},
+            rewardMoney = 8000,
+        },
+        [27855] = {
+            description = "The Alliance has brought in their mages to summon more reinforcements directly " ..
+                "to the battlefield from beyond their fortress. This must be stopped!\n\nTheir numbers " ..
+                "are few, but a single portal can turn the tide of battle. Attack their mages and shut " ..
+                "off those portals!",
+            rewardMoney = 8000,
+        },
+        [27856] = {
+            description = "Many warriors have met death to bring us victory, <name>. The fate of a true " ..
+                "orc.\n\nI have seen the way the Alliance loots the bodies of our fallen, clutching at " ..
+                "our goods like packrats. They will not defile our fallen heroes on this field.\n\nTake " ..
+                "these wards with you to the Bloodmire. Place them on the bodies of our fallen warriors. " ..
+                "I will be watching, to see how many have fallen, and to honor their sacrifice. Let us " ..
+                "hope the spirits give us aid for our respect.",
+            rewardMoney = 8000,
+        },
+        [27857] = {
+            description = "The Alliance are at our walls!\n\nYour actions delayed them and weakened their " ..
+                "forces, <name>, but in the end we are outnumbered. This is our last stand. Victory or " ..
+                "death...\n\nFight with honor, <name>. They are within the walls as we speak. Drive the " ..
+                "human dogs from Stonard, for the Horde!",
+            rewardChoices = {{64626, 1}, {64630, 1}, {64633, 1}, {64635, 1}, {64636, 1}},
+            rewardMoney = 16500,
+        },
+        [27858] = {description = "Wait here. I will retrieve the egg."},
+        [27859] = {
+            objectivesText = {"Wait as Rhea retrieves the egg from the Hidden Clutch."},
+            rewardItems = {{63194, 1}},
+            rewardMoney = 20500,
+        },
+        [27860] = {
+            description = "When the Dark Portal closed many years ago, regret and fear seized many of us " ..
+                "who had come to these lands. In their despair, they cursed the name of the Light, and " ..
+                "sank into violence and hatred.\n\nThese fallen souls are now the Lost Ones, little more " ..
+                "than mindless monsters, attacking all who approach. They grow more corrupt by the day, " ..
+                "and as they die off, they have begun to kidnap from the Harborage..\n\nThey are beyond " ..
+                "help, <name>. Their suffering must end. Will you put them from their misery?",
+            rewardMoney = 8000,
+        },
+        [27863] = {
+            description = "I'll tell you what, buddy, this place is a far cry from the rolling plains of " ..
+                "Nagrand or the bloodbowl in Zul'Drak, but hey, I go where the gold's at! So welcome to " ..
+                "Twi-Hi, pal.\n\nYou're new to this pit, so let me set you straight. I'm the fight " ..
+                "promoter and this feisty troll next to me is Wodin, my bodyguard. You're the " ..
+                "entertainment. When you wanna fight, let me know and I'll set up the match.\n\nIf you're " ..
+                "ready and got a group of friends with you, we can start! What do you say?",
+            rewardMoney = 282000,
+        },
+        [27864] = {
+            description = "You're going to love this one! The Dragonmaw heard you were entering the arena " ..
+                "and they're determined to make sure you don't leave it.\n\nTime for some good ol' <race> " ..
+                "on orc action! Let me know when you're ready to do this!",
+            rewardMoney = 282000,
+        },
+        [27865] = {
+            description = "You're going to love this one! The Wildhammer heard you were entering the " ..
+                "arena and they're determined to make sure you don't leave it.\n\nTime for some good ol' " ..
+                "<race> on dwarf action! Let me know when you're ready to do this!",
+            rewardMoney = 282000,
+        },
+        [27866] = {
+            description = "Grim and gory, this next match is sure to have the crowd groanin' one way or " ..
+                "another. Calder Gray has been gathering the bodyparts of defeated challengers and " ..
+                "building the perfect champion.\n\nThis thing is the ultimate cobbled collaboration of " ..
+                "corpsified combatants. A magnificent mashup of mangled monstrosities. Are you ready to " ..
+                "get messy?! Cause I am! Let me know when you're ready so we can get this thing started!",
+            rewardMoney = 282000,
+        },
+        [27867] = {
+            description = "You're going to have your hands full with this one, pal. We've got a seasoned " ..
+                "gentleman warrior here! He hails from Gilneas, and he's out to prove that he's the best " ..
+                "warrior this side of Azeroth.\n\nYou better pull up those boots and zip up those pants, " ..
+                "because it's going to get downright feral up in here. Give me the word when you're down " ..
+                "for some punishment.",
+            rewardMoney = 282000,
+        },
+        [27868] = {
+            description = "We've got someone you'll really love to hate this time around. I wasn't sure " ..
+                "at first if I should let him into the pit, but a fight's a fight! And who am I to turn " ..
+                "down some guaranteed cash?!\n\nThis guy hails from the Twilight Citadel itself, and " ..
+                "comes toting a toasty punch. Better move fast and watch your back! Just give me the word " ..
+                "when you're ready for some action.",
+            rewardChoices = {{63787, 1}, {63788, 1}, {63789, 1}, {63790, 1}, {63791, 1}, {63792, 1}},
+            rewardMoney = 376000,
+        },
+        [27869] = {
+            description = "These serpents must be from the Temple of Atal'Hakkar. I already had a " ..
+                "hint...\n\nNot a few days ago, I had a visitor stop by and ask me to keep an eye out for " ..
+                "such things. An elf by the name of Itharius. I'm sure he didn't think I could see " ..
+                "through his form... he was a green dragon in disguise, come here to help his fallen " ..
+                "brothers no doubt.\n\nHe may very well be on to something. Itharius left for the temple " ..
+                "itself. Perhaps you'd better go look for him there. Dark things are afoot.",
+            rewardMoney = 4000,
+        },
+        [27870] = {
+            description = "Regardless of whether you assist me within the temple, your people must be " ..
+                "told of what is brewing here.\n\nNorth of the temple, humans of your mortal Alliance " ..
+                "have built what they call Marshtide Watch. They war with the Horde across the swamp, a " ..
+                "raging conflict that I forsee only worsening.\n\nIt is not my role to interfere in " ..
+                "mortal affairs, <name>. I simply ask you bring warning to your people of what lurks " ..
+                "within the temple.",
+            rewardMoney = 4000,
+        },
+        [27871] = {
+            description = "Regardless of whether you assist me within the temple, your people must be " ..
+                "told of what is brewing here.\n\nSouthwest of the temple is the Horde town of Stonard. " ..
+                "The orcs there wage war with the new human arrivals to the swamp, a raging conflict that " ..
+                "I forsee only worsening.\n\nIt is not my role to interfere in mortal affairs, <name>. I " ..
+                "simply ask you bring warning to your people of what lurks within the temple.",
+            rewardMoney = 4000,
+        },
+        [27874] = {
+            description = "Your expertise is needed elsewhere, <name>.\n\nJust southwest of the World " ..
+                "Tree you will find the Shrine of Aviana, home to the Druids of the Talon. Aviana, the " ..
+                "matron of all winged creatures, gave her life for this world ten thousand years " ..
+                "ago.\n\nI sense her shrine is being threatened, as are the druids who guard it. Seek out " ..
+                "Choluna, one of the wisest of the winged druids, deep within the shrine.",
+            rewardMoney = 39000,
+        },
+        [27875] = {
+            description = "I have worked for years to try to cure the affliction of the Broken. The foul " ..
+                "energies that corrupted them did more than twist their bodies; it took the comfort of " ..
+                "the Light from them. They cannot feel its warmth.\n\nI cannot let Magtoor pass on in " ..
+                "darkness, <name>. Before he worsened, I was studying prayerblossom, a flower that grows " ..
+                "in the shifting mire. It grows hardy in even the darkest shade. I beg of you, gather " ..
+                "these flowers for me, for Magtoor's sake.",
+            rewardMoney = 8500,
+        },
+        [27876] = {
+            description = "The Shifting Mire takes its name from a unique phenomenon. By some force, the " ..
+                "extremely fine silt will collect, and move on its own accord, travelling as if " ..
+                "alive.\n\nI originally worried this was some corruptive force, but my studies have shown " ..
+                "the opposite; whatever energy invigorates this soil is positive in nature. Perhaps such " ..
+                "vibrant life can be imparted onto the Broken to reawaken what they once were.\n\nThe " ..
+                "silt may not take kindly to being collected, <name>. But please, help gather it.",
+            rewardMoney = 8500,
+        },
+        [27877] = {
+            description = "I need your help in a little project I'm working on, <name>. It falls into a " ..
+                "realm I like to call \"defensive archaeology\".\n\nI like to bury non-magical items in " ..
+                "conspicuous places to fool those Alliance idiots into thinking they've found something " ..
+                "valuable.\n\nHmm... Dark Iron dwarves wander Hammertoe's Digsite and Angor Fortress, to " ..
+                "the north. Bring their heads back to me. Yes, that's right, their heads.\n\nOnce the " ..
+                "flesh is stripped, we can use those skulls to interfere with the dwarves' work.",
+            rewardMoney = 6500,
+        },
+        [27878] = {
+            description = "I've got a little proposition for you, if you're interested.\n\nThe Dark Iron " ..
+                "dwarves were here long before we arrived. That means that, once these titan ruins opened " ..
+                "up, the Dark Irons were the first ones in there, looting all the choice items. I'll bet " ..
+                "they've still got those treasures locked up inside Angor Fortress, northwest of " ..
+                "here.\n\nI want you to find such a treasure... then steal it.",
+            rewardChoices = {{63169, 1}, {63170, 1}, {63171, 1}, {63172, 1}, {63173, 1}},
+            rewardMoney = 6500,
+        },
+        [27879] = {
+            description = "We're hard-up for supplies, stranger. With the black dragons raining " ..
+                "destruction on our hunting grounds, we have no way to get food.\n\nThe ogres to our " ..
+                "south, however, have exactly what we need. Within their grotto you should find plenty of " ..
+                "meat and crafting supplies.\n\nThey may put up a fight. Be on your guard.",
+            rewardMoney = 13500,
+        },
         [27989] = {rewardMoney = 6500},
         [27994] = {rewardMoney = 6500},
         [27995] = {rewardMoney = 6500},
