@@ -1070,6 +1070,11 @@ class TheChangelogMoves(unittest.TestCase):
             elif line.startswith("- "):
                 lines += 1
                 self.assertLessEqual(len(line), 100, "keep each change to one short line: " + line)
+            elif line.startswith(" ") and line.strip():
+                # What changed for the line above: "  - coordinates: 3 spawn points added in Badlands".
+                self.assertTrue(line.startswith("  - "), "an indented line is '  - <what changed>': " + line)
+                self.assertTrue(lines, "an indented line belongs under a change line: " + line)
+                self.assertLessEqual(len(line), 100, "keep each change to one short line: " + line)
         self.assertTrue(versions, "no version section in changelog.txt")
         self.assertEqual(versions, sorted(versions, reverse=True), "newest version first")
         self.assertEqual(len(versions), len(set(versions)), "a version appears once")
@@ -1079,6 +1084,75 @@ class TheChangelogMoves(unittest.TestCase):
         self.assertEqual(curseforge.txt_section(text, "0.2.121"), "- a - added\n- b - updated")
         self.assertEqual(curseforge.txt_section(text, "0.2.119"), "- c - added")
         self.assertEqual(curseforge.txt_section(text, "0.2.5"), "")
+
+    def test_what_changed_stays_under_its_line(self) -> None:
+        """The detail lines keep their indent, so markdown nests them under their change."""
+        text = "0.2.130\n- quest 1 - A - updated\n  - reward money added (94s)\n- npc 2 - B - added\n\n0.2.129\n"
+        self.assertEqual(curseforge.txt_section(text, "0.2.130"),
+                         "- quest 1 - A - updated\n  - reward money added (94s)\n- npc 2 - B - added")
+
+    @staticmethod
+    def big_section(count: int) -> str:
+        lines = ["- database - Wowhead data as the PandaQuest portal read it: 6,046 quests"]
+        for i in range(count):
+            lines += ["- quest %d - Quest %d - updated" % (i, i), "  - description added", "  - reward money added (9s)"]
+        lines.append("- npc 7 - Seven - added")
+        return "\n".join(lines)
+
+    def test_a_long_changelog_becomes_a_summary_with_links(self) -> None:
+        short = self.big_section(3)
+        self.assertEqual(curseforge.fit_changelog(short, "0.2.130", "v0.2.130", 30000), short)
+        long = self.big_section(2000)
+        self.assertGreater(len(long), 30000)
+        text = curseforge.fit_changelog(long, "0.2.130", "v0.2.130", 30000)
+        self.assertLessEqual(len(text), 30000)
+        self.assertIn("- database - Wowhead data as the PandaQuest portal read it: 6,046 quests", text)
+        self.assertIn("- quest - 2,000 quests updated", text)
+        self.assertIn("- npc - 1 NPC added", text)
+        self.assertIn("2,001 changes, 4,000 lines saying what changed", text)
+        self.assertIn("https://github.com/vem882/pandaquest/releases/tag/v0.2.130", text)
+        self.assertIn("https://raw.githubusercontent.com/vem882/pandaquest/v0.2.130/PandaQuest/changelog.txt", text)
+        self.assertNotIn("- quest 5 - Quest 5", text)
+
+    def test_the_upload_sends_the_summary_of_a_long_section_and_the_release_gets_it_whole(self) -> None:
+        import contextlib  # noqa: PLC0415
+        import os  # noqa: PLC0415
+
+        versions = [{"id": 11, "name": "5.5.4", "gameVersionTypeID": 79434}]
+        sent = []
+
+        def answer(request):
+            if request.full_url.endswith("/game/versions"):
+                return versions
+            sent.append(request.data)
+            return {"id": 99}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "PandaQuest-0.2.130.zip"
+            notes = Path(tmp) / "changelog.txt"
+            notes.write_text("0.2.130\n" + self.big_section(1200) + "\n\n0.2.129\n- x - y\n", encoding="utf-8")
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("PandaQuest/PandaQuest.toc", "## Interface: 50504\n## X-Curse-Project-ID: 111\n")
+            with mock.patch.dict(os.environ, {"CF_API_TOKEN": "x"}), \
+                    mock.patch.object(curseforge, "_call", side_effect=answer):
+                self.assertEqual(curseforge.upload(path, "111", "release", notes, "v0.2.130"), 0)
+            meta = json.loads(sent[0].split(b'name="metadata"\r\n\r\n', 1)[1].split(b"\r\n--", 1)[0])
+            self.assertLessEqual(len(meta["changelog"]), curseforge.CURSEFORGE_LIMIT)
+            self.assertIn("releases/tag/v0.2.130", meta["changelog"])
+            # the GitHub release notes carry it whole while it fits in GitHub's limit
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                curseforge.main(["notes", "--version", "0.2.130", "--tag", "v0.2.130", "--changelog-txt", str(notes)])
+            self.assertTrue(out.getvalue().startswith("## Changes\n\n- database - "))
+            self.assertIn("- quest 1199 - Quest 1199 - updated\n  - description added", out.getvalue())
+            self.assertNotIn("too long", out.getvalue())
+
+    def test_the_release_notes_carry_the_changelog(self) -> None:
+        release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+        for needle in ("curseforge.py notes", "release-notes/changes.md", "--notes-file notes.md"):
+            self.assertIn(needle, release, f"release.yml lost {needle!r}")
+        publish = (REPO / ".github" / "workflows" / "publish-curseforge.yml").read_text(encoding="utf-8")
+        self.assertIn('--release-tag "${RELEASE_TAG}"', publish)
 
 
 if __name__ == "__main__":

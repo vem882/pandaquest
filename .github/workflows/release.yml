@@ -104,6 +104,18 @@ jobs:
             echo "channel=${channel}"
           } >> "$GITHUB_OUTPUT"
 
+      # The changelog part of the release notes: this version's section of changelog.txt, every line
+      # of it -- a data sync lists each quest, NPC, object and item it changed, with indented lines
+      # saying what changed. Past GitHub's 125,000-character limit for a release body it is the
+      # section's summary and links to changelog.txt at this tag, which always holds the whole list.
+      - name: Write the release notes' changelog
+        run: |
+          set -euo pipefail
+          mkdir -p release-notes
+          python3 .github/release/curseforge.py notes --version "${{ steps.build.outputs.version }}" \
+            --tag "${{ steps.build.outputs.tag }}" > release-notes/changes.md
+          echo "release notes' changelog: $(wc -c < release-notes/changes.md) bytes"
+
       - name: Say what was built
         run: |
           set -euo pipefail
@@ -127,6 +139,14 @@ jobs:
         with:
           name: PandaQuest-${{ steps.build.outputs.version }}
           path: dist/${{ steps.build.outputs.package }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Keep the release notes' changelog
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: release-notes-${{ steps.build.outputs.version }}
+          path: release-notes/changes.md
           if-no-files-found: error
           retention-days: 14
 
@@ -154,6 +174,12 @@ jobs:
         with:
           name: PandaQuest-${{ needs.build.outputs.version }}
           path: dist
+
+      - name: Take the release notes' changelog
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: release-notes-${{ needs.build.outputs.version }}
+          path: release-notes
 
       # The artifact is re-zipped by upload-artifact and unpacked again by download-artifact.
       # This asserts that round trip gave back the same bytes, so the sha256 in the release notes
@@ -200,7 +226,7 @@ jobs:
             kind="Stable release."
             prerelease="false"
           fi
-          notes="$(printf '%s\n' \
+          printf '%s\n' \
             "PandaQuest ${label} for Mists of Pandaria Classic 5.5.4." \
             "${kind}" \
             "" \
@@ -211,7 +237,10 @@ jobs:
             "| sha256 | \`${SHA256}\` |" \
             "" \
             "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
-            "Licence: GPLv3. Content is completed at the PandaQuest portal, pd.zroot.it.")"
+            "Licence: GPLv3. Content is completed at the PandaQuest portal, pd.zroot.it." > notes.md
+          if [ -s release-notes/changes.md ]; then
+            { echo; cat release-notes/changes.md; } >> notes.md
+          fi
 
           # One listing, used for two things. Asking for the list rather than for this one
           # release means "the release is not there yet" is read off data instead of off an
@@ -306,7 +335,7 @@ jobs:
             gh release create "${tag}" "dist/${PACKAGE}" \
               --target "${GITHUB_SHA}" \
               --title "PandaQuest ${label}" \
-              --notes "${notes}" \
+              --notes-file notes.md \
               "${flags[@]}"
           fi
 

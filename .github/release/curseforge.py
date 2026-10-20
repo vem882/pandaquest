@@ -212,7 +212,11 @@ def zip_project_id(zip_path: Path):
 
 
 def txt_section(text: str, version: str) -> str:
-    """The lines under ``version`` in changelog.txt, or "" when that version has no section."""
+    """The lines under ``version`` in changelog.txt, or "" when that version has no section.
+
+    An indented line (``  - coordinates: 3 spawn points added in Badlands``) says what changed for
+    the line above it and keeps its indent, so markdown shows it as a sub-item of that line.
+    """
     section = []
     inside = False
     for line in text.splitlines():
@@ -222,8 +226,58 @@ def txt_section(text: str, version: str) -> str:
             inside = line.strip() == version
             continue
         if inside and line.strip():
-            section.append(line.strip())
+            section.append(line.rstrip())
     return "\n".join(section)
+
+
+#: The longest changelog sent with a CurseForge file. CurseForge documents no limit for the upload
+#: API's ``changelog`` field; the largest this project has seen accepted is the whole changelog.txt of
+#: 0.2.196 (31,375 bytes, sent by the repository webhook), so an upload stays under that.
+CURSEFORGE_LIMIT = 30000
+#: GitHub refuses a release body over 125,000 characters (HTTP 422); the notes around the changelog
+#: take the rest.
+GITHUB_NOTES_LIMIT = 120000
+GITHUB = "https://github.com/%s"
+DEFAULT_REPOSITORY = "vem882/pandaquest"
+#: A data line of changelog.txt: ``- quest 123 - Name - updated``.
+ENTITY_LINE = re.compile(r"- (quest|npc|object|item) \d+ - .* - (added|updated|fixed|removed)")
+
+
+def changelog_summary(section: str, version: str, tag: str, repository: str = DEFAULT_REPOSITORY) -> str:
+    """A section too long to send whole: its own summary lines (``- database - ...``), how many
+    entities it lists per status, and where the whole list is -- the release, and changelog.txt at
+    the release's tag, which always carries its own version in full."""
+    lines = section.splitlines()
+    kept = [line for line in lines if line.startswith("- ") and not ENTITY_LINE.fullmatch(line)]
+    counts = {}
+    details = 0
+    for line in lines:
+        match = ENTITY_LINE.fullmatch(line)
+        if match:
+            counts[(match.group(2), match.group(1))] = counts.get((match.group(2), match.group(1)), 0) + 1
+        elif line.startswith(" "):
+            details += 1
+    plural = {"quest": "quests", "npc": "NPCs", "object": "objects", "item": "items"}
+    for (action, kind), count in sorted(counts.items()):
+        kept.append("- %s - %s %s %s" % (kind, "{:,}".format(count),
+                                         plural[kind] if count != 1 else ("NPC" if kind == "npc" else kind), action))
+    base = GITHUB % repository
+    kept += [
+        "",
+        "The full list (%s changes, %s lines saying what changed) is too long for this page:" % (
+            "{:,}".format(sum(counts.values())), "{:,}".format(details)),
+        "- release notes: %s/releases/tag/%s" % (base, tag),
+        "- changelog.txt of %s: https://raw.githubusercontent.com/%s/%s/PandaQuest/changelog.txt" % (
+            version, repository, tag),
+    ]
+    return "\n".join(kept)
+
+
+def fit_changelog(section: str, version: str, tag: str, limit: int, repository: str = DEFAULT_REPOSITORY) -> str:
+    """The section itself when it fits in ``limit`` characters, else :func:`changelog_summary`."""
+    if len(section) <= limit:
+        return section
+    return changelog_summary(section, version, tag, repository)[:limit]
 
 
 def metadata(version: str, changelog: str, game_version_ids: list, release_type: str) -> dict:
@@ -257,7 +311,7 @@ def _call(request: urllib.request.Request):
         return json.loads(response.read().decode("utf-8"))
 
 
-def upload(zip_path: Path, project, release_type: str, changelog_txt=None) -> int:
+def upload(zip_path: Path, project, release_type: str, changelog_txt=None, release_tag=None) -> int:
     token = os.environ.get("CF_API_TOKEN", "")
     if not token:
         print("CF_API_TOKEN is not set; nothing uploaded.", file=sys.stderr)
@@ -301,6 +355,10 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None) -> in
     previous = previous_tag(release_tags(), version)
     notes = changelog_txt or CHANGELOG_TXT
     own = txt_section(notes.read_text(encoding="utf-8"), version) if notes.is_file() else ""
+    # A data sync can list thousands of changes: past the limit CurseForge gets the summary and
+    # the links to the whole list, which the GitHub release and the files in the zip carry.
+    own = fit_changelog(own, version, release_tag or "v" + version, CURSEFORGE_LIMIT,
+                        os.environ.get("GITHUB_REPOSITORY") or DEFAULT_REPOSITORY) if own else ""
     changelog = own \
         or format_changelog(version, previous, commit_subjects(previous)) \
         or latest_changelog(CHANGELOG.read_text(encoding="utf-8"))
@@ -325,7 +383,19 @@ def main(argv=None) -> int:
     up.add_argument("--release-type", default="beta", choices=RELEASE_TYPES)
     up.add_argument("--changelog-txt", type=Path,
                     help="changelog.txt as it was at the release (default: this checkout's)")
+    up.add_argument("--release-tag", help="the GitHub release the long-changelog link names (default v<version>)")
+    notes = sub.add_parser("notes", help="the changelog part of a GitHub release's notes, as markdown")
+    notes.add_argument("--version", required=True)
+    notes.add_argument("--tag", required=True)
+    notes.add_argument("--changelog-txt", type=Path, default=CHANGELOG_TXT)
     args = parser.parse_args(argv)
+    if args.command == "notes":
+        text = args.changelog_txt.read_text(encoding="utf-8") if args.changelog_txt.is_file() else ""
+        section = txt_section(text, args.version)
+        if section:
+            print("## Changes\n\n" + fit_changelog(section, args.version, args.tag, GITHUB_NOTES_LIMIT,
+                                                    os.environ.get("GITHUB_REPOSITORY") or DEFAULT_REPOSITORY))
+        return 0
     if args.command == "game-version":
         if args.zip:
             tocs = zip_tocs(args.zip)
@@ -336,7 +406,7 @@ def main(argv=None) -> int:
         for _type_id, version, _game in wanted_versions(tocs):
             print(version)
         return 0
-    return upload(args.zip, args.project, args.release_type, args.changelog_txt)
+    return upload(args.zip, args.project, args.release_type, args.changelog_txt, args.release_tag)
 
 
 if __name__ == "__main__":

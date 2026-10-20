@@ -2,6 +2,23 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.201] - 2026-10-20
+
+The changelog says what changed in every data sync, all of it.
+
+### Changed
+- `changelog.txt` may carry indented lines under a data change, one per thing that changed for that
+  quest, NPC, object or item (`  - coordinates: 3 spawn points added in Badlands`). The checks
+  allow them as `  - <what changed>`, at most 100 characters, under a change line.
+- The GitHub release notes now end with the version's own section of `changelog.txt`, every line
+  of it. Past GitHub's 125,000-character limit for a release body they carry the section's summary
+  lines and links to `changelog.txt` at the release's tag, which always holds the whole list.
+- A CurseForge upload (`publish-curseforge.yml`) sends the section whole up to 30,000 characters
+  and, past that, its summary and the links to the full list. CurseForge documents no limit; 30,000
+  stays under the largest changelog this project has seen accepted.
+- `changelog.txt` and `CHANGELOG.md` keep the newest data syncs in full; older ones are in their
+  GitHub releases and on https://pd.zroot.it/changelog.
+
 ## [0.2.200] - 2026-10-20
 
 Data from the PandaQuest portal.
