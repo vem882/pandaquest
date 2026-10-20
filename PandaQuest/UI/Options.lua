@@ -18,6 +18,7 @@ local APP_NAME = "PandaQuest"
 local options                       -- the built table (cached)
 local blizFrame, blizCategory       -- AddToBlizOptions results
 local registered = false
+local sections = {}                 -- key -> function returning an AceConfig group (AddSection)
 
 local function db()
     local PQ = ns.PQ
@@ -595,6 +596,16 @@ local function buildTable()
         },
     }
 
+    -- Tabs a module adds itself (Options.AddSection), built with the rest of the table.
+    for key, build in pairs(sections) do
+        local ok, group = pcall(build)
+        if ok and type(group) == "table" then
+            tbl.args[key] = group
+        elseif not ok then
+            Log.Error("Options", "section %s failed: %s", tostring(key), tostring(group))
+        end
+    end
+
     -- Profiles tab (AceDBOptions). Registered last so it always sorts to the end.
     local store = db()
     local AceDBOptions = LibStub and LibStub("AceDBOptions-3.0", true)
@@ -613,6 +624,15 @@ function M.GetTable()
         options = buildTable()
     end
     return options
+end
+
+--- Options.AddSection(key, build): a module's own tab. `build()` returns an AceConfig group and is
+-- called whenever the table is built, so the module keeps its options next to its code.
+function M.AddSection(key, build)
+    if type(key) ~= "string" or type(build) ~= "function" then return false end
+    sections[key] = build
+    M.Rebuild()
+    return true
 end
 
 --- Options.Rebuild(): drops the cached table (profile switch changes the AceDBOptions part).
