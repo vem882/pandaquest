@@ -49,6 +49,7 @@ import games
 # The checks that run the addon's Lua (Core/Game.lua, the saved-variable fixtures) need lupa, which a
 # GitHub-hosted runner does not have; there they report themselves skipped. See lua_checks.py.
 from lua_checks import AceDBKeepsTheTag, GameDetection, TheDatabaseCheck, TheSavedVariables  # noqa: F401
+from waypoint_checks import PinpointRange, TheWayOwner, WayParser  # noqa: F401
 
 REPO = Path(__file__).resolve().parents[2]
 ADDON_DIR = REPO / build.ADDON

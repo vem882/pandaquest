@@ -110,6 +110,72 @@ function M.GetWaypoint()
 end
 
 ---------------------------------------------------------------------------
+-- Following TomTom's own arrow (Nav/Waypoint.lua shows that waypoint in PandaQuest's style)
+---------------------------------------------------------------------------
+-- TomTom keeps the point its arrow follows to itself. What it does expose are the calls that set
+-- and end it: TomTom:SetCrazyArrow(uid, arrivalDistance, title), TomTom:ClearCrazyArrowPoint(remove)
+-- and TomTom:RemoveWaypoint(uid), plus TomTom:IsCrazyArrowEmpty(). A uid is TomTom's waypoint table,
+-- { [1] = uiMapID, [2] = x, [3] = y (0..1), title = ... }. The hooks are post-hooks: TomTom runs
+-- exactly as before and PandaQuest only learns where TomTom's arrow points. The waypoint PandaQuest
+-- itself handed TomTom (the "mirror" setting) is not followed back.
+
+local crazyUID                      -- the uid TomTom's arrow was last pointed at
+local crazyWatchers = {}            -- functions to call when it changes
+local crazyHooked = false
+
+--- GetCrazyArrowPoint() -> { uiMapID, x, y (0..100), label } | nil
+function M.GetCrazyArrowPoint()
+    local addon = tomtom()
+    local uid = crazyUID
+    if not addon or type(uid) ~= "table" or uid == liveUID then return nil end
+    if type(addon.IsCrazyArrowEmpty) == "function" then
+        local ok, empty = pcall(addon.IsCrazyArrowEmpty, addon)
+        if ok and empty then return nil end
+    end
+    local uiMapID, x, y = tonumber(uid[1]), tonumber(uid[2]), tonumber(uid[3])
+    if not uiMapID or not x or not y then return nil end
+    local label = uid.title
+    return { uiMapID = uiMapID, x = x * 100, y = y * 100, label = type(label) == "string" and label or nil }
+end
+
+local function crazyChanged()
+    local point = M.GetCrazyArrowPoint()
+    for i = 1, #crazyWatchers do pcall(crazyWatchers[i], point) end
+end
+
+--- WatchCrazyArrow(fn) -> bool: fn(point|nil) runs whenever TomTom's arrow changes its waypoint.
+-- false when TomTom is not loaded or does not have the calls above.
+function M.WatchCrazyArrow(fn)
+    if type(fn) == "function" then crazyWatchers[#crazyWatchers + 1] = fn end
+    if crazyHooked then return true end
+    local addon = tomtom()
+    local hook = _G and _G.hooksecurefunc
+    if not addon or type(hook) ~= "function" or type(addon.SetCrazyArrow) ~= "function" then return false end
+    hook(addon, "SetCrazyArrow", function(_, uid)
+        crazyUID = uid
+        crazyChanged()
+    end)
+    if type(addon.ClearCrazyArrowPoint) == "function" then
+        hook(addon, "ClearCrazyArrowPoint", function() crazyChanged() end)
+    end
+    if type(addon.RemoveWaypoint) == "function" then
+        hook(addon, "RemoveWaypoint", function(_, uid)
+            if uid ~= nil and uid == crazyUID then crazyUID = nil end
+            crazyChanged()
+        end)
+    end
+    crazyHooked = true
+    return true
+end
+
+--- UnwatchCrazyArrow(fn): stops calling fn (the hooks stay; with no watcher they do nothing).
+function M.UnwatchCrazyArrow(fn)
+    for i = #crazyWatchers, 1, -1 do
+        if crazyWatchers[i] == fn then table.remove(crazyWatchers, i) end
+    end
+end
+
+---------------------------------------------------------------------------
 -- Lifecycle
 ---------------------------------------------------------------------------
 

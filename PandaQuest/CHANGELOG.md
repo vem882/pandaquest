@@ -2,6 +2,45 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.198] - 2026-10-20
+
+Waypoints you see in the world, as far as Mists of Pandaria Classic lets an addon show them.
+
+### Added
+- **Pinpoint.** When the waypoint is an NPC -- the quest's hand-in NPC, or its giver -- and the NPC's
+  nameplate is on screen, the quest's name and what to do there ("Ready for turn-in") float over it in
+  a framed label, with three chevrons pointing down at the NPC. It appears within the Pinpoint
+  distance (20 yards; Options → Waypoints).
+- **Beam.** Further out, a column of light rises from the same nameplate, with a badge and the
+  distance at its foot. It fades as you close in and gives way to the Pinpoint label.
+- **Card.** The badge, the distance and the travel time to the waypoint ride on the arrow.
+- **Which place.** The waypoint follows the quest you track on the map (or else the arrow's target):
+  once the quest is complete, its hand-in NPC, at that NPC's nearest spot in the zone you are in.
+  Objectives of unfinished quests are marked only when you switch that on. `Waypoint:SetQuest(questID)`,
+  `Waypoint:SetPoint(uiMapID, x, y, label)` and `Waypoint:Clear()` let other parts of the addon choose
+  it (`ns.Waypoint`).
+- **`/way [zone] x y [label]`**, TomTom's syntax (`35 79`, `35, 79`, decimal commas, a zone name or
+  `#uiMapID`, `/way clear`), registered only when no other addon owns `/way`. The point is a flag on
+  the map and the arrow follows it; it is forgotten when you walk up to it (an option), and a pin you
+  had made yourself comes back when it goes.
+- **TomTom.** With TomTom installed, `/way` stays TomTom's, and the waypoint TomTom's arrow follows is
+  shown in PandaQuest's style (`TomTomBridge.WatchCrazyArrow`, post-hooks only).
+- **Options → Waypoints**: every part on or off, the Pinpoint distance, beam colour, size, forgetting a
+  `/way` point on arrival, and a button for friendly NPC nameplates, which the NPC marker needs.
+  PandaQuest never changes that game setting on its own.
+- `Textures/Waypoint/`: the beam, the badge, the chevrons and the label's plate -- original art,
+  drawn by a script, under the addon's licence.
+
+### Not possible in this client
+- Mists of Pandaria Classic 5.5.4 has no `C_Navigation`, no `C_SuperTrack` and no
+  `C_Map.SetUserWaypoint`, and the camera cannot be read, so nothing can be drawn at a spot in the 3D
+  world. There is no beam over a bare map coordinate or over an object (objects have no nameplate);
+  the arrow and the card show the way there. Friendly nameplates reach addons outdoors only.
+
+### Saved data
+- New keys only: `waypoint` in the profile (the options) and `waypoint` under the character (the point
+  or quest you chose). Nothing saved before is moved or changed.
+
 ## [0.2.197] - 2026-10-20
 
 Data from the PandaQuest portal.
