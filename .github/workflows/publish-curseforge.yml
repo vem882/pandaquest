@@ -131,6 +131,7 @@ jobs:
           if ! python3 .github/release/curseforge.py upload \
               --zip "${DOWNLOAD_DIR}/${PACKAGE}" \
               --changelog-txt "${DOWNLOAD_DIR}/changelog.txt" \
+              --release-tag "${RELEASE_TAG}" \
               --release-type "${RELEASE_TYPE}"; then
             echo "::error::The upload did not complete. ${RESERVATION} still reserves ${RELEASE_TAG}."
             echo "Check CurseForge and this run first. Only if no file was accepted:"
