@@ -2,6 +2,33 @@
 
 All notable changes to PandaQuest are documented here.
 
+## [0.2.190] - 2026-10-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 5,632 quests, 24 NPCs, 1 object
+- quest 27564 - In Defense of the Redoubt - updated
+- quest 27565 - Into the Prison - updated
+- quest 27567 - Twilight?! No! - updated
+- quest 27568 - Infiltrating Shadowforge City - updated
+- quest 27569 - Dark Iron Tacticians - updated
+- quest 27571 - The Grim Guzzler - updated
+- quest 27573 - The Dark Iron Pact - updated
+- quest 27574 - I Never Forget a Face - updated
+- quest 27575 - From the Belly of the Beast - updated
+- quest 27576 - Patchwork Command - updated
+- quest 27577 - 7th Legion Battle Plans - updated
+- quest 27578 - Morgan's Fruition - updated
+- quest 27580 - Sowing Discord - updated
+- quest 27581 - Twilight?! No! - updated
+- quest 27583 - The Northern Flank - updated
+- quest 27584 - Blood in the Surf - updated
+- quest 27585 - The 109th Division - updated
+- quest 27586 - Shells on the Sea Shore - updated
+- quest 27587 - Maliciously Delicious - updated
+- quest 27588 - Signal the Attack - updated
+- quest - and 48 more quests updated
+
 ## [0.2.189] - 2026-10-20
 
 Data from the PandaQuest portal.
