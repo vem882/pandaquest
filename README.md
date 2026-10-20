@@ -231,7 +231,12 @@ its operator turned that on, and then at most once a day.
 ## What the checks cannot tell you
 
 There is no Lua interpreter and no luacheck in this repository, so `check.py` cannot tell you the
-addon *works*; it tells you the package is not obviously broken:
+addon *works*; it tells you the package is not obviously broken. The one exception is
+`.github/release/lua_checks.py`, which `check.py` runs when `lupa` (Lua 5.1 for Python) is
+installed and reports as skipped where it is not, as on the GitHub runner: it runs `Core/Game.lua`
+(which game a client is, the database check) and the saved-variable fixtures in
+`.github/release/fixtures/savedvariables/` (files written by 0.2.99, 0.2.191 and this version) and
+holds that each comes through with only `game` added, or set aside whole under `foreign`.
 
 * the TOC parses and declares `## Interface`, `## Title` and `## Version`, and `## Interface` is
   `50504` by value and not merely by shape;
@@ -250,7 +255,9 @@ addon *works*; it tells you the package is not obviously broken:
   under the size the sync itself refuses to go past.
 
 Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, that it lints clean,
-and that it loads against the WoW API. A Lua syntax error would reach a player.
+and that it loads against the WoW API. A Lua syntax error would reach a player. (The portal
+repository's tools run those against this tree: `tools/syntax_check.py`, `tools/luacheck_runner.py`
+and the `tools/wowstub` tests.)
 
 ## Licence and credit
 

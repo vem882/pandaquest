@@ -46,6 +46,10 @@ import build
 import curseforge
 import games
 
+# The checks that run the addon's Lua (Core/Game.lua, the saved-variable fixtures) need lupa, which a
+# GitHub-hosted runner does not have; there they report themselves skipped. See lua_checks.py.
+from lua_checks import AceDBKeepsTheTag, GameDetection, TheDatabaseCheck, TheSavedVariables  # noqa: F401
+
 REPO = Path(__file__).resolve().parents[2]
 ADDON_DIR = REPO / build.ADDON
 TOC = ADDON_DIR / f"{build.ADDON}.toc"
@@ -801,6 +805,25 @@ class TheTocFiles(unittest.TestCase):
         self.assertIs(games.by_suffix(""), games.MOP)
         with self.assertRaises(SystemExit):
             build.render_toc(games.FOREVER)
+
+    def test_the_game_is_known_before_anything_reads_the_database(self) -> None:
+        """Core/Game.lua is the first file, and the first after Core/Build.lua in the package."""
+        _directives, files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
+        self.assertEqual(files[0], "Core\\Game.lua")
+        packaged = build.entries(build.identity())["PandaQuest/PandaQuest_Mists.toc"].decode("utf-8")
+        _directives, files = toc_lines(packaged)
+        self.assertEqual(files[:2], [build.BUILD_LUA_TOC_LINE, "Core\\Game.lua"])
+
+    def test_the_saved_variables_are_the_ones_core_game_lua_tags(self) -> None:
+        """Every saved variable the TOC declares is one Game.ClaimSavedVariables tags, and no other."""
+        directives, _files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
+        declared = [name.strip() for name in directives["SavedVariables"].split(",")]
+        game = (ADDON_DIR / "Core" / "Game.lua").read_text(encoding="utf-8")
+        listed = re.search(r"Game\.SAVED_VARIABLES = \{([^}]*)\}", game)
+        self.assertIsNotNone(listed)
+        assert listed is not None
+        self.assertEqual(re.findall(r'"(\w+)"', listed.group(1)), declared)
+        self.assertNotIn("SavedVariablesPerCharacter", directives)
 
     def test_the_mop_toc_lists_its_own_database_and_nothing_else(self) -> None:
         _directives, files = toc_lines(build.toc_texts()["PandaQuest_Mists.toc"])
