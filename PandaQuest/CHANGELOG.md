@@ -4,6 +4,214 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.204] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,409 quests, 26 NPCs, 1 object
+- quest 13692 - The Sword and the Sea - updated
+  - description added
+  - reward items: +1
+- quest 28570 - The Bogpaddle Bullet - updated
+  - description added
+  - reward money added (8s)
+- quest 28571 - Warchief's Command: Hillsbrad Foothills! - updated
+  - description added
+- quest 28573 - Hero's Call: Arathi Highlands! - updated
+  - description added
+- quest 28576 - Hero's Call: Western Plaguelands! - updated
+  - description added
+- quest 28578 - Hero's Call: Eastern Plaguelands! - updated
+  - description added
+- quest 28579 - Hero's Call: Badlands! - updated
+  - description added
+- quest 28580 - Warchief's Command: Badlands! - updated
+  - description added
+- quest 28581 - Warchief's Command: Searing Gorge! - updated
+  - description added
+- quest 28582 - Hero's Call: Searing Gorge! - updated
+  - description added
+- quest 28583 - Krazzworks - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28584 - Quality Construction - updated
+  - description added
+  - reward money added (9g)
+  - reward choices: +3
+- quest 28586 - Pool Pony Rescue - updated
+  - description added
+  - reward money added (9g)
+- quest 28587 - Aid of the Frostwolf - updated
+  - description added
+- quest 28588 - Wildhammer Infestation - updated
+  - description added
+  - reward money added (9g)
+- quest 28589 - Everything But the Kitchen Sink - updated
+  - description added
+  - reward money added (18g)
+  - reward choices: +3
+- quest 28590 - Reprisal - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28591 - Off The Wall - updated
+  - description added
+  - reward money added (9g)
+- quest 28592 - Parting Packages - updated
+  - description added
+  - reward money added (9g)
+  - reward choices: +3
+- quest 28593 - Of Utmost Importance - updated
+  - description added
+  - reward money added (9g)
+- quest 28594 - Highbank, Crybank - updated
+  - description added
+  - reward money added (9g)
+- quest 28595 - Krazz Works! - updated
+  - description added
+  - reward money added (18g)
+  - reward choices: +4
+- quest 28596 - Welcome to Highbank! - updated
+  - description added
+  - reward money added (9g)
+- quest 28597 - Burnin' at Both Ends - updated
+  - description added
+  - reward money added (9g)
+- quest 28598 - Aiming High - updated
+  - description added
+  - reward money added (18g)
+  - reward items: +1
+- quest 28599 - Kurdran's Waitin' - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28600 - Matters of Loyalty - updated
+  - description added
+  - reward money added (17s)
+- quest 28602 - Be Prepared - updated
+  - description added
+  - reward money added (8g 60s)
+  - reward choices: +3
+- quest 28603 - Infiltration - updated
+  - description added
+- quest 28604 - Deception and Trickery - updated
+  - description added
+  - reward choices: +4
+- quest 28605 - Domination - updated
+  - description added
+  - reward money added (67s)
+- quest 28606 - The Keys to the Hot Rod - updated
+  - reward items: +1
+- quest 28607 - The Keys to the Hot Rod - updated
+  - reward items: +1
+- quest 28608 - The Shadow Grave - updated
+  - description added
+  - reward money added (15c)
+- quest 28611 - The Defilers' Ritual - updated
+  - description added
+  - reward money added (9g)
+- quest 28612 - Harrison Jones and the Temple of Uldum - updated
+  - description added
+  - reward choices: +3
+- quest 28613 - See You on the Other Side! - updated
+  - description added
+- quest 28614 - Bearzerker - updated
+  - description added
+  - reward money added (1g 55s)
+  - reward choices: +4
+- quest 28615 - Turning the Earth - updated
+  - description added
+  - reward money added (75s)
+- quest 28616 - Stormpike Apocalypse - updated
+  - description added
+  - reward money added (67s)
+  - reward choices: +3
+- quest 28617 - Flower Power - updated
+  - description added
+  - reward money added (15c)
+- quest 28621 - Put That Baby in the Cradle! - updated
+  - description added
+- quest 28622 - Three if by Air - updated
+  - description added
+- quest 28623 - The Push Westward - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28633 - The Coffer of Promise - updated
+  - description added
+  - reward money added (8g 60s)
+- quest 28637 - A Taste for Bear - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28638 - The Owls Have It - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28639 - Ursius - updated
+  - description added
+  - reward money added (2g 40s)
+  - reward items: +1
+  - reward choices: +5
+- quest 28640 - Fresh Frostsabers - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28641 - Pride of the Dinner Table - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28649 - A Special Surprise - updated
+  - description added
+  - reward money added (85s)
+- quest 28650 - A Special Surprise - updated
+  - description added
+  - reward money added (85s)
+- quest 28651 - Novice Elreth - updated
+  - description added
+- quest 28652 - Caretaker Caice - updated
+  - description added
+- quest 28653 - Shadow Priest Sarvis - updated
+  - description added
+- quest 28654 - The Heart of the Matter - updated
+  - description added
+- quest 28655 - Wild, Wild, Wildhammer Wedding - updated
+  - description added
+  - reward money added (18g)
+- quest 28657 - A Huge Problem - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28658 - Swamp Bait - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28659 - The Leftovers - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28660 - Clearing the Depths - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28661 - The Imprisoned Archmage - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28662 - Learning From The Past - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28663 - D-Block - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28664 - Svarnos - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28665 - Cursed Shackles - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28666 - Hero's Call: Burning Steppes! - updated
+  - description added
+- quest 28667 - Warchief's Command: Burning Steppes! - updated
+  - description added
+- quest 28668 - Prison Revolt - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28669 - The Warden - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 28670 - Food From Below - updated
+  - description added
+  - reward money added (18g 80s)
+
 ## [0.2.203] - 2026-10-20
 
 Data from the PandaQuest portal.
@@ -744,33 +952,6 @@ Data from the PandaQuest portal.
 - quest 27659 - Portal Overload - updated
 - quest 27660 - Spirit of the Loch - updated
 - quest - and 50 more quests updated
-
-## [0.2.190] - 2026-10-20
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 5,632 quests, 24 NPCs, 1 object
-- quest 27564 - In Defense of the Redoubt - updated
-- quest 27565 - Into the Prison - updated
-- quest 27567 - Twilight?! No! - updated
-- quest 27568 - Infiltrating Shadowforge City - updated
-- quest 27569 - Dark Iron Tacticians - updated
-- quest 27571 - The Grim Guzzler - updated
-- quest 27573 - The Dark Iron Pact - updated
-- quest 27574 - I Never Forget a Face - updated
-- quest 27575 - From the Belly of the Beast - updated
-- quest 27576 - Patchwork Command - updated
-- quest 27577 - 7th Legion Battle Plans - updated
-- quest 27578 - Morgan's Fruition - updated
-- quest 27580 - Sowing Discord - updated
-- quest 27581 - Twilight?! No! - updated
-- quest 27583 - The Northern Flank - updated
-- quest 27584 - Blood in the Surf - updated
-- quest 27585 - The 109th Division - updated
-- quest 27586 - Shells on the Sea Shore - updated
-- quest 27587 - Maliciously Delicious - updated
-- quest 27588 - Signal the Attack - updated
-- quest - and 48 more quests updated
 
 ## [0.2.173] - 2026-10-18
 
