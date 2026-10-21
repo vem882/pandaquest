@@ -1156,7 +1156,16 @@ ns.Overrides.wowhead = {
         [11032] = {rewardChoices = {{29290, 1}, {29287, 1}, {29283, 1}}},
         [11034] = {rewardChoices = {{29283, 1}, {29279, 1}, {29287, 1}}},
         [11035] = {rewardMoney = 44000},
-        [11041] = {rewardMoney = 132000},
+        [11041] = {
+            description = "In the name of our great master... For the glory of Illidan!\n\nBy order of " ..
+                "Overlord Mor'ghor, the great plateau of Netherwing Ledge is to be secured. With all " ..
+                "Netherwing drakes captured or forced off of the land, rock flayers are running rampant " ..
+                "and threatening crystal harvesting operations.\n\nDestroy them all, their den mother and " ..
+                "her consort, Arvoar.\n\nMor'ghor commands it!\n\n<It would appear that this orc failed " ..
+                "to take the plateau. It is time to prove your worth to Mor'ghor!>",
+            rewardChoices = {{32865, 1}, {32866, 1}, {32867, 1}, {32868, 1}},
+            rewardMoney = 132000,
+        },
         [11049] = {rewardMoney = 88000},
         [11051] = {rewardMoney = 44000},
         [11053] = {rewardMoney = 44000},
@@ -29250,6 +29259,229 @@ ns.Overrides.wowhead = {
                 "boons she weaves for you there.",
             rewardMoney = 23500,
         },
+        [29281] = {
+            description = "These druids be lackin' the tools ta properly handle the job out 'ere. I got " ..
+                "meself a buddy back at day ol' stag shrine through the portal though. If we were ta be " ..
+                "gettin' reunited, we'd sure have some real toys ta use against ol' Ragboy and 'is " ..
+                "cronies.\n\nTake some of dem mark things an' go find Matoclaw. Ask her fer Ricket. We " ..
+                "need'r here so we can be causin' some real trouble.",
+            rewardMoney = 188000,
+        },
+        [29282] = {
+            description = "Ricket should be at Malfurion's Breach with Damek, as you requested. I'm not " ..
+                "sure you fully know what you're getting into with those two though.\n\nSpeaking of " ..
+                "which, you should probably go check on them... make sure they haven't managed to blow up " ..
+                "the Sentinel Tree itself. As long as you keep them busy with the elementals, the chances " ..
+                "of \"accidents\" at the breach should lessen dramatically.",
+            rewardMoney = 23500,
+        },
+        [29283] = {
+            description = "The ancients await in Hyjal. The Firelands will prove a dangerous place for " ..
+                "them considering their... composition, but their strength will be of great use to us if " ..
+                "we are to face any of Ragnaros' lieutenants.\n\nGather your marks, and seek out " ..
+                "Elderlimb at the Sanctuary of Malorne. If they are to march with us, he would be the one " ..
+                "leading them through the portal.",
+            rewardMoney = 188000,
+        },
+        [29284] = {
+            description = "The ancients have seen the value of your wisdom, and have set root at " ..
+                "Malfurion's Breach. You should seek out Elderlimb. I am certain he would like to hear " ..
+                "from you.",
+            rewardMoney = 23500,
+        },
+        [29285] = {
+            description = "The time of choosing has arrived, <name>.\n\nWhile only members of the blue " ..
+                "dragonflight may attend, Tarecgosa's binding makes your presence requisite.\n\nI must " ..
+                "ask that you take on her form and vote on her behalf.\n\nDo not tarry. The moment of the " ..
+                "eclipse draws near....",
+            rewardItems = {{71085, 1}},
+            rewardMoney = 282000,
+        },
+        [29287] = {
+            description = "These fire hawks are beings of fire, but they exhibit much of the same " ..
+                "behavior that we've seen in birds back home. It makes me wonder from where they " ..
+                "originate.\n\nBack to the point - I think we might be able to train them. Domesticate " ..
+                "them if you will. Use them against our enemies.\n\nI'd like you to retrieve one of their " ..
+                "eggs from the top of Fireplume Peak. If you can bring it back to me safely, I will see " ..
+                "to the rest.",
+            rewardMoney = 94000,
+        },
+        [29288] = {
+            description = "Our scouts are bringing back reports of fire hawk hatchlings all over the " ..
+                "peak... their eggs must have hatched very recently. Better yet, it seems that they're " ..
+                "extremely docile.\n\nI know it may sound a strange and perhaps unsavory request, but if " ..
+                "you were able to bring some of those hatchlings back to me, I might be able to train " ..
+                "them to aid us in our war efforts.\n\nAre you willing?",
+            rewardMoney = 94000,
+        },
+        [29290] = {
+            description = "Look at that! It's incredible! Born less than two days ago and already full " ..
+                "grown. Sadly, I suspect their life cycle is similarly short, so we'll have to take " ..
+                "advantage of any time we have.\n\nHis training went remarkably well. I want you to be " ..
+                "the one to take him out and unleash him on the bulk of the enemy forces gathered near " ..
+                "Ragnaros' keep.\n\nShow no mercy, <race>.",
+            rewardMoney = 94000,
+        },
+        [29293] = {
+            description = "Many of our Storm Crows have gone ahead to scout the peak and attempt to " ..
+                "retrieve some of the fire hawk eggs, but to very little success I'm afraid. The thermals " ..
+                "make it nearly impossible to fly safely, and the fire hawks aren't exactly friendly " ..
+                "either.\n\nI need you to head over there and rescue any druids that you can. I've got " ..
+                "splints, bandages, burn salves, smelling salts... anything you'll need to get them back " ..
+                "on their feet, assuming they're still alive. Please hurry and help anyone you can find.",
+            rewardMoney = 94000,
+        },
+        [29295] = {
+            description = "You're not going to take on fiery behemoths wearing THAT, are you? If you " ..
+                "aren't wearing my obsidium crafted goods, you're going to burn right up! And even if you " ..
+                "are, you can never have enough of the good stuff.\n\nLook <brother/sister>, I can craft " ..
+                "you the best armor that gold can buy, but I need pure, unsmelted Living Obsidium " ..
+                "first.\n\nThe Obsidium Punishers on Fireplume Peak are literally made of the stuff. Go " ..
+                "kill them and gather their pieces.",
+            rewardMoney = 94000,
+        },
+        [29296] = {
+            description = "The fire hawks are upset by our continued presence. They're getting extremely " ..
+                "hostile, and not just in the usual territorial ways. I worry that if we leave them " ..
+                "unchecked, they will soon be joining the assault on our tree, and I'm not sure we're " ..
+                "capable of handling that.\n\nGo across the way to Fireplume Peak and do what you have to " ..
+                "to keep them in check. I'm far more concerned with our safety right now than theirs, so " ..
+                "be decisive about it.",
+            rewardMoney = 94000,
+        },
+        [29297] = {
+            description = "Staghelm's druids are putting up a fierce fight at Wildflame Point to the " ..
+                "northeast.\n\nThe druids fly above us in fire crow form, then strike when we least " ..
+                "expect it. Worst part is, they know exactly how to stay out of our reach!\n\nWe would be " ..
+                "totally helpless, except Damek lent me his trusty harpoon. He says these weapons will " ..
+                "fly straight and true even in this super dense air.\n\nTake the dwarf's weapon and shoot " ..
+                "some birds out of the sky!",
+            rewardMoney = 94000,
+        },
+        [29298] = {
+            description = "This locket has a few small leaf-shaped carvings etched into its face, but any " ..
+                "other details have been rubbed away with time, or burned away with fire. It appears to " ..
+                "be druidic in nature.\n\nMost druids pass through Moonglade during their training. If " ..
+                "anybody can help you decipher where this locket came from, it would be Rabine Saturna of " ..
+                "Nighthaven.",
+        },
+        [29299] = {
+            description = "I've been making progress in my research, <name>. Based on what we've " ..
+                "witnessed in the local flora, it's quite possible that your Lasher also accepts " ..
+                "superheated liquids as a principal source of nutrition.\n\nI'd like you to help me with " ..
+                "a little experiment. The Emberspit Scorpions that inhabit the Magma Springs to the north " ..
+                "spew out burning pools of fire during combat.\n\nTake the Lasher and observe his " ..
+                "reaction to the scorpions' Ember Pools.",
+            rewardMoney = 94000,
+        },
+        [29302] = {
+            description = "The initials seem to have worn off of this locket, but I can sense a power " ..
+                "within it that suggests only one possible owner:\n\nLeyara, the Druid of the " ..
+                "Flame.\n\nStand back, and we shall see what surprises this locket contains.",
+        },
+        [29303] = {
+            description = "You were insightful to bring this locket to me, <name>. I am among the few who " ..
+                "know where Valstann's body lays.\n\nYou can find his resting site in a small graveyard, " ..
+                "southeast of Astranaar, in Ashenvale. Bring this locket to the site, and it may unlock " ..
+                "more memories.\n\nFarewell, <name>, and good luck on your journey.",
+        },
+        [29304] = {
+            description = "Our forces are falling beneath an unleashed monstrosity - Charhounds from the " ..
+                "molten depths.\n\nThese dogs fear nothing and will not stop until their lust for blood " ..
+                "is satisfied. Our forces are barely holding them back.\n\nGo join the defenders in the " ..
+                "Ashen Fields or in the Molten Flow. Perhaps you can make a dent in their numbers.",
+            rewardMoney = 94000,
+        },
+        [29305] = {
+            description = "One of Ragnaros' Lieutenants has shown himself at Ragnaros' Reach, the walled " ..
+                "area to our northeast.\n\nI hoped to send you as soon as you returned, but I suspect " ..
+                "Witherbranch and some of our forces have already joined the fight by now. You should " ..
+                "hurry.\n\nYou should be able to drop down the cliff wall right here and reach them " ..
+                "quickly.",
+            rewardMoney = 188000,
+        },
+        [29307] = {
+            description = "You are the first mortal to witness a dragon council, <name>, and among the " ..
+                "only beings in Azeroth to take part in the choosing of an Aspect.\n\nMy ascension has " ..
+                "endowed me with incredible power. I have taken the liberty to strengthen Tarecgosa's " ..
+                "bond with you, though she will require a more... permanent home.\n\nI would have you " ..
+                "venture one last time into the Plane of Fire and bring me the heart of Ragnaros.\n\nWhen " ..
+                "next we meet, I will be able to suitably thank you for all that you have done.",
+            rewardMoney = 282000,
+        },
+        [29308] = {
+            description = "You are the first mortal to witness a dragon council, <name>, and among the " ..
+                "only beings in Azeroth to take part in the choosing of an Aspect.\n\nMy ascension has " ..
+                "endowed me with incredible power. I have taken the liberty to strengthen Tarecgosa's " ..
+                "bond with you, though she will require a more... permanent home.\n\nI would have you " ..
+                "venture one last time into the Plane of Fire and bring me the heart of Ragnaros.\n\nWhen " ..
+                "next we meet, I will be able to suitably thank you for all that you have done.",
+            rewardMoney = 282000,
+        },
+        [29309] = {
+            description = "It is an honor to make your acquaintance, <race>.\n\nYour deeds echo in the " ..
+                "ears of Azeroth's creatures, mortal and immortal alike.\n\nI shall present the heart of " ..
+                "Ragnaros to Kalecgos when he arrives. Its power is to be harnessed to further endow your " ..
+                "weapon.\n\nThe ceremony is to begin shortly. I have been appointed to escort you there " ..
+                "when you are ready.",
+            rewardItems = {{71086, 1}},
+            rewardMoney = 282000,
+        },
+        [29310] = {
+            description = "On the day when Leyara attacked Hamuul, she was waiting near some ruins in " ..
+                "Hyjal, northwest of the Regrowth. She acted strangely at the time: calm, silent, and " ..
+                "staring off into the distance. Perhaps that location is of some importance to " ..
+                "her.\n\nThe locket might react if brought to that location.",
+        },
+        [29311] = {
+            description = "In her memories, Leyara spoke of Malfurion. The tragedies of her past - at " ..
+                "least, in her opinion - are largely due to his actions.\n\nMalfurion must remember " ..
+                "Leyara from before she became a Druid of the Flame. You resolve to bring the locket to " ..
+                "him in the Firelands. Hopefully he can answer any remaining questions.",
+            rewardItems = {{71259, 1}},
+            rewardMoney = 376000,
+        },
+        [29312] = {
+            description = "It is an honor to make your acquaintance, <race>.\n\nYour deeds echo in the " ..
+                "ears of Azeroth's creatures, mortal and immortal alike.\n\nI shall present the heart of " ..
+                "Ragnaros to Kalecgos when he arrives. Its power is to be harnessed to further endow your " ..
+                "weapon.\n\nThe ceremony is to begin shortly. I have been appointed to escort you there " ..
+                "when you are ready.",
+            rewardItems = {{71086, 1}},
+            rewardMoney = 282000,
+        },
+        [29313] = {
+            description = "My family has been making the best kimchi in Darnassus for generations, " ..
+                "<name>. The secret is something simple, but it makes all the difference.\n\nWe bury the " ..
+                "jars in the ground until it's ready to serve and my latest batch has just reached that " ..
+                "point. You can find the jars buried in earthen mounds all over the city. Would you help " ..
+                "me gather them while the contents are just right?",
+            rewardMoney = 20000,
+        },
+        [29314] = {
+            description = "The living are not the only ones who require sustenance. One of my duties is " ..
+                "to prepare the rice cakes that are left for the ancestors. Normally, my senior " ..
+                "apprentice has the honor of taking the cakes to the Temple of the Moon for blessing and " ..
+                "then presenting them to the ancestors. Since she is out of the city today, would you " ..
+                "mind performing the duty in her place?",
+            rewardMoney = 20000,
+        },
+        [29315] = {
+            description = "Some chefs complain that our beloved Undercity doesn't boast the ingredients " ..
+                "to create truly fine fare.\n\nSuch mewling little cretins. Delicious delights " ..
+                "abound!\n\nGather some of the rank, slimy Sewer Caps growing in Undercity's northwest " ..
+                "sewer line and return them to me.",
+            rewardMoney = 74000,
+        },
+        [29316] = {
+            description = "There are certain things that everyone needs, from the basic household cook to " ..
+                "the master chef. One of the city's most important staples is rice flour. Most families " ..
+                "keep at least one basket of rice in their houses and the residents of the Craftsmen's " ..
+                "Terrace and Tradesmen's Terrace are no different.\n\nI often ask my students to help " ..
+                "with the task of pounding rice into flour since it's good practice and an endless task. " ..
+                "Why don't you give it a try?",
+            rewardMoney = 8500,
+        },
         [29317] = {
             description = "There was an... incident... with an orc guard and one of Master Apothecary " ..
                 "Faranell 's abominations.\n\nApparently, the Kor'kron Overseer chopped its head clean " ..
@@ -29266,6 +29498,164 @@ ns.Overrides.wowhead = {
                 "the city.",
             rewardMoney = 114000,
         },
+        [29319] = {
+            description = "Some of our apothecaries took to dumping their more volatile waste chemicals " ..
+                "into Stillwater Pond and... well, let's just say that no one wants to know how big " ..
+                "mutant flesh-eating toads can grow.\n\nWould you consider fishing up some giant " ..
+                "flesh-eating tadpoles before it gets to that? Just don't try to handle them with your " ..
+                "bare hands.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29320] = {
+            description = "You've fished in Brightwater Lake, yes?\n\nThe prize catch there is one of the " ..
+                "lake's massive corpse-fed pikes. However, they only bite on a very specific type of " ..
+                "bait... corpse worms.\n\nSearch the graves in the courtyard up top and you should find " ..
+                "some.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29321] = {
+            description = "It seems like everyone I know loves clams, but I can't stand them! They're " ..
+                "smelly and slimy, and harvesting them means digging through mud. Give me a fishing pole " ..
+                "and some bait any day.\n\nStill, I want to surprise my brother with a bucket of fresh " ..
+                "clams. I'd reward you if you were willing to gather those clams for me.\n\nJust go " ..
+                "through the portal to Rut'theran Village and look for the clams in the shallows near the " ..
+                "shore.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29322] = {
+            description = "It takes a special sort of fisherman to reap the bounty of Undercity's " ..
+                "burbling slime troughs. Think you can handle gathering some of the squirming, sentient " ..
+                "slime mold slithering about down there?\n\nYou can try to fish them up, but they're " ..
+                "wily; you might be better off just diving into the ooze and grabbing them.\n\nRemember, " ..
+                "they're only useful alive and intact... who'd want to eat a dead slime mold?! Disgusting.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29323] = {
+            description = "We've used up most of our food stores in taking care of refugees and feeding " ..
+                "those whose homes and livelihoods were destroyed. If we don't replenish our stores, " ..
+                "we'll all be in danger next time there's a bad storm or a Horde invasion.\n\nPerhaps " ..
+                "you'd be willing to help me build up our stock of lake whitefish. You can catch it " ..
+                "anywhere in Darnassus, and once it's dried, it'll keep until it's needed.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 20000,
+        },
+        [29324] = {
+            description = "Have you met Sister Aquinne? She and I grew up together in Dolanaar, and she " ..
+                "recently came to the city to study at the Temple of the Moon. We decided to go for a " ..
+                "boat ride, but the clumsy oarsman managed to capsize the craft!\n\nWhen we got back to " ..
+                "the shore, Aquinne's moon pendant was missing. The lakes in Darnassus are full of giant " ..
+                "catfish who will gobble up anything shiny!\n\nI've been catching them nonstop, hoping to " ..
+                "find the one with her pendant. I don't suppose you want to help?",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 20000,
+        },
+        [29325] = {
+            description = "Have you ever eaten octopus meat? It takes some getting used to, but it's my " ..
+                "favorite! I even know some people who like to eat the whole thing while it's alive!\n\nI " ..
+                "don't plan on trying that anytime soon, but I am out of fresh octopi at the moment. Will " ..
+                "you help me gather some more? They live in the shallow water off the shore near " ..
+                "Rut'theran Village.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 20000,
+        },
+        [29326] = {
+            description = "Hello, <class>! My brothers and sisters of the Earthen Ring have spoken well " ..
+                "of your deeds in the wake of the Cataclysm. But much remains to be done if we are to " ..
+                "heal this broken world.\n\nWalk with me, friend. Preparations for a ceremony are " ..
+                "underway, a ritual that I hope will be a turning point in our battle against the " ..
+                "Twilight's Hammer.\n\nWhen all is done, you will be able to spread the word about our " ..
+                "triumph here.",
+            rewardMoney = 71000,
+        },
+        [29327] = {
+            description = "I do know the one you seek... but I do not know if it is wise for you to " ..
+                "follow him. He has cast himself into the cyclone. The winds now tear at his body and " ..
+                "mind, leaving nothing but shreds of flesh and doubt.\n\nChasing after him would only " ..
+                "expose you to the same fate. The wind's edge leaves nothing uncut.\n\nYou have been " ..
+                "warned. Now what will you do?",
+        },
+        [29328] = {
+            description = "Once again, <class>, I cannot do this without your help. I will try to quiet " ..
+                "this tempest, but you will need to fight back the unstable elementals that whirl around " ..
+                "it. Only then can we free Go'el!",
+        },
+        [29329] = {
+            description = "With the Stonemother's blessing, I can take us to where Go'el is being " ..
+                "held.\n\nWe must be careful. The Twilight's Hammer has agents all around. You help me " ..
+                "hold them off while I attempt to get through to Go'el!\n\nSpeak with me when you are " ..
+                "ready, and I will take you to him.",
+        },
+        [29330] = {
+            description = "The totems, <name>! We need to activate them, or Go'el is lost!\n\nKill the " ..
+                "elementals next to each of my totems, located around the edges of this plateau. Once all " ..
+                "four totems are activated, we should be able to free the last piece of Go'el's soul!",
+        },
+        [29331] = {
+            description = "Before he passed through the portal to Mount Hyjal, Thrall asked you to follow " ..
+                "him. There is something he would like you to witness.",
+            rewardChoices = {{71267, 1}, {71268, 1}, {71269, 1}, {71270, 1}},
+            rewardMoney = 376000,
+        },
+        [29332] = {
+            description = "The lilies that grow around Stillwater Pond can be rendered down into a " ..
+                "delightful broth.\n\nWell... by \"delightful,\" I mean \"won't immediately sicken any " ..
+                "orc who drinks it.\"\n\nWhy don't you go gather some for me, hmmm? Just watch out for " ..
+                "the giant flesh-eating tadpoles.",
+            rewardMoney = 90000,
+        },
+        [29333] = {
+            description = "The orc guards are always grumbling about bland and moldering Undercity fare - " ..
+                "as if it's OUR fault they can't get by on a diet of mushrooms and old corpses - so I " ..
+                "think it's time they learn just the sort of exotic delights we can cook up when we've a " ..
+                "mind to.\n\nGather some of the freshwater snails ambling about beneath Brightwater Lake " ..
+                "and I'll show them what a true culinary master can create.",
+            rewardMoney = 90000,
+        },
+        [29334] = {
+            description = "For all the grousing those Kor'kron Overseers do about Undercity food, there's " ..
+                "ONE thing they'll eat in spades: My sister Audrey's Thrice-Spiced Crunchy Stew.\n\nIts " ..
+                "popularity means she's always running low on ingredients. Could you gather some for her " ..
+                "at the coach she sells them from?\n\nYou'll find traps all over the city; just take " ..
+                "their contents to Audrey and she'll handle the rest!",
+            rewardMoney = 114000,
+        },
+        [29335] = {
+            description = "<class>, I refuse to believe my Go'el is lost forever. His spirit has been " ..
+                "scattered across the elemental planes. If even a part of him still exists, we can find " ..
+                "him, but I will need your help.\n\nWe will start with the plane of air.\n\nSpeak to me " ..
+                "and we will travel to the Vortex Pinnacle together. We must speak with an elemental, " ..
+                "Cyclonas. He's capricious, but he sees everything in the realm of air. If my love is " ..
+                "there, Cyclonas will know what's become of him.",
+        },
+        [29336] = {
+            description = "Go'el must be in the plane of water... the Abyssal Maw itself! I shudder to " ..
+                "imagine what fate awaits him there.\n\nFind the elemental, Hydrius, near the Abyssal " ..
+                "Breach. He knows of Go'el and is sympathetic to our fight against Ragnaros. If anyone " ..
+                "can help you there, it's him.\n\nI will meet you beneath the tides of Vashj'ir, <race>...",
+        },
+        [29337] = {
+            description = "Time is short! My love lies in Deepholm. I will take us there when you are " ..
+                "ready, and we will speak with Therazane the Stonemother.",
+        },
+        [29338] = {
+            description = "We must travel now to the Firelands. Within that realm, Go'el's burning spirit " ..
+                "could become as terrible as Ragnaros himself! Prepare yourself, for we will be alone in " ..
+                "a hostile world.\n\nSpeak with me when you are ready... and may the ancestors protect us!",
+        },
+        [29342] = {
+            description = "The best tastin' fish live in the cold waters o' Dun Morogh, <name>, an' don't " ..
+                "let anyone else tell ye otherwise! Me favorite, an' the most popular one in Ironforge, " ..
+                "is the arctic char, which only comes from our ancestral lands.\n\nI like tae think o' it " ..
+                "as Ironforge's gift t' the world!\n\nWhy don't ye try yer hand at catchin' a few " ..
+                "yerself? The best place tae find 'em is down in Helm's Bed Lake, in the eastern end o' " ..
+                "Dun Morogh.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
         [29343] = {
             description = "I'm sure by now ye've heard the tale o' Old Ironjaw, the most famous and " ..
                 "elusive fish in the waters o' Ironforge's Forlorn Cavern. Well, in his many years, he's " ..
@@ -29276,12 +29666,46 @@ ns.Overrides.wowhead = {
             rewardItems = {{67414, 1}},
             rewardMoney = 114000,
         },
+        [29344] = {
+            description = "Hae I introduced ye tae me pet, Squirky? I'm teachin' him tae fish all " ..
+                "proper-like. Fer now, I've been feedin' him minnows fished from the pool in this " ..
+                "cavern.\n\nMaybe ye'd like tae give it a try? Just cast yer lure in the pool over there " ..
+                "and feed Squirky any minnows ye happen tae fish up. He'll love ye ferever!",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 20000,
+        },
+        [29345] = {
+            description = "A well-meaning goblin visitor introduced Azshara snakeheads to our waters and " ..
+                "now they're overrunning the pond.\n\nPlease, if you can catch some of these voracious " ..
+                "predatory fish before they eat every smallfish and mud snapper in Thunder Bluff, I'd be " ..
+                "terribly grateful.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 90000,
+        },
         [29346] = {
             description = "One of the Forsaken from the Pools of Vision came to me and said he'd lost his " ..
                 "ring to a blind cavefish in the waters there.\n\nOr perhaps it was his finger. It was " ..
                 "hard to tell; his jaw did not move and his Orcish was no better than mine.\n\nIn any " ..
                 "case, I thought it would be a kind gesture towards our unusual visitors to catch and gut " ..
                 "cavefish until the ring - or finger - was found.\n\nWould you help?",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29347] = {
+            description = "If ye've ever fished fer crayfish, ye know they respond best to live bait, an' " ..
+                "the more bait, the better. Would ye like to test my new bait? Simply smear this on " ..
+                "yerself an' hop into Helm's Bed Lake in eastern Dun Morogh.\n\nAfter ye've got the " ..
+                "catch, take it to me friend, Cook Ghilm at Gol'Bolar Quarry, west of the lake. He's an " ..
+                "expert at cookin' those oversized bugs!",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 82000,
+        },
+        [29348] = {
+            description = "Thunder Bluff's fishing pond is being overrun with voracious Azshara " ..
+                "snakeheads; there are hardly any smallfish or mud snappers left.\n\nWe already have " ..
+                "fishers trying to kill as many snakeheads as they can, but can you assist us in our " ..
+                "restocking efforts?\n\nIf you could gather some fish from Stonebull Lake and bring them " ..
+                "here to Thunder Bluff, I would be very grateful.",
             rewardItems = {{67414, 1}},
             rewardMoney = 114000,
         },
@@ -29304,6 +29728,91 @@ ns.Overrides.wowhead = {
             rewardItems = {{67414, 1}},
             rewardMoney = 900,
         },
+        [29351] = {
+            description = "The guards who defend Ironforge put their lives on the line against our many " ..
+                "enemies, and it's up to us to take care of them.\n\nToday, their rations consist of two " ..
+                "dwarven favorites, haggis and Ironforge pale ale. Would ye be so kind as to help me " ..
+                "distribute them? That way, everyone gets his food in a timely manner and we can move on " ..
+                "to other tasks.",
+            rewardMoney = 114000,
+        },
+        [29352] = {
+            description = "Oh, no, <name>, this is going to be a disaster if we don't find some chicken " ..
+                "soon... Ye just cannae make cock-a-leekie soup without the chicken! It's not " ..
+                "possible!\n\nThere's still time to make the soup and broth if ye can find some fresh " ..
+                "chicken. Will ye help me? There are usually a few chickens running around outside the " ..
+                "front entrance to the city. If ye can get yer hands on, say, six o' them, that should " ..
+                "save me soup.",
+            rewardMoney = 56000,
+        },
+        [29353] = {
+            description = "The haggis must flow. Aye, it's a figure o' speech, for haggis'll ne'er flow! " ..
+                "Ye dinnae want to know what'll happen if the people o' Ironforge don't get their " ..
+                "haggis.\n\nI'm working on the next batch, but I'm still missing a couple of " ..
+                "ingredients.\n\nSognar Cliffbeard is the meat vendor in the Military Ward, an' he'll " ..
+                "sell you the big bag o' sheep innards I need. Ye can buy mild spices from any cooking " ..
+                "supplier and ye can find sacks o' oatmeal in any inn or among the supplies in the city.",
+            rewardMoney = 114000,
+        },
+        [29354] = {
+            description = "One of a fisher's most simple and effective tools is the shiny bauble; affixed " ..
+                "to a line, even the most novice angler has a chance at a catch.\n\nWith all the fishing " ..
+                "going on of late, though, Thunder Bluff is in woefully short supply!\n\nMight I ask you " ..
+                "to collect shiny stones from around the base of the central rise? Bring them to Nahari " ..
+                "Cloudchaser so that she might craft more shiny baubles with them.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 114000,
+        },
+        [29355] = {
+            description = "It might seem like a basic thing, <name>, but spice bread is a longtime " ..
+                "favorite in Ironforge. Some days, I have trouble keeping up!\n\nWould ye like to cook " ..
+                "some to practice yer skills an' help meet the demand? Ye can buy all the ingredients " ..
+                "ye'll need from me brother, Emrul Riknussun, who is downstairs.",
+            rewardMoney = 114000,
+        },
+        [29356] = {
+            description = "My stocks o' IPA, that's Ironforge Pale Ale for ye novices, are gettin' low. " ..
+                "Luckily, the brewery isn't too far away an' they should have a new cask o' Drugan's IPA " ..
+                "waitin' fer us. That Drugan's a genius of a brewer, I tell ye.\n\nI won't be able to get " ..
+                "down to Kharanos meself today, but perhaps ye can dash down there, pick up the new cask " ..
+                "an' run it back 'ere? What d'ye say?",
+            rewardMoney = 114000,
+        },
+        [29357] = {
+            description = "Isn't it amazing how something as simple as spice bread is used every day in " ..
+                "Darnassus? When I'm not seeing to my other responsibilities, I like to bake spice bread " ..
+                "to hone my skills as a cook and practice my technique.\n\nWhy don't you give it a try? " ..
+                "You should be able to get your ingredients here in the shop.\n\nNo matter how much we " ..
+                "make, it never goes to waste. Bring me your loaves when you're done and I'll have " ..
+                "someone share them with our friends, the Gilneans.",
+            rewardMoney = 20000,
+        },
+        [29358] = {
+            description = "The Shu'halo use pine nuts in so MANY dishes: meat, fish, vegetables, even " ..
+                "baked into breads or sprinkled over sweet pastries.\n\nThe Earth Mother has blessed us " ..
+                "in that the very BEST pine nuts come from the trees upon these very mesas. Simply gather " ..
+                "pine cones and toast them over a cooking fire to release the nuts within.\n\nWould you " ..
+                "please be so kind as to gather some? There are hardly ever enough to go around...",
+            rewardMoney = 110000,
+        },
+        [29359] = {
+            description = "Herring is one of the most sought-after fish in Darnassus, but not just any " ..
+                "herring. The Kaldorei herring is native only to the waters surrounding Teldrassil.\n\nI " ..
+                "try to keep a good supply of it because it's so versatile! I just finished smoking a " ..
+                "batch of it, so I need to rebuild my stocks. Would you mind helping me? You can catch " ..
+                "Kaldorei herring by fishing in Rut'theran Village.",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 94000,
+        },
+        [29360] = {
+            description = "It's not always about making food for the orcs, <class>. This time, it's about " ..
+                "making food for what will hopefully be their replacements.\n\nWe need to start small, we " ..
+                "need to catch flies. Flies love rotting meat, and we love rotting meat... as projectile " ..
+                "weapons!\n\nCheck out the Meat Wagons for any extra bits of meat. Where you find the " ..
+                "meat, you'll find the flies.\n\nBring me 25 bloated flies, and then I can start on the " ..
+                "next stage of our cooking plan.",
+            rewardMoney = 114000,
+        },
         [29361] = {
             description = "Sometimes fishing means throwing something back, <class>.\n\nWe've been " ..
                 "overfeeding these frogs for just that occasion. We've fed these frogs bloated spiders, " ..
@@ -29314,6 +29823,56 @@ ns.Overrides.wowhead = {
                 "appears.",
             rewardItems = {{67414, 1}},
             rewardMoney = 114000,
+        },
+        [29362] = {
+            description = "You know of the Pools of Vision, yes?\n\nThere is a sort of mushroom that " ..
+                "grows there... not the tough, rank fungi that dominates the place, but smaller, more " ..
+                "delicate caps that grow beneath them.\n\nThey are rare and quite delicious, adding a " ..
+                "flavor to meat dishes that one might even call magical.\n\n...what? No, really. They " ..
+                "just taste good. That's it.",
+            rewardMoney = 90000,
+        },
+        [29363] = {
+            description = "I am often asked, \"Aska, who is making all this Mulgore spice bread?!\"\n\nIt " ..
+                "is a reasonable question. Our fine and noble bread is traded in countless settlements in " ..
+                "the most far-away lands, even by our staunchest foes. IT'S JUST THAT GOOD.\n\nAnd the " ..
+                "answer...?\n\nIt is \"YOU.\" Please take this packet of Mulgore spices and use it to " ..
+                "turn bland, boring spice bread into MULGORE spice bread!",
+            rewardMoney = 114000,
+        },
+        [29364] = {
+            description = "One of Thunder Bluff's most important staples is cornmeal; bowls of corn may " ..
+                "be found in nearly every home.\n\nWith so many of the local mills under constant attack " ..
+                "by harpies, gnolls, reckless mining companies and Earth Mother knows what else, I often " ..
+                "ask my students to help with the task of grinding corn into cornmeal.\n\nWould you care " ..
+                "to help?",
+            rewardMoney = 90000,
+        },
+        [29365] = {
+            description = "Even the novice cook knows that a great dish begins with great " ..
+                "ingredients.\n\nI have standing orders with merchants throughout Thunder Bluff, but I'd " ..
+                "like to see how well you do at selecting the very best of what they have to " ..
+                "offer.\n\nPlease make the rounds and gather perfect portions of meat, fish, vegetables " ..
+                "and herbs from local merchant stalls.",
+            rewardMoney = 114000,
+        },
+        [29387] = {
+            description = "The Guardians of Hyjal, led by Arch Druid Malfurion Stormrage, seek brave " ..
+                "heroes to assist with a full-scale assault on the Firelands.\n\nWilling and able-bodied " ..
+                "heroes of the Alliance should report to the Sanctuary of Malorne in Mount Hyjal " ..
+                "immediately.",
+        },
+        [29388] = {
+            description = "The Guardians of Hyjal, led by Arch Druid Malfurion Stormrage, seek brave " ..
+                "heroes to assist with a full-scale assault on the Firelands.\n\nWilling and able-bodied " ..
+                "champions of the Horde should report to the Sanctuary of Malorne in Mount Hyjal " ..
+                "immediately.",
+        },
+        [29389] = {
+            description = "Your work has given us the advantage we need to mobilize against the denizens " ..
+                "of the Firelands. We are gathering our invasion force just south of our position.\n\nWe " ..
+                "could use your strength again, <race>. Speak with Matoclaw at the Sanctuary of Malorne. " ..
+                "She is coordinating the invasion effort.",
         },
         [29408] = {rewardMoney = 35},
         [29410] = {rewardMoney = 8},
@@ -30168,6 +30727,13 @@ ns.Overrides.wowhead = {
         [52269] = {spawns = {[1977] = {{59.9, 51.4}}}, zoneID = 1977},
         [52286] = {spawns = {[1977] = {{60.1, 41.4}}}, zoneID = 1977},
         [52832] = {spawns = {[3537] = {{32.6, 27.2}}}, zoneID = 3537},
+        [53422] = {
+            spawns = {
+                [1519] = {{56.8, 58.8}, {57.4, 59.8}, {57.6, 59.6}},
+                [1637] = {{48.4, 71.4}, {48.4, 71.6}},
+            },
+            zoneID = 1519,
+        },
     },
     objects = {
         [207381] = {

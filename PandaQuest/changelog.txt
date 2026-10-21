@@ -4,6 +4,229 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.210
+- database - Wowhead data as the PandaQuest portal read it: 6,809 quests, 40 NPCs, 1 object
+- quest 11041 - A Job Unfinished... - updated
+  - description added
+  - reward choices: +4
+- quest 29281 - Additional Armaments - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29282 - Well Armed - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29283 - Calling the Ancients - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29284 - Aid of the Ancients - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29285 - Alignment - updated
+  - description added
+  - reward money added (28g 20s)
+  - reward items: +1
+- quest 29287 - Peaked Interest - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29288 - Starting Young - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29290 - Fire in the Skies - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29293 - Singed Wings - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29295 - The Bigger They Are - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29296 - Territorial Birds - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29297 - Bye Bye Burdy - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29298 - A Smoke-Stained Locket - updated
+  - description added
+- quest 29299 - Some Like It Hot - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29302 - Unlocking the Secrets Within - updated
+  - description added
+- quest 29303 - Tragedy and Family - updated
+  - description added
+- quest 29304 - The Dogs of War - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29305 - Strike at the Heart - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29307 - Heart of Flame - updated
+  - description added
+  - reward money added (28g 20s)
+- quest 29308 - Heart of Flame - updated
+  - description added
+  - reward money added (28g 20s)
+- quest 29309 - The Stuff of Legends - updated
+  - description added
+  - reward money added (28g 20s)
+  - reward items: +1
+- quest 29310 - The Tipping Point - updated
+  - description added
+- quest 29311 - The Rest is History - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward items: +1
+- quest 29312 - The Stuff of Legends - updated
+  - description added
+  - reward money added (28g 20s)
+  - reward items: +1
+- quest 29313 - The Secret to Perfect Kimchi - updated
+  - description added
+  - reward money added (2g)
+- quest 29314 - Remembering the Ancestors - updated
+  - description added
+  - reward money added (2g)
+- quest 29315 - Fungus Among Us - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 29316 - Back to Basics - updated
+  - description added
+  - reward money added (85s)
+- quest 29319 - Tadpole Terror - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29320 - Like Pike? - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29321 - Happy as a Clam Digger - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29322 - Time for Slime - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29323 - Stocking Up - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 29324 - The Sister's Pendant - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 29325 - A Slippery Snack - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 29326 - The Nordrassil Summit - updated
+  - description added
+  - reward money added (7g 10s)
+- quest 29327 - Elemental Bonds: Doubt - updated
+  - description added
+- quest 29328 - Elemental Bonds: Desire - updated
+  - description added
+- quest 29329 - Elemental Bonds: Patience - updated
+  - description added
+- quest 29330 - Elemental Bonds: Fury - updated
+  - description added
+- quest 29331 - Elemental Bonds: The Vow - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +4
+- quest 29332 - Lily, Oh Lily - updated
+  - description added
+  - reward money added (9g)
+- quest 29333 - Escargot A Go-Go - updated
+  - description added
+  - reward money added (9g)
+- quest 29334 - Roach Coach - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29335 - Into Slashing Winds - updated
+  - description added
+- quest 29336 - Into Coaxing Tides - updated
+  - description added
+- quest 29337 - Into Constant Earth - updated
+  - description added
+- quest 29338 - Into Unrelenting Flame - updated
+  - description added
+- quest 29342 - Cold Water Fishing - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29344 - Fish fer Squirky - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 29345 - Pond Predators - updated
+  - description added
+  - reward money added (9g)
+  - reward items: +1
+- quest 29347 - Live Bait - updated
+  - description added
+  - reward money added (8g 20s)
+  - reward items: +1
+- quest 29348 - The Race to Restock - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29351 - A Round for the Guards - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29352 - A Fowl Shortage - updated
+  - description added
+  - reward money added (5g 60s)
+- quest 29353 - Keepin' the Haggis Flowin' - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29354 - Shiny Baubles - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29355 - Can't Get Enough Spice Bread - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29356 - I Need to Cask a Favor - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29357 - Spice Bread Aplenty - updated
+  - description added
+  - reward money added (2g)
+- quest 29358 - Pining for Nuts - updated
+  - description added
+  - reward money added (11g)
+- quest 29359 - An Old Favorite - updated
+  - description added
+  - reward money added (9g 40s)
+  - reward items: +1
+- quest 29360 - Would You Like Some Flies With That? - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29362 - "Magic" Mushrooms - updated
+  - description added
+  - reward money added (9g)
+- quest 29363 - Mulgore Spice Bread - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29364 - Corn Mash - updated
+  - description added
+  - reward money added (9g)
+- quest 29365 - Perfectly Picked Portions - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 29387 - Guardians of Hyjal: Firelands Invasion! - updated
+  - description added
+- quest 29388 - Guardians of Hyjal: Firelands Invasion! - updated
+  - description added
+- quest 29389 - Guardians of Hyjal: Firelands Invasion! - updated
+  - description added
+- npc 53422 - Dragonwrath, Tarecgosa's Rest - updated
+  - coordinates: 3 spawn points added in Stormwind City
+  - coordinates: 2 spawn points added in Orgrimmar
+
 0.2.209
 - database - Wowhead data as the PandaQuest portal read it: 6,739 quests, 39 NPCs, 1 object
 - quest 29194 - Through a Glass, Darkly - updated
@@ -1475,296 +1698,10 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - npc 48533 - Enormous Gyreworm - updated
   - coordinates: 8 spawn points added in Deepholm
 
-0.2.202
-- database - Wowhead data as the PandaQuest portal read it: 6,268 quests, 25 NPCs, 1 object
-- quest 16 - Give Gerard a Drink - updated
-  - reward items: +1
-- quest 28389 - Report to the Denmother - updated
-  - description added
-  - reward money added (1g 40s)
-  - reward choices: +3
-- quest 28390 - Glop, Son of Glop - updated
-  - description added
-  - reward money added (17g 20s)
-- quest 28391 - The Restless Brood - updated
-  - description added
-  - reward money added (17g 20s)
-- quest 28392 - The Timbermaw Tribe - updated
-  - description added
-  - reward money added (18s)
-- quest 28393 - A Dangerous Alliance - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +2
-- quest 28394 - The Golem Lord's Creations - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28397 - They Will Never Expect This... - updated
-  - description added
-  - reward money added (15s)
-- quest 28398 - The Pyromancer's Grimoire - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28399 - Stones of Binding - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28400 - Heroes of the Horde! - updated
-  - description added
-  - reward money added (60s)
-  - reward choices: +4
-- quest 28401 - Slaves of the Firelord - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +2
-- quest 28402 - Schnottz So Fast - updated
-  - description added
-  - reward money added (8g 60s)
-- quest 28403 - Bad Datas - updated
-  - description added
-  - reward money added (2g 15s)
-- quest 28404 - I'll Do It By Hand - updated
-  - description added
-  - reward money added (17g 20s)
-  - reward choices: +3
-- quest 28405 - Weapons of Darkness - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +3
-- quest 28407 - The Bachelorette - updated
-  - description added
-  - reward money added (4g 50s)
-- quest 28408 - Something Bold - updated
-  - description added
-  - reward money added (9g)
-- quest 28409 - Something Brewed - updated
-  - description added
-  - reward money added (9g)
-- quest 28410 - Something Stolen - updated
-  - description added
-  - reward money added (9g)
-- quest 28411 - Something Stewed - updated
-  - description added
-  - reward money added (9g)
-- quest 28413 - Words and Music By... - updated
-  - description added
-  - reward money added (6g 80s)
-- quest 28414 - Fourth and Goal - updated
-  - description added
-  - reward money added (50c)
-  - reward choices: +2
-- quest 28415 - SEVEN! YUP! - updated
-  - description added
-  - reward money added (75s)
-  - reward items: +1
-  - reward choices: +3
-- quest 28416 - Burning Vengeance - updated
-  - description added
-  - reward money added (75s)
-- quest 28417 - Done Nothing Wrong - updated
-  - description added
-  - reward money added (75s)
-  - reward choices: +3
-- quest 28418 - Burning Vengeance - updated
-  - description added
-  - reward money added (75s)
-- quest 28419 - Stocking Up - updated
-  - description added
-  - reward money added (75s)
-  - reward items: +1
-- quest 28420 - A Future Project - updated
-  - description added
-  - reward money added (75s)
-  - reward items: +1
-- quest 28421 - Mud Hunter - updated
-  - description added
-  - reward money added (75s)
-  - reward items: +1
-- quest 28422 - The Sand, the Cider, and the Orb - updated
-  - description added
-- quest 28423 - Warlocks Have the Neatest Stuff - updated
-  - description added
-  - reward money added (75s)
-- quest 28424 - Shadow Boxing - updated
-  - description added
-  - reward money added (75s)
-- quest 28425 - Return to Ariok - updated
-  - description added
-  - reward money added (7s)
-- quest 28426 - Chiselgrip, the Heart of the Steppes - updated
-  - description added
-  - reward money added (75s)
-  - reward choices: +4
-- quest 28427 - A Needle in a Hellhole - updated
-  - description added
-  - reward money added (7s)
-- quest 28428 - A Perfect Costume - updated
-  - description added
-  - reward money added (1g 45s)
-- quest 28429 - A Perfect Costume - updated
-  - description added
-  - reward money added (1g 45s)
-- quest 28430 - A Perfect Costume - updated
-  - description added
-  - reward money added (1g 45s)
-- quest 28431 - A Perfect Costume - updated
-  - description added
-  - reward money added (1g 45s)
-- quest 28432 - Into the Black Tooth Hovel - updated
-  - description added
-  - reward money added (35s)
-- quest 28433 - Grunt Work - updated
-  - description added
-  - reward money added (75s)
-- quest 28434 - Strategic Cuts - updated
-  - description added
-- quest 28435 - The Kodocaller's Horn - updated
-  - description added
-- quest 28436 - Taking the Horn For Ourselves - updated
-  - description added
-  - reward money added (75s)
-  - reward choices: +3
-- quest 28437 - General Thorg'izog - updated
-  - description added
-  - reward money added (40s)
-- quest 28438 - Trial by Magma - updated
-  - description added
-  - reward money added (1g 50s)
-  - reward choices: +4
-- quest 28439 - I Am the Law and I Am the Lash - updated
-  - description added
-  - reward money added (1g 50s)
-- quest 28440 - Abuse of Power - updated
-  - description added
-- quest 28441 - Enough Damage For One Day - updated
-  - description added
-  - reward money added (75s)
-  - reward choices: +5
-- quest 28442 - Flame Crest - updated
-  - description added
-  - reward money added (40s)
-- quest 28443 - Blackened Ashes - updated
-  - description added
-  - reward money added (75s)
-- quest 28444 - Latent Demons of the Land - updated
-  - description added
-  - reward money added (75s)
-- quest 28445 - A Heap of Delicious Worg - updated
-  - description added
-  - reward money added (75s)
-- quest 28446 - Blood Tour - updated
-  - description added
-- quest 28447 - Draconic Vanguard - updated
-  - description added
-- quest 28448 - A Deal With a Dragon - updated
-  - description added
-  - reward money added (75s)
-- quest 28449 - Placing the Pawns - updated
-  - description added
-  - reward money added (75s)
-  - reward choices: +4
-- quest 28450 - A Delivery for Thorg'izog - updated
-  - description added
-  - reward money added (40s)
-- quest 28451 - A Delivery for Neeralak - updated
-  - description added
-  - reward money added (40s)
-- quest 28452 - A Delivery for Xi'lun - updated
-  - description added
-  - reward money added (40s)
-- quest 28453 - Locked and Loaded - updated
-  - description added
-  - reward money added (19s)
-  - reward choices: +5
-- quest 28454 - Assault on Dreadmaul Rock - updated
-  - description added
-  - reward money added (2g 30s)
-- quest 28455 - Glory Amidst Chaos - updated
-  - description added
-  - reward money added (2g 30s)
-- quest 28456 - The Spoils of War - updated
-  - description added
-  - reward items: +1
-  - reward choices: +5
-- quest 28457 - A Dangerous Alliance - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +2
-- quest 28458 - The Pyromancer's Grimoire - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28459 - Stones of Binding - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28461 - The Golem Lord's Creations - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28465 - Slaves of the Firelord - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +2
-- quest 31132 - A Mile in My Shoes - updated
-  - description added
-- npc 9464 - Overlord Ror - updated
-  - coordinates: 8 spawn points added in Felwood
-
 0.2.201
 - changelog - data changes list every quest, NPC, object and item, each with what changed for it
 - release - the GitHub release notes carry the version's whole changelog section
 - curseforge - a changelog over 30,000 characters goes up as its summary and links to the full list
-
-0.2.200
-- database - Wowhead data as the PandaQuest portal read it: 6,197 quests, 24 NPCs, 1 object
-- quest 28289 - Moonglade Calls - updated
-- quest 28290 - Meet with Grezz Ragefist - updated
-- quest 28291 - Return to Camp - updated
-- quest 28292 - That's No Pyramid! - updated
-- quest 28293 - That's No Pyramid! - updated
-- quest 28294 - The Kirthaven Summit - updated
-- quest 28295 - Meetup with the Caravan - updated
-- quest 28296 - Meetup with the Caravan - updated
-- quest 28297 - Meet with Ormak Grimshot - updated
-- quest 28299 - Meet with Zevrost - updated
-- quest 28300 - Meet with Ureda - updated
-- quest 28302 - Meet with Sunwalker Atohmo - updated
-- quest 28303 - Meet with Master Pyreanor - updated
-- quest 28304 - Meet with Dark Cleric Cecille - updated
-- quest 28307 - Meet with Tyelis - updated
-- quest 28308 - Meet with Seer Liwatha - updated
-- quest 28309 - Meet with Shadow-Walker Zuru - updated
-- quest 28310 - Morgan's Vigil - updated
-- quest 28311 - Blackened Ashes - updated
-- quest 28312 - Latent Demons of the Land - updated
-- quest - and 50 more quests updated
-
-0.2.199
-- database - Wowhead data as the PandaQuest portal read it: 6,127 quests, 24 NPCs, 1 object
-- quest 28185 - Svarnos - updated
-- quest 28186 - Cursed Shackles - updated
-- quest 28187 - Missed Me By Zhat Much! - updated
-- quest 28188 - Prison Revolt - updated
-- quest 28189 - Do the Right Thing - updated
-- quest 28191 - A Fitting End - updated
-- quest 28192 - No One Here Gets Out Alive - updated
-- quest 28193 - Lockdown! - updated
-- quest 28194 - The Great Escape - updated
-- quest 28195 - Sending a Message - updated
-- quest 28196 - The Battle for Hillsbrad - updated
-- quest 28197 - Discretion is Key - updated
-- quest 28198 - The Weakest Link - updated
-- quest 28199 - For Science! - updated
-- quest 28200 - The Element of Supplies - updated
-- quest 28201 - Ploughshares to Swords - updated
-- quest 28202 - A Perfect Costume - updated
-- quest 28203 - A Perfect Costume - updated
-- quest 28204 - A Perfect Costume - updated
-- quest 28205 - A Perfect Costume - updated
-- quest - and 61 more quests updated
 
 0.2.198
 - waypoints - the quest NPC is marked over its nameplate: quest name, Ready for turn-in, chevrons
@@ -1775,30 +1712,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - waypoints - with TomTom installed, the waypoint TomTom's arrow follows is shown instead
 - options - a Waypoints tab: every part on or off, size, beam colour, Pinpoint distance
 - saved data - new keys profile.waypoint and char.waypoint; nothing saved before is changed
-
-0.2.197
-- database - Wowhead data as the PandaQuest portal read it: 6,046 quests, 24 NPCs, 1 object
-- quest 28063 - Leave No Weapon Behind - updated
-- quest 28064 - Welcome to the Brotherhood - updated
-- quest 28068 - Adventurers Wanted: Blackrock Depths - updated
-- quest 28069 - Adventurers Wanted: Blackrock Depths - updated
-- quest 28089 - Warchief's Command: Hillsbrad Foothills! - updated
-- quest 28090 - Precious Goods - updated
-- quest 28091 - Easy Pickings - updated
-- quest 28092 - If The Key Fits - updated
-- quest 28093 - Pressing Forward - updated
-- quest 28094 - Paving the Way - updated
-- quest 28096 - Welcome to the Machine - updated
-- quest 28097 - The Gates of Grim Batol - updated
-- quest 28099 - Rasha'krak - updated
-- quest 28101 - Mathias' Command - updated
-- quest 28103 - Easy Pickings - updated
-- quest 28104 - Precious Goods - updated
-- quest 28105 - Kavem the Callous - updated
-- quest 28107 - Paving the Way - updated
-- quest 28108 - If The Key Fits - updated
-- quest 28109 - Pressing Forward - updated
-- quest - and 51 more quests updated
 
 0.2.194
 - core - the addon knows which game it runs in: Mists of Pandaria Classic, or later WoW Forever
