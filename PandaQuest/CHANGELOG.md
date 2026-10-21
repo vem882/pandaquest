@@ -4,6 +4,227 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.208] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,668 quests, 36 NPCs, 1 object
+- quest 866 - Root Samples - updated
+  - description added
+  - reward items: +1
+- quest 29089 - Sludge Beast! - updated
+  - description added
+  - reward money added (8s)
+  - reward choices: +2
+- quest 29090 - A Burning Threat - updated
+  - description added
+  - reward money added (8s)
+- quest 29094 - The Short Way Home - updated
+  - description added
+  - reward choices: +2
+- quest 29095 - Report to Thork - updated
+  - description added
+  - reward money added (8s)
+- quest 29100 - Bwemba's Spirit - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29101 - Punting Season - updated
+  - description added
+- quest 29102 - To Fort Livingston - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29103 - Serpents and Poison - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29104 - Spirits Are With Us - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29105 - Nesingwary Will Know - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29109 - Mor'shan Caravan Pick-Up - updated
+  - description added
+  - reward money added (9s)
+- quest 29110 - Mor'shan Caravan Rescue - updated
+  - description added
+- quest 29111 - Mor'shan Caravan Delivery - updated
+  - description added
+  - reward money added (9s)
+  - reward choices: +3
+- quest 29112 - Demon Seed - updated
+  - description added
+  - reward money added (9s)
+  - reward items: +1
+- quest 29114 - Track the Tracker - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29115 - The Hunter's Revenge - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29116 - Follow That Cat - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29118 - Follow That Cat - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29120 - Mauti - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29121 - Bury Me With Me Boots... - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29122 - Echoes of Nemesis - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29123 - Rage Against the Flames - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29124 - Warn the Rebel Camp - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29125 - Between the Trees - updated
+  - description added
+- quest 29126 - The Power of Malorne - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29127 - Rage Against the Flames - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29128 - The Protectors of Hyjal - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29129 - A Legendary Engagement - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29131 - Defend the Rebel Camp - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29132 - A Legendary Engagement - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29133 - To the Digsite - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29134 - A Wrinkle in Time - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29135 - All-Seeing Eye - updated
+  - description added
+  - reward money added (28g 20s)
+- quest 29137 - Breach in the Defenses - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29138 - Burn Victims - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29139 - Aggressive Growth - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29141 - The Harder They Fall - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29142 - Traitors Return - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29143 - Wisp Away - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29145 - Opening the Door - updated
+  - description added
+  - reward money added (94s)
+- quest 29147 - Call the Flock - updated
+  - description added
+- quest 29148 - Wings Aflame - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29149 - Rage Against the Flames - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29150 - Voodoo Zombies - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29151 - Bad Supplies - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29152 - Making Contact - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29153 - Booty Bay's Interests - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29154 - Booty Bay's Interests - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29155 - A Shiny Reward - updated
+  - description added
+  - reward money added (9g 40s)
+  - reward items: +4
+- quest 29156 - The Troll Incursion - updated
+  - description added
+  - reward money added (94s)
+- quest 29157 - The Zandalari Menace - updated
+  - description added
+  - reward money added (94s)
+- quest 29159 - Pyrorachnophobia - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29160 - Egg-stinction - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29161 - Those Bears Up There - updated
+  - description added
+- quest 29162 - Nature's Blessing - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29163 - Rage Against the Flames - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29164 - Perfecting Your Howl - updated
+  - description added
+- quest 29165 - The Call of the Pack - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29166 - Supplies for the Other Side - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29172 - The Beasts Within - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 29173 - Secondary Targets - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 29175 - Break Their Spirits - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 29177 - Vigilance on Wings - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 29179 - Hostile Elements - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29181 - Druids of the Talon - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29182 - Flight of the Storm Crows - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29186 - The Hex Lord's Fetish - updated
+  - description added
+  - reward money added (18g 80s)
+  - reward items: +1
+  - reward choices: +3
+- quest 29189 - Wicked Webs - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29192 - The Wardens are Watching - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29193 - On a Wing and a Prayer - updated
+  - description added
+  - reward money added (9g 40s)
+- npc 52832 - Tarecgosa - updated
+  - coordinates: 1 spawn point added in Borean Tundra
+
 ## [0.2.207] - 2026-10-21
 
 Data from the PandaQuest portal.
@@ -1453,33 +1674,6 @@ Data from the PandaQuest portal.
 - quest 27969 - Make Yourself Useful - updated
 - quest 27970 - Captain P. Harris - updated
 - quest 27971 - Rattling Their Cages - updated
-- quest - and 50 more quests updated
-
-## [0.2.195] - 2026-10-20
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 5,905 quests, 24 NPCs, 1 object
-- quest 27880 - Half-Ton Holdouts - updated
-- quest 27881 - Bloodwatcher Point - updated
-- quest 27882 - It's Not About History, It's About Power - updated
-- quest 27883 - The Warden's Pawn - updated
-- quest 27884 - The Sentinel's Pawn - updated
-- quest 27885 - The Warden's Game - updated
-- quest 27886 - The Sentinel's Game - updated
-- quest 27887 - Ancient Protectors - updated
-- quest 27888 - Return to Blam - updated
-- quest 27889 - New Kargath - updated
-- quest 27890 - The Bad Dogs - updated
-- quest 27891 - Amakkar, Jack of All Trades - updated
-- quest 27892 - Jurrix the Striker - updated
-- quest 27893 - Gargal, the Behemoth - updated
-- quest 27894 - The Wrath of a Dragonflight - updated
-- quest 27895 - Their Hunt Continues - updated
-- quest 27896 - The Sorrow and the Fury - updated
-- quest 27897 - The Hidden Clutch - updated
-- quest 27898 - Rheastrasza's Gift - updated
-- quest 27899 - That Gleam in his Eye - updated
 - quest - and 50 more quests updated
 
 ## [0.2.194] - 2026-10-20
