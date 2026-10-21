@@ -4,6 +4,226 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.205
+- database - Wowhead data as the PandaQuest portal read it: 6,480 quests, 26 NPCs, 1 object
+- quest 14151 - Cardinal Ruby - updated
+  - description added
+- quest 28671 - Warchief's Command: Blasted Lands! - updated
+  - description added
+- quest 28672 - The Executor In the Field - updated
+  - description added
+  - reward money added (25c)
+- quest 28673 - Hero's Call: Blasted Lands! - updated
+  - description added
+- quest 28675 - Hero's Call: Swamp of Sorrows! - updated
+  - description added
+- quest 28677 - Warchief's Command: Swamp of Sorrows! - updated
+  - description added
+- quest 28678 - Captain P. Harris - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28679 - Rattling Their Cages - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28680 - Boosting Morale - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28681 - Shark Tank - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28682 - Claiming The Keep - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28683 - Thinning the Brood - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28684 - A Sticky Task - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28685 - Leave No Weapon Behind - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28686 - Not The Friendliest Town - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28687 - Teach A Man To Fish.... Or Steal - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28689 - The Forgotten - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28690 - Salvaging the Remains - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28691 - First Lieutenant Connor - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28692 - Magnets, How Do They Work? - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28693 - Finish The Job - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28694 - Watch Out For Splinters! - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28695 - WANTED: Foreman Wellson - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28696 - Bombs Away! - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28697 - Ghostbuster - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28698 - Cannonball! - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28699 - Hero's Call: Northern Stranglethorn Vale! - updated
+  - description added
+- quest 28700 - Taking the Overlook Back - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28702 - Hero's Call: The Cape of Stranglethorn! - updated
+  - description added
+- quest 28703 - Step Into My Barrow - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28705 - Warchief's Command: Outland! - updated
+  - description added
+- quest 28706 - Spray it Forward - updated
+  - description added
+  - reward money added (40s)
+- quest 28707 - Spray it Again - updated
+  - description added
+  - reward money added (40s)
+- quest 28708 - Hero's Call: Outland! - updated
+  - description added
+- quest 28709 - Hero's Call: Northrend! - updated
+  - description added
+- quest 28710 - Spray it One More Time - updated
+  - description added
+  - reward money added (40s)
+  - reward choices: +3
+- quest 28712 - Enter the Dragon Queen - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 28713 - The Balance of Nature - updated
+  - description added
+  - reward money added (35c)
+  - reward choices: +2
+- quest 28714 - Fel Moss Corruption - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+  - reward choices: +3
+- quest 28715 - Demonic Thieves - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28716 - Hero's Call: Twilight Highlands! - updated
+  - description added
+- quest 28717 - Warchief's Command: Twilight Highlands! - updated
+  - description added
+- quest 28718 - Where There's Smoke, There's Delicious Meat - updated
+  - description added
+  - reward money added (40s)
+- quest 28719 - A Little Gamy - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28726 - Webwood Corruption - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +4
+- quest 28727 - Vile Touch - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +2
+- quest 28729 - Teldrassil: Crown of Azeroth - updated
+  - description added
+  - reward money added (1s)
+- quest 28731 - Teldrassil: Passing Awareness - updated
+  - description added
+  - reward money added (1s)
+- quest 28732 - This Can Only Mean One Thing... - updated
+  - description added
+- quest 28733 - Basic Botany - updated
+  - description added
+  - reward money added (2g)
+- quest 28734 - A Favor for Melithar - updated
+  - description added
+  - reward money added (5c)
+- quest 28735 - To the Chamber of Incineration! - updated
+  - description added
+  - reward money added (32g 80s)
+- quest 28736 - Fire From the Sky - updated
+  - description added
+  - reward money added (8g 60s)
+- quest 28737 - What Is This Place? - updated
+  - description added
+  - reward money added (32g 80s)
+- quest 28738 - The Twilight Forge - updated
+  - description added
+  - reward money added (32g 80s)
+- quest 28740 - Do My Eyes Deceive Me? - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28741 - Ascendant Lord Obsidius - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28742 - Shy-Rotam - updated
+  - description added
+  - reward money added (1g 60s)
+  - reward items: +1
+  - reward choices: +5
+- quest 28744 - Ghouls Hate My Grains - updated
+  - description added
+  - reward money added (2g 90s)
+- quest 28745 - Screechy Keen - updated
+  - description added
+  - reward money added (1g 60s)
+- quest 28746 - Penetrating Their Defenses - updated
+  - description added
+  - reward money added (34g 40s)
+  - reward choices: +3
+- quest 28747 - Someone Setup the Pumpkin Bomb - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 28748 - Lawn of the Dead - updated
+  - description added
+  - reward money added (45g 60s)
+  - reward items: +1
+  - reward choices: +2
+- quest 28749 - The Battle for Andorhal - updated
+  - description added
+  - reward money added (9s)
+- quest 28753 - Doing it the Hard Way - updated
+  - description added
+  - reward money added (34g 40s)
+  - reward choices: +3
+- quest 28755 - Annals of the Silver Hand - updated
+  - description added
+- quest 28756 - Aberrations of Bone - updated
+  - description added
+- quest 28757 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28758 - Battle of Life and Death - updated
+  - description added
+  - reward money added (18g 80s)
+  - reward choices: +3
+- quest 28759 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28760 - Vengeance for Orsis - updated
+  - description added
+  - reward money added (36g)
+  - reward choices: +3
+
 0.2.204
 - database - Wowhead data as the PandaQuest portal read it: 6,409 quests, 26 NPCs, 1 object
 - quest 13692 - The Sword and the Sea - updated
@@ -834,30 +1054,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - quest 27748 - Fortune and Glory - updated
 - quest 27750 - War Forage - updated
 - quest - and 46 more quests updated
-
-0.2.191
-- database - Wowhead data as the PandaQuest portal read it: 5,702 quests, 24 NPCs, 1 object
-- quest 27641 - While Meeting The Family - updated
-- quest 27642 - Sifting Through The Wreckage - updated
-- quest 27643 - Donnelly Dunwald - updated
-- quest 27644 - Eoin Dunwald - updated
-- quest 27645 - Cayden Dunwald - updated
-- quest 27646 - Finding Beak - updated
-- quest 27647 - Anything But Water - updated
-- quest 27648 - Once More Into The Fire - updated
-- quest 27649 - A Steady Supply - updated
-- quest 27650 - Home Again - updated
-- quest 27651 - Doing It Like a Dunwald - updated
-- quest 27652 - Dark Assassins - updated
-- quest 27653 - Dark Assassins - updated
-- quest 27654 - Bring the Hammer Down - updated
-- quest 27655 - Bring the Hammer Down - updated
-- quest 27656 - Croc-Out - updated
-- quest 27657 - Help from the Earthcaller - updated
-- quest 27658 - Help from the Earthcaller - updated
-- quest 27659 - Portal Overload - updated
-- quest 27660 - Spirit of the Loch - updated
-- quest - and 50 more quests updated
 
 0.2.173
 - browser - a quest's page shows its money and reward items, and the quest giver's text
