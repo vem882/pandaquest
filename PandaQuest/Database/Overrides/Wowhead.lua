@@ -28731,8 +28731,525 @@ ns.Overrides.wowhead = {
                 "out a place suitable for its activation.\n\nGo, child. Time is of the essence...",
             rewardMoney = 94000,
         },
+        [29194] = {
+            description = "< Tarecgosa listens as you explain your presence in Coldarra.>\n\nYour tale " ..
+                "rings true, <class>. Much has changed since the death of Malygos - little of it for the " ..
+                "better.\n\nI know of the device you carry, and I recognize Anachronos' magic in its " ..
+                "creation. There is but one place in all of Coldarra that would allow this Timeless Eye " ..
+                "to be used discreetly.\n\nYou will require my assistance if you hope to succeed. Speak " ..
+                "with me again inside the Nexus and you shall have it.",
+            rewardMoney = 188000,
+        },
+        [29195] = {
+            description = "We appear to have everything under control. Our invasion portal to the " ..
+                "Firelands will be opened momentarily, and the elementals have not put up much " ..
+                "fight.\n\nAssist our druids by dispatching the last few of these elementals. Then, once " ..
+                "the gate has been opened, we can make our move.",
+            rewardMoney = 94000,
+        },
+        [29196] = {
+            description = "We should not worry about this \"Druid of the Flame\" for the time being. We " ..
+                "must be concerned with the continuance of our operation.\n\nReturn to Matoclaw at the " ..
+                "Sanctuary of Malorne. If Ragnaros was prepared for our arrival, then I anticipate that " ..
+                "his forces will launch a counterattack soon.",
+            rewardMoney = 9400,
+        },
+        [29197] = {
+            description = "Our invasion plan looks to have backfired. Several of our birds have already " ..
+                "reported in, speaking of fires breaking out across the vales of central Hyjal.\n\nNow, " ..
+                "many of our druids are stranded out in the field, unprepared for such a large-scale " ..
+                "attack. Thisalee was near Ashen Lake, and several others were out in the Regrowth, to " ..
+                "the northeast.\n\nGo, <name>! Find them, and make sure that they do not succumb to this " ..
+                "backdraft!",
+            rewardMoney = 94000,
+        },
+        [29198] = {
+            description = "Malfurion is working on a miracle for us. He believes that, in this time of " ..
+                "peril, he can resurrect Malorne to protect the Sanctuary. I have faith in him.\n\nIn the " ..
+                "meantime, we need to hold this perimeter. Stand by, and make sure no harm befalls my " ..
+                "fellow arch druid.",
+            rewardMoney = 94000,
+        },
+        [29199] = {
+            description = "We suffered heavy losses during the backdraft after our invasion attempt. Our " ..
+                "second attempt cannot fail.\n\nWe need reinforcements before we attempt another " ..
+                "invasion. Please, <name>, work with Matoclaw to obtain enough resources to afford " ..
+                "reinforcements. Then, we take our second and final stab at the Firelands.",
+        },
+        [29200] = {
+            description = "Before we depart, <name>, I have another matter to which you should " ..
+                "attend.\n\nA Druid of the Flame has been spotted in the ruins to the northwest. I " ..
+                "suspect it is the same one that attacked us at the portal several days ago. Now would be " ..
+                "an ideal time to see what it is that she truly wants... and if necessary, dispose of " ..
+                "her.\n\nSee to this flame druid, then we can continue on our planned course.",
+            rewardMoney = 94000,
+        },
+        [29201] = {
+            description = "There will be time to mourn for Hamuul later. His is the first of many " ..
+                "inevitable casualties in this war.... but our attack cannot wait, nor should the " ..
+                "momentum we have gained over the last several days be wasted.\n\nThe portal atop Nordune " ..
+                "Ridge is now open. Our reinforcements are prepared, and they await only my order to pass " ..
+                "through the portal.\n\nWe will meet again on the other side of the portal. Once there, " ..
+                "we shall ensure that our foothold is secure.",
+            rewardMoney = 188000,
+        },
+        [29202] = {
+            description = "I apologize for speaking curtly with you earlier. The loss of Hamuul was " ..
+                "shocking to me, and difficult to cope with.\n\nThey brought in his body while you were " ..
+                "away. He is alive, but - as you might imagine - he is very, very badly burned.\n\nThe " ..
+                "scars are deep. He may not live.\n\nI have arranged for some of our finest healers to " ..
+                "attend to him. If it is not too much to ask, would you speak with Dorda'en Nightweaver? " ..
+                "He and his fellow attendants may need your help.",
+            rewardMoney = 9400,
+        },
+        [29203] = {
+            description = "Leyara has been spotted in the Igneous Depths. A group of Shadow Wardens has " ..
+                "cornered her.\n\nGo there immediately. I will join you as soon as I make one necessary " ..
+                "preparation.",
+            rewardMoney = 188000,
+        },
+        [29205] = {
+            description = "Captain Saynna Stormrunner is launching an attack against the Forlorn Spire. " ..
+                "If you head to the northeast, you'll find her at the bottom of the ramp leading up " ..
+                "towards that rise.\n\nGo there and escort one of her druids to the tower with any forces " ..
+                "that she can spare. You'll have quite a fight ahead of you - make sure the druid lives " ..
+                "to see the end of it or they'll not be able to seize the tower.",
+            rewardMoney = 94000,
+        },
+        [29206] = {
+            description = "Skylord Omnuron and his druids are seeking to push through the Furnace to our " ..
+                "northwest. They've been able to fly over the dangers, but they really need someone on " ..
+                "the ground to help them secure the territory past the fire... someone like you.\n\nIf " ..
+                "you want to aid the Druids of the Talon, wait for one of Omnuron's Windcallers to start " ..
+                "pushing through the fire, stay close to him, and keep him safe from any attackers within " ..
+                "the flames.",
+            rewardMoney = 94000,
+        },
+        [29208] = {rewardItems = {{69251, 1}}},
+        [29210] = {
+            description = "Shalis has gone with one of our druids to stop a Druid of the Flame that is " ..
+                "performing a summoning ritual in the Igneous Depths, below us. They have been tasked " ..
+                "with killing the druid, but I need you to stop the ritual.\n\nYou'll find the entrance " ..
+                "to the cavern east of the Magma Springs. Once inside, you'll see 8 blue runes spread " ..
+                "throughout the cavern. You can use these runes to protect you from the fiery creatures, " ..
+                "but you need to stamp all of them out to end the ritual. You will need to be swift.",
+            rewardMoney = 94000,
+        },
+        [29211] = {
+            description = "The fight has taken us to Fandral's doorstep. His druids are channeling " ..
+                "energies of the Firelands into a vessel called the Solar Core.\n\nShould this vessel " ..
+                "detonate on Azeroth, none of us will have a home to return to.\n\nWe need to strike at " ..
+                "the Solar Core now, while it is still vulnerable. You can find the infernal device to " ..
+                "the northeast.",
+            rewardMoney = 94000,
+        },
+        [29213] = {
+            description = "Tings ain't looking good. Dat panther was under some powerful magic. We better " ..
+                "check on dat hunter an' see how he be doin'.",
+            rewardMoney = 94000,
+        },
+        [29214] = {
+            description = "The Shadow Wardens are back in the Regrowth. I know that they take the loss of " ..
+                "Fandral from their custody very seriously, so it wouldn't take much prodding to bring " ..
+                "them to the Firelands to hunt the Druids of the Flame, and perhaps aid us otherwise in " ..
+                "the process.\n\nShould you come upon enough marks, you should seek out Captain Saynna " ..
+                "Stormrunner at the Sanctuary of Malorne and secure her aid.",
+            rewardMoney = 188000,
+        },
+        [29215] = {
+            description = "The Shadow Wardens have joined the fight at the Molten Front, on your request. " ..
+                "You should find Captain Saynna Stormrunner and see to it that they've found a way to " ..
+                "best apply their skills.",
+            rewardMoney = 23500,
+        },
+        [29217] = {
+            description = "After we arrived, I dispatched my scouts to learn more about da Zandalari " ..
+                "presence here in Zul'Aman. Many returned with useful information, but four still be " ..
+                "missin'. If we do not act quickly, da new warlord's lieutenants will offer dem as " ..
+                "sacrifices in honor of da Zandalari emissaries.\n\nFind my scouts, <name>, and free dem " ..
+                "before da priests offer dem as sacrifices!",
+            rewardMoney = 188000,
+        },
+        [29219] = {
+            description = "Dese be troublin' times for us Darkspear. Da Zandalar be reuniting all da " ..
+                "troll clans an' plan to take back da lands dey lost.\n\nWe tryin' to warn all dat we " ..
+                "can. But it might be too late.\n\nAnother Darkspear gone down to Stranglethorn to warn " ..
+                "da people. But it ain't safe to travel alone in Stranglethorn.\n\nHelp me find him and " ..
+                "make sure da people in Stranglethorn are warned of da rise of da troll tribes.\n\nI " ..
+                "gonna bind my spirit wit' ya. When ya get to Stranglethorn, I be able to aid ya.",
+            rewardMoney = 94000,
+        },
+        [29220] = {
+            description = "Da first place we check gonna be da place most likely to be attacked first, " ..
+                "Bambala.\n\nBambala be dangerously close to da troll city Zul'Gurub... It make for an " ..
+                "easy target.\n\nMaybe we find da emissary dere. Hopefully it ain't too late.",
+            rewardMoney = 94000,
+        },
+        [29221] = {
+            description = "Da warning helped, <name>.\n\nWe gathered more Headhunters to help defend. But " ..
+                "Headhunters... Dey not used to hunting heads on serpents. So we soon be overwhelmed. " ..
+                "Dese serpents, dey seem to come from everywhere. An' it probably only gonna get " ..
+                "worse.\n\nHelp us and kill da serpents and have Bwemba use her mojo to cure da ones dat " ..
+                "are sick from poison.",
+            rewardMoney = 94000,
+        },
+        [29222] = {
+            description = "Dere was something about da way da serpents attacked, <name>. Something " ..
+                "unnatural... Even da poison had a hint of some bad mojo.\n\nDere be a shrine near here " ..
+                "wit' a bonfire. We can use dat to perform a ritual.\n\nWhatever be makin' dese serpents " ..
+                "attack, dey probably still watchin' over dem.\n\nDa only problem, <name>, is dat I only " ..
+                "be here in spirit form. I need you to be my hands. I need you to go to da fire an' " ..
+                "prepare it for me. Den I'll handle da rest.",
+            rewardMoney = 94000,
+        },
+        [29223] = {
+            description = "So da Gurubashi be on da rampage an' dey usin' serpents to lead da " ..
+                "charge.\n\nYou know who be good at keepin' da animal population in check? Da hunters at " ..
+                "Nesingwary's Expedition.\n\nHead over dere and see how dey doin'. See if dey know a good " ..
+                "way to get rid of da serpents.\n\nIf dey don't know, den you gotta at least warn dem dat " ..
+                "dese serpents, it ain't all natural.",
+            rewardMoney = 94000,
+        },
+        [29225] = {
+            description = "< Tarecgosa listens intently as you describe your " ..
+                "vision.>\n\nImpossible!\n\nNot even Arygos would dare to go to such lengths.\n\nI do not " ..
+                "question your integrity, <class>, but you must understand - your mortal mind can easily " ..
+                "be deceived.\n\nRegardless, Kalecgos must be informed of these events. You must travel " ..
+                "to Nordrassil at once to seek him out.\n\nI shall remain here to conceal the evidence of " ..
+                "our activities. Speak of this to no one else!",
+            rewardMoney = 47000,
+        },
+        [29226] = {
+            description = "We've been fending off serpents for days now, <name>. But the serpents are " ..
+                "nothing compared to what else is out in that jungle.\n\nWe hunters are being " ..
+                "hunted.\n\nA large panther named Mauti has been dragging my men off into the bush.\n\nWe " ..
+                "sent Grent Direhammer, one of our best hunters, to track this beast down.\n\nDirehammer " ..
+                "headed off to the east, perhaps you can find them there.",
+            rewardMoney = 94000,
+        },
+        [29227] = {
+            description = "The beast that's been hunting us... I've been hunting it.\n\nWe call him " ..
+                "Mauti. He's a clever one. But he made a grave mistake when he killed my brother. Now " ..
+                "that mistake is going to cost him. Ol' Direhammer has got his scent.\n\nI've noticed him " ..
+                "roaming just above Kurzen's Compound. If we act fast, we can take him down.\n\nAre you " ..
+                "ready, <name>?",
+            rewardMoney = 94000,
+        },
+        [29228] = {
+            description = "Well, that explains why Mauti seemed smaller... The real Mauti has run off " ..
+                "with Grent Direhammer, but being the wise hunter that he is, he has fired flares off so " ..
+                "you can track him. Find Direhammer before it's too late!",
+            rewardMoney = 94000,
+        },
+        [29229] = {
+            description = "Well, that explains why Mauti seemed smaller... The real Mauti has run off " ..
+                "with Grent Direhammer, but being the wise hunter that he is, he has fired flares off so " ..
+                "you can track him. Find Direhammer before it's too late!",
+            rewardMoney = 94000,
+        },
+        [29230] = {
+            description = "I got da feeling dat somethin' ain't right wit' dat panther, <name>. It ain't " ..
+                "natural. I gonna need to perform some rituals over da body. Put Mauti down, an' den " ..
+                "let's see what we can find out, <name>.",
+            rewardMoney = 94000,
+        },
+        [29231] = {
+            description = "Tings ain't looking good. Dat panther was under some powerful magic. We better " ..
+                "check on dat hunter an' see how he be doin'.",
+            rewardMoney = 94000,
+        },
+        [29232] = {
+            description = "Ah... It's you, <name>. Mauti... He's dead? Then my brother has been avenged. " ..
+                "I've only one request from ya... This scamp here, he's been pawing at me bare feet. No " ..
+                "dwarf should go to the earth with bare feet.\n\nPlease, bury me with me boots.",
+            rewardMoney = 94000,
+        },
+        [29233] = {
+            description = "Dis death ain't be in vain, <name>. We figure out dat Kilnara be on da prowl. " ..
+                "Tings don't look good.\n\nWe better check out Grom'gol Base Camp to da west. Maybe we " ..
+                "find my contact dere.",
+            rewardMoney = 94000,
+        },
+        [29234] = {
+            description = "I am duty-bound to look into your claims immediately, <race>, which means my " ..
+                "mission here now must fall to you.\n\nA surge of ancient magic, far too strong to have " ..
+                "occurred naturally, drew me here. I have since discovered a most troubling " ..
+                "development.\n\nA bough from Nordrassil has been ripped from the tree and taken deep " ..
+                "into the Firelands. There, a powerful ritual threatens to corrupt Nordrassil, consuming " ..
+                "it in flame.\n\nYou must find a way to interrupt the ritual and reclaim the World Tree's " ..
+                "branch.",
+            rewardMoney = 282000,
+        },
+        [29235] = {
+            description = "I hope you like to fight, <name>. Your troll friend has been through here and " ..
+                "warned us that the Gurubashi were on the rampage. I never thought the battle would be " ..
+                "this glorious though.\n\nCome, join in our fight and let's show these Gurubashi trolls " ..
+                "the might of the Horde!",
+            rewardMoney = 94000,
+        },
+        [29236] = {
+            description = "Bwemba... Is that you?\n\nYour contact was here. He was eager to get to the " ..
+                "next location and warn them. And really, who could blame him? I gave him use of a wyvern " ..
+                "to reach the goblins of Hardwrench Hideaway, in the Cape of Stranglethorn.\n\nI will " ..
+                "give you use of one of my wyverns to reach Hardwrench.\n\nTalk to me when you are ready " ..
+                "to go, <name>.",
+            rewardMoney = 94000,
+        },
+        [29237] = {
+            description = "Da people... Dey all zombies, voodoo zombies! Dis ain't gonna be pretty, " ..
+                "<name>.\n\nYou gotta kill dem.\n\nBut once dey killed, dere is a moment where I can save " ..
+                "dem. Change dem back into da person dey were before.\n\nWe gotta act fast. Da zombies " ..
+                "don' rest.",
+            rewardMoney = 94000,
+        },
+        [29238] = {
+            description = "Some of da survivors mentioned food, <name>. We better check da food supplies. " ..
+                "I gotta a bad feelin' about dis.",
+            rewardMoney = 94000,
+        },
+        [29239] = {
+            description = "Much has transpired since last we spoke.\n\nI have taken it upon myself to " ..
+                "visit the Nexus and recover Anachronos's artifact, but not before using it for myself. " ..
+                "Now I too have witnessed that which you have seen.\n\nBefore discussing the matter " ..
+                "further, allow me to express my gratitude to you for your assistance, both here and in " ..
+                "the Plane of Fire.",
+            rewardItems = {{71084, 1}},
+            rewardMoney = 282000,
+        },
+        [29240] = {
+            description = "Now, back to the matter at hand...\n\nI am convinced that the vision in the " ..
+                "Nexus is one of Deathwing's illusions designed to bring conflict into our flight at a " ..
+                "very fragile time.\n\nThe Worldbreaker would only be strengthened were we to fall to " ..
+                "infighting.\n\nStill, a gnawing sense of unease tempts me to take a path of " ..
+                "caution.\n\nIt would be wise for me to take Tarecgosa and withdraw until the time of " ..
+                "choosing.",
+            rewardMoney = 94000,
+        },
+        [29241] = {
+            description = "< Bloodslayer Zala points at the temple in the distance.>\n\nWhen Jin'do was " ..
+                "last ripped from dis world, he survived as a shade, weak and broken, in da spirit " ..
+                "world.\n\nBut Jin'do always had power over da spirits. One by one, he broke dem to his " ..
+                "will, and wit' each soul devoured, Jin'do got closer ta' rippin' a hole through to dis " ..
+                "world.\n\nTa be here now...\n\nDa spirits be wit' us, we must end Jin'do.",
+            rewardMoney = 376000,
+        },
+        [29242] = {
+            description = "Listen, friend. I don't know you, and you don't know me. But as long as we're " ..
+                "both here, there's something Revilgaz wanted me to mention.\n\nMaybe you're taking a " ..
+                "stroll through this troll-infested jungle-ocalypse. Maybe you happen to find a priceless " ..
+                "troll artifact or two. Maybe you bring it back to me and I accidentally leave behind a " ..
+                "little present for ya'.\n\nIf you must know, it's for a project. And no, you can't ask " ..
+                "what the project is.",
+            rewardMoney = 376000,
+        },
+        [29243] = {
+            description = "One of Ragnaros' Lieutenants has shown itself at Ragnaros' Reach. It is time " ..
+                "to strike. Captain Saynna has requested that you be there to help see the fight " ..
+                "through.\n\nWitherbranch and some others will have joined the battle by the time you " ..
+                "arrive. You should make haste to the northwest and find them.",
+            rewardMoney = 188000,
+        },
+        [29245] = {
+            description = "A small, dried acorn has fallen out of the Flame Druid's robe.\n\nWhy would a " ..
+                "Druid of the Flame be carrying it around?\n\nPerhaps someone at Malfurion's Breach would " ..
+                "like to see it.",
+            rewardMoney = 94000,
+        },
+        [29246] = {
+            description = "The Arch Druid has an immense tolerance for pain. I've treated burn victims " ..
+                "that spend twenty-two hours a day screaming in pain, and their burns weren't even half " ..
+                "as bad as what Hamuul has suffered.\n\nNevertheless, I can sense that he is in greater " ..
+                "discomfort than normal today. Bring me the hearts of the large fire elementals to the " ..
+                "southeast. I can use them to prepare a soothing salve for our patient.",
+            rewardMoney = 94000,
+        },
+        [29247] = {
+            description = "We have an ample supply of medical supplies here at the Sanctuary, but we " ..
+                "mustn't lose sight of the fact that we are at war. Hamuul isn't the only person who has " ..
+                "need of bandages.\n\nThe fiery behemoths that roam Sethria's Roost wear flame-resistant " ..
+                "wrappings that will serve Hamuul as ably as any bandage. Bring me those wrappings, and I " ..
+                "will prepare them for use on the Arch Druid.",
+            rewardMoney = 94000,
+        },
+        [29248] = {
+            description = "Having been burned so badly, Arch Druid Hamuul is suffering from edema - " ..
+                "swelling of the body's tissues. It takes a great deal of his attendants' effort to keep " ..
+                "his swelling down enough for him to breathe.\n\nNormally, to reduce this swelling, we " ..
+                "make cuts in his flesh, but he is weak, <name>. I cannot cut him today. I need your " ..
+                "help.\n\nFlamewaker scales will aid with the swelling, but you need a lot of them.",
+            rewardMoney = 94000,
+        },
+        [29249] = {
+            description = "The acorn seems to be unharmed.\n\n< Avrilla shrugs.>\n\nNo point in beating " ..
+                "around the bush. Let's plant it and see what comes out.\n\nLuckily for you, we brought " ..
+                "some leftover soil with us to help establish our base.\n\nYou'll find the soil at the " ..
+                "graveyard directly east.",
+            rewardMoney = 47000,
+        },
+        [29250] = {
+            description = "You aren't one of the zombies...\n\nA troll? I did see one, just before the " ..
+                "outbreak... He warned us, told us to be on our guard... But it was too late.\n\nYour " ..
+                "troll friend headed to Booty Bay to warn them...",
+            rewardMoney = 94000,
+        },
+        [29251] = {
+            description = "Look, <name>. You've helped out plenty so far, but that's not going to be " ..
+                "enough. I need these crazy trolls stopped, or at least stopped from getting into Booty " ..
+                "Bay.\n\nI'm going to send a man in to oversee the action, but I want you to go into " ..
+                "Zul'Gurub and make something happen.\n\nAt the very least, I want you to find me " ..
+                "something that will help keep these trolls out of Booty Bay.\n\nYou do that and we'll " ..
+                "treat you right.",
+            rewardMoney = 94000,
+        },
+        [29252] = {
+            description = "I've been sent here by Baron Revilgaz of Booty Bay to make sure this troll " ..
+                "menace is halted. Or that it is at least halted at the gates of Booty Bay.\n\nI want " ..
+                "action and I want results.\n\nI want you to get in there and kill.\n\nI want you to get " ..
+                "in there and find me something that will help keep these trolls out of Booty Bay.\n\nYou " ..
+                "do that and we'll make sure you get paid.",
+            rewardMoney = 94000,
+        },
+        [29253] = {
+            description = "There is a stash of loot located in the statue on Janeiro's Point just " ..
+                "northwest of Booty Bay in Stranglethorn Vale.\n\nHead to the statue and claim your " ..
+                "prize, <class>.",
+            rewardItems = {{69262, 1}, {69863, 1}, {69864, 1}, {69865, 1}},
+            rewardMoney = 94000,
+        },
+        [29254] = {
+            description = "The little red flower wiggles its tendrils happily. It seems to like " ..
+                "you!\n\nPerhaps Avrilla would like to see what grew out of the acorn.",
+            rewardMoney = 94000,
+        },
+        [29255] = {
+            description = "The Crimson Lasher has developed some cracking blisters on its vines. Without " ..
+                "treatment, this condition could be life threatening.\n\nLuckily, the Charred Soldiers " ..
+                "and Charred Vanquishers in the area produce a waxy substance known as Embergris, which " ..
+                "should soothe the Lasher's pain.\n\nBring me some of this substance, and kill those " ..
+                "nasty fire elementals while you're at it.",
+            rewardMoney = 94000,
+        },
+        [29257] = {
+            description = "We've discovered a new species of flower growing in the Magma Springs to the " ..
+                "north. Amazingly, they sustain themselves in pure molten lava!\n\nPlease go and retrieve " ..
+                "some specimens for me. I'm sure that further study of these plants will shed some light " ..
+                "on your little friend here.\n\nSpeaking of which, he seems quite eager to go with you. " ..
+                "Let's hope he behaves himself.",
+            rewardMoney = 94000,
+        },
         [29261] = {rewardMoney = 114000},
         [29262] = {rewardMoney = 114000},
+        [29263] = {
+            description = "As far as I'm concerned, there's no problem that can't be solved with bombs. " ..
+                "And if a bomb doesn't solve your problem on the first try... use a bigger bomb.\n\nSo " ..
+                "there's this big worm that's been eating people near the lava pools up north. Search for " ..
+                "breath bubbles to find it. Attack it until it prepares to bite, then place this bomb " ..
+                "down in front of it. Then sit back and watch the fireworks.\n\nHmm... there was one " ..
+                "other thing I wanted to say... oh yeah! Don't get eaten.",
+            rewardMoney = 94000,
+        },
+        [29264] = {
+            description = "Of all Ragnaros' minions, the flamewakers appear to be the most devoted. Most " ..
+                "of them dwell within this cave, preparing for another attack. Our foothold may be " ..
+                "strong, but we will not tolerate any surprise attacks from these worms.\n\nNo, we will " ..
+                "strike first.\n\nTear them apart, <name>.",
+            rewardMoney = 94000,
+        },
+        [29265] = {
+            description = "My fellow druid, Choluna, has asked us to collect any specimens of plant life " ..
+                "that we might find here in the Firelands...\n\n...I don't know whose idea it was to " ..
+                "bring scholars to a warfront.\n\nNevertheless, you will already be in the cave - killing " ..
+                "things - so be on the lookout for anything growing out of the ground.",
+            rewardMoney = 94000,
+        },
+        [29267] = {
+            description = "So much violence, so much death. Brothers have died, a mother has died, and " ..
+                "now a panther cub will die if there is no one to take care of it.\n\nWill you take a " ..
+                "pause from the violence to help care for a panther cub?",
+            rewardItems = {{68833, 1}},
+        },
+        [29268] = {
+            description = "So much violence, so much death. Brothers have died, a mother has died, and " ..
+                "now a panther cub will die if there is no one to take care of it.\n\nWill you take a " ..
+                "break from the violence and help care for a panther cub?",
+            rewardItems = {{68833, 1}},
+        },
+        [29269] = {
+            description = "I was charged with her protection, yet it was she who sacrificed herself for " ..
+                "my sake.\n\nI cannot bear to lose her, <name>. I must make a solemn request of " ..
+                "you.\n\nNever has a mortal borne the essence of a true dragon, but with your permission " ..
+                "I would make an exception.\n\nPlease, while there is life in her, will you allow me to " ..
+                "bind Tarecgosa to you?",
+            rewardMoney = 94000,
+        },
+        [29270] = {
+            description = "Tarecgosa is bound to you, <name>, but only temporarily. An aspect's power is " ..
+                "required to permanently seal her essence.\n\nMalygos's successor will not be chosen " ..
+                "until Azeroth's moons next eclipse, and the bond you share will not last until " ..
+                "then.\n\nFortunately, there is a way to buy us the time we need. Powerful elements exist " ..
+                "that can extend the ritual's effects. Some of these can be found in the Plane of Fire, " ..
+                "with which you've become familiar.\n\nObtain them, <class>, and sustain Tarecgosa until " ..
+                "the eclipse.",
+            rewardMoney = 94000,
+        },
+        [29272] = {description = "Need... water... badly...", rewardMoney = 94000},
+        [29273] = {
+            description = "The fire hawks of Fireplume Peak can withstand incredible temperatures. While " ..
+                "you'll often find them circling the skies above, they're also known to swim in molten " ..
+                "lava.\n\nIsn't that right, Anren?\n\nWe'd like to know just how hot that lava can get. " ..
+                "Fireplume Peak has three large lava pools. Use this to measure the temperature of each.",
+            rewardMoney = 94000,
+        },
+        [29274] = {
+            description = "On the Firelands' largest island, our troops have been having trouble against " ..
+                "Shannox, the flamewaker hunter. Not only does he have impeccable aim, but he keeps " ..
+                "trained hounds that give our troops no end of trouble.\n\nTholo, in all his wisdom, " ..
+                "thinks it would be a good idea to study the biology of these hounds. I, of course, agree " ..
+                "with Tholo.\n\nYou will find several hounds in the Molten Flow, beneath the Furnace. We " ..
+                "will need their ashes to study.",
+            rewardMoney = 94000,
+        },
+        [29275] = {
+            description = "The Druids of the Flame... an order of druids that, up until a few weeks ago, " ..
+                "Tholo and I had never even heard of. Now, under the leadership of Fandral Staghelm, they " ..
+                "threaten our mission's success with their mastery of fire.\n\nIt would appear that they " ..
+                "store some supplies in the Igneous Depths, to the northeast. Perhaps, if we can get some " ..
+                "of those supplies, we will have more luck when we take the fight to Fandral.",
+            rewardMoney = 94000,
+        },
+        [29276] = {
+            description = "The Widow's Clutch, to the northeast, is named after Beth'tilac, the enormous " ..
+                "queen of the flame spiders. Her webs and her poison are a nagging threat to our main " ..
+                "offensive force.\n\nWe believe that if we study the flame spiders here on the Molten " ..
+                "Front, we can use that information to find success against Beth'tilac. Use whatever " ..
+                "methods you can to gather their venom and their web fluid, then return to my trusted " ..
+                "friend Anren.",
+            rewardMoney = 94000,
+        },
+        [29278] = {
+            description = "Have you seen those fireballs falling out of the sky? I saw one crash in the " ..
+                "fields to the north, and the rock that landed was made of pure Living Obsidium!\n\nI can " ..
+                "use the material to craft ultra-sturdy heat proof armor and weapons for our troops. Can " ..
+                "you bring me a lode?\n\nGo to the Magma Springs and touch one of the magnetic stones. " ..
+                "Just watch where you're standing when the rain of fire hits, and gather up the rocks " ..
+                "before they crumble from the impact.",
+            rewardMoney = 94000,
+        },
+        [29279] = {
+            description = "We've constructed this moonwell, but it serves little purpose until it is " ..
+                "filled with the sacred waters of the Well of Eternity.\n\nWith an active moonwell, we " ..
+                "would be able to bless our food stores, and we may also be able to use the blessing to " ..
+                "offer you some protection from fire as well.\n\nWhen you've obtained enough marks, speak " ..
+                "to Matoclaw at the Sanctuary of Malorne. She'll be able to secure transport of the " ..
+                "sacred waters.",
+            rewardMoney = 188000,
+        },
+        [29280] = {
+            description = "I have dispatched the sacred moonwell waters to Malfurion's Breach, as you " ..
+                "requested. Ayla is well trained in tending to them. You should return to her and see the " ..
+                "boons she weaves for you there.",
+            rewardMoney = 23500,
+        },
         [29317] = {
             description = "There was an... incident... with an orc guard and one of Master Apothecary " ..
                 "Faranell 's abominations.\n\nApparently, the Kor'kron Overseer chopped its head clean " ..
@@ -28740,6 +29257,14 @@ ns.Overrides.wowhead = {
                 "can't find the thing. Care to try fishing it up? I'm sure the old fellow'd be grateful.",
             rewardItems = {{67414, 1}},
             rewardMoney = 90000,
+        },
+        [29318] = {
+            description = "One of my responsibilities is to feed the sentinels of Darnassus while they're " ..
+                "on duty. It's a time-consuming task, but one I'm happy to undertake. It's also a great " ..
+                "way to practice your skills. Would you mind helping me with today's meal? Simply take " ..
+                "these ribs, cook them near a stove or fire, and distribute them to sentinels throughout " ..
+                "the city.",
+            rewardMoney = 114000,
         },
         [29343] = {
             description = "I'm sure by now ye've heard the tale o' Old Ironjaw, the most famous and " ..
@@ -29639,6 +30164,9 @@ ns.Overrides.wowhead = {
                 },
             },
         },
+        [52258] = {spawns = {[1977] = {{59.9, 46.2}}}, zoneID = 1977},
+        [52269] = {spawns = {[1977] = {{59.9, 51.4}}}, zoneID = 1977},
+        [52286] = {spawns = {[1977] = {{60.1, 41.4}}}, zoneID = 1977},
         [52832] = {spawns = {[3537] = {{32.6, 27.2}}}, zoneID = 3537},
     },
     objects = {

@@ -4,6 +4,228 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.209
+- database - Wowhead data as the PandaQuest portal read it: 6,739 quests, 39 NPCs, 1 object
+- quest 29194 - Through a Glass, Darkly - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29195 - A Ritual of Flame - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29196 - To the Sanctuary! - updated
+  - description added
+  - reward money added (94s)
+- quest 29197 - Caught Unawares - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29198 - The Sanctuary Must Not Fall - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29199 - Calling for Reinforcements - updated
+  - description added
+- quest 29200 - Leyara - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29201 - Through the Gates of Hell - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29202 - The Fate of Runetotem - updated
+  - description added
+  - reward money added (94s)
+- quest 29203 - Into the Depths - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29205 - The Forlorn Spire - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29206 - Into the Fire - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29208 - An Old Friend - updated
+  - reward items: +1
+- quest 29210 - Enduring the Heat - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29211 - Solar Core Destruction - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29213 - How's the Hunter Holding Up? - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29214 - The Shadow Wardens - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29215 - The Hunt Begins - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29217 - The Captive Scouts - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29219 - Bwemba's Spirit - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29220 - To Bambala - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29221 - Serpents and Poison - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29222 - Spirits Are With Us - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29223 - Nesingwary Will Know - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29225 - Actionable Intelligence - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 29226 - Track the Tracker - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29227 - The Hunter's Revenge - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29228 - Follow That Cat - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29229 - Follow That Cat - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29230 - Mauti - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29231 - How's the Hunter Holding Up? - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29232 - Bury Me With Me Boots... - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29233 - Warn Grom'gol - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29234 - Delegation - updated
+  - description added
+  - reward money added (28g 20s)
+- quest 29235 - Defend Grom'gol - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29236 - To Hardwrench Hideaway - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29237 - Voodoo Zombies - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29238 - Bad Supplies - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29239 - Nordrassil's Bough - updated
+  - description added
+  - reward money added (28g 20s)
+  - reward items: +1
+- quest 29240 - Emergency Extraction - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29241 - Break the Godbreaker - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 29242 - Putting a Price on Priceless - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 29243 - Strike at the Heart - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29245 - The Mysterious Seed - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29246 - Relieving the Pain - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29247 - Treating the Wounds - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29248 - Releasing the Pressure - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29249 - Planting Season - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 29250 - Making Contact - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29251 - Booty Bay's Interests - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29252 - Booty Bay's Interests - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29253 - A Shiny Reward - updated
+  - description added
+  - reward money added (9g 40s)
+  - reward items: +4
+- quest 29254 - Little Lasher - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29255 - Embergris - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29257 - Steal Magmolias - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29263 - A Bitter Pill - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29264 - Flamewakers of the Molten Flow - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29265 - Fire Flowers - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29267 - Some Good Will Come - updated
+  - description added
+  - reward items: +1
+- quest 29268 - Some Good Will Come - updated
+  - description added
+  - reward items: +1
+- quest 29269 - At One - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29270 - Time Grows Short - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29272 - Need... Water... Badly... - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29273 - How Hot - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29274 - Hounds of Shannox - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29275 - Fandral's Methods - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29276 - The Flame Spider Queen - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29278 - Living Obsidium - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29279 - Filling the Moonwell - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29280 - Nourishing Waters - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29318 - Ribs for the Sentinels - updated
+  - description added
+  - reward money added (11g 40s)
+- npc 52258 - Gri'lek - updated
+  - coordinates: 1 spawn point added in Zul'Gurub
+- npc 52269 - Renataki - updated
+  - coordinates: 1 spawn point added in Zul'Gurub
+- npc 52286 - Wushoolay - updated
+  - coordinates: 1 spawn point added in Zul'Gurub
+
 0.2.208
 - database - Wowhead data as the PandaQuest portal read it: 6,668 quests, 36 NPCs, 1 object
 - quest 866 - Root Samples - updated
@@ -1577,30 +1799,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - quest 28108 - If The Key Fits - updated
 - quest 28109 - Pressing Forward - updated
 - quest - and 51 more quests updated
-
-0.2.196
-- database - Wowhead data as the PandaQuest portal read it: 5,975 quests, 24 NPCs, 1 object
-- quest 27952 - The Explorers - updated
-- quest 27953 - The Reliquary - updated
-- quest 27954 - The Eyes Have It - updated
-- quest 27955 - Eye Spy - updated
-- quest 27956 - Lunk's Task - updated
-- quest 27957 - Lunk No Kill - updated
-- quest 27958 - A Proper Antivenom - updated
-- quest 27959 - Lunk's Adventure: Spider Rider - updated
-- quest 27960 - The Fewer, the Better - updated
-- quest 27961 - Out of Place - updated
-- quest 27962 - A Lumbering Relic - updated
-- quest 27963 - A New Master... But Who? - updated
-- quest 27964 - Dig-Boss Dinwhisker - updated
-- quest 27965 - Thorium Point: The Seat of the Brotherhood - updated
-- quest 27966 - Salvaging the Remains - updated
-- quest 27967 - First Lieutenant Connor - updated
-- quest 27968 - Fury of the Pack - updated
-- quest 27969 - Make Yourself Useful - updated
-- quest 27970 - Captain P. Harris - updated
-- quest 27971 - Rattling Their Cages - updated
-- quest - and 50 more quests updated
 
 0.2.194
 - core - the addon knows which game it runs in: Mists of Pandaria Classic, or later WoW Forever
