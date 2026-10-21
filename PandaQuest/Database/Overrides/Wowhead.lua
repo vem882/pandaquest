@@ -27835,6 +27835,362 @@ ns.Overrides.wowhead = {
                 "will fortify yer fightin' skills.",
             rewardMoney = 90000,
         },
+        [28862] = {
+            description = "Refugees are still pouring into Thundermar from the fighting, and I'm hungry! " ..
+                "I mean them. The refugees, they're hungry.\n\nGet me some food from the Thundermar " ..
+                "Ruins! Scour the ruins to the south, east, and southwest for any stores that still " ..
+                "remain. Especially them big hocks of ham. I love those! Er, the refugees do.\n\nAnd see " ..
+                "if you can find some of them little cocktail weenies.",
+            rewardMoney = 90000,
+        },
+        [28863] = {
+            description = "He's at it again, <name>. Warlord Halthar... terror of the shire. He and his " ..
+                "drake were spotted causing trouble to the south, among the Thundermar Ruins.\n\nKill " ..
+                "Halthar, <name>! We'll send in some warbrands to help out once you engage.",
+            rewardMoney = 180000,
+        },
+        [28864] = {
+            description = "After my sister's wedding, I developed a taste for that Thunderbrew Lager that " ..
+                "Kurdran had imported from Dun Morogh. More is on the way, but our caravan keeps getting " ..
+                "jumped by the Dragonmaw!\n\nHead on up to the southeast side of Thunderstrike Mountain " ..
+                "and catch up with the caravan. Look for a fellow named Hammelhand at the side of the " ..
+                "road, and help him get the booze through the pass.\n\nJust get it as far as Kirthaven, " ..
+                "and we'll take it from there.",
+            rewardMoney = 90000,
+        },
+        [28865] = {
+            description = "Our venerable warmatron, Okrilla, has sent me to the far reaches of the world " ..
+                "in search of suitable heroes that would join our cause. Are you interested in " ..
+                "strengthening the Horde's grasp over the Eastern Kingdoms? Then take this portal to the " ..
+                "Blasted Lands and report to Okrilla at Dreadmaul Hold!",
+        },
+        [28866] = {
+            description = "You say that this Millhouse Manastorm and High Priestess Azil were to meet " ..
+                "inside the Stonecore?\n\nSounds big. We'd best get on their trail. We don't want the " ..
+                "Twilight's Hammer pulling off something big right under our noses.\n\nSpeak to " ..
+                "Earthwarden Yrsa inside the Stonecore. She's been stationed there to make sure the " ..
+                "Twilight's Hammer doesn't try to retake the Temple of Earth.",
+            rewardMoney = 8600,
+        },
+        [28867] = {
+            description = "Nethergarde needs you, <class>! I have been sent here by Quartermaster " ..
+                "Lungertz to head off Okrilla's nefarious lackeys and to recruit able-bodied heroes of " ..
+                "the Alliance! Help us fight off the Horde!\n\nIf you are willing, take this portal in " ..
+                "front of me to the Blasted Lands and speak with the quartermaster.",
+        },
+        [28868] = {
+            description = "We need to halt the construction on this Frostmane village. If we let them get " ..
+                "too entrenched, it will be more difficult to keep them from settling here " ..
+                "permanently.\n\nIt's time to give those brutes a gnome's-eye view of the world! Take " ..
+                "this gnomish viewpoint equalizer and use it on the Frostmane builders to bring them down " ..
+                "to our level. They won't be able to lift their tools and construction will come to a " ..
+                "standstill.",
+            rewardMoney = 175,
+        },
+        [28869] = {
+            description = "If you hadn't noticed, there's a very small elemental that has taken a liking " ..
+                "to you. If you stay on the ground for even a few moments, I'm sure you'll spot " ..
+                "him.\n\nYou seem to be quite adept at making friends down here. A good talent to have.",
+            rewardMoney = 8600,
+        },
+        [28870] = {
+            description = "We might've taken Neferset City, but the Neferset have a new seat of " ..
+                "power.\n\nThanks to Siamat, the powerful djinn of the south wind, the Neferset have " ..
+                "become considerably more dangerous.\n\nWe just learned that some of Nadun's ambushed " ..
+                "reconnaissance party managed to secure the entrance to the Lost City.\n\nGo find Captain " ..
+                "Hadan and get whatever information you need to bring down Siamat and the Neferset scum.",
+            rewardMoney = 9400,
+        },
+        [28871] = {
+            description = "The Wildhammer grow bold with their new Alliance allies. They dare press " ..
+                "across the river. Drive them back!\n\nSeek out and crush the Wildhammer warbrands who " ..
+                "fight in the riverbed and within the Thundermar Ruins along the north bank. The best " ..
+                "among them carry insignias - gather them for me to prove your allegiance to the " ..
+                "Dragonmaw cause.",
+            rewardMoney = 90000,
+        },
+        [28872] = {
+            description = "Some of the Wildhammer still cling to the hope of reclaiming the Thundermar " ..
+                "Ruins to the north, across the river. Burn them out! Smash open kegs of Thundermar ale. " ..
+                "That wicked brew is potent enough to explode when set aflame.\n\nDon't ask me " ..
+                "why.\n\nAnd don't ask me how they drink the stuff.",
+            rewardMoney = 90000,
+        },
+        [28873] = {
+            description = "< Griff 's stomach growls.>\n\nStill hungry. It's like... every day, I'm " ..
+                "hungry.\n\nI hear there's more food stashed up in the Thundermar Ruins across the river " ..
+                "to the north, where all the fighting is. Bring some to my mouth.",
+            rewardMoney = 90000,
+        },
+        [28874] = {
+            description = "The Wildhammer can train war gryphons faster than we can subvert and control " ..
+                "drakes. We can't let them continue to outnumber us!\n\nHunt gryphon riders flying over " ..
+                "the river north of Bloodgulch. Take this hook and fling it at them as they fly by. Their " ..
+                "momentum will hurl them from their mount, right to your feet. Kill the dismounted " ..
+                "gryphon riders!",
+            rewardMoney = 90000,
+        },
+        [28875] = {
+            description = "Our scouts in the field report that High Shaman MacKilligan has moved out of " ..
+                "Thundermar and is fighting amidst the Thundermar Ruins northwest of here, across the " ..
+                "river.\n\nHe's a dangerous one, <name>, responsible for the deaths of many a Dragonmaw. " ..
+                "He WILL be destroyed, that is not the question.\n\nThe question is: will you be the one " ..
+                "to earn the glory of the kill?",
+            rewardMoney = 180000,
+        },
+        [28881] = {
+            description = "Say... you haven't been to Southmoon Ruins yet, have you? Oh you simply MUST. " ..
+                "They have all sorts of fascinating titan artifacts. Head west, and look for the " ..
+                "Explorers' League tents.",
+            rewardMoney = 700,
+        },
+        [28882] = {
+            description = "We fought hard to get a foothold on this ugly rock and there is no way we are " ..
+                "going to let the Horde get in the way of our plans. Keeping control of Tol Barad is our " ..
+                "first priority and we need your help, <name>. Fight your way to victory in Tol Barad and " ..
+                "return to me word of your triumph.",
+            rewardMoney = 114000,
+        },
+        [28884] = {
+            description = "Maintaining control of Tol Barad is the key to our strategic plans here in the " ..
+                "Eastern Kingdoms, <race>. We must do whatever it takes to keep the Alliance off this " ..
+                "island and that means we need your help. Fight with everything you have to win control " ..
+                "of Tol Barad and bring me word of victory.",
+            rewardMoney = 114000,
+        },
+        [28885] = {
+            description = "Okay, <name>, we need to get to the earth portal at the back of the " ..
+                "cave.\n\nI've \"procured\" a ride for us. Why walk when we can ride in style? I hope you " ..
+                "don't mind mine carts.\n\nLet me know when you're ready.",
+            rewardMoney = 94000,
+        },
+        [28909] = {
+            description = "I see you haven't yet spoken to my advisor, Sauranok the Mystic. He has been " ..
+                "at my side since our campaign together in Northrend.\n\nTo assault the Twilight " ..
+                "Highlands, we're going to need a map of the shoreline. I have tasked Sauranok with " ..
+                "digging up this information. See if he can use your assistance! He is standing right " ..
+                "next to me.",
+            rewardMoney = 9000,
+        },
+        [29015] = {
+            description = "Hey <race>, you interested in treasure? I knew that would get your " ..
+                "attention.\n\nWord from the river dock here is that one of the miners in the Venture " ..
+                "Company's Boulder Lode mine just northeast of here discovered an emerald the size of " ..
+                "your fist.\n\nI know a few buyers who'd be interested in getting their hands on " ..
+                "something like that, and I'd be willing to go half and half on its sale. You in?",
+            rewardChoices = {{59570, 1}, {59571, 1}, {59572, 1}},
+        },
+        [29021] = {
+            description = "The Venture Company have a small research facility west of here, just past the " ..
+                "Sludge Fen. I don't know very much about what they're doing, but did manage to discover " ..
+                "that they're experimenting with something called a \"samophlange\".\n\nNow what the heck " ..
+                "is a samophlange? Well, whatever it is, I want to examine it, so I need someone to go " ..
+                "get it.\n\nI obtained a copy of their control system operating manual, you should be " ..
+                "able to figure out how to disengage the samophlange from it.",
+        },
+        [29022] = {
+            description = "The three control valves are currently opened. The various readings on the " ..
+                "control panel lead you to presume that they must be shut off before the apparatus can be " ..
+                "shut off.",
+        },
+        [29023] = {
+            description = "With the apparatus deactivated, the control panel can be opened up and the " ..
+                "samophlange removed from the console. With everything else in place, all that is left is " ..
+                "to acquire the key to unlock the console.",
+        },
+        [29024] = {
+            description = "Pulling open the face of the control console reveals a dense jumble of wires, " ..
+                "tubing and other strange mechanical objects--most of which seem to serve no practical " ..
+                "purpose. Pushing them aside and digging deeper into the console, you find the " ..
+                "samophlange. A tug removes it from its housing.",
+            rewardChoices = {{59568, 1}, {59569, 1}},
+        },
+        [29026] = {
+            description = "I think I really put my foot into that one - it looks like I might have " ..
+                "knocked one of the load-bearing fluxors into the spokes of the deregulator gear. We can " ..
+                "fix this, easy. I know an expert on triple-expansion piston drives who would love to get " ..
+                "her hands on a samophlange. Take the broken samophlange to Wenikee Boltbucket, just " ..
+                "south of Mor'shan Rampart, she'll patch 'er right up.\n\nHey, no need to walk - this " ..
+                "gives me the perfect opportunity to test my personal people porter device!",
+        },
+        [29027] = {
+            description = "I want to fix this samophlange, but to do that I'm going to need some " ..
+                "supplies. I ran out of seventeen-point-five gauge nugget slugs and I'm going to need a " ..
+                "bunch of those for the work ahead.\n\nUnfortunately, the closest place to get them is " ..
+                "the Burning Blade farm to the southwest. The place will be heavily guarded, so be " ..
+                "careful, but the samophlange just might be worth the risk. Search the tool buckets, then " ..
+                "return to me when you've gathered enough nugget slugs.",
+        },
+        [29032] = {
+            description = "I can teach you to ride a Winterspring frostsaber, but it takes time and " ..
+                "dedication. For this to work, both saber and rider must be highly trained and both must " ..
+                "share a bond of deep trust.\n\nThe cubs are only receptive to this training if they're " ..
+                "introduced to their riders at a young age. Some of the cubs in the dens surrounding " ..
+                "Frostsaber Rock are at the proper age to begin their training. If you help me gather the " ..
+                "most promising of those cubs, I'll allow you to begin training with your own cub.",
+        },
+        [29034] = {
+            description = "I think this little fellow will be a good match for you.\n\nThis cub is going " ..
+                "to require a lot of attention to ensure that he grows up strong and healthy. You should " ..
+                "check up on your cub at least once each day. Feeding and caring for your Winterspring " ..
+                "cub is the best way to build a bond of trust with him.\n\nAs your cub grows, he will " ..
+                "shed his old whiskers and grow new ones appropriate to his size. Once your cub has shed " ..
+                "twenty whiskers, bring him back to me along with some materials for your saddle.",
+            rewardItems = {{13086, 1}, {69986, 1}},
+        },
+        [29035] = {
+            description = "Your Winterspring cub looks at you and licks its lips. The little cat must be " ..
+                "hungry and it's up to you to find a suitable meal for your charge.\n\nRivern Frostwind " ..
+                "mentioned keeping some shardtooth bear meat on hand for feeding his frostsaber cubs. " ..
+                "Perhaps your cub would enjoy some fresh shardtooth meat of its own. Various kinds of " ..
+                "shardtooth bears can be found all over Winterspring.",
+            rewardItems = {{68644, 1}},
+        },
+        [29037] = {
+            description = "Your cub looks at you expectantly. What could it want now?\n\nThe little cat " ..
+                "licks its lips. It must be meal time again! As the cub's surrogate <father/mother> " ..
+                "you're responsible for providing meat until it can hunt on its own.\n\nBut what if you " ..
+                "let someone else do the hunting? The Winterfall furbolg of Winterspring usually have a " ..
+                "lot of smoked meat on hand in both of their camps. Surely, they wouldn't miss a few " ..
+                "pieces and your cub would get to try something new.",
+            rewardItems = {{68644, 1}},
+        },
+        [29038] = {
+            description = "Your Winterspring cub paws playfully at your hands. Without any playmates, the " ..
+                "cub has few chances to practice its hunting skills.\n\nPerhaps you should take your cub " ..
+                "hunting for the small arctic hares that burrow in the snow of northern Winterspring. " ..
+                "Bring your cub close to the mounds of snow covering the hare burrows and wait for the " ..
+                "cub's instincts to take over.",
+            rewardItems = {{68644, 1}},
+        },
+        [29039] = {
+            description = "Your Winterspring cub paws playfully at your hands. Without any playmates, the " ..
+                "cub has few chances to practice its hunting skills.\n\nPerhaps you should take your cub " ..
+                "hunting for the small arctic hares that burrow in the snow of northern Winterspring. " ..
+                "Bring your cub close to the mounds of snow covering the hare burrows and wait for the " ..
+                "cub's instincts to take over.",
+            rewardItems = {{68644, 1}},
+        },
+        [29040] = {
+            description = "The winterspring cub plays with a small tuft of fur from a large animal, " ..
+                "batting the discarded hair about. While your cub looks like it's enjoying the new game, " ..
+                "you wonder if it might get more enjoyment from a proper cat toy.\n\nWith a little bit of " ..
+                "leather from a yeti pelt and some feathers from crazed moonkin, you could make a " ..
+                "respectable toy. You'll need a hide from the yeti in the Ice Thistle Hills southeast of " ..
+                "Everlook and feathers from the moonkin at the Hidden Grove or Owl Wing Thicket.",
+            rewardItems = {{68644, 1}},
+        },
+        [29051] = {
+            description = "The Winterspring cub plays with a small tuft of fur from a large animal, " ..
+                "batting the discarded hair about. While your cub looks like it's enjoying the new game, " ..
+                "you wonder if it might get more enjoyment from a proper cat toy.\n\nWith a little bit of " ..
+                "leather from a yeti pelt and some feathers from crazed moonkin, you could make a " ..
+                "respectable toy. You'll need a hide from the yeti in the Ice Thistle Hills southeast of " ..
+                "Everlook and feathers from the moonkin at the Hidden Grove or Owl Wing Thicket.",
+            rewardItems = {{68644, 1}},
+        },
+        [29052] = {
+            description = "Your Winterspring cub looks at you and licks its lips. The little cat must be " ..
+                "hungry and it's up to you to find a suitable meal for your charge.\n\nRivern Frostwind " ..
+                "mentioned keeping some shardtooth bear meat on hand for feeding his frostsaber cubs. " ..
+                "Perhaps your cub would enjoy some fresh shardtooth meat of its own. Various kinds of " ..
+                "shardtooth bears can be found all over Winterspring.",
+            rewardItems = {{68644, 1}},
+        },
+        [29053] = {
+            description = "Your cub looks at you expectantly. What could it want now?\n\nThe little cat " ..
+                "licks its lips. It must be meal time again! As the cub's surrogate <father/mother> " ..
+                "you're responsible for providing meat until it can hunt on its own.\n\nBut what if you " ..
+                "let someone else do the hunting? The Winterfall furbolg of Winterspring usually have a " ..
+                "lot of smoked meat on hand in both of their camps. Surely, they wouldn't miss a few " ..
+                "pieces and your cub would get to try something new.",
+            rewardItems = {{68644, 1}},
+        },
+        [29066] = {
+            description = "<Blackhorn used the power of Thol'embaar's remains to slip his bonds. But at " ..
+                "least the inferno seems to be subsiding.>\n\n< Matoclaw will want to know what happened " ..
+                "here. She's waiting for you back at the Grove of Aessina.>",
+            rewardMoney = 7800,
+        },
+        [29071] = {rewardItems = {{68808, 1}}},
+        [29073] = {rewardItems = {{68809, 1}}},
+        [29078] = {
+            description = "Another Alliance recruit, eh? I'm Marshal McBride, commander of this garrison. " ..
+                "We don't see many of your kind here, <race>, but we could sure use the help.\n\nYou've " ..
+                "arrived just in time. The Blackrock orcs have managed to sneak into Northshire through a " ..
+                "break in the mountain. My soldiers are doing the best that they can to push them back, " ..
+                "but I fear they will be overwhelmed soon.\n\nHead northwest into the forest and kill the " ..
+                "attacking Blackrock worgs! Help my soldiers!",
+            rewardItems = {{57254, 1}},
+            rewardMoney = 50,
+        },
+        [29079] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57387, 1}},
+            rewardMoney = 40,
+        },
+        [29080] = {
+            description = "I have here an urgent message from Sergeant Willem. Turns out that the " ..
+                "Blackrock orcs have hired goblin assassins. They ambushed our battalion behind the " ..
+                "abbey. Willem has asked me to send him a hero. You have to go help them, <name>!\n\nFind " ..
+                "Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [29081] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{2186, 1}},
+            rewardMoney = 50,
+        },
+        [29082] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57257, 1}},
+            rewardMoney = 50,
+        },
+        [29083] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [29086] = {
+            description = "I'm just a little guy, trying to set up my own independent business. Working " ..
+                "hard toward the Azerothian dream, ya know?\n\nWell soon as I set up shop, the Venture " ..
+                "Co. next door decided they wanted me out. They've been harrassing me with threatening " ..
+                "letters, using words like 'cease' and 'desist.'\n\nWorst of all, the schematics for my " ..
+                "newest machine are missing, and I know those corporate pilferers stole them! Go to the " ..
+                "Sludge Fen and knock out some of their employees. I know they're hiding my blueprints!",
+        },
+        [29087] = {
+            description = "Hey <name>, do you see this footprint? We found them all over the camp last " ..
+                "night! Nothing's missing, but all our belongings have been...examined. The muddy trails " ..
+                "lead back toward the Sludge Fen.\n\nSomeone's been sniffing around, and I don't like it " ..
+                "one bit. Can you go west to the Sludge Fen and investigate? See if you can find any more " ..
+                "tracks just like this one!",
+            rewardMoney = 800,
+        },
+        [29088] = {
+            description = "Hey <name>, we've got a real problem here. There's an overpopulation of hyenas " ..
+                "just west of the Sludge Fen, and they're starting to become a menace.\n\nIf I have to " ..
+                "listen to them caterwauling one more night, I just might go crazy! Vernon over there " ..
+                "says the hyenas might even have made off with one of his stabled pigs. We can't have " ..
+                "that happening.\n\nCan you go thin out the hyena numbers? You'll find them parading in " ..
+                "broad daylight to the west.",
+            rewardMoney = 800,
+        },
         [29261] = {rewardMoney = 114000},
         [29262] = {rewardMoney = 114000},
         [29317] = {
@@ -28534,6 +28890,130 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 357,
+        },
+        [7435] = {
+            spawns = {
+                [618] = {
+                    {53.2, 55.2}, {53.4, 55.6}, {54, 54.4}, {54, 54.6}, {54.4, 49.8}, {54.4, 50.8},
+                    {54.6, 51.4}, {54.6, 51.6}, {54.6, 54.2}, {54.6, 54.8}, {54.8, 52.6}, {55.4, 49.4},
+                    {55.6, 49.4}, {55.8, 49.6}, {56.6, 49.4}, {56.6, 52.6}, {56.8, 50}, {57.2, 51.4},
+                    {57.4, 52.4}, {58, 48.6}, {58.2, 49.6}, {58.2, 51.2}, {58.4, 51.6}, {58.6, 48.4},
+                    {58.6, 51.4}, {58.6, 51.6}, {58.8, 48.6}, {59.2, 52.6}, {59.4, 53.6}, {59.6, 48.4},
+                    {59.6, 53.8}, {59.6, 54.6}, {60.2, 52.4}, {60.6, 52.8}, {60.6, 54}, {61, 51.6},
+                    {61.2, 50.6}, {61.4, 49.4}, {61.4, 50.4}, {61.6, 49.4},
+                },
+            },
+            zoneID = 618,
+        },
+        [7436] = {
+            spawns = {
+                [618] = {
+                    {53.4, 55}, {53.4, 55.6}, {54, 54.4}, {54, 54.6}, {54.4, 49.8}, {54.4, 50.8}, {54.6, 51},
+                    {54.6, 51.6}, {54.6, 54.2}, {54.6, 54.8}, {54.8, 49.8}, {54.8, 52.6}, {55.4, 49.4},
+                    {55.6, 49.4}, {56.6, 49.4}, {56.8, 50}, {56.8, 51.8}, {57, 52.6}, {57.2, 51.4},
+                    {58, 48.6}, {58.2, 48.4}, {58.2, 49.6}, {58.4, 51.4}, {58.4, 51.6}, {58.6, 48.4},
+                    {58.6, 51.4}, {58.8, 52}, {59.2, 52.6}, {59.4, 53.6}, {59.6, 53.4}, {59.6, 53.6},
+                    {59.8, 48.2}, {59.8, 54.6}, {60.2, 51.4}, {60.6, 52.8}, {60.8, 51.6}, {61.2, 51.2},
+                    {61.4, 49.4}, {61.4, 50}, {61.6, 50},
+                },
+            },
+            zoneID = 618,
+        },
+        [7437] = {
+            spawns = {
+                [618] = {
+                    {52.8, 55}, {53.2, 55.6}, {54, 54.4}, {54, 54.6}, {54.2, 50.4}, {54.4, 50.8},
+                    {54.6, 51.4}, {54.6, 51.6}, {54.6, 54.2}, {54.8, 52.6}, {55.2, 50.4}, {55.4, 49.4},
+                    {55.6, 49.4}, {56, 49.6}, {56.6, 50}, {56.8, 51.8}, {57.2, 52.6}, {57.8, 49},
+                    {58.2, 48.4}, {58.2, 49.6}, {58.2, 51.2}, {58.8, 52}, {59.2, 51}, {59.4, 49},
+                    {59.4, 52.8}, {59.4, 54.2}, {59.6, 49}, {60.4, 53}, {61, 49.8}, {61.2, 51.2}, {61.6, 50},
+                },
+            },
+            zoneID = 618,
+        },
+        [7445] = {
+            spawns = {
+                [618] = {
+                    {54.2, 20.6}, {54.4, 20.2}, {54.4, 22.8}, {54.6, 20.4}, {55.4, 18.8}, {55.4, 21.4},
+                    {55.4, 23.6}, {55.6, 22.4}, {55.6, 23.6}, {55.8, 19.2}, {56.4, 19.8}, {56.4, 24.6},
+                    {56.6, 23.4}, {56.6, 26.8}, {57, 21.6}, {57, 24.6}, {57.4, 12.8}, {57.4, 14.8},
+                    {57.4, 19.8}, {57.4, 24}, {57.6, 12.4}, {57.6, 12.6}, {57.6, 19.6}, {57.6, 26},
+                    {57.8, 22.4}, {58, 16.8}, {58, 24.8}, {58.2, 14.4}, {58.4, 16.4}, {58.4, 18.2},
+                    {58.4, 23.8}, {58.6, 20.4}, {58.6, 25}, {58.8, 16.2}, {59, 21.6}, {59, 25.8},
+                    {59.2, 14.8}, {59.4, 12}, {59.4, 14}, {59.4, 17.8},
+                },
+            },
+            zoneID = 618,
+        },
+        [7447] = {
+            spawns = {
+                [618] = {
+                    {29.4, 45.4}, {29.4, 45.8}, {29.6, 48.4}, {30.4, 38.4}, {30.6, 38.4}, {30.8, 38.8},
+                    {33.4, 44.2}, {33.6, 44.4}, {34, 39.4}, {34, 39.6}, {36, 44}, {36.8, 44.2}, {38.2, 38.4},
+                    {38.2, 38.8}, {38.6, 39}, {39, 40}, {39.2, 36.6}, {40.4, 35.6}, {40.6, 35.4},
+                    {40.6, 35.6}, {41.4, 39.2}, {41.6, 39.4}, {42, 36.4}, {42.2, 37.8}, {43.8, 37.2},
+                    {43.8, 37.6}, {44, 36}, {44, 43.4}, {44.4, 41.4}, {44.4, 41.6}, {44.6, 42.6}, {44.8, 34},
+                    {44.8, 35.8}, {44.8, 42.2}, {45.8, 44.8}, {46, 41.6}, {46.4, 36.8}, {46.4, 38.4},
+                    {46.6, 36.6}, {47.2, 43.4},
+                },
+            },
+            zoneID = 618,
+        },
+        [7449] = {
+            spawns = {
+                [618] = {
+                    {54.4, 19.4}, {54.4, 20.2}, {54.4, 21.6}, {54.4, 22.6}, {54.6, 22.4}, {54.8, 19.4},
+                    {55.4, 22.6}, {55.4, 23.6}, {55.6, 21.2}, {55.6, 22.4}, {55.6, 23.6}, {55.8, 19.2},
+                    {56.4, 25.4}, {56.4, 25.6}, {56.6, 19.4}, {56.6, 25.6}, {56.8, 23.6}, {57, 20.4},
+                    {57, 21.6}, {57, 23.2}, {57.4, 12.8}, {57.6, 12.4}, {57.8, 22.4}, {58, 14}, {58, 19.8},
+                    {58, 22.8}, {58.2, 18.4}, {58.2, 18.6}, {58.4, 16.6}, {58.4, 21}, {58.4, 25.2},
+                    {58.6, 16.2}, {58.6, 23.6}, {58.6, 25}, {59, 14.4}, {59, 14.6}, {59.4, 12.4},
+                    {59.4, 12.6}, {59.4, 19.6}, {59.4, 21},
+                },
+            },
+            zoneID = 618,
+        },
+        [7457] = {
+            spawns = {
+                [618] = {
+                    {28.6, 46.8}, {29, 46.4}, {30, 39.6}, {30.2, 38.4}, {30.6, 38}, {30.6, 38.8},
+                    {32.4, 39.4}, {32.6, 39.4}, {33.4, 43.4}, {33.4, 43.8}, {34, 40.2}, {34.2, 40.6},
+                    {35.8, 44}, {38.4, 40.4}, {38.6, 40.4}, {38.6, 40.6}, {39.4, 38.2}, {39.4, 38.6},
+                    {39.8, 38}, {40, 39.4}, {40.4, 35.6}, {40.6, 39.4}, {41.2, 36}, {41.8, 36.8}, {43, 37.6},
+                    {43.4, 33.2}, {43.6, 38.4}, {43.6, 38.6}, {44.2, 36.4}, {44.4, 35.2}, {44.4, 44},
+                    {44.6, 35.6}, {44.6, 41.2}, {44.8, 44.2}, {45, 35}, {45.2, 38.6}, {45.6, 38.4},
+                    {45.6, 38.6}, {45.8, 41.4}, {46.4, 44.2},
+                },
+            },
+            zoneID = 618,
+        },
+        [7461] = {
+            spawns = {
+                [618] = {
+                    {51.2, 88.8}, {51.2, 89.6}, {52.4, 84.4}, {52.4, 85.4}, {52.4, 88.4}, {52.4, 88.6},
+                    {52.6, 88.6}, {52.8, 90.2}, {53.2, 84.6}, {53.2, 86}, {55, 79.4}, {55.2, 78.2},
+                    {55.4, 84.2}, {55.6, 79.4}, {55.6, 84.2}, {55.8, 78}, {55.8, 81.8}, {56, 80.4},
+                    {56.4, 85.8}, {56.4, 86.6}, {56.6, 85.2}, {56.6, 86.4}, {57, 88}, {57, 88.8},
+                    {57.6, 88.6}, {57.8, 80.4}, {58, 86.6}, {58.2, 81.2}, {58.4, 82.6}, {58.4, 88},
+                    {58.8, 85}, {58.8, 85.6}, {59, 77.6}, {59, 83.8}, {59.2, 87.6}, {59.4, 75.4},
+                    {59.6, 76.2}, {59.6, 87.6}, {60, 77.2}, {60.2, 78},
+                },
+            },
+            zoneID = 618,
+        },
+        [7462] = {
+            spawns = {
+                [618] = {
+                    {51.2, 88.8}, {51.4, 90}, {52.4, 84.4}, {52.4, 84.8}, {52.4, 88.4}, {52.4, 88.6},
+                    {52.6, 88.4}, {52.6, 88.6}, {53, 86.2}, {53, 86.6}, {53.6, 85}, {54.2, 84.4},
+                    {55.4, 78.2}, {55.4, 79.6}, {55.6, 84.2}, {55.8, 80}, {55.8, 83.4}, {56.2, 78.4},
+                    {56.4, 85.4}, {56.4, 85.6}, {56.6, 78.8}, {56.6, 85.2}, {56.6, 86.6}, {57, 88.2},
+                    {57.4, 79.8}, {57.6, 79.8}, {57.8, 86.6}, {58, 80.8}, {58.4, 82.4}, {58.4, 82.6},
+                    {58.6, 88.2}, {58.6, 88.6}, {58.8, 83}, {58.8, 86.4}, {59, 83.8}, {59, 87.4},
+                    {59.4, 75.6}, {59.6, 75.4}, {59.6, 87.6}, {59.8, 74},
+                },
+            },
+            zoneID = 618,
         },
         [7665] = {
             spawns = {
