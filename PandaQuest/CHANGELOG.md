@@ -4,6 +4,254 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.206] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,550 quests, 26 NPCs, 1 object
+- quest 1578 - Supplying the Front - updated
+  - description added
+  - reward items: +1
+- quest 28762 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28763 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28765 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28766 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28767 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28769 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28770 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28771 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28773 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28774 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 28775 - Broken Serpent Figurine - updated
+  - description added
+  - reward items: +1
+- quest 28776 - Broken Earthen Figurine - updated
+  - description added
+  - reward items: +1
+- quest 28777 - Broken Owl Figurine - updated
+  - description added
+  - reward items: +1
+- quest 28778 - Broken Boar Figurine - updated
+  - description added
+  - reward items: +1
+- quest 28779 - A Long Way from Home - updated
+  - description added
+  - reward money added (36g)
+  - reward choices: +3
+- quest 28780 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28781 - Targets of Opportunity - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 28782 - A Bird of Legend - updated
+  - description added
+  - reward money added (1g 60s)
+  - reward items: +1
+  - reward choices: +5
+- quest 28783 - The Source of Their Power - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 28784 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28785 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28786 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28788 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28789 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 28790 - A Personal Summons - updated
+  - description added
+- quest 28791 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28792 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28793 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28794 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28796 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28797 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28805 - The Eye of the Storm - updated
+  - description added
+- quest 28806 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28807 - Expert Opinion - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28808 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28809 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28810 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28811 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28812 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28813 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 28814 - Followers and Leaders - updated
+  - description added
+  - reward money added (36g)
+  - reward choices: +3
+- quest 28815 - Twilight Documents - updated
+  - description added
+  - reward money added (36g)
+- quest 28816 - To the Depths - updated
+  - description added
+- quest 28817 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28818 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28819 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28820 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28822 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28823 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 28824 - Wayward Child - updated
+  - description added
+  - reward money added (36g)
+  - reward choices: +3
+- quest 28825 - A Personal Summons - updated
+  - description added
+- quest 28826 - The Eye of the Storm - updated
+  - description added
+- quest 28827 - To the Depths - updated
+  - description added
+- quest 28828 - You Gotta Have Eggs - updated
+  - description added
+  - reward money added (80s)
+  - reward items: +1
+  - reward choices: +5
+- quest 28832 - Twilight Shores - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28833 - Rescue the Earthspeaker! - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28834 - Rescue the Earthspeaker! - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28836 - Sins of the Sea Witch - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28843 - Sins of the Sea Witch - updated
+  - description added
+  - reward money added (32g 80s)
+  - reward choices: +3
+- quest 28845 - The Vortex Pinnacle - updated
+  - description added
+  - reward money added (90s)
+- quest 28849 - Twilight Skies - updated
+  - description added
+  - reward money added (4g 50s)
+- quest 28850 - The Prison Rooftop - updated
+  - description added
+  - reward money added (5c)
+- quest 28852 - Soften them Up - updated
+  - description added
+  - reward items: +1
+- quest 28853 - Kill the Courier - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 28854 - Closing a Dark Chapter - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 28857 - Blasted Lands: The Other Side of the World - updated
+  - description added
+  - reward money added (40s)
+- quest 28859 - The Dunes of Silithus - updated
+  - description added
+  - reward money added (40s)
+- quest 28860 - Keeping the Dragonmaw at Bay - updated
+  - description added
+  - reward money added (9g)
+- quest 28861 - Fight Like a Wildhammer - updated
+  - description added
+  - reward money added (9g)
+
 ## [0.2.205] - 2026-10-21
 
 Data from the PandaQuest portal.
@@ -1121,33 +1369,6 @@ Data from the PandaQuest portal.
 - quest 27823 - A Dwarf's Got Needs - updated
 - quest 27824 - The Good Stuff - updated
 - quest - and 49 more quests updated
-
-## [0.2.192] - 2026-10-20
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 5,766 quests, 24 NPCs, 1 object
-- quest 11014 - Enter the Taskmaster - updated
-- quest 24469 - Hold the Line! - updated
-- quest 27724 - Hero's Call: Vashj'ir! - updated
-- quest 27725 - Quel'Danil Lodge - updated
-- quest 27726 - Hero's Call: Mount Hyjal! - updated
-- quest 27727 - Hero's Call: Deepholm! - updated
-- quest 27729 - Once More, With Eeling - updated
-- quest 27733 - The Good Ol' Switcheroo - updated
-- quest 27737 - By Fire Be Saved! - updated
-- quest 27738 - The Pit of Scales - updated
-- quest 27739 - The Gnoll King - updated
-- quest 27740 - Baba Bogbrew - updated
-- quest 27742 - A Little on the Side - updated
-- quest 27743 - While We're Here - updated
-- quest 27744 - Rune Ruination - updated
-- quest 27745 - A Fiery Reunion - updated
-- quest 27746 - Empire of Dirt - updated
-- quest 27747 - Total War - updated
-- quest 27748 - Fortune and Glory - updated
-- quest 27750 - War Forage - updated
-- quest - and 46 more quests updated
 
 ## [0.2.173] - 2026-10-18
 

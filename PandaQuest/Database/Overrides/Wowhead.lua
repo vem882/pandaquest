@@ -83,6 +83,15 @@ ns.Overrides.wowhead = {
         [1222] = {rewardMoney = 4000},
         [1270] = {rewardMoney = 4000},
         [1393] = {rewardMoney = 8500},
+        [1578] = {
+            description = "The mountaineers of Loch Modan are fighting troggs, and having a busy time of " ..
+                "it! They need constant supplies of new armor and weapons if we're ever to get a handle " ..
+                "on those troggs.\n\nThat's why my colleague Thorvald is there, trying to keep the " ..
+                "mountaineers in good gear. So if you were to make some copper axes and copper chain " ..
+                "belts and bring them to Thorvald, he would be obliged. He might even share his knowledge " ..
+                "with you.\n\nThorvald is in Loch Modan's southern guard tower.",
+            rewardItems = {{33792, 1}},
+        },
         [1581] = {
             description = "Our herb and alchemy shop is booming, but my husband spends so much time " ..
                 "mixing potions that we never have time for each other.\n\nCan you help us?\n\nIf you can " ..
@@ -27190,6 +27199,28 @@ ns.Overrides.wowhead = {
             rewardChoices = {{66901, 1}, {66902, 1}, {66903, 1}},
             rewardMoney = 360000,
         },
+        [28762] = {
+            description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
+                "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
+                "papers.>\n\n<name>. It is <name>, right?\n\nYou've arrived just in time. The Blackrock " ..
+                "orcs have managed to sneak into Northshire through a break in the mountain. My soldiers " ..
+                "are doing the best that they can to push them back, but I fear they will be overwhelmed " ..
+                "soon.\n\nHead northwest into the forest and kill the attacking Blackrock worgs! Help my " ..
+                "soldiers!",
+            rewardItems = {{57255, 1}},
+            rewardMoney = 50,
+        },
+        [28763] = {
+            description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
+                "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
+                "papers.>\n\n<name>. It is <name>, right?\n\nYou've arrived just in time. The Blackrock " ..
+                "orcs have managed to sneak into Northshire through a break in the mountain. My soldiers " ..
+                "are doing the best that they can to push them back, but I fear they will be overwhelmed " ..
+                "soon.\n\nHead northwest into the forest and kill the attacking Blackrock worgs! Help my " ..
+                "soldiers!",
+            rewardItems = {{57253, 1}},
+            rewardMoney = 50,
+        },
         [28764] = {
             description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
                 "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
@@ -27201,6 +27232,66 @@ ns.Overrides.wowhead = {
             rewardItems = {{57254, 1}},
             rewardMoney = 50,
         },
+        [28765] = {
+            description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
+                "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
+                "papers.>\n\n<name>. It is <name>, right?\n\nYou've arrived just in time. The Blackrock " ..
+                "orcs have managed to sneak into Northshire through a break in the mountain. My soldiers " ..
+                "are doing the best that they can to push them back, but I fear they will be overwhelmed " ..
+                "soon.\n\nHead northwest into the forest and kill the attacking Blackrock worgs! Help my " ..
+                "soldiers!",
+            rewardItems = {{57253, 1}},
+            rewardMoney = 50,
+        },
+        [28766] = {
+            description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
+                "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
+                "papers.>\n\n<name>. It is <name>, right?\n\nYou've arrived just in time. The Blackrock " ..
+                "orcs have managed to sneak into Northshire through a break in the mountain. My soldiers " ..
+                "are doing the best that they can to push them back, but I fear they will be overwhelmed " ..
+                "soon.\n\nHead northwest into the forest and kill the attacking Blackrock worgs! Help my " ..
+                "soldiers!",
+            rewardItems = {{57255, 1}},
+            rewardMoney = 50,
+        },
+        [28767] = {
+            description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
+                "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
+                "papers.>\n\n<name>. It is <name>, right?\n\nYou've arrived just in time. The Blackrock " ..
+                "orcs have managed to sneak into Northshire through a break in the mountain. My soldiers " ..
+                "are doing the best that they can to push them back, but I fear they will be overwhelmed " ..
+                "soon.\n\nHead northwest into the forest and kill the attacking Blackrock worgs! Help my " ..
+                "soldiers!",
+            rewardItems = {{57254, 1}},
+            rewardMoney = 50,
+        },
+        [28769] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57386, 1}},
+            rewardMoney = 40,
+        },
+        [28770] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57388, 1}},
+            rewardMoney = 40,
+        },
+        [28771] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57386, 1}},
+            rewardMoney = 40,
+        },
         [28772] = {
             description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
                 "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
@@ -27210,12 +27301,180 @@ ns.Overrides.wowhead = {
             rewardItems = {{57387, 1}},
             rewardMoney = 40,
         },
+        [28773] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57386, 1}},
+            rewardMoney = 40,
+        },
+        [28774] = {
+            description = "The invading orcs aren't fools. They are sizing us up, making sure that when " ..
+                "they attack it will be to their advantage.\n\nIn the forest, to the northwest, are " ..
+                "Blackrock spies. They peer at us through spyglasses, watching our every move - waiting. " ..
+                "I want you take the fight to them!\n\nKill the Blackrock spies! We must show them that " ..
+                "we know they are watching us and that we are prepared!",
+            rewardItems = {{57388, 1}},
+            rewardMoney = 40,
+        },
+        [28775] = {
+            description = "This badly broken figurine was discarded by its last owner. However, with the " ..
+                "right materials and your skill in jewelcrafting, it could be completely restored.",
+            rewardItems = {{52353, 1}},
+        },
+        [28776] = {
+            description = "This badly broken figurine was discarded by its last owner. However, with the " ..
+                "right materials and your skill in jewelcrafting, it could be completely restored.",
+            rewardItems = {{52352, 1}},
+        },
+        [28777] = {
+            description = "This badly broken figurine was discarded by its last owner. However, with the " ..
+                "right materials and your skill in jewelcrafting, it could be completely restored.",
+            rewardItems = {{52354, 1}},
+        },
+        [28778] = {
+            description = "This badly broken figurine was discarded by its last owner. However, with the " ..
+                "right materials and your skill in jewelcrafting, it could be completely restored.",
+            rewardItems = {{52351, 1}},
+        },
+        [28779] = {
+            description = "I've a feeling I was able to escape my captors because, frankly, there is " ..
+                "nowhere to go.\n\nStranded on these platforms, they are bound to find me sooner or " ..
+                "later. Unless...\n\nIt is said that the heart of an elemental noble can grant whoever " ..
+                "holds it the characteristics of that element. Which, in the case of air, would be most " ..
+                "useful during a downward trip.\n\nBring me Grand Vizier Ertan's heart so I can use its " ..
+                "magic to land safely on the shoreline of Uldum.",
+            rewardChoices = {{66898, 1}, {66899, 1}, {66900, 1}},
+            rewardMoney = 360000,
+        },
+        [28780] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [28781] = {
+            description = "We were part of a clandestine operation put together by Prince Nadun of " ..
+                "Ramkahen. We lost most of our unit during an ambush and we're now unable to finish our " ..
+                "mission.\n\nShould you be up for it, I can arrange for a sizable reward for you.\n\nWe " ..
+                "were instructed to take out any targets of opportunity that would damage the enemy's " ..
+                "military infrastructure.\n\nWe've spotted General Husam and two of his captains up " ..
+                "ahead. Slaying them for us will be a great favor for Ramkahen.",
+            rewardChoices = {{66905, 1}, {66906, 1}, {66907, 1}},
+            rewardMoney = 376000,
+        },
+        [28782] = {
+            description = "Local legend tells of a mighty owl that circles the mountaintops like death on " ..
+                "wings. They named her Deathwing.\n\nSoon afterwards, they were told that that name was " ..
+                "already taken. So they settled on a moniker that evoked a similar sense of horror and " ..
+                "dread:\n\nHell-Hoot.\n\nHell-Hoot can be found atop the mountain to the southwest of our " ..
+                "smoking pit. Silence the infernal nocturnal... so we can eat her!",
+            rewardChoices = {{67168, 1}, {67185, 1}, {67202, 1}, {67218, 1}, {67225, 1}},
+            rewardItems = {{67271, 1}},
+            rewardMoney = 16000,
+        },
+        [28783] = {
+            description = "We managed to do extensive scouting before our crew was ambushed.\n\nWe " ..
+                "discovered that Deathwing's envoy, Siamat, is giving the Neferset their newfound " ..
+                "power.\n\nThey claim it has restored them to the greatness of old, but something else " ..
+                "has happened. Their very souls have been corrupted.\n\nAs one of the four winds, Siamat " ..
+                "is incredibly powerful. But that power has been drained considerably by this " ..
+                "process.\n\nStrike now, while it is possible for you to slay him and bring an end to " ..
+                "this madness.",
+            rewardChoices = {{66908, 1}, {66909, 1}, {66910, 1}},
+            rewardMoney = 376000,
+        },
+        [28784] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [28785] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [28786] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
         [28787] = {
             description = "While you were out training I received an urgent message from Sergeant Willem. " ..
                 "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
                 "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
                 "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
             rewardMoney = 13,
+        },
+        [28788] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [28789] = {
+            description = "While you were out training I received an urgent message from Sergeant Willem. " ..
+                "Turns out that the Blackrock orcs have hired goblin assassins. They ambushed our " ..
+                "battalion behind the abbey. Willem has asked me to send him a hero. You have to go help " ..
+                "them, <name>!\n\nFind Sergeant Willem north of the abbey at the command tent. Go!",
+            rewardMoney = 13,
+        },
+        [28790] = {
+            description = "<An unfamiliar feeling wells up from deep within you, flooding your mind with " ..
+                "thoughts and images.>\n\nHear my words, <name>.\n\nOur world finds itself in the grip of " ..
+                "a terrible crisis.\n\nI call upon you to lend your aid in this desperate hour.\n\nI am " ..
+                "Krogar.\n\nSeek me out at once, and your destiny shall be revealed.\n\nYou can find me " ..
+                "north of the Drag in Orgrimmar.",
+        },
+        [28791] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{2186, 1}},
+            rewardMoney = 50,
+        },
+        [28792] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{11192, 1}},
+            rewardMoney = 50,
+        },
+        [28793] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{2691, 1}},
+            rewardMoney = 50,
+        },
+        [28794] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{11192, 1}},
+            rewardMoney = 50,
         },
         [28795] = {
             description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
@@ -27227,6 +27486,26 @@ ns.Overrides.wowhead = {
             rewardItems = {{2186, 1}},
             rewardMoney = 50,
         },
+        [28796] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{11192, 1}},
+            rewardMoney = 50,
+        },
+        [28797] = {
+            description = "Have you ever seen a goblin, <name>? They're wretched little green-skinned " ..
+                "monsters that love only two things: gold and themselves.\n\nThe Blackrock orcs have " ..
+                "enlisted the aid of goblin assassins to kill our soldiers. If you look to the field in " ..
+                "the north you can barely make out their silhouettes, sneaking about in the grass.\n\nI " ..
+                "need you to head out there and kill every goblin that you see. They need to learn that " ..
+                "nobody messes with the Alliance!",
+            rewardItems = {{2691, 1}},
+            rewardMoney = 50,
+        },
         [28798] = {rewardMoney = 114000},
         [28799] = {rewardMoney = 74000},
         [28800] = {rewardMoney = 94000},
@@ -27234,6 +27513,135 @@ ns.Overrides.wowhead = {
         [28802] = {rewardMoney = 9000},
         [28803] = {rewardMoney = 114000},
         [28804] = {rewardMoney = 114000},
+        [28805] = {
+            description = "Greetings, <name>.\n\nYes, you are known to the Earthen Ring by name.\n\nYour " ..
+                "exploits and accomplishments are many. Azeroth already stands in your debt, and yet " ..
+                "again she is in need of her heroes.\n\nI am but a messenger. A familiar presence seeks " ..
+                "audience with you.\n\nPeer into the Waters of Farseeing and behold the fate of our world.",
+        },
+        [28806] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57257, 1}},
+            rewardMoney = 50,
+        },
+        [28807] = {
+            description = "<Anduin holds up the matching badges.>\n\nThe medallion we found on the farm " ..
+                "is identical to the one in Samuelson's notes! It can't be a coincidence. I think " ..
+                "Samuelson is up to something, but we need a smoking gun before we can accuse one of my " ..
+                "father's most trusted guards.\n\nThere's only one person I trust to sort this all out: " ..
+                "Mathias Shaw, the director of SI:7. Show him these badges and see what he thinks. " ..
+                "Meanwhile, I'll go back to the keep and watch Samuelson like a hawk!",
+            rewardMoney = 45000,
+        },
+        [28808] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57256, 1}},
+            rewardMoney = 50,
+        },
+        [28809] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57258, 1}},
+            rewardMoney = 50,
+        },
+        [28810] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57256, 1}},
+            rewardMoney = 50,
+        },
+        [28811] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57257, 1}},
+            rewardMoney = 50,
+        },
+        [28812] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57256, 1}},
+            rewardMoney = 50,
+        },
+        [28813] = {
+            description = "Have you embraced the Holy Light yet, <brother/sister>? It is through the Holy " ..
+                "Light that we are saved! It is through the Holy Light that I am able to heal these " ..
+                "overly demanding soldiers! And it is through the Holy Light that you will be able to " ..
+                "venture out into the field to the north and rescue our fallen brothers!\n\nTake this " ..
+                "prayer book with you into the field and cast the Light's healing touch on the injured.",
+            rewardItems = {{57258, 1}},
+            rewardMoney = 50,
+        },
+        [28814] = {
+            description = "The documents detail the arrival of High Priestess Azil to the depths of the " ..
+                "Stonecore.\n\nAzil is described as a high-ranking member of the Twilight Council. " ..
+                "Additionally, her entourage of over a hundred devout followers is preparing for an " ..
+                "unholy ritual of unforeseen darkness.\n\nSounds like an event you need to put a stop to.",
+            rewardChoices = {{66891, 1}, {66892, 1}, {66893, 1}},
+            rewardMoney = 360000,
+        },
+        [28815] = {
+            description = "We've tailed one of the Twilight's Hammer operatives here. He goes by the name " ..
+                "of Millhouse Manastorm.\n\nWe have reason to believe he's carrying important " ..
+                "documents.\n\nThis is as far as we can safely go, however, without neglecting our duty " ..
+                "to defend the Temple of Earth's inner perimeter.\n\nTrack down Manastorm and retrieve " ..
+                "the documents from him.",
+            rewardMoney = 360000,
+        },
+        [28816] = {
+            description = "The Earthen Ring has identified the watery realm of Vashj'ir as a source of " ..
+                "the adversary's destructive energies.\n\nIt is still uncertain what dangers might be " ..
+                "faced there. Any information you could gather would be of great value.\n\nThe Horde is " ..
+                "sending warships to the region as we speak. To gain passage, speak to Commander Thorak " ..
+                "at Bladefist Bay.\n\nMay the spirits guide you, <name>.",
+        },
+        [28817] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [28818] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [28819] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [28820] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
         [28821] = {
             description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
                 "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
@@ -27241,15 +27649,192 @@ ns.Overrides.wowhead = {
                 "control.\n\nFarewell, <class>.",
             rewardMoney = 7,
         },
+        [28822] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [28823] = {
+            description = "Excellent work, <name>! The rear is now officially clear. We'll take care of " ..
+                "the stragglers. I want you to go back to Marshal McBride, standing in front of " ..
+                "Northshire Abbey, south of here, and let him know that the goblin situation is under " ..
+                "control.\n\nFarewell, <class>.",
+            rewardMoney = 7,
+        },
+        [28824] = {
+            description = "One of my children is not with me, <name>.\n\nHe stayed behind with the " ..
+                "Twilight's Hammer at the Stonecore deep within the Temple of Earth.\n\nI sent my other " ..
+                "children to free him from the dark magic that was surely keeping him from returning " ..
+                "here, but... no such magic was placed upon him.\n\nGo into the Stonecore and destroy " ..
+                "Ozruk. He must be reclaimed by the earth.",
+            rewardChoices = {{66894, 1}, {66896, 1}, {66897, 1}},
+            rewardMoney = 360000,
+        },
+        [28825] = {
+            description = "<An unfamiliar feeling wells up from deep within you, flooding your mind with " ..
+                "thoughts and images.>\n\nHear my words, <name>.\n\nOur world finds itself in the grip of " ..
+                "a terrible crisis.\n\nI call upon you to lend your aid in this desperate hour.\n\nI am " ..
+                "Naraat.\n\nSeek me out at once, and your calling shall be revealed.\n\nI await you at " ..
+                "the Eastern Earthshrine in Stormwind City.",
+        },
+        [28826] = {
+            description = "Greetings, hero of Azeroth.\n\nWe of the Earthen Ring know you by name, " ..
+                "<name>.\n\nYour exploits and accomplishments are many. Azeroth already stands in your " ..
+                "debt, and yet again she is in need of her heroes.\n\nI am but a messenger. A powerful " ..
+                "presence seeks audience with you.\n\nPeer into the Waters of Farseeing and behold the " ..
+                "dilemma of our world.",
+        },
+        [28827] = {
+            description = "The Earthen Ring has identified the watery realm of Vashj'ir as a source of " ..
+                "the adversary's destructive energies.\n\nIt is still uncertain what dangers might be " ..
+                "faced there, so any information you could gather would be of great value.\n\nThe " ..
+                "Alliance is sending warships to the region as we speak. To gain passage, travel " ..
+                "northwest of Stormwind and speak to Recruiter Burns at Stormwind Harbor.\n\nMay the " ..
+                "spirits guide you, <name>.",
+        },
+        [28828] = {
+            description = "I don't have a very discerning palate, but even I can't stand the taste of " ..
+                "those chimaeras that you'll find around here. Their eggs, however, are a different " ..
+                "story.\n\nChimaera eggs are the richest, most buttery eggs you'll find this side of " ..
+                "Orgrimmar. Way better than boring owl eggs, and not as sulfurous as those weird wildkin " ..
+                "eggs.\n\nI'll take as many of them as you can gather. Head northeast, and look for their " ..
+                "nests in the snow.",
+            rewardChoices = {{67170, 1}, {67187, 1}, {67204, 1}, {67220, 1}, {67227, 1}},
+            rewardItems = {{67273, 1}},
+            rewardMoney = 8000,
+        },
         [28829] = {rewardMoney = 8000},
         [28830] = {rewardMoney = 8000},
         [28831] = {rewardMoney = 8000},
+        [28832] = {
+            description = "Right then, just hop in the seaplane behind me and I'll fly yeh to the " ..
+                "Highlands.\n\nWe're to report to a feller named \" Lieutenant Fawkes.\" I've promised " ..
+                "the King we'd get there lickety-fast, so I took the liberty of ditchin' any excess " ..
+                "weight. Like seatbelts. Parachutes. Maps. Stabilizers. Landing gear.\n\nI never actually " ..
+                "\"land\" these things anyways.",
+            rewardMoney = 45000,
+        },
+        [28833] = {
+            description = "Good! You've brought allies.\n\nYou must hurry if we are to rescue " ..
+                "Erunak.\n\nFight your way through Neptulon's halls. Find the shaman and free him from " ..
+                "these worms... if he still lives.\n\nDon't worry about them coming up from behind you. " ..
+                "Nothing's making it past me!",
+            rewardChoices = {{65654, 1}, {65655, 1}, {65656, 1}},
+            rewardMoney = 328000,
+        },
+        [28834] = {
+            description = "Good! You've brought allies.\n\nYou must hurry if we are to rescue " ..
+                "Erunak.\n\nGo now. Fight your way through Neptulon's halls. Find the shaman and free him " ..
+                "from these worms... if he still lives.\n\nDon't worry about them coming up from behind " ..
+                "you. I'll see that nothing makes it past me!",
+            rewardChoices = {{65654, 1}, {65655, 1}, {65656, 1}},
+            rewardMoney = 328000,
+        },
+        [28836] = {
+            description = "That vile worm has earned a thousand deaths!\n\nIt won't be easy. She and her " ..
+                "minions are firmly entrenched in this place, but she's bound to be exhausted from her " ..
+                "fight with Neptulon.\n\nNow is the time to strike! We won't have another opportunity " ..
+                "like this.\n\nRun her through, <name>!",
+            rewardChoices = {{65657, 1}, {65658, 1}, {65659, 1}},
+            rewardMoney = 328000,
+        },
         [28837] = {rewardMoney = 8000},
         [28841] = {rewardMoney = 8500},
         [28842] = {rewardMoney = 16500},
+        [28843] = {
+            description = "Naz'jar! She's the one responsible for this mess.\n\nShe's in here somewhere, " ..
+                "<name>. She must be exhausted after that fight with Neptulon.\n\nNow is the time to " ..
+                "strike! We won't have another opportunity like this.\n\nI'll handle anything that tries " ..
+                "to aid her from this direction.\n\nFind her, <name>, and run her through!",
+            rewardChoices = {{65657, 1}, {65658, 1}, {65659, 1}},
+            rewardMoney = 328000,
+        },
+        [28845] = {
+            description = "One of our civilian leaders was taken prisoner by the air elementals.\n\nThey " ..
+                "are probably torturing him for information as we speak.\n\nGo to the Vortex Pinnacle, " ..
+                "where these foul creatures came from, and look for Itesh.\n\nYou will find the entrance " ..
+                "to the Vortex Pinnacle hovering off of the southeastern coast of Uldum.",
+            rewardMoney = 9000,
+        },
         [28847] = {rewardMoney = 800},
         [28848] = {rewardMoney = 800},
+        [28849] = {
+            description = "I just got word from Orgrimmar that the Warchief wants us to move out. We " ..
+                "wouldn't have been ready if it wasn't for your help!\n\nThe plan is for the air fleet to " ..
+                "take off immediately, and for the navy to follow close behind. Hellscream will be " ..
+                "accompanying the air fleet and specifically requested that you come along with us.\n\nNo " ..
+                "time to delay! Go to the Southern Rocketway Terminus here in Azshara, and check in with " ..
+                "Friz Groundspin. I'll bring the zeppelin around to pick you up.",
+            rewardMoney = 45000,
+        },
+        [28850] = {
+            description = "I don't understand why the king wants to waste time saving his hide, but if " ..
+                "you want to risk your life, then be my guest.\n\nCrowley and his men are holed up " ..
+                "upstairs, probably plotting against the king as we speak!",
+            rewardMoney = 5,
+        },
+        [28852] = {
+            description = "At last, reinforcements! I'm so glad you're here. We never imagined just how " ..
+                "entrenched the Twilight's Hammer forces are. And there are so many!\n\nSeveral of our " ..
+                "drakes have been captured just inside the main hall. Please, break their bonds and free " ..
+                "them.\n\nOnce free, together we can scourge these halls clean with flame. Just climb " ..
+                "aboard a red drake and call out your targets. You will definitely want to cut down the " ..
+                "enemy numbers before delving deeper into the ruins.",
+            rewardItems = {{66943, 1}},
+        },
+        [28853] = {
+            description = "Thank you, <class>, for braving the horrors of this dark and terrible " ..
+                "place.\n\nThe bowels of Grim Batol are the heart of Cho'gall's war machine. If we are to " ..
+                "stop his machinations throughout the Highlands, we must learn all we can from these " ..
+                "depths.\n\nSeek out Drahga Shadowburner within. He is Cho'gall's runner, the link " ..
+                "between here and the Bastion of Twilight. We must learn the secrets he carries.",
+            rewardChoices = {{66936, 1}, {66937, 1}, {66938, 1}},
+            rewardMoney = 376000,
+        },
+        [28854] = {
+            description = "This terrible place was Alexstrasza's nightmare. During what mortals call the " ..
+                "second war, she was chained in the depths below, her tormented offspring forced to serve " ..
+                "the demon-corrupted Horde.\n\nAlexstrasza may be free, but the beast known as Erudax " ..
+                "still corrupts her offspring below.\n\n< Baleflame 's body tenses in anger.>\n\nDestroy " ..
+                "him, <class>. Crush him that we may end these horrors once and for all!",
+            rewardChoices = {{66933, 1}, {66934, 1}, {66935, 1}},
+            rewardMoney = 376000,
+        },
         [28856] = {rewardMoney = 4000},
+        [28857] = {
+            description = "Now here's an interesting one. It says to report to Quartermaster Lungertz at " ..
+                "Nethergarde Keep, in the Blasted Lands. That's just about as far as you can get from " ..
+                "here!\n\nIt says they're having trouble with Horde attacks. Hmph! I didn't know the " ..
+                "Horde even had an outpost in the Blasted Lands! They tend to worry more about demons and " ..
+                "less about rivalries down there, as I understand it.\n\nYou'll have to cross the Great " ..
+                "Sea, then travel south from the Swamp of Sorrows.\n\nYou interested?",
+            rewardMoney = 4000,
+        },
+        [28859] = {
+            description = "Cenarion Hold, in Silithus, is one of the biggest druid settlements in " ..
+                "Kalimdor. Almost as big as Moonglade, mon.\n\nSomeday, maybe Zen'Aliri be headin' on " ..
+                "over to Cenarion Hold... fightin' some Twilight's Hammer, healin' the land where the " ..
+                "silithid tear it... but Zen'Aliri 's master tells him to wait.\n\nSo Zen'Aliri " ..
+                "waits.\n\nThe easiest way to get there is that path up Un'Goro Crater's northwestern " ..
+                "cliffs.\n\nIf you got no master... there's nothing keepin' you from movin' on.",
+            rewardMoney = 4000,
+        },
+        [28860] = {
+            description = "With your help we've thumped the Dragonmaw pretty hard, but still their daily " ..
+                "attacks in the Thundermar outskirts persist. We need to keep up the pressure!\n\nWade " ..
+                "back into the battle that's raging in the Thundermar ruins to the south and southwest. " ..
+                "Kill Dragonmaw marauders and collect the insignias that their greatest warriors wear.",
+            rewardMoney = 90000,
+        },
+        [28861] = {
+            description = "<Blundy upends his cup.>\n\nI'm all outta ale, <name>!\n\nHead out into the " ..
+                "Thundermar Ruins and see if there's any left, before those grungy Dragonmaw get their " ..
+                "mouths on it.\n\nFeel free to have a few sips, yerself. A mug of ol' Thundermar's finest " ..
+                "will fortify yer fightin' skills.",
+            rewardMoney = 90000,
+        },
         [29261] = {rewardMoney = 114000},
         [29262] = {rewardMoney = 114000},
         [29317] = {
