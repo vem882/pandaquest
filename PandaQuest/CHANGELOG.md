@@ -4,6 +4,171 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.207] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 6,598 quests, 35 NPCs, 1 object
+- quest 28862 - Never Leave a Dinner Behind - updated
+  - description added
+  - reward money added (9g)
+- quest 28863 - Warlord Halthar is Back - updated
+  - description added
+  - reward money added (18g)
+- quest 28864 - Beer Run - updated
+  - description added
+  - reward money added (9g)
+- quest 28865 - Call of the Warmatron - updated
+  - description added
+- quest 28866 - Into the Stonecore - updated
+  - description added
+  - reward money added (86s)
+- quest 28867 - Nethergarde Needs You! - updated
+  - description added
+- quest 28868 - The View from Down Here - updated
+  - description added
+  - reward money added (1s 75c)
+- quest 28869 - Pebble - updated
+  - description added
+  - reward money added (86s)
+- quest 28870 - Return to the Lost City - updated
+  - description added
+  - reward money added (94s)
+- quest 28871 - Crushing the Wildhammer - updated
+  - description added
+  - reward money added (9g)
+- quest 28872 - Total War - updated
+  - description added
+  - reward money added (9g)
+- quest 28873 - Another Maw to Feed - updated
+  - description added
+  - reward money added (9g)
+- quest 28874 - Hook 'em High - updated
+  - description added
+  - reward money added (9g)
+- quest 28875 - Bring Down the High Shaman - updated
+  - description added
+  - reward money added (18g)
+- quest 28881 - Prospector Gunstan - updated
+  - description added
+  - reward money added (7s)
+- quest 28882 - Victory in Tol Barad - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 28884 - Victory in Tol Barad - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 28885 - Mr. Goldmine's Wild Ride - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 28909 - Sauranok Will Point the Way - updated
+  - description added
+  - reward money added (90s)
+- quest 29015 - Miner's Fortune - updated
+  - description added
+  - reward choices: +3
+- quest 29021 - Samophlange - updated
+  - description added
+- quest 29022 - Samophlange - updated
+  - description added
+- quest 29023 - Samophlange - updated
+  - description added
+- quest 29024 - Samophlange - updated
+  - description added
+  - reward choices: +2
+- quest 29026 - Wenikee Boltbucket - updated
+  - description added
+- quest 29027 - Nugget Slugs - updated
+  - description added
+- quest 29032 - Get Them While They're Young - updated
+  - description added
+- quest 29034 - They Grow Up So Fast - updated
+  - description added
+  - reward items: +2
+- quest 29035 - A Cub's Cravings - updated
+  - description added
+  - reward items: +1
+- quest 29037 - 'Borrowing' From the Winterfall - updated
+  - description added
+  - reward items: +1
+- quest 29038 - Hunting Practice - updated
+  - description added
+  - reward items: +1
+- quest 29039 - Hunting Practice - updated
+  - description added
+  - reward items: +1
+  - Wowhead marks it obsolete
+- quest 29040 - Cub's First Toy - updated
+  - description added
+  - reward items: +1
+- quest 29051 - Cub's First Toy - updated
+  - description added
+  - reward items: +1
+  - Wowhead marks it obsolete
+- quest 29052 - A Cub's Cravings - updated
+  - description added
+  - reward items: +1
+  - Wowhead marks it obsolete
+- quest 29053 - 'Borrowing' From the Winterfall - updated
+  - description added
+  - reward items: +1
+  - Wowhead marks it obsolete
+- quest 29066 - Good News... and Bad News - updated
+  - description added
+  - reward money added (78s)
+- quest 29071 - Make Haste to Stormwind! - updated
+  - reward items: +1
+- quest 29073 - Make Haste to Orgrimmar! - updated
+  - reward items: +1
+- quest 29078 - Beating Them Back! - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 29079 - Lions for Lambs - updated
+  - description added
+  - reward money added (40c)
+  - reward items: +1
+- quest 29080 - Join the Battle! - updated
+  - description added
+  - reward money added (13c)
+- quest 29081 - They Sent Assassins - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 29082 - Fear No Evil - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +1
+- quest 29083 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 29086 - Competition Schmompetition - updated
+  - description added
+- quest 29087 - Sludge Investigation - updated
+  - description added
+  - reward money added (8s)
+- quest 29088 - Hyena Extermination - updated
+  - description added
+  - reward money added (8s)
+- npc 7435 - Cobalt Wyrmkin - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7436 - Cobalt Scalebane - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7437 - Cobalt Mageweaver - updated
+  - coordinates: 31 spawn points added in Winterspring
+- npc 7445 - Elder Shardtooth - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7447 - Fledgling Chillwind - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7449 - Chillwind Ravager - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7457 - Rogue Ice Thistle - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7461 - Hederine Initiate - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 7462 - Hederine Manastalker - updated
+  - coordinates: 40 spawn points added in Winterspring
+
 ## [0.2.206] - 2026-10-21
 
 Data from the PandaQuest portal.
@@ -1342,33 +1507,6 @@ changes.
   (`.github/release/PandaQuest.toc.template`, with `games.py`), and the CurseForge upload maps every
   TOC the package carries to a game version and its CurseForge game version type. The package is
   unchanged: Mists of Pandaria Classic is the only game it carries.
-
-## [0.2.193] - 2026-10-20
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 5,835 quests, 24 NPCs, 1 object
-- quest 27803 - Welcome Relief - updated
-- quest 27804 - The Only Homes We Have - updated
-- quest 27805 - Small Comforts - updated
-- quest 27806 - Honorable Bearing - updated
-- quest 27807 - Clan Mullan - updated
-- quest 27808 - Stubborn as a Doyle - updated
-- quest 27809 - Firebeard Bellows - updated
-- quest 27810 - The Fighting Spirit - updated
-- quest 27811 - The Scent of Battle - updated
-- quest 27812 - The Loyalty of Clan Mullan - updated
-- quest 27813 - Death Worthy of a Dragonmaw - updated
-- quest 27814 - Anything We Can Get - updated
-- quest 27815 - Somethin' for the Boys - updated
-- quest 27816 - Personal Request - updated
-- quest 27817 - Dropping the Hammer - updated
-- quest 27818 - Slithering Signs - updated
-- quest 27821 - Orcs and Humans - updated
-- quest 27822 - Lumbering Oafs - updated
-- quest 27823 - A Dwarf's Got Needs - updated
-- quest 27824 - The Good Stuff - updated
-- quest - and 49 more quests updated
 
 ## [0.2.173] - 2026-10-18
 
