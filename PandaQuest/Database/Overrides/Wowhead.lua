@@ -30449,12 +30449,531 @@ ns.Overrides.wowhead = {
                 "crypts.\n\nWhat I ask is simple. Enter the Auchenai Crypts and speak with the Draenei " ..
                 "Spirit there. You must destroy Exarch Maladaar.",
         },
+        [29596] = {
+            description = "Exarch Maladaar performs his unholy work in the deepest part of the crypts. He " ..
+                "poses a threat to both of our worlds if he is not stopped.\n\nYou must slay him for the " ..
+                "benefit of us all, dead and alive.",
+            rewardChoices = {{29337, 1}, {29339, 1}, {29340, 1}, {29341, 1}},
+        },
+        [29599] = {
+            description = "I have plans for my people, stranger.\n\nOne day, they shall overthrow their " ..
+                "oppressors and rise as one. They will break free from the bonds that hold them and from " ..
+                "that uprising shall be born the orcish Horde.\n\nWe will leave when you are ready.",
+            rewardChoices = {{29316, 1}, {29317, 1}, {29318, 1}, {29319, 1}},
+        },
+        [29600] = {
+            description = "These pools are very special: they nurture life like nothing else in " ..
+                "Pandaria.\n\nUnfortunately this means they draw all kinds of attention from local fauna. " ..
+                "Recently, dragon turtles have discovered that toadspawn pools are common on the tier " ..
+                "just above us. They're running wild up there, trampling the lotuses and snapping at my " ..
+                "workers.\n\nThey aren't much of a threat on their own, but in groups they can be pretty " ..
+                "nasty. Please, if you can spare your strength, help clear them out.",
+            rewardChoices = {
+                {81805, 1}, {81806, 1}, {81807, 1}, {81808, 1}, {81809, 1}, {81810, 1}, {81811, 1},
+                {81812, 1}, {81813, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [29605] = {
+            description = "The Sethekk departed Skettis when Auchindoun exploded.\n\nMy brother, Syth, " ..
+                "was one of their leaders and told us we had to go into the ruins and face our god.\n\nIn " ..
+                "time, Syth had me cast out of the Halls for doubting them, but he refused to let me take " ..
+                "our sister Lakka. Will you help me rescue her?",
+            rewardChoices = {{29333, 1}, {29334, 1}, {29335, 1}, {29336, 1}},
+            rewardMoney = 82000,
+        },
+        [29606] = {
+            description = "Terokk, hero of the Arakkoa, mysteriously vanished one day, leaving only his " ..
+                "mask and spear behind.\n\nDarkweaver Syth still holds his mask and Talon King Ikiss " ..
+                "guards his spear.\n\nIt would mean a great deal to my people if these items were " ..
+                "returned to us.",
+            rewardChoices = {{29329, 1}, {29332, 1}, {29330, 1}},
+            rewardMoney = 82000,
+        },
+        [29607] = {
+            description = "I have a buyer who is interested in the eyes of the Cobalt Serpents that have " ..
+                "taken up residence here.\n\nIf you were to bring me some of these rare gems, I would cut " ..
+                "you a portion of the profits.\n\nDo we have a deal?",
+            rewardMoney = 164000,
+        },
+        [29608] = {
+            description = "Welcome to Northrend, <name>. I have been asked to arrange travel for you to " ..
+                "Dalaran so that you can meet with our allies there.\n\nRide the gryphon to Dalaran and " ..
+                "once you land, make your way to our inn there, A Hero's Welcome. Find Isirami Fairwind " ..
+                "and speak with her immediately.\n\nShe can help you bind your hearthstone to the city so " ..
+                "you can use the Silver Enclave's portal to travel back to Stormwind quickly.",
+        },
         [29609] = {
             description = "Welcome to Northrend. I have been asked to arrange travel for you to Dalaran " ..
                 "so that you can meet our friends in the city.\n\nSpeak with me and accept a ride to " ..
                 "Dalaran. Once you land, make your way to The Filthy Animal.\n\nMake contact with Uda the " ..
                 "Beast immediately.\n\nShe can help you bind your hearthstone to the city so you can use " ..
                 "the portal in Sunreaver's Sanctuary to travel back to Orgrimmar quickly.",
+        },
+        [29611] = {
+            description = "Lok'tar ogar, <race>. I am Nazgrim.\n\nYou are hereby ordered to present " ..
+                "yourself to Garrosh Hellscream at Grommash Hold immediately.\n\nBy his decree, all in " ..
+                "service to the Horde are to swear an oath of allegiance to their new Warchief.\n\nDo not " ..
+                "keep him waiting, <race>.",
+            rewardMoney = 9800,
+        },
+        [29612] = {
+            description = "Lok'tar Ogar, old friend. It has been too long since last we spoke.\n\nIt is " ..
+                "good to see that you emerged safely from the depths of Vashj'ir.\n\nWarchief Hellscream " ..
+                "has stationed me here in Grommash Hold.\n\nBy his decree, all in service to the Horde " ..
+                "are to swear allegiance to their new Warchief.\n\nYou would do well not to keep him " ..
+                "waiting, <name>.",
+            rewardMoney = 9800,
+        },
+        [29613] = {
+            description = "Warlord Kalithresh is in charge of the entire Steamvault operation.\n\nI need " ..
+                "you to kill him, <name>. The naga have left us with no option but violence.\n\nShow him " ..
+                "no mercy.",
+            rewardMoney = 176000,
+        },
+        [29614] = {
+            description = "The naga are working with leper gnomes to spread a horrific disease across " ..
+                "Zangarmarsh. It's already spread throughout the Steamvault.\n\nClear out anything that's " ..
+                "been contaminated and bring me the central gear from Mekgineer Steamrigger, quickly!",
+            rewardMoney = 132000,
+        },
+        [29615] = {
+            description = "The Steamvault is the heart of the naga's efforts to pump the water out of " ..
+                "Zangarmarsh, and Hydromancer Thespia personally oversees those efforts.\n\nTaking her " ..
+                "out would seriously hinder their operation.",
+            rewardMoney = 132000,
+        },
+        [29616] = {
+            description = "We have not as of yet been able to stop the naga in the Steamvault, where most " ..
+                "of their pumping infrastructure is located.\n\nThankfully, the expedition I sent there " ..
+                "is hard at work trying to change that fact. Will you travel to the Steamvault and offer " ..
+                "Watcher Jhang and her crew your aid?",
+            rewardMoney = 4200,
+        },
+        [29617] = {
+            description = "People come from all over Pandaria to train at the Tian Monastery, just to the " ..
+                "north of here. Probably because they never turn anybody down. They'll accept jinyu, " ..
+                "hozen... or even a foreign <race> like you!\n\nMy childhood friend, Lin, just joined the " ..
+                "monastery's order a few weeks ago. If you're interested in learning how our monks train, " ..
+                "maybe you should go talk with her!",
+            rewardMoney = 9400,
+        },
+        [29618] = {
+            description = "How strange, to have such a foreign-looking <class> visiting our temple. Are " ..
+                "you here to study?\n\nYou... you look very strong. You wouldn't have any trouble getting " ..
+                "accepted into the monastery. You should talk to the High Elder, up on the balcony above.",
+            rewardMoney = 9800,
+        },
+        [29619] = {
+            description = "I heard, I heard! The High Elder wants you to train with us!\n\nThere's going " ..
+                "to be a banquet for us, the trainees... and you should probably bring a gift, as a sign " ..
+                "of courtesy.\n\nThe oranges in the grove south of the temple are extra-sweet right now. " ..
+                "Bring some back, for the banquet.",
+            rewardMoney = 98000,
+        },
+        [29620] = {
+            description = "The banquet should be starting any time now. Go find the High Elder and pay " ..
+                "your respects. I'll be right behind you.",
+            rewardMoney = 49000,
+        },
+        [29622] = {
+            description = "< Xiao does not look up from his bowl.>\n\nHey, new <guy/lady>! Glad to see " ..
+                "you survived the banquet! Trial One: Complete!\n\n< Xiao eats noisily.>\n\nYou'd better " ..
+                "speak up with Instructor Xann. He'll be expecting you for your daily exercises.\n\n<He " ..
+                "continues eating. You suspect that he is done talking to you.>",
+            rewardMoney = 9800,
+        },
+        [29623] = {
+            description = "Perfection can be achieved through repetition. Every single student in the " ..
+                "training arena below will eventually perfect his or her form... assuming they don't give " ..
+                "up first. This is a fact.\n\nI encourage you to join them, <name>. As an honorary guest " ..
+                "of the monastery, you are not required to perform the requisite 10,000 daily strikes. " ..
+                "Simply follow the leader's example for a few minutes.",
+            rewardMoney = 98000,
+        },
+        [29624] = {
+            description = "Your next test also involves concentration and attention. I want you to " ..
+                "practice your abilities on the training bags in the pit below.\n\nThe bags are hung in " ..
+                "groups of two. When I call out \"Left\", attack the bag on the left. When I call out " ..
+                "\"Right\", attack the bag on the right.\n\nIf you fail to follow my simple directions, " ..
+                "this task will become much harder.\n\nNow beat on those practice bags until they burst, " ..
+                "<name>.",
+            rewardChoices = {
+                {80731, 1}, {80732, 1}, {80733, 1}, {80734, 1}, {80735, 1}, {80736, 1}, {80737, 1},
+                {80738, 1}, {80739, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [29626] = {
+            description = "We don't have many rules here, but we do have one particular rule that is " ..
+                "worth remembering. If you want to eat...\n\n< Xiao 's stomach grumbles " ..
+                "audibly.>\n\n...you have to work. Groundskeeper Wu can give you your chores for the day. " ..
+                "He's in the market, to the west.",
+            rewardMoney = 9800,
+        },
+        [29627] = {
+            description = "First things first, though.\n\nA proper trainee needs a proper weapon. And a " ..
+                "scrupulous trainee builds his own... or at least gathers the materials.\n\nThe switches " ..
+                "which grow nearby should suffice for any respectable weapon. You'll also need to shop " ..
+                "for black walnut extract to treat the wood. While you're there, get some ale, " ..
+                "for...\n\n<Wu pauses.>\n\n...well, you know what ale is for.",
+            rewardMoney = 98000,
+        },
+        [29628] = {
+            description = "Some of our trainees have... larger-than normal appetites. We have " ..
+                "occasionally had difficulty supplying enough food for all of them. In times like these, " ..
+                "we have to ask for help.\n\nA kindly older woman, who lives in a small house to the " ..
+                "northwest, has agreed to make some stew for our trainees. All you need to do is go and " ..
+                "get it.",
+            rewardMoney = 98000,
+        },
+        [29629] = {
+            description = "The black walnut extract you purchased from Miss Whiteblossom is but one of " ..
+                "many extracts we keep in stock for various applications.\n\nBlushleaf extract can be " ..
+                "gathered from the flowers in the Waxwood Forest to the west. Several units can be " ..
+                "extracted from one flower, but only those with calm nerves and steady hands can remove " ..
+                "all of the extract from one flower.",
+            rewardMoney = 98000,
+        },
+        [29630] = {
+            description = "The greenwood sprites in the Waxwood Forest to the west pose no direct threat " ..
+                "to us, this is true. However, their numbers have increased as of late, as have their " ..
+                "wily antics.\n\nPart of our duty as wardens of this forest is to maintain the balance. " ..
+                "Your duty is to do so by returning these sprites to the earth.",
+            rewardChoices = {
+                {80740, 1}, {80741, 1}, {80742, 1}, {80743, 1}, {80744, 1}, {80745, 1}, {80746, 1},
+                {80747, 1}, {80748, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [29631] = {
+            description = "Might I ask a favor of you, trainee <name>?\n\nBefore I came to the monastery, " ..
+                "I was a stranger to battle. During my time as a trainee, I performed adequately, but I " ..
+                "was never placed in any real danger. Now, as a graduate and a wage-earning guard, I am " ..
+                "expected to protect this perimeter at all costs.\n\nI can handle greenwood sprites, but " ..
+                "the tigers in the western Waxwood are something different altogether. Would you mind " ..
+                "taking care of them for me?",
+            rewardMoney = 98000,
+        },
+        [29632] = {
+            description = "Alright, <race>. I'd like to see what you're really made of.\n\nYou'll find my " ..
+                "pupils all over the monastery. Challenge them to fights. Push them to their limits. They " ..
+                "have been instructed to do the same to you.\n\nWin or lose, you both will come out of " ..
+                "the fight stronger.",
+            rewardMoney = 98000,
+        },
+        [29633] = {
+            description = "Upon the hills to my right, you will find a hozen named Zhi-Zhi. He, too, won " ..
+                "enough sparring matches to move up the ranks. I think he will provide you with more of a " ..
+                "challenge.\n\nChallenge him, and try to defeat him.",
+            rewardMoney = 98000,
+        },
+        [29634] = {
+            description = "The jinyu are long-standing allies of the pandaren, and we welcome any of " ..
+                "their kind into our monastery. Husshun, one of their elder shaman, is one of our newest " ..
+                "trainees.\n\nHis skills as a monk are mediocre at best, but he is still a fierce " ..
+                "combatant. He should provide you with the challenge that you deserve.",
+            rewardMoney = 98000,
+        },
+        [29635] = {
+            description = "You may have already met my best student, Xiao, at the banquet tables. I " ..
+                "personally would have graduated him several times over, but Instructor Xann insists that " ..
+                "he needs more discipline.\n\nIf you ask me, discipline means very little if you win " ..
+                "every fight you enter. I'm curious to see if Xiao can keep his streak alive against you.",
+            rewardChoices = {
+                {88690, 1}, {88691, 1}, {88692, 1}, {88693, 1}, {88694, 1}, {88695, 1}, {88696, 1},
+                {88697, 1}, {88698, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [29636] = {
+            description = "I have taught you everything that I can, <name>. It is time you spoke with " ..
+                "Instructor Myang.\n\nThe fights that she stages are less traditional than the sparring " ..
+                "matches I am used to. Nevertheless, the path of a traveling adventurer like yourself is " ..
+                "unpredictable, and a broad knowledge of fighting styles is an admirable " ..
+                "trait.\n\nFarewell, <name>, and best of luck on the remainder of your training.",
+            rewardMoney = 9800,
+        },
+        [29637] = {
+            description = "Master Stone Fist has trained you in the art of one-on-one combat. Now you " ..
+                "learn the art of one-on-many.\n\nHow does fifty sound?\n\nLower yourself into the Ring " ..
+                "of Inner Focus below, then, when you're ready, set off this firework. My assistants will " ..
+                "come at you, several at a time.\n\nAll you need to do is survive.",
+            rewardChoices = {
+                {84251, 1}, {84252, 1}, {84253, 1}, {84254, 1}, {84255, 1}, {84256, 1}, {84257, 1},
+                {84258, 1}, {84259, 1}, {84260, 1},
+            },
+            rewardMoney = 196000,
+        },
+        [29639] = {
+            description = "You have passed every test we prepared for you, <name>. It is now time for you " ..
+                "to move on to bigger and better things.\n\n...but not before another banquet. The High " ..
+                "Elder will be waiting for you at the banquet grounds to celebrate your graduation from " ..
+                "our monastery.",
+            rewardChoices = {{80798, 1}, {80799, 1}, {80800, 1}, {80801, 1}, {80802, 1}, {80803, 1}},
+            rewardMoney = 98000,
+        },
+        [29640] = {
+            description = "The Shadow Council has already killed most of our spies, but To'gun was " ..
+                "foolish enough to escape only to go back in!\n\nYou must find him. He may be reckless, " ..
+                "but we need to find out what he knows.",
+        },
+        [29641] = {
+            description = "They've been torturing me, trying to get me to tell them everything that I " ..
+                "know.\n\nThey fed the others to Hellmaw, and I was to be next. But I told them " ..
+                "nothing!\n\nThey're using special devices to make their summoning more powerful. You " ..
+                "must steal these devices!",
+            rewardChoices = {{28167, 1}, {28170, 1}, {28171, 1}, {28174, 1}},
+            rewardMoney = 88000,
+        },
+        [29642] = {
+            description = "I have spies within Auchindoun and they have been sending me disturbing " ..
+                "reports. That place has been nothing but trouble ever since it exploded a couple of " ..
+                "years ago.\n\nSomething in there has gone horribly wrong - again - and the Shadow " ..
+                "Council is now on a war footing. Though the reports were lacking on details, their " ..
+                "preparations appear to be directed inward.\n\nYou must make your way to the Shadow " ..
+                "Labyrinth. My field commander, Mahfuun, will fill you in on what needs to be done.",
+            rewardMoney = 4400,
+        },
+        [29643] = {
+            description = "Two years ago the Shadow Council summoned forth a being that shattered " ..
+                "Auchindoun in its wake.\n\nRead the Codex of Blood to find out what happened. Be warned, " ..
+                "Grandmaster Vorpil guards it with his life.",
+        },
+        [29644] = {
+            description = "The Shadow Council has lost control of the cosmic being that they summoned " ..
+                "here almost two years ago.\n\nKnown only as Murmur, it threatens to overrun the Shadow " ..
+                "Council and break free into the outside world!",
+            rewardChoices = {{28176, 1}, {28177, 1}, {28178, 1}, {28179, 1}},
+            rewardMoney = 132000,
+        },
+        [29645] = {
+            description = "When the Cabal found our spies, they fed them to Ambassador Hellmaw one by " ..
+                "one.\n\nOur men deserve justice. Slay the ritualists binding him, then dispose of " ..
+                "Hellmaw.\n\nIt is a most deserving fate.",
+            rewardMoney = 88000,
+        },
+        [29646] = {
+            description = "Well, I've done all that I can with you. Sounds like the others have, " ..
+                "too.\n\nHigh Elder Cloudfall will be waiting at the banquet grounds, ready to celebrate " ..
+                "your departure. Not that we're happy you're leaving... he just enjoys celebrations.",
+            rewardChoices = {{80798, 1}, {80799, 1}, {80800, 1}, {80801, 1}, {80802, 1}, {80803, 1}},
+            rewardMoney = 98000,
+        },
+        [29647] = {
+            description = "The Rumpus was your final test. You have mastered the disciplines taught at " ..
+                "this monastery.\n\nJust as your training began with a banquet, so shall it end. High " ..
+                "Elder Cloudfall should be waiting at the banquet grounds. I'll be right behind you.",
+            rewardChoices = {{80798, 1}, {80799, 1}, {80800, 1}, {80801, 1}, {80802, 1}, {80803, 1}},
+            rewardMoney = 98000,
+        },
+        [29649] = {
+            description = "Gunny is dying from a powerful curse, <name>.\n\nGrand Warlock Nethekurse " ..
+                "augments his power with a pair of mystical braziers. If you bring me an ember from that " ..
+                "brazier, perhaps it can counteract the dark magic?",
+            rewardChoices = {{25788, 1}, {25789, 1}, {25790, 1}, {25791, 1}, {25792, 1}},
+            rewardMoney = 132000,
+        },
+        [29650] = {
+            description = "Caza'rez is dying a coward's death.\n\nGrand Warlock Netherkurse placed a " ..
+                "terrible curse upon him. Perhaps if you were to bring me one of the embers from his " ..
+                "braziers, we could use it to counteract the magic before it's too late?",
+            rewardChoices = {{25788, 1}, {25789, 1}, {25790, 1}, {25791, 1}, {25792, 1}},
+            rewardMoney = 132000,
+        },
+        [29651] = {
+            description = "Their elite warriors are ruthless... so... powerful.\n\n< Caza'rez spits up " ..
+                "blood.>\n\nYou have to kill them... or we will never defeat Kargath...",
+            rewardMoney = 132000,
+        },
+        [29652] = {
+            description = "Ol' Gunny doesn't have much longer...\n\nDo me one last favor, and kill the " ..
+                "biggest, meanest fel orcs ye can find.\n\nFor old times' sake, aye?",
+            rewardMoney = 132000,
+        },
+        [29653] = {
+            description = "Kargath was once one of the Horde's greatest heroes.\n\nHe now wears the false " ..
+                "mantle of Warchief. Bring me his namesake weapon so that we can remember the champion he " ..
+                "once was, rather than the monster he's become.",
+            rewardChoices = {{25808, 1}, {25810, 1}, {25811, 1}, {25809, 1}},
+            rewardMoney = 176000,
+        },
+        [29654] = {
+            description = "There is only one true way to end the fel orc threat to Honor Hold and the " ..
+                "Alliance.\n\nTheir Warchief must be slain.\n\nBring me his namesake weapon, so that we " ..
+                "can always remember his death.",
+            rewardChoices = {{25805, 1}, {25806, 1}, {25804, 1}, {25803, 1}},
+            rewardMoney = 44000,
+        },
+        [29655] = {
+            description = "Warbringer O'mrogg has killed more brave soldiers than any enemy I've ever " ..
+                "encountered. He is ruthless, cunning, and extremely powerful.\n\nTake him down and bring " ..
+                "me his warcloth so that we may fashion it into a banner and show them the fury of the " ..
+                "Horde!",
+            rewardMoney = 88000,
+        },
+        [29656] = {
+            description = "Stormwind wants to see proof of our successes in the war effort.\n\nRather " ..
+                "than showing him body bags, I thought we'd present him the warcloth of O'mrogg, " ..
+                "Kargath's fiercest warrior. Think you can handle him?",
+            rewardMoney = 88000,
+        },
+        [29657] = {
+            description = "<A voice like the sound of light bells rings in your head.>\n\nThe Mechanar " ..
+                "employs my race's technology to create manacells, objects which provide great amounts of " ..
+                "power.\n\nI need you to eliminate Mechano-Lord Capacitus so that Kael'thas' forces " ..
+                "cannot harvest that power.",
+        },
+        [29658] = {
+            description = "<A gentle wind caresses your face.>\n\nOne more task yet remains.\n\nPathaleon " ..
+                "the Calculator oversees many of his master's operations. He is personally responsible " ..
+                "for much of the recent torment that has plagued this world.\n\nI ask that you eliminate " ..
+                "him.",
+        },
+        [29659] = {
+            description = "I sense that one of my kind's artifacts has been taken and stashed away in the " ..
+                "Cache of the Legion.\n\nWe cannot give them time to discover its power. If you would " ..
+                "kill the Gatewatchers and retrieve it for me, I would be most grateful.",
+        },
+        [29660] = {
+            description = "Kael'thas' forces in the Botanica were unsuccessful in handling the numerous " ..
+                "creatures contained within. We must take action to right their wrongs.\n\nThe first step " ..
+                "is to eliminate their forces so that they cannot cause further problems.",
+        },
+        [29661] = {
+            description = "Through meditation, I intend to find a route to locating Shu. In the meantime, " ..
+                "you would benefit from practice and discipline.\n\nYour first task is the task of all " ..
+                "trainees entering the pools: cross the balance poles to the west and ring the bell " ..
+                "without falling into the pool.\n\nShould you fall, the pool's curse will make it " ..
+                "difficult to get on a pole again, so you will need to return to the edge of the pool to " ..
+                "start over.\n\nOh, and beware the cranes.",
+            rewardChoices = {{74568, 1}, {74569, 1}, {74570, 1}},
+            rewardMoney = 100,
+        },
+        [29662] = {
+            description = "Gather me reeds from the nearby pools.\n\nDo not question why. Do, and then " ..
+                "observe the results.",
+            rewardMoney = 100,
+        },
+        [29663] = {
+            description = "I require peace to perform my meditation. Practice your arts while I meditate " ..
+                "on Shu's location.\n\nOther monks practice balance and combat upon the balance poles in " ..
+                "the surrounding pools. Engage them and defeat them.",
+            rewardMoney = 100,
+        },
+        [29664] = {
+            description = "You're strong of mind and strong of will, but you lack the skills to face me " ..
+                "in combat. You must fight with your body, but in truth, it is your character that is " ..
+                "being tested.\n\nLet us even the playing field.\n\nTake this torch, light it in the " ..
+                "brazier next to me, and then use it to light the three unlit braziers around the pool.",
+            rewardMoney = 75,
+        },
+        [29665] = {
+            description = "After their ship crashed, evil creatures swept up from the sea to pick through " ..
+                "the wreckage. Our aid may seem but a drop in the pond at the thought of the misfortune " ..
+                "they've faced today.\n\nDefeat their tormentors. These people desperately need our help.",
+            rewardMoney = 300,
+        },
+        [29666] = {
+            description = "There are dangers in the pools. The latest and most vicious are the water " ..
+                "pincers. A time has come for their numbers to be diminished, and I am no longer up to " ..
+                "the task.\n\nIf you could clear out some of the water pincers, I would be very " ..
+                "appreciative. Beware their numbers... sometimes it's best to lure them from the " ..
+                "pool-side rather than wading all the way in.",
+            rewardMoney = 100,
+        },
+        [29667] = {
+            description = "It seems that Kael'thas' forces have twisted the Botanica 's specimens beyond " ..
+                "saving. I do not want to see them unleashed upon Outland as so many others " ..
+                "have.\n\nThere is one, Laj, who I would like to examine. He is different somehow. " ..
+                "Perhaps we can learn from him.",
+        },
+        [29669] = {
+            description = "I must now ask you to complete a most somber task.\n\nWarp Splinter used to " ..
+                "act as guardian to all of the Botanica. He is now impure, and must be taken down.",
+        },
+        [29670] = {
+            description = "Thanks to you, there's a small militia of farmers hiding nearby. Hanae said " ..
+                "something about giving them \"liquid courage\" which, I'm pretty sure, means they're " ..
+                "sauced and ANGRY.\n\nThe mogu think they can walk all over us - we'll give them a fight " ..
+                "that will open their eyes.\n\nFollow the trail through the ruins and down to the beach. " ..
+                "Find their leader. When you engage him, we'll be there to back you up.",
+            rewardChoices = {{80778, 1}, {80779, 1}, {80780, 1}, {80781, 1}, {80782, 1}},
+            rewardMoney = 98000,
+        },
+        [29674] = {
+            description = "<The sound of chimes enters your head, but it is distressed.>\n\nWe imprisoned " ..
+                "the most dangerous beings we came across in our travels.\n\nZereketh is a powerful void " ..
+                "lord. If he escapes into Netherstorm, he will feed off of the abundant void energy.",
+        },
+        [29675] = {
+            description = "Two powerful agents of the Burning Legion, Wrath-Scryer Soccothrates and " ..
+                "Dalliah the Doomsayer, have begun rallying the demons on board together into a small " ..
+                "army.\n\nYou cannot let their forces grow any larger, or the Arcatraz may soon become " ..
+                "yet another Legion stronghold.",
+        },
+        [29676] = {
+            description = "It seems Shu, the spirit of water, had a play companion when he came to the " ..
+                "pools throughout the years. An old pandaren we know as Old Man Liang.\n\nLiang moved " ..
+                "away from the main town and stopped practicing in the pools some time ago. I am told he " ..
+                "lives in a small house northeast of here, up the hill.\n\nLiang may know what has driven " ..
+                "Shu away, and where the spirit might be found.\n\nGo to Liang. Ask of Shu.",
+            rewardMoney = 25,
+        },
+        [29677] = {
+            description = "Shu, the spirit of water, is eternally young, as are all the spirits of " ..
+                "Shen-zin Su. I have been friends with Shu all of my life, but I no longer have it within " ..
+                "me to play with him. I am old, and lack the energy.\n\nFor all his complexities, Shu is " ..
+                "simple to please: he desires friendship. When I returned to play with Shu each season, I " ..
+                "would always bring a Sun Pearl as a gift, and then we would play together. You can find " ..
+                "a Sun Pearl in the pools to the southeast. Perhaps you can be his new friend.",
+            rewardChoices = {{74574, 1}, {74575, 1}, {74576, 1}},
+            rewardMoney = 100,
+        },
+        [29678] = {
+            description = "Shu, the spirit of water, is sulking in the deep pool to the north. Cross the " ..
+                "rocks and then drop the sun pearl in the center of the pool. He will know what this " ..
+                "means.",
+            rewardMoney = 25,
+        },
+        [29679] = {
+            description = "He wants you to play with him. Go for it!",
+            rewardChoices = {{74571, 1}, {74572, 1}, {74573, 1}},
+            rewardMoney = 100,
+        },
+        [29680] = {
+            description = "We have done as Master Shang asked of us. I will return to the temple to " ..
+                "inform the master of our progress. You should continue south on the road to the " ..
+                "farmlands to seek out Wugou, the spirit of earth.\n\nJi awaits you at the Dai-Lo " ..
+                "Farmstead, and he'll surely need your help. I must warn you, Ji can be reckless in his " ..
+                "directness. Remember well the things I have taught you: discipline and patience.",
+            rewardMoney = 25,
+        },
+        [29681] = {
+            description = "Harbinger Skyriss is the heart of the problem in the Arcatraz.\n\nHe corrupted " ..
+                "Warden Mellichar and made him release many of the prisoners. It is only a matter of time " ..
+                "before the Harbinger himself is let loose.\n\n<name>, you cannot let a servant of the " ..
+                "Old Gods live!",
+            rewardChoices = {{31747, 1}, {31749, 1}, {31748, 1}},
+        },
+        [29682] = {
+            description = "We recently sent in an expeditionary force to the Magisters' Terrace to stop " ..
+                "the Legion forces there.\n\nHowever, we haven't heard from them since, and I fear the " ..
+                "worst.\n\nWill you go there and try to find Exarch Larethor? He's in charge of the " ..
+                "expedition.",
+            rewardMoney = 4400,
+        },
+        [29684] = {
+            description = "We've had a contact embedded in Magisters' Terrace gathering intelligence for " ..
+                "us for some time now, but we've lost contact with him.\n\nThe information he was " ..
+                "collecting is vital to our mission.",
+        },
+        [29685] = {
+            description = "As you've now witnessed, the Legion forces work tirelessly, manipulating the " ..
+                "Sunwell's power to achieve their malevolent ends.\n\nKael'thas has risen from the ashes " ..
+                "of defeat and once more leads them in their efforts. He must be stopped.",
+            rewardChoices = {{35487, 1}, {35488, 1}},
+            rewardMoney = 44000,
         },
         [29905] = {rewardItems = {{84105, 1}}, rewardMoney = 196000},
         [30027] = {
@@ -30477,6 +30996,11 @@ ns.Overrides.wowhead = {
         [30043] = {
             description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
             rewardMoney = 2,
+        },
+        [30122] = {
+            description = "You have found a beautiful silver flask decorated with ornate filigree. With " ..
+                "the right materials and your skill in alchemy, it could become quite magical.",
+            rewardItems = {{75525, 1}},
         },
         [30147] = {rewardMoney = 114000},
         [30487] = {
