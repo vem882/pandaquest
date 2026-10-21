@@ -4,6 +4,233 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.215] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,150 quests, 40 NPCs, 1 object
+- quest 29894 - Spirits of the Water - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29898 - Sacred Waters - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29899 - Rest in Peace - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29900 - An Ancient Legend - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29901 - Anduin's Decision - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29903 - A Perfect Match - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29904 - Bigger Fish to Fry - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29906 - Carp Diem - updated
+  - description added
+  - reward money added (19g 60s)
+  - reward choices: +10
+- quest 29907 - Chen and Li Li - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29908 - A Seemingly Endless Nuisance - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 29909 - Low Turnip Turnout - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29910 - Rampaging Rodents - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29911 - Practically Perfect Produce - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29912 - The Fabulous Miss Fanny - updated
+  - description added
+  - reward money added (7g 70s)
+- quest 29913 - The Meat They'll Eat - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 29914 - Back to the Sty - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29915 - A Neighbor's Duty - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29916 - Piercing Talons and Slavering Jaws - updated
+  - description added
+  - reward money added (7g 70s)
+- quest 29917 - Lupello - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29918 - A Lesson in Bravery - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +5
+- quest 29919 - Great Minds Drink Alike - updated
+  - description added
+  - reward money added (5g 10s)
+- quest 29920 - Getting Permission - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 29922 - In Search of Wisdom - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29924 - Kill Kher Shan - updated
+  - description added
+- quest 29925 - All We Can Spare - updated
+  - description added
+  - reward money added (2g 45s)
+- quest 29926 - Calamity Jade - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29927 - Mann's Man - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 29928 - I Have No Jade And I Must Scream - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29929 - Trapped! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29930 - What's Mined Is Yours - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 29931 - The Serpent's Heart - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29932 - The Temple of the Jade Serpent - updated
+  - description added
+- quest 29933 - The Bees' Knees - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29934 - To Ravenholdt - updated
+  - description added
+  - reward money added (2g 35s)
+- quest 29935 - Orders are Orders - updated
+  - description added
+  - reward money added (98s)
+- quest 29936 - Instant Messaging - updated
+  - description added
+  - reward money added (7g 40s)
+  - reward choices: +5
+- quest 29937 - Furious Fowl - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29939 - Boom Bait - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29940 - Taking a Crop - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 29941 - Beyond the Horizon - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 29942 - Silly Wikket, Slickies are for Hozen - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29943 - Guerrillas in our Midst - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29944 - Leaders Among Breeders - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29945 - Yellow and Red Make Orange - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29946 - The Warren-Mother - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29947 - Crouching Carrot, Hidden Turnip - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29948 - Thieves to the Core - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29949 - Legacy - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29950 - Li Li's Day Off - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29951 - Muddy Water - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 29952 - Broken Dreams - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 29966 - Burning Down the House - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29967 - Boom Goes the Doonamite! - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +10
+- quest 29968 - Green-ish Energy - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29971 - The Scouts Return - updated
+  - description added
+  - reward money added (98s)
+- quest 29981 - Stemming the Swarm - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29982 - Evacuation Orders - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 29983 - The Hidden Master - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29984 - Unyielding Fists: Trial of Bamboo - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29985 - They Will Be Mist - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29986 - Fog Wards - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 29987 - Unyielding Fists: Trial of Wood - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29988 - A Taste For Eggs - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29989 - Unyielding Fists: Trial of Stone - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 29990 - Training and Discipline - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29992 - Tenderpaw By Name, Tender Paw By Reputation - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29993 - Find the Boy - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29995 - Shrine of the Dawn - updated
+  - description added
+  - reward money added (9g 80s)
+
 ## [0.2.214] - 2026-10-21
 
 Data from the PandaQuest portal.
@@ -1567,171 +1794,6 @@ Data from the PandaQuest portal.
   - reward money added (9g 40s)
 - npc 52832 - Tarecgosa - updated
   - coordinates: 1 spawn point added in Borean Tundra
-
-## [0.2.207] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,598 quests, 35 NPCs, 1 object
-- quest 28862 - Never Leave a Dinner Behind - updated
-  - description added
-  - reward money added (9g)
-- quest 28863 - Warlord Halthar is Back - updated
-  - description added
-  - reward money added (18g)
-- quest 28864 - Beer Run - updated
-  - description added
-  - reward money added (9g)
-- quest 28865 - Call of the Warmatron - updated
-  - description added
-- quest 28866 - Into the Stonecore - updated
-  - description added
-  - reward money added (86s)
-- quest 28867 - Nethergarde Needs You! - updated
-  - description added
-- quest 28868 - The View from Down Here - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 28869 - Pebble - updated
-  - description added
-  - reward money added (86s)
-- quest 28870 - Return to the Lost City - updated
-  - description added
-  - reward money added (94s)
-- quest 28871 - Crushing the Wildhammer - updated
-  - description added
-  - reward money added (9g)
-- quest 28872 - Total War - updated
-  - description added
-  - reward money added (9g)
-- quest 28873 - Another Maw to Feed - updated
-  - description added
-  - reward money added (9g)
-- quest 28874 - Hook 'em High - updated
-  - description added
-  - reward money added (9g)
-- quest 28875 - Bring Down the High Shaman - updated
-  - description added
-  - reward money added (18g)
-- quest 28881 - Prospector Gunstan - updated
-  - description added
-  - reward money added (7s)
-- quest 28882 - Victory in Tol Barad - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 28884 - Victory in Tol Barad - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 28885 - Mr. Goldmine's Wild Ride - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 28909 - Sauranok Will Point the Way - updated
-  - description added
-  - reward money added (90s)
-- quest 29015 - Miner's Fortune - updated
-  - description added
-  - reward choices: +3
-- quest 29021 - Samophlange - updated
-  - description added
-- quest 29022 - Samophlange - updated
-  - description added
-- quest 29023 - Samophlange - updated
-  - description added
-- quest 29024 - Samophlange - updated
-  - description added
-  - reward choices: +2
-- quest 29026 - Wenikee Boltbucket - updated
-  - description added
-- quest 29027 - Nugget Slugs - updated
-  - description added
-- quest 29032 - Get Them While They're Young - updated
-  - description added
-- quest 29034 - They Grow Up So Fast - updated
-  - description added
-  - reward items: +2
-- quest 29035 - A Cub's Cravings - updated
-  - description added
-  - reward items: +1
-- quest 29037 - 'Borrowing' From the Winterfall - updated
-  - description added
-  - reward items: +1
-- quest 29038 - Hunting Practice - updated
-  - description added
-  - reward items: +1
-- quest 29039 - Hunting Practice - updated
-  - description added
-  - reward items: +1
-  - Wowhead marks it obsolete
-- quest 29040 - Cub's First Toy - updated
-  - description added
-  - reward items: +1
-- quest 29051 - Cub's First Toy - updated
-  - description added
-  - reward items: +1
-  - Wowhead marks it obsolete
-- quest 29052 - A Cub's Cravings - updated
-  - description added
-  - reward items: +1
-  - Wowhead marks it obsolete
-- quest 29053 - 'Borrowing' From the Winterfall - updated
-  - description added
-  - reward items: +1
-  - Wowhead marks it obsolete
-- quest 29066 - Good News... and Bad News - updated
-  - description added
-  - reward money added (78s)
-- quest 29071 - Make Haste to Stormwind! - updated
-  - reward items: +1
-- quest 29073 - Make Haste to Orgrimmar! - updated
-  - reward items: +1
-- quest 29078 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 29079 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 29080 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 29081 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 29082 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 29083 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 29086 - Competition Schmompetition - updated
-  - description added
-- quest 29087 - Sludge Investigation - updated
-  - description added
-  - reward money added (8s)
-- quest 29088 - Hyena Extermination - updated
-  - description added
-  - reward money added (8s)
-- npc 7435 - Cobalt Wyrmkin - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7436 - Cobalt Scalebane - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7437 - Cobalt Mageweaver - updated
-  - coordinates: 31 spawn points added in Winterspring
-- npc 7445 - Elder Shardtooth - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7447 - Fledgling Chillwind - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7449 - Chillwind Ravager - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7457 - Rogue Ice Thistle - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7461 - Hederine Initiate - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7462 - Hederine Manastalker - updated
-  - coordinates: 40 spawn points added in Winterspring
 
 ## [0.2.201] - 2026-10-20
 
