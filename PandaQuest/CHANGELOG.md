@@ -4,6 +4,237 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.214] - 2026-10-21
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,082 quests, 40 NPCs, 1 object
+- quest 29789 - Small, But Significant - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 29790 - Passing Wisdom - updated
+  - description added
+  - reward money added (2s 25c)
+  - reward choices: +3
+- quest 29791 - The Suffering of Shen-zin Su - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 29792 - Bidden to Greatness - updated
+  - description added
+  - reward money added (3s)
+- quest 29793 - Evil from the Seas - updated
+  - description added
+  - reward money added (3s)
+  - reward choices: +3
+- quest 29794 - None Left Behind - updated
+  - description added
+  - reward money added (3s)
+  - reward choices: +3
+- quest 29795 - Stocking Stalks - updated
+  - description added
+  - reward money added (3s)
+- quest 29796 - Urgent News - updated
+  - description added
+  - reward money added (3s)
+- quest 29797 - Medical Supplies - updated
+  - description added
+  - reward money added (3s)
+- quest 29798 - An Ancient Evil - updated
+  - description added
+  - reward money added (3s)
+- quest 29799 - The Healing of Shen-zin Su - updated
+  - description added
+  - reward money added (3s)
+  - reward choices: +3
+- quest 29800 - New Allies - updated
+  - description added
+  - reward money added (3s 50c)
+- quest 29801 - Proving Your Worth - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29802 - A Hidden Message - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29803 - Ears of the Lich King - updated
+  - description added
+  - reward choices: +4
+- quest 29804 - Seein' Red - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29806 - The Wanderer - updated
+  - description added
+- quest 29807 - Death to the Traitor King - updated
+  - description added
+  - reward money added (22g 40s)
+  - reward choices: +4
+- quest 29808 - Don't Forget the Eggs! - updated
+  - description added
+  - reward money added (22g 40s)
+  - reward choices: +4
+- quest 29809 - Efficient Excavations - updated
+  - description added
+  - reward money added (86s)
+- quest 29811 - The Gatewatcher's Talisman - updated
+  - description added
+  - reward money added (16g 80s)
+- quest 29815 - Forensic Science - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29821 - Missed Me By... That Much! - updated
+  - description added
+- quest 29822 - Lay of the Land - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29823 - Scouting Report: The Friend of My Enemy - updated
+  - description added
+- quest 29824 - Scouting Report: Like Jinyu in a Barrel - updated
+  - description added
+  - reward money added (39g 20s)
+  - reward choices: +5
+- quest 29825 - Pupil No More - updated
+  - description added
+  - reward money added (18g 60s)
+- quest 29826 - Reclaiming Ahn'Kahet - updated
+  - description added
+  - reward money added (18g 60s)
+- quest 29827 - Acid Rain - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29828 - What the Scourge Dred - updated
+  - description added
+  - reward money added (11g 20s)
+- quest 29829 - Discretion is Key - updated
+  - description added
+  - reward money added (66s)
+- quest 29830 - Containment - updated
+  - description added
+  - reward money added (26g)
+  - reward choices: +4
+- quest 29833 - Unfinished Business - updated
+  - description added
+- quest 29834 - Gal'darah Must Pay - updated
+  - description added
+  - reward money added (27g 20s)
+  - reward choices: +4
+- quest 29835 - Gal'darah Must Pay - updated
+  - description added
+  - reward money added (27g 20s)
+  - reward choices: +4
+- quest 29836 - Just Checkin' - updated
+  - description added
+  - reward money added (68s)
+- quest 29838 - One of a Kind - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +5
+- quest 29839 - One of a Kind - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +5
+- quest 29840 - For Posterity - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +4
+- quest 29844 - For Posterity - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +4
+- quest 29847 - To Catch a Thief - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29848 - The Forlorn Watcher - updated
+  - description added
+  - reward money added (13g 60s)
+- quest 29850 - Corrupt Constructs - updated
+  - description added
+  - reward money added (13g 60s)
+- quest 29851 - Champion of the Tournament - updated
+  - description added
+- quest 29860 - Diametrically Opposed - updated
+  - description added
+  - reward money added (22g 20s)
+  - reward choices: +5
+- quest 29861 - Whatever it Takes! - updated
+  - description added
+  - reward money added (29g 60s)
+  - reward choices: +4
+- quest 29862 - Clearing the Way - updated
+  - description added
+  - reward money added (22g 20s)
+- quest 29863 - Stormherald Eljrrin - updated
+  - description added
+  - reward money added (74s)
+- quest 29864 - Working at the Source - updated
+  - description added
+  - reward money added (22g 20s)
+- quest 29865 - The Silkwood Road - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29866 - The Threads that Stick - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29871 - Clever Ashyo - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29872 - Lin Tenderpaw - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29873 - Ken-Ken - updated
+  - description added
+  - reward money added (94s)
+- quest 29874 - Kang Bramblestaff - updated
+  - description added
+  - reward money added (94s)
+- quest 29875 - Kang Bramblestaff - updated
+  - description added
+  - reward money added (94s)
+- quest 29877 - A Poor Grasp of the Basics - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29879 - Swallowed Whole - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29881 - The Perfect Color - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29882 - Quill of Stingers - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29883 - The Pearlfin Situation - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29885 - Road Rations - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward items: +1
+- quest 29887 - The Elder's Instruments - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29888 - Seek Out the Lorewalker - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29889 - Borrowed Brew - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29890 - Finding Your Center - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 29891 - Potency - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29892 - Body - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29893 - Hue - updated
+  - description added
+  - reward money added (9g 80s)
+
 ## [0.2.213] - 2026-10-21
 
 Data from the PandaQuest portal.
@@ -1501,254 +1732,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Winterspring
 - npc 7462 - Hederine Manastalker - updated
   - coordinates: 40 spawn points added in Winterspring
-
-## [0.2.206] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,550 quests, 26 NPCs, 1 object
-- quest 1578 - Supplying the Front - updated
-  - description added
-  - reward items: +1
-- quest 28762 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28763 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28765 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28766 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28767 - Beating Them Back! - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28769 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 28770 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 28771 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 28773 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 28774 - Lions for Lambs - updated
-  - description added
-  - reward money added (40c)
-  - reward items: +1
-- quest 28775 - Broken Serpent Figurine - updated
-  - description added
-  - reward items: +1
-- quest 28776 - Broken Earthen Figurine - updated
-  - description added
-  - reward items: +1
-- quest 28777 - Broken Owl Figurine - updated
-  - description added
-  - reward items: +1
-- quest 28778 - Broken Boar Figurine - updated
-  - description added
-  - reward items: +1
-- quest 28779 - A Long Way from Home - updated
-  - description added
-  - reward money added (36g)
-  - reward choices: +3
-- quest 28780 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28781 - Targets of Opportunity - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward choices: +3
-- quest 28782 - A Bird of Legend - updated
-  - description added
-  - reward money added (1g 60s)
-  - reward items: +1
-  - reward choices: +5
-- quest 28783 - The Source of Their Power - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward choices: +3
-- quest 28784 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28785 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28786 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28788 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28789 - Join the Battle! - updated
-  - description added
-  - reward money added (13c)
-- quest 28790 - A Personal Summons - updated
-  - description added
-- quest 28791 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28792 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28793 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28794 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28796 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28797 - They Sent Assassins - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28805 - The Eye of the Storm - updated
-  - description added
-- quest 28806 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28807 - Expert Opinion - updated
-  - description added
-  - reward money added (4g 50s)
-- quest 28808 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28809 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28810 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28811 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28812 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28813 - Fear No Evil - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +1
-- quest 28814 - Followers and Leaders - updated
-  - description added
-  - reward money added (36g)
-  - reward choices: +3
-- quest 28815 - Twilight Documents - updated
-  - description added
-  - reward money added (36g)
-- quest 28816 - To the Depths - updated
-  - description added
-- quest 28817 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28818 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28819 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28820 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28822 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28823 - The Rear is Clear - updated
-  - description added
-  - reward money added (7c)
-- quest 28824 - Wayward Child - updated
-  - description added
-  - reward money added (36g)
-  - reward choices: +3
-- quest 28825 - A Personal Summons - updated
-  - description added
-- quest 28826 - The Eye of the Storm - updated
-  - description added
-- quest 28827 - To the Depths - updated
-  - description added
-- quest 28828 - You Gotta Have Eggs - updated
-  - description added
-  - reward money added (80s)
-  - reward items: +1
-  - reward choices: +5
-- quest 28832 - Twilight Shores - updated
-  - description added
-  - reward money added (4g 50s)
-- quest 28833 - Rescue the Earthspeaker! - updated
-  - description added
-  - reward money added (32g 80s)
-  - reward choices: +3
-- quest 28834 - Rescue the Earthspeaker! - updated
-  - description added
-  - reward money added (32g 80s)
-  - reward choices: +3
-- quest 28836 - Sins of the Sea Witch - updated
-  - description added
-  - reward money added (32g 80s)
-  - reward choices: +3
-- quest 28843 - Sins of the Sea Witch - updated
-  - description added
-  - reward money added (32g 80s)
-  - reward choices: +3
-- quest 28845 - The Vortex Pinnacle - updated
-  - description added
-  - reward money added (90s)
-- quest 28849 - Twilight Skies - updated
-  - description added
-  - reward money added (4g 50s)
-- quest 28850 - The Prison Rooftop - updated
-  - description added
-  - reward money added (5c)
-- quest 28852 - Soften them Up - updated
-  - description added
-  - reward items: +1
-- quest 28853 - Kill the Courier - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward choices: +3
-- quest 28854 - Closing a Dark Chapter - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward choices: +3
-- quest 28857 - Blasted Lands: The Other Side of the World - updated
-  - description added
-  - reward money added (40s)
-- quest 28859 - The Dunes of Silithus - updated
-  - description added
-  - reward money added (40s)
-- quest 28860 - Keeping the Dragonmaw at Bay - updated
-  - description added
-  - reward money added (9g)
-- quest 28861 - Fight Like a Wildhammer - updated
-  - description added
-  - reward money added (9g)
 
 ## [0.2.201] - 2026-10-20
 
