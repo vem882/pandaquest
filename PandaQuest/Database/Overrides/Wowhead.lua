@@ -30975,6 +30975,418 @@ ns.Overrides.wowhead = {
             rewardChoices = {{35487, 1}, {35488, 1}},
             rewardMoney = 44000,
         },
+        [29686] = {
+            description = "We cannot afford to lose this war. I'd like to empower our sentries so that " ..
+                "brave men and women don't have to die.\n\nThe Legion has gotten a hold of a powerful " ..
+                "elemental being. Its essence could be just what we need.",
+            rewardMoney = 44000,
+        },
+        [29687] = {
+            description = "The Legion and Kael'thas' forces are becoming increasingly intertwined. This " ..
+                "concerns me very deeply.\n\nFrom what we can gather Selin Fireheart and Priestess " ..
+                "Delrissa work closely together to unite the two armies. You need to stop them.",
+            rewardMoney = 44000,
+        },
+        [29688] = {
+            description = "I mostly listen, <class>. I listen so that the Warchief doesn't have " ..
+                "to.\n\nI've heard of the status of our campaign against the Hellfire Citadel. It is time " ..
+                "to take the Shattered Halls, seat of power for the fel orcs.\n\nGo speak with Stone " ..
+                "Guard Stok'ton, he's in charge there.",
+            rewardMoney = 4400,
+        },
+        [29689] = {
+            description = "The time has come to lay the final blow against the fel orcs.\n\nAdvance Scout " ..
+                "Chadwick awaits your presence inside the Shattered Halls of Hellfire Citadel. Make " ..
+                "haste, their forces could strike against Honor Hold at any moment!",
+            rewardMoney = 4400,
+        },
+        [29690] = {
+            description = "<Nazgrim fills his lungs with sea air.>\n\nYou smell that, <name>? It's the " ..
+                "smell of our home, the lands our kind have bled and died to preserve.\n\nAnd listen... " ..
+                "you hear that? It's the sound of peace and safety - a haven we've carved, where our " ..
+                "enemies fear to tread.\n\nRemember these things. You won't experience them again anytime " ..
+                "soon. We have ourselves a war to win.\n\nNow go get settled, we're shovin' off!",
+            rewardMoney = 9800,
+        },
+        [29691] = {
+            description = "My people use sanguine hibiscus for a number of purposes.\n\nIt grows " ..
+                "naturally only in the Underbog, and many of the bog's denizens have taken a liking to " ..
+                "it.\n\nIf you could bring me some, I would be very grateful.",
+        },
+        [29694] = {
+            description = "They have an airbase! I have underestimated this Alliance Captain for the last " ..
+                "time. So many good warriors lost...\n\nThere must have been a few survivors who were " ..
+                "able to bail during the crash. We need every able-bodied fighter we can get.\n\nFind as " ..
+                "many survivors as you can in the forest below, and I will investigate the wreckage " ..
+                "itself. Rally everyone together at the nearby village for a counter-attack.",
+            rewardChoices = {{90330, 1}, {90332, 1}, {90333, 1}, {90335, 1}, {90337, 1}},
+            rewardMoney = 98000,
+        },
+        [29716] = {
+            description = "There is a witch in the woods but no one believes me. She turned my friend " ..
+                "Shin into jade!\n\nWe were all so scared we tried to run back but she sicced her big " ..
+                "jade monsters on us. A bunch of my friends tried to get away by climbing trees.\n\nCan " ..
+                "you help me save my friends?",
+            rewardMoney = 98000,
+        },
+        [29717] = {
+            description = "I tried to fight one of the jade tigers in the woods but they were too scary. " ..
+                "They stare at you and you turn to a jade statue!\n\nHonest truth! Chen's sister's friend " ..
+                "Ni heard it from Kai's mom.\n\nI want to be brave like you though. Can you show me how " ..
+                "to beat up those jade tigers?",
+            rewardChoices = {{88704, 1}, {88705, 1}, {88706, 1}, {88707, 1}, {88708, 1}},
+            rewardMoney = 98000,
+        },
+        [29723] = {
+            description = "The Jade Witch must still have Shin.\n\nI... I can't do it! I don't want to " ..
+                "see the witch. Can you please go talk to her and see if she has Shin?\n\nYou're an " ..
+                "adult, I don't think she would try to turn you into jade.",
+            rewardItems = {{82984, 1}},
+            rewardMoney = 98000,
+        },
+        [29725] = {
+            description = "Yeah, we found Amber, she's alive, and all that. That's about where the good " ..
+                "news stops though.\n\nLet's see if I can pick up where ol' Rell left off...",
+        },
+        [29726] = {
+            description = "I... I can tell you what happened next! We continued north, into the forest...",
+        },
+        [29727] = {
+            description = "The final leg of our journey took us west, to a large hozen village. We set up " ..
+                "a small camp in the mountains, outside of their line of sight...",
+            rewardChoices = {{80768, 1}, {80769, 1}, {80770, 1}, {80771, 1}, {80772, 1}},
+            rewardMoney = 392000,
+        },
+        [29728] = {
+            description = "I must ask you to do one more thing for me, <name>.\n\nThe personal effects on " ..
+                "this ship cannot be left for others to find. We'll have to destroy it.\n\nI cobbled " ..
+                "together some Makeshift Dynamite from the scraps you brought me.\n\nPlace the dynamite " ..
+                "anywhere on the ship, but take care not to put them too close together.\n\nThey might " ..
+                "be...uh...a little unwieldy, so you should spread them out in case of premature " ..
+                "detonation.",
+            rewardMoney = 98000,
+        },
+        [29730] = {
+            description = "I bet I know your first question: \"What the ook happened to Sergeant " ..
+                "Gorrok?\" Don't worry, don't worry. He's totally alive. Not dead or anything.\n\n< Riko " ..
+                "shuffles uncomfortably.>\n\nWell, we THINK he's alive, but he ALSO might be very, very " ..
+                "dead.\n\n< Riko looks into your eyes for approval.>\n\nFine! Let me tell you exactly " ..
+                "what happened.",
+        },
+        [29731] = {
+            description = "MOST of what Riko said is true.\n\nWe didn't dare pursue Gorrok - the Horde's " ..
+                "numbers here are far too few. Our forces can only sustain so many losses, and frankly, " ..
+                "we don't know how powerful that witch really is.\n\nLet me pick up where the hozen left " ..
+                "off...",
+        },
+        [29733] = {
+            description = "<Rell coughs heavily before speaking.>\n\nPlease, <name>. You need to hear " ..
+                "what we've been through.\n\nThe whole damned Alliance needs to hear what we've been " ..
+                "through. There may not be much time left.",
+        },
+        [29743] = {
+            description = "It's plain to see that this statue and the surrounding ruins are of ancient " ..
+                "origin. Clearly, this land has a deep history, which means it could not have been born " ..
+                "of the cataclysm.\n\nAnd yet these waters have been explored for ages now, with no " ..
+                "record of anything here but open sea.\n\nPerhaps if you were to sketch the pieces of " ..
+                "this broken statue, you might shed light on the continent's origins.",
+        },
+        [29745] = {
+            description = "<Living statues rampage through the woods.\n\nFor now, they seem content in " ..
+                "pummeling the forest sprites into splinters, but if they continue any further the " ..
+                "pandaren will have more than just missing jade to worry about.>",
+            rewardMoney = 98000,
+        },
+        [29747] = {
+            description = "<Mogu conjurers call forth hapless spirits from beyond, forcing them into " ..
+                "statues.\n\nIt seems that destroying the statues alone will not be enough to break the " ..
+                "cycle.>",
+            rewardMoney = 98000,
+        },
+        [29748] = {
+            description = "<The shattered remains of an ancient mogu statue. This one looks like it never " ..
+                "animated before it was broken.\n\nWhatever dark magic the mogu are employing here, it " ..
+                "seems to make the brittle statues significantly tougher. Better to destroy them while " ..
+                "they are still vacant.\n\nA good old-fashioned kick should do the job.>",
+            rewardMoney = 98000,
+        },
+        [29749] = {
+            description = "<Your mind is racked with a howl. Beneath it, a wispy voice is barely audible, " ..
+                "as if from far away.>\n\nPlease... help... heart of the ruins... a ritual... " ..
+                "conjuring...\n\n...should not be here...\n\nMy staff... on the altar... take it. Please " ..
+                "hurry.",
+            rewardChoices = {{84261, 1}, {84262, 1}, {84263, 1}, {84264, 1}, {84265, 1}, {84266, 1}},
+            rewardMoney = 98000,
+        },
+        [29750] = {
+            description = "The Spiritclaws are a sect of mogu assassin-priests who, at the height of the " ..
+                "mogu empire, were the most elite and most feared of the emperor's troops.\n\nAll have " ..
+                "mastered a deathblow which ensnares the spirit of the enemy, trapping it in a jade " ..
+                "bottle for delivery to a Spiritbinder.\n\nIf you encounter any Spiritclaws further ahead " ..
+                "in the ruins, take note: their belts hang with a cursed weight.\n\nRelieve them of their " ..
+                "burden and bring the bottles back to me.",
+            rewardMoney = 98000,
+        },
+        [29751] = {
+            description = "So many spirits held in captivity here... I can feel them everywhere. Even the " ..
+                "walls are a cage for the long-dead.\n\n<name>, we cannot simply break the sorcery over " ..
+                "this place - doing so would release countless agonized souls to wander the earth. They " ..
+                "will need a beacon, something to guide them.\n\nWith your help, I can create a tan-chao: " ..
+                "a bridge from this world to the heavens. For this ritual, I'll need a bowl, a candle, " ..
+                "and a jade cong. You should be able to find them all within the ruins.",
+            rewardMoney = 98000,
+        },
+        [29752] = {
+            description = "The process of mass conjuring, as the mogu are doing here, is not without " ..
+                "byproduct. Some spirits arrive too distraught or unruly to be harnessed, so they are " ..
+                "confined and left to wander until their desperation leaves them more malleable.\n\nI " ..
+                "suspect the mogu have such a holding area somewhere nearby, likely guarded by " ..
+                "spiritclaws.\n\nPlease, take my staff again and use it to collect these wayward spirits. " ..
+                "You needn't fight them - present the staff and they should be drawn in.",
+            rewardMoney = 98000,
+        },
+        [29753] = {
+            description = "I'm afraid I have another favor to ask, <name>.\n\nThe bottles you recovered " ..
+                "contain neither the spirits of mogu ancestors nor recently slain foes; they contain " ..
+                "spirits of beasts. It seems the spiritclaws have resorted to poaching in an effort to " ..
+                "fuel their simulacra.\n\nThis complicates our task, for I cannot take the beasts with me " ..
+                "through the bridge.\n\nTake the bottles west to Tideview Thicket and smash them to " ..
+                "return the spirits to nature. Some may be blind with rage and will need to be subdued.",
+            rewardMoney = 98000,
+        },
+        [29754] = {
+            description = "We are ready to open the tan-chao and guide all of these spirits back to " ..
+                "peace.\n\nIf I may, I would have your assistance once more. The mogu will surely sense " ..
+                "the ritual taking place and will do everything in their power to halt it. I need only a " ..
+                "few moments without interference, and once the path is open it will surge too greatly to " ..
+                "be closed.\n\nIf you are willing to help one more time, please accompany me to the " ..
+                "ritual site.",
+            rewardMoney = 98000,
+        },
+        [29755] = {
+            description = "<Ancestral spirits stream into the tan-chao, Pei-Zhi 's bridge to " ..
+                "freedom.\n\nOne final chamber lingers in the ruins, just north of the tan-chao. The air " ..
+                "above crackles with foul energy. Shan Jitong is already at work.>",
+            rewardChoices = {
+                {80695, 1}, {80696, 1}, {80697, 1}, {80698, 1}, {80699, 1}, {80700, 1}, {80701, 1},
+                {80702, 1}, {80703, 1},
+            },
+            rewardMoney = 196000,
+        },
+        [29756] = {
+            description = "I'm almost ready for the ritual, there's just one more thing we need: An " ..
+                "offering.\n\nRelax, I don't mean a sacrifice. Just a bit of food.\n\nThere are sure to " ..
+                "be mushrooms growing in Tideview Thicket to the northwest that are suitable for this. " ..
+                "Please bring some.",
+            rewardMoney = 98000,
+        },
+        [29757] = {
+            description = "Have you heard about the crisis we're having at the pools?\n\nToads have moved " ..
+                "in and are spawning like crazy! It's become a real problem for the lotus " ..
+                "farmers.\n\nCoincidentally, I make a jam out of gelatinous toadspawn. I call it " ..
+                "\"Bottletoads\" and it's a big hit with the kids around here. Can't keep any in " ..
+                "stock.\n\nIf you're heading to the pools, you'd be doing everyone a favor by uh... " ..
+                "liberating some of those toad eggs.\n\nInto this bottle. For me.\n\nJust look for " ..
+                "bubbles and scoop right in!",
+            rewardMoney = 102000,
+        },
+        [29758] = {
+            description = "<This dragon turtle's massive shell is rock-hard and covered in sharp ridges. " ..
+                "One of the locals could almost certainly make use of it.>",
+            rewardMoney = 102000,
+        },
+        [29759] = {
+            description = "I hope you are capable of this next task, for our lives depend on it.\n\nThere " ..
+                "is only one key that will unlock our chains. Unfortunately, the key hangs around the " ..
+                "neck of the hozen's pet tiger, Kung Din.\n\nThey keep the tiger in the great pit to the " ..
+                "north. The only way to retrieve the key will be to kill the beast.",
+            rewardChoices = {
+                {90365, 1}, {90366, 1}, {90367, 1}, {90368, 1}, {90369, 1}, {90370, 1}, {90371, 1},
+                {90372, 1}, {90373, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [29762] = {
+            description = "We recently lost a fierce battle against the hozen at Moonwater Retreat.\n\nWe " ..
+                "evacuated as many of our people as we could, but still, there were many we could not " ..
+                "save.\n\nWe have no tokens of our lost over which to send our prayers.\n\nIf someone " ..
+                "could go and retrieve heirlooms from the dead bodies, we could properly lay them to " ..
+                "rest, and move on.\n\nIt would mean so much to us if you could do this, <name>.",
+            rewardMoney = 98000,
+        },
+        [29763] = {
+            description = "The vrykul are fearless in a fight. Seems they actually yearn fer a death in " ..
+                "battle. With their numbers and that ferocity, we're doomed - plain and " ..
+                "simple.\n\nThere's one they esteem though, goes by the name of Ingvar. Bring him down " ..
+                "and you'll deal a mighty blow to their spirit.",
+            rewardChoices = {{38218, 1}, {38219, 1}, {38220, 1}},
+            rewardMoney = 188000,
+        },
+        [29764] = {
+            description = "Take it from me, <lad/lass>, them vrykul weapons be downright nasty! " ..
+                "Deceptively well-balanced, wickedly sharp - just plain deadly.\n\nI need you to pilfer " ..
+                "some o' them weapons before they're used on us!",
+            rewardChoices = {{44374, 1}, {44375, 1}, {44376, 1}, {44377, 1}},
+        },
+        [29765] = {
+            description = "I coulda taken out da whole lot of 'em, mon.\n\nShot 'em one by one, den " ..
+                "played dead when dey be gettin' close. Fell for it every time, dey did - well almost " ..
+                "every time...\n\nOne of 'em finally got wise. Called my bluff. Before I knew it, dey was " ..
+                "usin' my eyes as marbles.\n\nRan off with my goods an' left me here ta die, da " ..
+                "savages...\n\nHelp me, mon. Lemme die wit my dignity intact.",
+            rewardMoney = 98000,
+        },
+        [29768] = {
+            description = "<name>, I've got it! It's simple really. Let's make a ruckus so loud that " ..
+                "there's no way he can sleep through it.\n\nWhy look at that, a conveniently placed gong! " ..
+                "Makes me think this may just be how they've awoken him in the past. We just need the " ..
+                "matching mallet to get it ringing as loud as possible.\n\nThe village leader tells me " ..
+                "the mallet is over at the Ki-Han Brewery on the river, to the southwest. It's not far. " ..
+                "Mind picking it up for me while I give the village some fair warning?",
+            rewardChoices = {{74583, 1}, {74584, 1}, {74585, 1}},
+            rewardMoney = 125,
+        },
+        [29769] = {
+            description = "I'll keep trying to find ways to wake this stubborn little guy up, but there " ..
+                "is no shortage of trouble on the island it seems. The crops to the south are infested " ..
+                "with virmen, rabbit-like thieves and pillagers.\n\nRascals!\n\nThey breed faster than we " ..
+                "can kill them! I have the perfect solution for such a situation: kill them faster! With " ..
+                "you here, <name>, that shouldn't be a problem.",
+            rewardMoney = 125,
+        },
+        [29770] = {
+            description = "The virmen to the south have been running off with all of our crops, but " ..
+                "they're taking more than they can eat. They must be stockpiling them somewhere - the " ..
+                "ones they like anyway.\n\nWill you go out and recover any of the uprooted crops you can " ..
+                "find? I've got an island's worth of people to feed, and every single vegetable makes a " ..
+                "difference.",
+            rewardChoices = {{74580, 1}, {74581, 1}, {74582, 1}},
+            rewardMoney = 125,
+        },
+        [29771] = {
+            description = "Gather me wood planks from construction near the Ki-Han Brewery.\n\nYou do not " ..
+                "yet know the extent of my strength, so I shall display it to you.",
+            rewardMoney = 125,
+        },
+        [29772] = {
+            description = "You ready for this, <name>? I'm thinking maybe we should have looked for " ..
+                "something to cover our ears, but it's a bit late for that now. Just remember that the " ..
+                "intense ringing you'll be hearing for the next few hours is the ringing sound of " ..
+                "victory!\n\nThe honor's all yours, <name>. Ring the gong whenever you're ready!",
+            rewardMoney = 125,
+        },
+        [29774] = {
+            description = "Alright <name>, I was thinking about what we'd try next if the whole gong " ..
+                "thing didn't work, and it came to me just like that! Water in the face always worked on " ..
+                "me. It's got to be twice as effective for someone so dry and earthy!\n\nMind going over " ..
+                "and asking Shu, the spirit of water, if he'll help us out? He should be playing in the " ..
+                "pool next to the waterfall, just on the other side of that tree.",
+            rewardMoney = 125,
+        },
+        [29775] = {
+            description = "Well, that wraps it up here, doesn't it <name>? Now that we've got these two " ..
+                "roused and all friendly towards you, we just need to get them back to the Temple of Five " ..
+                "Dawns.\n\nYou go ahead. I'm going to say my goodbyes, then I'll follow you up shortly.",
+            rewardChoices = {{74577, 1}, {74578, 1}, {74579, 1}},
+            rewardMoney = 125,
+        },
+        [29776] = {
+            description = "The fourth and final spirit is Dafeng, the spirit of air. When he is not in " ..
+                "the skies, he can be found on the Ridge of Laughing Winds to the west. I've sent both " ..
+                "Aysa and Ji to help you find him.\n\nWhen you are ready, I will summon winds to carry " ..
+                "you to the top of the temple. From there, cross the bridges to the west and find Ji in " ..
+                "Morning Breeze Village.",
+            rewardMoney = 125,
+        },
+        [29777] = {
+            description = "The hozen have stolen our brushes and are painting over our scrolls of wisdom " ..
+                "with their own wisdoms, if you can call them that. If you're here to help, stop them and " ..
+                "bring our brushes back before they can do more harm.",
+            rewardMoney = 175,
+        },
+        [29778] = {
+            description = "<name>, we must help Elder Shaopai. There are few more deserving of our " ..
+                "kindness.\n\nOn the way here, you surely noticed the scrolls of wisdom hanging in the " ..
+                "grotto to the south. The hozen have defiled many of them, and sadly, they are not " ..
+                "recoverable. We will deal with the problem directly - burn the defiled scrolls. Wipe the " ..
+                "hozen writings away entirely.\n\nDo not worry for Elder Shaopai. The people shall come " ..
+                "together and help him rewrite the wisdoms in time. I shall see to that.",
+            rewardChoices = {{74594, 1}, {74595, 1}, {74596, 1}},
+            rewardMoney = 175,
+        },
+        [29779] = {
+            description = "Alright <name>, this is the second time we've had to deal with ravaging hozen. " ..
+                "I think it's time we take care of this problem the Huojin way. No more patience. No more " ..
+                "mediation. We go to the source.\n\nWe're going into the hozen village to the north and " ..
+                "we're punishing those smelly troublemakers. I've been looking forward to a chance to " ..
+                "fight by your side again, <name>.",
+            rewardMoney = 175,
+        },
+        [29780] = {
+            description = "<name>, I need you to understand that the way of the Huojin is not the way of " ..
+                "violence. When fighting is needed, we will not hesitate, but when fighting is not " ..
+                "needed, neither do we instigate. However, the direct solution is often cutting the head " ..
+                "off the snake, as they say.\n\nThe hozen have a leader instigating these attacks. If we " ..
+                "remove Ruk-Ruk, we won't have to wipe the hozen out entirely.\n\nI know you are not of " ..
+                "the Huojin, but are you with me in what must be done, <name>?",
+            rewardChoices = {{74591, 1}, {74592, 1}, {74593, 1}},
+            rewardMoney = 175,
+        },
+        [29781] = {
+            description = "The monkeys have been stealing from the village during their attacks. We " ..
+                "should be fine without some of the extra food stores, but the idea of monkeys with " ..
+                "fireworks... I'm a little bit concerned. Not to mention, who knows when some fireworks " ..
+                "will come in handy?\n\nHelp me recover the stolen fireworks from their village, <name>?",
+            rewardMoney = 175,
+        },
+        [29782] = {
+            description = "This giant jade tiger pillar doesn't seem to fit in amidst the hozen " ..
+                "buildings.\n\nWhat it does seem is very hard. Very solid.\n\nYou know just the person to " ..
+                "bring this to.",
+            rewardChoices = {{74587, 1}, {74588, 1}, {74589, 1}, {74590, 1}},
+            rewardMoney = 175,
+        },
+        [29783] = {
+            description = "Gather me stone blocks from the Ridge of Laughing Winds to the south.\n\nYou " ..
+                "have seen my strength twice, yet I still spy doubt within your eyes. It will not last.",
+            rewardMoney = 175,
+        },
+        [29784] = {
+            description = "Aysa has been meditating on the lake since we've arrived, all her thoughts " ..
+                "focused on Dafeng. I don't know what she hopes to discover out there, but she's no fool, " ..
+                "and Master Shang Xi has entrusted this task with her.\n\nYou will need to cross the " ..
+                "ropes leading from the end of the dock to reach her. It shall test your balance, but I " ..
+                "think you're up to the task, <name>.",
+            rewardMoney = 175,
+        },
+        [29785] = {
+            description = "If you listen long enough, the wind will carry the answer to you.\n\nDafeng, " ..
+                "the spirit of air, has been scared from the skies by Zhao-Ren, the Onyx Serpent. He " ..
+                "hides within the Chamber of Whispers, at the south side of the plateau.\n\nGo to him. Ji " ..
+                "and I will join you there.",
+            rewardMoney = 175,
+        },
+        [29786] = {
+            description = "Dafeng, the spirit of air, is terrified by Zhao-Ren, the Onyx Serpent. We must " ..
+                "help him face that fear, or face it for him ourselves.\n\nWhen I told Ji of the serpent, " ..
+                "he said he had an idea and would begin preparations outside of the chamber. Despite his " ..
+                "rash nature, I must admit, I envy his passion and conviction.\n\nLet us go outside and " ..
+                "confront the Onyx Serpent.",
+            rewardItems = {{74586, 1}},
+            rewardMoney = 175,
+        },
+        [29787] = {
+            description = "The four elemental spirits will help you speak with the land and uncover its " ..
+                "plight, but first, I have one small task to ask of you.\n\nJoin me, my pupil. Accompany " ..
+                "this old pandaren to the western grove.",
+            rewardMoney = 225,
+        },
+        [29788] = {
+            description = "You faced forest sprites in the Dawning Valley, but the forest sprites in this " ..
+                "grove are a different breed. Crueler and more dangerous.\n\nIf you would clear some of " ..
+                "these sprites out, the spirits would thank you.",
+            rewardMoney = 225,
+        },
         [29905] = {rewardItems = {{84105, 1}}, rewardMoney = 196000},
         [30027] = {
             description = "First, you will need a weapon suited to your talents. Retrieve a staff from " ..
