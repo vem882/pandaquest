@@ -4,6 +4,245 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.211
+- database - Wowhead data as the PandaQuest portal read it: 6,883 quests, 40 NPCs, 1 object
+- quest 29390 - Guardians of Hyjal: Call of the Ancients - updated
+  - description added
+- quest 29391 - Guardians of Hyjal: Call of the Ancients - updated
+  - description added
+- quest 29401 - Blown Away - updated
+  - description added
+  - reward money added (12s)
+  - reward items: +1
+- quest 29406 - The Lesson of the Sandy Fist - updated
+  - description added
+  - reward money added (1s)
+  - reward choices: +3
+- quest 29409 - The Disciple's Challenge - updated
+  - description added
+  - reward money added (1s)
+  - reward choices: +3
+- quest 29412 - Blown Away - updated
+  - description added
+  - reward money added (12s)
+  - reward items: +1
+- quest 29414 - The Way of the Tushui - updated
+  - description added
+  - reward money added (50c)
+  - reward choices: +3
+- quest 29417 - The Way of the Huojin - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +3
+- quest 29418 - Kindling the Fire - updated
+  - description added
+  - reward money added (75c)
+- quest 29419 - The Missing Driver - updated
+  - description added
+  - reward money added (50c)
+  - reward items: +2
+- quest 29420 - The Spirit's Guardian - updated
+  - description added
+  - reward money added (20c)
+- quest 29421 - Only the Worthy Shall Pass - updated
+  - description added
+  - reward money added (75c)
+  - reward items: +1
+  - reward choices: +3
+- quest 29422 - Huo, the Spirit of Fire - updated
+  - description added
+  - reward money added (75c)
+- quest 29423 - The Passion of Shen-zin Su - updated
+  - description added
+  - reward money added (50c)
+  - reward choices: +4
+- quest 29424 - Items of Utmost Importance - updated
+  - description added
+  - reward money added (50c)
+- quest 29437 - The Fallen Guardian - updated
+  - description added
+  - reward money added (18g 80s)
+- quest 29439 - The Call of the World-Shaman - updated
+  - description added
+- quest 29440 - The Call of the World-Shaman - updated
+  - description added
+- quest 29452 - Your Time Has Come - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 29453 - Your Time Has Come - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 29475 - Goblin Engineering - updated
+  - description added
+- quest 29477 - Gnomish Engineering - updated
+  - description added
+- quest 29481 - Elixir Master - updated
+  - description added
+- quest 29521 - The Singing Pools - updated
+  - description added
+  - reward money added (25c)
+- quest 29522 - Ji of the Huojin - updated
+  - description added
+  - reward money added (13c)
+- quest 29523 - Fanning the Flames - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +3
+- quest 29524 - The Lesson of Stifled Pride - updated
+  - description added
+  - reward money added (1s)
+  - reward choices: +3
+- quest 29527 - War on the Ramparts - updated
+  - description added
+  - reward money added (5g 40s)
+  - reward choices: +4
+- quest 29528 - War on the Ramparts - updated
+  - description added
+  - reward money added (5g 40s)
+  - reward choices: +4
+- quest 29529 - Demons in the Citadel - updated
+  - description added
+  - reward money added (5g 40s)
+- quest 29530 - Demons in the Citadel - updated
+  - description added
+  - reward money added (5g 40s)
+- quest 29531 - Kill Stuff - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 29535 - Make Them Bleed - updated
+  - description added
+  - reward money added (5g 80s)
+- quest 29536 - Heart of Rage - updated
+  - description added
+  - reward money added (5g 80s)
+  - reward choices: +3
+- quest 29537 - Mind the Gap - updated
+  - description added
+  - reward money added (5g 80s)
+  - reward choices: +4
+- quest 29538 - Make Them Bleed - updated
+  - description added
+  - reward money added (5g 80s)
+- quest 29539 - Heart of Rage - updated
+  - description added
+  - reward money added (5g 80s)
+  - reward choices: +3
+- quest 29540 - The Breaker - updated
+  - description added
+  - reward money added (5g 80s)
+  - reward choices: +4
+- quest 29541 - Take Care of It - updated
+  - description added
+- quest 29543 - Invading the Citadel - updated
+  - description added
+  - reward money added (28s)
+- quest 29547 - The King's Command - updated
+  - description added
+  - reward money added (98s)
+- quest 29552 - Critical Condition - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 29553 - The Missing Admiral - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29555 - The White Pawn - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward items: +1
+- quest 29556 - Hozen Aren't Your Friends, Hozen Are Your Enemies - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29558 - The Path of War - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29559 - Freeing Our Brothers - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29560 - Ancient Power - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29562 - Jailbreak - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29563 - Lost in Action - updated
+  - description added
+- quest 29564 - A Brother Betrayed - updated
+  - description added
+  - reward money added (6g 60s)
+- quest 29565 - The Heart of the Matter - updated
+  - description added
+  - reward money added (6g 60s)
+  - reward choices: +3
+- quest 29567 - Stalk the Stalker - updated
+  - description added
+  - reward money added (6g 60s)
+  - reward choices: +2
+- quest 29568 - A Necessary Evil - updated
+  - description added
+  - reward money added (6g 60s)
+- quest 29570 - Rescuing the Expedition - updated
+  - description added
+  - reward money added (13g 20s)
+- quest 29573 - Safety is Job One - updated
+  - description added
+  - reward money added (7g)
+- quest 29574 - Intriguing Specimens - updated
+  - description added
+  - reward money added (7g)
+- quest 29575 - Undercutting the Competition - updated
+  - description added
+  - reward money added (7g)
+- quest 29576 - An Air of Worry - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29577 - Ashyo's Vision - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29578 - Defiance - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29579 - Rally the Survivors - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29580 - Orchard-Supplied Hardware - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29581 - The Golden Dream - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29583 - Eckert the Mad - updated
+  - description added
+  - reward money added (36s)
+- quest 29585 - Spitfire - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29586 - The Splintered Path - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29587 - Unbound - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29590 - The Dead Watcher - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 29591 - Raging Spirits - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 29593 - Hitting Them Where It Hurts - updated
+  - description added
+  - reward money added (8g 10s)
+- quest 29594 - Hitting Them Where It Hurts - updated
+  - description added
+  - reward money added (8g 10s)
+- quest 29595 - Everything Will Be Alright - updated
+  - description added
+- quest 31235 - Nope Nope Nope - updated
+  - description added
+  - reward money added (11g 40s)
+
 0.2.210
 - database - Wowhead data as the PandaQuest portal read it: 6,809 quests, 40 NPCs, 1 object
 - quest 11041 - A Job Unfinished... - updated
@@ -1498,205 +1737,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - quest 28670 - Food From Below - updated
   - description added
   - reward money added (18g 80s)
-
-0.2.203
-- database - Wowhead data as the PandaQuest portal read it: 6,338 quests, 26 NPCs, 1 object
-- quest 28466 - Weapons of Darkness - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward choices: +3
-- quest 28473 - Weapons of Darkness - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-  - reward choices: +3
-- quest 28474 - Twilight Scheming - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28475 - Twilight Scheming - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28476 - Twilight Scheming - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28477 - Twilight Scheming - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28478 - Twilight Scheming - updated
-  - description added
-  - reward money added (1g 45s)
-  - reward items: +1
-- quest 28480 - Lieutenants of Darkness - updated
-  - description added
-  - reward money added (9g)
-  - reward choices: +2
-- quest 28482 - Sullah's Gift - updated
-  - description added
-- quest 28483 - Bleeding the Enemy - updated
-  - description added
-  - reward money added (9g)
-- quest 28484 - The Heart of the Matter - updated
-  - description added
-  - reward items: +1
-  - reward choices: +3
-- quest 28486 - Salhet's Gambit - updated
-  - description added
-  - reward money added (9g)
-- quest 28487 - Humbert's Personal Problems - updated
-  - description added
-  - reward money added (15s)
-- quest 28488 - Beneath the Surface - updated
-  - description added
-  - reward money added (8g 60s)
-- quest 28489 - Stagwiches - updated
-  - description added
-  - reward money added (30s)
-  - reward items: +2
-- quest 28490 - Hero's Call: Darkshore! - updated
-  - description added
-- quest 28491 - Not Fireflies, Flameflies - updated
-  - description added
-  - reward money added (75s)
-  - reward items: +1
-  - reward choices: +3
-- quest 28492 - Hero's Call: Ashenvale! - updated
-  - description added
-- quest 28494 - Warchief's Command: Northern Barrens! - updated
-  - description added
-- quest 28495 - A Fighting Chance - updated
-  - description added
-  - reward money added (15s)
-- quest 28496 - Warchief's Command: Azshara! - updated
-  - description added
-- quest 28497 - Fire From the Sky - updated
-  - description added
-  - reward money added (8g 60s)
-  - reward choices: +3
-- quest 28498 - The Secret of Nahom - updated
-  - description added
-  - reward money added (9g)
-- quest 28499 - Punish the Trespassers - updated
-  - description added
-  - reward money added (9g)
-  - reward choices: +3
-- quest 28500 - The Cypher of Keset - updated
-  - description added
-  - reward money added (6g 80s)
-- quest 28501 - The Defense of Nahom - updated
-  - description added
-  - reward money added (18g)
-- quest 28502 - The Bandit Warlord - updated
-  - description added
-  - reward money added (9g)
-  - reward choices: +4
-- quest 28503 - Hero's Call: Thousand Needles! - updated
-  - description added
-- quest 28505 - The Battle for Andorhal - updated
-  - description added
-  - reward money added (9s)
-- quest 28506 - March of the Stormpike - updated
-  - description added
-- quest 28507 - Hero's Call: Tanaris! - updated
-  - description added
-- quest 28509 - Warchief's Command: Tanaris! - updated
-  - description added
-- quest 28511 - Hero's Call: Feralas! - updated
-  - description added
-- quest 28512 - To the Aid of the Thorium Brotherhood - updated
-  - description added
-  - reward money added (7s)
-- quest 28514 - Mouton Flamestar - updated
-  - description added
-  - reward money added (7s)
-- quest 28515 - Mouton Flamestar - updated
-  - description added
-  - reward money added (7s)
-- quest 28517 - The Howling Oak - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 28520 - The Fall of Neferset City - updated
-  - description added
-  - reward money added (27g)
-  - reward choices: +4
-- quest 28523 - More Beads for Salfa - updated
-  - reward money added (40s)
-- quest 28524 - Delivery for Donova - updated
-  - description added
-  - reward money added (35s)
-- quest 28525 - Hero's Call: Un'Goro Crater! - updated
-  - description added
-- quest 28526 - Warchief's Command: Un'Goro Crater! - updated
-  - description added
-- quest 28527 - Warchief's Command: Silithus! - updated
-  - description added
-- quest 28528 - Hero's Call: Silithus! - updated
-  - description added
-- quest 28529 - Writings of the Void - updated
-  - description added
-  - reward money added (15s)
-- quest 28531 - Hero's Call: Desolace! - updated
-  - description added
-- quest 28533 - The High Council's Decision - updated
-  - description added
-  - reward money added (9g)
-- quest 28538 - Cry of the Banshee - updated
-  - description added
-- quest 28539 - Hero's Call: Stonetalon Mountains! - updated
-  - description added
-- quest 28543 - Hero's Call: Felwood! - updated
-  - description added
-- quest 28544 - Hero's Call: Winterspring! - updated
-  - description added
-- quest 28545 - Warchief's Command: Winterspring! - updated
-  - description added
-- quest 28550 - Hero's Call: Southern Barrens! - updated
-  - description added
-- quest 28551 - Hero's Call: Southern Barrens! - updated
-  - description added
-- quest 28552 - Hero's Call: Dustwallow Marsh! - updated
-  - description added
-- quest 28553 - Okrilla and the Blasted Lands - updated
-  - description added
-  - reward money added (8s)
-- quest 28556 - Breaking the Hand - updated
-  - description added
-  - reward choices: +3
-- quest 28557 - Warchief's Command: Uldum! - updated
-  - description added
-- quest 28558 - Hero's Call: Uldum! - updated
-  - description added
-- quest 28559 - Hero's Call: Bloodmyst Isle! - updated
-  - description added
-- quest 28560 - Warchief's Command: Ghostlands! - updated
-  - description added
-- quest 28561 - Nahom Must Hold - updated
-  - description added
-  - reward money added (9g)
-- quest 28562 - Hero's Call: Westfall! - updated
-  - description added
-- quest 28563 - Hero's Call: Redridge Mountains! - updated
-  - description added
-  - reward money added (7s)
-  - reward choices: +4
-- quest 28564 - Hero's Call: Duskwood! - updated
-  - description added
-- quest 28565 - Hero's Call: Wetlands! - updated
-  - description added
-- quest 28566 - Decimation - updated
-  - description added
-- quest 28567 - Hero's Call: Loch Modan! - updated
-  - description added
-- quest 28568 - Warchief's Command: Silverpine Forest! - updated
-  - description added
-- quest 28569 - The Bogpaddle Bullet - updated
-  - description added
-  - reward money added (8s)
-- npc 48533 - Enormous Gyreworm - updated
-  - coordinates: 8 spawn points added in Deepholm
 
 0.2.201
 - changelog - data changes list every quest, NPC, object and item, each with what changed for it
