@@ -4,6 +4,226 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.217] - 2026-10-22
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,283 quests, 40 NPCs, 1 object
+- quest 30095 - The End Time - updated
+  - description added
+  - reward money added (94s)
+- quest 30096 - Murozond - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +4
+- quest 30097 - Archival Purposes - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 30098 - The Well of Eternity - updated
+  - description added
+  - reward money added (94s)
+- quest 30099 - In Unending Numbers - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 30100 - The Vainglorious - updated
+  - description added
+  - reward money added (37g 60s)
+- quest 30101 - The Path to the Dragon Soul - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +4
+- quest 30102 - The Hour of Twilight - updated
+  - description added
+  - reward money added (94s)
+- quest 30103 - To Wyrmrest! - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 30104 - Documenting the Timeways - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +4
+- quest 30105 - The Twilight Prophet - updated
+  - description added
+  - reward money added (37g 60s)
+  - reward choices: +3
+- quest 30106 - The Deed is Done - updated
+  - description added
+  - reward money added (4g 70s)
+  - reward items: +2
+- quest 30107 - Cluster Clutch - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 30108 - Our Man in Karazhan - updated
+  - description added
+  - reward money added (4g 70s)
+- quest 30109 - Blood of the Betrayer - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 30112 - A Score to Settle - updated
+  - description added
+  - reward choices: +4
+- quest 30113 - Victory in the Depths - updated
+  - description added
+  - reward money added (4g 70s)
+  - reward items: +2
+- quest 30116 - Sharpening Your Fangs - updated
+  - description added
+  - reward money added (9g 40s)
+- quest 30117 - Stoneplow Thirsts - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30118 - Patricide - updated
+  - description added
+  - reward money added (9g 40s)
+  - reward items: +2
+- quest 30120 - Cleansing Drak'Tharon - updated
+  - description added
+  - reward money added (17g 70s)
+  - reward choices: +4
+- quest 30121 - Search Party - updated
+  - description added
+  - reward money added (98s)
+- quest 30123 - Skitterer Stew - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30124 - Blind Them! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30127 - Threat from Dojan - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30128 - The Pools of Youth - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 30129 - The Mogu Agenda - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30130 - Herbal Remedies - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +1
+- quest 30131 - Life - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30132 - Going West - updated
+  - description added
+  - reward money added (1g 2s)
+  - reward choices: +5
+- quest 30133 - Into the Wilds - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30134 - Wild Things - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30135 - Beating the Odds - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30136 - Empty Nests - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30137 - Egg Collection - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30138 - Choosing the One - updated
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +3
+- quest 30139 - The Rider's Journey - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30140 - The Rider's Journey - updated
+  - quest giver added: Instructor Tong
+  - description added
+  - reward money added (5g 70s)
+- quest 30141 - The Rider's Journey - updated
+  - quest giver added: Instructor Tong
+  - description added
+  - reward money added (5g 70s)
+- quest 30142 - It's A... - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30143 - They Grow Like Weeds - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30144 - Flight Training: Ring Round-Up - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30145 - Flight Training: Full Speed Ahead - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30146 - Snack Time - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30148 - Just a Flesh Wound - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30149 - A Feast for the Senses - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30150 - Sweet as Honey - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30151 - Catch! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30152 - The Sky Race - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 30154 - The Easiest Way To A Serpent's Heart - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30155 - Restoring the Balance - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30156 - Feeding Time - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30157 - Emptier Nests - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30158 - Disarming the Enemy - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30159 - Preservation - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30163 - For the Tribe - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30164 - The Stoneplow Convoy - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30168 - Thieving Raiders - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +4
+- quest 30169 - Raid Leader Slovan - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 30172 - Barreling Along - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30174 - For Family - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30175 - The Mantid - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30178 - Into the Wilds - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30179 - Poisoned! - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+
 ## [0.2.216] - 2026-10-22
 
 Data from the PandaQuest portal.
@@ -1575,231 +1795,6 @@ Data from the PandaQuest portal.
 - npc 53422 - Dragonwrath, Tarecgosa's Rest - updated
   - coordinates: 3 spawn points added in Stormwind City
   - coordinates: 2 spawn points added in Orgrimmar
-
-## [0.2.209] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,739 quests, 39 NPCs, 1 object
-- quest 29194 - Through a Glass, Darkly - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29195 - A Ritual of Flame - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29196 - To the Sanctuary! - updated
-  - description added
-  - reward money added (94s)
-- quest 29197 - Caught Unawares - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29198 - The Sanctuary Must Not Fall - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29199 - Calling for Reinforcements - updated
-  - description added
-- quest 29200 - Leyara - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29201 - Through the Gates of Hell - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29202 - The Fate of Runetotem - updated
-  - description added
-  - reward money added (94s)
-- quest 29203 - Into the Depths - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29205 - The Forlorn Spire - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29206 - Into the Fire - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29208 - An Old Friend - updated
-  - reward items: +1
-- quest 29210 - Enduring the Heat - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29211 - Solar Core Destruction - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29213 - How's the Hunter Holding Up? - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29214 - The Shadow Wardens - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29215 - The Hunt Begins - updated
-  - description added
-  - reward money added (2g 35s)
-- quest 29217 - The Captive Scouts - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29219 - Bwemba's Spirit - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29220 - To Bambala - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29221 - Serpents and Poison - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29222 - Spirits Are With Us - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29223 - Nesingwary Will Know - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29225 - Actionable Intelligence - updated
-  - description added
-  - reward money added (4g 70s)
-- quest 29226 - Track the Tracker - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29227 - The Hunter's Revenge - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29228 - Follow That Cat - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29229 - Follow That Cat - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29230 - Mauti - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29231 - How's the Hunter Holding Up? - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29232 - Bury Me With Me Boots... - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29233 - Warn Grom'gol - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29234 - Delegation - updated
-  - description added
-  - reward money added (28g 20s)
-- quest 29235 - Defend Grom'gol - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29236 - To Hardwrench Hideaway - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29237 - Voodoo Zombies - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29238 - Bad Supplies - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29239 - Nordrassil's Bough - updated
-  - description added
-  - reward money added (28g 20s)
-  - reward items: +1
-- quest 29240 - Emergency Extraction - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29241 - Break the Godbreaker - updated
-  - description added
-  - reward money added (37g 60s)
-- quest 29242 - Putting a Price on Priceless - updated
-  - description added
-  - reward money added (37g 60s)
-- quest 29243 - Strike at the Heart - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29245 - The Mysterious Seed - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29246 - Relieving the Pain - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29247 - Treating the Wounds - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29248 - Releasing the Pressure - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29249 - Planting Season - updated
-  - description added
-  - reward money added (4g 70s)
-- quest 29250 - Making Contact - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29251 - Booty Bay's Interests - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29252 - Booty Bay's Interests - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29253 - A Shiny Reward - updated
-  - description added
-  - reward money added (9g 40s)
-  - reward items: +4
-- quest 29254 - Little Lasher - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29255 - Embergris - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29257 - Steal Magmolias - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29263 - A Bitter Pill - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29264 - Flamewakers of the Molten Flow - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29265 - Fire Flowers - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29267 - Some Good Will Come - updated
-  - description added
-  - reward items: +1
-- quest 29268 - Some Good Will Come - updated
-  - description added
-  - reward items: +1
-- quest 29269 - At One - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29270 - Time Grows Short - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29272 - Need... Water... Badly... - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29273 - How Hot - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29274 - Hounds of Shannox - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29275 - Fandral's Methods - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29276 - The Flame Spider Queen - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29278 - Living Obsidium - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29279 - Filling the Moonwell - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29280 - Nourishing Waters - updated
-  - description added
-  - reward money added (2g 35s)
-- quest 29318 - Ribs for the Sentinels - updated
-  - description added
-  - reward money added (11g 40s)
-- npc 52258 - Gri'lek - updated
-  - coordinates: 1 spawn point added in Zul'Gurub
-- npc 52269 - Renataki - updated
-  - coordinates: 1 spawn point added in Zul'Gurub
-- npc 52286 - Wushoolay - updated
-  - coordinates: 1 spawn point added in Zul'Gurub
 
 ## [0.2.201] - 2026-10-20
 
