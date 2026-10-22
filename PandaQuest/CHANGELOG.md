@@ -4,6 +4,248 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.219] - 2026-10-22
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,423 quests, 46 NPCs, 1 object
+- quest 30281 - The Silent Approach - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30282 - Burning Away the Filth - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30283 - A Smashing Impression - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30284 - A Thousand Pointy Teeth - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30285 - Wu Kao Scouting Reports - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30286 - Backed Into a Corner - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30287 - Mogu Make Poor House Guests - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30288 - My Town, It's On Fire Again - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30289 - Freeing Mind and Body - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30290 - Stonebound Killers - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30291 - Stunning Display - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30292 - Rude Awakenings - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30293 - In Enemy Hands - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30296 - Gaohun the Soul-Severer - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30297 - Baolai the Immolator - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30298 - Painting the Ruins Red - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30299 - No Stone Unturned - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30300 - The Key to Success - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30301 - Offering a Warm Welcome - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30302 - The Imperion Threat - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30304 - Hard as a Rock - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30305 - He Knows What He's Doing - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30306 - The Battle Ring - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30307 - The Eternal Vigil - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30308 - Stone Hard Quilen - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30309 - Set in Stone - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30310 - Thundering Skies - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30312 - Given a Second Chance - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30313 - The Moving Mists - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30314 - The Displaced Paleblade - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30317 - Water, Water Everywhere - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30318 - Chasing the Chicken - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30319 - Pest Problems - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30320 - Free Spirits - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30321 - Weed War II - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30322 - Money Matters - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30323 - They Don't Even Wear Them - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30324 - Not in Chee-Chee's Backyard - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30325 - Where It Counts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30326 - The Kunzen Legend-Chief - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30327 - You Have to Burn the Ropes - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30328 - The Thousand-Year Dumpling - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30329 - Cindergut Peppers - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30330 - The Truffle Shuffle - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30331 - The Mile-High Grub - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30332 - Fatty Goatsteak - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30333 - The Lesser of Two Evils - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30334 - Stealing is Bad... Re-Stealing is OK - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30335 - Stalling the Ravage - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30336 - The Kunzen Hunter-Chief - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30337 - Simian Sabotage - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30338 - A Weighty Task - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30339 - Getting your Hands Dirty - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30340 - Stick in the Mud - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30341 - Under Watchful Eyes - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30342 - Fiery Tongue, Fragile Feet - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30344 - The Lost Dynasty - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30346 - Where are the Pools - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30347 - The Pools of Youth - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30348 - Immortality? - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30349 - Threat from Dojan - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30350 - Squirmy Delight - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 30351 - Lotus Tea - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 30352 - Crane Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30353 - Profit Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30354 - No Sister Left Behind - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30355 - Re-Reclaim - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30356 - Sever Their Supply Line - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30357 - The Stoneplow Convoy - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30359 - The Lord Reclaimer - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30360 - Warn Stoneplow - updated
+  - description added
+  - reward money added (1g 2s)
+- npc 58408 - Leven Dawnblade - updated
+  - coordinates: 4 spawn points added in Vale of Eternal Blossoms
+- npc 58465 - Anji Autumnlight - updated
+  - coordinates: 5 spawn points added in Vale of Eternal Blossoms
+- npc 58468 - Sun Tenderheart - updated
+  - coordinates: 4 spawn points added in Vale of Eternal Blossoms
+- npc 58471 - Kun Autumnlight - updated
+  - coordinates: 5 spawn points added in Vale of Eternal Blossoms
+- npc 64192 - Shao-Tien Subjugator - updated
+  - coordinates: 16 spawn points added in Vale of Eternal Blossoms
+- npc 64201 - Shao-Tien Subjugator - updated
+  - coordinates: 40 spawn points added in Vale of Eternal Blossoms
+
 ## [0.2.218] - 2026-10-22
 
 Data from the PandaQuest portal.
@@ -1556,248 +1798,6 @@ Data from the PandaQuest portal.
 - quest 30122 - Silver Filigree Flask - updated
   - description added
   - reward items: +1
-
-## [0.2.211] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,883 quests, 40 NPCs, 1 object
-- quest 29390 - Guardians of Hyjal: Call of the Ancients - updated
-  - description added
-- quest 29391 - Guardians of Hyjal: Call of the Ancients - updated
-  - description added
-- quest 29401 - Blown Away - updated
-  - description added
-  - reward money added (12s)
-  - reward items: +1
-- quest 29406 - The Lesson of the Sandy Fist - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29409 - The Disciple's Challenge - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29412 - Blown Away - updated
-  - description added
-  - reward money added (12s)
-  - reward items: +1
-- quest 29414 - The Way of the Tushui - updated
-  - description added
-  - reward money added (50c)
-  - reward choices: +3
-- quest 29417 - The Way of the Huojin - updated
-  - description added
-  - reward money added (75c)
-  - reward choices: +3
-- quest 29418 - Kindling the Fire - updated
-  - description added
-  - reward money added (75c)
-- quest 29419 - The Missing Driver - updated
-  - description added
-  - reward money added (50c)
-  - reward items: +2
-- quest 29420 - The Spirit's Guardian - updated
-  - description added
-  - reward money added (20c)
-- quest 29421 - Only the Worthy Shall Pass - updated
-  - description added
-  - reward money added (75c)
-  - reward items: +1
-  - reward choices: +3
-- quest 29422 - Huo, the Spirit of Fire - updated
-  - description added
-  - reward money added (75c)
-- quest 29423 - The Passion of Shen-zin Su - updated
-  - description added
-  - reward money added (50c)
-  - reward choices: +4
-- quest 29424 - Items of Utmost Importance - updated
-  - description added
-  - reward money added (50c)
-- quest 29437 - The Fallen Guardian - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29439 - The Call of the World-Shaman - updated
-  - description added
-- quest 29440 - The Call of the World-Shaman - updated
-  - description added
-- quest 29452 - Your Time Has Come - updated
-  - description added
-  - reward money added (4g 70s)
-- quest 29453 - Your Time Has Come - updated
-  - description added
-  - reward money added (4g 70s)
-- quest 29475 - Goblin Engineering - updated
-  - description added
-- quest 29477 - Gnomish Engineering - updated
-  - description added
-- quest 29481 - Elixir Master - updated
-  - description added
-- quest 29521 - The Singing Pools - updated
-  - description added
-  - reward money added (25c)
-- quest 29522 - Ji of the Huojin - updated
-  - description added
-  - reward money added (13c)
-- quest 29523 - Fanning the Flames - updated
-  - description added
-  - reward money added (75c)
-  - reward choices: +3
-- quest 29524 - The Lesson of Stifled Pride - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29527 - War on the Ramparts - updated
-  - description added
-  - reward money added (5g 40s)
-  - reward choices: +4
-- quest 29528 - War on the Ramparts - updated
-  - description added
-  - reward money added (5g 40s)
-  - reward choices: +4
-- quest 29529 - Demons in the Citadel - updated
-  - description added
-  - reward money added (5g 40s)
-- quest 29530 - Demons in the Citadel - updated
-  - description added
-  - reward money added (5g 40s)
-- quest 29531 - Kill Stuff - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29535 - Make Them Bleed - updated
-  - description added
-  - reward money added (5g 80s)
-- quest 29536 - Heart of Rage - updated
-  - description added
-  - reward money added (5g 80s)
-  - reward choices: +3
-- quest 29537 - Mind the Gap - updated
-  - description added
-  - reward money added (5g 80s)
-  - reward choices: +4
-- quest 29538 - Make Them Bleed - updated
-  - description added
-  - reward money added (5g 80s)
-- quest 29539 - Heart of Rage - updated
-  - description added
-  - reward money added (5g 80s)
-  - reward choices: +3
-- quest 29540 - The Breaker - updated
-  - description added
-  - reward money added (5g 80s)
-  - reward choices: +4
-- quest 29541 - Take Care of It - updated
-  - description added
-- quest 29543 - Invading the Citadel - updated
-  - description added
-  - reward money added (28s)
-- quest 29547 - The King's Command - updated
-  - description added
-  - reward money added (98s)
-- quest 29552 - Critical Condition - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +5
-- quest 29553 - The Missing Admiral - updated
-  - description added
-  - reward money added (4g 90s)
-- quest 29555 - The White Pawn - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward items: +1
-- quest 29556 - Hozen Aren't Your Friends, Hozen Are Your Enemies - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29558 - The Path of War - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29559 - Freeing Our Brothers - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29560 - Ancient Power - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29562 - Jailbreak - updated
-  - description added
-  - reward money added (4g 90s)
-- quest 29563 - Lost in Action - updated
-  - description added
-- quest 29564 - A Brother Betrayed - updated
-  - description added
-  - reward money added (6g 60s)
-- quest 29565 - The Heart of the Matter - updated
-  - description added
-  - reward money added (6g 60s)
-  - reward choices: +3
-- quest 29567 - Stalk the Stalker - updated
-  - description added
-  - reward money added (6g 60s)
-  - reward choices: +2
-- quest 29568 - A Necessary Evil - updated
-  - description added
-  - reward money added (6g 60s)
-- quest 29570 - Rescuing the Expedition - updated
-  - description added
-  - reward money added (13g 20s)
-- quest 29573 - Safety is Job One - updated
-  - description added
-  - reward money added (7g)
-- quest 29574 - Intriguing Specimens - updated
-  - description added
-  - reward money added (7g)
-- quest 29575 - Undercutting the Competition - updated
-  - description added
-  - reward money added (7g)
-- quest 29576 - An Air of Worry - updated
-  - description added
-  - reward money added (4g 90s)
-- quest 29577 - Ashyo's Vision - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 29578 - Defiance - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29579 - Rally the Survivors - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29580 - Orchard-Supplied Hardware - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29581 - The Golden Dream - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 29583 - Eckert the Mad - updated
-  - description added
-  - reward money added (36s)
-- quest 29585 - Spitfire - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29586 - The Splintered Path - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29587 - Unbound - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29590 - The Dead Watcher - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 29591 - Raging Spirits - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 29593 - Hitting Them Where It Hurts - updated
-  - description added
-  - reward money added (8g 10s)
-- quest 29594 - Hitting Them Where It Hurts - updated
-  - description added
-  - reward money added (8g 10s)
-- quest 29595 - Everything Will Be Alright - updated
-  - description added
-- quest 31235 - Nope Nope Nope - updated
-  - description added
-  - reward money added (11g 40s)
 
 ## [0.2.201] - 2026-10-20
 
