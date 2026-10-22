@@ -4,6 +4,235 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.218] - 2026-10-22
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,352 quests, 40 NPCs, 1 object
+- quest 30181 - Mushan Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30182 - Fox Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30183 - Stalker Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30184 - Mushan Mastery: Darkhide - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30185 - Tortoise Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30186 - Parental Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30187 - Flight Training: In Due Course - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30188 - Riding the Skies - updated
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +1
+- quest 30189 - A Lovely Apple for Ella - updated
+  - reward items: +1
+- quest 30190 - Sprite Plight - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30191 - Steer Clear of the Beer Here - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30192 - My Town, It's on Fire - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30193 - Meating Expectations - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30194 - Encroaching Storm - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30195 - Blooming Blossoms - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30196 - Lushroom Rush - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30200 - In Ashen Webs - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30204 - That's Not a Rock! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30205 - Runelocked - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30206 - Runes in the Ruins - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30225 - The Ashweb Matriarch - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30226 - Blood on the Rise - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30227 - Wulon, the Granite Sentinel - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30228 - Troubling the Troublemakers - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30229 - The Greater Danger - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30230 - Re-Reclaim - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30231 - Pomfruit Pickup - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30232 - Ruffling Some Feathers - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30233 - Cracklefang - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30234 - Vicejaw - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30235 - Quid Pro Quo - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30236 - Aetha - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30237 - The Pandaren Uprising Relived - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30238 - Return to Rest - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30239 - Lao-Fe the Slavebinder - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30240 - Survival Ring: Flame - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30241 - Warn Stoneplow - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30242 - Survival Ring: Blades - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30243 - Mantid Under Fire - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30244 - Along the Serpent's Spine - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30245 - Lost Scouts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30246 - Upon the Ramparts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30248 - The Butcher - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30249 - Under the Setting Sun - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30251 - Vyraxxis, the Krik'thik Swarm-Lord - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30252 - A Helping Hand - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30254 - Learn and Grow II: Tilling and Planting - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30255 - Learn and Grow III: Tending Crops - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30256 - Learn and Grow IV: Harvesting - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30257 - Learn and Grow V: Halfhill Market - updated
+  - description added
+  - reward money added (5g 10s)
+- quest 30258 - Mung-Mung's Vote I: A Hozen's Problem - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30259 - Mung-Mung's Vote II: Rotten to the Core - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30260 - Growing the Farm I: The Weeds - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30261 - Roll Club: Serpent's Spine - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 30263 - Clearing in the Forest - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30264 - Enemy at the Gates - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 30265 - Sparkle in the Eye - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30266 - Bloodied Skies - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30267 - Watery Woes - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30268 - The Murksweats - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30269 - Unsafe Passage - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30270 - Blinding the Riverblades - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30271 - Sha Can Awe - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30272 - Striking the Rain - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30273 - In the House of the Red Crane - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30274 - The Arcanic Oubliette - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30275 - A Crocolisk Tale - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30277 - The Crumbling Hall - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 30280 - The Thunder Below - updated
+  - description added
+  - reward money added (45g 60s)
+
 ## [0.2.217] - 2026-10-22
 
 Data from the PandaQuest portal.
@@ -1569,232 +1798,6 @@ Data from the PandaQuest portal.
 - quest 31235 - Nope Nope Nope - updated
   - description added
   - reward money added (11g 40s)
-
-## [0.2.210] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,809 quests, 40 NPCs, 1 object
-- quest 11041 - A Job Unfinished... - updated
-  - description added
-  - reward choices: +4
-- quest 29281 - Additional Armaments - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29282 - Well Armed - updated
-  - description added
-  - reward money added (2g 35s)
-- quest 29283 - Calling the Ancients - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29284 - Aid of the Ancients - updated
-  - description added
-  - reward money added (2g 35s)
-- quest 29285 - Alignment - updated
-  - description added
-  - reward money added (28g 20s)
-  - reward items: +1
-- quest 29287 - Peaked Interest - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29288 - Starting Young - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29290 - Fire in the Skies - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29293 - Singed Wings - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29295 - The Bigger They Are - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29296 - Territorial Birds - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29297 - Bye Bye Burdy - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29298 - A Smoke-Stained Locket - updated
-  - description added
-- quest 29299 - Some Like It Hot - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29302 - Unlocking the Secrets Within - updated
-  - description added
-- quest 29303 - Tragedy and Family - updated
-  - description added
-- quest 29304 - The Dogs of War - updated
-  - description added
-  - reward money added (9g 40s)
-- quest 29305 - Strike at the Heart - updated
-  - description added
-  - reward money added (18g 80s)
-- quest 29307 - Heart of Flame - updated
-  - description added
-  - reward money added (28g 20s)
-- quest 29308 - Heart of Flame - updated
-  - description added
-  - reward money added (28g 20s)
-- quest 29309 - The Stuff of Legends - updated
-  - description added
-  - reward money added (28g 20s)
-  - reward items: +1
-- quest 29310 - The Tipping Point - updated
-  - description added
-- quest 29311 - The Rest is History - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward items: +1
-- quest 29312 - The Stuff of Legends - updated
-  - description added
-  - reward money added (28g 20s)
-  - reward items: +1
-- quest 29313 - The Secret to Perfect Kimchi - updated
-  - description added
-  - reward money added (2g)
-- quest 29314 - Remembering the Ancestors - updated
-  - description added
-  - reward money added (2g)
-- quest 29315 - Fungus Among Us - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 29316 - Back to Basics - updated
-  - description added
-  - reward money added (85s)
-- quest 29319 - Tadpole Terror - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29320 - Like Pike? - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29321 - Happy as a Clam Digger - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29322 - Time for Slime - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29323 - Stocking Up - updated
-  - description added
-  - reward money added (2g)
-  - reward items: +1
-- quest 29324 - The Sister's Pendant - updated
-  - description added
-  - reward money added (2g)
-  - reward items: +1
-- quest 29325 - A Slippery Snack - updated
-  - description added
-  - reward money added (2g)
-  - reward items: +1
-- quest 29326 - The Nordrassil Summit - updated
-  - description added
-  - reward money added (7g 10s)
-- quest 29327 - Elemental Bonds: Doubt - updated
-  - description added
-- quest 29328 - Elemental Bonds: Desire - updated
-  - description added
-- quest 29329 - Elemental Bonds: Patience - updated
-  - description added
-- quest 29330 - Elemental Bonds: Fury - updated
-  - description added
-- quest 29331 - Elemental Bonds: The Vow - updated
-  - description added
-  - reward money added (37g 60s)
-  - reward choices: +4
-- quest 29332 - Lily, Oh Lily - updated
-  - description added
-  - reward money added (9g)
-- quest 29333 - Escargot A Go-Go - updated
-  - description added
-  - reward money added (9g)
-- quest 29334 - Roach Coach - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29335 - Into Slashing Winds - updated
-  - description added
-- quest 29336 - Into Coaxing Tides - updated
-  - description added
-- quest 29337 - Into Constant Earth - updated
-  - description added
-- quest 29338 - Into Unrelenting Flame - updated
-  - description added
-- quest 29342 - Cold Water Fishing - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29344 - Fish fer Squirky - updated
-  - description added
-  - reward money added (2g)
-  - reward items: +1
-- quest 29345 - Pond Predators - updated
-  - description added
-  - reward money added (9g)
-  - reward items: +1
-- quest 29347 - Live Bait - updated
-  - description added
-  - reward money added (8g 20s)
-  - reward items: +1
-- quest 29348 - The Race to Restock - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29351 - A Round for the Guards - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29352 - A Fowl Shortage - updated
-  - description added
-  - reward money added (5g 60s)
-- quest 29353 - Keepin' the Haggis Flowin' - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29354 - Shiny Baubles - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29355 - Can't Get Enough Spice Bread - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29356 - I Need to Cask a Favor - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29357 - Spice Bread Aplenty - updated
-  - description added
-  - reward money added (2g)
-- quest 29358 - Pining for Nuts - updated
-  - description added
-  - reward money added (11g)
-- quest 29359 - An Old Favorite - updated
-  - description added
-  - reward money added (9g 40s)
-  - reward items: +1
-- quest 29360 - Would You Like Some Flies With That? - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29362 - "Magic" Mushrooms - updated
-  - description added
-  - reward money added (9g)
-- quest 29363 - Mulgore Spice Bread - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29364 - Corn Mash - updated
-  - description added
-  - reward money added (9g)
-- quest 29365 - Perfectly Picked Portions - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 29387 - Guardians of Hyjal: Firelands Invasion! - updated
-  - description added
-- quest 29388 - Guardians of Hyjal: Firelands Invasion! - updated
-  - description added
-- quest 29389 - Guardians of Hyjal: Firelands Invasion! - updated
-  - description added
-- npc 53422 - Dragonwrath, Tarecgosa's Rest - updated
-  - coordinates: 3 spawn points added in Stormwind City
-  - coordinates: 2 spawn points added in Orgrimmar
 
 ## [0.2.201] - 2026-10-20
 
