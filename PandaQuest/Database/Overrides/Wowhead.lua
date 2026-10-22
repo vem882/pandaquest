@@ -34003,6 +34003,528 @@ ns.Overrides.wowhead = {
                 "task.",
             rewardMoney = 456000,
         },
+        [30281] = {
+            description = "<He leans over and draws a picture of what can only be a mogu, points towards " ..
+                "the lake to the west, drags the blunt side of his dagger across his throat, and looks at " ..
+                "you expectantly. It seems he wants you to kill mogu at Whitepetal Lake.>",
+            rewardMoney = 114000,
+        },
+        [30282] = {
+            description = "The mogu have erected their filthy banners around the lake to the west, " ..
+                "claiming it as their own. Take this torch and show them what we think of their banners.",
+            rewardMoney = 114000,
+        },
+        [30283] = {
+            description = "Sometimes I feel sorry for these mogu... maybe ripping out the spirits of " ..
+                "other races is just their way of coping with family issues at home? Maybe we should be " ..
+                "more sympathetic to where all this aggression stems from?\n\nOr we could just smash all " ..
+                "their soul-stealing ritual objects down at the lake. That sounds more fun to me " ..
+                "personally.",
+            rewardMoney = 114000,
+        },
+        [30284] = {
+            description = "The water has been frothing with danger this day! Some sort of swarming, " ..
+                "meat-eating fishy nastiness has taken up residence in our lake! Deplorable. And just " ..
+                "when I was considering stripping down to my nothings to take a mid-day dip!\n\nYou are " ..
+                "adept in the ways of slaughtering any manner of nasty, are you not? Would you put your " ..
+                "skills to use this day, in the name of pandaren everywhere desiring a swim?\n\nIt's a " ..
+                "truly noble cause, especially with me among their ranks!",
+            rewardMoney = 114000,
+        },
+        [30285] = {
+            description = "There were some scouting reports unaccounted for after the attack. If we're " ..
+                "lucky, they're still out in the village, but the mogu may have gotten their hands on " ..
+                "some of them as well.\n\nIf you could bring back any scouting reports you find, it would " ..
+                "definitely put my mind at ease. We can't afford to let the mogu in on our positions or " ..
+                "any of the artifacts we've found, lest the men be in even more danger than they already " ..
+                "are.",
+            rewardMoney = 114000,
+        },
+        [30286] = {
+            description = "Many villagers are cornered and scared, unable to defend themselves. You will " ..
+                "need to defend them. Rescue them.\n\nGo quickly friend, save as many as you can!",
+            rewardMoney = 114000,
+        },
+        [30287] = {
+            description = "Leven sent Rook here to stop mogu, but there are more than Rook can kill " ..
+                "alone.\n\nYou help? Rook will tell Leven you helped. Promise.",
+            rewardMoney = 114000,
+        },
+        [30288] = {
+            description = "I don't know if you noticed, but my town is on fire... again.\n\nWe have water " ..
+                "buckets all over town, but no one can get out to put out the fires. Please, please, help " ..
+                "us!",
+            rewardMoney = 114000,
+        },
+        [30289] = {
+            description = "Mogu stealing peoples minds! Making them do evil things.\n\nDon't kill them, " ..
+                "just kill the mogu, then they forget about all the mogu mind stealing and stop being " ..
+                "evil. You should fix people like Rook is.",
+            rewardMoney = 114000,
+        },
+        [30290] = {
+            description = "Mogu stone dog creatures chasing villagers and hurting them. Rook try to smash " ..
+                "some, but they too fast.\n\nYou help smash some too?",
+            rewardMoney = 114000,
+        },
+        [30291] = {
+            description = "I've been talking to Tantan here... again... and he insists that fishing is " ..
+                "some kind of fabulous. I was skeptical, but I gave it another go. I'm not a big fan of " ..
+                "that whole holding a stick and waiting method though, so I tried something a bit more " ..
+                "direct.\n\nWould you be a doll and go collect any of the still intact fish floating " ..
+                "belly up in the lake for me?",
+            rewardMoney = 114000,
+        },
+        [30292] = {
+            description = "The mogu are taking over the minds of the saurok at the lake to our west and " ..
+                "turning them against us! The thing is, they were already against us, so I'm not sure " ..
+                "they really thought this thing through fully.\n\nAnyway, Anji's the fighter in this " ..
+                "pair, I'm more the lover, so I'm looking for someone to do all the weapon swinging and " ..
+                "spell flinging and war crying and such.\n\nCan you go kill some saurok for me?",
+            rewardMoney = 114000,
+        },
+        [30293] = {
+            description = "The Shao-Tien Mindbenders have taken over the minds of our defenders down at " ..
+                "Whitepetal Lake to the west. Get down there and kill the mogu that are controlling them, " ..
+                "but don't kill the defenders! Killing their captors should free them from their mind " ..
+                "control.\n\nSooner would be better. Anji might try to go down there to help soon, and " ..
+                "her ability to restrain herself when in the heat of things is not one of the qualities I " ..
+                "married her for.",
+            rewardMoney = 114000,
+        },
+        [30296] = {
+            description = "Big mogu leader is here! Up behind village. If we kill big mogu leader, Leven " ..
+                "be happy with us for sure!\n\nYou been good at helping Rook. Want to help more maybe? " ..
+                "Please?",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30297] = {
+            description = "Big mogu leader is here! Up behind village. If we kill big mogu leader, Leven " ..
+                "be happy with us for sure!\n\nYou been good at helping Rook. Want to help more maybe? " ..
+                "Please?",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30298] = {
+            description = "The mogu think they can inhabit these ruins uncontested. Let's show them the " ..
+                "error in their ways.",
+            rewardMoney = 114000,
+        },
+        [30299] = {
+            description = "The mogu have forced spirits into their old statues to bring them to life, " ..
+                "control them, and turn them against us.\n\nThe only way to free the bound spirits is to " ..
+                "destroy their vessels.",
+            rewardMoney = 114000,
+        },
+        [30300] = {
+            description = "The mogu have taken prisoners. They'll be tortured or worse.\n\nFind any way " ..
+                "you can to free them from their cages.",
+            rewardMoney = 114000,
+        },
+        [30301] = {
+            description = "There is no more sure message we can send them then to burn the tents the " ..
+                "sleep in.\n\nScour the ruins. Destroy every tent you find.",
+            rewardMoney = 114000,
+        },
+        [30302] = {
+            description = "Scouts spotted a Shao-Tien Imperion entering the Guo-Lai Halls. I need someone " ..
+                "I can trust to make sure he doesn't come out of there alive.\n\nI think you're the " ..
+                "<class> for the job.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30304] = {
+            description = "Hey! You know what awesome thing happened to me this morning?\n\nI was " ..
+                "strolling through the ruins with Anji, eyes on the ground so I wouldn't step on anymore " ..
+                "of those creepy spider pods, when one of the statues came to life and tried to smash " ..
+                "me!\n\nAnji ended up doing the smashing. But I'm not satisfied. I think that you should " ..
+                "go out there and smash all the statues, whether they're moving or not. It's the only way " ..
+                "to be sure.",
+            rewardMoney = 114000,
+        },
+        [30305] = {
+            description = "You know He Softfoot? Sneaky guy, don't talk much. He put traps all over ruins " ..
+                "for mogu. He said Rook just need to trick mogu into traps. Rook don't really know " ..
+                "how.\n\nMaybe you do it? You find traps, you get bad guys into traps? Can you not tell " ..
+                "He though, please?",
+            rewardMoney = 114000,
+        },
+        [30306] = {
+            description = "We have some fresh trainees that are far from being a danger to you, but in " ..
+                "numbers, they may prove enough of a challenge. And if not, they could use the lesson in " ..
+                "humility.\n\nStep into the battle ring when you're ready. Don't go easy on them.",
+            rewardMoney = 114000,
+        },
+        [30307] = {
+            description = "Good to have you with us, <class>. If you're joining the fight, I need more " ..
+                "men out up at the Golden Stair to clear out the mogu setting up base there.\n\nCan I " ..
+                "count on you?",
+            rewardMoney = 114000,
+        },
+        [30308] = {
+            description = "Leven always says the only good quilen is a dead quilen, and I'm inclined to " ..
+                "agree. You here to aid the cause?",
+            rewardMoney = 114000,
+        },
+        [30309] = {
+            description = "The mogu have been sending their narcissistic stone effigies onto our " ..
+                "battlefield today. They're brining them to life up on the Golden Stair.\n\nThe bigger " ..
+                "they are, the harder we hit'm. You in?",
+            rewardMoney = 114000,
+        },
+        [30310] = {
+            description = "The mogu have bent the will of sky serpents and turned them against us.\n\nThe " ..
+                "defenders won't fare well against them, but you would. Head northwest towards the Golden " ..
+                "Stair and remove them from the sky.",
+            rewardMoney = 114000,
+        },
+        [30312] = {
+            description = "A foolish contingent attempted to mount an offensive on the Golden Stair " ..
+                "through the eastern pass, and were bombarded by cannons. Those that made it back are in " ..
+                "bad shape, and there are still wounded out in the field.\n\nHere are some bandages. Use " ..
+                "these, or any other healing skills you possess, and help get our wounded defenders back " ..
+                "to safety.\n\nPlease hurry, there is little time.",
+            rewardMoney = 114000,
+        },
+        [30313] = {
+            description = "<He looks down at the dead fog creature at his feet, looks up at you, then " ..
+                "points out into the mists surrounding the lake. It seems he wants you to find and kill " ..
+                "more of these fog creatures.>",
+            rewardMoney = 114000,
+        },
+        [30314] = {
+            description = "<He looks down at the dead saurok at his feet, looks up at you, then points " ..
+                "out down the lake shore. It seems he wants you to find and kill more of these saurok.>",
+            rewardMoney = 114000,
+        },
+        [30317] = {
+            description = "How'd you like to make yourself useful?\n\nThe season's been awful dry lately. " ..
+                "I need someone to water the crops out in the Heartland. Here's the thing: I need you to " ..
+                "water ALL of the crops.\n\nI keep a few kites with Wing Nga, the flightmaster across the " ..
+                "way. Grab one of those kites, then throw water on any areas that look dry and dusty.",
+            rewardMoney = 114000,
+        },
+        [30318] = {
+            description = "Say, you there! <name>, was it? I've got a problem, and I need someone with " ..
+                "better legs than mine to help me solve it.\n\nMy prize-winning chicken has flown the " ..
+                "coop! Now she's out in the open, mingling with the other hens, wild birds, and... <gulp> " ..
+                "ill-intentioned roosters.\n\nMy farm is west of here, south of the Skyrange. Could you " ..
+                "find her, and bring her back to me?",
+            rewardMoney = 114000,
+        },
+        [30319] = {
+            description = "One of my farmhands, Wika-Wika, has been tilling the soil in my westernmost " ..
+                "field. I understand he's had some problems with pests.\n\nHe's got plenty of pesticide " ..
+                "to spray the bugs that eat my crops, but I'm afraid he has no way to deal with the " ..
+                "marmots.\n\nWould you lend him a hand? With rampant hozen and virmen attacks, I can't " ..
+                "afford to lose crops to simple pests.",
+            rewardMoney = 114000,
+        },
+        [30320] = {
+            description = "I came upon one of the Shao-Tien Soul-Render's daggers. It radiates a strong " ..
+                "magic. I've been told it should allow you to enter their spirit vortexes.\n\nThe mogu " ..
+                "use these to harvest spirits and bind them to their will, but I'm hoping you can use it " ..
+                "to free the spirits.\n\nEnter any of the spirit vortexes you can find up on the Golden " ..
+                "Stair, and free all the captive spirits you find.",
+            rewardMoney = 114000,
+        },
+        [30321] = {
+            description = "Ssshhay... d'you know that guy over on the farm, with the... the *hic*... the " ..
+                "weed problem? Gai Lan, I think his name was. I love that guy, man.\n\nAnywayshh, he said " ..
+                "that if I *hic* sent an adventurer over to go pick his weeds, he'd get me some " ..
+                "ale.\n\nIt's jusht a few weeds, not too many, probably.\n\n*hic*",
+            rewardMoney = 114000,
+        },
+        [30322] = {
+            description = "I love working in the market, although there's one aspect of this job I really " ..
+                "dislike: collecting debts.\n\nWhile most pandaren debts are simply due to laziness, " ..
+                "there are a few unsavory characters around town who simply don't want to pay, and " ..
+                "there's some who are just too poor.\n\nA few people here in town owe me money. Could you " ..
+                "go talk to them, and remind them about what they owe?",
+            rewardMoney = 114000,
+        },
+        [30323] = {
+            description = "A few weeks ago, a group of those jumpy little Springtail virmen broke into my " ..
+                "lockbox and stole several handfuls of my jewelry. I've since found a few pieces, but " ..
+                "they still have most of my collection.\n\nIf you're headed up to the Springtail Crag, in " ..
+                "the cliffs to the north, you should keep an eye out for them. I'd love to get my jewelry " ..
+                "back.",
+            rewardMoney = 114000,
+        },
+        [30324] = {
+            description = "Not all hozen are the same. Chee-Chee's tribe was forest hozen... came from " ..
+                "Jade Forest. Pretty easy to get along with.\n\nThe Kunzen invaders... they come from " ..
+                "mountains, far to the north. Not nearly as nice as Chee-Chee.\n\nThey come into our " ..
+                "green land, take our things, leave big mess behind.\n\nChee-Chee wants to kill them. You " ..
+                "like to help?",
+            rewardMoney = 114000,
+        },
+        [30325] = {
+            description = "I've been watching those Kunzen hozen, and I've noticed a consistent pattern. " ..
+                "Whenever they're getting ready to attack, they participate in strange, barbaric rituals " ..
+                "around their totem.\n\nIf we can disrupt this ritual, not only will we put off any " ..
+                "impending attacks, we can deal a huge blow to their morale! So get in there, rough them " ..
+                "up, and make as much of a mess as possible!",
+            rewardMoney = 114000,
+        },
+        [30326] = {
+            description = "I've heard people talk about the hozen like they're just some tribe of " ..
+                "barely-functional idiots... but that's not true! They have brains, too - they just don't " ..
+                "all like to use them that much.\n\nI've heard that the Kunzen tribe has two chiefs - one " ..
+                "in charge of fighting, and one in charge of stories, lore, and history.\n\nWhat I " ..
+                "wouldn't give to see what kind of stories they tell...",
+            rewardMoney = 114000,
+        },
+        [30327] = {
+            description = "I, umm... well...\n\nOh, never mind. It was a stupid idea.\n\nIt's just that, " ..
+                "I was thinking that maybe we can stop the Kunzen hozen from attacking us without having " ..
+                "to, you know... KILL anything. I noticed a few ropes on the side of the mountain. I " ..
+                "think they're using them to climb down to our farms and...\n\nNo, forget it. It was a " ..
+                "silly idea anyways.",
+            rewardMoney = 114000,
+        },
+        [30328] = {
+            description = "One of my most popular recipes is the Thousand-Year Dumpling, which is filled " ..
+                "with preserved vegetables.\n\nI normally let the vegetables ferment in a hole underneath " ..
+                "my house, but when I looked for them this morning, they were gone!\n\nI blame those " ..
+                "thieving virmen.\n\nBring them back, and I'll let you help me cook!",
+            rewardMoney = 114000,
+        },
+        [30329] = {
+            description = "A certain few pandaren around here prefer their dishes unbearably spicy. " ..
+                "Unfortunately, my access to such peppers is limited.\n\nThe Kunzen hozen, in the " ..
+                "mountains to the west, often carry cindergut peppers. A few of those and I'll be set for " ..
+                "a few days.\n\nSay, could you collect some for me? You might want to wear gloves if " ..
+                "you'll be handling them directly.",
+            rewardMoney = 114000,
+        },
+        [30330] = {
+            description = "I like to bake with truffles... when I can find them. They only grow up on the " ..
+                "Skyrange, and in very, very scarce amounts.\n\nThey're a fantastic ingredient, but we " ..
+                "can't risk over-farming them. That's why we need to replace what we've taken. Bring me a " ..
+                "handful of adult truffles, and plant some of these spores in their place.",
+            rewardMoney = 114000,
+        },
+        [30331] = {
+            description = "Have you ever tried Mushan Tail Stew? Chances are, if you have, that it was " ..
+                "stringy and tasteless. You see, there's a trick to making the perfect Mushan Tail Stew: " ..
+                "you need to cook it at high elevation.\n\nI've already gathered the ingredients. Take " ..
+                "this pot up to the Kunzen Village, up in the mountains to the west, and prepare the stew " ..
+                "over their bonfire.",
+            rewardMoney = 114000,
+        },
+        [30332] = {
+            description = "You know what? I think I want to grill up some goatsteak today.\n\nNo, not " ..
+                "from the puny little shaghorns they keep around here. They don't have nearly enough fat " ..
+                "on them.\n\n<The chef pats his voluminous belly.>\n\nYou think I got to this size eating " ..
+                "no-fat-havin' goats?\n\nNow, the shaghorns up on the Skyrange, to the west... those'll " ..
+                "do just fine.",
+            rewardMoney = 114000,
+        },
+        [30333] = {
+            description = "Like any farming community, we have the occasional virmen troubles.\n\nThe " ..
+                "most powerful Springtail virmen live high up in the cliffs to the north, and only come " ..
+                "down when they run out of veggies to nibble on.\n\nFrankly, I've dealt with virmen " ..
+                "before. They're nothing but a pest that must be kept in check, and there's no better way " ..
+                "to do that than by killing their warren-mother. Easy as that.",
+            rewardMoney = 114000,
+        },
+        [30334] = {
+            description = "The hozen, up in the mountains to the west, continue to steal vegetables from " ..
+                "my fellow farmers. Being so close to Halfhill, I very rarely suffer hozen attacks, but " ..
+                "my friends have not been so lucky.\n\nSeems to me like they steal way more than they can " ..
+                "eat. If you can find any intact vegetables up there in those mountains... steal them " ..
+                "back!",
+            rewardMoney = 114000,
+        },
+        [30335] = {
+            description = "The Kunzen hozen, up in the mountains to the west, have been acting up, " ..
+                "lighting their fires and shouting their chants. Based on what I've heard and seen around " ..
+                "here, that means that a ravage is coming.\n\nThere's not much we can do to stop the " ..
+                "ravage, but we can at least thin their numbers before they attack.",
+            rewardMoney = 114000,
+        },
+        [30336] = {
+            description = "From what I've gathered, the Kunzen hozen have two chiefs. One is harmless - " ..
+                "he deals with potions, medicines, and ancient fables. The other one is in charge of the " ..
+                "Kunzen's hunters - and the only thing they've been hunting lately is our crops.\n\nThe " ..
+                "Hunter-Chief is a problem waiting to be solved. I'm sure the local farmers would be " ..
+                "grateful if you went up there and, you know, \"took care\" of him.",
+            rewardMoney = 114000,
+        },
+        [30337] = {
+            description = "The hozen steal from us, and we keep stealing our stuff back. It has to stop " ..
+                "sometime.\n\n< Farmer Yoon hands you a barrel of fireworks.>\n\nFind some of our stolen " ..
+                "supplies in their mountain camp to the west, and place these fireworks beside them. " ..
+                "Hopefully, if they see the explosions, they'll think our supplies are defective and stop " ..
+                "stealing altogether.\n\nIt's worth a shot, right?",
+            rewardMoney = 114000,
+        },
+        [30338] = {
+            description = "For the life of me, I can't figure out why the mogu would have built all their " ..
+                "statues and such down in that lake. I'm sure there wasn't always water down there, but " ..
+                "it still seems wickedly inconvenient should it ever have rained.\n\nAh well, who's to " ..
+                "fathom the strange intentions of the mogu...\n\nWould you be so kind as to swim down " ..
+                "there and bring back any artifacts that seem even vaguely carry-able? I'd certainly " ..
+                "appreciate it.",
+            rewardMoney = 114000,
+        },
+        [30339] = {
+            description = "Some of the best fishin' in all of pandaria in this lake right here. I brought " ..
+                "enough brew to last me all day, but I didn't think to bring any bait.\n\nWho can really " ..
+                "remember such things?\n\nIf you'd be willing to gather me some bait along the shore, I'd " ..
+                "be willin' to think on you favorably when it comes time to price my merchandise. Oh, and " ..
+                "I'll pay you too, of course.\n\nHow's that sound?",
+            rewardMoney = 114000,
+        },
+        [30340] = {
+            description = "I came out for a beautiful day of fishin', but I didn't think to bring a pole. " ..
+                "There are so many things to remember for fishin', I just can't keep it all in my " ..
+                "head.\n\nThose reeds along the river look alright for makin' a pole out of. If you'd " ..
+                "gather me some number of them, I'd be willin' to think on you favorably when it comes " ..
+                "time to price my merchandise. Oh, and I'll pay you too, of course.\n\nHow's that sound?",
+            rewardMoney = 114000,
+        },
+        [30341] = {
+            description = "<He looks down at the dead mogu scout at his feet, looks up at you, then " ..
+                "points out out down the lake shore. It seems he wants you to find and kill more of these " ..
+                "mogu scouts.>",
+            rewardMoney = 114000,
+        },
+        [30342] = {
+            description = "I was kicking the water for fun again when one of those vicious crocolisks " ..
+                "lunged out to try to bite my foot off! Rude! I have proceeded to rest my weary soles a " ..
+                "few feet farther from the water, but I already look back on my water-kicking days " ..
+                "longingly.\n\nWould you be so kind as to kill a crocolisk or eight for me? I assure you " ..
+                "they deserve it for frightening me though.",
+            rewardMoney = 114000,
+        },
+        [30344] = {
+            description = "I wonder if I could bother you for another task. My daughter, the good " ..
+                "Sentinel Commander Lyalia here, refuses to let me go into the field.\n\nI have spent " ..
+                "everyday in that oubliette staring at the ruins to our north, itching to " ..
+                "investigate.\n\nIf we are where I suspect we are those ruins could contain the key we " ..
+                "need to finding the fabled Pools of Youth!\n\nPlease, <class>! Go to those ruins and " ..
+                "salvage any tablets that still have writing on them.",
+            rewardChoices = {{81522, 1}, {81523, 1}, {81524, 1}, {81525, 1}, {81526, 1}},
+            rewardMoney = 102000,
+        },
+        [30346] = {
+            description = "Perhaps these mogu know where the pools are.\n\nOur scouts have reported " ..
+                "seeing a commander along the southern side of the Ruins of Dojan.\n\nKill him and take " ..
+                "whatever information he is carrying. They should lead you to the pool.",
+            rewardMoney = 102000,
+        },
+        [30347] = {
+            description = "North! Go north to the Pools of Youth. Get some of the water but be on your " ..
+                "guard.\n\nThe mogu list this as a \"high value\" target. Kang Bramblestaff will meet you " ..
+                "there if he has not already arrived by your side.",
+            rewardChoices = {{81537, 1}, {81538, 1}, {81539, 1}, {81540, 1}, {81541, 1}},
+            rewardMoney = 102000,
+        },
+        [30348] = {
+            description = "Something is... off. The water feels strange.\n\nWhen we arrived here I felt " ..
+                "the presence of the Light, strong and vibrant, far to the north.\n\nI thought it would " ..
+                "be the Pools of Youth. But this... this water is tainted somehow. Stained with mogu " ..
+                "magics.\n\nI think it best I try only a sip and we see what happens.",
+            rewardMoney = 102000,
+        },
+        [30349] = {
+            description = "While you were at the ruins dusting off tablets for my father I lost five " ..
+                "scouts to wandering mogu patrols.\n\nThese creatures apparently have little interest in " ..
+                "peace and are about as trustworthy as the Horde.\n\nThey are too numerous and we are too " ..
+                "weak, however.\n\nGo to the ruins west of here and cull the mogu numbers. They won't be " ..
+                "expecting a <class>.",
+            rewardChoices = {{84281, 1}, {84282, 1}, {84283, 1}, {84284, 1}, {84285, 1}},
+            rewardMoney = 102000,
+        },
+        [30350] = {
+            description = "The hidden master may have to wait. Look at these people, $p.\n\nThey are so " ..
+                "THIN! They must be starving.\n\nYou know what we need? A big steaming bowl of Squirmy " ..
+                "Delight.\n\nIf you find yourself near a river, try rounding up some intact skitterer " ..
+                "glands and I'll cook up a batch.",
+            rewardItems = {{88388, 1}},
+            rewardMoney = 102000,
+        },
+        [30351] = {
+            description = "The mogu really like their poisons and curses. Mama Bramblestaff always said " ..
+                "lotus tea cures any mogu curse.\n\nI saw some imperial lotus plants in the nearby Ruins " ..
+                "of Dojan. We should go gather some of their leaves and keep them on hand just in case " ..
+                "the mogu get unruly.\n\nAlso, this will give me a chance to introduce my fists to some " ..
+                "mogu faces.",
+            rewardItems = {{88532, 1}},
+            rewardMoney = 102000,
+        },
+        [30352] = {
+            description = "Thing about hunting birds is you need ammo - and I ain't got any. Thing about " ..
+                "hunting with Nesingwary is you need to prove you can keep your tally and bragging rights " ..
+                "up.\n\nCan't hunt, can't brag. And I like bragging so this is no good.\n\nCan I hire you " ..
+                "to go kill me some carp hunters? You'll find them up and down the river west of here. " ..
+                "There are a bunch of them so don't hesitate to hunt while doing other stuff.",
+            rewardMoney = 102000,
+        },
+        [30353] = {
+            description = "Two words: Tiger Blood!\n\nThis is gonna sell better than saronite back on the " ..
+                "black market. Especially once I finish spreading a rumor about how it makes you all buff " ..
+                "and stuff.\n\nAnd this jungle is just full of tigers. Can you round up a few vials of " ..
+                "tiger blood for me? I'll cut you in on the scam.",
+            rewardChoices = {
+                {81494, 1}, {81495, 1}, {81496, 1}, {81497, 1}, {81498, 1}, {81499, 1}, {81500, 1},
+                {81501, 1}, {81502, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30354] = {
+            description = "We were searching the ruins south of here when the mogu fell upon us out of " ..
+                "nowhere.\n\nSome of us were able to retreat to this encampment but many others were " ..
+                "captured. The mogu have also caught a number of the Horde who happened to be in the area " ..
+                "as well.\n\nPlease, $p, rescue any sentinels that you can.\n\nLeave the Dawnchasers to " ..
+                "their fate.",
+            rewardMoney = 102000,
+        },
+        [30355] = {
+            description = "Mogu do NOT use arcane magics.\n\nThey are thugs. They have always been thugs. " ..
+                "Only when they ruled their empires in the old stories did they ever know any kind of " ..
+                "magic.\n\nBut these mogu are using arcane portals and old artifacts. We need to stop " ..
+                "them!\n\n$p, look for any artifacts the mogu are using to cast their magics with. I saw " ..
+                "piles of these items being collected near the Ruins of Korja south of here.",
+            rewardChoices = {
+                {81503, 1}, {81504, 1}, {81505, 1}, {81506, 1}, {81507, 1}, {81508, 1}, {81509, 1},
+                {81510, 1}, {81511, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30356] = {
+            description = "The mogu reclaimers are using portals to connect to Kun-Lai Summit, bringing " ..
+                "in reinforcements and supplies.\n\nWhat is worse, they are sending their captives " ..
+                "through these portals.\n\nGo to the Ruins of Korja and destroy as many of these Korjan " ..
+                "Reclaimers as you can find.",
+            rewardMoney = 102000,
+        },
+        [30357] = {
+            description = "Help me, $p. These poor pandaren are in need of healing, and my powers are " ..
+                "weakened.\n\nI did find an old tome in my collection that allowed me to convert the " ..
+                "herbs you collected earlier into a healing poultice.\n\nUse this on the injured pandaren " ..
+                "and it should get them back on their feet.",
+            rewardChoices = {{84291, 1}, {84292, 1}, {84293, 1}, {84294, 1}, {84295, 1}},
+            rewardMoney = 102000,
+        },
+        [30359] = {
+            description = "They have my daughter! Brojai... that Lord Reclaimer! I can see him clearly " ..
+                "through Lyalia's eyes.\n\nThat foolish girl must have tried to take him head " ..
+                "on.\n\nPlease, $p! Go to the Ruins of Korja and try to free her.\n\nI'll get Kang and " ..
+                "try to draw out Brojai from the ruins with a distraction.",
+            rewardMoney = 102000,
+        },
+        [30360] = {
+            description = "My father gave me his life. Tyrande gave me her trust. My sentinels gave me " ..
+                "their allegiance.\n\nIt is time I repaid them all.\n\nWith Brojai dead we can mop up the " ..
+                "remaining mogu. The next threat is the mantid.\n\nGo north to Stoneplow and lend them " ..
+                "your help. Tell them I will be bringing what sentinels I can muster to aid in the " ..
+                "defense of their city against the mantid.",
+            rewardMoney = 10200,
+        },
         [30487] = {
             description = "The mountain pass is very dangerous. You need much luck to survive. Nephew " ..
                 "Bentnail will show you the way.\n\nPerhaps today is a lucky day to travel though. Wind " ..
@@ -34824,6 +35346,34 @@ ns.Overrides.wowhead = {
                 [1637] = {{48.4, 71.4}, {48.4, 71.6}},
             },
             zoneID = 1519,
+        },
+        [58408] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
+        [58465] = {spawns = {[5840] = {{34, 38.2}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
+        [58468] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
+        [58471] = {spawns = {[5840] = {{33.8, 38.4}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
+        [64192] = {
+            spawns = {
+                [5840] = {
+                    {31.4, 71.2}, {31.6, 71}, {32.4, 73.4}, {32.4, 73.6}, {32.6, 73.6}, {33.2, 76.8},
+                    {34.2, 72}, {34.2, 72.6}, {36.4, 71}, {36.6, 71.2}, {37.2, 74.4}, {37.2, 74.6},
+                    {37.6, 76.4}, {37.6, 76.6}, {38.4, 71.4}, {38.4, 71.6},
+                },
+            },
+            zoneID = 5840,
+        },
+        [64201] = {
+            spawns = {
+                [5840] = {
+                    {30.2, 73.2}, {30.8, 73.2}, {31.2, 74.8}, {31.4, 71.2}, {31.6, 71}, {32, 74.6},
+                    {32.2, 71.8}, {32.4, 70}, {32.4, 73.6}, {32.6, 70.2}, {32.6, 75}, {32.6, 75.6},
+                    {33.4, 72.2}, {33.4, 72.8}, {33.8, 73.4}, {33.8, 76.8}, {34, 74}, {34.2, 69.6},
+                    {34.6, 69.4}, {34.6, 72.4}, {34.8, 65.4}, {35, 65.8}, {35.2, 69.6}, {36, 74.4},
+                    {36.4, 69.8}, {36.4, 71}, {36.4, 76.6}, {36.6, 71.2}, {36.6, 76.6}, {37, 74.4},
+                    {37.4, 68.2}, {37.4, 68.6}, {37.6, 68.8}, {37.6, 74.6}, {38.2, 73.2}, {38.4, 71.4},
+                    {38.4, 73.6}, {38.6, 69.4}, {38.6, 70.8}, {38.6, 72},
+                },
+            },
+            zoneID = 5840,
         },
     },
     objects = {
