@@ -33491,6 +33491,518 @@ ns.Overrides.wowhead = {
             rewardChoices = {{81522, 1}, {81523, 1}, {81524, 1}, {81525, 1}, {81526, 1}},
             rewardMoney = 98000,
         },
+        [30181] = {
+            description = "Mushan! Would ya look at the size o' 'em. Old as the dirt they walk on " ..
+                "probably. A fine trophy.\n\nIf you are lookin' to test your mettle as a big game hunter, " ..
+                "start with them.",
+            rewardMoney = 102000,
+        },
+        [30182] = {
+            description = "So, when I was scouting east of here I saw a collection of foxes. That's what " ..
+                "I first learned to hunt when back on the Wandering Isle.\n\nIf you want to see the " ..
+                "challenge a young pandaren hunter faced when growing up, head east and face off against " ..
+                "a bunch of foxes. They tend to be clever and cunning so be on your guard.",
+            rewardMoney = 102000,
+        },
+        [30183] = {
+            description = "Tigers! No matter what land I go to I hear about these big fanged beasts. And " ..
+                "yet I haven't had a chance to hunt any of them.\n\nLet's go hunt some tigers. I'll go " ..
+                "east, you go west. I think I saw some near Dustback Gorge. I'm sure there are tons near " ..
+                "those mushan.",
+            rewardChoices = {
+                {84320, 1}, {84321, 1}, {84322, 1}, {84323, 1}, {84324, 1}, {84325, 1}, {84326, 1},
+                {84327, 1}, {84328, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30184] = {
+            description = "My boy here is a talented hunter... in training. Let's show him an old 'Nessy " ..
+                "style hunt shall we?\n\nI saw a mighty big mushan east of here with a hide dark as " ..
+                "night. It looked like it had taken down a number of hunters in its day.\n\nIf you want a " ..
+                "big game hunt, go try an' take it on.",
+            rewardChoices = {
+                {81854, 1}, {81855, 1}, {81856, 1}, {81857, 1}, {81858, 1}, {81859, 1}, {90542, 1},
+                {90545, 1}, {90622, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30185] = {
+            description = "Granted, tortoises are not big game but they can be mean game. They also work " ..
+                "as the perfect bait for bigger game!\n\nGotcher found some ol' tablets sayin' that the " ..
+                "Torjari Pit is a sacrificin' site. The old empire used ta' feed unruly sorts to the " ..
+                "waters as it were.\n\nWell ah mean to see me what's down in that water. Gather up some " ..
+                "fresh tortoise shells and meet me at the pit.\n\nLet's see if ol' legends be true.",
+            rewardMoney = 102000,
+        },
+        [30186] = {
+            description = "If them tablets were correct, all ay got ta do is a small dance ritual and the " ..
+                "big thing o' the deep will be summoned.\n\nWhen it comes out, we'll get 'em and show me " ..
+                "pop we are both true big game hunters like him.",
+            rewardChoices = {{81819, 1}, {81820, 1}, {81821, 1}, {81822, 1}, {81823, 1}},
+            rewardMoney = 102000,
+        },
+        [30187] = {
+            description = "Now that you have learned the basics of the race, you should go learn the " ..
+                "course.\n\nExplore the spires and collect a race flag from each of the " ..
+                "checkpoints.\n\nFly through each checkered flag to collect it.",
+            rewardMoney = 114000,
+        },
+        [30188] = {
+            description = "I can no longer call myself your teacher, <name>.\n\nYou have proven yourself " ..
+                "worthy of your cloud serpent.\n\nToday, you shall join our ranks. Are you ready?",
+            rewardChoices = {{79802, 1}},
+            rewardMoney = 57000,
+        },
+        [30189] = {rewardItems = {{79320, 1}}},
+        [30190] = {
+            description = "Sprites again! I hate these things. We need to stop them before they hurt " ..
+                "someone or burn down half of the village!\n\nIf you see any of the pests, please deal " ..
+                "with them!",
+            rewardMoney = 114000,
+        },
+        [30191] = {
+            description = "Someone left some beer out up on the southern rise and now the sprites have " ..
+                "developed a taste for our brew. They've been sneaking into town all morning, stealing " ..
+                "whatever kegs they find.\n\nBring back what you can. A pandaren worker without brew is " ..
+                "just... it won't be very productive. We need the men in good spirits.",
+            rewardMoney = 114000,
+        },
+        [30192] = {
+            description = "I don't know if you noticed, but my town is burning...\n\nThe sprites have " ..
+                "started kicking the braziers! They're going to set fire to the whole town!\n\nPlease " ..
+                "help us! Stamp out any fires you see!",
+            rewardMoney = 114000,
+        },
+        [30193] = {
+            description = "Hard workers deserve hearty meals, but I'm all out of good meat!\n\nCan you " ..
+                "head out into the forest and get me some fresh gazelle meat?",
+            rewardMoney = 114000,
+        },
+        [30194] = {
+            description = "The villagers have lost another yak this morning to one of the thundermaw " ..
+                "wolves from across the river. The wolves grow bold.\n\nThis is a sign that they are " ..
+                "breeding beyond the vale's ability to sustain them. It's time to thin their numbers " ..
+                "again.\n\nIf you are willing to aid me in this, you would have my sincere appreciation.",
+            rewardMoney = 114000,
+        },
+        [30195] = {
+            description = "Would you do a humble merchant a favor? I've been needin' to refresh my stock " ..
+                "of eternal blossoms. They grow in the woods nearby.\n\nCould you help me out, perhaps?",
+            rewardMoney = 114000,
+        },
+        [30196] = {
+            description = "Building a new village makes for hungry workers it seems!\n\nI have a hearty " ..
+                "stew recipe prepared, but I need some lushrooms from the Tu Shen Burial Ground to the " ..
+                "east. Apparently there are roused spirits causing trouble up there though, and I'm not " ..
+                "very well suited for the violent life.\n\nIf you're heading up the burial grounds today, " ..
+                "could you collect some lushrooms for me?",
+            rewardMoney = 114000,
+        },
+        [30200] = {
+            description = "We used to have the trainees clear out the ruins of spiders as part of their " ..
+                "training, but now we send them straight to the mogu front. The spiders have gotten out " ..
+                "of control.\n\nCare to put things back in control?",
+            rewardMoney = 114000,
+        },
+        [30204] = {
+            description = "Okay, these spiders are seriously creeping me out. Especially those egg sacs " ..
+                "they leave lying around that I keep accidentally stepping on only to be covered in very " ..
+                "little but very creepy spiderlings. Ug, makes me shudder just thinking about it.\n\nI " ..
+                "say you burn them. Burn them all.",
+            rewardMoney = 114000,
+        },
+        [30205] = {
+            description = "Hello, friend.\n\nOne of Leven's men brought word to me of a mogu artifact in " ..
+                "the eastern ruins, but said he couldn't figure out how to retrieve it. I suspect it's " ..
+                "guarded by one of their rune locks.\n\nIf you go to the artifact, you should find four " ..
+                "runes somewhere nearby that when activated will release the lock. If you could bring the " ..
+                "artifact back to me, I would be very grateful.",
+            rewardMoney = 114000,
+        },
+        [30206] = {
+            description = "In the walls of the ruins themselves, there are precious runestones that we " ..
+                "can make use of back in the eastern vale.\n\nIf you see any while you are within the " ..
+                "ruins, would you be so kind as to bring them back to me?",
+            rewardMoney = 114000,
+        },
+        [30225] = {
+            description = "My dear Kun spotted more spiders pouring out of the Guo-Lai Halls this " ..
+                "morning, and when he went to investigate, he uncovered another spider matriarch " ..
+                "inside.\n\nI need you to kill it.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30226] = {
+            description = "A small group of mogu have been sighted on Ruin's Rise, to the " ..
+                "north.\n\nExtinguish them.",
+            rewardMoney = 114000,
+        },
+        [30227] = {
+            description = "One of the quilen statues in Guo-Lai Halls came to life and nearly killed my " ..
+                "precious Kun. I won't have it! No one threatens my Kun.\n\nI want you to go in there and " ..
+                "smash the thing to pieces. I'd do it myself, but I need to attend to my lover's wounds " ..
+                "first.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30228] = {
+            description = "The wood sprites are back. I need you to kill them before they cause anymore " ..
+                "trouble.",
+            rewardMoney = 114000,
+        },
+        [30229] = {
+            description = "I apologize for my harsh words earlier. Dezco might have been right to wait " ..
+                "and move west with a unified strength.\n\nThe mogu hit us hard when we were searching " ..
+                "the ruins west of here. They ambushed us using summoning portals and some dark magics. I " ..
+                "haven't seen such evil sorcery used since Outland.\n\nWe need a respite. Head west, kill " ..
+                "their summoners, cut their supply line.",
+            rewardMoney = 102000,
+        },
+        [30230] = {
+            description = "Mogu are thugs. They have always been thugs.\n\nOnly when they ruled their " ..
+                "empires in the old stories did they ever know any kind of magic.\n\nBut these mogu are " ..
+                "using arcane portals and spells. We need to stop them!\n\n$p, look for any artifacts the " ..
+                "mogu are using to cast their magics with. I saw a number of their collectors and " ..
+                "reclaimers to the west and north that were gathering these items.",
+            rewardChoices = {
+                {81503, 1}, {81504, 1}, {81505, 1}, {81506, 1}, {81507, 1}, {81508, 1}, {81509, 1},
+                {81510, 1}, {81511, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30231] = {
+            description = "I need more pomfruit! Go knock some loose from the trees for me, would " ..
+                "you?\n\nTake this, I use it when I go harvesting. Things go quicker when the fruit comes " ..
+                "to you!",
+            rewardMoney = 114000,
+        },
+        [30232] = {
+            description = "The hawk numbers in the vale are thriving. This is opportune for our " ..
+                "fletchers, for we will need a great number of feathers if we are to keep the archers " ..
+                "upon the wall stocked with arrows.\n\nIf you would not mind, could you aid us in " ..
+                "gathering these feathers?",
+            rewardMoney = 114000,
+        },
+        [30233] = {
+            description = "Hi! So, I have a dilemma. I've only got one good wolf name.... wait for it... " ..
+                "Cracklefang! I know, amazing right?! But now there are TWO big nasty wolves in the " ..
+                "forest, which is all kinds of confusing.\n\nI need you to kill one of them so I can free " ..
+                "up the name. Should be simple enough, yeah? Especially for someone of your " ..
+                "incredibleness.\n\nSo, are you on board? I'm hoping for yes!",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30234] = {
+            description = "Vicejaw! Sounds absolutely violent, does it not? I came up with it myself, and " ..
+                "I think it's very suiting. I tried to wrestle my staff away from him for hours, but he " ..
+                "simply would not let go!\n\nOkay, it was really more like a few seconds. I like to be " ..
+                "truthful to my friends, even if it makes my stories significantly more " ..
+                "boring.\n\nAnyway, would you be so kind as to release your oh-so-potent wrath upon this " ..
+                "crocolisk with a vice-like jaw, and then kindly bring my staff back? Preferably in-tact!",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30235] = {
+            description = "Quid is a very powerful and very ancient water spirit, though you might not " ..
+                "know it with his child-like ways.\n\nThis morning, Quid nearly killed several villagers " ..
+                "in the bar when he jokingly caused several of the water kegs to explode.\n\nAs long as " ..
+                "the water flows, Quid will remain. He cannot be slain. But he can be reminded that we do " ..
+                "not take his dangerous antics in jest.\n\nWould you be willing to carry this message to " ..
+                "him on behalf of the village?",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30236] = {
+            description = "It seems Aetha has been levitating the livestock and dropping them into the " ..
+                "river again. The mayor has requested that we remind her that these kinds of jokes are " ..
+                "not welcomed.\n\nWould you be so generous as to travel to the ridge above the village " ..
+                "and teach her this lesson? You cannot kill her, you can only send her away for a time, " ..
+                "but this should prove a potent reminder.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30237] = {
+            description = "In the Tu Shen Burial Ground to the east, the spirits of ancient mogu are " ..
+                "locked in battle with the spirits of our pandaren ancestors that rose up against them. " ..
+                "The spirits have seen no rest since the return of the mogu to the valley.\n\nIf you " ..
+                "would be willing to go to the graveyard and force the mogu to relive their defeat again, " ..
+                "we might offer some lasting peace to the spirits of our ancestors.",
+            rewardMoney = 114000,
+        },
+        [30238] = {
+            description = "The spirits of our ancestors are reliving one of the most revered battles in " ..
+                "our history at the Tu Shen Burial Grounds to the east.\n\nDo as I ask, <race>, and honor " ..
+                "their gravestones. Remind them that they are respected even these many years later, and " ..
+                "that they are deserving of peaceful rest.",
+            rewardMoney = 114000,
+        },
+        [30239] = {
+            description = "You can hear the spirit of Lao-Fe, the Slavebinder shouting taunts from the " ..
+                "cave at the top of Tu Shen Burial Mound.\n\nDefeating him will surely serve to ensure " ..
+                "victory for the spirits of the pandaren monks.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30240] = {
+            description = "This is one of the challenges I put upon my warriors to keep them strong and " ..
+                "fast. Let's see how you fare.\n\nSurvive the ring for 60 seconds without getting pushed " ..
+                "out or killed. Stay on your toes.",
+            rewardMoney = 114000,
+        },
+        [30241] = {
+            description = "So much death. And more to come, if Ambassador Han's stories of the mantid are " ..
+                "to be believed.\n\nWe must help. We must do our part to save lives.\n\nTravel to " ..
+                "Stoneplow. Warn them of the coming mantid attack.\n\nI will join you with what forces I " ..
+                "can muster once I have laid Kor's body to rest.",
+            rewardMoney = 10200,
+        },
+        [30242] = {
+            description = "This is one of the challenges I put upon my warriors to keep them strong and " ..
+                "fast. Let's see how you fare.\n\nSurvive the ring for 60 seconds without getting pushed " ..
+                "out or killed. Stay on your toes.",
+            rewardMoney = 114000,
+        },
+        [30243] = {
+            description = "The mantid are attacking again, and we're a bit short-handed up on the wall. " ..
+                "In hopes that you'd help, I saved one of the more fun posts for you: the hot " ..
+                "oil!\n\nIt's a bit more violent and a bit less scandalous than it sounds.\n\nIt's simple " ..
+                "really. Get up on the wall, find one of the oil stations, and dump it on any of the " ..
+                "mantid pouring up against the wall. It's very effective.",
+            rewardMoney = 114000,
+        },
+        [30244] = {
+            description = "There are mantid on top of the wall. The defenders on the ramparts are calling " ..
+                "for help!",
+            rewardMoney = 114000,
+        },
+        [30245] = {
+            description = "We sent some scouts towards the Five Sisters to the north to try and find " ..
+                "whatever mogu leader has risen up to direct their movements in the valley. Few have " ..
+                "returned.\n\nI'd like to think they're just off downing too much ale or being " ..
+                "irresponsible with some young pandaren, but they may actually be in some trouble.\n\nCan " ..
+                "you scout for the scouts? And see if they've turned up any information on that leader " ..
+                "while you're at it?",
+            rewardMoney = 114000,
+        },
+        [30246] = {
+            description = "Some of the mantid have made it on top of the wall. There's some risk they'll " ..
+                "route the soldiers we have posted there if their numbers are large enough.\n\nI need you " ..
+                "to get on top of the wall and help clear out any that have broken through.",
+            rewardMoney = 114000,
+        },
+        [30248] = {
+            description = "Scouts reports place the displaced Shao-Tien Imperion at the north end of the " ..
+                "wall.\n\nAngi Autumnlight spelled out your goal in no uncertain terms: find this leader " ..
+                "and kill him.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30249] = {
+            description = "A giant beast has burrowed under the gate into the courtyard. The defenders " ..
+                "need your help!",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30251] = {
+            description = "A giant mantid is terrorizing the inside of the wall. It seems doubtful that " ..
+                "the defenders will be able deal with it without you.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30252] = {
+            description = "I've been pushing and shoving and hammering all morning, but it's " ..
+                "hopeless.\n\nThese rocks won't budge!\n\n\"It will be a breeze,\" Grandpa said. " ..
+                "\"Farming's like breathing!\" he said. Maybe for him, but not for me!\n\nHow am I " ..
+                "supposed to succeed at this whole FARMING thing if I can't even clear my farm for " ..
+                "planting?\n\nHey, wait a minute. You look like you've got some muscle on you.\n\nWould " ..
+                "you be willing to help me out? Just until I can catch my breath.",
+            rewardMoney = 102000,
+        },
+        [30254] = {
+            description = "Okay, now we've got our seeds, it's time to plant them.\n\nFirst, we have to " ..
+                "prepare the soil! You gotta till the soil and break it up to make a nice bed for our " ..
+                "little sprouts.\n\nTill those two plots of soil over there, then plant the seeds in them.",
+            rewardMoney = 102000,
+        },
+        [30255] = {
+            description = "My grandfather used to say \"Yoonie, a cabbage is like a woman: ignore her and " ..
+                "she'll turn rotten. Pamper her and she'll grow big and plump and you can put a ribbon on " ..
+                "her and take her to market to show her off to your frie-\" look, he was from a different " ..
+                "time, okay?\n\nThe point is, now that our cabbages have sprouted, they need attention! " ..
+                "Today they look a little dry, so you should water them.\n\nHere's the old watering can " ..
+                "grandpa left. It will always be near the field if you need it.",
+            rewardMoney = 102000,
+        },
+        [30256] = {
+            description = "It's time for our hard work to pay off! Normally we'd have to wait a day " ..
+                "before the crops are ready to harvest.\n\nFortunately, those seeds Greenfield gave us " ..
+                "were specially designed to grow FAST. The yield won't be worth much, but they're good " ..
+                "for stepping new farmers through the process.\n\nOur cabbages should be ready to " ..
+                "harvest. I'll let you do the honors, of course!",
+            rewardMoney = 102000,
+        },
+        [30257] = {
+            description = "All right friend, all of that farming was just for practice!\n\nAre you ready " ..
+                "to try the real thing?\n\nThere's a lady by the name of Gina Mudclaw who runs the " ..
+                "Halfhill Market, which is across the street to the south.\n\nI heard she's looking to " ..
+                "buy some vegetables. Since it's your first time meeting her, you shouldn't go " ..
+                "empty-handed.\n\nWhy don't you look around the ranch and see if there are any items " ..
+                "hiding around?\n\nMight be that we'll find a good gift to take to our new neighbor!",
+            rewardMoney = 51000,
+        },
+        [30258] = {
+            description = "I've been thinkin' about how to get into the Tiller's good graces, " ..
+                "<name>.\n\nNow, the Tiller's Union accepts new farmers each year, and there are five " ..
+                "members on the voting council.\n\nWe already got Gina's vote, but we'll have to prove " ..
+                "ourselves to the other four members of their board.\n\nWhy don't you go over and say " ..
+                "hello to Mung-Mung? He works with Mr. Mudclaw out on the Mudclaw's farm to the northwest.",
+            rewardMoney = 57000,
+        },
+        [30259] = {
+            description = "Dem virmen's back!\n\nThey been biting Mr. Mudclaw's carrots. Ruining his " ..
+                "crop. And who is gonna pay? Mung-Mung, that's who!\n\nYou go get the chewed up carrots " ..
+                "before Mr. Mudclaw sees. They all over the fields to the southwest, and down under the " ..
+                "ground in the virmen's tunnels, too.\n\nOtherwise, Mung-Mung in big trouble.\n\nYou do " ..
+                "this for me?",
+            rewardMoney = 114000,
+        },
+        [30260] = {
+            description = "Hey <name>, I've been thinkin' recently about expanding my farm.\n\nSee that " ..
+                "plot there that's just covered in weeds? If we can get rid of those weeds, we could use " ..
+                "that land for planting.\n\nI heard there's a farmer by the name of Gai Lan who knows a " ..
+                "thing or two about weed whackin'.\n\nHis farm is just out west. Go talk to him and see " ..
+                "if he'd be willing to help us.",
+            rewardMoney = 57000,
+        },
+        [30261] = {
+            description = "Get to the bottom of the wall in the fastest time possible.\n\nSpeak to me " ..
+                "when you're ready to roll.",
+            rewardMoney = 228000,
+        },
+        [30263] = {
+            description = "The Shao-Tien are on their heels. Most of them retreated to Winterbough Glade " ..
+                "after their last defeat. We should press the advantage.\n\nTake the fight to these mogu " ..
+                "in the clearing to the northwest. Let us leave them no minute of rest as long as they " ..
+                "remain in the Vale.",
+            rewardMoney = 114000,
+        },
+        [30264] = {
+            description = "The mantid forces are pouring against the wall. I've arranged for some flying " ..
+                "serpents to cut away at their forces from the air.\n\nWould you be willing to take the " ..
+                "reigns on one of them?",
+            rewardMoney = 228000,
+        },
+        [30265] = {
+            description = "I've been staring down into the waters of the lake, pondering life, love, and " ..
+                "everything beautiful, and suddenly I realized that the sparkles in the water aren't just " ..
+                "a reflection of my radiant personality, there are actually some sort of shining objects " ..
+                "down there! Surely valuable.\n\nWould you mind taking a drip and relieving the lake's " ..
+                "depths of its mysterious sparkles? Pretty please?",
+            rewardMoney = 114000,
+        },
+        [30266] = {
+            description = "We have cannons set up on the top of the towers flanking the main gate. They " ..
+                "are our best method to clear the skies when the flying mantid try to pass over the wall, " ..
+                "like they are now.\n\nLooks like you're on, <name>.",
+            rewardMoney = 114000,
+        },
+        [30267] = {
+            description = "I love fishing. I'd be enjoying myself much more, however, if I had my bait " ..
+                "and my lures. They were thrown away in a... a misunderstanding with my wife, Rin.\n\n< " ..
+                "Gladecaster Lang sighs.>\n\nShould I let a whole day of fishing be ruined, just because " ..
+                "of a little domestic squabble? No! All I need is bugs and feathers, after all, and this " ..
+                "glade is filled with those two things.\n\nCare to help a fisherman out?",
+            rewardMoney = 102000,
+        },
+        [30268] = {
+            description = "Take a good look. The river nearby is swarming with these snakes. Their venom " ..
+                "causes a condition the locals call \"the murksweats.\"\n\nSeveral refugees were bitten " ..
+                "as they fled the temple and have already begun to show symptoms: nausea, vomiting, and " ..
+                "intense sweating as the body rejects all fluids, causing dehydration and potentially " ..
+                "death.\n\nWe are administering anti-venom as quickly as possible, but we'll need more " ..
+                "venom glands. Don't bother removing the glands yourself - just bring back the whole head.",
+            rewardChoices = {{81517, 1}, {81518, 1}, {81519, 1}, {81520, 1}, {81521, 1}},
+            rewardMoney = 102000,
+        },
+        [30269] = {
+            description = "As we say at the temple: \"Never fight a tiger with a hozen on your " ..
+                "back.\"\n\nWe will deal with the sha, but first we must see to the more immediate... " ..
+                "nuisance.\n\n<Koro slams the writhing saurok HARD against the stone.>\n\nGroups of " ..
+                "refugees from the temple are heading for a camp to the north, but they're being ambushed " ..
+                "by saurok. Help me see the next group to the camp and we'll figure out our next move " ..
+                "from there.",
+            rewardMoney = 102000,
+        },
+        [30270] = {
+            description = "\"A hooded falcon catches no quarry.\"\n\nThis is one of the first mantras we " ..
+                "teach young monks at the temple. It means that even a foe as swift and lethal as a " ..
+                "falcon can be neutralized by depriving its senses.\n\nThe saurok have scouts all over " ..
+                "the region acting as eyes for their raiding parties.\n\nIt's time we put their eyes out, " ..
+                "don't you think?",
+            rewardMoney = 102000,
+        },
+        [30271] = {
+            description = "The sha have the mysterious ability to evoke powerful, often overwhelming, " ..
+                "emotional responses in their victims.\n\nAs we fled the temple, senior members of the " ..
+                "Crane Wing order stayed behind to cover our escape. They are no doubt being subjected to " ..
+                "intense emotional trauma, and I fear they are not all strong enough to resist falling " ..
+                "into despair.\n\n$p, we have to show them there is still hope! Show them that despair " ..
+                "CAN be defeated!",
+            rewardMoney = 102000,
+        },
+        [30272] = {
+            description = "Now as for that \"striking the rain\" part... well, sometimes you have " ..
+                "to.\n\n\"Hope is the sun behind a stormy sky - ever in the heart, but veiled to the " ..
+                "eye.\"\n\nThere seems to be no end to the sha pouring out of the temple. But in order to " ..
+                "see beyond the veil of despair, you must carve through it.\n\nWith any luck, you'll find " ..
+                "a sun behind the clouds...",
+            rewardMoney = 102000,
+        },
+        [30273] = {
+            description = "\"Broken are the bodies wherein hopeless hearts reside - the blight of despair " ..
+                "strikes forth from inside.\"\n\nThis was the last piece of wisdom the Red Crane imparted " ..
+                "to me, just hours before the Sha outbreak. It makes sense now...\n\n$p, when the Sha " ..
+                "attacked, they broke forth from the temple's basement...\n\nAll of his teachings - the " ..
+                "very Way of the Crane itself... it's all been preparation for facing the Sha of " ..
+                "Despair.\n\nThe Red Crane has been expecting this conflict for centuries!",
+            rewardChoices = {
+                {81485, 1}, {81486, 1}, {81487, 1}, {81488, 1}, {81489, 1}, {81490, 1}, {81491, 1},
+                {81492, 1}, {81493, 1},
+            },
+            rewardMoney = 204000,
+        },
+        [30274] = {
+            description = "An Alliance member? Here? Elune be praised.\n\nMy team has encountered a snag. " ..
+                "We opened a portal to this land using some ancient scrolls we had found that predated " ..
+                "Azshara's rule.\n\nUnfortunately, the coordinates provided on the tablets were warded " ..
+                "and the portal that meant to take us to our destination landed us in this " ..
+                "oubliette.\n\nWe have been trapped here for days, and it is slowly leaching our energies " ..
+                "to power itself.\n\nCan you find the nearby shackles that bind the oubliette and disable " ..
+                "them?",
+            rewardMoney = 102000,
+        },
+        [30275] = {
+            description = "How could this crocolisk have grown so large?\n\nCertainly, rumors exist of " ..
+                "very old crocolisks that have grown to enormous sizes... but this female can't be more " ..
+                "than a dozen years old.\n\nPerhaps someone in New Cifera can shed some light on the " ..
+                "subject.",
+            rewardMoney = 102000,
+        },
+        [30277] = {
+            description = "An ancient mogu artifact has been uncovered in the Guo-Lai Vault, beyond the " ..
+                "Hall of Statues. We've made repeated attempts to retrieve it, but none have been " ..
+                "successful.\n\nWe cannot let this artifact fall into the hands of the Shao-Tien. I need " ..
+                "someone capable to retrieve it, and quickly.\n\nAre you in?",
+            rewardMoney = 456000,
+        },
+        [30280] = {
+            description = "Roars have been echoing out from inside the Guo-Lai Halls. The mogu have " ..
+                "awakened some ancient beast, and it will not be long before they attempt to release it " ..
+                "upon my men.\n\nFind your way to the Hall of the Serpent and slay the beast before it " ..
+                "can be unleashed upon us. I would trust no other with such a dangerous and important " ..
+                "task.",
+            rewardMoney = 456000,
+        },
         [30487] = {
             description = "The mountain pass is very dangerous. You need much luck to survive. Nephew " ..
                 "Bentnail will show you the way.\n\nPerhaps today is a lucky day to travel though. Wind " ..
