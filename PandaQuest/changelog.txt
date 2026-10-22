@@ -4,6 +4,41 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.220
+- database - Wowhead data as the PandaQuest portal read it: 7,433 quests, 46 NPCs, 1 object
+- quest 30361 - The Mantid - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +9
+- quest 30363 - Going on the Offensive - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30376 - Hope Springs Eternal - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30384 - Blind Them! - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30385 - Setting Sun Garrison - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30444 - No Reprieve - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30445 - The Waters of Youth - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30449 - Darkmoon Crane Deck - updated
+  - description added
+  - reward items: +1
+- quest 30450 - Darkmoon Ox Deck - updated
+  - description added
+  - reward items: +1
+- quest 30451 - Darkmoon Serpent Deck - updated
+  - description added
+  - reward items: +1
+
 0.2.219
 - database - Wowhead data as the PandaQuest portal read it: 7,423 quests, 46 NPCs, 1 object
 - quest 30281 - The Silent Approach - updated

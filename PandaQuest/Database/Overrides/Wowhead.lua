@@ -34525,6 +34525,86 @@ ns.Overrides.wowhead = {
                 "defense of their city against the mantid.",
             rewardMoney = 10200,
         },
+        [30361] = {
+            description = "The mantid! They came out of nowhere and smashed our convoy to ruin, " ..
+                "scattering our people this way and that.\n\nNow they are preparing to hit " ..
+                "Stoneplow.\n\nPlease, <class>, destroy some of these beasts before they get sufficient " ..
+                "numbers to flank our home.\n\nIf my cousin, Ambassador Len, is still alive and at our " ..
+                "convoy he should be able to reward you for your help.",
+            rewardChoices = {
+                {81458, 1}, {81459, 1}, {81460, 1}, {81461, 1}, {81462, 1}, {81463, 1}, {81464, 1},
+                {81465, 1}, {81466, 1},
+            },
+            rewardMoney = 106000,
+        },
+        [30363] = {
+            description = "Ha! So my father just wasted twenty years of our lives on a fool's " ..
+                "errand!\n\nI'm taking charge.\n\nWhen Tyrande sent us here she was very specific that we " ..
+                "not come back until we find the source of the Light that she saw in her visions. It's " ..
+                "obvious now that the Pools of Youth were not it.\n\nI want you to look for my scout. I " ..
+                "sent her to investigate the Crane Temple but she hasn't returned.\n\nGet her report and " ..
+                "rendezvous with us at the Sentinel Basecamp further west.",
+            rewardMoney = 10200,
+        },
+        [30376] = {
+            description = "The Shado-Pan are likely dealing with similar outbreaks elsewhere in " ..
+                "Pandaria.\n\nSeek out Loon Mai, the Shado-Pan Watch Commander in Stoneplow on the " ..
+                "western end of the Valley of the Four Winds. Let him know that we have the situation " ..
+                "here under control; the Shado-Pan need not send any aid.\n\nQuite the opposite, in fact " ..
+                "- I will be sending many of my followers on pilgrimage, to bring a message of hope to " ..
+                "those in need.\n\nThank you again, $p. Farewell.",
+            rewardMoney = 10200,
+        },
+        [30384] = {
+            description = "Horde sunwalkers! We saw one of their scouts patrolling by the oubliette not " ..
+                "long before you arrived.\n\nI don't know how he got here but I can guarantee you he " ..
+                "isn't alone. They never are.\n\nKill the sunwalker scout before he reports our position.",
+            rewardMoney = 102000,
+        },
+        [30385] = {
+            description = "I offer you my heartfelt appreciation for your aid. Anji awaits you in the " ..
+                "Setting Sun Garrison to the west.\n\nMay the day favor you, young <class>.",
+            rewardMoney = 57000,
+        },
+        [30444] = {
+            description = "We've been granted a brief respite from the mogu attacks as they attempt to " ..
+                "recoup near the Five Sisters to our north. I would like you to see to it that they not " ..
+                "be granted a similar reprieve.\n\nShow no mercy.",
+            rewardMoney = 114000,
+        },
+        [30445] = {
+            description = "She is headstrong, my little Lyalia. I should have known she would try to " ..
+                "challenge the Lord Reclaimer.\n\nSince her mother died, I forsook much of the time I " ..
+                "should have spent with her in search of immortality, insisting that we could live " ..
+                "forever, together.\n\nAnd now my obsession has cost my little Lyalia her " ..
+                "life.\n\nPlease, $p, when she wakes, tell her I love her.",
+            rewardChoices = {
+                {81449, 1}, {81450, 1}, {81451, 1}, {81452, 1}, {81453, 1}, {81454, 1}, {81455, 1},
+                {81456, 1}, {81457, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30449] = {
+            description = "Now that you have gathered all of the Crane cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{79330, 1}},
+        },
+        [30450] = {
+            description = "Now that you have gathered all of the Ox cards together into a deck, a ninth " ..
+                "card mysteriously appears with the same backing as the first eight. On this card is " ..
+                "inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have heard " ..
+                "that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{79329, 1}},
+        },
+        [30451] = {
+            description = "Now that you have gathered all of the Serpent cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{79331, 1}},
+        },
         [30487] = {
             description = "The mountain pass is very dangerous. You need much luck to survive. Nephew " ..
                 "Bentnail will show you the way.\n\nPerhaps today is a lucky day to travel though. Wind " ..
