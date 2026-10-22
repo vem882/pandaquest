@@ -34605,6 +34605,187 @@ ns.Overrides.wowhead = {
                 "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardItems = {{79331, 1}},
         },
+        [30452] = {
+            description = "Now that you have gathered all of the Tiger cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardChoices = {{79327, 1}, {79328, 1}},
+        },
+        [30457] = {
+            description = "Clearly, you are a hero come to aid us.\n\nSlay the Bataari Tribe in the " ..
+                "Kun-Lai Pass to the northwest until the Bataari Fire-Warrior is angered enough to " ..
+                "appear. Dispatch him.",
+            rewardChoices = {
+                {84537, 1}, {84538, 1}, {84539, 1}, {84540, 1}, {84541, 1}, {84542, 1}, {90467, 1},
+                {90468, 1}, {90623, 1},
+            },
+            rewardMoney = 204000,
+        },
+        [30459] = {
+            description = "As soon as their reinforcements arrive, the yaungol are going to overrun our " ..
+                "position here. If they do that, the village will be lost.\n\nWould you be willing to " ..
+                "retrieve as many arrows off the battlefield as you can carry? I have a plan that just " ..
+                "might save us with your help.",
+            rewardMoney = 102000,
+        },
+        [30460] = {
+            description = "Our warriors are fighting to keep the yaungol at bay in the Kun-Lai Pass to " ..
+                "the northwest.\n\nTake this liniment. It is a powerful medicine that has been passed " ..
+                "down in my family over the generations.\n\nUse the dit da jow to heal the injured " ..
+                "warriors if you do not have healing powers of your own to use on them.",
+            rewardMoney = 102000,
+        },
+        [30466] = {
+            description = "Training these savages has been quite a task, <name>.\n\nFinding ways to " ..
+                "motivate them was easy enough; the problem is keeping them motivated.. and focused... " ..
+                "and awake.\n\nNow that you're back, you can help me in getting the less disciplined " ..
+                "Hozen moving, if you catch my drift. I'll leave the method up to you.",
+            rewardMoney = 98000,
+        },
+        [30467] = {
+            description = "My son - can you find my son?\n\nWhen the Jinyu attacked, he ran off in the " ..
+                "confusion. I don't know if they've done anything with him, or if he's still alive, " ..
+                "even.\n\nNothing else matters if I can't find him.\n\nI'd ask Mei... but something's " ..
+                "wrong with her. She seems too... impulsive since the attack. I just can't trust that " ..
+                "she'd bring him back safely.",
+            rewardMoney = 51000,
+        },
+        [30468] = {
+            description = "<The Swordmistress does not look well. There's a darkness to her eyes " ..
+                "uncharacteristic of the pandaren.>\n\nI don't think I've ever been as... as furious as " ..
+                "now. What betrayal!\n\nI fought them off when they attacked, killed a few here, but " ..
+                "Merchant Shi is too much of a coward to let me go and finish the job!\n\nYou, do it for " ..
+                "me. Kill them. Kill them all.",
+            rewardChoices = {
+                {84528, 1}, {84529, 1}, {84530, 1}, {84531, 1}, {84532, 1}, {84533, 1}, {84534, 1},
+                {84535, 1}, {84536, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30469] = {
+            description = "Of course, the first priority is finding my son. But, if we save ourselves " ..
+                "only to starve, then what have we accomplished, in the end?\n\nPlease, I need you to " ..
+                "recover some of the supplies that the Jinyu took from our caravan.",
+            rewardMoney = 102000,
+        },
+        [30470] = {
+            description = "That Tina Mudclaw is in the Halfhill Market today, visiting her sister. She's " ..
+                "really nice, but she's really hard to get gifts for!\n\nThere's a little jewel that can " ..
+                "be found in the cliffs to the north. It's called a chrysoberyl, and it changes color " ..
+                "when you hold it. I'll bet she doesn't have one of THOSE!\n\nLook inside the virmen " ..
+                "caves. I bet you'll find one really fast.",
+            rewardMoney = 114000,
+        },
+        [30471] = {
+            description = "That crazy Chee Chee is actually pretty neat. Mah always said that hozen were " ..
+                "nothing but trouble, but... I guess he's just a better hozen then the rest of " ..
+                "them.\n\nWe should do something nice for him! Those mountain hozen in the west make some " ..
+                "really fancy stir fry, and keep bowls of it inside their little hozen houses.\n\nI bet " ..
+                "Chee Chee would love some!",
+            rewardMoney = 114000,
+        },
+        [30472] = {
+            description = "Sho - that girl who lives up in the mountains - is in town today. I saw her " ..
+                "walking toward the Halfhill Market.\n\nSuch a long walk... she must be hungry! And I " ..
+                "think I know just the thing that she'll like.\n\nThe hozen up on the Skyrange cook a " ..
+                "soup out of fish and apples. It sounds gross, I know... but it's awesome. You'll find it " ..
+                "near their big, scary totem.",
+            rewardMoney = 114000,
+        },
+        [30473] = {
+            description = "That Fish Fellreed is kind of weird. First of all, her name's Fish. That's " ..
+                "weird.\n\nOnce you talk to her, though, she's really a nice lady. Did you know that " ..
+                "she's an animal lover?\n\nI've got an idea! The Kunzen hozen, in the mountains to the " ..
+                "west, make little animal statues and put them in their huts to scare off bad guys. I bet " ..
+                "Fish would LOVE something weird like that!",
+            rewardMoney = 114000,
+        },
+        [30474] = {
+            description = "That poor Ella. She's so shy! I saw her standing in the Halfhill Market, " ..
+                "looking really hungry, but afraid to talk to any of the chefs.\n\nWe should bring her " ..
+                "some food! And not any boring food - something special.\n\nThe Kunzen hozen make spicy " ..
+                "shrimp dumplings from ingredients they've stolen from our farms. I don't like spicy " ..
+                "food, but Ella might!",
+            rewardMoney = 114000,
+        },
+        [30475] = {
+            description = "Farmer Fung is pretty mean, and just a little scary. Mah always said that he " ..
+                "was one of the best farmers in the valley, though.\n\nI think I know the perfect gift " ..
+                "for a mean, kind of scary guy like him.\n\nThere's some big plainshawks that circle the " ..
+                "hills to the west of here. You should get one, find a big piece of meat, and then ask " ..
+                "Kol Ironpaw to grill it up!",
+            rewardMoney = 114000,
+        },
+        [30476] = {
+            description = "Old Hillpaw has about a million chickens on his farm... but that's not what he " ..
+                "REALLY loves.\n\nI saw. He collects blue feathers.\n\nI don't realy know where to get a " ..
+                "blue feather around here, but I do know where to find some blue pearls!\n\nCheck the " ..
+                "oysters in Cattail Lake to the northwest. I'm sure a blue pearl will look nice with his " ..
+                "feather collection!",
+            rewardMoney = 114000,
+        },
+        [30477] = {
+            description = "Haohan Mudclaw is the big boss of the Tillers union and the richest guy in the " ..
+                "Valley! He's been nice to let me stay here, so I want to do something nice for " ..
+                "him.\n\nHe likes expensive stuff, like ruby shards, but I don't have a lot of money, so " ..
+                "I need to get him something else.\n\nI know! I've seen a great big fish in Cattail Lake! " ..
+                "We should get one of its teeth as a gift!",
+            rewardMoney = 114000,
+        },
+        [30478] = {
+            description = "Sometimes I feel sad for Jogu. He's the only jinyu around, and I don't think " ..
+                "he has any friends. Other than his smelly bottle, of course.\n\nYou know what? I've got " ..
+                "an idea. Farmer Yoon has a basket of craneberries inside his house, and a few apples as " ..
+                "well. I'm sure you could bring them to the stillmaster in the Halfhill Market and get " ..
+                "him to brew something special for Jogu.",
+            rewardMoney = 114000,
+        },
+        [30479] = {
+            description = "Have you seen Gina Mudclaw, the market girl? She has it all - looks, brains, " ..
+                "and nice big tummy. Could you deliver a gift for me?\n\nI wanted to pick some orchids " ..
+                "that grow on top of the big hills to the west, but I can't climb that high. Could you " ..
+                "pick a few and bring them to Gina?\n\nOh, and when you see her... tell her I said \"hi\".",
+            rewardMoney = 114000,
+        },
+        [30480] = {
+            description = "From the moment I first rose from the river, I knew I was destined to be " ..
+                "Waterspeaker.\n\nI was taught many rituals, and have performed all of them, save " ..
+                "one.\n\nThere was one, an extremely ancient one, that we were told to call upon if our " ..
+                "people ever turned against us.\n\nThis must have happened in our people's distant past, " ..
+                "because we haven't needed to use it in our village's memory.\n\nI suppose now is the " ..
+                "time to do so.",
+            rewardMoney = 102000,
+        },
+        [30481] = {
+            description = "You see the shiny stones in the walls? Rook wants some. The mogu been " ..
+                "collecting them, so they have some to take too maybe.\n\nIf you find stones, you please " ..
+                "bring them to Rook? Rook will be your friend.",
+            rewardMoney = 114000,
+        },
+        [30482] = {
+            description = "A single large mogu performing a ritual on the lake caught your attention " ..
+                "while you were killing the other mogu in the area. It seems unwise to let his ritual " ..
+                "complete.",
+            rewardItems = {{90625, 1}},
+            rewardMoney = 228000,
+        },
+        [30484] = {
+            description = "The time for war is at hand, <name>!\n\nWe've been training these natives " ..
+                "non-stop since you left, and I believe they're as good as they're going to get.\n\nSee " ..
+                "for yourself. Check in with the others and return with your findings.\n\nWe must rely on " ..
+                "our enemy being somehow... even less prepared.",
+            rewardMoney = 98000,
+        },
+        [30485] = {
+            description = "These hozen are behaving most unnaturally, <name>. Marching in formation? In " ..
+                "armor?\n\nThis troubles me. We must discuss it at another time, however. I have come to " ..
+                "ask for your assistance.\n\nThe ancient fresco, where last we spoke, is nearly unveiled. " ..
+                "I am certain that it holds ancient wisdom - knowledge that the emperor wanted us to " ..
+                "remember.\n\nMy meditations alone may not be enough to discern its meaning. Please, take " ..
+                "this heirloom to the shrine of my ancestors. I shall require their assistance.",
+            rewardMoney = 98000,
+        },
         [30487] = {
             description = "The mountain pass is very dangerous. You need much luck to survive. Nephew " ..
                 "Bentnail will show you the way.\n\nPerhaps today is a lucky day to travel though. Wind " ..
@@ -34612,10 +34793,140 @@ ns.Overrides.wowhead = {
                 "blows.\n\nClimb in the cart when you are ready to leave.",
             rewardMoney = 106000,
         },
+        [30488] = {
+            description = "What the heck are you supposed to be? A <class>? Never heard of one of them. " ..
+                "You here to help or to steal my yaks?\n\nLook, if yer' insistin' on helpin' out, go find " ..
+                "my boy. He got himself grabbed by a bunch of sprites and probably doesn't even know we " ..
+                "lost the ranch.\n\nThey dragged him off to Pranksters' Hollow south east of here. Go " ..
+                "rescue him an' I'll see about giving you a reward of some sort.",
+            rewardMoney = 106000,
+        },
+        [30489] = {
+            description = "Say, if you really are here to help, I could use me some needles off them " ..
+                "sprites in Pranksters' Hollow.\n\nThe grummles don't believe in luck they can't smell. " ..
+                "They'll pay better for yaks that have that fresh needle scent.",
+            rewardMoney = 106000,
+        },
+        [30491] = {
+            description = "Look, my father is crazy. I love him, but he's crazy.\n\nThese yaungol managed " ..
+                "to completely obliterate our ranch and scattered our yaks every which way.\n\nIf I know " ..
+                "my father though, he's going to try to go head to head with the yaungol to get the yaks " ..
+                "back.\n\nCan you help us round up some of the yaks so my father doesn't do anything " ..
+                "stupid?\n\nJust ride them over to the Yak Wash so we can clean them up and sell them to " ..
+                "the grummles.",
+            rewardMoney = 106000,
+        },
+        [30492] = {
+            description = "I wasn't lying about your reward. Here, take these washed yaks to the grummle " ..
+                "caravan master Eightcoins.\n\nYou can find him at the Grummle Bazaar west of here. He'll " ..
+                "credit us and give you a delivery fee.\n\nHe may be short, but he is our biggest " ..
+                "customer.\n\nReturn to me if you lose the yaks. More often than not they just come right " ..
+                "back here anyway. Once they've been cleaned that is.",
+            rewardChoices = {{82574, 1}, {82575, 1}, {82576, 1}, {82577, 1}, {82578, 1}},
+            rewardMoney = 106000,
+        },
+        [30495] = {
+            description = "Can I trouble you for another favor?\n\nWe're way behind schedule, and this " ..
+                "jade shipment is the last we need to finish the great statue.\n\nI've got my hands full, " ..
+                "so could you run this ore over to the other foremen?\n\nHistorian Dinh, Surveyor Sawa, " ..
+                "and Kitemaster Shoku can all be found around the base of the statue. Taskmaster Emi is " ..
+                "directing production at the top of the statue.\n\nWe're on a deadline, so make sure you " ..
+                "do it fast! Time's a wasting!",
+            rewardChoices = {{80773, 1}, {80774, 1}, {80775, 1}, {80776, 1}, {80777, 1}},
+            rewardMoney = 98000,
+        },
+        [30496] = {
+            description = "There is great dissent in Inkgill, <race>. Elder Shai Hu drank the " ..
+                "sha-corrupted waters of the mere, and forced the others to do the same. When I " ..
+                "protested, Orachi of the town guard confiscated my ritual staff and banished me.\n\nNow, " ..
+                "I am not only an exile, I am unable to speak with the waters that once gave me " ..
+                "guidance!\n\nI am not a fighter. But if you are, perhaps you can recover my staff from " ..
+                "Orachi? He is in town to our north.",
+            rewardMoney = 204000,
+        },
+        [30498] = {
+            description = "Oh, before I forget, I have something I was asked to deliver to you. A letter " ..
+                "from one of your companions, I assume.\n\nI was made to understand that your presence " ..
+                "was urgently required, so I took the liberty of arranging your passage.\n\nSpeak to " ..
+                "Ginsa Arroweye just south of here when you're ready. She has a kite waiting.",
+            rewardMoney = 74000,
+        },
+        [30499] = {
+            description = "Oh, before I forget, I have something I was asked to deliver to you. A letter " ..
+                "from one of your companions, I assume.\n\nI was made to understand that your presence " ..
+                "was urgently required, so I took the liberty of arranging your passage.\n\nSpeak to " ..
+                "Ginsa Arroweye just south of here when you're ready. She has a kite waiting.",
+            rewardMoney = 74000,
+        },
+        [30500] = {
+            description = "Pandaria is a mystical land, traveler.\n\nIt bears repeating that some of its " ..
+                "secrets remain hidden, even to Lorewalkers.\n\nSealing those fissures did not mend what " ..
+                "has been broken. If the legends are true, it will take much more to release this land " ..
+                "from the grasp of the Sha.\n\nThe aggression of that battle awakened a host of living " ..
+                "negative emotions. What you see here is likely the first of many such " ..
+                "manifestations.\n\nFor now, we can only try to diminish their presence here.",
+            rewardMoney = 98000,
+        },
+        [30502] = {
+            description = "The more powerful remnants of that horrible manifestation may be too much for " ..
+                "you to handle on your own, <name>.\n\nI fear I'd be of little help in terms of actual " ..
+                "combat, but I can suggest a solution.\n\nThe great jade statue was soon to become a " ..
+                "living serpent - one of our revered celestials. Its construction imbued it with special " ..
+                "powers that may sufficiently weaken these adversaries.",
+            rewardMoney = 98000,
+        },
+        [30504] = {
+            description = "Your companions have made themselves at home in our land, and brought with " ..
+                "them a dangerous conflict.\n\nThe full extent of their destruction here we cannot yet " ..
+                "know. Already it is... unspeakable.\n\nNevertheless, to forsake your friends out of " ..
+                "spite would be against our way. Any that yet live are doubtlessly wounded and in " ..
+                "desperate need of care.\n\nThese fireworks were to celebrate the statue's completion. " ..
+                "Use them near your companions to signal Mishi, and she will bear them off to safety.",
+            rewardMoney = 98000,
+        },
+        [30506] = {
+            description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
+                "his people are upstairs in the apothecary's house back in Binan Village.\n\nHe has " ..
+                "requested your presence.",
+            rewardMoney = 10200,
+        },
+        [30507] = {
+            description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
+                "his people are upstairs in the apothecary's house across the way.\n\nHe has requested " ..
+                "your presence.",
+            rewardMoney = 10200,
+        },
         [30508] = {
             description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
                 "his people are upstairs.\n\nHe has requested your presence.",
             rewardMoney = 10200,
+        },
+        [30509] = {
+            description = "It would seem that your General Nazgrim has awakened from his injuries. He and " ..
+                "his people are upstairs in the apothecary's house back in Binan Village.\n\nHe has " ..
+                "requested your presence.",
+            rewardMoney = 10200,
+        },
+        [30510] = {
+            description = "It would seem that your General Nazgrim has awakened from his injuries. He and " ..
+                "his people are upstairs in the apothecary's house across the way.\n\nHe has requested " ..
+                "your presence.",
+            rewardMoney = 10200,
+        },
+        [30511] = {
+            description = "It would seem that your General Nazgrim has awakened from his injuries. He and " ..
+                "his people are upstairs.\n\nHe has requested your presence.",
+            rewardMoney = 10200,
+        },
+        [30512] = {
+            description = "< Admiral Taylor winces in pain.>\n\nJade Forest was a disaster.\n\nAnduin's " ..
+                "gone. We lost some good people. We didn't stop the Horde from advancing into the " ..
+                "continent.\n\nBut I think I've found a way to get the locals on our side. You just " ..
+                "helped fight off some of these \"yaungol\", no?\n\nI hear yaungol sacked Westwind Rest, " ..
+                "a local village. We've been told that two groups of survivors have camped out along the " ..
+                "road west out of town.\n\nWe help them out, maybe they'll consider siding with the " ..
+                "Allliance.",
+            rewardMoney = 102000,
         },
         [30513] = {
             description = "I am injured, but we can't stop here.\n\nThe hozen were... unreliable. The " ..
@@ -34625,6 +34936,180 @@ ns.Overrides.wowhead = {
                 "gathered along the road out of town.\n\nGo. Take the road west. Gather the " ..
                 "survivors.\n\nWe'll help them rebuild. Then, they will see the advantage of joining the " ..
                 "Horde!",
+            rewardMoney = 102000,
+        },
+        [30514] = {
+            description = "The yaungol have always been a difficult, proud people, but never this violent " ..
+                "or aggressive.\n\nI do not know what has prompted this change in their behavior, but we " ..
+                "don't have time to find out, now. We fear for our lives and livelihoods as long as " ..
+                "Ur-Bataar, leader of the Bataari yaungol, lives.\n\nGo, set the banner in his camp " ..
+                "ablaze to challenge him, and then defeat him in battle. Only then will we be secure.",
+            rewardMoney = 204000,
+        },
+        [30515] = {
+            description = "The yaungol have always been a difficult, proud people, but never this violent " ..
+                "or aggressive.\n\nI do not know what has prompted this change in their behavior, but we " ..
+                "don't have time to find out, now. We fear for our lives and livelihoods as long as " ..
+                "Ur-Bataar, leader of the Bataari yaungol, lives.\n\nGo, set the banner in his camp " ..
+                "ablaze to challenge him, and then defeat him in battle. Only then will we be secure.",
+            rewardMoney = 204000,
+        },
+        [30516] = {
+            description = "So you need to whack some wily weeds?\n\nNo problem, neighbor! Only thing is, " ..
+                "I'm running low on weed killer.\n\nI make my own concoction - very potent, totally " ..
+                "organic and good for the earth. Plants love it! Well... except for those pesky weeds. " ..
+                "They hate the stuff!\n\nIf you bring me some Spideroot from the terraces just west of " ..
+                "us, I'll make a fresh batch and go down to Yoon's farm myself.\n\nI would gather some " ..
+                "myself but... well... I hate spiders. You'll see what I mean.",
+            rewardMoney = 114000,
+        },
+        [30517] = {
+            description = "The next voting member on the Tiller's council is Farmer Fung, and it's easy " ..
+                "to see why.\n\nThat man's vegetables are the biggest in the valley! I only hope that " ..
+                "someday I can grow pumpkins as big as his.\n\nIf we hope to join the Tillers, he would " ..
+                "be the next person to convince.",
+            rewardMoney = 57000,
+        },
+        [30518] = {
+            description = "You want my vote for Farmer Yoon? Ha! You're joking, right?\n\nListen, I'm not " ..
+                "going to vote for some citypaw with no lick a' knowledge about farming the earth.\n\nIt " ..
+                "would be an embarrassment to farm alongside you or that Yoon shmuck.\n\nNow let me deal " ..
+                "with my own problems. Some devil let my prize yaks loose, and now they're running wild " ..
+                "northwest of Halfhill.\n\nIf I could just get my yaks back, then maybe I'd be able to " ..
+                "sleep at night.",
+            rewardMoney = 114000,
+        },
+        [30519] = {
+            description = "The next vote we'll need is from Nana Mudclaw. She's Haohan's grandmother, and " ..
+                "she's been a Tiller longer than you and I have been alive!\n\nShe's still working at the " ..
+                "Tillers building in Halfhill. Why don't you pay her a visit?",
+            rewardMoney = 57000,
+        },
+        [30521] = {
+            description = "This is going to be tough, <name>.\n\nThe last vote we need comes from Haohan " ..
+                "Mudclaw, the head of the Tillers Union.\n\nI know he wasn't too keen on us to start, but " ..
+                "we've learned so much about farming, I'm sure he'll have a change of heart!\n\nGo speak " ..
+                "to him. You can be very convincing, right?",
+            rewardMoney = 57000,
+        },
+        [30522] = {
+            description = "What are YOU doing here, citypaw?\n\nLook, I've got my hands full with a " ..
+                "break-in at my shed to the west. Some rascals came in the middle of the night and " ..
+                "ransacked the place.\n\nI've got missing seeds, broken tools, and eaten inventory to " ..
+                "deal with.\n\nI'll just add it to my list of other troubles: a whole wagon of melons " ..
+                "stolen, a broken water pump, animals ruining my harvest...\n\nI wish that I could just " ..
+                "get to the bottom of all this already!",
+            rewardMoney = 114000,
+        },
+        [30523] = {
+            description = "Hey <name>. I've been looking at that wagon every day, day in and day out, " ..
+                "since the day I moved in. Quite an eyesore, don't you think?\n\nI heard in town that " ..
+                "Fish Fellreed is quite handy with tools. She might be able to fix it up, and then we " ..
+                "could turn that patch of land into a plot for farming.\n\nWhy don't you talk to her and " ..
+                "see if she'd be willing to do the job?",
+            rewardMoney = 57000,
+        },
+        [30524] = {
+            description = "Sure! I know just the wagon that you're talkin' about!\n\nI can fix it right " ..
+                "up, but I'll need wood.\n\nThere's a whole lot of it down at the bottom of the lake. If " ..
+                "you fish it right out - haha, get it? Fish? Oh I just crack myself up " ..
+                "sometimes.\n\nAnyway, you bring me here some 'o that wood and then I'll get right to " ..
+                "work!",
+            rewardMoney = 114000,
+        },
+        [30525] = {
+            description = "All right, <name>. This is our big chance!\n\nMr. Mudclaw's farm is in big " ..
+                "trouble. Those mountain hozen are coming down at night, wrecking his crops and eating " ..
+                "his hard-earned harvest.\n\nWe've got to get rid of them for good, and I know just how " ..
+                "to do it.\n\nBack in the day, my grandpa showed me how to mix a wounding poison to deal " ..
+                "with the pests on the farm.\n\nThe virmen warrens to the north hold the key ingredients " ..
+                "for my mixture.\n\nDon't look so worried, <name>! I'm pretty sure this is going to work.",
+            rewardMoney = 114000,
+        },
+        [30526] = {
+            description = "The starving, mangy dog whines piteously and attempts a brief wag of its " ..
+                "tail.\n\nIt looks like it could use a good meal right about now.",
+            rewardMoney = 114000,
+        },
+        [30527] = {
+            description = "All right, now I happen to know that those mountain hozen love a delicious, " ..
+                "sweet melon.\n\nMr. Haohan's last harvest of melons got stolen, so we're going to have " ..
+                "to grow some of our own.\n\nOnce we have our harvest, we'll use them to lure the nasty " ..
+                "hozen's leader out of its cave!",
+            rewardMoney = 114000,
+        },
+        [30528] = {
+            description = "You ready for the final step of the plan?\n\nThe leader of the Kunzen hozen is " ..
+                "a brute by the name of Chief Yip-Yip. It's said that he is nearly impervious to " ..
+                "pain.\n\nI've injected the melons with a toxic mixture, so don't try eating " ..
+                "them!\n\nOnce you get his attention, throw these melons onto the ground. Yip-Yip won't " ..
+                "be able to resist a sweet striped melon.\n\nWhen he takes a bite, he'll be temporarily " ..
+                "weakened, and you should find yourself an opening to attack.",
+            rewardMoney = 228000,
+        },
+        [30529] = {
+            description = "Now that we're officially members of the Tillers Union, Mr. Mudclaw said he'd " ..
+                "be happy to help us upturn this big ole' rock in the middle of our field.\n\nOnce we " ..
+                "clear away that stone, I've got something special planned.\n\nRun down and give him a " ..
+                "holler to let him know that we're ready.",
+            rewardMoney = 57000,
+        },
+        [30534] = {
+            description = "Despite your best efforts, the work is starting to pile up around " ..
+                "here.\n\nPerhaps you could ask one of your best friends if they'd like to help out at " ..
+                "Sunsong Ranch.",
+            rewardMoney = 57000,
+        },
+        [30535] = {
+            description = "Well, first things first! I'm going to need lots of help 'round here.\n\nIf " ..
+                "we're going to be partners, you've got to learn how to harvest crops, and if you wanna " ..
+                "harvest crops you gotta plant seeds!\n\nNow it's my understanding that a mister, uh... " ..
+                "Grainfell? No, that wasn't it... Greedfill? That doesn't sound right...\n\nGreenfield! " ..
+                "That's his name! He's the man to see for seeds.\n\nGreenfield's got a stall over at " ..
+                "Halfhill Market, directly southeast of here - go see him and pick up some vegetable " ..
+                "seeds.",
+            rewardMoney = 102000,
+        },
+        [30565] = {
+            description = "Things seem to be goin' our way more and more lately, <name>. I was out doin " ..
+                "some explorin' when I came upon this little beauty.\n\n<Sully gestures to the ballista " ..
+                "to his right.>\n\nProblem is she's one of a set and the other one is still in pieces. " ..
+                "I'd have gotten it together by now if those pesky Grimleers hadn't ambushed me and taken " ..
+                "some of the gears and bolts.\n\nHey, ye seem to be pretty good at handlin' the natives. " ..
+                "Ye wouldn't mind goin' and helpin' ol'Sully out would ye?",
+            rewardMoney = 98000,
+        },
+        [30567] = {
+            description = "Can you smell it in the air? A storm is brewing! And so am I!\n\nMeet me at " ..
+                "the hilltop when the storm hits and together we'll whip up a keg of my most famous brew. " ..
+                "Can I count on your help?",
+            rewardMoney = 456000,
+        },
+        [30568] = {
+            description = "Welcome back, <name>! It seems the Jinyu have taken to our training even " ..
+                "better than I had hoped. We're in the final stages of our preparations now.\n\nI need " ..
+                "someone to go check in with Amber, Bold Karasshi, and Mishka. See if they need any help " ..
+                "to complete their training.\n\nYou'll find Karasshi and Mishka here in Pearlfin Village. " ..
+                "Amber is training recruits in Slingtail Pits to the northwest.",
+            rewardMoney = 98000,
+        },
+        [30569] = {
+            description = "I... I escaped from Farmer Chow 's, to the southeast of here. It's been taken " ..
+                "over by yaungol, but the old man and his wife just won't give it up!\n\nPlease, go there " ..
+                "and help him out. Maybe if you do, he'll be willing to send some folks back here and " ..
+                "help you guys farm up some food for the new town?",
+            rewardMoney = 10200,
+        },
+        [30570] = {
+            description = "I... I escaped from Farmer Chow 's, to the southeast of here. It's been taken " ..
+                "over by yaungol, but the old man and his wife just won't give it up!\n\nPlease, go there " ..
+                "and help him... Maybe if you do, he'll be willing to send some folks back here and help " ..
+                "you guys farm up some food for the new town?",
+            rewardMoney = 10200,
+        },
+        [30571] = {
+            description = "Those Ordo yaungol are working my farmhands to death! It just ain't " ..
+                "right.\n\nPlease, <class>, save them before it's too late.",
             rewardMoney = 102000,
         },
         [30575] = {
@@ -34645,12 +35130,44 @@ ns.Overrides.wowhead = {
             rewardItems = {{88398, 1}},
             rewardMoney = 102000,
         },
+        [30582] = {
+            description = "This well worn trinket has several markings on it confessing love and " ..
+                "adoration from the late Mrs. Muskpaw.\n\nPerhaps Lao would like his wife's trinket back.",
+            rewardMoney = 106000,
+        },
+        [30583] = {
+            description = "Oi!\n\nWe need ta' get us some food, if we're gonna survive here for " ..
+                "long!\n\nYe' may not know it, but I'm somethin' of a cook me'self. Why don'tcha go out " ..
+                "there and fetch us some meaty bits. I can cook 'em up and feed us for weeks! Or, days, " ..
+                "at least.",
+            rewardMoney = 102000,
+        },
         [30584] = {
             description = "Have you ever had a fresh dojani eel <name>? No?\n\nWell you have not lived " ..
                 "then! Head north up to the dojani river and fish up a few for us. Be careful, those eels " ..
                 "can zap you if you're not careful!",
             rewardItems = {{81175, 1}},
             rewardMoney = 114000,
+        },
+        [30585] = {
+            description = "Legend tells of a great beast in the forest to the north. My son is missing " ..
+                "and I fear he may have wandered too near its lair....\n\nHead northwest to Krasari Falls " ..
+                "and look for a mysterious whirlpool - this is the key to revealing what is hidden there. " ..
+                "Kill the wretched beast and recover any clues to my son's whereabouts.",
+            rewardMoney = 114000,
+        },
+        [30586] = {
+            description = "Pandaren have been harvesting jagged abalone in this area for generations. Now " ..
+                "it's time for you to learn the ritual.\n\nThe abalone can be found just northeast of " ..
+                "here in narsong trench. Be careful, we have noticed increased shark activity in that " ..
+                "area recently.",
+            rewardMoney = 114000,
+        },
+        [30587] = {
+            description = "For now, the yaungol invaders seem content to steal yaks. Surveying the area, " ..
+                "however, you notice they could easily move on the Yak Wash at any moment.\n\nThinning " ..
+                "their numbers may help show the yaungol that this area is protected.",
+            rewardMoney = 106000,
         },
         [30595] = {
             description = "Let me guess, you're here to deal with the mogu statues that are being " ..
