@@ -4,6 +4,234 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.222
+- database - Wowhead data as the PandaQuest portal read it: 7,570 quests, 47 NPCs, 1 object
+- quest 30588 - Fishing for a Bruising - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30589 - Wrecking the Wreck - updated
+  - description added
+  - reward money added (3s)
+- quest 30590 - Handle With Care - updated
+  - description added
+  - reward money added (3s)
+- quest 30591 - Preying on the Predators - updated
+  - description added
+  - reward money added (3s)
+- quest 30592 - The Burlap Trail: To Burlap Waystation - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward items: +1
+- quest 30593 - Deanimate the Reanimated - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30594 - Deanimate the Reanimated - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30598 - Who Knew Fish Liked Eggs? - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30599 - A Monkey Idol - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward items: +1
+- quest 30600 - No Pack Left Behind - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward items: +1
+- quest 30601 - Instant Courage - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30602 - The Rabbitsfoot - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30604 - Breaking Broketooth - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30605 - Lucky Yakshoe - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward items: +1
+- quest 30606 - Thumping Knucklethump - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +8
+- quest 30607 - Hozen Love Their Keys - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30608 - The Snackrifice - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +9
+- quest 30610 - Grummle! Grummle! Grummle! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30611 - Unleash The Yeti! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30612 - The Leader Hozen - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +9
+- quest 30613 - Armored Carp - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30614 - Oil Stop - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30616 - Traffic Issues - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +5
+- quest 30617 - Roadside Assistance - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward items: +1
+- quest 30618 - Resupplying One Keg - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +9
+- quest 30619 - Mogu?! Oh No-gu! - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30620 - Mogu?! Oh No-gu! - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30621 - They Stole My Luck! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30622 - The Swarm Begins - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30623 - The Mantidote - updated
+  - description added
+- quest 30624 - It Does You No Good In The Keg - updated
+  - description added
+- quest 30625 - Students No More - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 30626 - Retreat! - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30627 - The Savior of Stoneplow - updated
+  - description added
+  - reward money added (30g 60s)
+- quest 30628 - The Gratitude of Stoneplow - updated
+  - description added
+  - reward money added (30g 60s)
+  - reward choices: +9
+- quest 30631 - The Shrine of Seven Stars - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30632 - The Ruins of Guo-Lai - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30633 - Out with the Scouts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30634 - Barring Entry - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30635 - Killing the Quilen - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30636 - Stones of Power - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30637 - The Guo-Lai Halls - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 30638 - Leaving an Opening - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30639 - The Secrets of Guo-Lai - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward choices: +5
+- quest 30640 - Battle Spear of the Thunder King - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30641 - Battle Helm of the Thunder King - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30642 - Battle Axe of the Thunder King - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward choices: +9
+- quest 30643 - The Mogu's Message - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30644 - What Comes to Pass - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30645 - The Might of Three - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30646 - The Final Power - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward choices: +5
+- quest 30648 - Moving On - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 30649 - The Shrine of Two Moons - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30650 - Pandaren Prisoners - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30652 - In Tents Channeling - updated
+  - description added
+- quest 30653 - It Does You No Good In The Keg - updated
+  - description added
+- quest 30654 - The Guo-Lai Halls - updated
+  - quest giver added: Anji Autumnlight
+  - description added
+  - reward money added (22g 80s)
+- quest 30655 - Pandaren Prisoners - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30656 - Barrels of Fun - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 30657 - In Tents Channeling - updated
+  - description added
+- quest 30658 - Huff & Puff - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30660 - The Ordo Warbringer - updated
+  - description added
+  - reward money added (30g 60s)
+  - reward choices: +10
+- quest 30661 - The Ordo Warbringer - updated
+  - description added
+  - reward money added (30g 60s)
+  - reward choices: +10
+- quest 30662 - The Ordo Warbringer - updated
+  - description added
+  - reward money added (30g 60s)
+  - reward choices: +10
+- quest 30666 - Sudden, Unexpected Crocolisk Aggression - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30667 - Particular Plumage - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30668 - Build Your Own Raft - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30669 - The Lorewalker on the Lake - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30670 - Turnabout - updated
+  - description added
+  - reward money added (10g 20s)
+- npc 60223 - Granite Quilen - updated
+  - coordinates: 40 spawn points added in Vale of Eternal Blossoms
+
 0.2.221
 - database - Wowhead data as the PandaQuest portal read it: 7,501 quests, 46 NPCs, 1 object
 - quest 30452 - Darkmoon Tiger Deck - updated
@@ -1608,185 +1836,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - quest 29893 - Hue - updated
   - description added
   - reward money added (9g 80s)
-
-0.2.213
-- database - Wowhead data as the PandaQuest portal read it: 7,013 quests, 40 NPCs, 1 object
-- quest 29686 - A Radical Notion - updated
-  - description added
-  - reward money added (4g 40s)
-- quest 29687 - Twisted Associations - updated
-  - description added
-  - reward money added (4g 40s)
-- quest 29688 - Advancing the Campaign - updated
-  - description added
-  - reward money added (44s)
-- quest 29689 - Advancing the Campaign - updated
-  - description added
-  - reward money added (44s)
-- quest 29690 - Into the Mists - updated
-  - description added
-  - reward money added (98s)
-- quest 29691 - Bring Me A Shrubbery! - updated
-  - description added
-- quest 29694 - Regroup! - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +5
-- quest 29716 - The Double Hozen Dare - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29717 - Down Kitty! - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +5
-- quest 29723 - The Jade Witch - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward items: +1
-- quest 29725 - SI:7 Report: Fire From the Sky - updated
-  - description added
-- quest 29726 - SI:7 Report: Hostile Natives - updated
-  - description added
-- quest 29727 - SI:7 Report: Take No Prisoners - updated
-  - description added
-  - reward money added (39g 20s)
-  - reward choices: +5
-- quest 29728 - Explosive Evidence - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29730 - Scouting Report: Hostile Natives - updated
-  - description added
-- quest 29731 - Scouting Report: On the Right Track - updated
-  - description added
-- quest 29733 - SI:7 Report: Lost in the Woods - updated
-  - description added
-- quest 29743 - Monstrosity - updated
-  - description added
-- quest 29745 - The Sprites' Plight - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29747 - Break the Cycle - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29748 - Simulacrumble - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29749 - An Urgent Plea - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +6
-- quest 29750 - Vessels of the Spirit - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29751 - Ritual Artifacts - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29752 - The Wayward Dead - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29753 - Back to Nature - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29754 - To Bridge Earth and Sky - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29755 - Pei-Back - updated
-  - description added
-  - reward money added (19g 60s)
-  - reward choices: +9
-- quest 29756 - A Humble Offering - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29757 - Bottletoads - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 29758 - Guess Whose Back - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 29759 - Kung Din - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29762 - Family Heirlooms - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29763 - Stealing Their Thunder - updated
-  - description added
-  - reward money added (18g 80s)
-  - reward choices: +3
-- quest 29764 - Disarmament - updated
-  - description added
-  - reward choices: +4
-- quest 29765 - Cryin' My Eyes Out - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29768 - Missing Mallet - updated
-  - description added
-  - reward money added (1s 25c)
-  - reward choices: +3
-- quest 29769 - Rascals - updated
-  - description added
-  - reward money added (1s 25c)
-- quest 29770 - Still Good! - updated
-  - description added
-  - reward money added (1s 25c)
-  - reward choices: +3
-- quest 29771 - Stronger Than Wood - updated
-  - description added
-  - reward money added (1s 25c)
-- quest 29772 - Raucous Rousing - updated
-  - description added
-  - reward money added (1s 25c)
-- quest 29774 - Not In the Face! - updated
-  - description added
-  - reward money added (1s 25c)
-- quest 29775 - The Spirit and Body of Shen-zin Su - updated
-  - description added
-  - reward money added (1s 25c)
-  - reward choices: +3
-- quest 29776 - Morning Breeze Village - updated
-  - description added
-  - reward money added (1s 25c)
-- quest 29777 - Tools of the Enemy - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29778 - Rewritten Wisdoms - updated
-  - description added
-  - reward money added (1s 75c)
-  - reward choices: +3
-- quest 29779 - The Direct Solution - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29780 - Do No Evil - updated
-  - description added
-  - reward money added (1s 75c)
-  - reward choices: +3
-- quest 29781 - Monkey Advisory Warning - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29782 - Stronger Than Bone - updated
-  - description added
-  - reward money added (1s 75c)
-  - reward choices: +4
-- quest 29783 - Stronger Than Stone - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29784 - Balanced Perspective - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29785 - Dafeng, the Spirit of Air - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 29786 - Battle for the Skies - updated
-  - description added
-  - reward money added (1s 75c)
-  - reward items: +1
-- quest 29787 - Worthy of Passing - updated
-  - description added
-  - reward money added (2s 25c)
-- quest 29788 - Unwelcome Nature - updated
-  - description added
-  - reward money added (2s 25c)
 
 0.2.201
 - changelog - data changes list every quest, NPC, object and item, each with what changed for it
