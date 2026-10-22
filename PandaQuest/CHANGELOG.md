@@ -4,6 +4,221 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.221] - 2026-10-22
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,501 quests, 46 NPCs, 1 object
+- quest 30452 - Darkmoon Tiger Deck - updated
+  - description added
+  - reward choices: +2
+- quest 30457 - Call Out Their Leader - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30459 - All of the Arrows - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30460 - Hit Medicine - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30466 - Sufficient Motivation - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30467 - My Son... - updated
+  - description added
+  - reward money added (5g 10s)
+- quest 30468 - Enraged Vengeance - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30469 - Repossession - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30470 - A Gift For Tina - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30471 - A Gift For Chee Chee - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30472 - A Gift For Sho - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30473 - A Gift For Fish - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30474 - A Gift For Ella - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30475 - A Gift For Fung - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30476 - A Gift For Old Hillpaw - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30477 - A Gift For Haohan - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30478 - A Gift For Jogu - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30479 - A Gift For Gina - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30480 - The Ritual - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30481 - Carved in Stone - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30482 - The Soul-Gatherer - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30484 - Gauging Our Progress - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30485 - Last Piece of the Puzzle - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30488 - The Missing Muskpaw - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30489 - Fresh Needle Scent - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30491 - At the Yak Wash - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30492 - Back in Yak - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +5
+- quest 30495 - Love's Labor - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 30496 - The Waterspeaker's Staff - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 30498 - Get Back Here! - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 30499 - Get Back Here! - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 30500 - Residual Fallout - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30502 - Jaded Heart - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30504 - Emergency Response - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30506 - Admiral Taylor has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30507 - Admiral Taylor has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30509 - General Nazgrim has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30510 - General Nazgrim has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30511 - General Nazgrim has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30512 - Westwind Rest - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30514 - Challenge Accepted - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 30515 - Challenge Accepted - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 30516 - Growing the Farm I: A Little Problem - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30517 - Farmer Fung's Vote I: Yak Attack - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30518 - Farmer Fung's Vote II: On the Loose - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30519 - Nana's Vote I: Nana's Secret Recipe - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30521 - Haohan's Vote I: Bungalow Break-In - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30522 - Haohan's Vote II: The Real Culprits - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30523 - Growing the Farm II: The Broken Wagon - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30524 - Growing the Farm II: Knock on Wood - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30525 - Haohan's Vote III: Pure Poison - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30526 - Lost and Lonely - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30527 - Haohan's Vote IV: Melons For Felons - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30528 - Haohan's Vote V: Chief Yip-Yip - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 30529 - Growing the Farm III: The Mossy Boulder - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30534 - A Second Hand - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30535 - Learn and Grow I: Seeds - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30565 - An Unexpected Advantage - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30567 - Blanche's Boomer Brew - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 30568 - Helping the Cause - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30569 - Trouble on the Farmstead - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30570 - Trouble on the Farmstead - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30571 - Farmhand Freedom - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30582 - The Late Mrs. Muskpaw - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30583 - Blue Dwarf Needs Food Badly - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30585 - What Lurks Below - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30586 - Jagged Abalone - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30587 - Yakity Yak - updated
+  - description added
+  - reward money added (10g 60s)
+
 ## [0.2.220] - 2026-10-22
 
 Data from the PandaQuest portal.
@@ -1599,243 +1814,6 @@ Data from the PandaQuest portal.
 - quest 29788 - Unwelcome Nature - updated
   - description added
   - reward money added (2s 25c)
-
-## [0.2.212] - 2026-10-21
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 6,957 quests, 40 NPCs, 1 object
-- quest 29596 - The End of the Exarch - updated
-  - description added
-  - reward choices: +4
-- quest 29599 - Escape from Durnholde - updated
-  - description added
-  - reward choices: +4
-- quest 29600 - Snap Judgment - updated
-  - description added
-  - reward money added (10g 20s)
-  - reward choices: +9
-- quest 29605 - Brother Against Brother - updated
-  - description added
-  - reward money added (8g 20s)
-  - reward choices: +4
-- quest 29606 - Terokk's Legacy - updated
-  - description added
-  - reward money added (8g 20s)
-  - reward choices: +3
-- quest 29607 - Eyes of Desire - updated
-  - description added
-  - reward money added (16g 40s)
-- quest 29608 - Allies in Dalaran - updated
-  - description added
-- quest 29611 - The Art of War - updated
-  - description added
-  - reward money added (98s)
-- quest 29612 - The Art of War - updated
-  - description added
-  - reward money added (98s)
-- quest 29613 - A Proper Fate - updated
-  - description added
-  - reward money added (17g 60s)
-- quest 29614 - Containment is Key - updated
-  - description added
-  - reward money added (13g 20s)
-- quest 29615 - Windcaller Claw and the Water Thief - updated
-  - description added
-  - reward money added (13g 20s)
-- quest 29616 - Storming the Steamvault - updated
-  - description added
-  - reward money added (42s)
-- quest 29617 - Tian Monastery - updated
-  - description added
-  - reward money added (94s)
-- quest 29618 - The High Elder - updated
-  - description added
-  - reward money added (98s)
-- quest 29619 - A Courteous Guest - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29620 - The Great Banquet - updated
-  - description added
-  - reward money added (4g 90s)
-- quest 29622 - Your Training Starts Now - updated
-  - description added
-  - reward money added (98s)
-- quest 29623 - Perfection - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29624 - Attention - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29626 - Groundskeeper Wu - updated
-  - description added
-  - reward money added (98s)
-- quest 29627 - A Proper Weapon - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29628 - A Strong Back - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29629 - A Steady Hand - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29630 - And a Heavy Fist - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29631 - Burning Bright - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29632 - Becoming Battle-Ready - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29633 - Zhi-Zhi, the Dextrous - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29634 - Husshun, the Wizened - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 29635 - Xiao, the Eater - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 29636 - A Test of Endurance - updated
-  - description added
-  - reward money added (98s)
-- quest 29637 - The Rumpus - updated
-  - description added
-  - reward money added (19g 60s)
-  - reward choices: +10
-- quest 29639 - Flying Colors - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +6
-- quest 29640 - Find Spy To'gun - updated
-  - description added
-- quest 29641 - The Soul Devices - updated
-  - description added
-  - reward money added (8g 80s)
-  - reward choices: +4
-- quest 29642 - Trouble at Auchindoun - updated
-  - description added
-  - reward money added (44s)
-- quest 29643 - The Codex of Blood - updated
-  - description added
-- quest 29644 - Into the Heart of the Labyrinth - updated
-  - description added
-  - reward money added (13g 20s)
-  - reward choices: +4
-- quest 29645 - Ambassador Hellmaw - updated
-  - description added
-  - reward money added (8g 80s)
-- quest 29646 - Flying Colors - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +6
-- quest 29647 - Flying Colors - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +6
-- quest 29649 - How to Save a Life - updated
-  - description added
-  - reward money added (13g 20s)
-  - reward choices: +5
-- quest 29650 - Fel Ember - updated
-  - description added
-  - reward money added (13g 20s)
-  - reward choices: +5
-- quest 29651 - Honor the Dying - updated
-  - description added
-  - reward money added (13g 20s)
-- quest 29652 - One Last Favor - updated
-  - description added
-  - reward money added (13g 20s)
-- quest 29653 - The Will of the Warchief - updated
-  - description added
-  - reward money added (17g 60s)
-  - reward choices: +4
-- quest 29654 - Turning the Tide - updated
-  - description added
-  - reward money added (4g 40s)
-  - reward choices: +4
-- quest 29655 - A Very Special Cloth - updated
-  - description added
-  - reward money added (8g 80s)
-- quest 29656 - O'mrogg's Warcloth - updated
-  - description added
-  - reward money added (8g 80s)
-- quest 29657 - With Great Power, Comes Great Responsibility - updated
-  - description added
-- quest 29658 - The Calculator - updated
-  - description added
-- quest 29659 - Lost Treasure - updated
-  - description added
-- quest 29660 - Saving the Botanica - updated
-  - description added
-- quest 29661 - The Lesson of Dry Fur - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29662 - Stronger Than Reeds - updated
-  - description added
-  - reward money added (1s)
-- quest 29663 - The Lesson of the Balanced Rock - updated
-  - description added
-  - reward money added (1s)
-- quest 29664 - The Challenger's Fires - updated
-  - description added
-  - reward money added (75c)
-- quest 29665 - From Bad to Worse - updated
-  - description added
-  - reward money added (3s)
-- quest 29666 - The Sting of Learning - updated
-  - description added
-  - reward money added (1s)
-- quest 29667 - Culling the Herd - updated
-  - description added
-- quest 29669 - A Most Somber Task - updated
-  - description added
-- quest 29670 - Maul Gormal - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +5
-- quest 29674 - Unbound Darkness - updated
-  - description added
-- quest 29675 - Hey There Dalliah - updated
-  - description added
-- quest 29676 - Finding an Old Friend - updated
-  - description added
-  - reward money added (25c)
-- quest 29677 - The Sun Pearl - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29678 - Shu, the Spirit of Water - updated
-  - description added
-  - reward money added (25c)
-- quest 29679 - A New Friend - updated
-  - description added
-  - reward money added (1s)
-  - reward choices: +3
-- quest 29680 - The Source of Our Livelihood - updated
-  - description added
-  - reward money added (25c)
-- quest 29681 - Maximum Security Breakout - updated
-  - description added
-  - reward choices: +3
-- quest 29682 - Magisters' Terrace - updated
-  - description added
-  - reward money added (44s)
-- quest 29684 - Severed Communications - updated
-  - description added
-- quest 29685 - Hard to Kill - updated
-  - description added
-  - reward money added (4g 40s)
-  - reward choices: +2
-- quest 30122 - Silver Filigree Flask - updated
-  - description added
-  - reward items: +1
 
 ## [0.2.201] - 2026-10-20
 
