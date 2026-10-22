@@ -32445,10 +32445,145 @@ ns.Overrides.wowhead = {
                 "seeking an answer to their dilemma amongst the pandriarchs of old.",
             rewardMoney = 98000,
         },
+        [29997] = {
+            description = "Since you were so helpful at the mines, would you be willing to help us with a " ..
+                "small problem here at the temple?\n\nWise Mari has been complaining recently of a " ..
+                "disturbance in his temple.\n\nThe water sprites have gotten quite playful recently, and " ..
+                "made off with his ceremonial staff.\n\nIf you could help him, I would be most grateful. " ..
+                "I may even put in a word with the Jade Serpent for you.\n\nJust follow the path to the " ..
+                "north.",
+            rewardMoney = 98000,
+        },
+        [29998] = {
+            description = "Lorewalker Stonestep is in charge of the entire temple library. Lately, " ..
+                "something has been troubling him and his work.\n\nWith thousands of ancient tomes to be " ..
+                "transcribed, I can't afford to have him distracted.\n\nWould you follow the path south " ..
+                "to the library and see what ails him?",
+            rewardMoney = 49000,
+        },
+        [29999] = {
+            description = "Have you seen the young serpents in the training yard?\n\nThe littles ones " ..
+                "tend to be mischievous, and some of them ran off to play before the training " ..
+                "session.\n\nThe Mistress will get angry if she discovers they're missing.\n\nWould you " ..
+                "go find them and bring them back to me? I don't want them to get into trouble.\n\nThey " ..
+                "like to play out in the open, so look for them in courtyards and around the spires.",
+            rewardMoney = 98000,
+        },
+        [30001] = {
+            description = "Moths have infested the library. Moths!\n\nAny librarian worth his letters " ..
+                "knows that moths are the most dangerous threat to paper, second only to bookworms.\n\nAs " ..
+                "it turns out, my assistants are a useless bunch of insect-fearing cowards.\n\nPlease, " ..
+                "you MUST help me get rid of the moths immediately! The works of a thousand pandaren " ..
+                "storytellers depend on you!",
+            rewardMoney = 98000,
+        },
+        [30002] = {
+            description = "The worst possible thing has happened, <race>.\n\nWe. Have. Bookworms.\n\nThis " ..
+                "is a critical situation. All Bookworms in the library must be eradicated at once to " ..
+                "prevent their spread.\n\nWe must squash this problem, literally! Please examine the " ..
+                "infested books in the library and squash any Bookworms that you find.",
+            rewardChoices = {
+                {80722, 1}, {80723, 1}, {80724, 1}, {80725, 1}, {80726, 1}, {80727, 1}, {80728, 1},
+                {80729, 1}, {80730, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [30004] = {
+            description = "You have helped us more than you can ever imagine, <name>.\n\nI do not know " ..
+                "what I would do if our precious scrolls were ever to be lost.\n\nPlease return to the " ..
+                "Elder Sage Rain-Zhu and tell him that the library is in order.",
+            rewardMoney = 49000,
+        },
+        [30005] = {
+            description = "Do you like fireworks, <sir/miss>?\n\nI love them! In older times we would set " ..
+                "them off to frighten away demons, but I just like them because they're pretty!\n\nI " ..
+                "think there are still some old launchers lying around the temple.\n\nWould you go set " ..
+                "off some big fireworks for me? It would make me so happy!",
+            rewardMoney = 98000,
+        },
+        [30006] = {
+            description = "Despite our best efforts, the sha broke the seals around the main " ..
+                "temple.\n\nIf we cannot hold them back here, their darkness will spread to the rest of " ..
+                "the Jade Forest.\n\nWe need your help immediately. Kill any sha creatures that you see. " ..
+                "They should not be difficult to find.",
+            rewardMoney = 114000,
+        },
+        [30011] = {
+            description = "Please tell the Elder Sage Rain-Zhu that I will begin my work at once.",
+            rewardMoney = 49000,
+        },
+        [30015] = {
+            description = "Blood and Thunder! My axe hungers!\n\nWe won't return to Orgrimmar until every " ..
+                "last Alliance is purged from this land.\n\nI will train these natives myself, if I have " ..
+                "to. One way or another, this land will be made ready for Horde settlement.\n\nIn the " ..
+                "meantime, their chief gave me this to pass on to you - a map and a message in some fancy " ..
+                "script.\n\nDo what you must, but be quick about it.\n\nWar is brewing...",
+            rewardMoney = 49000,
+        },
         [30027] = {
             description = "First, you will need a weapon suited to your talents. Retrieve a staff from " ..
                 "one of the weapon racks below, bring it to me, and show me that you know how to equip it " ..
                 "properly.",
+            rewardMoney = 15,
+        },
+        [30028] = {
+            description = "Since you are heading south, can you try to recover some of the grain that " ..
+                "these thieves made off with?\n\nWe saw birds and sprites running off with entire bags of " ..
+                "our best bulk stock into the fields east and south of here.",
+            rewardMoney = 102000,
+        },
+        [30029] = {
+            description = "So... we bought some cheap grains in bulk. It turned out the grain was " ..
+                "infested with sprites.\n\nI HATE sprites. With their wee beady eyes and constant " ..
+                "smiling.\n\nI would like to resolve this quietly. Can I buy your services to discretely " ..
+                "eliminate some of these grain thieves?",
+            rewardChoices = {{84329, 1}, {84330, 1}, {84331, 1}, {84332, 1}, {84333, 1}},
+            rewardMoney = 102000,
+        },
+        [30030] = {
+            description = "Just to be clear, what happened was an accident. What I did, I did for " ..
+                "INDUSTRY!\n\nThere was no way I could have known that a sprite invasion would happen at " ..
+                "any time, or that one of them would try to eat my new \"Pan's Miracle Gro\" " ..
+                "formula.\n\nNow not only do they have a big sprite leading them, but he's one angry " ..
+                "beast.\n\nIf I pay you, will you take him out?",
+            rewardMoney = 102000,
+        },
+        [30031] = {
+            description = "As long as you're here, you might as well help me out. I'm feeling pretty darn " ..
+                "unqualified for the task, seeing as I've never drank a drop of beer in my life.\n\nYou " ..
+                "should try a little sample of each of their grains. Let's see if any of this stuff is " ..
+                "sweet enough for Uncle Chen.",
+            rewardMoney = 102000,
+        },
+        [30032] = {
+            description = "Looking for sweet grain? My father once mentioned a malted cave barley that " ..
+                "sounds about right.\n\nIf you are willing to brave the peril, there is an ancient cave " ..
+                "at the base of the Winds' Edge south of here.\n\nThere is even an old lift my father " ..
+                "made when he would travel into the jungle.\n\nIn the cave is a bush as old as my family. " ..
+                "From that bush you can pluck a grain so sweet it will humble your senses.\n\nJust watch " ..
+                "out for its guardians.",
+            rewardChoices = {
+                {81787, 1}, {81788, 1}, {81789, 1}, {81790, 1}, {81791, 1}, {81792, 1}, {81793, 1},
+                {81794, 1}, {81795, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30033] = {
+            description = "First, you will need weapons suited to your talents. Retrieve a spellblade and " ..
+                "a hand fan from one of the weapon racks below, bring it to me, and show me that you know " ..
+                "how to hold it properly.",
+            rewardMoney = 15,
+        },
+        [30034] = {
+            description = "First, you will need a weapon suited to your talents. Retrieve a crossbow from " ..
+                "one of the weapon racks below, bring it to me, and show me that you know how to hold it " ..
+                "properly.",
+            rewardMoney = 15,
+        },
+        [30035] = {
+            description = "First, you will need weapons suited to your talents. Retrieve a mace and a " ..
+                "book of prayers from one of the weapon racks below, bring them to me, and show me that " ..
+                "you know how to hold them properly.",
             rewardMoney = 15,
         },
         [30036] = {
@@ -32457,14 +32592,399 @@ ns.Overrides.wowhead = {
                 "how to hold them properly.",
             rewardMoney = 15,
         },
+        [30037] = {
+            description = "First, you will need weapons suited to your talents. Retrieve an axe and a " ..
+                "shield from one of the weapon racks below, bring them to me, and show me that you know " ..
+                "how to hold them properly.",
+            rewardMoney = 15,
+        },
+        [30038] = {
+            description = "First, you will need a weapon suited to your talents. Retrieve a sword from " ..
+                "one of the weapon racks below, bring it to me, and show me that you know how to hold it " ..
+                "properly.",
+            rewardMoney = 15,
+        },
         [30039] = {
             description = "Freshly arrived for your training, your first task is simple: Speak to Master " ..
                 "Shang Xi.",
             rewardMoney = 2,
         },
+        [30040] = {
+            description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
+            rewardMoney = 2,
+        },
+        [30041] = {
+            description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
+            rewardMoney = 2,
+        },
+        [30042] = {
+            description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
+            rewardMoney = 2,
+        },
         [30043] = {
             description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
             rewardMoney = 2,
+        },
+        [30044] = {
+            description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
+            rewardMoney = 2,
+        },
+        [30045] = {
+            description = "Fresh to your training, your first task is simple: Speak to Master Shang Xi.",
+            rewardMoney = 2,
+        },
+        [30046] = {
+            description = "You know what? I don't have to take this.\n\nI'll show that Uncle Gao what it " ..
+                "means to be a real brewer. I'll brew the best beer he's ever tasted, with ingredients " ..
+                "I've never even used before.\n\nI'm Chen Stormstout, and I'm the best brewer alive.",
+            rewardMoney = 10200,
+        },
+        [30047] = {
+            description = "Uncle Chen is going to love this. Or... he might tell us to find something " ..
+                "sweeter. He's kind of dumb like that.\n\nLet's get this grain back to him at Halfhill.",
+            rewardMoney = 102000,
+        },
+        [30048] = {
+            description = "I'll let you in on my brewing plan, <name>: I'm planning on making an Emperor " ..
+                "Stout. Done right, it should be dark, roasty, and high in alcohol.\n\n<A frown appears " ..
+                "on Chen's face.>\n\nI just realized... I never told my plans to Li Li. She'll have no " ..
+                "idea what type of grain to bring back!\n\nCould you speak with her? I need her to bring " ..
+                "back the sweetest malted grains she can find.",
+            rewardMoney = 10200,
+        },
+        [30049] = {
+            description = "Would you mind checking in on Mudmug? He may need some assistance bringing " ..
+                "that water back.\n\nI'm sure he'll appreciate the help of a big, strong <class> like " ..
+                "yourself to help him shoulder the load.",
+            rewardMoney = 10200,
+        },
+        [30050] = {
+            description = "You want me to just GIVE you some hops? Pfshh! This is the third time today " ..
+                "some little <race> like you has come up to me asking for food!\n\nYou want food? Then " ..
+                "you'd better work!\n\n<She shoves a watering can into your hand.>\n\nNow go water my " ..
+                "plants!",
+            rewardChoices = {
+                {81844, 1}, {81845, 1}, {81846, 1}, {81847, 1}, {81848, 1}, {81849, 1}, {81850, 1},
+                {81851, 1}, {81852, 1}, {81853, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30051] = {
+            description = "Look at it, <name>: the Gilded Fan. I heared lots of good things about the " ..
+                "water they got here. Lots of bad things, too.\n\nNo sayin' what kind of water Chen's " ..
+                "gonna be needin', so what say we make him a little sampler platter?\n\nCome on, let's " ..
+                "get movin'. We'll go scoop up some water together.",
+            rewardChoices = {{81839, 1}, {81840, 1}, {81841, 1}, {81842, 1}, {81843, 1}},
+            rewardMoney = 102000,
+        },
+        [30052] = {
+            description = "You want some hops? I've got plenty in the shed out back. I'll gladly share " ..
+                "some with you... if you'll help me weed my field.\n\nNow \"hop\" to it! Get it?",
+            rewardMoney = 102000,
+        },
+        [30053] = {
+            description = "With Li Li fetching grain, and Mudmug handling our water, all we need is hops, " ..
+                "and some good wood barrels. I'll handle the barrels... but I need you to gather the " ..
+                "hops.\n\nI don't know much about the hops from this land, but I'm sure the nearby " ..
+                "farmers have something worth brewing with. Go see what you can rustle up.",
+            rewardMoney = 102000,
+        },
+        [30054] = {
+            description = "Virmen, they bite too much.\n\nThey bite Mung-Mung 's carrot. They bite " ..
+                "Mung-Mung 's pumpkin. Mung-Mung try to shoo them away, and the dookers bite Mung-Mung 's " ..
+                "tail and foot.\n\nEnough is ookin' enough.\n\nYou fight way better than Mung-Mung does. " ..
+                "Bring back their bitey teeth. Then we see who does the biting.",
+            rewardMoney = 102000,
+        },
+        [30055] = {
+            description = "All three farmers have delivered their hops to Halfhill. Perhaps you should " ..
+                "check in with Chen to make sure that he received them.",
+            rewardMoney = 102000,
+        },
+        [30056] = {
+            description = "Brave <class>, you could not have arrived at a better time. My daughter is " ..
+                "missing!\n\nI've got a suspicion that the virmen took her down into that stinking little " ..
+                "warren of theirs. I'm too old to fight virmen, and my farmhand is already exhausted from " ..
+                "fighting them off all morning.\n\nCould you look for her?",
+            rewardMoney = 102000,
+        },
+        [30057] = {
+            description = "Those virmen... they make me do horrible, horrible, silly things. All " ..
+                "involving carrots. I couldn't tell you how many carrots they threw at me.\n\nLet's not " ..
+                "waste any more time. Get me out of here!",
+            rewardChoices = {
+                {81751, 1}, {81752, 1}, {81753, 1}, {81754, 1}, {81755, 1}, {81756, 1}, {81757, 1},
+                {81758, 1}, {81759, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30058] = {
+            description = "The esteemed Journeyman Chu would appear to have created a monster. It is " ..
+                "silken death with wings.\n\nMothallus.\n\nYou have already faced its brood. Now we ask " ..
+                "that you help us face the creature itself.\n\nPlease, <class>, venture into the pit and " ..
+                "rifle the bait. This will bring the beast to you.\n\nOur mothfighters will assist you as " ..
+                "you need, though silk tends to stick to them more than most so you may need to help " ..
+                "them, should they become overwhelmed.",
+            rewardChoices = {
+                {88028, 1}, {88029, 1}, {88030, 1}, {88031, 1}, {88032, 1}, {88033, 1}, {88034, 1},
+                {90622, 1},
+            },
+            rewardMoney = 102000,
+        },
+        [30059] = {
+            description = "Oh... oh good! A <class>! Could you help me?\n\nI created a strain of vile " ..
+                "monsters during my experiments to improve silk output.\n\nThe result was a full-scale " ..
+                "moth rebellion. Can you use your <class>iness and destroy some of these mutants?",
+            rewardMoney = 102000,
+        },
+        [30063] = {
+            description = "The sha may seem unstoppable, but this is not true.\n\nTheir masks seem to be " ..
+                "the source of their power. When a sha and its mask are separated, the creature's essence " ..
+                "is banished back to its own realm.\n\nBring me intact masks, for I wish to study them " ..
+                "further. Do be careful. I'm sure the sha will not part with them easily.",
+            rewardMoney = 114000,
+        },
+        [30064] = {
+            description = "My adepts had to abandon their studies when the sha invasion " ..
+                "began.\n\nUnfortunately, they left their books scattered around the temple grounds. " ..
+                "These priceless works of knowledge must be saved!\n\nThe sutras can be found near the " ..
+                "Training Pit and the Adept's Ring to the northeast.",
+            rewardMoney = 114000,
+        },
+        [30065] = {
+            description = "Our war supplies grow low, but especially needed are additional arrows.\n\nOur " ..
+                "serpent riders are skilled marksmen, but they can do little without ammunition.\n\nWe " ..
+                "need someone to brave the battlefields and retrieve any undamaged arrows to refill our " ..
+                "stores.\n\nEvery arrow you retrieve will be used wisely.",
+            rewardMoney = 114000,
+        },
+        [30066] = {
+            description = "Our temple defenders have battled relentlessly for hours. No doubt they grow " ..
+                "tired.\n\nI will give you mantras to deliver to our fighters.\n\nDo not be fooled by " ..
+                "these pieces of paper. These ancient scriptures hold words of untold power.",
+            rewardMoney = 114000,
+        },
+        [30067] = {
+            description = "A terrible manifestation of the sha has appeared to the south.\n\nIt is trying " ..
+                "to destroy an ancient relic, the Bell of a Thousand Whispers.\n\nThis bell has never " ..
+                "been rung in the temple's history, for it is rumored to be an ancient instrument of " ..
+                "power.\n\nPlease go and defeat this demon where it stands! We must save this relic!",
+            rewardMoney = 114000,
+        },
+        [30068] = {
+            description = "Do you see the violent black and white flames erupting all around the " ..
+                "temple?\n\nThe greater our doubt, the stronger they rage. Unchecked, they will devour " ..
+                "the entire temple.\n\nWe have but one hope.\n\nTake flight on one of our war serpents. " ..
+                "Fly it near the pure springs of water, and then douse the fires with water from the " ..
+                "pools.",
+            rewardMoney = 114000,
+        },
+        [30069] = {
+            description = "Quickly and quietly; that's how SI:7 prefers to operate. That was the plan, at " ..
+                "least.\n\nRell Nightwind is already inside Garrosh'ar Point looking for signs of Anduin " ..
+                "and Taylor, but it's getting hot in there and he needs support.\n\nFight yer way through " ..
+                "these dogs and find Rell!",
+            rewardMoney = 98000,
+        },
+        [30070] = {
+            description = "Alright <lad/lass>. We've taken enough jabs at this warlock army... now it's " ..
+                "time to cut off the head.\n\nGa'trul 's back there, in that big ol' temple ruin. Give " ..
+                "him a good what-for, and the Horde will have lost its last stake here in Pandaria.",
+            rewardChoices = {
+                {90338, 1}, {90339, 1}, {90340, 1}, {90341, 1}, {90342, 1}, {90343, 1}, {90344, 1},
+                {90345, 1}, {90346, 1},
+            },
+            rewardMoney = 294000,
+        },
+        [30072] = {
+            description = "Would you like to be a Silkmaster for a day?\n\nThe first thing you'll need " ..
+                "are fresh mulberry leaves. You can find them in our grove of mulberry bushes to the " ..
+                "northwest.\n\nNext you will need to feed them to a hungry silkworm in our feeding pit to " ..
+                "the west.\n\nAnd finally you should get some raw silk from our processing hut on the " ..
+                "south side of our farm.\n\nHave fun!",
+            rewardChoices = {{84339, 1}, {84340, 1}, {84341, 1}, {84342, 1}, {84343, 1}},
+            rewardMoney = 102000,
+        },
+        [30073] = {
+            description = "We have everything we need. It's time to start brewing.\n\nPay attention, " ..
+                "<name>... you might learn a thing or two.",
+            rewardMoney = 10200,
+        },
+        [30074] = {
+            description = "Now, onward to the Stormstout Brewery! It's high time that I was reunited with " ..
+                "the rest of the Stormstouts... and what better way to reunite than over a few mugs of " ..
+                "ale?\n\nYou know where the brewery is, right? Just follow this road to the west. You " ..
+                "can't miss it. Of course, you're free to share the road with us - we'll be leaving any " ..
+                "moment now.",
+            rewardMoney = 10200,
+        },
+        [30075] = {
+            description = "Are you seeing this? Virmen, hozen, and water sprites... all pouring out of " ..
+                "the brewery doors and windows! What the heck is going on in there!?\n\nThere is another " ..
+                "entrance, on the eastern side of the brewery. I'm going to run over there and try to " ..
+                "figure out what's going on. In the meantime, see if you can't get rid of these " ..
+                "creatures. There's nothing worse than a drunken hozen.",
+            rewardChoices = {{81834, 1}, {81835, 1}, {81836, 1}, {81837, 1}, {81838, 1}},
+            rewardMoney = 102000,
+        },
+        [30076] = {
+            description = "I've heard lots of cockamamie rumors about this here brewery. I thought they " ..
+                "were all false... until I saw that giant hozen.\n\nSo, it got me thinkin', what if the " ..
+                "other rumors are true? I heard this one rumor just the other day about some water " ..
+                "sprites that run around inside the brewery, causin' a ruckus and whatnot. Their bodies " ..
+                "are actually MADE OF WATER.\n\nI reckon a man could make some mighty fine beer with some " ..
+                "fancy water like that. If you find any, could you bring me some?",
+            rewardMoney = 102000,
+        },
+        [30077] = {
+            description = "I can't believe that giant hozen! He's just throwing barrels " ..
+                "everywhere!\n\nBarrels, man!\n\nIt looks like he managed to get pretty much all the " ..
+                "pandaren that were working out in front of the brewery. If I were you, I'd help some of " ..
+                "them break out. Put some of those ridiculous muscles to use.\n\nWe're headed over to the " ..
+                "brewery's rear entrance, to the east. Meet you there!",
+            rewardMoney = 102000,
+        },
+        [30078] = {
+            description = "That's it, <name>. I've had enough of this.\n\nIf somebody doesn't do " ..
+                "SOMETHING to take care of this brewery, we'll lose it forever. And there's far too much " ..
+                "family history - and beer - in there to risk wasting.\n\nSo... we're going to break in " ..
+                "through the back door. You, Li Li, Mudmug, and me.\n\nIt's gonna be a brawl in " ..
+                "there.\n\nLet me know when you're ready.",
+            rewardChoices = {
+                {81742, 1}, {81743, 1}, {81744, 1}, {81745, 1}, {81746, 1}, {81747, 1}, {81748, 1},
+                {81749, 1}, {81750, 1},
+            },
+            rewardMoney = 306000,
+        },
+        [30079] = {
+            description = "Pandaren always welcome travelers with open arms - and open kegs! But this " ..
+                "town full of jerks!\n\nEveryone so busy sulking, they won't talk to Ken-Ken at " ..
+                "all!\n\nCan you find someone in town who will talk to us? Maybe normal pandaren just " ..
+                "hiding in the houses?",
+            rewardMoney = 98000,
+        },
+        [30080] = {
+            description = "My nephew, Yi-Mo, has always been sort of a downer. When this wave of despair " ..
+                "hit the town, he took it harder than most. He sat around for days refusing to eat, just " ..
+                "staring off into the horizon.\n\nNow he's wandered off toward the cliffs northeast of " ..
+                "here, where the thunderbirds nest and hunt.\n\nPlease, <class>, will you look for him?",
+            rewardMoney = 74000,
+        },
+        [30081] = {
+            description = "Alright, Ken-Ken pretty sure he knows what wrong with pandaren! Got old, old " ..
+                "hozen remedy that do the trick.\n\nNeed to mix honey, fish oil, and salt. Ken-Ken saw " ..
+                "lots of beehives in the trees around town, and there must be fish left in the dry " ..
+                "ponds.\n\nThat just leave salt... Mei might know where we can find some.",
+            rewardMoney = 98000,
+        },
+        [30082] = {
+            description = "Ever since this storm began, I've just been... tired.\n\nNot physically... no. " ..
+                "It's like my very soul is exhausted. Worthless. Hopeless. I imagine it's what one feels " ..
+                "when a mate leaves them for someone with a rounder belly, but I've never had a mate so " ..
+                "how would I know?\n\nHow can I claim to know anything? I'm worthless to everyone but " ..
+                "these thunderbirds. At least they'll have a good meal out of me.\n\n<Yi-Mo sighs deeply " ..
+                "and continues staring off into the sky. It doesn't look like he's going anywhere.>",
+            rewardChoices = {
+                {81440, 1}, {81441, 1}, {81442, 1}, {81443, 1}, {81444, 1}, {81445, 1}, {81446, 1},
+                {81447, 1}, {81448, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [30083] = {
+            description = "With our grip on the province loosening, saurok from the wilds have already " ..
+                "moved in to the cave just north of town.\n\nMost of our hunters are face-down in their " ..
+                "own tears, so the saurok just walk in here like they own the place and grab whatever " ..
+                "they want!\n\nI want to send a message that Zhu's Watch is not to be crossed.\n\nWill " ..
+                "you be my messenger?",
+            rewardChoices = {{81512, 1}, {81513, 1}, {81514, 1}, {81515, 1}, {81516, 1}},
+            rewardMoney = 98000,
+        },
+        [30084] = {
+            description = "Bonfires are surprisingly effective at discouraging beasts from wandering out " ..
+                "of the wilds. We have three along the border to the southwest which we normally keep lit " ..
+                "at all times.\n\nNobody's been there for days, though, and the fires must be out by now. " ..
+                "It's only a matter of time before the wilds creep back in and overtake the land we have " ..
+                "kept safe for centuries.\n\nPlease, re-ignite the bonfires. They are critical in keeping " ..
+                "the province safe, and they are memorials to the founders of our way of life.",
+            rewardMoney = 98000,
+        },
+        [30085] = {
+            description = "We need to find out what's going on inside that brewery, <name>!\n\nWe may " ..
+                "have cleared out some of the bigger pests, but I'm certain there's plenty more where " ..
+                "they came from. Gather up a few of your friends, and meet me inside!",
+            rewardMoney = 10200,
+        },
+        [30086] = {
+            description = "Oh, hello. Are you looking for the owner of this place? Then look to the " ..
+                "pandaren up at the top of the stairs.\n\nI'm just a visitor... like you.\n\nNow if " ..
+                "you'll excuse me, my friends and I are trying to decide something. We can talk again " ..
+                "afterwards.",
+        },
+        [30088] = {
+            description = "Okay, so that not work. Well... it cheer Ken-Ken up! But pandaren still " ..
+                "sad...\n\nWe try another old hozen remedy - this time, we go back even further than " ..
+                "gramma, way WAY back to ancient times. Hozen still do this sometimes... mostly at " ..
+                "parties.\n\nKen-Ken got woodworking to do - you bring him teeth! Not yours; big ones, " ..
+                "like a panther would have!\n\nOh, and some paint! Mei might know where to find.",
+            rewardChoices = {
+                {88053, 1}, {88054, 1}, {88055, 1}, {88056, 1}, {88057, 1}, {88058, 1}, {88059, 1},
+                {88060, 1}, {88061, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [30089] = {
+            description = "Well... THAT was unexpected!\n\nCome to think of it, now Ken-Ken remember why " ..
+                "hozen use mask in the first place...\n\nA legend about the Monkey King says he used a " ..
+                "mask to cure old pandaren emperor, Shaohao, when he was too sad to lead his people. Then " ..
+                "they buried mask--with all his sadness--in the ground.\n\nWe should use the mask on more " ..
+                "pandaren, but instead of putting sad away in ground, we gonna PUNCH ITS BUTT.\n\nLet's " ..
+                "do this, <name>!",
+            rewardChoices = {
+                {81467, 1}, {81468, 1}, {81469, 1}, {81470, 1}, {81471, 1}, {81472, 1}, {81473, 1},
+                {81474, 1}, {81475, 1},
+            },
+            rewardMoney = 98000,
+        },
+        [30090] = {
+            description = "Hmm... Is that Yi-Mo kid over there?\n\n< Ken-Ken squints against the " ..
+                "increasing torrents of rain.>\n\nIt is! He's at the well, and he's not lookin' so " ..
+                "good.\n\nKen-Ken got a bad feeling about this...",
+            rewardChoices = {{88580, 1}},
+            rewardMoney = 196000,
+        },
+        [30091] = {
+            description = "All of this started with our ponds. In a single day, all of the water " ..
+                "retreated down into the earth. When there was no more water in the ponds, it began to " ..
+                "fall from the sky.\n\nDespite endless torrents of rain, the ponds do not fill. It's as " ..
+                "if the land itself thirsts and cannot be quenched.\n\nNow the ponds birth horrific " ..
+                "manifestations of despair. Elementals made of water from the sky and salt from the " ..
+                "earth; the tears of Pandaria.",
+            rewardMoney = 98000,
+        },
+        [30092] = {
+            description = "If you wish to join my cause and slaughter the black dragons in hiding, prove " ..
+                "yourself by taking down Hiram Creed. He's amassing an army in Gilneas.\n\nWe haven't " ..
+                "been able to slip past his defenders, but we've got a man on the scene keeping an eye on " ..
+                "him. Zazzo Twinklefingers, a very crafty arcane mage, is waiting for us to contact him " ..
+                "just outside of the ruins of the Gilnean capital.\n\nFind him and he'll direct you to " ..
+                "the target.",
+        },
+        [30093] = {
+            description = "The city has been in chaos for days now. Hiram Creed, disguised as a Gilnean, " ..
+                "has infected the lot of those dogs with his own draconic blood. Even the Forsaken are " ..
+                "having trouble routing him out.\n\nOnly a surgical assassination can end this!\n\nThe " ..
+                "bridge behind me is relatively unguarded. Slip in through merchant's square and head " ..
+                "south - you'll find Creed in the middle of the military district.\n\nI'll keep an eye on " ..
+                "you and pull you out if there's any trouble.\n\n...There WILL be trouble!",
+            rewardMoney = 94000,
+        },
+        [30094] = {
+            description = "Nozdormu, the bronze Aspect, has asked for help from the champions of the " ..
+                "Horde. You are on his short list. I can share few other details.\n\nIt is " ..
+                "uncharacteristic of my master to request the assistance of mortals, but I suppose that " ..
+                "all things change with time... even the Aspect of Time himself.\n\nHe awaits you at the " ..
+                "End Time, in the distant future. I can help you to travel there, if you so choose.",
+            rewardMoney = 9400,
         },
         [30122] = {
             description = "You have found a beautiful silver flask decorated with ornate filigree. With " ..
