@@ -35169,6 +35169,58 @@ ns.Overrides.wowhead = {
                 "their numbers may help show the yaungol that this area is protected.",
             rewardMoney = 106000,
         },
+        [30588] = {
+            description = "The riverblade saurok clan is attacking one of our local fishing expeditions! " ..
+                "They need help right away!\n\nThin those saurok out and help that expedition return " ..
+                "safely!",
+            rewardMoney = 114000,
+        },
+        [30589] = {
+            description = "To dislodge the alliance ship, we need to find our engineer. He parted ways " ..
+                "with us when we were escaping the wreckage.\n\nYou should be able to find him somewhere " ..
+                "in the western forest. Tell him Korga sent you and he'll get in line to help.",
+            rewardMoney = 300,
+        },
+        [30590] = {
+            description = "We can help you get your ship free, but we'll need more of the explosives we " ..
+                "were trying to take back from the Alliance to make it happen.\n\nI ordered the men to " ..
+                "grab all the explosives they could before making our escape. If you sift through the " ..
+                "wreckage and bodies to our south, there should be some explosive bundles among them, " ..
+                "those that didn't already blow up anyway.\n\nGet me enough of them and I think I can put " ..
+                "something together for ya.",
+            rewardMoney = 300,
+        },
+        [30591] = {
+            description = "The forest has become far more dangerous ever since Shen-zin Su began shaking. " ..
+                "The tigers are agitated and have begun attacking the refugees, and on occasion, me as " ..
+                "well.\n\nIf these injured and weak survivors are to make it to safety here at the hut, " ..
+                "we need to help clear the forest for them.",
+            rewardMoney = 300,
+        },
+        [30592] = {
+            description = "Bad fortune for grummles today. Hozen have begun to ravage! They attack our " ..
+                "supply line to the Serpent's Spine.\n\nCan you help? We are not fighters. We are " ..
+                "grummles. Good fortune to those who help grummles.\n\nGo with a group of grummles to the " ..
+                "Burlap Waystation. Keep them safe. Make sure at least one grummle survives.\n\nGrummles " ..
+                "shall reward. Grummles always reward.",
+            rewardItems = {{88384, 1}},
+            rewardMoney = 106000,
+        },
+        [30593] = {
+            description = "The admiral's asked me to take care of a major problem, but my specialty's in " ..
+                "healing, not fighting!\n\nThe pandaren in the camp here have told me that something is " ..
+                "animating the statues to the northeast at Mogujia\n\nWill you help me out, <name>? We " ..
+                "can't afford to have a fight with an army of statues right now.",
+            rewardMoney = 102000,
+        },
+        [30594] = {
+            description = "I've got much to do here, <name>. I could use your help.\n\nThere's a place to " ..
+                "the northwest. The pandaren here call it Mogujia. Something's causing the statues there " ..
+                "to animate, and our pandaren friends here are pretty spooked about it.\n\nIf they're not " ..
+                "dealt with soon, we might have a serious problem. We just moved in. It's not like we can " ..
+                "afford to fight a war with an army of statues right now.",
+            rewardMoney = 102000,
+        },
         [30595] = {
             description = "Let me guess, you're here to deal with the mogu statues that are being " ..
                 "reanimated. What a coincidence, I'm here to, um... conduct research on the mogu.\n\nI " ..
@@ -35177,12 +35229,401 @@ ns.Overrides.wowhead = {
             rewardMoney = 102000,
         },
         [30597] = {rewardXP = 69400},
+        [30598] = {
+            description = "Great cranes have been nesting in this area for generations. The Narsong " ..
+                "Spires provide a sheltered area to rear their young.\n\nTheir pristine eggs are revered " ..
+                "as bait for catching the silver goby. Retrieve a crane egg and see if you can catch a " ..
+                "goby!",
+            rewardMoney = 114000,
+        },
+        [30599] = {
+            description = "Before, grummles keep hozen from ravaging by bribing with food.\n\nBut now the " ..
+                "Broketooth hozen south of here have their big magic idols. The Ook of Dook has trained " ..
+                "them to use their idols to get power from sacrifices.\n\nThey are using them to kill " ..
+                "grummles!\n\nYou must destroy these idols!\n\nFor every idol, there is a chief. Kill the " ..
+                "chief and throw the corpse on their altar.",
+            rewardItems = {{88385, 1}},
+            rewardMoney = 106000,
+        },
+        [30600] = {
+            description = "The Broketooth hozen south of here killed all of my grummles. What is worse, " ..
+                "their packages are undelivered.\n\nFortune frowns on a grummlepack " ..
+                "undelivered.\n\nPlease, give my grummles peace on the great trail of beyond and bring " ..
+                "their grummlepacks to me.\n\nI will see they are delivered.",
+            rewardItems = {{88397, 1}},
+            rewardMoney = 106000,
+        },
+        [30601] = {
+            description = "It is very bad fortune to travel mountain paths without a good guide. We " ..
+                "grummles make the best guides, but many have run away. They fear the mountain pass now. " ..
+                "Many good grummles disappear up there.\n\nGrummles are good at many things, but are not " ..
+                "very brave. Maybe with fire lotus incense you can make them brave. Then they will show " ..
+                "you the way.",
+            rewardMoney = 106000,
+        },
+        [30602] = {
+            description = "The Broketooth hozen stole our Rabbitsfoot! He was the grummle with the " ..
+                "biggest luckydo.\n\nThis is very bad fortune indeed. Please, <race>, we need our " ..
+                "Rabbitsfoot back. We need his good fortune back.\n\nCan you search the Broketooth " ..
+                "Outpost for him?",
+            rewardMoney = 106000,
+        },
         [30603] = {
             description = "They took my luckydo! Their leader hozen here, Mo Mo, stole my " ..
                 "rabbitsfoot.\n\nThis is most bad fortune for grummles. My rabbitsfoot is a big luckydo " ..
                 "for grummles everywhere. If hozen learn how to get luck from my rabbitsfoot then all is " ..
                 "lost.\n\nPlease can you get it back?",
             rewardMoney = 106000,
+        },
+        [30604] = {
+            description = "Hozen only ravage when they think their supplies are too few for their number " ..
+                "of mouths.\n\nProblem is, hozen always have more mouths than food.\n\nWe have very few " ..
+                "grummles these days.\n\nIt is a hard thing to ask, but can you be a friend to grummles, " ..
+                "and destroy some of the Broketooth hozen south of here? It is the only way to prevent " ..
+                "them from destroying the landscape.",
+            rewardMoney = 106000,
+        },
+        [30605] = {
+            description = "While you were gone, I saw a group of grummles coming down the Burlap Trail. " ..
+                "It was led by my Brother Yakshoe.\n\nBut then the Knucklethumps attacked. They took my " ..
+                "brother and his grummles north.\n\nPlease, $p! Save my brother. He always has bad " ..
+                "fortune and no luck, but he is my brother. Look for him at the alter in front of Fort " ..
+                "Silverback.",
+            rewardItems = {{88379, 1}},
+            rewardMoney = 106000,
+        },
+        [30606] = {
+            description = "The Knucklethump hozen have new chief, the Ook of Dook.\n\nHe sees fear in the " ..
+                "west, anger in the south, hatred in the north, and yaungols in the east.\n\nAnd so he " ..
+                "sets his hozen to ravage, gathering food and supplies for coming famine.\n\nThey are " ..
+                "many Knucklethumps and dangerous.\n\nPlease, Luckydo, can you defeat their fighters?",
+            rewardChoices = {
+                {88080, 1}, {88081, 1}, {88082, 1}, {88083, 1}, {88084, 1}, {88085, 1}, {88086, 1},
+                {90623, 1},
+            },
+            rewardMoney = 106000,
+        },
+        [30607] = {
+            description = "The hozen have a yeti! They call it Old Poot Poot and keep it at the back of " ..
+                "their cave.\n\nHozen are normally scared of yeti, but now they feed it grummles.\n\nThey " ..
+                "have a Hunter Chief, Cho Cho the Wicked. Can you see if he has a key on him to the yeti " ..
+                "shackles?\n\nBad fortune for hozen if a yeti is loose in their fort.",
+            rewardMoney = 106000,
+        },
+        [30608] = {
+            description = "They took my grummles! Hozen don't eat grummles, but yeti do. And the " ..
+                "Knucklethumps have a yeti.\n\nPlease rescue my grummles. Cut them down or let them out " ..
+                "of cages. Rescue them any way you can.\n\nMany fortunes and rewards if you do this.",
+            rewardChoices = {
+                {82532, 1}, {82533, 1}, {82534, 1}, {82535, 1}, {82536, 1}, {82537, 1}, {82538, 1},
+                {82539, 1}, {82540, 1},
+            },
+            rewardMoney = 106000,
+        },
+        [30610] = {
+            description = "Now that grummles are rescued, we need to rescue our supplies.\n\nThe Ook of " ..
+                "Dook is only chief because he has supplies.\n\nGo to the Dooker Dome area north west of " ..
+                "here. Take some grummles with you. Keep them safe and get them near supply " ..
+                "crates.\n\nGrummles know what to do from there.\n\nRabbitsfoot and I will meet you there.",
+            rewardMoney = 106000,
+        },
+        [30611] = {
+            description = "Your yeti ride gave me an idea. The Ook of Dook has a pet yeti he named Chomp " ..
+                "Chomp.\n\nHe uses this yeti to scare other hozen in to making him the leader hozen. We " ..
+                "need to get rid of that yeti.\n\nGo to Dooker Dome northwest of here and defeat some of " ..
+                "the Cagemasters so Chomp Chomp is not tied up as much.\n\nYakshoe and I will meet you " ..
+                "there with lots of incense and a dirty yak.",
+            rewardMoney = 106000,
+        },
+        [30612] = {
+            description = "The time has come to face the Ook of Dook. We beat him, and the hozen won't " ..
+                "have someone telling them to ravage.\n\nHere is the plan: Yakshoe will lead Tassle in to " ..
+                "arena and scare away Chomp Chomp.\n\nThen, you sneak in and fight the Ook of Dook while " ..
+                "his hozen are distracted by the yeti rampaging through their home.\n\nWe'll meet you " ..
+                "back at Kota Basecamp with a big reward. Good fortune to you, friend of grummles.",
+            rewardChoices = {
+                {82541, 1}, {82542, 1}, {82543, 1}, {82544, 1}, {82545, 1}, {82546, 1}, {82547, 1},
+                {82548, 1}, {82549, 1},
+            },
+            rewardMoney = 106000,
+        },
+        [30613] = {
+            description = "Armored Carp are a delicacy around these parts.\n\nUnfortunately we can't fish " ..
+                "them up since they snap our hooks with their powerful jaws. Take this fishing spear and " ..
+                "see if you can catch a few for us.",
+            rewardMoney = 114000,
+        },
+        [30614] = {
+            description = "When the yaungols came, they began to dig up oil. What is this \"oil\", I " ..
+                "wonder? Perhaps it is thing of much undiscovered luck. This I must know.\n\nHere, take " ..
+                "this vial, and fill it with yaungol oil from one of their windmills. I will give you " ..
+                "many fortunes if you bring me some.",
+            rewardMoney = 106000,
+        },
+        [30616] = {
+            description = "Yaungols are attacking our Burlap Trail. This is most bad fortune for " ..
+                "grummles.\n\nWe use that trail to carry supplies to the Serpent's Spine. Without " ..
+                "supplies, the defenders of the wall are in danger.\n\nGrummles are packers and " ..
+                "explorers, not fighters. Could you be a luckydo for us and stop the yaungol blockade?",
+            rewardChoices = {{82569, 1}, {82570, 1}, {82571, 1}, {82572, 1}, {82573, 1}},
+            rewardMoney = 106000,
+        },
+        [30617] = {
+            description = "A luckydo remembers to bring incense on a journey in to the mountains. The " ..
+                "smellier the luck the better.\n\nCan you journey up the road to One Keg and light the " ..
+                "incense you find along the way?\n\nThis will give good fortune to grummles that must " ..
+                "travel the road.\n\nBrother Lintpocket can give you many rewards. Speak to him when you " ..
+                "arrive.",
+            rewardItems = {{88381, 1}},
+            rewardMoney = 106000,
+        },
+        [30618] = {
+            description = "If you're looking for the best supplies in Kun-Lai you've come to the right " ..
+                "place! Oh sure, it looks a bit empty. Don't let appearances deceive you..\n\nOh, who am " ..
+                "I kidding?! Between the hozen attacks, and the sprites pillaging what few supplies we do " ..
+                "get, my stock has dwindled to a dangerous level.\n\nIf you could help me recover some of " ..
+                "my supplies I should have enough to contribute to your journey.",
+            rewardChoices = {
+                {88062, 1}, {88063, 1}, {88064, 1}, {88065, 1}, {88066, 1}, {88067, 1}, {88068, 1},
+                {88069, 1}, {88070, 1},
+            },
+            rewardMoney = 106000,
+        },
+        [30619] = {
+            description = "I know your friends are worried about the animating statues over at Mogujia, " ..
+                "but I'll tell you what you should really be worried about.\n\nWhere there are animated " ..
+                "statues, there are mogu. I don't know if you've seen one before, but if you " ..
+                "haven't...\n\nWell, let's just say mogu are bad, bad, news.\n\nWhile you're dealing with " ..
+                "whatever else you're doing, you need to get the mogu behind the trouble!",
+            rewardChoices = {
+                {82487, 1}, {82488, 1}, {82489, 1}, {82490, 1}, {82491, 1}, {82492, 1}, {82493, 1},
+                {82494, 1}, {82495, 1},
+            },
+            rewardMoney = 204000,
+        },
+        [30620] = {
+            description = "I know your friends are worried about the animating statues over at Mogujia, " ..
+                "but I'll tell you what you should really be worried about.\n\nWhere there are animated " ..
+                "statues, there are Mogu. I don't know if you've seen one before, but if you " ..
+                "haven't...\n\nWell, let's just say Mogu are bad, bad, news.\n\nWhile you're dealing with " ..
+                "whatever else you're doing, you need to get the Mogu behind the trouble!",
+            rewardChoices = {
+                {82487, 1}, {82488, 1}, {82489, 1}, {82490, 1}, {82491, 1}, {82492, 1}, {82493, 1},
+                {82494, 1}, {82495, 1},
+            },
+            rewardMoney = 204000,
+        },
+        [30621] = {
+            description = "My journeys through Kun-Lai have taught me two things. First, never sneak up " ..
+                "on a sleeping yak. Second, having luck on your side is both necessary and hard to come " ..
+                "by.\n\nThe grummles believe in carrying a lucky trinket at all times. In my mind, if one " ..
+                "trinket can sometimes bring luck, then many trinkets would guarantee it!\n\nAfter " ..
+                "arriving in One Keg my lucky trinkets were stolen by those little menace sprites. I'd be " ..
+                "truly grateful if you could retrieve them for me.",
+            rewardMoney = 106000,
+        },
+        [30622] = {
+            description = "Without the wall to protect us, we barely stand a chance. If you hadn't " ..
+                "gathered so many people to help us, we wouldn't have a prayer.\n\nCheck in with Captain " ..
+                "Oakenshield - he should be up near the break in the wall. Kill as many mantid as you can " ..
+                "on the way there.\n\nIf we win, we win. If we lose, we go down fighting. For Pandaria!",
+            rewardMoney = 102000,
+        },
+        [30623] = {
+            description = "<Mei motions towards the battlefield.>\n\nYou see those huge mantid commanders " ..
+                "out there? They have a strange aura about them. It reminds me of the sadness we saw at " ..
+                "Zhu's Watch.\n\nPerhaps... they're under the influence of the sha, too?\n\nI kept " ..
+                "Ken-Ken's mask - the one he used to remove the sha from Yi-Mo. I believe that, if we use " ..
+                "it on the mantid, we can convince them to turn back.",
+        },
+        [30624] = {
+            description = "I been thinkin'.\n\nWe got all this beer that Chen brewed, and we got all " ..
+                "these people that you've gathered. We should bring the two together.\n\nThere's a bunch " ..
+                "o' folks out there in the fields, riskin' their lives for Pandaria. You an' I should at " ..
+                "least bring 'em a keg or two.\n\nThey might raise their mugs in victory. They might " ..
+                "enjoy one last drink before gettin' skivvered by a mantid. Either way, I wouldn't want " ..
+                "'em to fight without a good brew in their belly.",
+        },
+        [30625] = {
+            description = "Those five students - the ones who were looking for the Hidden Master - they " ..
+                "went up to the front lines, alone. I'd send Shado-Pan to aid them, but I haven't got any " ..
+                "left.\n\nThere's dangerous creatures up there near the wall. If you find those students, " ..
+                "make sure that they haven't fallen to any of them.",
+            rewardMoney = 204000,
+        },
+        [30626] = {
+            description = "I'm going to withdraw what few forces I have. We may have to fall back to the " ..
+                "Stormstout Brewery, or even Halfhill. That call is Commander Loon Mai 's to make.\n\nYou " ..
+                "go ahead. Deliver word to the Commander. My Shado-Pan will be shortly behind.",
+            rewardMoney = 10200,
+        },
+        [30627] = {
+            description = "That commander speaks hastily. He has the weapon he needs to win this battle. " ..
+                "He has YOU.\n\n\"But it's too hard,\" you might say.\n\nYou would be wrong. It is not " ..
+                "too hard. NOTHING IS TOO HARD.\n\nGo now, <name>. Go, and save Stoneplow!",
+            rewardMoney = 306000,
+        },
+        [30628] = {
+            description = "One last thing, <name>. Don't worry, it's not another favor. You've killed " ..
+                "enough mantid today.\n\nWe recently received a shipment of high-quality armor from " ..
+                "Kun-Lai Summit. I was planning to keep them for my men... but I can't think of anybody " ..
+                "more deserving than you. You'll find them on the second floor of the inn, here in town.",
+            rewardChoices = {
+                {81476, 1}, {81477, 1}, {81478, 1}, {81479, 1}, {81480, 1}, {81481, 1}, {81482, 1},
+                {81483, 1}, {81484, 1},
+            },
+            rewardMoney = 306000,
+        },
+        [30631] = {
+            description = "Look at this creature, traveler. Only moments after we arrived, this mogu " ..
+                "assassin attacked with no warning.\n\nHis blade was intended for the leader of the " ..
+                "Golden Lotus. It is very lucky indeed that we were here to stop the attack.\n\nSeeing " ..
+                "this attempt on Zhi's life, I fear for the safety of those who have already entered the " ..
+                "valley.\n\nThe caretakers are settling your people into the city to the southeast. Go " ..
+                "and speak to the leaders. Make sure they are safe.",
+            rewardMoney = 102000,
+        },
+        [30632] = {
+            description = "According to Zhi the Harmonious, the mogu are moving into the Vale from the " ..
+                "Ruins of Guo-Lai to the west.\n\nI sent Anji and Kun to investigate the situation, but " ..
+                "they have not yet returned.\n\nI need a capable <class> like you to go check on them.",
+            rewardMoney = 57000,
+        },
+        [30633] = {
+            description = "We'd been briefed on mogu sightings in the Vale, but the situation is worse " ..
+                "than we had anticipated.\n\nScouts are swarming all over the ruins to the northwest, " ..
+                "gathering intel and stealing treasures.\n\nYour objective is clear - dispatch of any " ..
+                "scouts you see. An army cannot move if we take out its eyes.",
+            rewardMoney = 114000,
+        },
+        [30634] = {
+            description = "Lao Softfoot and I scouted up the ruins to the north.\n\nIt looks like the " ..
+                "mogu are infiltrating the valley through a cave just up the hill, and already they are " ..
+                "sending formidable reinforcements through.\n\nThere are too many enemies to take them " ..
+                "head on, so you'll have to meet Lao Softfoot at the entrance to the ruins.\n\nHe'll help " ..
+                "you sneak in under the cover of stealth. Then, plant this keg of explosives at the mouth " ..
+                "of the cave.\n\nThe rest should take care of itself.",
+            rewardMoney = 114000,
+        },
+        [30635] = {
+            description = "We've taken care of the scout problem for now, but there are still advance " ..
+                "mogu forces inside the Guo-Lai Halls down the hill.\n\nUnfortunately, their vicious " ..
+                "guard dogs are protecting their operations deeper in the ruins.\n\nGo and dispatch of " ..
+                "their beasts. Be on your guard - they can be quite good at blending into their " ..
+                "surroundings.",
+            rewardMoney = 114000,
+        },
+        [30636] = {
+            description = "Many thousands of years ago, the rulers of the Vale sought energy from a " ..
+                "powerful crystal known as Revelite.\n\nWith this substance, they were able to power " ..
+                "cities, factories, and engines of war.\n\nZhi the Harmonious has asked us to collect " ..
+                "some crystals and bring them back to the city.\n\nKeep an eye out for them while you are " ..
+                "in the ruins.",
+            rewardMoney = 114000,
+        },
+        [30637] = {
+            description = "As you pass by the great door, you hear sounds from deep inside.\n\nAnji " ..
+                "mentioned that advance mogu scouts had been sighted in this area. Perhaps they made " ..
+                "their way down to the depths below.\n\nYour senses tingling, you decide to investigate.",
+            rewardMoney = 228000,
+        },
+        [30638] = {
+            description = "This is serious.\n\nKun and I will keep an eye on things here, but you should " ..
+                "go to the Golden Pagoda.\n\nGo, swiftly!",
+            rewardMoney = 57000,
+        },
+        [30639] = {
+            description = "I just received information from a guard stationed near the Ruins of Guo-Lai " ..
+                "that the Shado-Tien leader entered the halls, killing two of my men in the process. " ..
+                "They're intent on something inside. We need to stop them.\n\nHe Softfoot has already " ..
+                "followed them in. He should be waiting for you at the entrance to the western " ..
+                "chambers.\n\nMove quickly, <name>. I don't like the thought that the mogu may be a step " ..
+                "ahead of us.",
+            rewardChoices = {{90614, 1}, {90615, 1}, {90616, 1}, {90617, 1}, {90618, 1}},
+            rewardMoney = 228000,
+        },
+        [30640] = {
+            description = "I have received some troubling news, <name>.\n\nThe mogu are plotting to steal " ..
+                "three artifacts of power from the Vale.\n\nWe must retrieve the artifacts immediately " ..
+                "and hide them for safekeeping.\n\nThe first artifact is the Battle Spear of the Thunder " ..
+                "King.\n\nUpon emperor Lei Shen's death, the spear was placed in an ancient shrine to the " ..
+                "northwest.\n\nBring the spear back to me.",
+            rewardMoney = 114000,
+        },
+        [30641] = {
+            description = "The second artifact of power is the Battle Helm of the Thunder " ..
+                "King.\n\nEmperor Lei Shen wore the helm into every battle. It became so well-known that " ..
+                "his enemies would flee at the mere sight of it.\n\nWhen the Emperor died, they placed " ..
+                "the helm in the very bottom of the Guo-Lai Halls to the west, surrounded by thousands of " ..
+                "terracotta soldiers.\n\nThus, they could look upon their leader and follow him into " ..
+                "death.",
+            rewardMoney = 114000,
+        },
+        [30642] = {
+            description = "The final artifact is the Thunder King's axe.\n\nLei Shen charged into battle " ..
+                "with his spear in one hand, and his axe in the other.\n\nIt is said that he could throw " ..
+                "his axe with brutal accuracy, and when it hit its target, it made a sound like crashing " ..
+                "thunder.\n\nAfter his death, the axe was placed in a ceremonial chamber to the " ..
+                "southwest.\n\nNeedless to say, we must not let it fall into the mogu's hands.",
+            rewardChoices = {
+                {90597, 1}, {90598, 1}, {90599, 1}, {90600, 1}, {90601, 1}, {90602, 1}, {90603, 1},
+                {90607, 1}, {90609, 1},
+            },
+            rewardMoney = 114000,
+        },
+        [30643] = {
+            description = "The battle against the mogu rages fiercely with neither side giving " ..
+                "quarter.\n\nWe cannot hold our position forever. Something must be done to strike a blow " ..
+                "at the mogu, a blow from which they cannot recover.\n\nGo check in with Zhi the " ..
+                "Harmonious at The Silent Sanctuary. I wish to hear his thoughts on this matter.",
+            rewardMoney = 57000,
+        },
+        [30644] = {
+            description = "You had better report back to the Golden Pagoda immediately.",
+            rewardMoney = 57000,
+        },
+        [30645] = {
+            description = "This is it, <name>. This is the end.\n\nIf we don't drive the mogu from the " ..
+                "valley, they will seize the remnants of their ancient power and use it to break Pandaria " ..
+                "to their will.\n\nBut our forces are few, and tired, and small. We bleed, while their " ..
+                "warriors are made of stone.\n\n<name>, although all odds are against us, still I must " ..
+                "ask you to go and help our forces slay the mogu invaders.\n\nI have prayed to the " ..
+                "Celestials, begging their aid. I can only hope that they answer our call.",
+            rewardMoney = 114000,
+        },
+        [30646] = {
+            description = "I never thought it would come to this!\n\nLeven went to face Warlord Zhao-Jin " ..
+                "the Bloodletter at the top of the palace steps, but our reinforcements cannot get " ..
+                "through!\n\nWe are the only ones who stand between him and the Vale's greatest... and " ..
+                "most deadly... powers.\n\nPlease, <name>, you must find a way to stop him!",
+            rewardChoices = {{90596, 1}, {90595, 1}, {90594, 1}, {90593, 1}, {90592, 1}},
+            rewardMoney = 228000,
+        },
+        [30648] = {
+            description = "Your journey in this land has already proven most eventful, traveler. And " ..
+                "mine, it appears, is destined to continue for a time.\n\nA chain of events began when " ..
+                "your people arrived here, and while some of those happenings are traumatic to behold, I " ..
+                "feel there must be a larger purpose behind your presence.\n\nFor now it is wisest that " ..
+                "you leave this place and explore Pandaria's other regions.\n\nSpeak to me when you are " ..
+                "ready to leave.",
+            rewardMoney = 74000,
+        },
+        [30649] = {
+            description = "Look at this creature, traveler. Only moments after we arrived, this mogu " ..
+                "assassin attacked with no warning.\n\nHis blade was intended for the leader of the " ..
+                "Golden Lotus. It is very lucky indeed that we were here to stop the attack.\n\nSeeing " ..
+                "this attempt on Zhi's life, I fear for the safety of those who have already entered the " ..
+                "valley.\n\nThe caretakers are settling your people into the city to the northeast. Go " ..
+                "and speak to the leaders. Make sure they are safe.",
+            rewardMoney = 102000,
+        },
+        [30650] = {
+            description = "Look, I know the Alliance needs recruits, and there's just not enough of us " ..
+                "here right now to make a fighting presence of this town.\n\nBut I know that the yaungol " ..
+                "over at Fire Camp Ordo, to the northwest, have taken many of my people as prisoners. And " ..
+                "I also know that if you would be willing to rescue them from their captivity, they'd " ..
+                "more than likely be willing to join the Alliance.\n\nWhat do you say, <name>?",
+            rewardMoney = 102000,
         },
         [30651] = {
             description = "Oh, well now, let's have us some fun, <boyo/girly>!\n\nThose Ordo yaungol to " ..
@@ -35192,11 +35633,126 @@ ns.Overrides.wowhead = {
             rewardItems = {{88577, 1}},
             rewardMoney = 102000,
         },
+        [30652] = {
+            description = "The yaungol of Fire Camp Ordo are a dire threat. I need you to head northwest " ..
+                "and take out their leader.\n\nUnfortunately, his four subordinates are maintaining a " ..
+                "fire barrier that prevents us from getting to him in the adjoining cave.\n\nTake them " ..
+                "out and the shield will come down. You'll find them in their tents, channeling.",
+        },
+        [30653] = {
+            description = "I been thinkin'.\n\nWe got all this beer that Chen brewed, and we got all " ..
+                "these people that you've gathered. We should bring the two together.\n\nThere's a bunch " ..
+                "o' folks out there in the fields, riskin' their lives for Pandaria. You an' I should at " ..
+                "least bring 'em a keg or two.\n\nThey might raise their mugs in victory. They might " ..
+                "enjoy one last drink before gettin' skivvered by a mantid. Either way, I wouldn't want " ..
+                "'em to fight without a good brew in their belly.",
+        },
+        [30654] = {
+            description = "The mogu are up to something, I can feel it.\n\nThey've been sending scouts " ..
+                "down into the Guo-Lai Halls.\n\nAccording to the caretakers, the Halls are home to " ..
+                "ancient treasures of emperors past. Not only riches, but artifacts of great power.\n\nWe " ..
+                "must prevent the mogu from accessing these treasures! Go down the ramp to the northwest " ..
+                "and stop them!",
+            rewardMoney = 228000,
+            startedBy = {{58465}},
+        },
+        [30655] = {
+            description = "Look, I know the Horde needs recruits, and there's just not enough of us here " ..
+                "right now to make a fighting presence of this town.\n\nBut I know that the yaungol over " ..
+                "at Fire Camp Ordo, to the west, have taken many of my people as prisoners. And I also " ..
+                "know that if you would be willing to rescue them from their captivity, they'd more than " ..
+                "likely be willing to join the Horde.\n\nWhat do you say, <name>?",
+            rewardMoney = 102000,
+        },
+        [30656] = {
+            description = "I love blowing stuff up. It's in my blood!\n\nThe yaungol to the west at Fire " ..
+                "Camp Ordo have a ton of explosive barrels just lying around.\n\nI say we put them to " ..
+                "good use and destroy their oil-pumpin' machines while having some fun!",
+            rewardItems = {{88577, 1}},
+            rewardMoney = 102000,
+        },
+        [30657] = {
+            description = "The yaungol of Fire Camp Ordo are the worst threat we're facing. I need you to " ..
+                "head west and take out their leader.\n\nThe coward is hiding in a cave, which is " ..
+                "protected by a fire shield cast by his four underlings.\n\nTake them out and the shield " ..
+                "will come down. You'll find them in their tents, channeling.",
+        },
+        [30658] = {
+            description = "Have you heard of the prickly puffer fish <name>? Of course you haven't, " ..
+                "you're new around these parts!\n\nThey can be found in the sarjun depths, due west of " ..
+                "here. Take this fishing spear and see if you can bring me back of few of their poison " ..
+                "tipped spines.",
+            rewardMoney = 114000,
+        },
+        [30660] = {
+            description = "<The shield is down. Time to head into the cave and slay the Warbringer of the " ..
+                "Ordo yaungol!>",
+            rewardChoices = {
+                {82589, 1}, {82590, 1}, {82591, 1}, {82592, 1}, {82593, 1}, {82594, 1}, {82595, 1},
+                {82596, 1}, {82597, 1}, {82598, 1},
+            },
+            rewardMoney = 306000,
+        },
+        [30661] = {
+            description = "<The shield is down. Time to head into the cave and slay the Warbringer of the " ..
+                "Ordo!>",
+            rewardChoices = {
+                {82589, 1}, {82590, 1}, {82591, 1}, {82592, 1}, {82593, 1}, {82594, 1}, {82595, 1},
+                {82596, 1}, {82597, 1}, {82598, 1},
+            },
+            rewardMoney = 306000,
+        },
+        [30662] = {
+            description = "You've taken the shield down at Fire Camp Ordo. Go back there before the " ..
+                "shield goes up again.\n\nTime to head into the cave and slay their chief!",
+            rewardChoices = {
+                {82589, 1}, {82590, 1}, {82591, 1}, {82592, 1}, {82593, 1}, {82594, 1}, {82595, 1},
+                {82596, 1}, {82597, 1}, {82598, 1},
+            },
+            rewardMoney = 306000,
+        },
         [30665] = {
             description = "I sent for reinforcements from the Shado-Pan Monastery, but have heard nothing " ..
                 "back. We have already lost the town.\n\nA few lucky villagers may have survived, but we " ..
                 "are pinned down here.\n\nWe do not have time to entertain strangers. If you can fight, " ..
                 "help my men defend this tower. If not, leave, for you will not survive long here.",
+            rewardMoney = 102000,
+        },
+        [30666] = {
+            description = "Normally, my day consists of catching fish, and then eating the fish I caught, " ..
+                "followed by sleeping. Note that I did not include \"fight with a crocolisk\" in that " ..
+                "list of activities.\n\nYou look like a handy <class>. Can you go get rid of some of " ..
+                "these crocolisks, so I can get back to my regular routine? The crocolisks normally keep " ..
+                "to themselves up at Kea Krak, to the northwest.",
+            rewardMoney = 102000,
+        },
+        [30667] = {
+            description = "When the crocs started attacking, they scared a bunch of the lories out of " ..
+                "their nests, up in that island to our northwest.\n\nI can use those lories' feathers to " ..
+                "make some specialized lures, which will come in handy if and when I get to stop " ..
+                "defending my brethren from these reptiles.\n\nYou up for some feather hunting?",
+            rewardMoney = 102000,
+        },
+        [30668] = {
+            description = "<Jay looks off in the direction of Kea Krak.>\n\nHmm. They don't seem to be... " ..
+                "calming down. We're going to have to try something different.\n\nYou'll need a raft. Go " ..
+                "grab some wood planks and seaweed, and bring them over to me. I'll put something " ..
+                "together for you.",
+            rewardMoney = 10200,
+        },
+        [30669] = {
+            description = "Your raft is down in the water below. Take it out to the middle of the lake, " ..
+                "where you should find a woman. Her name is Ana Wu.\n\nWhenever I have a question that I " ..
+                "can't figure out on my own, I'll ask her. She should be able to tell us why these " ..
+                "crocolisks won't stop attacking.",
+            rewardMoney = 10200,
+        },
+        [30670] = {
+            description = "Our true enemies are the sha, not the yungol.\n\nThe sha are emotion manifest. " ..
+                "Destructive, yes. But undisciplined. Undisciplined force cannot last. The flood, in " ..
+                "dispersion, loses its force. The wildfire burns its fuel.\n\nAnd, discipline and wisdom " ..
+                "can turn their destructive energy against themselves.\n\nBring me the essences of the " ..
+                "sha in the village, and I will explain further.",
             rewardMoney = 102000,
         },
         [30724] = {
@@ -35948,6 +36504,19 @@ ns.Overrides.wowhead = {
         [58465] = {spawns = {[5840] = {{34, 38.2}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [58468] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [58471] = {spawns = {[5840] = {{33.8, 38.4}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
+        [60223] = {
+            spawns = {
+                [5840] = {
+                    {42, 20}, {42.2, 22.8}, {44, 16.2}, {44, 19.6}, {44.2, 16.8}, {44.2, 17.8}, {44.2, 22.6},
+                    {44.4, 19}, {44.6, 19}, {44.8, 20}, {45, 21.6}, {45.2, 21.2}, {45.2, 24.6}, {45.6, 23.2},
+                    {45.8, 37.2}, {46, 26.2}, {46.4, 27.2}, {46.4, 29}, {47.2, 30.2}, {47.2, 35.6},
+                    {47.4, 32.4}, {47.4, 32.8}, {47.4, 35.2}, {47.4, 37}, {48, 30.6}, {48, 36}, {48.2, 29.2},
+                    {48.2, 39.4}, {48.6, 32}, {48.8, 29}, {49, 42}, {49.2, 40.4}, {49.4, 41}, {49.6, 33},
+                    {49.8, 39.2}, {49.8, 43}, {50.2, 41.8}, {50.2, 43.6}, {50.4, 28.2}, {50.8, 32},
+                },
+            },
+            zoneID = 5840,
+        },
         [64192] = {
             spawns = {
                 [5840] = {
