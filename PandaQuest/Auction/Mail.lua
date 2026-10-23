@@ -16,7 +16,7 @@ local _, ns = ...
 local Log = ns.Log
 local Store = ns.AuctionStore
 
-local M = {}
+local M = ns.PQ:GetModule("AuctionMail")   -- an AceAddon module (Core/Const.lua)
 ns.AuctionMail = M
 
 local type, tonumber, tostring, format, floor, abs = type, tonumber, tostring, string.format, math.floor, math.abs
@@ -34,7 +34,6 @@ local EXPIRY_TOLERANCE = 3600
 local READ_DELAY = 0.3              -- MAIL_INBOX_UPDATE comes in bursts; read once per burst
 
 local mailboxOpen = false
-local pending = false
 
 local function setting(key)
     local PQ = ns.PQ
@@ -62,7 +61,7 @@ end
 --- ReadInbox() -> number of new records. Safe to call as often as the inbox changes: an invoice
 -- already recorded on an earlier visit is matched and skipped.
 function M.ReadInbox()
-    if not setting("recordSales") then return 0 end
+    if not setting("recordSales") or not ns.IsModuleWanted("AuctionMail") then return 0 end
     if type(GetInboxNumItems) ~= "function" or type(GetInboxInvoiceInfo) ~= "function"
         or type(GetInboxHeaderInfo) ~= "function" then
         return 0
@@ -136,19 +135,11 @@ function M.ReadInbox()
     return added
 end
 
-local function readSoon()
-    if pending then return end
-    pending = true
-    local function run()
-        pending = false
-        local ok, err = pcall(M.ReadInbox)
-        if not ok then Log.Error("AuctionMail", "reading the inbox failed: %s", tostring(err)) end
-    end
-    if C_Timer and C_Timer.After then
-        C_Timer.After(READ_DELAY, run)
-    else
-        run()
-    end
+-- One read per burst of MAIL_INBOX_UPDATE: an AceBucket collects the burst for READ_DELAY seconds.
+local function readInbox()
+    if not mailboxOpen then return end
+    local ok, err = pcall(M.ReadInbox)
+    if not ok then Log.Error("AuctionMail", "reading the inbox failed: %s", tostring(err)) end
 end
 
 function M.IsMailboxOpen()
@@ -159,20 +150,20 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Enable()
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
+function M.OnEnable()
     -- MAIL_SHOW / MAIL_CLOSED / MAIL_INBOX_UPDATE: MailInfoDocumentation.lua:97, :50, :66. The inbox
     -- is only read while the mailbox is open; MailFrame_Show's CheckInbox (MailFrame.lua:102) is
     -- what brings the MAIL_INBOX_UPDATE with the invoices in it.
     M:RegisterEvent("MAIL_SHOW", function()
         mailboxOpen = true
     end)
-    M:RegisterEvent("MAIL_INBOX_UPDATE", function()
-        if mailboxOpen then readSoon() end
-    end)
+    M:RegisterBucketEvent("MAIL_INBOX_UPDATE", READ_DELAY, readInbox)
     M:RegisterEvent("MAIL_CLOSED", function()
         mailboxOpen = false
     end)
+end
+
+--- Switched off in Options > Modules: the mail events and the bucket are gone (AceEvent, AceBucket).
+function M.OnDisable()
+    mailboxOpen = false
 end
