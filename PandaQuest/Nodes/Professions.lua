@@ -49,7 +49,7 @@ local L = ns.L
 
 local Util, Log = ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Professions")   -- an AceAddon module (Core/Const.lua)
 ns.Professions = M
 
 local type, pairs, tostring, tonumber, format = type, pairs, tostring, tonumber, string.format
@@ -296,9 +296,10 @@ local function settingOn(key, default)
     return value and true or false
 end
 
---- Professions.IsEnabled() -> bool. The whole layer.
-function M.IsEnabled()
-    return settingOn("enabled", true)
+--- Professions.IsLayerEnabled() -> bool. The whole layer: its own switch (professions.enabled) and
+-- the module's (Options > Modules). Not IsEnabled, which is AceAddon's own on every module.
+function M.IsLayerEnabled()
+    return ns.IsModuleWanted("Professions") and settingOn("enabled", true)
 end
 
 --- Professions.KindEnabled(kind) -> bool. One toggle per kind.
@@ -913,7 +914,7 @@ end
 -- minimap cap, and this only says what should be there.
 function M.BuildSpecs(specs, byKey, maxPins)
     if type(specs) ~= "table" or type(byKey) ~= "table" then return 0 end
-    if not M.IsEnabled() then return 0 end
+    if not M.IsLayerEnabled() then return 0 end
     local playerMap, openMap = M.CurrentMaps()
     if not playerMap and not openMap then return 0 end
     local showUngatherable = M.ShowUngatherable()
@@ -1265,7 +1266,10 @@ local function askPinsToRedraw()
     end
 end
 
+local mapHooked = false
+
 local function mapMoved()
+    if not M:IsEnabled() then return end       -- the map hooks outlive a module switched off
     M.ResetMapCache()
     askPinsToRedraw()
 end
@@ -1277,7 +1281,7 @@ function M.Redraw()
     askPinsToRedraw()
 end
 
-function M.Init()
+function M.OnInitialize()
     -- Init runs from OnInitialize, after AceDB has read PandaQuestDB and before anything draws: the
     -- one moment a record left by an older build can be checked before it becomes a pin.
     M.CleanLearned()
@@ -1288,12 +1292,7 @@ function M.Init()
     lastLoot.guid, lastLoot.at = nil, 0
 end
 
-function M.Enable()
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    -- One AceEvent object per module: ns.PQ holds a single callback per message, so a
-    -- module that shares it silently overwrites another module's handler.
-    AceEvent:Embed(M)
+function M.OnEnable()
     M:RegisterEvent("LOOT_OPENED", function()
         local ok, err = pcall(M.OnLootOpened)
         if not ok then Log.Error("Professions", "LOOT_OPENED failed: %s", tostring(err)) end
@@ -1318,13 +1317,21 @@ function M.Enable()
     -- with a map addon for the same hook.
     M:RegisterEvent("ZONE_CHANGED_NEW_AREA", mapMoved)
     local frame = _G and _G.WorldMapFrame
-    if frame then
+    if frame and not mapHooked then
+        mapHooked = true                        -- a hook cannot be taken off, so it is put on once
         if frame.HookScript then pcall(frame.HookScript, frame, "OnShow", mapMoved) end
         if type(frame.OnMapChanged) == "function" and hooksecurefunc then
             pcall(hooksecurefunc, frame, "OnMapChanged", mapMoved)
         end
     end
-    Log.Debug("Professions", "enabled (%s)", M.IsEnabled() and "on" or "off")
+    Log.Debug("Professions", "enabled (%s)", M.IsLayerEnabled() and "on" or "off")
+end
+
+--- Switched off in Options > Modules: AceEvent dropped the loot, skill and cast events; the nodes
+-- come off the maps on the next redraw, which is asked for now.
+function M.OnDisable()
+    M.ResetCache()
+    askPinsToRedraw()
 end
 
 function M.OnDataReady()
