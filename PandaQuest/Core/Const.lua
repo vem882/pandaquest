@@ -194,7 +194,7 @@ ns.MODULE_ORDER = {
 -- module missing from this list is something another one stands on -- the quest log, the targets,
 -- the database -- and stays on.
 ns.OPTIONAL_MODULES = {
-    "Arrow", "TomTomBridge", "Pins", "Tooltips", "Respawn", "Professions", "NodeTooltip",
+    "Arrow", "Pins", "Tooltips", "Respawn", "Professions", "NodeTooltip",
     "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
     "AuctionScanner", "AuctionMail", "AuctionTooltip", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet",
