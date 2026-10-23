@@ -4,6 +4,276 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.229] - 2026-10-23
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,371 quests, 51 NPCs, 4 objects
+- quest 8486 - Arcane Instability - updated
+  - description added
+  - reward choices: +2
+- quest 8561 - Conqueror's Crown - updated
+  - description added
+  - reward items: +1
+- quest 9911 - The Count of the Marshes - updated
+  - description added
+- quest 10457 - Protecting Our Own - updated
+  - description added
+  - reward choices: +4
+- quest 10504 - The Bladespire Ogres - updated
+  - description added
+  - reward choices: +4
+- quest 10922 - Digging Through Bones - updated
+  - description added
+- quest 11793 - Further Investigation - updated
+  - description added
+- quest 13563 - A Love Eternal - updated
+  - description added
+  - reward choices: +2
+- quest 13898 - The Tides Turn Against Us - updated
+  - description added
+- quest 14075 - Trouble in the Mines - updated
+  - description added
+- quest 27152 - Unusual Behavior... Even For Gnolls - updated
+  - description added
+- quest 28837 - Altered Beasts - updated
+  - description added
+- quest 31735 - The Right Tool For The Job - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 31736 - Envoy of the Alliance - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31737 - The Cost of War - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31738 - Pillaging Peons - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31739 - Priorities! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31740 - Koukou's Rampage - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31741 - Twinspire Keep - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31742 - Fractured Forces - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31743 - Smoke Before Fire - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31744 - Unfair Trade - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31745 - Onward and Inward - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31752 - Blingtron 4000 - updated
+  - reward items: +1
+- quest 31754 - Cannonfire - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31755 - Acts of Cruelty - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31757 - Unleashed Spirits - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31758 - Laosy Scouting - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31760 - Striking First - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31762 - Crumbling Behemoth - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31765 - Paint it Red! - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 31766 - Touching Ground - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31767 - Finish Them! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31768 - Fire Is Always the Answer - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31769 - The Final Blow! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31770 - You're Either With Us Or... - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31772 - Priorities! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31773 - Prowler Problems - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31774 - Seeking Zin'jun - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 31775 - Assault on the Airstrip - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31776 - Strongarm Tactics - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31777 - Choppertunity - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31778 - Unreliable Allies - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31779 - The Darkness Within - updated
+  - description added
+  - reward money added (19g 60s)
+- quest 31780 - Old MacDonald - updated
+  - description added
+  - reward money added (70s)
+- quest 31781 - Lindsay - updated
+  - description added
+  - reward money added (35s)
+- quest 31782 - Overthrone - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward choices: +9
+- quest 31785 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31787 - Pristine Mogu Runestone - updated
+  - description added
+  - reward items: +2
+- quest 31788 - Pristine Terracotta Arm - updated
+  - description added
+  - reward items: +2
+- quest 31789 - Pristine Petrified Bone Whip - updated
+  - description added
+  - reward items: +2
+- quest 31790 - Pristine Thunder King Insignia - updated
+  - description added
+  - reward items: +2
+- quest 31791 - Pristine Edicts of the Thunder King - updated
+  - description added
+  - reward items: +2
+- quest 31792 - Pristine Iron Amulet - updated
+  - description added
+  - reward items: +2
+- quest 31793 - Pristine Branding Iron - updated
+  - description added
+  - reward items: +2
+- quest 31794 - Pristine Mogu Coin - updated
+  - description added
+  - reward items: +2
+- quest 31795 - Pristine Pandaren Tea Set - updated
+  - description added
+  - reward items: +2
+- quest 31796 - Pristine Game Board - updated
+  - description added
+  - reward items: +2
+- quest 31797 - Pristine Twin Stein Set - updated
+  - description added
+  - reward items: +2
+- quest 31798 - Pristine Walking Cane - updated
+  - description added
+  - reward items: +2
+- quest 31799 - Pristine Empty Keg - updated
+  - description added
+  - reward items: +2
+- quest 31800 - Pristine Carved Bronze Mirror - updated
+  - description added
+  - reward items: +2
+- quest 31801 - Pristine Gold-Inlaid Figurine - updated
+  - description added
+  - reward items: +2
+- quest 31802 - Pristine Apothecary Tins - updated
+  - description added
+  - reward items: +2
+- quest 31803 - Pristine Pearl of Yu'lon - updated
+  - description added
+  - reward items: +2
+- quest 31804 - Pristine Standard of Niuzao - updated
+  - description added
+  - reward items: +2
+- quest 31808 - Rampage Against the Machine - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31809 - Remnants of Anger - updated
+  - description added
+  - reward money added (45g 60s)
+  - reward choices: +9
+- quest 31810 - Riding the Skies - updated
+  - quest giver added: Elder Anli
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +1
+- quest 31811 - Riding the Skies - updated
+  - quest giver added: Elder Anli
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +1
+- quest 31818 - Zunta - updated
+  - description added
+  - reward money added (1s 75c)
+- quest 31819 - Dagra the Fierce - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 31820 - A Present for Teacher - updated
+  - description added
+  - reward money added (34g 20s)
+  - reward items: +1
+  - reward choices: +3
+- quest 31821 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31822 - Level Up! - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 31823 - Level Up! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31824 - Level Up! - updated
+  - description added
+  - reward money added (90s)
+- quest 31825 - Level Up! - updated
+  - description added
+  - reward money added (11g)
+- quest 31826 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31827 - Level Up! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31842 - Practice Makes Perfect: Master Kistane - updated
+  - description added
+- quest 32561 - Competing Magic - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 32686 - Pristine Banner of the Mantid Empire - updated
+  - description added
+  - reward items: +2
+- quest 92336 - Potion Master - updated
+  - description added
+- npc 3667 - Anaya Dawnrunner - updated
+  - coordinates: 16 spawn points added in Darkshore
+- npc 43929 - Blingtron 4000 - updated
+  - coordinates: 26 spawn points added in The Jade Forest
+  - coordinates: 20 spawn points added in Orgrimmar
+  - coordinates: 19 spawn points added in Krasarang Wilds
+  - coordinates: 16 spawn points added in Kun-Lai Summit
+  - coordinates: also changed in 7 more zones
+- npc 65804 - Golden Lotus Guard - updated
+  - coordinates: 28 spawn points added in Vale of Eternal Blossoms
+
 ## [0.2.228] - 2026-10-23
 
 Data from the PandaQuest portal.
