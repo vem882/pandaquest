@@ -842,8 +842,6 @@ local T = {
         "Näytä navigaattorissa",
     ["Hide from the navigator"] =
         "Piilota navigaattorista",
-    ["Copy link"] =
-        "Kopioi linkki",
     ["The arrow and the map pins follow this quest."] =
         "Nuoli ja karttamerkit seuraavat tätä tehtävää.",
     ["A hidden quest is left out of the arrow's route and the map pins. Settings > Hidden quests lists them."] =

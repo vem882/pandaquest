@@ -13,11 +13,8 @@ Fewer commands to remember: `/pq` opens PandaQuest, and everything else is in it
   options. A **Settings** button with a gear in its header opens all the settings in their own window.
   `/pq options` still opens them directly.
 - **A quest's page** has four buttons: *Navigate* (the arrow and the pins follow it), *Hide from the
-  navigator* / *Show in the navigator*, *Show on map* (the world map, where the quest starts) and *Copy
-  link*. Right-clicking a quest in the list offers the same four.
-- **Links go to the PandaQuest portal.** `/pq wh`, *Copy link*, and the arrow's and the map pins' menus
-  hand out the quest's page on https://pd.zroot.it (`/quests/<id>`, and `/npcs/`, `/objects/`, `/items/`)
-  instead of Wowhead's.
+  navigator* / *Show in the navigator*, *Show on map* (the world map, where the quest starts) and
+  *PandaQuest link*. Right-clicking a quest in the list offers the same four.
 - `/pq help` prints one line: "/pq opens PandaQuest; everything else is in its Settings." Every old
   command still works, for macros; `/pq help all` and Settings > Advanced list them.
 

@@ -640,7 +640,6 @@ L["/pq help all - every command"] = true
 -- The quest browser: the Settings button and what can be done with one quest (UI/QuestBrowser.lua)
 L["Show in the navigator"] = true
 L["Hide from the navigator"] = true
-L["Copy link"] = true
 L["The arrow and the map pins follow this quest."] = true
 L["A hidden quest is left out of the arrow's route and the map pins. Settings > Hidden quests lists them."] = true
 L["Opens the world map where this quest starts."] = true
