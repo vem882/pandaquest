@@ -50,7 +50,7 @@ local Const, Log, Thread, Util = ns.Const, ns.Log, ns.Thread, ns.Util
 local Compat = ns.Compat
 local Store = ns.RecipeStore
 
-local M = {}
+local M = ns.PQ:GetModule("RecipeScanner")   -- an AceAddon module (Core/Const.lua)
 ns.RecipeScanner = M
 
 local type, pairs, pcall, tonumber, tostring = type, pairs, pcall, tonumber, tostring
@@ -64,6 +64,7 @@ local MAX_EXPAND_ROUNDS = 4
 --- How many times an automatic scan re-reads a window whose list has not arrived yet.
 -- TRADE_SKILL_SHOW is the server saying the window is coming, not that it is here.
 local MAX_ARM_ATTEMPTS = 40
+local UPDATE_BUCKET = 0.1              -- TRADE_SKILL_UPDATE / _LIST_UPDATE burst collected by an AceBucket
 
 --- The word `/pq scan` hands to this module. Everything else stays the auction scanner's.
 local PROFESSION_WORDS = { professions = true, profession = true, prof = true }
@@ -574,6 +575,7 @@ local function reasonText(reason)
     if reason == "pending" then return L["The profession list has not arrived from the server yet. Try again in a moment."] end
     if reason == "windowClosed" then return L["Profession scan cancelled: the window was closed."] end
     if reason == "stopped" then return L["Profession scan stopped. Nothing was saved."] end
+    if reason == "off" then return L["That part of PandaQuest is switched off in the options, under Modules."] end
     return nil
 end
 
@@ -616,6 +618,7 @@ end
 --- CanScan() -> ok, reason. reason is "running", "closed", "unsupported", "linked" or the name of
 -- the missing call when the window's state could not be put back.
 function M.CanScan()
+    if not ns.IsModuleWanted("RecipeScanner") then return false, "off" end
     if ctx then return false, "running" end
     if not windowOpen then return false, "closed" end
     local missing, kind = M.MissingCall()
@@ -896,7 +899,7 @@ end
 -- Module lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
     -- `/pq scan` is the auction scanner's command. Rather than move it, this module
@@ -914,12 +917,17 @@ function M.Init()
     end
 end
 
-function M.Enable()
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
+function M.OnEnable()
     M:RegisterEvent("TRADE_SKILL_SHOW", onShow)
-    M:RegisterEvent("TRADE_SKILL_UPDATE", onUpdate)
-    M:RegisterEvent("TRADE_SKILL_LIST_UPDATE", onUpdate)
+    -- Blizzard's window fires these two on every filter change and every expand: one AceBucket
+    -- collects a burst of either into a single look at the window.
+    M:RegisterBucketEvent({ "TRADE_SKILL_UPDATE", "TRADE_SKILL_LIST_UPDATE" }, UPDATE_BUCKET, onUpdate)
     M:RegisterEvent("TRADE_SKILL_CLOSE", onClose)
+end
+
+--- Switched off in Options > Modules: a running scan is stopped and the window put back the way the
+-- player left it; AceEvent and AceBucket drop the trade skill events.
+function M.OnDisable()
+    if ctx then M.Stop("stopped") end
+    windowOpen, armed, attempts = false, false, 0
 end
