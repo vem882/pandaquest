@@ -1,42 +1,26 @@
 -- Core/Init.lua: AceAddon object, AceDB, module lifecycle and slash commands.
 -- Loaded last: every module table already exists on ns when this file runs.
-local ADDON_NAME, ns = ...
+local _, ns = ...
 local L = ns.L
 
 local Const, Util, Log, Thread = ns.Const, ns.Util, ns.Log, ns.Thread
 
-local AceAddon = LibStub("AceAddon-3.0")
 local AceDB = LibStub("AceDB-3.0")
 
-local PQ = AceAddon:NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0", "AceConsole-3.0")
-ns.PQ = PQ
-_G.PandaQuest = PQ
-
--- Module lifecycle order = TOC order. Core files have no lifecycle.
-ns.MODULE_ORDER = {
-    "Schema", "Zones", "DB",
-    "Player", "QuestLog", "Objectives", "Availability",
-    "Targets", "Router", "Arrow", "TomTomBridge",
-    "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
-    "Respawn", "Professions",
-    "FlightRoutes", "FlightTooltip",
-    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
-    "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
-    -- After AuctionScanner because RecipeScanner.Init takes one word out of its /pq scan command
-    -- and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,
-    -- so it comes after that one for the same reason.
-    "RecipeStore", "RecipeScanner", "Archaeology",
-    "Telemetry", "CharacterSheet", "Consent", "Community",
-}
+-- The addon object and every module were created in Core/Const.lua, with the lifecycle order
+-- (ns.MODULE_ORDER) and the modules a player may switch off (ns.OPTIONAL_MODULES).
+local PQ = ns.PQ
 
 local pcall, type, tonumber, tostring, pairs, ipairs, format = pcall, type, tonumber, tostring, pairs, ipairs, string.format
 
--- Calls M[method](...) on every module that defines it. Errors are reported and do not stop the loop.
+-- Calls M[method](...) on every enabled module that defines it, in ns.MODULE_ORDER. Errors are
+-- reported and do not stop the loop.
 local function CallModules(method, ...)
     for _, name in ipairs(ns.MODULE_ORDER) do
         local module = ns[name]
         local fn = module and module[method]
-        if type(fn) == "function" then
+        local handle = PQ:GetModule(name, true)
+        if type(fn) == "function" and not (handle and not handle:IsEnabled()) then
             local ok, err = pcall(fn, ...)
             if not ok then
                 local handler = geterrorhandler and geterrorhandler()
@@ -47,6 +31,38 @@ local function CallModules(method, ...)
     end
 end
 ns.CallModules = CallModules
+
+--- ns.IsModuleWanted(name) -> bool: an optional module the profile switched off is not wanted;
+-- every other module always is.
+local OPTIONAL = {}
+for _, name in ipairs(ns.OPTIONAL_MODULES) do OPTIONAL[name] = true end
+function ns.IsModuleWanted(name)
+    if not OPTIONAL[name] then return true end
+    local states = PQ.db and PQ.db.profile.modules
+    return not (type(states) == "table" and states[name] == false)
+end
+
+--- ns.ApplyModuleStates(): enables every wanted module and disables the rest, in ns.MODULE_ORDER.
+-- PQ:OnEnable calls it once for the login; Options > Modules and a profile change call it again.
+-- A module enabled after the database is ready gets the OnDataReady it missed.
+function ns.ApplyModuleStates()
+    for _, name in ipairs(ns.MODULE_ORDER) do
+        local module = PQ:GetModule(name, true)
+        if module then
+            local wanted = ns.IsModuleWanted(name)
+            if wanted and not module:IsEnabled() then
+                module:Enable()
+                local own = ns[name]
+                if ns.dbReady and type(own) == "table" and type(own.OnDataReady) == "function" then
+                    local ok, err = pcall(own.OnDataReady)
+                    if not ok then Log.Error("Init", "%s.OnDataReady failed: %s", name, tostring(err)) end
+                end
+            elseif not wanted and module:IsEnabled() then
+                module:Disable()
+            end
+        end
+    end
+end
 
 -- Applies a stored locale override (see Locales/fiFI.lua): copies the chosen table over ns.L.
 local function ApplyLanguage()
@@ -62,6 +78,7 @@ end
 
 local function OnProfileChanged(_, _, profileName)
     Log.Debug("Init", "profile changed -> %s", tostring(profileName))
+    ns.ApplyModuleStates()
     CallModules("OnProfileChanged")
     Log.Print(L["Profile changed: %s"], tostring(profileName or PQ.db:GetCurrentProfile()))
 end
@@ -103,12 +120,12 @@ function PQ:OnInitialize()
         self:RegisterChatCommand(cmd, "ChatCommand")
     end
 
+    -- AceAddon initializes the modules next, in ns.MODULE_ORDER.
     Log.Debug("Init", "OnInitialize (version %s)", Const.VERSION)
-    CallModules("Init")
 end
 
 function PQ:OnEnable()
-    CallModules("Enable")
+    ns.ApplyModuleStates()
 
     self:RegisterMessage("PQ_DB_READY", function()
         ns.dbReady = true

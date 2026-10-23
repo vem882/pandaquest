@@ -156,3 +156,98 @@ ns.DEFAULTS = {
                flight = { routes = {} },
                dbCompiled = nil },
 }
+
+---------------------------------------------------------------------------
+-- The AceAddon object and its modules
+---------------------------------------------------------------------------
+-- Every subsystem is an AceAddon-3.0 module of one addon object. They are created here, in the first
+-- file of the TOC, because each module file fetches its own object while it loads
+-- (`local M = ns.PQ:GetModule("QuestLog")`), and `ns.<Name>` is that same object, so everything that
+-- reads ns.QuestLog keeps working. Core/Init.lua gives the addon and the modules their lifecycle.
+--
+-- The order of this list is the lifecycle order, and both passes follow it:
+--   OnInitialize  at ADDON_LOADED, right after PQ:OnInitialize created AceDB. AceAddon initializes
+--                 modules in the order they were created, which is this list's order.
+--   OnEnable      at PLAYER_LOGIN, from PQ:OnEnable, one module at a time in this order, and only
+--                 then the database load (Core/Init.lua, ApplyModuleStates). The modules are created
+--                 disabled (SetDefaultModuleState(false)) for exactly that reason: AceAddon would
+--                 otherwise enable them itself, after PQ:OnEnable had already started the database.
+-- OnDataReady and OnProfileChanged reach the enabled modules in the same order (ns.CallModules).
+ns.MODULE_ORDER = {
+    "Schema", "Zones", "DB",
+    "Player", "QuestLog", "Objectives", "Availability",
+    "Targets", "Router", "Arrow", "TomTomBridge",
+    "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
+    "Respawn", "Professions",
+    "FlightRoutes", "FlightTooltip",
+    "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
+    "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
+    -- After AuctionScanner because RecipeScanner's OnInitialize takes one word out of its /pq scan
+    -- command and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,
+    -- so it comes after that one for the same reason.
+    "RecipeStore", "RecipeScanner", "Archaeology",
+    "Telemetry", "CharacterSheet", "Consent", "Community",
+}
+
+-- The modules a player may switch off (Options > Modules; profile.modules.<Name>, on by default).
+-- A module that is off has no event, message, bucket or timer registered and shows nothing. Every
+-- module missing from this list is something another one stands on -- the quest log, the targets,
+-- the database -- and stays on.
+ns.OPTIONAL_MODULES = {
+    "Arrow", "TomTomBridge", "Pins", "Tooltips", "Respawn", "Professions", "NodeTooltip",
+    "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
+    "AuctionScanner", "AuctionMail", "AuctionTooltip", "RecipeScanner", "Archaeology",
+    "Telemetry", "CharacterSheet",
+}
+
+-- profile.modules.<Name> = true for every optional module. A new key: nothing is moved into it.
+ns.DEFAULTS.profile.modules = {}
+for _, name in ipairs(ns.OPTIONAL_MODULES) do ns.DEFAULTS.profile.modules[name] = true end
+
+local PQ = LibStub("AceAddon-3.0"):NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0", "AceConsole-3.0")
+ns.PQ = PQ
+_G.PandaQuest = PQ
+
+-- What every module inherits. A file that still builds a table of its own (`local M = {}`, the shape
+-- every file had before the modules; ns.<Name> is then that table, not the module) is driven through
+-- that table's Init and Enable, so its lifecycle keeps the same place in the order.
+local Prototype = {}
+ns.ModulePrototype = Prototype
+
+local function ownTable(module)
+    local own = ns[module.moduleName]
+    if own ~= module and type(own) == "table" then return own end
+    return nil
+end
+
+function Prototype:OnInitialize()
+    local own = ownTable(self)
+    if own and type(own.Init) == "function" then own.Init() end
+end
+
+function Prototype:OnEnable()
+    local own = ownTable(self)
+    if own and type(own.Enable) == "function" then own.Enable() end
+end
+
+-- AceEvent, AceTimer and AceBucket clear the module's own registrations when it is disabled; a table
+-- of its own that embedded them itself is cleared here.
+function Prototype:OnDisable()
+    local own = ownTable(self)
+    if not own then return end
+    for _, target in ipairs({ own, rawget(own, "listener") or false }) do
+        if type(target) == "table" then
+            if type(target.UnregisterAllEvents) == "function" then target:UnregisterAllEvents() end
+            if type(target.UnregisterAllMessages) == "function" then target:UnregisterAllMessages() end
+            if type(target.UnregisterAllBuckets) == "function" then target:UnregisterAllBuckets() end
+            if type(target.CancelAllTimers) == "function" then target:CancelAllTimers() end
+        end
+    end
+end
+
+PQ:SetDefaultModuleState(false)
+PQ:SetDefaultModulePrototype(Prototype)
+PQ:SetDefaultModuleLibraries("AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0")
+for _, name in ipairs(ns.MODULE_ORDER) do
+    ns[name] = PQ:NewModule(name)
+end
