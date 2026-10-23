@@ -4,6 +4,24 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.230] - 2026-10-23
+
+Fixes to a quest's page in the quest browser, from the owner's screenshot of "Magic" Mushrooms (29362).
+
+### Fixed
+- **The map showed for a moment and then disappeared**, leaving its brown ground and the pins. The zone
+  art's tiles and the brown ground were textures in the same draw layer and sub-level, which the client
+  draws in no fixed order and re-sorts when the page changes (the crossfade, a pin popping in). The
+  ground is now at sub-level -8 and the tiles at 1, so the art is always on top.
+- **Level "-1"**: a quest whose level follows the player's (Questie's -1) reads *Scales* in the list
+  and on the page, its colour and difficulty are taken at the player's level, and the line under the
+  title says it scales with your level.
+- **Rewards "+5 81"**: the reputation is written with the faction's name, "+5 The Tillers" (the
+  faction id when the client does not know it), and money is shown in gold, silver and copper coins.
+- **Wowhead link** is now **PandaQuest link**: the copy box holds the quest's page on the PandaQuest
+  portal, https://pd.zroot.it/quests/<id>. Every other link the addon hands out (the arrow's and the
+  map pins' menus, `/pq wh`) goes to the portal too.
+
 ## [0.2.229] - 2026-10-23
 
 Data from the PandaQuest portal.

@@ -1,5 +1,7 @@
--- UI/Wowhead.lua: Wowhead URL builders and the copy dialog.
--- An in-game addon cannot open a browser, so the best we can do is hand the player a
+-- UI/Wowhead.lua: the link builders and the copy dialog. The module keeps its old name, but every link
+-- it builds is the PandaQuest portal's page (Const.HUB_BASE), not Wowhead's: the portal has the
+-- addon's own data and keeps the player there (pd.zroot.it/quests/<id>, /npcs/<id>, /objects/<id>,
+-- /items/<id>). An in-game addon cannot open a browser, so the best we can do is hand the player a
 -- pre-selected edit box and tell them to press Ctrl+C.
 local _, ns = ...
 local L = ns.L
@@ -11,13 +13,14 @@ ns.Wowhead = M
 
 local type, tonumber, format = type, tonumber, string.format
 
-local BASE = Const.WOWHEAD_BASE or "https://www.wowhead.com/mop-classic/"
+local BASE = Const.HUB_BASE or "https://pd.zroot.it/"
+local PATHS = { quest = "quests", npc = "npcs", object = "objects", item = "items" }
 local POPUP = "PANDAQUEST_WOWHEAD_URL"
 
 local function url(kind, id)
     id = tonumber(id)
     if not id then return nil end
-    return format("%s%s=%d", BASE, kind, id)
+    return format("%s%s/%d", BASE, PATHS[kind] or kind, id)
 end
 
 function M.QuestUrl(id) return url("quest", id) end

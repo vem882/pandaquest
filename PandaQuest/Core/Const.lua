@@ -40,6 +40,9 @@ Const.LOG_ERROR, Const.LOG_WARN, Const.LOG_INFO, Const.LOG_DEBUG, Const.LOG_TRAC
 -- Chat prefix colour and Wowhead base.
 Const.CHAT_PREFIX = "|cff5fd7ffPanda|rQuest"
 Const.WOWHEAD_BASE = "https://www.wowhead.com/mop-classic/"
+-- The PandaQuest portal: the page every link the addon hands out goes to, so a player stays on the
+-- site that has PandaQuest's own data (quests/<id>, npcs/<id>, objects/<id>, items/<id>).
+Const.HUB_BASE = "https://pd.zroot.it/"
 
 -- AceDB defaults. Must match the contract exactly.
 ns.DEFAULTS = {

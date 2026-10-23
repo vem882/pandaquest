@@ -4,6 +4,12 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.230
+- quest browser - the map on a quest's page stays: its tiles were drawn under the map's own ground
+- quest browser - a quest that scales with your level reads "Scales", not -1
+- quest browser - rewards name the reputation's faction and show money in coins
+- quest browser - the link button is a PandaQuest link: the quest's page on pd.zroot.it, not Wowhead
+
 0.2.229
 - database - Wowhead data as the PandaQuest portal read it: 8,371 quests, 51 NPCs, 4 objects
 - quest 8486 - Arcane Instability - updated
