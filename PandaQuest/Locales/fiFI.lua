@@ -5,19 +5,21 @@ local _, ns = ...
 
 local T = {
     -- Core / Init
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s ladattu. Kirjoita /pq avataksesi asetukset, /pq help näyttää komennot.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "Tervetuloa PandaQuestiin! Nuoli osoittaa seuraavaan tehtäväkohteeseen. Kirjoita /pq help nähdäksesi komennot.",
+    ["PandaQuest %s loaded. Type /pq to open it."] =
+        "PandaQuest %s ladattu. Kirjoita /pq avataksesi sen.",
+    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq to open PandaQuest and its settings."] =
+        "Tervetuloa PandaQuestiin! Nuoli osoittaa seuraavaan tehtäväkohteeseen. Kirjoita /pq avataksesi PandaQuestin ja sen asetukset.",
     ["%s is not available yet."] = "%s ei ole vielä käytettävissä.",
     ["Unknown command: %s"] = "Tuntematon komento: %s",
     ["Available commands:"] = "Käytettävissä olevat komennot:",
-    ["/pq - open options"] = "/pq - avaa asetukset",
+    ["/pq - open PandaQuest: every quest, and the Settings button"] =
+        "/pq - avaa PandaQuest: kaikki tehtävät ja Asetukset-painike",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - nuoli päälle/pois",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] = "/pq target [tehtäväID|clear] - kiinnitä tehtävä (tai näytä nykyinen kohde)",
     ["/pq next - skip the current target"] = "/pq next - ohita nykyinen kohde",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - etäisyysyksikkö",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [tehtäväID] - Wowhead-linkki",
+    ["/pq wh [questID] - link to the quest's page on the PandaQuest portal"] =
+        "/pq wh [tehtäväID] - linkki tehtävän sivulle PandaQuest-portaalissa",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <tehtäväID> - piilota tehtävä navigaattorista",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <tehtäväID> - näytä piilotettu tehtävä uudelleen",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - palauta nuolen sijainti ja karttapinnit",
@@ -106,7 +108,8 @@ local T = {
     ["Show on map"] = "Näytä kartalla",
     ["TomTom is not loaded."] = "TomTom ei ole ladattuna.",
     ["Unlock arrow"] = "Vapauta nuoli",
-    ["Wowhead link"] = "Wowhead-linkki",
+    ["Link to the quest's page"] =
+        "Linkki tehtävän sivulle",
 
     -- Nav/Waypoint (in-world waypoints, /way)
     ["Waypoints"] =
@@ -212,7 +215,8 @@ local T = {
     ["Right-click: more options"] = "Oikea klikkaus: lisää valintoja",
     ["Set as target"] = "Aseta kohteeksi",
     ["Hide quest: %s"] = "Piilota tehtävä: %s",
-    ["Wowhead: %s"] = "Wowhead: %s",
+    ["Portal page: %s"] =
+        "Portaalin sivu: %s",
     ["Starts: %s"] = "Aloittaa: %s",
     ["Turn in: %s"] = "Palauta: %s",
     ["Ends: %s"] = "Päättyy: %s",
@@ -729,8 +733,8 @@ local T = {
         "Poistaa tehtävän, joka on kiinnitetty kohdeasetuksella tai kartan oikean klikkauksen valikolla.",
     ["Reset arrow position and map pins"] =
         "Nollaa nuolen sijainti ja karttapinnit",
-    ["Wowhead link for the current target"] =
-        "Wowhead-linkki nykyiselle kohteelle",
+    ["Link to the current target's page"] =
+        "Linkki nykyisen kohteen sivulle",
     ["%d quests are hidden from the navigator."] =
         "%d tehtävää on piilotettu navigaattorista.",
     ["Show all hidden quests again"] =
@@ -826,6 +830,79 @@ local T = {
     ["Gear recording"] = "Varusteiden tallennus",
     ["Records your gear for the PandaQuest portal, together with the quest data."] =
         "Tallentaa varusteesi PandaQuest-portaalia varten tehtävätietojen kanssa.",
+    -- /pq opens the quest browser (Core/Init.lua)
+    ["/pq opens PandaQuest; everything else is in its Settings."] =
+        "/pq avaa PandaQuestin; kaikki muu on sen asetuksissa.",
+    ["/pq options - open the settings"] =
+        "/pq options - avaa asetukset",
+    ["/pq help all - every command"] =
+        "/pq help all - kaikki komennot",
+    -- The quest browser: the Settings button and what can be done with one quest (UI/QuestBrowser.lua)
+    ["Show in the navigator"] =
+        "Näytä navigaattorissa",
+    ["Hide from the navigator"] =
+        "Piilota navigaattorista",
+    ["The arrow and the map pins follow this quest."] =
+        "Nuoli ja karttamerkit seuraavat tätä tehtävää.",
+    ["A hidden quest is left out of the arrow's route and the map pins. Settings > Hidden quests lists them."] =
+        "Piilotettu tehtävä jätetään pois nuolen reitiltä ja karttamerkeistä. Asetukset > Piilotetut tehtävät listaa ne.",
+    ["Opens the world map where this quest starts."] =
+        "Avaa maailmankartan siihen kohtaan, josta tehtävä alkaa.",
+    ["The quest's page on the PandaQuest portal, to copy into your browser."] =
+        "Tehtävän sivu PandaQuest-portaalissa, kopioitavaksi selaimeen.",
+    ["Settings"] =
+        "Asetukset",
+    ["Every PandaQuest setting: modules, arrow, map, tooltips, sync and privacy, language and more."] =
+        "Kaikki PandaQuestin asetukset: moduulit, nuoli, kartta, vihjeruudut, synkronointi ja yksityisyys, kieli ja muuta.",
+    -- Options: what used to be a chat command only (UI/Options.lua)
+    ["The arrow, the flight bar and the dig site bar are back where they started."] =
+        "Nuoli, lentopalkki ja kaivauspaikan palkki ovat taas alkuperäisillä paikoillaan.",
+    ["No quest is hidden from the navigator."] =
+        "Yhtään tehtävää ei ole piilotettu navigaattorista.",
+    ["Modules switched on: %d of %d"] =
+        "Moduuleja päällä: %d / %d",
+    ["Every chat command still works, for macros. None of them is needed: everything is in these settings."] =
+        "Kaikki chat-komennot toimivat yhä makroja varten. Mitään niistä ei tarvita: kaikki löytyy näistä asetuksista.",
+    ["Synchronisation and privacy"] =
+        "Synkronointi ja yksityisyys",
+    ["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."] =
+        "Tallennetaan, kun päällä: hyväksytyt ja suoritetut tehtävät, tavoitteiden edistyminen, sijainti kartalla, tasosi ja kesto.",
+    ["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."] =
+        "Hahmokohtaisesti. Ei koskaan chattia eikä muiden pelaajien nimiä. Tiedot pysyvät koneellasi, ellet lähetä niitä PandaQuest-sovelluksella.",
+    ["Moving frames"] =
+        "Ikkunoiden siirtäminen",
+    ["The arrow, the flight bar and the dig site bar can be dragged where you want them while they are unlocked."] =
+        "Nuolta, lentopalkkia ja kaivauspaikan palkkia voi raahata haluamaasi paikkaan, kun ne on vapautettu.",
+    ["Unlock frames to move them"] =
+        "Vapauta ikkunat siirtämistä varten",
+    ["Unlocks the arrow, the flight bar and the dig site bar, and shows the two bars for a moment so you can find them."] =
+        "Vapauttaa nuolen, lentopalkin ja kaivauspaikan palkin ja näyttää palkit hetken, jotta löydät ne.",
+    ["Reset positions"] =
+        "Palauta sijainnit",
+    ["Puts the arrow, the flight bar and the dig site bar back where they started."] =
+        "Siirtää nuolen, lentopalkin ja kaivauspaikan palkin takaisin alkuperäisille paikoilleen.",
+    ["Hidden quests"] =
+        "Piilotetut tehtävät",
+    ["Hidden quest"] =
+        "Piilotettu tehtävä",
+    ["A hidden quest is left out of the arrow's route and the map pins."] =
+        "Piilotettu tehtävä jätetään pois nuolen reitiltä ja karttamerkeistä.",
+    ["Show this quest again"] =
+        "Näytä tämä tehtävä taas",
+    ["Status"] =
+        "Tila",
+    ["Refresh"] =
+        "Päivitä",
+    ["Database entry"] =
+        "Tietokantamerkintä",
+    ["Kind"] =
+        "Laji",
+    ["ID"] =
+        "ID",
+    ["Print the entry to chat"] =
+        "Tulosta merkintä chattiin",
+    ["Chat commands"] =
+        "Chat-komennot",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

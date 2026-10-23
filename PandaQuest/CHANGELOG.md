@@ -4,6 +4,31 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.234] - 2026-10-23
+
+Fewer commands to remember: `/pq` opens PandaQuest, and everything else is in its Settings.
+
+### Changed
+- **`/pq` (and `/pandaquest`) opens the quest browser**, every quest in the database, instead of the
+  options. A **Settings** button with a gear in its header opens all the settings in their own window.
+  `/pq options` still opens them directly.
+- **A quest's page** has four buttons: *Navigate* (the arrow and the pins follow it), *Hide from the
+  navigator* / *Show in the navigator*, *Show on map* (the world map, where the quest starts) and
+  *PandaQuest link*. Right-clicking a quest in the list offers the same four.
+- `/pq help` prints one line: "/pq opens PandaQuest; everything else is in its Settings." Every old
+  command still works, for macros; `/pq help all` and Settings > Advanced list them.
+
+### Added
+- Settings > **Status**: what `/pq status` and `/pq sync` print, on a page.
+- Settings > **Hidden quests**: every quest hidden from the navigator, and buttons to show one or all of
+  them again.
+- Settings > **Moving frames**: *Unlock frames to move them* (the arrow, the flight bar and the dig site
+  bar, with the two bars shown for a moment) and *Reset positions*.
+- Settings > **Synchronisation and privacy** says what is recorded and what never is, and has the data
+  sharing question as a button.
+- Settings > **Advanced**: print a database entry (quest, NPC, object or item), and the list of every
+  chat command.
+
 ## [0.2.233] - 2026-10-23
 
 PandaQuest uses its Ace3 libraries fully. In the game it looks and plays as before, with one new

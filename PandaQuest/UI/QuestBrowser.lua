@@ -2,6 +2,11 @@
 --
 --   /pq quests          open (or close) the window
 --
+-- `/pq` opens this window: it is PandaQuest's front door. The gear in its header opens the Settings, and
+-- every chat command that was about one quest is a button on its page or in a row's right-click menu:
+-- navigate to it, hide it from the navigator or show it again, show it on the world map, copy the link
+-- to its page on the PandaQuest portal.
+--
 -- Left: categories (continents, dungeons, raids, classes, professions, events) with counts. Middle: the
 -- quests that match the filters, sortable by clicking a column heading. Right: the selected quest as a
 -- page: text on a sheet of parchment, who starts and ends it, level, difficulty, side, and a map with the
@@ -57,7 +62,7 @@ local TREE_CHARS, TREE_SUB_CHARS = 25, 22
 local TITLE_CHARS, SUBTITLE_CHARS = 56, 50
 local VALUE_CHARS = 38
 local TAB_CHARS = 10
-local OBJECTIVE_CHARS = 270
+local OBJECTIVE_CHARS = 180               -- the paper gave two lines to the second row of buttons
 
 -- Motion ---------------------------------------------------------------------------------------
 local OPEN_TIME, CLOSE_TIME, OPEN_RISE = 0.18, 0.12, 8
@@ -1069,6 +1074,7 @@ function refreshDetail(animate)
 
     mapAreas = collectAreas(quest)
     d.quest = quest
+    if d.hide and M.HiddenLabel then d.hide.text:SetText(M.HiddenLabel(selectedId)) end
     if animate or not wasShown then crossfadePage() end
     showMapArea(quest, 1)
 end
@@ -1117,26 +1123,174 @@ local function onAreaTab(index)
     if quest then showMapArea(quest, index) end
 end
 
-local function navigate()
-    local quest = widgets.detail and widgets.detail.quest
-    if not quest then return end
-    local Targets, Router = ns.Targets, ns.Router
-    local list = Targets and Targets.GetForQuest and Targets.GetForQuest(quest.id)
-    local target = list and list[1]
-    if target and Router and Router.SetManualTarget then
-        Router.SetManualTarget(target)
-        Log.Print(L["Navigating to: %s"], quest.name or tostring(quest.id))
-    else
-        Log.Print(L["No target found for quest %d."], quest.id)
-    end
+---------------------------------------------------------------------------
+-- What can be done with one quest: the page's buttons and a row's right-click menu
+---------------------------------------------------------------------------
+
+local function questName(questID)
+    local DB = ns.DB
+    return (DB and DB.GetQuestName and DB.GetQuestName(questID)) or tostring(questID)
 end
 
-local function showWowhead()
-    local quest = widgets.detail and widgets.detail.quest
-    local Wowhead = ns.Wowhead
-    if quest and Wowhead and Wowhead.ShowCopyDialog then
-        Wowhead.ShowCopyDialog(Wowhead.QuestUrl(quest.id))
+local browserPin                   -- the custom target the browser made for a quest not in the log
+
+--- Navigate(questID) -> bool: pin the quest as the arrow's target (what `/pq target <id>` does). A quest
+-- the navigator has no target for -- not in the log, not available nearby -- is routed to where it is
+-- picked up, as one custom target the browser owns and replaces on the next quest it is asked for.
+function M.Navigate(questID)
+    if not questID then return false end
+    local Targets, Router, Objectives = ns.Targets, ns.Router, ns.Objectives
+    if not (Targets and Router and Router.SetManualTarget) then return false end
+    local list = Targets.GetForQuest and Targets.GetForQuest(questID)
+    local target = list and list[1]
+    if not target and Objectives and Objectives.BuildPickup and Targets.AddCustom then
+        local pickup = Objectives.BuildPickup(questID)
+        if pickup and pickup.uiMapID and pickup.x and pickup.y then
+            if browserPin and Targets.RemoveCustom then Targets.RemoveCustom(browserPin) end
+            target = Targets.AddCustom(pickup.uiMapID, pickup.x, pickup.y, questName(questID))
+            browserPin = target and target.key or nil
+        end
     end
+    if target then
+        Router.SetManualTarget(target)
+        Log.Print(L["Navigating to: %s"], questName(questID))
+        return true
+    end
+    Log.Print(L["No target found for quest %d."], questID)
+    return false
+end
+
+--- IsHidden(questID) -> is the quest hidden from the navigator (char.hiddenQuests)?
+function M.IsHidden(questID)
+    local PQ = ns.PQ
+    local char = PQ and PQ.db and PQ.db.char
+    return questID ~= nil and char ~= nil and type(char.hiddenQuests) == "table" and char.hiddenQuests[questID] == true
+end
+
+--- ToggleHidden(questID) -> hidden now: `/pq hide <id>` or `/pq unhide <id>`, the same functions.
+function M.ToggleHidden(questID)
+    if not questID then return false end
+    local PQ = ns.PQ
+    local commands = PQ and PQ.commands
+    local verb = M.IsHidden(questID) and "unhide" or "hide"
+    if commands and commands[verb] then commands[verb](tostring(questID)) end
+    if M.Refresh then M.Refresh() end
+    return M.IsHidden(questID)
+end
+
+--- MapIdFor(questID) -> the uiMapID of the first place the quest is known to start or end, or nil.
+function M.MapIdFor(questID)
+    local DB, Zones = ns.DB, ns.Zones
+    local quest = DB and DB.GetQuest and DB.GetQuest(questID)
+    if not quest then return nil end
+    local area = collectAreas(quest)[1]
+    return area and Zones and Zones.GetUiMapIdByAreaId and Zones.GetUiMapIdByAreaId(area) or nil
+end
+
+--- ShowOnMap(questID) -> bool: the world map, opened on the zone where the quest starts.
+function M.ShowOnMap(questID)
+    local uiMapID = questID and M.MapIdFor(questID)
+    if not uiMapID then
+        Log.Print("%s", L["No location is known for this quest."])
+        return false
+    end
+    if type(OpenWorldMap) == "function" then
+        return (pcall(OpenWorldMap, uiMapID))
+    end
+    local map = _G and _G.WorldMapFrame
+    if not map then return false end
+    if not map:IsShown() and type(ShowUIPanel) == "function" then pcall(ShowUIPanel, map) end
+    if map.SetMapID then pcall(map.SetMapID, map, uiMapID) end
+    return true
+end
+
+--- CopyLink(questID) -> bool: the quest's page on the PandaQuest portal, in a copy box.
+function M.CopyLink(questID)
+    local Links = ns.Wowhead
+    if not (questID and Links and Links.ShowCopyDialog and Links.QuestUrl) then return false end
+    Links.ShowCopyDialog(Links.QuestUrl(questID))
+    return true
+end
+
+local function pageQuestId()
+    local quest = widgets.detail and widgets.detail.quest
+    return quest and quest.id or nil
+end
+
+local function navigate() M.Navigate(pageQuestId()) end
+local function toggleHidden() M.ToggleHidden(pageQuestId()) end
+local function showOnMap() M.ShowOnMap(pageQuestId()) end
+local function showWowhead() M.CopyLink(pageQuestId()) end
+
+-- The label of the hide button says what pressing it will do.
+local function hiddenLabel(questID)
+    return M.IsHidden(questID) and L["Show in the navigator"] or L["Hide from the navigator"]
+end
+M.HiddenLabel = hiddenLabel
+
+-- A row's right-click menu: the four things the page's buttons do, for that row's quest. Built the
+-- first time it is asked for, and hidden with the window.
+local rowMenu
+local MENU_ACTIONS = {
+    { label = function() return L["Navigate"] end, run = function(id) return M.Navigate(id) end },
+    { label = hiddenLabel, run = function(id) return M.ToggleHidden(id) end },
+    { label = function() return L["Show on map"] end, run = function(id) return M.ShowOnMap(id) end },
+    { label = function() return L["PandaQuest link"] end, run = function(id) return M.CopyLink(id) end },
+}
+
+local function hideRowMenu()
+    if rowMenu then rowMenu:Hide() end
+end
+
+local function buildRowMenu()
+    if rowMenu or not frame then return rowMenu end
+    rowMenu = CreateFrame("Frame", nil, frame)
+    if rowMenu.SetFrameStrata then rowMenu:SetFrameStrata("DIALOG") end
+    rowMenu:SetSize(176, #MENU_ACTIONS * 22 + 8)
+    local bg = rowMenu:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints(rowMenu)
+    paint(bg, WINDOW_BG)
+    addEdge(rowMenu, GOLD, 0.6)
+    rowMenu:EnableMouse(true)
+    rowMenu.buttons = {}
+    for i, action in ipairs(MENU_ACTIONS) do
+        local b = newButton(rowMenu, "", 168, 20, function()
+            local id = rowMenu.questId
+            hideRowMenu()
+            action.run(id)
+        end, true)
+        b:SetPoint("TOPLEFT", rowMenu, "TOPLEFT", 4, -4 - (i - 1) * 22)
+        b.action = action
+        rowMenu.buttons[i] = b
+    end
+    rowMenu:Hide()
+    return rowMenu
+end
+
+--- OpenRowMenu(questID, anchor) -> the menu frame: what a right-click on a list row opens.
+function M.OpenRowMenu(questID, anchor)
+    local m = buildRowMenu()
+    if not (m and questID) then return nil end
+    m.questId = questID
+    for _, b in ipairs(m.buttons) do b.text:SetText(b.action.label(questID)) end
+    m:ClearAllPoints()
+    if anchor then
+        m:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 60, 2)
+    else
+        m:SetPoint("CENTER", frame, "CENTER", 0, 0)
+    end
+    m:Show()
+    return m
+end
+
+function M.GetRowMenu() return rowMenu end
+
+--- OpenSettings(): every PandaQuest setting, from the gear in the header.
+function M.OpenSettings()
+    local Options = ns.Options
+    if Options and Options.OpenDialog then return Options.OpenDialog() end
+    if Options and Options.Open then return Options.Open() end
+    return false
 end
 
 ---------------------------------------------------------------------------
@@ -1334,8 +1488,11 @@ local function buildList(parent)
         for _, col in ipairs(COLUMNS) do
             row[col.field] = newText(row, col.font, "LEFT", col.x, 0, col.w, ROW_H - 4, col.justify, col.color)
         end
-        row:SetScript("OnClick", function(self)
-            if self.questId then selectQuest(self.questId) end
+        if row.RegisterForClicks then row:RegisterForClicks("LeftButtonUp", "RightButtonUp") end
+        row:SetScript("OnClick", function(self, button)
+            if not self.questId then return end
+            selectQuest(self.questId)
+            if button == "RightButton" then M.OpenRowMenu(self.questId, self) else hideRowMenu() end
         end)
         widgets.rows[i] = row
     end
@@ -1498,7 +1655,7 @@ local function buildDetail(parent)
     d.rewardHit:SetScript("OnHide", function(self) dropTooltip(self) end)
 
     -- the quest text, on parchment, in ink
-    local paperBottom = -(PANEL_H - 34)
+    local paperBottom = -(PANEL_H - 58)          -- two rows of buttons under the paper
     d.paper = CreateFrame("Frame", nil, p)
     d.paper:SetPoint("TOPLEFT", p, "TOPLEFT", PAD, y)
     d.paper:SetSize(INNER_W, y - paperBottom)
@@ -1526,10 +1683,29 @@ local function buildDetail(parent)
     d.paper:SetScript("OnLeave", function(self) dropTooltip(self) end)
     d.paper:SetScript("OnHide", function(self) dropTooltip(self) end)
 
-    d.navigate = newButton(p, L["Navigate"], 120, 20, navigate)
-    d.navigate:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", PAD, 8)
-    d.wowhead = newButton(p, L["PandaQuest link"], 120, 20, showWowhead)
+    local buttonW = floor((INNER_W - 6) / 2)
+    d.navigate = newButton(p, L["Navigate"], buttonW, 20, navigate)
+    d.navigate:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", PAD, 32)
+    d.hide = newButton(p, L["Hide from the navigator"], buttonW, 20, toggleHidden)
+    d.hide:SetPoint("BOTTOMRIGHT", p, "BOTTOMRIGHT", -PAD, 32)
+    d.map = newButton(p, L["Show on map"], buttonW, 20, showOnMap)
+    d.map:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", PAD, 8)
+    d.wowhead = newButton(p, L["PandaQuest link"], buttonW, 20, showWowhead)
     d.wowhead:SetPoint("BOTTOMRIGHT", p, "BOTTOMRIGHT", -PAD, 8)
+    for _, b in ipairs({ d.navigate, d.hide, d.map, d.wowhead }) do
+        b:HookScript("OnEnter", function(self)
+            if self.tip and GameTooltip then
+                GameTooltip:SetOwner(self, "ANCHOR_TOP")
+                GameTooltip:SetText(self.tip, 1, 1, 1, 1, true)
+                GameTooltip:Show()
+            end
+        end)
+        b:HookScript("OnLeave", function(self) dropTooltip(self) end)
+    end
+    d.navigate.tip = L["The arrow and the map pins follow this quest."]
+    d.hide.tip = L["A hidden quest is left out of the arrow's route and the map pins. Settings > Hidden quests lists them."]
+    d.map.tip = L["Opens the world map where this quest starts."]
+    d.wowhead.tip = L["The quest's page on the PandaQuest portal, to copy into your browser."]
 
     d.panel:Hide()
 end
@@ -1578,6 +1754,28 @@ local function build()
     local close = newButton(frame, "X", 22, 18, function() M.Hide() end)
     close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -4)
 
+    -- The gear: every setting PandaQuest has. /pq opens this window, so this is the way in.
+    local settings = newButton(frame, L["Settings"], 96, 18, function() M.OpenSettings() end)
+    settings:SetPoint("TOPRIGHT", close, "TOPLEFT", -6, 0)
+    settings.text:ClearAllPoints()
+    settings.text:SetPoint("LEFT", settings, "LEFT", 22, 0)
+    settings.text:SetWidth(70)
+    local gear = settings:CreateTexture(nil, "ARTWORK")
+    gear:SetTexture("Interface\\Icons\\INV_Misc_Gear_01")
+    gear:SetSize(14, 14)
+    gear:SetPoint("LEFT", settings, "LEFT", 4, 0)
+    if gear.SetTexCoord then gear:SetTexCoord(0.08, 0.92, 0.08, 0.92) end
+    settings:HookScript("OnEnter", function(self)
+        if GameTooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT")
+            GameTooltip:SetText(L["Settings"], 1, 0.82, 0)
+            GameTooltip:AddLine(L["Every PandaQuest setting: modules, arrow, map, tooltips, sync and privacy, language and more."], 1, 1, 1, true)
+            GameTooltip:Show()
+        end
+    end)
+    settings:HookScript("OnLeave", function(self) dropTooltip(self) end)
+    widgets.settings = settings
+
     buildFilters(frame)
     buildTree(frame)
     buildList(frame)
@@ -1590,6 +1788,7 @@ local function build()
     end)
     frame:SetScript("OnHide", function()
         closing = false
+        hideRowMenu()
         settleMotion()
     end)
     frame:Hide()

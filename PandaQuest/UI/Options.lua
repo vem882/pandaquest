@@ -269,7 +269,111 @@ local function moduleArgs()
     return args
 end
 
+---------------------------------------------------------------------------
+-- What used to be a chat command only: moving frames, hidden quests, status, dumps
+---------------------------------------------------------------------------
+
+-- The three frames a player can drag. Unlocking shows the two bars for a moment so they can be
+-- found; the arrow is on screen whenever it has somewhere to point.
+local FRAME_LOCKS = { "arrow.locked", "flight.barLocked", "archaeology.barLocked" }
+
+local function framesUnlocked()
+    for _, path in ipairs(FRAME_LOCKS) do
+        if M.GetValue(path) ~= false then return false end
+    end
+    return true
+end
+
+local function unlockFrames(_, unlocked)
+    for _, path in ipairs(FRAME_LOCKS) do M.Set(path, not unlocked) end
+    if unlocked then
+        if ns.FlightBar and ns.FlightBar.Preview then pcall(ns.FlightBar.Preview) end
+        if ns.DigSiteBar and ns.DigSiteBar.Preview then pcall(ns.DigSiteBar.Preview) end
+    end
+end
+
+local function resetPositions()
+    for _, name in ipairs({ "Arrow", "FlightBar", "DigSiteBar" }) do
+        local module = ns[name]
+        if module and module.ResetPosition then pcall(module.ResetPosition) end
+    end
+    Log.Print("%s", L["The arrow, the flight bar and the dig site bar are back where they started."])
+end
+
+local function hiddenQuests()
+    local store = db()
+    return store and store.char and store.char.hiddenQuests or {}
+end
+
+local function questLabel(questID)
+    local DB = ns.DB
+    local name = DB and DB.GetQuestName and DB.GetQuestName(questID)
+    return name and format("%s (%d)", name, questID) or tostring(questID)
+end
+
+local pickedHidden                 -- the quest chosen in Hidden quests, until it is shown again
+
+local function hiddenValues()
+    local values = {}
+    for questID, hidden in pairs(hiddenQuests()) do
+        if hidden then values[questID] = questLabel(questID) end
+    end
+    return values
+end
+
+local function hiddenList()
+    local ids = {}
+    for questID, hidden in pairs(hiddenQuests()) do
+        if hidden then ids[#ids + 1] = questID end
+    end
+    table.sort(ids)
+    if #ids == 0 then return L["No quest is hidden from the navigator."] end
+    local lines = { format(L["%d quests are hidden from the navigator."], #ids) }
+    for i = 1, math.min(#ids, 40) do lines[#lines + 1] = "  " .. questLabel(ids[i]) end
+    if #ids > 40 then lines[#lines + 1] = format("  ... (%d)", #ids - 40) end
+    return table.concat(lines, "\n")
+end
+
+local function showAllHidden()
+    local PQ = ns.PQ
+    local unhide = PQ and PQ.commands and PQ.commands.unhide
+    local ids = {}
+    for questID in pairs(hiddenQuests()) do ids[#ids + 1] = questID end
+    for _, questID in ipairs(ids) do
+        if unhide then unhide(tostring(questID)) else hiddenQuests()[questID] = nil end
+    end
+    pickedHidden = nil
+end
+
+local function statusText()
+    local lines = {}
+    for _, line in ipairs(ns.StatusLines and ns.StatusLines() or {}) do lines[#lines + 1] = line end
+    local on, all = 0, 0
+    for _, name in ipairs(ns.OPTIONAL_MODULES or {}) do
+        all = all + 1
+        if ns.IsModuleWanted(name) then on = on + 1 end
+    end
+    lines[#lines + 1] = format(L["Modules switched on: %d of %d"], on, all)
+    lines[#lines + 1] = ""
+    local Telemetry = ns.Telemetry
+    for _, line in ipairs(Telemetry and Telemetry.GetStatusLines and Telemetry.GetStatusLines() or {}) do
+        lines[#lines + 1] = line
+    end
+    return table.concat(lines, "\n")
+end
+
+local DUMP_KINDS = { quest = "quest", npc = "NPC", object = "object", item = "item" }
+local dumpKind, dumpId = "quest", ""
+
+local function commandList()
+    local lines = { L["Every chat command still works, for macros. None of them is needed: everything is in these settings."], "" }
+    for _, line in ipairs(ns.COMMAND_LINES or {}) do lines[#lines + 1] = L[line] end
+    return table.concat(lines, "\n")
+end
+
 local function buildTable()
+    local privacy = L["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."]
+        .. " " .. L["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."]
     local tbl = {
         type = "group",
         name = format("%s %s", "PandaQuest", Const.VERSION),
@@ -501,8 +605,10 @@ local function buildTable()
                 },
             },
             sync = {
-                type = "group", order = 9, name = L["Synchronisation (optional)"], args = {
+                type = "group", order = 9, name = L["Synchronisation and privacy"], args = {
                     info = { type = "description", order = 0, name = L["Optional. PandaQuest works fully without it, and never uploads anything itself."] },
+                    privacy = { type = "description", order = 0.5, name = privacy },
+                    consent = command(0.7, L["Ask the data sharing question"], nil, "consent"),
                     enabled = toggle(1, L["Record quest data"], nil, "global.telemetry.enabled"),
                     breadcrumbs = toggle(2, L["Record movement breadcrumbs"],
                         L["Occasional position samples that improve community routes."], "global.telemetry.breadcrumbs"),
@@ -607,7 +713,7 @@ local function buildTable()
                             if ns.Router and ns.Router.SetManualTarget then ns.Router.SetManualTarget(nil) end
                         end },
                     reset = command(13, L["Reset arrow position and map pins"], nil, "reset"),
-                    wowhead = command(14, L["Wowhead link for the current target"], nil, "wh"),
+                    wowhead = command(14, L["Link to the current target's page"], nil, "wh"),
                     hiddenInfo = { type = "description", order = 15,
                         name = function()
                             local store = db()
@@ -637,6 +743,46 @@ local function buildTable()
             modules = {
                 type = "group", order = 18, name = L["Modules"], args = moduleArgs(),
             },
+            frames = {
+                type = "group", order = 13, name = L["Moving frames"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["The arrow, the flight bar and the dig site bar can be dragged where you want them while they are unlocked."] },
+                    unlock = { type = "toggle", order = 1, width = "full", name = L["Unlock frames to move them"],
+                        desc = L["Unlocks the arrow, the flight bar and the dig site bar, and shows the two bars for a moment so you can find them."],
+                        get = framesUnlocked, set = unlockFrames },
+                    reset = { type = "execute", order = 2, name = L["Reset positions"],
+                        desc = L["Puts the arrow, the flight bar and the dig site bar back where they started."],
+                        func = resetPositions },
+                },
+            },
+            hidden = {
+                type = "group", order = 14, name = L["Hidden quests"], args = {
+                    list = { type = "description", order = 0, fontSize = "medium", name = hiddenList },
+                    pick = { type = "select", order = 1, width = "double", name = L["Hidden quest"],
+                        desc = L["A hidden quest is left out of the arrow's route and the map pins."],
+                        values = hiddenValues,
+                        get = function() return pickedHidden end,
+                        set = function(_, value) pickedHidden = value end },
+                    unhide = { type = "execute", order = 2, name = L["Show this quest again"],
+                        disabled = function() return pickedHidden == nil end,
+                        func = function()
+                            local PQ = ns.PQ
+                            if pickedHidden and PQ and PQ.commands and PQ.commands.unhide then
+                                PQ.commands.unhide(tostring(pickedHidden))
+                            end
+                            pickedHidden = nil
+                        end },
+                    unhideAll = { type = "execute", order = 3, name = L["Show all hidden quests again"],
+                        func = showAllHidden },
+                },
+            },
+            status = {
+                type = "group", order = 15, name = L["Status"], args = {
+                    text = { type = "description", order = 0, fontSize = "medium", name = statusText },
+                    refresh = { type = "execute", order = 1, name = L["Refresh"],
+                        func = function() M.Rebuild() end },
+                },
+            },
             advanced = {
                 type = "group", order = 20, name = L["Advanced"], args = {
                     level = { type = "select", order = 1, name = L["Log level"],
@@ -653,6 +799,21 @@ local function buildTable()
                             local PQ = ns.PQ
                             if PQ and PQ.commands and PQ.commands.status then PQ.commands.status("") end
                         end },
+                    dumpHeader = header(20, L["Database entry"]),
+                    dumpKind = { type = "select", order = 21, name = L["Kind"],
+                        values = DUMP_KINDS, get = function() return dumpKind end,
+                        set = function(_, value) dumpKind = value end },
+                    dumpId = { type = "input", order = 22, name = L["ID"],
+                        get = function() return dumpId end,
+                        set = function(_, value) dumpId = tostring(value or ""):match("%d+") or "" end },
+                    dump = { type = "execute", order = 23, name = L["Print the entry to chat"],
+                        disabled = function() return dumpId == "" end,
+                        func = function()
+                            local PQ = ns.PQ
+                            if PQ and PQ.commands and PQ.commands.dump then PQ.commands.dump(dumpKind .. " " .. dumpId) end
+                        end },
+                    commandsHeader = header(30, L["Chat commands"]),
+                    commands = { type = "description", order = 31, name = commandList },
                 },
             },
         },
@@ -726,6 +887,7 @@ function M.OnInitialize()
 end
 
 function M.OnEnable()
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(...) return M.OnSettingChanged(...) end)
     if not registered or blizFrame then return end
     local AceConfigDialog = LibStub and LibStub("AceConfigDialog-3.0", true)
     -- InterfaceOptions_AddCategory does not exist on 5.5.4; AceConfigDialog uses the Settings API.
@@ -739,7 +901,21 @@ function M.OnEnable()
     Log.Debug("Options", "options panel registered (%s)", tostring(blizCategory))
 end
 
---- Options.Open([group]): opened by /pq. Prefers the Blizzard settings panel, falls back to the
+--- Options.OpenDialog([group]): the settings in their own window (AceConfigDialog), beside the quest
+-- browser instead of in the game's Settings panel -- what the browser's gear opens.
+function M.OpenDialog(group)
+    local AceConfigDialog = LibStub and LibStub("AceConfigDialog-3.0", true)
+    if registered and AceConfigDialog and AceConfigDialog.Open then
+        local ok = pcall(AceConfigDialog.Open, AceConfigDialog, APP_NAME, nil, group)
+        if ok then
+            M.lastOpen = "dialog"
+            return true
+        end
+    end
+    return M.Open(group)
+end
+
+--- Options.Open([group]): opened by /pq options. Prefers the Blizzard settings panel, falls back to the
 -- standalone AceConfigDialog window when the Settings API refuses (it does in some Classic builds).
 function M.Open(group)
     local AceConfigDialog = LibStub and LibStub("AceConfigDialog-3.0", true)
@@ -769,6 +945,15 @@ end
 
 function M.GetCategory()
     return blizCategory, blizFrame
+end
+
+--- A quest hidden or shown again anywhere -- the browser, a map pin, /pq hide -- redraws an open panel.
+function M.OnSettingChanged(_, path)
+    if path == "char.hiddenQuests" then
+        if pickedHidden and not hiddenQuests()[pickedHidden] then pickedHidden = nil end
+        local AceConfigRegistry = LibStub and LibStub("AceConfigRegistry-3.0", true)
+        if AceConfigRegistry and registered then pcall(AceConfigRegistry.NotifyChange, AceConfigRegistry, APP_NAME) end
+    end
 end
 
 function M.OnProfileChanged()

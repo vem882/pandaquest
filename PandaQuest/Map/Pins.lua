@@ -1141,7 +1141,7 @@ function M.BuildMenu(spec)
                     if ns.Targets and ns.Targets.Rebuild then ns.Targets.Rebuild("pinHide") end
                     M.Redraw()
                 end }
-            menu[#menu + 1] = { text = format(L["Wowhead: %s"], t.questTitle or tostring(t.questID)),
+            menu[#menu + 1] = { text = format(L["Portal page: %s"], t.questTitle or tostring(t.questID)),
                 notCheckable = true, func = function()
                     if ns.Wowhead and ns.Wowhead.ShowCopyDialog and ns.Wowhead.QuestUrl then
                         ns.Wowhead.ShowCopyDialog(ns.Wowhead.QuestUrl(t.questID))

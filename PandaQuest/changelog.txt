@@ -4,6 +4,14 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.234
+- ui - /pq opens PandaQuest: the quest browser with every quest; its Settings button opens the rest
+- ui - a quest's page and right-click menu: navigate, hide or show, show on map, PandaQuest link
+- ui - links go to the quest's page on the PandaQuest portal (pd.zroot.it) instead of Wowhead
+- options - new sections: Status, Hidden quests, Moving frames; privacy text under Sync
+- options - Advanced prints a database entry and lists every chat command
+- commands - every old command still works; /pq help is one line, /pq help all lists them
+
 0.2.233
 - core - every part of PandaQuest is an Ace3 module, set up and started in the same order as before
 - options - new Modules section: switch a part of the addon off completely, saved in the profile

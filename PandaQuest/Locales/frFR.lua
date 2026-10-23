@@ -3,20 +3,14 @@
 local _, ns = ...
 
 local T = {
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s chargé. Tapez /pq pour les options, /pq help pour les commandes.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "Bienvenue dans PandaQuest ! La flèche indique votre prochain objectif de quête. Tapez /pq help pour les commandes.",
     ["%s is not available yet."] = "%s n'est pas encore disponible.",
     ["Unknown command: %s"] = "Commande inconnue : %s",
     ["Available commands:"] = "Commandes disponibles :",
-    ["/pq - open options"] = "/pq - ouvrir les options",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - afficher/masquer la flèche de navigation",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - épingler une quête (ou afficher la cible actuelle)",
     ["/pq next - skip the current target"] = "/pq next - passer la cible actuelle",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - unités de distance",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - lien Wowhead",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - masquer une quête du navigateur",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - afficher de nouveau une quête masquée",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - réinitialiser la position de la flèche et les marqueurs de la carte",
@@ -102,7 +96,6 @@ local T = {
     ["Show on map"] = "Afficher sur la carte",
     ["TomTom is not loaded."] = "TomTom n'est pas chargé.",
     ["Unlock arrow"] = "Déverrouiller la flèche",
-    ["Wowhead link"] = "Lien Wowhead",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "%d apparitions ici",
@@ -110,7 +103,6 @@ local T = {
     ["Right-click: more options"] = "Clic droit : plus d'options",
     ["Set as target"] = "Définir comme cible",
     ["Hide quest: %s"] = "Masquer la quête : %s",
-    ["Wowhead: %s"] = "Wowhead : %s",
     ["Starts: %s"] = "Début : %s",
     ["Turn in: %s"] = "Rendre : %s",
     ["Ends: %s"] = "Fin : %s",
@@ -578,7 +570,6 @@ local T = {
     ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
         "Efface la quête épinglée avec le réglage de focalisation ou avec le menu clic droit de la carte.",
     ["Reset arrow position and map pins"] = "Réinitialiser flèche et marqueurs",
-    ["Wowhead link for the current target"] = "Lien Wowhead pour la cible actuelle",
     ["%d quests are hidden from the navigator."] = "%d quêtes sont masquées du navigateur.",
     ["Show all hidden quests again"] = "Réafficher toutes les quêtes masquées",
     ["Reading windows"] = "Lecture des fenêtres",

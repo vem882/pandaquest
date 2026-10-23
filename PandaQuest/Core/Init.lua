@@ -138,9 +138,9 @@ function PQ:OnEnable()
 
     if not self.db.global.welcomeShown then
         self.db.global.welcomeShown = Const.VERSION
-        Log.Print(L["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."])
+        Log.Print(L["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq to open PandaQuest and its settings."])
     end
-    Log.Info("Init", L["PandaQuest %s loaded. Type /pq for options, /pq help for commands."], Const.VERSION)
+    Log.Info("Init", L["PandaQuest %s loaded. Type /pq to open it."], Const.VERSION)
 end
 
 function PQ:OnDisable()
@@ -189,26 +189,36 @@ end
 local commands = {}
 PQ.commands = commands
 
-commands.help = function()
+-- Every chat command still works, for macros and muscle memory, but none is advertised any more:
+-- `/pq` opens PandaQuest and its Settings hold everything. `/pq help` says exactly that in one line;
+-- the whole list is under Advanced in the options, and `/pq help all` prints it.
+ns.COMMAND_LINES = {
+    "/pq - open PandaQuest: every quest, and the Settings button", "/pq options - open the settings",
+    "/pq arrow - toggle the navigation arrow",
+    "/pq target [questID|clear] - pin a quest (or show the current target)", "/pq next - skip the current target",
+    "/pq units meters|yards - distance units", "/pq wh [questID] - link to the quest's page on the PandaQuest portal",
+    "/pq hide <questID> - hide a quest from the navigator", "/pq unhide <questID> - show a hidden quest again",
+    "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
+    "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
+    "/pq sync - telemetry and community data status",
+    "/pq scan professions - read the open profession window",
+    "/pq scan archaeology - read your archaeology window",
+    "/pq digsite - show the dig site bar so you can move it",
+    "/pq consent - ask the data sharing question again",
+    "/pq flight - show the flight bar so you can drag it",
+    "/pq quests [questID] - browse every quest in the database",
+    "/pq lang auto|<locale> - interface language",
+    "/pq config [section] [option] [value] - change any setting from chat",
+    "/pq help all - every command",
+}
+
+commands.help = function(arg)
+    if tostring(arg or ""):lower() ~= "all" then
+        Log.Print("%s", L["/pq opens PandaQuest; everything else is in its Settings."])
+        return
+    end
     Log.Print(L["Available commands:"])
-    local lines = {
-        "/pq - open options", "/pq arrow - toggle the navigation arrow",
-        "/pq target [questID|clear] - pin a quest (or show the current target)", "/pq next - skip the current target",
-        "/pq units meters|yards - distance units", "/pq wh [questID] - Wowhead link",
-        "/pq hide <questID> - hide a quest from the navigator", "/pq unhide <questID> - show a hidden quest again",
-        "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
-        "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
-        "/pq sync - telemetry and community data status",
-        "/pq scan professions - read the open profession window",
-        "/pq scan archaeology - read your archaeology window",
-        "/pq digsite - show the dig site bar so you can move it",
-        "/pq consent - ask the data sharing question again",
-        "/pq flight - show the flight bar so you can drag it",
-        "/pq quests [questID] - browse every quest in the database",
-        "/pq lang auto|<locale> - interface language",
-        "/pq config [section] [option] [value] - change any setting from chat",
-    }
-    for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end
+    for _, line in ipairs(ns.COMMAND_LINES) do Log.Print("  %s", L[line]) end
 end
 
 commands.options = function()
@@ -284,7 +294,7 @@ commands.wh = function(arg)
         questID = current and current.questID
     end
     if not questID then
-        Log.Print(L["Usage: %s"], L["/pq wh [questID] - Wowhead link"])
+        Log.Print(L["Usage: %s"], L["/pq wh [questID] - link to the quest's page on the PandaQuest portal"])
         return
     end
     local urlFn = need("Wowhead", "QuestUrl")
@@ -301,6 +311,7 @@ local function setHidden(arg, hidden)
     end
     PQ.db.char.hiddenQuests[questID] = hidden or nil
     Log.Print(L[hidden and "Quest %d hidden." or "Quest %d is visible again."], questID)
+    PQ:SendMessage("PQ_SETTING_CHANGED", "char.hiddenQuests", questID)
     if ns.Availability and ns.Availability.Recalculate then ns.Availability.Recalculate("hidden") end
     if ns.Targets and ns.Targets.Rebuild then ns.Targets.Rebuild("hidden") end
 end
@@ -353,37 +364,45 @@ commands.dump = function(arg)
     Log.Print("%s %s: %s", kind, id, dumpValue(entry))
 end
 
-commands.status = function()
-    Log.Print(L["Version %s"], Const.VERSION)
+--- ns.StatusLines() -> the lines `/pq status` prints, also the Status page in the options.
+function ns.StatusLines()
+    local lines = {}
+    local function add(fmt, ...) lines[#lines + 1] = format(fmt, ...) end
+    add(L["Version %s"], Const.VERSION)
     -- ns.Build is generated INTO THE PACKAGE by build.py and is absent from the
     -- repository, so a developer running from a checkout simply gets one line less.  It is printed
     -- here because it carries the one fact ## Version cannot: when the commit this copy was built
     -- from was made.  A player comparing their game with what /setup offers is comparing dates.
     local build = ns.Build
     if build and build.committed then
-        Log.Print(L["Built %s from %s"], build.committed, build.commit or "?")
+        add(L["Built %s from %s"], build.committed, build.commit or "?")
         if build.dirty then
-            Log.Print(L["This is a build from a modified working tree; it is not a release."])
+            add("%s", L["This is a build from a modified working tree; it is not a release."])
         end
     end
     if build and build.channel == "beta" then
-        Log.Print(L["This is a beta build: new features are not yet confirmed in the game."])
+        add("%s", L["This is a beta build: new features are not yet confirmed in the game."])
     end
     local ready = ns.DB and ns.DB.IsReady and ns.DB.IsReady()
-    Log.Print(L["Database: %s"], L[ready and "ready" or "loading"])
+    add(L["Database: %s"], L[ready and "ready" or "loading"])
     if ns.QuestLog and ns.QuestLog.GetAll then
         local n = 0
         for _ in pairs(ns.QuestLog.GetAll() or {}) do n = n + 1 end
-        Log.Print(L["Quests in log: %d"], n)
+        add(L["Quests in log: %d"], n)
     end
     if ns.Targets and ns.Targets.GetAll then
-        Log.Print(L["Targets: %d"], #(ns.Targets.GetAll() or {}))
+        add(L["Targets: %d"], #(ns.Targets.GetAll() or {}))
     end
     if ns.Router and ns.Router.GetCurrent then
-        Log.Print(L["Current target: %s"], describeTarget(ns.Router.GetCurrent()))
+        add(L["Current target: %s"], describeTarget(ns.Router.GetCurrent()))
     end
-    Log.Print(L["Background jobs: %d"], Thread.CountRunning())
-    Log.Print(L["Units: %s"], L[PQ.db.profile.units])
+    add(L["Background jobs: %d"], Thread.CountRunning())
+    add(L["Units: %s"], L[PQ.db.profile.units])
+    return lines
+end
+
+commands.status = function()
+    for _, line in ipairs(ns.StatusLines()) do Log.Print("%s", line) end
 end
 
 commands.sync = function()
@@ -486,7 +505,10 @@ function PQ:ChatCommand(input)
     cmd = cmd and cmd:lower() or ""
     rest = rest or ""
     if cmd == "" then
-        if ns.Options and ns.Options.Open then
+        -- /pq is PandaQuest itself: the quest browser, whose Settings button opens everything else.
+        if ns.QuestBrowser and ns.QuestBrowser.Toggle then
+            ns.QuestBrowser.Toggle()
+        elseif ns.Options and ns.Options.Open then
             ns.Options.Open()
         else
             commands.help()

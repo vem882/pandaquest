@@ -3,20 +3,14 @@
 local _, ns = ...
 
 local T = {
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s загружен. Введите /pq для настроек, /pq help — список команд.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "Добро пожаловать в PandaQuest! Стрелка указывает на следующую цель задания. Введите /pq help, чтобы увидеть список команд.",
     ["%s is not available yet."] = "%s: пока недоступно.",
     ["Unknown command: %s"] = "Неизвестная команда: %s",
     ["Available commands:"] = "Доступные команды:",
-    ["/pq - open options"] = "/pq - открыть настройки",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - показать или скрыть навигационную стрелку",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - выбрать задание целью (или показать текущую цель)",
     ["/pq next - skip the current target"] = "/pq next - пропустить текущую цель",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - единицы расстояния",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - ссылка Wowhead",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - скрыть задание из навигатора",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - снова показать скрытое задание",
     ["/pq reset - reset arrow position and map pins"] =
@@ -104,7 +98,6 @@ local T = {
     ["Show on map"] = "Показать на карте",
     ["TomTom is not loaded."] = "TomTom не загружен.",
     ["Unlock arrow"] = "Открепить стрелку",
-    ["Wowhead link"] = "Ссылка Wowhead",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "Точек появления здесь: %d",
@@ -112,7 +105,6 @@ local T = {
     ["Right-click: more options"] = "ПКМ: дополнительные действия",
     ["Set as target"] = "Назначить целью",
     ["Hide quest: %s"] = "Скрыть задание: %s",
-    ["Wowhead: %s"] = "Wowhead: %s",
     ["Starts: %s"] = "Начинает: %s",
     ["Turn in: %s"] = "Сдать: %s",
     ["Ends: %s"] = "Завершает: %s",
@@ -625,8 +617,6 @@ local T = {
         "Сбрасывает задание, закреплённое настройкой «Выбранное задание» или через контекстное меню карты (ПКМ).",
     ["Reset arrow position and map pins"] =
         "Сбросить положение стрелки и метки",
-    ["Wowhead link for the current target"] =
-        "Ссылка Wowhead для текущей цели",
     ["%d quests are hidden from the navigator."] =
         "Скрыто из навигатора заданий: %d.",
     ["Show all hidden quests again"] =

@@ -4,20 +4,14 @@ local _, ns = ...
 
 local T = {
     -- Core / Init
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s geladen. Mit /pq öffnest du die Optionen, /pq help zeigt alle Befehle.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "Willkommen bei PandaQuest! Der Pfeil zeigt auf dein nächstes Questziel. Mit /pq help siehst du alle Befehle.",
     ["%s is not available yet."] = "%s ist noch nicht verfügbar.",
     ["Unknown command: %s"] = "Unbekannter Befehl: %s",
     ["Available commands:"] = "Verfügbare Befehle:",
-    ["/pq - open options"] = "/pq - Optionen öffnen",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - Navigationspfeil ein- oder ausblenden",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - Quest als Ziel festlegen (oder aktuelles Ziel anzeigen)",
     ["/pq next - skip the current target"] = "/pq next - aktuelles Ziel überspringen",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - Entfernungseinheit",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - Wowhead-Link",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - Quest im Navigator ausblenden",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - ausgeblendete Quest wieder anzeigen",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - Pfeilposition und Kartenmarkierungen zurücksetzen",
@@ -103,7 +97,6 @@ local T = {
     ["Show on map"] = "Auf der Karte anzeigen",
     ["TomTom is not loaded."] = "TomTom ist nicht geladen.",
     ["Unlock arrow"] = "Pfeil entsperren",
-    ["Wowhead link"] = "Wowhead-Link",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "%d Spawns hier",
@@ -111,7 +104,6 @@ local T = {
     ["Right-click: more options"] = "Rechtsklick: weitere Optionen",
     ["Set as target"] = "Als Ziel festlegen",
     ["Hide quest: %s"] = "Quest ausblenden: %s",
-    ["Wowhead: %s"] = "Wowhead: %s",
     ["Starts: %s"] = "Beginnt: %s",
     ["Turn in: %s"] = "Abgeben: %s",
     ["Ends: %s"] = "Endet: %s",
@@ -605,7 +597,6 @@ local T = {
     ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
         "Entfernt die Quest, die mit der Fokus-Einstellung oder dem Rechtsklickmenü der Karte festgelegt wurde.",
     ["Reset arrow position and map pins"] = "Pfeil und Markierungen zurücksetzen",
-    ["Wowhead link for the current target"] = "Wowhead-Link für das aktuelle Ziel",
     ["%d quests are hidden from the navigator."] = "%d Quests sind im Navigator ausgeblendet.",
     ["Show all hidden quests again"] = "Ausgeblendete Quests wieder anzeigen",
     ["Reading windows"] = "Fenster lesen",

@@ -434,7 +434,7 @@ local function openMenu()
             end }
         end
         if target.questID then
-            menu[#menu + 1] = { text = L["Wowhead link"], notCheckable = true, func = function()
+            menu[#menu + 1] = { text = L["Link to the quest's page"], notCheckable = true, func = function()
                 if ns.Wowhead and ns.Wowhead.ShowCopyDialog and ns.Wowhead.QuestUrl then
                     ns.Wowhead.ShowCopyDialog(ns.Wowhead.QuestUrl(target.questID))
                 end
