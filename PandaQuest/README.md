@@ -29,7 +29,7 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Quest database** – quests, NPCs, objects and items with zone mapping, dungeon entrances and
   hidden-quest lists. Decoded in a coroutine at login (about half a second) so the game never
   freezes.
-- **Quest browser** – `/pq quests` (or Shift-click the minimap button) opens a window with every
+- **Quest browser** – `/pq quests` (or left-click the minimap button) opens a window with every
   quest in the database: categories with counts on the left (continents, dungeons, raids,
   battlegrounds, classes, professions, events), a sortable list in the middle, and the selected
   quest as a page on the right — its text, who starts and ends it with coordinates, level, difficulty,
@@ -61,6 +61,11 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Tracker and notifications** – distance and a "navigate here" button on the Blizzard tracker,
   and a short centre-screen message when a quest completes or the target changes.
 - **Wowhead links** – `/pq wh` gives a copyable link for a quest.
+- **Minimap button** – left-click opens the quest browser, Shift-click shows or hides the arrow,
+  right-click opens the options. Its tooltip shows the current target, the flight in progress and
+  the last sync with the PandaQuest site. The button can be hidden or locked in place, per profile.
+  It is a LibDataBroker data source too, so Titan Panel, ChocolateBar and other broker bars show
+  the flight, the target and its distance, or how many quests you track.
 - **Options** – a full options panel (`/pq`) with profiles.
 - **Languages** – English, and German, Spanish (Spain and Mexico), French, Italian, Brazilian
   Portuguese, Russian, Korean, Simplified and Traditional Chinese — every language the WoW client
@@ -155,7 +160,7 @@ Everything has a working default; the panel (`/pq`) is optional.
 
 | Group | What you can change |
 |---|---|
-| General | distance units (metres/yards), quest database source (PandaQuest only / fill gaps from QuestieDB / QuestieDB values first), minimap button, language |
+| General | distance units (metres/yards), quest database source (PandaQuest only / fill gaps from QuestieDB / QuestieDB values first), minimap button (show, lock in place), language |
 | Arrow | show/lock, quest text, ETA, community timings, hide in instances, arrival flash, size, opacity, text size, reset position |
 | Navigation | target selection (auto / focused quest / nearest), route to turn-ins and new quests, arrival radius |
 | TomTom | off, or mirror the current target |

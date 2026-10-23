@@ -257,11 +257,32 @@ local function buildTable()
                             }
                         end,
                         arg = "global.questieDB.mode", get = get, set = set },
+                    -- The button's three switches live in profile.minimapButton, the table LibDBIcon
+                    -- is handed: `hide`, `lock` and `showInCompartment` are LibDBIcon's own keys, so
+                    -- every profile keeps its own button (UI/MinimapButton.lua).
                     minimapButton = toggle(2, L["Show minimap button"],
-                        L["Left-click the minimap button to toggle the arrow, right-click for these options."],
+                        L["Left-click: browse all quests"] .. "\n" .. L["Shift-click: toggle the arrow"]
+                            .. "\n" .. L["Right-click: open options"],
                         "minimapButton.hide", {
                             get = function() return not M.GetValue("minimapButton.hide") end,
                             set = function(_, value) M.Set("minimapButton.hide", not value) end,
+                        }),
+                    minimapLock = toggle(2.1, L["Lock the minimap button"],
+                        L["A locked button cannot be dragged around the minimap."],
+                        "minimapButton.lock", {
+                            get = function() return M.GetValue("minimapButton.lock") and true or false end,
+                            set = function(_, value) M.Set("minimapButton.lock", value and true or nil) end,
+                        }),
+                    -- Only on a client with an add-on compartment; 5.5.4 has none, so it is hidden.
+                    minimapCompartment = toggle(2.2, L["Show in the add-on compartment"],
+                        L["Adds PandaQuest to the add-on list under the minimap."],
+                        "minimapButton.showInCompartment", {
+                            get = function() return M.GetValue("minimapButton.showInCompartment") and true or false end,
+                            set = function(_, value) M.Set("minimapButton.showInCompartment", value and true or nil) end,
+                            hidden = function()
+                                local Button = ns.MinimapButton
+                                return not (Button and Button.IsCompartmentAvailable and Button.IsCompartmentAvailable())
+                            end,
                         }),
                     browser = { type = "execute", order = 4, name = L["Open the quest browser"],
                         desc = L["Browse every quest in the database, with a page and a map for each."],

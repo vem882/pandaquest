@@ -246,8 +246,6 @@ local T = {
     ["Metres are shown as '123 m', yards as '135 yd'."] =
         "Metrit näytetään muodossa '123 m', jaardit muodossa '135 yd'.",
     ["Show minimap button"] = "Näytä minikartan painike",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "Vasen klikkaus vaihtaa nuolen näkyvyyttä, oikea avaa nämä asetukset.",
     ["Language"] = "Kieli",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest seuraa pelin kieltä; /pq lang ohittaa sen.",
@@ -430,7 +428,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Etäisyys tuntematon",
-    ["Left-click: toggle the arrow"] = "Vasen klikkaus: nuoli päälle/pois",
+    ["Left-click: browse all quests"] = "Vasen klikkaus: selaa kaikkia tehtäviä",
     ["Right-click: open options"] = "Oikea klikkaus: avaa asetukset",
     ["Press Ctrl+C to copy the link:"] = "Kopioi linkki painamalla Ctrl+C:",
     ["Navigate to this quest"] = "Navigoi tähän tehtävään",
@@ -693,7 +691,7 @@ local T = {
     ["Categories"] = "Luokat",
     ["Loosen a filter, or press Reset."] = "Löysennä suodatinta tai paina Nollaa.",
     ["Quests"] = "Tehtävät",
-    ["Shift-click: browse all quests"] = "Vaihto+klikkaus: selaa kaikkia tehtäviä",
+    ["Shift-click: toggle the arrow"] = "Vaihto+klikkaus: nuoli päälle/pois",
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Tämä on beta-versio: uusia ominaisuuksia ei ole vielä vahvistettu pelissä.",
     -- Motion (UI/Motion.lua)
@@ -751,6 +749,25 @@ local T = {
         "Näytä synkronoinnin tila",
     ["Ask the data sharing question"] =
         "Kysy tiedonjakokysymys",
+    -- Minimap button and broker text (UI/MinimapButton.lua)
+    ["%d tracked quest"] =
+        "%d seurattu tehtävä",
+    ["%d tracked quests"] =
+        "%d seurattua tehtävää",
+    ["Flying to %s"] =
+        "Lento: %s",
+    ["Flying"] =
+        "Lennolla",
+    ["Last sync with the PandaQuest site: %s"] =
+        "Viimeisin synkronointi PandaQuest-sivuston kanssa: %s",
+    ["Lock the minimap button"] =
+        "Lukitse minikartan painike",
+    ["A locked button cannot be dragged around the minimap."] =
+        "Lukittua painiketta ei voi raahata minikartan reunalla.",
+    ["Show in the add-on compartment"] =
+        "Näytä lisäosalokerossa",
+    ["Adds PandaQuest to the add-on list under the minimap."] =
+        "Lisää PandaQuestin minikartan alla olevaan lisäosaluetteloon.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

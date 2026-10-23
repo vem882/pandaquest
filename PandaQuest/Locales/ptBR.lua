@@ -142,8 +142,6 @@ local T = {
     ["Distance units"] = "Unidades de distância",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "Metros aparecem como '123 m' e jardas como '135 yd'.",
     ["Show minimap button"] = "Mostrar botão do minimapa",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "Clique esquerdo no botão do minimapa para mostrar ou ocultar a seta; clique direito para abrir estas opções.",
     ["Language"] = "Idioma",
     ["PandaQuest follows your game language; /pq lang overrides it."] = "O PandaQuest usa o idioma do seu jogo; /pq lang substitui essa escolha.",
     ["Arrow"] = "Seta",
@@ -304,7 +302,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Distância desconhecida",
-    ["Left-click: toggle the arrow"] = "Clique esquerdo: mostrar ou ocultar a seta",
+    ["Left-click: browse all quests"] = "Clique esquerdo: explorar todas as missões",
     ["Right-click: open options"] = "Clique direito: abrir opções",
     ["Press Ctrl+C to copy the link:"] = "Pressione Ctrl+C para copiar o link:",
     ["Navigate to this quest"] = "Navegar até esta missão",
@@ -533,7 +531,7 @@ local T = {
     ["Navigate"] = "Navegar",
     ["Pick a quest from the list to see its page."] = "Escolha uma missão da lista para ver a página dela.",
     ["Quests"] = "Missões",
-    ["Shift-click: browse all quests"] = "Shift+clique: explorar todas as missões",
+    ["Shift-click: toggle the arrow"] = "Shift+clique: mostrar ou ocultar a seta",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Esta é uma versão beta: os novos recursos ainda não foram confirmados no jogo.",

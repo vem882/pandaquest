@@ -145,8 +145,6 @@ local T = {
     ["Distance units"] = "Единицы расстояния",
     ["Metres are shown as '123 m', yards as '135 yd'."] = "Метры отображаются как «123 m», ярды — как «135 yd».",
     ["Show minimap button"] = "Показывать кнопку у миникарты",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "ЛКМ по кнопке у миникарты показывает или скрывает стрелку, ПКМ открывает эти настройки.",
     ["Language"] = "Язык",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest использует язык вашей игры; /pq lang меняет его.",
@@ -323,7 +321,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Расстояние неизвестно",
-    ["Left-click: toggle the arrow"] = "ЛКМ: показать или скрыть стрелку",
+    ["Left-click: browse all quests"] = "ЛКМ: просмотреть все задания",
     ["Right-click: open options"] = "ПКМ: открыть настройки",
     ["Press Ctrl+C to copy the link:"] = "Нажмите Ctrl+C, чтобы скопировать ссылку:",
     ["Navigate to this quest"] = "Проложить путь к этому заданию",
@@ -582,7 +580,7 @@ local T = {
     ["Pick a quest from the list to see its page."] =
         "Выберите задание в списке, чтобы увидеть его страницу.",
     ["Quests"] = "Задания",
-    ["Shift-click: browse all quests"] = "Shift+щелчок: просмотреть все задания",
+    ["Shift-click: toggle the arrow"] = "Shift+щелчок: показать или скрыть стрелку",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Это бета-версия: новые функции ещё не подтверждены в игре.",

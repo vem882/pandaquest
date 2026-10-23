@@ -148,8 +148,6 @@ local T = {
     ["Metres are shown as '123 m', yards as '135 yd'."] =
         "Los metros se muestran como '123 m' y las yardas como '135 yd'.",
     ["Show minimap button"] = "Mostrar el botón del minimapa",
-    ["Left-click the minimap button to toggle the arrow, right-click for these options."] =
-        "Clic izquierdo en el botón del minimapa para mostrar u ocultar la flecha; clic derecho para ver estas opciones.",
     ["Language"] = "Idioma",
     ["PandaQuest follows your game language; /pq lang overrides it."] =
         "PandaQuest usa el idioma de tu juego; /pq lang lo reemplaza.",
@@ -324,7 +322,7 @@ local T = {
 
     -- UI (minimap button, tracker, notifications, Wowhead)
     ["Distance unknown"] = "Distancia desconocida",
-    ["Left-click: toggle the arrow"] = "Clic izquierdo: mostrar u ocultar la flecha",
+    ["Left-click: browse all quests"] = "Clic izquierdo: explorar todas las misiones",
     ["Right-click: open options"] = "Clic derecho: abrir las opciones",
     ["Press Ctrl+C to copy the link:"] = "Presiona Ctrl+C para copiar el enlace:",
     ["Navigate to this quest"] = "Navegar hasta esta misión",
@@ -583,7 +581,7 @@ local T = {
     ["Navigate"] = "Navegar",
     ["Pick a quest from the list to see its page."] = "Elige una misión de la lista para ver su página.",
     ["Quests"] = "Misiones",
-    ["Shift-click: browse all quests"] = "Mayús + clic: explorar todas las misiones",
+    ["Shift-click: toggle the arrow"] = "Mayús + clic: mostrar u ocultar la flecha",
     -- Beta notice and animation options
     ["This is a beta build: new features are not yet confirmed in the game."] =
         "Esta es una versión beta: las funciones nuevas aún no se han confirmado en el juego.",
