@@ -4,6 +4,9 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.239
+- docs - README brought up to date: flight times, quest mobs, site links, install and privacy
+
 0.2.238
 - database - Wowhead data as the PandaQuest portal read it: 8,588 quests, 56 NPCs, 4 objects
 - quest 7491 - For All To See - updated

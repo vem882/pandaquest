@@ -3,7 +3,8 @@
 **Quest helper and navigator for Mists of Pandaria Classic (5.5.4, Interface 50504).**
 
 An arrow that always points at your next sensible quest objective, quest pins on the world map and
-minimap, gathering nodes, flight times and Wowhead links — with a built-in database of 17 693
+minimap, waypoints, gathering nodes, flight times and links to the PandaQuest site — with a
+built-in database of 17 693
 quests, 60 224 NPCs, 20 326 objects and 80 049 items.
 
 PandaQuest works fully on its own. The optional **PandaQuest portal at <https://pd.zroot.it>**
@@ -51,19 +52,25 @@ is where the addon's content is completed and corrected — and you are welcome 
 - **Gathering nodes** – ore, herbs, fishing pools, chests and rare spawns, filtered by what your
   character can gather. Pandaria's nodes are learned from play: gathering one teaches the addon
   where it is.
-- **Flight times** – the flight master's tooltip shows how long a flight takes, and a bar runs
-  during the flight. Routes are measured by flying them; an unmeasured route shows nothing rather
-  than a guess. A `/reload` in the air keeps the flight. With synchronisation on, each flight you
+- **Flight times** – the flight master's tooltip shows how long a flight takes before you fly, and
+  a bar during the flight shows the time left and the arrival time on hover. The time is your own
+  median once you have flown the route twice, otherwise the players' measured time from the
+  PandaQuest site, otherwise an estimate from the route's length; an estimate says *(estimated)*.
+  A `/reload` in the air keeps the flight. With synchronisation on, each flight you
   take from a flight master is also saved for the PandaQuest site — its route and stops, time in the
   air, fare and landing time — so the site can show flight routes, how long they take and what they
   cost.
+- **Quest mobs** – the NPCs your unfinished kill and loot objectives need get an icon on their
+  nameplate and a line in their tooltip (Options → Navigation → Quest mobs; can be switched off
+  under Options → Modules).
 - **Archaeology** – a dig-site progress bar (the one Mists never shipped) and a read of your
   archaeology window.
 - **Professions and auctions** – read your recipe books (`/pq scan professions`) and scan auction
   prices on your realm. Nothing scans on its own; it always starts from a button or a command.
 - **Tracker and notifications** – distance and a "navigate here" button on the Blizzard tracker,
   and a short centre-screen message when a quest completes or the target changes.
-- **Wowhead links** – `/pq wh` gives a copyable link for a quest.
+- **Site links** – `/pq wh` gives a copyable link to the quest's page on the PandaQuest site,
+  <https://pd.zroot.it> (the command keeps its old name).
 - **Minimap button** – left-click opens the quest browser, Shift-click shows or hides the arrow,
   right-click opens the options. Its tooltip shows the current target, the flight in progress and
   the last sync with the PandaQuest site. The button can be hidden or locked in place, per profile.
@@ -83,8 +90,9 @@ Synchronisation is **optional and off by default**; nothing in PandaQuest needs 
 on (`/pq` → Synchronisation, or `/pq consent`), the addon records what you do while questing into a
 file on your own computer (`PandaQuestSync` in your SavedVariables), and every flight you take from
 a flight master (`PandaQuestSync.flights`: route, stops, time, fare, landing time). **The addon never
-uploads anything itself.** A separate companion program reads that file when you run it, and the
-addon drops what the site has confirmed it received. Turn it off at any time; nothing is recorded
+uploads anything itself.** The separate PandaQuest Sync app (from <https://pd.zroot.it/setup> or
+the Microsoft Store) reads that file when you run it, and the addon drops what the site has
+confirmed it received. The site's privacy statement is <https://pd.zroot.it/privacy>. Turn it off at any time; nothing is recorded
 while it is off.
 
 ## Content and community
@@ -97,7 +105,7 @@ the addon's data.
 
 ## Download and install
 
-- **CurseForge app** (recommended): search for *PandaQuest* and install it.
+- **CurseForge app** or **Wago app** (recommended): search for *PandaQuest* and install it.
 - **GitHub**: download `PandaQuest-<version>.zip` from
   <https://github.com/vem882/pandaquest/releases> and unzip it into
   `World of Warcraft/_classic_/Interface/AddOns/`. The folder must be named exactly `PandaQuest` and
@@ -140,7 +148,7 @@ The window can be dragged and resized from its corner, remembers its place, size
 and closes with Escape. Options has a category list with a search box over every setting and a **Reset
 Settings** button per category.
 
-The old commands still work, for macros and muscle memory, and are listed under Settings > Advanced
+The old commands still work, for macros and muscle memory, and are listed under Options > Advanced
 (`/pq help all` prints them):
 
 | Command | Effect |
@@ -182,7 +190,7 @@ The same options are in the game's own Settings panel and in `/pq config`.
 |---|---|
 | General | distance units (metres/yards), quest database source (PandaQuest only / fill gaps from QuestieDB / QuestieDB values first), minimap button (show, lock in place), language |
 | Arrow | show/lock, quest text, ETA, community timings, hide in instances, arrival flash, size, opacity, text size, reset position |
-| Navigation | target selection (auto / focused quest / nearest), route to turn-ins and new quests, arrival radius |
+| Navigation | target selection (auto / focused quest / nearest), route to turn-ins and new quests, arrival radius, quest mobs |
 | TomTom | off, or mirror the current target |
 | Waypoints | on/off; follow the tracked quest; also objectives; show TomTom's waypoint; the distance on the arrow, the Pinpoint label, its distance, the beam and its colour, size; forget a `/way` point on arrival; friendly NPC nameplates (a button, never on its own); clear the waypoint |
 | Map | objective / turn-in / available pins, minimap pins, pin sizes, how many nodes the minimap carries, which quests to show |
@@ -191,7 +199,7 @@ The same options are in the game's own Settings panel and in `/pq config`.
 | Flight master | the flight time line, the in-flight bar, its lock, size and position |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound |
-| Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the auction scan, mailbox sales, auction tooltip prices, the recipe and archaeology readers, quest data and gear recording. A part that is off listens to nothing and runs no timer |
+| Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the auction scan, mailbox sales, auction tooltip prices, the recipe and archaeology readers, quest mobs, quest data and gear recording. A part that is off listens to nothing and runs no timer |
 | Moving frames | unlock the arrow, the flight bar and the dig site bar to drag them; reset their positions |
 | Hidden quests | the quests hidden from the navigator, and showing one or all of them again |
 | Status | version, database, quest log, targets, background jobs, modules, synchronisation |
@@ -218,16 +226,17 @@ one chat line says so.
 
 ## Frequently asked questions
 
-**Do I need the portal or the companion program?** No. PandaQuest works fully on its own. The
+**Do I need the site or the sync app?** No. PandaQuest works fully on its own. The
 portal is where the shared content is completed; using it is optional.
 
 **Is anything sent anywhere?** No. The addon cannot send anything: the WoW client does not allow
-it. Synchronisation only writes a file on your computer, and only if you switch it on. A separate
-companion program, run by you, can read that file.
+it. Synchronisation only writes a file on your computer, and only if you switch it on. The
+separate PandaQuest Sync app, run by you, can read that file and upload it.
 
-**Why does a node or a flight show no time?** Because the number is unknown, and PandaQuest leaves
-a line out rather than print a guess. Respawn timers and flight times are measured from play: kill
-the mob, gather the node or fly the route once and it appears.
+**Why does a node show no respawn time?** Because the number is unknown, and PandaQuest leaves a
+line out rather than print a guess. Respawn timers are measured from play: kill the mob or gather
+the node once and it appears. Flight times always show a number; one that nobody has measured yet
+is marked *(estimated)*.
 
 **The arrow points at something odd.** `/pq next` skips the current target, `/pq target <questID>`
 pins a quest, and the Navigation options switch between automatic, focused and nearest. If the arrow

@@ -1,29 +1,103 @@
 # PandaQuest
 
-**Quest helper and navigator for Mists of Pandaria Classic (5.5.4, interface 50504).**
+**Quest helper and navigator for World of Warcraft: Mists of Pandaria Classic (5.5.4, interface 50504).**
 
-An arrow to your next quest objective, quest pins on the world map and minimap, gathering nodes
-with respawn timers, flight times, archaeology and profession tools, and Wowhead links — in English,
-every other language the WoW client supports, and Finnish. It works fully on its own;
-synchronisation with the community portal is optional and off by default.
+PandaQuest shows where your next quest objective is: an arrow, quest pins on the world map and
+minimap, waypoints over quest NPCs' nameplates, gathering nodes with respawn timers, flight times,
+and a browser for every quest in the game. It works on its own; sharing data with the PandaQuest
+site is optional and off by default.
 
-The player-facing documentation — features, slash commands, settings, roadmap and credits — is
-[`PandaQuest/README.md`](PandaQuest/README.md). This file is about the repository.
+The site is **<https://pd.zroot.it>**: quest guides, NPCs, maps, flights and more, built from
+Questie's data and from what players share.
 
-PandaQuest is free software under the **GNU General Public License v3** — see [`LICENSE`](LICENSE).
+This file covers the addon in short and then the repository. The full player guide (every
+setting, slash command and FAQ) is [`PandaQuest/README.md`](PandaQuest/README.md).
+
+## Install
+
+- **CurseForge app** or **Wago app**: search for *PandaQuest* and install it.
+- **By hand:** download `PandaQuest-<version>.zip` from
+  [GitHub releases](https://github.com/vem882/pandaquest/releases) and unzip it into
+  `World of Warcraft/_classic_/Interface/AddOns/`, so that the folder is
+  `AddOns/PandaQuest/PandaQuest.toc`. Releases marked *Pre-release* are betas.
+
+Restart the game, or `/reload` if it was running.
+
+## Usage
+
+- **`/pq`** (or `/pandaquest`) opens the PandaQuest window. Tabs: **Quests**, **Status**,
+  **Options**, **About & Help** and **Performance**. `/pq help` lists the commands.
+- **Minimap button:** left-click opens the quest list, Shift-click shows or hides the arrow,
+  right-click opens the options. It is also a LibDataBroker source for Titan Panel, ChocolateBar
+  and similar bars.
+- **`/way [zone] x y [label]`** sets a waypoint, in TomTom's syntax; `/way clear` removes it. If
+  TomTom is installed, `/way` stays TomTom's.
+
+## Features
+
+- **Navigation arrow** to the next objective, turn-in or nearby quest, with distance and travel time.
+- **Waypoints:** a label and chevrons (Pinpoint) over the target NPC's nameplate when close, a
+  column of light with the distance when further away.
+- **Quest browser** of every quest, with categories, filters and a zone map per quest.
+- **Map pins** for objectives, turn-ins and available quests on the world map and minimap.
+- **Quest-mob icons** on the nameplates of mobs your active quests need, plus a tooltip line.
+- **Tooltips** on NPCs, items and pins: quests, level, respawn time, drop rate.
+- **Gathering nodes** (ore, herbs, fishing, chests, rares) with respawn countdowns.
+- **Flight times:** the flight master's tooltip shows the expected time before you fly, and a bar
+  shows the time left during the flight. Your own measured flights come first, then the players'
+  measured times from the site, then an estimate, marked as estimated.
+- **Archaeology** dig-site bar, profession recipe and auction price readers (started by you).
+- **Tracker additions** and short notifications.
+- **Links** to the quest's, NPC's or object's page on pd.zroot.it.
+- **Languages:** English, every language the WoW client offers, and Finnish.
+- **Optional:** TomTom (the target as a TomTom waypoint) and QuestieDB (fills gaps in the
+  built-in database).
+
+The addon is built on Ace3 (modules, timers, saved variables, options).
+
+## Supported games
+
+**Mists of Pandaria Classic** (interface 50504) only. The addon checks which game the client is and
+switches its database off on any other game. Other game versions are being worked on; there is no
+release for them yet.
+
+## Privacy and data sharing
+
+- The addon **cannot send anything**; the WoW client does not allow it.
+- Sharing is **off by default**. If you say yes (`/pq consent` or Options), the addon writes what
+  you do while questing — quest progress, positions outside instances, flights, your gear — into
+  `PandaQuestSync` in your SavedVariables. No chat, no names of other players, no bag contents.
+- The separate **PandaQuest Sync** app, which you install and run yourself (from
+  <https://pd.zroot.it/setup> or the Microsoft Store), reads that file and uploads it to the site.
+- Turn sharing off at any time; nothing is recorded while it is off. The site's privacy statement
+  is at <https://pd.zroot.it/privacy>.
+
+## Licence and credits
+
+PandaQuest is free software under the **GNU General Public License v3** ([`LICENSE`](LICENSE)),
+© 2026 vem882.
+
+- **Questie:** the quest, NPC, object and item database is built from Questie's Mists of Pandaria
+  data (GPLv3).
+- **Libraries:** Ace3, LibStub, CallbackHandler, LibDataBroker, **LibDBIcon** and **HereBeDragons**,
+  embedded unchanged under their own licences ([`PandaQuest/Libs/README.md`](PandaQuest/Libs/README.md)).
+- **InFlight** (MIT): PandaQuest uses InFlight's approach to noticing a flight on this client; no
+  InFlight code is copied.
+- **pfQuest** (MIT): respawn times and drop rates for older content, and map icons
+  (`PandaQuest/Textures/Icons/LICENSE.md`).
+- Inspired by Questie, pfQuest, TomTom and Waypoint UI; PandaQuest is its own code.
+  [`PandaQuest/README.md`](PandaQuest/README.md) has the full list.
+
+World of Warcraft is a trademark of Blizzard Entertainment. PandaQuest is a fan project and is not
+affiliated with or endorsed by Blizzard.
 
 ## Content and community
 
-Much of Mists of Pandaria's data exists in no downloadable source, so PandaQuest's content is
-completed from play and from contributors. The **PandaQuest portal, <https://pd.zroot.it>**, is
-where that content is filled in and corrected, and where you can join in and help complete the
-addon's data.
-
-## Inspiration
-
-PandaQuest is its own code, **inspired by** Questie, pfQuest, TomTom and the map addons it is built
-to coexist with — it does not copy their code. Data and assets taken from other projects keep their
-own terms; `PandaQuest/README.md`, "Credits and inspiration", lists exactly what.
+Much of Mists of Pandaria's data (Pandaria's nodes, respawn times, flight times) exists in no
+downloadable source, so it is measured from play. The site at <https://pd.zroot.it> is where that
+data is collected and corrected, and every two hours the site's data sync brings it into this
+repository as a new release (see "Data from the portal"). Report bugs at
+<https://github.com/vem882/pandaquest/issues> or on the site's bugtracker.
 
 ## What is in this repository
 
@@ -42,17 +116,6 @@ This repository is the addon and the release tooling that turns it into a zip. N
 
 `PandaQuest/README.md`, `PandaQuest/changelog.txt`, `PandaQuest/CHANGELOG.md`, `PandaQuest/LICENSE` and
 `PandaQuest/Textures/README.md` ship inside the release zip.
-
-## Install
-
-Unzip the release asset into your WoW AddOns directory, so that the addon ends up at
-`World of Warcraft/_classic_/Interface/AddOns/PandaQuest`:
-
-```sh
-unzip PandaQuest-<version>.zip -d "/path/to/World of Warcraft/_classic_/Interface/AddOns"
-```
-
-Mists of Pandaria Classic uses the `_classic_` flavor folder.
 
 ## The release asset
 
@@ -216,9 +279,12 @@ and squash-merges it once the checks pass. It touches only:
     a whole row for one a quest names but the database lacks, and an NPC's level range, rank and title;
 * `PandaQuest/Database/Overrides/Portal.lua` — the portal's moderator corrections, `hidden` included;
   applied last, so a correction always wins;
+* `PandaQuest/Database/Overrides/Flights.lua` — the flight time of every direct flight in the
+  taxi network: the players' measured median where at least two flights back it, otherwise an
+  estimate from the path length, marked as estimated; plus measured multi-hop chains;
 * `PandaQuest/changelog.txt` and `PandaQuest/CHANGELOG.md` — one section per release, under the
   version the merge produces, listing every quest, NPC, object and item whose data in the addon
-  changed in it (`quest 123 - Name - updated`), up to twenty per status and "and N more";
+  changed in it (`quest 123 - Name - updated`), each with indented lines saying what changed;
 * `data-sync.json` — the last portal changelog line it looked at, and the portal's lines about an
   entity whose data has not reached the addon yet (`pending_change_ids`), written with the release
   that data arrives in or dropped after a week.
@@ -226,7 +292,8 @@ and squash-merges it once the checks pass. It touches only:
 There is no release without data: a sync that would change nothing under `PandaQuest/Database`
 commits nothing, however many lines the portal's own changelog gained — what happened only on the
 portal (an item's Wowhead tooltip, say) never appears here. It does not upload to CurseForge unless
-its operator turned that on, and then at most once a day.
+its operator turned that on, and then at most once a day. The sync runs on the portal's development box
+(`tools/addon_sync.py` and `deploy/addonsync/` in vem882/pandawow).
 
 ## What the checks cannot tell you
 
@@ -259,11 +326,3 @@ and that it loads against the WoW API. A Lua syntax error would reach a player. 
 repository's tools run those against this tree: `tools/syntax_check.py`, `tools/luacheck_runner.py`
 and the `tools/wowstub` tests.)
 
-## Licence and credit
-
-PandaQuest is © 2026 vem882 and released under the **GNU General Public License v3**
-([`LICENSE`](LICENSE)). The quest database is built from Questie's Mists of Pandaria data (Questie is
-also GPLv3). The embedded libraries under `PandaQuest/Libs/` — Ace3, LibStub, CallbackHandler,
-LibDataBroker, LibDBIcon and HereBeDragons — and the icons under `PandaQuest/Textures/Icons/` keep
-their own, GPL-compatible licences: `PandaQuest/Libs/LICENSE-Ace3.txt`, `PandaQuest/Libs/README.md`
-and `PandaQuest/Textures/Icons/LICENSE.md`.
