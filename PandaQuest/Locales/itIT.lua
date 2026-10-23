@@ -353,47 +353,7 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "Non verrà raccolto nulla. Puoi attivarlo in qualsiasi momento in /pq options.",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "Scansiona prezzi",
-    ["Stop scan (%d%%)"] = "Ferma scansione (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "Scansione della casa d'aste in corso. Tieni aperta la finestra: chiuderla annulla la scansione.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "Scansione della casa d'aste terminata: %d aste per %d oggetti in %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "La scansione si è fermata a %d aste per mantenere piccolo il file salvato.",
-    ["A scan is already running."] = "Una scansione è già in corso.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "Apri prima la casa d'aste, poi premi Scansiona prezzi o digita /pq scan.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "Questo client non offre alcun elenco della casa d'aste che PandaQuest possa leggere.",
-    ["Scan cancelled: the auction house window was closed."] =
-        "Scansione annullata: la finestra della casa d'aste è stata chiusa.",
-    ["Scan stopped: the auction house did not answer."] =
-        "Scansione interrotta: la casa d'aste non ha risposto.",
-    ["Scan stopped. Nothing was saved."] = "Scansione interrotta. Non è stato salvato nulla.",
-    ["The auction house sent an empty listing. Nothing was saved."] =
-        "La casa d'aste ha inviato un elenco vuoto. Non è stato salvato nulla.",
     ["No scan is running."] = "Nessuna scansione in corso.",
-    ["Scanning: %d%% (%d auctions read)."] = "Scansione: %d%% (%d aste lette).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] =
-        "Ultima scansione di %s (%s, %s): %d aste per %d oggetti, %s fa.",
-    ["No auction house scan yet for this realm."] = "Nessuna scansione della casa d'aste per questo reame.",
-    ["AH minimum buyout"] = "Acquisto immediato minimo (CdA)",
-    ["AH market value"] = "Valore di mercato (CdA)",
-    ["bids only"] = "solo offerte",
-    ["%s, scanned %s ago"] = "%s, scansionato %s fa",
-    ["Auction house"] = "Casa d'aste",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest non esegue mai scansioni da solo. Premi Scansiona prezzi nella finestra della casa d'aste, oppure digita /pq scan mentre è aperta.",
-    ["Show the scan button on the auction house window"] =
-        "Mostra il pulsante di scansione nella finestra della casa d'aste",
-    ["Show auction prices on item tooltips"] = "Mostra i prezzi d'asta nei tooltip degli oggetti",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "L'acquisto immediato più basso e il valore di mercato dell'ultima scansione su questo reame, con il tempo trascorso.",
-    ["Record my auction sales and purchases"] = "Registra le mie vendite e i miei acquisti all'asta",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "Letti dalle fatture d'asta nella tua cassetta delle lettere. Vengono conservati l'oggetto, la quantità e il prezzo, mai il nome dell'altro giocatore.",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] =
         "/pq scan professions - leggi la finestra della professione aperta",

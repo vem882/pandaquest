@@ -66,7 +66,7 @@ local MAX_EXPAND_ROUNDS = 4
 local MAX_ARM_ATTEMPTS = 40
 local UPDATE_BUCKET = 0.1              -- TRADE_SKILL_UPDATE / _LIST_UPDATE burst collected by an AceBucket
 
---- The word `/pq scan` hands to this module. Everything else stays the auction scanner's.
+--- The words `/pq scan` hands to this module. Archaeology takes its own word before them.
 local PROFESSION_WORDS = { professions = true, profession = true, prof = true }
 
 -- Link types GetTradeSkillRecipeLink may answer with. The 5.5.4 UI does call the function
@@ -722,8 +722,7 @@ function M.Start()
         end
         if #scan.rows == 0 then
             -- Not one row survived. Stored, that would be a profession with no recipes -- a claim
-            -- about the game rather than about this read, and the auction scanner refuses an empty
-            -- listing for the same reason. The rule holds however the rows were lost,
+            -- about the game rather than about this read. The rule holds however the rows were lost,
             -- counted failures or not: a list whose names have not arrived produces no recipe and
             -- no failure either, and is exactly the case that used to be stored as a real book.
             if scan.unnamed > 0 and (scan.skipped + scan.incomplete) == 0 then
@@ -879,8 +878,8 @@ end
 --- ChatCommand(arg): what is left of `/pq scan professions [status]`.
 function M.ChatCommand(arg)
     arg = tostring(arg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
-    -- The auction scanner's own word, and it has to mean the same thing here: a player who learned
-    -- `stop` from `/pq scan` and typed it at `/pq scan professions` was starting a scan instead.
+    -- `stop` has to stop: a player who typed it at `/pq scan professions` was otherwise starting a
+    -- scan instead.
     if arg == "stop" then
         if not M.Stop("stopped") then Log.Print("%s", L["No scan is running."]) end
         return
@@ -902,9 +901,9 @@ end
 function M.OnInitialize()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
-    -- `/pq scan` is the auction scanner's command. Rather than move it, this module
-    -- takes the one word it owns off the front and hands everything else straight back, so
-    -- /pq scan, /pq scan stop and /pq scan status still reach the auction house unchanged.
+    -- This module takes the words it owns off the front of `/pq scan` and hands everything else to
+    -- whatever command was there before (nothing, since the auction scanner is gone), so a bare
+    -- /pq scan tells the player what to type.
     local previous = PQ.commands.scan
     PQ.commands.scan = function(rest)
         local text = tostring(rest or "")

@@ -816,14 +816,33 @@ class TheTocFiles(unittest.TestCase):
         self.assertEqual(files[:2], [build.BUILD_LUA_TOC_LINE, "Core\\Game.lua"])
 
     def test_the_saved_variables_are_the_ones_core_game_lua_tags(self) -> None:
-        """Every saved variable the TOC declares is one Game.ClaimSavedVariables tags, and no other."""
+        """Every saved variable the TOC declares is one Game.ClaimSavedVariables tags, or a retired one."""
         directives, _files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
         declared = [name.strip() for name in directives["SavedVariables"].split(",")]
         game = (ADDON_DIR / "Core" / "Game.lua").read_text(encoding="utf-8")
         listed = re.search(r"Game\.SAVED_VARIABLES = \{([^}]*)\}", game)
+        retired = re.search(r"Game\.RETIRED_SAVED_VARIABLES = \{([^}]*)\}", game)
         self.assertIsNotNone(listed)
-        assert listed is not None
-        self.assertEqual(re.findall(r'"(\w+)"', listed.group(1)), declared)
+        self.assertIsNotNone(retired)
+        assert listed is not None and retired is not None
+        tagged = re.findall(r'"(\w+)"', listed.group(1))
+        kept = re.findall(r'"(\w+)"', retired.group(1))
+        self.assertEqual(sorted(tagged + kept), sorted(declared))
+        self.assertFalse(set(tagged) & set(kept))
+
+    def test_the_auction_data_stays_declared(self) -> None:
+        """The Auction module is gone, but WoW deletes an undeclared saved variable at logout:
+        PandaQuestAH must stay in the TOC so no player's stored scans are lost."""
+        directives, _files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
+        declared = [name.strip() for name in directives["SavedVariables"].split(",")]
+        self.assertIn("PandaQuestAH", declared)
+        for path in ADDON_DIR.rglob("*.lua"):
+            if path.parts[-3:-1] == ("Database", "Data") or "Libs" in path.parts:
+                continue
+            code = "\n".join(line.split("--", 1)[0] for line in path.read_text(encoding="utf-8").splitlines())
+            if path.name == "Game.lua":
+                code = re.sub(r"Game\.RETIRED_SAVED_VARIABLES = \{[^}]*\}", "", code)
+            self.assertNotIn("PandaQuestAH", code, f"{path.relative_to(ADDON_DIR)} touches PandaQuestAH")
         self.assertNotIn("SavedVariablesPerCharacter", directives)
 
     def test_the_mop_toc_lists_its_own_database_and_nothing_else(self) -> None:

@@ -473,45 +473,8 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "Mitään ei kerätä. Voit ottaa keruun käyttöön milloin tahansa asetuksista (/pq).",
 
-    -- Auction house
-    ["Scan prices"] = "Skannaa hinnat",
-    ["Stop scan (%d%%)"] = "Pysäytä skannaus (%d %%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "Skannataan huutokauppaa. Pidä ikkuna auki; sen sulkeminen keskeyttää skannauksen.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "Huutokaupan skannaus valmis: %d huutokauppaa, %d esinettä, kesto %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "Skannaus pysähtyi %d huutokauppaan, jotta tallennustiedosto pysyy pienenä.",
-    ["A scan is already running."] = "Skannaus on jo käynnissä.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "Avaa ensin huutokauppa ja paina sitten Skannaa hinnat tai kirjoita /pq scan.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "Tämä peliversio ei tarjoa huutokauppalistausta, jota PandaQuest osaisi lukea.",
-    ["Scan cancelled: the auction house window was closed."] =
-        "Skannaus keskeytettiin: huutokauppaikkuna suljettiin.",
-    ["Scan stopped: the auction house did not answer."] = "Skannaus pysähtyi: huutokauppa ei vastannut.",
-    ["Scan stopped. Nothing was saved."] = "Skannaus pysäytettiin. Mitään ei tallennettu.",
-    ["The auction house sent an empty listing. Nothing was saved."] =
-        "Huutokauppa lähetti tyhjän listan. Mitään ei tallennettu.",
+    -- Skannaus
     ["No scan is running."] = "Skannausta ei ole käynnissä.",
-    ["Scanning: %d%% (%d auctions read)."] = "Skannataan: %d %% (%d huutokauppaa luettu).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] =
-        "Viimeisin skannaus %s (%s, %s): %d huutokauppaa, %d esinettä, %s sitten.",
-    ["No auction house scan yet for this realm."] = "Tältä realmilta ei ole vielä huutokauppaskannausta.",
-    ["AH minimum buyout"] = "Huutokauppa, halvin osto",
-    ["AH market value"] = "Huutokauppa, markkina-arvo",
-    ["bids only"] = "vain huutoja",
-    ["%s, scanned %s ago"] = "%s, skannattu %s sitten",
-    ["Auction house"] = "Huutokauppa",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest ei koskaan skannaa itsestään. Paina huutokauppaikkunan Skannaa hinnat -painiketta tai kirjoita /pq scan, kun ikkuna on auki.",
-    ["Show the scan button on the auction house window"] = "Näytä skannauspainike huutokauppaikkunassa",
-    ["Show auction prices on item tooltips"] = "Näytä huutokauppahinnat esineiden vihjeissä",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "Halvin ostohinta ja markkina-arvo viimeisimmästä skannauksestasi tällä realmilla sekä sen ikä.",
-    ["Record my auction sales and purchases"] = "Kirjaa huutokauppamyyntini ja -ostoni",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "Luetaan postilaatikon huutokauppakuiteista. Talteen jäävät esine, määrä ja hinta, ei koskaan toisen pelaajan nimeä.",
 
     -- Ammattireseptit
     ["/pq scan professions - read the open profession window"] =
@@ -811,14 +774,6 @@ local T = {
     ["The short messages in the middle of the screen."] = "Lyhyet viestit keskellä ruutua.",
     ["The archaeology bar that fills while you survey a dig site."] =
         "Arkeologiapalkki, joka täyttyy, kun tutkit kaivauspaikkaa.",
-    ["Auction house scan"] = "Huutokauppakamarin skannaus",
-    ["The Scan prices button on the auction house window, and /pq scan."] =
-        "Huutokauppaikkunan Skannaa hinnat -painike ja /pq scan.",
-    ["Auction sales from the mailbox"] = "Huutokauppamyynnit postilaatikosta",
-    ["Records your auction sales and purchases from the invoices in your mailbox."] =
-        "Tallentaa huutokauppamyyntisi ja -ostosi postilaatikkosi laskuista.",
-    ["Auction prices in tooltips"] = "Huutokauppahinnat vihjeruuduissa",
-    ["Your last scanned prices on item tooltips."] = "Viimeksi skannatut hinnat esineiden vihjeruuduissa.",
     ["Recipe reader"] = "Reseptien lukija",
     ["Reads your recipes when you open a profession window."] = "Lukee reseptisi, kun avaat ammatti-ikkunan.",
     ["Archaeology reader"] = "Arkeologian lukija",
@@ -953,8 +908,6 @@ local T = {
         "Lennot",
     ["Professions & Gathering"] =
         "Ammatit ja keräily",
-    ["Auction"] =
-        "Huutokauppa",
     ["Sync & Privacy"] =
         "Synkronointi ja yksityisyys",
     ["Language & Units"] =

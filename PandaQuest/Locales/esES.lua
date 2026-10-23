@@ -338,42 +338,7 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "No se recogerá nada. Puedes activarlo cuando quieras en /pq options.",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "Escanear precios",
-    ["Stop scan (%d%%)"] = "Detener escaneo (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "Escaneando la casa de subastas. Mantén la ventana abierta: si la cierras, se cancela el escaneo.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "Escaneo de la casa de subastas terminado: %d subastas de %d objetos en %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "El escaneo se detuvo en %d subastas para que el archivo guardado no crezca demasiado.",
-    ["A scan is already running."] = "Ya hay un escaneo en curso.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "Abre primero la casa de subastas y luego pulsa Escanear precios o escribe /pq scan.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "Este cliente no ofrece ninguna lista de la casa de subastas que PandaQuest pueda leer.",
-    ["Scan cancelled: the auction house window was closed."] = "Escaneo cancelado: se cerró la ventana de la casa de subastas.",
-    ["Scan stopped: the auction house did not answer."] = "Escaneo detenido: la casa de subastas no respondió.",
-    ["Scan stopped. Nothing was saved."] = "Escaneo detenido. No se guardó nada.",
-    ["The auction house sent an empty listing. Nothing was saved."] = "La casa de subastas envió una lista vacía. No se guardó nada.",
     ["No scan is running."] = "No hay ningún escaneo en curso.",
-    ["Scanning: %d%% (%d auctions read)."] = "Escaneando: %d%% (%d subastas leídas).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] = "Último escaneo de %s (%s, %s): %d subastas de %d objetos, hace %s.",
-    ["No auction house scan yet for this realm."] = "Todavía no hay ningún escaneo de la casa de subastas para este reino.",
-    ["AH minimum buyout"] = "Compra mínima (CS)",
-    ["AH market value"] = "Valor de mercado (CS)",
-    ["bids only"] = "solo pujas",
-    ["%s, scanned %s ago"] = "%s, escaneado hace %s",
-    ["Auction house"] = "Casa de subastas",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest nunca escanea por su cuenta. Pulsa Escanear precios en la ventana de la casa de subastas o escribe /pq scan mientras esté abierta.",
-    ["Show the scan button on the auction house window"] = "Mostrar el botón de escaneo en la ventana de la casa de subastas",
-    ["Show auction prices on item tooltips"] = "Mostrar precios de subasta en los tooltips de objetos",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "La compra más baja y el valor de mercado de tu último escaneo en este reino, con su antigüedad.",
-    ["Record my auction sales and purchases"] = "Registrar mis ventas y compras de subastas",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "Se lee de las facturas de subasta de tu buzón. Se guardan el objeto, la cantidad y el precio, nunca el nombre del otro jugador.",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] = "/pq scan professions - leer la ventana de profesión abierta",
     ["/pq scan archaeology - read your archaeology window"] = "/pq scan archaeology - leer tu ventana de arqueología",

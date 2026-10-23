@@ -344,44 +344,7 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "아무것도 수집되지 않습니다. /pq options에서 언제든 켤 수 있습니다.",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "가격 스캔",
-    ["Stop scan (%d%%)"] = "스캔 중지 (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "경매장을 스캔하는 중입니다. 창을 열어 두세요. 창을 닫으면 스캔이 취소됩니다.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "경매장 스캔 완료: 경매 %d건, 아이템 %d종, 소요 시간 %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "저장 파일 크기를 줄이기 위해 경매 %d건에서 스캔을 중단했습니다.",
-    ["A scan is already running."] = "이미 스캔이 진행 중입니다.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "먼저 경매장을 연 다음 가격 스캔을 누르거나 /pq scan을 입력하세요.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "이 클라이언트에서는 PandaQuest가 읽을 수 있는 경매장 목록을 제공하지 않습니다.",
-    ["Scan cancelled: the auction house window was closed."] = "스캔 취소: 경매장 창이 닫혔습니다.",
-    ["Scan stopped: the auction house did not answer."] = "스캔 중단: 경매장이 응답하지 않았습니다.",
-    ["Scan stopped. Nothing was saved."] = "스캔이 중단되었습니다. 아무것도 저장되지 않았습니다.",
-    ["The auction house sent an empty listing. Nothing was saved."] =
-        "경매장에서 빈 목록을 보냈습니다. 아무것도 저장되지 않았습니다.",
     ["No scan is running."] = "진행 중인 스캔이 없습니다.",
-    ["Scanning: %d%% (%d auctions read)."] = "스캔 중: %d%% (경매 %d건 읽음).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] =
-        "%s의 마지막 스캔 (%s, %s): 경매 %d건, 아이템 %d종, %s 전.",
-    ["No auction house scan yet for this realm."] = "이 서버에서는 아직 경매장 스캔을 하지 않았습니다.",
-    ["AH minimum buyout"] = "경매장 최저 즉시 구매가",
-    ["AH market value"] = "경매장 시장 가치",
-    ["bids only"] = "입찰만",
-    ["%s, scanned %s ago"] = "%s, %s 전에 스캔",
-    ["Auction house"] = "경매장",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest는 스스로 스캔하지 않습니다. 경매장 창에서 가격 스캔을 누르거나, 창이 열려 있는 동안 /pq scan을 입력하세요.",
-    ["Show the scan button on the auction house window"] = "경매장 창에 스캔 버튼 표시",
-    ["Show auction prices on item tooltips"] = "아이템 툴팁에 경매 가격 표시",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "이 서버에서 마지막으로 스캔한 최저 즉시 구매가와 시장 가치를, 얼마나 오래된 정보인지와 함께 표시합니다.",
-    ["Record my auction sales and purchases"] = "내 경매 판매 및 구매 기록",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "우편함의 경매 송장에서 읽어 옵니다. 아이템, 수량, 가격만 보관하며 상대 플레이어의 이름은 저장하지 않습니다.",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] = "/pq scan professions - 열려 있는 전문 기술 창 읽기",
     ["/pq scan archaeology - read your archaeology window"] = "/pq scan archaeology - 고고학 창 읽기",

@@ -338,44 +338,7 @@ local T = {
         "Merci. PandaQuest partagera vos données de quête. Désactivable à tout moment avec /pq sync.",
     ["Nothing will be collected. Turn it on any time in /pq options."] = "Rien ne sera collecté. Activable à tout moment dans /pq options.",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "Analyser les prix",
-    ["Stop scan (%d%%)"] = "Arrêter l'analyse (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "Analyse de l'hôtel des ventes en cours. Laisser la fenêtre ouverte : la fermer annule l'analyse.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "Analyse de l'hôtel des ventes terminée : %d enchères pour %d objets en %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "L'analyse s'est arrêtée à %d enchères pour garder un fichier de sauvegarde léger.",
-    ["A scan is already running."] = "Une analyse est déjà en cours.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "Ouvrir d'abord l'hôtel des ventes, puis cliquer sur Analyser les prix ou taper /pq scan.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "Ce client ne propose aucune liste de l'hôtel des ventes que PandaQuest puisse lire.",
-    ["Scan cancelled: the auction house window was closed."] = "Analyse annulée : la fenêtre de l'hôtel des ventes a été fermée.",
-    ["Scan stopped: the auction house did not answer."] = "Analyse arrêtée : l'hôtel des ventes n'a pas répondu.",
-    ["Scan stopped. Nothing was saved."] = "Analyse arrêtée. Rien n'a été enregistré.",
-    ["The auction house sent an empty listing. Nothing was saved."] =
-        "L'hôtel des ventes a envoyé une liste vide. Rien n'a été enregistré.",
     ["No scan is running."] = "Aucune analyse en cours.",
-    ["Scanning: %d%% (%d auctions read)."] = "Analyse : %d%% (%d enchères lues).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] =
-        "Dernière analyse de %s (%s, %s) : %d enchères pour %d objets, il y a %s.",
-    ["No auction house scan yet for this realm."] = "Pas encore d'analyse de l'hôtel des ventes pour ce royaume.",
-    ["AH minimum buyout"] = "Achat immédiat min. (HV)",
-    ["AH market value"] = "Valeur marchande (HV)",
-    ["bids only"] = "enchères seulement",
-    ["%s, scanned %s ago"] = "%s, analysé il y a %s",
-    ["Auction house"] = "Hôtel des ventes",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest n'analyse jamais de lui-même. Cliquer sur Analyser les prix dans la fenêtre de l'hôtel des ventes, ou taper /pq scan pendant qu'elle est ouverte.",
-    ["Show the scan button on the auction house window"] = "Afficher le bouton d'analyse dans la fenêtre de l'hôtel des ventes",
-    ["Show auction prices on item tooltips"] = "Afficher les prix de l'hôtel des ventes dans les infobulles d'objets",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "Le prix d'achat immédiat le plus bas et la valeur marchande de votre dernière analyse sur ce royaume, avec son ancienneté.",
-    ["Record my auction sales and purchases"] = "Enregistrer mes ventes et achats à l'hôtel des ventes",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "Relevé à partir des factures de l'hôtel des ventes dans votre boîte aux lettres. L'objet, la quantité et le prix sont conservés, jamais le nom de l'autre joueur.",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] = "/pq scan professions - lire la fenêtre de métier ouverte",
     ["/pq scan archaeology - read your archaeology window"] = "/pq scan archaeology - lire votre fenêtre d'archéologie",

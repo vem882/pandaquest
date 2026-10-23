@@ -27,6 +27,9 @@
 # component written down here would be one nobody remembers to bump.
 ## Version: 0.2.0
 ## Author: vem882
+# PandaQuestAH stays although the Auction module is gone: WoW deletes a SavedVariable that is no
+# longer listed here at the next logout, and a player's stored auction scans must not be lost.
+# Nothing reads or writes it any more.
 ## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
 ## OptionalDeps: TomTom, Questie, QuestieDB
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
@@ -105,10 +108,6 @@ UI\OptionsRenderer.lua
 UI\MainWindow.lua
 UI\Notify.lua
 UI\DigSiteBar.lua
-Auction\Store.lua
-Auction\Scanner.lua
-Auction\Mail.lua
-Auction\Tooltip.lua
 Recipes\Store.lua
 Recipes\Scanner.lua
 Recipes\Archaeology.lua
