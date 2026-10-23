@@ -19,12 +19,13 @@
 -- becomes "Respawn in 2 Mins 14 Secs" and keeps counting while the tooltip is open. It rewrites
 -- that single font string (_G[name .. "TextRight" .. i], the same handle Blizzard's own
 -- TooltipUtil.lua uses) instead of rebuilding the tooltip, and it only allocates when the whole
--- second changes - at most one string per second, nothing per frame.
+-- second changes - at most one string per second, nothing per frame. The tick is an AceTimer that
+-- only exists while a countdown runs.
 local _, ns = ...
 
 local Util, Log = ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("NodeTooltip")   -- an AceAddon module (Core/Const.lua)
 ns.NodeTooltip = M
 
 local type, pairs, format = type, pairs, string.format
@@ -36,7 +37,7 @@ local MAX_OBJECTIVES = 6            -- per quest
 local MAX_NAME_CHARS = 42           -- long names wrap the tooltip into a paragraph otherwise
 local MAX_OBJECTIVE_CHARS = 38
 local MAX_REWARD_CHARS = 60         -- one wrapped line of money, experience and items
-local TICK = 0.2                    -- countdown OnUpdate throttle
+local TICK = 0.2                    -- countdown timer period (AceTimer)
 
 -- Line colours. The label/value pair matches the screenshot (plain white); the extras say where a
 -- number came from without adding a word: grey for an estimate, gold for a running countdown.
@@ -543,9 +544,9 @@ local countdown = {
     active = false, tooltip = nil, name = nil, index = nil,
     kind = nil, id = nil, spawnKey = nil, staticText = nil,
     label = nil, owner = nil,
-    lastWhole = nil, elapsed = 0,
+    lastWhole = nil,
 }
-local driver
+local ticker                        -- the AceTimer handle while a countdown runs
 local hooked = false
 
 -- The two halves of the one line we own. Blizzard's own TooltipUtil.lua reads them the same way
@@ -565,8 +566,10 @@ function M.StopCountdown()
     countdown.kind, countdown.id, countdown.spawnKey = nil, nil, nil
     countdown.staticText, countdown.lastWhole = nil, nil
     countdown.label, countdown.owner = nil, nil
-    countdown.elapsed = 0
-    if driver then driver:Hide() end
+    if ticker then
+        M:CancelTimer(ticker)
+        ticker = nil
+    end
 end
 
 --- True while the remembered line is still the line this module wrote. Two independent checks,
@@ -585,7 +588,7 @@ local function stillOurs()
     return label:GetText() == countdown.label
 end
 
---- NodeTooltip.Tick(): rewrites the countdown line. Called by the OnUpdate driver (throttled) and
+--- NodeTooltip.Tick(): rewrites the countdown line. Called by the countdown timer every TICK and
 -- directly by the tests. Allocates only when the displayed second changes.
 function M.Tick()
     if not countdown.active then return false end
@@ -624,23 +627,6 @@ function M.Tick()
     return true
 end
 
-local function onUpdate(_, elapsed)
-    -- Nothing is allocated here: the accumulator is a field on a table that already exists, and
-    -- Tick only builds a string when the whole second changed.
-    countdown.elapsed = countdown.elapsed + (elapsed or 0)
-    if countdown.elapsed < TICK then return end
-    countdown.elapsed = 0
-    M.Tick()
-end
-
-local function ensureDriver()
-    if driver or not CreateFrame then return driver end
-    driver = CreateFrame("Frame", "PandaQuestNodeTooltipDriver", UIParent)
-    driver:Hide()
-    driver:SetScript("OnUpdate", onUpdate)
-    return driver
-end
-
 local function hookHide(tooltip)
     if not tooltip or not tooltip.HookScript then return end
     tooltip:HookScript("OnHide", M.StopCountdown)
@@ -664,13 +650,14 @@ local function startCountdown(tooltip, index, rec)
     countdown.active = true
     countdown.tooltip, countdown.name, countdown.index = tooltip, name, index
     countdown.kind, countdown.id, countdown.spawnKey = rec.entityKind, rec.entityID, rec.spawnKey
-    countdown.staticText, countdown.lastWhole, countdown.elapsed = rec.staticText, nil, 0
+    countdown.staticText, countdown.lastWhole = rec.staticText, nil
     countdown.label = rec.left
     if tooltip.GetOwner then
         local ok, owner = pcall(tooltip.GetOwner, tooltip)
         countdown.owner = ok and owner or nil
     end
-    if ensureDriver() then driver:Show() end
+    -- Tick only builds a string when the whole second changed, so five calls a second cost nothing.
+    ticker = M:ScheduleRepeatingTimer(M.Tick, TICK)
 end
 
 --- NodeTooltip.IsCountdownActive() -> bool
@@ -738,9 +725,13 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Enable()
+function M.OnEnable()
     ensureHooks()
     Log.Debug("NodeTooltip", "enabled")
+end
+
+function M.OnDisable()
+    M.StopCountdown()
 end
 
 function M.OnProfileChanged()
