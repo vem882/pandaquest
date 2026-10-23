@@ -955,7 +955,8 @@ class TheReleaseNotes(unittest.TestCase):
         self.assertTrue(found, "UI/ReleaseNotes.lua lists no release")
         for note_version, body in found:
             self.assertIn(note_version, sections, f"{note_version} is not a section of changelog.txt")
-            for text in re.findall(r'"((?:[^"\\]|\\.)*)"', body):
+            for quoted in re.findall(r'"((?:[^"\\]|\\.)*)"', body):
+                text = re.sub(r"\\(.)", r"\1", quoted)          # a Lua string's \" and \\
                 self.assertIn(text, sections[note_version], f"{note_version}: {text!r} is not in changelog.txt")
 
 
