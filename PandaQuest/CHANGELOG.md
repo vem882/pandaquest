@@ -4,6 +4,251 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.232] - 2026-10-23
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,534 quests, 51 NPCs, 4 objects
+- quest 8633 - Enigma Robes - updated
+  - description added
+  - reward items: +1
+- quest 10667 - Underworld Loam - updated
+  - description added
+- quest 10775 - Tabards of the Illidari - updated
+  - description added
+- quest 11213 - Check Up on Tabetha - updated
+  - description added
+- quest 12761 - Mastery of the Crystals - updated
+  - description added
+- quest 13598 - Unsavory Remedies - updated
+  - description added
+- quest 14237 - Forward Movement - updated
+  - description added
+- quest 14275 - Someone's Keeping Track of You - updated
+  - description added
+- quest 14303 - Back to Aggra - updated
+  - description added
+- quest 24480 - The Halls Of Reflection - updated
+  - description added
+- quest 24502 - Necessary Roughness - updated
+  - description added
+- quest 27697 - Corruption in Maraudon - updated
+  - description added
+- quest 28460 - Threat of the Winterfall - updated
+  - description added
+  - reward choices: +4
+- quest 31870 - Cassandra Kaboom - updated
+  - description added
+  - reward items: +1
+- quest 31959 - The Empress' Gambit - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31966 - Battle Pet Tamers: Cataclysm - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 31967 - Battle Pet Tamers: Cataclysm - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 31970 - Grand Master Obalis - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 31971 - Grand Master Obalis - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 31972 - Brok - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31973 - Bordin Steadyfist - updated
+  - description added
+  - reward money added (9g)
+- quest 31974 - Goz Banefury - updated
+  - description added
+  - reward money added (65s)
+- quest 31975 - The Returning Champion - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 31976 - The Returning Champion - updated
+  - description added
+  - reward money added (35s)
+- quest 31977 - The Returning Champion - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31978 - Priorities! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31980 - The Returning Champion - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 31981 - Exceeding Expectations - updated
+  - description added
+  - reward money added (90s)
+- quest 31982 - Exceeding Expectations - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31983 - A Brief Reprieve - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31984 - A Brief Reprieve - updated
+  - description added
+  - reward money added (11g)
+- quest 31985 - The Triumphant Return - updated
+  - description added
+  - reward money added (9g)
+- quest 31986 - The Triumphant Return - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31987 - Theramore - updated
+  - reward money added (9g 40s)
+  - reward items: +1
+- quest 31988 - Daily Selected Scenario - updated
+  - reward money added (11g 40s)
+- quest 31991 - Grand Master Zusshi - updated
+  - description added
+  - reward money added (90s)
+  - reward items: +1
+- quest 31998 - A Worthy Challenge: Sha of Doubt - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 31999 - Nazgrim's Command - updated
+  - description added
+  - reward money added (98s)
+  - reward choices: +9
+- quest 32001 - A Worthy Challenge: Sha of Hatred - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32002 - A Worthy Challenge: Xin the Weaponmaster - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32003 - A Worthy Challenge: Raigonn - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32004 - A Worthy Challenge: Wing Leader Ner'onok - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32005 - A Worthy Challenge: Durand - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32006 - A Worthy Challenge: Flameweaver Koegler - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32007 - A Worthy Challenge: Darkmaster Gandling - updated
+  - description added
+  - reward money added (34g 20s)
+- quest 32008 - Audrey Burnhep - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 32018 - His Name Was... Stormstout - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 32019 - They Call Him... Stormstout - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 32030 - Once in a Hundred Lifetimes - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32035 - Got Silk? - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 32038 - Stag Mastery - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 32045 - Children of the Water - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 32097 - Short-Supply Reward - updated
+  - reward items: +1
+- quest 32106 - A Winter Veil Gift - updated
+  - reward items: +1
+- quest 32107 - Flying Tiger Gourami - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32108 - Domination Point - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32109 - Lion's Landing - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32115 - Shackles of the Past - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32116 - Priorities, People! - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32118 - Taking Advantage - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32119 - It Is A Mystery - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32120 - Legacy of Ogudei - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32121 - The Spirit Trap - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32122 - Ogudei's Lieutenants - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32123 - Death on Two Legs - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32126 - Tear It Up - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32127 - All Dead, All Dead - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32128 - Another One Bites the Dust - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32130 - Good Luck, Have Fun - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32131 - We Require More Minerals! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32132 - Worker Harassment - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32133 - Sentry Wards - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32134 - Hard Counter - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32135 - Hero Killer - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32136 - Work Order: Fuel - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32137 - Runnin' On Empty - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32138 - Work Order: Lumber - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32139 - Stacked! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32140 - Work Order: Iron - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32141 - Power Metal - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32142 - We Will Rock You - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 91703 - A Celestial Challenge: Flameweaver Koegler - updated
+  - description added
+  - reward money added (45g 60s)
+  - XP added (471,000)
+
 ## [0.2.231] - 2026-10-23
 
 Data from the PandaQuest portal.
