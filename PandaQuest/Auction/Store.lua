@@ -11,7 +11,7 @@ local _, ns = ...
 
 local Thread = ns.Thread
 
-local M = {}
+local M = ns.PQ:GetModule("AuctionStore")   -- an AceAddon module (Core/Const.lua)
 ns.AuctionStore = M
 
 local type, pairs, tonumber, tostring, format, floor = type, pairs, tonumber, tostring, string.format, math.floor
