@@ -62,7 +62,7 @@ local TREE_CHARS, TREE_SUB_CHARS = 25, 22
 local TITLE_CHARS, SUBTITLE_CHARS = 56, 50
 local VALUE_CHARS = 38
 local TAB_CHARS = 10
-local OBJECTIVE_CHARS = 270
+local OBJECTIVE_CHARS = 180               -- the paper gave two lines to the second row of buttons
 
 -- Motion ---------------------------------------------------------------------------------------
 local OPEN_TIME, CLOSE_TIME, OPEN_RISE = 0.18, 0.12, 8
@@ -1132,13 +1132,26 @@ local function questName(questID)
     return (DB and DB.GetQuestName and DB.GetQuestName(questID)) or tostring(questID)
 end
 
---- Navigate(questID) -> bool: pin the quest as the arrow's target (what `/pq target <id>` does).
+local browserPin                   -- the custom target the browser made for a quest not in the log
+
+--- Navigate(questID) -> bool: pin the quest as the arrow's target (what `/pq target <id>` does). A quest
+-- the navigator has no target for -- not in the log, not available nearby -- is routed to where it is
+-- picked up, as one custom target the browser owns and replaces on the next quest it is asked for.
 function M.Navigate(questID)
     if not questID then return false end
-    local Targets, Router = ns.Targets, ns.Router
-    local list = Targets and Targets.GetForQuest and Targets.GetForQuest(questID)
+    local Targets, Router, Objectives = ns.Targets, ns.Router, ns.Objectives
+    if not (Targets and Router and Router.SetManualTarget) then return false end
+    local list = Targets.GetForQuest and Targets.GetForQuest(questID)
     local target = list and list[1]
-    if target and Router and Router.SetManualTarget then
+    if not target and Objectives and Objectives.BuildPickup and Targets.AddCustom then
+        local pickup = Objectives.BuildPickup(questID)
+        if pickup and pickup.uiMapID and pickup.x and pickup.y then
+            if browserPin and Targets.RemoveCustom then Targets.RemoveCustom(browserPin) end
+            target = Targets.AddCustom(pickup.uiMapID, pickup.x, pickup.y, questName(questID))
+            browserPin = target and target.key or nil
+        end
+    end
+    if target then
         Router.SetManualTarget(target)
         Log.Print(L["Navigating to: %s"], questName(questID))
         return true
