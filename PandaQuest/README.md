@@ -53,7 +53,10 @@ is where the addon's content is completed and corrected — and you are welcome 
   where it is.
 - **Flight times** – the flight master's tooltip shows how long a flight takes, and a bar runs
   during the flight. Routes are measured by flying them; an unmeasured route shows nothing rather
-  than a guess.
+  than a guess. A `/reload` in the air keeps the flight. With synchronisation on, each flight you
+  take from a flight master is also saved for the PandaQuest site — its route and stops, time in the
+  air, fare and landing time — so the site can show flight routes, how long they take and what they
+  cost.
 - **Archaeology** – a dig-site progress bar (the one Mists never shipped) and a read of your
   archaeology window.
 - **Professions and auctions** – read your recipe books (`/pq scan professions`) and scan auction
@@ -78,9 +81,11 @@ is where the addon's content is completed and corrected — and you are welcome 
 
 Synchronisation is **optional and off by default**; nothing in PandaQuest needs it. If you turn it
 on (`/pq` → Synchronisation, or `/pq consent`), the addon records what you do while questing into a
-file on your own computer (`PandaQuestSync` in your SavedVariables). **The addon never uploads
-anything itself.** A separate companion program reads that file when you run it. Turn it off at any
-time; nothing is recorded while it is off.
+file on your own computer (`PandaQuestSync` in your SavedVariables), and every flight you take from
+a flight master (`PandaQuestSync.flights`: route, stops, time, fare, landing time). **The addon never
+uploads anything itself.** A separate companion program reads that file when you run it, and the
+addon drops what the site has confirmed it received. Turn it off at any time; nothing is recorded
+while it is off.
 
 ## Content and community
 
@@ -298,6 +303,10 @@ PandaQuest is its own code. It is **inspired by** other addons, and it does not 
   chevrons once you are close. PandaQuest's waypoints are their own code and art, built on
   nameplates, because the navigation frame that addon draws on does not exist in Mists of Pandaria
   Classic.
+- **InFlight** by TotalPackage, Deranjata and LudiusMaximus (MIT) — how a flight is noticed on this
+  client: the taxi is read from `UnitOnTaxi` after the click, because the flag is not there the
+  moment the flight master's button is pressed. PandaQuest reimplements the approach; no InFlight
+  code is copied.
 - **Leatrix Maps, Mapster, ElvUI** — PandaQuest is built to coexist with them.
 
 Data and assets from other projects keep their own terms:

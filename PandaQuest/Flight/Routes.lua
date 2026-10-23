@@ -1,9 +1,11 @@
--- Flight/Routes.lua: how long a flight takes, measured by flying it.
+-- Flight/Routes.lua: how long a flight takes and what it costs, measured by flying it.
 --
 -- The player asked for a time beside each destination at the flight master, and for a bar while
 -- the flight runs. There is exactly one honest way to produce that number on this client, and it
 -- is to fly the route and time it. This file is the measuring half; Flight/Tooltip.lua and
--- UI/FlightBar.lua are the two screens that read it.
+-- UI/FlightBar.lua are the two screens that read it. Every flight it can name is also handed to
+-- the PandaQuest site through PandaQuestSync.flights (see "The upload outbox" below), so the site
+-- can show routes, their times and their prices.
 --
 -- **Why there is nothing to show before the first flight.** TaxiNodePosition and
 -- TaxiGetSrcX/SrcY/DestX/DestY answer normalised positions on the taxi map TEXTURE, not on any
@@ -39,34 +41,63 @@
 -- the map system, compared against Enum.UIMapSystem.Taxi the way Mists' own UIParent compares it
 -- (Blizzard_UIParent/Mists/UIParent.lua:1355-1359). Nothing says the node list is still live once
 -- TakeTaxiNode has returned -- it closes the frame -- so the click hook only looks up what the
--- open already cached.
+-- open already cached, the price included.
 --
--- **The flight itself is timed between two confirmed edges.** UnitOnTaxi("player") is the
--- authority that a flight is happening. PLAYER_CONTROL_LOST and PLAYER_CONTROL_GAINED supply the
--- timestamps and nothing else: they also fire for stuns, cinematics and vehicles, and nothing in
--- their payload ties them to a taxi. Blizzard's own UIParent separates the two cases with exactly
--- this test (Mists/UIParent.lua:848-850). So a takeoff is PLAYER_CONTROL_LOST *with*
--- UnitOnTaxi true, and a landing is PLAYER_CONTROL_GAINED *with* UnitOnTaxi false. Anything else
--- is discarded, and a discarded flight is a flight that produces no number.
+-- **The click.** On 5.5.4 the flight master's map is Shared/TaxiFrame.lua (there is no
+-- Blizzard_FlightMap in the Mists tree), and its destination buttons do exactly one thing:
+-- `TakeTaxiNode(self:GetID())`, a global looked up at click time (Shared/TaxiFrame.xml:15-17). A
+-- hooksecurefunc on that global therefore sees every click, and nothing else on this client starts
+-- a taxi from a map.
+--
+-- **Takeoff and landing are read from UnitOnTaxi("player") itself, not from control events.**
+-- Earlier versions started a measurement only inside PLAYER_CONTROL_LOST, and only when
+-- UnitOnTaxi was already true at that instant; any control loss that failed the test also threw
+-- the click away. In the game that never matched -- no flight was ever measured and the bar never
+-- appeared. The taxi flag is not set the moment the click is made: InFlight, which does work on
+-- this client, says so in its own words ("check if actually in flight after take off (doesn't
+-- happen immediately)") and never listens to PLAYER_CONTROL_LOST at all; it polls UnitOnTaxi for a
+-- few seconds after TakeTaxiNode instead. Its landing check carries an "event bug fix" for the
+-- same reason: PLAYER_CONTROL_GAINED is not a reliable landing signal either. Our test harness had
+-- hidden all of this by setting UnitOnTaxi before firing PLAYER_CONTROL_LOST -- the order this
+-- file needed rather than the order the client produces.
+--
+-- So, the approach InFlight proved (reimplemented here, not copied):
+--   * a click starts a cheap AceTimer that asks UnitOnTaxi every POLL seconds, for at most
+--     CLICK_WINDOW seconds, and stops the moment it answers; the takeoff is the moment it turned
+--     true. PLAYER_CONTROL_LOST and UNIT_FLAGS only make that check happen sooner;
+--   * a landing is UnitOnTaxi turning false: PLAYER_CONTROL_GAINED and UNIT_FLAGS ask at once, and
+--     a slow AceTimer (FLIGHT_POLL) asks while the player is in the air, in case neither arrives;
+--   * a taxi nobody clicked for -- a quest script -- is still noticed (a control loss or a unit
+--     flag change with UnitOnTaxi true) and drawn by the bar, but it has no route, so it is never
+--     filed and never uploaded.
+--
+-- **A reload in the air keeps the flight.** The flight in progress is written to the character's
+-- saved variables at takeoff (PandaQuestDB.char.flightInAir) with the server's clock, so a /reload
+-- -- the taxi keeps flying while the interface reloads -- resumes the same measurement. A login
+-- that finds the player on a taxi (a disconnect) does not: the time spent logged out is not time
+-- anyone saw in the air, so that flight is drawn but not filed.
 --
 -- Deliberately NOT measured, because each would record a duration that is not the route's:
---   * an early landing (TaxiRequestEarlyLanding), which ends the flight somewhere else entirely;
---   * a reload or a disconnect in the air -- the measurement lives in memory only, so a session
---     that ends mid-flight simply loses it, and PLAYER_ENTERING_WORLD drops any leftover;
+--   * an early landing (TaxiRequestEarlyLanding), a summon, a battleground or dungeon port taken in
+--     the air -- each ends the flight somewhere else entirely;
+--   * a loading screen in the air that is not a /reload;
 --   * a control event with no taxi under it;
 --   * a click whose destination this open did not cache;
 --   * a takeoff that no recent click explains -- a click the server refused, or a taxi boarded
 --     from a quest script with no flight master in it. See CLICK_WINDOW.
 --
--- **Nothing runs per frame here.** Like Nodes/Respawn.lua, this file is entirely event driven; the
--- arithmetic is done when a screen asks for it. UI/FlightBar.lua has the only OnUpdate, and only
--- while it is on screen.
+-- **Nothing runs per frame here.** The two timers above run only while a click waits for its
+-- takeoff and while a flight is in the air; the rest is event driven. UI/FlightBar.lua has the only
+-- OnUpdate, and only while it is on screen.
 --
 -- Verified against 5.5.4 rather than assumed:
---   * TAXIMAP_OPENED, TAXIMAP_CLOSED, PLAYER_CONTROL_LOST, PLAYER_CONTROL_GAINED,
---     PLAYER_ENTERING_WORLD: all present in _reference/misc/ketho/Events_classic.lua.
---   * C_TaxiMap.GetAllTaxiNodes, TaxiGetNodeSlot, TaxiNodeGetType, TaxiRequestEarlyLanding:
---     present in _reference/misc/ketho/GlobalAPI_classic.lua.
+--   * TAXIMAP_OPENED, TAXIMAP_CLOSED, PLAYER_CONTROL_LOST, PLAYER_CONTROL_GAINED, UNIT_FLAGS,
+--     PLAYER_MONEY, UI_ERROR_MESSAGE, LFG_PROPOSAL_SUCCEEDED, PLAYER_ENTERING_WORLD (with
+--     isInitialLogin and isReloadingUi, SystemDocumentation.lua): all present in
+--     _reference/misc/ketho/Events_classic.lua.
+--   * C_TaxiMap.GetAllTaxiNodes, TaxiGetNodeSlot, TaxiNodeGetType, TaxiNodeCost,
+--     TaxiRequestEarlyLanding, GetMoney, GetServerTime: present in
+--     _reference/misc/ketho/GlobalAPI_classic.lua.
 --   * Shared/TaxiFrame.lua is the file this client loads -- Blizzard_UIPanels_Game_Classic.toc:75
 --     lists it "[AllowLoadGameType cata, mists]" -- and that addon is LoadFirst, not
 --     load-on-demand, so its globals exist before this one runs.
@@ -77,8 +108,9 @@ ns.FlightRoutes = M
 
 local Util, Log, Compat = ns.Util, ns.Log, ns.Compat
 
-local type, tonumber, pairs, pcall, format = type, tonumber, pairs, pcall, string.format
-local floor, sort, wipe = math.floor, table.sort, (wipe or table.wipe)
+local type, tonumber, tostring, pairs, ipairs, pcall, format = type, tonumber, tostring, pairs, ipairs, pcall,
+    string.format
+local floor, sort, tremove, wipe = math.floor, table.sort, table.remove, (wipe or table.wipe)
 
 ---------------------------------------------------------------------------
 -- Bounds
@@ -95,8 +127,8 @@ local MIN_FLIGHT = 5
 -- unchanged, and again because inventing a tighter one would mean inventing the length of the
 -- longest flight in the game -- which is exactly the number this whole file exists to measure and
 -- does not yet have. It is a backstop and not a filter: both edges are already confirmed against
--- UnitOnTaxi, and a flight left open by a landing whose event never arrived is dropped at the next
--- flight master rather than being closed by this bound.
+-- UnitOnTaxi, and a flight left open by a landing nobody saw is dropped at the next flight master
+-- rather than being closed by this bound.
 local MAX_FLIGHT = 2 * 3600
 
 --- Samples kept per route, oldest out first. Nodes/Respawn.lua keeps eight observations per spawn
@@ -110,22 +142,38 @@ local MAX_SAMPLES = 8
 -- ceiling anyone reaches by playing -- it is the line past which the file stops growing.
 local MAX_ROUTES = 400
 
---- How long a click on a destination stays redeemable by a takeoff. The click and the takeoff are
--- two separate events with nothing in their payloads tying them together, so something has to say
--- when a click has stopped being about the flight that follows -- otherwise a click the server
--- refused (not enough money, in combat, out of range) waits forever and is spent on whatever taxi
--- the player boards next, including a quest-scripted flight taken nowhere near a flight master.
--- That is a real duration filed under a route nobody flew, which is the one thing this file exists
--- not to do.
+--- How long a click on a destination stays redeemable by a takeoff, and so how long the takeoff
+-- check runs after a click. The click and the takeoff are two separate things with nothing tying
+-- them together, so something has to say when a click has stopped being about the flight that
+-- follows -- otherwise a click the server refused (not enough money, in combat, mounted) waits
+-- forever and is spent on whatever taxi the player boards next, including a quest-scripted flight
+-- taken nowhere near a flight master. That is a real duration filed under a route nobody flew,
+-- which is the one thing this file exists not to do. A refusal the client words as a taxi error
+-- (UI_ERROR_MESSAGE with one of the ERR_TAXI* strings) drops the click at once.
 --
--- Nodes/Professions.lua:111 already fixes this exact shape of bound -- "how long a gathering cast
--- still explains a loot window", GATHER_WINDOW = 8 -- and reads it the same way at :981-986: an
--- action older than the window no longer explains what just happened. This is that question with
--- a taxi click in place of a cast, so it takes that number rather than a new one. Nothing in this
--- repository has measured how long the client takes to lift a taxi off after TakeTaxiNode, and a
--- window that turns out to be too short costs a measurement, not a wrong one -- which is the side
--- this file's header says it wants to err on.
-local CLICK_WINDOW = 8
+-- InFlight gives the taxi five seconds after the click to show up in UnitOnTaxi before it hides
+-- its bar, and it measures flights on this client with that; this window is twice as long, so a
+-- slow server answer costs nothing, and a window that is still too short costs a measurement, not
+-- a wrong one -- the side this file's header says it wants to err on.
+local CLICK_WINDOW = 10
+
+--- How often the takeoff is checked while a click waits for it. One UnitOnTaxi call; the check
+-- stops the moment the taxi is there or the window has run out.
+local POLL = 0.1
+
+--- How often the landing is checked while the player is in the air, in case neither
+-- PLAYER_CONTROL_GAINED nor UNIT_FLAGS arrives. Half a second against flights of minutes.
+local FLIGHT_POLL = 0.5
+
+--- How long after the takeoff a drop in the player's money is still the fare. The server takes the
+-- fare as the taxi starts; PLAYER_MONEY can arrive a moment after UnitOnTaxi turns true.
+local FARE_WINDOW = 30
+
+--- How long a /reload may take and still pick up the flight it interrupted (see persist()).
+local RELOAD_GAP = 300
+
+--- Newest flights kept in PandaQuestSync.flights waiting for the PandaQuest site to take them.
+local OUTBOX_MAX = 300
 
 --- Below this the median of the samples is the samples. The portal fixes its
 -- minimum at 2 samples for exactly this reason -- "a median of one is that measurement" --
@@ -133,6 +181,9 @@ local CLICK_WINDOW = 8
 -- figure, but both have to say it rests on one flight, and UI/FlightBar.lua draws no fill below
 -- this count: a printed number can carry its sample count beside it, a bar's fill cannot.
 M.MIN_SAMPLES = 2
+M.CLICK_WINDOW = CLICK_WINDOW
+M.OUTBOX_MAX = OUTBOX_MAX
+
 
 --- The Mists perk that makes every flight path 25% faster, and the factor that takes it back out.
 --
@@ -180,39 +231,71 @@ function M.SpeedFactor()
     return 1
 end
 
+
 ---------------------------------------------------------------------------
--- State (all of it session state; only `routes` is saved)
+-- State (session state, except the flight in the air: see "Saved across a reload")
 ---------------------------------------------------------------------------
 
--- captured[slotIndex] = { nodeID = , name = , hops = { slot, ... }|nil }
+-- captured[slotIndex] = { nodeID = , name = , hops = { slot, ... }|nil, nodeHops = { nodeID, ... }|nil,
+--                         cost = copper|nil }
 -- Refilled on every TAXIMAP_OPENED and read by the click hook and by the tooltip.
 local captured = {}
 local currentSlot, currentNodeID
+-- Every slot's nodeID on the map that is open now, reachable or not: a hop chain passes through
+-- nodes the player cannot fly to directly.
+local nodeIdBySlot = {}
 
 --- Which value of TaxiGetNodeSlot's third argument means "the source of this leg": true, false, or
 -- nil when this map could not settle it. See resolvePolarity.
 local slotPolarity
 
--- The click the player made on this map open, waiting for a takeoff to confirm it.
-local pending
+-- What the takeoff check is waiting for: { at = GetTime(), click = {...}|nil, resume = {...}|nil }.
+-- `click` is the destination the player clicked; `resume` a flight a /reload interrupted. Neither
+-- means a control loss or a unit flag change the player did not click for.
+local waiting
+local waitTimer
 
--- The flight being measured: { src, dst, name, startedAt, discarded }.
+-- The flight being measured: { src, dst, name, legs, hops, startedAt, takeoff, money, cost, paid,
+-- discarded, identified }.
 local flight
+local flightTimer
 
 local hooked = false
 
--- Own AceEvent object. AceEvent keys its registry by target, so registering
+-- Own AceEvent/AceTimer object. AceEvent keys its registry by target, so registering
 -- PLAYER_ENTERING_WORLD on ns.PQ would collide with whichever other module wants it (the same
 -- note is in Nodes/Respawn.lua, Sync/Telemetry.lua and Quest/Player.lua).
 local listener = {}
 do
     local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
     if AceEvent then AceEvent:Embed(listener) end
+    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
+    if AceTimer then AceTimer:Embed(listener) end
 end
 M.listener = listener
 
 local function now()
     return (GetTime and GetTime()) or 0
+end
+
+--- The server's clock, which the PandaQuest site reads and which survives a /reload; GetTime()
+-- starts again from the client's uptime and is only good inside one session.
+local function serverNow()
+    if GetServerTime then
+        local ok, value = pcall(GetServerTime)
+        if ok and tonumber(value) then return tonumber(value) end
+    end
+    return Util.UnixNow()
+end
+
+local function money()
+    if type(GetMoney) ~= "function" then return nil end
+    local ok, value = pcall(GetMoney)
+    return ok and tonumber(value) or nil
+end
+
+local function onTaxi()
+    return Compat.UnitOnTaxi("player")
 end
 
 --- Throw away whatever the last flight master's map said. Called from every path that must not
@@ -222,6 +305,7 @@ end
 -- under the wrong pair of node ids.
 local function forgetCapture()
     wipe(captured)
+    wipe(nodeIdBySlot)
     currentSlot, currentNodeID, slotPolarity = nil, nil, nil
 end
 
@@ -229,6 +313,11 @@ local function settings()
     local PQ = ns.PQ
     local profile = PQ and PQ.db and PQ.db.profile
     return (profile and profile.flight) or ns.DEFAULTS.profile.flight
+end
+
+local function send(message, ...)
+    local PQ = ns.PQ
+    if PQ and PQ.SendMessage then PQ:SendMessage(message, ...) end
 end
 
 ---------------------------------------------------------------------------
@@ -391,14 +480,6 @@ function M.Record(srcNodeID, dstNodeID, seconds)
     return count
 end
 
---- Reset(): forget every measurement. `/pq reset` does not call this -- a measurement is data, not
--- a window position -- but the tests and a future options button need one door to it.
-function M.Reset()
-    local routes = M.GetRoutes()
-    if routes then wipe(routes) end
-    forgetCapture()
-    pending, flight = nil, nil
-end
 
 ---------------------------------------------------------------------------
 -- Reading the flight master's map
@@ -441,9 +522,12 @@ end
 -- standing, or whose legs do not join end to end, is not a chain we understood, and half a chain
 -- is worth nothing.
 local function readHops(index)
-    if slotPolarity == nil then return nil end
     local legs = GetNumRoutes and GetNumRoutes(index)
     if type(legs) ~= "number" or legs < 1 then return nil end
+    -- One leg is a direct flight, and a direct flight runs from where the player stands to the
+    -- destination whichever way round TaxiGetNodeSlot speaks: there is nothing to settle.
+    if legs == 1 and currentSlot and index ~= currentSlot then return { currentSlot, index } end
+    if slotPolarity == nil then return nil end
     local chain, previous = {}, nil
     for leg = 1, legs do
         local src = TaxiGetNodeSlot(index, leg, slotPolarity)
@@ -460,6 +544,29 @@ local function readHops(index)
     end
     if chain[#chain] ~= index then return nil end
     return chain
+end
+
+--- The same chain as node ids, in flight order -- what the PandaQuest site is given -- or nil when
+-- any slot on it has no node id: half a chain would draw a route nobody flew.
+local function nodeChain(slots)
+    if not slots then return nil end
+    local out = {}
+    for i = 1, #slots do
+        local nodeID = nodeIdBySlot[slots[i]]
+        if not nodeID then return nil end
+        out[i] = nodeID
+    end
+    return out
+end
+
+--- The price the flight master's own tooltip shows for a slot (Shared/TaxiFrame.lua:39), read
+-- while the map is open; nil when the client does not say.
+local function slotCost(index)
+    if type(TaxiNodeCost) ~= "function" then return nil end
+    local ok, value = pcall(TaxiNodeCost, index)
+    value = ok and tonumber(value) or nil
+    if not value or value < 0 then return nil end
+    return floor(value)
 end
 
 --- Capture() -> how many reachable destinations were cached, or nil when the client gave us
@@ -485,7 +592,7 @@ function M.Capture()
     -- only -- confirming, below, that slotIndex really indexes the taxi frame's slot space -- and
     -- is never consulted about whether a node can be flown to. That reading is TaxiNodeGetType's
     -- alone (see the header).
-    local nodeIdBySlot, nameBySlot, stateBySlot = {}, {}, {}
+    local nameBySlot, stateBySlot = {}, {}
     for i = 1, #infos do
         local info = infos[i]
         if type(info) == "table" then
@@ -569,7 +676,9 @@ function M.Capture()
                 -- The name is cached for the bar to print and for nothing else. Keying by it is
                 -- what the header forbids; showing the player the word their own client used is
                 -- the opposite of a guess.
-                captured[index] = { nodeID = nodeID, name = nameBySlot[index], hops = readHops(index) }
+                local hops = readHops(index)
+                captured[index] = { nodeID = nodeID, name = nameBySlot[index], hops = hops,
+                                    nodeHops = nodeChain(hops), cost = slotCost(index) }
                 cached = cached + 1
             end
         end
@@ -579,7 +688,8 @@ function M.Capture()
     return cached
 end
 
---- GetCaptured(slotIndex) -> { nodeID, name, hops }|nil for a destination this open cached.
+--- GetCaptured(slotIndex) -> { nodeID, name, hops, nodeHops, cost }|nil for a destination this
+-- open cached. `hops` are slots, `nodeHops` the same chain as node ids.
 function M.GetCaptured(slotIndex)
     local slot = tonumber(slotIndex)
     return slot and captured[slot] or nil
@@ -602,117 +712,442 @@ function M.GetSlotPolarity()
 end
 
 ---------------------------------------------------------------------------
+-- The upload outbox
+---------------------------------------------------------------------------
+--
+-- The companion app reads only PandaQuestSync, so a flight reaches the PandaQuest site as one more
+-- list in it:
+--
+--   PandaQuestSync.flights = { { id = , src = , dst = , hops = { src, ..., dst }, s = seconds,
+--                                cost = copper|nil, t = unix landing, char = , build = ,
+--                                speed = 0.8|nil }, ... }
+--
+-- `speed` is there only for a character with Ride Like the Wind, whose flights run at that factor
+-- (see SpeedFactor): `s` is what the character really spent in the air, and the site needs the
+-- factor to put a fast and a slow flight of one route on one scale.
+--
+-- Only flights this file can name go in -- never a quest taxi, never an early landing -- and only
+-- while the player has agreed to share data (global.telemetry.enabled, the same switch the rest of
+-- PandaQuestSync obeys: a flight with a character name and a landing time is a movement record).
+-- The list keeps the newest OUTBOX_MAX. The site writes `flightsAckedAt` into the community file
+-- once it has the flights up to that landing time, and SyncFlightAck below drops them -- the
+-- pattern Sync/Community.lua follows for sessions with `ackUploadedThrough`.
+
+local function syncStore()
+    local sync = ns.Sync or _G.PandaQuestSync
+    if type(sync) ~= "table" then return nil end
+    return sync
+end
+
+--- CharacterKey() -> "Name-Realm", the key PandaQuestSync.characters and the sessions use
+-- (Sync/Telemetry.lua: realm spaces and hyphens removed, matching the hub's /characters route).
+function M.CharacterKey()
+    local name = (UnitName and UnitName("player")) or "Unknown"
+    local realm
+    if GetNormalizedRealmName then realm = GetNormalizedRealmName() end
+    if not realm or realm == "" then
+        realm = (GetRealmName and GetRealmName()) or "Unknown"
+        realm = realm:gsub("[%s%-]", "")
+    end
+    return name .. "-" .. realm
+end
+
+--- ClientBuild() -> "5.5.4.70449", the first two returns of GetBuildInfo joined the way the
+-- sessions' clientBuild is.
+function M.ClientBuild()
+    if not GetBuildInfo then return "unknown" end
+    local version, build = GetBuildInfo()
+    if not version then return "unknown" end
+    if not build or build == "" then return version end
+    return version .. "." .. build
+end
+
+local function sharingAllowed()
+    local Telemetry = ns.Telemetry
+    if Telemetry and type(Telemetry.IsEnabled) == "function" then return Telemetry.IsEnabled() and true or false end
+    local PQ = ns.PQ
+    local global = PQ and PQ.db and PQ.db.global
+    local telemetry = global and global.telemetry
+    return type(telemetry) == "table" and telemetry.enabled == true
+end
+
+--- GetOutbox() -> PandaQuestSync.flights, or nil when nothing was ever put in it.
+function M.GetOutbox()
+    local sync = syncStore()
+    local flights = sync and sync.flights
+    if type(flights) ~= "table" then return nil end
+    return flights
+end
+
+local function copyList(list)
+    if type(list) ~= "table" then return nil end
+    local out = {}
+    for i = 1, #list do out[i] = list[i] end
+    return out
+end
+
+--- One finished flight into the outbox. Returns the entry, or nil when it was not added.
+local function addToOutbox(f, seconds, landedAt)
+    if not sharingAllowed() then return nil end
+    local sync = syncStore()
+    if not sync then return nil end
+    if type(sync.flights) ~= "table" then sync.flights = {} end
+    local flights = sync.flights
+    local char = M.CharacterKey()
+    local entry = {
+        id = format("%s-%d-%d-%d", char, landedAt, f.src, f.dst),
+        src = f.src, dst = f.dst,
+        hops = copyList(f.hops),
+        s = floor(seconds + 0.5),
+        cost = f.paid or f.cost,
+        t = landedAt,
+        char = char,
+        build = M.ClientBuild(),
+    }
+    local factor = f.speed or 1
+    if factor ~= 1 then entry.speed = factor end
+    flights[#flights + 1] = entry
+    while #flights > OUTBOX_MAX do tremove(flights, 1) end
+    return entry
+end
+
+--- PruneUploadedFlights(ack) -> number removed. Drops every flight that landed at or before `ack`:
+-- the site already has it. Anything that is not a flight record goes too.
+function M.PruneUploadedFlights(ack)
+    ack = tonumber(ack)
+    if not ack or ack <= 0 then return 0 end
+    local flights = M.GetOutbox()
+    if not flights then return 0 end
+    local n = #flights
+    local kept, removed = 0, 0
+    for i = 1, n do
+        local entry = flights[i]
+        local keep = type(entry) == "table"
+        if keep then
+            local landed = tonumber(entry.t)
+            if landed and landed <= ack then keep = false end
+        end
+        if keep then
+            kept = kept + 1
+            flights[kept] = entry
+        else
+            removed = removed + 1
+        end
+    end
+    for i = kept + 1, n do flights[i] = nil end
+    return removed
+end
+
+--- SyncFlightAck() -> ack|nil, removed
+-- Copies `flightsAckedAt` from the community file the site generated into PandaQuestSync (never
+-- backwards) and prunes the flights it covers -- Sync/Community.lua's SyncAck, for flights. A
+-- community file from before the site wrote the field has none, and then nothing happens.
+function M.SyncFlightAck()
+    local overrides = ns.Overrides
+    local community = overrides and overrides.community
+    local ack = type(community) == "table" and tonumber(community.flightsAckedAt) or nil
+    local sync = syncStore()
+    if not ack or ack <= 0 or not sync then return nil, 0 end
+
+    local previous = tonumber(sync.flightsAckedAt) or 0
+    if ack > previous then
+        sync.flightsAckedAt = ack
+    else
+        ack = previous
+    end
+    local removed = M.PruneUploadedFlights(ack)
+    if removed > 0 then
+        Log.Debug("Flight", "the site has flights up to %s; pruned %d uploaded flight(s)", tostring(ack), removed)
+    end
+    return ack, removed
+end
+
+---------------------------------------------------------------------------
+-- Saved across a reload
+---------------------------------------------------------------------------
+
+local function charStore()
+    local PQ = ns.PQ
+    local db = PQ and PQ.db
+    local char = db and db.char
+    if type(char) ~= "table" then return nil end
+    return char
+end
+
+--- Writes the flight in the air to PandaQuestDB.char.flightInAir, or clears it. The server's clock
+-- goes in, because GetTime() does not survive the reload. PLAYER_LOGOUT -- which a /reload sends
+-- too -- stamps `leftAt` on it, and only a reload that follows within RELOAD_GAP picks it up again:
+-- a record left behind by a session that ended some other way is never mistaken for today's taxi.
+local function persist()
+    local char = charStore()
+    if not char then return end
+    local f = flight
+    if not f then
+        char.flightInAir = nil
+        return
+    end
+    char.flightInAir = {
+        src = f.src, dst = f.dst, name = f.name, legs = f.legs, hops = copyList(f.hops),
+        takeoff = f.takeoff, money = f.money, cost = f.cost, paid = f.paid, speed = f.speed,
+        identified = f.identified or nil, discarded = f.discarded or nil,
+    }
+end
+
+---------------------------------------------------------------------------
 -- Measuring one flight
 ---------------------------------------------------------------------------
 
---- The hook on TakeTaxiNode. It looks nothing up in the client: the frame is closing and nothing
--- promises the node list outlives it, so the only source is what TAXIMAP_OPENED cached.
-local function onTakeTaxiNode(index)
-    pending = nil
-    local slot = tonumber(index)
-    if not slot then return end
-    local entry = captured[slot]
-    if not (entry and currentNodeID) then
-        Log.Debug("Flight", "taxi slot %s was not cached; this flight will not be measured", tostring(index))
-        return
-    end
-    -- The number of legs travels with the click. It is not part of the key and not part of the
-    -- store -- see the note on M.RouteKey -- but it is the one thing that says whether two samples
-    -- of one route measured one path, and a reader chasing a route whose median moved needs to be
-    -- able to see it. A chain of n slots is n-1 legs; nil when the polarity could not be settled.
-    local legs = entry.hops and (#entry.hops - 1) or nil
-    pending = { src = currentNodeID, dst = entry.nodeID, name = entry.name, at = now(), legs = legs }
+local function stopWaiting()
+    if waitTimer and listener.CancelTimer then listener:CancelTimer(waitTimer) end
+    waitTimer, waiting = nil, nil
 end
 
---- The takeoff edge. UnitOnTaxi is the authority; the event only says when.
---
--- The click is taken off the table first and whatever happens next, because a control loss the
--- player did not get from this click has already made the click stale: they were stunned, they
--- watched a cinematic, they stepped into a vehicle. Leaving it standing would hand it to the next
--- taxi they board instead. A click spent on a control loss that turns out not to be a taxi costs
--- one measurement; a click kept costs a wrong number on a route nobody flew.
-local function onControlLost()
-    local click = pending
-    pending = nil
-    if not Compat.UnitOnTaxi("player") then return end       -- a stun, a cinematic, a vehicle
+local function stopFlightTimer()
+    if flightTimer and listener.CancelTimer then listener:CancelTimer(flightTimer) end
+    flightTimer = nil
+end
 
-    -- A flight this module could not put a name to is still a flight, and the player is still in
-    -- the air watching it happen. The bar was hidden for all of them until a player reported
-    -- exactly that: every takeoff where the click was not seen -- a taxi from a quest script, a
-    -- flight master whose map C_TaxiMap could not read (see the header: both of those calls are
-    -- guarded and this client has no call site for either), a click older than CLICK_WINDOW --
-    -- drew nothing at all, which reads as a broken addon rather than as a route nobody knows.
-    --
-    -- So an unidentified flight is measured too, and the only thing it lacks is a name to file
-    -- the measurement under. `src` and `dst` are nil, which is what M.Record refuses on, so
-    -- nothing unidentified ever reaches the store; the stopwatch is real either way and the time
-    -- in the air is the one honest number such a flight has.
-    local usable = click ~= nil
-    if usable then
+local checkLanding
+
+local function startFlight(f)
+    stopWaiting()
+    flight = f
+    stopFlightTimer()
+    if listener.ScheduleRepeatingTimer then
+        flightTimer = listener:ScheduleRepeatingTimer(checkLanding, FLIGHT_POLL)
+    end
+    persist()
+    send("PQ_FLIGHT_STARTED", f.src, f.dst)
+end
+
+--- The takeoff: UnitOnTaxi has just turned true. `click` is what the player clicked, if anything
+-- still explains this taxi.
+local function takeOff(click)
+    if click then
         local waited = now() - (tonumber(click.at) or 0)
         if waited < 0 or waited > CLICK_WINDOW then
             Log.Debug("Flight", "a click %.0f s old is not this takeoff; timing it unnamed", waited)
-            usable = false
+            click = nil
         end
     end
-    if not usable then
-        flight = { src = nil, dst = nil, name = nil, legs = nil,
-                   startedAt = now(), discarded = false, identified = false }
+    local factor = M.SpeedFactor()
+    -- A flight this module could not put a name to is still a flight, and the player is still in
+    -- the air watching it happen: a taxi from a quest script, a flight master whose map C_TaxiMap
+    -- could not read, a click the takeoff came too late for. It is timed and drawn -- the time in
+    -- the air is the one honest number it has -- and `src` and `dst` stay nil, which is what
+    -- M.Record and the outbox refuse on, so nothing unnamed is ever filed.
+    if not (click and click.src and click.dst) then
+        startFlight({ startedAt = now(), takeoff = serverNow(), discarded = false, identified = false,
+                      speed = factor })
         Log.Debug("Flight", "measuring an unnamed flight; the bar shows the time in the air only")
-        local PQ = ns.PQ
-        if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", nil, nil) end
         return
     end
-    flight = { src = click.src, dst = click.dst, name = click.name, legs = click.legs,
-               startedAt = now(), discarded = false, identified = true }
-    local PQ = ns.PQ
-    if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_STARTED", flight.src, flight.dst) end
-    Log.Debug("Flight", "measuring %d-%d over %s legs", flight.src, flight.dst,
-        tostring(flight.legs or "an unread number of"))
+    local f = { src = click.src, dst = click.dst, name = click.name, legs = click.legs, hops = click.hops,
+                startedAt = now(), takeoff = serverNow(), money = click.money, cost = click.cost,
+                discarded = false, identified = true, speed = factor }
+    -- The fare: what left the purse between the click and now. PLAYER_MONEY may still be on its
+    -- way, and then it is read when it arrives (onMoney).
+    local current = money()
+    if f.money and current and current < f.money then f.paid = f.money - current end
+    startFlight(f)
+    Log.Debug("Flight", "measuring %d-%d over %s legs", f.src, f.dst, tostring(f.legs or "an unread number of"))
 end
 
---- The landing edge. Control can come back while the player is still on the taxi -- that is not a
--- landing, and closing the measurement there would record the wrong duration.
-local function onControlGained()
-    local f = flight
-    if not f then return end
-    if Compat.UnitOnTaxi("player") then return end
-    flight = nil
-    local PQ = ns.PQ
-    if PQ and PQ.SendMessage then PQ:SendMessage("PQ_FLIGHT_ENDED", f.src, f.dst) end
-    if not f.identified then
-        -- Timed, shown, and never filed: there is no route to file it under. See the takeoff.
-        Log.Debug("Flight", "an unnamed flight landed after %.0f s; nothing recorded",
-            now() - f.startedAt)
+--- Asks UnitOnTaxi whether the taxi has lifted off yet. Runs from the POLL timer while a click (or
+-- a reload) waits, and from every event that can mean a taxi.
+local function checkTakeoff()
+    if flight then
+        stopWaiting()
         return
+    end
+    local w = waiting
+    if onTaxi() then
+        if w and w.resume then
+            local record = w.resume
+            stopWaiting()
+            -- The same flight, picked up where the reload left it: elapsed time from the server's clock.
+            local elapsed = serverNow() - (tonumber(record.takeoff) or serverNow())
+            if elapsed < 0 then elapsed = 0 end
+            record.startedAt = now() - elapsed
+            record.discarded = record.discarded and true or false
+            record.identified = record.identified and true or false
+            startFlight(record)
+            Log.Debug("Flight", "a reload in the air; still measuring after %.0f s", elapsed)
+            return
+        end
+        takeOff(w and w.click)
+        return
+    end
+    if w and now() - w.at > CLICK_WINDOW then
+        if w.resume then
+            Log.Debug("Flight", "the flight interrupted by the reload ended before it; nothing recorded")
+            persist()
+        end
+        stopWaiting()
+    end
+end
+
+--- Starts (or restarts) the takeoff check for CLICK_WINDOW seconds.
+local function wait(entry)
+    stopWaiting()
+    waiting = entry
+    if listener.ScheduleRepeatingTimer then
+        waitTimer = listener:ScheduleRepeatingTimer(checkTakeoff, POLL)
+    end
+end
+
+--- The landing: UnitOnTaxi is false again. Control can come back while the player is still on the
+-- taxi -- that is not a landing, and closing the measurement there would record the wrong duration.
+local function land()
+    local f = flight
+    if not f then return nil end
+    stopFlightTimer()
+    flight = nil
+    persist()
+    send("PQ_FLIGHT_ENDED", f.src, f.dst)
+    local seconds = now() - (tonumber(f.startedAt) or now())
+    if not f.identified then
+        -- Timed, shown, and never filed: there is no route to file it under. See takeOff.
+        Log.Debug("Flight", "an unnamed flight landed after %.0f s; nothing recorded", seconds)
+        return nil
     end
     if f.discarded then
-        Log.Debug("Flight", "%d-%d landed early; nothing recorded", f.src, f.dst)
+        Log.Debug("Flight", "%d-%d ended somewhere else; nothing recorded", f.src, f.dst)
+        return nil
+    end
+    -- The leg count goes to the log as well as the outbox: two samples of one node-id pair flown
+    -- over different hop chains -- because the character has since found an intermediate flight
+    -- point -- go into one median in the local store, which has no field to tell them apart.
+    Log.Debug("Flight", "%d-%d landed after %s legs", f.src, f.dst, tostring(f.legs or "an unread number of"))
+    local count = M.Record(f.src, f.dst, seconds)
+    if count then addToOutbox(f, seconds, serverNow()) end
+    return count
+end
+
+checkLanding = function()
+    if flight and not onTaxi() then land() end
+end
+
+--- The hook on TakeTaxiNode. It looks nothing up in the client: the frame is closing and nothing
+-- promises the node list outlives it, so the only source is what TAXIMAP_OPENED cached -- the
+-- price included. The purse is read here, after the call: the fare is taken by the server, so it
+-- cannot have left it yet.
+local function onTakeTaxiNode(index)
+    if flight then return end
+    local slot = tonumber(index)
+    local entry = slot and captured[slot] or nil
+    local click = { at = now(), money = money() }
+    if entry and currentNodeID then
+        click.src, click.dst, click.name = currentNodeID, entry.nodeID, entry.name
+        click.hops, click.cost = entry.nodeHops, entry.cost
+        -- A chain of n slots is n-1 legs; nil when it could not be read.
+        click.legs = entry.hops and (#entry.hops - 1) or nil
+    else
+        Log.Debug("Flight", "taxi slot %s was not cached; this flight will not be filed", tostring(index))
+    end
+    wait({ at = click.at, click = click })
+    checkTakeoff()
+end
+
+--- Something that can mean a taxi: a control loss, a unit flag change. Never a flight by itself --
+-- UnitOnTaxi decides -- but a taxi nobody clicked for (a quest script) is only ever noticed here.
+local function onTaxiHint()
+    if flight then
+        checkLanding()
         return
     end
-    -- The leg count is logged and not stored. Two samples of one node-id pair flown over different
-    -- hop chains -- because the character has since found an intermediate flight point -- go into
-    -- one median, and the store has no field that would tell them apart. That is stated in
-    -- said plainly rather than papered over; this line is what a reader chasing a route whose median
-    -- moved has to go on.
-    Log.Debug("Flight", "%d-%d landed after %s legs", f.src, f.dst,
-        tostring(f.legs or "an unread number of"))
-    return M.Record(f.src, f.dst, now() - f.startedAt)
-end
-
---- A reload, a disconnect or a loading screen with a measurement open. The measurement lives in
--- memory only, so a session that ends in the air loses it by itself; this is the case where the
--- session survives and the flight did not, and the answer is the same -- drop it. A taxi that
--- somehow crossed a loading screen would be dropped here too, which is the conservative side: no
--- number at all beats a number that is missing the part before the screen.
-local function onEnteringWorld()
-    if flight then
-        Log.Debug("Flight", "loading screen with a flight open; nothing recorded")
+    if onTaxi() then
+        checkTakeoff()
+    elseif not waiting then
+        -- The flag can trail the control loss here too; give it the same window a click gets.
+        wait({ at = now() })
     end
-    flight, pending = nil, nil
 end
 
---- GetFlight() -> { src, dst, name, startedAt, elapsed, seconds, samples }|nil
+local function onUnitFlags(_, unit)
+    if unit == "player" then onTaxiHint() end
+end
+
+local function onControlGained()
+    if flight then checkLanding() end
+end
+
+--- PLAYER_MONEY: a fare that arrived after the takeoff was seen.
+local function onMoney()
+    local f = flight
+    if not (f and f.identified and f.paid == nil and f.money) then return end
+    if now() - (tonumber(f.startedAt) or 0) > FARE_WINDOW then return end
+    local current = money()
+    if current and current < f.money then
+        f.paid = f.money - current
+        persist()
+    end
+end
+
+--- A refusal from the server, worded as one of the client's taxi errors: the click will not fly.
+local TAXI_ERRORS = {
+    "ERR_TAXINOTENOUGHMONEY", "ERR_TAXIPLAYERBUSY", "ERR_TAXIPLAYERALREADYMOUNTED",
+    "ERR_TAXIPLAYERSHAPESHIFTED", "ERR_TAXIPLAYERMOVING", "ERR_TAXINOSUCHPATH", "ERR_TAXITOOFARAWAY",
+    "ERR_TAXIUNSPECIFIEDSERVERERROR", "ERR_TAXISAMENODE", "ERR_TAXINOTVISITED", "ERR_TAXINOVENDORNEARBY",
+    "ERR_TAXINOTSTANDING", "ERR_TAXINOPATHS",
+}
+local function isTaxiError(message)
+    if type(message) ~= "string" then return false end
+    for _, name in ipairs(TAXI_ERRORS) do
+        local text = _G[name]
+        if type(text) == "string" and text == message then return true end
+    end
+    return false
+end
+
+local function onErrorMessage(_, _, message)
+    if waiting and waiting.click and not flight and isTaxiError(message) then
+        Log.Debug("Flight", "the server refused the click: %s", message)
+        stopWaiting()
+    end
+end
+
+--- Something took the player off this flight before its destination: the route's time is not
+-- what this flight will measure.
+local function discard(why)
+    if flight and not flight.discarded then
+        flight.discarded = true
+        persist()
+        Log.Debug("Flight", "%s in the air; this flight will not be filed", why)
+    end
+end
+
+--- PLAYER_ENTERING_WORLD(isInitialLogin, isReloadingUi).
+local function onEnteringWorld(_, isInitialLogin, isReloadingUi)
+    if flight then
+        -- A loading screen in the air in this same session. A reload never gets here with the
+        -- flight in memory in the real client, but the measurement survives one either way. Any
+        -- other loading screen is a port, a summon or a teleport: not the route.
+        if not isReloadingUi then discard("a loading screen") end
+        checkLanding()
+        return
+    end
+    local char = charStore()
+    local record = char and char.flightInAir
+    if type(record) == "table" and isReloadingUi and not isInitialLogin then
+        local age = serverNow() - (tonumber(record.takeoff) or 0)
+        local gap = serverNow() - (tonumber(record.leftAt) or 0)
+        if age >= 0 and age <= MAX_FLIGHT and gap >= 0 and gap <= RELOAD_GAP then
+            -- Picked up by the takeoff check, which also covers a taxi flag that trails the reload.
+            wait({ at = now(), resume = record })
+            checkTakeoff()
+            return
+        end
+    end
+    if record ~= nil and char then
+        -- A login, not a reload (a disconnect in the air), or a record too old to be this flight:
+        -- the time spent away was not seen in the air. Nothing is filed.
+        char.flightInAir = nil
+    end
+    if onTaxi() then takeOff(nil) end
+end
+
+--- GetFlight() -> { src, dst, name, startedAt, elapsed, seconds, samples, discarded, identified }|nil
 -- What is being measured right now, with the route's own estimate beside it so a screen does not
 -- have to ask twice. `seconds` and `samples` are nil on a route nobody has flown, and UI/FlightBar
 -- .lua then shows elapsed time and no fraction.
@@ -722,13 +1157,33 @@ function M.GetFlight()
     return {
         src = flight.src, dst = flight.dst, name = flight.name,
         startedAt = flight.startedAt, elapsed = now() - flight.startedAt,
-        discarded = flight.discarded, seconds = seconds, samples = samples or 0,
+        discarded = flight.discarded, identified = flight.identified,
+        seconds = seconds, samples = samples or 0,
     }
 end
 
 --- IsMeasuring() -> true while a flight is being timed.
 function M.IsMeasuring()
     return flight ~= nil
+end
+
+--- IsWaiting() -> true while a click (or a reload) waits for UnitOnTaxi. The takeoff check runs
+-- only then.
+function M.IsWaiting()
+    return waiting ~= nil
+end
+
+--- Reset(): forget every measurement. `/pq reset` does not call this -- a measurement is data, not
+-- a window position -- but the tests and a future options button need one door to it. The upload
+-- outbox is left alone: what waits for the site is the player's data, not this store's.
+function M.Reset()
+    local routes = M.GetRoutes()
+    if routes then wipe(routes) end
+    forgetCapture()
+    stopWaiting()
+    stopFlightTimer()
+    flight = nil
+    persist()
 end
 
 ---------------------------------------------------------------------------
@@ -752,8 +1207,16 @@ local function hookTaxiGlobals()
     -- If it does not, an early landing is recorded as a normal flight of the wrong duration, which
     -- is why the type check below is the guard and not the citation.
     if type(_G.TaxiRequestEarlyLanding) == "function" then
-        hooksecurefunc("TaxiRequestEarlyLanding", function()
-            if flight then flight.discarded = true end
+        hooksecurefunc("TaxiRequestEarlyLanding", function() discard("an early landing") end)
+    end
+    -- A summon or a battleground port taken in the air ends the flight somewhere else. InFlight
+    -- watches the same two calls on this client for the same reason.
+    if type(_G.C_SummonInfo) == "table" and type(_G.C_SummonInfo.ConfirmSummon) == "function" then
+        hooksecurefunc(_G.C_SummonInfo, "ConfirmSummon", function() discard("a summon") end)
+    end
+    if type(_G.AcceptBattlefieldPort) == "function" then
+        hooksecurefunc("AcceptBattlefieldPort", function(_, accept)
+            if accept then discard("a battleground port") end
         end)
     end
 end
@@ -764,11 +1227,14 @@ function M.Enable()
 
     listener:RegisterEvent("TAXIMAP_OPENED", function(_, system)
         -- A map opening ends whatever the last flight master started: a click that never became a
-        -- flight, and a flight whose landing event never arrived. Neither can still be true. This
-        -- runs before the system id is looked at, because a map system this addon does not read is
+        -- flight, and a flight whose landing nobody saw. Neither can still be true. This runs
+        -- before the system id is looked at, because a map system this addon does not read is
         -- still a map system that replaced the one it did: returning with the last flight master's
         -- table standing would let the click hook key the next flight from it.
-        pending, flight = nil, nil
+        stopWaiting()
+        stopFlightTimer()
+        flight = nil
+        persist()
         -- Blizzard's own Mists UIParent compares this payload against Enum.UIMapSystem.Taxi before
         -- it shows the frame (Mists/UIParent.lua:1355-1359). A client that sends no system id at
         -- all is taken at its word: this event has no other sender.
@@ -787,15 +1253,26 @@ function M.Enable()
         M.Capture()
     end)
 
-    listener:RegisterEvent("PLAYER_CONTROL_LOST", onControlLost)
+    listener:RegisterEvent("PLAYER_CONTROL_LOST", onTaxiHint)
+    listener:RegisterEvent("UNIT_FLAGS", onUnitFlags)
     listener:RegisterEvent("PLAYER_CONTROL_GAINED", onControlGained)
+    listener:RegisterEvent("PLAYER_MONEY", onMoney)
+    listener:RegisterEvent("UI_ERROR_MESSAGE", onErrorMessage)
+    listener:RegisterEvent("LFG_PROPOSAL_SUCCEEDED", function() discard("a dungeon port") end)
     listener:RegisterEvent("PLAYER_ENTERING_WORLD", onEnteringWorld)
+    listener:RegisterEvent("PLAYER_LOGOUT", function()
+        local char = charStore()
+        if flight and char and type(char.flightInAir) == "table" then char.flightInAir.leftAt = serverNow() end
+    end)
 end
 
 --- Init(): the hook is tried here as well as in Enable, because Blizzard_UIPanels_Game is
 -- LoadFirst rather than load-on-demand (Blizzard_UIPanels_Game_Classic.toc:5) and its globals are
 -- therefore already in place -- but an addon that cannot hook is one that measures nothing, so it
--- gets two chances rather than one.
+-- gets two chances rather than one. The site's acknowledgement is applied here too, as soon as the
+-- saved variable exists, the way Sync/Community.lua applies the sessions' one.
 function M.Init()
     hookTaxiGlobals()
+    local ok, err = pcall(M.SyncFlightAck)
+    if not ok then Log.Warn("Flight", "the flight acknowledgement is unusable: %s", tostring(err)) end
 end
