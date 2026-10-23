@@ -764,7 +764,8 @@ end
 
 local function sharingAllowed()
     local Telemetry = ns.Telemetry
-    if Telemetry and type(Telemetry.IsEnabled) == "function" then return Telemetry.IsEnabled() and true or false end
+    -- IsRecording, not IsEnabled: IsEnabled is AceAddon's on every module (Sync/Telemetry.lua).
+    if Telemetry and type(Telemetry.IsRecording) == "function" then return Telemetry.IsRecording() and true or false end
     local PQ = ns.PQ
     local global = PQ and PQ.db and PQ.db.global
     local telemetry = global and global.telemetry
