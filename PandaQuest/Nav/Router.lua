@@ -14,23 +14,14 @@
 -- re-planned only when the identity of the nearest target changes, exactly like pfQuest.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Router")   -- an AceAddon module (Core/Const.lua)
 ns.Router = M
 
 local Util, Log = ns.Util, ns.Log
 
--- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
--- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
--- handler another module installed for the same message, so every module listens through its own
--- embedded object instead.
-local listener = {}
-M.listener = listener
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local type, tonumber, tostring, pairs = type, tonumber, tostring, pairs
 local abs, huge, max, pi = math.abs, math.huge, math.max, math.pi
@@ -530,22 +521,16 @@ local function onTargetsUpdated()
     M.Update(true)
 end
 
-function M.Init()
+function M.OnInitialize()
     local db = charDB()
     manualKey = db and db.manualTargetKey or nil
 end
 
-function M.Enable()
-    if listener.RegisterMessage then
-        listener:RegisterMessage("PQ_TARGETS_UPDATED", onTargetsUpdated)
-    end
-    if listener.RegisterEvent then
-        listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Update(true) end)
-        listener:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() M.Update(true) end)
-    end
-    if listener.ScheduleRepeatingTimer and not ticker then
-        ticker = listener:ScheduleRepeatingTimer(M.Update, TICK)
-    end
+function M.OnEnable()
+    M:RegisterMessage("PQ_TARGETS_UPDATED", onTargetsUpdated)
+    M:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Update(true) end)
+    M:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() M.Update(true) end)
+    ticker = M:ScheduleRepeatingTimer(M.Update, TICK)
 end
 
 function M.OnProfileChanged()
