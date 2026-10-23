@@ -4,6 +4,166 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.243] - 2026-10-23
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,616 quests, 56 NPCs, 4 objects
+- database - flight times: 0 measured, 1,632 estimated
+- quest 188 - Tiger Mastery - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 8281 - Stepping Up Security - updated
+  - description added
+- quest 8282 - Noggle's Lost Satchel - updated
+  - description added
+  - reward choices: +2
+- quest 8321 - Vyral the Vile - updated
+  - description added
+  - reward choices: +2
+- quest 9705 - Package Recovery - updated
+  - description added
+- quest 9867 - Murkblood Leaders... - updated
+  - description added
+  - reward choices: +3
+- quest 10004 - Patience and Understanding - updated
+  - description added
+- quest 10069 - Ways of the Light - updated
+  - description added
+- quest 10461 - Restorer's Pledge - updated
+  - reward items: +1
+- quest 10468 - Sage's Oath - updated
+  - description added
+  - reward items: +1
+- quest 10653 - Marks of Sargeras - updated
+  - description added
+- quest 10656 - Sunfury Signets - updated
+  - description added
+- quest 10948 - The Hostage Soul - updated
+  - description added
+- quest 11999 - Rifle the Bodies - updated
+  - description added
+- quest 12219 - The Failed World Tree - updated
+  - description added
+  - reward choices: +4
+- quest 12514 - Mushroom Mixer - updated
+  - description added
+- quest 12553 - Skimmer Spinnerets - updated
+  - description added
+- quest 12637 - Near Miss - updated
+  - description added
+- quest 12661 - Infiltrating Voltarus - updated
+  - description added
+  - reward choices: +5
+- quest 12665 - I Sense a Disturbance - updated
+  - description added
+- quest 12686 - Zero Tolerance - updated
+  - description added
+- quest 12690 - Fuel for the Fire - updated
+  - description added
+- quest 12697 - Gothik the Harvester - updated
+  - description added
+- quest 12718 - More Skulls For Brew - updated
+  - reward items: +1
+- quest 12919 - The Storm King's Vengeance - updated
+  - description added
+  - reward items: +1
+  - reward choices: +5
+- quest 13177 - No Mercy for the Merciless - updated
+  - quest giver added: Commander Zanneth
+  - description added
+- quest 13180 - Slay them all! - updated
+  - description added
+- quest 13186 - Stop the Siege - updated
+  - description added
+- quest 13198 - Warding the Warriors - updated
+  - description added
+- quest 13207 - Halls of Stone - updated
+  - description added
+  - reward choices: +4
+- quest 13632 - Rear Guard Duty - updated
+  - description added
+- quest 13683 - Stopping the Rituals - updated
+  - description added
+- quest 13778 - A Blade Fit For A Champion - updated
+  - description added
+  - reward items: +1
+- quest 13795 - The Scourgebane - updated
+  - description added
+- quest 13798 - Rain of Destruction - updated
+  - description added
+- quest 13866 - To The Ramparts! - updated
+  - description added
+- quest 14134 - The Captain's Logs - updated
+  - description added
+- quest 14141 - Gormok Wants His Snobolds - updated
+  - description added
+- quest 14329 - Not So Fast! - updated
+  - description added
+- quest 14422 - Raptor Raptor Rocket - updated
+  - description added
+- quest 14445 - Farewell, For Now - updated
+  - description added
+- quest 14473 - It's Our Problem Now - updated
+  - description added
+- quest 24430 - Blacken the Skies - updated
+  - description added
+- quest 24501 - Queen-Sized Troubles - updated
+  - description added
+- quest 24528 - The Power of the Light - updated
+  - description added
+- quest 26255 - Return to the Temple of Earth - updated
+  - description added
+  - reward money added (6g 20s)
+- quest 26594 - Return to MacKinley - updated
+  - description added
+- quest 27677 - Archaedas, The Ancient Stone Watcher - updated
+  - description added
+  - reward money added (2g)
+- quest 27681 - Behind Closed Doors - updated
+  - description added
+- quest 28152 - Jaedenar Awaits - updated
+  - description added
+- quest 28301 - Meet with Kardris Dreamseeker - updated
+  - description added
+- quest 28373 - Timbermaw Hold - updated
+  - description added
+- quest 29408 - The Lesson of the Burning Scroll - updated
+  - description added
+- quest 31000 - Dread Space - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32309 - A Tale of Six Masters - updated
+  - quest giver added: Zevrost
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 32310 - A Tale of Six Masters - updated
+  - quest giver added: Sandahl
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 32324 - Seek the Signal - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32376 - To the Valley! - updated
+  - description added
+- quest 32527 - Grave Circumstances - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32706 - Allies in the Shadows - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32872 - Battlefield: Barrens - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 91711 - A Celestial Challenge: Xin the Weaponmaster - updated
+  - description added
+  - reward money added (45g 60s)
+  - XP added (471,000)
+
 ## [0.2.242] - 2026-10-23
 
 ### Fixed
@@ -1583,279 +1743,6 @@ Data from the PandaQuest portal.
   - coordinates: 29 spawn points added in The Jade Forest
 - object 214863 - Hatchling Poop - updated
   - coordinates: 24 spawn points added in The Jade Forest
-
-## [0.2.227] - 2026-10-23
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,216 quests, 48 NPCs, 2 objects
-- quest 5892 - Irondeep Supplies - updated
-  - description added
-- quest 8764 - The Changing of Paths - Protector No More - updated
-  - reward choices: +2
-- quest 9280 - Replenishing the Healing Crystals - updated
-  - description added
-  - reward choices: +3
-- quest 10704 - How to Break Into the Arcatraz - updated
-  - description added
-  - reward items: +1
-  - reward choices: +5
-- quest 10735 - Down the Violet Path - updated
-  - description added
-  - reward items: +1
-- quest 11212 - Tabetha's Farm - updated
-  - description added
-- quest 24471 - Aid for the Wounded - updated
-  - description added
-- quest 24475 - All the Other Stuff - updated
-  - description added
-- quest 28121 - Forces of Jaedenar - updated
-  - description added
-- quest 28609 - Hammer Time - updated
-  - description added
-- quest 31542 - Incarnadine Ink - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (236,000)
-  - reward items: +1
-- quest 31543 - Portrait of a Lady - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (236,000)
-  - reward items: +1
-- quest 31544 - A Tribute to the Dead - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (236,000)
-  - reward items: +1
-- quest 31545 - The Finer Things - updated
-  - description added
-- quest 31548 - Learning the Ropes - updated
-  - description added
-  - reward money added (90s)
-- quest 31549 - On The Mend - updated
-  - description added
-  - reward money added (4g 10s)
-- quest 31550 - Got one! - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31551 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31552 - Learning the Ropes - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31553 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31555 - Got one! - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31556 - Learning the Ropes - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31557 - The Finer Things - updated
-  - description added
-- quest 31558 - The Finer Things - updated
-  - description added
-- quest 31559 - The Finer Things - updated
-  - description added
-- quest 31560 - The Finer Things - updated
-  - description added
-- quest 31561 - The Finer Things - updated
-  - description added
-- quest 31562 - The Finer Things - updated
-  - description added
-- quest 31563 - The Finer Things - updated
-  - description added
-- quest 31564 - The Finer Things - updated
-  - description added
-- quest 31565 - The Finer Things - updated
-  - description added
-- quest 31566 - The Finer Things - updated
-  - description added
-- quest 31567 - The Finer Things - updated
-  - description added
-- quest 31568 - On The Mend - updated
-  - description added
-  - reward money added (90s)
-- quest 31569 - Got one! - updated
-  - description added
-  - reward money added (90s)
-- quest 31570 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31571 - Learning the Ropes - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31572 - On The Mend - updated
-  - description added
-  - reward money added (90s)
-- quest 31573 - Learning the Ropes - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31574 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31575 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31576 - Learning the Ropes - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31577 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31578 - Got one! - updated
-  - description added
-  - reward money added (9g)
-- quest 31579 - Learning the Ropes - updated
-  - description added
-  - reward money added (90s)
-- quest 31580 - On The Mend - updated
-  - description added
-  - reward money added (90s)
-- quest 31581 - Got one! - updated
-  - description added
-  - reward money added (90s)
-- quest 31582 - Learning the Ropes - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31583 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31584 - Got one! - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31588 - Learning the Ropes - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31589 - On The Mend - updated
-  - description added
-  - reward money added (65s)
-- quest 31590 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31591 - Learning the Ropes - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31592 - On The Mend - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31593 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31598 - Kypa'rak's Core - updated
-  - description added
-  - reward money added (22g 80s)
-- quest 31599 - The Matriarch's Maw - updated
-  - description added
-  - reward money added (22g 80s)
-- quest 31603 - Seeds of Fear - updated
-  - reward money added (1g 14s)
-- quest 31605 - The Zan'thik Dig - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31606 - The Dissector Wakens - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward choices: +9
-- quest 31609 - The Wrath of Shek'zeer - updated
-  - description added
-  - reward money added (22g 80s)
-- quest 31611 - The Kun-Lai Kicker - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 31612 - Shadow of the Empire - updated
-  - description added
-  - reward money added (22g 80s)
-  - reward choices: +5
-- quest 31614 - LFGDungeons - Mists - Heroic Random - 1st - updated
-  - reward money added (22g 80s)
-  - XP added (294,000)
-- quest 31615 - LFGDungeons - Mists - Heroic Random - Nth - updated
-  - reward money added (22g 80s)
-  - XP added (294,000)
-- quest 31616 - LFGDungeons - Mists - Scenario - Normal Random - 1st - updated
-  - reward money added (11g 40s)
-  - XP added (236,000)
-- quest 31617 - LFGDungeons - Mists - Scenario - Normal Random - Nth - updated
-  - reward money added (11g 40s)
-  - XP added (236,000)
-- quest 31618 - LFGDungeons - Mists - Normal Random - 1st - updated
-  - reward money added (11g 40s)
-  - XP added (236,000)
-- quest 31619 - LFGDungeons - Mists - Normal Random - Nth - updated
-  - reward money added (11g 40s)
-  - XP added (236,000)
-- quest 31620 - Stormstout Brewery Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31621 - Stormstout Brewery Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31622 - Stormstout Brewery Challenge Mode - Silver Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31623 - Stormstout Brewery Challenge Mode - Gold Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31624 - Gate of the Setting Sun Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31625 - Shado-Pan Monastery Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31626 - Siege of Niuzao Temple Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31627 - Mogu'shan Palace Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31628 - Scholomance Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31629 - Scarlet Monastery Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31630 - Scarlet Halls Challenge Mode - Consolation (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31631 - Gate of the Setting Sun Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31632 - Shado-Pan Monastery Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31633 - Siege of Niuzao Temple Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31634 - Mogu'shan Palace Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31635 - Scholomance Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31636 - Scarlet Halls Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31637 - Scarlet Monastery Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 31638 - Gate of the Setting Sun Challenge Mode - Silver Addition (Nth) - updated
-  - reward money added (11g 40s)
-  - XP added (177,000)
-- quest 32627 - Charged Moganite - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 33027 - The Secret Ingredient Is... - updated
-  - description added
-  - reward money added (22g 80s)
-- quest 33230 - A Flash of Bronze... - updated
-  - description added
-  - reward money added (2g 85s)
-- quest 33338 - Empowering the Hourglass - updated
-  - description added
 
 ## [0.2.226] - 2026-10-23
 
