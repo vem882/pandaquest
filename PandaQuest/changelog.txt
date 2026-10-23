@@ -4,6 +4,75 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.238
+- database - Wowhead data as the PandaQuest portal read it: 8,588 quests, 56 NPCs, 4 objects
+- quest 7491 - For All To See - updated
+  - description added
+  - reward choices: +3
+- quest 9158 - Bearers of the Plague - updated
+  - description added
+- quest 9309 - The Missing Scout - updated
+  - description added
+- quest 9358 - Ranger Sareyn - updated
+  - description added
+- quest 9455 - Strange Findings - updated
+  - description added
+- quest 9648 - Maatparm Mushroom Menagerie - updated
+  - description added
+  - reward choices: +3
+- quest 10073 - Corruption - updated
+  - description added
+- quest 10408 - Nexus-King Salhadaar - updated
+  - description added
+  - reward choices: +5
+- quest 10947 - An Artifact From the Past - updated
+  - description added
+- quest 12107 - The End of the Line - updated
+  - description added
+  - reward items: +1
+  - reward choices: +5
+- quest 12225 - Mmm... Amberseeds! - updated
+  - description added
+- quest 12226 - Just Passing Through - updated
+  - description added
+- quest 24458 - A Hello to Arms - updated
+  - description added
+- quest 24504 - Clear the High Road - updated
+  - description added
+- quest 24807 - Winnoa Pineforest - updated
+  - description added
+- quest 26046 - Between a Rock and a Hard Place - updated
+  - description added
+- quest 26255 - Return to the Temple of Earth - updated
+  - description removed
+  - reward money removed (6g 20s)
+- quest 26325 - A Nose for This Sort of Thing - updated
+  - description added
+- quest 27677 - Archaedas, The Ancient Stone Watcher - updated
+  - description removed
+  - reward money removed (2g)
+- quest 31000 - Dread Space - updated
+  - description removed
+  - reward money removed (1g 14s)
+- quest 32192 - Bloodlines - updated
+  - description added
+  - reward money added (8g 60s)
+- quest 32199 - Krasarang Steampot - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32419 - Nowhere to Hide - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 32807 - The Warchief and the Darkness - updated
+  - description added
+  - reward money added (45g 60s)
+  - reward choices: +1
+- quest 33334 - Strong Enough To Survive - updated
+  - description added
+  - reward money added (22g 80s)
+- npc 4949 - Thrall - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+
 0.2.237
 - database - Wowhead data as the PandaQuest portal read it: 8,579 quests, 55 NPCs, 4 objects
 - quest 2754 - Horns of Frenzy - updated
