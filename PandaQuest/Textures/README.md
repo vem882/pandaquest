@@ -137,3 +137,9 @@ Notes for users of the textures:
   keeps them readable when scaled down.
 - `Icons/route.tga` (8x8 dot) is suitable for drawing route lines with many small textures.
 - `Icons/tracker_*.tga` are plain UI button glyphs for the tracker/options frames.
+
+## The window's logo
+
+`logo_round.tga` (128x128, same format) is the round logo over the top left corner of PandaQuest's
+window (UI/MainWindow.lua). It is not drawn by the script above: `assets/logo/make_round_logo.py` in
+the repository renders the portal's logo (`assets/logo/panda-quest.svg`) into a disc with a gold ring.

@@ -92,12 +92,15 @@ Nodes\Professions.lua
 Flight\Routes.lua
 Flight\Tooltip.lua
 UI\Motion.lua
+UI\ReleaseNotes.lua
 UI\Options.lua
 UI\MinimapButton.lua
 UI\FlightBar.lua
 UI\Wowhead.lua
 UI\Tracker.lua
 UI\QuestBrowser.lua
+UI\OptionsRenderer.lua
+UI\MainWindow.lua
 UI\Notify.lua
 UI\DigSiteBar.lua
 Auction\Store.lua

@@ -1285,11 +1285,13 @@ end
 
 function M.GetRowMenu() return rowMenu end
 
---- OpenSettings(): every PandaQuest setting, from the gear in the header.
+--- OpenSettings(): every PandaQuest setting, from the gear in the header: the window's Options tab.
 function M.OpenSettings()
+    local Window = ns.MainWindow
+    if Window and Window.Open and Window.Open("options") then return true end
     local Options = ns.Options
     if Options and Options.OpenDialog then return Options.OpenDialog() end
-    if Options and Options.Open then return Options.Open() end
+    if Options and Options.OpenPanel then return Options.OpenPanel() end
     return false
 end
 
@@ -1739,20 +1741,28 @@ local function build()
     gold:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -26)
     gold:SetHeight(1)
     widgets.goldLine = gold
-    local toolbar = newBar(frame, "BORDER", TOOLBAR_BG)
+    -- Everything below the header is the Quests page: UI/MainWindow.lua shows another page in its place
+    -- when another tab is chosen. It covers the whole frame, so the panels keep their positions.
+    local page = CreateFrame("Frame", nil, frame)
+    page:SetAllPoints(frame)
+    widgets.page = page
+
+    local toolbar = newBar(page, "BORDER", TOOLBAR_BG)
     toolbar:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -27)
     toolbar:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -27)
     toolbar:SetHeight(46)
-    local toolbarLine = newBar(frame, "BORDER", EDGE, 0.6)
+    local toolbarLine = newBar(page, "BORDER", EDGE, 0.6)
     toolbarLine:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -73)
     toolbarLine:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -73)
     toolbarLine:SetHeight(1)
 
-    local title = newText(frame, "GameFontNormal", "TOPLEFT", 12, -6, 400, 16, "LEFT", GOLD)
+    local title = newText(frame, "GameFontNormal", "TOPLEFT", 12, -6, 220, 16, "LEFT", GOLD)
     title:SetText("PandaQuest - " .. L["Quests"])
+    widgets.title = title
 
     local close = newButton(frame, "X", 22, 18, function() M.Hide() end)
     close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -4)
+    widgets.close = close
 
     -- The gear: every setting PandaQuest has. /pq opens this window, so this is the way in.
     local settings = newButton(frame, L["Settings"], 96, 18, function() M.OpenSettings() end)
@@ -1776,10 +1786,10 @@ local function build()
     settings:HookScript("OnLeave", function(self) dropTooltip(self) end)
     widgets.settings = settings
 
-    buildFilters(frame)
-    buildTree(frame)
-    buildList(frame)
-    buildDetail(frame)
+    buildFilters(page)
+    buildTree(page)
+    buildList(page)
+    buildDetail(page)
 
     frame:SetScript("OnShow", function()
         local Catalog = catalog()
@@ -1801,6 +1811,9 @@ local function build()
     end
     built = true
     M.frame = frame
+    -- The window around the browser: logo, tabs, resizing, the remembered place (UI/MainWindow.lua).
+    local Window = ns.MainWindow
+    if Window and Window.Decorate then Window.Decorate(frame, widgets) end
     return frame
 end
 
@@ -1823,7 +1836,8 @@ function M.GetWidgets() return widgets end
 --- PulseCount() -> how many map pins are breathing right now (for tests).
 function M.PulseCount() return #pulsing end
 
-function M.Show()
+--- ShowWindow() -> bool: PandaQuest's window, on whichever tab it was on.
+function M.ShowWindow()
     local f = build()
     if not f then return false end
     local Catalog = catalog()
@@ -1833,6 +1847,14 @@ function M.Show()
         results = {}
         if refreshList then refreshList() end
     end
+    return true
+end
+
+--- Show() -> bool: the window on its Quests tab.
+function M.Show()
+    if not M.ShowWindow() then return false end
+    local Window = ns.MainWindow
+    if Window and Window.SelectTab then Window.SelectTab("quests") end
     return true
 end
 
