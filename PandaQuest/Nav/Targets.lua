@@ -11,23 +11,14 @@
 local _, ns = ...
 local L = ns.L
 
-local M = {}
+local M = ns.PQ:GetModule("Targets")   -- an AceAddon module (Core/Const.lua)
 ns.Targets = M
 
 local Const, Log, Thread = ns.Const, ns.Log, ns.Thread
 
--- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
--- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
--- handler another module installed for the same message, so every module listens through its own
--- embedded object instead.
-local listener = {}
-M.listener = listener
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local type, pairs, tonumber, tostring, pcall = type, pairs, tonumber, tostring, pcall
 local abs, huge, floor = math.abs, math.huge, math.floor
@@ -384,13 +375,8 @@ end
 --- Coalesces a burst of messages into one rebuild REBUILD_DELAY seconds later.
 function M.RequestRebuild(reason)
     pendingReason = reason or pendingReason
-    if not listener.ScheduleTimer then
-        M.Rebuild(pendingReason)
-        pendingReason = nil
-        return
-    end
     if rebuildTimer then return end
-    rebuildTimer = listener:ScheduleTimer(function()
+    rebuildTimer = M:ScheduleTimer(function()
         rebuildTimer = nil
         local why = pendingReason
         pendingReason = nil
@@ -478,16 +464,15 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     local db = charDB()
     if db and type(db.customTargets) ~= "table" then db.customTargets = {} end
 end
 
-function M.Enable()
-    if not listener.RegisterMessage then return end
-    listener:RegisterMessage("PQ_QUESTLOG_CHANGED", function() M.RequestRebuild("questlog") end)
-    listener:RegisterMessage("PQ_AVAILABLE_UPDATED", function() M.RequestRebuild("available") end)
-    listener:RegisterMessage("PQ_PLAYER_ZONE_CHANGED", function() M.RequestRebuild("zone") end)
+function M.OnEnable()
+    M:RegisterMessage("PQ_QUESTLOG_CHANGED", function() M.RequestRebuild("questlog") end)
+    M:RegisterMessage("PQ_AVAILABLE_UPDATED", function() M.RequestRebuild("available") end)
+    M:RegisterMessage("PQ_PLAYER_ZONE_CHANGED", function() M.RequestRebuild("zone") end)
 end
 
 function M.OnDataReady()
