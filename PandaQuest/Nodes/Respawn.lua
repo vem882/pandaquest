@@ -55,7 +55,7 @@
 --     confirmed in _reference/misc/WoW-API/WoW-API/Data/Wiki.lua).
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Respawn")   -- an AceAddon module (Core/Const.lua)
 ns.Respawn = M
 
 local Util, Log = ns.Util, ns.Log
@@ -99,15 +99,9 @@ local MIN_OWN_OBSERVATIONS = 2
 
 local KINDS = { npc = true, object = true }
 
--- Own AceEvent object: AceEvent keys its registry by target, so registering
--- PLAYER_TARGET_CHANGED on ns.PQ would collide with whichever other module wants it
--- (see the same note in Sync/Telemetry.lua and Quest/Player.lua).
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 ---------------------------------------------------------------------------
 -- State
@@ -378,6 +372,7 @@ end
 -- Four Winds -- a live mob drawn faint with an invented timer.
 function M.GetRemaining(kind, id, spawnKey)
     if not (validKind(kind) and validId(id)) then return nil end
+    if not ns.IsModuleWanted("Respawn") then return nil end     -- switched off: no countdowns
     local list = tracked[kind][id]
     if not list or #list == 0 then return nil end
 
@@ -439,6 +434,7 @@ end
 -- "This died / was gathered here, now." Starts the countdown and opens an interval.
 function M.NoteDeath(kind, id, uiMapID, x, y)
     if not (validKind(kind) and validId(id)) then return nil end
+    if not ns.IsModuleWanted("Respawn") then return nil end     -- switched off: nothing is timed
     if type(x) ~= "number" or type(y) ~= "number" then return nil end
     local list = listFor(kind, id, true)
     if not list then return nil end
@@ -683,28 +679,36 @@ M.SeenUnit = seenUnit
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
-
+function M.OnEnable()
     if CreateFrame then
         -- A bare frame rather than an AceEvent registration, because RegisterUnitEvent is a frame
         -- method: it asks the *client* to filter UNIT_HEALTH down to the two units the player can
         -- be fighting, so the handler is never called for the other forty in the camp. AceEvent
-        -- has no equivalent and would deliver every one of them.
-        unitFrame = CreateFrame("Frame")
-        unitFrame:SetScript("OnEvent", onUnitHealth)
+        -- has no equivalent and would deliver every one of them. One frame for the session; a
+        -- module switched off and on again re-registers on it (OnDisable unregisters it).
+        if not unitFrame then
+            unitFrame = CreateFrame("Frame")
+            unitFrame:SetScript("OnEvent", onUnitHealth)
+        end
         if unitFrame.RegisterUnitEvent then
             unitFrame:RegisterUnitEvent("UNIT_HEALTH", "target", "mouseover")
         end
     end
 
-    listener:RegisterEvent("NAME_PLATE_UNIT_ADDED", onNameplateAdded)
-    listener:RegisterEvent("UPDATE_MOUSEOVER_UNIT", onMouseover)
-    listener:RegisterEvent("PLAYER_TARGET_CHANGED", onTargetChanged)
-    listener:RegisterEvent("LOOT_OPENED", onLootOpened)
-    listener:RegisterEvent("LOOT_CLOSED", onLootClosed)
+    M:RegisterEvent("NAME_PLATE_UNIT_ADDED", onNameplateAdded)
+    M:RegisterEvent("UPDATE_MOUSEOVER_UNIT", onMouseover)
+    M:RegisterEvent("PLAYER_TARGET_CHANGED", onTargetChanged)
+    M:RegisterEvent("LOOT_OPENED", onLootOpened)
+    M:RegisterEvent("LOOT_CLOSED", onLootClosed)
 
     Log.Debug("Respawn", "watching for deaths and returns")
+end
+
+--- Switched off in Options > Modules: AceEvent dropped the nameplate, target and loot events; the
+-- unit frame is the one registration it does not own.
+function M.OnDisable()
+    if unitFrame then unitFrame:UnregisterAllEvents() end
+    wipe(pendingLoot)
 end
 
 function M.OnProfileChanged()
