@@ -62,7 +62,7 @@ local L = ns.L
 
 local Log = ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("DigSiteBar")   -- an AceAddon module (Core/Const.lua)
 ns.DigSiteBar = M
 
 local type, tonumber, pcall, format = type, tonumber, pcall, string.format
@@ -463,7 +463,9 @@ end
 -- turned that off contradicts the switch in its own words.
 function M.WhyNoPreview()
     if stoodDown then return L["This client draws its own dig site progress bar."] end
-    if settings().digSiteBar == false then return L["The dig site bar is switched off in /pq options."] end
+    if settings().digSiteBar == false or not ns.IsModuleWanted("DigSiteBar") then
+        return L["The dig site bar is switched off in /pq options."]
+    end
     return nil
 end
 
@@ -510,7 +512,7 @@ end
 -- have to stay in step: a bar that draws itself on a survey but refuses to preview, or the other
 -- way round, is the switch meaning two different things.
 local function enabled()
-    return settings().digSiteBar ~= false and not stoodDown
+    return settings().digSiteBar ~= false and not stoodDown and ns.IsModuleWanted("DigSiteBar")
 end
 
 --- OnSurveyCast(numFindsCompleted, totalFinds, researchBranchID [, successfulFind])
@@ -594,28 +596,30 @@ function M.OnProfileChanged()
     M.Refresh()
 end
 
+--- Switched off in Options > Modules: the three archaeology events are gone (AceEvent); the bar goes.
+function M.OnDisable()
+    M.Hide()
+end
+
 ---------------------------------------------------------------------------
 -- Module lifecycle
 ---------------------------------------------------------------------------
 
-function M.Enable()
+function M.OnEnable()
     if M.BlizzardHasOne() then
         -- Said once, at level Info, and then never again: this is a client that does not need us.
         stoodDown = true
         Log.Info("DigSiteBar", "the client has its own dig site progress bar; PandaQuest draws none")
         return
     end
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
-    -- All three stay registered for the life of the session; see the header for why this does not
+    -- All three stay registered while the module is on; see the header for why this does not
     -- follow Blizzard's show/hide registration swap.
     M:RegisterEvent("ARCHAEOLOGY_SURVEY_CAST", function(_, ...) M.OnSurveyCast(...) end)
     M:RegisterEvent("ARCHAEOLOGY_FIND_COMPLETE", function(_, ...) M.OnFindComplete(...) end)
     M:RegisterEvent("ARTIFACT_DIGSITE_COMPLETE", function(_, ...) M.OnDigsiteComplete(...) end)
 end
 
-function M.Init()
+function M.OnInitialize()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
     -- `/pq digsite` -- show the bar where it is so it can be dragged, or say why there is none.
