@@ -118,7 +118,48 @@ function PQ:OnInitialize()
     Log.Debug("Init", "OnInitialize (version %s)", Const.VERSION)
 end
 
+--- ns.CheckLoadedFiles() -> { name, ... } of the files this session did not load, and says so once.
+-- The game reads an addon's TOC when it starts, not on /reload. Updated while it runs, the addon's
+-- existing files reload in their new version and the files the update ADDED do not load at all, with
+-- no error anywhere: 0.2.236 added Flight/Eta.lua, Database/Overrides/Flights.lua and
+-- Quest/QuestMobs.lua, and after a /reload the flight bar showed only the time in the air and no quest
+-- mob was marked. A module whose file did not run still has exactly the keys Core/Const.lua gave it;
+-- the other files are known by the table they put on ns.
+local staleWarned = false
+function ns.CheckLoadedFiles()
+    local missing = {}
+    for _, name in ipairs(ns.MODULE_ORDER or {}) do
+        local module, bare = PQ:GetModule(name, true), ns.BARE_MODULES and ns.BARE_MODULES[name]
+        if module and bare and rawequal(ns[name], module) then
+            local touched = false
+            for key in pairs(module) do
+                -- AceAddon's own initialization writes baseName; everything else is the file's.
+                if not bare[key] and key ~= "baseName" then touched = true break end
+            end
+            if not touched then missing[#missing + 1] = name end
+        end
+    end
+    for _, name in ipairs(ns.FILE_TABLES or {}) do
+        if type(ns[name]) ~= "table" then missing[#missing + 1] = name end
+    end
+    local overrides = type(ns.Overrides) == "table" and ns.Overrides or {}
+    local game = ns.Game and ns.Game.id
+    if game == nil or (ns.Game and game == ns.Game.UNKNOWN) then game = "mop" end
+    for _, name in ipairs((ns.OVERRIDE_FILES or {})[game] or {}) do
+        if overrides[name] == nil then missing[#missing + 1] = "Overrides." .. name end
+    end
+    if #missing > 0 and not staleWarned then
+        staleWarned = true
+        local text = L["PandaQuest was updated while the game was running, and the game still uses the old "
+            .. "file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."]
+        Log.Print(text, table.concat(missing, ", "))
+    end
+    return missing
+end
+
 function PQ:OnEnable()
+    local okFiles, errFiles = pcall(ns.CheckLoadedFiles)
+    if not okFiles then Log.Error("Init", "CheckLoadedFiles failed: %s", tostring(errFiles)) end
     ns.ApplyModuleStates()
 
     self:RegisterMessage("PQ_DB_READY", function()

@@ -4,6 +4,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.242
+- core - new files of an update made while the game ran did not load: PandaQuest now says to restart
+  - after 0.2.236 that hid the flight times and the quest mob marks; /reload is not enough
+- quest mobs - kill-credit objectives mark their own group, not another creature of the quest twice
+- quest mobs - talk-to NPCs, turn-in NPCs (?) and givers with a quest for you (!) are marked too
+  - each with its own switch; the kill mark is now the kill pin by default
+
 0.2.241
 - games - PandaQuest runs in Classic Era, TBC Anniversary and WoW Forever, beside MoP Classic
   - one download: each game's TOC loads only its own quest database
