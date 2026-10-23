@@ -8,7 +8,7 @@ local L = ns.L
 
 local Const, Log = ns.Const, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Options")   -- an AceAddon module (Core/Const.lua)
 ns.Options = M
 
 local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format
@@ -669,7 +669,7 @@ end
 -- Registration and opening
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     local AceConfig = LibStub and LibStub("AceConfig-3.0", true)
     if not AceConfig then
         Log.Warn("Options", "AceConfig-3.0 is missing; /pq falls back to chat commands")
@@ -684,7 +684,7 @@ function M.Init()
     registered = true
 end
 
-function M.Enable()
+function M.OnEnable()
     if not registered or blizFrame then return end
     local AceConfigDialog = LibStub and LibStub("AceConfigDialog-3.0", true)
     -- InterfaceOptions_AddCategory does not exist on 5.5.4; AceConfigDialog uses the Settings API.
