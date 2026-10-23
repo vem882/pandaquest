@@ -27,23 +27,14 @@
 local _, ns = ...
 local L = ns.L
 
-local M = {}
+local M = ns.PQ:GetModule("Arrow")   -- an AceAddon module (Core/Const.lua)
 ns.Arrow = M
 
 local Const, Util, Log, Compat = ns.Const, ns.Util, ns.Log, ns.Compat
 
--- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
--- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
--- handler another module installed for the same message, so every module listens through its own
--- embedded object instead.
-local listener = {}
-M.listener = listener
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local tonumber, tostring = tonumber, tostring
 local abs, floor, cos, pi = math.abs, math.floor, math.cos, math.pi
@@ -218,7 +209,7 @@ end
 
 local function shouldHide()
     local p = arrowProfile()
-    if not p.enabled then return true end
+    if not p.enabled or not M:IsEnabled() then return true end
     if Compat.IsInPetBattle() then return true end
     if Compat.UnitOnTaxi("player") then return true end
     if p.autoHideInInstance and ns.Player and ns.Player.IsInInstance and ns.Player.IsInInstance() then
@@ -734,36 +725,39 @@ local function onCurrentTargetChanged(_, target)
     end
 end
 
-function M.Init()
+function M.OnInitialize()
     -- Nothing: the frame is created in Enable, after PLAYER_LOGIN.
 end
 
-function M.Enable()
+function M.OnEnable()
     createFrame()
-    if listener.RegisterMessage then
-        listener:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
-        listener:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
-        listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
-            M.Refresh()
-            -- `/pq debug arrow` flips this flag; print the raw angles once so the sign convention
-            -- can be verified in game without a reload.
-            if path == "debug.arrowDebug" and profile().debug and profile().debug.arrowDebug then
-                M.DebugAngles()
-            end
-        end)
-    end
-    if listener.RegisterEvent then
-        listener:RegisterEvent("PLAYER_ENTERING_WORLD", M.Evaluate)
-        listener:RegisterEvent("ZONE_CHANGED_NEW_AREA", M.Evaluate)
-    end
+    M:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
+    M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+        M.Refresh()
+        -- `/pq debug arrow` flips this flag; print the raw angles once so the sign convention
+        -- can be verified in game without a reload.
+        if path == "debug.arrowDebug" and profile().debug and profile().debug.arrowDebug then
+            M.DebugAngles()
+        end
+    end)
+    M:RegisterEvent("PLAYER_ENTERING_WORLD", M.Evaluate)
+    M:RegisterEvent("ZONE_CHANGED_NEW_AREA", M.Evaluate)
     -- A hidden frame runs no OnUpdate, so the show/hide decision needs its own heartbeat.
-    if listener.ScheduleRepeatingTimer and not evaluateTicker then
-        evaluateTicker = listener:ScheduleRepeatingTimer(M.Evaluate, EVALUATE_INTERVAL)
+    if not evaluateTicker then
+        evaluateTicker = M:ScheduleRepeatingTimer(M.Evaluate, EVALUATE_INTERVAL)
     end
     if arrowProfile().enabled then
         lastTargetAt = now()
     end
     M.Evaluate()
+end
+
+--- Switched off in Options > Modules. AceEvent and AceTimer have already dropped the messages, the
+-- events and the heartbeat; what is left is the frame, and a hidden frame runs no OnUpdate.
+function M.OnDisable()
+    evaluateTicker = nil
+    if frame and visible then hideFrame() end
 end
 
 function M.OnProfileChanged()
