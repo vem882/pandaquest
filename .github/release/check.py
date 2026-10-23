@@ -933,6 +933,32 @@ class TheTranslations(unittest.TestCase):
             self.assertIn("Locales\\" + path.stem + ".lua", toc, f"{path.name} is not in the TOC")
 
 
+class TheReleaseNotes(unittest.TestCase):
+    """UI/ReleaseNotes.lua (Options > Release notes in the addon's window) quotes changelog.txt.
+
+    Every version it lists has its section in changelog.txt, and every line it shows for a version is a
+    line of that section, so the window can never announce a change the changelog does not have. The
+    data releases the portal's sync makes are not required in it.
+    """
+
+    def test_every_release_note_is_a_line_of_its_changelog_section(self) -> None:
+        notes = (ADDON_DIR / "UI" / "ReleaseNotes.lua").read_text(encoding="utf-8")
+        changelog = (ADDON_DIR / "changelog.txt").read_text(encoding="utf-8")
+        sections, version = {}, None
+        for line in changelog.splitlines():
+            if re.fullmatch(r"\d+(?:\.\d+)+", line):
+                version = line
+                sections[version] = []
+            elif version and line.startswith("- "):
+                sections[version].append(line[2:])
+        found = re.findall(r'version = "([^"]+)", date = "[^"]*", lines = \{(.*?)\} \}', notes, re.S)
+        self.assertTrue(found, "UI/ReleaseNotes.lua lists no release")
+        for note_version, body in found:
+            self.assertIn(note_version, sections, f"{note_version} is not a section of changelog.txt")
+            for text in re.findall(r'"((?:[^"\\]|\\.)*)"', body):
+                self.assertIn(text, sections[note_version], f"{note_version}: {text!r} is not in changelog.txt")
+
+
 class TheReleaseChannel(unittest.TestCase):
     """A beta says so in four places, and none of them is a file name a consumer reads."""
 

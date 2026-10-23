@@ -132,6 +132,8 @@ local APPLIERS = {
     ["archaeology"] = function()
         if ns.DigSiteBar and ns.DigSiteBar.Refresh then ns.DigSiteBar.Refresh() end
     end,
+    -- The window's size and place (UI/MainWindow.lua).
+    ["window"] = function() if ns.MainWindow and ns.MainWindow.ApplyGeometry then ns.MainWindow.ApplyGeometry() end end,
     -- Options > Modules: enable or disable the AceAddon modules to match (Core/Init.lua).
     ["modules"] = function() if ns.ApplyModuleStates then ns.ApplyModuleStates() end end,
 }
@@ -371,6 +373,214 @@ local function commandList()
     return table.concat(lines, "\n")
 end
 
+---------------------------------------------------------------------------
+-- The main window's pages: Status, About & Help, Performance, Release notes, the window itself
+---------------------------------------------------------------------------
+
+local function syncStateText()
+    local lines = {}
+    local Telemetry, Community = ns.Telemetry, ns.Community
+    local store = Telemetry and Telemetry.GetStore and Telemetry.GetStore()
+    local ack = store and tonumber(store.ackUploadedThrough)
+    if ack and ack > 0 and date then
+        lines[#lines + 1] = format(L["Last upload the portal confirmed: %s"], date("%Y-%m-%d %H:%M", ack))
+    else
+        lines[#lines + 1] = L["No upload confirmed by the portal yet."]
+    end
+    if Telemetry and Telemetry.GetPendingSessionCount then
+        lines[#lines + 1] = format(L["Sessions waiting to be uploaded: %d"], Telemetry.GetPendingSessionCount())
+    end
+    local fresh = Community and Community.GetFreshnessText and Community.GetFreshnessText()
+    if fresh then lines[#lines + 1] = fresh end
+    return table.concat(lines, "\n")
+end
+
+local function databaseText()
+    local DB = ns.DB
+    local meta = DB and DB.GetMeta and DB.GetMeta()
+    local stats = DB and DB.GetStats and DB.GetStats()
+    local counts = stats and stats.counts or {}
+    local lines = {}
+    if meta then
+        lines[#lines + 1] = format(L["Database: %s, built %s"], tostring(meta.source or "?"), tostring(meta.built or "?"))
+    end
+    lines[#lines + 1] = format(L["%d quests, %d NPCs, %d objects, %d items"], counts.quests or 0, counts.npcs or 0,
+        counts.objects or 0, counts.items or 0)
+    return table.concat(lines, "\n")
+end
+
+-- Performance: what is cheap to ask for and needs no script profiling. Addon memory is the client's
+-- own figure (UpdateAddOnMemoryUsage walks every addon, so it is asked only when the page is drawn).
+local function memoryText()
+    local update, usage = _G.UpdateAddOnMemoryUsage, _G.GetAddOnMemoryUsage
+    if type(update) ~= "function" or type(usage) ~= "function" then return L["This client does not report addon memory."] end
+    pcall(update)
+    local ok, kb = pcall(usage, Const.ADDON_NAME)
+    if not ok or type(kb) ~= "number" then return L["This client does not report addon memory."] end
+    return format(L["Memory: %.1f MB"], kb / 1024)
+end
+
+--- M.ModuleRegistrations(name) -> events, messages, timers, buckets the module has registered now.
+function M.ModuleRegistrations(name)
+    local PQ = ns.PQ
+    local module = PQ and PQ.GetModule and PQ:GetModule(name, true)
+    if not module then return 0, 0, 0, 0 end
+    local own = ns[name]
+    local targets = { module }
+    if own ~= module and type(own) == "table" then
+        targets[#targets + 1] = own
+        if type(own.listener) == "table" then targets[#targets + 1] = own.listener end
+    end
+    local AceEvent = LibStub("AceEvent-3.0", true)
+    local AceTimer = LibStub("AceTimer-3.0", true)
+    local AceBucket = LibStub("AceBucket-3.0", true)
+    local events, messages, timers, buckets = 0, 0, 0, 0
+    for _, target in ipairs(targets) do
+        if AceEvent then
+            for _, t in pairs(AceEvent.events.events) do if t[target] then events = events + 1 end end
+            for _, t in pairs(AceEvent.messages.events) do if t[target] then messages = messages + 1 end end
+        end
+        if AceTimer then
+            for _, timer in pairs(AceTimer.activeTimers) do if timer.object == target then timers = timers + 1 end end
+        end
+        if AceBucket then
+            for _, bucket in pairs(AceBucket.buckets) do if bucket.object == target then buckets = buckets + 1 end end
+        end
+    end
+    return events, messages, timers, buckets
+end
+
+local function modulesText()
+    local PQ = ns.PQ
+    local lines = {}
+    local on, all = 0, 0
+    for _, name in ipairs(ns.MODULE_ORDER or {}) do
+        local module = PQ and PQ:GetModule(name, true)
+        local enabled = module and module:IsEnabled()
+        all = all + 1
+        if enabled then on = on + 1 end
+        local e, m, t, b = M.ModuleRegistrations(name)
+        lines[#lines + 1] = format(L["%s: %s - %d events, %d messages, %d timers, %d buckets"], name,
+            enabled and L["on"] or L["off"], e, m, t, b)
+    end
+    table.insert(lines, 1, format(L["Modules running: %d of %d"], on, all))
+    return table.concat(lines, "\n")
+end
+
+local showCommands = false              -- About & Help: the Commands section, folded until asked for
+
+local function releaseNotes()
+    local args = {
+        intro = { type = "description", order = 0,
+            name = L["What changed in the recent versions. The whole list is changelog.txt in the addon's folder."] },
+    }
+    for index, release in ipairs(ns.ReleaseNotes or {}) do
+        args["v" .. index] = { type = "header", order = index * 10, name = release.version .. "  -  " .. (release.date or "") }
+        args["t" .. index] = { type = "description", order = index * 10 + 1,
+            name = "- " .. table.concat(release.lines or {}, "\n- ") }
+    end
+    return args
+end
+
+--- The categories of the main window's Options tab, in order: each is a name, an icon from the game's own
+-- icon set, and the option groups it shows (one sub-tab each when there are several). A group no category
+-- names still appears, under Other, so nothing in the table can be lost from the window.
+M.CATEGORIES = {
+    { key = "navigation", name = L["Navigation"], icon = "Interface\\Icons\\INV_Misc_Map_01",
+      groups = { "arrow", "nav", "tracker", "hidden" } },
+    { key = "map", name = L["Map & Minimap"], icon = "Interface\\Icons\\INV_Misc_Map02", groups = { "map" } },
+    { key = "tooltips", name = L["Tooltips"], icon = "Interface\\Icons\\INV_Misc_Note_01", groups = { "tooltips" } },
+    { key = "flight", name = L["Flight"], icon = "Interface\\Icons\\Ability_Mount_Wyvern_01", groups = { "flight" } },
+    { key = "gathering", name = L["Professions & Gathering"], icon = "Interface\\Icons\\Trade_Mining",
+      groups = { "professions", "recipes", "archaeology" } },
+    { key = "auction", name = L["Auction"], icon = "Interface\\Icons\\INV_Misc_Coin_01", groups = { "auction" } },
+    { key = "notify", name = L["Notifications"], icon = "Interface\\Icons\\INV_Scroll_03", groups = { "notify" } },
+    { key = "privacy", name = L["Sync & Privacy"], icon = "Interface\\Icons\\INV_Misc_Key_03", groups = { "sync" } },
+    { key = "appearance", name = L["Appearance"], icon = "Interface\\Icons\\Spell_Holy_MindVision",
+      groups = { "window", "frames", "motion" } },
+    { key = "language", name = L["Language & Units"], icon = "Interface\\Icons\\INV_Misc_Book_09", groups = { "general" } },
+    { key = "modules", name = L["Modules"], icon = "Interface\\Icons\\INV_Misc_Gear_01", groups = { "modules" } },
+    { key = "profiles", name = L["Profiles"], icon = "Interface\\Icons\\INV_Misc_Head_Human_01", groups = { "profiles" } },
+    { key = "notes", name = L["Release notes"], icon = "Interface\\Icons\\INV_Scroll_05", groups = { "notes" } },
+    { key = "advanced", name = L["Advanced"], icon = "Interface\\Icons\\Trade_Engineering", groups = { "advanced", "tools" } },
+}
+
+--- The main window's top tabs that are pages of this table rather than option categories.
+M.TAB_GROUPS = { status = "status", about = "about", performance = "performance" }
+
+--- Categories() -> M.CATEGORIES plus "Other" for a group no category names (and no tab is).
+function M.Categories()
+    local tbl = M.GetTable()
+    local named = {}
+    for _, category in ipairs(M.CATEGORIES) do
+        for _, group in ipairs(category.groups) do named[group] = true end
+    end
+    for _, group in pairs(M.TAB_GROUPS) do named[group] = true end
+    local list = {}
+    for _, category in ipairs(M.CATEGORIES) do list[#list + 1] = category end
+    local other = {}
+    for key, option in pairs(tbl.args or {}) do
+        if type(option) == "table" and option.type == "group" and not named[key] then other[#other + 1] = key end
+    end
+    if #other > 0 then
+        table.sort(other)
+        list[#list + 1] = { key = "other", name = L["Other"], icon = "Interface\\Icons\\INV_Misc_QuestionMark",
+                            groups = other }
+    end
+    return list
+end
+
+--- DefaultFor(path) -> the AceDB default of a settings path ("arrow.scale", "global.telemetry.enabled").
+function M.DefaultFor(path)
+    if type(path) ~= "string" then return nil end
+    local globalPath = path:match("^global%.(.+)$")
+    local node = globalPath and ns.DEFAULTS.global or ns.DEFAULTS.profile
+    for part in (globalPath or path):gmatch("[^%.]+") do
+        if type(node) ~= "table" then return nil end
+        node = node[part]
+    end
+    return node
+end
+
+local function copy(value)
+    if type(value) ~= "table" then return value end
+    local out = {}
+    for k, v in pairs(value) do out[k] = copy(v) end
+    return out
+end
+
+--- ResetGroups(groupKeys) -> how many settings changed. Every option in those groups that stores a
+-- settings path goes back to its default; an option that says how to reset itself (arg.resetValue) is
+-- set to that. Nothing outside the groups is touched.
+function M.ResetGroups(groupKeys)
+    local tbl = M.GetTable()
+    local changed = 0
+    local function walk(args)
+        for _, option in pairs(args or {}) do
+            if type(option) == "table" then
+                if option.type == "group" then
+                    walk(option.args)
+                elseif type(option.arg) == "string" and option.type ~= "execute" then
+                    if M.Set(option.arg, copy(M.DefaultFor(option.arg))) then changed = changed + 1 end
+                elseif type(option.arg) == "table" and option.arg.resetValue ~= nil and type(option.set) == "function" then
+                    local before = type(option.get) == "function" and option.get({}) or nil
+                    if before ~= option.arg.resetValue then
+                        option.set({}, option.arg.resetValue)
+                        changed = changed + 1
+                    end
+                end
+            end
+        end
+    end
+    for _, key in ipairs(groupKeys or {}) do
+        local group = tbl.args and tbl.args[key]
+        if type(group) == "table" then walk(group.args) end
+    end
+    local registry = LibStub and LibStub("AceConfigRegistry-3.0", true)
+    if registry and registered then pcall(registry.NotifyChange, registry, APP_NAME) end
+    return changed
+end
+
 local function buildTable()
     local privacy = L["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."]
         .. " " .. L["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."]
@@ -439,7 +649,7 @@ local function buildTable()
                     languageInfo = { type = "description", order = 11,
                         name = L["Choose the language of PandaQuest's texts. Automatic follows the game's language."] },
                     language = { type = "select", order = 12, name = L["Language"],
-                        values = languageValues(), sorting = LANGUAGE_ORDER,
+                        values = languageValues(), sorting = LANGUAGE_ORDER, arg = { resetValue = "auto" },
                         get = function()
                             local store = db()
                             return store and store.global and store.global.language or "auto"
@@ -779,9 +989,67 @@ local function buildTable()
             status = {
                 type = "group", order = 15, name = L["Status"], args = {
                     text = { type = "description", order = 0, fontSize = "medium", name = statusText },
-                    refresh = { type = "execute", order = 1, name = L["Refresh"],
+                    syncHeader = header(5, L["Synchronisation"]),
+                    sync = { type = "description", order = 6, name = syncStateText },
+                    dbHeader = header(10, L["Database"]),
+                    db = { type = "description", order = 11, name = databaseText },
+                    refresh = { type = "execute", order = 20, name = L["Refresh"],
                         func = function() M.Rebuild() end },
                 },
+            },
+            about = {
+                type = "group", order = 16, name = L["About & Help"], args = {
+                    what = { type = "description", order = 1, fontSize = "medium",
+                        name = L["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic."] .. " "
+                            .. L["An arrow to your next objective, quest pins on the map and minimap, gathering nodes with respawn timers."]
+                            .. " " .. L["Flight times, archaeology and profession tools, and a page for every quest."] },
+                    how = { type = "description", order = 2,
+                        name = L["Type /pq to open this window. Quests lists every quest in the database; Options holds every setting."]
+                            .. " " .. L["Everything works without any of them."] },
+                    siteHeader = header(10, L["The PandaQuest portal"]),
+                    site = { type = "description", order = 11,
+                        name = L["Quest pages, routes, the community data and the bug tracker are at https://pd.zroot.it"] },
+                    siteLink = { type = "execute", order = 12, name = L["Copy the portal's address"],
+                        func = function()
+                            local Links = ns.Wowhead
+                            if Links and Links.ShowCopyDialog then Links.ShowCopyDialog(Const.HUB_BASE or "https://pd.zroot.it/") end
+                        end },
+                    creditsHeader = header(20, L["Credits and licences"]),
+                    credits = { type = "description", order = 21,
+                        name = L["PandaQuest is free software under the GNU General Public License v3."] .. " "
+                            .. L["The quest database is built from Questie's Mists of Pandaria data (GPLv3)."] .. " "
+                            .. L["Embedded libraries keep their own licences: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons."]
+                            .. " " .. L["Inspired by Questie, pfQuest and TomTom; no code of theirs is copied."] },
+                    commandsHeader = header(30, L["Commands"]),
+                    showCommands = { type = "toggle", order = 31, width = "full", name = L["Show the chat commands"],
+                        desc = L["Every chat command still works, for macros. None of them is needed."],
+                        get = function() return showCommands end, set = function(_, v) showCommands = v and true or false end },
+                    commands = { type = "description", order = 32, name = commandList,
+                        hidden = function() return not showCommands end },
+                },
+            },
+            performance = {
+                type = "group", order = 17, name = L["Performance"], args = {
+                    info = { type = "description", order = 0,
+                        name = L["What PandaQuest costs right now. Nothing here measures CPU: that would need the game's script profiling."] },
+                    memory = { type = "description", order = 1, fontSize = "medium", name = memoryText },
+                    modulesHeader = header(5, L["Modules, events and timers"]),
+                    modules = { type = "description", order = 6, name = modulesText },
+                    refresh = { type = "execute", order = 10, name = L["Refresh"],
+                        func = function() M.Rebuild() end },
+                },
+            },
+            window = {
+                type = "group", order = 12.5, name = L["Window"], args = {
+                    scale = range(1, L["Window size"], L["The size of the PandaQuest window, on top of the game's own UI scale."],
+                        "window.scale", 0.6, 1.4, 0.05),
+                    reset = { type = "execute", order = 2, name = L["Reset the window"],
+                        desc = L["Puts the PandaQuest window back in the middle of the screen at its first size."],
+                        func = function() if ns.MainWindow and ns.MainWindow.ResetGeometry then ns.MainWindow.ResetGeometry() end end },
+                },
+            },
+            notes = {
+                type = "group", order = 25, name = L["Release notes"], args = releaseNotes(),
             },
             advanced = {
                 type = "group", order = 20, name = L["Advanced"], args = {
@@ -918,6 +1186,18 @@ end
 --- Options.Open([group]): opened by /pq options. Prefers the Blizzard settings panel, falls back to the
 -- standalone AceConfigDialog window when the Settings API refuses (it does in some Classic builds).
 function M.Open(group)
+    -- The settings live in PandaQuest's own window now (UI/MainWindow.lua); the game's Settings panel
+    -- and the AceConfigDialog window are what is left when that window cannot be built.
+    local Window = ns.MainWindow
+    if Window and Window.Open and Window.Open("options", group) then
+        M.lastOpen = "window"
+        return true
+    end
+    return M.OpenPanel(group)
+end
+
+--- Options.OpenPanel([group]): the same table in the game's Settings panel, or AceConfigDialog's window.
+function M.OpenPanel(group)
     local AceConfigDialog = LibStub and LibStub("AceConfigDialog-3.0", true)
     local settings = _G and _G.Settings
     if blizCategory and settings and settings.OpenToCategory then

@@ -181,6 +181,7 @@ ns.MODULE_ORDER = {
     "Respawn", "Professions",
     "FlightRoutes", "FlightTooltip",
     "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
+    "MainWindow",
     "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
     -- After AuctionScanner because RecipeScanner's OnInitialize takes one word out of its /pq scan
     -- command and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,

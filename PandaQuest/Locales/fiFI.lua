@@ -903,6 +903,116 @@ local T = {
         "Tulosta merkintä chattiin",
     ["Chat commands"] =
         "Chat-komennot",
+    -- The main window (UI/MainWindow.lua)
+    ["Options"] =
+        "Asetukset",
+    ["About & Help"] =
+        "Tietoja ja ohjeet",
+    ["Performance"] =
+        "Suorituskyky",
+    ["Search: %s"] =
+        "Haku: %s",
+    ["No setting matches."] =
+        "Mikään asetus ei vastaa hakua.",
+    ["Search all settings"] =
+        "Hae kaikista asetuksista",
+    ["Reset Settings"] =
+        "Palauta asetukset",
+    ["%s: %d settings back to their defaults."] =
+        "%s: %d asetusta palautettu oletuksiin.",
+    ["Reset every setting in %s to its default?"] =
+        "Palautetaanko kaikki kohdan %s asetukset oletuksiin?",
+    -- The main window's pages and categories (UI/Options.lua)
+    ["Last upload the portal confirmed: %s"] =
+        "Viimeisin portaalin vahvistama lähetys: %s",
+    ["No upload confirmed by the portal yet."] =
+        "Portaali ei ole vielä vahvistanut yhtään lähetystä.",
+    ["Sessions waiting to be uploaded: %d"] =
+        "Lähetystä odottavia istuntoja: %d",
+    ["Database: %s, built %s"] =
+        "Tietokanta: %s, koottu %s",
+    ["%d quests, %d NPCs, %d objects, %d items"] =
+        "%d tehtävää, %d NPC:tä, %d objektia, %d esinettä",
+    ["This client does not report addon memory."] =
+        "Tämä pelin versio ei kerro lisäosien muistinkäyttöä.",
+    ["Memory: %.1f MB"] =
+        "Muisti: %.1f Mt",
+    ["%s: %s - %d events, %d messages, %d timers, %d buckets"] =
+        "%s: %s - %d tapahtumaa, %d viestiä, %d ajastinta, %d kokoajaa",
+    ["on"] =
+        "päällä",
+    ["off"] =
+        "pois",
+    ["Modules running: %d of %d"] =
+        "Käynnissä olevia moduuleja: %d / %d",
+    ["What changed in the recent versions. The whole list is changelog.txt in the addon's folder."] =
+        "Mitä viimeisimmissä versioissa muuttui. Koko luettelo on lisäosan kansion tiedostossa changelog.txt.",
+    ["Map & Minimap"] =
+        "Kartta ja minikartta",
+    ["Flight"] =
+        "Lennot",
+    ["Professions & Gathering"] =
+        "Ammatit ja keräily",
+    ["Auction"] =
+        "Huutokauppa",
+    ["Sync & Privacy"] =
+        "Synkronointi ja yksityisyys",
+    ["Language & Units"] =
+        "Kieli ja yksiköt",
+    ["Release notes"] =
+        "Julkaisutiedot",
+    ["Other"] =
+        "Muut",
+    ["Synchronisation"] =
+        "Synkronointi",
+    ["Database"] =
+        "Tietokanta",
+    ["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic."] =
+        "PandaQuest on tehtäväapuri ja navigaattori Mists of Pandaria Classiciin.",
+    ["An arrow to your next objective, quest pins on the map and minimap, gathering nodes with respawn timers."] =
+        "Nuoli seuraavaan tavoitteeseen, tehtävämerkit kartalla ja minikartalla, keräyspaikat uudelleensyntymisajastimineen.",
+    ["Flight times, archaeology and profession tools, and a page for every quest."] =
+        "Lentoajat, arkeologia- ja ammattityökalut sekä sivu jokaiselle tehtävälle.",
+    ["Type /pq to open this window. Quests lists every quest in the database; Options holds every setting."] =
+        "Kirjoita /pq avataksesi tämän ikkunan. Tehtävät listaa kaikki tietokannan tehtävät; Asetuksissa on jokainen asetus.",
+    ["Everything works without any of them."] =
+        "Kaikki toimii ilman niitäkin.",
+    ["The PandaQuest portal"] =
+        "PandaQuest-portaali",
+    ["Quest pages, routes, the community data and the bug tracker are at https://pd.zroot.it"] =
+        "Tehtäväsivut, reitit, yhteisön tiedot ja vikailmoitukset löytyvät osoitteesta https://pd.zroot.it",
+    ["Copy the portal's address"] =
+        "Kopioi portaalin osoite",
+    ["Credits and licences"] =
+        "Tekijät ja lisenssit",
+    ["PandaQuest is free software under the GNU General Public License v3."] =
+        "PandaQuest on vapaa ohjelma GNU General Public License v3 -lisenssillä.",
+    ["The quest database is built from Questie's Mists of Pandaria data (GPLv3)."] =
+        "Tehtävätietokanta on koottu Questien Mists of Pandaria -tiedoista (GPLv3).",
+    ["Embedded libraries keep their own licences: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons."] =
+        "Mukana olevilla kirjastoilla on omat lisenssinsä: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons.",
+    ["Inspired by Questie, pfQuest and TomTom; no code of theirs is copied."] =
+        "Innoittajina Questie, pfQuest ja TomTom; niiden koodia ei ole kopioitu.",
+    ["Commands"] =
+        "Komennot",
+    ["Show the chat commands"] =
+        "Näytä chat-komennot",
+    ["Every chat command still works, for macros. None of them is needed."] =
+        "Kaikki chat-komennot toimivat yhä makroja varten. Mitään niistä ei tarvita.",
+    ["What PandaQuest costs right now. Nothing here measures CPU: that would need the game's script profiling."] =
+        "Mitä PandaQuest kuluttaa juuri nyt. Suoritinaikaa ei mitata: se vaatisi pelin skriptiprofiloinnin.",
+    ["Modules, events and timers"] =
+        "Moduulit, tapahtumat ja ajastimet",
+    ["Window"] =
+        "Ikkuna",
+    ["Window size"] =
+        "Ikkunan koko",
+    ["The size of the PandaQuest window, on top of the game's own UI scale."] =
+        "PandaQuest-ikkunan koko pelin oman käyttöliittymän skaalauksen päälle.",
+    ["Reset the window"] =
+        "Palauta ikkuna",
+    ["Puts the PandaQuest window back in the middle of the screen at its first size."] =
+        "Palauttaa PandaQuest-ikkunan keskelle ruutua alkuperäiseen kokoonsa.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
