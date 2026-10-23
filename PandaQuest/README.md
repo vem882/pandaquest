@@ -129,17 +129,25 @@ A good report says what you did, what you expected and what happened. Please inc
 
 ## Slash commands
 
-`/pq` or `/pandaquest`:
+There is one to remember: **`/pq`** (or `/pandaquest`) opens PandaQuest -- the quest browser, every quest
+in the database. Its **Settings** button (the gear in the header) opens everything else, and every
+setting and every action has a control there or on a quest's page: navigate to a quest, hide it from the
+navigator or show it again, show it on the world map, copy the link to its page on the PandaQuest portal
+(right-click a quest in the list for the same four). `/pq help` says exactly that.
+
+The old commands still work, for macros and muscle memory, and are listed under Settings > Advanced
+(`/pq help all` prints them):
 
 | Command | Effect |
 |---|---|
-| `/pq` | open the options panel |
-| `/pq help` | list commands |
+| `/pq` | open PandaQuest (the quest browser) |
+| `/pq options` | open the settings |
+| `/pq help [all]` | one line, or every command |
 | `/pq arrow` | toggle the navigation arrow |
 | `/pq target [questID\|clear]` | pin a quest as the current target (no argument: show the current target) |
 | `/pq next` | skip the current target |
 | `/pq units meters\|yards` | distance units |
-| `/pq wh [questID]` | Wowhead link for a quest (default: current target) |
+| `/pq wh [questID]` | link to a quest's page on the PandaQuest portal, pd.zroot.it (default: current target) |
 | `/pq hide <questID>` / `/pq unhide <questID>` | hide a quest from the navigator / show it again |
 | `/pq reset` | reset the arrow position and map pins |
 | `/pq quests [questID]` | open the quest browser, optionally on one quest's page |
@@ -162,7 +170,7 @@ style instead.
 
 ## Settings
 
-Everything has a working default; the panel (`/pq`) is optional.
+Everything has a working default; the settings (the gear in `/pq`, or `/pq options`) are optional.
 
 | Group | What you can change |
 |---|---|
@@ -177,9 +185,12 @@ Everything has a working default; the panel (`/pq`) is optional.
 | Flight master | the flight time line, the in-flight bar, its lock, size and position |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound |
-| Synchronisation (optional) | record quest data, movement breadcrumbs, sessions kept |
 | Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the auction scan, mailbox sales, auction tooltip prices, the recipe and archaeology readers, quest data and gear recording. A part that is off listens to nothing and runs no timer |
-| Advanced | log level, arrow debug output, redraw pins |
+| Moving frames | unlock the arrow, the flight bar and the dig site bar to drag them; reset their positions |
+| Hidden quests | the quests hidden from the navigator, and showing one or all of them again |
+| Status | version, database, quest log, targets, background jobs, modules, synchronisation |
+| Synchronisation and privacy | what is recorded and what is not, the data sharing question, the recording switches |
+| Advanced | log level, arrow debug output, redraw pins, print a database entry, every chat command |
 | Profiles | standard profile management (AceDBOptions); the module switches are part of the profile |
 
 PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks another one, and
