@@ -11,7 +11,7 @@ local Const, Log = ns.Const, ns.Log
 local M = ns.PQ:GetModule("Options")   -- an AceAddon module (Core/Const.lua)
 ns.Options = M
 
-local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format
+local type, pairs, ipairs, tonumber, tostring, format = type, pairs, ipairs, tonumber, tostring, string.format
 
 local APP_NAME = "PandaQuest"
 
@@ -132,6 +132,8 @@ local APPLIERS = {
     ["archaeology"] = function()
         if ns.DigSiteBar and ns.DigSiteBar.Refresh then ns.DigSiteBar.Refresh() end
     end,
+    -- Options > Modules: enable or disable the AceAddon modules to match (Core/Init.lua).
+    ["modules"] = function() if ns.ApplyModuleStates then ns.ApplyModuleStates() end end,
 }
 
 local function applierFor(path)
@@ -229,6 +231,42 @@ local function languageValues()
         zhCN = "Chinese, Simplified (\231\174\128\228\189\147\228\184\173\230\150\135)",
         zhTW = "Chinese, Traditional (\231\185\129\233\171\148\228\184\173\230\150\135)",
     }
+end
+
+-- Options > Modules: one switch per optional module (ns.OPTIONAL_MODULES), in that order. The name
+-- and the line under it say what the player loses, in their words, not the module's.
+local MODULE_TEXT = {
+    Arrow = { L["Navigation arrow"], L["The arrow that points to your next quest objective."] },
+    Pins = { L["Map and minimap pins"], L["Quest pins and gathering nodes on the world map and the minimap."] },
+    Tooltips = { L["Quest info in tooltips"], L["Which quests an NPC or an item belongs to, on its tooltip."] },
+    Respawn = { L["Respawn timers"], L["Times how long mobs and nodes take to come back, and fades them until they do."] },
+    Professions = { L["Gathering nodes"], L["Ore, herbs, fishing pools, chests and rare spawns on the maps."] },
+    Tracker = { L["Quest tracker additions"], L["Distances and target buttons in the Blizzard quest tracker."] },
+    Notify = { L["Notifications"], L["The short messages in the middle of the screen."] },
+    DigSiteBar = { L["Dig site progress bar"], L["The archaeology bar that fills while you survey a dig site."] },
+    AuctionScanner = { L["Auction house scan"], L["The Scan prices button on the auction house window, and /pq scan."] },
+    AuctionMail = { L["Auction sales from the mailbox"], L["Records your auction sales and purchases from the invoices in your mailbox."] },
+    AuctionTooltip = { L["Auction prices in tooltips"], L["Your last scanned prices on item tooltips."] },
+    RecipeScanner = { L["Recipe reader"], L["Reads your recipes when you open a profession window."] },
+    Archaeology = { L["Archaeology reader"], L["Reads your archaeology races and artifacts when you open the archaeology window."] },
+    Telemetry = { L["Quest data recording"], L["Records quest data for the community routes, once you have agreed to share it."] },
+    CharacterSheet = { L["Gear recording"], L["Records your gear for the PandaQuest portal, together with the quest data."] },
+}
+
+local function moduleArgs()
+    local args = {
+        info = { type = "description", order = 0, fontSize = "medium",
+            name = L["Switch a part of PandaQuest off completely: it stops listening to the game, its timers stop "
+                .. "and it shows nothing. What is not listed here is what the rest is built on, and always runs."] },
+    }
+    for index, name in ipairs(ns.OPTIONAL_MODULES or {}) do
+        local text = MODULE_TEXT[name] or { name, nil }
+        args[name] = toggle(index, text[1], text[2], "modules." .. name, {
+            get = function() return ns.IsModuleWanted(name) end,
+            set = function(_, value) M.Set("modules." .. name, value and true or false) end,
+        })
+    end
+    return args
 end
 
 local function buildTable()
@@ -595,6 +633,9 @@ local function buildTable()
                     syncStatus = command(31, L["Show synchronisation status"], nil, "sync"),
                     consent = command(32, L["Ask the data sharing question"], nil, "consent"),
                 },
+            },
+            modules = {
+                type = "group", order = 18, name = L["Modules"], args = moduleArgs(),
             },
             advanced = {
                 type = "group", order = 20, name = L["Advanced"], args = {

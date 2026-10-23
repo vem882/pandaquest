@@ -55,7 +55,6 @@ local skippedKey                    -- target skipped with Router.Skip until the
 
 local lastUpdate, lastSort = 0, 0
 local lastRouteKey                  -- current.key when the route was planned
-local ticker
 
 local etaSpeed, etaSpeedAt          -- EMA state for the ETA speed
 local etaKey, etaShown              -- hysteresis state for the displayed ETA
@@ -530,7 +529,7 @@ function M.OnEnable()
     M:RegisterMessage("PQ_TARGETS_UPDATED", onTargetsUpdated)
     M:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Update(true) end)
     M:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() M.Update(true) end)
-    ticker = M:ScheduleRepeatingTimer(M.Update, TICK)
+    M:ScheduleRepeatingTimer(M.Update, TICK)        -- cancelled with the module (AceTimer)
 end
 
 function M.OnProfileChanged()

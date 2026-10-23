@@ -54,14 +54,20 @@ function ns.ApplyModuleStates()
     end
 end
 
--- Applies a stored locale override (see Locales/fiFI.lua): copies the chosen table over ns.L.
+-- Applies the chosen language (see Locales/fiFI.lua) to ns.L, the AceLocale table. Every translated
+-- key goes back to its English text first -- an enUS value is the key itself -- and only then is the
+-- chosen table copied over it, so a key that language leaves untranslated reads as English: never
+-- as the game's own language (which AceLocale filled in at load) or the language chosen before.
 local function ApplyLanguage()
     local choice = PQ.db.global.language
     if choice == nil or choice == "auto" then
         choice = (GAME_LOCALE or (GetLocale and GetLocale())) or "enUS"
     end
+    for _, translated in pairs(ns.LOCALE_TABLES or {}) do
+        for key in pairs(translated) do rawset(L, key, key) end
+    end
     local tbl = ns.LOCALE_TABLES and ns.LOCALE_TABLES[choice]
-    if tbl and choice ~= "enUS" then
+    if tbl then
         for key, value in pairs(tbl) do rawset(L, key, value) end
     end
 end
@@ -200,6 +206,7 @@ commands.help = function()
         "/pq flight - show the flight bar so you can drag it",
         "/pq quests [questID] - browse every quest in the database",
         "/pq lang auto|<locale> - interface language",
+        "/pq config [section] [option] [value] - change any setting from chat",
     }
     for _, line in ipairs(lines) do Log.Print("  %s", L[line]) end
 end
@@ -432,6 +439,31 @@ commands.quests = function(arg)
     end
 end
 
+-- `/pq config [section [option [value]]]`: any setting from chat, through AceConfigCmd-3.0 on the
+-- very table the options panel draws (UI/Options.lua), so the two can never disagree. A first word
+-- that is an options section and not one of the commands above goes the same way:
+-- `/pq map showOnMinimap off`, `/pq modules tracker off`.
+local function configCommand(input)
+    local AceConfigCmd = LibStub("AceConfigCmd-3.0", true)
+    local AceConfigRegistry = LibStub("AceConfigRegistry-3.0", true)
+    local appName = ns.Options and ns.Options.APP_NAME
+    if not (AceConfigCmd and AceConfigRegistry and appName and AceConfigRegistry:GetOptionsTable(appName)) then
+        notAvailable("AceConfigCmd")
+        return
+    end
+    AceConfigCmd.HandleCommand(PQ, "pq config", appName, input or "")
+end
+commands.config = configCommand
+
+local function isOptionsSection(word)
+    local tbl = ns.Options and ns.Options.GetTable and ns.Options.GetTable()
+    if type(tbl) ~= "table" or type(tbl.args) ~= "table" then return false end
+    for key in pairs(tbl.args) do
+        if type(key) == "string" and key:lower() == word then return true end
+    end
+    return false
+end
+
 commands.lang = function(arg)
     local known = {}
     for _, code in ipairs(availableLanguages()) do known[code] = true end
@@ -462,6 +494,9 @@ function PQ:ChatCommand(input)
         return
     end
     local handler = commands[cmd]
+    if not handler and isOptionsSection(cmd) then
+        handler = function() configCommand(input) end
+    end
     if not handler then
         Log.Print(L["Unknown command: %s"], cmd)
         commands.help()
