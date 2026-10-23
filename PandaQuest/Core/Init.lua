@@ -32,16 +32,6 @@ local function CallModules(method, ...)
 end
 ns.CallModules = CallModules
 
---- ns.IsModuleWanted(name) -> bool: an optional module the profile switched off is not wanted;
--- every other module always is.
-local OPTIONAL = {}
-for _, name in ipairs(ns.OPTIONAL_MODULES) do OPTIONAL[name] = true end
-function ns.IsModuleWanted(name)
-    if not OPTIONAL[name] then return true end
-    local states = PQ.db and PQ.db.profile.modules
-    return not (type(states) == "table" and states[name] == false)
-end
-
 --- ns.ApplyModuleStates(): enables every wanted module and disables the rest, in ns.MODULE_ORDER.
 -- PQ:OnEnable calls it once for the login; Options > Modules and a profile change call it again.
 -- A module enabled after the database is ready gets the OnDataReady it missed.

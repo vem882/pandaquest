@@ -202,7 +202,21 @@ ns.OPTIONAL_MODULES = {
 
 -- profile.modules.<Name> = true for every optional module. A new key: nothing is moved into it.
 ns.DEFAULTS.profile.modules = {}
-for _, name in ipairs(ns.OPTIONAL_MODULES) do ns.DEFAULTS.profile.modules[name] = true end
+local OPTIONAL = {}
+for _, name in ipairs(ns.OPTIONAL_MODULES) do
+    ns.DEFAULTS.profile.modules[name] = true
+    OPTIONAL[name] = true
+end
+
+--- ns.IsModuleWanted(name) -> bool. False only for an optional module the profile switched off; true
+-- for everything else, and before AceDB exists. Module code asks this ("has the player switched me
+-- off?") rather than AceAddon's IsEnabled, which is also false between loading and PLAYER_LOGIN.
+function ns.IsModuleWanted(name)
+    if not OPTIONAL[name] then return true end
+    local PQ = ns.PQ
+    local states = PQ and PQ.db and PQ.db.profile and PQ.db.profile.modules
+    return not (type(states) == "table" and states[name] == false)
+end
 
 local PQ = LibStub("AceAddon-3.0"):NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0", "AceConsole-3.0")
 ns.PQ = PQ

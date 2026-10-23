@@ -209,7 +209,7 @@ end
 
 local function shouldHide()
     local p = arrowProfile()
-    if not p.enabled or not M:IsEnabled() then return true end
+    if not p.enabled or not ns.IsModuleWanted("Arrow") then return true end
     if Compat.IsInPetBattle() then return true end
     if Compat.UnitOnTaxi("player") then return true end
     if p.autoHideInInstance and ns.Player and ns.Player.IsInInstance and ns.Player.IsInInstance() then
