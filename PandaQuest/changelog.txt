@@ -6,9 +6,9 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 
 0.2.234
 - ui - /pq opens PandaQuest: the quest browser with every quest; its Settings button opens the rest
-- ui - a quest's page and its right-click menu: navigate, hide or show in the navigator, show on map, copy link
+- ui - a quest's page and right-click menu: navigate, hide or show, show on map, copy link
 - ui - links go to the quest's page on the PandaQuest portal (pd.zroot.it) instead of Wowhead
-- options - new sections: Status, Hidden quests, Moving frames; Sync and privacy says what is recorded
+- options - new sections: Status, Hidden quests, Moving frames; privacy text under Sync
 - options - Advanced prints a database entry and lists every chat command
 - commands - every old command still works; /pq help is one line, /pq help all lists them
 
