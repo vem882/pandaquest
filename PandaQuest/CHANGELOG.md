@@ -4,6 +4,29 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.236] - 2026-10-23
+
+The flight bar knows how long the flight takes, and quest mobs are marked on their nameplates.
+
+### Added
+- **Flight time before the first flight.** The bar shows "1 min 30 s left" and fills from takeoff on
+  routes you have never flown. The expected time is, in order: your own median (two flights or more);
+  the median all players measured, from the PandaQuest portal (the whole multi-hop flight when the
+  portal has it, else the sum of its legs); the portal's estimate from the path's length; one flight
+  of your own; the straight line between the flight masters. Everything but the first two reads
+  "~... left (estimated)". Hover the bar for the arrival time on the clock.
+  - The flight master's tooltip shows the same expected time for every destination before you click.
+  - Your own flights are still timed and uploaded as before.
+  - New data file `Database/Overrides/Flights.lua`, written by the portal's data sync.
+- **Quest mobs.** NPCs that your active, unfinished quests need you to kill -- kill objectives,
+  kill-credit groups and the NPCs that drop a quest item -- get a small quest mark on their nameplate
+  and a "Quest: <title> (3/8)" line on their tooltip. The mark goes as soon as the objective is done.
+  - Options > Navigation > **Quest mobs**: the icon (the quest "!", crossed swords or PandaQuest's
+    kill pin), its size, an optional gold tint on the health bar (off by default) and the tooltip line.
+    Options > Modules switches the whole thing off.
+  - Works with Blizzard's nameplates and leaves Plater, KUI and others alone: the mark is a frame of
+    its own on top of the plate. Enemy nameplates must be shown (V).
+
 ## [0.2.235] - 2026-10-23
 
 One PandaQuest window, in the layout the owner asked for: tabs along the top, a category list with

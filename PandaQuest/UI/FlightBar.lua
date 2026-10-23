@@ -1,7 +1,11 @@
 -- UI/FlightBar.lua: the bar that runs while the taxi does.
 --
--- The player asked for "a small bar with progress and remaining time" during the flight. There is
--- only one honest way to fill it, and on most routes there is nothing to fill it with yet:
+-- The player asked for "a small bar with progress and remaining time" during the flight.
+--
+-- **Since Flight/Eta.lua** the bar knows a whole on almost every route: the player's own median
+-- (as below), else the portal's all-players median ("X left"), else an estimate from the path's
+-- length ("~X left (estimated)"). Hovering the bar shows the arrival time on the clock. The rules
+-- below still hold for the player's own measurements, which come first:
 --
 --   * with a measured time for the route -- at least ns.FlightRoutes.MIN_SAMPLES flights of it --
 --     the bar shows how far along the flight is and how much is left;
@@ -203,6 +207,11 @@ local function applyLayout()
     -- the lock refuses anyway. (Nav/Arrow.lua has the same pair and keeps its mouse on purpose:
     -- that frame is a Button with a right-click menu.)
     frame:EnableMouse(not p.barLocked)
+    -- Locked, the bar still answers a hover (the arrival time) but lets every click through.
+    if p.barLocked and frame.SetMouseMotionEnabled and frame.SetMouseClickEnabled then
+        frame:SetMouseMotionEnabled(true)
+        frame:SetMouseClickEnabled(false)
+    end
     if fillBar then fillBar:SetHeight(BASE_FILL_HEIGHT * scale) end
     if baseFontSize then
         scaleFont(nameText, baseFontSize * scale)
@@ -294,6 +303,8 @@ local function createFrame()
         baseFontSize = tonumber(size)
     end
 
+    frame:SetScript("OnEnter", function(self) M.ShowArrivalTooltip(self) end)
+    frame:SetScript("OnLeave", function() if GameTooltip then GameTooltip:Hide() end end)
     frame:SetScript("OnDragStart", onDragStart)
     frame:SetScript("OnDragStop", onDragStop)
     frame:SetScript("OnUpdate", onUpdate)
@@ -309,8 +320,13 @@ end
 -- Drawing
 ---------------------------------------------------------------------------
 
---- TimeText(elapsed, seconds, samples) -> text, fraction|nil
+--- TimeText(elapsed, seconds, samples, source) -> text, fraction|nil
 -- The one place that decides what the bar is allowed to say. `fraction` nil means "draw no fill".
+--
+-- `source` is Flight/Routes.lua's GetFlight().source. nil or "own" is the player's own median and
+-- follows the three cases below. "measured" (all players, from the portal) prints "X left";
+-- "estimated", "own1" and "straight" print "~X left (estimated)". Both fill the bar, and past the
+-- expected time both fall back to the time in the air with a full bar, like the own median.
 --
 -- Three cases, and only the first of them knows a whole:
 --   * a route measured at least MIN_SAMPLES times, still inside its measured time -> how much is
@@ -320,9 +336,19 @@ end
 --     being something we measured. Saying "0 s left" while the ground is still moving underneath
 --     would be a number nothing measured;
 --   * everything else -- no samples, or one -> the time in the air and no fill at all.
-function M.TimeText(elapsed, seconds, samples)
+function M.TimeText(elapsed, seconds, samples, source)
     local spent = tonumber(elapsed) or 0
     if spent < 0 then spent = 0 end
+    if source ~= nil and source ~= "own" then
+        local total = tonumber(seconds)
+        if not (total and total > 0) then
+            return format(L["%s in the air"], Util.FormatTime(floor(spent))), nil
+        end
+        if spent >= total then return format(L["%s in the air"], Util.FormatTime(floor(spent))), 1 end
+        local left = Util.FormatTime(floor(total - spent))
+        local pattern = source == "measured" and L["%s left"] or L["~%s left (estimated)"]
+        return format(pattern, left), spent / total
+    end
     local Routes = ns.FlightRoutes
     local minimum = (Routes and tonumber(Routes.MIN_SAMPLES)) or 2
     local total, count = tonumber(seconds), tonumber(samples) or 0
@@ -388,14 +414,14 @@ end
 -- The StatusBar needs a legal, non-empty range, so its numbers are clamped. The player's are not:
 -- what `timeText` says is what M.TimeText decided, and when that decided there is no fraction the
 -- bar is drawn empty rather than filled to some plausible place.
-local function draw(destination, elapsed, seconds, samples, label)
+local function draw(destination, elapsed, seconds, samples, label, source)
     local f = createFrame()
     if not f then return end
     local text, fraction
     if label then
         text, fraction = label, nil
     else
-        text, fraction = M.TimeText(elapsed, seconds, samples)
+        text, fraction = M.TimeText(elapsed, seconds, samples, source)
     end
     -- "Appearing" is every draw that finds the bar not on screen: that one starts from its value
     -- and fades in, and the draws after it only move the fill.
@@ -406,7 +432,7 @@ local function draw(destination, elapsed, seconds, samples, label)
     nameText:SetText(name)
     timeText:SetText(text)
     shown = { destination = destination, elapsed = tonumber(elapsed), seconds = tonumber(seconds),
-              samples = tonumber(samples), fraction = fraction, text = text }
+              samples = tonumber(samples), fraction = fraction, text = text, source = source }
     if appearing then reveal(f) end
     visible = true
 end
@@ -435,7 +461,7 @@ function M.Refresh()
         draw(nil, flight.elapsed, nil, nil)
         return true
     end
-    draw(flight.name, flight.elapsed, flight.seconds, flight.samples)
+    draw(flight.name, flight.elapsed, flight.seconds, flight.samples, nil, flight.source)
     return true
 end
 
@@ -451,6 +477,7 @@ function M.GetState()
         samples = shown.samples,
         fraction = shown.fraction,
         text = shown.text,
+        source = shown.source,
         -- `value` is the fill as drawn this frame; `goal` is where the last reading sends it. They
         -- are the same number once the glide is over and always with motion off.
         value = fillBar and fillBar:GetValue() or nil,
@@ -474,6 +501,32 @@ function M.GetLayout()
         fillHeight = fillBar and fillBar:GetHeight() or nil,
         fontSize = fontSize,
     }
+end
+
+--- ArrivalText(nowClock) -> "Arrives at 14:32" | nil. The local clock plus what is left of the flight
+-- on screen; nil when the bar knows no whole or the flight has run past it. `nowClock` is for tests.
+function M.ArrivalText(nowClock)
+    local total, spent = tonumber(shown.seconds), tonumber(shown.elapsed)
+    if not (total and spent and shown.fraction and spent < total) then return nil end
+    if not (type(date) == "function" and (nowClock or type(time) == "function")) then return nil end
+    local at = (tonumber(nowClock) or time()) + (total - spent)
+    local text = format(L["Arrives at %s"], date("%H:%M", floor(at + 0.5)))
+    local Eta = ns.FlightEta
+    if shown.source and Eta and Eta.IsMeasured and not Eta.IsMeasured(shown.source) then
+        text = text .. " " .. L["(estimated)"]
+    end
+    return text
+end
+
+--- ShowArrivalTooltip(owner): the bar's hover.
+function M.ShowArrivalTooltip(owner)
+    if not (GameTooltip and owner and visible) then return end
+    local text = M.ArrivalText()
+    if not text then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_TOP")
+    if shown.destination then GameTooltip:AddLine(shown.destination, 1, 0.82, 0) end
+    GameTooltip:AddLine(text, 1, 1, 1)
+    GameTooltip:Show()
 end
 
 function M.IsShown()
