@@ -8,7 +8,7 @@ local L = ns.L
 
 local Util, Log = ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Tooltips")   -- an AceAddon module (Core/Const.lua)
 ns.Tooltips = M
 
 local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format
@@ -32,7 +32,10 @@ local function profile()
     return PQ and PQ.db and PQ.db.profile
 end
 
+-- The hooks cannot be taken off a tooltip again, so a module switched off in Options > Modules
+-- is told apart here, on every tooltip.
 local function enabled()
+    if not ns.IsModuleWanted("Tooltips") then return false end
     local p = profile()
     return not p or not p.tooltips or p.tooltips.enabled ~= false
 end
@@ -293,26 +296,25 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     M.InvalidateCache()
 end
 
-function M.Enable()
+function M.OnEnable()
     if not hooked then
         hookTooltip(_G and _G.GameTooltip)
         hookTooltip(_G and _G.ItemRefTooltip)
         hooked = true
     end
-    -- Own AceEvent embed: registering on ns.PQ would overwrite another module's handler for the
-    -- same message (AceEvent stores one callback per object and message).
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then
-        AceEvent:Embed(M)
-        M:RegisterMessage("PQ_QUESTLOG_CHANGED", M.InvalidateCache)
-        M:RegisterMessage("PQ_TARGETS_UPDATED", M.InvalidateCache)
-        M:RegisterMessage("PQ_AVAILABLE_UPDATED", M.InvalidateCache)
-    end
+    M:RegisterMessage("PQ_QUESTLOG_CHANGED", M.InvalidateCache)
+    M:RegisterMessage("PQ_TARGETS_UPDATED", M.InvalidateCache)
+    M:RegisterMessage("PQ_AVAILABLE_UPDATED", M.InvalidateCache)
     Log.Debug("Tooltips", "enabled")
+end
+
+-- Switched off: the messages are gone (AceEvent) and the cache would only go stale.
+function M.OnDisable()
+    M.InvalidateCache()
 end
 
 function M.OnDataReady()
