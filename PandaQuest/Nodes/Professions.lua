@@ -1174,7 +1174,7 @@ function M.RecordGather(id, kind, uiMapID, x, y, unit, skill, name)
     -- The consent gate. Telemetry.Record is itself a no-op while telemetry is off,
     -- but asking first keeps the event table from being built at all for a player who said no.
     local Telemetry = ns.Telemetry
-    if Telemetry and Telemetry.IsEnabled and Telemetry.IsEnabled() and Telemetry.Record then
+    if Telemetry and Telemetry.IsRecording and Telemetry.IsRecording() and Telemetry.Record then
         Telemetry.Record(NODE_CODE, { k = kind, o = id, m = uiMapID,
                                       x = floor(x * 10 + 0.5) / 1000, y = floor(y * 10 + 0.5) / 1000 })
         observation.sent = true

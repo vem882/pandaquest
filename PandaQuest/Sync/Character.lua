@@ -21,7 +21,7 @@
 --     are read there and kept on the character's row until the next visit.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("CharacterSheet")   -- an AceAddon module (Core/Const.lua)
 ns.CharacterSheet = M
 
 local Log = ns.Log
@@ -88,16 +88,9 @@ local snapshotCount = 0
 -- has been recorded and a corrected one is owed the moment the client answers".
 local awaitingCorrection = nil
 
--- Own AceEvent/AceTimer object: AceEvent keys its registry by target, so registering
--- PLAYER_LEVEL_UP on ns.PQ or on Telemetry's listener would collide with them.
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 ---------------------------------------------------------------------------
 -- Settings
@@ -115,11 +108,13 @@ local function settings()
 end
 M.GetSettings = settings
 
---- IsEnabled() -> bool. Gear snapshots need telemetry itself on *and* `gear` not turned off.
--- Both are checked here so there is exactly one place that decides whether anything happens.
-function M.IsEnabled()
+--- IsRecording() -> bool. Gear snapshots need telemetry itself on *and* `gear` not turned off *and*
+-- this module not switched off in Options > Modules. All three are checked here so there is exactly
+-- one place that decides whether anything happens. (Not IsEnabled: that name is AceAddon's.)
+function M.IsRecording()
+    if not ns.IsModuleWanted("CharacterSheet") then return false end
     local Telemetry = ns.Telemetry
-    if not (Telemetry and Telemetry.IsEnabled and Telemetry.IsEnabled()) then return false end
+    if not (Telemetry and Telemetry.IsRecording and Telemetry.IsRecording()) then return false end
     return settings().gear ~= false
 end
 
@@ -503,7 +498,7 @@ end
 -- Keeps the choices on the character's row of the SavedVariable (`look`, with the race and sex
 -- they belong to) and asks for a snapshot when they changed. Nothing at all while telemetry is off.
 function M.RememberBarberChoices(reason)
-    if not M.IsEnabled() then return nil end
+    if not M.IsRecording() then return nil end
     local choices = M.ReadBarberChoices()
     if not choices then return nil end
     local Telemetry = ns.Telemetry
@@ -522,7 +517,7 @@ function M.RememberBarberChoices(reason)
 end
 
 local function cancelBarberTimer()
-    if barberTimer and listener.CancelTimer then listener:CancelTimer(barberTimer, true) end
+    if barberTimer and M.CancelTimer then M:CancelTimer(barberTimer, true) end
     barberTimer = nil
 end
 
@@ -532,8 +527,8 @@ function M.OnBarberOpen()
     barberOpen = true
     cancelBarberTimer()
     if M.RememberBarberChoices("BARBER_SHOP_OPEN") ~= nil then return end
-    if not listener.ScheduleTimer then return end
-    barberTimer = listener:ScheduleTimer(function()
+    if not M.ScheduleTimer then return end
+    barberTimer = M:ScheduleTimer(function()
         barberTimer = nil
         if barberOpen then M.RememberBarberChoices("BARBER_SHOP_OPEN retry") end
     end, BARBER_RETRY)
@@ -666,10 +661,10 @@ local function clearPending()
     awaitingCorrection = nil
     if waitingForItems then
         waitingForItems = false
-        if listener.UnregisterEvent then listener:UnregisterEvent("GET_ITEM_INFO_RECEIVED") end
+        if M.UnregisterEvent then M:UnregisterEvent("GET_ITEM_INFO_RECEIVED") end
     end
-    if waitTimer and listener.CancelTimer then
-        listener:CancelTimer(waitTimer, true)
+    if waitTimer and M.CancelTimer then
+        M:CancelTimer(waitTimer, true)
     end
     waitTimer = nil
 end
@@ -728,7 +723,7 @@ end
 -- postponed: the ids are requested, GET_ITEM_INFO_RECEIVED finishes it, and ITEM_WAIT is the
 -- deadline after which whatever is known is recorded anyway.
 function M.Capture(forced)
-    if not M.IsEnabled() then
+    if not M.IsRecording() then
         clearPending()
         return nil, "disabled"
     end
@@ -747,11 +742,11 @@ function M.Capture(forced)
         end
         if pendingCount > 0 then
             waitingForItems = true
-            if listener.RegisterEvent then
-                listener:RegisterEvent("GET_ITEM_INFO_RECEIVED", M.OnItemInfoReceived)
+            if M.RegisterEvent then
+                M:RegisterEvent("GET_ITEM_INFO_RECEIVED", M.OnItemInfoReceived)
             end
-            if listener.ScheduleTimer then
-                waitTimer = listener:ScheduleTimer(function()
+            if M.ScheduleTimer then
+                waitTimer = M:ScheduleTimer(function()
                     waitTimer = nil
                     Log.Debug("CharacterSheet", "item data never arrived for %d item(s); recording anyway",
                         pendingCount)
@@ -784,8 +779,8 @@ function M.Capture(forced)
         end
         if pendingCount > 0 then
             waitingForItems = true
-            if listener.RegisterEvent then
-                listener:RegisterEvent("GET_ITEM_INFO_RECEIVED", M.OnItemInfoReceived)
+            if M.RegisterEvent then
+                M:RegisterEvent("GET_ITEM_INFO_RECEIVED", M.OnItemInfoReceived)
             end
         end
     end
@@ -819,15 +814,15 @@ end
 
 local function fire()
     debounceTimer = nil
-    if not M.IsEnabled() then return end
+    if not M.IsRecording() then return end
 
     -- At most one snapshot per interval. When one is due sooner than that, the timer is simply
     -- pushed out to the moment it becomes allowed instead of being dropped.
     if lastRecordedAt > 0 then
         local remaining = snapshotInterval() - (clock() - lastRecordedAt)
         if remaining > 0 then
-            if listener.ScheduleTimer then
-                debounceTimer = listener:ScheduleTimer(fire, remaining)
+            if M.ScheduleTimer then
+                debounceTimer = M:ScheduleTimer(fire, remaining)
             end
             return
         end
@@ -839,13 +834,13 @@ end
 --- Request(reason) -> bool. Asks for a snapshot; the work happens DEBOUNCE seconds later so a
 -- player swapping ten items produces one event.
 function M.Request(reason)
-    if not M.IsEnabled() then return false end
-    if not listener.ScheduleTimer then
+    if not M.IsRecording() then return false end
+    if not M.ScheduleTimer then
         M.Capture(false)
         return true
     end
-    if debounceTimer then listener:CancelTimer(debounceTimer, true) end
-    debounceTimer = listener:ScheduleTimer(fire, DEBOUNCE)
+    if debounceTimer then M:CancelTimer(debounceTimer, true) end
+    debounceTimer = M:ScheduleTimer(fire, DEBOUNCE)
     Log.Debug("CharacterSheet", "snapshot requested (%s)", tostring(reason))
     return true
 end
@@ -880,7 +875,7 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     lastFingerprint, lastSnapshot = nil, nil
     awaitingCorrection = nil
     lastRecordedAt, snapshotCount = 0, 0
@@ -889,27 +884,25 @@ function M.Init()
     clearPending()
 end
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
-
-    listener:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function() M.Request("PLAYER_EQUIPMENT_CHANGED") end)
-    listener:RegisterEvent("PLAYER_LEVEL_UP", function() M.Request("PLAYER_LEVEL_UP") end)
-    listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Request("PLAYER_ENTERING_WORLD") end)
+function M.OnEnable()
+    M:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function() M.Request("PLAYER_EQUIPMENT_CHANGED") end)
+    M:RegisterEvent("PLAYER_LEVEL_UP", function() M.Request("PLAYER_LEVEL_UP") end)
+    M:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Request("PLAYER_ENTERING_WORLD") end)
     -- The barber's chair: the one place this client tells an addon what a face and hair are.
-    listener:RegisterEvent("BARBER_SHOP_OPEN", M.OnBarberOpen)
-    listener:RegisterEvent("BARBER_SHOP_RESULT", M.OnBarberResult)
-    listener:RegisterEvent("BARBER_SHOP_APPEARANCE_APPLIED", function()
+    M:RegisterEvent("BARBER_SHOP_OPEN", M.OnBarberOpen)
+    M:RegisterEvent("BARBER_SHOP_RESULT", M.OnBarberResult)
+    M:RegisterEvent("BARBER_SHOP_APPEARANCE_APPLIED", function()
         M.RememberBarberChoices("BARBER_SHOP_APPEARANCE_APPLIED")
     end)
-    listener:RegisterEvent("BARBER_SHOP_CLOSE", M.OnBarberClose)
+    M:RegisterEvent("BARBER_SHOP_CLOSE", M.OnBarberClose)
 
-    listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if type(path) ~= "string" or path:sub(1, 16) ~= "global.telemetry" then return end
-        if M.IsEnabled() then
+        if M.IsRecording() then
             M.Request("PQ_SETTING_CHANGED")
         else
             clearPending()
-            if debounceTimer and listener.CancelTimer then listener:CancelTimer(debounceTimer, true) end
+            if debounceTimer and M.CancelTimer then M:CancelTimer(debounceTimer, true) end
             debounceTimer = nil
         end
     end)
@@ -917,11 +910,21 @@ function M.Enable()
     M.Request("Enable")
 end
 
+--- Switched off in Options > Modules: nothing is waiting any more; AceEvent and AceTimer drop the
+-- equipment and barber events and the debounce, item and barber timers.
+function M.OnDisable()
+    clearPending()
+    cancelBarberTimer()
+    barberOpen = false
+    if debounceTimer then M:CancelTimer(debounceTimer) end
+    debounceTimer = nil
+end
+
 function M.OnProfileChanged()
     -- A different profile may have telemetry off, or on after it was off; both are one Request
     -- away, and the fingerprint is cleared so the new profile gets a full snapshot.
     lastFingerprint = nil
-    if M.IsEnabled() then
+    if M.IsRecording() then
         M.Request("OnProfileChanged")
     else
         clearPending()
