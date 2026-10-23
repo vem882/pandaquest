@@ -4,6 +4,33 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.226] - 2026-10-23
+
+### Fixed
+- Flights are recorded again. The recorder started a measurement only on `PLAYER_CONTROL_LOST`, and
+  only if `UnitOnTaxi("player")` was already true at that moment. On the 5.5.4 client the taxi flag
+  is set a moment after the flight master's button is pressed, so that never matched: no flight was
+  measured, no route time was stored and the flight bar never appeared. Takeoff and landing are now
+  read from `UnitOnTaxi` itself -- an AceTimer checks it for up to 10 seconds after the click, and
+  every half second in the air -- with the control and unit-flag events only making the check
+  sooner. This is the approach InFlight uses on this client, reimplemented.
+- A click the server refuses (a taxi error message) is dropped at once, so it cannot name a quest
+  taxi taken a few seconds later. A summon, a battleground or dungeon port, an early landing or a
+  loading screen in the air end the flight elsewhere and are not filed.
+
+### Added
+- A `/reload` in the air keeps the flight: it is kept in `PandaQuestDB.char.flightInAir` with the
+  server's clock and picked up after the reload. A login in the air (after a disconnect) is shown on
+  the bar but not filed, because the time logged out was not seen in the air.
+- Each flight keeps its route as node ids with every stop, the seconds in the air, the fare (the
+  money that left your purse, else the flight master's price) and the landing time.
+- With synchronisation on, every finished flight from a flight master is added to
+  `PandaQuestSync.flights` (`id`, `src`, `dst`, `hops`, `s`, `cost`, `t`, `char`, `build`, and
+  `speed` for a character with Ride Like the Wind) for the companion app to take to the PandaQuest
+  site, which can then show flight routes, their times and their prices. The newest 300 are kept.
+  When the site's community file carries `flightsAckedAt`, the flights it covers are dropped, the way
+  `ackUploadedThrough` drops uploaded sessions. Existing saved data is not changed.
+
 ## [0.2.225] - 2026-10-23
 
 ### Changed

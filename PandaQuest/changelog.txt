@@ -4,6 +4,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.226
+- flight times - flights are measured again: takeoff and landing are read from the taxi itself
+- flight times - a /reload in the air keeps the flight; a disconnect in the air is not filed
+- flight times - each flight keeps its route, stops, time in the air, fare and landing time
+- sync - finished flights wait in PandaQuestSync.flights for the PandaQuest site (with sharing on)
+- sync - flights the site has confirmed (flightsAckedAt) are dropped from the file
+
 0.2.225
 - minimap button - left-click opens the quest browser, Shift-click shows or hides the arrow
 - minimap button - broker bars (Titan Panel, ChocolateBar) show the flight, target or tracked quests
