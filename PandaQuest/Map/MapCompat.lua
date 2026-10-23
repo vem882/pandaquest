@@ -38,7 +38,7 @@
 --     tracked, and watching WorldMapFrame alone missed every zoom.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("MapCompat")   -- an AceAddon module (Core/Const.lua)
 ns.MapCompat = M
 
 local Log = ns.Log
@@ -289,12 +289,12 @@ function M.GetProvider() return provider end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     lastScale, lastWidth, lastHeight, lastCanvas, lastCanvasScale = nil, nil, nil, nil, nil
     pollElapsed = 0
 end
 
-function M.Enable()
+function M.OnEnable()
     if enabled then return true end
     enabled = true
     M.EnsureWatcher(true)
@@ -310,7 +310,7 @@ function M.Enable()
     return true
 end
 
-function M.IsEnabled() return enabled end
+-- IsEnabled is AceAddon's: true from OnEnable on, like the `enabled` flag above.
 
 function M.OnProfileChanged()
     M.Check("profile")

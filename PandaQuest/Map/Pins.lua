@@ -9,7 +9,7 @@ local L = ns.L
 
 local Const, Util, Log = ns.Const, ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Pins")   -- an AceAddon module (Core/Const.lua)
 ns.Pins = M
 
 local type, pairs, tostring, format = type, pairs, tostring, string.format
@@ -71,8 +71,7 @@ local currentKey = nil              -- Router's current target key (highlight)
 local redrawPending = false
 local driver                        -- OnUpdate frame that drains the queue
 local layerOverride = {}            -- runtime SetLayerVisible values (nil = follow the profile)
-local minimapDriver                 -- OnUpdate frame for the minimap rank/fade tick
-local minimapElapsed = 0
+local minimapTicker                 -- repeating AceTimer for the minimap rank/fade tick, while needed
 local rankScratch = {}              -- reused by rankMinimapSpecs: an OnUpdate must not allocate
 local nextRespawnAt                 -- GetTime() at which the soonest drawn countdown runs out
 local pulsing = {}                  -- lit pin -> true: the pins on screen whose glow is breathing
@@ -691,20 +690,22 @@ function M.UpdateMinimapNodes()
     return ranked, capped
 end
 
-local function onMinimapTick(_, elapsed)
-    minimapElapsed = minimapElapsed + (elapsed or 0)
-    if minimapElapsed < MINIMAP_TICK then return end
-    minimapElapsed = 0
+local function onMinimapTick()
     M.CheckRespawnExpiry()
     M.UpdateMinimapNodes()
 end
 
-local function ensureMinimapDriver()
-    if minimapDriver or not CreateFrame then return minimapDriver end
-    minimapDriver = CreateFrame("Frame", "PandaQuestMinimapDriver", UIParent)
-    minimapDriver:SetScript("OnUpdate", onMinimapTick)
-    minimapDriver:Hide()
-    return minimapDriver
+-- The minimap tick is an AceTimer that exists only while there is something to re-rank or a
+-- countdown to watch: four calls a second instead of an OnUpdate counting every frame.
+local function startMinimapTick()
+    if not minimapTicker then minimapTicker = M:ScheduleRepeatingTimer(onMinimapTick, MINIMAP_TICK) end
+end
+
+local function stopMinimapTick()
+    if minimapTicker then
+        M:CancelTimer(minimapTicker)
+        minimapTicker = nil
+    end
 end
 
 ---------------------------------------------------------------------------
@@ -825,7 +826,7 @@ function M.Clear()
     wipe(queue)
     queueIndex = 1
     if driver then driver:Hide() end
-    if minimapDriver then minimapDriver:Hide() end
+    stopMinimapTick()
     nextRespawnAt = nil
 end
 
@@ -839,6 +840,11 @@ function M.Redraw(immediate)
     redrawPending = false
     local p = profile()
     if not p then return 0 end
+    -- Switched off in Options > Modules: nothing is drawn, whoever asks.
+    if not ns.IsModuleWanted("Pins") then
+        M.Clear()
+        return 0
+    end
     local count = buildSpecs()
     local map = mapProfile()
     local wantMinimap = not map or map.showOnMinimap ~= false
@@ -900,31 +906,25 @@ function M.Redraw(immediate)
         if d then d:Show() else M.ProcessQueue(pending * 2 + 1) end
     end
     local mini = select(2, M.GetPinCount())
-    local ticker = ensureMinimapDriver()
-    if ticker then
-        -- The tick also polls the respawn countdown, so it has to run while one is
-        -- outstanding even when the minimap layer itself is off.
-        if (wantMinimap and (mini > 0 or pending > 0)) or nextRespawnAt then
-            ticker:Show()
-        else
-            ticker:Hide()
-        end
+    -- The tick also polls the respawn countdown, so it has to run while one is
+    -- outstanding even when the minimap layer itself is off.
+    if (wantMinimap and (mini > 0 or pending > 0)) or nextRespawnAt then
+        startMinimapTick()
+    else
+        stopMinimapTick()
     end
     Log.Debug("Pins", "redraw: %d pins (%d kept, %d queued)", count, kept, pending)
     return count
 end
 
--- Coalesces the redraw bursts that arrive when Targets, Availability and Router all update.
+-- Coalesces the redraw bursts that arrive when Targets, Availability and Router all update. An
+-- AceTimer, so a redraw still pending when the module is switched off is cancelled with it.
 local function requestRedraw()
     if redrawPending then return end
     redrawPending = true
-    if C_Timer and C_Timer.After then
-        C_Timer.After(REDRAW_DELAY, function()
-            if redrawPending then M.Redraw() end
-        end)
-    else
-        M.Redraw()
-    end
+    M:ScheduleTimer(function()
+        if redrawPending then M.Redraw() end
+    end, REDRAW_DELAY)
 end
 M.RequestRedraw = requestRedraw
 
@@ -995,7 +995,7 @@ function M.ReanchorWorld()
     return n
 end
 
---- Pins.OnMapGeometryChanged(reason): the ns.MapCompat listener. Sizes first (they are derived
+--- Pins.OnMapGeometryChanged(reason): the ns.MapCompat M. Sizes first (they are derived
 -- from the effective scale), then the anchors.
 function M.OnMapGeometryChanged(reason)
     M.RefreshSizes()
@@ -1203,21 +1203,16 @@ M.OnPinEnter = onEnter
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     wipe(layerOverride)
 end
 
-function M.Enable()
+function M.OnEnable()
     -- A scale or canvas-size change has to reach the pins that are already drawn.
     -- ns.MapCompat owns the detection; Pins only says what to do about it.
     local Compat = ns.MapCompat
     if Compat and Compat.RegisterListener then Compat.RegisterListener(M.OnMapGeometryChanged) end
 
-    -- AceEvent keeps one callback per (object, message), and every module would otherwise share
-    -- ns.PQ as that object and silently overwrite each other. Each module embeds its own.
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
     M:RegisterMessage("PQ_TARGETS_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_AVAILABLE_UPDATED", function() requestRedraw() end)
     M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", function(_, target) M.SetCurrent(target) end)
@@ -1236,6 +1231,15 @@ function M.Enable()
     -- ns.Respawn only sends this when it has an estimate, i.e. only when something can change.
     M:RegisterMessage("PQ_RESPAWN_CHANGED", function() requestRedraw() end)
     Log.Debug("Pins", "enabled (HBD pins %s)", hbdPins() and "ready" or "missing")
+end
+
+--- Switched off in Options > Modules: AceEvent and AceTimer dropped the messages, a pending redraw
+-- and the minimap tick; the pins come off both maps and the frames go back to the pool.
+function M.OnDisable()
+    redrawPending = false
+    local Compat = ns.MapCompat
+    if Compat and Compat.UnregisterListener then Compat.UnregisterListener(M.OnMapGeometryChanged) end
+    M.Clear()
 end
 
 function M.OnDataReady()

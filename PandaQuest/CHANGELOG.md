@@ -4,6 +4,49 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.233] - 2026-10-23
+
+PandaQuest uses its Ace3 libraries fully. In the game it looks and plays as before, with one new
+options section.
+
+### Added
+- **Options > Modules.** Fifteen parts of PandaQuest can be switched off completely: the arrow, map
+  and minimap pins, quest info in tooltips, respawn timers, gathering nodes, the quest tracker
+  additions, notifications, the dig site bar, the auction house scan, auction sales from the mailbox,
+  auction prices in tooltips, the recipe reader, the archaeology reader, quest data recording and gear
+  recording. A part that is off stops listening to the game, its timers stop and it shows nothing.
+  The switch is stored in the profile (`profile.modules.<Name>`, on by default) and follows a profile
+  switch, copy or reset. What the rest is built on (quest log, targets, database, options) always runs.
+- **`/pq config [section] [option] [value]`** changes any setting from chat: AceConfigCmd-3.0 on the
+  same options table the panel draws. `/pq config` lists the sections; a section that is not also a
+  command works without the word, e.g. `/pq map showOnMinimap off`. Every other command is unchanged.
+
+### Changed
+- Every subsystem is an AceAddon-3.0 module of one addon object, created in the lifecycle order and
+  enabled one by one in that order at login, before the database starts loading -- the same order as
+  before. `ns.<Name>` is still the module, so nothing that reads it changed.
+- Each module is its own AceEvent/AceTimer/AceBucket target, so switching it off drops all of its
+  events, messages, timers and buckets at once.
+- Timers that were frames counting every frame are AceTimers that fire only when due: the minimap pin
+  re-ranking (4 per second, only while needed), the node tooltip respawn countdown, the auction scan
+  poll and the telemetry breadcrumb sampler. The pin redraw, the notification hold and the mailbox read
+  were `C_Timer` calls; they are AceTimers on their module now. The combat log is an AceEvent
+  registration, made only while quest data is recorded.
+- Bursty events go through AceBucket: `MAIL_INBOX_UPDATE` (one read per burst) and
+  `TRADE_SKILL_UPDATE` / `TRADE_SKILL_LIST_UPDATE` (one look at the window per burst), beside the
+  `QUEST_LOG_UPDATE` bucket that was there.
+- `Telemetry.IsEnabled`, `CharacterSheet.IsEnabled` and `Professions.IsEnabled` are renamed
+  `IsRecording`, `IsRecording` and `IsLayerEnabled`: `IsEnabled` is AceAddon's own on every module.
+
+### Fixed
+- Choosing a language now puts every text back to English before it applies the new one, so a text that
+  language does not translate reads in English -- not in the game's language or the language chosen
+  before it (`/pq lang enUS` on a German client gave German until a reload).
+
+### Saved data
+- Nothing in `PandaQuestDB`, `PandaQuestSync`, `PandaQuestAH` or `PandaQuestProf` is moved, renamed
+  or dropped. The only new keys are the module switches, and AceDB writes them only when one is off.
+
 ## [0.2.232] - 2026-10-23
 
 Data from the PandaQuest portal.

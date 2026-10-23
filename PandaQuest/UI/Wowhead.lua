@@ -8,7 +8,7 @@ local L = ns.L
 
 local Const, Log = ns.Const, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Wowhead")   -- an AceAddon module (Core/Const.lua)
 ns.Wowhead = M
 
 local type, tonumber, format = type, tonumber, string.format
@@ -115,4 +115,4 @@ end
 M.POPUP = POPUP
 M.BASE = BASE
 
-function M.Init() end
+function M.OnInitialize() end

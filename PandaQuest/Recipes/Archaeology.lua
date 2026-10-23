@@ -62,7 +62,7 @@ local L = ns.L
 local Const, Log, Util = ns.Const, ns.Log, ns.Util
 local Store = ns.RecipeStore
 
-local M = {}
+local M = ns.PQ:GetModule("Archaeology")   -- an AceAddon module (Core/Const.lua)
 ns.Archaeology = M
 
 local type, pcall, tonumber, tostring = type, pcall, tonumber, tostring
@@ -190,6 +190,7 @@ end
 
 --- CanSnapshot() -> ok, reason. reason is "unsupported" when the client does not have the calls.
 function M.CanSnapshot()
+    if not ns.IsModuleWanted("Archaeology") then return false, "off" end
     for i = 1, #REQUIRED_CALLS do
         if type(_G[REQUIRED_CALLS[i]]) ~= "function" then return false, "unsupported" end
     end
@@ -321,6 +322,7 @@ local function reasonText(reason)
     if reason == "unsupported" then return L["This client does not offer the archaeology data PandaQuest reads."] end
     if reason == "empty" then return L["This character has no archaeology races to read yet."] end
     if reason == "short" then return L["Your artifact history has not arrived yet, so the archaeology PandaQuest already had was kept."] end
+    if reason == "off" then return L["That part of PandaQuest is switched off in the options, under Modules."] end
     return nil
 end
 
@@ -407,7 +409,7 @@ end
 -- Module lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
     -- The same relay Recipes/Scanner.lua builds on the auction scanner's /pq scan: take the one
@@ -425,10 +427,7 @@ function M.Init()
     end
 end
 
-function M.Enable()
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
+function M.OnEnable()
     -- One event, both directions, and ARCHAEOLOGY_CLOSED deliberately not registered beside it.
     M:RegisterEvent("ARCHAEOLOGY_TOGGLE", onToggle)
 end

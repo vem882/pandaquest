@@ -25,7 +25,7 @@
 -- reason.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("RecipeStore")   -- an AceAddon module (Core/Const.lua)
 ns.RecipeStore = M
 
 local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format

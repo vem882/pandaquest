@@ -4,16 +4,16 @@
 --
 -- Three rules shape this file:
 --   * Nothing is recorded unless global.telemetry.enabled is true. `active` is the single switch:
---     when it is false Record() returns on its first line, the combat-log frame is unregistered
---     and the breadcrumb OnUpdate frame is hidden, so the recorder costs literally nothing.
+--     when it is false Record() returns on its first line, the combat log event is unregistered
+--     and the breadcrumb timer cancelled, so the recorder costs literally nothing.
 --   * Privacy: only the fields listed in the contract ever reach the saved variable. No chat text,
 --     no player or NPC names, no group members. Coordinates come from Player.GetPosition(), which
 --     is nil inside instances, so instance positions are never written.
 --   * Cheap: one table per recorded event and nothing else. The caller builds that table and hands
---     ownership to Record(); the per-frame breadcrumb driver only adds up `elapsed`.
+--     ownership to Record(); the breadcrumb is an AceTimer that fires once per interval.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Telemetry")   -- an AceAddon module (Core/Const.lua)
 ns.Telemetry = M
 
 local Const, Util, Log, Compat = ns.Const, ns.Util, ns.Log, ns.Compat
@@ -64,22 +64,16 @@ local objSnapshot = {}          -- questID -> { [objectiveIndex] = numFulfilled,
 local turnedInAt = {}           -- questID -> GetTime(), so QR is not recorded after a turn-in
 local lastKillGuid, lastKillAt  -- kill de-duplication
 local lastZoneMap               -- last uiMapID written as a ZONE event
-local breadcrumbAccum = 0
 local lastPosX, lastPosY, lastPosMap
 
-local combatFrame, breadcrumbFrame
+local breadcrumbTimer             -- repeating AceTimer while recording with breadcrumbs on
+local breadcrumbEvery             -- the interval it was started with
+local combatRegistered = false    -- COMBAT_LOG_EVENT_UNFILTERED registered on the module
 local lootPatterns              -- { { pattern = "...", count = bool }, ... }
 
--- Own AceEvent/AceTimer object: AceEvent keys its registry by target, so registering
--- QUEST_TURNED_IN on ns.PQ would collide with Quest/Player.lua (see Quest/Player.lua).
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 ---------------------------------------------------------------------------
 -- Settings and the saved variable
@@ -128,9 +122,11 @@ function M.GetSession()
     return session
 end
 
---- IsEnabled() -> bool. The one place that decides whether anything is recorded at all.
-function M.IsEnabled()
-    return settings().enabled ~= false
+--- IsRecording() -> bool. The one place that decides whether anything is recorded at all: the
+-- player's consent (global.telemetry.enabled) and the module (Options > Modules). Not IsEnabled,
+-- which is AceAddon's own on every module and is re-embedded over a module's by a newer AceAddon.
+function M.IsRecording()
+    return ns.IsModuleWanted("Telemetry") and settings().enabled ~= false
 end
 
 ---------------------------------------------------------------------------
@@ -229,7 +225,7 @@ end
 -- one character and outlive the session they were read in. The companion uploads only the fields
 -- updateCharacter writes; `look` reaches the hub inside the GEAR snapshot.
 function M.GetCharacterRow()
-    if not M.IsEnabled() then return nil end
+    if not M.IsRecording() then return nil end
     local key, name, realm = characterKey()
     local row = M.GetStore().characters[key]
     if type(row) ~= "table" then row = updateCharacter(key, name, realm) end
@@ -251,7 +247,7 @@ end
 
 --- StartSession() -> session|nil. Idempotent: the running session is returned unchanged.
 function M.StartSession()
-    if not M.IsEnabled() then return nil end
+    if not M.IsRecording() then return nil end
     if session then return session end
 
     ensureStore()
@@ -730,12 +726,9 @@ end
 -- Breadcrumbs
 ---------------------------------------------------------------------------
 
---- One POS sample every `breadcrumbInterval` seconds while the player is moving and has quests.
--- The OnUpdate body allocates nothing: it adds up `elapsed` and leaves immediately.
-local function onBreadcrumbUpdate(_, elapsed)
-    breadcrumbAccum = breadcrumbAccum + elapsed
-    if breadcrumbAccum < numberSetting("breadcrumbInterval") then return end
-    breadcrumbAccum = 0
+--- One POS sample every `breadcrumbInterval` seconds while the player is moving and has quests,
+-- from a repeating AceTimer: nothing runs between two samples.
+local function onBreadcrumb()
     if not active or settings().breadcrumbs == false then return end
 
     local QuestLog = ns.QuestLog
@@ -759,32 +752,46 @@ end
 -- The master switch
 ---------------------------------------------------------------------------
 
---- ApplySettings(): the single place where telemetry turns on and off. Everything downstream reads
--- `active`, and the two frames that would otherwise cost CPU are detached when it is false.
-function M.ApplySettings()
-    local wanted = M.IsEnabled()
+-- The breadcrumb timer runs while recording with breadcrumbs on, at the interval in the settings;
+-- a changed interval restarts it.
+local function applyBreadcrumbs()
+    local every = numberSetting("breadcrumbInterval")
+    local wanted = active and settings().breadcrumbs ~= false
+    if breadcrumbTimer and (not wanted or every ~= breadcrumbEvery) then
+        M:CancelTimer(breadcrumbTimer)
+        breadcrumbTimer = nil
+    end
+    if wanted and not breadcrumbTimer then
+        breadcrumbTimer = M:ScheduleRepeatingTimer(onBreadcrumb, every)
+        breadcrumbEvery = every
+    end
+end
+
+--- ApplySettings([off]): the single place where telemetry turns on and off. Everything downstream
+-- reads `active`, and what would otherwise cost CPU -- the combat log event and the breadcrumb
+-- timer -- is dropped when it is false. `off` forces it off (the module being switched off).
+function M.ApplySettings(off)
+    local wanted = not off and M.IsRecording()
     if wanted == active then
         -- The interval or the breadcrumb toggle may still have changed.
-        if breadcrumbFrame then
-            if active and settings().breadcrumbs ~= false then breadcrumbFrame:Show() else breadcrumbFrame:Hide() end
-        end
+        applyBreadcrumbs()
         return active
     end
 
     active = wanted
 
-    if combatFrame then
-        -- COMBAT_LOG_EVENT_UNFILTERED is the highest-frequency event in the game: only ask the
-        -- client to dispatch it when there is an API to read the payload with.
-        if active and combatLogInfoFunc() then
-            combatFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-        else
-            combatFrame:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+    -- COMBAT_LOG_EVENT_UNFILTERED is the highest-frequency event in the game: only ask the client
+    -- to dispatch it when there is an API to read the payload with, and only while recording.
+    if active and combatLogInfoFunc() then
+        if not combatRegistered then
+            M:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", onCombatLogEvent)
+            combatRegistered = true
         end
+    elseif combatRegistered then
+        M:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+        combatRegistered = false
     end
-    if breadcrumbFrame then
-        if active and settings().breadcrumbs ~= false then breadcrumbFrame:Show() else breadcrumbFrame:Hide() end
-    end
+    applyBreadcrumbs()
 
     if active then
         ensureStore()
@@ -848,8 +855,8 @@ function M.GetStatusLines()
     local lines = {}
     ensureStore()
 
-    lines[#lines + 1] = format(L["Telemetry: %s"], M.IsEnabled() and L["Enabled"] or L["Disabled"])
-    if not M.IsEnabled() then
+    lines[#lines + 1] = format(L["Telemetry: %s"], M.IsRecording() and L["Enabled"] or L["Disabled"])
+    if not M.IsRecording() then
         lines[#lines + 1] = L["Nothing is recorded while telemetry is off. Re-enable it in /pq options."]
     end
 
@@ -863,7 +870,7 @@ function M.GetStatusLines()
     -- The gear snapshot is recorded by Sync/Character.lua but reported here, because /pq sync is
     -- the one place a player asks "what is this addon sending?".
     local CharacterSheet = ns.CharacterSheet
-    if CharacterSheet and CharacterSheet.IsEnabled and not CharacterSheet.IsEnabled() then
+    if CharacterSheet and CharacterSheet.IsRecording and not CharacterSheet.IsRecording() then
         lines[#lines + 1] = L["Gear snapshots: off."]
     elseif CharacterSheet and CharacterSheet.GetLast then
         local _, capturedAt = CharacterSheet.GetLast()
@@ -881,36 +888,25 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     buildLootPatterns()
     ensureStore()
 end
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
+function M.OnEnable()
+    M:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
+    M:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
+    M:RegisterEvent("QUEST_REMOVED", onQuestRemoved)
+    M:RegisterEvent("PLAYER_LEVEL_UP", onLevelUp)
+    M:RegisterEvent("PLAYER_DEAD", onPlayerDead)
+    M:RegisterEvent("CHAT_MSG_LOOT", onChatMsgLoot)
+    M:RegisterEvent("PLAYER_LOGOUT", function() M.EndSession() end)
 
-    if CreateFrame then
-        combatFrame = CreateFrame("Frame")
-        combatFrame:SetScript("OnEvent", onCombatLogEvent)
-
-        breadcrumbFrame = CreateFrame("Frame")
-        breadcrumbFrame:SetScript("OnUpdate", onBreadcrumbUpdate)
-        breadcrumbFrame:Hide()
-    end
-
-    listener:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
-    listener:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
-    listener:RegisterEvent("QUEST_REMOVED", onQuestRemoved)
-    listener:RegisterEvent("PLAYER_LEVEL_UP", onLevelUp)
-    listener:RegisterEvent("PLAYER_DEAD", onPlayerDead)
-    listener:RegisterEvent("CHAT_MSG_LOOT", onChatMsgLoot)
-    listener:RegisterEvent("PLAYER_LOGOUT", function() M.EndSession() end)
-
-    listener:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)
-    listener:RegisterMessage("PQ_PLAYER_ZONE_CHANGED", onZoneChanged)
-    listener:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
-    listener:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
-    listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+    M:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)
+    M:RegisterMessage("PQ_PLAYER_ZONE_CHANGED", onZoneChanged)
+    M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", onCurrentTargetChanged)
+    M:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if type(path) == "string" and path:sub(1, 16) == "global.telemetry" then
             M.ApplySettings()
         end
@@ -930,6 +926,12 @@ function M.OnDataReady()
             if not objSnapshot[questID] then snapshotQuest(questID, entry) end
         end
     end
+end
+
+--- Switched off in Options > Modules: the session is closed and the recorder stopped, then AceEvent
+-- and AceTimer drop every event, message and timer that is left.
+function M.OnDisable()
+    M.ApplySettings(true)
 end
 
 function M.OnProfileChanged()

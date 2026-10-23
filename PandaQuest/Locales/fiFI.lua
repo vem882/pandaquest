@@ -778,6 +778,54 @@ local T = {
         "maine %d",
     ["PandaQuest link"] =
         "PandaQuest-linkki",
+
+    -- Modules (Core/Const.lua, Core/Init.lua, UI/Options.lua)
+    ["/pq config [section] [option] [value] - change any setting from chat"] =
+        "/pq config [osio] [asetus] [arvo] - muuta mitä tahansa asetusta chatista",
+    ["That part of PandaQuest is switched off in the options, under Modules."] =
+        "Se PandaQuestin osa on kytketty pois asetuksista, kohdasta Moduulit.",
+    ["Modules"] = "Moduulit",
+    ["Switch a part of PandaQuest off completely: it stops listening to the game and shows nothing. The parts not listed here always run."] =
+        "Kytke PandaQuestin osa kokonaan pois: se lakkaa kuuntelemasta peliä eikä näytä mitään. Muut osat ovat aina käynnissä.",
+    ["Navigation arrow"] = "Navigointinuoli",
+    ["The arrow that points to your next quest objective."] = "Nuoli, joka osoittaa seuraavaan tehtäväkohteeseesi.",
+    ["Map and minimap pins"] = "Kartan ja minikartan merkit",
+    ["Quest pins and gathering nodes on the world map and the minimap."] =
+        "Tehtävämerkit ja keräyspaikat maailmankartalla ja minikartalla.",
+    ["Quest info in tooltips"] = "Tehtävätiedot vihjeruuduissa",
+    ["Which quests an NPC or an item belongs to, on its tooltip."] =
+        "Mihin tehtäviin NPC tai esine liittyy, sen vihjeruudussa.",
+    ["Respawn timers"] = "Uudelleensyntymisajastimet",
+    ["Times how long mobs and nodes take to come back, and fades them until they do."] =
+        "Mittaa, kauanko olennoilla ja keräyspaikoilla kestää palata, ja himmentää ne siihen asti.",
+    ["Gathering nodes"] = "Keräyspaikat",
+    ["Ore, herbs, fishing pools, chests and rare spawns on the maps."] =
+        "Malmit, yrtit, kalaparvet, arkut ja harvinaiset olennot kartoilla.",
+    ["Quest tracker additions"] = "Tehtäväseurannan lisäykset",
+    ["Distances and target buttons in the Blizzard quest tracker."] =
+        "Etäisyydet ja kohdepainikkeet Blizzardin tehtäväseurannassa.",
+    ["The short messages in the middle of the screen."] = "Lyhyet viestit keskellä ruutua.",
+    ["The archaeology bar that fills while you survey a dig site."] =
+        "Arkeologiapalkki, joka täyttyy, kun tutkit kaivauspaikkaa.",
+    ["Auction house scan"] = "Huutokauppakamarin skannaus",
+    ["The Scan prices button on the auction house window, and /pq scan."] =
+        "Huutokauppaikkunan Skannaa hinnat -painike ja /pq scan.",
+    ["Auction sales from the mailbox"] = "Huutokauppamyynnit postilaatikosta",
+    ["Records your auction sales and purchases from the invoices in your mailbox."] =
+        "Tallentaa huutokauppamyyntisi ja -ostosi postilaatikkosi laskuista.",
+    ["Auction prices in tooltips"] = "Huutokauppahinnat vihjeruuduissa",
+    ["Your last scanned prices on item tooltips."] = "Viimeksi skannatut hinnat esineiden vihjeruuduissa.",
+    ["Recipe reader"] = "Reseptien lukija",
+    ["Reads your recipes when you open a profession window."] = "Lukee reseptisi, kun avaat ammatti-ikkunan.",
+    ["Archaeology reader"] = "Arkeologian lukija",
+    ["Reads your archaeology races and artifacts when you open the archaeology window."] =
+        "Lukee arkeologian kansasi ja esineesi, kun avaat arkeologiaikkunan.",
+    ["Quest data recording"] = "Tehtävätietojen tallennus",
+    ["Records quest data for the community routes, once you have agreed to share it."] =
+        "Tallentaa tehtävätietoja yhteisön reitteihin, kun olet suostunut jakamaan ne.",
+    ["Gear recording"] = "Varusteiden tallennus",
+    ["Records your gear for the PandaQuest portal, together with the quest data."] =
+        "Tallentaa varusteesi PandaQuest-portaalia varten tehtävätietojen kanssa.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

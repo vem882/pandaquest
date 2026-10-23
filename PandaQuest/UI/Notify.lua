@@ -12,7 +12,7 @@
 -- message shortens the reading time of the one in front of it so the backlog never goes stale. The
 -- same words forced again (the options Preview button) lengthen the message on screen, or are
 -- absorbed by the identical one that is waiting, instead of queueing copies.
--- Everything that moves goes through ns.Motion; the hold is a C_Timer, so this file has no OnUpdate
+-- Everything that moves goes through ns.Motion; the hold is an AceTimer, so this file has no OnUpdate
 -- of its own and a hidden notification costs nothing. With motion off a message appears whole and
 -- is removed after the same hold as before.
 local _, ns = ...
@@ -20,7 +20,7 @@ local L = ns.L
 
 local Util, Log = ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Notify")   -- an AceAddon module (Core/Const.lua)
 ns.Notify = M
 
 local type, pairs, tostring, format = type, pairs, tostring, string.format
@@ -54,7 +54,7 @@ local history = {}              -- ring of the last messages (tests, /pq status)
 local lastQuestID = nil         -- for PQ_CURRENT_TARGET_CHANGED: only speak when the quest changes
 local current = nil             -- the entry on screen, nil between messages
 local queue = {}                -- entries waiting for their turn, oldest first
-local holdTimer = nil           -- C_Timer that ends the reading time of `current`
+local holdTimer = nil           -- AceTimer that ends the reading time of `current`
 local holdDue = 0               -- GetTime() at which that timer fires
 local shownAt = 0               -- GetTime() when `current` arrived
 local present, endHold          -- forward declarations (they call each other through the queue)
@@ -145,18 +145,14 @@ local function textWidth(text)
 end
 
 local function cancelHold()
-    if holdTimer and holdTimer.Cancel then holdTimer:Cancel() end
+    if holdTimer then M:CancelTimer(holdTimer) end
     holdTimer = nil
 end
 
 local function scheduleHold(seconds)
     cancelHold()
     holdDue = now() + seconds
-    if C_Timer and C_Timer.NewTimer then
-        holdTimer = C_Timer.NewTimer(seconds, endHold)
-    else
-        endHold()       -- no timers at all (a bare runtime): do not leave a message up for ever
-    end
+    holdTimer = M:ScheduleTimer(endHold, seconds)
 end
 
 -- The fade-out is over: hand the screen to the next waiting message, if there is one.
@@ -259,6 +255,7 @@ end
 function M.Show(text, kind, force, dedupeKey)
     if type(text) ~= "string" or text == "" then return false end
     kind = kind or "info"
+    if not ns.IsModuleWanted("Notify") then return false end    -- switched off in Options > Modules
     local p = notifyProfile()
     if not force then
         if p and p.enabled == false then return false end
@@ -472,15 +469,16 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Enable()
-    -- Own AceEvent embed: ns.PQ holds exactly one callback per message, so modules that all
-    -- registered on it would overwrite each other.
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
+function M.OnEnable()
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", M.OnQuestLogChanged)
     M:RegisterMessage("PQ_CURRENT_TARGET_CHANGED", M.OnCurrentTargetChanged)
     M:RegisterMessage("PQ_NOTIFY", M.OnNotify)
+end
+
+--- Switched off in Options > Modules: the messages and the hold timer are gone (AceEvent, AceTimer);
+-- whatever was on screen or waiting goes with them.
+function M.OnDisable()
+    M.Hide()
 end
 
 function M.OnProfileChanged()

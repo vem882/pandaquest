@@ -3,7 +3,7 @@
 -- texture invisible in-game, so every lookup degrades to a path instead of erroring.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Icons")   -- an AceAddon module (Core/Const.lua)
 ns.Icons = M
 
 local type, pairs, tostring = type, pairs, tostring

@@ -18,7 +18,7 @@
 --     the options panel makes, so there is one code path that starts the recorder.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Consent")   -- an AceAddon module (Core/Const.lua)
 ns.Consent = M
 
 local Log = ns.Log
@@ -117,11 +117,11 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init() end
+function M.OnInitialize() end
 
 --- Nothing is asked at login: synchronisation is optional, and a dialog nobody requested is a
 -- nag. `/pq consent` and the options panel are the two ways in.
-function M.Enable() end
+function M.OnEnable() end
 
 --- A profile change cannot un-ask the question: `asked` is global, not per profile.
 function M.OnProfileChanged() end

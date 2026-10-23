@@ -21,7 +21,7 @@
 -- every one of these is simply its final state, and a hidden window has nothing running at all.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("QuestBrowser")   -- an AceAddon module (Core/Const.lua)
 ns.QuestBrowser = M
 
 local L = ns.L
@@ -1661,28 +1661,22 @@ function M.Open(questID)
     return true
 end
 
+function M.OnInitialize() end
+
 -- The catalog finishes asynchronously; the window fills in when it does.
-local listener = {}
-M.listener = listener
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
+function M.OnEnable()
+    M:RegisterMessage("PQ_CATALOG_READY", function()
+        if frame and frame:IsShown() then refreshAll() end
+    end)
+    M:RegisterMessage("PQ_DB_READY", function()
+        local Catalog = catalog()
+        if Catalog then Catalog.Invalidate() end
+    end)
 end
 
-function M.Init() end
-
-function M.Enable()
-    if listener.RegisterMessage then
-        listener:RegisterMessage("PQ_CATALOG_READY", function()
-            if frame and frame:IsShown() then refreshAll() end
-        end)
-        listener:RegisterMessage("PQ_DB_READY", function()
-            local Catalog = catalog()
-            if Catalog then Catalog.Invalidate() end
-        end)
-    end
+--- The page reads browser.questText and browser.rewards as it is drawn: an open one is drawn again.
+function M.OnProfileChanged()
+    M.Refresh()
 end
-
-function M.OnProfileChanged() end
 
 return M

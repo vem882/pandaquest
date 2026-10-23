@@ -11,7 +11,7 @@ local L = ns.L
 
 local Util, Log = ns.Util, ns.Log
 
-local M = {}
+local M = ns.PQ:GetModule("Tracker")   -- an AceAddon module (Core/Const.lua)
 ns.Tracker = M
 
 local type, select, pairs = type, select, pairs
@@ -38,7 +38,10 @@ local function trackerProfile()
     return profile and profile.tracker
 end
 
+-- The WatchFrame hooks cannot be taken off again, so a module switched off in Options > Modules is
+-- told apart here, on every layout.
 local function enabled()
+    if not ns.IsModuleWanted("Tracker") then return false end
     local p = trackerProfile()
     return not p or p.enhanceBlizzard ~= false
 end
@@ -383,7 +386,7 @@ local function lineUpdate()
 end
 M.LineUpdate = lineUpdate
 
-function M.Enable()
+local function hookWatchFrame()
     if hooked then return end
     if not _G or not _G.WatchFrame then
         Log.Debug("Tracker", "WatchFrame is missing; tracker enhancement disabled")
@@ -403,15 +406,19 @@ function M.Enable()
     local addUpdate = _G.WatchFrameLines_AddUpdateFunction
     if type(addUpdate) == "function" then pcall(addUpdate, lineUpdate) end
     hooked = true
+end
 
-    -- Own AceEvent embed (ns.PQ keeps only one callback per message).
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then
-        AceEvent:Embed(M)
-        M:RegisterMessage("PQ_TARGETS_UPDATED", function() M.Refresh() end)
-        M:RegisterMessage("PQ_QUESTLOG_CHANGED", function() M.Refresh() end)
-    end
+function M.OnEnable()
+    hookWatchFrame()
+    if not hooked then return end
+    M:RegisterMessage("PQ_TARGETS_UPDATED", function() M.Refresh() end)
+    M:RegisterMessage("PQ_QUESTLOG_CHANGED", function() M.Refresh() end)
     Log.Debug("Tracker", "enabled")
+end
+
+--- Switched off in Options > Modules: the messages are gone (AceEvent), the rows and buttons go too.
+function M.OnDisable()
+    M.Clear()
 end
 
 function M.OnProfileChanged()

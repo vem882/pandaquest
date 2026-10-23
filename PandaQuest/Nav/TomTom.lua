@@ -11,23 +11,14 @@
 local _, ns = ...
 local L = ns.L
 
-local M = {}
+local M = ns.PQ:GetModule("TomTomBridge")   -- an AceAddon module (Core/Const.lua)
 ns.TomTomBridge = M
 
 local Log, Compat = ns.Log, ns.Compat
 
--- AceEvent/AceTimer key their registries by object, and CallbackHandler keeps exactly ONE callback
--- per (object, message). Registering on the shared ns.PQ object therefore silently replaces the
--- handler another module installed for the same message, so every module listens through its own
--- embedded object instead.
-local listener = {}
-M.listener = listener
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local type, tonumber, tostring = type, tonumber, tostring
 
@@ -179,17 +170,16 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     -- A waypoint description from the previous session has no live uid behind it any more.
     local db = charDB()
     if db then db.tomtomWaypoint = nil end
 end
 
-function M.Enable()
-    if not listener.RegisterMessage then return end
+function M.OnEnable()
     -- "mirror" keeps TomTom pointed at whatever PandaQuest points at. Router calls SetWaypoint
     -- directly on a change; this handler covers the case where the setting is flipped later.
-    listener:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
+    M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if path ~= "nav.tomtomMode" then return end
         local PQ = ns.PQ
         if not PQ or not PQ.db then return end

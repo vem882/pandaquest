@@ -20,7 +20,7 @@ local L = ns.L
 local Const, Log, Thread, Util = ns.Const, ns.Log, ns.Thread, ns.Util
 local Store = ns.AuctionStore
 
-local M = {}
+local M = ns.PQ:GetModule("AuctionScanner")   -- an AceAddon module (Core/Const.lua)
 ns.AuctionScanner = M
 
 local type, pairs, tonumber, tostring, format = type, pairs, tonumber, tostring, string.format
@@ -45,7 +45,8 @@ local ctx                           -- the running scan, nil when idle
 local lastResult                    -- { ok, reason, scan, at } of the last scan this session
 local auctionOpen = false
 local auctioneerNpc
-local button, ticker
+local button
+local ticker                        -- the repeating AceTimer that polls a running scan every TICK
 local hookedPlayerQueries = false
 
 local function unixNow()
@@ -193,6 +194,7 @@ local function reasonText(reason)
     if reason == "noAnswer" then return L["Scan stopped: the auction house did not answer."] end
     if reason == "stopped" then return L["Scan stopped. Nothing was saved."] end
     if reason == "empty" then return L["The auction house sent an empty listing. Nothing was saved."] end
+    if reason == "off" then return L["That part of PandaQuest is switched off in the options, under Modules."] end
     return nil
 end
 
@@ -267,23 +269,17 @@ end
 
 local tick
 
+-- An AceTimer rather than an OnUpdate frame counting to TICK: ten calls a second while a scan runs,
+-- nothing at all otherwise, and it is cancelled with the module.
 local function startTicker()
-    if not ticker then
-        ticker = CreateFrame("Frame", nil, UIParent)
-        ticker.elapsed = 0
-        ticker:SetScript("OnUpdate", function(self, elapsed)
-            self.elapsed = self.elapsed + (elapsed or 0)
-            if self.elapsed < TICK then return end
-            self.elapsed = 0
-            tick()
-        end)
-    end
-    ticker.elapsed = 0
-    ticker:Show()
+    if not ticker then ticker = M:ScheduleRepeatingTimer(function() tick() end, TICK) end
 end
 
 local function stopTicker()
-    if ticker then ticker:Hide() end
+    if ticker then
+        M:CancelTimer(ticker)
+        ticker = nil
+    end
 end
 
 local function endScan(scan, result)
@@ -584,6 +580,7 @@ end
 
 --- CanScan() -> ok, reasonOrMethod. ok is false with "running", "closed" or "unsupported".
 function M.CanScan()
+    if not ns.IsModuleWanted("AuctionScanner") then return false, "off" end
     if ctx then return false, "running" end
     if not auctionOpen then return false, "closed" end
     local method = M.DetectMethod()
@@ -661,7 +658,7 @@ local function onAuctionHouseShow()
     -- UIParent loads the auction UI in its own AUCTION_HOUSE_SHOW handler; if this handler ran
     -- first the frame does not exist yet, so look again on the next frame.
     if not button or not button:IsShown() then
-        if C_Timer and C_Timer.After then C_Timer.After(0, M.RefreshButton) end
+        M:ScheduleTimer(M.RefreshButton, 0)
     end
 end
 
@@ -715,22 +712,27 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     local PQ = ns.PQ
     if PQ and PQ.commands then
         PQ.commands.scan = M.ChatCommand
     end
 end
 
-function M.Enable()
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if not AceEvent then return end
-    AceEvent:Embed(M)
+function M.OnEnable()
     M:RegisterEvent("AUCTION_HOUSE_SHOW", onAuctionHouseShow)
     M:RegisterEvent("AUCTION_HOUSE_CLOSED", onAuctionHouseClosed)
     M:RegisterEvent("REPLICATE_ITEM_LIST_UPDATE", onReplicateList)
     M:RegisterEvent("AUCTION_ITEM_LIST_UPDATE", onLegacyList)
     M:RegisterEvent("AUCTION_HOUSE_THROTTLED_SYSTEM_READY", onThrottleReady)
+end
+
+--- Switched off in Options > Modules: a running scan is stopped (nothing half read is saved), the
+-- button goes, and AceEvent and AceTimer drop the auction events and the poll.
+function M.OnDisable()
+    if ctx then M.Stop("stopped") end
+    auctionOpen = false
+    M.RefreshButton()
 end
 
 function M.OnProfileChanged()
