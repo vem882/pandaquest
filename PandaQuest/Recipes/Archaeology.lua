@@ -427,6 +427,8 @@ function M.OnInitialize()
 end
 
 function M.OnEnable()
+    -- Archaeology is Cataclysm's and later: MoP only (Core/Game.lua). Elsewhere nothing registers.
+    if not ns.Game.Has("archaeology") then return end
     -- One event, both directions, and ARCHAEOLOGY_CLOSED deliberately not registered beside it.
     M:RegisterEvent("ARCHAEOLOGY_TOGGLE", onToggle)
 end

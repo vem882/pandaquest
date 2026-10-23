@@ -1,6 +1,7 @@
 # PandaQuest
 
-**Quest helper and navigator for World of Warcraft: Mists of Pandaria Classic (5.5.4, interface 50504).**
+**Quest helper and navigator for World of Warcraft: Mists of Pandaria Classic (5.5.4), Classic Era (1.15),
+The Burning Crusade Classic Anniversary (2.5) and WoW Forever (1.60).**
 
 PandaQuest shows where your next quest objective is: an arrow, quest pins on the world map and
 minimap, waypoints over quest NPCs' nameplates, gathering nodes with respawn timers, flight times,
@@ -18,7 +19,8 @@ setting, slash command and FAQ) is [`PandaQuest/README.md`](PandaQuest/README.md
 - **CurseForge app** or **Wago app**: search for *PandaQuest* and install it.
 - **By hand:** download `PandaQuest-<version>.zip` from
   [GitHub releases](https://github.com/vem882/pandaquest/releases) and unzip it into
-  `World of Warcraft/_classic_/Interface/AddOns/`, so that the folder is
+  `World of Warcraft/<game folder>/Interface/AddOns/` (`_classic_` for MoP, `_classic_era_`,
+  `_anniversary_` or `_forever_` for the others), so that the folder is
   `AddOns/PandaQuest/PandaQuest.toc`. Releases marked *Pre-release* are betas.
 
 Restart the game, or `/reload` if it was running.
@@ -57,9 +59,21 @@ The addon is built on Ace3 (modules, timers, saved variables, options).
 
 ## Supported games
 
-**Mists of Pandaria Classic** (interface 50504) only. The addon checks which game the client is and
-switches its database off on any other game. Other game versions are being worked on; there is no
-release for them yet.
+| Game | Interface | TOC | Quest database |
+|---|---|---|---|
+| Mists of Pandaria Classic | 50504 | `PandaQuest.toc`, `PandaQuest_Mists.toc` | `Database/Data/` |
+| Classic Era | 11509 | `PandaQuest_Vanilla.toc` | `Database/Era/` |
+| TBC Anniversary | 20506 | `PandaQuest_TBC.toc` | `Database/Anniversary/` |
+| WoW Forever | 16001 | `PandaQuest_Forever.toc`, `PandaQuest_Camelot.toc` | from its launch, 4 November 2026 |
+
+One download: each game's TOC loads the shared code and only its own game's database. WoW Forever has
+no quest data until its launch (no beta data); until then the addon loads there and says so in one
+line. `Core/Game.lua` detects the game and switches off what a game does not have (archaeology and the
+dig-site bar are MoP's; the WatchFrame tracker distances use MoP's tracker; in Forever the recipe
+scanner and combat-log kill counts are off for now); `Core/Compat.lua` bridges Forever's
+Mainline-family API. The other games' databases are built by the portal's
+`tools/build_db.py --flavour Vanilla|TBC|Forever` from the same Questie bundle as MoP's. Retail is not
+supported.
 
 ## Privacy and data sharing
 
@@ -136,17 +150,15 @@ unambiguous and anything that sorts releases by the number reads it the same way
 
 ### The TOC files
 
-The packaged zip carries the addon's TOC twice, with identical bytes: `PandaQuest.toc` and
-`PandaQuest_Mists.toc`. The Mists of Pandaria Classic client reads the `_Mists` file first, CurseForge
-reads the suffix to tag the file's game version, and the plain file is the fallback a consumer's
-package index reads. `## Interface: 50504` and `## AllowLoadGameType: mists` keep it from loading
-anywhere else.
+The packaged zip carries one TOC per game (see "Supported games"), each listing only its own game's
+database. The MoP pair (`PandaQuest.toc`, `PandaQuest_Mists.toc`) and the Forever pair (`_Forever`,
+`_Camelot`) have identical bytes. The plain file is MoP's and the fallback a package index reads; its
+`## AllowLoadGameType: mists` keeps it from loading anywhere else.
 
 Every TOC is written from one template, `.github/release/PandaQuest.toc.template`, filled from
-`.github/release/games.py`: one row per game with its `## Interface`, the lines only its TOC has and
-the TOC lines of its database. Mists of Pandaria Classic is the only game shipped. Forever's row
-(interface 16001, the `_Forever` and `_Camelot` suffixes, CurseForge game version type 88568) is
-written down but has no TOC yet.
+`.github/release/games.py`: one row per game with its `## Interface`, its `## Notes`, the lines only
+its TOC has and the TOC lines of its database. The saved-variables line is the template's, the same
+in every TOC (PandaQuestAH included, as a retired variable nothing touches).
 
 `PandaQuest/PandaQuest.toc` stays in the repository, because CurseForge's own packager ships it as it
 is. **Edit the template, not the TOC**, then run `python3 .github/release/build.py tocs`; `check.py`
@@ -155,7 +167,9 @@ TOCs exist only in the package — a repository with two TOCs would have two to 
 `build.py` refuses a tree that contains one.
 
 `curseforge.py` tags the uploaded file from the package's own TOCs: each `## Interface` number is
-mapped to its game and game version (50504 is Mists of Pandaria Classic `5.5.4`), and the CurseForge
+mapped to its game and game version (50504 is Mists of Pandaria Classic `5.5.4`, 11509 Classic Era
+`1.15.9` under type 67408, 20506 TBC Anniversary `2.5.6` under 73246, 16001 Forever `1.60.1` under 88568),
+and the CurseForge
 game version is looked up by its name and its game version type together, because a name alone can
 belong to two games.
 
@@ -256,8 +270,9 @@ same release being sent twice.
 
 CurseForge also packages the repository itself through its webhook, using `.pkgmeta`. That package
 is made by CurseForge's packager, not by `build.py`, so it is not the reference one: its TOC keeps the
-declared `## Version: 0.2.0` and there is no `Core/Build.lua`. The release asset and the file the
-workflow above uploads are the stamped, deterministic ones.
+declared `## Version: 0.2.0` and there is no `Core/Build.lua`. It has only the plain TOC, so it is a
+MoP Classic package, and `.pkgmeta` leaves the other games' databases out of it. The release asset and
+the file the workflow above uploads are the stamped, deterministic ones.
 
 ## Data from the portal
 

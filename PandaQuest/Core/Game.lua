@@ -5,7 +5,8 @@
 -- there before anything reads the database. It needs nothing but GetBuildInfo at load time; the
 -- functions that print run later, when ns.Log and ns.L exist.
 --
---   ns.Game.id            "mop", "forever" or "unknown", fixed when this file runs
+--   ns.Game.id            "mop", "era", "anniversary", "forever" or "unknown", fixed when this file runs
+--   ns.Game.Has(feature)  whether this game has a feature at all (archaeology, the WatchFrame tracker, ...)
 --   ns.Game.DataGame()    the game ns.Data was built for; a database that does not say is MoP's
 --   ns.Game.DataMatches() false turns the database off (Database/DB.lua) with one line in chat
 --   ns.Game.ClaimSavedVariables()  tags each saved variable with ns.Game.id, from Core/Init.lua
@@ -19,9 +20,13 @@ local concat, sort = table.concat, table.sort
 local _G = _G
 
 Game.MOP, Game.FOREVER, Game.UNKNOWN = "mop", "forever", "unknown"
+Game.ERA, Game.ANNIVERSARY = "era", "anniversary"
 
+-- The keys are the portal's (pandaquest_hub/versions.py) and the build's (.github/release/games.py).
 Game.NAMES = {
     mop = "Mists of Pandaria Classic",
+    era = "Classic Era",
+    anniversary = "Burning Crusade Classic Anniversary",
     forever = "WoW Forever",
 }
 
@@ -31,25 +36,82 @@ local FOREVER_INTERFACES = { 16000, 16999 }
 local FOREVER_PROJECT_ID = 18
 -- Mists of Pandaria Classic is 5.5.x, interface 505xx.
 local MOP_INTERFACES = { 50500, 50599 }
+-- Classic Era is 1.15.x (11509; 11508 is its test realm), project id 2 (WOW_PROJECT_CLASSIC). The same
+-- client is Season of Discovery, Hardcore and the fresh Anniversary realms before TBC.
+local ERA_INTERFACES = { 11500, 11599 }
+local ERA_PROJECT_ID = 2
+-- TBC Anniversary is 2.5.x (20506), project id 5 (WOW_PROJECT_BURNING_CRUSADE_CLASSIC). The 2021
+-- Burning Crusade Classic client that also said 2.5 became Wrath Classic long ago.
+local ANNIVERSARY_INTERFACES = { 20500, 20599 }
+local ANNIVERSARY_PROJECT_ID = 5
 
 local function within(value, range)
     return value ~= nil and value >= range[1] and value <= range[2]
 end
 
---- Game.Detect(version, interface, projectID, mistsProjectID) -> "mop" | "forever" | "unknown"
+--- Game.Detect(version, interface, projectID, mistsProjectID) -> "mop" | "era" | "anniversary" | "forever" | "unknown"
 -- From GetBuildInfo's version and interface number and the client's WOW_PROJECT_ID; mistsProjectID is
 -- WOW_PROJECT_MISTS_CLASSIC. Any of them may be nil: the project constants do not exist in every
--- client. The interface ranges are asked before the project ids, so a 505xx client is always MoP.
+-- client. The interface ranges are asked before the project ids, so a 505xx client is always MoP and a
+-- 16xxx one always Forever, whatever project id it reports.
 function Game.Detect(version, interface, projectID, mistsProjectID)
     interface = tonumber(interface)
     if within(interface, FOREVER_INTERFACES) then return Game.FOREVER end
     if within(interface, MOP_INTERFACES) then return Game.MOP end
+    if within(interface, ERA_INTERFACES) then return Game.ERA end
+    if within(interface, ANNIVERSARY_INTERFACES) then return Game.ANNIVERSARY end
     if type(projectID) == "number" then
         if projectID == FOREVER_PROJECT_ID then return Game.FOREVER end
         if type(mistsProjectID) == "number" and projectID == mistsProjectID then return Game.MOP end
+        -- A project id alone (no interface number) decides only for the two games whose id is fixed
+        -- and not shared: Retail's 1 is not one of them.
+        if interface == nil and projectID == ERA_PROJECT_ID then return Game.ERA end
+        if interface == nil and projectID == ANNIVERSARY_PROJECT_ID then return Game.ANNIVERSARY end
     end
-    if type(version) == "string" and version:match("^5%.5%.") then return Game.MOP end
+    if type(version) == "string" then
+        if version:match("^5%.5%.") then return Game.MOP end
+        if version:match("^1%.15%.") then return Game.ERA end
+        if version:match("^2%.5%.") then return Game.ANNIVERSARY end
+        if version:match("^1%.6%d%.") then return Game.FOREVER end
+    end
     return Game.UNKNOWN
+end
+
+---------------------------------------------------------------------------
+-- What each game has
+---------------------------------------------------------------------------
+
+-- Features a game's client does not have at all, or that PandaQuest only implements for some games. A
+-- module asks Game.Has before it registers a single event, so in a game without the feature nothing of
+-- it runs and nothing of it is shown. Everything not listed here is in every game; the API differences
+-- between the clients are bridged in Core/Compat.lua instead.
+--   archaeology   the profession, its dig sites and its frames: Cataclysm and later, so MoP only. Forever's
+--                 Mainline engine still carries Blizzard_ArchaeologyUI, but there is no archaeology in its world.
+--   watchFrame    the MoP WatchFrame tracker UI/Tracker.lua decorates; Era and TBC have QuestWatchFrame,
+--                 Forever the Mainline ObjectiveTrackerFrame.
+--   tradeSkills   the recipe scanner (Recipes/Scanner.lua) reads the classic trade skill window; Forever has
+--                 the Mainline Professions UI (C_TradeSkillUI), which it does not read yet.
+--   combatLog     kill counts from COMBAT_LOG_EVENT_UNFILTERED; restricted on Forever's Mainline engine.
+--   petBattles    pet battles exist from MoP on.
+--   pandaria      the Pandaria flight bar and anything that only means something in Pandaria.
+Game.FEATURES = {
+    archaeology = { mop = true },
+    watchFrame = { mop = true },
+    tradeSkills = { mop = true, era = true, anniversary = true },
+    combatLog = { mop = true, era = true, anniversary = true },
+    petBattles = { mop = true },
+    pandaria = { mop = true },
+}
+
+--- Game.Has(feature [, game]) -> bool
+-- A feature this file does not list is in every game. A game this file does not know has every feature
+-- PandaQuest's original game has, so an unknown client behaves as the MoP addon always did.
+function Game.Has(feature, game)
+    local games = Game.FEATURES[feature]
+    if games == nil then return true end
+    game = game or Game.id
+    if game == Game.UNKNOWN or game == nil then game = Game.MOP end
+    return games[game] == true
 end
 
 do

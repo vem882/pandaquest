@@ -52,10 +52,15 @@ end
 
 --- sideOf(races) -> "alliance" | "horde" | "both"
 -- A quest for no race in particular, or for races of both factions, is "both".
+-- 64 bits (Core/Compat.lua): WoW Forever's Skyborne bits 32/33 count to their faction.
+local ALLIANCE_RACES = RACE.ALL_ALLIANCE + RACE.SKYBORNE_ALLIANCE
+local HORDE_RACES = RACE.ALL_HORDE + RACE.SKYBORNE_HORDE
 local function sideOf(races)
-    if type(races) ~= "number" or races == 0 or not band then return "both" end
-    if band(races, RACE.ALL_ALLIANCE) == races then return "alliance" end
-    if band(races, RACE.ALL_HORDE) == races then return "horde" end
+    if type(races) ~= "number" or races == 0 then return "both" end
+    local band64 = ns.Compat and ns.Compat.Band64
+    if not band64 then return "both" end
+    if band64(races, ALLIANCE_RACES) == races then return "alliance" end
+    if band64(races, HORDE_RACES) == races then return "horde" end
     return "both"
 end
 M.SideOf = sideOf

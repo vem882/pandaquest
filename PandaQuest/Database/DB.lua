@@ -41,6 +41,7 @@ local extras = { quests = {}, npcs = {}, objects = {}, items = {} }  -- override
 local ready = false
 local loading = false
 local refusedGame = false                   -- the database is another game's: said once, never loaded
+local saidPending = false                   -- this game's database ships later (Database/Forever/Pending.lua)
 local loadHandle
 local stats = { loadMs = 0, counts = {} }
 
@@ -65,6 +66,22 @@ local OVERRIDE_KEYS = {
 -- The override sets in the order they are applied: a later one has the last word. The portal's
 -- corrections (Database/Overrides/Portal.lua) are what its moderators decided, so they come last.
 local OVERRIDE_SETS = { "wowhead", "community", "portal" }
+
+-- Database/Overrides/Community.lua is ONE file every TOC lists: the sync app writes it into each game's
+-- install folder. A file that names no game was written for MoP Classic, the only game the portal's
+-- community data comes from today; in another game it is set aside (ns.Overrides.foreignCommunity, kept,
+-- never applied), so MoP's guides, respawns and nodes never land on another world (docs/13 section 9.3).
+do
+    local Overrides, Game = ns.Overrides, ns.Game
+    local community = type(Overrides) == "table" and Overrides.community or nil
+    if type(community) == "table" and Game and Game.id and Game.id ~= Game.UNKNOWN then
+        local written = type(community.game) == "string" and community.game or Game.MOP
+        if written ~= Game.id then
+            Overrides.foreignCommunity = community
+            Overrides.community = nil
+        end
+    end
+end
 
 -- Sets that fill gaps only. Database/Overrides/Wowhead.lua is what the PandaQuest portal read off Wowhead
 -- for the places the generated database is empty; the sync that writes it checks that against the same
@@ -403,6 +420,18 @@ function DB.Load()
     if loading then return true end
 
     local Data = ns.Data
+    -- A game whose TOC ships without its database yet (WoW Forever until its launch: no beta data) says
+    -- so once, in words, instead of reporting a broken install. ns.Data.pending names when it comes.
+    if type(Data) == "table" and Data.pending and Data.quests == nil then
+        if not saidPending then
+            saidPending = true
+            local Game = ns.Game
+            Log.Print(L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."],
+                Game and Game.Name(Data.game or Game.id) or tostring(Data.game), tostring(Data.pending))
+        end
+        ready = false
+        return false
+    end
     if type(Data) ~= "table" or (Data.quests == nil and Data.npcs == nil) then
         Log.Error("DB", L["PandaQuest database not found. Reinstall the addon: the Database/Data files are missing."])
         ready = false
@@ -580,10 +609,11 @@ function DB.GetQuestTagInfo(questID)
         return correction[1], correction[2]
     end
 
-    local api = _G and _G.GetQuestTagInfo
-    if api then
-        local ok, tagID, tagName = pcall(api, questID)
-        if ok and tagID then
+    -- GetQuestTagInfo in the classic clients, C_QuestLog.GetQuestTagInfo in Forever (Core/Compat.lua).
+    local Compat = ns.Compat
+    if Compat and Compat.GetQuestTagInfo then
+        local tagID, tagName = Compat.GetQuestTagInfo(questID)
+        if tagID then
             tagCache[questID] = { tagID, tagName }
             return tagID, tagName
         end

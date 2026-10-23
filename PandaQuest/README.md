@@ -1,6 +1,7 @@
 # PandaQuest
 
-**Quest helper and navigator for Mists of Pandaria Classic (5.5.4, Interface 50504).**
+**Quest helper and navigator for Mists of Pandaria Classic (5.5.4), WoW Classic Era (1.15), The Burning
+Crusade Classic Anniversary (2.5) and WoW Forever (1.60).**
 
 An arrow that always points at your next sensible quest objective, quest pins on the world map and
 minimap, waypoints, gathering nodes, flight times and links to the PandaQuest site — with a
@@ -119,8 +120,13 @@ how the map art loads and how the motion feels are still open. Please report wha
 `/pq status` and the Lua error text if there is one. A build made for testing says *beta* after the
 version in the AddOns list and in `/pq status`.
 
-PandaQuest is built for **Mists of Pandaria Classic 5.5.4** only. It does not load on other game
-versions. Optional: **TomTom** is detected automatically when present.
+PandaQuest runs in **Mists of Pandaria Classic 5.5.4**, **WoW Classic Era 1.15**, **The Burning Crusade
+Classic Anniversary 2.5** and **WoW Forever 1.60**: one download, and each game loads its own quest
+database only. Features a game does not have stay off there: archaeology and the dig-site bar are MoP's,
+the quest tracker distances use MoP's tracker, and in WoW Forever the profession recipe scanner and kill
+counts are off for now. **WoW Forever's quest database arrives with the game's launch (4 November
+2026)**; until then PandaQuest loads there without quest data and says so once. Retail is not supported.
+Optional: **TomTom** is detected automatically when present.
 
 ## Getting help and reporting problems
 
@@ -256,8 +262,9 @@ not been tested together in game. If you see two sets of pins, switch one addon'
 the options panel's *Profiles* tab. Deleting `PandaQuestDB.lua` from your SavedVariables folder
 (with the game closed) resets all settings.
 
-**Does it work on Retail, Classic Era or other Classic versions?** No. It targets interface
-50504, Mists of Pandaria Classic 5.5.4.
+**Does it work on Retail, Classic Era or other Classic versions?** Classic Era (1.15), TBC
+Anniversary (2.5), Mists of Pandaria Classic (5.5.4) and WoW Forever (1.60, quest data from its launch)
+yes; Retail and the other Classic versions no.
 
 ## Compatibility
 

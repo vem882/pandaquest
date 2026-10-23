@@ -129,7 +129,7 @@ end
 
 --- NpcIdFromGuid(guid) -> npcID|nil
 function M.NpcIdFromGuid(guid)
-    if type(guid) ~= "string" then return nil end
+    if (Compat and Compat.IsSecret and Compat.IsSecret(guid)) or type(guid) ~= "string" then return nil end
     return Util.NpcIdFromGuid(guid)
 end
 
@@ -357,11 +357,7 @@ function M.FromTarget(target)
 end
 
 local function superTrackedQuest()
-    local get = _G.GetSuperTrackedQuestID
-    if type(get) ~= "function" then return nil end
-    local ok, questID = pcall(get)
-    if ok and type(questID) == "number" and questID > 0 then return questID end
-    return nil
+    return Compat.GetSuperTrackedQuestID()
 end
 
 local function tomtomPoint()
@@ -1141,8 +1137,9 @@ end
 local function tokenIsTarget(token)
     local d = M.current
     if not d or not d.npcID or type(token) ~= "string" then return false end
+    -- NpcIdFromGuid answers nil for no GUID and for a secret one (Forever), so nothing compares a secret.
     local guid = _G.UnitGUID and _G.UnitGUID(token)
-    return guid ~= nil and M.NpcIdFromGuid(guid) == d.npcID
+    return M.NpcIdFromGuid(guid) == d.npcID
 end
 
 local function detach()
@@ -1502,8 +1499,10 @@ function M:OnEnable()
         self:RegisterMessage(message, M.RequestUpdate)
     end
     self:RegisterMessage("PQ_SETTING_CHANGED", onSettingChanged)
-    for _, event in ipairs({ "PLAYER_ENTERING_WORLD", "ZONE_CHANGED_NEW_AREA", "SUPER_TRACKED_QUEST_CHANGED" }) do
-        pcall(self.RegisterEvent, self, event, M.RequestUpdate)
+    -- SUPER_TRACKED_QUEST_CHANGED in the classic clients, SUPER_TRACKING_CHANGED in Forever: each one is
+    -- registered where the client knows it (Core/Compat.lua).
+    for _, event in ipairs({ "PLAYER_ENTERING_WORLD", "ZONE_CHANGED_NEW_AREA", unpack(Compat.SUPER_TRACK_EVENTS) }) do
+        Compat.RegisterEvent(self, event, M.RequestUpdate)
     end
     -- /way only when nobody else has it; with TomTom, its waypoint is followed instead.
     M.wayOwner = M.WayOwner()

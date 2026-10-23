@@ -801,10 +801,8 @@ end
 -- the way the client names it; an id the client does not know stays readable as an id.
 local function factionName(factionID)
     if type(factionID) ~= "number" then return tostring(factionID) end
-    if GetFactionInfoByID then
-        local ok, name = pcall(GetFactionInfoByID, factionID)
-        if ok and type(name) == "string" and name ~= "" then return name end
-    end
+    local name = ns.Compat.GetFactionInfoByID(factionID)
+    if type(name) == "string" and name ~= "" then return name end
     return format(L["faction %d"], factionID)
 end
 
@@ -816,11 +814,8 @@ M.ReputationText = reputationText
 local function difficultyText(level)
     level = effectiveLevel(level)
     if type(level) ~= "number" or level <= 0 then return "-" end
-    local range = 5
-    if GetQuestGreenRange then
-        local ok, value = pcall(GetQuestGreenRange)
-        if ok and type(value) == "number" and value > 0 then range = value end
-    end
+    local range = ns.Compat.GetQuestGreenRange()
+    if not range or range <= 0 then range = 5 end
     return format("|cffffff00%d|r  |cff40c040%d|r  |cff808080%d|r",
         max(1, level - 2), level + 3, level + range + 1)
 end

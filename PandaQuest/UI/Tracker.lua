@@ -409,6 +409,8 @@ local function hookWatchFrame()
 end
 
 function M.OnEnable()
+    -- MoP's WatchFrame only: Era and TBC draw QuestWatchFrame, Forever ObjectiveTrackerFrame (Core/Game.lua).
+    if not ns.Game.Has("watchFrame") then return end
     hookWatchFrame()
     if not hooked then return end
     M:RegisterMessage("PQ_TARGETS_UPDATED", function() M.Refresh() end)

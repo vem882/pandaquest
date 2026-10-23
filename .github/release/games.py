@@ -14,10 +14,18 @@ A row says, for one game:
   name alone is not unique across games (curseforge.py);
 * whether the package carries it at all (``shipped``).
 
-Mists of Pandaria Classic is the only game shipped.  Forever's row is written down so that its numbers
-are in one place before its TOCs exist (the portal repository's docs/13-forever-and-versions.md, sections
-2.5 and 8): interface 16001, the ``_Forever`` and ``_Camelot`` suffixes, CurseForge game version type
-88568.  It has no TOC lines yet, and build.py refuses to write a TOC for a game that has none.
+Four games are shipped (the portal repository's docs/13-forever-and-versions.md, sections 2.5 and 8):
+
+* Mists of Pandaria Classic -- the plain ``PandaQuest.toc`` and ``_Mists``, byte for byte as before;
+* Classic Era -- ``_Vanilla``, its database in ``Database/Era/``;
+* TBC Anniversary -- ``_TBC``, its database in ``Database/Anniversary/``;
+* WoW Forever -- ``_Forever`` and ``_Camelot``, byte-identical.  Its TOCs list ``Database/Forever/Pending.lua``
+  instead of a database until the game launches (4 November 2026): the owner's rule is no beta data, and
+  Questie's Forever data is the beta's.  The addon says so in one line in game.
+
+Each TOC lists only its own game's database, so a client never parses another game's data.  The CurseForge
+game version types are BigWigsMods/packager's (release.sh: ``classic) game_id=67408``, ``bcc) 73246``,
+``mists) 79434``, ``forever) 88568``).
 """
 
 from __future__ import annotations
@@ -44,6 +52,8 @@ class Game:
     curseforge_type: int
     #: Whether the package carries this game's TOC files.
     shipped: bool
+    #: The ``## Notes`` lines (with their localized variants), at the template's ``{{notes}}`` line.
+    notes: tuple[str, ...] = ()
     #: Lines only this game's TOC has, at the template's ``{{game-header}}`` line.
     header: tuple[str, ...] = ()
     #: This game's zone tables, at the template's ``{{zone-data}}`` line.
@@ -63,6 +73,20 @@ MOP = Game(
     # written down; CurseForge's API lists them only beside each version.
     curseforge_type=79434,
     shipped=True,
+    notes=(
+        "## Notes: Quest helper and navigator for Mists of Pandaria Classic",
+        "## Notes-fiFI: Tehtäväapuri ja navigaattori Mists of Pandaria Classiciin",
+        "## Notes-deDE: Questhelfer und Navigator für Mists of Pandaria Classic",
+        "## Notes-esES: Ayudante de misiones y navegador para Mists of Pandaria Classic",
+        "## Notes-esMX: Asistente de misiones y navegador para Mists of Pandaria Classic",
+        "## Notes-frFR: Assistant de quêtes et navigateur pour Mists of Pandaria Classic",
+        "## Notes-itIT: Assistente per le missioni e navigatore per Mists of Pandaria Classic",
+        "## Notes-koKR: 판다리아의 안개 클래식을 위한 퀘스트 도우미 및 내비게이터",
+        "## Notes-ptBR: Assistente de missões e navegador para Mists of Pandaria Classic",
+        "## Notes-ruRU: Помощник по заданиям и навигатор для Mists of Pandaria Classic",
+        "## Notes-zhCN: 熊猫人之谜 经典版 任务助手与导航",
+        "## Notes-zhTW: 潘達利亞之謎 經典版 任務助手與導航",
+    ),
     header=(
         "# Mists of Pandaria Classic only (documented at warcraft.wiki.gg/wiki/TOC_format). The release also",
         "# carries this file under the name PandaQuest_Mists.toc, which the Mists client reads first.",
@@ -83,6 +107,61 @@ MOP = Game(
     ),
 )
 
+def _notes(english: str, finnish: str) -> tuple[str, ...]:
+    """A new game's ``## Notes``: English, which every other client language falls back to, and Finnish."""
+    return (f"## Notes: {english}", f"## Notes-fiFI: {finnish}")
+
+
+def _database(folder: str, *, seed: bool) -> tuple[str, ...]:
+    """A game's database lines: its own folder's generated files and overrides, the companion's shared
+    Community.lua, and -- for the games pfQuest describes (vanilla and TBC) -- its respawn/drop seed."""
+    base = f"Database\\{folder}"
+    return (
+        f"{base}\\Data\\Meta.lua",
+        f"{base}\\Data\\Quests.lua",
+        f"{base}\\Data\\Npcs.lua",
+        f"{base}\\Data\\Objects.lua",
+        f"{base}\\Data\\Items.lua",
+        *(("Database\\Data\\Seed.lua",) if seed else ()),
+        f"{base}\\Overrides\\Wowhead.lua",
+        "Database\\Overrides\\Community.lua",
+        f"{base}\\Overrides\\Portal.lua",
+    )
+
+
+ERA = Game(
+    key="era",
+    name="Classic Era",
+    interface=11509,
+    interfaces=range(11500, 11600),
+    # The suffix Questie and QuestieDB use; the packager maps it to its "classic" game type.
+    suffixes=("_Vanilla",),
+    fallback=False,
+    curseforge_type=67408,
+    shipped=True,
+    notes=_notes("Quest helper and navigator for WoW Classic Era",
+                 "Tehtäväapuri ja navigaattori WoW Classic Eraan"),
+    zone_data=("Database\\Era\\ZoneData.lua",),
+    # Seed.lua is pfQuest's vanilla+tbc respawn timers, drop rates and gathering nodes: Era's own world.
+    data=_database("Era", seed=True),
+)
+
+ANNIVERSARY = Game(
+    key="anniversary",
+    name="Burning Crusade Classic Anniversary",
+    interface=20506,
+    interfaces=range(20500, 20600),
+    suffixes=("_TBC",),
+    fallback=False,
+    # The packager's "bcc" type: TBC Anniversary is tagged as Burning Crusade Classic 2.5.x.
+    curseforge_type=73246,
+    shipped=True,
+    notes=_notes("Quest helper and navigator for The Burning Crusade Classic Anniversary",
+                 "Tehtäväapuri ja navigaattori The Burning Crusade Classic Anniversaryyn"),
+    zone_data=("Database\\Anniversary\\ZoneData.lua",),
+    data=_database("Anniversary", seed=True),
+)
+
 FOREVER = Game(
     key="forever",
     name="WoW Forever",
@@ -92,12 +171,17 @@ FOREVER = Game(
     suffixes=("_Forever", "_Camelot"),
     fallback=False,
     curseforge_type=88568,
-    # Not until the addon has been made to work there (step A3): no TOC lines, no database.
-    shipped=False,
+    shipped=True,
+    notes=_notes("Quest helper and navigator for WoW Forever",
+                 "Tehtäväapuri ja navigaattori WoW Foreveriin"),
+    # No beta data (the owner's decision): until Forever's live data exists the TOC carries Pending.lua,
+    # which tells the player in one line that the database comes at launch.  Then: zone_data =
+    # Database\Forever\ZoneData.lua and data = _database("Forever", seed=False).
+    data=("Database\\Forever\\Pending.lua", "Database\\Overrides\\Community.lua"),
 )
 
 #: Every game, in the order their TOCs are written and tagged.
-GAMES: tuple[Game, ...] = (MOP, FOREVER)
+GAMES: tuple[Game, ...] = (MOP, ERA, ANNIVERSARY, FOREVER)
 
 
 def by_key(key: str) -> Game:

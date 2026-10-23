@@ -12,7 +12,12 @@ manual-changelog:
   filename: PandaQuest/changelog.txt
 move-folders:
   PandaQuest/PandaQuest: PandaQuest
+# That package has only the plain TOC, which is Mists of Pandaria Classic's, so the other games'
+# databases would be dead weight in it: the four-game package is the GitHub release zip.
 ignore:
+  - PandaQuest/Database/Era
+  - PandaQuest/Database/Anniversary
+  - PandaQuest/Database/Forever
   - .github
   - assets
   - README.md

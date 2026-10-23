@@ -61,6 +61,10 @@ end
 local function masksOverlap(required, playerMask)
     if not required or required == 0 then return true end
     if not playerMask or playerMask == 0 then return false end
+    -- 64 bits: WoW Forever's Skyborne race bits (32, 33) are beyond bit.band's reach (Core/Compat.lua).
+    if ns.Compat and ns.Compat.MasksOverlap then
+        return ns.Compat.MasksOverlap(required, playerMask)
+    end
     if band then
         return band(required, playerMask) ~= 0
     end
@@ -104,8 +108,8 @@ local function professionName(skillLine)
     if cached ~= nil then return cached or nil end
     local spellID = PROFESSION_SPELLS[skillLine]
     local name
-    if spellID and GetSpellInfo then
-        name = GetSpellInfo(spellID)
+    if spellID then
+        name = ns.Compat.GetSpellName(spellID)
     end
     professionNames[skillLine] = name or false
     return name
@@ -133,11 +137,7 @@ function M.IsLevelOk(questID)
     local questLevel = DB.GetQuestField(questID, "questLevel") or 0
     if questLevel <= 0 then return true end          -- scaling / unknown: always show
 
-    local green = 5
-    if GetQuestGreenRange then
-        local ok, value = pcall(GetQuestGreenRange, "player")
-        if ok and type(value) == "number" then green = value end
-    end
+    local green = ns.Compat.GetQuestGreenRange() or 5
     return questLevel >= (level - green)
 end
 

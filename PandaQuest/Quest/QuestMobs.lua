@@ -341,9 +341,10 @@ local hooked = false
 local function hookTooltip()
     if hooked then return end
     local tooltip = _G.GameTooltip
-    if not (tooltip and tooltip.HookScript) then return end
+    if not tooltip then return end
     hooked = true
-    tooltip:HookScript("OnTooltipSetUnit", function(self)
+    -- OnTooltipSetUnit in the classic clients, TooltipDataProcessor in Forever (Core/Compat.lua).
+    ns.Compat.HookTooltip(tooltip, "Unit", function(self)
         local ok, err = pcall(M.OnTooltipSetUnit, self)
         if not ok then Log.Error("QuestMobs", "tooltip line failed: %s", tostring(err)) end
     end)

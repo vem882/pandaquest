@@ -316,16 +316,18 @@ class TheZipContract(unittest.TestCase):
         cls.infos = cls.archive.infolist()
 
     def _reachable(self) -> set[str]:
-        """Every archive path the packaged TOC reaches, directly or through an XML include.
+        """Every archive path a packaged TOC reaches, directly or through an XML include.
 
         The client's own load order: the TOC names files and XML files, an XML names scripts
-        and further XML.  Anything outside the closure is never run.
+        and further XML.  Anything outside the closure is never run.  Every game's TOC counts:
+        Era's database is reached by ``PandaQuest_Vanilla.toc`` and by no other.
         """
         names = {name.lower(): name for name in self.archive.namelist()}
         prefix = f"{build.ADDON}/"
-        _directives, listed = toc_lines(
-            self.archive.read(f"{prefix}{build.ADDON}.toc").decode("utf-8-sig")
-        )
+        listed: list[str] = []
+        for name in self.archive.namelist():
+            if name.count("/") == 1 and name.startswith(prefix) and name.endswith(".toc"):
+                listed += toc_lines(self.archive.read(name).decode("utf-8-sig"))[1]
         reached: set[str] = set()
         queue = [prefix + entry.replace("\\", "/") for entry in listed]
         while queue:
@@ -599,10 +601,12 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn("WoW Forever", problems[0])
         self.assertIn("88568", problems[0])
 
-    def test_every_toc_the_package_carries_maps_to_mop_5_5_4(self) -> None:
-        """Today: two TOCs, one game, one game version -- and the type is Mists of Pandaria Classic's."""
+    def test_every_toc_the_package_carries_maps_to_its_game(self) -> None:
+        """Six TOCs, four games, four game versions, each under its own game version type."""
         wanted = curseforge.wanted_versions(build.toc_texts())
-        self.assertEqual([(type_id, name, game.key) for type_id, name, game in wanted], [(79434, "5.5.4", "mop")])
+        self.assertEqual([(type_id, name, game.key) for type_id, name, game in wanted],
+                         [(67408, "1.15.9", "era"), (73246, "2.5.6", "anniversary"), (79434, "5.5.4", "mop"),
+                          (88568, "1.60.1", "forever")])
 
     def test_forever_tocs_would_add_forever_1_60_1(self) -> None:
         """Prepared, not shipped: the mapping a package with Forever's TOCs would get (step A3)."""
@@ -622,8 +626,9 @@ class CurseForgeReadiness(unittest.TestCase):
         for name, text in (
             ("PandaQuest_Mists.toc", "## Interface: 16001\n"),     # the Mists client would read Forever's file
             ("PandaQuest_Forever.toc", "## Interface: 50504\n"),
-            ("PandaQuest.toc", "## Interface: 11509\n"),           # Classic Era: not an addon target
-            ("PandaQuest_Vanilla.toc", "## Interface: 11509\n"),
+            ("PandaQuest.toc", "## Interface: 110205\n"),          # Retail: not an addon target
+            ("PandaQuest_Vanilla.toc", "## Interface: 20506\n"),   # Era's client would read TBC's file
+            ("PandaQuest_TBC.toc", "## Interface: 11509\n"),
             ("PandaQuest.toc", "## Title: no interface\n"),
         ):
             with self.subTest(name=name, text=text), self.assertRaises(ValueError):
@@ -666,7 +671,7 @@ class CurseForgeReadiness(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "PandaQuest-0.2.1.zip"
             with zipfile.ZipFile(path, "w") as archive:
-                archive.writestr("PandaQuest/PandaQuest.toc", "## Interface: 11509\n## X-Curse-Project-ID: 111\n")
+                archive.writestr("PandaQuest/PandaQuest.toc", "## Interface: 110205\n## X-Curse-Project-ID: 111\n")
             with mock.patch.dict(os.environ, {"CF_API_TOKEN": "x"}), \
                     mock.patch.object(curseforge, "_call", side_effect=AssertionError("must not call")):
                 self.assertEqual(curseforge.upload(path, "111", "beta"), 2)
@@ -770,9 +775,9 @@ class TheTocFiles(unittest.TestCase):
     """Every TOC is written from one template, and MoP's are today's TOC byte for byte.
 
     The repository keeps ``PandaQuest.toc`` because CurseForge's own packager ships it as it is;
-    the package's copies come from the template.  So the one thing that must hold is that the
-    template, filled for Mists of Pandaria Classic, *is* the repository's TOC -- not "equivalent",
-    the same bytes -- and that nothing but MoP is shipped yet.
+    the package's copies come from the template.  So what must hold is that the template, filled
+    for Mists of Pandaria Classic, *is* the repository's TOC -- not "equivalent", the same bytes --
+    and that every other game's TOC lists its own database and no other game's.
     """
 
     def test_the_repositorys_toc_is_what_the_template_makes(self) -> None:
@@ -784,28 +789,68 @@ class TheTocFiles(unittest.TestCase):
         )
         self.assertTrue(build.write_tocs(check=True))
 
-    def test_mop_has_the_plain_and_the_mists_toc_with_the_same_bytes(self) -> None:
+    ALL_TOCS = ["PandaQuest.toc", "PandaQuest_Camelot.toc", "PandaQuest_Forever.toc", "PandaQuest_Mists.toc",
+                "PandaQuest_TBC.toc", "PandaQuest_Vanilla.toc"]
+
+    def test_every_game_has_its_tocs_and_the_twins_have_the_same_bytes(self) -> None:
         tocs = build.toc_texts()
-        self.assertEqual(sorted(tocs), ["PandaQuest.toc", "PandaQuest_Mists.toc"])
+        self.assertEqual(sorted(tocs), self.ALL_TOCS)
         self.assertEqual(tocs["PandaQuest.toc"], tocs["PandaQuest_Mists.toc"])
+        self.assertEqual(tocs["PandaQuest_Forever.toc"], tocs["PandaQuest_Camelot.toc"])
         content = build.entries(build.identity())
         packaged = sorted(name for name in content if name.count("/") == 1 and name.endswith(".toc"))
-        self.assertEqual(packaged, ["PandaQuest/PandaQuest.toc", "PandaQuest/PandaQuest_Mists.toc"])
+        self.assertEqual(packaged, [f"PandaQuest/{name}" for name in self.ALL_TOCS])
         self.assertEqual(content["PandaQuest/PandaQuest.toc"], content["PandaQuest/PandaQuest_Mists.toc"])
+        self.assertEqual(content["PandaQuest/PandaQuest_Forever.toc"], content["PandaQuest/PandaQuest_Camelot.toc"])
+        for name, interface in (("PandaQuest_Vanilla.toc", 11509), ("PandaQuest_TBC.toc", 20506),
+                                ("PandaQuest_Forever.toc", 16001), ("PandaQuest_Mists.toc", 50504)):
+            self.assertIn(f"## Interface: {interface}\n", tocs[name], name)
 
-    def test_forever_is_known_and_not_shipped(self) -> None:
-        """Step A3 ships it; until then its numbers are written down and nothing else."""
-        self.assertEqual([game.key for game in games.shipped()], ["mop"])
-        self.assertFalse(games.FOREVER.shipped)
-        self.assertEqual(games.FOREVER.interface, 16001)
-        self.assertEqual(games.FOREVER.suffixes, ("_Forever", "_Camelot"))
-        self.assertEqual(games.FOREVER.curseforge_type, 88568)
+    def test_the_four_games(self) -> None:
+        """Interfaces, suffixes and CurseForge types (BigWigsMods/packager's table) in one place."""
+        self.assertEqual([game.key for game in games.shipped()], ["mop", "era", "anniversary", "forever"])
+        rows = {game.key: (game.interface, game.suffixes, game.curseforge_type) for game in games.GAMES}
+        self.assertEqual(rows, {
+            "mop": (50504, ("_Mists",), 79434),
+            "era": (11509, ("_Vanilla",), 67408),
+            "anniversary": (20506, ("_TBC",), 73246),
+            "forever": (16001, ("_Forever", "_Camelot"), 88568),
+        })
         self.assertIs(games.by_interface(16001), games.FOREVER)
         self.assertIs(games.by_interface(50504), games.MOP)
-        self.assertIsNone(games.by_interface(11509))
+        self.assertIs(games.by_interface(11509), games.ERA)
+        self.assertIs(games.by_interface(11508), games.ERA)
+        self.assertIs(games.by_interface(20506), games.ANNIVERSARY)
+        self.assertIsNone(games.by_interface(110205))
         self.assertIs(games.by_suffix(""), games.MOP)
-        with self.assertRaises(SystemExit):
-            build.render_toc(games.FOREVER)
+        self.assertIs(games.by_suffix("_TBC"), games.ANNIVERSARY)
+        self.assertIs(games.by_suffix("_Camelot"), games.FOREVER)
+
+    def test_each_toc_lists_its_own_database_and_no_other_games(self) -> None:
+        """A client never parses another game's data: each TOC names its own folder only."""
+        folders = {"mop": "database\\data\\", "era": "database\\era\\",
+                   "anniversary": "database\\anniversary\\", "forever": "database\\forever\\"}
+        shared_ok = {"database\\data\\seed.lua"}            # pfQuest's vanilla+tbc seed: Era's and TBC's too
+        for game in games.shipped():
+            name = f"PandaQuest{game.suffixes[0]}.toc"
+            _directives, files = toc_lines(build.toc_texts()[name])
+            own = [*game.zone_data, *game.data]
+            self.assertEqual([entry for entry in files if entry in own], own, f"{name}: in that order")
+            for other, folder in folders.items():
+                if other == game.key:
+                    continue
+                strays = [entry for entry in files if entry.lower().startswith(folder) and entry.lower() not in shared_ok]
+                self.assertEqual(strays, [], f"{name} lists {other}'s files")
+            for entry in own:
+                self.assertTrue((ADDON_DIR / entry.replace("\\", "/")).is_file(), entry)
+
+    def test_forever_waits_for_launch_without_data(self) -> None:
+        """No beta data: Forever's TOC carries Pending.lua and no database file (the owner's decision)."""
+        _directives, files = toc_lines(build.toc_texts()["PandaQuest_Forever.toc"])
+        forever = [entry for entry in files if entry.lower().startswith("database\\forever\\")]
+        self.assertEqual(forever, ["Database\\Forever\\Pending.lua"])
+        self.assertFalse((ADDON_DIR / "Database" / "Forever" / "Data").exists())
+        self.assertFalse([entry for entry in files if "ZoneData" in entry])
 
     def test_the_game_is_known_before_anything_reads_the_database(self) -> None:
         """Core/Game.lua is the first file, and the first after Core/Build.lua in the package."""
@@ -851,7 +896,8 @@ class TheTocFiles(unittest.TestCase):
         self.assertEqual([name for name in files if name in own], own, "in that order")
         on_disk = sorted("Database\\Data\\" + path.name for path in (ADDON_DIR / "Database" / "Data").glob("*.lua"))
         self.assertEqual(sorted(name for name in games.MOP.data if name.startswith("Database\\Data\\")), on_disk)
-        self.assertFalse([name for name in files if name.lower().startswith("database\\forever\\")])
+        for folder in ("forever", "era", "anniversary"):
+            self.assertFalse([name for name in files if name.lower().startswith(f"database\\{folder}\\")])
 
     def test_the_shared_part_is_the_same_for_every_game(self) -> None:
         """A game changes its own lines and its interface; the rest is the template, once."""
@@ -862,10 +908,12 @@ class TheTocFiles(unittest.TestCase):
             zone_data=("Database\\Forever\\ZoneData.lua",), data=("Database\\Forever\\Data\\Meta.lua",))
 
         def shared(game):
-            own = {*game.header, *game.zone_data, *game.data, f"## Interface: {game.interface}"}
+            own = {*game.notes, *game.header, *game.zone_data, *game.data, f"## Interface: {game.interface}"}
             return [line for line in build.render_toc(game).split("\n") if line not in own]
 
         self.assertEqual(shared(games.MOP), shared(other))
+        for game in games.shipped():
+            self.assertEqual(shared(games.MOP), shared(game), game.key)
         self.assertIn("## Interface: 16001", build.render_toc(other))
         self.assertNotIn("AllowLoadGameType", build.render_toc(other))
 

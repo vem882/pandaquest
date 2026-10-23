@@ -1303,12 +1303,8 @@ function M.OnEnable()
     end)
     M:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", function(_, unit, _castGUID, spellID)
         if unit ~= "player" then return end
-        local name = nil
-        if type(GetSpellInfo) == "function" then
-            local ok, spellName = pcall(GetSpellInfo, spellID)
-            if ok then name = spellName end
-        end
-        M.NoteGatherCast(spellID, name)
+        -- C_Spell.GetSpellName in every client; GetSpellInfo is gone from Forever (Core/Compat.lua).
+        M.NoteGatherCast(spellID, ns.Compat.GetSpellName(spellID))
     end)
     -- The nodes are built for the map the player is on and the map that is open, so both of those
     -- moving is a redraw. ZONE_CHANGED_NEW_AREA covers walking; the two hooks below cover opening

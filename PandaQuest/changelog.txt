@@ -4,6 +4,17 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.241
+- games - PandaQuest runs in Classic Era, TBC Anniversary and WoW Forever, beside MoP Classic
+  - one download: each game's TOC loads only its own quest database
+  - WoW Forever's quest database comes with its launch (4 November 2026); one line says so
+  - the MoP Classic TOC and database are unchanged
+- games - features a game does not have stay off there: archaeology and the dig-site bar are MoP's
+  - in WoW Forever the recipe scanner and kill counts from the combat log are off for now
+- saved data - MoP data copied into another game's folder is set aside whole, never deleted
+- compatibility - WoW Forever's quest log, spells, reputation and tooltips are bridged
+  - Skyborne quests (race bits 32 and 33) are matched correctly
+
 0.2.240
 - auction - the auction house scan, mailbox sales and auction tooltip prices are removed
   - your saved auction data (PandaQuestAH) is kept: still declared, never read or written
