@@ -195,7 +195,7 @@ ns.MODULE_ORDER = {
 -- the database -- and stays on.
 ns.OPTIONAL_MODULES = {
     "Arrow", "Pins", "Tooltips", "Respawn", "Professions",
-    "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
+    "Tracker", "Notify", "DigSiteBar",
     "AuctionScanner", "AuctionMail", "AuctionTooltip", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet",
 }
