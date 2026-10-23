@@ -4,20 +4,14 @@ local _, ns = ...
 
 local T = {
     -- Core / Init
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s cargado. Escribe /pq para ver las opciones y /pq help para ver los comandos.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "¡Te damos la bienvenida a PandaQuest! La flecha señala tu próximo objetivo de misión. Escribe /pq help para ver los comandos.",
     ["%s is not available yet."] = "%s aún no está disponible.",
     ["Unknown command: %s"] = "Comando desconocido: %s",
     ["Available commands:"] = "Comandos disponibles:",
-    ["/pq - open options"] = "/pq - abrir las opciones",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - mostrar u ocultar la flecha de navegación",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - fijar una misión (o mostrar el objetivo actual)",
     ["/pq next - skip the current target"] = "/pq next - saltar el objetivo actual",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - unidades de distancia",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - enlace de Wowhead",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - ocultar una misión del navegador",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - volver a mostrar una misión oculta",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - restablecer la posición de la flecha y los marcadores del mapa",
@@ -103,7 +97,6 @@ local T = {
     ["Show on map"] = "Mostrar en el mapa",
     ["TomTom is not loaded."] = "TomTom no está cargado.",
     ["Unlock arrow"] = "Desbloquear flecha",
-    ["Wowhead link"] = "Enlace de Wowhead",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "%d puntos de aparición aquí",
@@ -111,7 +104,6 @@ local T = {
     ["Right-click: more options"] = "Clic derecho: más opciones",
     ["Set as target"] = "Fijar como objetivo",
     ["Hide quest: %s"] = "Ocultar misión: %s",
-    ["Wowhead: %s"] = "Wowhead: %s",
     ["Starts: %s"] = "Comienza: %s",
     ["Turn in: %s"] = "Entregar: %s",
     ["Ends: %s"] = "Termina: %s",
@@ -577,7 +569,6 @@ local T = {
     ["Clears the quest pinned with the focus setting or the map's right-click menu."] =
         "Quita la misión fijada con el ajuste 'Misión fijada' o con el menú de clic derecho del mapa.",
     ["Reset arrow position and map pins"] = "Restablecer flecha y marcadores",
-    ["Wowhead link for the current target"] = "Enlace de Wowhead del objetivo actual",
     ["%d quests are hidden from the navigator."] = "%d misiones están ocultas del navegador.",
     ["Show all hidden quests again"] = "Mostrar de nuevo las misiones ocultas",
     ["Reading windows"] = "Lectura de ventanas",

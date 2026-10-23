@@ -4,20 +4,14 @@ local _, ns = ...
 
 local T = {
     -- Core / Init
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s 已載入。輸入 /pq 開啟選項，輸入 /pq help 查看指令。",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "歡迎使用 PandaQuest！箭頭會指向你的下一個任務目標。輸入 /pq help 查看指令。",
     ["%s is not available yet."] = "%s 目前尚無法使用。",
     ["Unknown command: %s"] = "未知的指令：%s",
     ["Available commands:"] = "可用的指令：",
-    ["/pq - open options"] = "/pq - 開啟選項",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - 切換導航箭頭",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - 固定一個任務（或顯示目前目標）",
     ["/pq next - skip the current target"] = "/pq next - 略過目前的目標",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - 距離單位",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - Wowhead 連結",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - 從導航中隱藏任務",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - 重新顯示已隱藏的任務",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - 重設箭頭位置與地圖標記",
@@ -102,7 +96,6 @@ local T = {
     ["Show on map"] = "在地圖上顯示",
     ["TomTom is not loaded."] = "TomTom 尚未載入。",
     ["Unlock arrow"] = "解除鎖定箭頭",
-    ["Wowhead link"] = "Wowhead 連結",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "此處有 %d 個重生點",
@@ -110,7 +103,6 @@ local T = {
     ["Right-click: more options"] = "右鍵點擊：更多選項",
     ["Set as target"] = "設為目標",
     ["Hide quest: %s"] = "隱藏任務：%s",
-    ["Wowhead: %s"] = "Wowhead：%s",
     ["Starts: %s"] = "起始：%s",
     ["Turn in: %s"] = "交付任務：%s",
     ["Ends: %s"] = "結束：%s",
@@ -575,8 +567,6 @@ local T = {
         "清除透過「專注任務」設定或地圖右鍵選單所固定的任務。",
     ["Reset arrow position and map pins"] =
         "重設箭頭位置與地圖標記",
-    ["Wowhead link for the current target"] =
-        "目前目標的 Wowhead 連結",
     ["%d quests are hidden from the navigator."] =
         "有 %d 個任務已從導航中隱藏。",
     ["Show all hidden quests again"] =

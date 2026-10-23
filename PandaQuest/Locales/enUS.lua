@@ -7,17 +7,17 @@ local L = AceLocale:NewLocale("PandaQuest", "enUS", true, true)
 if not L then return end
 
 -- Core / Init
-L["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] = true
-L["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] = true
+L["PandaQuest %s loaded. Type /pq to open it."] = true
+L["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq to open PandaQuest and its settings."] = true
 L["%s is not available yet."] = true
 L["Unknown command: %s"] = true
 L["Available commands:"] = true
-L["/pq - open options"] = true
+L["/pq - open PandaQuest: every quest, and the Settings button"] = true
 L["/pq arrow - toggle the navigation arrow"] = true
 L["/pq target [questID|clear] - pin a quest (or show the current target)"] = true
 L["/pq next - skip the current target"] = true
 L["/pq units meters|yards - distance units"] = true
-L["/pq wh [questID] - Wowhead link"] = true
+L["/pq wh [questID] - link to the quest's page on the PandaQuest portal"] = true
 L["/pq hide <questID> - hide a quest from the navigator"] = true
 L["/pq unhide <questID> - show a hidden quest again"] = true
 L["/pq reset - reset arrow position and map pins"] = true
@@ -101,7 +101,7 @@ L["Show distance in yards"] = true
 L["Show on map"] = true
 L["TomTom is not loaded."] = true
 L["Unlock arrow"] = true
-L["Wowhead link"] = true
+L["Link to the quest's page"] = true
 
 -- Nav/Waypoint (in-world waypoints, /way)
 L["Waypoints"] = true
@@ -159,7 +159,7 @@ L["Left-click: navigate here"] = true
 L["Right-click: more options"] = true
 L["Set as target"] = true
 L["Hide quest: %s"] = true
-L["Wowhead: %s"] = true
+L["Portal page: %s"] = true
 L["Starts: %s"] = true
 L["Turn in: %s"] = true
 L["Ends: %s"] = true
@@ -581,7 +581,7 @@ L["Moves the arrow on to the next target."] = true
 L["Stop following the pinned quest"] = true
 L["Clears the quest pinned with the focus setting or the map's right-click menu."] = true
 L["Reset arrow position and map pins"] = true
-L["Wowhead link for the current target"] = true
+L["Link to the current target's page"] = true
 L["%d quests are hidden from the navigator."] = true
 L["Show all hidden quests again"] = true
 L["Reading windows"] = true
@@ -631,3 +631,45 @@ L["Quest data recording"] = true
 L["Records quest data for the community routes, once you have agreed to share it."] = true
 L["Gear recording"] = true
 L["Records your gear for the PandaQuest portal, together with the quest data."] = true
+
+-- /pq opens the quest browser (Core/Init.lua)
+L["/pq opens PandaQuest; everything else is in its Settings."] = true
+L["/pq options - open the settings"] = true
+L["/pq help all - every command"] = true
+
+-- The quest browser: the Settings button and what can be done with one quest (UI/QuestBrowser.lua)
+L["Show in the navigator"] = true
+L["Hide from the navigator"] = true
+L["Copy link"] = true
+L["The arrow and the map pins follow this quest."] = true
+L["A hidden quest is left out of the arrow's route and the map pins. Settings > Hidden quests lists them."] = true
+L["Opens the world map where this quest starts."] = true
+L["The quest's page on the PandaQuest portal, to copy into your browser."] = true
+L["Settings"] = true
+L["Every PandaQuest setting: modules, arrow, map, tooltips, sync and privacy, language and more."] = true
+
+-- Options: what used to be a chat command only (UI/Options.lua)
+L["The arrow, the flight bar and the dig site bar are back where they started."] = true
+L["No quest is hidden from the navigator."] = true
+L["Modules switched on: %d of %d"] = true
+L["Every chat command still works, for macros. None of them is needed: everything is in these settings."] = true
+L["Synchronisation and privacy"] = true
+L["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."] = true
+L["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."] = true
+L["Moving frames"] = true
+L["The arrow, the flight bar and the dig site bar can be dragged where you want them while they are unlocked."] = true
+L["Unlock frames to move them"] = true
+L["Unlocks the arrow, the flight bar and the dig site bar, and shows the two bars for a moment so you can find them."] = true
+L["Reset positions"] = true
+L["Puts the arrow, the flight bar and the dig site bar back where they started."] = true
+L["Hidden quests"] = true
+L["Hidden quest"] = true
+L["A hidden quest is left out of the arrow's route and the map pins."] = true
+L["Show this quest again"] = true
+L["Status"] = true
+L["Refresh"] = true
+L["Database entry"] = true
+L["Kind"] = true
+L["ID"] = true
+L["Print the entry to chat"] = true
+L["Chat commands"] = true

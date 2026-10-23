@@ -4,20 +4,14 @@ local _, ns = ...
 
 local T = {
     -- Core / Init
-    ["PandaQuest %s loaded. Type /pq for options, /pq help for commands."] =
-        "PandaQuest %s 로드됨. 옵션은 /pq, 명령어는 /pq help를 입력하세요.",
-    ["Welcome to PandaQuest! The arrow points to your next quest objective. Type /pq help for commands."] =
-        "PandaQuest에 오신 것을 환영합니다! 화살표가 다음 퀘스트 목표를 가리킵니다. 명령어는 /pq help를 입력하세요.",
     ["%s is not available yet."] = "아직 사용할 수 없습니다: %s",
     ["Unknown command: %s"] = "알 수 없는 명령어: %s",
     ["Available commands:"] = "사용 가능한 명령어:",
-    ["/pq - open options"] = "/pq - 옵션 열기",
     ["/pq arrow - toggle the navigation arrow"] = "/pq arrow - 길 안내 화살표 켜기/끄기",
     ["/pq target [questID|clear] - pin a quest (or show the current target)"] =
         "/pq target [questID|clear] - 퀘스트 고정 (또는 현재 대상 표시)",
     ["/pq next - skip the current target"] = "/pq next - 현재 대상 건너뛰기",
     ["/pq units meters|yards - distance units"] = "/pq units meters|yards - 거리 단위",
-    ["/pq wh [questID] - Wowhead link"] = "/pq wh [questID] - Wowhead 링크",
     ["/pq hide <questID> - hide a quest from the navigator"] = "/pq hide <questID> - 길 안내에서 퀘스트 숨기기",
     ["/pq unhide <questID> - show a hidden quest again"] = "/pq unhide <questID> - 숨긴 퀘스트 다시 표시",
     ["/pq reset - reset arrow position and map pins"] = "/pq reset - 화살표 위치와 지도 핀 초기화",
@@ -103,7 +97,6 @@ local T = {
     ["Show on map"] = "지도에 표시",
     ["TomTom is not loaded."] = "TomTom이 로드되지 않았습니다.",
     ["Unlock arrow"] = "화살표 잠금 해제",
-    ["Wowhead link"] = "Wowhead 링크",
 
     -- Map (pins, tooltips)
     ["%d spawns here"] = "이곳에 %d개 출현",
@@ -111,7 +104,6 @@ local T = {
     ["Right-click: more options"] = "오른쪽 클릭: 옵션 더 보기",
     ["Set as target"] = "대상으로 지정",
     ["Hide quest: %s"] = "퀘스트 숨기기: %s",
-    ["Wowhead: %s"] = "Wowhead: %s",
     ["Starts: %s"] = "시작: %s",
     ["Turn in: %s"] = "반환: %s",
     ["Ends: %s"] = "종료: %s",
@@ -597,8 +589,6 @@ local T = {
         "집중 퀘스트 설정이나 지도의 오른쪽 클릭 메뉴로 고정한 퀘스트를 해제합니다.",
     ["Reset arrow position and map pins"] =
         "화살표 위치와 지도 핀 초기화",
-    ["Wowhead link for the current target"] =
-        "현재 대상의 Wowhead 링크",
     ["%d quests are hidden from the navigator."] =
         "퀘스트 %d개가 길 안내에서 숨겨져 있습니다.",
     ["Show all hidden quests again"] =
