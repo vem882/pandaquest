@@ -10,7 +10,7 @@ local L = ns.L
 local Util = ns.Util
 local Store = ns.AuctionStore
 
-local M = {}
+local M = ns.PQ:GetModule("AuctionTooltip")   -- an AceAddon module (Core/Const.lua)
 ns.AuctionTooltip = M
 
 local type, tostring, format, pcall = type, tostring, string.format, pcall
@@ -21,7 +21,10 @@ local COLOR_AGE = { 0.6, 0.6, 0.6 }
 
 local hooked = false
 
+-- The tooltip hooks cannot be taken off again, so a module switched off in Options > Modules is
+-- told apart here, on every tooltip.
 local function enabled()
+    if not ns.IsModuleWanted("AuctionTooltip") then return false end
     local PQ = ns.PQ
     local auction = PQ and PQ.db and PQ.db.profile and PQ.db.profile.auction
     if not auction then return ns.DEFAULTS.profile.auction.showTooltipPrices end
@@ -73,7 +76,7 @@ function M.OnTooltipSetItem(tooltip)
     end
 end
 
-function M.Enable()
+function M.OnEnable()
     if hooked then return end
     for _, name in ipairs({ "GameTooltip", "ItemRefTooltip" }) do
         local tooltip = _G[name]
