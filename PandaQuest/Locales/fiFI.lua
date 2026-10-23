@@ -1012,6 +1012,24 @@ local T = {
         "Tehtävä: %s (%d/%d)",
     ["Quest: %s"] =
         "Tehtävä: %s",
+    ["Quest: %s (talk to)"] =
+        "Tehtävä: %s (puhu)",
+    ["Turn in: %s"] =
+        "Palauta: %s",
+    ["Quest available: %s"] =
+        "Tehtävä tarjolla: %s",
+    ["Mark NPCs to talk to"] =
+        "Merkitse NPC:t, joille pitää puhua",
+    ["Mark where quests are turned in (?)"] =
+        "Merkitse, minne tehtävät palautetaan (?)",
+    ["Mark quest givers with a quest for you (!)"] =
+        "Merkitse tehtävänantajat, joilla on sinulle tehtävä (!)",
+    ["Quest givers and turn-ins are friendly NPCs: their marks need friendly nameplates (Shift-V)."] =
+        "Tehtävänantajat ja palautuspaikat ovat ystävällisiä NPC:itä: niiden merkit tarvitsevat ystävälliset nimikilvet (Shift-V).",
+
+    -- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
+    ["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] =
+        "PandaQuest päivittyi pelin ollessa käynnissä, ja peli käyttää yhä vanhaa tiedostoluetteloa: %s ei latautunut. Sulje World of Warcraft kokonaan ja käynnistä se uudelleen; /reload ei riitä.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.242] - 2026-10-23
+
+### Fixed
+- **Flight times and quest mobs missing after an update.** The game reads an addon's file list when
+  it starts, not on `/reload`, so an update installed while the game ran loaded its changed files but
+  not its new ones: after 0.2.236 the flight bar showed only the time in the air on a grey bar, the
+  flight master showed no flight times and no quest mob was marked. PandaQuest now notices files that
+  did not load and says once in chat to quit the game completely and start it again.
+- **Quest mobs: the right NPCs for kill-credit objectives.** An objective named after a group
+  ("Muckscale tribe members slain") was matched by position among all of the quest's creatures,
+  counting the ones other objectives had already claimed by name, so the group was never marked and
+  another creature was marked twice. It now picks only from the creatures no other objective names.
+
+### Added
+- **More quest NPCs marked on nameplates and tooltips**, each with its own switch under Quest mobs:
+  - the NPC a talk-to objective names (a speech mark);
+  - the NPC a quest in your log is turned in to: a yellow "?" when it is complete, a grey one before;
+  - quest givers with a quest you can pick up now: a "!".
+  - The kill mark is now PandaQuest's kill pin by default, so it is not mistaken for a quest giver's
+    "!". Friendly NPCs need friendly nameplates (Shift-V) to show their marks.
+
 ## [0.2.241] - 2026-10-23
 
 PandaQuest now runs in four games: Mists of Pandaria Classic, WoW Classic Era, The Burning Crusade

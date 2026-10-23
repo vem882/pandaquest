@@ -721,3 +721,13 @@ L["A gold wash over the nameplate's health bar, with Blizzard's own nameplates."
 L["Show the quest on the tooltip"] = true
 L["Quest: %s (%d/%d)"] = true
 L["Quest: %s"] = true
+L["Quest: %s (talk to)"] = true
+L["Turn in: %s"] = true
+L["Quest available: %s"] = true
+L["Mark NPCs to talk to"] = true
+L["Mark where quests are turned in (?)"] = true
+L["Mark quest givers with a quest for you (!)"] = true
+L["Quest givers and turn-ins are friendly NPCs: their marks need friendly nameplates (Shift-V)."] = true
+
+-- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
+L["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] = true

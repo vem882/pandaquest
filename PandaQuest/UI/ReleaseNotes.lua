@@ -6,6 +6,11 @@
 local _, ns = ...
 
 ns.ReleaseNotes = {
+    { version = "0.2.242", date = "2026-10-23", lines = {
+        "core - new files of an update made while the game ran did not load: PandaQuest now says to restart",
+        "quest mobs - kill-credit objectives mark their own group, not another creature of the quest twice",
+        "quest mobs - talk-to NPCs, turn-in NPCs (?) and givers with a quest for you (!) are marked too",
+    } },
     { version = "0.2.240", date = "2026-10-23", lines = {
         "auction - the auction house scan, mailbox sales and auction tooltip prices are removed",
     } },

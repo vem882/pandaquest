@@ -266,6 +266,20 @@ end
 PQ:SetDefaultModuleState(false)
 PQ:SetDefaultModulePrototype(Prototype)
 PQ:SetDefaultModuleLibraries("AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0")
+-- ns.BARE_MODULES[name] = the raw keys a module has before its own file runs. A module that still has
+-- exactly these at login is one whose file the game never loaded (Core/Init.lua, CheckLoadedFiles).
+ns.BARE_MODULES = {}
 for _, name in ipairs(ns.MODULE_ORDER) do
-    ns[name] = PQ:NewModule(name)
+    local module = PQ:NewModule(name)
+    ns[name] = module
+    local keys = {}
+    for key in pairs(module) do keys[key] = true end
+    ns.BARE_MODULES[name] = keys
 end
+-- Files that are not modules but that other files only use when present, so a missing one is
+-- silent: the table each of them puts on ns.
+ns.FILE_TABLES = { "FlightRoutes", "FlightEta", "FlightTooltip", "FlightBar", "Motion", "MinimapButton",
+                   "QuestCatalog", "QuestieDB", "Waypoint" }
+-- The Database/Overrides files each game's TOC lists, by the ns.Overrides key each one sets (the
+-- other games' TOCs carry their own data files: .github/release/games.py).
+ns.OVERRIDE_FILES = { mop = { "wowhead", "community", "portal", "flights" } }
