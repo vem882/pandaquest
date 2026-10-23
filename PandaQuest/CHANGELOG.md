@@ -4,6 +4,171 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.237] - 2026-10-23
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,579 quests, 55 NPCs, 4 objects
+- quest 2754 - Horns of Frenzy - updated
+  - description added
+  - reward items: +1
+- quest 8790 - Imperial Qiraji Regalia - updated
+  - description added
+  - reward choices: +3
+- quest 9670 - They're Alive! Maybe... - updated
+  - description added
+  - reward items: +1
+- quest 9760 - Vindicator's Rest - updated
+  - description added
+- quest 10330 - Shutting Down Manaforge Coruu - updated
+  - description added
+- quest 10348 - New Opportunities - updated
+  - description added
+- quest 12063 - Strength of Icemist - updated
+  - description added
+- quest 12245 - No Mercy for the Captured - updated
+  - description added
+- quest 12298 - High Commander Halford Wyrmbane - updated
+  - description added
+- quest 12411 - A Sister's Pledge - updated
+  - description added
+- quest 12413 - Attack on Silverbrook - updated
+  - description added
+  - reward choices: +5
+- quest 12647 - An End to the Suffering - updated
+  - description added
+  - reward choices: +4
+- quest 12758 - A Hero's Headgear - updated
+  - description added
+- quest 12937 - Relief for the Fallen - updated
+  - description added
+- quest 13088 - Northern Cooking - updated
+  - description added
+- quest 13793 - Among the Champions - updated
+  - description added
+  - reward choices: +2
+- quest 14435 - The Blackmaw Doublecross - updated
+  - description added
+  - reward choices: +3
+- quest 26044 - Where Are the Parts? - updated
+  - description added
+- quest 26405 - Zul'Mamwe Mambo - updated
+  - description added
+  - reward choices: +3
+- quest 27191 - Hungry as an Ogre! - updated
+  - description added
+  - reward choices: +2
+- quest 32143 - A Kind of Magic - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32144 - Under Pressure - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32145 - Don't Lose Your Head - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32146 - Hammer to Fall - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32148 - Attack! Move! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32149 - Resource Gathering - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32150 - Supply Block - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32151 - Tower Defense - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32152 - Siege Damage - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32153 - Hero Killer - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32154 - Burn Out! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32156 - It's Only Right - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32157 - The Only Good Goblin... - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32158 - Two Step Program - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32161 - Beastmaster's Hunt: The Crane - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32162 - Beastmaster's Hunt: The Tiger - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32163 - Beastmaster's Hunt: The Crab - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32164 - Beastmaster's Hunt: The Crane - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32165 - Beastmaster's Hunt: The Tiger - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32166 - Beastmaster's Hunt: The Crab - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32167 - Ancient's Fall - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32168 - End of an Elder - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32169 - A Colossal Victory - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32170 - Ancient's Fall - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32171 - End of an Elder - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32172 - A Colossal Victory - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32181 - Beastmaster's Quarry: The Crane - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32182 - Beastmaster's Quarry: The Tiger - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32183 - Beastmaster's Quarry: The Crab - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32184 - Beastmaster's Quarry: The Crane - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32371 - Memory Wine - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32377 - A Kor'kron In Our Midst - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 33341 - Wayshrines Of The Celestials - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 64142 - A Demonstration of Loyalty - updated
+  - description added
+  - XP added (11,900)
+- npc 4358 - Mirefin Puddlejumper - updated
+  - coordinates: 14 spawn points added in Dustwallow Marsh
+- npc 17681 - Expedition Researcher - updated
+  - coordinates: 40 spawn points added in Bloodmyst Isle
+- npc 39273 - "Doc" Cogspin - updated
+  - coordinates: 16 spawn points added in Dun Morogh
+- npc 67438 - Krasari Elder - updated
+  - coordinates: 4 spawn points added in Krasarang Wilds
+
 ## [0.2.236] - 2026-10-23
 
 The flight bar knows how long the flight takes, and quest mobs are marked on their nameplates.
