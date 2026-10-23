@@ -768,6 +768,16 @@ local T = {
         "Näytä lisäosalokerossa",
     ["Adds PandaQuest to the add-on list under the minimap."] =
         "Lisää PandaQuestin minikartan alla olevaan lisäosaluetteloon.",
+
+    -- The quest browser: scaling quests, reputation, the portal link (UI/QuestBrowser.lua)
+    ["Scales"] =
+        "Skaalautuu",
+    ["A quest that scales with your level, for %s, from level %d."] =
+        "Tasosi mukaan skaalautuva tehtävä, %s, tasolta %d alkaen.",
+    ["faction %d"] =
+        "maine %d",
+    ["PandaQuest link"] =
+        "PandaQuest-linkki",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

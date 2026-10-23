@@ -140,9 +140,33 @@ local function sideText(side)
     return L["both factions"]
 end
 
-local function colorHex(level)
-    return Util.QuestDifficultyColorHex(level):sub(3)
+-- Questie writes -1 (and the database 0) for a quest whose level follows the player's: it scales.
+local function scales(level)
+    return type(level) ~= "number" or level <= 0
 end
+
+local function playerLevel()
+    local level = UnitLevel and UnitLevel("player")
+    return (type(level) == "number" and level > 0) and level or 1
+end
+
+--- The level a quest is played at: its own, or the player's when it scales.
+local function effectiveLevel(level)
+    if scales(level) then return playerLevel() end
+    return level
+end
+
+local function colorHex(level)
+    return Util.QuestDifficultyColorHex(effectiveLevel(level)):sub(3)
+end
+
+--- The level as the list and the page write it: the number, or "Scales" for a scaling quest.
+local function levelText(level)
+    local hex = colorHex(level)
+    if scales(level) then return format("|c%s%s|r", "ff" .. hex:sub(1, 6), L["Scales"]) end
+    return format("|c%s%d|r", "ff" .. hex:sub(1, 6), level)
+end
+M.LevelText = levelText
 
 local function setColor(fontString, color)
     fontString:SetTextColor(color[1], color[2], color[3], color[4] or 1)
@@ -623,12 +647,11 @@ function refreshList(changed)
         local row, record = rows[i], results[scrollOffset + i]
         if record then
             row.questId = record.id
-            local hex = colorHex(record.level)
             local selected = record.id == selectedId
             row.name:SetText(Util.Truncate(record.name, NAME_CHARS))
             setColor(row.name, selected and GOLD or TEXT)
             row.zone:SetText(Util.Truncate(Catalog.ZoneLabel(nil, record.area) or "", ZONE_CHARS))
-            row.level:SetText(format("|c%s%d|r", "ff" .. hex:sub(1, 6), record.level))
+            row.level:SetText(levelText(record.level))
             row.req:SetText(record.minLevel > 0 and tostring(record.minLevel) or "-")
             row.xp:SetText(record.xp and tostring(record.xp) or "")
             local color = sideColor(record.side)
@@ -769,7 +792,24 @@ end
 --- Difficulty: the player levels at which the quest turns yellow, green and grey.
 -- Blizzard's own colour rule (GetQuestDifficultyColor): yellow from 2 levels below the quest's, green
 -- from 3 above, grey beyond the green range, which the client reports for the player's level.
+--- The reputation a quest gives, "+5 The Tillers": Questie's {factionID, amount} with the faction named
+-- the way the client names it; an id the client does not know stays readable as an id.
+local function factionName(factionID)
+    if type(factionID) ~= "number" then return tostring(factionID) end
+    if GetFactionInfoByID then
+        local ok, name = pcall(GetFactionInfoByID, factionID)
+        if ok and type(name) == "string" and name ~= "" then return name end
+    end
+    return format(L["faction %d"], factionID)
+end
+
+local function reputationText(entry)
+    return format("%+d %s", tonumber(entry[2]) or 0, factionName(tonumber(entry[1]) or entry[1]))
+end
+M.ReputationText = reputationText
+
 local function difficultyText(level)
+    level = effectiveLevel(level)
     if type(level) ~= "number" or level <= 0 then return "-" end
     local range = 5
     if GetQuestGreenRange then
@@ -787,7 +827,11 @@ local function ensureMapTiles()
     if map.tiles then return end
     map.tiles = {}
     for i = 1, MAX_TILES do
-        local t = map:CreateTexture(nil, "BACKGROUND")
+        -- Sub-level 1: above the map's brown ground (sub-level -8). Two textures in one draw layer and
+        -- sub-level are drawn in no fixed order, and the client re-sorts them whenever the page changes
+        -- (the crossfade's alpha, a pin popping in), so tiles at the ground's own sub-level showed for a
+        -- frame and then vanished under it.
+        local t = map:CreateTexture(nil, "BACKGROUND", nil, 1)
         t:Hide()
         map.tiles[i] = t
     end
@@ -951,11 +995,15 @@ function refreshDetail(animate)
     d.hint:Hide()
     d.panel:Show()
 
-    local hex = colorHex(quest.questLevel or 0)
     d.title:SetText(Util.Truncate(quest.name or ("Quest " .. selectedId), TITLE_CHARS))
     local side = ns.QuestCatalog.SideOf(quest.requiredRaces)
-    d.subtitle:SetText(Util.Truncate(format(L["A level %d quest for %s, from level %d."], quest.questLevel or 0,
-        sideText(side), max(1, quest.requiredLevel or 1)), SUBTITLE_CHARS))
+    if scales(quest.questLevel) then
+        d.subtitle:SetText(Util.Truncate(format(L["A quest that scales with your level, for %s, from level %d."],
+            sideText(side), max(1, quest.requiredLevel or 1)), SUBTITLE_CHARS))
+    else
+        d.subtitle:SetText(Util.Truncate(format(L["A level %d quest for %s, from level %d."], quest.questLevel,
+            sideText(side), max(1, quest.requiredLevel or 1)), SUBTITLE_CHARS))
+    end
     local accent = sideColor(side)
     if accent then paint(d.accent, accent) else paint(d.accent, EDGE) end
 
@@ -976,12 +1024,13 @@ function refreshDetail(animate)
     local rewards = {}
     local info = DB.GetQuestRewards and DB.GetQuestRewards(selectedId) or nil
     local withItems = browserOption("rewards")
-    if info and info.money and withItems then rewards[#rewards + 1] = Util.FormatMoney(info.money) end
+    -- The money goes in front in coins, outside the character budget: a texture escape must not be cut.
+    local money = info and info.money and withItems and Util.FormatMoneyCoins(info.money) or nil
     if info and info.xp then rewards[#rewards + 1] = format(L["%d experience"], info.xp) end
     if type(quest.reputationReward) == "table" then
         for _, entry in ipairs(quest.reputationReward) do
             if type(entry) == "table" and entry[1] and entry[2] then
-                rewards[#rewards + 1] = format("%+d %s", entry[2], tostring(entry[1]))
+                rewards[#rewards + 1] = reputationText(entry)
             end
         end
     end
@@ -994,8 +1043,15 @@ function refreshDetail(animate)
         end
     end
     local rewardText = tconcat(rewards, ", ")
-    local shownRewards = Util.Truncate(rewardText, 2 * VALUE_CHARS - 2)
-    d.rewards:SetText(#rewards > 0 and shownRewards or L["Not in the database."])
+    -- the money takes as many characters as it shows: its digits, its spaces and one per coin
+    local budget = 2 * VALUE_CHARS - 2
+    if money then budget = budget - #(money:gsub("|T.-|t", "o")) - 2 end
+    local shownRewards = Util.Truncate(rewardText, budget)
+    if money then
+        shownRewards = #rewards > 0 and (money .. ", " .. shownRewards) or money
+        rewardText = #rewards > 0 and (money .. ", " .. rewardText) or money
+    end
+    d.rewards:SetText((#rewards > 0 or money) and shownRewards or L["Not in the database."])
     d.rewardHit.questID = (hasItems or shownRewards ~= rewardText) and selectedId or nil
     dropTooltip(d.rewardHit)
 
@@ -1003,7 +1059,7 @@ function refreshDetail(animate)
     d.startText:SetText(pointText(endpoints(quest, "startedBy")))
     d.endText:SetText(pointText(endpoints(quest, "finishedBy")))
 
-    d.level:SetText(format("|c%s%d|r", "ff" .. hex:sub(1, 6), quest.questLevel or 0))
+    d.level:SetText(levelText(quest.questLevel))
     d.required:SetText(tostring(quest.requiredLevel or 0))
     d.difficulty:SetText(difficultyText(quest.questLevel))
     d.side:SetText(Util.Truncate(sideText(side), 14))
@@ -1024,12 +1080,12 @@ function M.RewardLines(questID)
     local quest = DB and DB.GetQuest and DB.GetQuest(questID)
     local lines = {}
     local function add(text, color) lines[#lines + 1] = { text, color[1], color[2], color[3] } end
-    if info.money and browserOption("rewards") then add(Util.FormatMoney(info.money), TEXT) end
+    if info.money and browserOption("rewards") then add(Util.FormatMoneyCoins(info.money), TEXT) end
     if info.xp then add(format(L["%d experience"], info.xp), TEXT) end
     if quest and type(quest.reputationReward) == "table" then
         for _, entry in ipairs(quest.reputationReward) do
             if type(entry) == "table" and entry[1] and entry[2] then
-                add(format("%+d %s", entry[2], tostring(entry[1])), TEXT)
+                add(reputationText(entry), TEXT)
             end
         end
     end
@@ -1406,8 +1462,9 @@ local function buildDetail(parent)
     local map = CreateFrame("Frame", nil, p)
     map:SetSize(MAP_W, MAP_H)
     map:SetPoint("TOPLEFT", p, "TOPLEFT", PAD, y)
-    local mapBg = map:CreateTexture(nil, "BACKGROUND")
+    local mapBg = map:CreateTexture(nil, "BACKGROUND", nil, -8)      -- under the tiles, always
     mapBg:SetAllPoints(map)
+    map.ground = mapBg
     fillColor(mapBg, 0.16, 0.13, 0.08, 1)
     map.fallback = CreateFrame("Frame", nil, map)
     map.fallback:SetAllPoints(map)
@@ -1471,7 +1528,7 @@ local function buildDetail(parent)
 
     d.navigate = newButton(p, L["Navigate"], 120, 20, navigate)
     d.navigate:SetPoint("BOTTOMLEFT", p, "BOTTOMLEFT", PAD, 8)
-    d.wowhead = newButton(p, L["Wowhead link"], 120, 20, showWowhead)
+    d.wowhead = newButton(p, L["PandaQuest link"], 120, 20, showWowhead)
     d.wowhead:SetPoint("BOTTOMRIGHT", p, "BOTTOMRIGHT", -PAD, 8)
 
     d.panel:Hide()

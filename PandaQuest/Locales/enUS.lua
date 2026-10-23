@@ -591,3 +591,9 @@ L["Read my archaeology now"] = true
 L["Open the archaeology window first."] = true
 L["Show synchronisation status"] = true
 L["Ask the data sharing question"] = true
+
+-- The quest browser: scaling quests, reputation, the portal link (UI/QuestBrowser.lua)
+L["Scales"] = true
+L["A quest that scales with your level, for %s, from level %d."] = true
+L["faction %d"] = true
+L["PandaQuest link"] = true

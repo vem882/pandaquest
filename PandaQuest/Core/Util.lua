@@ -40,6 +40,23 @@ function Util.FormatMoney(copper)
     return format("%dc", rest)
 end
 
+local COIN = "|TInterface\\MoneyFrame\\UI-%sIcon:0:0:2:0|t"
+
+--- Util.FormatMoneyCoins(copper) -> "14|Tgold|t 50|Tsilver|t": the same amounts as FormatMoney, with the
+-- game's coin icons instead of the letters. For a line that is never cut by characters (an escape
+-- sequence must not be split).
+function Util.FormatMoneyCoins(copper)
+    copper = floor((tonumber(copper) or 0) + 0.5)
+    local gold = floor(copper / 10000)
+    local silver = floor(copper / 100) % 100
+    local rest = copper % 100
+    local parts = {}
+    if gold > 0 then parts[#parts + 1] = gold .. format(COIN, "Gold") end
+    if silver > 0 then parts[#parts + 1] = silver .. format(COIN, "Silver") end
+    if (rest > 0 and gold == 0) or #parts == 0 then parts[#parts + 1] = rest .. format(COIN, "Copper") end
+    return table.concat(parts, " ")
+end
+
 function Util.Clamp(x, lo, hi)
     if x < lo then return lo end
     if x > hi then return hi end
