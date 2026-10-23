@@ -11,7 +11,7 @@
 -- `ackUploadedThrough`, and on load we copy it into PandaQuestSync and drop the sessions it covers.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Community")   -- an AceAddon module (Core/Const.lua)
 ns.Community = M
 
 local Log = ns.Log
@@ -268,7 +268,7 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     -- The override file has already run (it loads before Sync/ in the TOC), so the ack can be
     -- applied as soon as the saved variable exists. Never let bad generated data break the login.
     local ok, err = pcall(M.SyncAck)
@@ -277,7 +277,7 @@ function M.Init()
     end
 end
 
-function M.Enable()
+function M.OnEnable()
     if M.IsAvailable() then
         Log.Info("Community", L["Community data from %s"], tostring(M.GetGeneratedDate() or "?"))
     end
