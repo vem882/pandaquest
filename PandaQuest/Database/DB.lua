@@ -17,7 +17,7 @@
 -- MUST NOT be mutated by callers. Copy first if you need to change anything.
 local _, ns = ...
 
-local DB = {}
+local DB = ns.PQ:GetModule("DB")           -- an AceAddon module (Core/Const.lua)
 ns.DB = DB
 
 local L = ns.L

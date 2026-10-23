@@ -7,7 +7,7 @@
 -- logged once each at debug level so a broken zone shows up in /pq debug 3 without spamming the chat.
 local _, ns = ...
 
-local Zones = {}
+local Zones = ns.PQ:GetModule("Zones")     -- an AceAddon module (Core/Const.lua)
 ns.Zones = Zones
 
 local Log = ns.Log
@@ -74,10 +74,10 @@ local function playerFaction()
 end
 
 ---------------------------------------------------------------------------
--- Lifecycle (Core/Init.lua CallModules). Only clears caches; the data tables are already loaded.
+-- Lifecycle (AceAddon OnInitialize). Only clears caches; the data tables are already loaded.
 ---------------------------------------------------------------------------
 
-function Zones.Init()
+function Zones.OnInitialize()
     Zones.ResetCache()
 end
 

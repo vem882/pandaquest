@@ -4,7 +4,7 @@
 -- Numbers are cross-checked against _reference/Questie/Database/{questDB,npcDB,objectDB,itemDB,QuestieDB}.lua.
 local _, ns = ...
 
-local Schema = {}
+local Schema = ns.PQ:GetModule("Schema")   -- an AceAddon module (Core/Const.lua) with no lifecycle
 ns.Schema = Schema
 
 local pairs = pairs
