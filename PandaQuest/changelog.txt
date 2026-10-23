@@ -4,6 +4,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.225
+- minimap button - left-click opens the quest browser, Shift-click shows or hides the arrow
+- minimap button - broker bars (Titan Panel, ChocolateBar) show the flight, target or tracked quests
+- minimap button - the tooltip shows the flight in progress and the last sync with the site
+- options - lock the minimap button in place; each profile keeps its own button
+- options - an add-on compartment entry on clients that have one (Mists Classic has none)
+
 0.2.224
 - database - Wowhead data as the PandaQuest portal read it: 8,130 quests, 48 NPCs, 2 objects
 - quest 6625 - Alliance Trauma - updated

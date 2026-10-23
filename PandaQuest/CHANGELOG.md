@@ -4,6 +4,28 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.225] - 2026-10-23
+
+### Changed
+- Left-click on the minimap button now opens and closes the quest browser, the general list of
+  quests. Shift-click shows or hides the arrow (what left-click used to do); right-click still opens
+  the options. The tooltip and the options say so in every language.
+
+### Added
+- The minimap button is a LibDataBroker data source rather than a plain launcher, so Titan Panel,
+  ChocolateBar and every other broker display can show it. Its text follows the flight in progress
+  (destination and time left, in the flight bar's own words), else the current target and its
+  distance, else how many quests you track; the icon turns into the taxi pin while you fly. The text
+  is rebuilt on events and by a one-second AceTimer only while a target or a flight is shown, never
+  per frame, and a burst of events is one rebuild.
+- The button's tooltip adds the flight in progress and, when the addon knows it, the last time the
+  PandaQuest site confirmed a sync.
+- Options: lock the minimap button in place. The button's settings live in the AceDB profile, and a
+  profile switch, copy or reset moves the button to the new profile's table.
+- The add-on compartment (`LibDBIcon:AddButtonToCompartment`) behind LibDBIcon's own feature check,
+  with a switch in the options. The Mists Classic 5.5.4 client has no add-on compartment, so there
+  the switch is hidden and nothing is registered.
+
 ## [0.2.224] - 2026-10-23
 
 Data from the PandaQuest portal.
