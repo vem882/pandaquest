@@ -11,7 +11,7 @@
 local _, ns = ...
 local L = ns.L
 
-local M = {}
+local M = ns.PQ:GetModule("Objectives")   -- an AceAddon module (Core/Const.lua)
 ns.Objectives = M
 
 local Const, Log = ns.Const, ns.Log
@@ -768,9 +768,9 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
 end
 
-function M.Enable()
+function M.OnEnable()
     Log.Debug("Objectives", "ready (cluster box %d%%, max %d spawns per target)", CLUSTER_BOX, MAX_SPAWNS)
 end

@@ -7,7 +7,7 @@
 -- busy login.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Availability")   -- an AceAddon module (Core/Const.lua)
 ns.Availability = M
 
 local Log, Thread, Schema = ns.Log, ns.Thread, ns.Schema
@@ -19,16 +19,9 @@ local wipe = wipe or table.wipe
 local QUESTS_PER_YIELD = 24
 local RECALC_DEBOUNCE = 1.0         -- collapse a burst of accepts/turn-ins into one pass
 
--- Own AceEvent object (see Quest/Player.lua): the shared ns.PQ registry is keyed by target, so two
--- modules listening to the same event on it would overwrite each other.
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local band = bit and bit.band
 
@@ -424,7 +417,7 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
 end
 
 --- ChangesAffectAvailability(changes) -> bool
@@ -444,9 +437,8 @@ end
 
 -- A burst of accepts (picking up five quests from one NPC) is collapsed into a single pass.
 local function requestRecalculate(reason)
-    if not listener.ScheduleTimer then return M.Recalculate(reason) end
-    if debounceTimer then listener:CancelTimer(debounceTimer, true) end
-    debounceTimer = listener:ScheduleTimer(function()
+    if debounceTimer then M:CancelTimer(debounceTimer, true) end
+    debounceTimer = M:ScheduleTimer(function()
         debounceTimer = nil
         M.Recalculate(reason)
     end, RECALC_DEBOUNCE)
@@ -454,14 +446,13 @@ local function requestRecalculate(reason)
 end
 M.RequestRecalculate = requestRecalculate
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
-    listener:RegisterMessage("PQ_QUESTLOG_CHANGED", function(_, changes)
+function M.OnEnable()
+    M:RegisterMessage("PQ_QUESTLOG_CHANGED", function(_, changes)
         if not M.ChangesAffectAvailability(changes) then return end
         requestRecalculate("PQ_QUESTLOG_CHANGED")
     end)
-    listener:RegisterEvent("PLAYER_LEVEL_UP", function() requestRecalculate("PLAYER_LEVEL_UP") end)
-    listener:RegisterEvent("SKILL_LINES_CHANGED", function() requestRecalculate("SKILL_LINES_CHANGED") end)
+    M:RegisterEvent("PLAYER_LEVEL_UP", function() requestRecalculate("PLAYER_LEVEL_UP") end)
+    M:RegisterEvent("SKILL_LINES_CHANGED", function() requestRecalculate("SKILL_LINES_CHANGED") end)
 end
 
 function M.OnDataReady()
