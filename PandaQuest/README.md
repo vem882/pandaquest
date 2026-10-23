@@ -129,11 +129,16 @@ A good report says what you did, what you expected and what happened. Please inc
 
 ## Slash commands
 
-There is one to remember: **`/pq`** (or `/pandaquest`) opens PandaQuest -- the quest browser, every quest
-in the database. Its **Settings** button (the gear in the header) opens everything else, and every
-setting and every action has a control there or on a quest's page: navigate to a quest, hide it from the
-navigator or show it again, show it on the world map, copy the link to its page on the PandaQuest portal
-(right-click a quest in the list for the same four). `/pq help` says exactly that.
+There is one to remember: **`/pq`** (or `/pandaquest`, or the minimap button) opens PandaQuest's window.
+Its tabs are **Quests** (every quest in the database), **Status**, **Options**, **About & Help** and
+**Performance**; the gear in the header goes to Options too. Every setting and every action has a control
+there or on a quest's page: navigate to a quest, hide it from the navigator or show it again, show it on
+the world map, copy the link to its page on the PandaQuest portal (right-click a quest in the list for
+the same four). `/pq help` says exactly that.
+
+The window can be dragged and resized from its corner, remembers its place, size and scale per profile,
+and closes with Escape. Options has a category list with a search box over every setting and a **Reset
+Settings** button per category.
 
 The old commands still work, for macros and muscle memory, and are listed under Settings > Advanced
 (`/pq help all` prints them):
@@ -170,7 +175,8 @@ style instead.
 
 ## Settings
 
-Everything has a working default; the settings (the gear in `/pq`, or `/pq options`) are optional.
+Everything has a working default; the settings (the Options tab of `/pq`, or `/pq options`) are optional.
+The same options are in the game's own Settings panel and in `/pq config`.
 
 | Group | What you can change |
 |---|---|

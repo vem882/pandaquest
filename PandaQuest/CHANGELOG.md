@@ -4,6 +4,40 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.235] - 2026-10-23
+
+One PandaQuest window, in the layout the owner asked for: tabs along the top, a category list with
+icons, the settings as rows.
+
+### Added
+- **The PandaQuest window** (`/pq`, the minimap button): a dark window with a gold edge, the round
+  PandaQuest logo over its top left corner, and five tabs -- **Quests** (the quest browser, the
+  default), **Status** (synchronisation, the last upload the portal confirmed, the database and its
+  counts), **Options**, **About & Help** (what the addon does, the portal's address, credits and
+  licences, and the chat commands folded away) and **Performance** (the addon's memory, every module
+  on or off and how many events, messages, timers and buckets it holds; nothing needs script
+  profiling).
+- **Options as categories**: Navigation, Map & Minimap, Tooltips, Flight, Professions & Gathering,
+  Auction, Notifications, Sync & Privacy, Appearance, Language & Units, Modules, Profiles, Release notes
+  and Advanced, each with an icon. A category with several groups has sub-tabs. Every setting is a row:
+  its name in white, a line in grey under it, and its control on the right -- a check box, a slider
+  with its range and a number box, a list, a button or a text box.
+- **Search all settings**, a box above the categories: every setting whose name or description has
+  the words in it, under the category it belongs to.
+- **Reset Settings** per category, after a yes: only that category's settings go back to their
+  defaults.
+- Appearance > **Window**: the window's size on top of the game's UI scale, and putting it back.
+- Options > **Release notes**: the feature releases, quoted from this changelog.
+
+### Changed
+- The window can be moved and resized (from the corner, down to the quest browser's size), and
+  remembers its place, size and scale per profile (`profile.window`, a new key). It never grows past
+  the screen at any UI scale. Escape closes it.
+- The Settings button and `/pq options` open the window's Options tab. The same options are still in
+  the game's own Settings panel and in `/pq config`: all three read the one options table.
+- The window and each page are built the first time they are opened, only the rows on screen exist,
+  and nothing runs while the window is hidden.
+
 ## [0.2.234] - 2026-10-23
 
 Fewer commands to remember: `/pq` opens PandaQuest, and everything else is in its Settings.

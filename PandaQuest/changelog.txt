@@ -4,6 +4,12 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.235
+- ui - one PandaQuest window: Quests, Status, Options, About & Help and Performance
+- options - categories with icons, sub-tabs, a search box and a reset button per category
+- ui - the window remembers its place, size and scale per profile; Esc closes it
+- options - Release notes, About & Help and Performance pages; the logo is the portal's, made round
+
 0.2.234
 - ui - /pq opens PandaQuest: the quest browser with every quest; its Settings button opens the rest
 - ui - a quest's page and right-click menu: navigate, hide or show, show on map, PandaQuest link
