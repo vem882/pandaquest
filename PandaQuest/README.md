@@ -65,8 +65,8 @@ is where the addon's content is completed and corrected — and you are welcome 
   under Options → Modules).
 - **Archaeology** – a dig-site progress bar (the one Mists never shipped) and a read of your
   archaeology window.
-- **Professions and auctions** – read your recipe books (`/pq scan professions`) and scan auction
-  prices on your realm. Nothing scans on its own; it always starts from a button or a command.
+- **Professions** – read your recipe books when you open a profession window, or with
+  `/pq scan professions`.
 - **Tracker and notifications** – distance and a "navigate here" button on the Blizzard tracker,
   and a short centre-screen message when a quest completes or the target changes.
 - **Site links** – `/pq wh` gives a copyable link to the quest's page on the PandaQuest site,
@@ -199,7 +199,7 @@ The same options are in the game's own Settings panel and in `/pq config`.
 | Flight master | the flight time line, the in-flight bar, its lock, size and position |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound |
-| Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the auction scan, mailbox sales, auction tooltip prices, the recipe and archaeology readers, quest mobs, quest data and gear recording. A part that is off listens to nothing and runs no timer |
+| Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the recipe and archaeology readers, quest mobs, quest data and gear recording. A part that is off listens to nothing and runs no timer |
 | Moving frames | unlock the arrow, the flight bar and the dig site bar to drag them; reset their positions |
 | Hidden quests | the quests hidden from the navigator, and showing one or all of them again |
 | Status | version, database, quest log, targets, background jobs, modules, synchronisation |
@@ -213,7 +213,9 @@ PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks an
 ## Saved variables
 
 `PandaQuestDB` (settings and profiles), `PandaQuestSync` (optional synchronisation data),
-`PandaQuestAH` (auction scans) and `PandaQuestProf` (recipe books). The waypoint settings are
+`PandaQuestProf` (recipe books) and `PandaQuestAH`. `PandaQuestAH` held the auction scans of the
+Auction module, which was removed; it stays declared so WoW keeps what you had saved, and nothing
+reads or writes it any more. The waypoint settings are
 `waypoint` in the profile and the point or quest you chose is `waypoint` under the character, both
 added in 0.2.198; nothing saved before them is changed. A module switched off in
 Options > Modules is one new key in the profile, `modules.<Name> = false`; nothing else moved.
@@ -314,7 +316,7 @@ Not done yet:
 - A PandaQuest quest tracker of its own (today it enhances Blizzard's).
 - Measured respawn timers, node positions and flight times for all of Pandaria — this is what the
   portal and your play fill in.
-- Verification in game: the arrow's rotation, the auction scanning path on Hoptallus, and
+- Verification in game: the arrow's rotation and
   compatibility with Leatrix Maps, Mapster and ElvUI's map module have been tested against a
   simulated client but not yet confirmed on a live one.
 

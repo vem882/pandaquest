@@ -6,6 +6,9 @@
 local _, ns = ...
 
 ns.ReleaseNotes = {
+    { version = "0.2.240", date = "2026-10-23", lines = {
+        "auction - the auction house scan, mailbox sales and auction tooltip prices are removed",
+    } },
     { version = "0.2.235", date = "2026-10-23", lines = {
         "ui - one PandaQuest window: Quests, Status, Options, About & Help and Performance",
         "options - categories with icons, sub-tabs, a search box and a reset button per category",

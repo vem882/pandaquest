@@ -327,39 +327,7 @@ local T = {
         "谢谢。PandaQuest将共享你的任务数据。可随时通过 /pq sync 关闭。",
     ["Nothing will be collected. Turn it on any time in /pq options."] = "不会收集任何内容。可随时在 /pq options 中开启。",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "扫描价格",
-    ["Stop scan (%d%%)"] = "停止扫描（%d%%）",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "正在扫描拍卖行。请保持窗口打开；关闭窗口会取消扫描。",
-    ["Auction house scan finished: %d auctions of %d items in %s."] = "拍卖行扫描完成：%d条拍卖，%d种物品，用时%s。",
-    ["The scan stopped at %d auctions to keep the saved file small."] = "为控制保存文件的大小，扫描在%d条拍卖处停止。",
-    ["A scan is already running."] = "扫描已在进行中。",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "请先打开拍卖行，然后点击“扫描价格”或输入 /pq scan。",
-    ["This client offers no auction house listing PandaQuest can read."] = "此客户端未提供PandaQuest可读取的拍卖行列表。",
-    ["Scan cancelled: the auction house window was closed."] = "扫描已取消：拍卖行窗口已关闭。",
-    ["Scan stopped: the auction house did not answer."] = "扫描已停止：拍卖行没有响应。",
-    ["Scan stopped. Nothing was saved."] = "扫描已停止，未保存任何内容。",
-    ["The auction house sent an empty listing. Nothing was saved."] = "拍卖行返回了空列表，未保存任何内容。",
     ["No scan is running."] = "当前没有正在进行的扫描。",
-    ["Scanning: %d%% (%d auctions read)."] = "正在扫描：%d%%（已读取%d条拍卖）。",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] = "上次扫描%s（%s，%s）：%d条拍卖，%d种物品，%s前。",
-    ["No auction house scan yet for this realm."] = "此服务器尚未进行过拍卖行扫描。",
-    ["AH minimum buyout"] = "拍卖行最低一口价",
-    ["AH market value"] = "拍卖行市场价值",
-    ["bids only"] = "仅竞标",
-    ["%s, scanned %s ago"] = "%s，%s前扫描",
-    ["Auction house"] = "拍卖行",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest绝不会自行扫描。请在拍卖行窗口中点击“扫描价格”，或在窗口打开时输入 /pq scan。",
-    ["Show the scan button on the auction house window"] = "在拍卖行窗口显示扫描按钮",
-    ["Show auction prices on item tooltips"] = "在物品鼠标提示中显示拍卖价格",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "显示你在此服务器上次扫描得到的最低一口价和市场价值，以及数据已过去多久。",
-    ["Record my auction sales and purchases"] = "记录我的拍卖出售和购买",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "从邮箱中的拍卖发票读取。只保存物品、数量和价格，绝不保存对方玩家的名字。",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] = "/pq scan professions - 读取已打开的专业技能窗口",
     ["/pq scan archaeology - read your archaeology window"] = "/pq scan archaeology - 读取你的考古学窗口",

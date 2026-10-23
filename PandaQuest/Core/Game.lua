@@ -98,8 +98,12 @@ end
 -- The saved variables
 ---------------------------------------------------------------------------
 
--- Every saved variable PandaQuest.toc declares. Each one is a table of the game it was written in.
-Game.SAVED_VARIABLES = { "PandaQuestDB", "PandaQuestSync", "PandaQuestAH", "PandaQuestProf" }
+-- Every saved variable PandaQuest.toc declares and the addon still uses. Each one is a table of the
+-- game it was written in.
+Game.SAVED_VARIABLES = { "PandaQuestDB", "PandaQuestSync", "PandaQuestProf" }
+-- Declared in the TOC so WoW keeps a player's copy, and otherwise never touched -- not even tagged:
+-- PandaQuestAH held the auction scans of the Auction module, which is gone.
+Game.RETIRED_SAVED_VARIABLES = { "PandaQuestAH" }
 
 --- Game.ClaimStore(store, game) -> the foreign key the old contents went under, or nil
 -- One saved variable, as WoW handed it over:

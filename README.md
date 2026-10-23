@@ -46,7 +46,7 @@ Restart the game, or `/reload` if it was running.
 - **Flight times:** the flight master's tooltip shows the expected time before you fly, and a bar
   shows the time left during the flight. Your own measured flights come first, then the players'
   measured times from the site, then an estimate, marked as estimated.
-- **Archaeology** dig-site bar, profession recipe and auction price readers (started by you).
+- **Archaeology** dig-site bar and a profession recipe reader.
 - **Tracker additions** and short notifications.
 - **Links** to the quest's, NPC's or object's page on pd.zroot.it.
 - **Languages:** English, every language the WoW client offers, and Finnish.

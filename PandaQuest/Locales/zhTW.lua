@@ -331,40 +331,7 @@ local T = {
         "謝謝你。PandaQuest 將會分享你的任務資料，你隨時可以用 /pq sync 關閉。",
     ["Nothing will be collected. Turn it on any time in /pq options."] = "不會收集任何資料。你隨時可以在 /pq options 中開啟。",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "掃描價格",
-    ["Stop scan (%d%%)"] = "停止掃描 (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "正在掃描拍賣場。請保持視窗開啟；關閉視窗會取消掃描。",
-    ["Auction house scan finished: %d auctions of %d items in %s."] = "拍賣場掃描完成：%d 筆拍賣、%d 種物品，耗時 %s。",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "為了讓儲存的檔案不致過大，掃描已在 %d 筆拍賣時停止。",
-    ["A scan is already running."] = "已有掃描正在進行中。",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "請先開啟拍賣場，再按下「掃描價格」或輸入 /pq scan。",
-    ["This client offers no auction house listing PandaQuest can read."] = "此遊戲用戶端沒有提供 PandaQuest 可讀取的拍賣場列表。",
-    ["Scan cancelled: the auction house window was closed."] = "掃描已取消：拍賣場視窗已關閉。",
-    ["Scan stopped: the auction house did not answer."] = "掃描已停止：拍賣場沒有回應。",
-    ["Scan stopped. Nothing was saved."] = "掃描已停止。沒有儲存任何資料。",
-    ["The auction house sent an empty listing. Nothing was saved."] = "拍賣場傳回了空白的列表。沒有儲存任何資料。",
     ["No scan is running."] = "目前沒有進行中的掃描。",
-    ["Scanning: %d%% (%d auctions read)."] = "掃描中：%d%%（已讀取 %d 筆拍賣）。",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] = "%s 的最近一次掃描 (%s, %s)：%d 筆拍賣、%d 種物品，%s前。",
-    ["No auction house scan yet for this realm."] = "此伺服器尚未進行過拍賣場掃描。",
-    ["AH minimum buyout"] = "拍賣場最低一口價",
-    ["AH market value"] = "拍賣場市價",
-    ["bids only"] = "僅限競標",
-    ["%s, scanned %s ago"] = "%s，%s前掃描",
-    ["Auction house"] = "拍賣場",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest 絕不會自行掃描。請在拍賣場視窗中按下「掃描價格」，或在視窗開啟時輸入 /pq scan。",
-    ["Show the scan button on the auction house window"] = "在拍賣場視窗顯示掃描按鈕",
-    ["Show auction prices on item tooltips"] = "在物品提示中顯示拍賣價格",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "顯示你在此伺服器上最近一次掃描得到的最低一口價與市價，以及資料已過了多久。",
-    ["Record my auction sales and purchases"] = "記錄我的拍賣出售與購買",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "從信箱中的拍賣發票讀取。只會保留物品、數量與價格，絕不保留對方玩家的名稱。",
 
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] = "/pq scan professions - 讀取已開啟的專業技能視窗",

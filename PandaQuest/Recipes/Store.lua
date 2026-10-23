@@ -1,13 +1,13 @@
 -- Recipes/Store.lua: the account-wide SavedVariable PandaQuestProf.
 --
--- A recipe book is kept apart from PandaQuestSync for the reason the auction data is
--- (Auction/Store.lua): a scan is an order of magnitude bigger than a questing session, and losing
+-- A recipe book is kept apart from PandaQuestSync because a scan is an order of magnitude bigger
+-- than a questing session, and losing
 -- or resetting it must never take the quest log with it. WoW still writes every SavedVariable of
 -- the addon into one PandaQuest.lua and the companion refuses that file past 32 MB
 -- (companion-go/internal/luaparse/limits.go SyncLimits), so this table is bounded in both
 -- directions: how many professions are kept at all, and how many recipes one of them may carry.
 --
--- One recipe is one short string rather than a table, again for the auction store's reason: WoW's
+-- One recipe is one short string rather than a table, to keep the file small: WoW's
 -- serializer spends six lines and about a hundred bytes on a table per entry and about forty on
 -- the string. Measured against the closest thing in the repository, ns.Data.professionNodes costs
 -- 52.9 bytes per entry as a table (Database/Data/Seed.lua); a recipe carries more numbers than

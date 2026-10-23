@@ -182,10 +182,8 @@ ns.MODULE_ORDER = {
     "FlightRoutes", "FlightTooltip",
     "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
     "MainWindow",
-    "AuctionStore", "AuctionScanner", "AuctionMail", "AuctionTooltip",
-    -- After AuctionScanner because RecipeScanner's OnInitialize takes one word out of its /pq scan
-    -- command and hands the rest back. Archaeology does the same to RecipeScanner's wrapper,
-    -- so it comes after that one for the same reason.
+    -- Archaeology's OnInitialize takes one word out of RecipeScanner's /pq scan command and hands
+    -- the rest back, so it comes after that one.
     "RecipeStore", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet", "Consent", "Community",
 }
@@ -197,7 +195,7 @@ ns.MODULE_ORDER = {
 ns.OPTIONAL_MODULES = {
     "Arrow", "Pins", "Tooltips", "QuestMobs", "Respawn", "Professions",
     "Tracker", "Notify", "DigSiteBar",
-    "AuctionScanner", "AuctionMail", "AuctionTooltip", "RecipeScanner", "Archaeology",
+    "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet",
 }
 

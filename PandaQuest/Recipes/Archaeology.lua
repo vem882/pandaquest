@@ -243,8 +243,7 @@ function M.Snapshot()
     if #races == 0 then
         -- Not one race could be read. Stored, that would be "this character has no archaeology",
         -- which is a claim about the character rather than about this reading -- the same refusal
-        -- Recipes/Scanner.lua makes for a book whose every row failed, and the auction scanner for
-        -- an empty listing.
+        -- Recipes/Scanner.lua makes for a book whose every row failed.
         lastResult = { ok = false, reason = "empty", at = unixNow() }
         return nil, "empty"
     end
@@ -412,7 +411,7 @@ end
 function M.OnInitialize()
     local PQ = ns.PQ
     if not (PQ and PQ.commands) then return end
-    -- The same relay Recipes/Scanner.lua builds on the auction scanner's /pq scan: take the one
+    -- The same relay Recipes/Scanner.lua builds on /pq scan: take the one
     -- word this module owns off the front and hand everything else straight back, so /pq scan,
     -- /pq scan professions and their sub-words all still reach their owners. This module is after
     -- RecipeScanner in ns.MODULE_ORDER, so `previous` here is the recipe scanner's wrapper.

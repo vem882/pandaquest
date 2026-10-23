@@ -354,48 +354,7 @@ local T = {
     ["Nothing will be collected. Turn it on any time in /pq options."] =
         "Ничего не будет собираться. Включить это можно в любой момент в /pq options.",
 
-    -- Auction house: the scan, the invoices, the tooltip and the options section
-    ["Scan prices"] = "Сканировать цены",
-    ["Stop scan (%d%%)"] = "Остановить (%d%%)",
-    ["Scanning the auction house. Keep the window open; closing it cancels the scan."] =
-        "Идёт сканирование аукционного дома. Не закрывайте окно: при закрытии сканирование будет отменено.",
-    ["Auction house scan finished: %d auctions of %d items in %s."] =
-        "Сканирование аукционного дома завершено. Лотов: %d, предметов: %d, время: %s.",
-    ["The scan stopped at %d auctions to keep the saved file small."] =
-        "Сканирование остановлено, чтобы сохранённый файл не разрастался (лимит лотов: %d).",
-    ["A scan is already running."] = "Сканирование уже выполняется.",
-    ["Open the auction house first, then press Scan prices or type /pq scan."] =
-        "Сначала откройте аукционный дом, затем нажмите «Сканировать цены» или введите /pq scan.",
-    ["This client offers no auction house listing PandaQuest can read."] =
-        "Этот клиент не предоставляет список аукционного дома, который может прочитать PandaQuest.",
-    ["Scan cancelled: the auction house window was closed."] =
-        "Сканирование отменено: окно аукционного дома было закрыто.",
-    ["Scan stopped: the auction house did not answer."] =
-        "Сканирование остановлено: аукционный дом не ответил.",
-    ["Scan stopped. Nothing was saved."] = "Сканирование остановлено. Ничего не сохранено.",
-    ["The auction house sent an empty listing. Nothing was saved."] =
-        "Аукционный дом прислал пустой список. Ничего не сохранено.",
     ["No scan is running."] = "Сканирование не выполняется.",
-    ["Scanning: %d%% (%d auctions read)."] = "Сканирование: %d%% (прочитано лотов: %d).",
-    ["Last scan of %s (%s, %s): %d auctions of %d items, %s ago."] =
-        "Последнее сканирование: %s (%s, %s), лотов: %d, предметов: %d, %s назад.",
-    ["No auction house scan yet for this realm."] =
-        "Для этого игрового мира сканирования аукционного дома ещё не было.",
-    ["AH minimum buyout"] = "Мин. выкуп на аукционе",
-    ["AH market value"] = "Рыночная цена на аукционе",
-    ["bids only"] = "только ставки",
-    ["%s, scanned %s ago"] = "%s, просканировано %s назад",
-    ["Auction house"] = "Аукционный дом",
-    ["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] =
-        "PandaQuest никогда не сканирует сам. Нажмите «Сканировать цены» в окне аукционного дома или введите /pq scan, пока оно открыто.",
-    ["Show the scan button on the auction house window"] =
-        "Показывать кнопку сканирования в окне аукционного дома",
-    ["Show auction prices on item tooltips"] = "Показывать цены аукциона в подсказках предметов",
-    ["The lowest buyout and the market value from your last scan on this realm, with how old it is."] =
-        "Наименьшая цена выкупа и рыночная цена по вашему последнему сканированию в этом игровом мире, а также давность данных.",
-    ["Record my auction sales and purchases"] = "Записывать мои продажи и покупки на аукционе",
-    ["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."] =
-        "Данные берутся из аукционных счетов в вашем почтовом ящике. Сохраняются предмет, количество и цена, но никогда не имя другого игрока.",
     -- Professions: the recipe scan, its refusals and the options section
     ["/pq scan professions - read the open profession window"] =
         "/pq scan professions - прочитать открытое окно профессии",

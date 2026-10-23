@@ -117,11 +117,6 @@ local APPLIERS = {
     ["global.telemetry"] = function()
         if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
     end,
-    -- The tooltip and the mailbox read their switch every time, so only the button on
-    -- an already open auction house window has to be told.
-    ["auction"] = function()
-        if ns.AuctionScanner and ns.AuctionScanner.RefreshButton then ns.AuctionScanner.RefreshButton() end
-    end,
     -- The bar re-reads its own size and lock; the tooltip line reads its switch on every hover, so
     -- nothing has to be told about that one.
     ["flight"] = function()
@@ -247,9 +242,6 @@ local MODULE_TEXT = {
     Tracker = { L["Quest tracker additions"], L["Distances and target buttons in the Blizzard quest tracker."] },
     Notify = { L["Notifications"], L["The short messages in the middle of the screen."] },
     DigSiteBar = { L["Dig site progress bar"], L["The archaeology bar that fills while you survey a dig site."] },
-    AuctionScanner = { L["Auction house scan"], L["The Scan prices button on the auction house window, and /pq scan."] },
-    AuctionMail = { L["Auction sales from the mailbox"], L["Records your auction sales and purchases from the invoices in your mailbox."] },
-    AuctionTooltip = { L["Auction prices in tooltips"], L["Your last scanned prices on item tooltips."] },
     RecipeScanner = { L["Recipe reader"], L["Reads your recipes when you open a profession window."] },
     Archaeology = { L["Archaeology reader"], L["Reads your archaeology races and artifacts when you open the archaeology window."] },
     Telemetry = { L["Quest data recording"], L["Records quest data for the community routes, once you have agreed to share it."] },
@@ -494,7 +486,6 @@ M.CATEGORIES = {
     { key = "flight", name = L["Flight"], icon = "Interface\\Icons\\Ability_Mount_Wyvern_01", groups = { "flight" } },
     { key = "gathering", name = L["Professions & Gathering"], icon = "Interface\\Icons\\Trade_Mining",
       groups = { "professions", "recipes", "archaeology" } },
-    { key = "auction", name = L["Auction"], icon = "Interface\\Icons\\INV_Misc_Coin_01", groups = { "auction" } },
     { key = "notify", name = L["Notifications"], icon = "Interface\\Icons\\INV_Scroll_03", groups = { "notify" } },
     { key = "privacy", name = L["Sync & Privacy"], icon = "Interface\\Icons\\INV_Misc_Key_03", groups = { "sync" } },
     { key = "appearance", name = L["Appearance"], icon = "Interface\\Icons\\Spell_Holy_MindVision",
@@ -830,22 +821,7 @@ local function buildTable()
                         "global.telemetry.maxEventsPerSession", 100, 50000, 100),
                 },
             },
-            -- There is no "scan when the window opens" switch: a scan is the player's
-            -- time and the realm's load, so it only ever starts from the button or /pq scan.
-            auction = {
-                type = "group", order = 10, name = L["Auction house"], args = {
-                    info = { type = "description", order = 0,
-                        name = L["PandaQuest never scans on its own. Press Scan prices on the auction house window, or type /pq scan while it is open."] },
-                    scanButton = toggle(1, L["Show the scan button on the auction house window"], nil, "auction.scanButton"),
-                    showTooltipPrices = toggle(2, L["Show auction prices on item tooltips"],
-                        L["The lowest buyout and the market value from your last scan on this realm, with how old it is."],
-                        "auction.showTooltipPrices"),
-                    recordSales = toggle(3, L["Record my auction sales and purchases"],
-                        L["Read from the auction invoices in your mailbox. The item, the amount and the price are kept, never the other player's name."],
-                        "auction.recordSales"),
-                },
-            },
-            -- On by default, unlike the auction scan: reading a window the player has
+            -- On by default: reading a window the player has
             -- already opened costs them a fraction of a second and the realm nothing at all, and
             -- the only visible cost -- the list redrawing while the filters are off -- is over
             -- before it is noticed. The linked-window refusal is named here because it is the

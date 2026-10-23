@@ -100,12 +100,10 @@ function PQ:OnInitialize()
     _G.PandaQuestSync = _G.PandaQuestSync or {}
     ns.Sync = _G.PandaQuestSync
 
-    -- Auction house scans and sales are their own SavedVariable, so a scan an order
-    -- of magnitude bigger than the quest log can be lost or reset without taking telemetry with
-    -- it. Auction/Store.lua gives the table its shape.
-    _G.PandaQuestAH = _G.PandaQuestAH or {}
+    -- PandaQuestAH (the auction house scans of the removed Auction module) is still declared in
+    -- the TOC so WoW keeps a player's stored copy, but nothing reads or writes it any more.
 
-    -- The same argument for profession recipes. A book read off one window is larger
+    -- Profession recipes are their own SavedVariable: a book read off one window is larger
     -- than a questing session, and it must be droppable without the quest log going with it.
     -- Recipes/Store.lua gives the table its shape.
     _G.PandaQuestProf = _G.PandaQuestProf or {}

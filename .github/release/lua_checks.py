@@ -41,7 +41,10 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 ADDON_DIR = REPO / "PandaQuest"
 FIXTURES = HERE / "fixtures" / "savedvariables"
-STORES = ("PandaQuestDB", "PandaQuestSync", "PandaQuestAH", "PandaQuestProf")
+STORES = ("PandaQuestDB", "PandaQuestSync", "PandaQuestProf")
+#: Declared in the TOC so WoW keeps it, and never touched: the removed Auction module's data.
+RETIRED = ("PandaQuestAH",)
+ALL_STORES = STORES + RETIRED
 
 needs_lua = unittest.skipIf(LuaRuntime is None, "lupa (Lua 5.1 for Python) is not installed: pip install lupa")
 
@@ -186,7 +189,7 @@ def saved(rt, value, depth: int = 0) -> str:
 def saved_file(rt) -> str:
     """The whole ``PandaQuest.lua`` WoW would write from ``rt``'s four saved variables."""
     found = rt.globals()
-    return "".join(f"{name} = {saved(rt, found[name])}\n" for name in STORES if found[name] is not None)
+    return "".join(f"{name} = {saved(rt, found[name])}\n" for name in ALL_STORES if found[name] is not None)
 
 
 def fixture(name: str) -> str:
@@ -321,7 +324,7 @@ class TheSavedVariables(unittest.TestCase):
         rt = runtime()
         if text is not None:
             rt.execute(text)
-        before = {name: saved(rt, rt.globals()[name]) for name in STORES if rt.globals()[name] is not None}
+        before = {name: saved(rt, rt.globals()[name]) for name in ALL_STORES if rt.globals()[name] is not None}
         ns = load_game(rt, *client_facts)
         moved = None
         for _ in range(times):
@@ -340,9 +343,11 @@ class TheSavedVariables(unittest.TestCase):
                     self.assertEqual(rt.globals()[store].game, "mop", store)
                     self.assertIsNone(rt.globals()[store].foreign, store)
                     self.assertEqual(without_game_line(saved(rt, rt.globals()[store], 0)), before[store], store)
-                # The whole file: the original, plus four lines, and nothing else.
+                for store in RETIRED:
+                    self.assertEqual(saved(rt, rt.globals()[store]), before[store], store)
+                # The whole file: the original, plus three lines, and nothing else.
                 self.assertEqual(without_game_line(after), saved_file_of(original))
-                self.assertEqual(after.count('["game"] = "mop"'), 4)
+                self.assertEqual(after.count('["game"] = "mop"'), 3)
 
     def test_this_versions_mop_file_is_what_0_2_191_wrote_plus_the_tag(self) -> None:
         self.assertEqual(without_game_line(saved_file_of(fixture("tagged-mop.lua"))),
@@ -375,8 +380,10 @@ class TheSavedVariables(unittest.TestCase):
                     self.assertEqual(sorted(table.foreign.keys()), [other])
                     # byte for byte what the other game had written, its own tag (if any) included
                     self.assertEqual(saved(rt, table.foreign[other]), before[store], store)
+                for store in RETIRED:
+                    self.assertEqual(saved(rt, rt.globals()[store]), before[store], f"{store} is never touched")
                 lines = chat(ns)
-                self.assertEqual(len(lines), 1, "one line for all four")
+                self.assertEqual(len(lines), 1, "one line for all three")
                 self.assertIn(ns.Game.Name(other), lines[0])
                 for store in STORES:
                     self.assertIn(store, lines[0])
@@ -440,10 +447,11 @@ class TheSavedVariables(unittest.TestCase):
 
     def test_a_saved_variable_that_is_not_a_table_is_left_alone(self) -> None:
         rt = runtime()
-        rt.execute('PandaQuestAH = "not a table"; PandaQuestSync = { version = 1 }')
+        rt.execute('PandaQuestProf = "not a table"; PandaQuestSync = { version = 1 }')
         ns = load_game(rt, *MOP_CLIENT)
         ns.Game.ClaimSavedVariables()
-        self.assertEqual(rt.globals().PandaQuestAH, "not a table")
+        self.assertEqual(rt.globals().PandaQuestProf, "not a table")
+        self.assertIsNone(rt.globals().PandaQuestAH, "a retired saved variable is not even created")
         self.assertEqual(rt.globals().PandaQuestSync.game, "mop")
         self.assertEqual(rt.globals().PandaQuestSync.version, 1)
 

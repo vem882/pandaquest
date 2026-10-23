@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.240] - 2026-10-23
+
+### Removed
+- **The auction house.** The price scan (the Scan prices button and `/pq scan`), the mailbox sales
+  record, the auction prices on item tooltips, their three switches under Options > Modules and the
+  Auction options page are gone.
+  - Your saved auction data is kept: `PandaQuestAH` stays declared in the TOC, because WoW deletes a
+    saved variable that is no longer declared at the next logout. Nothing reads or writes it any more.
+  - `/pq scan` on its own now says to open a profession window; `/pq scan professions` and
+    `/pq scan archaeology` work as before.
+
 ## [0.2.239] - 2026-10-23
 
 Documentation only.
