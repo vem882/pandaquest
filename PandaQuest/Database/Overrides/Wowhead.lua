@@ -167,7 +167,14 @@ ns.Overrides.wowhead = {
         [5545] = {rewardMoney = 350},
         [5581] = {rewardMoney = 3500},
         [5713] = {rewardMoney = 1400},
-        [5892] = {rewardMoney = 57000},
+        [5892] = {
+            description = "Before the fighting started, we stored supplies for Dun Baldar in the Irondeep " ..
+                "mine. The troggs that surfaced there weren't much of a problem when we had spare troops " ..
+                "to guard the mine, but now that we're fighting with the Horde we can't maintain control " ..
+                "of Irondeep.\n\nWe need the supplies in Irondeep, <name>. Enter the mine and bring me a " ..
+                "load of them.",
+            rewardMoney = 57000,
+        },
         [5893] = {rewardMoney = 57000},
         [6132] = {rewardMoney = 3500},
         [6134] = {rewardMoney = 4500},
@@ -361,6 +368,7 @@ ns.Overrides.wowhead = {
         },
         [8751] = {rewardItems = {{21200, 1}}},
         [8753] = {rewardItems = {{21202, 1}}},
+        [8764] = {rewardChoices = {{21210, 1}, {21205, 1}}},
         [8791] = {
             description = "A terrible menace has been laid to rest. The cruel Ossirian has been " ..
                 "vanquished.\n\nThe denizens of Kalimdor would be relieved to know of this victory. Take " ..
@@ -426,7 +434,15 @@ ns.Overrides.wowhead = {
         [9275] = {rewardMoney = 1100},
         [9276] = {rewardMoney = 1000},
         [9277] = {rewardMoney = 1100},
-        [9280] = {rewardMoney = 15},
+        [9280] = {
+            description = "Our immediate concern is the depleted state of our healing crystals. We must " ..
+                "replenish them quickly!\n\nUnfortunately, the only way to do this at this point is to " ..
+                "extract the blood from the local vale moths. Their blood will make for a suitable " ..
+                "substitute.\n\nThe moths can be found in many places around the vale, but they are " ..
+                "mostly concentrated in the northwest.",
+            rewardChoices = {{24129, 1}, {24130, 1}, {24131, 1}},
+            rewardMoney = 15,
+        },
         [9281] = {rewardMoney = 2000},
         [9283] = {rewardMoney = 65},
         [9293] = {rewardMoney = 35},
@@ -1008,7 +1024,17 @@ ns.Overrides.wowhead = {
         [10701] = {rewardMoney = 78000},
         [10702] = {rewardMoney = 123000},
         [10703] = {rewardMoney = 123000},
-        [10704] = {rewardMoney = 132000},
+        [10704] = {
+            description = "A message was embedded in the ata'mal crystal that you recovered. Nexus-Prince " ..
+                "Haramad has given us information vital to our campaign against Tempest Keep.\n\nHe tells " ..
+                "us that there are two pieces, shards to a key, which, when combined, will unlock the " ..
+                "keep's Arcatraz satellite.\n\nOne half is possessed by an ancient in the Botanica known " ..
+                "as Warp Splinter. The other is held by Pathaleon the Calculator inside the " ..
+                "Mechanar.\n\nBring both shards to me and I will combine them into the Arcatraz key.",
+            rewardChoices = {{31460, 1}, {31461, 1}, {31462, 1}, {31464, 1}, {31465, 1}},
+            rewardItems = {{31084, 1}},
+            rewardMoney = 132000,
+        },
         [10710] = {rewardMoney = 16000},
         [10711] = {rewardMoney = 24000},
         [10712] = {rewardMoney = 31000},
@@ -1054,6 +1080,12 @@ ns.Overrides.wowhead = {
                 "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
                 "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
             rewardItems = {{29289, 1}},
+        },
+        [10735] = {
+            description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
+                "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
+                "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
+            rewardItems = {{29281, 1}},
         },
         [10736] = {
             description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
@@ -1268,6 +1300,15 @@ ns.Overrides.wowhead = {
         [11188] = {rewardMoney = 47000},
         [11190] = {rewardMoney = 47000},
         [11202] = {rewardMoney = 47000},
+        [11212] = {
+            description = "Deep in the heart of the swamp lives an old woman named Tabetha. We've never " ..
+                "really known much about her, save that she's a good deal older than she appears. She's " ..
+                "helped us from time to time and helped keep the peace here between the Horde and our " ..
+                "forces.\n\nShe used to keep in regular contact, but we haven't received one " ..
+                "lately.\n\nCould you check in with her when you have time? Just follow the road beyond " ..
+                "North Point Tower, where it turns south and into the Quagmire. You can see her farm from " ..
+                "the road.",
+        },
         [11216] = {
             description = "I was sent here by my mentor to look for assistance, but unfortunately I'm not " ..
                 "allowed outside of Lower City and the individuals that frequent this establishment tend " ..
@@ -3176,11 +3217,25 @@ ns.Overrides.wowhead = {
             rewardMoney = 15,
         },
         [24470] = {rewardChoices = {{66928, 1}, {66929, 1}, {66930, 1}}, rewardMoney = 35},
-        [24471] = {rewardMoney = 35},
+        [24471] = {
+            description = "<name>, listen! Unlike Joren, I've no need for yer blade, but I do need " ..
+                "someone with a steady hand and a bit o' courage.\n\nOur mountaineers are trained to " ..
+                "protect the village from the odd wolf attack... not an all-out trogg invasion! Many of " ..
+                "our best have succumbed to wounds and exhaustion, and I need yer help bandaging them " ..
+                "up.\n\nHere, take my first aid kit and assist as many as ye can.",
+            rewardMoney = 35,
+        },
         [24472] = {rewardMoney = 225},
         [24473] = {rewardMoney = 3},
         [24474] = {rewardMoney = 35},
-        [24475] = {rewardMoney = 35},
+        [24475] = {
+            description = "If we're going to be on lockdown for any extended period o' time, we're gonna " ..
+                "need some food, and some blankets to keep the wee ones warm. Would ye mind headin' " ..
+                "outside and gatherin' up some supplies?\n\nYe'll find that a few o' the small boars " ..
+                "actually have some healthy-sized haunches... good for eatin'. We'll also need some pelts " ..
+                "from the young wolves.\n\nYe'll find animals almost anywhere ye go in Coldridge.",
+            rewardMoney = 35,
+        },
         [24476] = {rewardMoney = 74000},
         [24477] = {rewardMoney = 35},
         [24478] = {rewardMoney = 1000},
@@ -23367,7 +23422,14 @@ ns.Overrides.wowhead = {
                 "there, that place is crawling with undead.",
             rewardMoney = 188000,
         },
-        [28121] = {rewardMoney = 6500},
+        [28121] = {
+            description = "The Shadow Council perpetuates the corruption of this land. At Jaedenar in the " ..
+                "northwest, they worship the demons of the Burning Legion, and work to open the path for " ..
+                "their masters to return to this world.\n\nThe grounds are patrolled by Jaedenar Hounds, " ..
+                "Guardians, Adepts, and Cultists - thugs that act as lookout for the more vile forces " ..
+                "beneath. They will be the first to die so that these forests may no longer suffer!",
+            rewardMoney = 6500,
+        },
         [28122] = {
             description = "We finally capture this godforsaken rock and then we find out that there is a " ..
                 "huge ettin roaming around, taking out our sentry patrols!\n\n<name>, I need you to round " ..
@@ -26375,7 +26437,14 @@ ns.Overrides.wowhead = {
                 "Darnell will join you. He knows the way.",
             rewardMoney = 15,
         },
-        [28609] = {rewardMoney = 4000},
+        [28609] = {
+            description = "The three of us have been arguing for weeks over whose weapons are " ..
+                "superior.\n\nI won't let anyone tell me my maces are second best. Kilram's axes and " ..
+                "Seril's swords could never match the pure strength of my craft.\n\nI'm tired of arguing. " ..
+                "It's time to show those two I'm right with a demonstration. If you would, dear, head " ..
+                "outside and tell Deez Rocksnitch that I need the biggest boulder he can find!",
+            rewardMoney = 4000,
+        },
         [28610] = {rewardMoney = 7500},
         [28611] = {
             description = "Ah, I can already see more clearly, <name>.\n\nWe are right to be wary of the " ..
@@ -40163,9 +40232,352 @@ ns.Overrides.wowhead = {
             rewardMoney = 114000,
             rewardXP = 236000,
         },
+        [31542] = {
+            description = "The practice of caligraphy is an old custom in Pandaria. I am working on a " ..
+                "piece about an ancient war, so I seek an ink that is suitable to the subject " ..
+                "matter.\n\nI have searched high and low for the right hue, but it eludes me. Can you " ..
+                "think of a way to achieve the color I am seeking?",
+            rewardItems = {{79731, 1}},
+            rewardMoney = 114000,
+            rewardXP = 236000,
+        },
+        [31543] = {
+            description = "Many great pieces of art are results of great love. A merchant in Halfhill " ..
+                "wishes to have a portrait made for his beloved, as a birthday present. Will you accept " ..
+                "this commission?",
+            rewardItems = {{79731, 1}},
+            rewardMoney = 114000,
+            rewardXP = 236000,
+        },
+        [31544] = {
+            description = "All things must come to an end - even the life of a good man. A family in Kun " ..
+                "Lai has commissioned a monument for their beloved patriarch who has passed on recently. " ..
+                "Will you accept the commission?",
+            rewardItems = {{79731, 1}},
+            rewardMoney = 114000,
+            rewardXP = 236000,
+        },
+        [31545] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31548] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the valley and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 9000,
+        },
+        [31549] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Shelby Stoneflint, our local stable master, to heal and revive your " ..
+                "pets.",
+            rewardMoney = 41000,
+        },
+        [31550] = {
+            description = "Great work so far <name>. You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 106000,
+        },
+        [31551] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
+        [31552] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 106000,
+        },
+        [31553] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Seriadne, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
+        [31555] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 106000,
+        },
+        [31556] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
+                "I will continue your training. Good luck!",
+            rewardMoney = 114000,
+        },
+        [31557] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31558] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31559] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31560] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31561] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31562] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31563] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31564] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31565] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31566] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31567] = {
+            description = "The Pandaria Treasure Society is interested in purchasing finely crafted goods " ..
+                "from skilled jewelcrafters such as yourself. The items will be catalogued, and the most " ..
+                "exceptional cuts stored in a secret vault, while the rest are sold to refresh our " ..
+                "funds.\n\nOur goal is to eventually create a unique collection for a special event.",
+        },
+        [31568] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Esbina, our local stable master, to heal and revive your pets.",
+            rewardMoney = 9000,
+        },
+        [31569] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 9000,
+        },
+        [31570] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
+        [31571] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 114000,
+        },
+        [31572] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Shoja'my, our local stable master, to heal and revive your pets.",
+            rewardMoney = 9000,
+        },
+        [31573] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 114000,
+        },
+        [31574] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Seikwa, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
+        [31575] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
+        [31576] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 114000,
+        },
+        [31577] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Morganus, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
+        [31578] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 90000,
+        },
+        [31579] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 9000,
+        },
+        [31580] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Anathos, our local stable master, to heal and revive your pets.",
+            rewardMoney = 9000,
+        },
+        [31581] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 9000,
+        },
+        [31582] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 106000,
+        },
+        [31583] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Jaelysia, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
+        [31584] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 106000,
+        },
         [31585] = {rewardMoney = 9000},
         [31586] = {rewardMoney = 9000},
         [31587] = {rewardMoney = 9000},
+        [31588] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
+                "I will continue your training. Good luck!",
+            rewardMoney = 114000,
+        },
+        [31589] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Murog, our local stable master, to heal and revive your pets.",
+            rewardMoney = 6500,
+        },
+        [31590] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
+        [31591] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
+                "I will continue your training. Good luck!",
+            rewardMoney = 106000,
+        },
+        [31592] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Jenova Stoneshield, our local stable master, to heal and revive your " ..
+                "pets.",
+            rewardMoney = 106000,
+        },
+        [31593] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
+        [31598] = {
+            description = "<As the ringworm tumbles apart, a massive chunk of organic kyparite falls from " ..
+                "its core. Someone at Klaxxi'vess will want to see this.>",
+            rewardMoney = 228000,
+        },
+        [31599] = {
+            description = "<The enormous mandibles of the kunchong matriarch Karanosh should be of value " ..
+                "to someone in Klaxxi'vess.>",
+            rewardMoney = 228000,
+        },
+        [31603] = {rewardMoney = 11400},
+        [31605] = {
+            description = "We have just intercepted a message from an adjunct on Zan'vess. Yaungol " ..
+                "laborers there have unearthed a paragon in the amber quarry on the back side of the " ..
+                "island.\n\nGet there immediately and free him before the Zan'thik destroy him!",
+            rewardMoney = 11400,
+        },
+        [31606] = {
+            description = "You are... not like the others...\n\nI hear the Klaxxi calling... <cough>\n\nI " ..
+                "just need a moment.",
+            rewardChoices = {
+                {84046, 1}, {84047, 1}, {84048, 1}, {84049, 1}, {84050, 1}, {84051, 1}, {84052, 1},
+                {84053, 1}, {84054, 1},
+            },
+            rewardMoney = 114000,
+        },
+        [31609] = {
+            description = "The rest of the freed paragons are scattered around the Heart of Fear, " ..
+                "fighting off the mantid swarm. They may need your help!",
+            rewardMoney = 228000,
+        },
+        [31611] = {
+            description = "Have you ever seen the Brewmoon Festival?\n\nThe good folks of Binan Village " ..
+                "host quite a party. And tonight's festivities are brew-catered by none other than your's " ..
+                "truly here.\n\nI am making my famous Kun-Lai Kicker!\n\nThink you might come and join us " ..
+                "for the festivities? It should be a completely relaxing event with absolutely no danger " ..
+                "whatsoever.",
+            rewardMoney = 456000,
+        },
+        [31612] = {
+            description = "You only understand part of our order. You are an outsider, and have been " ..
+                "treated as such.\n\nIt is no longer appropriate that we keep our secrets from you. There " ..
+                "is something you should see.",
+            rewardChoices = {{90858, 1}, {90859, 1}, {90860, 1}, {90861, 1}, {90862, 1}},
+            rewardMoney = 228000,
+        },
         [31613] = {
             description = "I am working on a batch of my famous Volatile Greenstone Brew.\n\nShould be " ..
                 "superb in countering the rascals and mischievous elementals we have been seeing around " ..
@@ -40173,6 +40585,31 @@ ns.Overrides.wowhead = {
                 "bring them back here to try out a round.\n\nFirst one's on the house!",
             rewardMoney = 456000,
         },
+        [31614] = {rewardMoney = 228000, rewardXP = 294000},
+        [31615] = {rewardMoney = 228000, rewardXP = 294000},
+        [31616] = {rewardMoney = 114000, rewardXP = 236000},
+        [31617] = {rewardMoney = 114000, rewardXP = 236000},
+        [31618] = {rewardMoney = 114000, rewardXP = 236000},
+        [31619] = {rewardMoney = 114000, rewardXP = 236000},
+        [31620] = {rewardMoney = 114000, rewardXP = 177000},
+        [31621] = {rewardMoney = 114000, rewardXP = 177000},
+        [31622] = {rewardMoney = 114000, rewardXP = 177000},
+        [31623] = {rewardMoney = 114000, rewardXP = 177000},
+        [31624] = {rewardMoney = 114000, rewardXP = 177000},
+        [31625] = {rewardMoney = 114000, rewardXP = 177000},
+        [31626] = {rewardMoney = 114000, rewardXP = 177000},
+        [31627] = {rewardMoney = 114000, rewardXP = 177000},
+        [31628] = {rewardMoney = 114000, rewardXP = 177000},
+        [31629] = {rewardMoney = 114000, rewardXP = 177000},
+        [31630] = {rewardMoney = 114000, rewardXP = 177000},
+        [31631] = {rewardMoney = 114000, rewardXP = 177000},
+        [31632] = {rewardMoney = 114000, rewardXP = 177000},
+        [31633] = {rewardMoney = 114000, rewardXP = 177000},
+        [31634] = {rewardMoney = 114000, rewardXP = 177000},
+        [31635] = {rewardMoney = 114000, rewardXP = 177000},
+        [31636] = {rewardMoney = 114000, rewardXP = 177000},
+        [31637] = {rewardMoney = 114000, rewardXP = 177000},
+        [31638] = {rewardMoney = 114000, rewardXP = 177000},
         [31695] = {
             description = "We received word the Shado-Pan have begun a counter attack in to Townlong " ..
                 "Steppes. It sounds like they are going after the root of the yaungol invasion.\n\nThe " ..
@@ -40291,6 +40728,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{94220, 1}},
             rewardMoney = 228000,
         },
+        [32627] = {
+            description = "We have been dispatching spies into the Sunreaver base of operations on a " ..
+                "daily basis. Some had orders to recover charged moganite from the enemy and bring it " ..
+                "here.\n\nThey have not returned, and I can confirm they have left the Sunreaver " ..
+                "base.\n\nSearch the jungle between here and there and find any of the charged moganite " ..
+                "that might have been lost in transit. Bring it to me and we will put it to good use.",
+            rewardMoney = 114000,
+        },
         [32707] = {
             description = "I do have one thing I would ask of you, <class>.\n\nWe've gotten our hands on " ..
                 "a powerful ritual stone that the Shan'ze mogu use to beckon their allies into battle, " ..
@@ -40319,6 +40764,13 @@ ns.Overrides.wowhead = {
                     "print(C_QuestLog.IsQuestFlaggedCompleted(33025))",
             },
         },
+        [33027] = {
+            description = "The best way to go about doing this is through hands-on experience.\n\nI've " ..
+                "arranged for merchants, scholars, and farmers from all over Pandaria to come for a taste " ..
+                "test of your soups. We'll get the best results if you can match them to the soups they " ..
+                "prefer.\n\nIt's time to find the secret ingredient!",
+            rewardMoney = 228000,
+        },
         [33160] = {
             description = "You have found your way to the Timeless Isle, <class>. The bronze dragonflight " ..
                 "is keen to investigate the mysteries of this place, but the island is dangerous, and we " ..
@@ -40326,6 +40778,13 @@ ns.Overrides.wowhead = {
                 "east.\n\nIt will lead you to the ancient Celestial Court. You will find Kairoz there, " ..
                 "one of the Keepers of Time that we are working with.\n\nKairoz will answer any questions " ..
                 "you might have. Be careful: The way may not be safe.",
+        },
+        [33230] = {
+            description = "As you survey the devastation of the vale, a flash of bronze catches your eye. " ..
+                "Unless you're mistaken, a tiny gnome is trying to catch your attention from the balcony " ..
+                "above Mogu'shan Palace, just outside of the Seat of Knowledge.\n\nYou should see what " ..
+                "she wants.",
+            rewardMoney = 28500,
         },
         [33333] = {
             description = "The journal indicates that treasures abound across the island, sometimes " ..
@@ -40335,6 +40794,12 @@ ns.Overrides.wowhead = {
                 "warned that all that glitters is not gold, yet the reverse is also true. Sometimes the " ..
                 "simple hollowed-out stump is the best hiding place for one's valuables.",
             rewardMoney = 114000,
+        },
+        [33338] = {
+            description = "The hourglass gives us glimpses into the streams of time we once walked as " ..
+                "easily as a well-worn path.\n\nGather additional epoch stones, so that we may continue " ..
+                "to use the power of the hourglass to delve into the mysteries of the timeways.\n\nThe " ..
+                "future depends on it.",
         },
     },
     npcs = {
