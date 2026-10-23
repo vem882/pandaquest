@@ -448,6 +448,15 @@ L["Show the flight time at the flight master"] = true
 L["One line in the destination's tooltip, with how many of your own flights it rests on."] = true
 L["Show the progress bar while flying"] = true
 L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."] = true
+L["Times your own flights; until a route is flown twice, uses the portal's times (all players' or estimated)."] = true
+L["Progress, remaining time and arrival time. Marked estimated when nobody has measured the route."] = true
+L["One line in the destination's tooltip: the expected flight time and what it rests on."] = true
+L["%s left"] = true
+L["~%s left (estimated)"] = true
+L["Arrives at %s"] = true
+L["(estimated)"] = true
+L["%s (%d flights, all players)"] = true
+L["~%s (estimated)"] = true
 -- Archaeology
 L["This client does not offer the archaeology data PandaQuest reads."] = true
 L["This character has no archaeology races to read yet."] = true
@@ -730,3 +739,18 @@ L["Window size"] = true
 L["The size of the PandaQuest window, on top of the game's own UI scale."] = true
 L["Reset the window"] = true
 L["Puts the PandaQuest window back in the middle of the screen at its first size."] = true
+
+-- Quest mobs on nameplates and tooltips (Quest/QuestMobs.lua)
+L["Quest mobs"] = true
+L["Marks the NPCs your unfinished quests need you to kill, on their nameplates and tooltips."] = true
+L["Turn on enemy nameplates (V) to see the marks."] = true
+L["Mark quest mobs"] = true
+L["Icon"] = true
+L["Quest mark (!)"] = true
+L["Crossed swords"] = true
+L["PandaQuest's kill pin"] = true
+L["Tint the health bar"] = true
+L["A gold wash over the nameplate's health bar, with Blizzard's own nameplates."] = true
+L["Show the quest on the tooltip"] = true
+L["Quest: %s (%d/%d)"] = true
+L["Quest: %s"] = true

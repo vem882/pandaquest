@@ -177,7 +177,7 @@ ns.MODULE_ORDER = {
     "Schema", "Zones", "DB",
     "Player", "QuestLog", "Objectives", "Availability",
     "Targets", "Router", "Arrow", "TomTomBridge",
-    "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips",
+    "Icons", "MapCompat", "NodeTooltip", "Pins", "Tooltips", "QuestMobs",
     "Respawn", "Professions",
     "FlightRoutes", "FlightTooltip",
     "Options", "MinimapButton", "FlightBar", "Wowhead", "Tracker", "Notify", "DigSiteBar", "QuestBrowser",
@@ -195,7 +195,7 @@ ns.MODULE_ORDER = {
 -- module missing from this list is something another one stands on -- the quest log, the targets,
 -- the database -- and stays on.
 ns.OPTIONAL_MODULES = {
-    "Arrow", "Pins", "Tooltips", "Respawn", "Professions",
+    "Arrow", "Pins", "Tooltips", "QuestMobs", "Respawn", "Professions",
     "Tracker", "Notify", "DigSiteBar",
     "AuctionScanner", "AuctionMail", "AuctionTooltip", "RecipeScanner", "Archaeology",
     "Telemetry", "CharacterSheet",

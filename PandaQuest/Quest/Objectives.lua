@@ -413,6 +413,12 @@ local function selectDescriptors(DB, objective, ordinal, byType, out)
 end
 
 ---------------------------------------------------------------------------
+-- Quest/QuestMobs.lua marks the NPCs of the same objectives on their nameplates, so it reads them
+-- through the same two functions rather than a second copy of the matching rules.
+M.BuildDescriptors = buildDescriptors
+M.SelectDescriptors = selectDescriptors
+
+---------------------------------------------------------------------------
 -- Objective -> Targets
 ---------------------------------------------------------------------------
 

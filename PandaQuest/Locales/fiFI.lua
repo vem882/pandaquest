@@ -1013,6 +1013,50 @@ local T = {
         "Palauta ikkuna",
     ["Puts the PandaQuest window back in the middle of the screen at its first size."] =
         "Palauttaa PandaQuest-ikkunan keskelle ruutua alkuperäiseen kokoonsa.",
+    ["Times your own flights; until a route is flown twice, uses the portal's times (all players' or estimated)."] =
+        "Ajastaa omat lentosi; kunnes olet lentänyt reitin kahdesti, käyttää portaalin aikoja (kaikkien tai arvio).",
+    ["Progress, remaining time and arrival time. Marked estimated when nobody has measured the route."] =
+        "Eteneminen, jäljellä oleva aika ja saapumisaika. Merkitty arvioksi, kun reittiä ei ole kukaan mitannut.",
+    ["One line in the destination's tooltip: the expected flight time and what it rests on."] =
+        "Yksi rivi kohteen vihjeessä: odotettu lentoaika ja mihin se perustuu.",
+    ["%s left"] =
+        "%s jäljellä",
+    ["~%s left (estimated)"] =
+        "~%s jäljellä (arvio)",
+    ["Arrives at %s"] =
+        "Perillä klo %s",
+    ["(estimated)"] =
+        "(arvio)",
+    ["%s (%d flights, all players)"] =
+        "%s (%d lentoa, kaikki pelaajat)",
+    ["~%s (estimated)"] =
+        "~%s (arvio)",
+    ["Quest mobs"] =
+        "Tehtävän viholliset",
+    ["Marks the NPCs your unfinished quests need you to kill, on their nameplates and tooltips."] =
+        "Merkitsee hahmot, jotka keskeneräisissä tehtävissäsi pitää tappaa, niiden nimikilpiin ja vihjeisiin.",
+    ["Turn on enemy nameplates (V) to see the marks."] =
+        "Laita vihollisten nimikilvet päälle (V), niin näet merkit.",
+    ["Mark quest mobs"] =
+        "Merkitse tehtävän viholliset",
+    ["Icon"] =
+        "Kuvake",
+    ["Quest mark (!)"] =
+        "Tehtävämerkki (!)",
+    ["Crossed swords"] =
+        "Ristikkäiset miekat",
+    ["PandaQuest's kill pin"] =
+        "PandaQuestin tappomerkki",
+    ["Tint the health bar"] =
+        "Väritä elämäpalkki",
+    ["A gold wash over the nameplate's health bar, with Blizzard's own nameplates."] =
+        "Kultainen sävy nimikilven elämäpalkin päälle, Blizzardin omissa nimikilvissä.",
+    ["Show the quest on the tooltip"] =
+        "Näytä tehtävä vihjeessä",
+    ["Quest: %s (%d/%d)"] =
+        "Tehtävä: %s (%d/%d)",
+    ["Quest: %s"] =
+        "Tehtävä: %s",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

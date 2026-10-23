@@ -241,6 +241,7 @@ local MODULE_TEXT = {
     Arrow = { L["Navigation arrow"], L["The arrow that points to your next quest objective."] },
     Pins = { L["Map and minimap pins"], L["Quest pins and gathering nodes on the world map and the minimap."] },
     Tooltips = { L["Quest info in tooltips"], L["Which quests an NPC or an item belongs to, on its tooltip."] },
+    QuestMobs = { L["Quest mobs"], L["Marks the NPCs your unfinished quests need you to kill, on their nameplates and tooltips."] },
     Respawn = { L["Respawn timers"], L["Times how long mobs and nodes take to come back, and fades them until they do."] },
     Professions = { L["Gathering nodes"], L["Ore, herbs, fishing pools, chests and rare spawns on the maps."] },
     Tracker = { L["Quest tracker additions"], L["Distances and target buttons in the Blizzard quest tracker."] },
@@ -487,7 +488,7 @@ end
 -- names still appears, under Other, so nothing in the table can be lost from the window.
 M.CATEGORIES = {
     { key = "navigation", name = L["Navigation"], icon = "Interface\\Icons\\INV_Misc_Map_01",
-      groups = { "arrow", "nav", "tracker", "hidden" } },
+      groups = { "arrow", "nav", "tracker", "hidden", "questmobs" } },
     { key = "map", name = L["Map & Minimap"], icon = "Interface\\Icons\\INV_Misc_Map02", groups = { "map" } },
     { key = "tooltips", name = L["Tooltips"], icon = "Interface\\Icons\\INV_Misc_Note_01", groups = { "tooltips" } },
     { key = "flight", name = L["Flight"], icon = "Interface\\Icons\\Ability_Mount_Wyvern_01", groups = { "flight" } },
@@ -864,12 +865,12 @@ local function buildTable()
             flight = {
                 type = "group", order = 12, name = L["Flight master"], args = {
                     info = { type = "description", order = 0,
-                        name = L["PandaQuest times your own flights and shows what it measured. A route you have never flown shows nothing at all."] },
+                        name = L["Times your own flights; until a route is flown twice, uses the portal's times (all players' or estimated)."] },
                     tooltipETA = toggle(1, L["Show the flight time at the flight master"],
-                        L["One line in the destination's tooltip, with how many of your own flights it rests on."],
+                        L["One line in the destination's tooltip: the expected flight time and what it rests on."],
                         "flight.tooltipETA"),
                     bar = toggle(2, L["Show the progress bar while flying"],
-                        L["Progress and remaining time once the route has been flown twice; before that, only the time in the air."],
+                        L["Progress, remaining time and arrival time. Marked estimated when nobody has measured the route."],
                         "flight.bar"),
                     barLocked = toggle(3, L["Lock the bar in place"],
                         L["Unlocked, it can be dragged with the left mouse button."], "flight.barLocked"),

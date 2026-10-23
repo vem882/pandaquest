@@ -4,6 +4,16 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.236
+- flight - the bar shows the time left and fills from takeoff, also on a route you never flew
+  - the time is your own median of 2+ flights, else all players' measured time from the portal
+  - else an estimate from the path's length, marked "(estimated)"; hover the bar: arrival time
+- flight - the flight master's tooltip shows the expected time before the first flight
+- database - flight times from the portal (Database/Overrides/Flights.lua)
+- quests - mobs your unfinished quests need killed get a quest mark on their nameplate
+  - also the droppers of quest items; tooltip line "Quest: <title> (3/8)"; optional health bar tint
+  - Options > Navigation > Quest mobs: icon, size, tint, tooltip; Options > Modules switches it off
+
 0.2.235
 - ui - one PandaQuest window: Quests, Status, Options, About & Help and Performance
 - options - categories with icons, sub-tabs, a search box and a reset button per category

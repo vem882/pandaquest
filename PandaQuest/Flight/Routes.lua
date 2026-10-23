@@ -13,8 +13,13 @@
 -- 1.0-y purely to place a 16 px button (Blizzard_UIPanels_Game/Shared/TaxiFrame.lua:68-69), and
 -- the vanilla frame uses a different texture size for the same world. Turning those into yards
 -- means choosing a scale nobody measured, and there is no taxi speed constant anywhere in either
--- reference tree to divide it by. So a route that has never been flown shows nothing at all --
--- not an approximation, not a dash with a question mark. An empty line is the true one.
+-- reference tree to divide it by. So this file never turns those texture positions into a time.
+--
+-- **What is shown before the first flight** is Flight/Eta.lua's business: the portal's measured
+-- medians and path-length estimates (Database/Overrides/Flights.lua), and as a last resort the
+-- straight line between C_TaxiMap's node positions -- which are on the taxi UI map, not on the
+-- texture -- turned into yards by HereBeDragons. This file only keeps those positions
+-- (GetNodePosition) and hands Eta the route at the click; the expected duration rides with the flight.
 --
 -- **The key is a pair of numeric node ids, never a name.** C_TaxiMap.GetAllTaxiNodes(uiMapID)
 -- returns TaxiNodeInfo records carrying both `nodeID` -- stable and language independent -- and
@@ -244,6 +249,9 @@ local currentSlot, currentNodeID
 -- Every slot's nodeID on the map that is open now, reachable or not: a hop chain passes through
 -- nodes the player cannot fly to directly.
 local nodeIdBySlot = {}
+-- nodeID -> { x, y, uiMapID } from C_TaxiMap's `position`, kept for the session: a flight master does
+-- not move, and Flight/Eta.lua's straight-line estimate needs both ends of every hop.
+local nodePositions = {}
 
 --- Which value of TaxiGetNodeSlot's third argument means "the source of this leg": true, false, or
 -- nil when this map could not settle it. See resolvePolarity.
@@ -600,6 +608,19 @@ function M.Capture()
             if slot and nodeID then
                 nodeIdBySlot[slot] = nodeID
                 stateBySlot[slot] = info.state
+                local position = info.position
+                local px, py
+                if type(position) == "table" then
+                    if type(position.GetXY) == "function" then
+                        local okXY, x, y = pcall(position.GetXY, position)
+                        if okXY then px, py = x, y end
+                    else
+                        px, py = position.x, position.y
+                    end
+                end
+                if tonumber(px) and tonumber(py) and (px > 0 or py > 0) then
+                    nodePositions[nodeID] = { tonumber(px), tonumber(py), mapID }
+                end
                 if type(info.name) == "string" and info.name ~= "" then nameBySlot[slot] = info.name end
             end
         end
@@ -693,6 +714,14 @@ end
 function M.GetCaptured(slotIndex)
     local slot = tonumber(slotIndex)
     return slot and captured[slot] or nil
+end
+
+--- GetNodePosition(nodeID) -> x, y, uiMapID (normalised on that taxi map) or nil, from any flight
+-- master map opened this session.
+function M.GetNodePosition(nodeID)
+    local entry = nodePositions[tonumber(nodeID) or 0]
+    if not entry then return nil end
+    return entry[1], entry[2], entry[3]
 end
 
 --- GetCurrentNodeID() -> the nodeID of the flight master the player is standing at, or nil.
@@ -890,6 +919,7 @@ local function persist()
     char.flightInAir = {
         src = f.src, dst = f.dst, name = f.name, legs = f.legs, hops = copyList(f.hops),
         takeoff = f.takeoff, money = f.money, cost = f.cost, paid = f.paid, speed = f.speed,
+        expected = f.expected, expectedSource = f.expectedSource, expectedSamples = f.expectedSamples,
         identified = f.identified or nil, discarded = f.discarded or nil,
     }
 end
@@ -945,7 +975,9 @@ local function takeOff(click)
     end
     local f = { src = click.src, dst = click.dst, name = click.name, legs = click.legs, hops = click.hops,
                 startedAt = now(), takeoff = serverNow(), money = click.money, cost = click.cost,
-                discarded = false, identified = true, speed = factor }
+                discarded = false, identified = true, speed = factor,
+                expected = click.expected, expectedSource = click.expectedSource,
+                expectedSamples = click.expectedSamples }
     -- The fare: what left the purse between the click and now. PLAYER_MONEY may still be on its
     -- way, and then it is read when it arrives (onMoney).
     local current = money()
@@ -1043,6 +1075,15 @@ local function onTakeTaxiNode(index)
         click.hops, click.cost = entry.nodeHops, entry.cost
         -- A chain of n slots is n-1 legs; nil when it could not be read.
         click.legs = entry.hops and (#entry.hops - 1) or nil
+        -- The expected duration is settled here, while the map's positions are still the ones the
+        -- player clicked on (Flight/Eta.lua). The player's own median is read live by GetFlight.
+        local Eta = ns.FlightEta
+        if Eta and type(Eta.Expected) == "function" then
+            local ok, seconds, source, samples = pcall(Eta.Expected, currentNodeID, entry.nodeID, entry.nodeHops)
+            if ok and seconds then
+                click.expected, click.expectedSource, click.expectedSamples = seconds, source, samples
+            end
+        end
     else
         Log.Debug("Flight", "taxi slot %s was not cached; this flight will not be filed", tostring(index))
     end
@@ -1148,18 +1189,25 @@ local function onEnteringWorld(_, isInitialLogin, isReloadingUi)
     if onTaxi() then takeOff(nil) end
 end
 
---- GetFlight() -> { src, dst, name, startedAt, elapsed, seconds, samples, discarded, identified }|nil
--- What is being measured right now, with the route's own estimate beside it so a screen does not
--- have to ask twice. `seconds` and `samples` are nil on a route nobody has flown, and UI/FlightBar
--- .lua then shows elapsed time and no fraction.
+--- GetFlight() -> { src, dst, name, startedAt, elapsed, seconds, samples, source, discarded,
+-- identified }|nil
+-- What is being measured right now, with its expected duration beside it so a screen does not have
+-- to ask twice. The player's own median (MIN_SAMPLES flights or more) is read live and wins
+-- (source "own"); otherwise it is what Flight/Eta.lua answered at the click ("measured" by all
+-- players, "estimated", "own1" or "straight"). `seconds` is nil when nothing at all is known, and
+-- UI/FlightBar.lua then shows the time in the air and no fraction.
 function M.GetFlight()
     if not flight then return nil end
     local seconds, samples = M.GetEstimate(flight.src, flight.dst)
+    local source = seconds and "own" or nil
+    if not (seconds and (samples or 0) >= M.MIN_SAMPLES) and tonumber(flight.expected) then
+        seconds, samples, source = flight.expected, flight.expectedSamples or 0, flight.expectedSource
+    end
     return {
         src = flight.src, dst = flight.dst, name = flight.name,
         startedAt = flight.startedAt, elapsed = now() - flight.startedAt,
         discarded = flight.discarded, identified = flight.identified,
-        seconds = seconds, samples = samples or 0,
+        seconds = seconds, samples = samples or 0, source = source,
     }
 end
 

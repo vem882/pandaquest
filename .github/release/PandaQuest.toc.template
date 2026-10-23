@@ -78,6 +78,7 @@ Quest\QuestLog.lua
 Quest\Objectives.lua
 Quest\Availability.lua
 Quest\Catalog.lua
+Quest\QuestMobs.lua
 Nav\Targets.lua
 Nav\Router.lua
 Nav\Arrow.lua
@@ -90,6 +91,7 @@ Map\Tooltips.lua
 Nodes\Respawn.lua
 Nodes\Professions.lua
 Flight\Routes.lua
+Flight\Eta.lua
 Flight\Tooltip.lua
 UI\Motion.lua
 UI\ReleaseNotes.lua

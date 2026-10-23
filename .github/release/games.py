@@ -79,6 +79,7 @@ MOP = Game(
         "Database\\Overrides\\Wowhead.lua",
         "Database\\Overrides\\Community.lua",
         "Database\\Overrides\\Portal.lua",
+        "Database\\Overrides\\Flights.lua",
     ),
 )
 
