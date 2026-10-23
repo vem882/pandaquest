@@ -150,6 +150,7 @@ A good report says what you did, what you expected and what happened. Please inc
 | `/pq consent` | the question about sharing quest data (synchronisation is off until you say yes) |
 | `/pq lang auto\|<locale>` | interface language (`/pq lang` lists the codes: `enUS deDE esES esMX fiFI frFR itIT koKR ptBR ruRU zhCN zhTW`) |
 | `/pq status` | addon status |
+| `/pq config [section] [option] [value]` | change any setting from chat (`/pq config` lists the sections, e.g. `/pq config map showOnMinimap off`, `/pq config modules notify off`) |
 | `/pq dump quest\|npc\|object\|item <id>` | print a database entry |
 | `/pq debug [0-4\|arrow]` | log level (0 error ... 4 trace) or arrow debug values |
 
@@ -177,8 +178,9 @@ Everything has a working default; the panel (`/pq`) is optional.
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound |
 | Synchronisation (optional) | record quest data, movement breadcrumbs, sessions kept |
+| Modules | switch a whole part of PandaQuest off: the arrow, map pins, tooltips, respawn timers, gathering nodes, tracker additions, notifications, the dig site bar, the auction scan, mailbox sales, auction tooltip prices, the recipe and archaeology readers, quest data and gear recording. A part that is off listens to nothing and runs no timer |
 | Advanced | log level, arrow debug output, redraw pins |
-| Profiles | standard profile management |
+| Profiles | standard profile management (AceDBOptions); the module switches are part of the profile |
 
 PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks another one, and
 `/pq lang auto` goes back to the game's; reload the UI afterwards.
@@ -188,7 +190,8 @@ PandaQuest follows the game locale (see "Languages"). `/pq lang <code>` picks an
 `PandaQuestDB` (settings and profiles), `PandaQuestSync` (optional synchronisation data),
 `PandaQuestAH` (auction scans) and `PandaQuestProf` (recipe books). The waypoint settings are
 `waypoint` in the profile and the point or quest you chose is `waypoint` under the character, both
-added in 0.2.198; nothing saved before them is changed.
+added in 0.2.198; nothing saved before them is changed. A module switched off in
+Options > Modules is one new key in the profile, `modules.<Name> = false`; nothing else moved.
 
 Each one carries a `game` key, the game it was written in (`mop` for Mists of Pandaria Classic),
 added the first time 0.2.194 or later loads it; nothing else in it is changed. If PandaQuest finds

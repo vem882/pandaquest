@@ -4,6 +4,14 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.233
+- core - every part of PandaQuest is an Ace3 module, set up and started in the same order as before
+- options - new Modules section: switch a part of the addon off completely, saved in the profile
+- options - /pq config [section] [option] [value] changes any setting from chat
+- core - timers that counted every frame now fire only when due (map pins, tooltips, scans)
+- languages - a text a language does not translate now reads in English, not the language before
+- saved data - nothing is moved or renamed; module switches are new keys only
+
 0.2.232
 - database - Wowhead data as the PandaQuest portal read it: 8,534 quests, 51 NPCs, 4 objects
 - quest 8633 - Enigma Robes - updated
