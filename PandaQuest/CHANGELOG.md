@@ -4,6 +4,15 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.239] - 2026-10-23
+
+Documentation only.
+
+### Changed
+- **README brought up to date.** Flight times before the first flight, quest-mob icons, links to
+  the PandaQuest site instead of Wowhead, the Wago app, the PandaQuest Sync app and the privacy
+  statement.
+
 ## [0.2.238] - 2026-10-23
 
 Data from the PandaQuest portal.
