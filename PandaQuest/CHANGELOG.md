@@ -4,6 +4,134 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.244] - 2026-10-23
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,635 quests, 58 NPCs, 4 objects
+- quest 6607 - Nat Pagle, Angler Extreme - updated
+  - description added
+  - reward items: +1
+- quest 7784 - The Lord of Blackrock - updated
+  - description added
+  - reward choices: +3
+- quest 9490 - The Rock Flayer Matriarch - updated
+  - description added
+  - reward choices: +3
+- quest 9627 - Allegiance to the Horde - updated
+  - description added
+- quest 9914 - A Head Full of Ivory - updated
+  - description added
+- quest 10077 - Oshu'gun Crystal Powder - updated
+  - reward items: +1
+- quest 10191 - Mark V is Alive! - updated
+  - description added
+  - reward choices: +2
+- quest 10332 - Master Smith Rhonsus - updated
+  - description added
+  - reward choices: +4
+- quest 10450 - Bonechewer Blood - updated
+  - description added
+  - reward choices: +5
+- quest 10648 - Wanted: Uvuros, Scourge of Shadowmoon - updated
+  - description added
+  - reward choices: +4
+- quest 10786 - Slaughter at Boulder'mok - updated
+  - description added
+- quest 10975 - Purging the Chambers of Bash'ir - updated
+  - reward items: +1
+- quest 11107 - Bow to the Highlord - updated
+  - description added
+- quest 11233 - Landing the Killing Blow - updated
+  - description added
+  - reward choices: +6
+- quest 11290 - Dragonflayer Battle Plans - updated
+  - description added
+  - reward choices: +4
+- quest 11367 - Demolishing Megalith - updated
+  - description added
+  - reward items: +1
+- quest 11636 - Magic Carpet Ride - updated
+  - description added
+- quest 11678 - Find Bristlehorn - updated
+  - description added
+- quest 12207 - Vordrassil's Fall - updated
+  - description added
+  - reward choices: +4
+- quest 12222 - Secrets of the Flamebinders - updated
+  - description added
+- quest 12916 - Our Only Hope - updated
+  - description added
+- quest 13218 - Battle at Valhalas: Thane Deathblow - updated
+  - description added
+- quest 13612 - Mor'shan Defense - updated
+  - description added
+- quest 13815 - Making Stumps - updated
+  - description added
+- quest 13880 - Hot Lava - updated
+  - description added
+- quest 13946 - Nature's Reprisal - updated
+  - description added
+- quest 13965 - Check in on the Edunes - updated
+  - description added
+- quest 14359 - Blessings From Above - updated
+  - description added
+- quest 24522 - Journey To The Sunwell - updated
+  - description added
+- quest 26256 - Bleed the Bloodshaper - updated
+  - description removed
+  - reward money removed (6g 20s)
+- quest 26613 - Up to Snuff - updated
+  - description added
+- quest 26712 - Off to the Bank - updated
+  - reward items: counts corrected
+- quest 27184 - Jarl Needs Eyes - updated
+  - description added
+- quest 27339 - The Reagent Thief - updated
+  - description added
+  - reward choices: +3
+- quest 27412 - WANTED: Goreclaw the Ravenous - updated
+  - description added
+  - reward choices: +3
+- quest 27416 - The Brood of Onyxia - updated
+  - description added
+- quest 27424 - Overlord Mok'Morokk's Concern - updated
+  - description added
+  - reward choices: +2
+- quest 28493 - Warchief's Command: Ashenvale! - updated
+  - description added
+- quest 28656 - Strange Life Forces - updated
+  - description added
+- quest 32254 - Manipulating the Saurok - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32317 - Seeking the Soulstones - updated
+  - description added
+  - reward money added (11g 40s)
+  - XP added (236,000)
+- quest 32344 - It Is A Mystery - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32429 - The Prince's Pursuit - updated
+  - description added
+  - reward money added (11g 40s)
+  - XP added (236,000)
+- quest 32538 - Heinous Sacrifice - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32676 - Extended Shore Leave - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 33343 - The Archiereus Of Flame - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- npc 2550 - Captain Stillwater - updated
+  - coordinates: 2 spawn points added in Northern Stranglethorn
+- npc 14720 - High Overlord Saurfang - updated
+  - coordinates: 10 spawn points added in Orgrimmar
+  - coordinates: 8 spawn points added in Silithus
+
 ## [0.2.243] - 2026-10-23
 
 Data from the PandaQuest portal.
