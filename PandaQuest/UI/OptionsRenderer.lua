@@ -233,9 +233,9 @@ local function flatButton(parent, width, height)
     b.bg:SetAllPoints(b)
     b.edge = edge(b, EDGE, 0.7)
     b.text = fontString(b, "GameFontHighlightSmall", WHITE, "CENTER")
-    b.text:SetPoint("LEFT", b, "LEFT", 4, 0)
-    b.text:SetPoint("RIGHT", b, "RIGHT", -4, 0)
-    if b.SetWordWrap then b.text:SetWordWrap(false) end
+    b.text:SetPoint("CENTER", b, "CENTER", 0, 0)
+    b.text:SetSize(width - 8, height - 2)
+    if b.text.SetWordWrap then b.text:SetWordWrap(false) end
     local hover = bar(b, "HIGHLIGHT", GOLD, 0.12)
     hover:SetAllPoints(b)
     return b
@@ -243,15 +243,26 @@ end
 R.FlatButton = flatButton
 R.Paint, R.Bar, R.Edge, R.FontString = paint, bar, edge, fontString
 
-local function describeHeight(textValue, width)
+-- How many lines a text wraps into at a width (about 5.6 px a character in the small game font).
+local function textLines(textValue, width)
     textValue = tostring(textValue or "")
-    if textValue == "" then return 6 end
+    if textValue == "" then return 0 end
     local perLine = max(10, floor(width / 5.6))
     local lines = 0
     for paragraph in (textValue .. "\n"):gmatch("([^\n]*)\n") do
         lines = lines + max(1, ceil(#paragraph / perLine))
     end
+    return lines
+end
+
+local function describeHeight(textValue, width)
+    local lines = textLines(textValue, width)
+    if lines == 0 then return 6 end
     return lines * TEXT_LINE + 10
+end
+
+local function textWidth(width)
+    return width - 2 * PAD - CONTROL_W - 12
 end
 
 ---------------------------------------------------------------------------
@@ -381,8 +392,10 @@ function builders.slider(row)
     end
     s.low = fontString(row, "GameFontDisableSmall", DIM, "LEFT")
     s.low:SetPoint("TOPLEFT", s, "BOTTOMLEFT", 0, -1)
+    s.low:SetSize(60, 12)
     s.high = fontString(row, "GameFontDisableSmall", DIM, "RIGHT")
     s.high:SetPoint("TOPRIGHT", s, "BOTTOMRIGHT", 0, -1)
+    s.high:SetSize(60, 12)
     s.box = CreateFrame("EditBox", nil, row)
     s.box:SetSize(48, 18)
     s.box:SetAutoFocus(false)
@@ -399,7 +412,8 @@ function builders.slider(row)
     s:SetScript("OnMouseUp", function() if row.item then row.view:Refresh() end end)
     s.box:SetScript("OnEnterPressed", function(self)
         self:ClearFocus()
-        local value = tonumber((self:GetText() or ""):gsub(",", "."))
+        local typed = (self:GetText() or ""):gsub(",", ".")      -- a decimal comma reads too
+        local value = tonumber(typed)
         local item = row.item
         if value and item then
             local option = item.option
@@ -418,6 +432,7 @@ function builders.select(row)
     b.text:SetJustifyH("LEFT")
     b.arrow = fontString(b, "GameFontNormalSmall", GOLD, "RIGHT")
     b.arrow:SetPoint("RIGHT", b, "RIGHT", -6, 0)
+    b.arrow:SetSize(10, 14)
     b.arrow:SetText("v")
     b:SetScript("OnClick", function()
         local item = row.item
@@ -497,9 +512,11 @@ local function newRow(view)
     row.controls = {}
     row.title = fontString(row, "GameFontHighlight", WHITE, "LEFT")
     row.title:SetPoint("TOPLEFT", row, "TOPLEFT", PAD, -6)
+    row.title:SetSize(200, 16)
     if row.title.SetWordWrap then row.title:SetWordWrap(false) end
     row.desc = fontString(row, "GameFontHighlightSmall", GREY, "LEFT")
     row.desc:SetPoint("TOPLEFT", row.title, "BOTTOMLEFT", 0, -2)
+    row.desc:SetSize(200, TEXT_LINE)
     row.sep = bar(row, "BORDER", SEPARATOR, 0.35)
     row.sep:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", PAD, 0)
     row.sep:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", -PAD, 0)
@@ -543,8 +560,8 @@ local function configure(view, row, entry, width)
     local title, desc = row.title, row.desc
     title:ClearAllPoints()
     title:SetPoint("TOPLEFT", row, "TOPLEFT", PAD, -6)
-    title:SetWidth(width - 2 * PAD - CONTROL_W - 12)
-    desc:SetWidth(width - 2 * PAD - CONTROL_W - 12)
+    title:SetSize(textWidth(width), 16)
+    desc:SetSize(textWidth(width), max(1, textLines(entry.option and text(entry, "desc"), textWidth(width))) * TEXT_LINE)
     title:Show()
     desc:Show()
 
@@ -556,7 +573,7 @@ local function configure(view, row, entry, width)
         title:SetTextColor(GOLD[1], GOLD[2], GOLD[3])
         title:ClearAllPoints()
         title:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", PAD, 8)
-        title:SetWidth(width - 2 * PAD)
+        title:SetSize(width - 2 * PAD, 16)
         title:SetText(label or "")
         desc:Hide()
         row.sep:Hide()
@@ -576,8 +593,9 @@ local function configure(view, row, entry, width)
             or fontSize == "medium" and "GameFontHighlight" or "GameFontHighlightSmall")
         if title.SetWordWrap then title:SetWordWrap(true) end
         title:SetTextColor(0.85, 0.85, 0.85)
-        title:SetWidth(width - 2 * PAD)
-        title:SetText(text(entry, "name") or "")
+        local body = text(entry, "name") or ""
+        title:SetSize(width - 2 * PAD, max(1, textLines(body, width - 2 * PAD)) * TEXT_LINE + 4)
+        title:SetText(body)
         desc:Hide()
         row.sep:Hide()
         return
@@ -700,7 +718,7 @@ function R.New(parent, appName)
     frame:SetScript("OnHide", hideList)
     view.empty = fontString(frame, "GameFontDisable", GREY, "CENTER")
     view.empty:SetPoint("TOP", frame, "TOP", 0, -30)
-    view.empty:SetWidth(360)
+    view.empty:SetSize(360, 40)
     view.empty:Hide()
     return view
 end
@@ -725,8 +743,10 @@ function View:ItemHeight(entry, width)
         return describeHeight(text(entry, "name"), width - 2 * PAD)
     end
     local h = HEIGHT[kind] or 40
-    if kind ~= "range" and not text(entry, "desc") then h = ROW_PLAIN + 6 end
-    return h
+    local lines = textLines(text(entry, "desc"), textWidth(width))
+    if lines == 0 and kind ~= "range" then return ROW_PLAIN + 6 end
+    -- the title, then as many lines of description as it wraps into
+    return max(h, 6 + 16 + 2 + lines * TEXT_LINE + 8)
 end
 
 --- SetItems(items [, emptyText]): what the view lists; scrolled back to the top.
