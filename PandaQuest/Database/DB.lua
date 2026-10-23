@@ -17,7 +17,9 @@
 -- MUST NOT be mutated by callers. Copy first if you need to change anything.
 local _, ns = ...
 
-local DB = ns.PQ:GetModule("DB")           -- an AceAddon module (Core/Const.lua)
+-- An AceAddon module (Core/Const.lua). The release checks load this file on its own, over a two-quest
+-- database and no addon object (.github/release/lua_checks.py), and get a plain table then.
+local DB = ns.PQ and ns.PQ:GetModule("DB") or {}
 ns.DB = DB
 
 local L = ns.L

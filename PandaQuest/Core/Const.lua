@@ -218,7 +218,12 @@ function ns.IsModuleWanted(name)
     return not (type(states) == "table" and states[name] == false)
 end
 
-local PQ = LibStub("AceAddon-3.0"):NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0", "AceConsole-3.0")
+-- In the game AceAddon is always there (embeds.xml loads it first). The release checks also read this
+-- file on its own, for ns.DEFAULTS alone (.github/release/lua_checks.py), and there is no addon then.
+local AceAddon = LibStub and LibStub("AceAddon-3.0", true)
+if not AceAddon then return end
+
+local PQ = AceAddon:NewAddon(ADDON_NAME, "AceEvent-3.0", "AceTimer-3.0", "AceBucket-3.0", "AceConsole-3.0")
 ns.PQ = PQ
 _G.PandaQuest = PQ
 
