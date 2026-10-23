@@ -7,7 +7,7 @@
 --   * The position table is allocated ONCE and refilled, because Arrow/Router poll it every frame.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("Player")   -- an AceAddon module (Core/Const.lua)
 ns.Player = M
 
 local Const, Compat, Log, Schema = ns.Const, ns.Compat, ns.Log, ns.Schema
@@ -20,17 +20,9 @@ local POS_CACHE_SECONDS = 0.05          -- The position is cached for at most 0.
 local SPEED_TAU = 0.5                   -- EMA time constant for GetSpeed
 local COMPLETED_REFRESH_DELAY = 2       -- QUEST_TURNED_IN + 2 s (the server updates the flag late)
 
--- Own AceEvent/AceTimer object instead of ns.PQ: AceEvent keys its registry by target, so two
--- modules registering the same event on ns.PQ would silently overwrite each other (QUEST_TURNED_IN
--- and PLAYER_ENTERING_WORLD are wanted by several modules).
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local HBD                               -- HereBeDragons-2.0, resolved lazily (Libs load before us, but be safe)
 
@@ -338,15 +330,15 @@ function M.GetZone()
     return lastZoneMapID, lastZoneAreaID
 end
 
-function M.Init()
+function M.OnInitialize()
     -- Nothing that needs the world; the caches build themselves on first use.
 end
 
 -- Frame:RegisterEvent errors on an event name the client does not know, and AceEvent forwards that
--- straight out of Enable(). One bad name would then strip every handler registered after it, so
+-- straight out of OnEnable(). One bad name would then strip every handler registered after it, so
 -- each registration is isolated: a miss costs that one handler and is logged, nothing else.
 local function safeRegister(event, handler)
-    local ok, err = pcall(listener.RegisterEvent, listener, event, handler)
+    local ok, err = pcall(M.RegisterEvent, M, event, handler)
     if not ok then
         Log.Error("Player", "RegisterEvent(%s) failed: %s", tostring(event), tostring(err))
     end
@@ -354,9 +346,7 @@ local function safeRegister(event, handler)
 end
 M.SafeRegister = safeRegister
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
-
+function M.OnEnable()
     safeRegister("ZONE_CHANGED_NEW_AREA", function() announceZone("ZONE_CHANGED_NEW_AREA") end)
     safeRegister("PLAYER_ENTERING_WORLD", function()
         M.InvalidateCompleted()
@@ -370,11 +360,7 @@ function M.Enable()
         if type(questID) == "number" then
             M.GetCompleted()[questID] = true
         end
-        if listener.ScheduleTimer then
-            listener:ScheduleTimer(M.InvalidateCompleted, COMPLETED_REFRESH_DELAY)
-        else
-            M.InvalidateCompleted()
-        end
+        M:ScheduleTimer(M.InvalidateCompleted, COMPLETED_REFRESH_DELAY)
     end)
 
     safeRegister("PLAYER_LEVEL_UP", function() M.InvalidateSkills() end)
