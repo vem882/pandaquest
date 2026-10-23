@@ -11,7 +11,7 @@
 --     from an abandoned one.
 local _, ns = ...
 
-local M = {}
+local M = ns.PQ:GetModule("QuestLog")   -- an AceAddon module (Core/Const.lua)
 ns.QuestLog = M
 
 local Log = ns.Log
@@ -21,19 +21,9 @@ local gsub, match, sub = string.gsub, string.match, string.sub
 local concat = table.concat
 local wipe = wipe or table.wipe
 
--- Own AceEvent/AceTimer/AceBucket object: AceEvent keys its registry by target, so registering
--- QUEST_TURNED_IN or PLAYER_ENTERING_WORLD on the shared ns.PQ would overwrite another module's
--- handler for the same event.
-local listener = {}
-do
-    local AceEvent = LibStub and LibStub("AceEvent-3.0", true)
-    if AceEvent then AceEvent:Embed(listener) end
-    local AceTimer = LibStub and LibStub("AceTimer-3.0", true)
-    if AceTimer then AceTimer:Embed(listener) end
-    local AceBucket = LibStub and LibStub("AceBucket-3.0", true)
-    if AceBucket then AceBucket:Embed(listener) end
-end
-M.listener = listener
+-- The module is its own AceEvent/AceTimer/AceBucket target (Core/Const.lua embeds them in every
+-- module). AceEvent keeps one handler per (target, event), so registering on the module never
+-- overwrites another module's handler, and disabling the module drops all of them at once.
 
 local BUCKET_SECONDS = 0.3              -- QUEST_LOG_UPDATE bucket
 local RETRY_SECONDS = 1                 -- zone-transition retry delay
@@ -317,9 +307,9 @@ local function fillDatabaseFields(entry)
 end
 
 local function scheduleRetry(reason)
-    if retryScheduled or not listener.ScheduleTimer then return end
+    if retryScheduled then return end
     retryScheduled = true
-    listener:ScheduleTimer(function()
+    M:ScheduleTimer(function()
         retryScheduled = false
         M.Refresh(reason .. ":retry" .. retries)
     end, RETRY_SECONDS)
@@ -450,41 +440,34 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 
-function M.Init()
+function M.OnInitialize()
     buildPatterns()
 end
 
-function M.Enable()
-    if not listener.RegisterEvent then return end
-
+function M.OnEnable()
     -- Classic signature is QUEST_ACCEPTED(logIndex, questID), modern is (questID); we only rescan.
-    listener:RegisterEvent("QUEST_ACCEPTED", function() M.Refresh("QUEST_ACCEPTED") end)
+    M:RegisterEvent("QUEST_ACCEPTED", function() M.Refresh("QUEST_ACCEPTED") end)
 
     -- QUEST_TURNED_IN arrives before QUEST_REMOVED: remember it so the removal is labelled correctly.
-    listener:RegisterEvent("QUEST_TURNED_IN", function(_, questID)
+    M:RegisterEvent("QUEST_TURNED_IN", function(_, questID)
         if type(questID) == "number" then
             turnedInPending[questID] = now()
         end
         removalSignalled = true
     end)
 
-    listener:RegisterEvent("QUEST_REMOVED", function()
+    M:RegisterEvent("QUEST_REMOVED", function()
         removalSignalled = true
         M.Refresh("QUEST_REMOVED")
     end)
-    listener:RegisterEvent("QUEST_WATCH_UPDATE", function() M.Refresh("QUEST_WATCH_UPDATE") end)
-    listener:RegisterEvent("UNIT_QUEST_LOG_CHANGED", function(_, unit)
+    M:RegisterEvent("QUEST_WATCH_UPDATE", function() M.Refresh("QUEST_WATCH_UPDATE") end)
+    M:RegisterEvent("UNIT_QUEST_LOG_CHANGED", function(_, unit)
         if unit == "player" then M.Refresh("UNIT_QUEST_LOG_CHANGED") end
     end)
-    listener:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Refresh("PLAYER_ENTERING_WORLD") end)
+    M:RegisterEvent("PLAYER_ENTERING_WORLD", function() M.Refresh("PLAYER_ENTERING_WORLD") end)
 
-    -- QUEST_LOG_UPDATE fires in bursts; one refresh per 0.3 s is plenty.
-    if listener.RegisterBucketEvent then
-        listener:RegisterBucketEvent("QUEST_LOG_UPDATE", BUCKET_SECONDS,
-            function() M.Refresh("QUEST_LOG_UPDATE") end)
-    else
-        listener:RegisterEvent("QUEST_LOG_UPDATE", function() M.Refresh("QUEST_LOG_UPDATE") end)
-    end
+    -- QUEST_LOG_UPDATE fires in bursts; one refresh per 0.3 s is plenty (AceBucket).
+    M:RegisterBucketEvent("QUEST_LOG_UPDATE", BUCKET_SECONDS, function() M.Refresh("QUEST_LOG_UPDATE") end)
 
     M.Refresh("Enable")
 end
