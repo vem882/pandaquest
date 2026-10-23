@@ -59,8 +59,9 @@ Every TOC the package carries is written from one template, ``PandaQuest.toc.tem
 this script, filled from ``games.py``: the game's ``## Interface``, the lines only its TOC has,
 and the TOC lines of its database.  A shipped game gets one TOC per suffix its client reads
 (``PandaQuest_Mists.toc``), and the game marked ``fallback`` also gets the plain
-``PandaQuest.toc``.  Mists of Pandaria Classic is the only game shipped, so the package carries
-those two, with identical bytes.
+``PandaQuest.toc``.  Four games are shipped: Mists of Pandaria Classic (the plain TOC and
+``_Mists``, identical bytes), Classic Era (``_Vanilla``), TBC Anniversary (``_TBC``) and WoW Forever
+(``_Forever`` and ``_Camelot``, identical bytes); each lists only its own game's database.
 
 The plain TOC is also kept in the repository, because CurseForge's own packager (``.pkgmeta``)
 reads it as it is and runs nothing here.  ``tocs`` writes it; :func:`entries` refuses to package
@@ -96,7 +97,8 @@ TEMPLATE_NOTE = "#~"
 #: The template's placeholders.  ``{{interface}}`` is replaced inside its line; the others stand on
 #: a line of their own, which becomes the game's lines -- or disappears, when the game has none.
 INTERFACE_PLACEHOLDER = "{{interface}}"
-LINE_PLACEHOLDERS = {"{{game-header}}": "header", "{{zone-data}}": "zone_data", "{{data}}": "data"}
+LINE_PLACEHOLDERS = {"{{notes}}": "notes", "{{game-header}}": "header", "{{zone-data}}": "zone_data",
+                     "{{data}}": "data"}
 
 #: How many leading components of the TOC's ``## Version`` are kept by hand.  The rest is the
 #: commit count.  ``0.2`` + 84 commits is ``0.2.84``.

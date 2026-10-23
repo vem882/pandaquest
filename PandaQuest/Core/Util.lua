@@ -187,6 +187,10 @@ end
 
 -- GUID field 6 holds the creature/object id: "Creature-0-4379-870-8-57232-0000123456".
 local function guidField(guid, prefixes)
+    -- WoW Forever can hand out a GUID as a "secret value" (Mainline's restricted contexts): parsing one
+    -- raises, so it is no GUID here. issecretvalue exists in every client PandaQuest supports.
+    local secret = _G.issecretvalue
+    if secret and secret(guid) then return nil end
     if type(guid) ~= "string" then return nil end
     local unitType, fields = guid:match("^(%a+)%-(.+)$")
     if not unitType or not prefixes[unitType] then return nil end

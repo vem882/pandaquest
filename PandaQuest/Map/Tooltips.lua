@@ -247,7 +247,8 @@ function M.OnTooltipSetUnit(tooltip)
     if not enabled() or not tooltip or not tooltip.GetUnit then return end
     local _, unit = tooltip:GetUnit()
     if not unit then return end
-    local guid = UnitGUID and UnitGUID(unit)
+    -- A secret value (Forever, restricted) cannot be parsed: no line rather than an error.
+    local guid = UnitGUID and ns.Compat.Plain(UnitGUID(unit))
     local npcID = guid and Util.NpcIdFromGuid(guid) or nil
     if not npcID then return end
     -- Blizzard's unit tooltip already carries the name, the level and the type of the node tooltip's
@@ -287,9 +288,10 @@ function M.OnTooltipSetItem(tooltip)
 end
 
 local function hookTooltip(tooltip)
-    if not tooltip or not tooltip.HookScript then return end
-    tooltip:HookScript("OnTooltipSetUnit", M.OnTooltipSetUnit)
-    tooltip:HookScript("OnTooltipSetItem", M.OnTooltipSetItem)
+    if not tooltip then return end
+    -- The script hooks in the classic clients, TooltipDataProcessor in Forever (Core/Compat.lua).
+    ns.Compat.HookTooltip(tooltip, "Unit", M.OnTooltipSetUnit)
+    ns.Compat.HookTooltip(tooltip, "Item", M.OnTooltipSetItem)
 end
 
 ---------------------------------------------------------------------------

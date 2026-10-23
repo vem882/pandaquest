@@ -4,6 +4,35 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.241] - 2026-10-23
+
+PandaQuest now runs in four games: Mists of Pandaria Classic, WoW Classic Era, The Burning Crusade
+Classic Anniversary and WoW Forever.
+
+### Added
+- **Classic Era and TBC Anniversary.** One download carries a TOC per game (`PandaQuest_Vanilla.toc`,
+  `PandaQuest_TBC.toc`), and each game loads only its own quest database (`Database/Era/`,
+  `Database/Anniversary/`), built by the PandaQuest portal from the same Questie release as MoP's.
+  - Era and TBC use their own zone maps; TBC Anniversary follows Questie's content phase 3.
+  - Respawn timers, drop rates and gathering nodes from pfQuest's vanilla and TBC data work there too.
+- **WoW Forever** (`PandaQuest_Forever.toc` and `PandaQuest_Camelot.toc`). The addon loads in Forever;
+  its quest database comes with the game's launch on 4 November 2026 (no beta data), and until then
+  one line in chat says so instead of a reinstall message.
+  - Forever is a modern-engine client: the quest log, spells, reputation, quest tags, tooltips and the
+    super-tracked quest are read through its own API.
+  - Skyborne quests (race-mask bits 32 and 33) are matched correctly.
+
+### Changed
+- Features a game does not have stay off there, without touching your settings: archaeology and the
+  dig-site bar are MoP's; the quest tracker distances use MoP's tracker; in WoW Forever the recipe
+  scanner and kill counts from the combat log are off for now.
+- The community file the sync app writes is MoP's; in another game it is kept aside, never applied.
+
+### Unchanged
+- The MoP Classic TOC and database are byte for byte what they were.
+- Saved data: each game's WTF folder keeps its own. MoP data copied into another game's folder is set
+  aside whole (`foreign.mop`), never deleted.
+
 ## [0.2.240] - 2026-10-23
 
 ### Removed

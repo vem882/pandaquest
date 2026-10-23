@@ -153,6 +153,10 @@ Schema.raceKeys = {
     PANDAREN = 8388608,
     PANDAREN_ALLIANCE = 16777216,
     PANDAREN_HORDE = 33554432,
+    -- WoW Forever's Skyborne (race ids 95 and 96): bits 32 and 33, beyond what the 32-bit `bit` library
+    -- sees. Masks are compared with Compat.Band64 / Compat.MasksOverlap for that reason.
+    SKYBORNE_ALLIANCE = 4294967296,
+    SKYBORNE_HORDE = 8589934592,
 }
 
 Schema.classKeys = {
@@ -181,6 +185,8 @@ Schema.raceFileToMask = {
     Human = 1, Orc = 2, Dwarf = 4, NightElf = 8, Scourge = 16, Undead = 16, Tauren = 32,
     Gnome = 64, Troll = 128, Goblin = 256, BloodElf = 512, Draenei = 1024, Worgen = 2097152,
     Pandaren = 8388608,
+    -- Skyborne is one race file for both factions, like Pandaren: Player.GetRaceMask picks the bit by faction.
+    Skyborne = 0,
 }
 
 -- quest_template.QuestFlags

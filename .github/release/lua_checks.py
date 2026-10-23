@@ -53,6 +53,9 @@ needs_lua = unittest.skipIf(LuaRuntime is None, "lupa (Lua 5.1 for Python) is no
 MOP_CLIENT = ("5.5.4", 50504, 19, 19)
 FOREVER_CLIENT = ("1.60.1", 16001, 18, None)
 ERA_CLIENT = ("1.15.9", 11509, 2, None)
+ANNIVERSARY_CLIENT = ("2.5.6", 20506, 5, None)
+#: Retail: a game PandaQuest does not support.
+RETAIL_CLIENT = ("11.2.5", 110205, 1, None)
 
 
 # ------------------------------------------------------------------------------ helpers
@@ -218,9 +221,16 @@ class GameDetection(unittest.TestCase):
         (("1.60.1", 16001, 1, None), "forever"),          # early Forever builds reported Retail's 1
         (("1.61.0", 16100, None, None), "forever"),
         ((None, None, 18, 19), "forever"),
-        (ERA_CLIENT, "unknown"),                          # Classic Era: not an addon target
-        (("2.5.6", 20506, 5, None), "unknown"),           # TBC Anniversary: not an addon target
-        (("11.2.5", 110205, 1, None), "unknown"),         # Retail
+        (ERA_CLIENT, "era"),
+        (("1.15.8", 11508, None, None), "era"),           # Era's test realm, project constants gone
+        (("1.15.9", None, None, None), "era"),            # no interface number: the version says 1.15
+        ((None, None, 2, None), "era"),                   # nothing but WOW_PROJECT_CLASSIC
+        (ANNIVERSARY_CLIENT, "anniversary"),
+        (("2.5.7", 20507, None, None), "anniversary"),
+        ((None, None, 5, None), "anniversary"),           # nothing but WOW_PROJECT_BURNING_CRUSADE_CLASSIC
+        (("1.15.9", 11509, 5, None), "era"),              # the interface decides before the project
+        ((None, 110205, 2, None), "unknown"),             # a project id beside a foreign interface decides nothing
+        (RETAIL_CLIENT, "unknown"),                       # Retail
         ((None, None, None, None), "unknown"),            # nil == nil must not read as MoP
     )
 
@@ -238,8 +248,10 @@ class GameDetection(unittest.TestCase):
         self.assertEqual((ns.Game.version, ns.Game.interface, ns.Game.project), ("5.5.4", 50504, 19))
         self.assertEqual(ns.Game.Name("mop"), "Mists of Pandaria Classic")
         self.assertEqual(ns.Game.Name("forever"), "WoW Forever")
-        era = load_game(runtime(), *ERA_CLIENT)
-        self.assertIn("11509", era.Game.Name("unknown"))
+        self.assertEqual(ns.Game.Name("era"), "Classic Era")
+        self.assertEqual(ns.Game.Name("anniversary"), "Burning Crusade Classic Anniversary")
+        retail = load_game(runtime(), *RETAIL_CLIENT)
+        self.assertIn("110205", retail.Game.Name("unknown"))
 
 
 @needs_lua
@@ -295,7 +307,8 @@ class TheDatabaseCheck(unittest.TestCase):
 
     def test_another_games_data_is_refused_with_one_line(self) -> None:
         for client_facts, data_game in ((FOREVER_CLIENT, "mop"), (FOREVER_CLIENT, None), (MOP_CLIENT, "forever"),
-                                        (ERA_CLIENT, "mop")):
+                                        (ERA_CLIENT, "mop"), (ERA_CLIENT, None), (ANNIVERSARY_CLIENT, "era"),
+                                        (MOP_CLIENT, "anniversary")):
             with self.subTest(client=client_facts, data_game=data_game):
                 _rt, ns = self._db(client_facts, data_game)
                 self.assertFalse(ns.DB.Load())
@@ -369,6 +382,12 @@ class TheSavedVariables(unittest.TestCase):
             ("tagged-mop.lua", FOREVER_CLIENT, "forever", "mop"),
             ("untagged-0.2.191.lua", FOREVER_CLIENT, "forever", "mop"),
             ("untagged-0.2.99.lua", FOREVER_CLIENT, "forever", "mop"),
+            # The launcher can copy a MoP WTF folder into Era's or TBC Anniversary's: MoP's data is kept.
+            ("tagged-mop.lua", ERA_CLIENT, "era", "mop"),
+            ("untagged-0.2.191.lua", ERA_CLIENT, "era", "mop"),
+            ("tagged-mop.lua", ANNIVERSARY_CLIENT, "anniversary", "mop"),
+            ("untagged-0.2.99.lua", ANNIVERSARY_CLIENT, "anniversary", "mop"),
+            ("tagged-forever.lua", ERA_CLIENT, "era", "forever"),
         ):
             with self.subTest(fixture=name, game=game):
                 rt, ns, before, moved = self.claim(fixture(name), client_facts)
@@ -431,16 +450,20 @@ class TheSavedVariables(unittest.TestCase):
                 self.assertEqual(chat(ns), [])
 
     def test_a_first_install_is_tagged_from_its_first_save(self) -> None:
-        rt, ns, _before, moved = self.claim(None, MOP_CLIENT)
-        self.assertEqual(len(moved), 0)
-        self.assertEqual(saved_file(rt), "".join(f'{name} = {{\n\t["game"] = "mop",\n}}\n' for name in STORES))
-        self.assertEqual(chat(ns), [])
+        for client_facts, game in ((MOP_CLIENT, "mop"), (ERA_CLIENT, "era"), (ANNIVERSARY_CLIENT, "anniversary"),
+                                   (FOREVER_CLIENT, "forever")):
+            with self.subTest(game=game):
+                rt, ns, _before, moved = self.claim(None, client_facts)
+                self.assertEqual(len(moved), 0)
+                self.assertEqual(saved_file(rt),
+                                 "".join(f'{name} = {{\n\t["game"] = "{game}",\n}}\n' for name in STORES))
+                self.assertEqual(chat(ns), [])
 
     def test_an_unknown_game_touches_nothing(self) -> None:
         for name in ("untagged-0.2.191.lua", "tagged-forever.lua", None):
             with self.subTest(fixture=name):
                 original = fixture(name) if name else None
-                rt, ns, _before, moved = self.claim(original, ERA_CLIENT)
+                rt, ns, _before, moved = self.claim(original, RETAIL_CLIENT)
                 self.assertEqual(len(moved), 0)
                 self.assertEqual(saved_file(rt), saved_file_of(original) if original else "")
                 self.assertEqual(chat(ns), [])

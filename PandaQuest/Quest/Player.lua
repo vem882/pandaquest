@@ -79,6 +79,14 @@ function M.GetRaceMask()
         elseif faction == "Horde" then
             mask = mask + Schema.raceKeys.PANDAREN_HORDE
         end
+    elseif file == "Skyborne" then
+        -- WoW Forever: a 64-bit mask (bits 32/33), compared with Compat.MasksOverlap, never bit.band.
+        local faction = M.GetFaction()
+        if faction == "Alliance" then
+            mask = Schema.raceKeys.SKYBORNE_ALLIANCE
+        elseif faction == "Horde" then
+            mask = Schema.raceKeys.SKYBORNE_HORDE
+        end
     end
     return mask
 end
@@ -238,9 +246,7 @@ local completedValid = false
 function M.GetCompleted()
     if not completedValid then
         wipe(completed)
-        if GetQuestsCompleted then
-            pcall(GetQuestsCompleted, completed)
-        end
+        Compat.GetCompletedQuests(completed)
         completedValid = true
     end
     return completed
@@ -266,14 +272,9 @@ local skillsValid = false
 function M.GetSkills()
     if not skillsValid then
         wipe(skills)
-        if GetNumSkillLines and GetSkillLineInfo then
-            local count = GetNumSkillLines() or 0
-            for i = 1, count do
-                local name, isHeader, _, rank = GetSkillLineInfo(i)
-                if name and not isHeader and type(rank) == "number" then
-                    skills[name] = rank
-                end
-            end
+        -- Every skill in the classic clients; the professions alone in Forever (Core/Compat.lua).
+        for _, line in ipairs(Compat.GetSkillLines()) do
+            skills[line.name] = line.rank
         end
         skillsValid = true
     end
@@ -296,14 +297,13 @@ end
 --- GetReputation(factionID) -> value, standingID
 -- `value` is the raw reputation total the quest database compares against.
 -- nil means "faction not discovered"; callers treat that as 0.
--- 5.5.4 has no C_Reputation, so GetFactionInfoByID is the only source.
+-- 5.5.4 has no C_Reputation, so GetFactionInfoByID is the source there; Forever has only
+-- C_Reputation.GetFactionDataByID (Core/Compat.lua bridges the two).
 function M.GetReputation(factionID)
     if type(factionID) ~= "number" then return nil end
-    if GetFactionInfoByID then
-        local ok, name, _, standingID, _, _, barValue = pcall(GetFactionInfoByID, factionID)
-        if ok and name then
-            return barValue, standingID
-        end
+    local name, standingID, barValue = Compat.GetFactionInfoByID(factionID)
+    if name then
+        return barValue, standingID
     end
     return nil
 end

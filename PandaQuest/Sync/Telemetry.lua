@@ -782,7 +782,7 @@ function M.ApplySettings(off)
 
     -- COMBAT_LOG_EVENT_UNFILTERED is the highest-frequency event in the game: only ask the client
     -- to dispatch it when there is an API to read the payload with, and only while recording.
-    if active and combatLogInfoFunc() then
+    if active and combatLogInfoFunc() and ns.Game.Has("combatLog") then
         if not combatRegistered then
             M:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", onCombatLogEvent)
             combatRegistered = true

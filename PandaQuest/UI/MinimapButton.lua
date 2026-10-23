@@ -101,9 +101,7 @@ end
 
 --- GetTrackedCount() -> how many quests the quest log has on its watch list.
 function M.GetTrackedCount()
-    if type(GetNumQuestWatches) ~= "function" then return 0 end
-    local ok, count = pcall(GetNumQuestWatches)
-    return (ok and tonumber(count)) or 0
+    return ns.Compat.GetNumQuestWatches()
 end
 
 local function currentTarget()

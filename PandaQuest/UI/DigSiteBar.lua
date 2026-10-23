@@ -606,6 +606,11 @@ end
 ---------------------------------------------------------------------------
 
 function M.OnEnable()
+    -- No archaeology in Classic Era, TBC or Forever (Core/Game.lua): no bar, no events, not a word.
+    if not ns.Game.Has("archaeology") then
+        stoodDown = true
+        return
+    end
     if M.BlizzardHasOne() then
         -- Said once, at level Info, and then never again: this is a client that does not need us.
         stoodDown = true

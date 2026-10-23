@@ -99,7 +99,9 @@ local FILTER_CALLS = {
 
 --- The calls without which there is no scan at all.
 local REQUIRED_CALLS = {
-    "GetNumTradeSkills", "GetTradeSkillInfo", "GetTradeSkillLine", "IsTradeSkillLinked",
+    -- IsTradeSkillLinked is not here: Era's and TBC's trade skill UI never calls it, and a client without
+    -- it has no linked recipe books to refuse (the check below asks only where it exists).
+    "GetNumTradeSkills", "GetTradeSkillInfo", "GetTradeSkillLine",
     "GetTradeSkillNumMade", "GetTradeSkillNumReagents", "GetTradeSkillReagentInfo",
     "GetTradeSkillReagentItemLink", "GetTradeSkillItemLink", "GetTradeSkillRecipeLink",
     "ExpandTradeSkillSubClass", "CollapseTradeSkillSubClass",
@@ -627,7 +629,7 @@ function M.CanScan()
         return false, "restore", missing
     end
     -- Before anything at all is touched: this is the one refusal that is about somebody else.
-    if IsTradeSkillLinked() then return false, "linked" end
+    if IsTradeSkillLinked and IsTradeSkillLinked() then return false, "linked" end
     return true
 end
 
@@ -917,6 +919,8 @@ function M.OnInitialize()
 end
 
 function M.OnEnable()
+    -- The classic trade skill window only; Forever's Mainline Professions UI is not read (Core/Game.lua).
+    if not ns.Game.Has("tradeSkills") then return end
     M:RegisterEvent("TRADE_SKILL_SHOW", onShow)
     -- Blizzard's window fires these two on every filter change and every expand: one AceBucket
     -- collects a burst of either into a single look at the window.

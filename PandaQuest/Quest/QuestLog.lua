@@ -14,7 +14,7 @@ local _, ns = ...
 local M = ns.PQ:GetModule("QuestLog")   -- an AceAddon module (Core/Const.lua)
 ns.QuestLog = M
 
-local Log = ns.Log
+local Log, Compat = ns.Log, ns.Compat
 
 local type, pairs, ipairs, next, pcall, tonumber, tostring = type, pairs, ipairs, next, pcall, tonumber, tostring
 local gsub, match, sub = string.gsub, string.match, string.sub
@@ -223,8 +223,9 @@ end
 -- `trustEmpty` is true when the game told us a quest really left the log (QUEST_REMOVED /
 -- QUEST_TURNED_IN) or the retries ran out; abandoning your last quest must not be ignored forever.
 local function scan(dest, orderOut, trustEmpty)
-    if not (GetNumQuestLogEntries and GetQuestLogTitle) then return false end
-    local numEntries, numQuests = GetNumQuestLogEntries()
+    -- Compat: the classic GetQuestLogTitle, or Forever's C_QuestLog.GetInfo in the same shape.
+    if not Compat.HasQuestLog() then return false end
+    local numEntries, numQuests = Compat.GetNumQuestLogEntries()
     numEntries = numEntries or 0
     numQuests = numQuests or 0
 
@@ -237,7 +238,7 @@ local function scan(dest, orderOut, trustEmpty)
     local header = nil
     local sawNil = false
     for i = 1, numEntries do
-        local title, level, questTag, isHeader, _, isComplete, frequency, questID = GetQuestLogTitle(i)
+        local title, level, questTag, isHeader, _, isComplete, frequency, questID = Compat.GetQuestLogTitle(i)
         if title == nil then
             sawNil = true
         elseif isHeader then

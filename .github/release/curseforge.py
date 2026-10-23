@@ -15,11 +15,12 @@ second, different zip of the same tree.
 
 Which game versions a file is tagged with
 -----------------------------------------
-Every TOC the package carries is read (``PandaQuest.toc``, ``PandaQuest_Mists.toc``, and later
-``PandaQuest_Forever.toc``/``_Camelot.toc``), and each ``## Interface`` number is mapped to a game
-of games.py and to a game version: 50504 is Mists of Pandaria Classic "5.5.4", 16001 is Forever
-"1.60.1".  A CurseForge game version is then looked up by its name *and* its game version type
-(Mists of Pandaria Classic 79434, Forever 88568), because a name alone can belong to two games.
+Every TOC the package carries is read (``PandaQuest.toc``, ``_Mists``, ``_Vanilla``, ``_TBC``,
+``_Forever`` and ``_Camelot``), and each ``## Interface`` number is mapped to a game of games.py and to a
+game version: 50504 is Mists of Pandaria Classic "5.5.4", 11509 Classic Era "1.15.9", 20506 TBC
+Anniversary "2.5.6", 16001 Forever "1.60.1".  A CurseForge game version is then looked up by its name
+*and* its game version type (BigWigsMods/packager's: Mists of Pandaria Classic 79434, Classic 67408,
+Burning Crusade Classic 73246, Forever 88568), because a name alone can belong to two games.
 The upload carries every id found, once.  A TOC whose suffix and interface name two different
 games, an interface no game claims, and a version CurseForge does not list are all refused before
 anything is sent.

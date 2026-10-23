@@ -240,11 +240,8 @@ local function focusQuestID()
     local nav = profile().nav or {}
     local questID = tonumber(nav.focusQuestID)
     if questID then return questID end
-    if GetSuperTrackedQuestID then
-        local tracked = GetSuperTrackedQuestID()
-        if type(tracked) == "number" and tracked > 0 then return tracked end
-    end
-    return nil
+    -- GetSuperTrackedQuestID, or C_SuperTrack's in Forever (Core/Compat.lua).
+    return ns.Compat.GetSuperTrackedQuestID()
 end
 
 local function passesMode(target, mode, focus)

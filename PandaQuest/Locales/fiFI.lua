@@ -88,6 +88,8 @@ local T = {
         "Tämä PandaQuestin tietokanta on pelille %s, mutta tämä peli on %s. Tehtävätiedot ovat pois päältä; asenna PandaQuest tälle pelille.",
     ["Saved data from %s was set aside, not deleted (%s); this game starts its own."] =
         "Pelin %s tallennetut tiedot siirrettiin sivuun, niitä ei poistettu (%s); tämä peli aloittaa omansa.",
+    ["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] =
+        "PandaQuestin tehtävätietokanta pelille %s tulee pelin julkaisun myötä (%s). Siihen asti nuolella, karttamerkeillä ja tehtävälistalla ei ole tietoja; kaikki muu toimii.",
 
     -- Nav (arrow, router, TomTom)
     ["Arrow locked."] = "Nuoli lukittu.",
