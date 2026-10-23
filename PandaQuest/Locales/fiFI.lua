@@ -785,8 +785,8 @@ local T = {
     ["That part of PandaQuest is switched off in the options, under Modules."] =
         "Se PandaQuestin osa on kytketty pois asetuksista, kohdasta Moduulit.",
     ["Modules"] = "Moduulit",
-    ["Switch a part of PandaQuest off completely: it stops listening to the game, its timers stop and it shows nothing. What is not listed here is what the rest is built on, and always runs."] =
-        "Kytke PandaQuestin osa kokonaan pois: se lakkaa kuuntelemasta peliä, sen ajastimet pysähtyvät eikä se näytä mitään. Mitä tässä ei ole, on se, jonka varaan muu on rakennettu, ja se on aina käynnissä.",
+    ["Switch a part of PandaQuest off completely: it stops listening to the game and shows nothing. The parts not listed here always run."] =
+        "Kytke PandaQuestin osa kokonaan pois: se lakkaa kuuntelemasta peliä eikä näytä mitään. Muut osat ovat aina käynnissä.",
     ["Navigation arrow"] = "Navigointinuoli",
     ["The arrow that points to your next quest objective."] = "Nuoli, joka osoittaa seuraavaan tehtäväkohteeseesi.",
     ["Map and minimap pins"] = "Kartan ja minikartan merkit",

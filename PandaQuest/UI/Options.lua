@@ -256,8 +256,8 @@ local MODULE_TEXT = {
 local function moduleArgs()
     local args = {
         info = { type = "description", order = 0, fontSize = "medium",
-            name = L["Switch a part of PandaQuest off completely: it stops listening to the game, its timers stop "
-                .. "and it shows nothing. What is not listed here is what the rest is built on, and always runs."] },
+            name = L["Switch a part of PandaQuest off completely: it stops listening to the game and shows nothing. "
+                .. "The parts not listed here always run."] },
     }
     for index, name in ipairs(ns.OPTIONAL_MODULES or {}) do
         local text = MODULE_TEXT[name] or { name, nil }
