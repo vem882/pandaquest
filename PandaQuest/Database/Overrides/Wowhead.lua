@@ -326,6 +326,15 @@ ns.Overrides.wowhead = {
                 "you.\n\nYou will find them useful in the fight against the enemy.",
             rewardItems = {{21365, 1}},
         },
+        [8633] = {
+            description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
+                "The terrible fate that awaits Azeroth could come in days or years; time has no meaning " ..
+                "for beings of his power.\n\nWhen the stars are favorable, he will lash out against all " ..
+                "living beings with terrible wrath. You must find him before then and find a way to bring " ..
+                "his existence to an end.\n\nDo this and bring me a piece of his husk. I shall grant you " ..
+                "armor no mortal has ever worn... armor fit for one who has slain a god!",
+            rewardItems = {{21343, 1}},
+        },
         [8637] = {
             description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
                 "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
@@ -1130,7 +1139,15 @@ ns.Overrides.wowhead = {
         [10661] = {rewardMoney = 41000},
         [10664] = {rewardMoney = 41000},
         [10666] = {rewardMoney = 41000},
-        [10667] = {rewardMoney = 44000},
+        [10667] = {
+            description = "The frame that you brought me earlier will not be sufficient to hold molten " ..
+                "metal without reinforcement. A rare kind of earth can be used to cool and imbue the " ..
+                "frame, giving the adamantite an unnatural strength.\n\nUnderworld loam, as the earth is " ..
+                "known, is accorded great value among the naga. Few enough of them possess it, and in " ..
+                "Outland, I know of only one naga who uses it -- Hydromancer Thespia, who resides in the " ..
+                "Steamvault of Coilfang Reservoir.",
+            rewardMoney = 44000,
+        },
         [10670] = {rewardMoney = 44000},
         [10671] = {rewardMoney = 37000},
         [10672] = {rewardMoney = 41000},
@@ -1239,6 +1256,12 @@ ns.Overrides.wowhead = {
         [10769] = {rewardMoney = 132000},
         [10770] = {rewardMoney = 37000},
         [10771] = {rewardMoney = 37000},
+        [10775] = {
+            description = "The gryphon riders must return to Wildhammer Stronghold to prepare for the " ..
+                "next phase of our assault. What I need from you now are the tabards that these blood " ..
+                "elves wear.\n\nWhen you have collected enough tabards, call for a gryphon rider using " ..
+                "the Wildhammer flare gun. Prepare yourself for a bit of espionage, <race>!",
+        },
         [10776] = {rewardMoney = 132000},
         [10777] = {rewardMoney = 41000},
         [10778] = {rewardMoney = 41000},
@@ -1442,6 +1465,14 @@ ns.Overrides.wowhead = {
                 "lately.\n\nCould you check in with her when you have time? Just follow the road beyond " ..
                 "North Point Tower, where it turns south and into the Quagmire. You can see her farm from " ..
                 "the road.",
+        },
+        [11213] = {
+            description = "A human woman named Tabetha lives on a small farm near the middle of the " ..
+                "marsh. Ordinarily, I wouldn't associate with a human, but her help has proven useful at " ..
+                "times.\n\nUnfortunately, she's been out of touch for quite some time now and I'm looking " ..
+                "for someone to travel down to her farm to see if everything's all right.\n\nIf you " ..
+                "follow the road south out of the village, then into the swamp's interior, you'll find " ..
+                "her farm near the middle of the Quagmire.",
         },
         [11216] = {
             description = "I was sent here by my mentor to look for assistance, but unfortunately I'm not " ..
@@ -2194,7 +2225,15 @@ ns.Overrides.wowhead = {
         [12758] = {rewardMoney = 74000},
         [12759] = {rewardMoney = 136000},
         [12760] = {rewardMoney = 136000},
-        [12761] = {rewardMoney = 136000},
+        [12761] = {
+            description = "Sparktouched are still being attacked by puppy-men... we think they maybe not " ..
+                "stop if we not make them stop. We have secret weapon though... we sent it out to Soo-met " ..
+                "so he can use to protect all Oracles.\n\nSecret weapon is from Great Ones themselves... " ..
+                "extra shiny crystals found inside sacred Great One temples. Be very careful... no break " ..
+                "them.\n\nCrystals are in chest near shrine at Sparktouched Haven, in far southwest. You " ..
+                "go use crystals to help Soo-met beat the puppy-men.",
+            rewardMoney = 136000,
+        },
         [12762] = {rewardMoney = 136000},
         [12763] = {rewardMoney = 6000},
         [12770] = {rewardMoney = 6000},
@@ -2776,7 +2815,15 @@ ns.Overrides.wowhead = {
         [13592] = {rewardMoney = 74000},
         [13594] = {rewardMoney = 1300},
         [13596] = {rewardMoney = 600},
-        [13598] = {rewardMoney = 500},
+        [13598] = {
+            description = "I have no doubts that Grimclaw will recover with the help of my healing " ..
+                "magics, though I can't say the same for the poachers that attacked him. Still, I could " ..
+                "use some salve to close his wounds and lessen his pain while he heals.\n\nTo the east " ..
+                "you will find the Ruins of Lornesta. Among the crumbled stones, there is a variety of " ..
+                "fuming toadstool that flourishes in the damp environment. Bring me some of the " ..
+                "toadstools so that I can mix a salve for our friend here.",
+            rewardMoney = 500,
+        },
         [13599] = {rewardMoney = 350},
         [13600] = {rewardMoney = 74000},
         [13602] = {rewardMoney = 1300},
@@ -3265,6 +3312,13 @@ ns.Overrides.wowhead = {
         [14232] = {rewardMoney = 3000},
         [14234] = {rewardChoices = {{52902, 1}, {52931, 1}, {52948, 1}}},
         [14236] = {rewardChoices = {{52899, 1}, {52929, 1}, {52945, 1}}, rewardMoney = 125},
+        [14237] = {
+            description = "Kilag should be in position by now. It is time for you to move forward to the " ..
+                "Wild Overlook. The rest of us will pack up here and move out soon.\n\nJust follow the " ..
+                "path northwest through the Vicious Vale. Not so vicious any longer thanks to you, " ..
+                "eh?\n\nKilag and his scouts will be keeping themselves hidden just off the path, but the " ..
+                "SI:7 assassins are sure to spot them soon, so hurry!",
+        },
         [14238] = {rewardChoices = {{52900, 1}, {52930, 1}, {52946, 1}}, rewardMoney = 175},
         [14240] = {
             description = "I sent Scout Brax forward along the road to the cliffs overlooking the beach " ..
@@ -3293,7 +3347,13 @@ ns.Overrides.wowhead = {
         [14269] = {rewardMoney = 35},
         [14271] = {rewardMoney = 600},
         [14273] = {rewardMoney = 35},
-        [14275] = {rewardMoney = 35},
+        [14275] = {
+            description = "Most of us made it here alive... but there are worgen on this side of the city " ..
+                "as well.\n\nWe're going to continue heading south once everyone's accounted for.\n\nThat " ..
+                "reminds me, someone was asking about you. A man named Blake. Said something about a plan " ..
+                "to escape into the woods.",
+            rewardMoney = 35,
+        },
         [14277] = {rewardMoney = 35},
         [14278] = {rewardMoney = 35},
         [14280] = {rewardMoney = 35},
@@ -3320,6 +3380,12 @@ ns.Overrides.wowhead = {
         [14299] = {rewardChoices = {{53401, 1}, {53420, 1}}, rewardMoney = 700},
         [14300] = {rewardMoney = 1000},
         [14301] = {rewardMoney = 6500},
+        [14303] = {
+            description = "Return to the Horde Base Camp and let Aggra know that we still live, " ..
+                "<name>.\n\nTell her that I am moving on to the Wild Overlook and that we will all meet " ..
+                "up on the northwest side of the island. I expect to see you there.\n\nWe will track down " ..
+                "the Alliance and slay them to the last!",
+        },
         [14304] = {rewardMoney = 3500},
         [14305] = {rewardMoney = 3000},
         [14306] = {rewardMoney = 3000},
@@ -3520,7 +3586,15 @@ ns.Overrides.wowhead = {
         [24477] = {rewardMoney = 35},
         [24478] = {rewardMoney = 1000},
         [24479] = {rewardMoney = 1000},
-        [24480] = {rewardMoney = 74000},
+        [24480] = {
+            description = "You have reforged and tempered the sword, yet it sits quietly in its sheath, " ..
+                "showing no signs of the power it should possess. You say the sword pulls you, as though " ..
+                "it possesses a will?\n\nDare you bring it where it wishes to go? It's not right that the " ..
+                "sword should be this silent and this insistent, yet I fear that if you do not take the " ..
+                "sword to its destination, we will never learn why. Take it into Icecrown Citadel's Halls " ..
+                "of Reflection, but be on your guard! I'll be waiting for you in The Frozen Halls.",
+            rewardMoney = 74000,
+        },
         [24484] = {rewardMoney = 225},
         [24486] = {rewardChoices = {{57530, 1}, {57531, 1}, {57532, 1}}, rewardMoney = 35},
         [24487] = {rewardMoney = 5},
@@ -3546,7 +3620,12 @@ ns.Overrides.wowhead = {
         [24499] = {rewardMoney = 296000},
         [24500] = {rewardMoney = 296000},
         [24501] = {rewardChoices = {{54996, 1}, {54997, 1}, {54998, 1}}, rewardMoney = 300},
-        [24502] = {rewardMoney = 50},
+        [24502] = {
+            description = "We're down to our last shredder. While no one was looking, I loaded it up " ..
+                "with, shall we say, modified footbombs.\n\nKid, I need you to get in that shredder and " ..
+                "give 'em heck!",
+            rewardMoney = 50,
+        },
         [24504] = {rewardMoney = 1400},
         [24506] = {rewardMoney = 19000},
         [24507] = {rewardMoney = 296000},
@@ -21216,7 +21295,15 @@ ns.Overrides.wowhead = {
                 "\"ultimate\" weapon?",
             rewardMoney = 94000,
         },
-        [27697] = {rewardMoney = 14000},
+        [27697] = {
+            description = "<name>, I require your assistance immediately! I am Zaetar, son of Cenarius, " ..
+                "and I am trapped here after an unfortunate series of events! Before saving me is an " ..
+                "option, you must help me clean out the corruption that runs so rampant through " ..
+                "Maraudon.\n\nLord Vyletongue is the satyr ruler of the purple crystal caverns. He is an " ..
+                "insidious agent of the Burning Legion and his continued presence can only lead to chaos " ..
+                "and death. He can live no longer!",
+            rewardMoney = 14000,
+        },
         [27698] = {rewardMoney = 15300},
         [27699] = {
             description = "That's one tough shark!\n\nYou determine that it's in everyone's best interest " ..
@@ -25913,7 +26000,16 @@ ns.Overrides.wowhead = {
             rewardItems = {{65627, 1}},
             rewardMoney = 14500,
         },
-        [28460] = {rewardMoney = 14500},
+        [28460] = {
+            description = "I came to Winterspring to investigate the Frostfire Hot Springs. I've noticed " ..
+                "that the water seems to have... strange qualities. I haven't yet been able to discover " ..
+                "the source, and to tell you the truth, I've had some difficulty lately, due to the " ..
+                "Winterfall furbolg.\n\nThey seem to be drawn to the springs, just as I am. They have " ..
+                "become extremely protective of the water, and won't let me come near the two larger " ..
+                "springs to the north of here.\n\nI'd like to continue my studies, so won't you help me?",
+            rewardChoices = {{67158, 1}, {67175, 1}, {67192, 1}, {67209, 1}},
+            rewardMoney = 14500,
+        },
         [28461] = {
             description = "The Shattered Hand has discovered some disturbing information in Blackrock " ..
                 "Depths. It appears Twilight's Hammer is working with the Dark Iron engineer, Argelmach, " ..
@@ -42052,7 +42148,14 @@ ns.Overrides.wowhead = {
                 "<he/she> is in. You be givin' Zonya no trouble dis time.",
             rewardMoney = 114000,
         },
-        [31870] = {rewardMoney = 68000},
+        [31870] = {
+            description = "Cassandra Kaboom is a fierce tamer, known for her mechanical pets. She should " ..
+                "serve as the next step on your journey to greatness.\n\nFind her in Southern Barrens " ..
+                "near the Frazzlecraz Motherlode and challenge her. Beating Cassandra will surely prove " ..
+                "yourself in the eyes of Varzok.\n\nGood luck.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 68000,
+        },
         [31871] = {
             description = "You beat Gluk before, but now Gluk lay da smackdown on puny <race>!",
             rewardMoney = 102000,
@@ -42469,9 +42572,147 @@ ns.Overrides.wowhead = {
             rewardItems = {{89125, 1}},
             rewardMoney = 114000,
         },
+        [31959] = {
+            description = "Grand Empress Shek'zeer has finally lost her patience with us. We have learned " ..
+                "of an enormous army, massing in the shadows of the Heart of Fear, with orders to crush " ..
+                "Klaxxi'vess.\n\nWe have been fortunate to hold out this long, but we cannot survive a " ..
+                "siege of this scale.\n\nWakener, you have been invaluable to our efforts. Come, take " ..
+                "your place on the field among we paragons.\n\nI will see you on the battlefield!",
+            rewardMoney = 114000,
+        },
+        [31966] = {
+            description = "You have defeated Northrend's finest tamers, but you need more preparation " ..
+                "before you are ready to face the grand masters of Pandaria. Ready yourself and hone your " ..
+                "skills by defeating these elite tamers: Brok in Mount Hyjal, Bordin Steadyfist in " ..
+                "Deepholm, and Goz Banefury in Twilight Highlands.\n\nOnce you have triumphed over them, " ..
+                "you will be ready to journey to Pandaria to face the ultimate challenge.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 114000,
+        },
+        [31967] = {
+            description = "Northrend has fallen to your hand, but you are not yet ready to face the grand " ..
+                "masters of Pandaria. Defeat these tamers to harden your will for the coming challenges: " ..
+                "Brok in Mount Hyjal, Bordin Steadyfist in Deepholm, and Goz Banefury in Twilight " ..
+                "Highlands.\n\nOnly by defeating them will you be ready to journey to Pandaria.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 114000,
+        },
+        [31970] = {
+            description = "You think yourself ready to challenge Pandaria? You truly believe that you can " ..
+                "defeat the most powerful tamers in all of Azeroth?\n\nI shall be the judge of that " ..
+                "notion, <race>. Face me atop the Vir'naal Dam in Uldum, and we shall see if you are " ..
+                "truly ready.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 114000,
+        },
+        [31971] = {
+            description = "I see the triumphant tamer returns to again test <himself/herself> against me. " ..
+                "Very well. I accept your challenge.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 114000,
+        },
+        [31972] = {
+            description = "I do not yet understand the plight of these creatures well enough to help them " ..
+                "sufficiently. Perhaps another battle would strengthen our bond?",
+            rewardMoney = 106000,
+        },
+        [31973] = {
+            description = "The natives have taught me the strength of the earth. I know it's unending " ..
+                "endurance. Let us battle once more, and you'll see that I'm tougher than ever!",
+            rewardMoney = 90000,
+        },
+        [31974] = {
+            description = "The power of twilight flows through me. I am a god! You have no hope of " ..
+                "defeating me!",
+            rewardMoney = 6500,
+        },
+        [31975] = {
+            description = "You belong in Outland with the other hotshots if ya ask me. Why don't ya go " ..
+                "back to Audrey Burnhep in Stormwind and see what's next in your new career as a tamer!",
+            rewardMoney = 78000,
+        },
+        [31976] = {
+            description = "Word of your skill is spreading. I suggest you return to your trainer, Audrey " ..
+                "Burnhep, for further guidance.",
+            rewardMoney = 3500,
+        },
+        [31977] = {
+            description = "You belong in Outland with the other hotshots if ya ask me. Why don't ya go " ..
+                "back to Varzok in Orgrimmar and see what's next in your new career as a tamer!",
+            rewardMoney = 114000,
+        },
+        [31978] = {
+            description = "Just look at this mess! All that brew gone to waste!\n\nTaran Zhu warned us " ..
+                "against speaking to you outsiders, but I'll take any help I can get.\n\nWe were on our " ..
+                "way to Dawn's Blossom to deliver our brew when the fighting broke out. Now all of our " ..
+                "brew has been lost!\n\nYou want to make it up to us? Maybe you can find some of our " ..
+                "Honeybrew barrels that haven't been broken. Then it wouldn't be a complete loss.",
+            rewardMoney = 98000,
+        },
+        [31980] = {
+            description = "Word of your skill is spreading. I suggest you return to your trainer, Varzok, " ..
+                "for further guidance.",
+            rewardMoney = 78000,
+        },
+        [31981] = {
+            description = "Run off to your trainer, Audrey Burnhep, in Stormwind. Perhaps she can find " ..
+                "you more...worthwhile...challenges.",
+            rewardMoney = 9000,
+        },
+        [31982] = {
+            description = "Run off to your trainer, Varzok, in Orgrimmar. Perhaps he can find you more... " ..
+                "worthwhile... challenges.",
+            rewardMoney = 114000,
+        },
+        [31983] = {
+            description = "Well done, for an <race>. Now, get back to Orgrimmar and talk to that brute " ..
+                "Varzok. Maybe he can point you somewhere very far away from my family.",
+            rewardMoney = 114000,
+        },
+        [31984] = {
+            description = "Well done, well done indeed! If you would, please report to Miss Audrey " ..
+                "Burnhep in Stormwind.\n\nOh, and send her my regards. She's a beautiful young woman that " ..
+                "could benefit from the company of an accomplished fighter such as myself.",
+            rewardMoney = 110000,
+        },
+        [31985] = {
+            description = "You are now prepared as your trainer instructed. Travel back to Stormwind and " ..
+                "have words with Audrey Burnhep. She will guide you further.",
+            rewardMoney = 90000,
+        },
+        [31986] = {
+            description = "You are now prepared as your trainer instructed. Travel back to Orgrimmar and " ..
+                "have words with Varzok. He will guide you further.",
+            rewardMoney = 114000,
+        },
+        [31987] = {rewardItems = {{90041, 1}}, rewardMoney = 94000},
+        [31988] = {rewardMoney = 114000},
         [31989] = {
             description = "The time has come for you to return to the Peak of Serenity to complete your " ..
                 "training. Use Zen Pilgrimage to return there and speak with Master Hight when you arrive.",
+        },
+        [31991] = {
+            description = "I knew you would return to face me once more. Let us see who is truly wiser in " ..
+                "the ways of battle.",
+            rewardItems = {{89125, 1}},
+            rewardMoney = 9000,
+        },
+        [31998] = {
+            description = "<name>, I need you to assemble a hearty group and lead them into the Temple of " ..
+                "the Jade Serpent. Activate the Challenger's Orb therein, and vanquish the Sha of " ..
+                "Doubt.\n\nReturn to me when you've completed this challenge, and I shall reward you " ..
+                "handsomely.",
+            rewardMoney = 456000,
+        },
+        [31999] = {
+            description = "You have a comfortable base of operations, no Alliance around for miles, and a " ..
+                "few Horde veterans by your side. It looks like it's time to start painting this " ..
+                "continent red.\n\nGeneral Nazgrim should know where to start.",
+            rewardChoices = {
+                {90285, 1}, {90286, 1}, {90287, 1}, {90288, 1}, {90289, 1}, {90290, 1}, {90292, 1},
+                {90293, 1}, {90294, 1},
+            },
+            rewardMoney = 9800,
         },
         [32000] = {
             description = "<name>, I need you to assemble a hearty group and lead them into Stormstout " ..
@@ -42480,7 +42721,312 @@ ns.Overrides.wowhead = {
                 "handsomely.",
             rewardMoney = 456000,
         },
+        [32001] = {
+            description = "<name>, I need you to assemble a tranquil group and lead them into the " ..
+                "Shado-Pan Monastery. Activate the Challenger's Orb therein, and rescue Taran Zhu from " ..
+                "the Sha of Hatred.\n\nReturn to me when you've completed this challenge, and I shall " ..
+                "reward you handsomely.",
+            rewardMoney = 456000,
+        },
+        [32002] = {
+            description = "<name>, I need you to assemble a nimble group and lead them into Mogu'shan " ..
+                "Palace. Activate the Challenger's Orb therein, and put an end to Xin the " ..
+                "Weaponmaster.\n\nReturn to me when you've completed this challenge, and I shall reward " ..
+                "you handsomely.",
+            rewardMoney = 456000,
+        },
+        [32003] = {
+            description = "<name>, I need you to assemble a cracking group and lead them into the Gate of " ..
+                "the Setting Sun. Activate the Challenger's Orb therein and lay waste to " ..
+                "Raigonn.\n\nReturn to me when you've completed this challenge, and I shall reward you " ..
+                "handsomely.",
+            rewardMoney = 456000,
+        },
+        [32004] = {
+            description = "<name>, I need you to assemble an eagle-eyed group and lead them into the " ..
+                "Siege of Niuzao Temple. Activate the Challenger's Orb and ground Wing Leader " ..
+                "Ner'onok.\n\nReturn to me when you've completed this challenge, and I shall reward you " ..
+                "handsomely.",
+            rewardMoney = 456000,
+        },
+        [32005] = {
+            description = "<name>, I need you to assemble a stout group and lead them into Scarlet " ..
+                "Monastery. Activate the Challenger's Orb therein, and smite Durand with righteous " ..
+                "fury.\n\nReturn to me when you've completed this challenge, and I shall reward you " ..
+                "handsomely.",
+            rewardMoney = 456000,
+        },
+        [32006] = {
+            description = "<name>, I need you to assemble a cunning group and venture forth into the " ..
+                "depths of Scarlet Halls. Activate the Challenger's Orb therein, and put a stop to " ..
+                "Flameweaver Koegler's book-burning ways.",
+            rewardMoney = 456000,
+        },
+        [32007] = {
+            description = "<name>, I need you to assemble a fearless group and lead them into the depths " ..
+                "of Scholomance. Activate the Challenger's Orb, and cleanse Scholomance of Darkmaster " ..
+                "Gandling's evil presence.\n\nReturn to me when you've completed this challenge and I " ..
+                "shall reward you handsomely.",
+            rewardMoney = 342000,
+        },
+        [32008] = {
+            description = "Greetings, <name>! My name is Audrey Burnhep. I've been hearing quite a lot " ..
+                "about you recently. You're becoming quite the tamer!\n\nYou should come speak with me in " ..
+                "Stormwind. I have connections with some of the finest tamers in all of Azeroth, and I " ..
+                "can help you grow even more!",
+            rewardMoney = 106000,
+        },
         [32009] = {rewardMoney = 9000},
+        [32018] = {
+            description = "An unusual pandaren came through town a few days back. He told a better tale " ..
+                "than Pan, drank twice as much as Lee, and then beat me up in front of the bar. All while " ..
+                "his little niece made fun of us.\n\nIt was awesome.\n\nThey said they were headed to the " ..
+                "Valley of the Four Winds. You should meet him! Just... watch out for that right hook.",
+            rewardMoney = 10200,
+        },
+        [32019] = {
+            description = "Things were not always like this, <race>. Oh no, they were much, much worse. " ..
+                "Not three weeks ago, we were under siege by saurok bandits. They stole our jade, " ..
+                "befouled our food stores, and terrorized our cubs.\n\nWe needed a hero, and a hero " ..
+                "arrived.\n\nHe drove back their forces, defeated their leader, and returned our stolen " ..
+                "jade. All he asked in return was a serpent ride for his niece.\n\nI was never able to " ..
+                "thank him. If you are headed to the Valley of the Four Winds, would you relay our thanks?",
+            rewardMoney = 10200,
+        },
+        [32030] = {
+            description = "The time has come, wakener.\n\nThe council's power will combine to bring an " ..
+                "end to the corrupted empress.\n\nThis ritual has not been witnessed in one hundred of " ..
+                "your kind's lifetimes - and never by an outsider.\n\nIn exchange for your deeds on our " ..
+                "behalf, I invite you to behold this great moment in our history.",
+            rewardMoney = 11400,
+        },
+        [32035] = {
+            description = "Strange noises comin' from over at the Silken Fields.\n\nStrange smells, " ..
+                "too.\n\nAlmost makes you think that they could use a cash-strapped <class> to complete a " ..
+                "few odd jobs for 'em. Make a few pieces of gold.\n\nOr not.",
+            rewardMoney = 10200,
+        },
+        [32038] = {
+            description = "I always was a fan of a good stag hunt. Stags are tough, fast, and " ..
+                "territorial.\n\nThey may be plant eaters but they can give any hunter a run for his " ..
+                "money.\n\nEast of here is a whole mess of Wilderland Stags just waiting for a hunter " ..
+                "like yourself to give 'em a good run.\n\nHappy hunting.",
+            rewardMoney = 102000,
+        },
+        [32045] = {
+            description = "We are all children of the water here in the Valley of the Four Winds. It " ..
+                "nourishes us, it grows our vegetables, it brings us life.\n\nSome creatures, however, " ..
+                "drink too deeply from the water. They grow too large, and must be eliminated before they " ..
+                "cause havoc to those around them.\n\nI am but a simple stonecarver. You, on the other " ..
+                "hand...",
+            rewardMoney = 102000,
+        },
+        [32097] = {rewardItems = {{90818, 1}}},
+        [32106] = {rewardItems = {{90892, 1}}},
+        [32107] = {
+            description = "You've caught a unique fish... with wings. Perhaps it deserves the expert " ..
+                "opinion of Nat Pagle in Anglers Wharf.",
+            rewardMoney = 114000,
+        },
+        [32108] = {
+            description = "Now it is time to show this new land the true strength of the Horde.\n\nReturn " ..
+                "to the beach and light the remaining signal fire. Our fleet is waiting.",
+            rewardMoney = 57000,
+        },
+        [32109] = {
+            description = "For too long the Horde has been allowed to run rampant across Azeroth. I will " ..
+                "not see these new lands conquered by some barbaric \"warchief.\"\n\nAre you ready to " ..
+                "bring Alliance justice to the shores of Pandaria?\n\nLet us return to the landing site. " ..
+                "Use the flare launcher to bring in the fleet proper, and begin Operation: Shieldwall.",
+            rewardMoney = 57000,
+        },
+        [32115] = {
+            description = "The mogu are a bunch of right bastards!\n\nThey enslaved the pandaren who " ..
+                "worked these caves even after their death. Ye' gotta go free their spirits! It's just " ..
+                "not right.\n\nBe careful though... so much trauma, they don't know what's a friend and " ..
+                "what's an enemy. So they'll probably fight back.",
+            rewardMoney = 114000,
+        },
+        [32116] = {
+            description = "When I ordered the excavation of the tunnel to the northwest, I thought we'd " ..
+                "find something useful. Gold, iron... anything!\n\nInstead, we found mogu artifacts, and " ..
+                "I get a bunch of dwarves from the Explorers' League to baby-sit.\n\nI hear from the " ..
+                "soldiers that there's trouble in the mines. I have orders from Wrynn that I have to " ..
+                "support the Explorers' League, but I can't spare any troops. Can you get down there and " ..
+                "find out what's going on?",
+            rewardMoney = 11400,
+        },
+        [32118] = {
+            description = "The fools in the Explorers' League have excavated an ancient mogu ruin to the " ..
+                "northeast. And - of course - in their bumbling, they've disturbed the mogu spirits " ..
+                "within.\n\nWe are going to take advantage of their ineptitude. Take this portal and meet " ..
+                "with Kaelis Sunsoar, my contact within the ruins.",
+            rewardMoney = 11400,
+        },
+        [32119] = {
+            description = "There's somethin' down there that was spookin' the workers. Some kind o' " ..
+                "anomaly... looks like a ghost, or a magic spell... like nothing I've ever seen.\n\nI did " ..
+                "manage to get a reading on it and put together this device to try to track it down. The " ..
+                "display on the device will let you know roughly how close you are.\n\nOnce you get close " ..
+                "enough, you can use it to draw out the anomaly and get rid of it for good!",
+            rewardMoney = 114000,
+        },
+        [32120] = {
+            description = "The ruins which we are occupying were built by Ogudei - an ancient mogu ruler. " ..
+                "We know little about who he was, though the rise of the spirits in this area seems to " ..
+                "indicate that it was related to spirit binding.\n\nWhen you destroy these spirits, a " ..
+                "small amount of their essence will remain in this world. Bring it to us - we will " ..
+                "analyze it and hopefully learn more about Ogudei's history - and his power.",
+            rewardMoney = 114000,
+        },
+        [32121] = {
+            description = "In the ruins there are a bunch of right nasty blue crystals. Look at 'em the " ..
+                "wrong way and bloody angry ghosts run out at ya.\n\nI'm gonna be needing ye' to go in " ..
+                "and clear some of them out so we can get our people back to work.",
+            rewardMoney = 114000,
+        },
+        [32122] = {
+            description = "When we dug through to an ancient section of the mogu ruins, that's when all " ..
+                "this nasty business went down - and that's where the two worst o' these ghosties " ..
+                "emerged.\n\nWe need them gone, friend.",
+            rewardMoney = 114000,
+        },
+        [32123] = {
+            description = "The Alliance has made landfall. If we do not defeat them here, any hope of a " ..
+                "Horde presence on this continent is lost.\n\nGo to the battlefield south of here and " ..
+                "slay Alliance you find.\n\nShow them how any Horde who still stands on two legs will be " ..
+                "the death of ten Alliance!",
+            rewardMoney = 114000,
+        },
+        [32126] = {
+            description = "The Alliance may be cowardly, but they are not fools. Their assault would be " ..
+                "formidable, if it were directed at lesser creatures.\n\nTo sustain a siege and put " ..
+                "pressure on our troops they are air dropping in supplies to support their ground " ..
+                "forces.\n\nSearch the beaches and docks to the south for any airdropped supplies and " ..
+                "smash them.\n\nLet the Alliance see their food and ammunition destroyed before their " ..
+                "eyes and despair.",
+            rewardMoney = 114000,
+        },
+        [32127] = {
+            description = "Our Warchief has dispatched me to these shores to deal with this pitiful " ..
+                "Alliance threat.\n\nThese humans and their allies have proven to be very dependent on " ..
+                "their leaders. No initiative of their own.\n\nAs you walk the battlefield today look to " ..
+                "the Alliance ships off our southern shores. Find their captains.\n\nSlay them.\n\nFor " ..
+                "the Horde!",
+            rewardMoney = 114000,
+        },
+        [32128] = {
+            description = "The Alliance have planted themselves off our southern coast and continue to " ..
+                "pepper our ground forces with cannon fire. Let us see how great their siege is without " ..
+                "such support.\n\nBoard the enemy vessels and destroy their reserve ammunition. This will " ..
+                "take the teeth out of their bite.",
+            rewardMoney = 114000,
+        },
+        [32130] = {
+            description = "I've got some customers lined up that wanna collect some good old fashioned " ..
+                "ears. But not any old ears. They only want the absolute waxiest ears money can " ..
+                "buy!\n\nGuess they think they're lucky or something'.\n\nAnyways, I need you to go get " ..
+                "'em for me. I don't want to hurt any animals, so you'll need to get 'em from the " ..
+                "Alliance over at Lion's Landing.\n\nHave fun - and remember, only bring me the waxiest!",
+            rewardMoney = 114000,
+        },
+        [32131] = {
+            description = "Gnomes are excavating a stone quarry to the northeast.\n\nThey're building " ..
+                "stuff with it!\n\n<Zazzix rolls his eyes.>\n\nThey're too stupid to realize it's special " ..
+                "mogu stone for creating animated statues.\n\nWE can mix with a little Goblin magic juice " ..
+                "to make some real big explosions!\n\nBut the stuff is heavy. They've got some of their " ..
+                "stupid bomb-bots there for excavating the stone. Blow 'em up near slabs and you'll get " ..
+                "chunks small enough to carry.\n\nOr, just kill 'em and take it. Whatever works.",
+            rewardMoney = 114000,
+        },
+        [32132] = {
+            description = "Our goblin friends do not have the grasp of strategy necessary to win a long " ..
+                "term engagement, I'm afraid.\n\nThe key to eliminating any permanent establishment is to " ..
+                "attack their ability to replenish their troops and to rebuild.\n\nIn this case, that " ..
+                "means taking out their Peasants. Kill them, and you weaken the foundation. The rest of " ..
+                "the keep is bound to crumble.",
+            rewardMoney = 114000,
+        },
+        [32133] = {
+            description = "We've spotted heavy air support over their base, in the form of way too many " ..
+                "dwarves on way too many griffons. Means we can't get any vision of the area from " ..
+                "above.\n\nA troll... friend of mine gave us a set of Sentry Wards, which we can use to " ..
+                "spy on their base and get a vantage point on what's going on in there.\n\nBad news, " ..
+                "friend - you're going to be the one going in there.",
+            rewardMoney = 114000,
+        },
+        [32134] = {
+            description = "We've managed to get some Demolishers on the beach, but the stupid dwarves are " ..
+                "also out there with their stupid mortar tubes, preventing the Demolishers from pushing " ..
+                "forward and assaulting the keep itself!\n\nGet out there, kill some dwarves, and blow up " ..
+                "some mortar tubes.",
+            rewardMoney = 114000,
+        },
+        [32135] = {
+            description = "There are some situations in which taking out one of their soldiers is more " ..
+                "important than killing hundreds.\n\nThey've deployed some of their heroes to the " ..
+                "battlefield to help rally their defenders. Not only will killing them soften their " ..
+                "defense, it will also leave their morale crippled.\n\nSo go, take one down for me. You " ..
+                "can handle it.",
+            rewardMoney = 114000,
+        },
+        [32136] = {
+            description = "Our fuel supplies are running low. Without fuel we won't be able to operate " ..
+                "the machinery that's building this place. They might even expect me to start helping " ..
+                "them build!\n\nI was not built for manual labor! See these nails?! I just had them " ..
+                "done!\n\nGet down to the refinery and get this fuel order filled! Hurry! They were " ..
+                "fitting me for a tool-belt this morning. It didn't even match my outfit!",
+            rewardMoney = 11400,
+        },
+        [32137] = {
+            description = "I've never seen this quality of oil! Problem is the oil needed a little extra " ..
+                "refinin'.\n\nI heard of this system where you use ocean water to speed up the process. I " ..
+                "don't have time to waste down here, so I just threw the barrels into the bay.\n\nPretty " ..
+                "good idea, I know. Problem is, I'm not sure how to pull it out of the bay...\n\nMaybe " ..
+                "someone of your expertise could help me out.",
+            rewardMoney = 114000,
+        },
+        [32138] = {
+            description = "Everyday it's the same thing! \"We're out of this!\", \"We need more of " ..
+                "that!\", \"Why don't you ever do anything?!\"\n\nI work! I do things! They can be so " ..
+                "hurtful! I'm doin' my best down here!\n\nOh yeah, we need more lumber! Go down and tell " ..
+                "that good for nothin' Zino to get his shredders in gear!",
+            rewardMoney = 11400,
+        },
+        [32139] = {
+            description = "We just filled an order this morning. How could they possibly need more " ..
+                "already?!\n\nMy team has been workin' double-time to get these trees chopped and " ..
+                "processed.\n\nProblem is we have an infestation of Lion's Landing troops down here. I " ..
+                "already risked my neck once today, I'm not goin' back out there!\n\nGoob will go with " ..
+                "you and help you fill this order. He's not the brightest, but he can do the heavy " ..
+                "liftin'.",
+            rewardMoney = 114000,
+        },
+        [32140] = {
+            description = "When they said they found some amazing rocks in that mine I envisioned " ..
+                "diamonds. Everyone knows all mines have diamonds, silly! At the very least " ..
+                "rubies!\n\nInstead, all I got was this strange iron! What am I supposed to do with " ..
+                "this?\n\nOh well, no one said this job would be glamorous. I just do what I can to add a " ..
+                "little class.\n\nWe just got another work order for iron. Go see Daxil down near " ..
+                "Oregrind's Dig and get it filled pronto!",
+            rewardMoney = 11400,
+        },
+        [32141] = {
+            description = "<Daxil narrows her eyes and speaks in a hushed tone.>\n\nSometimes we dig too " ..
+                "deep, <class>. Sometimes, we uncover something so horrible we wish we hadn't started " ..
+                "diggin'...\n\nJust kidding! I mean, don't get me wrong, we did find something " ..
+                "unexpected. The ore we're finding down there is not your average run-of-the-mill " ..
+                "iron.\n\nThere is just one problem; Shale Spiders! We're struggling to keep these orders " ..
+                "filled.\n\nMaybe you can lend us a hand?",
+            rewardMoney = 114000,
+        },
+        [32142] = {
+            description = "The orcs can NOT be allowed a foothold in this land. They will defile it just " ..
+                "as they did Kalimdor.\n\n$p, I need boots on the ground and horde in their graves. Get " ..
+                "down to the coastline and bring the full force of Alliance wrath down on their " ..
+                "heads!\n\nSlay any orcs you find. Take the wind out of their sails.\n\nFor the King!",
+            rewardMoney = 114000,
+        },
         [32299] = {
             description = "This is not a glamorous job. Let me put it to you bluntly.\n\nThe Skumblade " ..
                 "saurok pile all of their filth into a pool in the middle of their village. This filth is " ..
@@ -42634,6 +43180,13 @@ ns.Overrides.wowhead = {
             description = "I have finished grinding the stones, and have attuned the hourglass to a new " ..
                 "series of timeways. Will you return to the Siege of Orgrimmar and turn the hourglass " ..
                 "once more?\n\nReturn quickly, I am most curious.",
+        },
+        [91703] = {
+            description = "<name>, the Celestials call out for your aid. Assemble a cunning group and " ..
+                "venture forth into the depths of Scarlet Halls. Invoke the will of the Celestials, and " ..
+                "put a stop to Flameweaver Koegler's book-burning ways.",
+            rewardMoney = 456000,
+            rewardXP = 471000,
         },
         [92336] = {
             description = "Potions, potions, potions. Can I teach you about potions!\n\nYou're going to " ..
