@@ -4,6 +4,250 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.248] - 2026-10-24
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,702 quests, 72 NPCs, 4 objects
+- quest 3106 - Simple Rune - updated
+  - reward money removed (25c)
+- quest 3107 - Consecrated Rune - updated
+  - reward money removed (25c)
+- quest 3108 - Etched Rune - updated
+  - reward money removed (25c)
+- quest 3109 - Encrypted Rune - updated
+  - reward money removed (25c)
+- quest 3110 - Hallowed Rune - updated
+  - reward money removed (25c)
+- quest 3116 - Simple Sigil - updated
+  - reward money removed (25c)
+- quest 3117 - Etched Sigil - updated
+  - reward money removed (25c)
+- quest 3119 - Hallowed Sigil - updated
+  - reward money removed (25c)
+- quest 3120 - Verdant Sigil - updated
+  - reward money removed (25c)
+- quest 4512 - A Little Slime Goes a Long Way - updated
+  - reward money removed (75s)
+- quest 5041 - Supplies for the Crossroads - updated
+  - reward money removed (5s)
+- quest 5381 - Hand of Iruxos - updated
+  - reward money removed (45s)
+- quest 5545 - A Bundle of Trouble - updated
+  - reward money removed (3s 50c)
+- quest 5713 - One Shot. One Kill. - updated
+  - reward money removed (14s)
+- quest 5893 - Coldtooth Supplies - updated
+  - reward money removed (5g 70s)
+- quest 6132 - Get Me Out of Here! - updated
+  - reward money removed (35s)
+- quest 6281 - Continue to Stormwind - updated
+  - reward money removed (1s 75c)
+- quest 6285 - Return to Lewis - updated
+  - reward money removed (3s 50c)
+- quest 6323 - Ride to the Undercity - updated
+  - reward money removed (85c)
+- quest 6324 - Return to Morris - updated
+  - reward money removed (1s 75c)
+- quest 6343 - Return to Nyoma - updated
+  - reward money removed (1s 25c)
+- quest 6362 - Ride to Thunder Bluff - updated
+  - reward money removed (85c)
+- quest 6364 - Return to Varg - updated
+  - reward money removed (1s 75c)
+- quest 6384 - Ride to Orgrimmar - updated
+  - reward money removed (85c)
+- quest 6386 - Return to Razor Hill - updated
+  - reward money removed (1s 75c)
+- quest 6610 - Clamlette Surprise - updated
+  - description added
+  - reward items: +1
+- quest 6611 - To Gadgetzan You Go! - updated
+  - description added
+- quest 8285 - The Deserter - updated
+  - description added
+- quest 8307 - Desert Recipe - updated
+  - description added
+- quest 8313 - Sharing the Knowledge - updated
+  - description added
+- quest 8317 - Kitchen Assistance - updated
+  - description added
+- quest 8320 - Twilight Geolords - updated
+  - description added
+- quest 8658 - Striker's Leggings - updated
+  - description added
+  - reward items: +1
+- quest 9815 - Muck Diving - updated
+  - description added
+  - reward choices: +3
+- quest 9983 - He Called Himself Altruis... - updated
+  - description added
+- quest 10471 - Defender's Oath - updated
+  - description added
+  - reward items: +1
+- quest 10883 - The Tempest Key - updated
+  - description added
+- quest 11211 - Help for Mudsprocket - updated
+  - description added
+- quest 11377 - Revenge is Tasty - updated
+  - description added
+  - reward choices: +2
+- quest 11379 - Super Hot Stew - updated
+  - description added
+  - reward choices: +2
+- quest 11380 - Manalicious - updated
+  - description added
+  - reward choices: +2
+- quest 11381 - Soup for the Soul - updated
+  - description added
+  - reward choices: +2
+- quest 12042 - Heart of the Ancients - updated
+  - description added
+  - reward items: +1
+- quest 12205 - Wanted: The Scarlet Onslaught - updated
+  - description added
+- quest 12255 - The Thane of Voldrune - updated
+  - description added
+  - reward choices: +5
+- quest 12442 - Wanted: Onslaught Commander Iustus - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 12443 - Seeking Solvent - updated
+  - description added
+- quest 12610 - Clipping Their Wings - updated
+  - description added
+  - reward choices: +4
+- quest 12677 - Hazardous Materials - updated
+  - description added
+- quest 13077 - The Touch of an Aspect - updated
+  - description added
+  - reward money added (5g 80s)
+- quest 13087 - Northern Cooking - updated
+  - description added
+- quest 13090 - Northern Cooking - updated
+  - description added
+- quest 13100 - Infused Mushroom Meatloaf - updated
+  - description added
+  - reward items: +1
+- quest 13101 - Convention at the Legerdemain - updated
+  - description added
+  - reward items: +1
+- quest 13102 - Sewer Stew - updated
+  - description added
+  - reward items: +1
+- quest 13103 - Cheese for Glowergold - updated
+  - description added
+  - reward items: +1
+- quest 13107 - Mustard Dogs! - updated
+  - description added
+  - reward items: +1
+- quest 13112 - Infused Mushroom Meatloaf - updated
+  - description added
+  - reward items: +1
+- quest 13113 - Convention at the Legerdemain - updated
+  - description added
+  - reward items: +1
+- quest 13114 - Sewer Stew - updated
+  - description added
+  - reward items: +1
+- quest 13115 - Cheese for Glowergold - updated
+  - description added
+  - reward items: +1
+- quest 13116 - Mustard Dogs! - updated
+  - description added
+  - reward items: +1
+- quest 13416 - The Library Console - updated
+  - description added
+- quest 13841 - All Apologies - updated
+  - description added
+- quest 13883 - Lousy Pieces of Ship - updated
+  - description added
+- quest 24558 - Return To Myralion Sunblaze - updated
+  - description added
+- quest 25955 - A Better Vantage - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 26404 - Above My Pay Grade - updated
+  - description added
+- quest 26494 - Mixmaster Jasper - updated
+  - description added
+- quest 26495 - Chabal - updated
+  - description added
+- quest 26555 - High Priest Venoxis - updated
+  - description added
+  - reward choices: +3
+- quest 27150 - The Menders' Stead - updated
+  - description added
+- quest 27153 - The Good People of Hearthglen - updated
+  - description added
+- quest 27237 - Recover the Cargo! - updated
+  - description added
+  - reward money added (40s)
+  - reward choices: +2
+- quest 27321 - The Writ of History - updated
+  - description added
+- quest 27346 - The Zeppelin Crash - updated
+  - description added
+- quest 28536 - The Curse of Zin-Malor - updated
+  - description added
+- quest 28753 - Doing it the Hard Way - updated
+  - description removed
+  - reward money removed (34g 40s)
+  - reward choices: -3
+- quest 31856 - The Peak of Serenity - Begin Your Training - updated
+  - description removed
+- quest 32251 - Dagger in the Dark - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32568 - No Time To Rest - updated
+  - description added
+  - reward money added (2g 85s)
+- quest 33018 - Noodle Secrets Long Forgotten - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 33021 - Secrets Lost, Forever? - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 33022 - Catch and Carry - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 33026 - These Aren't Your Fatty Goatsteaks - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 33107 - Bad Feeling, Worse Result - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 33139 - Secrets Lost, Forever? - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 33146 - Noodle Time - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 33358 - Noodle Time: Bonus - updated
+  - description added
+  - reward money added (22g 80s)
+- npc 5428 - Roc - updated
+  - coordinates: 40 spawn points added in Tanaris
+- npc 5615 - Wastewander Rogue - updated
+  - coordinates: 40 spawn points added in Tanaris
+- npc 5616 - Wastewander Thief - updated
+  - coordinates: 35 spawn points added in Tanaris
+- npc 5617 - Wastewander Shadow Mage - updated
+  - coordinates: 40 spawn points added in Tanaris
+- npc 5618 - Wastewander Bandit - updated
+  - coordinates: 34 spawn points added in Tanaris
+- npc 5623 - Wastewander Assassin - updated
+  - coordinates: 39 spawn points added in Tanaris
+- npc 7856 - Southsea Freebooter - updated
+  - coordinates: 27 spawn points added in Tanaris
+- npc 7857 - Southsea Dock Worker - updated
+  - coordinates: 12 spawn points added in Tanaris
+- npc 7883 - Andre Firebeard - updated
+  - coordinates: 6 spawn points added in Tanaris
+- npc 8125 - Dirge Quikcleave - updated
+  - coordinates: 1 spawn point added in Tanaris
+
 ## [0.2.247] - 2026-10-24
 
 Data from the PandaQuest portal.
@@ -1386,171 +1630,6 @@ Data from the PandaQuest portal.
   - reward money added (22g 80s)
 - npc 4949 - Thrall - updated
   - coordinates: 2 spawn points added in Orgrimmar
-
-## [0.2.237] - 2026-10-23
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,579 quests, 55 NPCs, 4 objects
-- quest 2754 - Horns of Frenzy - updated
-  - description added
-  - reward items: +1
-- quest 8790 - Imperial Qiraji Regalia - updated
-  - description added
-  - reward choices: +3
-- quest 9670 - They're Alive! Maybe... - updated
-  - description added
-  - reward items: +1
-- quest 9760 - Vindicator's Rest - updated
-  - description added
-- quest 10330 - Shutting Down Manaforge Coruu - updated
-  - description added
-- quest 10348 - New Opportunities - updated
-  - description added
-- quest 12063 - Strength of Icemist - updated
-  - description added
-- quest 12245 - No Mercy for the Captured - updated
-  - description added
-- quest 12298 - High Commander Halford Wyrmbane - updated
-  - description added
-- quest 12411 - A Sister's Pledge - updated
-  - description added
-- quest 12413 - Attack on Silverbrook - updated
-  - description added
-  - reward choices: +5
-- quest 12647 - An End to the Suffering - updated
-  - description added
-  - reward choices: +4
-- quest 12758 - A Hero's Headgear - updated
-  - description added
-- quest 12937 - Relief for the Fallen - updated
-  - description added
-- quest 13088 - Northern Cooking - updated
-  - description added
-- quest 13793 - Among the Champions - updated
-  - description added
-  - reward choices: +2
-- quest 14435 - The Blackmaw Doublecross - updated
-  - description added
-  - reward choices: +3
-- quest 26044 - Where Are the Parts? - updated
-  - description added
-- quest 26405 - Zul'Mamwe Mambo - updated
-  - description added
-  - reward choices: +3
-- quest 27191 - Hungry as an Ogre! - updated
-  - description added
-  - reward choices: +2
-- quest 32143 - A Kind of Magic - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32144 - Under Pressure - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32145 - Don't Lose Your Head - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32146 - Hammer to Fall - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32148 - Attack! Move! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32149 - Resource Gathering - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32150 - Supply Block - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32151 - Tower Defense - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32152 - Siege Damage - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32153 - Hero Killer - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32154 - Burn Out! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32156 - It's Only Right - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32157 - The Only Good Goblin... - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32158 - Two Step Program - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32161 - Beastmaster's Hunt: The Crane - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32162 - Beastmaster's Hunt: The Tiger - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32163 - Beastmaster's Hunt: The Crab - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32164 - Beastmaster's Hunt: The Crane - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32165 - Beastmaster's Hunt: The Tiger - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32166 - Beastmaster's Hunt: The Crab - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32167 - Ancient's Fall - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32168 - End of an Elder - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32169 - A Colossal Victory - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32170 - Ancient's Fall - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32171 - End of an Elder - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32172 - A Colossal Victory - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32181 - Beastmaster's Quarry: The Crane - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32182 - Beastmaster's Quarry: The Tiger - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32183 - Beastmaster's Quarry: The Crab - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32184 - Beastmaster's Quarry: The Crane - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32371 - Memory Wine - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32377 - A Kor'kron In Our Midst - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 33341 - Wayshrines Of The Celestials - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 64142 - A Demonstration of Loyalty - updated
-  - description added
-  - XP added (11,900)
-- npc 4358 - Mirefin Puddlejumper - updated
-  - coordinates: 14 spawn points added in Dustwallow Marsh
-- npc 17681 - Expedition Researcher - updated
-  - coordinates: 40 spawn points added in Bloodmyst Isle
-- npc 39273 - "Doc" Cogspin - updated
-  - coordinates: 16 spawn points added in Dun Morogh
-- npc 67438 - Krasari Elder - updated
-  - coordinates: 4 spawn points added in Krasarang Wilds
 
 ## [0.2.236] - 2026-10-23
 
