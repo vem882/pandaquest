@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.1.0+v1.0.6 (Classic Era database + corrections from QuestieDB 1.0.6). DO NOT EDIT.
--- Built: 2026-10-16T23:14:25Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.2.0+v1.0.7 (Classic Era database + corrections from QuestieDB 1.0.7). DO NOT EDIT.
+-- Built: 2026-10-24T11:45:10Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -4935,7 +4935,7 @@ ns.Data.objects = [=[return {
 [179424] = {"[PH] Alliance Graveyard Mid Pre-Banner BIG",nil,nil,{[2597]={{45.1,45.19},{45.21,45.55},{44.19,46.07},{44.31,45.52}}},2597},
 [179425] = {"[PH] Horde Graveyard Mid Pre-Banner BIG",nil,nil,{[2597]={{45.1,45.19},{45.21,45.55},{44.19,46.07},{44.31,45.52}}},2597},
 [179426] = {"Gri'lek the Wanderer",nil,nil,{[33]={{24.77,22.88}}},33},
-[179437] = {"Wanted: ORCS!",{7402},nil,nil,0},
+[179437] = {"Wanted: ORCS!",{7402},nil,{[2597]={{43.27,16.52}}},2597},
 [179438] = {"Wanted: DWARVES!",{7401},nil,{[2597]={{50.78,80.23}}},2597},
 [179485] = {"Broken Trap",{1193},{1193},{[10022]={{-1,-1}}},2557},
 [179486] = {"Battered Footlocker",nil,nil,{[11]={{23.18,31.91},{20.59,35.41},{21.96,31.16},{12.55,41.71},{17.21,36.16},{19.03,37.71},{15.31,36.68},{14.32,35.95},{21.44,34.27},{20.25,35.99},{17.04,40.38}},[267]={{81.9,41.71},{80.7,44.11},{82.6,41.04},{82.87,42.56},{77.49,44.32},{78.98,45.95},{78.97,44.53},{79.4,46.14},{79.57,46.45},{75.8,39.87}},[406]={{63.3,51.21},{71.37,52.63},{62.91,53.18},{70.18,48.74},{71.5,56.79},{61.9,51.51},{61.36,55.56},{71.86,49.53},{67.84,56.58},{59.73,53.51},{66.09,50.89}}},11},

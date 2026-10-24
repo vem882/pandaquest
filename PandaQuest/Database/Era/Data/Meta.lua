@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.1.0+v1.0.6 (Classic Era database + corrections from QuestieDB 1.0.6). DO NOT EDIT.
--- Built: 2026-10-16T23:14:25Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.2.0+v1.0.7 (Classic Era database + corrections from QuestieDB 1.0.7). DO NOT EDIT.
+-- Built: 2026-10-24T11:45:10Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "era"
 ns.Data.meta = {
-  ["built"] = "2026-10-16T23:14:25Z",
+  ["built"] = "2026-10-24T11:45:10Z",
   ["contentPhase"] = 0,
   ["counts"] = {["items"]=14899,["npcs"]=10122,["objects"]=6666,["questXP"]=3494,["quests"]=4257},
   ["expansion"] = "Classic",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.1.0+v1.0.6",
+  ["source"] = "Questie 12.2.0+v1.0.7",
 }
 ns.Data.questTagCorrections = {
   [17] = {81,"Dungeon"},
@@ -4974,6 +4974,7 @@ ns.Data.hiddenQuests = {
   [88801] = true,
   [93823] = true,
   [93824] = true,
+  [93928] = true,
   [96253] = true,
   [96254] = true,
 }
@@ -5020,6 +5021,56 @@ ns.Data.hideOnMapQuests = {
   [24806] = true,
   [32435] = true,
   [32436] = true,
+  [78124] = true,
+  [78127] = true,
+  [78142] = true,
+  [78143] = true,
+  [78145] = true,
+  [78146] = true,
+  [78147] = true,
+  [78148] = true,
+  [78149] = true,
+  [79091] = true,
+  [79092] = true,
+  [79093] = true,
+  [79094] = true,
+  [79095] = true,
+  [79096] = true,
+  [79097] = true,
+  [79535] = true,
+  [79947] = true,
+  [79948] = true,
+  [79949] = true,
+  [79950] = true,
+  [79951] = true,
+  [79952] = true,
+  [79953] = true,
+  [81947] = true,
+  [81949] = true,
+  [81951] = true,
+  [81952] = true,
+  [81953] = true,
+  [81954] = true,
+  [81955] = true,
+  [81956] = true,
+  [84395] = true,
+  [84396] = true,
+  [84397] = true,
+  [84398] = true,
+  [84399] = true,
+  [84400] = true,
+  [84401] = true,
+  [84402] = true,
+  [91899] = true,
+  [91900] = true,
+  [91901] = true,
+  [91904] = true,
+  [91905] = true,
+  [91906] = true,
+  [97065] = true,
+  [97066] = true,
+  [97067] = true,
+  [97583] = true,
 }
 ns.Data.hiddenNpcs = {
   [8001] = true,
