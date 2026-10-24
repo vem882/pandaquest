@@ -160,11 +160,11 @@ Every TOC is written from one template, `.github/release/PandaQuest.toc.template
 its TOC has and the TOC lines of its database. The saved-variables line is the template's, the same
 in every TOC (PandaQuestAH included, as a retired variable nothing touches).
 
-`PandaQuest/PandaQuest.toc` stays in the repository, because CurseForge's own packager ships it as it
-is. **Edit the template, not the TOC**, then run `python3 .github/release/build.py tocs`; `check.py`
-and `build.py package` refuse a TOC that is not byte for byte what the template makes. The suffixed
-TOCs exist only in the package — a repository with two TOCs would have two to keep in step — and
-`build.py` refuses a tree that contains one.
+Every one of those TOCs is committed in `PandaQuest/`, because CurseForge's own packager ships the
+tree as it is and tags the file with a game for each TOC it finds (see "The CurseForge webhook
+package"). **Edit the template, not the TOCs**, then run `python3 .github/release/build.py tocs`,
+which writes all six; `check.py` and `build.py package` refuse a tree where any of them is missing or
+not byte for byte what the template makes, and `check.py` also refuses a TOC no game writes.
 
 `curseforge.py` tags the uploaded file from the package's own TOCs: each `## Interface` number is
 mapped to its game and game version (50504 is Mists of Pandaria Classic `5.5.4`, 11509 Classic Era
@@ -268,11 +268,41 @@ is something worth a new file. It needs the `CF_API_TOKEN` repository secret; th
 the package's TOC names (`## X-Curse-Project-ID`). A `curseforge/<tag>` reservation tag stops the
 same release being sent twice.
 
-CurseForge also packages the repository itself through its webhook, using `.pkgmeta`. That package
-is made by CurseForge's packager, not by `build.py`, so it is not the reference one: its TOC keeps the
-declared `## Version: 0.2.0` and there is no `Core/Build.lua`. It has only the plain TOC, so it is a
-MoP Classic package, and `.pkgmeta` leaves the other games' databases out of it. The release asset and
-the file the workflow above uploads are the stamped, deterministic ones.
+### The CurseForge webhook package
+
+CurseForge also packages the repository itself through its webhook (GitHub → Settings → Webhooks, a
+push hook to the URL the CurseForge project's source settings give), using `.pkgmeta`. That package
+is made by CurseForge's packager, not by `build.py`, so it is not the reference one: its TOCs keep the
+declared `## Version: 0.2.0` and there is no `Core/Build.lua`. The release asset and the file the
+workflow above uploads are the stamped, deterministic ones.
+
+It carries all four games: every TOC is committed (see "The TOC files") and `.pkgmeta` leaves no
+game's database out. How the file gets tagged for each game:
+
+* CurseForge's own packager is not open source and its documentation does not say how it reads game
+  versions. [Preparing the PackageMeta file](https://support.curseforge.com/support/solutions/articles/9000197952-preparing-the-packagemeta-file)
+  covers only `ignore`, `move-folders`, `manual-changelog` and externals (and says `ignore` is applied
+  before `move-folders`, which is why the paths in `.pkgmeta` start with `PandaQuest/`);
+  [Multi-TOC for World of Warcraft Addons](https://support.curseforge.com/support/solutions/articles/9000209856-multi-toc-for-world-of-warcraft-addons)
+  says each TOC must start with the folder's name and carry the interface number of its game. CurseForge
+  answered the request to read game versions from every TOC ([CF-I-1832](https://curseforge-ideas.overwolf.com/ideas/CF-I-1832))
+  as "Already exists": "You can now tag multiple interface versions/flavours and upload multi TOC files".
+* The BigWigs packager follows the same `.pkgmeta` conventions and documents the rule
+  ([README](https://github.com/BigWigsMods/packager#readme), "every interface value in every
+  (non-external) TOC file will be included as a supported version"). Its `release.sh` looks for
+  `<name>.toc` and `<name>[-_]{Mainline,Classic,Vanilla,BCC,TBC,Wrath,WOTLKC,Cata,Mists,Camelot}.toc`,
+  maps each `## Interface` number to a game (`11xxx` Classic Era, `16xxx` Forever, `20xxx` TBC,
+  `50xxx` Mists…), accepts comma-separated `## Interface:` values, and refuses a suffixed TOC whose
+  number is another game's. **`_Forever` is not in that list; `_Camelot` is**, which is why Forever ships
+  both (identical bytes): `_Camelot` gets the file tagged, and the client reads either
+  ([TOC format](https://warcraft.wiki.gg/wiki/TOC_format#Naming): `_Forever` or `_Camelot` for Forever,
+  `_Mists`, `_TBC` for TBC Classic and Anniversary, `_Vanilla` for Classic Era).
+
+So each game has a TOC under a recognised suffix with its own single `## Interface` number, which is the
+layout both rules tag for every game. If a webhook file ever shows only Mists of Pandaria Classic,
+CurseForge's packager is reading the plain TOC alone; the fix would then be comma-separated interfaces in
+the plain TOC (harmless in game, since every shipped client reads its own suffixed TOC first), or tagging
+the file by hand.
 
 ## Data from the portal
 

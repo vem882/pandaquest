@@ -5,10 +5,10 @@
 #~   {{game-header}}  lines only that game's TOC has (AllowLoadGameType for Mists of Pandaria Classic)
 #~   {{zone-data}}    that game's zone tables
 #~   {{data}}         that game's database: the generated data and the override files
-#~ PandaQuest/PandaQuest.toc is written from here and kept in the repository, because CurseForge's own
-#~ packager reads it as it is.  Edit this file, never that one, then run
+#~ Every PandaQuest/PandaQuest*.toc is written from here and kept in the repository, because CurseForge's
+#~ own packager ships them as they are.  Edit this file, never those, then run
 #~   python3 .github/release/build.py tocs
-#~ check.py fails while the two differ.
+#~ check.py fails while any of them differs.
 ## Interface: {{interface}}
 ## Title: |cff5fd7ffPanda|rQuest
 {{notes}}

@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.246] - 2026-10-24
+
+### Changed
+- **The CurseForge package made from the repository carries every game again.** CurseForge's own
+  packaging (the repository webhook) now gets the TOCs of all four games and their databases, so a
+  file it makes runs in Mists of Pandaria Classic, Classic Era, TBC Anniversary and WoW Forever, like
+  the GitHub release.
+  - every game's TOC is kept in the repository, written from one template by `build.py tocs`, and the checks fail if one is missing or differs
+  - `.pkgmeta` no longer leaves the Classic Era, TBC Anniversary and Forever databases out
+
 ## [0.2.245] - 2026-10-24
 
 Data from the PandaQuest portal.

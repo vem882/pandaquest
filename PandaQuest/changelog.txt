@@ -4,6 +4,11 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.246
+- packaging - the CurseForge package made from the repository carries all four games again
+  - every game's TOC is kept in the repository, written from one template
+  - the Classic Era, TBC Anniversary and Forever databases are no longer left out of it
+
 0.2.245
 - database - Wowhead data as the PandaQuest portal read it: 8,712 quests, 62 NPCs, 4 objects
 - quest 2 - Sharptalon's Claw - updated

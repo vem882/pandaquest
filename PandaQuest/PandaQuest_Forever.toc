@@ -1,0 +1,99 @@
+## Interface: 16001
+## Title: |cff5fd7ffPanda|rQuest
+## Notes: Quest helper and navigator for WoW Forever
+## Notes-fiFI: Tehtäväapuri ja navigaattori WoW Foreveriin
+# The series only.  What ships is 0.2.<commits on this repository's main>, computed at package time
+# and stamped into this file and into ## Title (build.py: release_version, stamp_toc); a third
+# component written down here would be one nobody remembers to bump.
+## Version: 0.2.0
+## Author: vem882
+# PandaQuestAH stays although the Auction module is gone: WoW deletes a SavedVariable that is no
+# longer listed here at the next logout, and a player's stored auction scans must not be lost.
+# Nothing reads or writes it any more.
+## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
+## OptionalDeps: TomTom, Questie, QuestieDB
+## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
+## X-Website: https://github.com/vem882/pandaquest
+## X-License: GPL-3.0
+# Release channel: stable. Write beta here to ship a beta (README.md, "The release channel").
+## X-Release-Channel: stable
+## X-Curse-Project-ID: 1735809
+## X-Wago-ID: n6VYMQNd
+# Category is set because Questie sets it, and "Quests" is Questie's own value, so if the client
+# does group by it a player with both installed finds them under one heading.  What 5.5.4 actually
+# does with the field is NOT verified: the only AddOns-list source in the reference trees
+# (Blizzard_AddOnList/Classic_AddonList.lua) builds one flat list from C_AddOns.GetAddOnInfo and
+# never reads Category, and no Blizzard TOC in those trees declares it.
+# X-Category stays beside it: nothing here reads it either, but it is the TOC's namespace for
+# third-party metadata and dropping it would be silent.
+## Category: Quests
+## Category-fiFI: Tehtävät
+## X-Category: Quests & Leveling
+
+Core\Game.lua
+embeds.xml
+Core\Const.lua
+Core\Util.lua
+Core\Log.lua
+Core\Compat.lua
+Core\Thread.lua
+Locales\enUS.lua
+Locales\fiFI.lua
+Locales\deDE.lua
+Locales\esES.lua
+Locales\esMX.lua
+Locales\frFR.lua
+Locales\itIT.lua
+Locales\koKR.lua
+Locales\ptBR.lua
+Locales\ruRU.lua
+Locales\zhCN.lua
+Locales\zhTW.lua
+Database\Schema.lua
+Database\Zones.lua
+Database\Forever\Pending.lua
+Database\Overrides\Community.lua
+Database\QuestieDB.lua
+Database\DB.lua
+Quest\Player.lua
+Quest\QuestLog.lua
+Quest\Objectives.lua
+Quest\Availability.lua
+Quest\Catalog.lua
+Quest\QuestMobs.lua
+Nav\Targets.lua
+Nav\Router.lua
+Nav\Arrow.lua
+Nav\TomTom.lua
+Map\Icons.lua
+Map\MapCompat.lua
+Map\NodeTooltip.lua
+Map\Pins.lua
+Map\Tooltips.lua
+Nodes\Respawn.lua
+Nodes\Professions.lua
+Flight\Routes.lua
+Flight\Eta.lua
+Flight\Tooltip.lua
+UI\Motion.lua
+UI\ReleaseNotes.lua
+UI\Options.lua
+UI\MinimapButton.lua
+UI\FlightBar.lua
+UI\Wowhead.lua
+UI\Tracker.lua
+UI\QuestBrowser.lua
+UI\OptionsRenderer.lua
+UI\MainWindow.lua
+UI\Notify.lua
+UI\DigSiteBar.lua
+Recipes\Store.lua
+Recipes\Scanner.lua
+Recipes\Archaeology.lua
+Sync\Telemetry.lua
+Sync\Character.lua
+Sync\Consent.lua
+Sync\Community.lua
+Core\Init.lua
+# AceAddon modules that create themselves (ns.PQ:NewModule) come after Core\Init.lua, which made ns.PQ.
+Nav\Waypoint.lua
