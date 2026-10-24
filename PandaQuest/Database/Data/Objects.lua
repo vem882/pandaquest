@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.1.0+v1.0.6 (MoP database + corrections from QuestieDB 1.0.6). DO NOT EDIT.
--- Built: 2026-10-16T23:14:25Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.2.0+v1.0.7 (MoP database + corrections from QuestieDB 1.0.7). DO NOT EDIT.
+-- Built: 2026-10-24T11:45:10Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -5065,7 +5065,7 @@ ns.Data.objects = [=[return {
 [179424] = {"[PH] Alliance Graveyard Mid Pre-Banner BIG",nil,nil,{[2597]={{-1,-1}}},2597},
 [179425] = {"[PH] Horde Graveyard Mid Pre-Banner BIG",nil,nil,{[2597]={{-1,-1}}},2597},
 [179426] = {"Gri'lek the Wanderer",nil,nil,{[33]={{24.77,22.88}}},33},
-[179437] = {"Wanted: ORCS!",nil,nil,{[2597]={{-1,-1}}},2597},
+[179437] = {"Wanted: ORCS!",nil,nil,{[2597]={{43.27,16.52}}},2597},
 [179438] = {"Wanted: DWARVES!",{7401},nil,{[2597]={{-1,-1}}},2597},
 [179485] = {"Broken Trap",{27118},{1193,27118},{[10022]={{26.44,57.77},{-1,-1}}},2557},
 [179486] = {"Battered Footlocker",nil,nil,{[11]={{18,34.25},{16.28,33.93},{15.78,39.62},{14.33,35.99},{12.56,41.69},{18.39,31.24},{19.02,37.7},{14.88,42.2},{18.65,41.33},{24.52,39.27},{15.31,36.68},{20.8,31.94},{20.27,39.42},{23.18,31.91},{17.04,40.38},{13.07,40}},[267]={{69.92,63.28},{66.84,61.03},{70.52,61.24}}},11},
