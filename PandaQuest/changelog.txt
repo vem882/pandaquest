@@ -4,6 +4,370 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.247
+- database - rebuilt from Questie 12.2.0+v1.0.7 (was 12.1.0+v1.0.6)
+- database - Wowhead data as the PandaQuest portal read it: 8,700 quests, 62 NPCs, 4 objects
+- quest 216 - Between a Rock and a Thistlefur - updated
+  - reward money removed (15s)
+- quest 236 - Fueling the Demolishers - updated
+  - reward money removed (7g 40s)
+- quest 287 - Frostmane Hold - updated
+  - disabled by quest added
+- quest 313 - Forced to Watch from Afar - updated
+  - reward money removed (1s 75c)
+- quest 333 - Harlan Needs a Resupply - updated
+  - reward money removed (17c)
+- quest 334 - Package for Thurman - updated
+  - disabled by quest added
+- quest 353 - Stormpike's Delivery - updated
+  - reward money removed (7s)
+- quest 432 - Those Blasted Troggs! - updated
+  - reward money removed (3s)
+- quest 476 - Gnarlpine Corruption - updated
+  - reward money removed (1s 25c)
+- quest 487 - The Road to Darnassus - updated
+  - reward money removed (3s)
+- quest 489 - Seek Redemption! - updated
+  - reward money removed (1s 25c)
+- quest 543 - The Perenolde Tiara - updated
+  - reward money removed (1g 50s)
+- quest 583 - Welcome to the Jungle - updated
+  - reward money removed (1s 75c)
+- quest 590 - A Rogue's Deal - updated
+  - objectives added
+  - coordinates: 1 exploration point removed in Tirisfal Glades
+- quest 834 - Winds in the Desert - updated
+  - reward money removed (3s)
+- quest 844 - Plainstrider Menace - updated
+  - reward money removed (5s)
+- quest 845 - The Zhevra - updated
+  - reward money removed (6s)
+- quest 848 - Fungal Spores - updated
+  - reward money removed (14s)
+- quest 867 - Harpy Raiders - updated
+  - reward money removed (9s)
+- quest 875 - Harpy Lieutenants - updated
+  - reward money removed (8s)
+- quest 880 - Altered Beings - updated
+  - reward money removed (6s)
+- quest 903 - Hunting the Huntress - updated
+  - reward money removed (6s)
+- quest 930 - The Glowing Fruit - updated
+  - reward money removed (3s)
+- quest 931 - The Shimmering Frond - updated
+  - reward money removed (3s)
+- quest 997 - Denalan's Earth - updated
+  - reward money removed (1s 50c)
+- quest 2278 - The Platinum Discs - updated
+  - reward money removed (2g)
+- quest 2459 - Ferocitas the Dream Eater - updated
+  - reward money removed (2s 50c)
+- quest 2518 - Tears of the Moon - updated
+  - reward money removed (7s)
+- quest 6388 - Gryth Thurden - updated
+  - description added
+- quest 9463 - Medicinal Purpose - updated
+  - description added
+- quest 9841 - Stinging the Stingers - updated
+  - description added
+- quest 9856 - Windroc Mastery - updated
+  - description added
+  - reward choices: +3
+- quest 10556 - Scratches - updated
+  - description added
+- quest 10640 - Altruis - updated
+  - description added
+- quest 12039 - Black Blood of Yogg-Saron - updated
+  - description added
+- quest 12190 - Say Hello to My Little Friend - updated
+  - description added
+- quest 12218 - Spread the Good Word - updated
+  - description added
+- quest 12253 - Rescue from Town Square - updated
+  - description added
+- quest 12259 - The Thane of Voldrune - updated
+  - description added
+  - reward choices: +5
+- quest 12311 - The Noble's Crypt - updated
+  - description added
+  - reward choices: +4
+- quest 12965 - The Gifts of Loken - updated
+  - description added
+  - reward choices: +4
+- quest 12997 - Into the Pit - updated
+  - description added
+- quest 13007 - The Iron Colossus - updated
+  - description added
+  - reward choices: +4
+- quest 13077 - The Touch of an Aspect - updated
+  - reward money removed (5g 80s)
+- quest 13110 - The Restless Dead - updated
+  - description added
+  - reward choices: +4
+- quest 13117 - Where Are They Coming From? - updated
+  - description added
+- quest 13396 - Futility - updated
+  - description added
+- quest 13906 - They Grow Up So Fast - updated
+  - description added
+- quest 14066 - Investigate the Wreckage - updated
+  - description added
+- quest 14190 - The Perfect Prism - updated
+  - description added
+- quest 24531 - Getting Battle-Ready - updated
+  - description added
+- quest 25955 - A Better Vantage - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 26903 - Willix the Importer - updated
+  - description added
+  - reward choices: +3
+- quest 27144 - The Reckoning - updated
+  - description added
+  - reward money added (50s)
+  - reward choices: +5
+- quest 27237 - Recover the Cargo! - updated
+  - description removed
+  - reward money removed (40s)
+  - reward choices: -2
+- quest 32542 - Surgical Strike - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32659 - Work Order: The Klaxxi II - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32684 - You Want Fish? - updated
+  - description added
+  - reward money added (1g 14s)
+  - reward items: +1
+- quest 32840 - Boom Boom's Fuse - updated
+  - description added
+  - reward money added (5g 70s)
+- npc 384 - Katie Hunter - updated
+  - NPC services added
+- npc 543 - Nalesette Wildbringer - updated
+  - NPC services corrected
+- npc 1261 - Veron Amberstill - updated
+  - NPC services added
+- npc 3362 - Ogunaro Wolfrunner - updated
+  - NPC services added
+- npc 3685 - Harb Clawhoof - updated
+  - NPC services added
+- npc 3956 - Harklan Moongrove - updated
+  - NPC services added
+- npc 4730 - Lelanai - updated
+  - NPC services added
+- npc 4731 - Zachariah Post - updated
+  - NPC services added
+- npc 6737 - Innkeeper Shaussiy - updated
+  - NPC services corrected
+- npc 7952 - Zjolnir - updated
+  - NPC services added
+- npc 7955 - Milli Featherwhistle - updated
+  - NPC services added
+- npc 9087 - Bashana Runetotem - updated
+  - NPC services added
+- npc 9976 - Tharlidun - updated
+  - NPC services corrected
+- npc 9981 - Sikwa - updated
+  - NPC services corrected
+- npc 9982 - Penny - updated
+  - NPC services corrected
+- npc 9989 - Lina Hearthstove - updated
+  - NPC services corrected
+- npc 10047 - Michael - updated
+  - NPC services corrected
+- npc 10057 - Theodore Mont Claire - updated
+  - NPC services corrected
+- npc 10058 - Greth - updated
+  - NPC services corrected
+- npc 10063 - Reggifuz - updated
+  - NPC services corrected
+- npc 11119 - Azzleby - updated
+  - NPC services corrected
+- npc 14624 - Master Smith Burninate - updated
+  - NPC services corrected
+- npc 15131 - Qeeju - updated
+  - NPC services corrected
+- npc 17666 - Astur - updated
+  - NPC services corrected
+- npc 17896 - Kameel Longstride - updated
+  - NPC services corrected
+- npc 18244 - Khalan - updated
+  - NPC services corrected
+- npc 18250 - Joraal - updated
+  - NPC services corrected
+- npc 18984 - Trag - updated
+  - NPC services corrected
+- npc 21517 - Ilthuril - updated
+  - NPC services corrected
+- npc 22469 - Fiskal Shadowsong - updated
+  - NPC services corrected
+- npc 23392 - Skyguard Stable Master - updated
+  - NPC services corrected
+- npc 24067 - Mahana Frosthoof - updated
+  - NPC services corrected
+- npc 24905 - Leassian - updated
+  - NPC services corrected
+- npc 24974 - Liza Cutlerflix - updated
+  - NPC services corrected
+- npc 28057 - Garmin Herzog - updated
+  - NPC services corrected
+- npc 35290 - Steen Horngrass - updated
+  - NPC services corrected
+- npc 43019 - Teldorae - updated
+  - NPC services corrected
+- npc 43379 - Limiah Whitebranch - updated
+  - NPC services corrected
+- npc 43408 - Aili Greenwillow - updated
+  - NPC services corrected
+- npc 43617 - Lursa - updated
+  - NPC services corrected
+- npc 43630 - Drek - updated
+  - NPC services corrected
+- npc 43766 - Roslyn Paxton - updated
+  - NPC services corrected
+- npc 43773 - Stella Boomboom - updated
+  - NPC services corrected
+- npc 43877 - Fina Stillgrove - updated
+  - NPC services corrected
+- npc 43979 - Gravin Steelbeard - updated
+  - NPC services corrected
+- npc 43982 - Vernon Soursprye - updated
+  - NPC services corrected
+- npc 43988 - Carthok - updated
+  - NPC services corrected
+- npc 43994 - Salustred - updated
+  - NPC services corrected
+- npc 44007 - Shep Goldtend - updated
+  - NPC services corrected
+- npc 44354 - Grantor - updated
+  - NPC services corrected
+- npc 44378 - Ajaye - updated
+  - NPC services corrected
+- npc 44382 - Veir - updated
+  - NPC services corrected
+- npc 44384 - Sora - updated
+  - NPC services corrected
+- npc 45297 - Beast-Handler Rustclamp - updated
+  - NPC services corrected
+- npc 45298 - Mule Driver Ironshod - updated
+  - NPC services corrected
+- npc 47934 - Karn Cragcare - updated
+  - NPC services corrected
+- npc 48055 - Deedee Dropbolt - updated
+  - NPC services corrected
+- npc 48095 - Katrina Lyons - updated
+  - NPC services corrected
+- npc 48216 - Hurah - updated
+  - NPC services corrected
+- npc 48887 - Darwishi - updated
+  - NPC services corrected
+- npc 49395 - Shannon Lamb - updated
+  - NPC services corrected
+- npc 49408 - Farah Tamina - updated
+  - NPC services corrected
+- npc 49431 - Ansel Tunsleworth - updated
+  - NPC services corrected
+- npc 49577 - Baird Darkfeather - updated
+  - NPC services corrected
+- npc 49593 - Tarm Deepgale - updated
+  - NPC services corrected
+- npc 49600 - Matthew Churchill - updated
+  - NPC services corrected
+- npc 49689 - Bonnie Hennigan - updated
+  - NPC services corrected
+- npc 49755 - Zay'hana - updated
+  - NPC services corrected
+- npc 49767 - Rukh Zumtarg - updated
+  - NPC services corrected
+- npc 49803 - Kennen - updated
+  - NPC services corrected
+- npc 58718 - Merchant Greenfield - updated
+  - NPC services corrected
+- npc 67558 - Huntsman Blake - updated
+  - NPC services added
+- npc 67881 - Proveditor Grantley - updated
+  - NPC services added
+- npc 69060 - Tuskripper Grukna - updated
+  - NPC services added
+- npc 70030 - Agrant Sharpshot - updated
+  - NPC services corrected
+- npc 70034 - Arnold Raygun - updated
+  - NPC services corrected
+- npc 70346 - Ao Pye - updated
+  - NPC services corrected
+- npc 70436 - Blacktalon Quartermaster - updated
+  - NPC services added
+- npc 72993 - Lao-Chin the Iron Belly - updated
+  - NPC services added
+- npc 72997 - Fei Li - updated
+  - NPC services added
+- npc 73003 - Brewmaster Bo - updated
+  - NPC services added
+- npc 73004 - Brewmaster Blanche - updated
+  - NPC services added
+- npc 73005 - Brewmaster Boof - updated
+  - NPC services added
+- npc 73006 - Brewmaster Chani - updated
+  - NPC services added
+- npc 73007 - Uncle Gao - updated
+  - NPC services added
+- npc 73009 - Brother Yakshoe - updated
+  - NPC services added
+- npc 73010 - Brother Rabbitsfoot - updated
+  - NPC services added
+- npc 73082 - Master Li - updated
+  - NPC services added
+- npc 73142 - Armsmaster Holinka - updated
+  - NPC services added
+- npc 73143 - Hayden Christophen - updated
+  - NPC services added
+- npc 73144 - Lucan Malory - updated
+  - NPC services added
+- npc 73147 - Ethan Natice - updated
+  - NPC services added
+- npc 73305 - Mistweaver Ai - updated
+  - NPC services added
+- npc 73306 - Mistweaver Ku - updated
+  - NPC services added
+- npc 73307 - Speaker Gulan - updated
+  - NPC services added
+- npc 73435 - Grimthorn Redbeard - updated
+  - NPC services added
+- npc 73618 - Brewmaster Tzu - updated
+  - NPC services added
+- npc 73622 - Graceful Swan - updated
+  - NPC services corrected
+- npc 73647 - Sapmaster Vu - updated
+  - NPC services added
+- npc 73649 - Mama Stormstout - updated
+  - NPC services added
+- npc 73651 - Big Dan Stormstout - updated
+  - NPC services added
+- npc 73657 - Great Chef Woo - updated
+  - NPC services added
+- npc 73812 - Brother Noodle - updated
+  - NPC services added
+- npc 73813 - Galu Wellspring - updated
+  - NPC services added
+- npc 73814 - Noodle-Maker Monmon - updated
+  - NPC services added
+- npc 73815 - Hearthminder Digao - updated
+  - NPC services added
+- npc 73816 - Master Miantiao - updated
+  - NPC services added
+- npc 73817 - Smiling Jade - updated
+  - NPC services added
+- npc 73819 - Ku-Mo - updated
+  - NPC services added
+- npc 211332 - Korralin Hoperender - updated
+  - NPC services added
+- npc 211340 - Kolara Dreamsmasher - updated
+  - NPC services added
+- object 179437 - Wanted: ORCS! - updated
+  - coordinates in Alterac Valley: 1 spawn point added, 1 removed
+
 0.2.246
 - packaging - the CurseForge package made from the repository carries all four games again
   - every game's TOC is kept in the repository, written from one template
@@ -1152,570 +1516,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - core - timers that counted every frame now fire only when due (map pins, tooltips, scans)
 - languages - a text a language does not translate now reads in English, not the language before
 - saved data - nothing is moved or renamed; module switches are new keys only
-
-0.2.232
-- database - Wowhead data as the PandaQuest portal read it: 8,534 quests, 51 NPCs, 4 objects
-- quest 8633 - Enigma Robes - updated
-  - description added
-  - reward items: +1
-- quest 10667 - Underworld Loam - updated
-  - description added
-- quest 10775 - Tabards of the Illidari - updated
-  - description added
-- quest 11213 - Check Up on Tabetha - updated
-  - description added
-- quest 12761 - Mastery of the Crystals - updated
-  - description added
-- quest 13598 - Unsavory Remedies - updated
-  - description added
-- quest 14237 - Forward Movement - updated
-  - description added
-- quest 14275 - Someone's Keeping Track of You - updated
-  - description added
-- quest 14303 - Back to Aggra - updated
-  - description added
-- quest 24480 - The Halls Of Reflection - updated
-  - description added
-- quest 24502 - Necessary Roughness - updated
-  - description added
-- quest 27697 - Corruption in Maraudon - updated
-  - description added
-- quest 28460 - Threat of the Winterfall - updated
-  - description added
-  - reward choices: +4
-- quest 31870 - Cassandra Kaboom - updated
-  - description added
-  - reward items: +1
-- quest 31959 - The Empress' Gambit - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31966 - Battle Pet Tamers: Cataclysm - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31967 - Battle Pet Tamers: Cataclysm - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31970 - Grand Master Obalis - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31971 - Grand Master Obalis - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31972 - Brok - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31973 - Bordin Steadyfist - updated
-  - description added
-  - reward money added (9g)
-- quest 31974 - Goz Banefury - updated
-  - description added
-  - reward money added (65s)
-- quest 31975 - The Returning Champion - updated
-  - description added
-  - reward money added (7g 80s)
-- quest 31976 - The Returning Champion - updated
-  - description added
-  - reward money added (35s)
-- quest 31977 - The Returning Champion - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31978 - Priorities! - updated
-  - description added
-  - reward money added (9g 80s)
-- quest 31980 - The Returning Champion - updated
-  - description added
-  - reward money added (7g 80s)
-- quest 31981 - Exceeding Expectations - updated
-  - description added
-  - reward money added (90s)
-- quest 31982 - Exceeding Expectations - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31983 - A Brief Reprieve - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31984 - A Brief Reprieve - updated
-  - description added
-  - reward money added (11g)
-- quest 31985 - The Triumphant Return - updated
-  - description added
-  - reward money added (9g)
-- quest 31986 - The Triumphant Return - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31987 - Theramore - updated
-  - reward money added (9g 40s)
-  - reward items: +1
-- quest 31988 - Daily Selected Scenario - updated
-  - reward money added (11g 40s)
-- quest 31991 - Grand Master Zusshi - updated
-  - description added
-  - reward money added (90s)
-  - reward items: +1
-- quest 31998 - A Worthy Challenge: Sha of Doubt - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 31999 - Nazgrim's Command - updated
-  - description added
-  - reward money added (98s)
-  - reward choices: +9
-- quest 32001 - A Worthy Challenge: Sha of Hatred - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32002 - A Worthy Challenge: Xin the Weaponmaster - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32003 - A Worthy Challenge: Raigonn - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32004 - A Worthy Challenge: Wing Leader Ner'onok - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32005 - A Worthy Challenge: Durand - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32006 - A Worthy Challenge: Flameweaver Koegler - updated
-  - description added
-  - reward money added (45g 60s)
-- quest 32007 - A Worthy Challenge: Darkmaster Gandling - updated
-  - description added
-  - reward money added (34g 20s)
-- quest 32008 - Audrey Burnhep - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 32018 - His Name Was... Stormstout - updated
-  - description added
-  - reward money added (1g 2s)
-- quest 32019 - They Call Him... Stormstout - updated
-  - description added
-  - reward money added (1g 2s)
-- quest 32030 - Once in a Hundred Lifetimes - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32035 - Got Silk? - updated
-  - description added
-  - reward money added (1g 2s)
-- quest 32038 - Stag Mastery - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 32045 - Children of the Water - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 32097 - Short-Supply Reward - updated
-  - reward items: +1
-- quest 32106 - A Winter Veil Gift - updated
-  - reward items: +1
-- quest 32107 - Flying Tiger Gourami - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32108 - Domination Point - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 32109 - Lion's Landing - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 32115 - Shackles of the Past - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32116 - Priorities, People! - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32118 - Taking Advantage - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32119 - It Is A Mystery - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32120 - Legacy of Ogudei - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32121 - The Spirit Trap - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32122 - Ogudei's Lieutenants - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32123 - Death on Two Legs - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32126 - Tear It Up - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32127 - All Dead, All Dead - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32128 - Another One Bites the Dust - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32130 - Good Luck, Have Fun - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32131 - We Require More Minerals! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32132 - Worker Harassment - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32133 - Sentry Wards - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32134 - Hard Counter - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32135 - Hero Killer - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32136 - Work Order: Fuel - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32137 - Runnin' On Empty - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32138 - Work Order: Lumber - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32139 - Stacked! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32140 - Work Order: Iron - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 32141 - Power Metal - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32142 - We Will Rock You - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 91703 - A Celestial Challenge: Flameweaver Koegler - updated
-  - description added
-  - reward money added (45g 60s)
-  - XP added (471,000)
-
-0.2.231
-- database - Wowhead data as the PandaQuest portal read it: 8,461 quests, 51 NPCs, 4 objects
-- quest 11 - Riverpaw Gnoll Bounty - updated
-  - description added
-  - reward choices: +3
-- quest 9035 - Roadside Ambush - updated
-  - description added
-- quest 9541 - Totem of Yor - updated
-  - description added
-- quest 9748 - Don't Drink the Water - updated
-  - description added
-- quest 10321 - Shutting Down Manaforge Coruu - updated
-  - description added
-- quest 10322 - Shutting Down Manaforge Duro - updated
-  - description added
-- quest 10328 - Sunfury Briefings - updated
-  - description added
-- quest 10365 - Shutting Down Manaforge Ara - updated
-  - description added
-  - reward choices: +2
-- quest 11015 - Netherwing Crystals - updated
-  - description added
-- quest 12786 - Thunder Bluff - updated
-  - quest giver added: Grand Apothecary Putress
-  - description added
-- quest 13570 - Remembrance of Auberdine - updated
-  - reward items: +1
-  - reward choices: +3
-- quest 14240 - To the Cliffs - updated
-  - description added
-- quest 14470 - Military Breakthrough - updated
-  - description added
-- quest 24456 - Thunderhorn Cleansing - updated
-  - description added
-- quest 24457 - Rite of Vision - updated
-  - description added
-- quest 26663 - Sinking From Within - updated
-  - description added
-- quest 26703 - Bloodsail's End - updated
-  - description added
-  - reward items: +1
-  - reward choices: +3
-- quest 27326 - The Drums of War - updated
-  - description added
-- quest 27348 - Secure the Cargo! - updated
-  - description added
-- quest 28479 - The Ruins of Kel'Theril - updated
-  - description added
-- quest 31817 - Merda Stronghoof - updated
-  - description added
-  - reward items: +1
-- quest 31828 - Level Up! - updated
-  - description added
-  - reward money added (90s)
-- quest 31830 - Level Up! - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31831 - Level Up! - updated
-  - description added
-  - reward money added (7s)
-- quest 31832 - Level Up! - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31833 - Continue Your Training: Master Woo - updated
-  - description added
-  - reward choices: +3
-- quest 31834 - Begin Your Training: Master Cheng - updated
-  - description added
-  - reward choices: +2
-- quest 31835 - Continue Your Training: Master Kistane - updated
-  - description added
-  - reward choices: +2
-- quest 31839 - Continue Your Training: Master Hsu - updated
-  - description added
-  - reward choices: +3
-- quest 31847 - Better Dead than Dread - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31850 - Eric Davidson - updated
-  - description added
-  - reward money added (90s)
-- quest 31851 - Bill Buckler - updated
-  - description added
-  - reward money added (90s)
-- quest 31852 - Steven Lisbane - updated
-  - description added
-  - reward money added (90s)
-- quest 31853 - All Aboard! - updated
-  - description added
-  - reward money added (98s)
-- quest 31858 - The Peak of Serenity - Continue Your Training - updated
-  - description added
-- quest 31859 - The Peak of Serenity - Continue Your Training - updated
-  - description added
-- quest 31860 - The Peak of Serenity - Continue Your Training - updated
-  - description added
-- quest 31861 - The Peak of Serenity - Continue Your Training - updated
-  - description added
-- quest 31862 - Zonya the Sadist - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31872 - Merda Stronghoof - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31876 - The Inkmasters of the Arboretum - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31877 - The Inkmasters of the Arboretum - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31886 - Dread Space - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31889 - Battle Pet Tamers: Kalimdor - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31891 - Battle Pet Tamers: Kalimdor - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31894 - A Delicate Balance - updated
-  - description added
-  - reward money added (1g 10s)
-- quest 31895 - Better Off Dread - updated
-  - description added
-  - reward money added (1g 14s)
-- quest 31897 - Grand Master Trixxy - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31902 - Battle Pet Tamers: Eastern Kingdoms - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31903 - Battle Pet Tamers: Eastern Kingdoms - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31905 - Grazzle the Great - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31906 - Kela Grimtotem - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31907 - Zoltan - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31909 - Grand Master Trixxy - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31910 - David Kosse - updated
-  - description added
-  - reward money added (90s)
-- quest 31911 - Deiza Plaguehorn - updated
-  - description added
-  - reward money added (90s)
-- quest 31912 - Kortas Darkhammer - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31913 - Everessa - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31914 - Durin Darkhammer - updated
-  - description added
-  - reward money added (90s)
-- quest 31915 - Grand Master Lydia Accoste - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31916 - Grand Master Lydia Accoste - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31917 - A Tamer's Homecoming - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31918 - A Tamer's Homecoming - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31919 - Battle Pet Tamers: Outland - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31920 - Grand Master Antari - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31921 - Battle Pet Tamers: Outland - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31922 - Nicki Tinytech - updated
-  - description added
-  - reward money added (2g 90s)
-- quest 31923 - Ras'an - updated
-  - description added
-  - reward money added (90s)
-- quest 31924 - Narrok - updated
-  - description added
-  - reward money added (2g 90s)
-- quest 31925 - Morulu The Elder - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31926 - Grand Master Antari - updated
-  - description added
-  - reward money added (9g 40s)
-  - reward items: +1
-- quest 31927 - Battle Pet Tamers: Northrend - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31928 - Grand Master Payne - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31929 - Battle Pet Tamers: Northrend - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31930 - Battle Pet Tamers: Pandaria - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31931 - Beegle Blastfuse - updated
-  - description added
-  - reward money added (90s)
-- quest 31932 - Nearly Headless Jacob - updated
-  - description added
-  - reward money added (90s)
-- quest 31933 - Okrut Dragonwaste - updated
-  - description added
-  - reward money added (90s)
-- quest 31934 - Gutretch - updated
-  - description added
-  - reward money added (90s)
-- quest 31935 - Grand Master Payne - updated
-  - description added
-  - reward money added (90s)
-  - reward items: +1
-- quest 31936 - The "Jinyu Princess" Irrigation System - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31937 - "Thunder King" Pest Repellers - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31938 - The "Earth-Slasher" Master Plow - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31941 - Squash Those Foul Odors - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 31942 - It's Melon Time - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 31943 - Which Berries? Witchberries. - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 31944 - Complete Your Training: The Final Test - updated
-  - description added
-  - reward choices: +3
-- quest 31945 - Learn and Grow VI: Gina's Vote - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 31946 - Mung-Mung's Vote III: The Great Carrot Caper - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31947 - Farmer Fung's Vote III: Crazy For Cabbage - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31948 - Nana's Vote II: The Sacred Springs - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31949 - Nana's Vote III: Witchberry Julep - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31951 - Grand Master Aki - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31952 - Battle Pet Tamers: Pandaria - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (80)
-  - reward items: +1
-- quest 31953 - Grand Master Hyuna - updated
-  - description added
-  - reward money added (10g 60s)
-  - reward items: +1
-- quest 31954 - Grand Master Mo'ruk - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31955 - Grand Master Nishi - updated
-  - description added
-  - reward money added (9g 40s)
-  - reward items: +1
-- quest 31956 - Grand Master Yon - updated
-  - description added
-  - reward money added (90s)
-  - reward items: +1
-- quest 31957 - Grand Master Shu - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 31958 - Grand Master Aki - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 32565 - Encroaching Force - updated
-  - description added
-  - reward money added (22g 80s)
-  - reward items: +1
-- quest 33375 - Refining The Vision - updated
-  - description added
 
 0.2.230
 - quest browser - the map on a quest's page stays: its tiles were drawn under the map's own ground
