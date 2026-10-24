@@ -528,6 +528,71 @@ ns.Overrides.wowhead = {
                 "handwriting. Show him this page and see if the writing matches that of the registry " ..
                 "signature.",
         },
+        [81] = {
+            description = "I have taken the extra step of securing not only Dran's packaged ripple in the " ..
+                "barrel, but also the extra bottles of ripple he is purloining. While I may not hold Dran " ..
+                "very highly, there is nothing worse than jostled ripple. You're welcome.\n\nNow, deliver " ..
+                "yon barrel to Dran Droffers in his salvage emporium in Orgrimmar. Pray tell, please " ..
+                "extend my warmest greetings to Malton; let him know that should he ever thirst for fine " ..
+                "drink and finer drinking companions, we would be honored with his visit.",
+            rewardMoney = 14000,
+        },
+        [82] = {
+            description = "All right now, these reports about the bugs... what we know is that they are " ..
+                "draining the water pools that used to be where the Noxious Lair is. What we DON'T know " ..
+                "is, well, everything else.\n\nLet's figure out who our enemy is first! I want you to " ..
+                "head into the Noxious Lair and get some parts off of those critters. Get five from the " ..
+                "Centipaar there and bring them to Alchemist Pestlezugg for him to dink with. With him on " ..
+                "the case, we'll figure out what they are!",
+            rewardMoney = 5000,
+        },
+        [83] = {
+            description = "The Defias gang in Northshire wears burlap masks, but the Defias in Elwynn " ..
+                "wear linen which I can use to make fine linen goods.\n\nBring me red linen bandanas and " ..
+                "I'll use them to fashion something for you.\n\nDefias gang members have camps pocketed " ..
+                "throughout Elwynn.",
+            rewardItems = {{2575, 1}, {983, 1}},
+        },
+        [84] = {
+            description = "Here you go. And when you give this pie to that Billy, you tell him I hope he " ..
+                "chokes on it!",
+        },
+        [85] = {
+            description = "I lost my necklace, and think that guttersnipe Billy Maclure took it! He's " ..
+                "usually scuttling like a rat around the Maclure vineyards east of here.\n\nGet my " ..
+                "necklace back for me, and you'll warm an old widow's heart.",
+        },
+        [86] = {
+            description = "Maybe if I got a pie, I could tell you who has that necklace. And you know, I " ..
+                "think that old Bernice lady at that other farm makes great Pork Belly Pies...\n\nMaybe " ..
+                "if you gave her some chunks of boar meat from the boars that hang around our farms, and " ..
+                "told her what it was for, she'd bake up a pie for you.",
+        },
+        [87] = {
+            description = "I was playing near the Fargodeep Mine, and I think I dropped, er...I mean I " ..
+                "saw, the old lady's necklace. Don't ask me how it got there...it wasn't me!\n\nWell " ..
+                "anyway, I saw this big, gold-toothed kobold pick up the necklace and run into the mine. " ..
+                "Go find that kobold and you'll find the necklace, I swear!",
+            rewardItems = {{1359, 1}},
+        },
+        [88] = {
+            description = "The Brackwells have a prize-winning pig, Princess. The sow is HUGE, and she " ..
+                "got that way from sneaking over here and eating my veggies!\n\nSo before she comes to " ..
+                "our fields...Princess must die! Bring me her collar as proof of the deed and I'll give " ..
+                "you something for your time!\n\nPrincess is usually over at the Brackwell Pumpkin Patch, " ..
+                "to the east and beyond the Maclure farm. Get her before she gets hungry and comes back " ..
+                "here!",
+            rewardChoices = {{1173, 1}, {1182, 1}, {11191, 1}},
+        },
+        [89] = {
+            description = "During the last orc invasion we were forced to smelt our iron down to make " ..
+                "bullets, swords and armor. We sent word to Stormwind for a new shipment of materials but " ..
+                "a band of Redridge gnolls hijacked the caravan and ran off into the hills behind " ..
+                "Lakeshire.\n\nNow we're coming up short on supplies to get this bridge rebuilt. If you " ..
+                "can bring me 5 iron pikes and 5 iron rivets, <name>, I'll make sure you're " ..
+                "rewarded.\n\nNow let's get to work!",
+            rewardChoices = {{1310, 1}, {1303, 1}, {1304, 1}},
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
@@ -894,6 +959,16 @@ ns.Overrides.wowhead = {
                 "him you're prepared to offer a deal. Lure him away and slay him.",
             rewardMoney = 44000,
         },
+        [10274] = {
+            description = "The nether dragons have the same ferocious temperament as their black dragon " ..
+                "forbears, but there is something entirely alien about them. They hatch and mature " ..
+                "rapidly, harnessing the strange energies that forged their kind in the destruction of " ..
+                "Draenor.\n\nThere is so much more I need to know about them, but I believe the powers " ..
+                "may be of use to my own flight. If we can displace the leader of these drakes, Veraku, " ..
+                "with a show of dominance, we can cow the rest of them into submission.",
+            rewardChoices = {{29808, 1}, {29810, 1}, {29811, 1}, {29812, 1}},
+            rewardMoney = 88000,
+        },
         [10275] = {
             description = "I've recalibrated the triangulation device with the information that you " ..
                 "provided from the first point. You'll use it in exactly the same manner to discover the " ..
@@ -947,8 +1022,400 @@ ns.Overrides.wowhead = {
                 "timeway leading to the Black Morass. Go west and then south, past my future self, until " ..
                 "you reach the tunnel that houses the swamp specimens. Cross over and speak with Sa'at.",
         },
+        [10297] = {
+            description = "Beyond this timeway, in the heart of the Black Morass, the Guardian, Medivh, " ..
+                "feverishly works to open the Dark Portal, heralding in the age of orcs upon " ..
+                "Azeroth.\n\nThe Infinite have sent their rift lords to stop this from " ..
+                "happening.\n\nScattered across the morass, rifts will materialize. Infinite will pour " ..
+                "out of the rifts and attempt to destroy Medivh's shields and, ultimately, " ..
+                "Medivh.\n\nKill their rift lords and leaders! Do this until Medivh succeeds. Use this " ..
+                "chrono-beacon should you require aid.",
+        },
+        [10298] = {
+            description = "Return to the child, Andormu, <name>. He awaits you outside this pocket of " ..
+                "time, in the master's lair.\n\nI hear flutterings. The Scale of Sands has shown interest " ..
+                "in your abilities. Perhaps they too would like to speak with you.",
+            rewardChoices = {{29320, 1}, {29322, 1}, {29321, 1}, {29323, 1}},
+        },
+        [10310] = {
+            description = "With the Burning Legion nearby at the fel reaver scrap field, we must do what " ..
+                "we can to stop the flow of demons into the area.\n\nThey have a warp-gate to the south " ..
+                "in an area that they've cleverly named Invasion Point: Destroyer.\n\nI need you to go " ..
+                "with me to the site and keep me safe while I sabotage it.\n\nAfterward, go to the " ..
+                "Midrealm Post to the north inside Eco-Dome Midrealm and apprise Gahruj of our " ..
+                "success.\n\nWe're going to need a friend or two of yours along to help with this.",
+            rewardChoices = {{29978, 1}, {29980, 1}, {29979, 1}},
+            rewardMoney = 88000,
+        },
+        [10311] = {
+            description = "<class>, it is good to see a helpful face around here.\n\nThe Burning Legion " ..
+                "at the nearby fel reaver heap has become more bold, and I am beginning to fear for our " ..
+                "safety here. The demons are constantly receiving reinforcements from Invasion Point: " ..
+                "Destroyer to the south.\n\nMy compatriot, Drijya, has gone down there to scout and see " ..
+                "if he can do something about the Burning Legion's warp-gate.\n\nPlease find and assist " ..
+                "him in any way that you can.",
+        },
+        [10315] = {
+            description = "The blood elves are fools! I'm glad that our trade relations with them have " ..
+                "fallen apart. In all of my travels throughout the cosmos, I have never encountered " ..
+                "beings so selfish.\n\nThey continue to destroy the land around us with their manaforges, " ..
+                "so let's see if we can put a dent in their operations across the bridge at Manaforge " ..
+                "Ara.\n\nTheir nethermancers channel energy to and from the blood gems to stabilize the " ..
+                "flow of power. Go over there and wipe them out!",
+            rewardMoney = 44000,
+        },
+        [10317] = {
+            description = "The blood elves call the mine underneath Manaforge Ara the Trelleum Mine. Ever " ..
+                "since they lost the one underneath Manaforge Ultris, this is where their sole supply of " ..
+                "material for running the forges is coming from.\n\nNeedless to say, it would be a boon " ..
+                "for us to cripple their mining operation. Perhaps we'd even be able to move in and take " ..
+                "it over for ourselves?\n\nWhatever the case, I want you to go in there and deal with " ..
+                "Foreman Sundown. The mine is around the back of the island to the left.",
+        },
+        [10318] = {
+            description = "I used to be the foreman here. But now that I've been demoted, I've come to " ..
+                "realize our pilgrimage from Quel'Thalas to Outland was all a lie.\n\nA lie perpetrated " ..
+                "by Kael'thas to strengthen his forces here in the Netherstorm.\n\nI've tried to convince " ..
+                "my brethren that we should leave, especially with the Burning Legion here, but they are " ..
+                "all too stubborn.\n\nDo me a favor? Kill Overmaster Grindgarr. Then return to your " ..
+                "ethereal and tell him that I am no longer his enemy.",
+            rewardChoices = {{30003, 1}, {30004, 1}, {30005, 1}, {30006, 1}},
+            rewardMoney = 44000,
+        },
+        [10322] = {
+            description = "We've received news from one of the two manaforges that remain operational. " ..
+                "The Sunfury army is losing control of Manaforge Duro.\n\nDroves of errant mana creatures " ..
+                "have been attracted to it by its increased energy production - the manaforge is in " ..
+                "chaos.\n\nAn explosion at Duro has the potential to cause a chain reaction that would " ..
+                "endanger all of Outland. Overseer Athanel is in possesion of the access crystal you need " ..
+                "to safely disable the manaforge.",
+        },
+        [10323] = {
+            description = "One manaforge is all that keeps Tempest Keep functional. After we bring " ..
+                "Manaforge Ara down, Kael will have to resort to depleting whatever energy he's got " ..
+                "stored up.\n\nTravel to Manaforge Ara, in the northwest, and deliver the final blow that " ..
+                "we need by shutting it down.\n\nThe last access crystal is in the possession of Overseer " ..
+                "Azarad. Be warned that we expect heavy opposition in the last of Kael's functional " ..
+                "manaforges. You're likely to need the assistance of reliable friends.",
+            rewardChoices = {{30377, 1}, {30365, 1}},
+            rewardMoney = 44000,
+        },
+        [10328] = {
+            description = "Something about these manaforges has been bothering me, <name>. Naaru " ..
+                "technology is incredibly advanced; it should've taken Kael'thas years to even begin to " ..
+                "understand it.\n\nInformation-gathering on the subject has been difficult as Kael's army " ..
+                "is well disciplined and destroys all evidence of written communication.\n\nWe've been " ..
+                "informed Manaforge Duro is under attack by mana creatures. It is possible that those " ..
+                "defending it have not yet destroyed their briefings. Obtain them and bring them to me.",
+        },
+        [10335] = {
+            description = "I have to get over to the Ruins of Farahlon to start my excavations! The " ..
+                "problem is that the place has been infested by demons!\n\nMaybe you could do some " ..
+                "preliminary work for me?\n\nThere are three locations within the ruins to the northeast " ..
+                "where I want you to place surveying markers. Each is near a draenei banner.\n\nReturn to " ..
+                "me when you've managed to place all three markers.",
+            rewardChoices = {{30255, 1}, {30253, 1}, {30254, 1}},
+            rewardMoney = 44000,
+        },
+        [10336] = {
+            description = "A few weeks ago, the Burning Legion moved into the Ruins of Farahlon, " ..
+                "thwarting our plans to excavate the site for its artifacts.\n\nThen earlier today, I " ..
+                "learned that one of their dreadlords, Culuthas, somehow killed off all of the other " ..
+                "Burning Legion. He has since summoned in demons that serve him.\n\n<class>, I want you " ..
+                "to go up to those ruins to the northeast and rid them of their demon infestation.",
+            rewardMoney = 44000,
+        },
+        [10338] = {
+            description = "So Manaforge Duro is under attack and Sunfury forces have lost control? What a " ..
+                "dilemma! If Duro goes down, then Tempest Keep goes down. Only drawback is... if Tempest " ..
+                "Keep is destroyed, the explosion will probably take what little remains of this forsaken " ..
+                "land with it.\n\nDead Kael'thas is good. Dead everyone else is... not that great, I " ..
+                "suppose. It pains me to ask this of you, but go to Manaforge Duro and shut it down " ..
+                "before it goes up in flames. The access crystal is held by Overseer Athanel.",
+        },
+        [10339] = {
+            description = "Directly south of here you will find the Ethereum Staging Grounds. The " ..
+                "Ethereum are there, preparing for something... Perhaps an assault on Ultris.\n\nWe can't " ..
+                "take any chances, though, <class>. Break through their perimeter defenses and take out " ..
+                "their training facility.\n\nOnce you've destroyed their soldiers and Captain Zovax, " ..
+                "locate Ethereum transponder Zeta and use it to establish contact with me to get your " ..
+                "next set of orders.",
+        },
+        [10341] = {
+            description = "The news you've discovered is fortunate, <name>. Not only do you get to waltz " ..
+                "into Manaforge Duro unfettered, this also presents a great opportunity to deal a blow to " ..
+                "Kael's army.\n\nUse the mana creature assault to your advantage and pick off any Sunfury " ..
+                "stragglers you run into.\n\nI do not take particular glee in the senseless slaughter of " ..
+                "my own kin the way that Thalodien does, but the tactical advantage here is too high to " ..
+                "pass up.",
+            rewardChoices = {{30395, 1}, {30394, 1}, {30396, 1}, {30522, 1}},
+        },
+        [10345] = {
+            description = "You see these corpses, <race>? Arconus is responsible for this slaughter. He's " ..
+                "sucked them dry, leaving nothing more than a fleshy husk. But don't let the bodies fool " ..
+                "you! Inside those corpses lie flesh beasts, waiting to pounce on the unsuspecting fool " ..
+                "that gets too close.\n\nI've got my orders. I must remain here until backup arrives. " ..
+                "That doesn't mean that you can't take my igniter and destroy the withered corpses that " ..
+                "litter the mines. One way or another, the mission must be completed.",
+            rewardChoices = {{30352, 1}, {30341, 1}, {30342, 1}, {30519, 1}},
+        },
+        [10353] = {
+            description = "Araxes and I were deployed to Ultris 2 days ago. Our mission: Find and " ..
+                "terminate the void lord Arconus. We tracked him to this mine and discovered that he'd " ..
+                "been feeding off the energies of the creatures in the area.\n\nA fire-fight broke out " ..
+                "which resulted in Araxes and I separating. Now I'm stuck here, badly injured. The " ..
+                "mission is in shambles!\n\nIf you can take out Arconus, high command would be grateful. " ..
+                "Should you accept this mission, I will assist by providing a reflection of myself as a " ..
+                "guardian.",
+            rewardChoices = {{30329, 1}, {30328, 1}, {30330, 1}, {30517, 1}},
+            rewardMoney = 44000,
+        },
+        [10365] = {
+            description = "You've done much better than any of us anticipated. Manaforge Ara is the last " ..
+                "of Kael's working manaforges. You'll find it northwest of here, though you're likely to " ..
+                "have to do some circumnavigating to get to it. We want you to shut it down.\n\nThe last " ..
+                "access crystal is in the possession of Overseer Azarad. This is Kael's very last source " ..
+                "of energy as far as we know, so expect heavy opposition. I'd bring a couple of friends " ..
+                "along if I were you.\n\nHmm... Azarad. What an odd name for a sin'dorei.",
+            rewardChoices = {{30366, 1}, {30378, 1}},
+            rewardMoney = 44000,
+        },
+        [10380] = {
+            description = "We've been so blind, <name>, that the alliance of two of our most dangerous " ..
+                "enemies went completely unnoticed.\n\nI wouldn't be surprised if the Scryers had " ..
+                "something to do with hiding this information from us, but we must now face the reality. " ..
+                "The Burning Legion and Kael'thas' Sunfury army serve under the same banner.\n\nThese " ..
+                "demons are the only reason Kael'thas was ever able to utilize the technology in Tempest " ..
+                "Keep. Under Orelis's orders I must command you to destroy them.",
+        },
+        [10381] = {
+            description = "My mission here is finished. I did what Orelis ordered me to - I've never " ..
+                "failed to.\n\nNo more. I foresee a great carnage - a crusade, they'll call it - " ..
+                "following the news of this alliance between Kael'thas and the Burning Legion.\n\nFirst " ..
+                "they give our holiest city away to our enemies and then they ask us to die fighting " ..
+                "their enemies. Go back to Orelis; tell him the naaru can fight their own fights from now " ..
+                "on.",
+            rewardChoices = {{30382, 1}, {30379, 1}, {30381, 1}, {30380, 1}},
+        },
+        [10384] = {
+            description = "Look around you, fleshling. Very close to this transponder should be an " ..
+                "Ethereum data cell. Locate that data cell, open it, and retrieve the contents.\n\nBring " ..
+                "it back to this transponder at once!",
+        },
+        [10385] = {
+            description = "They're using relays to transfer information around the staging " ..
+                "grounds.\n\nThere is only one way for you to see these relays and extract the " ..
+                "information they hold. Unfortunately, doing so may cause you irreparable brain " ..
+                "damage.\n\nIf you're still interested, you'll need to slay Ethereum here at the staging " ..
+                "grounds and take their essences. Once you have an essence, drink it down. It will " ..
+                "temporarily allow you to see an Ethereum relay - giving you enough time to destroy a " ..
+                "relay and extract its information.",
+        },
+        [10405] = {
+            description = "We must destroy the machinery that is making these nexus-stalker aberrations " ..
+                "possible. To strike at their proto-accelerator would be futile as it is an ethereal " ..
+                "creation. We must instead destroy the manaforge energy tube that they are using as a " ..
+                "conduit.\n\nI have all that I need to create a device to overload the conduit save for " ..
+                "one item. I need a wrapping from an archon or overlord that might be transforming soon " ..
+                "in order to calibrate the device.",
+        },
+        [10406] = {
+            description = "I'm sending one of my demolitionists out to place the disruption device. Just " ..
+                "make sure no harm comes to him as he's placing the disruptor.\n\nKeep him protected! He " ..
+                "will not fight back if enemies attack him as he is only a holographic image but the " ..
+                "image can be destroyed!\n\nReturn to me once the job is done.",
+            rewardChoices = {{30335, 1}, {30337, 1}, {30336, 1}, {30518, 1}},
+        },
+        [10407] = {
+            description = "The infamous eredar, Socrethar, leads the Burning Legion in Netherstorm. " ..
+                "Mentioning his name is enough to make most draenei shudder. He gives orders from an " ..
+                "island in the northwest that only his most trusted lieutenants can access.\n\nTo get " ..
+                "there you will need to obtain a teleportation stone, which won't be an easy task. The " ..
+                "first half of the stone is in the possession of Forgemaster Morug at Forge Base: " ..
+                "Oblivion. The second half is held by Silroth at Forge Base: Gehenna.",
+            rewardMoney = 44000,
+        },
+        [10408] = {
+            description = "I have in my possession another disruptor, one capable of destroying the three " ..
+                "conduits that surround Salhadaar. Once the conduits are destroyed, Salhadaar's " ..
+                "protective force fields will be down. For this act, he will strike at you with a " ..
+                "ferocity you have never before witnessed, <name>.\n\nIf you are willing to rid the world " ..
+                "of Salhadaar, I will give you the disruptor.",
+            rewardChoices = {{30011, 1}, {30012, 1}, {30010, 1}, {30013, 1}, {30009, 1}},
+            rewardMoney = 132000,
+        },
+        [10409] = {
+            description = "When facing eredar of great power, large armies are useless for the most part. " ..
+                "Their corruptive powers over mortal souls are such that only the strongest-willed can " ..
+                "even stand face to face with them.\n\nTake this stone to the Invasion Point: Overlord, " ..
+                "between Forge Base: Oblivion and Gehenna and bring your closest, strongest friends with " ..
+                "you. Orelis and Karja will meet you at Socrethar's Seat; I will send Adyen along with " ..
+                "them.\n\nMay the Light prevail today, <name>. May Socrethar meet his end.",
+            rewardChoices = {{30368, 1}, {30369, 1}, {30370, 1}, {30371, 1}, {30860, 1}},
+            rewardMoney = 132000,
+        },
+        [10410] = {
+            description = "The time has come to face Socrethar, <name>. Confronting an eredar leader " ..
+                "isn't something that's taken lightly among us. A single mistake is likely to cost us our " ..
+                "lives if we're ill-prepared.\n\nTake Socrethar's teleportation stone to High Priestess " ..
+                "Ishanah at the Shrine of Unending Light in Shattrath City. She will determine how we " ..
+                "need to handle the situation.",
+        },
+        [10411] = {
+            description = "Around the ruined manaforge you will find the run-off of Dimensius's handy " ..
+                "work. Seeping sludge occupies the pools that surround Ultris. Directly below those " ..
+                "pools, where the Ethereum Staging Grounds now stand, you will find even more run-off in " ..
+                "the form of void waste.\n\nThe best method of disposal is to use electro-shock to break " ..
+                "slimes down to globules. Use this elixir to augment your attacks with electricity. The " ..
+                "resultant discharge will break the slimes up into their raw form. Destroy the globules!",
+            rewardMoney = 132000,
+        },
+        [10413] = {
+            description = "You carefully fill a vial with the fallen void horror's ooze.\n\nResearcher " ..
+                "Navuud at the Protectorate Watch Post would be quite interested in such a find! Take it " ..
+                "to him at once!",
+            rewardChoices = {{30338, 1}, {30339, 1}, {30340, 1}},
+            rewardMoney = 88000,
+        },
+        [10416] = {
+            description = "Arcane tomes are not ordinary books that happen to deal with arcane matters. " ..
+                "There is intrinsic power in them - a power I've learned to synthesize into a single " ..
+                "arcane rune.\n\nShould you find an arcane tome in your travels I will give you one such " ..
+                "rune. Only the most powerful wielders of magic carry the books I need. In Outland this " ..
+                "usually means Kael's blood elves - but you'd be surprised by where such tomes often turn " ..
+                "up.",
+            rewardItems = {{29736, 1}},
+        },
+        [10419] = {rewardItems = {{29736, 1}}},
+        [10420] = {
+            description = "This temple is one of the holiest places in all of Outland. The power of the " ..
+                "Light here is so strong, that even items with the strongest fel taint can be cleansed of " ..
+                "a worldly item.\n\nShould you run into any fel armaments in your confrontations with " ..
+                "demonic enemies, bring them to me and I will demonstrate the cleansing power of the " ..
+                "Light.",
+            rewardItems = {{29735, 1}},
+        },
+        [10421] = {rewardItems = {{29735, 1}}},
+        [10422] = {
+            description = "Captain Tyralius took a platoon of soldiers south towards the Ethereum Staging " ..
+                "Grounds 10 days ago. We haven't heard from him or his crew since.\n\nChances are good " ..
+                "that they were ambushed and killed but I'm getting a curious reading from my " ..
+                "instruments.\n\nI think it's a distress signal but these things have been wrong before. " ..
+                "If Tyralius is still alive, they're keeping him in one of their prisons. You'll have to " ..
+                "locate the prison and open it with a key, probably found on the warden.",
+            rewardMoney = 132000,
+        },
+        [10425] = {
+            description = "Thank K'aresh! He would have torn me apart!\n\nI'm a Protectorate soldier, " ..
+                "fleshling. My platoon was sent on a recon mission about 10 days ago. As we were moving " ..
+                "across the upper ledges of this island, a group of Ethereum jumped us. At least I think " ..
+                "it was Ethereum. They had the same energy color but their wrappings looked void.\n\nOnly " ..
+                "Tyralius was spared. I think they put him in a prison cell.\n\nI've got to get back to " ..
+                "the Protectorate Watch Post! Can you escort me back?",
+            rewardChoices = {{30331, 1}, {30332, 1}, {30333, 1}, {30334, 1}},
+        },
+        [10431] = {
+            description = "The Sunfury briefings support the theory that Kael'thas has been receiving " ..
+                "outside help in constructing and running these manaforges. Who this is remains a bit of " ..
+                "a mystery, though we're likely to find out in Manaforge Ara.\n\nI've sent a group of my " ..
+                "men to scout the surrounding area. Go to Tuluman's Landing, north of here, and speak to " ..
+                "Kaylaan. See what he's discovered at Manaforge Ara. Find out who is assisting the " ..
+                "Sunfury army and take care of them.",
+        },
+        [10432] = {
+            description = "As you may have noticed, there are servants of the Burning Legion all over " ..
+                "Manaforge Ara. Kael'thas has entered an alliance with the Burning Legion. He must've " ..
+                "caught wind of Illidan's descent into insanity and switched paymasters " ..
+                "accordingly.\n\nIf the Scryers get definite proof of this, it will give them a " ..
+                "considerable political advantage. I know for a fact that the Legion forces at this " ..
+                "manaforge have orders that bear Kael's seal.\n\nGet these orders and bring them to " ..
+                "Thalodien.",
+        },
+        [10437] = {
+            description = "Atop Manaforge Ultris lies the tear in the nether that the void lord, " ..
+                "Dimensius, came through. That tear provides Dimensius with a link to the void, rendering " ..
+                "him immune to physical harm. If we can get a lock on the conduit that Dimensius is using " ..
+                "to keep himself phased out of this plane of existence, we can destroy it and then " ..
+                "destroy Dimensius.\n\nTo do this, we're going to first need you to collect fragments of " ..
+                "Dimensius from the void creatures that he sends out to do his dirty work.",
+        },
+        [10438] = {
+            description = "Here it is, <name>. Take this phase disruptor and mount up! The Protecotrate " ..
+                "nether drake will fly you close enough to Ultris so that you can drop the disruptor on " ..
+                "top of the void conduit.\n\nDrop as many disruptor charges as possible to ensure " ..
+                "complete annihilation!\n\nWhen you are ready, speak with the nether drake and he'll take " ..
+                "you up.\n\nIf you miss the mark you will have to get more bombs from me before you can " ..
+                "go up again.",
+        },
+        [10439] = {
+            description = "Your brave actions have forced Ameer to react! He has deployed Captain Saeed " ..
+                "and the Avengers!\n\nNow all that is left to do is destroy Dimensius.\n\nWhen you are " ..
+                "ready, I will call for Saeed. If he is not currently fighting another battle, he will be " ..
+                "awaiting orders from you - directly east of here.\n\nLet him know when you are ready to " ..
+                "fight and he will put his troops in motion!\n\nI wish you luck, fleshling! We have " ..
+                "hunted Dimensius for a thousand years!",
+            rewardChoices = {{30297, 1}, {30300, 1}, {30299, 1}, {30298, 1}},
+            rewardMoney = 132000,
+        },
+        [10445] = {
+            description = "Seven vials were drawn from the Well of Eternity by Illidan. He poured three " ..
+                "into the lake on top of Mount Hyjal and a second Well of Eternity was created. For years " ..
+                "the rest were believed lost.\n\nWith the opening of the Dark Portal, we've come to know " ..
+                "that he gave one each to his lieutenants Kael'thas and Vashj. Retrieve what remains of " ..
+                "them; we will need them as foci to open a gateway to any events tied to Mount Hyjal, " ..
+                "recent or ancient. The outcome of the Battle of Mount Hyjal must be preserved.",
+            rewardMoney = 132000,
+        },
+        [10451] = {
+            description = "Thank the Earthmother! I parted ways with the others several days ago. I was " ..
+                "intent on discovering the source of the disturbance that the spirits of water were " ..
+                "feeling. My search led me to Coilskar where I discovered that the naga were befouling " ..
+                "the water supply of Shadowmoon Valley.\n\nUnfortunately, I was discovered and taken " ..
+                "prisoner. There's no telling what ghastly things they had in store for me.\n\nWe must " ..
+                "leave this place! Help me escape and then seek out Torlok at the Altar of Damnation.",
+            rewardChoices = {{30927, 1}, {30952, 1}, {30937, 1}, {30968, 1}},
+            rewardMoney = 132000,
+        },
+        [10458] = {
+            description = "We must try and make amends. We must commune with the elements of this region " ..
+                "and see if anything can be done!\n\nI grant you the totem of spirits, <race>. If you " ..
+                "slay an enraged elemental spirit in close proximity of the totem, it will consume the " ..
+                "elemental's soul. You must use the totem to consume many souls before you may return to " ..
+                "me.\n\nDo this for the spirits of fire and earth first. Return to me when the totem is " ..
+                "full.",
+        },
+        [10460] = {rewardItems = {{29294, 1}}},
+        [10461] = {rewardItems = {{29307, 1}}},
+        [10462] = {rewardItems = {{29298, 1}}},
+        [10463] = {rewardItems = {{29302, 1}}},
+        [10464] = {
+            description = "You've made your pledge, <class>. Now it is up to you to see it " ..
+                "through.\n\nServe the Scale of the Sands well and you will be rewarded.\n\nFail and the " ..
+                "timeline as we know it will be unravelled!",
+            rewardItems = {{29303, 1}},
+        },
+        [10465] = {
+            description = "You've made your pledge, <class>. Now it is up to you to see it " ..
+                "through.\n\nServe the Scale of the Sands well and you will be rewarded. Fail and the " ..
+                "timeline as we know it will be unravelled!",
+            rewardItems = {{29306, 1}},
+        },
+        [10466] = {
+            description = "You've made your pledge, <class>. Now it is up to you to see it " ..
+                "through.\n\nServe the Scale of the Sands well and you will be rewarded. Fail and the " ..
+                "timeline as we know it will be unravelled!",
+            rewardItems = {{29299, 1}},
+        },
+        [10467] = {
+            description = "You've made your pledge, <class>. Now it is up to you to see it " ..
+                "through.\n\nServe the Scale of the Sands well and you will be rewarded. Fail and the " ..
+                "timeline as we know it will be unravelled!",
+            rewardItems = {{29295, 1}},
+        },
     },
-    npcs = {},
+    npcs = {
+        [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
+    },
     objects = {},
     items = {},
 }
