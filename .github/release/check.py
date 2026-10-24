@@ -572,7 +572,8 @@ class CurseForgeReadiness(unittest.TestCase):
         text = plain.decode("utf-8")
         self.assertIn("## Interface: 50504", text)
         self.assertIn("## AllowLoadGameType: mists", text)
-        self.assertFalse((ADDON_DIR / "PandaQuest_Mists.toc").exists(), "the Mists TOC is generated")
+        # Committed beside the plain one, because CurseForge's own packager ships the tree's TOCs.
+        self.assertEqual((ADDON_DIR / "PandaQuest_Mists.toc").read_bytes(), TOC.read_bytes())
 
     def test_the_game_version_is_what_the_toc_says(self) -> None:
         self.assertEqual(curseforge.game_version(50504), "5.5.4")
@@ -709,6 +710,11 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertRegex(meta, r"(?m)^package-as: PandaQuest$")
         self.assertRegex(meta, r"(?m)^  PandaQuest/PandaQuest: PandaQuest$")
         self.assertIn("filename: PandaQuest/changelog.txt", meta)
+        # That package is every game's, like the release zip: no game's database is left out of it.
+        ignored = re.findall(r"(?m)^  - (\S+)$", meta)
+        self.assertNotIn("PandaQuest", ignored)
+        for path in ignored:
+            self.assertFalse(path.startswith("PandaQuest/"), f".pkgmeta leaves {path} out of the webhook package")
         # CurseForge's validator answered "Unknown markup type 'text'" to this key; what the
         # local packager accepts is not what CurseForge accepts, so the key stays out.
         self.assertNotRegex(meta, r"(?m)^\s*markup-type:")
@@ -774,19 +780,23 @@ class CurseForgeReadiness(unittest.TestCase):
 class TheTocFiles(unittest.TestCase):
     """Every TOC is written from one template, and MoP's are today's TOC byte for byte.
 
-    The repository keeps ``PandaQuest.toc`` because CurseForge's own packager ships it as it is;
-    the package's copies come from the template.  So what must hold is that the template, filled
-    for Mists of Pandaria Classic, *is* the repository's TOC -- not "equivalent", the same bytes --
-    and that every other game's TOC lists its own database and no other game's.
+    The repository keeps every game's TOC because CurseForge's own packager ships them as they are
+    and tags the file for each; the release zip writes its copies from the template.  So what must
+    hold is that the template, filled for each game, *is* the repository's TOC -- not "equivalent",
+    the same bytes -- and that every game's TOC lists its own database and no other game's.
     """
 
-    def test_the_repositorys_toc_is_what_the_template_makes(self) -> None:
-        made = build.toc_texts()[f"{build.ADDON}.toc"].encode("utf-8")
-        self.assertTrue(
-            TOC.read_bytes() == made,
-            f"{TOC.name} is not what {build.TOC_TEMPLATE.name} makes: edit the template and run "
-            "python3 .github/release/build.py tocs",
-        )
+    def test_the_repositorys_tocs_are_what_the_template_makes(self) -> None:
+        """Every game's TOC is committed, byte for byte the template's: CurseForge's packager ships them."""
+        for name, text in build.toc_texts().items():
+            path = ADDON_DIR / name
+            self.assertTrue(
+                path.is_file() and path.read_bytes() == text.encode("utf-8"),
+                f"{name} is missing or not what {build.TOC_TEMPLATE.name} makes: edit the template and "
+                "run python3 .github/release/build.py tocs",
+            )
+        committed = sorted(path.name for path in ADDON_DIR.glob("*.toc"))
+        self.assertEqual(committed, sorted(build.toc_texts()), "a TOC in PandaQuest/ that no game in games.py writes")
         self.assertTrue(build.write_tocs(check=True))
 
     ALL_TOCS = ["PandaQuest.toc", "PandaQuest_Camelot.toc", "PandaQuest_Forever.toc", "PandaQuest_Mists.toc",
@@ -936,15 +946,28 @@ class TheTocFiles(unittest.TestCase):
                 build.entries(build.identity(), root)
             self.assertIn("build.py tocs", str(refused.exception))
 
+    def test_a_tree_missing_a_games_toc_is_not_packaged(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build.write_tocs(root=root)
+            (root / "PandaQuest_TBC.toc").unlink()
+            with self.assertRaises(SystemExit) as refused:
+                build.entries(build.identity(), root)
+            self.assertIn("PandaQuest_TBC.toc", str(refused.exception))
+
     def test_tocs_writes_the_template_and_check_writes_nothing(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
-            toc = Path(tmp) / "PandaQuest.toc"
+            root = Path(tmp)
+            toc = root / "PandaQuest.toc"
             toc.write_text("## Interface: 1\n", encoding="utf-8")
-            self.assertFalse(build.write_tocs(check=True, toc=toc))
+            self.assertFalse(build.write_tocs(check=True, root=root))
             self.assertEqual(toc.read_text(encoding="utf-8"), "## Interface: 1\n")
-            self.assertFalse(build.write_tocs(toc=toc))
+            self.assertEqual(sorted(path.name for path in root.iterdir()), ["PandaQuest.toc"])
+            self.assertFalse(build.write_tocs(root=root))
             self.assertEqual(toc.read_bytes(), TOC.read_bytes())
-            self.assertTrue(build.write_tocs(check=True, toc=toc))
+            for name in build.toc_texts():
+                self.assertEqual((root / name).read_bytes(), (ADDON_DIR / name).read_bytes(), name)
+            self.assertTrue(build.write_tocs(check=True, root=root))
 
 
 class TheTranslations(unittest.TestCase):
