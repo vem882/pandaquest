@@ -521,6 +521,62 @@ ns.Overrides.wowhead = {
                 "handwriting. Show him this page and see if the writing matches that of the registry " ..
                 "signature.",
         },
+        [81] = {
+            description = "I have taken the extra step of securing not only Dran's packaged ripple in the " ..
+                "barrel, but also the extra bottles of ripple he is purloining. While I may not hold Dran " ..
+                "very highly, there is nothing worse than jostled ripple. You're welcome.\n\nNow, deliver " ..
+                "yon barrel to Dran Droffers in his salvage emporium in Orgrimmar. Pray tell, please " ..
+                "extend my warmest greetings to Malton; let him know that should he ever thirst for fine " ..
+                "drink and finer drinking companions, we would be honored with his visit.",
+            rewardMoney = 14000,
+        },
+        [82] = {
+            description = "All right now, these reports about the bugs... what we know is that they are " ..
+                "draining the water pools that used to be where the Noxious Lair is. What we DON'T know " ..
+                "is, well, everything else.\n\nLet's figure out who our enemy is first! I want you to " ..
+                "head into the Noxious Lair and get some parts off of those critters. Get five from the " ..
+                "Centipaar there and bring them to Alchemist Pestlezugg for him to dink with. With him on " ..
+                "the case, we'll figure out what they are!",
+            rewardMoney = 5000,
+        },
+        [83] = {
+            description = "The Defias gang in Northshire wears burlap masks, but the Defias in Elwynn " ..
+                "wear linen which I can use to make fine linen goods.\n\nBring me red linen bandanas and " ..
+                "I'll use them to fashion something for you.\n\nDefias gang members have camps pocketed " ..
+                "throughout Elwynn.",
+            rewardItems = {{2575, 1}, {983, 1}},
+        },
+        [84] = {
+            description = "Here you go. And when you give this pie to that Billy, you tell him I hope he " ..
+                "chokes on it!",
+        },
+        [85] = {
+            description = "I lost my necklace, and think that guttersnipe Billy Maclure took it! He's " ..
+                "usually scuttling like a rat around the Maclure vineyards east of here.\n\nGet my " ..
+                "necklace back for me, and you'll warm an old widow's heart.",
+        },
+        [86] = {
+            description = "Maybe if I got a pie, I could tell you who has that necklace. And you know, I " ..
+                "think that old Bernice lady at that other farm makes great Pork Belly Pies...\n\nMaybe " ..
+                "if you gave her some chunks of boar meat from the boars that hang around our farms, and " ..
+                "told her what it was for, she'd bake up a pie for you.",
+        },
+        [87] = {
+            description = "I was playing near the Fargodeep Mine, and I think I dropped, er...I mean I " ..
+                "saw, the old lady's necklace. Don't ask me how it got there...it wasn't me!\n\nWell " ..
+                "anyway, I saw this big, gold-toothed kobold pick up the necklace and run into the mine. " ..
+                "Go find that kobold and you'll find the necklace, I swear!",
+            rewardItems = {{1359, 1}},
+        },
+        [88] = {
+            description = "The Brackwells have a prize-winning pig, Princess. The sow is HUGE, and she " ..
+                "got that way from sneaking over here and eating my veggies!\n\nSo before she comes to " ..
+                "our fields...Princess must die! Bring me her collar as proof of the deed and I'll give " ..
+                "you something for your time!\n\nPrincess is usually over at the Brackwell Pumpkin Patch, " ..
+                "to the east and beyond the Maclure farm. Get her before she gets hungry and comes back " ..
+                "here!",
+            rewardChoices = {{1173, 1}, {1182, 1}, {11191, 1}},
+        },
         [105] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
                 "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
@@ -855,6 +911,7 @@ ns.Overrides.wowhead = {
                 "gauntlets.",
             rewardItems = {{12699, 1}, {12631, 1}},
         },
+        [5125] = {rewardChoices = {{17044, 1}, {17045, 1}}},
         [5126] = {description = "The Satyr paces about and talks to himself. Do you wish to question him?"},
         [5127] = {
             description = "Lorax makes deals, he does not accept them from insignificant mortals.\n\nA " ..
@@ -889,6 +946,402 @@ ns.Overrides.wowhead = {
             description = "A finer instrument of justice, Haleh could not have chosen. Read from the " ..
                 "catalogue of the wayward and be enlightened.\n\nShould you persist... should you do what " ..
                 "is asked of you... should you survive... a hero you will make.",
+        },
+        [5166] = {
+            description = "The forging of a powerful breastplate to protect against the unrelenting " ..
+                "attacks of the chromatic flight is one built upon irony.\n\nThe scales of the very " ..
+                "beasts we battle must be sewn to the pristine carapace of an elder chromatic drake or " ..
+                "dragon. None are known to exist at this time and we should hope that none will ever " ..
+                "exist.\n\nLastly, perhaps the most difficult of all components: the blood of " ..
+                "heroes.\n\nThe Sculptor must ultimately forge this creation.",
+            rewardItems = {{12895, 1}},
+        },
+        [5167] = {
+            description = "The carapace of a mature chromatic drake is needed to form the foundation of " ..
+                "the leggings. Brilliant chromatic scales are then layered upon the wire frame and " ..
+                "enchanted in the blood of heroes. Finally, the supple skin of shadow must be applied to " ..
+                "the inner greaves.",
+            rewardChoices = {{12903, 1}, {12945, 1}},
+        },
+        [5201] = {
+            description = "My presence goes unnoticed by most, <name>. However, there is an annoyance " ..
+                "that seems firmly rooted here in Winterspring: the Winterfall furbolg.\n\nAlthough I " ..
+                "have never directly attacked the furbolg, they seem crazed, fearful of anything in their " ..
+                "path. I have watched them slay countless creatures that had the misfortune to simply be " ..
+                "in the wrong place at the wrong time.\n\nI am weary of their meddling -- please, help me " ..
+                "by fighting back. Slay the furbolg and keep them away from Frostsaber Rock.",
+        },
+        [5206] = {
+            description = "Chromie said the relics you gathered are reagents to a powerful spell, and one " ..
+                "more is required: skulls from the scourge who took part in the battle of " ..
+                "Darrowshire.\n\nTake this crystal and hunt scourge champions for their skulls. The " ..
+                "crystal is enchanted; if a champion took part in the battle, then when you pass the " ..
+                "crystal over its skull it will resonate. Bring me those resonating skulls.\n\nGo, " ..
+                "<name>. You'll find scourge champions in the Noxious Glade to the north and the Fungal " ..
+                "Vale to the west.",
+        },
+        [5212] = {
+            description = "The Forsaken apothecaries are not the only beings in this world schooled in " ..
+                "the sciences.\n\nI have been studying the plague for years, <race>. We had previously " ..
+                "thought that the potency of the plague was dwindling, but what I have discovered here in " ..
+                "the Plaguelands is startling. The plague seems to be growing in strength!\n\nI need to " ..
+                "run more tests! The most potent source of the plague is from the tainted flesh of the " ..
+                "most recently infected. Travel to Stratholme and bring me samples, <name>.",
+            rewardMoney = 18000,
+        },
+        [5213] = {
+            description = "You will have to delve deeper into Stratholme, <name>.\n\nBeyond the first " ..
+                "gates you will find the ziggurats. We know that the Scourge draws great power from these " ..
+                "structures. Search the Ziggurats and return with any information that you may discover.",
+            rewardChoices = {{13209, 1}, {19812, 1}},
+        },
+        [5214] = {
+            description = "Terrible thing... what happened to Ezra. You see, the town was sacked and Ezra " ..
+                "didn't want to leave his precious goods behind. The last thing I remember him saying " ..
+                "was, 'I'll burn every last leaf before they get their damned, dirty hands on them!'\n\nI " ..
+                "may love a good stogie but I'm no fool. I left Ezra and his delightful store that day. I " ..
+                "assume he went down in flames but if there's a chance that even one box of his famous " ..
+                "tobacco is still intact...\n\nWhat do you say, <name>? Find a box for ol' Smokey?",
+            rewardItems = {{13171, 1}},
+        },
+        [5243] = {
+            description = "I look at my undeath as a malady, <race>. An illness that merely requires " ..
+                "treatment; however, it is also a great blessing for the Argent Dawn. What better vessel " ..
+                "to smite the heathens of the Scourge than through the undead?\n\nI am revered by my " ..
+                "colleagues because of the sacrifices I have made, but the accolades mean nothing to " ..
+                "me.\n\nIf you are interested in assisting the Argent Dawn, then a job I can " ..
+                "offer.\n\nVenture to Stratholme and recover our surplus of holy water. Search the supply " ..
+                "crates.",
+            rewardChoices = {{13216, 1}, {13217, 1}},
+            rewardItems = {{3928, 5}, {6149, 5}},
+            rewardMoney = 18000,
+        },
+        [5251] = {
+            description = "Anything taken to an extreme is hazardous to our world, <name>. Take for " ..
+                "example, the Scarlet Crusade. Do you believe that their blind zealotry serves a greater " ..
+                "good? How many innocents have they destroyed in the name of the Light?\n\nBlasphemers, " ..
+                "one and all!\n\nOne in particular interests me, though; the Archivist Galford of " ..
+                "Stratholme: A man that watches over the Crusade's most valued documents. Destroy him and " ..
+                "burn down his archives! Should you succeed, return to me and be rewarded.",
+            rewardMoney = 18000,
+        },
+        [5262] = {
+            description = "You try and gather your thoughts as the dust settles across the chamber. You " ..
+                "go over the events that just transpired and still cannot comprehend the gravity of the " ..
+                "situation.\n\nThe Grand Crusader of the Scarlet Crusade a demon? And not just any demon " ..
+                "but brother to Varimathras, arch lord of the Undercity?\n\nYou carefully stow the " ..
+                "severed head of the dreadlord into your pack. Surely, none would believe the tale you " ..
+                "would tell without proof.\n\nDuke Nicholas Zverenhoff must be told at once!",
+        },
+        [5263] = {
+            description = "You display a natural aptitude for destruction and you follow orders. It is " ..
+                "rare to see the two coexist. I am beginning to think that you may make an excellent " ..
+                "vehicle of divine justice.\n\n<Zverenhoff clasps his hands together in front of his " ..
+                "face.>\n\nKel'Thuzad's errand boy rules over Stratholme. Prove to me that you are a " ..
+                "champion - my champion. Destroy Baron Rivendare and return to me with his head.",
+        },
+        [5264] = {
+            description = "I am about to bestow a great honor upon you, <name>.\n\nLord Maxwell wishes to " ..
+                "reward you for your service to the Argent Dawn!\n\nIt has been years since Maxwell has " ..
+                "granted audience to outsiders.",
+        },
+        [5265] = {
+            description = "Through the years the Argent Hold has remained locked. None have been worthy " ..
+                "to reach inside and take from it the power of the Argent Dawn - until today.\n\nthe " ..
+                "Argent Hold is now open to you, <name>.",
+            rewardChoices = {{13246, 1}, {13243, 1}, {13249, 1}},
+            rewardMoney = 27000,
+        },
+        [5281] = {
+            description = "There are those that died tragically in the fall of Stratholme. Many took " ..
+                "their own lives, opting to hurl themselves into the myriad flames of the smoldering city " ..
+                "rather than become one of the Scourge.\n\nThey now walk the streets of Stratholme as " ..
+                "restless spirits.\n\nWe must aid them, <name>!\n\nI have an associate named Egan who has " ..
+                "been doing miraculous work with ghosts and souls. Seek him out. He walks the eastern " ..
+                "Plaguelands, near Stratholme, testing his innovations.",
+        },
+        [5282] = {
+            description = "I draw my power - my will to continue living and breathing - from the " ..
+                "unmitigated hatred I have for the Scourge and all that they have done. I am, however, no " ..
+                "zealot. There are those, like the Scarlet Crusade, who would sooner destroy the innocent " ..
+                "undead than lend them even an ounce of compassion.\n\nWhich brings me to this: My " ..
+                "blaster. It will unchain the tortured souls from Stratholme.\n\nUse it on the ghosts " ..
+                "that haunt the ransacked streets. Free their souls.",
+            rewardItems = {{13315, 1}},
+            rewardMoney = 18000,
+        },
+        [5305] = {
+            description = "Within the confines of the Scarlet Bastion lies sweet Serenity. The Crimson " ..
+                "Hammersmith guards the recipe with his life. Defeat him and bring me his apron. For " ..
+                "that, I shall train you to become a hammersmith.\n\nUnderstand this: Once you have " ..
+                "chosen the path of the hammersmith, the paths of the swordsmith and axesmith will no " ..
+                "longer be available.",
+            rewardItems = {{12824, 1}},
+        },
+        [5306] = {
+            description = "Don't let her beauty fool you, <class>. The shadow huntress, Vosh'gajin is " ..
+                "deadly and deranged.\n\n< Kilram points to the scar on his face.>\n\nAye, she gave me " ..
+                "that - a love tap, she called it.\n\nThe time for vengeance has finally come.\n\nYou can " ..
+                "find Vosh'gajin in Blackrock Spire. Slay her and return to me with her snakestone. Do " ..
+                "this and I will teach you the ways of the axesmith.",
+            rewardItems = {{12821, 1}},
+        },
+        [5307] = {
+            description = "If I am short with you, it is for a reason. The plans for the creation of the " ..
+                "great blade, Corruption, have been stolen by the Black Guard: Elite skeletal units of " ..
+                "Baron Rivendare.\n\nYes, Baron Rivendare of Stratholme.\n\nThe Black Guard swordsmith " ..
+                "now guards those plans with his... undeath.\n\nSlay him and return proof of this deed " ..
+                "and I shall train you in the ways of the swordsmith.",
+            rewardItems = {{12825, 1}},
+        },
+        [5341] = {
+            description = "Within the Scholomance lays the Barov family fortune. I, Alexi Barov, am one " ..
+                "of the last two remaining heirs of the house Barov. My brother, Weldon, is the " ..
+                "other.\n\nWeldon, the miserable coward, fled during the war and thus retained his " ..
+                "worthless existence as a human.\n\nHe now searches for the deeds so that he may claim " ..
+                "the fortune for his own. Recover the deeds before my brother does and I shall make you " ..
+                "wealthy beyond your wildest dreams!",
+            rewardMoney = 18000,
+        },
+        [5342] = {
+            description = "Naturally, with my brother still alive, there may be some contention as to the " ..
+                "primary beneficiary of the family's fortune. This cannot be.\n\nA low down guttersnipe " ..
+                "like you isn't above a little cold-blooded murder, I hope.\n\nIt's a simple task and one " ..
+                "that I expect you will complete; that is, if you wish to claim your reward.\n\nWeldon " ..
+                "sits under Alliance protection at Chillwind Camp, to the east. Slay him, return his " ..
+                "head.\n\n<Alexi yawns.>\n\nHurry along now.",
+            rewardItems = {{14022, 1}},
+            rewardMoney = 18000,
+        },
+        [5343] = {
+            description = "My dear brother Alexi. What a fool I was to spare his life. I looked into the " ..
+                "face of the enemy, one of the undead, and let him live.\n\n<Weldon spits.>\n\nHe now " ..
+                "searches for MY inheritance. This simply cannot happen.\n\nFind my family's deeds before " ..
+                "that vile retch gets his boney hands upon them and I shall reward you with vast riches. " ..
+                "They lay in the ruins of the Scholomance. Make haste!",
+            rewardMoney = 18000,
+        },
+        [5344] = {
+            description = "With the deeds recovered, there is but one thing left to do. Alexi must be " ..
+                "killed. With him dead, I need not ever worry about an unscrupulous gang of mercenaries " ..
+                "seeking my head.\n\nIt's a simple task. Alexi hides under the protection of the Horde - " ..
+                "at the Bulwark.\n\nNo, I do not expect you to just walk up and kill him, I want his " ..
+                "head! How you get it... well, that part is up to you. That type of behavior is below one " ..
+                "of my noble upbringing.",
+            rewardItems = {{14023, 1}},
+            rewardMoney = 18000,
+        },
+        [5382] = {
+            description = "Krastinov is responsible for the deaths of thousands. He must be punished, " ..
+                "justice must be meted out.\n\nFind him and exact upon him the agony he has inflicted " ..
+                "upon countless innocents. Once he is destroyed, burn our remains. Turn them to ashes, " ..
+                "<name>.",
+        },
+        [5384] = {
+            description = "This is it, <name>.\n\n<Eva points to the vial inside the bag.>\n\nThe blood " ..
+                "of innocents. The purest blood, used to appease Krastinov's master.\n\nIt is with this " ..
+                "blood that Kirtonos may be summoned. It is with this blood, then, that Kirtonos must be " ..
+                "destroyed.\n\nTake the blood to the porch. Place it upon the brazier. Kirtonos will come " ..
+                "- he cannot resist. When he appears, unleash the fury and wrath of a thousand innocent " ..
+                "deaths upon him.\n\nShould you succeed, you will earn more than just our gratitude.",
+            rewardChoices = {{15805, 1}, {15806, 1}},
+            rewardItems = {{13544, 1}},
+        },
+        [5461] = {
+            description = "The undead fear life just as the living fear death. It is not unusual for a " ..
+                "sentient undead being to completely destroy all remnants of his or her previous life " ..
+                "after having turned.\n\nUnfortunately, in order to create an artifact capable of " ..
+                "reverting Ras Frostwhisper to a mortal, we must have a keepsake from his years among the " ..
+                "living.\n\nYou must venture to the ruined city of Stromgarde, Frostwhisper's home, and " ..
+                "search for such an item. May luck be with you, <name>.",
+        },
+        [5462] = {
+            description = "Upon tainted soil, the keepsake must be attuned.\n\nIt is rumored that " ..
+                "Stratholme is where Frostwhisper succumbed to the Lich King. Upon those bloodied grounds " ..
+                "he gave his life - freely and with motive - to become one of the undying.\n\nIt is those " ..
+                "grounds that must be found.\n\nThere is one, an undead dissenter of the Scourge, freed " ..
+                "by the Banshee Queen but loyal to the cause of the Argent Dawn. Find him: Leonid " ..
+                "Barthalomew the Revered. He may know more. Seek out Light's Hope, <name>.",
+        },
+        [5463] = {
+            description = "I watched as the human, Ras Frostwhisper, pledged his undying soul to the Lich " ..
+                "King. He drew the dagger to his own throat and with a smile, cut from ear to ear. His " ..
+                "body collapsed inside the borders of the pentagram. The Lich King stood over the fallen " ..
+                "mage and with a single motion, Ras Frostwhisper the lich, was born.\n\n<Leonid gazes at " ..
+                "the ground and then looks up at you.>\n\nYes, <race>, I remember. What you seek has a " ..
+                "name - Menethil's Gift: The ground blessed by the Lich King - holy ground to Scourge.",
+        },
+        [5464] = {
+            description = "The soul of the fallen clings to that which represents its former life and " ..
+                "transforms the item into a soulbound keepsake. You pick the item up and place it in your " ..
+                "pack.",
+        },
+        [5465] = {
+            description = "Return to Marduke with the keepsake, <name>. He will instruct you in its use.",
+        },
+        [5466] = {
+            description = "There is but one task remaining, <name>. Confront the lich, Ras Frostwhisper, " ..
+                "in his lair.\n\nUse the power of the keepsake against the beast - be unrelenting in your " ..
+                "actions! Weather the blows that the flailing beast will surely bring down upon you. Do " ..
+                "not give in to the pain!\n\nWhen the ritual is complete, Ras will be mortal once more. " ..
+                "It is at that point that he must be slain. Strike him down and take his human head.",
+            rewardChoices = {{13982, 1}, {13986, 1}, {13984, 1}},
+            rewardItems = {{14002, 1}},
+        },
+        [5504] = {
+            description = "Your service to the Argent Dawn is to be commended, <name>. You are truly " ..
+                "revered amongst us. I have been authorized to make available for you to purchase one of " ..
+                "the Dawn's most valued items - our magic resistance mantles.\n\nApplication of a mantle " ..
+                "to your existing shoulder piece will enhance your resistance to the powers of magic in " ..
+                "one of five potential ways. As a sign of continued dedication to our cause, I ask for no " ..
+                "less than ten of our valor tokens in exchange for access to these mantles.",
+        },
+        [5505] = {rewardItems = {{13704, 1}}},
+        [5507] = {
+            description = "Your service to the Argent Dawn is to be commended, <name>. You are truly " ..
+                "revered amongst us. I have been authorized to make available for you to purchase one of " ..
+                "the Dawn's most valued items - our magic resistance mantles.\n\nApplication of a mantle " ..
+                "to your existing shoulder piece will enhance your resistance to the powers of magic in " ..
+                "one of five potential ways. As a sign of continued dedication to our cause, I ask for no " ..
+                "less than ten of our valor tokens in exchange for access to these mantles.",
+        },
+        [5511] = {rewardItems = {{13704, 1}}},
+        [5513] = {
+            description = "Your service to the Argent Dawn is to be commended, <name>. You are truly " ..
+                "revered amongst us. I have been authorized to make available for you to purchase one of " ..
+                "the Dawn's most valued items - our magic resistance mantles.\n\nApplication of a mantle " ..
+                "to your existing shoulder piece will enhance your resistance to the powers of magic in " ..
+                "one of five potential ways. As a sign of continued dedication to our cause, I ask for no " ..
+                "less than ten of our valor tokens in exchange for access to these mantles.",
+        },
+        [5515] = {
+            description = "A great weight has been lifted from our hearts, <name>, but your task is not " ..
+                "yet complete. Krastinov's master, Kirtonos, still lives.\n\nBefore you may face " ..
+                "Kirtonos, however, you must first secure a method in which to summon him.\n\nIt is said " ..
+                "that Jandice Barov stewards the blood of innocents from Krastinov to Kirtonos.\n\nFind " ..
+                "her in the sunken catacombs of Scholomance and strike her down. Bring back any clues " ..
+                "that you may find.",
+        },
+        [5517] = {
+            description = "<Brother/Sister> <name> - your deeds on behalf of the Argent Dawn are far too " ..
+                "numerous to be recounted easily. As a fitting tribute, I'll part with one of our special " ..
+                "Chromatic Mantles of the Dawn - a version that protects the wearer from all forms of " ..
+                "resistible magic simultaneously. Chromatic Mantles of the Dawn are reserved for only the " ..
+                "mightiest of the Dawn's heroes!\n\nBring to me twenty-five valor tokens as a sign of " ..
+                "tribute, and I'll give you the finest of all our mantles.",
+            rewardItems = {{18182, 1}},
+        },
+        [5518] = {
+            description = "If you're going to fight the king of this dump - and I think that's what " ..
+                "you're bound to do - then you're going to need to get by Captain Kromcrush. Now, you can " ..
+                "get by him by killing him, sure. You might actually want to leave him alive.\n\nHow, you " ..
+                "ask? Since I've been here, I think I know how to make an ogre suit that will last just " ..
+                "long enough to fool these bozos. The only problem is stability - ten minutes tops. Bring " ..
+                "me what I need, and I'll make you one. I'm not going anywhere...",
+            rewardItems = {{18258, 1}},
+        },
+        [5519] = {rewardItems = {{18258, 1}}},
+        [5521] = {
+            description = "<Brother/Sister> <name> - your deeds on behalf of the Argent Dawn are far too " ..
+                "numerous to be recounted easily. As a fitting tribute, I'll part with one of our special " ..
+                "Chromatic Mantles of the Dawn - a version that protects the wearer from all forms of " ..
+                "resistible magic simultaneously. Chromatic Mantles of the Dawn are reserved for only the " ..
+                "mightiest of the Dawn's heroes!\n\nBring to me twenty-five valor tokens as a sign of " ..
+                "tribute, and I'll give you the finest of all our mantles.",
+            rewardItems = {{18182, 1}},
+        },
+        [5522] = {
+            description = "I received a message from my master, Vectus. Well, the message wasn't really " ..
+                "from Vectus...it was from someone named Leonid Barthalomew. I don't know Leonid, but he " ..
+                "knew my master, and no one knows my master unless he allows it.\n\nLeonid says Vectus " ..
+                "wants the dragon eggs. He wants you to deliver them to him at the Light's Hope Chapel in " ..
+                "the Eastern Plaguelands.\n\nThat hurts! Why you? Doesn't Vectus trust me? Oh, never " ..
+                "mind... just take the eggs and tell Leonid that I did what our master commanded.",
+        },
+        [5524] = {
+            description = "<Brother/Sister> <name> - your deeds on behalf of the Argent Dawn are far too " ..
+                "numerous to be recounted easily. As a fitting tribute, I'll part with one of our special " ..
+                "Chromatic Mantles of the Dawn - a version that protects the wearer from all forms of " ..
+                "resistible magic simultaneously. Chromatic Mantles of the Dawn are reserved for only the " ..
+                "mightiest of the Dawn's heroes!\n\nBring to me twenty-five valor tokens as a sign of " ..
+                "tribute, and I'll give you the finest of all our mantles.",
+            rewardItems = {{18182, 1}},
+        },
+        [5526] = {
+            description = "Your knowledge of Eldre'Thalas - Dire Maul - in Feralas will now come into " ..
+                "play, <name>. In the eastern part of the ruined city is where Alzzin the Wildshaper has " ..
+                "exerted his corrupt dominion. Go there with all due haste and brave whatever challenges " ..
+                "await you.\n\nThe Fruit of Fertility, now corrupted as the Felvine, should be close to " ..
+                "Alzzin. When he falls, capture whatever essence of the Felvine you can. Seal it in the " ..
+                "Reliquary, and bring it to me.\n\nGood luck, and Cenarion's speed.",
+            rewardChoices = {{18535, 1}, {18536, 1}},
+        },
+        [5527] = {
+            description = "The first step is to find a container capable of holding an extremely " ..
+                "corruptible substance without the handler suffering ill effects. There is only one sort " ..
+                "device I am aware of that could possibly contain something as vile as the Felvine: a " ..
+                "Reliquary of Purity.\n\nDeep in the wasteland of Silithus is the remnants of the night " ..
+                "elf village known as Southwind. I know one was there many, many years ago. If we are to " ..
+                "succeed, I need you to scour those ruins in the hopes of reclaiming it.",
+        },
+        [5528] = {rewardItems = {{18269, 5}, {18284, 5}}},
+        [5531] = {
+            description = "The eggs you brought were to be used in Scourge experiments to create a " ..
+                "plagued dragonflight. These frozen black dragon eggs would have been invaluable in their " ..
+                "studies, and would have assuredly quickened their timetable.\n\nNow, it is time we ended " ..
+                "their research.\n\nTake the frozen eggs to Betina Bigglezink outside. She is " ..
+                "well-learned in science and alchemy, and has produced a weapon we can use against the " ..
+                "Scourge. With your help, we will deal them a heavy blow.",
+        },
+        [5721] = {
+            description = "Now, <name>, you will take part in battle of Darrowshire, and you will save " ..
+                "Joseph Redpath.\n\nPlace this relic bundle in the Darrowshire town square, and the " ..
+                "spirits of Darrowshire will rise. Join their battle and assure that these two things " ..
+                "come to pass: Davil must survive beyond the death of Horgus, and Redpath must survive to " ..
+                "be corrupted, then defeated.\n\nAfter defeating the corrupted Redpath, his spirit will " ..
+                "be saved. Speak with him, then return to his daughter Pamela.",
+            rewardItems = {{15723, 1}},
+        },
+        [5803] = {
+            description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
+                "that he was the former leader of Scholomance before claiming the city as his own. To " ..
+                "finish the key, we will need his signet - called a scarab - mounted as the head of the " ..
+                "key.\n\nMake your way into the heart of Andorhal, and break his hold on the city now " ..
+                "that he is drawn into the open. Once destroyed, seize his scarab from his fallen " ..
+                "phylactery!\n\nThe Key to Scholomance awaits, <name>!",
+        },
+        [5804] = {
+            description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
+                "that he was the former leader of Scholomance before claiming the city as his own. To " ..
+                "finish the key, we will need his signet - called a scarab - mounted as the head of the " ..
+                "key.\n\nMake your way into the heart of Andorhal, and break his hold on the city now " ..
+                "that he is drawn into the open. Once destroyed, seize his scarab from his fallen " ..
+                "phylactery!\n\nThe Key to Scholomance awaits, <name>!",
+        },
+        [5848] = {
+            description = "The painting... It hung on the wall of my workshop - inside the Order's " ..
+                "barracks - for years.\n\nAfter Tirion's trial was over, I knew that I could no longer " ..
+                "keep the painting visible. I hid it in a place that they would never think to " ..
+                "look.\n\nTravel to Stratholme and make your way deep inside what is now the Scarlet " ..
+                "Bastion, search for a painting of our twin moons. Chip away at the paint until you " ..
+                "uncover my master work, ' Of Love and Family.'\n\nMay the Light guide your actions.",
+        },
+        [5861] = {
+            description = "<name>, you have done all that I have asked thus far. Only one step remains in " ..
+                "your quest of redemption.\n\nYou must deliver the items you have collected to Taelan. " ..
+                "Unfortunately, Taelan and his Scarlet Crusaders will attack you on sight.\n\nThere is " ..
+                "only one way in which to deliver my message and that is through a guise of " ..
+                "deception.\n\nTo the south you will find Uther's tomb. An old and trusted confidant of " ..
+                "mine, Myranda, now resides there - seek her out. Show her the items and she will assist " ..
+                "you.",
+        },
+        [9075] = {
+            description = "Would you honor me by returning the armor of those that fell in the defense of " ..
+                "these lands?\n\nThe armor has been desecrated and is undoubtedly being used for evil; " ..
+                "however, with wartorn armor scraps, the desecrated armor can be renewed and worn for " ..
+                "battle once more.\n\nBring me the remnants of the fallen along with purification " ..
+                "materials and Earthshatter shall be yours to don.\n\nSearch Naxxramas.",
+            rewardItems = {{22471, 1}},
         },
     },
     npcs = {},
