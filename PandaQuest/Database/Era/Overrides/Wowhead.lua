@@ -264,6 +264,263 @@ ns.Overrides.wowhead = {
                 "ingredients:\n\n3 Stringy Vulture Meat 3 Goretusk Snouts 3 Murloc Eyes 3 Okra",
             rewardItems = {{733, 3}, {728, 1}, {1479, 1}, {2225, 1}},
         },
+        [39] = {
+            description = "Tell Marshal Dughan of Malakai and Rolf's deaths, and report to him that the " ..
+                "Murlocs in eastern Elwynn cannot be contained by our current troop presence.\n\nI know " ..
+                "we don't have many troops to spare, but hopefully Dughan can find someone.",
+            rewardMoney = 700,
+        },
+        [40] = {
+            description = "<name>, there's a new threat in Elwynn Forest! Murlocs are swimming up the " ..
+                "streams of eastern Elwynn, scaring away fish and attacking gentle folk!\n\nI warned " ..
+                "Marshal Dughan, but he's more worried about the gnolls and the bandits. He's not " ..
+                "convinced that the murlocs are a danger.\n\nPlease, <name>, speak to Dughan and persuade " ..
+                "him to send more troops to the east!",
+        },
+        [45] = {
+            description = "Upon further searching the area, you find webbed footprints leading east along " ..
+                "the shore of Stone Cairn Lake. In the distance to the east, you can just barely see a " ..
+                "Murloc village.\n\nPerhaps Rolf's fate ended there...",
+        },
+        [46] = {
+            description = "The Stormwind Army has placed a bounty on murloc lurkers and foragers in " ..
+                "Elwynn. Slaughter them and bring me their torn murloc fins, and the Stormwind Army will " ..
+                "reward you well.\n\nThe murlocs have built a village at Stone Cairn Lake north of here, " ..
+                "and another to the south where the stream forks.",
+            rewardChoices = {{4840, 1}, {1158, 1}, {1008, 1}},
+        },
+        [47] = {
+            description = "The Kobolds in these parts sometimes carry Gold Dust on them. I could really " ..
+                "use the stuff - bring me a load of it and I'll give you the best price in town...best " ..
+                "price in town!\n\nYou can find kobolds in the Fargodeep Mine to the south, and around " ..
+                "the Jasperlode Mine to the northeast.",
+            rewardItems = {{1191, 1}},
+            rewardMoney = 175,
+        },
+        [48] = {
+            description = "In the land to the south where vines twist and creep Lies a hidden well where " ..
+                "the water runs deep Pure as the Light's sacred Daughter Bring to me now some Holy Spring " ..
+                "Water.",
+            rewardMoney = 6500,
+        },
+        [49] = {
+            description = "Amber is the hue of my life's longest love Like the last embers of dusk in the " ..
+                "sky above Retrieve for me so that my love shall be born One sack of each: barley, rye " ..
+                "and corn.",
+            rewardMoney = 12500,
+        },
+        [50] = {
+            description = "I'll mix and mix till we have a mash For this will be our own private stash A " ..
+                "still must be fashioned of metal strong Bring me some Truesilver so I can finish this " ..
+                "song.",
+            rewardMoney = 12500,
+        },
+        [51] = {
+            description = "Not yet filtered but freshly distilled Like unseeded land waiting there " ..
+                "tilled. Next I will fashion our pile of charcoal Deliver a sycamore branch, that is your " ..
+                "next goal.",
+            rewardMoney = 12500,
+        },
+        [52] = {
+            description = "Hail, <name>. Wild animals are growing more and more aggressive the farther we " ..
+                "get from Goldshire, and the Eastvale Logging Camp suffers nearly constant attacks from " ..
+                "wolves and bears!\n\nWe could use your help out here.",
+            rewardItems = {{858, 2}},
+            rewardMoney = 250,
+        },
+        [53] = {
+            description = "Mellifluous liquid clear as a baby's tears Turns a lovely deep amber over the " ..
+                "years But before we proceed to get lit to the hilt A barrel of charred oak must be built.",
+            rewardItems = {{744, 1}},
+        },
+        [54] = {
+            description = "<name>, you are a <class> with proven interest in the security of Northshire. " ..
+                "You are now tasked with the protection of the surrounding Elwynn Forest.\n\nIf you " ..
+                "accept this duty, then I have prepared papers that must be delivered to Marshal Dughan " ..
+                "in Goldshire. Goldshire lies along the southern road, past the border gates.",
+            rewardItems = {{6078, 1}},
+        },
+        [55] = {
+            description = "Morbent Fel hides in his lair, the house perched atop the hill to the east " ..
+                "overlooking the Raven Hill cemetery. His time in this land is drawing to an " ..
+                "end...\n\nUse Morbent's Bane against him. It will render his protective magics " ..
+                "powerless.\n\nSlay him. Slay him, and save us from his wickedness. Be the instrument of " ..
+                "my revenge, and a hero of Duskwood!",
+            rewardChoices = {{2954, 1}, {2953, 1}, {1282, 1}},
+            rewardItems = {{7344, 1}},
+        },
+        [56] = {
+            description = "As Commander of The Night Watch it is my sworn duty to protect the citizens of " ..
+                "Darkshire. Stormwind has retracted their commissioned guards from their posts here, " ..
+                "leaving us to our own devices.\n\nIf you feel worthy of the task, we need your help! " ..
+                "Assist The Night Watch by venturing forth into Tranquil Gardens, just south of " ..
+                "Darkshire, and slaying 8 Skeletal Warriors and 6 Skeletal Mages. The undead threat must " ..
+                "be thwarted!",
+            rewardMoney = 1700,
+        },
+        [57] = {
+            description = "<name>, I'm getting reports of an undead infestation in the forest! If you're " ..
+                "up to the job, journey to the Raven Hill graveyard and slay 15 of those vile Skeletal " ..
+                "Fiends and 15 Skeletal Horrors. There are also reports of skeletons just south of " ..
+                "Darkshire, in and around Tranquil Gardens Cemetery. The undead must be driven from " ..
+                "Duskwood!",
+            rewardMoney = 2000,
+        },
+        [58] = {
+            description = "The situation in Raven Hill is still grim. The safety of Darkshire is in your " ..
+                "hands, <name>. I don't have enough Watchers to keep the town safe. We need you to " ..
+                "dispatch for Raven Hill yet again and rid the eastern mausoleum of 20 Plague Spreaders!",
+            rewardChoices = {{3604, 1}, {3605, 1}, {1729, 1}},
+            rewardMoney = 2500,
+        },
+        [59] = {
+            description = "For your shrewdness and valor, I have a marker here that is good for one piece " ..
+                "of armor. I want you to take it to Sara Timberlain at the Eastvale Logging Camp. Give " ..
+                "her the marker, and she will fashion the armor for you. And after you receive it, " ..
+                "<name>, use it in the defense of Elwynn.\n\nThe Eastvale Logging Camp is beyond Guard " ..
+                "Thomas' post to the east.",
+            rewardChoices = {{1171, 1}, {2237, 1}},
+        },
+        [60] = {
+            description = "Hello, <good sir/my lady>! Do you have a moment?\n\nMy brother and I run an " ..
+                "apothecary in Stormwind, and I'm here to gather large candles for their wax. Can you " ..
+                "help me?\n\nYou can get large candles from kobolds, and I hear rumors that kobolds are " ..
+                "infesting the Elwynn mines... the Fargodeep mine to the south and Jasperlode Mine to the " ..
+                "east. I suggest looking for candles in one of those places.",
+            rewardItems = {{1434, 5}},
+            rewardMoney = 125,
+        },
+        [61] = {
+            description = "My brother Morgan is waiting in Stormwind for my shipment of candles. I don't " ..
+                "have enough time to make the trip myself, but if you'd like to take him the shipment, " ..
+                "he'll pay you well.\n\nI've packed up the candles, and you can find Morgan in our shop, " ..
+                "Pestle's Apothecary, in the Stormwind Trade District.",
+            rewardChoices = {{1178, 15}, {1177, 5}, {2454, 2}},
+            rewardMoney = 350,
+        },
+        [62] = {
+            description = "The mine in Northshire isn't the only one with problems! I have reports that " ..
+                "the Fargodeep Mine in Elwynn has also become a haven for Kobolds.\n\nExplore the mine " ..
+                "and confirm these reports, then return to me. The mine is almost due south of Goldshire, " ..
+                "between the Stonefield and Maclure homesteads.",
+            rewardMoney = 125,
+        },
+        [63] = {
+            description = "Along the coast of Silverpine, west of the Sepulcher, you will find a shrine " ..
+                "that has become tainted by the plague. The spirits there no longer speak to our people " ..
+                "and it will be up to you to defeat the manifestation and cleanse the pool.\n\nTake the " ..
+                "elemental's bracers, along with the remaining drops of Brine's potion, and place them on " ..
+                "the brazier. The ritual should be enough to summon a pure spirit for you to communicate " ..
+                "with.\n\nBring me proof the task is done, and I will reward you with your totem.",
+        },
+        [64] = {
+            description = "It was horrible! Verna woke me when she heard a ruckus in the fields. The " ..
+                "fields were full of hooligans. We left in a rush and I forgot to pack my pocket watch. " ..
+                "Verna's pa gave me that watch on our wedding day and I feel just sick knowing those " ..
+                "thieves have it. I left the pocket watch in the wardrobe at the farmhouse. Look for the " ..
+                "field of pumpkins to the West -- you can't miss it. If you bring it back to me, I'd sure " ..
+                "be grateful!",
+            rewardItems = {{4541, 10}, {1179, 10}},
+        },
+        [65] = {
+            description = "The band of wretches responsible for driving the good people of Westfall from " ..
+                "the land call themselves The Defias Brotherhood. I need you to infiltrate this clan of " ..
+                "thugs. We need to know who heads up the cartel and where they are hiding out. In " ..
+                "Lakeshire, in the inn, there is a rogue by the name of Wiley who owes me a " ..
+                "favor.\n\nTravel to Lakeshire in the Redridge Mountains, east of Elwynn, and find out " ..
+                "what you can.",
+        },
+        [66] = {
+            description = "Last night a horrible disturbance rippled through my veins. I sensed that my " ..
+                "granddaughter, Alyssa, was in great danger. I consulted the cards and Death stared up at " ..
+                "me from the table.\n\nAfter taking a long journey through a dark trance I was able to " ..
+                "uncover a clue to this terrifying mystery. A name came to me, the name of " ..
+                "Stalvan.\n\nSeek out the Clerk in the Town Hall and see if you can find out more about " ..
+                "this character. I fear for us all.",
+        },
+        [67] = {
+            description = "Stalvan, eh? Let me check the town registry.\n\nStalvan...Stalvan...let's see. " ..
+                "Ah, here we go! I have a record of a Mr. Stalvan Mistmantle. The last recorded address " ..
+                "is the Moonbrook Schoolhouse. My, talk about outdated!\n\nDo me a favor will you, " ..
+                "friend? If you happen to go out to Moonbrook, let me know if you get any update on this " ..
+                "fellow. I like to keep the records clean.",
+        },
+        [68] = {description = "You find a Dusty Unsent Letter in the old footlocker."},
+        [69] = {
+            description = "Oh my! Must have missed this the first time. In the registry, right beneath " ..
+                "the first address for Stalvan there's another one listed, only partially scratched out. " ..
+                "Looks like he was headed to The Lion's Pride Inn over in Goldshire. Might want to check " ..
+                "there, <name>.",
+        },
+        [70] = {
+            description = "The name Stalvan rings a bell. I remember now.\n\nMany years back, on a stormy " ..
+                "night, a messenger came in, seeking refuge for the night. Near the stroke of midnight, " ..
+                "the man ran down the stairs screaming, his face pale with fear. Still wearing his " ..
+                "bedclothes, he disappeared into the downpour.\n\nIn his haste he forgot his letters in " ..
+                "the chest upstairs. He never returned for them. One remains from that Stalvan fellow, " ..
+                "intended for the Canal District in Stormwind. Help yourself to it.",
+        },
+        [71] = {
+            description = "Now that you have both medallions, deliver them to Guard Thomas at the bridge " ..
+                "so that he might know the fate of his murdered guards.",
+        },
+        [72] = {
+            description = "My father was the caretaker of the estate long before I was. He had to mop the " ..
+                "blood up after the massacre. But that's neither here nor there.\n\nThe last funds of the " ..
+                "Flintridge trust have dried up. Now the last of the family possessions are headed for " ..
+                "auction. Blame the tax vultures. I guess if you're really itching to learn more you're " ..
+                "free to look through this junk. Who knows what you might find.",
+        },
+        [74] = {
+            description = "Inside the crate you find various objects: musty heirlooms, a family portrait, " ..
+                "a few hunting trophies and some old books. Near the bottom, underneath a ceramic vase, " ..
+                "you uncover A Torn Journal Page.",
+        },
+        [75] = {
+            description = "There was a bundle of parchments in the chest upstairs when I moved into this " ..
+                "place. I looked at them once when I first arrived but I gave up once the fog hazed over " ..
+                "my peepers.\n\nDo an old, nearly-blind man a favor and check the chest upstairs for " ..
+                "anything that might help you in your quest to discover more about this Stalvan " ..
+                "character. I'm pretty sure there's a faded journal page that might be of interest to " ..
+                "you. Bring it to me and I'll help in anyway I can.",
+        },
+        [76] = {
+            description = "Thanks to you we know the Fargodeep Mine is infested with kobolds. Now we need " ..
+                "a scout to investigate the more distant Jasperlode Mine.\n\nExplore Jasperlode and " ..
+                "confirm any kobold presence. To reach the mine, travel east along the road until you " ..
+                "reach the Tower of Azora. From the tower, head north and you'll find the mine in the " ..
+                "foothills.",
+            rewardMoney = 350,
+        },
+        [77] = {
+            description = "I possess original packaging materials for the ripple Dran Droffers seeks. I " ..
+                "will assist you in packaging the ripple for Malton's abrasive father... for a fee of two " ..
+                "additional bottles of said ripple. They are located in crates found in the abandoned " ..
+                "Horde base near Skulk Rock.\n\nIt will be an arduous task, to wit; foul slimes and oozes " ..
+                "will be found sticking to the ruins; rumor has it they are led by some sort of master " ..
+                "ooze. Regardless, procure the ripple and return to me here for packaging.",
+        },
+        [78] = {
+            description = "I know of someone who might be able to assist you. Back when I was leading the " ..
+                "Stormwind Guard, we used to get drinks at the Scarlet Raven Tavern in Darkshire. The " ..
+                "Innkeeper there, Smitts, was quite an expert on the local lore. Show him this page and " ..
+                "see what he has to say about it.",
+        },
+        [79] = {
+            description = "I followed the legend of that Stalvan character for years. When those visiting " ..
+                "nobles were slaughtered a few years back I went with Haggard to investigate. I found " ..
+                "these muddy pages but we were never able to link the handwriting to that crazy man in " ..
+                "the woods. Your trail of evidence proves his guilt. Take this to Commander Ebonlocke " ..
+                "immediately and fill her in on what you've discovered!",
+            rewardItems = {{939, 1}},
+        },
+        [80] = {
+            description = "I have had my eye on that creep, Stalvan, for quite sometime. But if this page " ..
+                "was written by the same hand it proves his guilt beyond a shadow of a doubt.\n\nIn all " ..
+                "his days keeping the Town Registry, Clerk Daltry has become an expert at identifying " ..
+                "handwriting. Show him this page and see if the writing matches that of the registry " ..
+                "signature.",
+        },
         [105] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
                 "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
@@ -305,8 +562,347 @@ ns.Overrides.wowhead = {
                 "out to the Crimson Veil and speak with him below decks. She's anchored off the Wild " ..
                 "Coast east of here, next to the Riptide and the Damsel's Luck.",
         },
+        [2741] = {rewardItems = {{8647, 1}}},
+        [2743] = {
+            description = "Let us not mince words, <race>; my time here is limited.\n\nYou must destroy " ..
+                "the triad of power which protects the demon lord, Razelikh. Doing so will not be as " ..
+                "simple a task as freeing a damned soul.\n\n<Kirith grins.>\n\nYou see, each of " ..
+                "Razelikh's underlings wears a third of an amulet of Razelikh's creation around their " ..
+                "neck. The very same amulet you will need in order to summon the arch demon.\n\nReturn to " ..
+                "Trebor and tell him what is required to summon Razelikh. He will be able to instruct you " ..
+                "further.",
+        },
+        [2744] = {
+            description = "The triad is protected by Razelikh.\n\nIn exchange for their servitude, " ..
+                "Razelikh granted each of them nearly unlimited power within the Blasted Lands. The " ..
+                "amulet pieces are each attuned to the lifeforce of their owner, granting them " ..
+                "immortality. As long as they remain within the Blasted Lands, they cannot be slain, " ..
+                "their life spans extended until the end of days.\n\nThere is one who may be able to " ..
+                "assist you further, <name>. Travel to Azshara and find the demon hunter, Loramus " ..
+                "Thalipedes. Search the islands.",
+        },
+        [2747] = {rewardItems = {{9541, 1}}},
+        [2748] = {rewardItems = {{9540, 1}}},
+        [2749] = {rewardItems = {{9539, 1}}},
+        [3627] = {
+            description = "To reach the Defiler, you must first destroy the triad of power and recover " ..
+                "the amulet pieces. When you recover all three pieces, return to me and I shall give you " ..
+                "further instruction.\n\nGo <name>! To the Blasted Lands! Sevine, Allistarj, and Grol " ..
+                "must fall!",
+        },
+        [3628] = {
+            description = "Razelikh's lair is atop the highest mountain in the Blasted Lands. The only " ..
+                "way to the lair is through the use of the teleport runes near the mountain. As long as " ..
+                "you hold the amulet, you can freely transport up to the lair. Once you reach the lair, " ..
+                "you must conjure the beast. The amulet is your key, <name>. Use it on the Altar of the " ..
+                "Defiler.\n\nShould you defeat the Defiler, bring back his horn. It will become a symbol " ..
+                "of hope for all that view it - proof that heroes do exist in this war torn world.",
+            rewardItems = {{10778, 1}, {10779, 1}, {10959, 1}},
+            rewardMoney = 27000,
+        },
+        [4004] = {
+            description = "You have slain my husband, <race>! My child will be born into this world " ..
+                "without a father.\n\n<Princess Moira points directly at you.>\n\nI assure you, this " ..
+                "child will be the next ruler of the kingdom of Ironforge. You and your kind shall be " ..
+                "hunted down until the end of days for this wrongful act.\n\n<You think that Princess " ..
+                "Moira may be suffering from the residual effect of Thaurissan's spell.>\n\nLeave me be, " ..
+                "<race>. I am certain your warchief will be eager to hear the results of his meddling.",
+            rewardChoices = {{12544, 1}, {12545, 1}},
+            rewardMoney = 27000,
+        },
+        [4621] = {
+            description = "Listen close, sea dawg... the powers of Booty Bay is what keeps us Bloodsail " ..
+                "from sailing wheres we like and taking whats we want as rights o' plunder. Were ye to " ..
+                "put a knife to Fleet Master Seahorn, we'd ne'er run afoul of a Booty Bay 's vessel. Were " ..
+                "ye to put a knife to Baron Revilgaz, we'd ne'er face the law on their terms.\n\nIf ye " ..
+                "are to be an honorary admiral amongst us - yes, ADMIRAL, you'll puts a knife to both of " ..
+                "'em as I've says. Go now <lad/lass>, and return to me once ye does the deeds.",
+            rewardItems = {{12185, 1}},
+        },
+        [4734] = {
+            description = "<name>, I've been working hard on a new device, the eggscilloscope! It's " ..
+                "designed to project a burst of cold energy at the egg of a black dragon... and freeze it " ..
+                "solid! Can you test it for me?\n\nI heard that high up in Blackrock Spire, the dragons " ..
+                "have a rookery where they hatch their eggs. That's where you'll have to go to test the " ..
+                "eggscilloscope, and then let me know how it worked!\n\nAnd don't worry. Frozen dragon " ..
+                "eggs should be harmless. It's the unfrozen ones you have to worry about!",
+            rewardItems = {{12144, 1}},
+            rewardMoney = 18000,
+        },
+        [4735] = {
+            description = "<name>, I'm finally ready for real samples of dragon eggs! Here, take this " ..
+                "collectronic module. It's designed to extract a dragon egg and prepare it for transport. " ..
+                "Go back to the Rookery and use the module to collect eggs.\n\nAnd don't forget to freeze " ..
+                "them first, or they might hatch before you can collect them!\n\nWhen you have enough " ..
+                "eggs, bring them to me!",
+            rewardMoney = 27000,
+        },
+        [4742] = {
+            description = "As you can see, the unadorned seal has three empty sockets. Each of those " ..
+                "sockets must be filled with a gemstone representing the leadership's command. Finally, " ..
+                "Overlord Wyrmthalak, master of the lower citadel, must forge the seal in the flames of " ..
+                "the Black Dragonflight.\n\nUnderstand this, mortal: the chance that one of the three " ..
+                "generals of the lower citadel would carry a gemstone at any given time is rare. You must " ..
+                "be vigilant in your quest. Remain determined!",
+        },
+        [4743] = {
+            description = "Few of the black dragonkin, outside of those in the upper citadel, have the " ..
+                "ability to forge the seal with their own flaming breath. Wyrmthalak is one such " ..
+                "dragonkin, but his will is unbreakable.\n\nYou must travel to the Wyrmbog in Dustwallow " ..
+                "Marsh. It is there that you will find an ancient drake known as Emberstrife. You must " ..
+                "break his will, <name>. Break it and use this orb on his weakened form. You will have " ..
+                "scant seconds to control his mind and fan the flames that will forge the seal.",
+            rewardItems = {{12344, 1}},
+        },
+        [4764] = {
+            description = "There is a chamber, high in Blackrock Spire, that was once called the Hall of " ..
+                "Fortune. It was where the Dark Iron dwarves kept their relics, trophies and objects of " ..
+                "art.\n\nThat was long ago. It is said the hall has collapsed and is now used for... less " ..
+                "savory tasks. But I believe some old dwarven relics may still be found there.\n\nOne " ..
+                "such relic is Doomrigger's clasp, with a surface so encrusted with rare gems that it was " ..
+                "said to make weep any dwarf who gazes upon it.\n\nThat clasp, <name>, is your goal.",
+        },
+        [4765] = {
+            description = "I have packaged Doomriggers Clasp into a crate, suitable for shipment to " ..
+                "Stormwind. <name>, you have been extremely helpful -- can I ask you for one last " ..
+                "favor?\n\nDeliver the crate to Count Remington Ridgewell. You will find him in the Keep " ..
+                "of Stormwind. I am sure he'll be very pleased to see what you have for him.",
+            rewardChoices = {{15861, 1}, {15860, 1}},
+            rewardMoney = 27000,
+        },
+        [4766] = {
+            description = "An agent of mine, Mayara Brightwing, was sent to the Burning Steppes to scout " ..
+                "the ruined city of Thaurissan. That destroyed city of the Dark Iron dwarves may hide " ..
+                "objects of great value... objects that would fit nicely into our family " ..
+                "museum.\n\nMayara says she found something and will need aid in retrieving it, but it is " ..
+                "not in Thaurissan. Instead, a foray into Blackrock Spire will be required.\n\nI do not " ..
+                "know the details, but if interested then speak with Mayara in the Burning Steppes.",
+        },
+        [4768] = {
+            description = "The Darkstone Tablet holds the writings of the long-dead dwarf Urheld " ..
+                "Darkstone. An alchemist of great skill, he was thought insane by his contemporaries and, " ..
+                "hence, did not share his research.\n\nBut he did etch it onto tablets, and I believe one " ..
+                "such tablet lies in Blackrock Spire, in a chamber once named the Hall of Fortune. I know " ..
+                "not what it is now called, for few enter Blackrock and return.\n\nBut if you are willing " ..
+                "to brave its dangers and return to me with the tablet, your reward will be great.",
+            rewardChoices = {{15861, 1}, {15860, 1}},
+            rewardMoney = 27000,
+        },
+        [4769] = {
+            description = "Vivian Lagrave sent me word from Kargath, in the Badlands. Through her " ..
+                "studies, she believes there is an ancient text within Blackrock Spire that would benefit " ..
+                "our research. To confirm this, she will need someone to extract the text from the spire. " ..
+                "No easy task.\n\nIf interested, then speak with Vivian in Kargath.",
+        },
+        [4771] = {
+            description = "I've placed Dawn's Gambit in the container you brought to us, the one that " ..
+                "held the dragon eggs. Your job is to bring it deep within the Scholomance.\n\nThe undead " ..
+                "mage Vectus leads a team of scourge scholars... place Dawn's Gambit in their chamber, " ..
+                "called the \"viewing room.\" It will then react with the undead found there and, with a " ..
+                "little luck, destroy them!\n\nAfter that, defeating Vectus shouldn't be a problem. Right?",
+            rewardChoices = {{15853, 1}, {15854, 1}},
+            rewardMoney = 27000,
+        },
+        [4801] = {rewardItems = {{12450, 3}}},
+        [4802] = {rewardItems = {{12451, 3}}},
+        [4803] = {rewardItems = {{12455, 3}}},
+        [4804] = {rewardItems = {{12457, 3}}},
+        [4805] = {rewardItems = {{12459, 3}}},
+        [4806] = {rewardItems = {{12460, 3}}},
+        [4807] = {rewardItems = {{12458, 3}}},
+        [4866] = {
+            description = "It's probably one of the most potent poisons in the world, <race>!\n\nI've " ..
+                "overheard the Blackrock speaking about its lethality in my jaunts into the Spire. They " ..
+                "call it 'Mother's Milk', named after Mother Smolderweb, the big nasty spider in the " ..
+                "Skitterweb cave.\n\nNow here's what I need from you: A live sample of the Milk, flowing " ..
+                "through YOUR veins. Just bringing me the gland won't be enough! Get her to poison you " ..
+                "and come back to me!\n\nThen... I get to milk ya!\n\n<Rubs his hands together in " ..
+                "anticipation.>",
+            rewardItems = {{15873, 1}},
+            rewardMoney = 18000,
+        },
+        [4867] = {
+            description = "Argh! So hard to speak!\n\nTake this note! Get me my mojo!",
+            rewardItems = {{15867, 1}},
+        },
+        [4903] = {
+            description = "By order of Warlord Goretooth, the following inhabitants of Blackrock Spire " ..
+                "must be destroyed:\n\nThe rotund menace, Highlord Omokk.\n\nThe cruel and ruthless " ..
+                "troll, War Master Voone.\n\nOverlord Wyrmthalak, taskmaster of the lesser city.\n\nYou " ..
+                "will also be required to return any important documents that you may find.\n\nSucceed " ..
+                "and be honored.\n\nFail and be forgotten.",
+            rewardChoices = {{13958, 1}, {13959, 1}, {13961, 1}, {13962, 1}, {13963, 1}},
+            rewardMoney = 18000,
+        },
+        [4907] = {
+            description = "Hi, <name>. Remember Tinkee Steamboil? Well, she remembers you! She sent me a " ..
+                "message to keep an eye out for you, because... she needs your help again. I think it has " ..
+                "something to do with her studies on dragons.\n\nYou should speak to her in the Burning " ..
+                "Steppes, at the Flame Crest.",
+        },
+        [4941] = {
+            description = "Rend lives?\n\nImpossible!\n\nIt had been thought that Rend was slain decades " ..
+                "ago.\n\nSeek out the wisdom of Eitrigg, <name>. None know the workings of the Blackrock " ..
+                "better than he and if what is written here bares truth, Eitrigg should be informed. No " ..
+                "person should be denied the right of vengeance.\n\nYou will find him in " ..
+                "Orgrimmar.\n\nOnce you have spoken with Eitrigg, confer with the Warchief to find out " ..
+                "what he wishes to do about this problem.",
+        },
+        [4970] = {
+            description = "If you wish to prove yourself, you may begin by doing a very simple, but very " ..
+                "important task.\n\nGather meat from the chimaera and from the shardtooth bears in the " ..
+                "area. Bring it to me so that I may use it to feed the frostsabers that are being trained.",
+        },
+        [4974] = {
+            description = "Rend dares make such grand claims because of the protection he is afforded by " ..
+                "the black flight.\n\nYou, <name>, will find a way to pass through the Halls of " ..
+                "Ascension. You will then find 'Warchief' Rend Blackhand and you will destroy him - FOR " ..
+                "THE HORDE!\n\n< Thrall slams a fist down upon his throne.>\n\nThe next time you return " ..
+                "to my chambers, you will hold his head high in triumph and then you shall present it to " ..
+                "your Warchief. Do this and be honored as a hero of the Horde.",
+            rewardChoices = {{13966, 1}, {13968, 1}, {13965, 1}},
+            rewardMoney = 27000,
+        },
+        [5047] = {
+            description = "You'll find Malyfous Darkhammer in Everlook, <class>. Tell him that 'Pip is " ..
+                "A-OK' and that the suit works perfectly.\n\nThen hand him this:\n\n<Pip hands you a " ..
+                "glowing piece of flesh.>\n\nI snatched it from the beast's innards during my " ..
+                "'vacation.'\n\nI bet Malyfous could give you a fairly accurate assessment of what he can " ..
+                "do with parts from a monster like this!\n\nOh, I suppose you don't know where Everlook " ..
+                "is, do you? To Winterspring, <fella/lady>!",
+        },
+        [5056] = {
+            description = "In northern Winterspring, great cats assemble around a large landmark called " ..
+                "Frostsaber Rock. The leader of these cats is known by the name Shy-Rotam. Defeating the " ..
+                "matriarch of the frostsabers would grant you much respect in the eyes of your fellow " ..
+                "<race>.\n\nGo again to the harsh wilds, and once there, gather sacred meat from the " ..
+                "frostsabers. Find the stone of Shy-Rotam, and place it there. Placing the meat of her " ..
+                "kin before her will summon Shy-Rotam, in anger.\n\nBe ready for her fury, and defeat her.",
+            rewardChoices = {{15783, 1}, {15782, 1}},
+        },
+        [5057] = {
+            description = "Before you spoke to me, <name>, I had heard of your endeavors... that you had " ..
+                "an unyielding desire to prove yourself, that you had an exceptional ability as a " ..
+                "<class>, and I now know these things to be the truth.\n\nThose that excel as you do are " ..
+                "worthy of recognition. Take this marker to a friend of mine in Thunder Bluff named Melor " ..
+                "Stonehoof. I'm sure he will remember you, and what you accomplished so long ago. Speak " ..
+                "to him of you recent victories, and do not ever forget what you have accomplished today.",
+            objectivesText = {"Bring Storm Shadowhoof 's Marker to Melor Stonehoof in Thunder Bluff."},
+            rewardItems = {{15704, 1}},
+        },
+        [5063] = {
+            description = "A finer cap you may never see. From the pristine hide of the beast, our expert " ..
+                "crafters will create the most phenomenal hat a prestidigitator could ever hope to " ..
+                "don!\n\nFifty gold pieces along with the listed items and your head shall be graced with " ..
+                "the Cap of the Scarlet Savant:\n\n*The pristine hide of the beast.\n\n* Frayed " ..
+                "abomination stitchings.\n\n* Arcane crystals.\n\n* Enchanted scarlet thread.\n\nBEHOLD!",
+            rewardItems = {{12752, 1}},
+        },
+        [5067] = {
+            description = "While the crafting of such an item has never successfully been accomplished, " ..
+                "it is thought to be possible - under the right circumstance.\n\nShould the seeker of " ..
+                "arcanum desire to imbue leggings with immense power, the following they must find:\n\n* " ..
+                "The pristine hide of the Beast.\n\n* Frayed abomination stitchings.\n\n* Arcanite " ..
+                "Bars.\n\n* Frostwhisper's embalming fluid.\n\nBEHOLD!",
+            rewardItems = {{12756, 1}},
+        },
+        [5068] = {
+            description = "It is said that only one Breastplate of Bloodthirst has ever been created and " ..
+                "that it was made for the legendary assassin, Garona. Whether this world will ever see " ..
+                "another is doubtful.\n\nRegardless! Our master crafters can reproduce the item given the " ..
+                "necessary components:\n\n*The pristine hide of the Beast.\n\n* Frayed abomination " ..
+                "stitchings.\n\n* Arcanite bars.\n\n*The skin of shadow.\n\nBEHOLD!",
+            rewardItems = {{12757, 1}},
+        },
+        [5081] = {
+            description = "This information fills in the gaps to our otherwise impeccable intelligence of " ..
+                "Blackrock Spire.\n\nThe attack must be decisive, <name>.\n\nFirst their war master, the " ..
+                "troll Voone, must be destroyed. Without his battle plans, the Blackrock orcs will be " ..
+                "thrown into chaos.\n\nYou must then take out the ogre Highlord, Omokk. The cowardly " ..
+                "ogres of Blackrock are powerless without his leadership.\n\nLastly, the overlord of the " ..
+                "citadel: Wyrmthalak. With Wyrmthalak dead, their central command unit is without a " ..
+                "conduit.",
+            rewardChoices = {{13958, 1}, {13959, 1}, {13961, 1}, {13962, 1}, {13963, 1}},
+            rewardMoney = 18000,
+        },
+        [5089] = {
+            description = "From the corpse of the defeated serpent you uncover what appears to be a note " ..
+                "of some importance: A letter from his superior, General Drakkisath, concerning " ..
+                "protocol.\n\nYour instinct tells you that you should take it to Marshal Maxwell.",
+        },
+        [5102] = {
+            description = "We battle against these beasts on two fronts: From our capital of Stormwind we " ..
+                "fight them from the inside out and here, in the Burning Steppes, we take the battle to " ..
+                "their doorstep. We must be vigilant, <name>. None should be spared our wrath as none of " ..
+                "our own were spared when they struck at our homes and families.\n\nFind this General " ..
+                "Drakkisath and destroy him!\n\nThe task certainly will not be a simple one, but the " ..
+                "rewards shall be extravagant.",
+            rewardChoices = {{13966, 1}, {13968, 1}, {13965, 1}},
+            rewardMoney = 27000,
+        },
+        [5103] = {
+            description = "The only thing that remains of this human are some charred bones. He seems to " ..
+                "have died within arms reach of what he was after - unfired plate gauntlets.\n\nPerhaps " ..
+                "you should grab the gauntlets and get out of the fire?",
+        },
+        [5124] = {
+            description = "By Thaurissan's beard!\n\nWhere did you find them?\n\nMore importantly, are " ..
+                "you willing to part with them? Naturally, I would pay you for such a noble " ..
+                "gesture.\n\nI'll tell you what, <name>. If you give me those unfired gauntlets, I will " ..
+                "teach you how to make a set all your own. All you need to do is collect the parts for me " ..
+                "so that I may narrow down the exact recipe.\n\nDo we have a deal??\n\nHere's the list of " ..
+                "what I need, I'll front the non-enchanted thorium myself since you're supplying the " ..
+                "gauntlets.",
+            rewardItems = {{12699, 1}, {12631, 1}},
+        },
+        [5126] = {description = "The Satyr paces about and talks to himself. Do you wish to question him?"},
+        [5127] = {
+            description = "Lorax makes deals, he does not accept them from insignificant mortals.\n\nA " ..
+                "deal I shall make with you, however... take this pike, it is imbued with powerful Fel " ..
+                "energies. When you find Goraluk Anvilcrack, slay him and drive this pike through his " ..
+                "dying heart. His soul he bartered, his soul I shall have. Return the pike and return the " ..
+                "breastplate that the thief stole and I shall teach you what it is that he was to learn.",
+            rewardItems = {{12696, 1}, {9224, 5}, {12849, 1}},
+        },
+        [5160] = {
+            description = "Travel to Kalimdor, <race>. Our flight makes its home in the frigid landscape " ..
+                "of Winterspring. Once you reach Winterspring, find the caves of Mazthoril.\n\nUpon the " ..
+                "icy floors of Mazthoril you will find cobalt runes. Hold one of my scales and stand upon " ..
+                "a rune and you shall be transported to Haleh, our matron protectorate.\n\nGive her the " ..
+                "scale so that she may scry what it is I have seen and felt, here in this doomed place.",
+        },
+        [5161] = {
+            description = "We understand what the cursed brood of Deathwing attempts to do and we know " ..
+                "that it cannot be allowed.\n\nBecause of the protection Blackrock mountain affords " ..
+                "Nefarian, it has become increasingly difficult for us to intercede.\n\nWe can, however, " ..
+                "empower you, mortal - should you so choose.\n\nThe path before you is one full of peril. " ..
+                "You must decide whether to accept our help. Ponder this and speak with me again when a " ..
+                "decision has been made.",
+        },
+        [5162] = {
+            description = "It is the arcane that I control and the arcane which will send you to your " ..
+                "next destination.\n\nWhen you are ready, the journey will begin. To the Plaguelands you " ..
+                "will go and to Jeziba you will speak.\n\nHe is a mortal as wise as the ancients and as " ..
+                "patient as the immovable earth. Find him in Andorhal.",
+        },
+        [5164] = {
+            description = "A finer instrument of justice, Haleh could not have chosen. Read from the " ..
+                "catalogue of the wayward and be enlightened.\n\nShould you persist... should you do what " ..
+                "is asked of you... should you survive... a hero you will make.",
+        },
     },
     npcs = {},
-    objects = {},
+    objects = {
+        [105570] = {
+            spawns = {
+                [36] = {
+                    {11.7, 73.8}, {12.3, 79.4}, {12.4, 79.5}, {12.6, 79.4}, {14.9, 75.3}, {17.7, 56.4},
+                    {17.7, 56.5}, {18, 77.2}, {19.9, 57.6}, {20, 57.3}, {21.3, 62.6}, {21.4, 62.3},
+                    {21.7, 59.4}, {21.7, 59.5},
+                },
+            },
+            zoneID = 36,
+        },
+    },
     items = {},
 }
