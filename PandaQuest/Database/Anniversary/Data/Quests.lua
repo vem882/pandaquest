@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.1.0+v1.0.6 (TBC Anniversary database + corrections from QuestieDB 1.0.6). DO NOT EDIT.
--- Built: 2026-10-16T23:14:25Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.2.0+v1.0.7 (TBC Anniversary database + corrections from QuestieDB 1.0.7). DO NOT EDIT.
+-- Built: 2026-10-24T11:45:10Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -279,7 +279,7 @@ ns.Data.quests = [=[return {
 [284] = {"The Search Continues",{nil,{261}},{nil,{142151}},20,25,1101,nil,{"Search for the Menethil Statuette."},nil,nil,nil,nil,{281},nil,nil,nil,11,nil,nil,nil,nil,285,8,nil,nil,{{72,25}}},
 [285] = {"Search More Hovels",{nil,{142151}},{nil,{259}},20,25,1101,nil,{"Continue searching the Murloc hovels for the Menethil Statuette."},nil,nil,nil,nil,{284},nil,nil,nil,11,nil,nil,nil,nil,286,8,nil,nil,{{72,75}}},
 [286] = {"Return the Statuette",{nil,{259}},{{1242}},20,25,1101,nil,{"Bring Karl Boran the Menethil Statuette."},nil,nil,2625,nil,{285},nil,nil,nil,11,nil,nil,nil,nil,nil,nil,nil,nil,{{72,150}}},
-[287] = {"Frostmane Hold",{{1252}},{{1252}},7,9,1101,nil,{"Explore Frostmane Hold, and kill 5 Frostmane Headhunters for Senir Whitebeard in Kharanos."},{"Fully explore Frostmane Hold",{{{21.47,52.2}}}},{{{1123}}},nil,nil,{},nil,nil,nil,1,nil,nil,nil,nil,291,12,2,nil,{{47,150},{54,150}}},
+[287] = {"Frostmane Hold",{{1252}},{{1252}},7,9,1101,nil,{"Explore Frostmane Hold, and kill 5 Frostmane Headhunters for Senir Whitebeard in Kharanos."},{"Fully explore Frostmane Hold",{{{21.47,52.2}}}},{{{1123}}},nil,nil,{},nil,nil,nil,1,nil,nil,nil,nil,291,12,2,nil,{{47,150},{54,150}},nil,nil,nil,nil,nil,nil,nil,nil,nil,420},
 [288] = {"The Third Fleet",{{1239}},{{1239}},22,27,1101,nil,{"Buy First Mate Fitzsimmons a Flagon of Mead."},nil,{nil,nil,{{2594}}},nil,nil,nil,nil,nil,nil,11,nil,nil,nil,nil,289,8},
 [289] = {"The Cursed Crew",{{1239}},{{1239}},22,29,1101,nil,{"Kill 13 Cursed Sailors, 5 Cursed Marines and First Mate Snellig. Bring Snellig's Snuffbox to First Mate Fitzsimmons in Menethil Harbor."},nil,{{{1157},{1158}},nil,{{3619}}},nil,nil,{288},nil,nil,nil,11,nil,nil,nil,nil,290,8,nil,nil,{{54,75},{72,150}}},
 [290] = {"Lifting the Curse",{{1239}},{nil,{112948}},22,30,1101,nil,{"Get the Intrepid Strongbox Key from Captain Halyndor.","","Use the key to open the Intrepid's Locked Strongbox."},nil,{nil,nil,{{2629}}},nil,nil,{289},nil,nil,nil,11,nil,nil,nil,nil,292,8,nil,nil,{{72,75}}},
@@ -322,7 +322,7 @@ ns.Data.quests = [=[return {
 [331] = {"Report to Doren",{{1422}},{{469}},30,37,1101,nil,{"Speak with Lieutenant Doren."},nil,nil,nil,nil,{330},nil,nil,nil,33,nil,nil,nil,nil,nil,8,nil,nil,{{72,250}}},
 [332] = {"Wine Shop Advert",{{1432}},{{1431}},1,2,1101,nil,{"Go to the Gallina Winery, and bring Suzetta Gallina the Wine Ticket for a free bottle of wine."},nil,nil,2722,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,nil,nil,nil,nil,{{72,150}}},
 [333] = {"Harlan Needs a Resupply",{{1427}},{{1428}},1,2,1101,nil,{"Go to the Canal Tailor Shop and bring Rema Schneider the Cloth Request from Harlan Bagley."},nil,nil,2724,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,nil,nil,nil,nil,{{72,75}}},
-[334] = {"Package for Thurman",{{1428}},{{1429}},1,2,1101,nil,{"Go to the Larson Clothiers in the Stormwind Mage Quarter, and give Thurman Schneider his Sewing Kit."},nil,nil,2760,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,nil,nil,nil,nil,{{72,150}}},
+[334] = {"Package for Thurman",{{1428}},{{1429}},1,2,1101,nil,{"Go to the Larson Clothiers in the Stormwind Mage Quarter, and give Thurman Schneider his Sewing Kit."},nil,nil,2760,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,nil,nil,nil,nil,{{72,150}},nil,nil,nil,nil,nil,nil,nil,nil,nil,333},
 [335] = {"A Noble Brew",{{1435}},{{1435}},25,30,1101,nil,{"Zardeth the Black Claw wants you to bring him a Tear of Tilloa from Darkshire and a Musquash Root from the Wetlands."},nil,{nil,nil,{{2779},{2784}}},nil,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,336,8},
 [336] = {"A Noble Brew",{{1435}},{{1439}},25,30,1101,nil,{"Take the Black Claw Stout to Lord Wishock in the Hall of Petitioners."},nil,nil,2788,nil,{335},nil,nil,nil,1519,nil,nil,nil,nil,397},
 [337] = {"An Old History Book",{nil,nil,{2794}},{{1440}},20,25,1101,nil,{"Return the book: The History of Stormwind, to the Stormwind Library."},nil,nil,2794,nil,nil,nil,nil,nil,10,nil,nil,nil,nil,538,nil,nil,nil,{{72,150}}},
@@ -570,7 +570,7 @@ ns.Data.quests = [=[return {
 [587] = {"Up to Snuff",{{2488}},{{2488}},37,41,0,nil,{"Deeg in Booty Bay wants you to bring him 15 shares of Snuff."},nil,{nil,nil,{{3910}}},nil,nil,{597},nil,nil,nil,33,nil,nil,nil,nil,nil,8,nil,nil,{{21,250},{87,-250}}},
 [588] = {"The Fate of Yenniku",{nil,{2076}},{{2519}},38,45,690,nil,{"Speak with Kin'weelay."},nil,nil,nil,{585,586},nil,nil,nil,nil,33,nil,nil,nil,nil,589,8,nil,nil,{{530,25}}},
 [589] = {"The Singing Crystals",{{2519}},{{2519}},30,45,690,nil,{"Bring 3 Pulsing Blue Shards to Kin'weelay at the Grom'gol Base Camp."},nil,{nil,nil,{{3911}}},nil,nil,{588},nil,nil,nil,33,nil,nil,nil,nil,591,8,nil,nil,{{530,250}}},
-[590] = {"A Rogue's Deal",{{6784}},{{6784}},1,5,690,nil,{"Defeat Calvin Montague in Deathknell."},{"Defeat Calvin Montague",{[85]={{38.19,56.74}}}},nil,nil,nil,{8},nil,nil,nil,154,nil,nil,nil,nil,nil,2,2,nil,{{68,75}}},
+[590] = {"A Rogue's Deal",{{6784}},{{6784}},1,5,690,nil,{"Defeat Calvin Montague in Deathknell."},nil,{{{6784}}},nil,nil,{8},nil,nil,nil,154,nil,nil,nil,nil,nil,2,2,nil,{{68,75}}},
 [591] = {"The Mind's Eye",{{2519}},{{2519}},30,46,690,nil,{"Bring the Mind's Eye to Kin'weelay at the Grom'gol Base Camp."},nil,{nil,nil,{{3616}}},nil,nil,{589},nil,nil,nil,33,nil,nil,nil,nil,592,8,nil,nil,{{530,350}}},
 [592] = {"Saving Yenniku",{{2519}},{{2497}},30,46,690,nil,{"Bring the Filled Soul Gem to Nimboya."},nil,{nil,nil,{{3913}}},3912,nil,{591},{593},nil,nil,33,nil,nil,nil,nil,nil,nil,nil,nil,{{530,350}}},
 [593] = {"Filling the Soul Gem",{{2530}},{{2530}},38,46,690,nil,nil,nil,{nil,nil,{{3912}}},nil,nil,nil,nil,nil,nil,33,nil,nil,nil,nil,nil,8,1,592},
