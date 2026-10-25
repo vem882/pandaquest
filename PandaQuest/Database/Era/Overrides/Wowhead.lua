@@ -886,6 +886,14 @@ ns.Overrides.wowhead = {
                 "friends...and when he reads it and discovers what you did for me...I'm sure he'll be " ..
                 "just as happy as I am! Hahahaha!",
         },
+        [162] = {
+            description = "I urge you to take this report to someone who has working knowledge in this " ..
+                "kind of thing.\n\nI know this night elf scholar named Gracina Spiritmight. She's spent a " ..
+                "lot of time studying life forms that are unique to the ecology of Azeroth; she's a " ..
+                "historian to boot! If you want someone to help figure out what exactly this threat is, " ..
+                "and more importantly how to stop it, give her the report. We'll need the help.\n\nLast I " ..
+                "heard, she was residing in the Temple of the Moon, located in Darnassus.",
+        },
         [181] = {
             description = "Now there is just one more item needed to complete this device. Cog's " ..
                 "blueprint calls for a lens of some sort. The only lens I know of that would be large " ..
@@ -1072,6 +1080,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{4987, 1}},
             rewardMoney = 12500,
         },
+        [809] = {
+            description = "Since the last great war when the Burning Legion was defeated, I have searched " ..
+                "for sources of demonic corruption in orc society. The collar you brought me confirms my " ..
+                "fears.\n\nIt belongs to the Burning Blade, a cult that rallies around an item of demonic " ..
+                "power. It is called the Demon Seed, and it resides in the Barrens atop Dreadmist Peak. " ..
+                "It must be destroyed!\n\nGo to Far Watch Post, on the border of the Barrens to the west, " ..
+                "and speak with my assistant, Ak'Zeloth. He will direct you further.",
+        },
         [851] = {
             description = "The centaur Verog the Dervish wanders the Barrens, and will be difficult to " ..
                 "find. But he is based at the centaur command tent at the Stagnant Oasis to the " ..
@@ -1160,6 +1176,13 @@ ns.Overrides.wowhead = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
         },
+        [1522] = {
+            description = "Fire be witcha, mon. I see you be strong in da ways of earth already, an' me " ..
+                "tinkin' you be ready to talk to Kranal.\n\nKranal live north of da Crossroads in da " ..
+                "Barrens. He be strong in da ways of da elements and can teach ya da ways of fire... if " ..
+                "you tink you be ready.\n\nHe be easy ta find, just don' go too far--ya go too far an' ya " ..
+                "find yerself in da elves' lands.",
+        },
         [1524] = {
             description = "You are powerful enough to wield the totem of fire, but that does not mean you " ..
                 "are ready.\n\nAlong the Southfury River in Durotar, before the Great Sea, lies a hidden " ..
@@ -1208,6 +1231,13 @@ ns.Overrides.wowhead = {
                 "beasties of Darkshore. Out of the corner of me eyes I saw some of them Ragin' Crawlers, " ..
                 "Ferocious Foreststrider, and murloc rummaging through the wreckage....",
             rewardMoney = 1200,
+        },
+        [2159] = {
+            description = "Greetings, young <class>. Can you offer me aid? I have a package of herbs that " ..
+                "I must deliver to the town of Dolanaar. But I still have business with the druids of " ..
+                "Shadowglen and cannot yet leave.\n\nCan you deliver this package for me? It must be sent " ..
+                "to Innkeeper Keldamyr, at the Dolanaar inn. It lies along the road, to the south.",
+            rewardChoices = {{2070, 5}, {159, 5}},
         },
         [2161] = {
             description = "Excuse me? Can you help me?\n\nI have a load of food here. I walked along the " ..
@@ -1286,6 +1316,11 @@ ns.Overrides.wowhead = {
                 "the craft should be rewarded.\n\nYou have attained expertise over blacksmithing, <name>. " ..
                 "Reap the rewards!",
             rewardItems = {{8703, 1}},
+        },
+        [3082] = {
+            description = "Ah, while you were gone a tablet came for you, <name>.\n\nRead it when you " ..
+                "have time. If I'm not mistaken, it came from the hunter trainer Jen'shan. She would have " ..
+                "words with you when you're ready.",
         },
         [3627] = {
             description = "To reach the Defiler, you must first destroy the triad of power and recover " ..
@@ -3148,6 +3183,15 @@ ns.Overrides.wowhead = {
         },
         [8052] = {rewardItems = {{19594, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
+        [8120] = {
+            description = "As you no doubt have heard, the League of Arathor is sending large numbers of " ..
+                "troops into Arathi Basin. Eager for food and supplies, these Alliance fools are intent " ..
+                "to take and control the rich resources there. We must show them that Arathi will never " ..
+                "again be a home for humans!\n\nGo to Arathi Basin and assault the mine, the lumber mill, " ..
+                "the blacksmith and the stables. Pull down the enemies' banners, declaring those " ..
+                "territories for the Horde.\n\nGo, <name>. Report back to me when this task is complete.",
+            rewardMoney = 16500,
+        },
         [8169] = {
             description = "As you no doubt have heard, the League of Arathor is sending large numbers of " ..
                 "troops into Arathi Basin. Eager for food and supplies, these Alliance fools are intent " ..
@@ -3197,6 +3241,13 @@ ns.Overrides.wowhead = {
                 "need more stranglekelp have you? Well, it's your lucky day, because the answer to that " ..
                 "very important question is a very affirmative YES! Think you could gather up twenty more?",
             rewardItems = {{21436, 3}, {21510, 1}},
+        },
+        [8510] = {
+            description = "Ok, so it looks like I still need more Arthas' Tears. I would imagine that you " ..
+                "will be able to find them in the general location that you gathered them up for me last " ..
+                "time. The quicker we get these, the faster we can start up the offensive against the " ..
+                "forces at Ahn'Qiraj.\n\nYou gonna help us out again <class>?",
+            rewardItems = {{21436, 10}, {21513, 1}},
         },
         [8521] = {
             description = "It is very kind of you to offer to help me again <class>. It looks like we've " ..
@@ -3295,6 +3346,11 @@ ns.Overrides.wowhead = {
             description = "Thanks to you and Omarion, may he rest in peace, I am now able to create a " ..
                 "Glacial vest. All you need to do is bring me the materials and pay a small crafting fee.",
             rewardItems = {{22652, 1}},
+        },
+        [9241] = {
+            description = "Thanks to you and Omarion (May he rest in peace), I am now able to create " ..
+                "Polar bracers. All you need to do is bring me the materials and pay a small crafting fee.",
+            rewardItems = {{22663, 1}},
         },
         [9271] = {
             description = "This final task will be the most difficult of all, <name>. You have faced and " ..
