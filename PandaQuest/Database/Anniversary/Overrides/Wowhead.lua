@@ -715,10 +715,70 @@ ns.Overrides.wowhead = {
                 "you see him along the shore and bring me one of his scales and I shall reward you.",
             rewardChoices = {{1172, 1}, {1557, 1}, {5240, 1}},
         },
+        [105] = {
+            description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
+                "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
+                "dominion. He is guarded by numerous Scourge surrounding the remains of city's center, " ..
+                "and his personal retinue of guardians attached to him directly is formidable. You will " ..
+                "need numerous allies to even stand a chance of facing him successfully.\n\nDestroy Araj, " ..
+                "<name>, and bring me a shard from his phylactery as proof!",
+            rewardItems = {{17759, 1}},
+        },
+        [106] = {
+            description = "Oh, I'm cursed! My heart belongs to Tommy Joe Stonefield, but our families are " ..
+                "bitter enemies. So I can't see him, even though my eyes ache to gaze upon that handsome " ..
+                "face!\n\nPlease, take this letter and give it to Tommy Joe. He's usually at the river to " ..
+                "the west of the Stonefield Farm, which is due west of here.",
+        },
+        [107] = {
+            description = "I bet William Pestle has a potion to unite our two young lovers!\n\nHere, take " ..
+                "this note to William. He's staying at the Lion's Pride Inn in Goldshire.",
+        },
+        [109] = {
+            description = "Looks to me you've seen quite a bit of combat in your time, <class>. If you " ..
+                "haven't already, you should report to Gryan Stoutmantle. He heads up the People's " ..
+                "Militia, aimed at protecting the farmlands of Westfall. I bet he could use your help. " ..
+                "You can usually find him in the stone tower on Sentinel Hill, just off the road in the " ..
+                "middle of Westfall.",
+            rewardMoney = 250,
+        },
+        [110] = {
+            description = "I'm going to spend some time taking a look at Scrimshank's surveying gear... " ..
+                "as well as putting his personal effects in order. I get the sneaking feeling behind my " ..
+                "ears that this isn't the last loss we'll be facing against these bugs.\n\nI'd like for " ..
+                "you to check in with Alchemist Pestlezugg to see if he has had a chance to process the " ..
+                "insect parts we sent him. If they're ready, bring them to me.",
+        },
+        [111] = {
+            description = "Please, <name>, talk with my Gramma. If anyone can find a way to bring me " ..
+                "together with Maybell, she can.\n\nShe's inside our house east of here.",
+        },
+        [112] = {
+            description = "I can make an invisibility liquor for Maybell, so she can slip away from the " ..
+                "Maclure Vineyards and go to Tommy Joe. But to make the Liquor, I need some crystal " ..
+                "kelp.\n\nAlthough the kelp usually grows in the ocean... sometimes murlocs collect it. " ..
+                "See if the murlocs near Crystal Lake have any. Crystal Lake is just east of Goldshire.",
+        },
+        [113] = {
+            description = "Senior Surveyor Fizzledowser needs to see this report immediately. Actually... " ..
+                "everyone who can read needs to see this report. We are facing a grave and serious threat " ..
+                "to not only Tanaris and Gadgetzan, but if left unchecked, the entirety of southern " ..
+                "Kalimdor. Heck, even quite possible the whole of Azeroth; this thing has given no " ..
+                "indication it will subside.\n\nHave Fizzledowser make a duplicate of the report for you " ..
+                "to distribute freely to your allegiance. Everyone must know about this threat!",
+            rewardMoney = 7000,
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
+        [9427] = {
+            description = "I must ask that you finish what we've set in motion. Now that the demonic " ..
+                "influence has weakened you must take this cleansing vial and pour it at the very source " ..
+                "of the taint - Aggonar's own corpse.\n\nYou will find the demon's bones at the northern " ..
+                "end of the pools. Beware, I sense that Aggonar's essence has not quite left this world.",
+            rewardChoices = {{25484, 1}, {25486, 1}, {25485, 1}},
+        },
         [9492] = {
             description = "The permanence of the orcish threat is one of the sad truths of Outland. There " ..
                 "was a time when we Sons of Lothar believed we'd purchased Honor Hold's safety with our " ..
@@ -2244,8 +2304,390 @@ ns.Overrides.wowhead = {
                 "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
             rewardItems = {{29277, 1}},
         },
+        [10738] = {
+            description = "You have not disappointed us, <name>. We continue to have very high hopes for " ..
+                "you, however.\n\nContinue to serve the Violet Eye and you will be appropriately rewarded.",
+            rewardItems = {{29286, 1}},
+        },
+        [10739] = {
+            description = "You have not disappointed us, <name>. We continue to have very high hopes for " ..
+                "you, however.\n\nContinue to serve the Violet Eye and you will be appropriately rewarded.",
+            rewardItems = {{29291, 1}},
+        },
+        [10740] = {
+            description = "You have not disappointed us, <name>. We continue to have very high hopes for " ..
+                "you, however.\n\nContinue to serve the Violet Eye and you will be appropriately rewarded.",
+            rewardItems = {{29282, 1}},
+        },
+        [10741] = {
+            description = "You have not disappointed us, <name>. We continue to have very high hopes for " ..
+                "you, however.\n\nContinue to serve the Violet Eye and you will be appropriately rewarded.",
+            rewardItems = {{29278, 1}},
+        },
+        [10742] = {
+            description = "Now it comes to this. We will bring Goc forth from his lair, and we will " ..
+                "destroy him. With Goc dead, the Bladespire ogres will threaten the Mok'Nathal no longer. " ..
+                "Go to Goc 's altar outside Gruul's Lair, then blow my horn. I will come, and we will " ..
+                "face the son of Gruul together.",
+            rewardChoices = {{31546, 1}, {31544, 1}, {31545, 1}, {31547, 1}, {31549, 1}, {31548, 1}},
+            rewardMoney = 132000,
+        },
+        [10744] = {
+            description = "You must bring word of our success to Kurdran Wildhammer immediately! His men, " ..
+                "under Wing Commander Nuainn, have fought nonstop to keep Wildhammer Stronghold safe and " ..
+                "your return will surely bolster their spirits. With the threat from the Legion out of " ..
+                "the way, Kurdran can finally turn his attention to dealing with the forces of Illidan. " ..
+                "Our place here is far from secure, but we've won a major victory this day.",
+            rewardChoices = {{30973, 1}, {30924, 1}, {31025, 1}, {31033, 1}, {31031, 1}},
+            rewardMoney = 44000,
+        },
+        [10745] = {
+            description = "You must bring word of our success to Overlord Or'barokh immediately! Now that " ..
+                "we've crushed the Legion and obliterated their presence in Shadowmoon Valley, the " ..
+                "overlord can turn his attention to our other foes.\n\nAlthough the Kor'kron guard will " ..
+                "never admit it, they'll be glad we're no longer fighting on two fronts.",
+            rewardChoices = {{30973, 1}, {30924, 1}, {31025, 1}, {31033, 1}, {31031, 1}},
+            rewardMoney = 44000,
+        },
+        [10750] = {
+            description = "Word has come from my wind riders, <name>. The Eclipsion blood elves are " ..
+                "planning something big. They have begun forming their armies at the Path of Conquest, " ..
+                "far to the southeast - adjacent to Eclipse Point.\n\nI want you to travel to the Path of " ..
+                "Conquest and assess the situation. Once you have done so, use this flare gun to signal a " ..
+                "wind rider. One will swoop down from the sky to meet you. Inform them of what you have " ..
+                "discovered and they will give you your next set of orders.",
+        },
+        [10751] = {
+            description = "We're going to need more time, <race>. I'm going to fly further ahead with " ..
+                "some of the other wind riders. Hopefully, we can gather some more information. What I " ..
+                "need from you now is to clear a path and more importantly, keep their arrows pointed " ..
+                "away from us!\n\nCall for a wind rider with the Kor'kron flare gun once you have thinned " ..
+                "their numbers.",
+        },
+        [10754] = {
+            description = "This freshly cast mold was to be used to create a key of some sort. From the " ..
+                "image engraved on its back, it appears to be related to Hellfire Citadel.\n\nMaybe this " ..
+                "could prove to interest to Danath, the force commander at Honor Hold.",
+        },
+        [10755] = {
+            description = "This freshly cast mold was to be used to create a key of some sort. From the " ..
+                "image engraved on its back, it appears to be related to Hellfire Citadel.\n\nMaybe this " ..
+                "could prove to interest to Nazgrel, the leader of the Horde's forces in Thrallmar.",
+        },
+        [10756] = {
+            description = "The symbol on the key's handle... it is hard to make it out inside the mold, " ..
+                "but I recognize it as the Shattered Hand's own.\n\nThere is a good chance this key will " ..
+                "allow you to enter the Shattered Halls.\n\nSpeak to Rohok, our resident blacksmith. If " ..
+                "anyone can forge this key it is he.",
+        },
+        [10757] = {
+            description = "Fel orc blacksmiths may not be the most skilled in the world, but there is " ..
+                "some craftsmanship to their trade. Only fel iron can be used with this mold if we want " ..
+                "to end up with a working key - anything else would probably end up breaking it.\n\nBring " ..
+                "me some fel iron bars, a bit of arcane dust and motes of fire. I'll try my hand at it, " ..
+                "but I make no promises.",
+        },
+        [10758] = {
+            description = "It's no good, <name>! No matter how many coals I put to the fire, it's just " ..
+                "not enough heat.\n\nThere's only one thing I can think of that is hot enough to temper " ..
+                "this key and it is the insides of the Legion's fel reavers.\n\nI've only ever seen one " ..
+                "downed once. I remember seeing its insides fuming, shooting fire and steam as it fell. " ..
+                "Take this mold and plunge it into a fallen fel reaver. I recommend you get yourself some " ..
+                "friends if you plan to take one down.",
+            rewardItems = {{28395, 1}},
+        },
+        [10762] = {
+            description = "The symbol on the key's handle... it is hard to make it out inside the mold, " ..
+                "but I recognize it at the Shattered Hand's own.\n\nThere is a good chance this key will " ..
+                "allow you to enter the Shattered Halls.\n\nSpeak to Dumphry. He is a master of his " ..
+                "craft. If he can't craft this key for you, no one can.",
+        },
+        [10763] = {
+            description = "Fel orcs might be complete barbarians but their smithing is not as primitive " ..
+                "as you might think. Only fel iron can be used with this mold if we want to end up with a " ..
+                "working key - anything else would probably end up breaking it.\n\nBring me some fel iron " ..
+                "bars, a bit of arcane dust and motes of fire. I'll try my hand at it, but I make no " ..
+                "promises.",
+        },
+        [10764] = {
+            description = "It's not working, <lad/lass>. I cannot give it enough heat... the materials " ..
+                "will not be properly tempered.\n\nYou know, the Fel Reavers used by the Burning Legion " ..
+                "are powered by a scalding core of fel fire - it burns much hotter than normal " ..
+                "fire.\n\nIf you could find enough people to take one down, you could heat the mold in " ..
+                "the insides of the fallen reaver. Beware, <class>, those fel reavers pack quite a punch.",
+            rewardItems = {{28395, 1}},
+        },
+        [10765] = {
+            description = "At the southern end of the Path of Conquest, near a stationary caravan, I " ..
+                "discovered what looked like a meeting between a giant and a blood elf chancellor. You've " ..
+                "probably already noticed the smaller giants on the path as well. Something is just not " ..
+                "right about all of this, grunt.\n\nI want you to fight your way to this meeting and " ..
+                "break up the party. Recover whatever you can from the scene and then call for one of us " ..
+                "with the flare gun.",
+        },
+        [10768] = {
+            description = "The wind riders must return to Shadowmoon Village to prepare for the next " ..
+                "phase of our assault. What I need from you now are the tabards that these blood elves " ..
+                "wear.\n\nWhen you have collected enough tabards, call for a wind rider using the " ..
+                "Kor'kron flare gun. Prepare yourself for a bit of espionage, <race>!",
+        },
+        [10769] = {
+            description = "Researcher Tiorus was kind enough to put this concoction together for the " ..
+                "final strike. I merely pour it upon this tabard that you have provided for me and the " ..
+                "item is imbued with the essence of the Illidari filth.\n\nTake the enchanted tabard and " ..
+                "travel to the Eclipsion Fields, southwest of Eclipse Point. Once there, use the tabard " ..
+                "to transform into an agent of Illidan. While in disguise, slay the crazed colossi that " ..
+                "wander the field. They will think it an attack by the Eclipsion and sever all ties!",
+            rewardChoices = {{31075, 1}, {31077, 1}, {31076, 1}, {31078, 1}},
+            rewardMoney = 132000,
+        },
+        [10772] = {
+            description = "My gryphon riders have come back with a bit of news! The Eclipsion blood elves " ..
+                "are planning something big. They've begun forming their armies at the Path of Conquest, " ..
+                "located east of here - adjacent to Eclipse Point.\n\nI want you to travel to the Path of " ..
+                "Conquest and assess the situation. Once you've done so, use this flare gun to signal a " ..
+                "gryphon rider. One will swoop down from the sky to meet you. Tell 'em what you've " ..
+                "discovered and they'll give you the next set of orders.",
+        },
+        [10773] = {
+            description = "We're going to need more time, <race>. I'm going to fly further ahead with " ..
+                "some of the other gryphon riders. Hopefully, we can gather some more information. What I " ..
+                "need from you now is to clear a path and more importantly, keep their arrows pointed " ..
+                "away from us!\n\nCall for a gryphon rider with the Wildhammer flare gun once you have " ..
+                "thinned their numbers.",
+        },
+        [10774] = {
+            description = "At the southern end of the Path of Conquest, near a stationary caravan, I " ..
+                "discovered what looked like a meeting between a giant and a blood elf chancellor. What " ..
+                "are giants even doing here? Something is just not right about all of this, grunt.\n\nI " ..
+                "want you to fight your way to this meeting and break up the party. Recover whatever you " ..
+                "can from the scene and then call for one of us with the flare gun.",
+        },
+        [10775] = {
+            description = "The gryphon riders must return to Wildhammer Stronghold to prepare for the " ..
+                "next phase of our assault. What I need from you now are the tabards that these blood " ..
+                "elves wear.\n\nWhen you have collected enough tabards, call for a gryphon rider using " ..
+                "the Wildhammer flare gun. Prepare yourself for a bit of espionage, <race>!",
+        },
+        [10776] = {
+            description = "Gnomus was kind enough to put this concoction together for the final strike. I " ..
+                "merely pour it upon this tabard that you have provided for me and the item is imbued " ..
+                "with the essence of the Illidari filth.\n\nTake the enchanted tabard and travel to the " ..
+                "Eclipsion Fields, southwest of Eclipse Point. Once there, use the tabard to transform " ..
+                "into an agent of Illidan. While in disguise, slay the crazed colossi that wander the " ..
+                "field. They will think it an attack by the Eclipsion and sever all ties!",
+            rewardChoices = {{31075, 1}, {31077, 1}, {31076, 1}, {31078, 1}},
+            rewardMoney = 132000,
+        },
+        [10781] = {
+            description = "They are probably searching for you on the Path of Conquest as we speak. You " ..
+                "must make your escape, <race>!\n\nLeave me, I'm done for... They... I think I hear them " ..
+                "coming. It's now or never! Get out! If you choose to stay, you will have to fight!\n\nIf " ..
+                "you fight and somehow manage to survive, take what you have learned here and deliver " ..
+                "that knowledge to A'dal in Shattrath City.",
+            rewardChoices = {{31380, 1}, {31381, 1}, {31382, 1}, {31383, 1}},
+            rewardItems = {{31408, 1}},
+            rewardMoney = 132000,
+        },
+        [10793] = {
+            description = "This journal documents the recent activities of Illidan's armies. It also " ..
+                "explains why Val'zareq was parading around the Path of Conquest. He was personally " ..
+                "responsible for the capture of a high general of the Sha'tar.\n\nThis general is being " ..
+                "held at a post known as Crimson Watch, located at the southern end of the Path of " ..
+                "Conquest. A mysterious faction, calling itself the Crimson Sigil, is charged with his " ..
+                "incarceration. If you choose to investigate, it would be wise to bring allies.",
+        },
+        [10804] = {
+            description = "Something has them spooked, <race>.\n\n< Mordenai points to the nether drakes " ..
+                "flying overhead.>\n\nThey won't even come down to feed. I have seen several fall to the " ..
+                "earth, dead from exhaustion before their bodies hit the ground.\n\nWe must save them! " ..
+                "The Rocknail flayers that are found near the crystals are their natural prey. Kill " ..
+                "flayers and take their carcasses. Place a carcass in the field and stand extremely " ..
+                "still. As long as you do not make any aggressive motions, they will not attack you.",
+        },
+        [10806] = {
+            description = "The time has come for us to face Goc, the master of the Bladespire ogres. It " ..
+                "is also time that I take a hand in events, to see the last of the gronn's life.\n\nTake " ..
+                "my signet ring. When you come to the Altar of Goc, use it, and I will come to join " ..
+                "you.\n\nTogether we will destroy Goc.",
+            rewardChoices = {{31546, 1}, {31544, 1}, {31545, 1}, {31547, 1}, {31549, 1}, {31548, 1}},
+            rewardMoney = 132000,
+        },
+        [10807] = {
+            description = "The Ashtongue tribe is feared among all Broken. It consists of the most " ..
+                "vicious and bloodthirsty individuals, handpicked by Akama himself. They are as fierce " ..
+                "and ruthless as any naga, demon or blood elf in Illidan's army and they have been " ..
+                "deployed in large numbers at the Ruins of Baa'ri, to the north. Go there and put a dent " ..
+                "in their numbers before they get a chance to mount an attack on us.",
+        },
+        [10811] = {
+            description = "Their patron soars high above, <name>. Perhaps the kindness that you showed " ..
+                "his children has moved his heart. Seek Neltharaku out and enlist his aid. Together, you " ..
+                "may be able to solve the plight of the Netherwing drakes.\n\n< Mordenai points to the " ..
+                "sky.>\n\nFly high, friend...",
+        },
+        [10814] = {
+            description = "I have information that you may find useful. Please listen to what I have to " ..
+                "tell you, <race>.",
+        },
+        [10816] = {
+            description = "You did well against the Broken in Baa'ri, <name>. Let's see how well you do " ..
+                "against Illidan's most feared army.\n\nThe fel orcs of the Shadowmoon Clan occupy the " ..
+                "Ata'mal Terrace, once a very holy site where ata'mal crystals were used in spiritual " ..
+                "ceremonies.\n\nWe had reason to believe they were hiding an actual ata'mal crystal in " ..
+                "the vicinity, but our scrying has revealed nothing. Nevertheless, the fel orcs are on " ..
+                "draenei holy ground and their presence must be dealt with.",
+            rewardChoices = {{30940, 1}, {30961, 1}, {30922, 1}, {30958, 1}},
+            rewardMoney = 44000,
+        },
+        [10817] = {
+            description = "You did well against the Ashtongue Broken, <name>. I have another challenge " ..
+                "for you, should you be up to it.\n\nNot too long ago, the Sanctum of the Stars suffered " ..
+                "a tremendous attack by Illidan's fel orcs.\n\nWe've determined it was perpetrated by the " ..
+                "Shadowmoon orcs who occupy the Ata'mal Terrace.\n\nShow them that the Scryers are not to " ..
+                "be trifled with.",
+            rewardChoices = {{30940, 1}, {30961, 1}, {30922, 1}, {30958, 1}},
+            rewardMoney = 44000,
+        },
+        [10824] = {
+            description = "The survival of the Scryers hinges on outrecruiting Kael'thas. Every pilgrim " ..
+                "from Quel'Thalas that joins his side brings him closer to victory. The opposite is true " ..
+                "for us.\n\nSoon, however, we will run out of recruits and it will come down to what side " ..
+                "can kill the other quicker. Prove your worth to the Scryers by bringing me Sunfury " ..
+                "signets worn by high-ranking blood elves allied with Kael'thas and Illidan. You'll find " ..
+                "them at Eclipse Point to the west and the Ruins of Karabor, to the northeast.",
+        },
+        [10826] = {
+            description = "By now it should be clear to you why we oppose the Burning Legion and those " ..
+                "who serve them.\n\nIf you wish to prove yourself to the Aldor, bring me the insignias of " ..
+                "high-ranking Legion and their Shadow Council followers. Here in Shadowmoon you will find " ..
+                "a strong Legion presence to the far west in Legion Hold and the Deathforge.",
+        },
+        [10831] = {
+            description = "I can teach you the ways of mooncloth tailoring, if you are interested.. By " ..
+                "specializing in mooncloth tailoring, creating primal mooncloth will yield twice the " ..
+                "normal amount and you will have access to several exclusive patterns. All that is " ..
+                "required is that you pass a simple test.\n\nAs to the test, your task is to create a " ..
+                "small sample of primal mooncloth in the moonwell at Cenarion Refuge. I will provide all " ..
+                "the materials you'll need. When you've created the sample, bring it back to me for " ..
+                "examination.",
+        },
+        [10832] = {
+            description = "I can teach you the ways of spellfire tailoring if you wish, but be warned, " ..
+                "it's a dangerous pursuit.\n\nCreating spellcloth in Netherstorm attracts powerful " ..
+                "nether-wraiths. I'm searching for a way to lessen backlash, but I need more " ..
+                "nether-wraith essence for my research.\n\nTake this beacon with you to Netherstorm and " ..
+                "use it to summon a nether-wraith. Bring back its essence and I'll agree to teach you. As " ..
+                "a spellfire tailor, you'll receive twice as much cloth and have access to exclusive " ..
+                "patterns.",
+        },
+        [10833] = {
+            description = "If you become a shadoweave specialist, you will make twice as much shadowcloth " ..
+                "as an average tailor and have access to several exclusive patterns.\n\nOf course, any " ..
+                "tailor can use the Altar of Shadows, but a shadoweave tailor possesses a deeper " ..
+                "attunement to the altar, unlocking powers that few can fathom.\n\nTake this crystal to " ..
+                "eastern Shadowmoon Valley, and find Netherwing Pass leading south from the Netherwing " ..
+                "Fields. Near the world's edge, you will find the Altar of Shadows. Use the crystal there.",
+        },
+        [10836] = {
+            description = "I require time so that I may devise a plan to save my children and mate. You " ..
+                "will buy me this time, mortal.\n\nVenture into Dragonmaw Fortress, located on the " ..
+                "eastern edge of the Netherwing Fields, and lay waste to all Dragonmaw orcs that you " ..
+                "find. The ensuing chaos and confusion should have a considerable impact on their " ..
+                "plans.\n\nBe warned, some of my kin are too far gone - their minds corrupted by the " ..
+                "Dragonmaw. For them, the only resolution is death. You have my permission to end their " ..
+                "lives as well.",
+        },
+        [10837] = {
+            description = "I believe that I can imbue nethervine crystals with my own essence. The power " ..
+                "contained within these imbued crystals should be sufficient to free enslaved drakes of " ..
+                "their masters' grasps.\n\nTravel to Netherwing Ledge, an island located off the broken " ..
+                "shelf of Shadowmoon Valley, to the southeast. It is on Netherwing Ledge that you will " ..
+                "find nethervine crystals. Return to me when you have collected enough crystals to fill " ..
+                "your packs.\n\nAnd <name>, Beware the Dragonmaw that now inhabit the island.",
+        },
+        [10854] = {
+            description = "Take this enchanted nethervine crystal and make your way back to Dragonmaw " ..
+                "Fortress. Once there, seek out the enslaved drakes and invoke the magic of the " ..
+                "nethervine crystal. My own energies will pour forth, causing the drakes to break free " ..
+                "from the bond of their captors. When you see that the drake has broken free, help it " ..
+                "defeat its captor! It will most assuredly be weak from the imprisonment.\n\nRelease all " ..
+                "that you can find and return to me, <name>.",
+        },
+        [10858] = {
+            description = "It shames me to ask for your assistance once more, <name>, but you are my " ..
+                "flight's only hope. Without my mate, the netherwing brood may die out " ..
+                "completely.\n\nMake your way to the top of Dragonmaw Fortress and find Karynaku.\n\nWe " ..
+                "will be flying overhead. Should a break appear in their defenses, the might of the " ..
+                "netherwing will swoop down to assist you.",
+        },
+        [10866] = {
+            description = "He hides in my thoughts, mortal. He waits for me to break... for me to bend to " ..
+                "his will.\n\nAnd this will be his undoing. I will call for him. I will tell him that I " ..
+                "will do as he asks. When he appears, kill him and take the key!\n\nKnow this: Zuluhed is " ..
+                "an ancient orc with unknown powers. He has surely been empowered further by Illidan. You " ..
+                "risk your life for me in doing as I ask. Are you certain you wish to make such a " ..
+                "sacrifice?",
+        },
+        [10870] = {
+            description = "Allow me to return you to Mordenai. I am certain that he wishes to see you " ..
+                "once more.",
+            rewardChoices = {{31490, 1}, {31491, 1}, {31492, 1}, {31493, 1}, {31494, 1}},
+            rewardMoney = 132000,
+            rewardXP = 19000,
+        },
+        [10871] = {
+            description = "Allow me to return you to Mordenai. I am certain that he wishes to see you " ..
+                "once more.",
+            rewardChoices = {{31490, 1}, {31491, 1}, {31492, 1}, {31493, 1}, {31494, 1}},
+            rewardMoney = 132000,
+            rewardXP = 19000,
+        },
+        [10872] = {
+            description = "He hides in my thoughts, mortal. He waits for me to break... for me to bend to " ..
+                "his will.\n\nAnd this will be his undoing. I will call for him. I will tell him that I " ..
+                "will do as he asks. When he appears, kill him and take the key!\n\nKnow this: Zuluhed is " ..
+                "an ancient orc with unknown powers. He has surely been empowered further by Illidan. You " ..
+                "risk your life for me in doing as I ask. Are you certain you wish to make such a " ..
+                "sacrifice?",
+        },
+        [10882] = {
+            description = "<A discordant note can be detected in A'dal 's 'voice'.>\n\nPrince Kael'thas " ..
+                "has chosen his warden poorly, and now the entities that we kept locked up within the " ..
+                "Arcatraz are breaking free.\n\nOne in particular, a servant of the Old Gods known as " ..
+                "Harbinger Skyriss, seeks to usher in his masters' vision of conquering all of the worlds " ..
+                "in the universe.\n\n<name>, you must not allow him to escape. Return to Tempest Keep, " ..
+                "enter the Arcatraz, and slay Harbinger Skyriss before it is too late!",
+            rewardChoices = {{31747, 1}, {31749, 1}, {31748, 1}},
+            rewardMoney = 132000,
+        },
+        [10883] = {
+            description = "You have proven yourself capable of great feats, <name>. Your discovery of the " ..
+                "Cipher of Damnation and Kael'Thas' involvement is most important to our cause. Should " ..
+                "Kael use the cipher, what little is left of this world may collapse.\n\nA'dal is " ..
+                "convinced that Kael must be stopped and now seeks adventurers willing to undergo trials. " ..
+                "Those that prove their strength will be granted favor by the naaru.\n\n< Khadgar " ..
+                "nods.>\n\nA'dal awaits...",
+        },
+        [10884] = {
+            description = "Four trials you must pass before you are deemed worthy by the naaru.\n\nWithin " ..
+                "the Shattered Halls of Hellfire Citadel are three of your people. They are held there by " ..
+                "the merciless one, Kargath Bladefist. He seeks to execute them as a sign of his virility " ..
+                "and power. You must save these prisoners before such an atrocity can come to pass. As " ..
+                "proof of deed, bring me the unused axe of the executioner. It must not have a drop of " ..
+                "blood on its blade!",
+        },
     },
     npcs = {
+        [15241] = {
+            spawns = {
+                [3483] = {
+                    {53.4, 62.4}, {54.2, 63}, {54.4, 63.6}, {54.8, 63.2}, {54.8, 63.8}, {55.8, 60.6},
+                    {56, 63.2}, {56.8, 63.6}, {57.8, 63.8},
+                },
+            },
+            zoneID = 3483,
+        },
         [19797] = {
             spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.6}}},
             zoneID = 3520,
@@ -2262,6 +2704,10 @@ ns.Overrides.wowhead = {
         },
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
         [21877] = {spawns = {[3520] = {{58.2, 70.4}, {58.2, 70.8}}}, zoneID = 3520},
+        [22076] = {
+            spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.8}, {52, 73.6}}},
+            zoneID = 3520,
+        },
     },
     objects = {},
     items = {},
