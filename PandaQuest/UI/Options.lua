@@ -574,7 +574,7 @@ function M.ResetGroups(groupKeys)
 end
 
 local function buildTable()
-    local privacy = L["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."]
+    local privacy = L["Recorded when on: quests accepted and finished, objective progress, where on the map, your level, your guild name and rank, and how long it took."]
         .. " " .. L["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."]
     local tbl = {
         type = "group",

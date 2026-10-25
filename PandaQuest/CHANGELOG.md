@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.268] - 2026-10-26
+
+### Changed
+- **The shared character row says which guild the character is in.** While quest data sharing is
+  on, the character row in `PandaQuestSync` also keeps the guild's name, the rank name, the rank
+  index (0 = Guild Master) and the guild's home realm when it differs from the character's, so the
+  PandaQuest hub can show guild members once the sync app uploads it. Out of a guild the name is
+  empty; a guild the game has not loaded yet is never forgotten.
+  - refreshed at login, on `PLAYER_GUILD_UPDATE` and `GUILD_ROSTER_UPDATE`, and at logout
+  - the privacy line in the options names the guild name and rank
+
 ## [0.2.267] - 2026-10-26
 
 ### Added
