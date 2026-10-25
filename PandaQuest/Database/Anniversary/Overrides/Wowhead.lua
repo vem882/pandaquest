@@ -593,6 +593,63 @@ ns.Overrides.wowhead = {
                 "rewarded.\n\nNow let's get to work!",
             rewardChoices = {{1310, 1}, {1303, 1}, {1304, 1}},
         },
+        [90] = {
+            description = "Seasoned Wolf Kabobs are a house favorite! Sure, I can make you some. But " ..
+                "first I'll need the supplies. Bring me 10 Lean Wolf Flanks as well as some Stormwind " ..
+                "Seasoning Herbs. There are so many wolves here in the forest, I am sure finding the " ..
+                "Flanks will be no problem. For the herbs, seek out Felicia Gump in her canal district " ..
+                "flower shop in Stormwind.",
+            rewardItems = {{1017, 4}, {2701, 1}},
+            rewardMoney = 1800,
+        },
+        [91] = {
+            description = "An enemy of Stormwind has taken up residence in the eastern foothills of " ..
+                "Redridge. This wicked villain uses the Arcane to spread terror and misery upon our town " ..
+                "and our people. Under the name, Morganth, he conducts his evil business.\n\nMorganth now " ..
+                "controls the Shadowhide Gnoll Clan to perform his biddings. As stated by the Law of " ..
+                "Lakeshire, aiding a criminal of the Kingdom is punishable by death.\n\nThese vile gnolls " ..
+                "must be killed!\n\nTurn in 10 Shadowhide Pendants to me, and you shall be rewarded.",
+            rewardMoney = 1500,
+        },
+        [92] = {
+            description = "Nothing would please me more than to make you some Redridge Goulash. But " ..
+                "there's a slight problem. During the recent orc uprising I fed the entire brigade of " ..
+                "Stormwind troops. My cupboard is now bare. But if you can provide me with the " ..
+                "ingredients, I'd be happy to oblige.\n\nJust bring me five pieces of Tough Condor Meat, " ..
+                "five Great Goretusk Snouts and five helpings of Crisp Spider Meat.",
+            rewardItems = {{1082, 5}, {2699, 1}},
+            rewardMoney = 1000,
+        },
+        [93] = {
+            description = "I'll let you in on a little secret - Dusky \"Crab\" Cakes are really made from " ..
+                "spider legs! I know it's a bit disgusting, but the cakes have a nice, tangy flavor and " ..
+                "make great snacks! Bring me Gooey Spider Legs and I'll whip you up a few of them.\n\nI " ..
+                "hear Venom Web Spiders are a good source - they nest to the north, between the foothills " ..
+                "and the river.",
+            rewardItems = {{3683, 1}},
+        },
+        [94] = {
+            description = "My rival, Morganth, is a vicious mage of great power who lives in the Tower of " ..
+                "Ilgalar in Redridge. I have developed a means of spying on him, the Eye of Azora, and " ..
+                "can now view him from afar.\n\nBut to study his thoughts... I require further aid.\n\nIf " ..
+                "you are willing, then take my Glyph of Azora to the Tower of Ilgalar. Place it upon the " ..
+                "Lion Statue near the Tower.\n\nWhen this is done, the power of Azora will grant visions " ..
+                "of Morganth's future plans.",
+        },
+        [95] = {
+            description = "I used to work one of the farms to the southeast...until Dark Riders from " ..
+                "Deadwind Pass descended upon my farm and slaughtered my family when I was away!\n\nWhen " ..
+                "I returned I saw a shadowy figure skulking near my barn, burying something. He fled " ..
+                "before I could catch him, and I couldn't linger for I was hot on the heels of the Dark " ..
+                "Riders. So I never discovered what was hidden.\n\nIf you can find what that shadowy " ..
+                "figure buried, I would be grateful. The hiding spot is behind the old stump near my barn.",
+        },
+        [96] = {
+            description = "Take shard. Take shard and give life.\n\nGive life and understand. Understand " ..
+                "water is life... corruption stops life.\n\nYou protect and give life with water's power.",
+            rewardItems = {{5177, 1}},
+            rewardXP = 2350,
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
@@ -1412,8 +1469,386 @@ ns.Overrides.wowhead = {
                 "timeline as we know it will be unravelled!",
             rewardItems = {{29295, 1}},
         },
+        [10468] = {
+            description = "You've carried out the promise you made to us, <name>. And for that you've " ..
+                "gained the recognition you deserve.\n\nAs you continue to become attuned with past " ..
+                "events surrounding mount Hyjal, I can continue to tap into the power contained in your " ..
+                "ring. It won't be long until it has reached its full potential.",
+            rewardItems = {{29304, 1}},
+        },
+        [10469] = {
+            description = "You've carried out the promise you made to us, <name>. And for that you've " ..
+                "gained the recognition you deserve.\n\nAs you continue to become attuned with past " ..
+                "events surrounding mount Hyjal, I can continue to tap into the power contained in your " ..
+                "ring. It won't be long until it has reached its full potential.",
+            rewardItems = {{29308, 1}},
+        },
+        [10470] = {
+            description = "You've carried out the promise you made to us, <name>. And for that you've " ..
+                "gained the recognition you deserve.\n\nAs you continue to become attuned with past " ..
+                "events surrounding mount Hyjal, I can continue to tap into the power contained in your " ..
+                "ring. It won't be long until it has reached its full potential.",
+            rewardItems = {{29300, 1}},
+        },
+        [10471] = {
+            description = "You've carried out the promise you made to us, <name>. And for that you've " ..
+                "gained the recognition you deserve.\n\nAs you continue to become attuned with past " ..
+                "events surrounding mount Hyjal, I can continue to tap into the power contained in your " ..
+                "ring. It won't be long until it has reached its full potential.",
+            rewardItems = {{29296, 1}},
+        },
+        [10472] = {
+            description = "Your accomplishments have gone beyond my greatest expectations, <name>.\n\nYou " ..
+                "step in and out of time as comfortably as any bronze dragon I've known. You are destined " ..
+                "for great power and I am more than pleased to help you on your way there.\n\nContinue to " ..
+                "serve the Scale of the Sands and I will unleash your gift's full potential.",
+            rewardItems = {{29305, 1}},
+        },
+        [10473] = {
+            description = "Your accomplishments have gone beyond my greatest expectations, <name>.\n\nYou " ..
+                "step in and out of time as comfortably as any bronze dragon I've known. You are destined " ..
+                "for great power and I am more than pleased to help you on your way there.\n\nContinue to " ..
+                "serve the Scale of the Sands and I will unleash your gift's full potential.",
+            rewardItems = {{29309, 1}},
+        },
+        [10474] = {
+            description = "Your accomplishments have gone beyond my greatest expectations, <name>.\n\nYou " ..
+                "step in and out of time as comfortably as any bronze dragon I've known. You are destined " ..
+                "for great power and I am more than pleased to help you on your way there.\n\nContinue to " ..
+                "serve the Scale of the Sands and I will unleash your gift's full potential.",
+            rewardItems = {{29301, 1}},
+        },
+        [10475] = {
+            description = "Your accomplishments have gone beyond my greatest expectations, <name>.\n\nYou " ..
+                "step in and out of time as comfortably as any bronze dragon I've known. You are destined " ..
+                "for great power and I am more than pleased to help you on your way there.\n\nContinue to " ..
+                "serve the Scale of the Sands and I will unleash your gift's full potential.",
+            rewardItems = {{29297, 1}},
+        },
+        [10480] = {
+            description = "The Illidari naga of the region have taken control of the only clean water " ..
+                "supply that exists in Shadowmoon Valley.\n\nDirectly north of here you will find the " ..
+                "lair of the naga: Coilskar. Around Coilskar are pockets of agitated water that howl to " ..
+                "the land in anguish. It is at those pockets that the enraged spirits of water now " ..
+                "wander.\n\nTravel to Coilskar and use the totem of spirits to capture watery souls. You " ..
+                "will find the largest concentration of these spirits near Coilskar Cistern.",
+        },
+        [10481] = {
+            description = "Venture southeast, hero. When you see fields of gigantic blue crystals jutting " ..
+                "out from the land, you will have reached your destination. It is there, at the " ..
+                "Netherwing Fields, that you will find the enraged spirits of air. They roam the cliffs " ..
+                "and mountain bases that surround the fields.\n\nDestroy their tortured forms and capture " ..
+                "their souls with the totem of spirits. Return to me when this is done.",
+            rewardChoices = {{30953, 1}, {30930, 1}, {30942, 1}, {30964, 1}},
+        },
+        [10507] = {
+            description = "This is the chance we've been waiting for, <name>. Not only have we uncovered " ..
+                "the evidence we need to show our people who Kael'thas is really working for, but we can " ..
+                "prove our strength by defeating his new masters.\n\nMy frail health prevents me from " ..
+                "aiding you in person with this endeavor, but I will offer you an object that will allow " ..
+                "me to project my powers across the continent.",
+            rewardChoices = {{30375, 1}, {30372, 1}, {30373, 1}, {30374, 1}, {30859, 1}},
+            rewardMoney = 132000,
+        },
+        [10508] = {
+            description = "I don't want to send you to Voren'thal empty-handed. It's not in my style to " ..
+                "be underwhelming.\n\nTo gain access to Socrethar's Seat in the north, we'll need to use " ..
+                "his own teleporters - locked by Socrethar's teleportation stone. The first half of the " ..
+                "stone is in the possession of Forgemaster Morug at Forge Base Oblivion. The second half " ..
+                "is held by the demon Silroth at Forge Base: Gehenna.\n\nObtain these and Voren'thal will " ..
+                "be impressed beyond words.",
+            rewardMoney = 44000,
+        },
+        [10509] = {
+            description = "Now I can properly send you back to Shattrath City. You've uncovered evidence " ..
+                "of Kael'thas making pacts with the Burning Legion and you've got the key to the " ..
+                "overlord's back door.\n\nMake sure Voren'thal doesn't topple over with excitement from " ..
+                "the news - the old man's getting a bit fragile, if you know what I mean. You'll find him " ..
+                "inside the Seer's Library at the Scryer's Tier.",
+        },
+        [10513] = {
+            description = "I do not know how we can acquire the spell that the spirits mentioned, <name>. " ..
+                "Truth be told, I don't even know where we would start such a search.\n\n<Torlok stares " ..
+                "off in the distance, lost in thought.>\n\nHrm... It is a long shot but it might be our " ..
+                "only chance. There is an orc that I have seen visit this area before. I spoke to him " ..
+                "briefly once. He is a hermit that claims to live above Coilskar Cistern to the " ..
+                "northeast. Seek out this orc, Oronok Torn-heart.\n\nAs I said, it is a long shot.",
+        },
+        [10514] = {
+            description = "I've been a lot of things, stranger, but what I once was isn't what's " ..
+                "important. What I am now is what matters and what I am now is a farmer.\n\nI use trained " ..
+                "felboars to dig up tubers from the hardened earth of the Shattered Plains. Recently, " ..
+                "though, flayers from a nest to the northeast have been attacking my animals, preventing " ..
+                "me from gathering tubers.\n\nWould you go to the area north of here and gather tubers " ..
+                "for me? Use this whistle while standing on a tuber mound and a boar will come dig one up!",
+            rewardChoices = {{30357, 20}, {30358, 20}, {30359, 20}, {30361, 20}},
+        },
+        [10515] = {
+            description = "We need to show those flayers what happens when you mess with Oronok's " ..
+                "business!\n\nI want you to go back to the Shattered Plains and destroy every flayer egg " ..
+                "that you see. They'll be deep in flayer territory so keep your guard up.",
+        },
+        [10519] = {
+            description = "<Oronok adjusts his posture and stands to his full height.>\n\nI had to be " ..
+                "sure, <name>. And to be sure, I had to test you. Please excuse the little masquerade. I " ..
+                "am as much a farmer as you are <female/male>. Which is to say, not at all.\n\nIf you are " ..
+                "to recover the Cipher of Damnation, you will need to listen to what I have to tell you. " ..
+                "When you are ready, let me know and I will tell you the story.",
+        },
+        [10521] = {
+            description = "My first born, Grom'tor, left to search Coilskar Point - directly southwest of " ..
+                "here.\n\nHe's the warrior in the family - ill-tempered and blood-thirsty... Traits he " ..
+                "inherited from his mother. Search along the outskirts of Coilskar Point. If you see naga " ..
+                "corpses, Grom'tor is sure to be close.\n\nWhen you find him, tell him this: \"We spill " ..
+                "blood for just cause.\" It will let him know that you are a friend to Torn-heart and " ..
+                "prevent your premature death.",
+        },
+        [10522] = {
+            description = "This naga filth is the sixth one I've interrogated today. He's got the fancy " ..
+                "armor so I figured he knew something. Those other ones were useless.\n\n<Grom'tor points " ..
+                "to the corpses of the naga around him.>\n\nI only had to beat him once and he told me " ..
+                "everything.\n\nThe first part of the cipher is hidden in a naga chest at Coilskar Point " ..
+                "or Coilskar Cistern, east of here. He says naga carry the keys. Kill 'em, take their " ..
+                "keys and use them to open the Coilskar chests. Return to me when you find the cipher.",
+        },
+        [10523] = {
+            description = "<Grom'tor wraps the documents up and places them in a lockbox.>\n\nTake this " ..
+                "box to father. He awaits your return at the farm, northeast of here.\n\nTell him that I " ..
+                "will be home soon. As soon as I am done having my fun...",
+            rewardChoices = {{30945, 1}, {30923, 1}, {30981, 1}, {30956, 1}},
+        },
+        [10527] = {
+            description = "My youngest son, Ar'tor, left to search Illidari Point - far to the southwest, " ..
+                "nestled between Legion Hold and Wildhammer Stronghold.\n\nWhile Ar'tor is a hunter of " ..
+                "remarkable skill and an expert tracker, I fear that he may be in over his head this " ..
+                "time. Illidari Point is the proving grounds for Illidan's demons. These are demons that " ..
+                "left the Burning Legion to join the Betrayer!\n\nTravel to Illidari Point and find " ..
+                "Ar'tor, <name>.",
+        },
+        [10528] = {
+            description = "From assessing the scene, you note that Ar'tor is being held in place by " ..
+                "energy beams emanating from the crystals hovering around the rune. Try as you might, " ..
+                "Ar'tor is unmovable.\n\nYou note that the crystals have an empty slot at their base - " ..
+                "perhaps for a key. It also seems as if succubi periodically perform some sort of ritual " ..
+                "at the site.\n\nSearch Illidari Point for their leader. Perhaps she holds the key to " ..
+                "releasing Ar'tor.",
+        },
+        [10537] = {
+            description = "It is a sign, <name>. Even in death, I cannot be stopped. Recovering a part of " ..
+                "the Cipher of Damnation is my destiny. With your help, that destiny will be " ..
+                "fulfilled.\n\nBefore we embark on that journey, I must have my longbow, Lohn'goron. It " ..
+                "is a family heirloom that has been handed down from Torn-heart to Torn-heart for " ..
+                "generations.\n\nMy instinct tells me that a demon stole it from my corpse. Kill the " ..
+                "demons here until you find my bow.",
+        },
+        [10540] = {
+            description = "At last, we are ready. I will bestow a piece of my spirit upon you, hero. It " ..
+                "will guard you and help you in your battle against evil.\n\nYou must then travel south " ..
+                "of here towards the back of Illidari Point. Hidden in the ether is a vile creature known " ..
+                "as Veneratus the Many. My spirit hunter will call him out when he is near.\n\nDestroy " ..
+                "Veneratus and take from his corpse the second part of the Cipher of Damnation.",
+        },
+        [10541] = {
+            description = "I thank you, hero. For without you, my spirit would forever remain in this " ..
+                "cursed place.\n\n<Ar'tor hands you a spectral lockbox.>\n\nTake it and deliver it to my " ..
+                "father at the farm, far to the northeast, above Coilskar Cistern... Inside are " ..
+                "Lohn'goron and the second part of the cipher.\n\nHe will be sad to hear news of my " ..
+                "death. Promise me that you will assure him that I died a free soul. Tell him that I see " ..
+                "the hunting grounds and they are glorious. Tell him that I wait for him there...",
+            rewardChoices = {{30936, 1}, {30931, 1}, {30957, 1}, {30971, 1}, {30959, 1}},
+        },
+        [10546] = {
+            description = "While Ar'tor was off hunting and Grom'tor was off fighting, Borak studied. " ..
+                "Eventually he took up a vocation as a scholar and left for the wilds of Draenor. He " ..
+                "returned home a few years ago a changed orc.\n\nHis heightened sense of awareness and " ..
+                "mental acuity had forged a silent assassin.\n\nNow a confident and powerful orc, he has " ..
+                "taken to recovering the most guarded piece of the cipher.\n\nFind Borak hiding near " ..
+                "Eclipse Point, far to the south. He watches from the shadows of the bridge.",
+        },
+        [10547] = {
+            description = "I'd have given up had I not noticed... He's a Thistlehead. I couldn't place it " ..
+                "at first but the signs are all there...\n\nNow if we could get our hands on some " ..
+                "bloodthistle, we'd be in business.\n\nIn my travels, I met a shady Broken in Shattrath " ..
+                "named Tobias.\n\nTobias made a business of trading bloodthistle to blood elves for " ..
+                "rotten arakkoa eggs.\n\nDirectly west of here are arakkoa ruins. Search them for an egg " ..
+                "and head to the lower city of Shattrath. That's where you'll find Tobias.",
+        },
+        [10550] = {
+            description = "I wasn't lying. That egg was incredible. Where did you get it from?\n\nWell, " ..
+                "if you ever need more bloodthistle, you know where I am and what I need.\n\nHere's a " ..
+                "bundle of the stuff. Take it back to your benefactor.",
+        },
+        [10568] = {
+            description = "Years ago, the dreaded warlock known as Gul'dan raised the volcano in the " ..
+                "middle of Shadowmoon. The draenei village of Baa'ri, to the southwest, was buried under " ..
+                "the lava along with its inhabitants and artifacts of religious importance.\n\nThe " ..
+                "treacherous tribe of Broken known as the Ashtongue has been ordered by Illidan to " ..
+                "excavate the area. We must use this opportunity to recover the Tablets of Baa'ri, an " ..
+                "ancient text rumored to hold the secrets of the Temple of Karabor, now known as the " ..
+                "Black Temple.",
+        },
+        [10570] = {
+            description = "<Borak takes the bundle of bloodthistle from you and places it to his " ..
+                "nose.>\n\nPungent...\n\nNow, take this bundle and place it at the other end of this " ..
+                "bridge. When the envoy makes his daily rounds, he will be compelled to pick it up - " ..
+                "without his bodyguard. You see, blood elves look down upon bloodthistle addicts. If any " ..
+                "of his compatriots ever found out...\n\nAll you need to do is lie in wait for him to " ..
+                "dismiss his bodyguard. When he is alone, make your strike! Kill him and take the missive.",
+        },
+        [10571] = {
+            description = "According to the tablets, an artifact known as a Medallion of Karabor was kept " ..
+                "at Baa'ri. Only the highest-ranking draenei priests were granted these, as they allowed " ..
+                "unfettered access into the Temple of Karabor.\n\nWe must find out whether the Ashtongue " ..
+                "have recovered the medallion that was kept at Baa'ri yet. Its power would provide great " ..
+                "aid in our fight against Illidan.\n\nAkama's lieutenant at Baa'ri, Oronu the Elder, " ..
+                "receives written orders from him daily. Obtain them and bring them to me.",
+        },
+        [10574] = {
+            description = "According to Akama's letter, four fragments of the medallion were unearthed " ..
+                "and given to the Ashtongue Corruptors. These dreaded Broken were once powerful shaman " ..
+                "who now defile the very elements they revered.\n\nHaalum, Corruptor of Air, can be found " ..
+                "at Netherwing Pass. Eykenen and Uylaru, Corruptors of Earth and Fire, were last seen at " ..
+                "the Fel Pits near the Hand of Gul'dan. Lakaan, Corruptor of Water, is rumored to be near " ..
+                "Coilskar Point.\n\nFind them and obtain the medallion fragments.",
+        },
+        [10575] = {
+            description = "The fragments you obtained are only half of the medallion. The Ashtongue " ..
+                "leader, Akama, must have kept the other half.\n\nI dread to ask this of you, as Akama is " ..
+                "both evil and cunning.\n\nHe and the Ashtongue Deathsworn - the vilest and most brutal " ..
+                "of the tribe - are rumored to run a torture chamber inside the Warden's Cage.\n\nI want " ..
+                "you to find that dreaded prison, and find the whereabouts of Akama. His second in " ..
+                "command at the location is a Broken known as Sanoru - interrogate him if you have to.",
+        },
+        [10576] = {
+            description = "<Borak looks you up and down.>\n\nThis is going to be tricky, but I think I " ..
+                "can make it work.\n\nI can disguise you as one of these Illidari blood elves, <name>. " ..
+                "What I need first, though, are several pieces of their armor. It is imperative that the " ..
+                "armor be clean. No blood stains! We want to avoid suspicion.\n\nBring me the gear and " ..
+                "I'll take care of the rest of the disguise.\n\nOnce the disguise is assembled, you're " ..
+                "going to deliver the message to the Grand Commander - in person.",
+        },
+        [10577] = {
+            description = "Take this disguise and enter Eclipse Point. Once inside, use the disguise to " ..
+                "cloak yourself. The Eclipsion blood elves will be unable to see through the disguise, " ..
+                "thereby granting you safe passage to Grand Commander Ruusk.\n\nOnce you find Ruusk, tell " ..
+                "him where next to move the cipher. You're going to have to act your heart out, <name>. " ..
+                "Play it off as if you are his superior, delivering a message from his lord. That should " ..
+                "do it!\n\nOh - watch out for the dragonhawks as they see through the disguise.",
+        },
+        [10578] = {
+            description = "That Cipher fragment will never reach Zuluhed. You're going to ambush Ruul the " ..
+                "Darkener and his transport before it has a chance to make the delivery.\n\nThe Dragonmaw " ..
+                "Fortress is directly east of here, across the Netherwing Fields. Somewhere between " ..
+                "Dragonmaw Fortress and the Sanctum of the Stars is where you'll find Ruul. Strike hard " ..
+                "and strike fast! And <name>, from the sound of it, this Ruul is going to be tough. Keep " ..
+                "your guard up.\n\nReturn the Cipher to me should you succeed.",
+        },
+        [10579] = {
+            description = "Take this box to my father. He still resides at Oronok's Farm, far to the " ..
+                "north, above Coilskar Cistern. When all three fragments are pieced together, the ancient " ..
+                "words will be known once more.\n\nGood luck, <name>. Tell my father that I will be home " ..
+                "soon.",
+            rewardChoices = {{30951, 1}, {30962, 1}, {30939, 1}, {30925, 1}, {30967, 1}, {30944, 1}},
+        },
+        [10587] = {
+            description = "Our scouts have reported a massive influx of Sunfury blood elf recruits " ..
+                "heading to the Ruins of Karabor. Normally this would represent a purely military threat, " ..
+                "however we believe something else is amiss.\n\nDescriptions of their attire and fighting " ..
+                "style are suspiciously close to that of Illidan himself. I do not want to become alarmed " ..
+                "without good reason, so I would like you to go there and bring me back their weapons. We " ..
+                "will then determine whether my fears are unfounded or not.",
+        },
+        [10588] = {
+            description = "How many times has this spell has been used in the history of our worlds? " ..
+                "Undoubtedly, its power for destruction is unparalleled.\n\nWhat you must do now is take " ..
+                "the cipher, now made whole, and read from it at the Altar of Damnation - where the " ..
+                "memory of Gul'dan stands.\n\nWhat you will see once the words are uttered are the " ..
+                "memories left imprinted upon the land. Stand your ground and await the coming of " ..
+                "Cyrukh.\n\nYou must be victorious, <name>. This land can not withstand another " ..
+                "shattering.",
+            rewardChoices = {{31036, 1}, {31038, 1}, {31062, 1}, {31071, 1}, {31072, 1}, {31073, 1}},
+            rewardItems = {{31074, 1}},
+            rewardMoney = 132000,
+            rewardXP = 19000,
+        },
+        [10619] = {
+            description = "The Ashtongue tribe is feared among all Broken. It consists of the most " ..
+                "vicious and bloodthirsty individuals, handpicked by Akama himself. They are as fierce " ..
+                "and ruthless as any naga, demon or blood elf in Illidan's army and they have been " ..
+                "deployed in large numbers at the Ruins of Baa'ri, southwest of here. Go there and put a " ..
+                "dent in their numbers before they get a chance to mount an attack on us.",
+        },
+        [10622] = {
+            description = "Akama has been tracking your progress quite closely, <name>.\n\nThe Ashtongue " ..
+                "you've slain at the Ruins of Baa'ri are amongst the most evil Broken known among us... " ..
+                "carefully hand-picked by Akama himself to maintain the facade we need to present to " ..
+                "Illidan. The Deathsworn, however, know of Akama's true intentions.\n\nFirst things " ..
+                "first. We need to know that you are not with Illidan. A Satyr known as Zandras watches " ..
+                "over us from above the prison walls on his behalf. Slay him as proof of your allegiance.",
+        },
+        [10628] = {
+            description = "You've proven what side you're on. I will reveal to you our leader's " ..
+                "hideout.\n\nFollow the halls beyond; there will be an underground passage hidden by " ..
+                "stagnant water on your right.\n\nI must warn you, <name>. You are not to speak to anyone " ..
+                "of what you see there.",
+        },
+        [10633] = {
+            description = "Stories abound about the life of Teron Gorefiend, but most are just that - " ..
+                "stories. We do not know what happened to Gorefiend after he returned to Draenor.\n\nThe " ..
+                "only thing we are certain of is that he has already died once.\n\nI have heard the " ..
+                "scouts here speaking of an ancient orc spirit that resides at the Altar of Shadows, far " ..
+                "to the southeast, across the Netherwing Fields and through Netherwing Pass. Take the " ..
+                "Spectrecles and track this orc down. He will surely have more information on Gorefiend.",
+        },
+        [10634] = {
+            description = "In life, Gorefiend was a bastard, but in death, Gorefiend was an unmitigated " ..
+                "terror.\n\nTo the southeast you will find Netherwing Ledge. What was once part of the " ..
+                "mainland of Shadowmoon is now a floating island in the sky.\n\nVhel'kur, spawn of " ..
+                "Deathwing, once called it his home, but now knows it as his grave. He flies an endless " ..
+                "circle above the island, seething at his defeat to Gorefiend.\n\nIf you are to recover " ..
+                "the Gorefiend's armor, it is Vhel'kur that you must defeat.",
+        },
+        [10635] = {
+            description = "Many a cruel act he committed but none so cold as the slaughter of the clerics " ..
+                "of Karabor.\n\nAfter Gul'dan's Horde defeated the draenei of Karabor, the surviving " ..
+                "clerics of Karabor were marched out, told that they were to be taken to Hellfire Citadel " ..
+                "as prisoners of war.\n\nGorefiend, not yet a death knight, murdered each and every last " ..
+                "one of them in cold blood. They now roam in front of the Black Temple with vengeance in " ..
+                "their hearts.\n\nIt is the clerics of Karabor that hold the cloak of Gorefiend.",
+        },
+        [10636] = {
+            description = "One by one they knelt before him, offering their lives as a show of " ..
+                "allegiance. Gorefiend hoisted his sickle and cut clean their heads. Shortly after this " ..
+                "slaughter, Gorefiend took his own life.\n\nBut this was no act of contrition! No, " ..
+                "Gorefiend sought immortality! From the corpses of the fallen death knights rose the " ..
+                "Ghostriders of Karabor.\n\nThey now ride the roads encircling the Hand of Guldan, " ..
+                "awaiting the day that their master returns. It is they who hold the truncheon of " ..
+                "Gorefiend. Retrieve it...",
+        },
+        [10637] = {
+            description = "The weapons are authentic, as we feared. Illidan is training demon hunters at " ..
+                "the Ruins of Karabor and we must put an end to it.\n\nDo not be fooled by their name, " ..
+                "<name>, their power will be used against us as often as against any demon.\n\nTheir " ..
+                "warlocks summon and subdue demons to be used as part of the initiates' training. A pit " ..
+                "lord named Azaloth has proven too strong to be used in training and is kept banished. " ..
+                "Find a way to let him loose on his captors. That should buy us the time we need.",
+        },
     },
     npcs = {
+        [19797] = {
+            spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.6}}},
+            zoneID = 3520,
+        },
+        [20427] = {
+            spawns = {
+                [3520] = {
+                    {28.4, 57.6}, {29.4, 55.8}, {29.4, 56.8}, {29.4, 58}, {29.4, 58.6}, {29.6, 57.8},
+                    {30.2, 56.8}, {30.4, 56.4}, {30.6, 56.6}, {30.6, 58}, {30.8, 56.2}, {31.8, 56.4},
+                    {31.8, 56.6},
+                },
+            },
+            zoneID = 3520,
+        },
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
     },
     objects = {},
