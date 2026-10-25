@@ -4,6 +4,131 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.262] - 2026-10-25
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,563 quests, 99 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 525 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 526 quests, 8 NPCs
+- quest 9452 - Red Snapper - Very Tasty! - updated
+  - description added
+  - reward items: +2
+- quest 12907 - Examples to be Made - updated
+  - description added
+- quest 12908 - A Certain Prisoner - updated
+  - description added
+- quest 12909 - The Nose Knows - updated
+  - description added
+- quest 12910 - Sniffing Out the Perpetrator - updated
+  - description added
+- quest 12912 - A Great Storm Approaches - updated
+  - description added
+- quest 12913 - Speak Orcish, Man! - updated
+  - description added
+- quest 12914 - Gymer's Salvation - updated
+  - description added
+- quest 12915 - Mending Fences - updated
+  - description added
+- quest 12917 - Speaking with the Wind's Voice - updated
+  - description added
+- quest 12920 - Catching up with Brann - updated
+  - description added
+- quest 12921 - A Change of Scenery - updated
+  - description added
+- quest 12922 - The Refiner's Fire - updated
+  - description added
+- quest 12925 - Aberrations - updated
+  - description added
+- quest 12926 - Pieces of the Puzzle - updated
+  - description added
+- quest 12927 - Data Mining - updated
+  - description added
+- quest 12929 - The Earthen of Ulduar - updated
+  - description added
+- quest 12930 - Rare Earth - updated
+  - description added
+- quest 12931 - Fighting Back - updated
+  - description added
+- quest 12932 - The Amphitheater of Anguish: Yggdras! - updated
+  - description added
+  - reward items: +1
+- quest 12933 - The Amphitheater of Anguish: Magnataur! - updated
+  - description added
+  - reward items: +1
+- quest 12934 - The Amphitheater of Anguish: From Beyond! - updated
+  - description added
+  - reward items: +1
+- quest 12936 - The Amphitheater of Anguish: Korrak the Bloodrager! - updated
+  - description added
+  - reward items: +1
+- quest 12938 - The Duke - updated
+  - description added
+- quest 12939 - Honor Challenge - updated
+  - description added
+- quest 12949 - Get the Key - updated
+  - description added
+- quest 12951 - Let the Baron Know - updated
+  - description added
+- quest 12954 - The Amphitheater of Anguish: Yggdras! - updated
+  - description added
+  - reward items: +1
+- quest 12956 - A Spark of Hope - updated
+  - description added
+- quest 12957 - Slaves of the Stormforged - updated
+  - description added
+- quest 12958 - Shipment: Blood Jade Amulet - updated
+  - description added
+- quest 12959 - Shipment: Glowing Ivory Figurine - updated
+  - description added
+- quest 12960 - Shipment: Wicked Sun Brooch - updated
+  - description added
+- quest 12961 - Shipment: Intricate Bone Figurine - updated
+  - description added
+- quest 12962 - Shipment: Bright Armor Relic - updated
+  - description added
+- quest 12963 - Shipment: Shifting Sun Curio - updated
+  - description added
+- quest 12964 - The Dark Ore - updated
+  - description added
+- quest 12966 - You Can't Miss Him - updated
+  - description added
+- quest 12967 - Battling the Elements - updated
+  - description added
+- quest 12968 - Yulda's Folly - updated
+  - description added
+- quest 12969 - Is That Your Goblin? - updated
+  - description added
+- quest 12970 - The Hyldsmeet - updated
+  - description added
+- quest 12972 - You'll Need a Bear - updated
+  - description added
+- quest 12974 - The Champion's Call! - updated
+  - description added
+  - reward items: +1
+- quest 12975 - In Memoriam - updated
+  - description added
+- quest 12976 - A Monument to the Fallen - updated
+  - description added
+- quest 12977 - Hodir's Call - updated
+  - description added
+- quest 12978 - Facing the Storm - updated
+  - description added
+- quest 12979 - Armor of Darkness - updated
+  - description added
+- quest 12980 - The Armor's Secrets - updated
+  - reward money removed (7g 40s)
+- quest 12981 - Hot and Cold - updated
+  - reward money removed (7g 40s)
+- quest 12985 - Forging a Head - updated
+  - reward money removed (7g 40s)
+- quest 12987 - Placing Hodir's Helm - updated
+  - reward money removed (1g 90s)
+- quest 12988 - Destroy the Forges! - updated
+  - reward money removed (7g 40s)
+- quest 12991 - Hit Them Where it Hurts - updated
+  - reward money removed (7g 40s)
+
 ## [0.2.261] - 2026-10-25
 
 Data from the PandaQuest portal.

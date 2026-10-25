@@ -3746,6 +3746,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{33250, 1}, {57851, 1}},
             rewardMoney = 4000,
         },
+        [9452] = {
+            description = "I've found that these waters are bustling with red snapper, a very tasty fish. " ..
+                "With a fishing net, I can catch enough to feed dozens of draenei! Unfortunately, I was " ..
+                "recently attacked by a creature known as a murloc while netting in the river and have " ..
+                "suffered some injuries that prevent me from doing my job. I need help!\n\nUse this " ..
+                "fishing net near schools of red snapper, found in the Crystalbrook river to the east, to " ..
+                "catch the fish.\n\nWhat do you say? Remember to return the net when you are finished.",
+            rewardItems = {{6256, 1}, {6529, 1}},
+        },
         [9453] = {
             description = "You did a wonderful job, <name>. Our people will be thankful for this bounty. " ..
                 "With that said, would you mind taking this haul of red snapper to Acteon at Azure " ..
@@ -22993,11 +23002,76 @@ ns.Overrides.wowhead = {
                 "with the mines. Do whatever she asks until she trusts you with the keys to my shackles.",
         },
         [12906] = {rewardMoney = 36000},
-        [12907] = {rewardMoney = 36000},
-        [12909] = {rewardMoney = 7400},
-        [12910] = {rewardMoney = 74000},
-        [12913] = {rewardMoney = 7400},
-        [12915] = {rewardMoney = 74000},
+        [12907] = {
+            description = "For every action there is an opposite reaction, sister. In the case of us " ..
+                "applying pressure on the males, this has meant newly spread rumors of " ..
+                "insurrection.\n\nThe bearded pig behind this rabble-rousing is called Garhal. Put an end " ..
+                "to him... and make sure the other males see his demise. They must learn that " ..
+                "insubordination will not be tolerated.",
+            rewardMoney = 36000,
+        },
+        [12908] = {
+            description = "You are without mercy. You will do well around these parts.\n\nI have another " ..
+                "task to ask of you. There is a female vrykul prisoner that's become more of a liability " ..
+                "than I had anticipated.\n\nShe had the gall to claim the right to take part in the " ..
+                "Hyldsmeet, our sacred competition of strength and fighting prowess.\n\nHere's the key to " ..
+                "her shackles. Make it as painless as possible. She's a female after all, even if not one " ..
+                "of us.",
+        },
+        [12909] = {
+            description = "In order to track down Brann, we're going to need a creature with a keen sense " ..
+                "of smell and a good tracking ability. There weren't any hounds on the zeppelin, but I " ..
+                "think I have a substitute.\n\nAfter the crash, I sent Khaliisi down the east face of the " ..
+                "mountain to start hunting for food. Her cat, Frostbite, excels at tracking prey in the " ..
+                "snow. Tell her that she'll have to part with her companion for a while, at least. She " ..
+                "can hunt on her own, but we have no other way of catching up to Brann Bronzebeard.",
+            rewardMoney = 7400,
+        },
+        [12910] = {
+            description = "Boktar can have his way this time, but I'll expect him to make it up to me. " ..
+                "Don't look at me like that. Boktar may be in command, but no one tells a hunter what to " ..
+                "do.\n\n'Put that beast away,' he says. 'Make it stop growling.'\n\nAll of a sudden he " ..
+                "changes his mind when it suits him. Next time he complains, Frostbite'll just nip him a " ..
+                "bit. Don't worry, she'll do an admirable job tracking your prey. After she locates her " ..
+                "target, you're on your own to deal with iron dwarves, or Brann, or whatever you find.",
+            rewardMoney = 74000,
+        },
+        [12912] = {
+            description = "You are not like the others, little one. You do not reek of the ancient death. " ..
+                "Perhaps you can be trusted.\n\nI am Gymer, king of the storm giants. I was lured here by " ..
+                "my brother, Thiassi, now an undead servant of the Lich King. By the time I realized that " ..
+                "his cry for help was a trap, it was too late. I am now a prisoner of the Scourge and I " ..
+                "fear that soon I will suffer the same fate as many of the other storm giants.\n\nFind a " ..
+                "way to release me from this cage and I will aid you to the best of my ability.",
+        },
+        [12913] = {
+            description = "<Brann begins gesticulating wildly and rambling in his native " ..
+                "language.>\n\nRuk MogOth red a mogoth ta eft Thros-garE Haldir.\n\nKha gor ruk khaz ta " ..
+                "ke ruk hrim eft thros-am-kha ruk kost-um havar go kost.\n\nA modoss hine ruk bergum eft " ..
+                "thros-am-kha ga eft Haldir ke loch Thon we lo gefrunon ta mitta.\n\nGar Ruk dagUm loch " ..
+                "angor-magi ta har ruk!\n\n<After a few moments, you realize the conversation is going " ..
+                "nowhere. Perhaps the shaman, Moteha Windborn, at the Grom'arsh Crash-Site will know what " ..
+                "to do.>",
+            rewardMoney = 7400,
+        },
+        [12914] = {
+            description = "Now you say that he's locked up in a 100 foot tall cage, eh?\n\nIf my " ..
+                "calculations are correct, we should be able to at least weaken the hinges on the cage, " ..
+                "giving the giant enough leeway to break out.\n\nIf this is going to work I'm going to " ..
+                "need some plasticizers and stabilizers.\n\nBanshee essence should do nicely for the " ..
+                "plasticizer. You can get that from the banshees in the Dead Fields, northeast of us. The " ..
+                "stabilizer can be found on the earthragers to the southwest, near Ebon Watch.\n\nGet a " ..
+                "move on!",
+        },
+        [12915] = {
+            description = "If I hope to wrest control of the Temple of the Makers from my brother, I must " ..
+                "make amends with my old allies.\n\nPerhaps by eliminating a common enemy, we may at " ..
+                "least take a step towards renewing my friendship with the frost giants.\n\nFjorn has " ..
+                "besieged Dun Niffelem with giants of iron. You must defeat him at Fjorn 's Anvil, far to " ..
+                "the east of here, and weaken his forces sufficiently for the Sons of Hodir to emerge " ..
+                "victorious.\n\nTake this charm, <name>. Use it to summon my earthen to your aid.",
+            rewardMoney = 74000,
+        },
         [12916] = {
             description = "What I'm about to give you is called seaforium. It is a highly volatile " ..
                 "explosive with some unique properties. Due to its malleable nature, you will be able to " ..
@@ -23005,7 +23079,15 @@ ns.Overrides.wowhead = {
                 "and use the jumbo seaforium charge to set him free.\n\nLet's hope he honors the bargain. " ..
                 "He's our only hope.",
         },
-        [12917] = {rewardMoney = 74000},
+        [12917] = {
+            description = "I suppose we shouldn't have expected to find Brann so easily, not with our " ..
+                "luck. If we can make sense of what Brann is saying, you can persuade him to give up his " ..
+                "location.\n\nThe power of the wind is strong in these mountains, and it may prove a " ..
+                "great boon to us. A knowledgeable shaman can hear the sound of all the world's tongues " ..
+                "on the wind.\n\nTo the northwest, on the Snowdrift Plains, you will find beings made of " ..
+                "wind, the stormriders. Capture their voices and bring them to me.",
+            rewardMoney = 74000,
+        },
         [12919] = {
             description = "My people have been decimated by the Lich King. The Scourge now use the " ..
                 "corpses of storm giants to create mindless flesh giants, or worse, stitched together " ..
@@ -23017,21 +23099,115 @@ ns.Overrides.wowhead = {
             rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
             rewardMoney = 186000,
         },
-        [12920] = {rewardMoney = 58000},
-        [12922] = {rewardMoney = 74000},
+        [12920] = {
+            description = "What are you waiting for? The language barrier has been broken, thanks to " ..
+                "Moteha. Contact Brann Bronzebeard and find out anything you can about where he's hiding " ..
+                "and what he's chasing after.\n\nMaybe we can still salvage something from this disaster.",
+            rewardMoney = 58000,
+        },
+        [12921] = {
+            description = "Excellent. There's an exit in the eastern end of the mine that leads to " ..
+                "Brunnhildar Village. Follow it and I'll meet you there.\n\nWe must not be seen together " ..
+                "so no one suspects you of aiding me. I'll use my magic to disguise my appearance. Do not " ..
+                "worry, <race> -- we'll find your friend in no time.",
+        },
+        [12922] = {
+            description = "Beneath its porous exterior, this hunk of metal gleams with a mysterious " ..
+                "quality.\n\nYou feel it would only be prudent to burn off the slag at Fjorn's " ..
+                "Anvil.\n\nAs you ponder where in this frozen waste you might find something hot enough " ..
+                "for the job, a fire revenant crosses your path...",
+            rewardMoney = 74000,
+        },
         [12924] = {rewardMoney = 74000},
-        [12925] = {rewardMoney = 74000},
-        [12926] = {rewardMoney = 74000},
-        [12927] = {rewardMoney = 74000},
+        [12925] = {
+            description = "The Lich King sent emissaries to us on three different occasions. All three " ..
+                "were promptly dismembered.\n\nOur sisters in Valkyrion were not as dedicated to our " ..
+                "traditions and accepted the Scourge's advances. Now instead of capturing their drakes " ..
+                "from the wild, they raise them from the blight and filth that the Scourge wallow " ..
+                "in.\n\nTake the frost oil that the Valkyrion Hyldnir carry on them and use it to freeze " ..
+                "any blighted eggs you find. Rumors speak of a fetid pool of blight where the eggs are " ..
+                "kept.",
+            rewardMoney = 74000,
+        },
+        [12926] = {
+            description = "We've seen the iron dwarves and their constructs making war on the creatures " ..
+                "of stone that Brann calls the earthen, along with their giant allies. Contact him and " ..
+                "aid him in any way you can, and remember that anything we can learn from his search may " ..
+                "aid us in fighting against the iron dwarves and their master.",
+            rewardMoney = 74000,
+        },
+        [12927] = {
+            description = "That disk you assembled... it's blank! Keeper Mimir, the tinker who built this " ..
+                "library, must've hidden the information elsewhere. Look around the Inventor's Library; " ..
+                "do you see any databanks there?\n\nThat might be the disk's purpose. Try using it near " ..
+                "some of those databanks. Perhaps it's set to retrieve and store information from them. " ..
+                "After you've tried your hand at that, contact me again and let me know what you've " ..
+                "found. Meanwhile, I'll be trying to track down the other half of the archive key.",
+            rewardMoney = 74000,
+        },
         [12928] = {rewardMoney = 74000},
-        [12929] = {rewardMoney = 7400},
-        [12930] = {rewardMoney = 74000},
-        [12931] = {rewardMoney = 74000},
-        [12932] = {rewardMoney = 195000},
-        [12933] = {rewardMoney = 195000},
-        [12934] = {rewardMoney = 195000},
+        [12929] = {
+            description = "The earthen who once inhabited, built, and maintained Ulduar were ousted from " ..
+                "their home when Loken took over the city. Since then, his iron dwarf followers have " ..
+                "relentlessly attacked the exiles.\n\nThey have taken refuge in an old titan building, " ..
+                "which they now call Bouldercrag's Refuge, on the face of a mountain west of the " ..
+                "Inventor's Library. Bouldercrag and his brethren fight to keep the irons from " ..
+                "overrunning their haven, but they cannot hold their ground long. Find and help them, " ..
+                "<name>.",
+            rewardMoney = 7400,
+        },
+        [12930] = {
+            description = "It seems so long ago that these hammers pounded and hewed stone instead of " ..
+                "iron. Our expulsion from Ulduar saw the weakest of us dead and the strongest of our " ..
+                "craftsmen reborn as warriors.\n\nAs the irons beat us back, even the strongest find " ..
+                "themselves failing.\n\nWe can do little for the wounded, save when we have a stock of " ..
+                "enchanted earth. We used to mine it from the deposits on the sheer cliff face to the " ..
+                "northwest, but the constant battle has prevented us from replenishing our stock. Would " ..
+                "you help?",
+            rewardMoney = 74000,
+        },
+        [12931] = {
+            description = "The refuge's defenders have done their best to blunt the iron dwarves' " ..
+                "attacks, but we keep losing ground inch by inch. My men are hardy, but not tireless. " ..
+                "Without reinforcements, it's only a matter of time until we will be overrun.\n\nWould " ..
+                "you lend your skills to the refuge's defense? It would greatly improve the morale of the " ..
+                "defenders and give them -- and me -- hope of mounting a counterattack.\n\nKill any of " ..
+                "the stormforged or their creations you encounter outside the refuge.",
+            rewardMoney = 74000,
+        },
+        [12932] = {
+            description = "I'll tell you what, buddy, this place is a far cry from the rolling plains of " ..
+                "Nagrand. These trolls are dirtier than ogres; but hey, I go where the gold's at! So " ..
+                "welcome to Zul'Drak, pal.\n\nYou're new to this racket, so let me set you straight. I'm " ..
+                "the fight promoter and this feisty troll next to me is Wodin, my bodyguard. You're the " ..
+                "entertainment. When you wanna fight, let me know and I'll set up the match.\n\nIf you're " ..
+                "ready and got a group of friends with you, we can start! What do you say?",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+            rewardMoney = 195000,
+        },
+        [12933] = {
+            description = "This next match is a doozy, buddy! Apparently some magnataur from the " ..
+                "Dragonblight wants a piece of the action. You ever fought one of those before? All I can " ..
+                "tell you is to aim high!\n\nWe'll get this party started when you give me the word.",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+            rewardMoney = 195000,
+        },
+        [12934] = {
+            description = "I'm not gonna lie to you, pal. You might be overmatched here. This next one is " ..
+                "a being from the elemental planes! I don't even know what's gonna show up in that " ..
+                "arena!\n\nIf you think you're up to it, get in there and give 'em hell!",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+            rewardMoney = 195000,
+        },
         [12935] = {rewardMoney = 195000},
-        [12936] = {rewardMoney = 195000},
+        [12936] = {
+            description = "You're not gonna believe this, pal. Your next fight is against Korrak the " ..
+                "Bloodrager! Looks like the Drakkari trolls are pulling a power play! And let me tell " ..
+                "you, buddy, he's been sippin' the animal god juice. He's good and ready to pound you " ..
+                "into the ground.\n\nAre you ready?",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+            rewardMoney = 195000,
+        },
         [12937] = {
             description = "The refuge's defenders fight bravely, but they cannot keep up with the iron " ..
                 "onslaught.\n\nWith the earth you collected, I can make bandages to help heal the wounds " ..
@@ -23041,24 +23217,110 @@ ns.Overrides.wowhead = {
                 "is one too many.",
             rewardMoney = 74000,
         },
-        [12939] = {rewardMoney = 74000},
+        [12938] = {
+            description = "We need you focused, <name>. We're barely holding The Shadow Vault as it is. " ..
+                "As you can see, we've greatly angered the Lich King.\n\n<The baron chuckles.>\n\nI need " ..
+                "you to speak with Duke Lankral. He's in charge here now. You'll find him inside the " ..
+                "vault building proper.\n\nWere I you, I would not keep him waiting.",
+        },
+        [12939] = {
+            description = "The first step we're going to take is at a place in Jotunheim called the " ..
+                "Savage Ledge. It's just over the mountains to the west.\n\nOn the ledge the vrykul " ..
+                "warriors are always sparring, being instructed in the finer arts of battle by their " ..
+                "thane's men.\n\nI want you to take this flag and issue a challenge to a number of them. " ..
+                "Let's demoralize them with the 'mere' skills of a <race>, shall we?\n\n<The duke grins, " ..
+                "his rotting teeth flashing in the dim light of the vault.>",
+            rewardMoney = 74000,
+        },
         [12942] = {rewardMoney = 74000},
         [12943] = {rewardMoney = 74000},
         [12948] = {rewardMoney = 204000},
-        [12949] = {rewardMoney = 74000},
-        [12951] = {rewardMoney = 19000},
+        [12949] = {
+            description = "<class>, the key to my shackles is hanging around the neck of Instructor " ..
+                "Hroegar outside.\n\nPerhaps you could retrieve it by separating his head from his " ..
+                "shoulders?",
+            rewardMoney = 74000,
+        },
+        [12951] = {
+            description = "The most important thing that you can do right now is to return to The Shadow " ..
+                "Vault and let Baron Sliver know that I've failed.\n\nYou see, I wasn't the only one " ..
+                "captured by these vrykul devils. My entire contingent of death knights was also " ..
+                "taken.\n\nI should have seen the trap before it was sprung, but there's no use crying " ..
+                "over spilled milk now is there?\n\nGo on before you get captured, too! I'll see you back " ..
+                "at the vault.",
+            rewardMoney = 19000,
+        },
         [12953] = {rewardMoney = 58000},
-        [12954] = {rewardMoney = 195000},
+        [12954] = {
+            description = "I was wondering when you'd show up, <name>! Having a past champion of the Ring " ..
+                "of Blood here will be a huge draw! We're gonna be rich, buddy! RICH!\n\nAnyway, this " ..
+                "dump is Zul'Drak. All the ice trolls seem to use it as a toilet. I dunno, the whole " ..
+                "place is off its rocker if you ask me! Who cares, though, right? We're here to make some " ..
+                "gold!\n\nYou know the drill, <name>. When you're ready let me know and we'll get this " ..
+                "show on the road!",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+            rewardMoney = 195000,
+        },
         [12955] = {rewardMoney = 74000},
-        [12956] = {rewardMoney = 58000},
-        [12957] = {rewardMoney = 74000},
-        [12958] = {rewardMoney = 15},
-        [12959] = {rewardMoney = 102000},
-        [12960] = {rewardMoney = 114000},
-        [12961] = {rewardMoney = 114000},
-        [12962] = {rewardMoney = 114000},
-        [12963] = {rewardMoney = 15},
-        [12964] = {rewardMoney = 74000},
+        [12956] = {
+            description = "Clearly, this is more than an ordinary hunk of metal.\n\nUnlike any ore you're " ..
+                "familiar with, it is hard but not brittle, far lighter than it looks, and glows even " ..
+                "when cool.\n\nLooking closer, you can make out one of Thorim 's runes shining beneath " ..
+                "the surface....",
+            rewardMoney = 58000,
+        },
+        [12957] = {
+            description = "To the southwest, on the western side of the Snowdrift Plains, the iron " ..
+                "dwarves have dug a mine into the hillside. There, they use captive mechagnomes, servants " ..
+                "of Keeper Mimir, to mine ore.\n\nI don't know where these mechagnomes came from, nor " ..
+                "what they would do with their freedom, but perhaps we can win their help.\n\nGo to the " ..
+                "Frozen Mine, <name>, and set these creatures free from their bondage. Ask if they would " ..
+                "fight alongside us against iron dwarf tyranny.",
+            rewardMoney = 74000,
+        },
+        [12958] = {
+            description = "A wealthy shipping concern has requested a collection of Blood Jade Amulets to " ..
+                "sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 15,
+        },
+        [12959] = {
+            description = "A wealthy shipping concern has requested a collection of Glowing Ivory " ..
+                "Figurines to sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 102000,
+        },
+        [12960] = {
+            description = "A wealthy shipping concern has requested a collection of Wicked Sun Brooches " ..
+                "to sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 114000,
+        },
+        [12961] = {
+            description = "A wealthy shipping concern has requested a collection of Intricate Bone " ..
+                "Figurines to sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 114000,
+        },
+        [12962] = {
+            description = "A wealthy shipping concern has requested a collection of Bright Armor Relics " ..
+                "to sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 114000,
+        },
+        [12963] = {
+            description = "A wealthy shipping concern has requested a collection of Shifting Sun Curios " ..
+                "to sell at Undermine. If you can bring me one, I can reward you with a Dalaran " ..
+                "Jewelcrafter's Token.",
+            rewardMoney = 15,
+        },
+        [12964] = {
+            description = "At the Frozen Mine in the western part of the Snowdrift Plains, the " ..
+                "stormforged iron dwarves have constructed a mine manned by slaves.\n\nIt's well behind " ..
+                "the lines, so we haven't been able to find out much about what's going on there, but my " ..
+                "scouts have reported seeing them remove cartloads of dark, sickly looking ore.",
+            rewardMoney = 74000,
+        },
         [12965] = {
             description = "The one who commands the stormforged iron dwarves is called Runeseer Valduran. " ..
                 "Although I have never seen them, it is said that his master, Keeper Loken, who took over " ..
@@ -23069,25 +23331,112 @@ ns.Overrides.wowhead = {
             rewardChoices = {{42795, 1}, {42820, 1}, {42827, 1}, {42808, 1}},
             rewardMoney = 74000,
         },
-        [12968] = {rewardMoney = 58000},
-        [12970] = {rewardMoney = 7400},
+        [12966] = {
+            description = "<Jokkum listens patiently to your request, then ponders it carefully before " ..
+                "responding.>\n\nSo it is you we have to thank for Fjorn's demise?\n\nWhile it's true " ..
+                "that you have aided us in our time of need, there is still much that must be done to " ..
+                "repair our relations with Thorim.\n\nFor now, I shall allow Njormeld to reforge the " ..
+                "armor we gifted to the Stormlord so many ages ago. Consider it payment for your " ..
+                "assistance against Fjorn.\n\nNjormeld was sent to recover Fjorn's anvil. You should find " ..
+                "him there.",
+        },
+        [12967] = {
+            description = "Snorri was once the pride of our nation. A mighty warrior, many an enemy fell " ..
+                "to his club.\n\nWe honor him, though he's no longer what he once was. Age has taken its " ..
+                "toll, dulling his senses and sapping his strength. Still, he remains as proud as ever, " ..
+                "never missing an opportunity to join a battle.\n\nSpeaking of battle, we're cooling " ..
+                "Fjorn's anvil so it can be taken home. The remaining fire revenants are putting up some " ..
+                "resistance. Help Snorri relive his glory days, <race>. Guide him against this enemy.",
+        },
+        [12968] = {
+            description = "The witch that started it all, Yulda the Stormspeaker came to our very " ..
+                "village. She dared to insult our noble traditions and spouted the Lich King's venomous " ..
+                "promises of power.\n\nShe ought to have left with a sword through her, but her magic was " ..
+                "strong and she managed to escape.\n\nSeek her in Valkyrion inside the largest dwelling " ..
+                "and show her that we are not to be trifled with.",
+            rewardMoney = 58000,
+        },
+        [12969] = {
+            description = "I trust that's the green little one you've been looking for. If I were you I'd " ..
+                "step in before that Hyldnir splits him in half.\n\nYou've arrived in the middle of the " ..
+                "Hyldsmeet, so all challenges must be accepted by participants. There's nothing to stop " ..
+                "you from taking your green friend's place.",
+        },
+        [12970] = {
+            description = "Whether you've noticed or not, by defeating your first Hyldnir in hand-to-hand " ..
+                "combat, you've entered the Hyldsmeet -- the great competition of Hyldnir against Hyldnir " ..
+                "to determine who will rule by Thorim's side.\n\nThe Hyldsmeet is the reason why I was " ..
+                "imprisoned, for I sought to partake in the competition but was far too old and frail to " ..
+                "be a match for the Hyldnir.\n\nIf you're willing to listen, I've a proposal for you.",
+            rewardMoney = 7400,
+        },
         [12971] = {rewardMoney = 74000},
+        [12972] = {
+            description = "You've succeeded in the first rounds of the Hyldsmeet. To advance further, " ..
+                "you're going to need a warbear of your own.\n\nUnfortunately, the Hyldnir don't give " ..
+                "them out to just anyone. You'll have to emerge victorious from true battle, not just " ..
+                "gladiatorial combat.\n\nThe Hyldnir of Brunnhildar are currently involved in a feud " ..
+                "against the Sons of Hodir, Thorim's former allies. Speak to Brijana just outside the " ..
+                "village and see how you can help them and prove yourself in the process.",
+        },
         [12973] = {rewardMoney = 222000},
-        [12975] = {rewardMoney = 74000},
-        [12976] = {rewardMoney = 37000},
-        [12977] = {rewardMoney = 74000},
-        [12978] = {rewardMoney = 74000},
-        [12979] = {rewardMoney = 74000},
-        [12980] = {rewardMoney = 74000},
-        [12981] = {rewardMoney = 74000},
+        [12974] = {
+            description = "Pfft, what happens down here ain't fightin'. It's a couple of guys dancin' " ..
+                "around a flag.\n\nYou lookin' for some real action, buddy? 'Cause if you are I got the " ..
+                "hottest ticket in town.\n\nEver heard of Gurgthock and Wodin? Goblin and troll who ran " ..
+                "the Ring of Blood back in Outland? Well they're here in Northrend and they've started up " ..
+                "a whole new fight club over in Zul'Drak. If you're interested go to Zul'Drak, east of " ..
+                "Crystalsong. They're at the big arena in the center. Tell 'em Shifty sent ya!",
+            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
+        },
+        [12975] = {
+            description = "Surely Thorim has told you of the tragedy that divides us.\n\nIt was in " ..
+                "Thunderfall, northeast of here, that these events unfolded. The frozen fossils there are " ..
+                "a reminder of that dark day, as are the spirits that haunt that place.\n\nIf my people " ..
+                "are to forgive Thorim, something must take the place of those images. A memorial must be " ..
+                "constructed to bring our hearts peace.\n\nGo there, <race>. Collect the fragments of " ..
+                "Hodir's Horn that was shattered that day.",
+            rewardMoney = 74000,
+        },
+        [12976] = {
+            description = "Bring these fragments to Njormeld. He will use the pieces of that sacred relic " ..
+                "in the construction of a mighty monument.\n\nMay it soothe the pains and heal the scars " ..
+                "my people have borne these many years.\n\nMay its presence help to bring about a new age " ..
+                "that sees us once again in glorious battle at Thorim's side.\n\nGo now, <class>. " ..
+                "Njormeld awaits you.",
+            rewardMoney = 37000,
+        },
+        [12977] = {
+            description = "You have done a great service to the giants of Dun Niffelem. Without your aid, " ..
+                "this monument would not exist.\n\nAs you silently ponder its significance, feelings " ..
+                "begin to flood your heart. The feelings fill your mind with thoughts and images... as " ..
+                "well as a sense of urgency.\n\nThe sensations fade and leave you with a knowledge of " ..
+                "what you must do. The restless spirits at Thunderfall must be put to rest.\n\nAs you set " ..
+                "off, you find that your hands have been filled with an ethereal horn.",
+            rewardMoney = 74000,
+        },
+        [12978] = {
+            description = "Like Bouldercrag, I once served the keepers as a craftsman in Ulduar, but with " ..
+                "Loken's betrayal, I turned my hammer toward our new foes.\n\nWhen we could spare the " ..
+                "men, I led raids on Nidavelir to relieve the pressure on our defenders, but our lines " ..
+                "are near collapse.\n\nYou've proven yourself a capable combatant and a staunch ally. " ..
+                "Perhaps you'd be willing to take up our banner and take the fight to Nidavelir, the iron " ..
+                "dwarf stronghold to the southwest, across the Snowdrift Plains.",
+            rewardMoney = 74000,
+        },
+        [12979] = {
+            description = "This armor plate is thick and oversized compared to the rest of the golem's " ..
+                "defenses. A quick examination of the golem's corpse reveals that this heavier plate " ..
+                "seems to have been bolted on as an afterthought or a crude upgrade.\n\nWhy would the " ..
+                "iron dwarves have added this redundant and mismatched armor to their war " ..
+                "golems?\n\nPerhaps Bruor Ironbane would know if he had the chance to examine several of " ..
+                "these plates from stormforged war golems.",
+            rewardMoney = 74000,
+        },
         [12982] = {rewardMoney = 74000},
         [12984] = {rewardMoney = 148000},
-        [12985] = {rewardMoney = 74000},
         [12986] = {rewardMoney = 74000},
-        [12987] = {rewardMoney = 19000},
-        [12988] = {rewardMoney = 74000},
         [12989] = {rewardMoney = 74000},
-        [12991] = {rewardMoney = 74000},
         [12992] = {rewardMoney = 74000},
         [12993] = {rewardMoney = 74000},
         [12994] = {rewardMoney = 74000},
