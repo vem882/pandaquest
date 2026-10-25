@@ -990,6 +990,56 @@ ns.Overrides.wowhead = {
                 "the forest's edge.\n\nTake this letter of response to your Master in Lakeshire.",
             rewardMoney = 250,
         },
+        [147] = {
+            description = "If the \"Collector\" is taking gold from our mines then he's stealing from the " ..
+                "kingdom! Bring the Collector to justice, and bring me the ring mentioned in the pickup " ..
+                "schedule you gave me. It may tell us whom the Collector is working for...\n\nThat Pickup " ..
+                "Schedule says the Collector is hiding out at the Brackwell Pumpkin Patch. You should " ..
+                "search for him there.",
+            rewardChoices = {{1360, 1}, {1183, 1}},
+        },
+        [148] = {
+            description = "Oh, what is a poor old man to do? I need some supplies from Darkshire, but the " ..
+                "village is so far away and I am so old and feeble...I would never make the trip.\n\nCan " ..
+                "you go to Darkshire and bring me back some Ghost Hair Thread? You can get it from Madame " ..
+                "Eva at her home on the Darkshire square.",
+        },
+        [149] = {
+            description = "There is a poor, sad spirit, Blind Mary, who haunts an old farm house in the " ..
+                "hills south of Darkshire.\n\nHere, take this Spectral Comb and ask Blind Mary to comb " ..
+                "her hair. Then bring back the comb and I will glean from it the Ghost Hair I'll need for " ..
+                "the thread.\n\nAnd take care, for dark things now lurk near that house...",
+        },
+        [150] = {
+            description = "Murlocs are becoming a problem. Larger groups of the fishmen are dropping " ..
+                "anchor along the shores of Lake Everstill and fishing up a storm! We need them gone " ..
+                "before they eat all the fish in the lake!\n\nHunt murlocs! Bring me eight of their fins " ..
+                "and I might have something for you...",
+            rewardItems = {{3567, 1}},
+        },
+        [151] = {
+            description = "Poor Old Blanchy! Such a tired beast after all the work we put her through. I " ..
+                "fed her before we left the farm, but we weren't expecting the wagon to break on us. If " ..
+                "you could bring her a few handfuls of oats from the fields, I'd be grateful.\n\nI bet " ..
+                "you could find some around all of the farms in Westfall, if you can steer clear of those " ..
+                "horrific machines that have taken over. There are several farms southwest of here.",
+            rewardItems = {{2165, 1}, {1537, 1}},
+        },
+        [152] = {
+            description = "You probably noticed all of the shipwrecks along the coast. The Great Sea is " ..
+                "treacherous indeed. The coast of Westfall needs to be kept clear, so that if sailors " ..
+                "find their way to our beaches, they are safe. The Murlocs are trouble though.\n\nKill 7 " ..
+                "Tidehunters, 7 Warriors, 7 Oracles and 7 Coastrunners and I will see to it that you are " ..
+                "rewarded.",
+            rewardMoney = 1100,
+        },
+        [153] = {
+            description = "The Defias Front is constantly shifting. I've been following their movements " ..
+                "for quite some time now. On a side note, I've ascertained that many members of the gang " ..
+                "can be tracked by the Red Leather Bandanas they wear.\n\nBring me 15 of these Bandanas " ..
+                "and I'll see to it you are rewarded.",
+            rewardChoices = {{3511, 1}, {5944, 1}, {12295, 1}},
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
