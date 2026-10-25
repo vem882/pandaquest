@@ -1080,6 +1080,83 @@ ns.Overrides.wowhead = {
                 "friends...and when he reads it and discovers what you did for me...I'm sure he'll be " ..
                 "just as happy as I am! Hahahaha!",
         },
+        [161] = {
+            description = "If my suspicions are correct, this is some type of explosive powder. This must " ..
+                "be analyzed by an explosives expert so we know just what we're dealing with here. Ashlan " ..
+                "Stonesmirk was assigned to the regiment guarding Dun Modr and the Thandol Span. I need " ..
+                "you to make a grave and perilous journey, <name>.\n\nTravel through the Algaz Gate, " ..
+                "follow the road through the Wetlands and seek out Stonesmirk in Dun Modr. Heed my " ..
+                "advice: stick to the roads and stop for nothing!",
+        },
+        [162] = {
+            description = "I urge you to take this report to someone who has working knowledge in this " ..
+                "kind of thing.\n\nI know this night elf scholar named Gracina Spiritmight. She's spent a " ..
+                "lot of time studying life forms that are unique to the ecology of Azeroth; she's a " ..
+                "historian to boot! If you want someone to help figure out what exactly this threat is, " ..
+                "and more importantly how to stop it, give her the report. We'll need the help.\n\nLast I " ..
+                "heard, she was residing in the Temple of the Moon, located in Darnassus.",
+        },
+        [163] = {
+            description = "Something's amiss at Raven Hill, <name>. Calor swears that someone--or " ..
+                "something--is haunting the buildings there. Two nights running he's noticed the shadows " ..
+                "moving, and the third before that he says he saw light in one of the windows.\n\nIf, as " ..
+                "you say, you care about the safety of Duskwood, find out what monster haunts in Raven " ..
+                "Hill.",
+        },
+        [164] = {
+            description = "Do you know Sven? Now, there is a man who does the work of the Light! He and " ..
+                "his followers keep a camp at the northwestern edge of Duskwood.\n\nUnfortunately, " ..
+                "because they are so few, they cannot even spare a man to fetch supplies from town. Will " ..
+                "you deliver these supplies to him?",
+            rewardMoney = 800,
+        },
+        [165] = {
+            description = "There was an old man who used to come into town to buy supplies rather " ..
+                "frequently, but I haven't seen him for quite some time now. He lives out in a shack " ..
+                "overlooking Raven Hill cemetery, if I remember correctly. Perhaps you should go see if " ..
+                "something is amiss.",
+        },
+        [166] = {
+            description = "There is but one task left for you to complete. Edwin VanCleef must be " ..
+                "assassinated. While it saddens me to condemn any man to a death sentence, it is for the " ..
+                "greater good of the people of Westfall that VanCleef is laid to rest once and for all. " ..
+                "Bring me the villain's head once the deed is done.",
+            rewardChoices = {{6087, 1}, {2041, 1}, {2042, 1}},
+        },
+        [167] = {
+            description = "We were deep in a vast mine in Westfall, hidden beneath a barn in Moonbrook. " ..
+                "No clue where these stinkin' thieving types came from. Anyway, the mine tunnel collapsed " ..
+                "on us. I got out but the others... well... the others haven't been heard from.\n\nYou " ..
+                "look like you might have better luck in there. If you could look for my brother, I'd be " ..
+                "thankful. He always carried his Explorers' League Badge. If you can't find him, that " ..
+                "badge would at least give me some peace of mind.",
+            rewardItems = {{1893, 1}},
+        },
+        [424] = {
+            description = "It will indeed take me longer than I had thought to uncover the dark secrets " ..
+                "behind the enchantments Arugal was using.\n\nBut in the meantime I need you to take care " ..
+                "of a slight problem our Darkstalkers have discovered. It seems that Arugal let his magic " ..
+                "spread to the Deep Elem Mine in the hills to the southeast.\n\nThe mine would prove to " ..
+                "be quite a resource for Varimathras's advance.\n\nI want you to behead the tainted " ..
+                "foreman of the mine, Grimson the Pale. With his death, the mine shall be ours.",
+            rewardMoney = 700,
+        },
+        [444] = {
+            description = "I have reduced the ichor you brought me and separated it into its base " ..
+                "components. My findings are not conclusive, but I have determined that warlock and " ..
+                "necromantic magics were used in the ichor's creation.\n\nWhile I continue to study the " ..
+                "ichor, I want you to take a sample to Bethor Iceshard in the Undercity. Bethor is not an " ..
+                "apothecary, but his knowledge of magic may help to unravel the mystery of the rot " ..
+                "hides.\n\nGo. You will find Bethor in the Magic Quarter of the Undercity.",
+        },
+        [642] = {
+            description = "My name is Myzrael. I am a princess of the earth, and my captors, the giants, " ..
+                "have trapped me deep beneath the Arathi Highlands. These crystal shards are the only way " ..
+                "I can speak with the surface world.\n\nPlease help me. Allies of the giants, the " ..
+                "Drywhisker Kobolds, have a shard like this one in their Drywhisker Gorge, to the east. " ..
+                "To power the cluster, you must gather Motes of Myzrael from the kobolds and apply them " ..
+                "to it.\n\nI beg you, <name>, aid me!",
+        },
         [643] = {
             description = "Though they can barely be said to control Stromgarde, let alone the whole of " ..
                 "Arathi Highlands, the human prince trots the remnants of his cavalry over the " ..
@@ -1088,9 +1165,59 @@ ns.Overrides.wowhead = {
                 "to Lieutenant Valorcall, their cavalry leader. Locate him and bring his sigil back to me.",
             rewardMoney = 5500,
         },
+        [887] = {
+            description = "I sure wish Vice Admiral Grezzlik did a better job of keeping the seas safe " ..
+                "for our trading vessels. With all the gold the trade princes have poured into the Trade " ..
+                "Fleets, it ticks me off to see so many pirates running willy-nilly, raiding my ships and " ..
+                "stealing my goods!\n\nI heard that the Southsea Freebooters have set up a camp just " ..
+                "south of here. They've been a real thorn in my side and if Grezzlik won't take care of " ..
+                "them, well, maybe you can help me get rid of them.",
+            rewardMoney = 500,
+        },
+        [905] = {
+            description = "Now, <name>, the hunt deepens. Now you must defeat your prey, and then find " ..
+                "your way to its lair.\n\nHunt the sunscale raptors to the south. Slay them and remove " ..
+                "the feathers they wear. Place the feathers on the scytheclaw nests southwest of the " ..
+                "Stagnant Oasis. Show their brethren you do not fear them!",
+            rewardMoney = 900,
+        },
+        [1035] = {
+            description = "Relara's fever has passed, but she is still very weak. I do not believe time " ..
+                "alone will give her back the strength she has lost. I believe it will take the power of " ..
+                "a moonstone.\n\nWe used to gather moonstones at Fallen Sky Lake to the southeast... " ..
+                "until the Shadethickets came.\n\nTheir leader, a Shadethicket Oracle, gathered up all " ..
+                "the fallen moonstones and hoards them. Now, you must retrieve a moonstone from the " ..
+                "Oracle.\n\nAnd to do that, I fear that you must slay him.",
+            rewardChoices = {{5814, 1}, {6722, 1}, {17047, 1}},
+        },
+        [1043] = {
+            description = "Your story rings true... I do not entirely understand your motives, but if " ..
+                "your business here in Duskwood involves ridding the forest of worgen in any number, then " ..
+                "I can forgo understanding for results.\n\nThere is a mine to the south that has been " ..
+                "overrun with worgen... They appeared out of nowhere, but from what we know, that is " ..
+                "where they first were found.\n\nGo about your business, but I would ask that if you find " ..
+                "anything of import, you share it with me. We will accept any aid in our war against evil.",
+            rewardMoney = 2500,
+        },
+        [1359] = {
+            description = "The wolf hearts you acquired possess a quality unseen in similar specimens. " ..
+                "There is a toxicity to them that should be deadly to the very wolves in which the hearts " ..
+                "beat!\n\nIt's quite incredible, and we must study it further. I kept a few samples of " ..
+                "the hearts acquired. Take them to my colleague, Apothecary Zinge. You will find her in " ..
+                "our headquarters in the Undercity.",
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
+        },
+        [3462] = {
+            description = "Speak with my envoy, Squire Maltrake. He will further instruct you as to the " ..
+                "use of the Torch of Retribution.",
+        },
+        [3565] = {
+            description = "What is it? Oh yes, your payment. Of course.\n\nTake this and be off with you. " ..
+                "I'm sure Jediga is awaiting oh so patiently for your return.",
+            rewardMoney = 6000,
         },
         [4243] = {
             description = "Unfortunately, something's happened to one of my greatest inventions. You've " ..
@@ -1100,10 +1227,51 @@ ns.Overrides.wowhead = {
                 "apes' lair--just east of here, and that's when I lost contact. The last thing I saw was " ..
                 "one of their alpha males rushing up to say hello to her!\n\nCan you help me find her?",
         },
+        [4561] = {rewardItems = {{15102, 1}}},
+        [6323] = {
+            description = "One of my bats can take you to the Undercity, for a small fee. Speak with me " ..
+                "again when you are ready so that we may arrange your transport.\n\nYou will find Gordon " ..
+                "Wendham in the Trade Quarter of the Undercity. That is the same quarter where my bat " ..
+                "will land.",
+            rewardMoney = 175,
+        },
+        [6364] = {
+            description = "In order to fly to a town, you must have already been there and spoken with " ..
+                "the wind rider master of that town. You have been to the Crossroads and spoken to their " ..
+                "wind rider master Devrak, so for a small fee you can take a wind rider to him from " ..
+                "here.\n\nSpeak with me again when you are ready. Once at the Crossroads, you can then " ..
+                "deliver the leather goods to Jahan Hawkwing.",
+            rewardMoney = 350,
+        },
+        [7828] = {
+            description = "Many brave trolls have been lost to the harsh wilds of the Hinterlands, " ..
+                "<race>. The Silvermane wolves are one of the biggest threats to our hunters. They lay in " ..
+                "wait, hiding amongst the bushes and landscape, then strike out when the opportunity " ..
+                "presents itself.\n\nThis type of ferocity will not go unchecked!\n\nYou must think like " ..
+                "the Silvermane. Stalk the stalkers! Slay them all!",
+            rewardMoney = 14000,
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
+        [8732] = {rewardItems = {{20810, 1}}},
+        [8920] = {
+            description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
+                "this world. Yet I'm willing to wager you haven't seen a piece of armor like " ..
+                "this.\n\nPerform a small favor for me and I'll be willing to trade it to you for an " ..
+                "ordinary set of bracers.\n\nI'm in need of a sizeable sample of venom drawn from the " ..
+                "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
+                "coins and I'll perform the exchange.",
+            rewardItems = {{21996, 1}},
+        },
+        [8944] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gauntlets. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{21994, 1}, {21998, 1}},
+        },
         [9004] = {
             description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
                 "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
@@ -1269,6 +1437,15 @@ ns.Overrides.wowhead = {
                 "glaives and arrowheads.\n\nOnly the best armaments will have materials useful to us, " ..
                 "<name>. You will have to seek out the naga of Coilfang Reservoir.",
         },
+        [9815] = {
+            description = "The most affected elements of water can be found in the Halaani Basin, " ..
+                "southwest of here, beneath the abandoned city of Halaa. While some distressed elements " ..
+                "can be destroyed without any impact upon the environment, spawns of muck must be " ..
+                "physically removed from the world once destroyed.\n\nYou see, muck spawns leave behind " ..
+                "globules of tainted debris that if left untouched will spread and further contaminate " ..
+                "the environment.\n\nDestroy these muck spawns and bring back their muck-ridden cores.",
+            rewardChoices = {{25560, 1}, {25561, 1}, {25559, 1}},
+        },
         [9824] = {
             description = "I'm trying to obtain an imprint of Karazhan 's energy... for a personal " ..
                 "project, of course. Unfortunately, I'm not getting anything up here. If I could get near " ..
@@ -1381,6 +1558,15 @@ ns.Overrides.wowhead = {
         [9885] = {rewardItems = {{25422, 1}}},
         [9886] = {rewardItems = {{25424, 1}}},
         [9887] = {rewardItems = {{25423, 1}}},
+        [9971] = {
+            description = "I have no idea what killed all of the druids here. I've been away for a couple " ..
+                "of days on a survey of the Bone Wastes to the south.\n\nPlease, you must help me to " ..
+                "uncover what's behind this horrible tragedy. Go into the thicket and look for a clue " ..
+                "that might reveal something to us. When I was in there briefly, I could have sworn I saw " ..
+                "a dead Broken and a strange object next to him.\n\nAnd don't worry about Treelos - he " ..
+                "might have been driven insane by what happened, but I think he's mostly harmless.",
+            rewardMoney = 29000,
+        },
         [9995] = {
             description = "I don't know about you, but I have no idea what all of those things are. I do " ..
                 "know one thing though - they look dangerous!\n\n<name>, I think you should take this box " ..
@@ -3159,6 +3345,15 @@ ns.Overrides.wowhead = {
                 "hero? Return to the field of battle and strike at their soldiers. Keep them occupied so " ..
                 "that my scouts can get behind their lines and see what they are creating.",
         },
+        [10930] = {
+            description = "I was right! These carcasses you brought me belong to the baby bone worms. Do " ..
+                "you know what that means? It means that somewhere out there is a big one! I think we can " ..
+                "get it to come out if we can provide the right kind of food. Let's see... something big! " ..
+                "Yes!\n\nI remember seeing clefthooves east of here on the other side of the Bone Wastes. " ..
+                "Get out there and kill a clefthoof. Once it's dead, use the drums. Hopefully the big one " ..
+                "will come up to feed. If you manage to kill it, bring me its organs!",
+            rewardChoices = {{31756, 1}, {31758, 1}, {31759, 1}},
+        },
         [10938] = {
             description = "Now that you have gathered all of the Blessings cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -3704,6 +3899,20 @@ ns.Overrides.wowhead = {
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
         [21502] = {spawns = {[3520] = {{23.4, 36.8}, {23.6, 36.8}}}, zoneID = 3520},
         [21877] = {spawns = {[3520] = {{58.2, 70.4}, {58.2, 70.8}}}, zoneID = 3520},
+        [22038] = {
+            spawns = {
+                [3519] = {
+                    {31.2, 76}, {32, 76}, {37.6, 75.4}, {39.4, 75.8}, {41.2, 73.6}, {41.4, 76.4},
+                    {41.4, 77.8}, {41.6, 75.4}, {42, 77}, {42.2, 77.6}, {42.4, 71.6}, {42.4, 80},
+                    {42.6, 75.4}, {42.6, 76.2}, {42.6, 78.4}, {42.6, 79}, {43.4, 69.6}, {43.4, 71},
+                    {43.6, 70}, {43.8, 71.6}, {44.4, 72.6}, {44.4, 73.8}, {44.4, 76}, {44.4, 76.8},
+                    {44.4, 79}, {44.4, 79.8}, {44.8, 79.6}, {44.8, 81.4}, {45.2, 75.6}, {45.2, 81.6},
+                    {45.4, 74.2}, {45.4, 75.4}, {45.4, 77.6}, {45.4, 78.8}, {45.6, 74}, {45.6, 76.8},
+                    {45.6, 78.6}, {45.8, 79.8}, {46, 75.4}, {46.4, 76},
+                },
+            },
+            zoneID = 3519,
+        },
         [22076] = {
             spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.8}, {52, 73.6}}},
             zoneID = 3520,

@@ -894,6 +894,15 @@ ns.Overrides.wowhead = {
                 "and more importantly how to stop it, give her the report. We'll need the help.\n\nLast I " ..
                 "heard, she was residing in the Temple of the Moon, located in Darnassus.",
         },
+        [169] = {
+            description = "Wanted! Gath'Ilzogg, Leader of the Blackrock attacks on Stonewatch Keep and " ..
+                "raids against the township of Lakeshire.\n\nGath'Ilzogg is extremely dangerous. He is " ..
+                "reportedly holed up in the recently conquered keep plotting the Blackrock clan's further " ..
+                "crimes against humanity. The orc infestation must be quelled at all costs. A gracious " ..
+                "reward will be given to whatever brave soul can deliver the head of Gath'Ilzogg to " ..
+                "Magistrate Solomon.",
+            rewardMoney = 4000,
+        },
         [181] = {
             description = "Now there is just one more item needed to complete this device. Cog's " ..
                 "blueprint calls for a lens of some sort. The only lens I know of that would be large " ..
@@ -910,6 +919,15 @@ ns.Overrides.wowhead = {
                 "need numerous allies to even stand a chance of facing him successfully.\n\nDestroy Araj, " ..
                 "<name>, and bring me a shard from his phylactery as proof!",
             rewardItems = {{17759, 1}},
+        },
+        [245] = {
+            description = "Hail, <class>. Perhaps you've seen those spiders that have taken over the " ..
+                "western border? The eight-legged menaces are too much for us to handle, and the " ..
+                "Commander hasn't enough manpower to spare so far from Darkshire.\n\nI hate to ask this " ..
+                "of you, but you seem like you might be able to handle them. I can't promise you anything " ..
+                "of great value, but I can reward you if you can help root out the filthy bugs.\n\nOh, " ..
+                "and a word of advice, you'll want to avoid their venom if you can.",
+            rewardItems = {{3559, 1}},
         },
         [278] = {
             description = "Begin collecting the disarming materials immediately, <name>. Lurker Venom can " ..
@@ -1171,6 +1189,14 @@ ns.Overrides.wowhead = {
                 "gulping sounds as the machine cuts out. Then, suddenly, it bursts back to life.\n\n\"4!\"",
             rewardItems = {{2082, 1}, {11846, 5}},
             rewardMoney = 800,
+        },
+        [1014] = {
+            description = "Arugal still resides in Shadowfang Keep. We cannot claim Silverpine as a " ..
+                "strategic stronghold for the Dark Lady until Arugal is slain.\n\nI shall see to it that " ..
+                "his magic is eradicated, <name>. But I leave it in your hands to see that Arugal meets " ..
+                "the death he so deserves.\n\nTravel to Shadowfang Keep and put an end to Arugal's foul " ..
+                "spells once and for all. Bring to me the vile wizard's head!",
+            rewardItems = {{6414, 1}},
         },
         [1036] = {
             description = "<name>... yeah, I've heard of you. I've heard that you're no friend of Booty " ..
@@ -2543,6 +2569,16 @@ ns.Overrides.wowhead = {
                 "I shall enchant the fragment into something that will grant you access to Onyxia's lair.",
             rewardItems = {{16309, 1}},
         },
+        [6521] = {
+            description = "Malcin claims he is outside Razorfen Downs. This ambassador must be slain--his " ..
+                "mission a failure in the eyes of the Lich King.\n\nHis presence there does explain much " ..
+                "of what we've discovered about the area--some of the quilboar have grown frightfully " ..
+                "powerful while showing signs of the Plague in their own way. Truly that must be a sign " ..
+                "of some sort of deal they've struck.\n\nFind Malcin and slay him, <name>. Return to me " ..
+                "after the deed is done.",
+            rewardChoices = {{17039, 1}, {17042, 1}, {17043, 1}},
+            rewardMoney = 2000,
+        },
         [6523] = {
             description = "Thank you for rescuing me! We must leave quickly before they discover that I " ..
                 "am free. Please escort me to Camp Aparaje. From there, I know my way.\n\nMy father, " ..
@@ -3298,6 +3334,26 @@ ns.Overrides.wowhead = {
                 "courser glands as the first ingredient for a restorative salve -- a salve we will use to " ..
                 "heal Felwood.",
         },
+        [8285] = {
+            description = "There are rumors of a Twilight's Hammer member called Ortell having deserted " ..
+                "his sect. Word has it he hid in the mountains south of Southwind Village, where he lives " ..
+                "as a hermit. Perhaps you can enlist his help in deciphering the tablet.\n\nTake the " ..
+                "restored tablet with you and seek out Ortell.",
+        },
+        [8288] = {
+            description = "There is no time to waste! A hero must be found! The task I give will require " ..
+                "an army to complete but only one may rise from the throng of would be champions to take " ..
+                "on the burden and responsibility of an ally of the Brood.\n\nWithin the lair of the Lord " ..
+                "of Blackrock is a most cruel beast. The Broodlord Lashlayer guards the Halls of Strife, " ..
+                "blocking the way into Nefarian's inner sanctum. Slay the foul aberration and return his " ..
+                "head to me. Do this and you may begin the next step of your journey.",
+        },
+        [8410] = {
+            description = "Bath'rah the Windwatcher has sent out a summons for a shaman of your wisdom. " ..
+                "He requests you bring a sample of each of the elements to show you are ready.\n\nTo find " ..
+                "Bath'rah, go to the river east of Tarren Mill. Follow the river north until you come " ..
+                "across the ruins where Bath'rah resides.",
+        },
         [8413] = {
             description = "The spirit totem just isn't enough. We be needin' some voodoo magic to make it " ..
                 "work jus' right.\n\nThe trolls in the sunken temple have feathers strong with voodoo " ..
@@ -3314,6 +3370,12 @@ ns.Overrides.wowhead = {
                 "between all of those trips to Zul'Gurub, or wherever it is that you kids hang out these " ..
                 "days?",
             rewardItems = {{21436, 5}, {21511, 1}},
+        },
+        [8496] = {
+            description = "Our supply of bandages in the battlefield is running dangerously low after the " ..
+                "recent casualties we have incurred. Obtain a batch of first-aid supplies and deliver " ..
+                "them to Windcaller Proudhorn in Cenarion Hold.",
+            rewardItems = {{20800, 1}, {20805, 1}},
         },
         [8499] = {
             description = "It is very kind of you to inquire about the needs that the Alliance has. In " ..
@@ -3418,6 +3480,14 @@ ns.Overrides.wowhead = {
                 "wartorn armor scraps and supply to me the other material components I require and I will " ..
                 "craft Dreamwalker armor.",
             rewardItems = {{22492, 1}},
+        },
+        [9107] = {
+            description = "I make no pretenses, maggot. The darkness Plagueheart items hold could very " ..
+                "well destroy the both of us. That is why the price is so high. If I'm going to die, it's " ..
+                "going to be as a rich man.\n\nAnd I don't give an ounce of gnoll spit how you die, only " ..
+                "that you do as I ask. Bring me what I require and we will both benefit - or die; but " ..
+                "I've already explained this...",
+            rewardItems = {{22508, 1}},
         },
         [9112] = {
             description = "<Father Montoy makes some strange gestures in the air in front of " ..
