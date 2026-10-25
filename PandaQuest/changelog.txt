@@ -4,6 +4,133 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.259
+- database - Wowhead data as the PandaQuest portal read it: 10,535 quests, 97 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 512 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 476 quests, 6 NPCs
+- quest 12604 - Congratulations! - updated
+  - reward items: +1
+- quest 12605 - Securing the Bait - updated
+  - description added
+- quest 12606 - Cocooned! - updated
+  - description added
+- quest 12607 - A Mammoth Undertaking - updated
+  - description added
+- quest 12608 - Cultist Incursion - updated
+  - description added
+- quest 12612 - The Fallen Pillar - updated
+  - description added
+- quest 12613 - Powering the Waygate - The Makers' Overlook - updated
+  - description added
+- quest 12615 - The Blessing of Zim'Torga - updated
+  - description added
+- quest 12620 - The Lifewarden's Wrath - updated
+  - description added
+- quest 12621 - Freya's Pact - updated
+  - description added
+- quest 12623 - To the Witch Doctor - updated
+  - description added
+- quest 12627 - Breaking Through Jin'Alai - updated
+  - description added
+- quest 12628 - To Speak With Har'koa - updated
+  - description added
+- quest 12629 - You Can Run, But You Can't Hide - updated
+  - description added
+- quest 12631 - An Invitation, of Sorts... - updated
+  - description added
+- quest 12633 - Darkness Calling - updated
+  - description added
+- quest 12634 - Some Make Lemonade, Some Make Liquor - updated
+  - description added
+- quest 12635 - Relics of the Snow Leopard Goddess - updated
+  - description added
+- quest 12636 - The Eye Of Acherus - updated
+  - description added
+- quest 12638 - Close Call - updated
+  - description added
+- quest 12640 - Sealing the Rifts - updated
+  - description added
+- quest 12641 - Death Comes From On High - updated
+  - description added
+- quest 12642 - Spirit of Rhunok - updated
+  - description added
+- quest 12643 - Silver Lining - updated
+  - description added
+- quest 12644 - Still At It - updated
+  - description added
+- quest 12646 - My Prophet, My Enemy - updated
+  - description added
+- quest 12648 - Dressing Down - updated
+  - description added
+- quest 12649 - Suit Up! - updated
+  - description added
+- quest 12650 - Plundering Their Own - updated
+  - description added
+- quest 12651 - Lakeside Landing - updated
+  - description added
+- quest 12653 - Back to Har'koa - updated
+  - description added
+- quest 12654 - The Part-time Hunter - updated
+  - description added
+- quest 12655 - The Blessing of Zim'Rhuk - updated
+  - description added
+- quest 12658 - My Pet Roc - updated
+  - description added
+- quest 12659 - Scalps! - updated
+  - description added
+- quest 12660 - Weapons of Destruction - updated
+  - description added
+- quest 12663 - Reunited - updated
+  - description added
+- quest 12664 - Dark Horizon - updated
+  - description added
+- quest 12666 - Preparations for the Underworld - updated
+  - description added
+- quest 12667 - Seek the Wind Serpent Goddess - updated
+  - description added
+- quest 12668 - Foundation for Revenge - updated
+  - description added
+- quest 12670 - The Scarlet Harvest - updated
+  - description added
+- quest 12671 - Reconnaissance Flight - updated
+  - description added
+- quest 12672 - Setting the Stage - updated
+  - description added
+- quest 12673 - It Rolls Downhill - updated
+  - description added
+- quest 12675 - One Last Thing - updated
+  - description added
+- quest 12680 - Grand Theft Palomino - updated
+  - description added
+- quest 12683 - Burning to Help - updated
+  - description added
+- quest 12684 - Blood of a Dead God - updated
+  - description added
+- quest 12688 - Engineering a Disaster - updated
+  - description added
+- quest 12692 - Return of the Lich Hunter - updated
+  - description added
+- quest 12695 - Return of the Friendly Dryskin - updated
+  - description added
+- quest 12696 - Aerial Surveillance - updated
+  - description added
+- quest 12699 - An Embarassing Incident - updated
+  - description added
+- quest 12700 - An Attack Of Opportunity - updated
+  - description added
+- quest 12702 - Chicken Party! - updated
+  - description added
+- quest 12703 - Kartak's Rampage - updated
+  - description added
+- quest 12704 - Appeasing the Great Rain Stone - updated
+  - description added
+- quest 12705 - Will of the Titans - updated
+  - description added
+- quest 12708 - Enchanted Tiki Warriors - updated
+  - description added
+- quest 12710 - Disclosure - updated
+  - description added
+
 0.2.258
 - database - Wowhead data as the PandaQuest portal read it: 10,508 quests, 97 NPCs, 5 objects
 - database - Classic Era: data from the PandaQuest portal: 502 quests, 7 NPCs, 1 object
