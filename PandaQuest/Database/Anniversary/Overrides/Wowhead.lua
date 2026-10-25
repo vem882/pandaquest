@@ -650,6 +650,71 @@ ns.Overrides.wowhead = {
             rewardItems = {{5177, 1}},
             rewardXP = 2350,
         },
+        [97] = {
+            description = "Let Commander Ebonlocke know immediately that the handwriting matched, <name>! " ..
+                "Her suspicions were correct!",
+        },
+        [98] = {
+            description = "Stalvan Mistmantle led a life of depravity. Innocent victims died by his hand. " ..
+                "Undoubtedly he is guilty of countless crimes. Now the lunatic threatens Darkshire. The " ..
+                "Light only knows what sordid acts he is plotting. Travel to his cottage just north of " ..
+                "town, <class>, and execute Stalvan, once and for all.\n\nWhen the deed is done, travel " ..
+                "to Madame Eva 's and show her his family ring. After all, it was her premonition that " ..
+                "led to this gruesome discovery. But Darkshire is safer because of her.",
+            rewardChoices = {{2044, 1}, {2043, 1}},
+        },
+        [99] = {
+            description = "As my understanding of Arugal's magic grows so does my disdain for the hapless " ..
+                "fool. I am close to completing my research on his so called remedy.\n\nMy knowledge will " ..
+                "be complete when I learn what enchantment is causing the strange behavior going on in " ..
+                "Pyrewood Village. By day, the peasants appear to be Human. But when the sun goes down " ..
+                "the townsfolk turn into Moonrage Worgen.\n\nI need to draw energy from the enchanted " ..
+                "shackles Arugal cast on them. Bring to me six enchanted Pyrewood Shackles, <name>.",
+            rewardChoices = {{3586, 1}, {3570, 1}, {5242, 1}},
+        },
+        [100] = {
+            description = "Light explodes as you finish the incantation. The sounds of the water drops " ..
+                "hitting the flame have died down and your senses are overcome as the corrupt spirits " ..
+                "around you are destroyed.",
+        },
+        [101] = {
+            description = "As the mystical taint creeps through the forest, the need for self-protection " ..
+                "is undeniable, <name>. The winds whisper to me and they speak of a great danger which " ..
+                "waits patiently for you in the near future.\n\nIf you wish to protect yourself, noble " ..
+                "<class>, bring to me 10 ghoul fangs, 10 skeleton fingers and 5 vials of spider venom. " ..
+                "For you I shall enchant a Totem of Infliction which will harm those who attempt violent " ..
+                "acts against you.",
+            rewardItems = {{1131, 1}},
+        },
+        [102] = {
+            description = "Stormwind has abandoned us. A foul wind of depravity rustles through the " ..
+                "plains of Westfall. This was my homeland and I will not turn my back on the citizens who " ..
+                "choose to remain here. We, the former farmers, shall make our stand.\n\nYour task, " ..
+                "should you choose to accept, is to patrol the grasslands of Westfall. Track down and " ..
+                "slay the vile Gnolls that seem to be working in conjunction with the Deadmines thieves. " ..
+                "Bring me eight Gnoll Paws and I will reward your bravery.",
+            rewardChoices = {{1154, 1}, {710, 1}},
+        },
+        [103] = {
+            description = "The night the Lighthouse Keeper's family died was horrible. I watched, " ..
+                "helpless, as Old Murk-Eye led the attack. But what's done is done and now my concern is " ..
+                "for the lives of the sailors on The Great Sea whose ships come close to the perilous " ..
+                "rocks of the coastline. With no one to keep watch on the flame the responsibility has " ..
+                "fallen upon me.\n\nHelp me keep the torch lit by bringing me 5 flasks of oil from the " ..
+                "Harvest Monsters.",
+            rewardChoices = {{2455, 3}, {118, 3}},
+            rewardItems = {{955, 1}, {1180, 1}},
+            rewardMoney = 600,
+        },
+        [104] = {
+            description = "When my life was ended upon the rocks, I had no clue what the afterlife held " ..
+                "for me. The Lighthouse was black that night because Old Murk-Eye had scared the keeper's " ..
+                "family off. They returned and re-lit the flame but Old Murk-Eye coerced the weaker " ..
+                "minded murlocs to raid the Lighthouse with him once again. The second time the family " ..
+                "was not so lucky and before my eyes they perished helplessly.\n\nSlay Old Murk-Eye if " ..
+                "you see him along the shore and bring me one of his scales and I shall reward you.",
+            rewardChoices = {{1172, 1}, {1557, 1}, {5240, 1}},
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
@@ -1833,6 +1898,352 @@ ns.Overrides.wowhead = {
                 "lord named Azaloth has proven too strong to be used in training and is kept banished. " ..
                 "Find a way to let him loose on his captors. That should buy us the time we need.",
         },
+        [10639] = {
+            description = "With Gorefiend's items restored, there is but one last piece to this puzzle: A " ..
+                "host.\n\n<The ancient shadowmoon spirit 's lips curl up to form a wicked " ..
+                "grin.>\n\nSurely you did not believe the fairy tale that I told you. The Altar of " ..
+                "Shadows is my prison. Without your help, I would have been stuck here for all eternity. " ..
+                "Now, I will take over your body and you will destroy my captors and break these bonds. " ..
+                "Refuse and we will both be stuck here forever.\n\nTeron Gorefiend will be free!",
+            rewardChoices = {{31104, 1}, {31105, 1}, {31106, 1}, {31107, 1}, {31109, 1}, {31110, 1}},
+            rewardXP = 19000,
+        },
+        [10640] = {
+            description = "It is rare in this day and age to hear of those who follow the path of the " ..
+                "demon hunter. It is rarer still to find someone who does and has no allegiance to " ..
+                "Illidan.\n\nThere are rumors of one such individual here in Outland. One name is said to " ..
+                "be feared in the Legion fields of Nagrand more than any army of Aldor vindicators. That " ..
+                "name is Altruis.\n\nGo to western Nagrand and find him. He might be willing to shed some " ..
+                "light on these new demon hunter training grounds.",
+        },
+        [10641] = {
+            description = "The Burning Legion has proven its capacity to corrupt mortal souls time and " ..
+                "again. If I'm to entrust you with the knowledge you seek, I must have proof of your " ..
+                "allegiance.\n\nA demoness known as Sathal has eluded me for a long time as she's gifted " ..
+                "with an incorporeal form.\n\nShe watches over the wrath priestesses as they do her " ..
+                "bidding at Forge Base: Gehenna. Slay one of her minions and spill her blood on the " ..
+                "ground. This affront should cause Sathal to materialize temporarily. Slay her while you " ..
+                "can.",
+        },
+        [10644] = {
+            description = "Stories abound about the life of Teron Gorefiend, but most are just that - " ..
+                "stories. We do not know what happened to Gorefiend after he returned to Draenor.\n\nThe " ..
+                "only thing we are certain of is that he has already died once.\n\nI have heard the " ..
+                "scouts here speaking of an ancient orc spirit that resides at the Altar of Shadows, far " ..
+                "to the east, across the Netherwing Fields and through Netherwing Pass. Take the " ..
+                "Spectrecles and track this orc down. He will surely have more information on Gorefiend.",
+        },
+        [10645] = {
+            description = "With Gorefiend's items restored, there is but one last piece to this puzzle: A " ..
+                "host.\n\n<The ancient shadowmoon spirit 's lips curl up to form a wicked " ..
+                "grin.>\n\nSurely you did not believe the fairy tale that I told you. The Altar of " ..
+                "Shadows is my prison. Without your help, I would have been stuck here for all eternity. " ..
+                "Now, I will take over your body and you will destroy my captors and break these bonds. " ..
+                "Refuse and we will both be stuck here forever.\n\nTeron Gorefiend will be free!",
+            rewardChoices = {{31104, 1}, {31105, 1}, {31106, 1}, {31107, 1}, {31109, 1}, {31110, 1}},
+            rewardXP = 19000,
+        },
+        [10646] = {
+            description = "You've proven your allegiance, <name>. You must forgive my caution, but in " ..
+                "this world things are not what they appear.\n\nI will tell you about Varedis when you're " ..
+                "ready.",
+        },
+        [10647] = {
+            description = "Wanted - DEAD:\n\nUvuros, scourge of Shadowmoon Valley.\n\nBy order of " ..
+                "Overlord Or'barokh, the fel beast, Uvuros, is to be killed on sight and his mane " ..
+                "stripped from his carcass as proof of deed. Return the fiery mane of the beast to " ..
+                "Warcaller Sardon Truslice should you succeed.\n\nUvuros was last seen at the Hand of " ..
+                "Gul'dan, located in the heart of Shadowmoon Valley - east of Shadowmoon Village.",
+            rewardChoices = {{31112, 1}, {31114, 1}, {31111, 1}, {31115, 1}},
+            rewardMoney = 132000,
+        },
+        [10648] = {
+            description = "Wanted - DEAD:\n\nUvuros, scourge of Shadowmoon Valley.\n\nBy order of Thane " ..
+                "Yoregar, the fel beast, Uvuros, is to be killed on sight and his mane stripped from his " ..
+                "carcass as proof of deed. Return the fiery mane of the beast to Warcaller Beersnout " ..
+                "should you succeed.\n\nUvuros was last seen at the Hand of Gul'dan, located in the heart " ..
+                "of Shadowmoon Valley - northeast of Wildhammer Stronghold.",
+            rewardChoices = {{31112, 1}, {31114, 1}, {31111, 1}, {31115, 1}},
+            rewardMoney = 132000,
+        },
+        [10649] = {
+            description = "I sympathize with your intentions of stopping Varedis and his followers, but " ..
+                "you won't stand a chance against him. That is, unless you find the artifact that gave " ..
+                "him his power.\n\nThe Book of Fel Names is rumored to be in the possession of Blackheart " ..
+                "the Inciter inside the Shadow Labyrinth in Auchindoun. Obtaining it will be your only " ..
+                "hope against Varedis.",
+        },
+        [10650] = {
+            description = "This book... I could use it to increase my power tenfold... No! It would end " ..
+                "up corrupting my very soul, this I am sure of. Return to those who sent you here, " ..
+                "<name>.\n\nYou now have the means to stop Varedis. Wait until he manifests his demonic " ..
+                "form through metamorphosis, at that point you will need to burn the book in his " ..
+                "presence. That will be the only way you can deprive him of his power.",
+        },
+        [10651] = {
+            description = "We must dispose of this foul artifact, but not before we use it to dispose of " ..
+                "Varedis 's powers.\n\nWe need to permanently shut down the Ruins of Karabor training " ..
+                "grounds, which will mean killing not only Varedis but also the three night elf masters " ..
+                "that assist him: Alandien, Theras and Netharel.\n\nGather a suitable force and return to " ..
+                "the Ruins of Karabor. Follow Altruis's instructions for defeating Varedis. For all of " ..
+                "our sakes, I hope they work.",
+            rewardChoices = {{31013, 1}, {30933, 1}, {31010, 1}, {31002, 1}, {30948, 1}, {31009, 1}},
+        },
+        [10653] = {
+            description = "By now it should be clear to you why we oppose the Burning Legion and those " ..
+                "who serve them.\n\nIf you wish to prove yourself to the Aldor, bring me the insignias of " ..
+                "high-ranking Legion and their Shadow Council followers. The highest-ranking Legion can " ..
+                "be found in Netherstorm and Shadowmoon Valley.",
+        },
+        [10656] = {
+            description = "As you might know, the Scryers and the armies of Kael'thas are at war. Kael " ..
+                "sees us as a threat to his influence over other blood elves and has tried to crush us " ..
+                "time and again.\n\nIf you wish to aid us in our battle against Kael'thas, there are " ..
+                "plenty of targets for you to go after. Kael's highest ranking soldiers wear Sunfury " ..
+                "signets to mark their ranks. You will find them all over Netherstorm and Shadowmoon " ..
+                "Valley.",
+        },
+        [10667] = {
+            description = "The frame that you brought me earlier will not be sufficient to hold molten " ..
+                "metal without reinforcement. A rare kind of earth can be used to cool and imbue the " ..
+                "frame, giving the adamantite an unnatural strength.\n\nUnderwold loam, as the earth is " ..
+                "known, is accorded great value among the naga. Few enough of them possess it, and in " ..
+                "Outland, I know of only one naga who uses it -- Hydromancer Thespia, who resides in the " ..
+                "Steamvault of Coilfang Reservoir.",
+            rewardMoney = 44000,
+        },
+        [10668] = {
+            description = "I still have respect for Illidan. Without him I would not have found my " ..
+                "path.\n\nHe is not who he once was, however. His soul has been corrupted by power, his " ..
+                "mind has been twisted by defeat. He has become what I am sworn to destroy and his pet " ..
+                "servants, the Illidari, are as much of an abomination as any demon of the Burning " ..
+                "Legion.\n\nHis grasp on Outland is slipping yet his reach is still vast. Prove you're " ..
+                "not with him by slaying his lieutenant Lothros at Illidari Point in Shadowmoon Valley.",
+        },
+        [10669] = {
+            description = "Some demons pledge allegiance to no one but themselves. A true enemy of demons " ..
+                "finds and destroys his prey regardless of affiliation, however.\n\nThe demon Xeleth - a " ..
+                "Legion defector - was once worshipped as a god by primitive swamp creatures in " ..
+                "Zangarmarsh. When Draenor was nearly destroyed, he retreated into a slumber deep beneath " ..
+                "Marshlight Lake. Find the portal at the lake and plant this spear into the " ..
+                "ground.\n\nXeleth will awake - be ready to slay him and prove you're an enemy to all " ..
+                "demons.",
+        },
+        [10670] = {
+            description = "The sword's enchantments must be contained within a powerful focus, such as a " ..
+                "gem. I know of a gem that we can use for this purpose, for there are few that can play " ..
+                "host to such powerful magics without shattering.\n\nThe gem we need is called the tear " ..
+                "of the earthmother. It's a powerful artifact in the hands of the ogres who created it, " ..
+                "and Warbringer O'mrogg, who currently holds the gem, has many powerful allies in " ..
+                "Hellfire Citadel's Shattered Halls. Take care in retrieving the tear, <name>.",
+            rewardMoney = 44000,
+        },
+        [10673] = {
+            description = "Gnomus knows about the massive diemetradon and plans to eat it! He must have " ..
+                "been able to see what I could see through the eyes of his arcano-scorp. Look, there's no " ..
+                "time to explain. He's crazy and that craziness is going to cost us the closest thing " ..
+                "we've got to a fireproof jumpsuit.\n\nGet back to the lava flow near Baa'ri and track " ..
+                "down Felspine the Greater. Once you find it, kill it and bring me back its " ..
+                "hide.\n\nDon't try and reason with me, <name>. I'm well past that point.",
+            rewardMoney = 88000,
+        },
+        [10676] = {
+            description = "<David gathers his smithing supplies.>\n\nYou've done well in getting " ..
+                "everything we'll need to reforge the anti-demon blade. Your hard work and dedication is " ..
+                "about to be repaid.\n\nThe time has come to forge the sword.",
+        },
+        [10678] = {
+            description = "Long story short, I used to work with a blood elf named Tiorus. My partnership " ..
+                "with Tiorus dissolved once I got into gourmet living. He decided to take it upon himself " ..
+                "to continue our research using MY inventions. Anyhow, he had some of his Horde goons " ..
+                "using my arcano-scorp probes at the Ruins of Baa'ri lava flow and discovered the mother " ..
+                "of all diemetradons!\n\nI need you to get there before he does and kill the diemetradon, " ..
+                "Felspine, and bring his hide back to me.\n\nHurry up!",
+            rewardMoney = 88000,
+        },
+        [10679] = {
+            description = "The blade is nearly finished!\n\nYou can almost feel the magic beginning to " ..
+                "coalesce inside the steel, but one thing remains to be done.\n\nYou must take the forged " ..
+                "blade to the Scalding Pools near the top of the Hand of Gul'dan in Shadowmoon Valley and " ..
+                "plunge it into the lava pools to quench the sword. When you have quenched the sword, " ..
+                "return.",
+            rewardChoices = {{30788, 1}, {30789, 1}, {30787, 1}, {31745, 1}},
+            rewardMoney = 44000,
+        },
+        [10680] = {
+            description = "The elements need your help, <race>! Shadowmoon Valley has been subject to " ..
+                "unspeakable evils. The spirits remain tortured to this day. Many are enraged and " ..
+                "unwilling to commune with the Earthen Ring.\n\nHelp this world heal, friend.\n\nDirectly " ..
+                "northeast of Wildhammer Stronghold you will find an area known as the Altar of " ..
+                "Damnation. Make your way there and speak with Earthmender Torlok.",
+        },
+        [10681] = {
+            description = "The elements need your help, <race>! Shadowmoon Valley has been subject to " ..
+                "unspeakable evils. The spirits remain tortured to this day. Many are enraged and " ..
+                "unwilling to commune with the Earthen Ring.\n\nHelp this world heal, " ..
+                "friend.\n\nSoutheast of Shadowmoon Village - in the heart of Shadowmoon Valley - you " ..
+                "will find an area known as the Altar of Damnation. Make your way there and speak with " ..
+                "Earthmender Torlok.",
+        },
+        [10683] = {
+            description = "The Ashtongue Broken have been ordered by Illidan to excavate the Ruins of " ..
+                "Baa'ri, to the far north. They're in search of draenei artifacts, no doubt - Baa'ri was " ..
+                "home to many Baa'ri relics before Gul'dan buried the town under a volcanic explosion. We " ..
+                "must use this opportunity to recover the Tablets of Baa'ri, an ancient text rumored to " ..
+                "hold the secrets of the Temple of Karabor... a place you might know as the Black Temple.",
+        },
+        [10684] = {
+            description = "According to the tablets, an artifact known as a Medallion of Karabor was kept " ..
+                "at Baa'ri. Only the highest-ranking draenei priests were granted these, as they allowed " ..
+                "unfettered access into the Temple of Karabor.\n\nWe must find out whether the Ashtongue " ..
+                "have recovered the medallion that was kept at Baa'ri yet. Its power would provide great " ..
+                "aid in our fight against Illidan.\n\nAkama's lieutenant at Baa'ri, Oronu the Elder, " ..
+                "receives written orders from him daily. Obtain them and bring them to me.",
+        },
+        [10685] = {
+            description = "According to Akama's letter, four fragments of the medallion were unearthed " ..
+                "and given to the Ashtongue Corruptors. These dreaded Broken were once powerful shaman " ..
+                "who now defile the very elements they revered.\n\nHaalum, Corruptor of Air, can be found " ..
+                "at Netherwing Pass. Eykenen and Uylaru, Corruptors of Earth and Fire, were last seen at " ..
+                "the Fel Pits near the Hand of Gul'dan. Lakaan, Corruptor of Water, is rumored to be near " ..
+                "Coilskar Point.\n\nFind them and obtain the medallion fragments.",
+        },
+        [10686] = {
+            description = "The fragments you obtained are only half of the medallion. The Ashtongue " ..
+                "leader, Akama, must have kept the other half.\n\nI dread to ask this of you, as Akama is " ..
+                "both evil and cunning.\n\nHe and the Ashtongue Deathsworn - the vilest and most brutal " ..
+                "of the tribe - are rumored to run a torture chamber inside the Warden's Cage.\n\nI want " ..
+                "you to find that dreaded prison, and find the whereabouts of Akama. His second in " ..
+                "command at the location is a Broken known as Sanoru - interrogate him if you have to.",
+        },
+        [10687] = {
+            description = "Our scouts have reported a massive influx of Sunfury blood elf recruits " ..
+                "heading to the Ruins of Karabor. Normally this would represent a purely military threat, " ..
+                "however we believe something else is amiss.\n\nDescriptions of their attire and fighting " ..
+                "style are suspiciously close to that of Illidan himself. I do not want to become alarmed " ..
+                "without good reason, so I would like you to go there and bring me back their weapons. We " ..
+                "will then determine whether my fears are unfounded or not.",
+        },
+        [10688] = {
+            description = "The weapons are authentic, as we feared. Illidan is training demon hunters at " ..
+                "the Ruins of Karabor and we must put an end to it.\n\nDo not be fooled by their name, " ..
+                "<name>, their power will be used against us as often as against any demon.\n\nTheir " ..
+                "warlocks summon and subdue demons to be used as part of the initiates' training. A pit " ..
+                "lord named Azaloth has proven too strong to be used in training and is kept banished. " ..
+                "Find a way to let him loose on his captors. That should buy us the time we need.",
+        },
+        [10689] = {
+            description = "You don't see many demon hunters nowawdays. They're viewed with suspicion by " ..
+                "their own people and it's very rare to find one that doesn't have some sort of " ..
+                "allegiance to Illidan.\n\nThere are rumors of one such demon hunter out in Nagrand. His " ..
+                "name is Altruis. He hates all demons with a passion and will help us if you can convince " ..
+                "him that you share his goals.\n\nGo to western Nagrand and find him. He might be willing " ..
+                "to shed some light on these new demon hunter training grounds.",
+        },
+        [10691] = {
+            description = "This book... I could use it to increase my power tenfold... No! It would end " ..
+                "up corrupting my very soul, this I am sure of. Return to those who sent you here, " ..
+                "<name>.\n\nYou now have the means to stop Varedis. Wait until he manifests his demonic " ..
+                "form through metamorphosis, at that point you will need to burn the book in his " ..
+                "presence. That will be the only way you can deprive him of his power.",
+        },
+        [10692] = {
+            description = "Of course we must destroy this book, but not before we use it to destroy " ..
+                "Varedis.\n\nIf we're to shut down this academy of Illidan imitators, we'll have to deal " ..
+                "not just with Varedis but also the three night elf masters that assist him: Alandien, " ..
+                "Theras and Netharel.\n\nGather a suitable force and return to the Ruins of Karabor. " ..
+                "Follow Altruis's instructions for defeating Varedis. Hopefully his plan will work - " ..
+                "otherwise... it'll have been a pleasure working with you.",
+            rewardChoices = {{31013, 1}, {30933, 1}, {31010, 1}, {31002, 1}, {30948, 1}, {31009, 1}},
+        },
+        [10704] = {
+            description = "A message was embedded in the ata'mal crystal that you recovered. Nexus-Prince " ..
+                "Haramad has given us information vital to our campaign against Tempest Keep.\n\nHe tells " ..
+                "us that there are two pieces, shards to a key, which, when combined, will unlock the " ..
+                "keep's Arcatraz satellite.\n\nOne half is possessed by an ancient in the Botanica known " ..
+                "as Warp Splinter. The other is held by Pathaleon the Calculator inside the " ..
+                "Mechanar.\n\nBring both shards to me and I will combine them into the Arcatraz key.",
+            rewardChoices = {{31465, 1}, {31461, 1}, {31464, 1}, {31462, 1}, {31460, 1}},
+            rewardItems = {{31084, 1}},
+            rewardMoney = 132000,
+        },
+        [10705] = {
+            description = "I hope you're not shocked when I reveal to you that the pieces of the " ..
+                "Medallion of Karabor you obtained from my minions are mere replicas.\n\n< Akama shows " ..
+                "you an identical medallion in his open palm.>\n\nMy Deathsworn and I have kept the " ..
+                "secret from Illidan for as long as possible. We are however, still missing the final " ..
+                "piece.\n\nUdalo came to me in dreams to announce he had found it. Unfortunately he is " ..
+                "held by Kael'thas inside the Arcatraz in Tempest Keep. Find him and see what he knows.",
+        },
+        [10706] = {
+            description = "Before he died, Udalo appears to have written a single word on the floor " ..
+                "beneath him. The writing is barely legible but you recognize the word " ..
+                "Atam'al.\n\nPerhaps Akama will understand the meaning of his brethren's message.",
+        },
+        [10707] = {
+            description = "It has been known to us that the fel orcs, under Illidan's command, have " ..
+                "guarded an Ata'mal crystal known as the Heart of Fury at the Ata'mal Terrace. They cloud " ..
+                "its presence with dark magic, to keep it from the Sha'tar.\n\nFight your way to the " ..
+                "Atam'al Terrace outside the Black Temple and turn your eyes to the sky. Shadowlord " ..
+                "Deathwail will circle the terrace, beyond your reach. You will have to slay him and his " ..
+                "warlocks before you can obtain the crystal.\n\nIt won't be easy, <name>. I wish you luck.",
+        },
+        [10725] = {
+            description = "Your services have gone above and beyond what is expected of you, <name>. You " ..
+                "are but a step away from achieving the highest honor available to non-citizens of " ..
+                "Dalaran.\n\nContinue to prove your loyalty to us and I will empower your signet to its " ..
+                "full capacity.",
+            rewardItems = {{29287, 1}},
+        },
+        [10726] = {
+            description = "Your services have gone above and beyond what is expected of you, <name>. You " ..
+                "are but a step away from achieving the highest honor available to non-citizens of " ..
+                "Dalaran.\n\nContinue to prove your loyalty to us and I will empower your signet to its " ..
+                "full capacity.",
+            rewardItems = {{29290, 1}},
+        },
+        [10727] = {
+            description = "Your services have gone above and beyond what is expected of you, <name>. You " ..
+                "are but a step away from achieving the highest honor available to non-citizens of " ..
+                "Dalaran.\n\nContinue to prove your loyalty to us and I will empower your signet to its " ..
+                "full capacity.",
+            rewardItems = {{29283, 1}},
+        },
+        [10728] = {
+            description = "Your services have gone above and beyond what is expected of you, <name>. You " ..
+                "are but a step away from achieving the highest honor available to non-citizens of " ..
+                "Dalaran.\n\nContinue to prove your loyalty to us and I will empower your signet to its " ..
+                "full capacity.",
+            rewardItems = {{29279, 1}},
+        },
+        [10729] = {rewardItems = {{29284, 1}}},
+        [10730] = {rewardItems = {{29288, 1}}},
+        [10731] = {rewardItems = {{29280, 1}}},
+        [10732] = {rewardItems = {{29276, 1}}},
+        [10733] = {
+            description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
+                "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
+                "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
+            rewardItems = {{29285, 1}},
+        },
+        [10734] = {
+            description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
+                "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
+                "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
+            rewardItems = {{29289, 1}},
+        },
+        [10735] = {
+            description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
+                "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
+                "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
+            rewardItems = {{29281, 1}},
+        },
+        [10736] = {
+            description = "You've chosen your path, <class>. Now it is up to you to travel the path to " ..
+                "wherever it may lead.\n\nYou will find that having friends among the Archmages of " ..
+                "Dalaran has its advantages. Serve us well and your deeds will not go unrewarded.",
+            rewardItems = {{29277, 1}},
+        },
     },
     npcs = {
         [19797] = {
@@ -1850,6 +2261,7 @@ ns.Overrides.wowhead = {
             zoneID = 3520,
         },
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
+        [21877] = {spawns = {[3520] = {{58.2, 70.4}, {58.2, 70.8}}}, zoneID = 3520},
     },
     objects = {},
     items = {},
