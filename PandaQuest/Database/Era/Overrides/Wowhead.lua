@@ -642,6 +642,71 @@ ns.Overrides.wowhead = {
                 "water is life... corruption stops life.\n\nYou protect and give life with water's power.",
             rewardItems = {{5177, 1}},
         },
+        [97] = {
+            description = "Let Commander Ebonlocke know immediately that the handwriting matched, <name>! " ..
+                "Her suspicions were correct!",
+        },
+        [98] = {
+            description = "Stalvan Mistmantle led a life of depravity. Innocent victims died by his hand. " ..
+                "Undoubtedly he is guilty of countless crimes. Now the lunatic threatens Darkshire. The " ..
+                "Light only knows what sordid acts he is plotting. Travel to his cottage just north of " ..
+                "town, <class>, and execute Stalvan, once and for all.\n\nWhen the deed is done, travel " ..
+                "to Madame Eva 's and show her his family ring. After all, it was her premonition that " ..
+                "led to this gruesome discovery. But Darkshire is safer because of her.",
+            rewardChoices = {{2044, 1}, {2043, 1}},
+        },
+        [99] = {
+            description = "As my understanding of Arugal's magic grows so does my disdain for the hapless " ..
+                "fool. I am close to completing my research on his so called remedy.\n\nMy knowledge will " ..
+                "be complete when I learn what enchantment is causing the strange behavior going on in " ..
+                "Pyrewood Village. By day, the peasants appear to be Human. But when the sun goes down " ..
+                "the townsfolk turn into Moonrage Worgen.\n\nI need to draw energy from the enchanted " ..
+                "shackles Arugal cast on them. Bring to me six enchanted Pyrewood Shackles, <name>.",
+            rewardChoices = {{3586, 1}, {3570, 1}, {5242, 1}},
+        },
+        [100] = {
+            description = "Light explodes as you finish the incantation. The sounds of the water drops " ..
+                "hitting the flame have died down and your senses are overcome as the corrupt spirits " ..
+                "around you are destroyed.",
+        },
+        [101] = {
+            description = "As the mystical taint creeps through the forest, the need for self-protection " ..
+                "is undeniable, <name>. The winds whisper to me and they speak of a great danger which " ..
+                "waits patiently for you in the near future.\n\nIf you wish to protect yourself, noble " ..
+                "<class>, bring to me 10 ghoul fangs, 10 skeleton fingers and 5 vials of spider venom. " ..
+                "For you I shall enchant a Totem of Infliction which will harm those who attempt violent " ..
+                "acts against you.",
+            rewardItems = {{1131, 1}},
+        },
+        [102] = {
+            description = "Stormwind has abandoned us. A foul wind of depravity rustles through the " ..
+                "plains of Westfall. This was my homeland and I will not turn my back on the citizens who " ..
+                "choose to remain here. We, the former farmers, shall make our stand.\n\nYour task, " ..
+                "should you choose to accept, is to patrol the grasslands of Westfall. Track down and " ..
+                "slay the vile Gnolls that seem to be working in conjunction with the Deadmines thieves. " ..
+                "Bring me eight Gnoll Paws and I will reward your bravery.",
+            rewardChoices = {{1154, 1}, {710, 1}},
+        },
+        [103] = {
+            description = "The night the Lighthouse Keeper's family died was horrible. I watched, " ..
+                "helpless, as Old Murk-Eye led the attack. But what's done is done and now my concern is " ..
+                "for the lives of the sailors on The Great Sea whose ships come close to the perilous " ..
+                "rocks of the coastline. With no one to keep watch on the flame the responsibility has " ..
+                "fallen upon me.\n\nHelp me keep the torch lit by bringing me 5 flasks of oil from the " ..
+                "Harvest Monsters.",
+            rewardChoices = {{2455, 3}, {118, 3}},
+            rewardItems = {{955, 1}, {1180, 1}},
+            rewardMoney = 600,
+        },
+        [104] = {
+            description = "When my life was ended upon the rocks, I had no clue what the afterlife held " ..
+                "for me. The Lighthouse was black that night because Old Murk-Eye had scared the keeper's " ..
+                "family off. They returned and re-lit the flame but Old Murk-Eye coerced the weaker " ..
+                "minded murlocs to raid the Lighthouse with him once again. The second time the family " ..
+                "was not so lucky and before my eyes they perished helplessly.\n\nSlay Old Murk-Eye if " ..
+                "you see him along the shore and bring me one of his scales and I shall reward you.",
+            rewardChoices = {{1172, 1}, {1557, 1}, {5240, 1}},
+        },
         [105] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
                 "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
@@ -650,6 +715,16 @@ ns.Overrides.wowhead = {
                 "need numerous allies to even stand a chance of facing him successfully.\n\nDestroy Araj, " ..
                 "<name>, and bring me a shard from his phylactery as proof!",
             rewardItems = {{17759, 1}},
+        },
+        [106] = {
+            description = "Oh, I'm cursed! My heart belongs to Tommy Joe Stonefield, but our families are " ..
+                "bitter enemies. So I can't see him, even though my eyes ache to gaze upon that handsome " ..
+                "face!\n\nPlease, take this letter and give it to Tommy Joe. He's usually at the river to " ..
+                "the west of the Stonefield Farm, which is due west of here.",
+        },
+        [107] = {
+            description = "I bet William Pestle has a potion to unite our two young lovers!\n\nHere, take " ..
+                "this note to William. He's staying at the Lion's Pride Inn in Goldshire.",
         },
         [211] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
@@ -660,6 +735,14 @@ ns.Overrides.wowhead = {
                 "<name>, and bring me a shard from his phylactery as proof!",
             rewardItems = {{17759, 1}},
         },
+        [281] = {
+            description = "Not long ago a merchant vessel, the Blind Princess, was raided by Murlocs. " ..
+                "Although the ship escaped intact, much of its cargo was dragged overboard by the " ..
+                "creatures, including a very valuable statuette of Terenas Menethil. We want that " ..
+                "statuette recovered.\n\nSearch the coastal Murloc hovels for crates, barrels and other " ..
+                "evidence of lost cargo. Find the Menethil Statuette and return it to me.",
+            rewardItems = {{929, 5}},
+        },
         [317] = {
             description = "I'm preparing to start a mission for the Siege Brigade. It's a long one, and I " ..
                 "need to stock Jetsteam with a month's worth of supplies. So while Steelgrill is working " ..
@@ -667,6 +750,80 @@ ns.Overrides.wowhead = {
                 "meat for food. You can get meat from boars and fur from the bears... you can find them " ..
                 "both in the snow fields south of the Grizzled Den.",
             rewardMoney = 250,
+        },
+        [343] = {
+            description = "I'm giving a speech on the Fortitude of the Spirit, and I'd like to recite " ..
+                "passages from a particular book on metallurgy - \"The Stresses of Iron.\" A copy of this " ..
+                "book should be in the Royal Library, within Stormwind Keep. Can you retrieve it for me? " ..
+                "If so, then may the blessings of the Light be with you!\n\nThe Royal Library is very " ..
+                "large, but the head librarian, Milton Sheaf, knows each shelf like it was his own son. " ..
+                "Speak to him, he'll retrieve the book for you.",
+        },
+        [344] = {
+            description = "The Stresses of Iron? Yes, I know the book. Quite a good one, written by the " ..
+                "Dwarven miner Margulf Blaggon a few decades ago. He spent most his time deep in the " ..
+                "mountains of Khaz Modan, digging ore. Smart fellow!\n\nBut where was I? Oh yes, the " ..
+                "Stresses of Iron! I'm afraid the book was moved to the Northshire Abbey. The caretaker " ..
+                "of the Abbey's library, Brother Paxton, wanted to make a copy of the book for his own " ..
+                "shelves.\n\nBut that was months ago. I wonder why it's taking him so long...",
+        },
+        [405] = {
+            description = "Bethor Iceshard, a high-ranking and powerful mage in the Undercity to the " ..
+                "south, commands me to send him an agent with proven worth against the Scourge. You, " ..
+                "<name>, will be that agent.\n\nPresent these orders to Bethor. He will then instruct you " ..
+                "on your mission. I don't know its details, but it deals with recruiting a wayward Lich. " ..
+                "And it will be dangerous.\n\nSo ready yourself, <class>. You must not fail.\n\nYou may " ..
+                "find Bethor in the Magic Quarter of the Undercity.",
+        },
+        [412] = {
+            description = "Upon further analysis of the Gnomeregan situation, it would appear as though " ..
+                "we not only failed to eradicate the troggs but we also happened to turn most of the " ..
+                "gnomish race into horrific, mindless, evil-doing leper gnomes.\n\nOzzie and I plan to " ..
+                "reverse the horrible leper effect with our latest invention: The Recombobulator. The " ..
+                "machine is almost complete but we are in dire need of some Restabilization Cogs and " ..
+                "Gyromechanic Gears. Retrieve some from the leper gnomes out front of Gnomeregan for us.",
+            rewardChoices = {{3152, 1}, {3153, 1}},
+        },
+        [414] = {
+            description = "I've been drinking more of that Shimmer Stout my brother made - it's great " ..
+                "stuff! I want a fellow Mountaineer to try it. His name's Kadrell, and he's usually " ..
+                "patrolling the road through Thelsamar in Loch Modan.\n\nTo get to Thelsamar, go " ..
+                "southeast through the tunnel, then turn northeast when the path forks into a road. " ..
+                "Follow that road straight into Thelsamar.\n\nGive Mountaineer Kadrell this cask of " ..
+                "Shimmer Stout and see what he thinks!",
+        },
+        [415] = {
+            description = "Rejold Barleybrew at Brewnall Village has been asking for you.\n\nHe wants to " ..
+                "talk to you about a new drink he's been brewing...said something about you helping him " ..
+                "with it. You might want to head back to Brewnall Village and see what he has to " ..
+                "say.\n\nThere could be some free booze in it for you...",
+            rewardItems = {{3087, 1}},
+        },
+        [576] = {
+            description = "Avast! Who goes there?\n\nArgh, I am but useless without me special enchanted " ..
+                "eye. Bad enough to have lost me eyes in battle in the first place! But by some stroke o' " ..
+                "luck we docked in Menethil and a traveling wizard enchanted a special glass eye that let " ..
+                "me see again.\n\nLast night I ended up gettin' jumped by some Bloodsail Buccaneers on me " ..
+                "way out. Took me eye, they did! Seems those blokes have found their way to Booty " ..
+                "Bay.\n\nHelp an old sea dog out by gettin' me eye back?",
+            rewardItems = {{4114, 1}},
+        },
+        [585] = {
+            description = "<The head of Nezzliok speaks.>\n\nIt is true. I know where the child of the " ..
+                "Darkspears was taken. You have bested me and bound my spirit, but I will say nothing " ..
+                "without appeasement!\n\nThe Bloodscalps war with the Skullsplitters. To gain my favor, " ..
+                "steal from the Skullsplitters 3 of their trophy skulls and place them here with us, so " ..
+                "that my spirit will have slaves in the Nether. One skull must be from their trophy pile " ..
+                "in Balia'mah, another from Ziata'jai, and the last from Zul'Mamwe.",
+        },
+        [628] = {
+            description = "With the inside finished, all that's left is to add the outer layer. For this, " ..
+                "I use only the best elder croc skins. They are more durable and a better canvas--if you " ..
+                "will--for adding the designs and accents that make Drizzlik 's Excelsior line.\n\nIt's " ..
+                "hard to find that perfect skin though, the only one that fits my plan is the skin of an " ..
+                "elder saltwater crocolisk. The elders only come out to defend the other saltwater crocs, " ..
+                "so you might need to kill a few to draw one out.",
+            rewardItems = {{4109, 1}},
         },
         [969] = {
             description = "Ah, I can tell just by lookin' at ya -- you be wantin' to make a lucky charm. " ..
@@ -690,6 +847,10 @@ ns.Overrides.wowhead = {
                 "hearty <men/women> just like you for a special mission.\n\nIf you're interested, head on " ..
                 "out to the Crimson Veil and speak with him below decks. She's anchored off the Wild " ..
                 "Coast east of here, next to the Riptide and the Damsel's Luck.",
+        },
+        [1462] = {
+            objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
+            rewardItems = {{6635, 1}},
         },
         [1524] = {
             description = "You are powerful enough to wield the totem of fire, but that does not mean you " ..
@@ -728,6 +889,45 @@ ns.Overrides.wowhead = {
         [2747] = {rewardItems = {{9541, 1}}},
         [2748] = {rewardItems = {{9540, 1}}},
         [2749] = {rewardItems = {{9539, 1}}},
+        [2758] = {
+            description = "When I was about your age, a dwarf by the name of Galvan took me under his " ..
+                "wing and trained me in the ways of the armorsmith. Before he left for Booty Bay, he made " ..
+                "me promise to train all those with the desire and determination to advance in the craft " ..
+                "of blacksmithing -- so here I am -- all these years later.\n\nSo, now it's time for you " ..
+                "to learn a little something. Make me six golden scale bracers and you will learn where " ..
+                "smithing comes from, <name>.",
+            rewardItems = {{9367, 1}},
+        },
+        [2759] = {
+            description = "Although Galvan left Booty Bay many years ago, members of the order still " ..
+                "remain in town, hoping to one day find another worthy of Galvan's tutelage.\n\nTake this " ..
+                "insignia and present it to McGavan in Booty Bay.\n\nIf you actually make it that far, " ..
+                "he'll know that you are worthy. I have faith, <name>!",
+        },
+        [2760] = {
+            description = "Most of our recruits never make it to Booty Bay, <name>. The shine of the " ..
+                "insignia is enough to trigger the loot lust in even the staunchest of blacksmiths. Fools " ..
+                "they be, as the insignia is a drop in the bucket compared to the wealth of items you'll " ..
+                "see!\n\nFind Galvan the Ancient and show him this pin. His residence is far to the " ..
+                "north, between Zul Gurub and the Mosh'Ogg ogre mound.",
+        },
+        [2762] = {
+            description = "It is said that truesilver is stronger and more durable than mithril. Galvan " ..
+                "does not disagree with this assessment of the minerals, but contrary to its name, " ..
+                "truesilver is not true! Mithril is a far nobler mineral! HAH! Regardless, for this " ..
+                "lesson you will need to find the great silver deceiver, <name>.\n\nBring me forty bars " ..
+                "of mithril and five bars of truesilver. In exchange, you will be taught the secret of " ..
+                "ornate mithril gloves and more importantly, learn that truesilver is a liar!",
+            rewardItems = {{7984, 1}},
+        },
+        [2765] = {
+            description = "When you first came to me, I knew that you would turn out to be one of my " ..
+                "finest pupils! It was without hesitancy that you gave up a trinket of some power to " ..
+                "McGavan. You did this only so that you could meet me. Such blind faith and devotion to " ..
+                "the craft should be rewarded.\n\nYou have attained expertise over blacksmithing, <name>. " ..
+                "Reap the rewards!",
+            rewardItems = {{8703, 1}},
+        },
         [3627] = {
             description = "To reach the Defiler, you must first destroy the triad of power and recover " ..
                 "the amulet pieces. When you recover all three pieces, return to me and I shall give you " ..
@@ -932,6 +1132,14 @@ ns.Overrides.wowhead = {
                 "'vacation.'\n\nI bet Malyfous could give you a fairly accurate assessment of what he can " ..
                 "do with parts from a monster like this!\n\nOh, I suppose you don't know where Everlook " ..
                 "is, do you? To Winterspring, <fella/lady>!",
+        },
+        [5048] = {
+            description = "She's a tad ornery, and quite possibly out of her gourd... but the records " ..
+                "indicate that Ol' Emma does fit the framework of who Emma Felstone might be.\n\nPerhaps " ..
+                "you've seen Ol' Emma wander the city - she talks to herself, most often in nonsensical " ..
+                "jibber-jabber. Still, she doesn't hurt anything or anyone, so folks pretty much leave " ..
+                "her be.\n\nAll things considered, I would say that Ol' Emma is in fact Emma Felstone. " ..
+                "You might try asking if her last name is indeed Felstone.",
         },
         [5056] = {
             description = "In northern Winterspring, great cats assemble around a large landmark called " ..
@@ -1176,6 +1384,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{13315, 1}},
             rewardMoney = 18000,
         },
+        [5302] = {
+            description = "One day, I will create a legendary hammer. A hammer fit for a Warchief!\n\nIt " ..
+                "is my life's work, <name>. My passion. I recognize that you have the potential to be " ..
+                "among us, one of us - a weaponsmith. I am the one that can help you harness that " ..
+                "potential.\n\nA simple task is all that you must complete. Simple for one of your " ..
+                "exceptional skill.",
+        },
         [5305] = {
             description = "Within the confines of the Scarlet Bastion lies sweet Serenity. The Crimson " ..
                 "Hammersmith guards the recipe with his life. Defeat him and bring me his apron. For " ..
@@ -1293,6 +1508,11 @@ ns.Overrides.wowhead = {
                 "It is at that point that he must be slain. Strike him down and take his human head.",
             rewardChoices = {{13982, 1}, {13986, 1}, {13984, 1}},
             rewardItems = {{14002, 1}},
+        },
+        [5481] = {
+            description = "Master want weeds. Us gots big hands and not good at picking. You help us and " ..
+                "we not hurt you. Us need gloom weed. Many weeds around here and near road.\n\nWhen you " ..
+                "have gloom weed you take to Master Holland in Brill graveyard.",
         },
         [5504] = {
             description = "Your service to the Argent Dawn is to be commended, <name>. You are truly " ..
@@ -1760,6 +1980,173 @@ ns.Overrides.wowhead = {
                 "Shazzrah. Kill them and bring me their hands!\n\nThis task will take every resource you " ..
                 "possess, <name>, but if can do it then the Firelords will be dealt a terrible blow.",
         },
+        [7001] = {
+            description = "The war in the valley has taken its toll on our soldiers. We must revitalize " ..
+                "our forces!\n\nIf we can fill up the stables, the Wolf Riders will once more be able to " ..
+                "ride out into the field of battle.\n\nTake this muzzle and track down the frostwolves " ..
+                "that inhabit the nearby forest. Once you find a wolf, use the muzzle to tame the beast. " ..
+                "Bring the tamed beast back to me so that I may place it in the stable.\n\nWhen we have " ..
+                "enough wolves stabled, the Wolf Riders will rejoin their patrol on our front lines.",
+        },
+        [7027] = {
+            description = "Just look at the stables, <name>! Empty! The Stormpike Brigade has no rams to " ..
+                "ride - the cavalry is defunct.\n\nYou must help us, soldier. Take this training collar " ..
+                "and enter the wilds of this valley. Locate the Alterac rams that roam throughout the " ..
+                "area and use the collar to snare one. When you have captured a ram, return it to me and " ..
+                "I shall place it in our stable.\n\nWhen we have enough rams, the ram rider commander " ..
+                "will be notifed. With your help, the cavalry will be reborn!",
+        },
+        [7081] = {
+            description = "The graveyards in Alterac Valley are prized territories. Both the Horde and " ..
+                "the Alliance fight savagely for these sacred grounds. Are you, <name>, ready to join " ..
+                "that fight?\n\nI want you to assault an enemy graveyard. Find a graveyard with a Horde " ..
+                "banner in its midst, and pull it from the ground! Do that, and your task will be " ..
+                "complete....\n\nBut if you can also hold the graveyard for a few minutes, then our " ..
+                "troops will soon come to relieve you.",
+            rewardMoney = 9000,
+        },
+        [7082] = {
+            description = "The battle lines of Alterac Valley are ever shifting. Territories swing back " ..
+                "and forth as we meet our opponents in deadly combat. And graveyards, <name>, are where " ..
+                "battles rage most fierce.\n\nI want you to attack an Alliance held graveyard! Find a " ..
+                "graveyard with an Alliance banner in its midst and pull it from the ground.\n\nDo that " ..
+                "and your task for me will be complete, but... if you hold the graveyard for a few " ..
+                "minutes, then it will be ours and troops will come and relieve you.",
+            rewardMoney = 9000,
+        },
+        [7101] = {
+            description = "Towers and bunkers are important positions, and we must capture and hold them " ..
+                "all! So to that end, I want you to attack a bunker that is controlled by the " ..
+                "enemy.\n\nTo do that, enter one with an Alliance banner. You will see another banner " ..
+                "inside. Pull out that banner, and a white Horde banner will appear in its place. Well " ..
+                "done!\n\nAt that point your task for me will be complete, but if you hold the place long " ..
+                "enough, and if the Alliance doesn't take it back, then it will be destroyed!",
+            rewardMoney = 9000,
+        },
+        [7102] = {
+            description = "Towers and bunkers are key defensive positions, and so we must hold as many as " ..
+                "possible! I want you to attack a tower or a bunker in Alterac Valley.\n\nTo do that, " ..
+                "enter a tower with a Horde banner atop it. You will see another enemy banner inside. " ..
+                "Pull out that banner, and a white Alliance banner will appear in its place. Well " ..
+                "done!\n\nAt that point your mission for me will be complete, but hold the area long " ..
+                "enough, and if the Horde doesn't take it back, then it will be destroyed!",
+            rewardMoney = 9000,
+        },
+        [7121] = {
+            description = "<name>, our quartermaster charged me to direct new recruits to him. He needs " ..
+                "supplies from caches stored in the mines of Alterac, and he'll probably send you to get " ..
+                "them.\n\nFollow the road. You'll find our quartermaster to the west.",
+        },
+        [7122] = {
+            description = "The mines in Alterac Valley hold more than just minerals. Both the Frostwolf " ..
+                "and Stormpike have cached excess supplies in the Irondeep and Coldtooth mines... that's " ..
+                "not a bad idea, if we could only maintain control of them!\n\nCapture a mine, then " ..
+                "return to me. To capture a mine, enter one that we do not control and kill its leader. " ..
+                "When you do that, the mine will be ours, and we'll send troops to protect it!",
+            rewardMoney = 9000,
+        },
+        [7123] = {
+            description = "<name>, the Frostwolf Quartermaster is looking for recruits, for tasks that " ..
+                "lead into the mines of Alterac Valley. Speak with him; he will tell you more.\n\nFollow " ..
+                "the road west into the bunker, then take the west exit and you'll find our quartermaster.",
+        },
+        [7142] = {
+            description = "The Stormpike dwarves and their allies have invaded Alterac Valley, and we " ..
+                "must drive them out! To win the battle for Alterac, we must defeat their general, " ..
+                "Vanndar Stormpike!\n\nYou will find Vanndar in Dun Baldar, in the north of Alterac " ..
+                "Valley.\n\nDestroy him, <name>, and then return to me.",
+            rewardMoney = 27000,
+        },
+        [7161] = {
+            description = "Hail, <class>. It has been a long time since we have had the chance to answer " ..
+                "the call of battle. The old feelings are slow to rise but once awakened, the blood does " ..
+                "rush. The battle rage returns...\n\nAll newcomers to the Valley must first complete the " ..
+                "rite of battle.\n\nDeep within the Wildpaw gnoll cave is a banner of the Frostwolf. " ..
+                "Venture forth and recover the banner. Return it to me and I shall grant you the " ..
+                "Frostwolf initiate's insignia.",
+            rewardItems = {{17690, 1}, {19483, 1}},
+        },
+        [7162] = {
+            description = "You've arrived just in time, <class>. These Frostwolf savages just won't give " ..
+                "up! We must show them the might of the Stormpike. They must bow to our " ..
+                "superiority.\n\nBefore you make your way to the field of battle, you will want to join " ..
+                "the rank of Stormpike.\n\nSouthwest of Dun Baldar, you will find the Icewing Caverns. " ..
+                "Planted deep within the caverns is a Stormpike Banner. Venture forth and recover that " ..
+                "banner. Return it to me, and you will have earned a Stormpike initiate's insignia.",
+            rewardItems = {{17691, 1}, {19484, 1}},
+        },
+        [7163] = {rewardItems = {{17905, 1}}},
+        [7164] = {rewardItems = {{17906, 1}}},
+        [7165] = {rewardItems = {{17907, 1}}},
+        [7166] = {rewardItems = {{17908, 1}}},
+        [7202] = {
+            description = "The indigenous Winterax trolls of the region are ruthless savages that would " ..
+                "love nothing more than to have our bones added to their foul stew.\n\nWe must show them " ..
+                "our might!\n\nWe have recovered tomes from their caves that detail their leadership " ..
+                "hierarchy. The artifacts indicate that their leader, Korrak the Bloodrager, tends to " ..
+                "remain hidden until given a reason to make his presence known.\n\nDeath to Korrak would " ..
+                "mean death to Winterax Clan! Slay him and return.",
+            rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}},
+            rewardItems = {{18150, 1}},
+        },
+        [7223] = {
+            description = "Battles rage constantly in Alterac Valley, and the supplies we get from " ..
+                "Ironforge are not enough to outfit our experienced troops.\n\nIf you find armor scraps " ..
+                "from the battlefield, aid the war effort and bring those scraps to me!",
+        },
+        [7341] = {rewardItems = {{18042, 200}}},
+        [7342] = {rewardItems = {{18042, 200}}},
+        [7361] = {
+            description = "<Najak snarls.>\n\nBefore the night elves existed there was troll. It was from " ..
+                "troll that the night elves came.\n\nTheir mutinous attacks against my people will not be " ..
+                "tolerated. Staghelm seeks to wipe us out - to leave no trace of those that bore him and " ..
+                "his ilk. It will not happen!\n\nFor every night elf that you slay and decapitate, Najak " ..
+                "will grant you favor amongst the Darkspear. Word of your deeds will be spread across " ..
+                "Kalimdor and the Eastern Kingdoms. Go now and serve the Darkspear!",
+        },
+        [7362] = {
+            description = "The Elder Crone has sent me to this warzone to research the other races. More " ..
+                "specifically, I am to collect gnome samples. Magatha is primarily interested in their " ..
+                "survivability. Aye, the gnomes - while pitifully weak and miniscule - exude great " ..
+                "resilience both in and out of combat.\n\nFortunately for you, I am looking for ruffians " ..
+                "to do Magatha's bidding. Return to me with tufts of gnome hair and you shall be known to " ..
+                "the tauren as an ally.",
+        },
+        [7363] = {
+            description = "Humans are so utterly detestable.\n\n<Commander Philips grimaces.>\n\nWhile it " ..
+                "is true that I am a soldier of Frostwolf, I remain a servant of Sylvanas.\n\nDuring my " ..
+                "tour of duty, I do extra work on the side for the Dark Apothecaries of the " ..
+                "Undercity.\n\nI have been tasked with collecting human bone chips that are to be used in " ..
+                "curing the human condition.\n\nI am authorized to pass that task on to my " ..
+                "subordinates.\n\nFind them. Kill them. Return their bone chips to me.",
+        },
+        [7366] = {
+            description = "The Archbishop is as kind as he is wise. For a man to look mercifully on such " ..
+                "a wretched lot...\n\n<Commander Philips shakes his head in disbelief.>\n\nToo kind... " ..
+                "Just too kind.\n\nThe Archbishop asks that we take pity on the undead and grant them " ..
+                "swift and permanent deaths. For this grand display of mercy, we merely require their " ..
+                "black, disease ridden hearts.\n\nBring me the hearts of the Forsaken so that they may be " ..
+                "ceremoniously incinerated at the Cathedral of Light. Make haste, <name>!",
+        },
+        [7381] = {
+            description = "While it is true that Korrak has been slain, one question remains: Will he " ..
+                "remain dead? Trolls are notorious for their other-worldly tribal magics. I would not be " ..
+                "surprised if the fallen leader was raised from the dead to once more rule over his " ..
+                "clan.\n\nYou know what to do should this ever occur.\n\n<Warmaster Laggrond makes a " ..
+                "cutting motion across his neck with his index finger.>\n\nAnd this time, I want his " ..
+                "skull. Just keep your eyes peeled, soldier.\n\nDismissed!",
+            rewardItems = {{18149, 1}},
+        },
+        [7382] = {
+            description = "There's something not quite right about all of this... Did anybody think to " ..
+                "burn Korrak's corpse? Those trolls will stop at nothing to revive their fallen leader - " ..
+                "as blue skinned pagan man-beasts often do.\n\nJust keep your eyes out, <name>. Don't be " ..
+                "alarmed if Korrak makes a surprise appearance; and if he does, I want him executed - his " ..
+                "corpse burned to ashes.\n\nFor good measure, lop off his head and bring me his skull " ..
+                "before you ignite the lifeless mass.",
+            rewardItems = {{18150, 1}},
+        },
+        [7429] = {rewardXP = 660},
         [8413] = {
             description = "The spirit totem just isn't enough. We be needin' some voodoo magic to make it " ..
                 "work jus' right.\n\nThe trolls in the sunken temple have feathers strong with voodoo " ..
