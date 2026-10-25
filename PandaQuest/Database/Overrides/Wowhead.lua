@@ -24255,28 +24255,153 @@ ns.Overrides.wowhead = {
             rewardMoney = 71000,
         },
         [13142] = {rewardMoney = 222000},
-        [13143] = {rewardMoney = 74000},
+        [13143] = {
+            description = "First things first. I saw some Lithe Stalkers on the ramparts just east of us. " ..
+                "They used to serve us before we broke with Arthas, and they're about as perfect a scout " ..
+                "as you can get... with a little prodding from an eye of dominion.\n\nFly up, find one of " ..
+                "the stalkers, beat it down a bit, and then use this Sigil of the Ebon Blade to command " ..
+                "its obedience. It will recognize the sigil, guaranteed. Lead it back to the top of the " ..
+                "rocks northeast of here and it will find its way to me.",
+            rewardMoney = 74000,
+        },
         [13144] = {rewardMoney = 74000},
         [13145] = {rewardMoney = 74000},
-        [13146] = {rewardMoney = 74000},
-        [13147] = {rewardMoney = 74000},
-        [13148] = {rewardMoney = 114000},
-        [13149] = {rewardMoney = 296000},
+        [13146] = {
+            description = "We need to cause some disruption to bring those death knights away from their " ..
+                "leaders. If we lay waste to their minions below, I suspect they'll have to devote more " ..
+                "attention to keeping a close eye on operations.\n\nAbominations are easy prey - slow, " ..
+                "predictable, and most importantly, stupid. Take advantage of their trust of the stalkers " ..
+                "to drag them near some of the Scourge bombs scattered throughout the construction area. " ..
+                "You'll be able to light the bombs far before they figure out what's going on.",
+            rewardMoney = 74000,
+        },
+        [13147] = {
+            description = "The major difference between vargul and lesser undead minions is that vargul " ..
+                "still possess enough of their minds to despise being used for labor. Never will a vargul " ..
+                "be pleased to be working aside skeletons or ghouls.\n\nLets take advantage of this " ..
+                "inevitable animosity and start some fights between the umbral brutes and the other " ..
+                "undead in Malykriss. That should serve to slow production and bring the death knights " ..
+                "down to babysit.\n\nShould be simple - throw rocks at the brutes as they near lesser " ..
+                "undead.",
+            rewardMoney = 74000,
+        },
+        [13148] = {
+            description = "This damaged necklace has an invoice with it that reads \"Property of Timothy " ..
+                "Jones - Cartier and Co Fine Jewelry - Magus Commerce Exhange - Dalaran\".\n\nPerhaps you " ..
+                "should repair it and return it to him.",
+            rewardMoney = 114000,
+        },
+        [13149] = {
+            description = "The infinite dragonflight seek to disrupt history by deceiving Prince " ..
+                "Arthas.\n\nIf they can convince him that none of the grain here carries the plague, then " ..
+                "he'll never have to make the fateful decision to cull Stratholme.\n\nUse this arcane " ..
+                "disruptor on any suspicious crates of grain you find.",
+            rewardMoney = 296000,
+        },
         [13151] = {rewardMoney = 296000},
-        [13152] = {rewardMoney = 74000},
-        [13153] = {rewardMoney = 74000},
-        [13154] = {rewardMoney = 74000},
-        [13155] = {rewardMoney = 37000},
-        [13156] = {rewardMoney = 74000},
-        [13160] = {rewardMoney = 74000},
+        [13152] = {
+            description = "So they've been embedding these ghouls with broken shards of saronite down in " ..
+                "the Sanctum of Reanimation? We must put a stop to this, before these ghouls can be " ..
+                "deployed against our troops.\n\nFind the entrance to the Sanctum of Reanimation in the " ..
+                "flesh giant lab area of the Fleshwerks. There, the ghoul mastermind, Doctor Sabnok, " ..
+                "keeps the most fearsome of his creations, Patches. Free Patches from his chains and help " ..
+                "him take his revenge on the doctor. Let his own creation be his undoing.",
+            rewardMoney = 74000,
+        },
+        [13153] = {
+            description = "<name>, good to see you. While the battle has subsided for now, we must hurry " ..
+                "and replenish our stocks. My research indicates that the armor of soldiers recently " ..
+                "slain in the Glacial Falls becomes imbued with an incredible amount of energy. The Horde " ..
+                "has been seen collecting armor in the area.\n\nHead to the Glacial Falls and slay any of " ..
+                "the Horde you find there. Return their imbued armor to me.\n\nIf you cannot find any of " ..
+                "the Horde, you might find the armor of an adventurer slain by the elementals.",
+            rewardMoney = 74000,
+            startedBy = {{31051}},
+        },
+        [13154] = {
+            description = "Dragons are incredible! Well, their bones at least! I've been equipping our " ..
+                "archers with arrowheads made of Dragonbone. Unfortunately, since the massacre at " ..
+                "Angrathar, it has become almost impossible to get bone from Dragonblight.\n\nHowever, " ..
+                "the Forest of Shadows on the western edge of Wintergrasp has enough bones to tide us " ..
+                "over.\n\nHead to the Forest of Shadows and bring back any bone splinters you can " ..
+                "find!\n\nThe Horde have been seen collecting bone splinters in the area. Slay them!",
+            rewardMoney = 74000,
+            startedBy = {{31052}},
+        },
+        [13155] = {
+            description = "I've already heard some rumors regarding Malykriss and Arthas's new death " ..
+                "knight order, but I assumed it nothing more than filling the void. These numbers suggest " ..
+                "he's trying to take it up a notch though.\n\nWe dispatched one of our best to Malykriss " ..
+                "not long ago - Vereth the Cunning. You should be able to find him on the Rise of " ..
+                "Suffering, just west of Malykriss, and inside the Court of Bones.\n\nTry not to draw too " ..
+                "much attention on your way in.",
+            rewardMoney = 37000,
+        },
+        [13156] = {
+            description = "My, it its quite chilly up here! Reminds me of the stormy peaks of Kaarinos on " ..
+                "Argus. However, with all of this snow and ice, our soldiers can easily catch " ..
+                "cold.\n\nHead to the Steppe of Life in southwestern Wintergrasp, and bring me back 10 of " ..
+                "the Horde herb pouches you find. I will grind them into a medicine to help protect " ..
+                "against the cold.\n\nThe Horde have been seen collecting them from the plant life in the " ..
+                "area. Do not hesitate to slay them and retrieve the herbs!",
+            rewardMoney = 74000,
+            startedBy = {{31054}},
+        },
+        [13160] = {
+            description = "Gargoyles make effective scouts and can be deadly if left to rain attacks from " ..
+                "the air, but they have a very obvious weakness. Most of them have to go through long " ..
+                "periods resting as stone to maintain the energy they need to carry their heavy bodies " ..
+                "through the air.\n\nAs I peered through the eye you were using, I noticed dozens of " ..
+                "iceskin sentries resting on the eastern and southern walls inside. Use the stalker to " ..
+                "leap up to their ledges and devastate them while they sleep.",
+            rewardMoney = 74000,
+        },
         [13161] = {rewardMoney = 148000},
         [13162] = {rewardMoney = 148000},
         [13163] = {rewardMoney = 148000},
         [13164] = {rewardMoney = 222000},
-        [13166] = {rewardMoney = 25000},
-        [13168] = {rewardMoney = 7400},
-        [13169] = {rewardMoney = 74000},
-        [13170] = {rewardMoney = 74000},
+        [13165] = {
+            description = "The haze has been lifted. I can see as clearly now as the day that I plunged " ..
+                "the Ashbringer into my own heart to free my father's cursed soul: my last memory as a " ..
+                "free man.\n\nWe must take back Acherus from the Scourge if our order is to survive in " ..
+                "this new world. I have taught you how to call forth a death gate. The death gate will " ..
+                "return you to Acherus when you call upon it, <name>. Use it now and meet me at Acherus. " ..
+                "The first battle of the Knights of the Ebon Blade is underway! Death to the Scourge!",
+        },
+        [13166] = {
+            description = "The Hall of Command has been secured, but the Lich King has left us a little " ..
+                "present in the Heart of Acherus. The stitched terror, Patchwerk, and a horde of " ..
+                "abominations have taken over the second floor.\n\nUse the teleporter to get to the " ..
+                "second floor and destroy the Scourge forces that remain. Do not engage Patchwerk alone! " ..
+                "You must fight the monstrosity with other death knights of Acherus!\n\nGo, <name>. You " ..
+                "have my strength to carry you!",
+            rewardMoney = 25000,
+        },
+        [13168] = {
+            description = "Look what we have here... eyes of dominion. The Cult normally goes to great " ..
+                "lengths to keep these things safe, but I suppose their options for retreat are few when " ..
+                "we're slaughtering them in their own home.\n\nThe eyes allow a being of any relative " ..
+                "power to control an undead minion's actions precisely. As you can imagine, this can be " ..
+                "extremely useful when it comes to your typical clumsy ghoul or skeleton.\n\nCare to try " ..
+                "your hand at it? Use one of the eyes to control a captured shade.",
+            rewardMoney = 7400,
+        },
+        [13169] = {
+            description = "As is usual practice, the undead at the saronite quarry to the southwest " ..
+                "starve plaguehounds to keep them extra aggressive. Use the shade to get up close and " ..
+                "feed some of those hounds and I promise you they'll be content to leave you alone, if " ..
+                "not side with the hand that fed them.\n\nDon't get too close to those things until " ..
+                "you've fed them though. Their noses don't fall victim to your shade's elusiveness.",
+            rewardMoney = 74000,
+        },
+        [13170] = {
+            description = "Ghouls are fragile things when it comes down to it, and the lookouts at the " ..
+                "saronite quarry down the path to the southwest are no exception. Using one of the " ..
+                "shades, I have no doubt that you can sneak up and put down their lookouts without making " ..
+                "a sound.\n\nClear out as many lookouts as you can reach in a reasonable amount of " ..
+                "time... we'll want their ranks thinned for our assault to come.",
+            rewardMoney = 74000,
+        },
         [13171] = {
             description = "My main concern is the saronite quarry down the path to the southwest. They " ..
                 "are pulling up immense amounts of ore from that quarry and I'd like to know what they're " ..
@@ -24287,22 +24412,54 @@ ns.Overrides.wowhead = {
             rewardMoney = 74000,
         },
         [13172] = {rewardMoney = 74000},
-        [13174] = {rewardMoney = 74000},
+        [13174] = {
+            description = "Shutting down their operation is just half of the plan. The other important " ..
+                "goal here is to find out where all that saronite is being sent. We know of a few places " ..
+                "it's been ending up, but the amount they're pulling out suggests to me that there's a " ..
+                "bigger project in the works.\n\nOnce you're inside the quarry, get your hands on any of " ..
+                "their documents that you can find. If you're assaulting the place with one of the " ..
+                "gryphons, you can drop down from it as soon as the wetwork is done.",
+            rewardMoney = 74000,
+        },
         [13177] = {
             description = "Welcome to the Wintergrasp Fortress, <name>. Your mission is simple. Defeat " ..
                 "ten of the Horde's finest. Now, go! Bring victory to the Alliance!",
             rewardMoney = 114000,
             startedBy = {{31036}},
         },
-        [13178] = {rewardMoney = 114000},
-        [13179] = {rewardMoney = 114000},
+        [13178] = {
+            description = "Welcome to the Wintergrasp Fortress, <name>. Warlord Garrosh demands one " ..
+                "thing: Slay them all!\n\nReturn to me when ten of the strongest members of the Alliance " ..
+                "are dead.",
+            rewardMoney = 114000,
+            startedBy = {{31091}},
+        },
+        [13179] = {
+            description = "Welcome to Wintergrasp, <name>. Your mission is simple. Defeat ten of the " ..
+                "Horde's finest. Now, go! Bring victory to the Alliance!",
+            rewardMoney = 114000,
+        },
         [13180] = {
             description = "Welcome to Wintergrasp, <name>. Warlord Garrosh demands one thing: Slay them " ..
                 "all!\n\nReturn to me when ten of the strongest members of the Alliance are dead.",
             rewardMoney = 114000,
         },
-        [13181] = {rewardMoney = 114000},
-        [13183] = {rewardMoney = 114000},
+        [13181] = {
+            description = "Commander Zanneth might be satisfied with a pile of Horde corpses at his feet, " ..
+                "but controlling Wintergrasp is of the utmost importance to the Valiance Expedition. Make " ..
+                "sure it remains in our control.\n\nHowever, don't think we'll just let you stand around " ..
+                "while your allies do your dirty work for you. If you're not at least a second level " ..
+                "recruit by the end of the battle, don't come back.",
+            rewardMoney = 114000,
+        },
+        [13183] = {
+            description = "While Dardosh might be content with slaying our foes, it is of the utmost " ..
+                "importance that we control Wintergrasp Fortress. Do whatever it takes to ensure " ..
+                "Wintergrasp is ours.\n\nHowever, don't think we'll just let you stand around while your " ..
+                "allies do your dirty work for you. If you're not at least a second level recruit by the " ..
+                "end of the battle, don't come back.",
+            rewardMoney = 114000,
+        },
         [13185] = {
             description = "I hears dem! The Alliance come soon. Destroy three Alliance siege devices and " ..
                 "come back to Murp.",
@@ -24314,6 +24471,14 @@ ns.Overrides.wowhead = {
             rewardMoney = 114000,
         },
         [13187] = {rewardMoney = 248000},
+        [13188] = {
+            description = "You are now, and forever will be, a Knight of the Ebon Blade, <name>, but know " ..
+                "this: you were once a hero of the Alliance.\n\n<Darion stares at you.>\n\nThis order " ..
+                "must establish allies for itself if it is to survive. You must represent the Knights of " ..
+                "the Ebon Blade to the Alliance.\n\nOn the platform, southeast of me, is a portal to " ..
+                "Stormwind City. Take this letter, given to me on your behalf by Lord Fordring, and " ..
+                "deliver it to King Varian Wrynn. Use the portal.",
+        },
         [13189] = {
             description = "You are now, and forever will be, a Knight of the Ebon Blade, <name>, but know " ..
                 "this: you were once a hero of the Horde.\n\n<Darion stares at you.>\n\nThis order must " ..
@@ -24322,7 +24487,16 @@ ns.Overrides.wowhead = {
                 "Take this letter, given to me on your behalf by Lord Fordring, and deliver it to the " ..
                 "Warchief. Use the portal.",
         },
-        [13191] = {rewardMoney = 74000},
+        [13191] = {
+            description = "Lok'tar, <name>! While the battle may be over, we must prepare for the " ..
+                "Alliance's next assault! Travel to the Cauldron of Flames in south eastern Wintergrasp " ..
+                "and retrieve ten eternal embers.\n\nThe embers are mixed in with coal to fuel the " ..
+                "Demolishers and Siege Engines.\n\nWe've heard reports of Alliance pigs collecting the " ..
+                "embers all day. Slay them and take their embers! If they have already abandoned the " ..
+                "area, then be prepared to fight the fire elementals there until you find some!",
+            rewardMoney = 74000,
+            startedBy = {{31106}},
+        },
         [13192] = {
             description = "Hey 'mon. This place be givin' me dah heebie jeebies, don't cha know?\n\nWay " ..
                 "too many spirits haunting dis place. I want ta be placing hoodoo wards up, but I be " ..
@@ -24333,11 +24507,55 @@ ns.Overrides.wowhead = {
                 "got 'em, mon.",
             rewardMoney = 74000,
         },
-        [13193] = {rewardMoney = 74000},
-        [13194] = {rewardMoney = 74000},
-        [13195] = {rewardMoney = 74000},
-        [13196] = {rewardMoney = 74000},
-        [13197] = {rewardMoney = 74000},
+        [13193] = {
+            description = "Why would they set me to the task of arming our archers? I was a poet, not a " ..
+                "ranger! Well, no use complaining. <name>, I am in need of dragon bone for our " ..
+                "arrowheads.\n\nTravel to the Forest of Shadows on the western side of Wintergrasp. Ever " ..
+                "since the last skirmish, the Alliance have been scavenging dragon bones in the area. " ..
+                "Slay them and take the bones.\n\nIf that fails, you might be lucky and get one from the " ..
+                "spirits in the area. I hear they love to impale their living victims on the bones as " ..
+                "they die.",
+            rewardMoney = 74000,
+            startedBy = {{31102}},
+        },
+        [13194] = {
+            description = "Between the battles, one might almost believe that there was hope for peace in " ..
+                "this land. Sadly, that is not to be our fate.\n\nTravel to the Steppe of Life in " ..
+                "southwestern Wintergrasp. I have need of the roses that grow there for salve to treat " ..
+                "the wounded.\n\nSadly, the rose has become scarce due to the Alliance harvesting it too " ..
+                "rapidly. Slay them on the Steppe of Life and retrieve their herb pouches from the " ..
+                "bodies.\n\nIf that fails, perhaps a lasher or two might have one.",
+            rewardMoney = 74000,
+            startedBy = {{31053}},
+        },
+        [13195] = {
+            description = "My, it is quite chilly up here! Reminds me of the stormy peaks of Kaarinos on " ..
+                "Argus. However, with all of this snow and ice, our soldiers can easily catch " ..
+                "cold.\n\nHead to the Steppe of Life in southwestern Wintergrasp, and bring me back 10 " ..
+                "Horde Herb Pouches. I will grind the herbs into a medicine to protect against the " ..
+                "cold.\n\nThe Horde have been seen collecting them from the plant life in the area. Do " ..
+                "not hesitate to slay them and retrieve the herbs!\n\nYou may also find one on a lasher " ..
+                "in the area.",
+            rewardMoney = 74000,
+        },
+        [13196] = {
+            description = "Dragons are incredible! Well, their bones at least! I've been equipping our " ..
+                "archers with arrowheads made of Dragonbone. Unfortunately, since the massacre at " ..
+                "Angrathar, it has become almost impossible to get bone from Dragonblight.\n\nHowever, " ..
+                "the Forest of Shadows on the western edge of Wintergrasp has enough bones to tide us " ..
+                "over.\n\nHead to the Forest of Shadows and bring back any bone splinters you can " ..
+                "find!\n\nThe Horde have been seen collecting bone splinters in the area. Slay them!",
+            rewardMoney = 74000,
+        },
+        [13197] = {
+            description = "<name>! About time you showed up. While we may have lost the last battle, we " ..
+                "should prepare for the next! Travel to the Cauldron of Flames in southeastern " ..
+                "Wintergrasp and retrieve several eternal embers.\n\nThe embers are mixed in with coal to " ..
+                "fuel the Demolisher and Siege Engines.\n\nOh, and if you happen to see some of the Horde " ..
+                "in the Cauldron, don't hesitate to slay them and take their embers. We must prevent them " ..
+                "from holding the keep!",
+            rewardMoney = 74000,
+        },
         [13198] = {
             description = "<name>, good to see you. We must prepare for our next assault on the fortress. " ..
                 "My research indicates that the armor of soldiers recently slain in the Glacial Falls " ..
@@ -24347,10 +24565,43 @@ ns.Overrides.wowhead = {
                 "the armor of an adventurer slain by the elementals.",
             rewardMoney = 74000,
         },
-        [13199] = {rewardMoney = 74000},
-        [13200] = {rewardMoney = 74000},
-        [13201] = {rewardMoney = 74000},
-        [13202] = {rewardMoney = 74000},
+        [13199] = {
+            description = "Why would they set me to the task of arming our archers? I was a poet, not a " ..
+                "ranger! Well, no use complaining. <name>, I am in need of dragon bone for our " ..
+                "arrowheads.\n\nTravel to the Forest of Shadows on the western side of Wintergrasp. Ever " ..
+                "since the last skirmish, the Alliance have been scavenging dragon bones in the area. " ..
+                "Slay them and take the bones.\n\nIf that fails, you might be lucky and get one from the " ..
+                "spirits in the area. I hear they love to impale their living victims on the bones as " ..
+                "they die.",
+            rewardMoney = 74000,
+        },
+        [13200] = {
+            description = "Lok'tar, <name>! While the battle may have subsided, we must prepare to retake " ..
+                "the fortress! Travel to the Cauldron of Flames in south eastern Wintergrasp and retrieve " ..
+                "ten eternal embers.\n\nThe embers are mixed in with coal to fuel the Demolishers and " ..
+                "Siege Engines.\n\nWe've heard reports of Alliance pigs collecting the embers all day. " ..
+                "Slay them and take their embers! If they have already abandoned the area, then be " ..
+                "prepared to fight the fire elementals there until you find some!",
+            rewardMoney = 74000,
+        },
+        [13201] = {
+            description = "So many of our braves were lost during the battle, but even more shall die if " ..
+                "left untreated.\n\nTravel to the Steppe of Life in southwestern Wintergrasp. I have need " ..
+                "of the roses that grow there for salve to treat the wounded.\n\nSadly, the rose has " ..
+                "become scarce due to the Alliance harvesting it too rapidly. Slay them on the Steppe of " ..
+                "Life and retrieve their herb pouches from the bodies.\n\nIf that fails, perhaps a lasher " ..
+                "or two might be in bloom.",
+            rewardMoney = 74000,
+        },
+        [13202] = {
+            description = "Hey 'mon. See dem Alliance sitting comfy in their keep?\n\nI think they be a " ..
+                "bit too comfy, ya? I want ta be jinxing the place, but I be needin' some souls, mon. Not " ..
+                "any soul though, only da soul of a strong warrior could do da job.\n\nThe Glacial Falls " ..
+                "in east Wintergrasp be havin' dem special properties to extract da soul. Slay the " ..
+                "Alliance there, they be havin' the stuff we need.\n\nBring back da armor of the slain. " ..
+                "If there be no Alliance maybe da elementals got 'em, mon.",
+            rewardMoney = 74000,
+        },
         [13206] = {rewardMoney = 188000},
         [13207] = {
             description = "Well now, I'm surprised to see other adventurers in a place such as " ..
@@ -24371,10 +24622,38 @@ ns.Overrides.wowhead = {
                 "parts.",
             rewardMoney = 74000,
         },
-        [13214] = {rewardMoney = 222000},
-        [13215] = {rewardMoney = 222000},
+        [13213] = {
+            description = "I see and hear many things, <name>, and something very important has happened " ..
+                "since your defeat of Overthane Balargarde: you are wanted for battle in Valhalas!\n\nYou " ..
+                "will find the battle pit to the north. Go now with your friends and speak with Geirrvif " ..
+                "the val'kyr. The challengers that she will offer you within Valhalas are sure to require " ..
+                "their help.\n\nGood luck.",
+        },
+        [13214] = {
+            description = "If you believe yourself ready to begin then I have just the match for you to " ..
+                "cut your teeth on.\n\nAnother group of outsiders thought themselves prepared for the " ..
+                "rigors of Valhalas. They had much hubris, but in the end they fell like all of the " ..
+                "others.\n\nIf you think yourselves so different -- if you think that you have the skill " ..
+                "and experience to fight here amongst such storied warriors -- then please accept the " ..
+                "challenge.",
+            rewardMoney = 222000,
+        },
+        [13215] = {
+            description = "A variety of beings travel the world to prove themselves within Valhalas. Some " ..
+                "even come from under the world.\n\nKhit'rix the Dark Master is one such.\n\nHailing from " ..
+                "deep within the ground where insanity reigns, Khit'rix has asked for someone exotic to " ..
+                "face in the ring. You will do.\n\nDare you face this Nerubian nightmare, <race>?",
+            rewardMoney = 222000,
+        },
         [13216] = {rewardMoney = 222000},
-        [13217] = {rewardMoney = 222000},
+        [13217] = {
+            description = "You've been successful up to this point, <name>, but what you must face to " ..
+                "continue to battle within Valhalas is a gigantic horror beyond imagining.\n\nI must warn " ..
+                "you to turn away now. Carnage is a mountain of flesh constructed by the Lich King's most " ..
+                "fiendish minds.\n\nI do not see how you and your friends will defeat it. However, the " ..
+                "choice is yours.",
+            rewardMoney = 222000,
+        },
         [13218] = {
             description = "Your skills have not gone unnoticed by the vrykul of Jotunheim, <name>. Thane " ..
                 "Banahogg has taken a personal interest in you and has insisted that he be your next " ..
@@ -24384,20 +24663,81 @@ ns.Overrides.wowhead = {
             rewardMoney = 222000,
         },
         [13219] = {rewardMoney = 222000},
-        [13220] = {rewardMoney = 74000},
-        [13221] = {rewardMoney = 74000},
-        [13222] = {rewardMoney = 114000},
-        [13223] = {rewardMoney = 114000},
-        [13228] = {rewardMoney = 74000},
-        [13229] = {rewardMoney = 74000},
-        [13230] = {rewardMoney = 74000},
-        [13231] = {rewardMoney = 74000},
-        [13232] = {rewardMoney = 74000},
-        [13233] = {rewardMoney = 74000},
-        [13234] = {rewardMoney = 74000},
+        [13220] = {
+            description = "We can't afford to waste any time putting Olakin back together. Fortunately, " ..
+                "the Scourge has provided a perfect place for you to stitch him back together.\n\nNear " ..
+                "the Fleshwerks' flesh giant lab is the Sanctum of Reanimation. Search the area for a " ..
+                "spool of thread and the doctor's cleaver. Then, take Olakin's remains to the large slab " ..
+                "in the middle of the sanctum and get to work.",
+            rewardMoney = 74000,
+        },
+        [13221] = {
+            description = "The Light smiles upon me. I have not yet died in this living nightmare, but " ..
+                "the Scourge will kill me and tear my body apart for use in their 'work' here if I cannot " ..
+                "escape.\n\nI cannot make it on my own, my child, but with your help, I may yet live to " ..
+                "fight the Scourge again.\n\nWill you help me make my escape before the Scourge's " ..
+                "butchers come to finish me off?",
+            rewardMoney = 74000,
+        },
+        [13222] = {
+            description = "Front and center, <name>! We're beginning our assault on Wintergrasp Fortress. " ..
+                "Those Horde animals think they can hide cowardly behind their walls? Well, I think not! " ..
+                "We'll show them the power of Gnomish technology and smash their walls to " ..
+                "bits!\n\nHowever, even the most powerful siege device is helpless without a crew. Pilot " ..
+                "or protect one of our siege vehicles as it destroys three of the Horde structures.",
+            rewardMoney = 114000,
+        },
+        [13231] = {
+            description = "What?! Noooo!\n\nWe went to such great pains to keep this attack secret. How " ..
+                "could the Horde have known? The resources... the men... all lost? Inconceivable!\n\nOur " ..
+                "plans here in Icecrown hinged upon our taking that gate before the Horde could. We must " ..
+                "recover quickly and prepare to mount another offensive.\n\nVisit the battlefield and " ..
+                "search for any survivors. See if there's anything to be learned from this " ..
+                "tragedy.\n\nAnd prepare yourself, <name>, for a war - on two fronts...",
+            rewardMoney = 74000,
+        },
+        [13232] = {
+            description = "They taunt us - even as they lie dying here...\n\nPlease, <brother/miss>... " ..
+                "Don't allow their mocking to be the last sounds I hear...\n\nFinish me... deliver me " ..
+                "from this torment... into... the Light.\n\nSeek out my companions... offer them the same " ..
+                "mercy.\n\nLeave nothing for the Scourge to raise!\n\nI beg you...",
+            rewardMoney = 74000,
+        },
+        [13233] = {
+            description = "It is as I told you. They were not merely idle words spoken in a fit of " ..
+                "anger.\n\nTime and again, the Horde have demonstrated their disdain for everything we " ..
+                "hold dear and holy. They must pay with their lives for their transgressions against the " ..
+                "light.\n\nAll of them.\n\nJust imagine a world free of their stain, <name>. Envision the " ..
+                "joy our children will know. Think of the reverence your descendants will have for your " ..
+                "memory, knowing they owe their happiness to you.\n\nNow go, and make that vision a " ..
+                "reality!",
+            rewardMoney = 74000,
+        },
+        [13234] = {
+            description = "The time has come!\n\nToo long have we suffered the company of the " ..
+                "self-righteous Alliance! Too long have we stayed our hand from cleansing our world of " ..
+                "the weak and the desperate.\n\nNow, we bring an end to our humiliation! Now, we show " ..
+                "them the true meaning of fear! Now, we bring honor to the Horde!\n\nHere, at Icecrown, " ..
+                "we break the Alliance!\n\nGo, <class>. Hunt them down. Break them. Take their will to " ..
+                "live!",
+            rewardMoney = 74000,
+        },
         [13235] = {rewardMoney = 148000},
+        [13236] = {
+            description = "You probably think you're quite strong -- fighting these undead and crushing " ..
+                "their bones beneath your war machines.\n\nThat is nothing compared to the strength it " ..
+                "took to create them.\n\nI saw the prince do it himself. I can show you how it " ..
+                "happened... if you'd like.",
+        },
         [13237] = {rewardMoney = 74000},
-        [13238] = {rewardMoney = 7400},
+        [13238] = {
+            description = "Goblins! Hyper little busy-bodies...\n\nListen, <name>. Copperclaw, our " ..
+                "resident engineer, is insisting that he's got something useful to show me.\n\nI'm in no " ..
+                "mood to endure his squeaky nagging. The last time I acknowledged him, he chirped on for " ..
+                "an hour straight. It was all I could do to keep from drop-kicking him into Sindragosa's " ..
+                "Fall!\n\nYou go in my place and humor him. Let me know if indeed he's on to anything.",
+            rewardMoney = 7400,
+        },
         [13239] = {rewardMoney = 74000},
         [13242] = {
             description = "Darkness stirs, <name>. A tragic event has transpired that none but the " ..
@@ -24416,9 +24756,38 @@ ns.Overrides.wowhead = {
                 "the portal back to Orgrimmar and seek out Thrall.",
             startedBy = {{25256}},
         },
+        [13258] = {
+            description = "We recently came upon schematics that indicate a weakness in Icecrown Citadel. " ..
+                "An opening in its defenses, both figuratively and literally.\n\nThe captured diagrams " ..
+                "show an orifice leading several hundred feet into the ground. We're unsure of its " ..
+                "purpose, but our scouting has revealed it to be of high importance to the " ..
+                "Scourge.\n\nSpeak to Sergeant Kregga below Icecrown Citadel, she's leading the attack on " ..
+                "the site.",
+        },
         [13259] = {rewardMoney = 74000},
-        [13261] = {rewardMoney = 74000},
-        [13262] = {rewardMoney = 7400},
+        [13260] = {
+            description = "While we should never miss an opportunity to strike out against the Alliance, " ..
+                "we mustn't forget about the Scourge.\n\nWe won't have the numbers here to make a proper " ..
+                "assault in the glacier for weeks, but that won't keep us from learning all we can know " ..
+                "about their defenses.\n\nI have asked our resident death knight to advise you in this " ..
+                "effort. After all, who better knows this enemy than they?\n\nAllow me to introduce " ..
+                "Koltira Deathweaver.",
+        },
+        [13261] = {
+            description = "Wahooo! It works! Not that I had any doubts in my supernatural ingenuity, only " ..
+                "that I wasn't quite sure what kind of explosion to expect - let's just say I'm glad to " ..
+                "see that you didn't get your eyebrows singed off. So now I just need to show ol' Korm " ..
+                "how ya thaw out one 'a them wyrms. He'll hafta promote me to... to... to whatever comes " ..
+                "after Chief Engineer! Here, you take another batch of the stuff and head back out to the " ..
+                "front and I'll go get Korm...\n\nWell? Move out!",
+            rewardMoney = 74000,
+        },
+        [13262] = {
+            description = "This is probably as under-control as this situation is going to get. Let's do " ..
+                "this, <name>.\n\nI need someone to light the fuse on those bombs and it looks like " ..
+                "you're the one to do it.",
+            rewardMoney = 7400,
+        },
         [13263] = {
             description = "As you light the fuse, you notice that it is consumed by fire far quicker than " ..
                 "you would expect.\n\nThe bombs are about to go off and your best chance at surviving is " ..
@@ -24426,8 +24795,31 @@ ns.Overrides.wowhead = {
             rewardMoney = 7400,
         },
         [13264] = {rewardMoney = 74000},
-        [13273] = {rewardMoney = 74000},
-        [13274] = {rewardMoney = 74000},
+        [13271] = {
+            description = "The object is not a crystal at all, but some form of organ, encased in " ..
+                "ice.\n\nAs you touch it, your hand reels in horrible pain. You feel as if your hand has " ..
+                "been cut, yet there is no visible wound.\n\nAs you collect your thoughts, you hear a " ..
+                "young boy's voice nearby.\n\n\"You really shouldn't have done that.\"",
+        },
+        [13273] = {
+            description = "With Norgannon's Shell in hand, only half of the archive key remains to be " ..
+                "found. Luckily, I've had the Explorers' League hard at work chasing down leads about the " ..
+                "whereabouts of Norgannon's Core.\n\nFar to the southeast of the Inventor's Library, on " ..
+                "the slopes to the north of Dun Niffelem, is a camp bearing my name. The Explorers' " ..
+                "League representatives seeking the second half of the key are based there. Bring me the " ..
+                "maps and the notes they've made and we should be able to track down the other key half.",
+            rewardMoney = 74000,
+        },
+        [13274] = {
+            description = "Prospector Soren's notes say that Norgannon's Core is in the keeping of a " ..
+                "sentinel named Athan, one of Mimir's creations.\n\nSoren says the vault where Athan " ..
+                "resides is called \"Loken's Bargain\" these days.\n\nLoken, eh? The earthen have " ..
+                "mentioned him.\n\nThe vault is said to be southwest of the ruined Explorers' League " ..
+                "camp, with a round entrance on a mountainside overlooking the Valley of Ancient " ..
+                "Winters.\n\nFind this Athan and get the core from him, but I wouldn't be surprised if " ..
+                "you were in for a fight.",
+            rewardMoney = 74000,
+        },
         [13275] = {rewardMoney = 58000},
         [13276] = {rewardMoney = 74000},
         [13277] = {rewardMoney = 148000},
@@ -76676,6 +77068,8 @@ ns.Overrides.wowhead = {
             },
             zoneID = 8,
         },
+        [5397] = {spawns = {[405] = {{36.2, 79.2}}}, zoneID = 405},
+        [5398] = {spawns = {[405] = {{74.8, 68}}}, zoneID = 405},
         [5428] = {
             spawns = {
                 [440] = {
@@ -76783,6 +77177,15 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 440,
+        },
+        [5644] = {
+            spawns = {
+                [405] = {
+                    {54.8, 26.2}, {55.4, 27.2}, {55.4, 27.6}, {55.6, 26.2}, {55.6, 26.8}, {55.6, 28.2},
+                    {55.8, 28.6}, {56, 29.6}, {57.2, 30.6}, {57.6, 30.8},
+                },
+            },
+            zoneID = 405,
         },
         [7435] = {
             spawns = {
@@ -76977,6 +77380,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 47,
         },
+        [11863] = {spawns = {[405] = {{38.8, 27.2}}}, zoneID = 405},
         [12046] = {spawns = {[440] = {{41, 57.4}, {41.4, 57.6}, {41.6, 57.8}}}, zoneID = 440},
         [12262] = {
             spawns = {

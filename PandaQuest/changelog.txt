@@ -4,6 +4,138 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.264
+- database - Wowhead data as the PandaQuest portal read it: 10,583 quests, 107 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 599 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 621 quests, 9 NPCs
+- quest 13143 - New Recruit - updated
+  - description added
+- quest 13146 - Generosity Abounds - updated
+  - description added
+- quest 13147 - Matchmaker - updated
+  - description added
+- quest 13148 - Necklace Repair - updated
+  - description added
+- quest 13149 - Dispelling Illusions - updated
+  - description added
+- quest 13152 - A Visit to the Doctor - updated
+  - description added
+- quest 13153 - Warding the Warriors - updated
+  - quest giver added: Sorceress Kaylana
+  - description added
+- quest 13154 - Bones and Arrows - updated
+  - quest giver added: Bowyer Randolph
+  - description added
+- quest 13155 - Vereth the Cunning - updated
+  - description added
+- quest 13156 - A Rare Herb - updated
+  - quest giver added: Anchorite Tessa
+  - description added
+- quest 13160 - Stunning View - updated
+  - description added
+- quest 13165 - Taking Back Acherus - updated
+  - description added
+- quest 13166 - The Battle For The Ebon Hold - updated
+  - description added
+- quest 13168 - Parting Gifts - updated
+  - description added
+- quest 13169 - An Undead's Best Friend - updated
+  - description added
+- quest 13170 - Honor is for the Weak - updated
+  - description added
+- quest 13174 - Amidst the Confusion - updated
+  - description added
+- quest 13178 - Slay them all! - updated
+  - quest giver added: Commander Dardosh
+  - description added
+- quest 13179 - No Mercy for the Merciless - updated
+  - description added
+- quest 13181 - Victory in Wintergrasp - updated
+  - description added
+- quest 13183 - Victory in Wintergrasp - updated
+  - description added
+- quest 13188 - Where Kings Walk - updated
+  - description added
+- quest 13191 - Fueling the Demolishers - updated
+  - quest giver added: Siegesmith Stronghoof
+  - description added
+- quest 13193 - Bones and Arrows - updated
+  - quest giver added: Vieron Blazefeather
+  - description added
+- quest 13194 - Healing with Roses - updated
+  - quest giver added: Primalist Mulfort
+  - description added
+- quest 13195 - A Rare Herb - updated
+  - description added
+- quest 13196 - Bones and Arrows - updated
+  - description added
+- quest 13197 - Fueling the Demolishers - updated
+  - description added
+- quest 13199 - Bones and Arrows - updated
+  - description added
+- quest 13200 - Fueling the Demolishers - updated
+  - description added
+- quest 13201 - Healing with Roses - updated
+  - description added
+- quest 13202 - Jinxing the Walls - updated
+  - description added
+- quest 13213 - Battle at Valhalas - updated
+  - description added
+- quest 13214 - Battle at Valhalas: Fallen Heroes - updated
+  - description added
+- quest 13215 - Battle at Valhalas: Khit'rix the Dark Master - updated
+  - description added
+- quest 13217 - Battle at Valhalas: Carnage! - updated
+  - description added
+- quest 13220 - Putting Olakin Back Together Again - updated
+  - description added
+- quest 13221 - I'm Not Dead Yet! - updated
+  - description added
+- quest 13222 - Defend the Siege - updated
+  - description added
+- quest 13223 - Defend the Siege - updated
+  - reward money removed (11g 40s)
+- quest 13228 - The Broken Front - updated
+  - reward money removed (7g 40s)
+- quest 13229 - I'm Not Dead Yet! - updated
+  - reward money removed (7g 40s)
+- quest 13230 - Avenge Me! - updated
+  - reward money removed (7g 40s)
+- quest 13231 - The Broken Front - updated
+  - description added
+- quest 13232 - Finish Me! - updated
+  - description added
+- quest 13233 - No Mercy! - updated
+  - description added
+- quest 13234 - Make Them Pay! - updated
+  - description added
+- quest 13236 - Army of the Damned - updated
+  - description added
+- quest 13238 - Good For Something? - updated
+  - description added
+- quest 13258 - Opportunity - updated
+  - description added
+- quest 13260 - Takes One to Know One - updated
+  - description added
+- quest 13261 - Volatility - updated
+  - description added
+- quest 13262 - Blow it Up! - updated
+  - description added
+- quest 13271 - A Voice in the Dark - updated
+  - description added
+- quest 13273 - Going After the Core - updated
+  - description added
+- quest 13274 - The Core's Keeper - updated
+  - description added
+- npc 5397 - Uthek the Wise - updated
+  - coordinates: 1 spawn point added in Desolace
+- npc 5398 - Warug - updated
+  - coordinates: 1 spawn point added in Desolace
+- npc 5644 - Dalinda Malem - updated
+  - coordinates: 10 spawn points added in Desolace
+- npc 11863 - Azore Aldamort - updated
+  - coordinates: 1 spawn point added in Desolace
+
 0.2.263
 - database - Wowhead data as the PandaQuest portal read it: 10,580 quests, 103 NPCs, 5 objects
 - database - Classic Era: data from the PandaQuest portal: 538 quests, 7 NPCs, 1 object
