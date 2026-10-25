@@ -4,1184 +4,706 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
-## [0.2.255] - 2026-10-25
+## [0.2.256] - 2026-10-25
 
 Data from the PandaQuest portal.
 
-- database - Wowhead data as the PandaQuest portal read it: 10,167 quests, 95 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 366 quests, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 360 quests, 6 NPCs
-- quest 193 - Panther Mastery - updated
+- database - Wowhead data as the PandaQuest portal read it: 10,321 quests, 97 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 428 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 390 quests, 6 NPCs
+- quest 7604 - A Binding Contract - updated
   - description added
   - reward items: +1
-  - reward choices: +3
-- quest 197 - Raptor Mastery - updated
+- quest 9549 - Artifacts of the Blacksilt - updated
   - description added
   - reward items: +1
-  - reward choices: +3
-- quest 208 - Big Game Hunter - updated
-  - description added
-  - reward choices: +4
-- quest 769 - Kodo Hide Bag - updated
-  - description added
-  - reward items: +1
-- quest 770 - The Demon Scarred Cloak - updated
+- quest 9569 - Containing the Threat - updated
   - description added
   - reward choices: +2
-- quest 1168 - Army of the Black Dragon - updated
+- quest 9579 - Galaen's Fate - updated
+  - description added
+  - reward choices: +3
+- quest 9581 - Learning from the Crystals - updated
+  - description added
+  - reward choices: +3
+- quest 9624 - A Favorite Treat - updated
+  - description added
+  - reward items: +1
+  - reward choices: +3
+- quest 9628 - Salvaging the Data - updated
+  - description added
+  - reward items: +1
+- quest 9629 - Catch and Release - updated
+  - description added
+  - reward choices: +3
+- quest 9634 - Alien Predators - updated
+  - description added
+  - reward choices: +4
+- quest 9641 - Irradiated Crystal Shards - updated
+  - description added
+  - reward choices: +3
+- quest 9646 - WANTED: Deathclaw - updated
   - description added
   - reward choices: +2
-- quest 1222 - Stinky's Escape - updated
+- quest 9647 - Culling the Flutterers - updated
   - description added
-  - reward items: +1
-- quest 1258 - ... and Bugs - updated
+  - reward choices: +3
+- quest 9649 - Ysera's Tears - updated
   - description added
-  - reward items: +1
-  - reward choices: +2
-- quest 1270 - Stinky's Escape - updated
+  - reward choices: +3
+- quest 9666 - Declaration of Power - updated
   - description added
-  - reward items: +1
-- quest 1393 - Galen's Escape - updated
-  - description added
-  - reward items: +1
-- quest 4621 - Avast Ye, Admiral! - updated
-  - description added
-  - reward items: +1
-- quest 9415 - Report to Marshal Bluewall - updated
-  - description added
-- quest 9416 - Report to General Kirika - updated
-  - description added
-- quest 9436 - Bloodscalp Insight - updated
-  - description added
-- quest 9437 - Twilight of the Dawn Runner - updated
+  - reward choices: +3
+- quest 9667 - Saving Princess Stillpine - updated
   - description added
   - reward choices: +2
-- quest 9453 - Find Acteon! - updated
+- quest 9683 - Ending the Bloodcurse - updated
   - description added
-- quest 9457 - An Unusual Patron - updated
+  - reward items: +1
+- quest 9689 - Razormaw - updated
   - description added
   - reward choices: +3
-- quest 9473 - An Alternative Alternative - updated
-  - description added
-- quest 9487 - Arcane Reavers - updated
-  - description added
-- quest 9505 - The Prophecy of Velen - updated
-  - description added
-- quest 9506 - A Small Start - updated
-  - description added
-- quest 9513 - Reclaiming the Ruins - updated
-  - description added
-- quest 9514 - Rune Covered Tablet - updated
-  - description added
-- quest 9523 - Precious and Fragile Things Need Special Handling - updated
-  - description added
-- quest 9527 - All That Remains - updated
-  - description added
-- quest 9530 - I've Got a Plant - updated
-  - description added
-- quest 9531 - Tree's Company - updated
-  - description added
-- quest 9538 - Learning the Language - updated
-  - description added
-- quest 9539 - Totem of Coo - updated
-  - description added
-- quest 9540 - Totem of Tikti - updated
-  - description added
-- quest 9542 - Totem of Vark - updated
-  - description added
-- quest 9550 - A Map to Where? - updated
-  - description added
-- quest 9557 - Deciphering the Book - updated
-  - description added
-- quest 9559 - Stillpine Hold - updated
-  - description added
-- quest 9561 - Nolkai's Words - updated
-  - description added
-  - reward items: +1
-- quest 9562 - Murlocs... Why Here? Why Now? - updated
-  - description added
-- quest 9566 - Blood Crystals - updated
-  - description added
-- quest 9567 - Know Thine Enemy - updated
-  - description added
-- quest 9570 - The Kurken is Lurkin' - updated
-  - description added
-- quest 9574 - Victims of Corruption - updated
-  - description added
-- quest 9576 - Cruelfin's Necklace - updated
-  - description added
-- quest 9578 - Searching for Galaen - updated
-  - description added
-- quest 9580 - The Bear Necessities - updated
-  - description added
-- quest 9582 - Strength of One - updated
-  - description added
-- quest 9583 - Omar's Test Quest bk - updated
-  - description added
-- quest 9584 - The Second Sample - updated
-  - description added
-- quest 9585 - The Final Sample - updated
-  - description added
-- quest 9594 - Signs of the Legion - updated
-  - description added
-- quest 9602 - Deliver Them From Evil... - updated
-  - description added
-- quest 9603 - Beds, Bandages, and Beyond - updated
-  - description added
-- quest 9604 - On the Wings of a Hippogryph - updated
-  - description added
-- quest 9605 - Hippogryph Master Stephanos - updated
-  - description added
-- quest 9606 - Return to Caregiver Chellan - updated
-  - description added
-- quest 9612 - A Hearty Thanks! - updated
-  - description added
-- quest 9620 - The Missing Survey Team - updated
-  - description added
-- quest 9621 - Envoy to the Horde - updated
-  - description added
-- quest 9622 - Warn Your People - updated
-  - description added
-- quest 9623 - Coming of Age - updated
-  - description added
-- quest 9625 - Elekks Are Serious Business - updated
-  - description added
-- quest 9632 - Newfound Allies - updated
-  - description added
-- quest 9642 - More Irradiated Crystal Shards - updated
-  - reward choices: +3
-- quest 9643 - Constrictor Vines - updated
-  - description added
-- quest 9663 - The Kessel Run - updated
-  - description added
-- quest 9668 - Report to Exarch Admetius - updated
-  - description added
-- quest 9669 - The Missing Expedition - updated
-  - description added
-- quest 9672 - The Bloodcurse Legacy - updated
-  - description added
-- quest 9674 - The Bloodcursed Naga - updated
-  - description added
-- quest 9680 - Digging Up the Past - updated
-  - description added
-- quest 9682 - The Hopeless Ones... - updated
-  - description added
-- quest 9687 - Restoring Sanctity - updated
-  - description added
-- quest 9688 - Into the Dream - updated
-  - description added
-- quest 9693 - What Argus Means to Me - updated
-  - description added
-- quest 9696 - Translations... - updated
-  - description added
-- quest 9698 - Audience with the Prophet - updated
-  - description added
-- quest 9699 - Truth or Fiction - updated
-  - description added
-- quest 9704 - Slain by the Wretched - updated
-  - description added
-- quest 9706 - Galaen's Journal - The Fate of Vindicator Saruan - updated
-  - description added
-- quest 10280 - Special Delivery to Shattrath City - updated
+- quest 9694 - Blood Watch - updated
   - description added
   - reward choices: +3
-- quest 10416 - Synthesis of Power - updated
-  - description added
-  - reward items: +1
-- quest 10419 - Arcane Tomes - updated
-  - reward items: +1
-- quest 10420 - A Cleansing Light - updated
-  - description added
-  - reward items: +1
-- quest 10421 - Fel Armaments - updated
-  - reward items: +1
-- quest 10509 - Bound for Glory - updated
-  - description added
-- quest 10553 - Voren'thal the Seer - updated
-  - description added
-- quest 10554 - Ishanah - updated
-  - description added
-- quest 10884 - Trial of the Naaru: Mercy - updated
-  - description added
-- quest 10885 - Trial of the Naaru: Strength - updated
-  - description added
-- quest 10886 - Trial of the Naaru: Tenacity - updated
-  - description added
-- quest 11024 - An Ally in Lower City - updated
-  - description added
-- quest 11038 - Assist Exarch Orelis - updated
-  - description added
-- quest 11039 - Report to Spymaster Thalodien - updated
-  - description added
-- quest 11045 - Zorus the Judicator - updated
-  - description added
-- quest 11046 - Chief Apothecary Hildagard - updated
-  - description added
-- quest 11129 - Kyle's Gone Missing! - updated
-  - description added
-- quest 11153 - Break the Blockade - updated
-  - description added
-- quest 11154 - Scare the Guano Out of Them! - updated
-  - description added
-  - reward choices: +4
-- quest 11155 - Shoveltusk Soup Again? - updated
-  - description added
-  - reward items: +1
-- quest 11157 - The Clutches of Evil - updated
-  - description added
-- quest 11167 - The New Plague - updated
-  - description added
-  - reward choices: +4
-- quest 11168 - Spiking the Mix - updated
-  - description added
-- quest 11170 - Test at Sea - updated
-  - description added
-  - reward choices: +4
-- quest 11175 - My Daughter - updated
-  - description added
-- quest 11176 - See to the Operations - updated
-  - description added
-- quest 11182 - Root Causes - updated
-  - description added
-  - reward choices: +4
-- quest 11187 - Mage-Lieutenant Malister - updated
-  - description added
-- quest 11188 - Two Wrongs... - updated
-  - description added
-  - reward choices: +4
-- quest 11190 - One Size Does Not Fit All - updated
-  - description added
-- quest 11199 - Report to Scout Knowles - updated
-  - description added
-- quest 11202 - Mission: Eternal Flame - updated
-  - description added
-  - reward choices: +4
-- quest 11218 - Danger! Explosives! - updated
-  - description added
-- quest 11221 - Reports from the Field - updated
-  - description added
-- quest 11224 - Send Them Packing - updated
-  - description added
-- quest 11227 - Let Them Eat Crow - updated
-  - description added
-- quest 11228 - Hell Has Frozen Over... - updated
-  - description added
-- quest 11229 - The Windrunner Fleet - updated
-  - description added
-- quest 11230 - Ambushed! - updated
+- quest 9700 - I Shoot Magic Into the Darkness - updated
   - description added
   - reward choices: +3
-- quest 11231 - Of Keys and Cages - updated
+- quest 9703 - The Cryo-Core - updated
   - description added
-- quest 11232 - Guide Our Sights - updated
+  - reward choices: +3
+- quest 9711 - Matis the Cruel - updated
   - description added
-- quest 11234 - Report to Anselm - updated
+  - reward choices: +3
+- quest 9740 - The Sun Gate - updated
   - description added
-  - reward items: +1
-- quest 11235 - Dealing With Gjalerbron - updated
+- quest 9741 - Critters of the Void - updated
   - description added
-- quest 11236 - Necro Overlord Mezhen - updated
+- quest 9751 - The Bloodcurse Legacy - updated
   - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 11237 - Gjalerbron Attack Plans - updated
+- quest 9753 - What We Know... - updated
   - description added
-- quest 11238 - The Frost Wyrm and its Master - updated
+- quest 9756 - What We Don't Know... - updated
   - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 11239 - In Service to the Light - updated
+- quest 9758 - Return to Arcanist Vandril - updated
   - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 11240 - Leader of the Deranged - updated
+- quest 9759 - Ending Their World - updated
   - description added
   - reward choices: +4
-- quest 11241 - Trail of Fire - updated
+- quest 9761 - Clearing the Way - updated
+  - description added
+  - reward choices: +3
+- quest 9762 - The Unwritten Prophecy - updated
+  - reward items: +1
+  - reward choices: +2
+- quest 9779 - Intercepting the Message - updated
+  - description added
+- quest 9798 - Blood Elf Plans - updated
+  - description added
+- quest 9799 - Botanical Legwork - updated
+  - description added
+- quest 9811 - Friend of the Sin'dorei - updated
+  - description added
+- quest 9812 - Envoy to the Horde - updated
+  - description added
+- quest 9826 - Contact from Dalaran - updated
+  - description added
+- quest 9831 - Entry Into Karazhan - updated
+  - description added
+- quest 9836 - The Master's Touch - updated
+  - description added
+- quest 9838 - The Violet Eye - updated
+  - description added
+- quest 9844 - A Demonic Presence - updated
+  - description added
+- quest 10063 - Explorers' League, Is That Something for Gnomes? - updated
+  - description added
+- quest 10064 - Talk to the Hand - updated
+  - description added
+- quest 10065 - Cutting a Path - updated
+  - description added
+- quest 10066 - Oh, the Tangled Webs They Weave - updated
+  - description added
+- quest 10067 - Fouled Water Spirits - updated
+  - description added
+- quest 10068 - Frost Nova - updated
+  - description added
+- quest 10071 - Evisceration - updated
+  - description added
+- quest 10072 - Learning the Word - updated
+  - description added
+- quest 10166 - Whitebark's Memory - updated
+  - description added
+- quest 10167 - Auchindoun... - updated
+  - description added
+- quest 10180 - Can't Stay Away - updated
+  - description added
+- quest 10227 - I See Dead Draenei - updated
+  - description added
+- quest 10228 - Ezekiel - updated
+  - description added
+- quest 10277 - The Caverns of Time - updated
+  - description added
+- quest 10279 - To The Master's Lair - updated
+  - description added
+- quest 10282 - Old Hillsbrad - updated
+  - description added
+- quest 10296 - The Black Morass - updated
+  - description added
+- quest 10297 - The Opening of the Dark Portal - updated
+  - description added
+  - reward choices: +4
+- quest 10302 - Volatile Mutations - updated
+  - description added
+- quest 10304 - Vindicator Aldar - updated
+  - description added
+- quest 10428 - The Missing Fisherman - updated
+  - description added
+- quest 10451 - Escape from Coilskar Cistern - updated
+  - description added
+  - reward choices: +4
+- quest 10458 - Enraged Spirits of Fire and Earth - updated
+  - description added
+- quest 10460 - Defender's Pledge - updated
+  - reward items: +1
+- quest 10462 - Champion's Pledge - updated
+  - reward items: +1
+- quest 10463 - Sage's Pledge - updated
+  - reward items: +1
+- quest 10480 - Enraged Spirits of Water - updated
+  - description added
+- quest 10513 - Oronok Torn-heart - updated
+  - description added
+- quest 10514 - I Was A Lot Of Things... - updated
+  - description added
+  - reward choices: +4
+- quest 10515 - A Lesson Learned - updated
+  - description added
+- quest 10519 - The Cipher of Damnation - Truth and History - updated
+  - description added
+- quest 10521 - Grom'tor, Son of Oronok - updated
+  - description added
+- quest 10522 - The Cipher of Damnation - Grom'tor's Charge - updated
+  - description added
+- quest 10523 - The Cipher of Damnation - The First Fragment Recovered - updated
+  - description added
+  - reward choices: +4
+- quest 10527 - Ar'tor, Son of Oronok - updated
+  - description added
+- quest 10537 - Lohn'goron, Bow of the Torn-heart - updated
+  - description added
+- quest 10540 - The Cipher of Damnation - Ar'tor's Charge - updated
+  - description added
+- quest 10541 - The Cipher of Damnation - The Second Fragment Recovered - updated
+  - description added
+  - reward choices: +5
+- quest 10546 - Borak, Son of Oronok - updated
+  - description added
+- quest 10547 - Of Thistleheads and Eggs... - updated
+  - description added
+- quest 10550 - The Bundle of Bloodthistle - updated
+  - description added
+- quest 10562 - Besieged! - updated
+  - description added
+- quest 10563 - To Legion Hold - updated
+  - description added
+- quest 10564 - Blast the Infernals! - updated
+  - description added
+  - reward choices: +4
+- quest 10568 - Tablets of Baa'ri - updated
+  - description added
+- quest 10569 - The Sketh'lon Wreckage - updated
+  - description added
+- quest 10570 - To Catch A Thistlehead - updated
+  - description added
+- quest 10571 - Oronu the Elder - updated
+  - description added
+- quest 10572 - Setting Up the Bomb - updated
+  - description added
+- quest 10573 - The Deathforge - updated
+  - description added
+- quest 10574 - The Ashtongue Corruptors - updated
+  - description added
+- quest 10575 - The Warden's Cage - updated
+  - description added
+- quest 10576 - The Shadowmoon Shuffle - updated
+  - description added
+- quest 10577 - What Illidan Wants, Illidan Gets... - updated
+  - description added
+- quest 10578 - The Cipher of Damnation - Borak's Charge - updated
+  - description added
+- quest 10579 - The Cipher of Damnation - The Third Fragment Recovered - updated
   - description added
   - reward choices: +6
-- quest 11243 - If Valgarde Falls... - updated
+- quest 10582 - Minions of the Shadow Council - updated
   - description added
-- quest 11244 - Rescuing the Rescuers - updated
+- quest 10583 - The Fate of Flanis - updated
   - description added
+- quest 10586 - Bring Down the Warbringer! - updated
+  - description added
+- quest 10587 - Karabor Training Grounds - updated
+  - description added
+- quest 10588 - The Cipher of Damnation - updated
+  - description added
+  - reward items: +1
   - reward choices: +6
-- quest 11245 - Towers of Certain Doom - updated
+- quest 10595 - Besieged! - updated
   - description added
-- quest 11246 - Gruesome, But Necessary - updated
+- quest 10596 - To Legion Hold - updated
   - description added
-- quest 11247 - Burn Skorn, Burn! - updated
+- quest 10597 - Setting Up the Bomb - updated
   - description added
-- quest 11248 - Operation: Skornful Wrath - updated
+- quest 10598 - Blast the Infernals! - updated
+  - description added
+  - reward choices: +4
+- quest 10599 - The Deathforge - updated
+  - description added
+- quest 10600 - Minions of the Shadow Council - updated
+  - description added
+- quest 10601 - The Fate of Kagrosh - updated
+  - description added
+- quest 10602 - The Summoning Chamber - updated
+  - description added
+- quest 10603 - Bring Down the Warbringer! - updated
+  - description added
+- quest 10604 - Gaining Access - updated
+  - description added
+- quest 10606 - The Art of Fel Reaver Maintenance - updated
+  - description added
+- quest 10611 - The Art of Fel Reaver Maintenance - updated
+  - description added
+- quest 10612 - The Fel and the Furious - updated
+  - description added
+- quest 10613 - The Fel and the Furious - updated
+  - description added
+- quest 10619 - The Ashtongue Tribe - updated
+  - description added
+- quest 10622 - Proof of Allegiance - updated
+  - description added
+- quest 10623 - Illidari-Bane Shard - updated
+  - description added
+- quest 10624 - A Haunted History - updated
+  - description added
+- quest 10625 - Spectrecles - updated
+  - description added
+- quest 10626 - Capture the Weapons - updated
+  - description added
+  - reward choices: +4
+- quest 10627 - Capture the Weapons - updated
+  - description added
+  - reward choices: +4
+- quest 10628 - Akama - updated
+  - description added
+- quest 10633 - Teron Gorefiend - Lore and Legend - updated
+  - description added
+- quest 10634 - Divination: Gorefiend's Armor - updated
+  - description added
+- quest 10635 - Divination: Gorefiend's Cloak - updated
+  - description added
+- quest 10636 - Divination: Gorefiend's Truncheon - updated
+  - description added
+- quest 10637 - A Necessary Distraction - updated
   - description added
 - quest 11249 - Stop the Ascension! - updated
-  - reward money removed (10g)
+  - description added
+  - reward money added (10g)
+  - reward choices: +4
 - quest 11250 - All Hail the Conqueror of Skorn! - updated
-  - reward money removed (10g)
+  - description added
+  - reward money added (10g)
+  - reward items: +1
+  - reward choices: +4
+- quest 11253 - Sniff Out the Enemy - updated
+  - description added
+- quest 11254 - The Dragonskin Map - updated
+  - description added
 - quest 11255 - Prisoners of Wyrmskull - updated
-  - reward money removed (4g 40s)
+  - description added
+  - reward money added (4g 40s)
+- quest 11256 - Skorn Must Fall! - updated
+  - description added
 - quest 11257 - Gruesome, But Necessary - updated
-  - reward money removed (4g 70s)
+  - description added
+  - reward money added (4g 70s)
 - quest 11258 - Burn Skorn, Burn! - updated
-  - reward money removed (4g 70s)
+  - description added
+  - reward money added (4g 70s)
 - quest 11259 - Towers of Certain Doom - updated
-  - reward money removed (4g 70s)
+  - description added
+  - reward money added (4g 70s)
 - quest 11260 - Stop the Ascension! - updated
-  - reward money removed (10g)
+  - description added
+  - reward money added (10g)
+  - reward choices: +4
 - quest 11261 - The Conqueror of Skorn! - updated
-  - reward money removed (10g)
+  - description added
+  - reward money added (10g)
+  - reward items: +1
+  - reward choices: +4
 - quest 11263 - Dealing With Gjalerbron - updated
-  - reward money removed (4g 70s)
+  - description added
+  - reward money added (4g 70s)
 - quest 11264 - Necro Overlord Mezhen - updated
-  - reward money removed (10g)
+  - description added
+  - reward money added (10g)
+  - reward items: +1
+  - reward choices: +4
 - quest 11265 - Of Keys and Cages - updated
-  - reward money removed (4g 70s)
+  - description added
+  - reward money added (4g 70s)
 - quest 11266 - Gjalerbron Attack Plans - updated
-  - reward money removed (5g)
+  - description added
+  - reward money added (5g)
 - quest 11267 - The Frost Wyrm and its Master - updated
-  - reward money removed (10g)
-- quest 11451 - Alicia's Poem - updated
   - description added
-- quest 11875 - Gaining the Advantage - updated
+  - reward money added (10g)
+  - reward items: +1
+  - reward choices: +4
+- quest 11268 - The Walking Dead - updated
   - description added
   - reward items: +1
-- quest 11958 - Let Nothing Go To Waste - updated
-  - description added
-- quest 11960 - Planning for the Future - updated
-  - description added
-- quest 11977 - A Tauren Among Taunka - updated
-  - description added
-- quest 11978 - Into the Fold - updated
-  - description added
-- quest 11979 - The Taunka and the Tauren - updated
-  - description added
-- quest 11980 - Pride of the Horde - updated
-  - description added
-  - reward choices: +5
-- quest 11983 - Blood Oath of the Horde - updated
-  - description added
-- quest 11995 - Your Presence is Required at Stars' Rest - updated
-  - description added
-- quest 11996 - Your Presence is Required at Agmar's Hammer - updated
-  - description added
-- quest 12000 - Rifle the Bodies - updated
-  - description added
-- quest 12004 - Prevent the Accord - updated
+  - reward choices: +4
+- quest 11269 - Down to the Wire - updated
   - description added
   - reward choices: +4
-- quest 12005 - Prevent the Accord - updated
+- quest 11270 - War is Hell - updated
+  - description added
+- quest 11271 - Hasty Preparations - updated
   - description added
   - reward choices: +4
-- quest 12006 - Avenge this Atrocity! - updated
+- quest 11273 - The Human League - updated
   - description added
-- quest 12008 - Agmar's Hammer - updated
+- quest 11274 - Zedd's Probably Dead - updated
   - description added
-  - reward items: +1
-- quest 12009 - Tua'kea's Crab Traps - updated
+- quest 11275 - Making the Horn - updated
   - description added
-- quest 12011 - Signs of Big Watery Trouble - updated
+- quest 11276 - And Then There Were Two... - updated
   - description added
-- quest 12013 - End Arcanimus - updated
+- quest 11277 - The Depths of Depravity - updated
   - description added
-  - reward choices: +4
-- quest 12016 - The Bait - updated
-  - description added
-- quest 12017 - Meat on the Hook - updated
+- quest 11278 - Return to Valgarde - updated
   - description added
   - reward choices: +4
-- quest 12028 - Spiritual Insight - updated
+- quest 11279 - Green Eggs and Whelps - updated
   - description added
-- quest 12030 - Elder Mana'loa - updated
+- quest 11280 - Draconis Gastritis - updated
   - description added
-- quest 12031 - Freedom for the Lingering - updated
+  - reward choices: +4
+- quest 11281 - Mimicking Nature's Call - updated
   - description added
-- quest 12032 - Conversing With the Depths - updated
+  - reward choices: +4
+- quest 11282 - A Lesson in Fear - updated
   - description added
-  - reward items: +1
+  - reward choices: +4
+- quest 11283 - Baleheim Bodycount - updated
+  - description added
+  - reward choices: +4
+- quest 11284 - The Yeti Next Door - updated
+  - description added
+  - reward choices: +4
+- quest 11285 - Baleheim Must Burn! - updated
+  - description added
+- quest 11286 - The Artifacts of Steel Gate - updated
+  - description added
+  - reward choices: +3
+- quest 11287 - Find Sage Mistwalker - updated
+  - description added
+- quest 11288 - The Shining Light - updated
+  - description added
   - reward choices: +6
-- quest 12033 - Message from the West - updated
+- quest 11289 - Guided by Honor - updated
   - description added
-- quest 12034 - Victory Nears... - updated
-  - description added
-- quest 12036 - From the Depths of Azjol-Nerub - updated
-  - description added
-- quest 12040 - An Enemy in Arthas - updated
-  - description added
-- quest 12041 - The Lost Empire - updated
-  - description added
-  - reward choices: +4
-- quest 12043 - Nozzlerust Defense - updated
-  - description added
-- quest 12044 - Stocking Up - updated
-  - description added
-- quest 12046 - Soft Packaging - updated
-  - description added
-- quest 12048 - Scourge Armaments - updated
-  - description added
-  - reward choices: +4
-- quest 12049 - Hard to Swallow - updated
-  - description added
-- quest 12052 - Harp on This! - updated
-  - description added
-  - reward choices: +4
-- quest 12053 - The Might of the Horde - updated
-  - description added
-  - reward choices: +4
-- quest 12055 - A Strange Device - updated
-  - description added
-- quest 12056 - Marked for Death: High Cultist Zangus - updated
-  - description added
-- quest 12057 - The Flesh-Bound Tome - updated
-  - description added
-- quest 12059 - A Strange Device - updated
-  - description added
-- quest 12060 - Projections and Plans - updated
-  - description added
-- quest 12061 - Projections and Plans - updated
-  - description added
-- quest 12064 - Chains of the Anub'ar - updated
-  - description added
-  - reward choices: +4
-- quest 12065 - The Focus on the Beach - updated
-  - description added
-- quest 12066 - The Focus on the Beach - updated
-  - description added
-- quest 12067 - A Letter for Home - updated
-  - description added
-- quest 12069 - Return of the High Chief - updated
-  - description added
-- quest 12071 - Attack by Air! - updated
-  - description added
-- quest 12072 - Blightbeasts be Damned! - updated
-  - description added
-  - reward choices: +4
-- quest 12076 - Messy Business - updated
-  - description added
-- quest 12077 - Apply This Twice A Day - updated
+- quest 11291 - To Westguard Keep! - updated
   - description added
   - reward items: +1
-- quest 12078 - Worm Wrangler - updated
+- quest 11292 - Preying Upon the Weak - updated
+  - description added
+  - reward choices: +4
+- quest 11295 - The Offensive Begins - updated
+  - description added
+- quest 11296 - Rivenwood Captives - updated
+  - description added
+  - reward choices: +4
+- quest 11297 - Keeping Watch on the Interlopers - updated
+  - description added
+- quest 11298 - What's in That Brew? - updated
+  - description added
+- quest 11299 - The Ring of Judgement - updated
+  - description added
+- quest 11300 - Stunning Defeat at the Ring - updated
+  - description added
+- quest 11301 - Brains! Brains! Brains! - updated
+  - description added
+  - reward choices: +4
+- quest 11302 - The Enigmatic Frost Nymphs - updated
+  - description added
+- quest 11303 - The Ambush - updated
+  - description added
+- quest 11304 - New Agamand - updated
+  - description added
+- quest 11305 - A Tailor-Made Formula - updated
+  - description added
+  - reward choices: +4
+- quest 11306 - Apply Heat and Stir - updated
+  - description added
+- quest 11307 - Field Test - updated
   - description added
   - reward items: +1
-- quest 12079 - Stomping Grounds - updated
-  - description added
-- quest 12080 - Really Big Worm - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12083 - Atop the Woodlands - updated
-  - description added
-  - reward choices: +4
-- quest 12084 - Atop the Woodlands - updated
-  - description added
-  - reward choices: +4
-- quest 12085 - A Letter for Home - updated
-  - description added
-- quest 12089 - Wanted: Magister Keldonus - updated
-  - description added
-  - reward items: +1
-  - reward choices: +6
-- quest 12090 - Wanted: Gigantaur - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12091 - Wanted: Dreadtalon - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12092 - Strengthen the Ancients - updated
-  - description added
-  - reward choices: +4
-- quest 12095 - To Dragon's Fall - updated
-  - description added
-  - reward items: +1
-- quest 12096 - Strengthen the Ancients - updated
-  - description added
-  - reward choices: +4
-- quest 12097 - Sarathstra, Scourge of the North - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12098 - Search Indu'le Village - updated
-  - description added
-- quest 12100 - Containing the Rot - updated
-  - description added
-- quest 12102 - In Search of the Ruby Lilac - updated
-  - description added
-- quest 12104 - Return to Soar - updated
-  - description added
-- quest 12106 - Search Indu'le Village - updated
-  - description added
-- quest 12110 - The End of the Line - updated
-  - description added
-  - reward items: +1
-  - reward choices: +5
-- quest 12111 - Where the Wild Things Roam - updated
-  - description added
-  - reward items: +1
-  - reward choices: +6
-- quest 12112 - Stiff Negotiations - updated
-  - description added
-- quest 12115 - Koltira and the Language of Death - updated
-  - description added
-- quest 12117 - Travel to Moa'ki Harbor - updated
-  - description added
-  - reward choices: +4
-- quest 12118 - Travel to Moa'ki Harbor - updated
-  - description added
-  - reward choices: +4
-- quest 12119 - Gaining an Audience - updated
-  - description added
-- quest 12122 - Gaining an Audience - updated
-  - description added
-- quest 12123 - Informing the Queen - updated
-  - description added
-  - reward items: +1
-- quest 12124 - Informing the Queen - updated
-  - description added
-  - reward items: +1
-- quest 12125 - In Service of Blood - updated
-  - description added
-- quest 12126 - In Service of the Unholy - updated
-  - description added
-- quest 12127 - In Service of Frost - updated
-  - description added
-- quest 12136 - The Translated Tome - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12140 - All Hail Roanauk! - updated
-  - description added
-  - reward choices: +4
-- quest 12142 - Pest Control - updated
-  - description added
-- quest 12143 - Canyon Chase - updated
-  - description added
-  - reward choices: +4
-- quest 12144 - Pest Control - updated
-  - description added
-- quest 12145 - Canyon Chase - updated
-  - description added
-  - reward choices: +4
-- quest 12146 - Disturbing Implications - updated
-  - description added
-- quest 12147 - Disturbing Implications - updated
-  - description added
-- quest 12148 - One of a Kind - updated
-  - description added
-  - reward items: +1
-- quest 12149 - Mighty Magnataur - updated
-  - description added
-  - reward items: +1
-- quest 12150 - Reclusive Runemaster - updated
-  - description added
-  - reward items: +1
-- quest 12151 - Wanton Warlord - updated
-  - description added
-  - reward items: +1
-  - reward choices: +6
-- quest 12157 - The Lost Courier - updated
-  - description added
-- quest 12166 - The Liquid Fire of Elune - updated
-  - description added
-- quest 12167 - Kill the Cultists - updated
-  - description added
-- quest 12168 - The Favor of Zangus - updated
-  - description added
-- quest 12169 - The High Cultist - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12171 - Of Traitors and Treason - updated
-  - description added
-- quest 12174 - High Commander Halford Wyrmbane - updated
-  - description added
-- quest 12181 - Give it a Name - updated
-  - description added
-- quest 12182 - To Venomspite! - updated
-  - description added
-- quest 12188 - The Forsaken Blight and You: How Not to Die - updated
-  - description added
-  - reward choices: +4
-- quest 12189 - Imbeciles Abound! - updated
-  - description added
-- quest 12200 - Emerald Dragon Tears - updated
-  - description added
-- quest 12206 - Blighted Last Rites - updated
-  - description added
-- quest 12209 - Materiel Plunder - updated
-  - description added
-- quest 12211 - Let Them Not Rise! - updated
-  - description added
-  - reward choices: +4
-- quest 12214 - Fresh Remounts - updated
-  - description added
-- quest 12224 - The Kor'kron Vanguard! - updated
-  - description added
-  - reward choices: +4
-- quest 12230 - Stealing from the Siegesmiths - updated
-  - description added
-- quest 12232 - Bombard the Ballistae - updated
-  - description added
-  - reward choices: +3
-- quest 12234 - Need to Know - updated
-  - description added
-- quest 12235 - Naxxramas and the Fall of Wintergarde - updated
-  - description added
-- quest 12237 - Flight of the Wintergarde Defender - updated
-  - description added
-- quest 12239 - The Spy in New Hearthglen - updated
-  - description added
-- quest 12240 - A Means to an End - updated
-  - description added
-- quest 12243 - Fire Upon the Waters - updated
-  - description added
-  - reward choices: +4
-- quest 12251 - Return to the High Commander - updated
-  - description added
-  - reward choices: +4
-- quest 12252 - Torture the Torturer - updated
-  - description added
-  - reward choices: +4
-- quest 12254 - Without a Prayer - updated
-  - description added
-- quest 12258 - The Fate of the Dead - updated
-  - description added
-  - reward choices: +4
-- quest 12260 - The Perfect Dissemblance - updated
-  - description added
-- quest 12261 - No Place to Run - updated
-  - description added
-- quest 12262 - No One to Save You - updated
-  - description added
-- quest 12264 - Culling the Damned - updated
-  - description added
-- quest 12265 - Defiling the Defilers - updated
-  - description added
-- quest 12266 - Tales of Destruction - updated
-  - description added
-  - reward items: +1
-- quest 12267 - Neltharion's Flame - updated
-  - description added
-  - reward choices: +4
-- quest 12269 - Not In Our Mine - updated
-  - description added
-- quest 12271 - The Rod of Compulsion - updated
-  - description added
-- quest 12272 - The Bleeding Ore - updated
-  - description added
-- quest 12274 - A Fall From Grace - updated
-  - description added
-- quest 12275 - The Demo-gnome - updated
-  - description added
-- quest 12276 - The Search for Slinkin - updated
-  - description added
-- quest 12277 - Leave Nothing to Chance - updated
-  - description added
-  - reward choices: +4
-- quest 12281 - Understanding the Scourge War Machine - updated
-  - description added
-- quest 12282 - Imprints on the Past - updated
-  - description added
-  - reward choices: +4
-- quest 12283 - The Truth Will Out - updated
-  - description added
-- quest 12285 - Do Unto Others - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12287 - Orik Trueheart and the Forgotten Shore - updated
-  - description added
-- quest 12290 - The Murkweed Elixir - updated
-  - description added
-- quest 12291 - The Forgotten Tale - updated
-  - description added
-- quest 12297 - Of Traitors and Treason - updated
-  - description added
-- quest 12301 - The Truth Shall Set Us Free - updated
-  - description added
-- quest 12303 - Funding the War Effort - updated
-  - description added
-  - reward choices: +5
-- quest 12304 - Beachfront Property - updated
-  - description added
-- quest 12305 - Parting Thoughts - updated
-  - description added
-  - reward choices: +5
-- quest 12309 - Find Durkon! - updated
-  - description added
-- quest 12312 - Secrets of the Scourge - updated
-  - description added
-- quest 12319 - Mystery of the Tome - updated
-  - description added
-- quest 12320 - Understanding the Language of Death - updated
-  - description added
-- quest 12321 - A Righteous Sermon - updated
-  - description added
-  - reward choices: +4
-- quest 12325 - Into Hostile Territory - updated
-  - description added
-- quest 12326 - Steamtank Surprise - updated
-  - description added
-  - reward choices: +3
-- quest 12372 - Defending Wyrmrest Temple - updated
-  - description added
-- quest 12416 - Heated Battle - updated
-  - description added
-- quest 12417 - Return to the Earth - updated
-  - description added
-- quest 12418 - Through Fields of Flame - updated
-  - description added
-  - reward choices: +4
-- quest 12435 - Report to Lord Devrestrasz - updated
-  - description added
-- quest 12438 - Wanted: Kreug Oathbreaker - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12439 - A Disturbance In The West - updated
-  - description added
-- quest 12440 - To Stars' Rest! - updated
-  - description added
-- quest 12441 - Wanted: High Shaman Bloodpaw - updated
-  - description added
-  - reward items: +1
-  - reward choices: +6
-- quest 12448 - Heated Battle - updated
-  - description added
-- quest 12449 - Return to the Earth - updated
-  - description added
-- quest 12450 - Through Fields of Flame - updated
-  - description added
-  - reward choices: +4
-- quest 12454 - Cycle of Life - updated
-  - description added
-- quest 12455 - Scattered To The Wind - updated
-  - description added
-- quest 12458 - Seeds of the Lashers - updated
-  - description added
-- quest 12460 - Report to the Ruby Dragonshrine - updated
-  - description added
-- quest 12461 - Report to the Ruby Dragonshrine - updated
-  - description added
-- quest 12462 - Breaking Off A Piece - updated
-  - description added
-  - reward choices: +4
-- quest 12463 - Plunderbeard Must Be Found! - updated
-  - description added
-- quest 12464 - My Old Enemy - updated
-  - description added
-  - reward items: +1
-  - reward choices: +5
-- quest 12465 - Plunderbeard's Journal - updated
-  - description added
-- quest 12466 - Chasing Icestorm: The 7th Legion Front - updated
-  - description added
-- quest 12467 - Chasing Icestorm: Thel'zan's Phylactery - updated
-  - description added
-  - reward choices: +4
-- quest 12469 - Return to Sender - updated
-  - description added
-- quest 12470 - Mystery of the Infinite - updated
-  - description added
-  - reward choices: +4
-- quest 12472 - Finality - updated
-  - description added
-- quest 12473 - An End And A Beginning - updated
-  - description added
-- quest 12474 - To Fordragon Hold! - updated
-  - description added
-  - reward choices: +4
-- quest 12475 - What Secrets Men Hide - updated
-  - description added
-- quest 12478 - Frostmourne Cavern - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12495 - Audience With The Dragon Queen - updated
-  - description added
-- quest 12496 - Audience With The Dragon Queen - updated
-  - description added
-- quest 12497 - Galakrond and the Scourge - updated
-  - description added
-- quest 12498 - On Ruby Wings - updated
-  - description added
-  - reward choices: +4
-- quest 12499 - Return To Angrathar - updated
-  - description added
-  - reward items: +1
-- quest 12500 - Return To Angrathar - updated
-  - description added
-  - reward items: +1
-- quest 12766 - Speak with your Ambassador - updated
-  - description added
-- quest 12767 - Speak with your Ambassador - updated
-  - description added
-- quest 12768 - The Steward of Wyrmrest Temple - updated
-  - description added
-- quest 12769 - The Steward of Wyrmrest Temple - updated
-  - description added
-- quest 13078 - Dahlia's Tears - updated
-  - description added
-- quest 13242 - Darkness Stirs - updated
-  - quest giver added: Alexstrasza the Life-Binder
-  - description added
-  - Wowhead marks it obsolete
-- quest 13343 - Mystery of the Infinite, Redux - updated
-  - description added
-  - reward items: +1
-  - reward choices: +3
-- quest 13347 - Reborn From The Ashes - updated
-  - quest giver added: Alexstrasza the Life-Binder
-  - description added
-  - Wowhead marks it obsolete
-- quest 13369 - Fate, Up Against Your Will - updated
-  - quest giver added: King Varian Wrynn
-  - description added
-  - Wowhead marks it obsolete
-- quest 13370 - A Royal Coup - updated
-  - quest giver added: Thrall
-  - description added
-  - Wowhead marks it obsolete
-- quest 13375 - The Heroic Key to the Focusing Iris - updated
-  - description added
-  - reward items: +1
-- quest 13377 - The Battle For The Undercity - updated
-  - quest giver added: Broll Bearmantle
-  - description added
-  - reward items: +1
-  - reward choices: +6
-  - Wowhead marks it obsolete
-- quest 13859 - At The Enemy's Gates - updated
-  - description added
-- quest 14438 - Sharing the Land - updated
-  - description added
-- quest 14449 - The First Step - updated
-  - description added
-- quest 14452 - Rite of Strength - updated
-  - description added
-- quest 14455 - Stop the Thorncallers - updated
-  - description added
-- quest 14456 - Rite of Courage - updated
-  - description added
-- quest 14458 - Go to Adana - updated
-  - description added
-- quest 14459 - The Battleboars - updated
-  - description added
-- quest 14460 - Rite of Honor - updated
-  - description added
-- quest 14491 - The Restless Earth - updated
-  - description added
-- quest 20440 - Poison Water - updated
-  - description added
-- quest 20441 - Rite of Vision - updated
-  - description added
-- quest 23733 - Rites of the Earthmother - updated
-  - description added
-- quest 24440 - Winterhoof Cleansing - updated
-  - description added
-- quest 24524 - Wildmane Cleansing - updated
-  - description added
-- quest 24540 - War Dance - updated
-  - description added
-- quest 24550 - Journey into Thunder Bluff - updated
-  - description added
-- quest 25051 - Darkmist Extermination - updated
-  - description added
-- quest 25292 - Next of Kin - updated
-  - description added
-- quest 26269 - The Green Hills of Stranglethorn - updated
-  - description added
-- quest 26278 - The Defense of Grom'gol: Raptor Risk - updated
-  - description added
-- quest 26279 - The Defense of Grom'gol: Ogre Oppression - updated
-  - description added
-  - reward choices: +3
-- quest 26280 - The Defense of Grom'gol: Murloc Menace - updated
-  - description added
-- quest 26281 - The Defense of Grom'gol: Trollish Thievery - updated
-  - description added
-  - reward choices: +3
-- quest 26298 - Hunt for Yenniku - updated
-  - description added
-- quest 26299 - Headhunting - updated
-  - description added
-  - reward choices: +4
-- quest 26300 - Nezzliok Will Know - updated
-  - description added
-- quest 26301 - Speaking with Nezzliok - updated
-  - description added
-  - reward choices: +3
-- quest 26302 - Chasing Yenniku's Fate - updated
-  - description added
-- quest 26303 - The Mind's Eye - updated
-  - description added
-- quest 26304 - Nighttime in the Jungle - updated
-  - description added
-- quest 26305 - Saving Yenniku - updated
-  - description added
-  - reward choices: +3
-- quest 26317 - A Lashtail Hatchling - updated
-  - description added
-- quest 26321 - I Think She's Hungry - updated
-  - description added
-- quest 26323 - Favored Skull - updated
-  - description added
-- quest 26330 - Who's a Big Troll? - updated
-  - description added
-  - reward choices: +3
-- quest 26332 - Skullsplitter Mojo - updated
-  - description added
-- quest 26334 - Bloodlord Mandokir - updated
-  - description added
-- quest 26338 - Population Con-Troll - updated
-  - description added
-- quest 26340 - The Hunt - updated
-  - description added
-- quest 26343 - Supply and Demand - updated
-  - description added
-- quest 26344 - Some Assembly Required - updated
-  - description added
-- quest 26345 - Excelsior - updated
-  - description added
-  - reward items: +1
-- quest 26350 - Priestess Hu'rala - updated
-  - description added
-- quest 26351 - Mind Vision - updated
-  - description added
-- quest 26352 - Cozzle's Plan - updated
-  - description added
-- quest 26359 - See Raptor - updated
-  - description added
-- quest 26360 - Mind Control - updated
-  - description added
-- quest 26362 - Be Raptor - updated
-  - description added
-  - reward choices: +4
-- quest 26386 - Surkhan - updated
-  - description added
-- quest 26399 - The Mosh'Ogg Bounty - updated
-  - description added
-- quest 26400 - The Universal Key - updated
-  - description added
-- quest 26403 - Venture Company Mining - updated
-  - description added
-  - reward choices: +3
-- quest 26407 - Mosh'Ogg Handiwork - updated
-  - description added
-- quest 26412 - The Mosh'Ogg Bounty - updated
-  - description added
-- quest 26416 - Well, Come to the Jungle - updated
-  - description added
-- quest 26417 - Northern Stranglethorn: The Fallen Empire - updated
-  - description added
-- quest 26433 - The Holy Water of Clarity - updated
-  - description added
-- quest 26434 - Primal Reagents of Power - updated
-  - description added
-  - reward choices: +3
-- quest 26435 - I'm A Huge Liar and a Fraud - updated
-  - description added
-- quest 26450 - If They're Just Going to Leave Them Lying Around... - updated
-  - description added
-  - reward choices: +4
-- quest 26451 - Gurubashi Challenge: Free-For-All Arena Combat - updated
-  - description added
-- quest 26487 - Akiris by the Bundle - updated
-  - description added
-- quest 26489 - It's You!! - updated
-  - description added
-- quest 26493 - There's Somebody Out There Who Wants It - updated
-  - description added
   - reward choices: +2
-- quest 26533 - Zanzil's Secret - updated
+- quest 11308 - Time for Cleanup - updated
   - description added
-- quest 26534 - Let's See What You've Got, Zanzil - updated
-  - description added
-- quest 26551 - Eliminate the Outcast - updated
-  - description added
-- quest 26552 - Through the Troll Hole - updated
-  - description added
-- quest 26553 - High Priestess Jeklik - updated
-  - description added
-- quest 26590 - The Holy Water of Clarity - updated
-  - description added
-- quest 26592 - Diffractory Chromascope - updated
-  - description added
-- quest 26593 - Scaring Shaky - updated
-  - description added
-- quest 26595 - Kill-Collect - updated
+- quest 11309 - Parts for the Job - updated
   - description added
   - reward choices: +3
-- quest 26597 - Stranglethorn Fever - updated
+- quest 11310 - Warning: Some Assembly Required - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 11311 - Suppressing the Elements - updated
+  - description added
+- quest 11312 - The Frozen Glade - updated
+  - description added
+- quest 11313 - Spirits of the Ice - updated
+  - description added
+- quest 11314 - The Fallen Sisters - updated
+  - description added
+- quest 11315 - Wild Vines - updated
+  - description added
+- quest 11316 - Spawn of the Twisted Glade - updated
+  - description added
+- quest 11317 - The Cleansing - updated
+  - description added
+- quest 11319 - Seeds of the Blacksouled Keepers - updated
   - description added
   - reward choices: +3
-- quest 26598 - The Heart of Mokk - updated
-  - objectives text added
+- quest 11322 - The Cleansing - updated
   - description added
-- quest 26599 - The Captain's Chest - updated
+- quest 11323 - In Worg's Clothing - updated
   - description added
-  - reward items: +1
-- quest 26600 - A Giant's Feast - updated
+- quest 11324 - Alpha Worg - updated
   - description added
   - reward items: +1
-- quest 26601 - Mok'rash the Cleaver - updated
-  - description added
   - reward choices: +4
-- quest 26602 - A Dish Best Served Huge - updated
+- quest 11325 - In Worg's Clothing - updated
+  - description added
+- quest 11326 - Alpha Worg - updated
   - description added
   - reward items: +1
-- quest 26603 - Message in a Bottle - updated
+  - reward choices: +4
+- quest 11327 - Mission: Package Retrieval - updated
   - description added
-- quest 26604 - Protecting Her Royal Highness Poobah - updated
+- quest 11328 - Mission: Forsaken Intel - updated
   - description added
-- quest 26605 - Grubby Little Paws - updated
+- quest 11329 - I'll Try Anything! - updated
   - description added
-- quest 26606 - Mukla's Demise - updated
+- quest 11330 - Absholutely... Thish Will Work! - updated
   - description added
+- quest 11331 - You Tell Him ...Hic! - updated
+  - description added
+- quest 11332 - Mission: Plague This! - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 11333 - Into the World of Spirits - updated
+  - description added
+- quest 11343 - The Echo of Ymiron - updated
+  - description added
+- quest 11344 - Anguish of Nifflevar - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 11346 - The Book of Runes - updated
+  - description added
+- quest 11348 - The Rune of Command - updated
+  - description added
+  - reward items: +1
+- quest 11349 - Mastering the Runes - updated
+  - description added
+- quest 11350 - The Book of Runes - updated
+  - description added
+- quest 11351 - Mastering the Runes - updated
+  - description added
+- quest 11352 - The Rune of Command - updated
+  - description added
+  - reward items: +1
+- quest 11355 - March of the Giants - updated
+  - description added
+  - reward items: +1
+- quest 11358 - The Lodestone - updated
+  - description added
+  - reward items: +1
+- quest 11359 - Demolishing Megalith - updated
+  - description added
+  - reward items: +1
+- quest 11365 - March of the Giants - updated
+  - description added
+  - reward items: +1
+- quest 11366 - The Lodestone - updated
+  - description added
+  - reward items: +1
+- quest 11390 - I've Got a Flying Machine! - updated
+  - description added
+  - reward items: +1
   - reward choices: +3
-- quest 26609 - The Bloodsail Buccaneers - updated
-  - description added
-- quest 26610 - Bloodsail Treachery - updated
-  - description added
-- quest 26612 - Details of the Attack - updated
-  - description added
-  - reward choices: +4
-- quest 26614 - Keep An Eye Out - updated
+- quest 11391 - Steel Gate Patrol - updated
   - description added
   - reward items: +1
-- quest 26617 - An Old Sea Dog - updated
+- quest 11393 - Where is Explorer Jaren? - updated
   - description added
-- quest 26624 - Getting In With the Bloodsail - updated
+- quest 11394 - And You Thought Murlocs Smelled Bad! - updated
   - description added
-- quest 26629 - Seeing Where Your Loyalties Lie - updated
+- quest 11395 - It's a Scourge Device - updated
   - description added
-- quest 26630 - Looks Like a Tauren Pirate to Me - updated
-  - description added
-  - reward items: +1
-- quest 26631 - Your First Day as a Pirate - updated
-  - description added
-- quest 26633 - Swabbing Duty - updated
+- quest 11396 - Bring Down Those Shields - updated
   - description added
   - reward choices: +4
-- quest 26634 - The Bane of Many A Pirate - updated
+- quest 11397 - And You Thought Murlocs Smelled Bad! - updated
+  - description added
+- quest 11398 - It's a Scourge Device - updated
+  - description added
+- quest 11399 - Bring Down Those Shields - updated
+  - description added
+  - reward choices: +4
+- quest 11406 - Everything Must Be Ready - updated
+  - description added
+- quest 11410 - The One That Got Away - updated
+  - description added
+- quest 11411 - Camp Winterhoof - updated
+  - description added
+- quest 11414 - Brother Betrayers - updated
+  - description added
+- quest 11415 - Brother Betrayers - updated
+  - description added
+- quest 11416 - Eyes of the Eagle - updated
+  - description added
+- quest 11417 - Eyes of the Eagle - updated
+  - description added
+- quest 11418 - We Call Him Steelfeather - updated
+  - description added
+- quest 11420 - The Path to Payback - updated
+  - description added
+- quest 11421 - It Goes to 11... - updated
+  - description added
+  - reward choices: +4
+- quest 11422 - Trident of the Son - updated
+  - description added
+- quest 11423 - The Enemy's Legacy - updated
+  - description added
+- quest 11426 - Locating the Mechanism - updated
+  - description added
+- quest 11427 - Meet Lieutenant Icehammer... - updated
+  - description added
+- quest 11428 - Keeper Witherleaf - updated
+  - description added
+  - reward items: +1
+- quest 11429 - Drop It then Rock It! - updated
+  - description added
+- quest 11430 - Harpoon Master Yavus - updated
+  - description added
+- quest 11432 - Sleeping Giants - updated
+  - description added
+  - reward items: +1
+- quest 11433 - Sleeping Giants - updated
+  - description added
+  - reward items: +1
+- quest 11434 - Forgotten Treasure - updated
+  - description added
+- quest 11436 - Let's Go Surfing Now - updated
+  - description added
+  - reward items: +1
+- quest 11443 - Daggercap Divin' - updated
+  - description added
+- quest 11448 - The Explorers' League Outpost - updated
+  - description added
+- quest 11452 - The Slumbering King - updated
+  - description added
+  - reward items: +1
+- quest 11453 - The Slumbering King - updated
+  - description added
+  - reward items: +1
+- quest 11455 - The Fragrance of Money - updated
+  - description added
+- quest 11456 - Feeding the Survivors - updated
+  - description added
+- quest 11457 - Arming Kamagua - updated
+  - description added
+- quest 11458 - Avenge Iskaal - updated
+  - description added
+- quest 11459 - Zeh'gehn Sez - updated
+  - description added
+- quest 11460 - Trust is Earned - updated
+  - description added
+- quest 11464 - Gambling Debt - updated
+  - description added
+- quest 11465 - The Ransacked Caravan - updated
+  - description added
+- quest 11466 - Jack Likes His Drink - updated
+  - description added
+- quest 11467 - Dead Man's Debt - updated
   - description added
   - reward items: +2
-- quest 26635 - Cannonball Swim - updated
+- quest 11468 - Falcon Versus Hawk - updated
   - description added
-- quest 26647 - Ol' Blasty - updated
+- quest 11469 - Swabbin' Soap - updated
   - description added
-- quest 26648 - Our Mortal Enemies - updated
-  - description added
-  - reward choices: +3
-- quest 26649 - Drive-By Piracy - updated
+- quest 11470 - There Exists No Honor Among Birds - updated
   - description added
   - reward choices: +4
-- quest 26650 - The Damsel's Luck - updated
-  - description added
-- quest 26662 - The Brashtide Crew - updated
-  - description added
-- quest 26664 - Making Mutiny - updated
-  - description added
-  - reward choices: +3
-- quest 26665 - Call of Booty - updated
-  - description added
-- quest 26678 - Doublerum - updated
+- quest 11471 - The Jig is Up - updated
   - description added
   - reward items: +1
-- quest 26679 - Return to Revilgaz - updated
+  - reward choices: +3
+- quest 11472 - The Way to His Heart... - updated
   - description added
-- quest 26682 - A Shambling Threat - updated
+- quest 11473 - A Traitor Among Us - updated
   - description added
-- quest 26695 - Prepare for Takeoff - updated
+- quest 11474 - Problems on the High Bluff - updated
   - description added
-- quest 26697 - The Final Voyage of the Brashtide - updated
+- quest 11475 - Tools to Get the Job Done - updated
+  - description added
+- quest 11476 - A Carver and a Croaker - updated
+  - description added
+- quest 11477 - Out of My Element? - updated
+  - description added
+- quest 11478 - Outpost Over Yonder... - updated
+  - description added
+- quest 11479 - "Crowleg" Dan - updated
+  - description added
+- quest 11480 - Meet Number Two - updated
+  - description added
+- quest 11483 - We Can Rebuild It - updated
+  - description added
+- quest 11484 - We Have the Technology - updated
+  - description added
+- quest 11485 - Iron Rune Constructs and You: Rocket Jumping - updated
+  - description added
+- quest 11489 - Iron Rune Constructs and You: Collecting Data - updated
+  - description added
+- quest 11491 - Iron Rune Constructs and You: The Bluff - updated
+  - description added
+- quest 11494 - Lightning Infused Relics - updated
   - description added
   - reward choices: +3
-- quest 26698 - Seeking Seahorn - updated
-  - description added
-- quest 26699 - Turning the Brashtide - updated
-  - description added
-  - reward choices: +3
-- quest 26700 - The Damsel's (Bad) Luck - updated
-  - description added
-- quest 26701 - Flight to Brackenwall - updated
-  - description added
-- quest 27182 - The Hermit of Witch Hill - updated
-  - description added
-- quest 27183 - Marsh Frog Legs - updated
-  - description added
-  - reward items: +1
-  - reward choices: +2
-- quest 27186 - Jarl Needs a Blade - updated
-  - description added
-  - reward choices: +3
-- quest 27188 - What's Haunting Witch Hill? - updated
-  - description added
-- quest 27189 - The Witch's Bane - updated
-  - description added
-- quest 27244 - The Lost Report - updated
-  - description added
-- quest 27254 - The Black Shield - updated
-  - description added
-- quest 27255 - The Black Shield - updated
-  - description added
-- quest 27257 - The Black Shield - updated
-  - description added
-- quest 27259 - Suspicious Hoofprints - updated
-  - description added
-- quest 27261 - Questioning Reethe - updated
-  - description added
-  - reward choices: +2
-- quest 27293 - The Grimtotem Plot - updated
-  - description added
-- quest 27294 - More than Coincidence - updated
-  - description added
-  - reward choices: +2
-- quest 27295 - Seek Out Tabetha - updated
-  - description added
-- quest 27296 - Raze Direhorn Post! - updated
-  - description added
-- quest 27297 - Justice Dispensed - updated
-  - description added
-  - reward choices: +2
-- quest 27306 - Talk to Ogron - updated
-  - description added
-- quest 27347 - Corrosion Prevention - updated
-  - description added
-  - reward choices: +4
-- quest 27408 - Banner of the Stonemaul - updated
-  - description added
-- quest 27410 - Spirits of Stonemaul Hold - updated
-  - description added
-- quest 27413 - Catch a Dragon by the Tail - updated
-  - description added
-  - reward choices: +2
-- quest 27414 - Identifying the Brood - updated
-  - description added
-  - reward choices: +3
-- quest 27415 - The Brood of Onyxia - updated
-  - description added
-  - reward choices: +2
-- quest 27417 - The Brood of Onyxia - updated
-  - description added
-- quest 27418 - Challenge Overlord Mok'Morokk - updated
-  - description added
-  - reward choices: +3
-- quest 27692 - Princess Theradras - updated
-  - description added
-  - reward choices: +5
-- quest 27698 - Servants of Theradras - updated
-  - description added
-- quest 28554 - Warchief's Command: Dustwallow Marsh! - updated
-  - description added
-- quest 28688 - Warchief's Command: Northern Stranglethorn Vale! - updated
-  - description added
-- npc 698 - Bloodscalp Tiger - updated
-  - coordinates: 30 spawn points added in Northern Stranglethorn
-- npc 5391 - Galen Goodward - updated
-  - coordinates: 13 spawn points added in Swamp of Sorrows
-- npc 10802 - Hitah'ya the Keeper - updated
-  - coordinates: 6 spawn points added in The Hinterlands
+- quest 11495 - The Delicate Sound of Thunder - updated
+  - reward money removed (9g 40s)
+- quest 11572 - Return to Atuik - updated
+  - reward money removed (14g 10s)
+- quest 12481 - Adding Injury to Insult - updated
+  - reward money removed (9g 40s)
+- quest 24431 - Waterlogged Recipe - updated
+  - reward money removed (7g 40s)
+- quest 24557 - The Silver Covenant's Scheme - updated
+  - reward money removed (7g 40s)
+- quest 30130 - Herbal Remedies - updated
+  - reward choices: counts corrected
+- quest 30350 - Squirmy Delight - updated
+  - reward items: counts corrected
+- quest 30351 - Lotus Tea - updated
+  - reward items: counts corrected
+- npc 20427 - Veneratus the Many - updated
+  - coordinates: 15 spawn points added in Shadowmoon Valley
+- npc 21502 - Image of Warbringer Razuun - updated
+  - coordinates: 2 spawn points added in Shadowmoon Valley
 
 ## [0.2.246] - 2026-10-24
 

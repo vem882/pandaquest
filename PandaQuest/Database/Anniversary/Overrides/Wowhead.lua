@@ -768,6 +768,57 @@ ns.Overrides.wowhead = {
                 "to distribute freely to your allegiance. Everyone must know about this threat!",
             rewardMoney = 7000,
         },
+        [114] = {
+            description = "Take this invisibility liquor to young Maybell. It should last long enough for " ..
+                "her to visit Tommy Joe.",
+            rewardItems = {{118, 5}},
+        },
+        [115] = {
+            description = "The Blackrock orcs enlisted shadowcasters to aid their attacks in Redridge, " ..
+                "and they have brought with them devices of dark power-- midnight orbs. These orbs have " ..
+                "struck telling blows against Redridge's defenders, and it's imperative we remove the " ..
+                "demon-tainted items from the conflict.\n\nFind and deliver to me midnight orbs from " ..
+                "slain Blackrock shadowcasters. I will then have them disposed of, for this world would " ..
+                "be a better place without them!",
+            rewardMoney = 1500,
+        },
+        [116] = {
+            description = "I find myself in quite a pinch here, <name>. The bottles are close to running " ..
+                "dry. The latest booze shipment is long overdue. The orc invasion has been " ..
+                "hell.\n\nPerhaps you can go to work for me?\n\nI need you to pick up a keg of " ..
+                "Thunderbrew Lager from Grimbooze Thunderbrew in the Westfall hills, a cask of Merlot " ..
+                "from Stormwind, a bottle of Moonshine from Darkshire and a skin of Sweet Rum from " ..
+                "Goldshire. Bring those back to me and I will see to it you are rewarded.",
+            rewardItems = {{1270, 1}, {10456, 1}},
+        },
+        [117] = {
+            description = "Hurry, my friend, move with haste In order for our rich lager to taste More " ..
+                "like beer and less like stew, Hops are needed to make the brew.",
+            rewardItems = {{1262, 1}},
+        },
+        [118] = {
+            description = "I've been using so much iron keeping the Stormwind Guards outfitted, I don't " ..
+                "have enough to supply the stable's horses with shoes!\n\nTake this note to Blacksmith " ..
+                "Argus in Goldshire. It explains to him my problem and requests a shipment of horseshoes.",
+        },
+        [119] = {
+            description = "Ok, I'll give him his 50 horseshoes...\n\nHere they are, all boxed up and " ..
+                "ready to go! Tell Verner it was a pleasure doing business, and be sure he reads the note " ..
+                "attached to this crate!",
+            rewardMoney = 500,
+        },
+        [120] = {
+            description = "These are trying times, <class>. The township is under constant siege. Without " ..
+                "reinforcements, we will certainly face defeat. The message I now entrust to you is of " ..
+                "utmost importance. Get this report to General Marcus Jonathan of Stormwind immediately. " ..
+                "Once your delivery is made, return to me at once with any news, be it good or " ..
+                "bad.\n\nNow make haste!",
+        },
+        [121] = {
+            description = "While I wait for a response from the King I want you to carry this letter to " ..
+                "Magistrate Solomon.\n\nDismissed, <class>!",
+            rewardMoney = 150,
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
@@ -2676,6 +2727,180 @@ ns.Overrides.wowhead = {
                 "and power. You must save these prisoners before such an atrocity can come to pass. As " ..
                 "proof of deed, bring me the unused axe of the executioner. It must not have a drop of " ..
                 "blood on its blade!",
+        },
+        [10885] = {
+            description = "Four trials you must pass before you are deemed worthy by the naaru.\n\nThe " ..
+                "trial of strength is divided in two. You must destroy the leader of the Coilfang " ..
+                "Steamvaults, Warlord Kalithresh, and bring me his trident. Slay the extra-planar being " ..
+                "known as Murmur, in the Shadow Labyrinth of Auchindoun, and bring me his essence.\n\nDo " ..
+                "this and you will have passed the trial of strength.",
+        },
+        [10886] = {
+            description = "Four trials you must pass before you are deemed worthy by the naaru.\n\nIn our " ..
+                "travels we have encountered many dangerous beings. Some of these beings we incarcerated " ..
+                "and placed in what is now known as the Arcatraz of Tempest Keep.\n\nThere is one " ..
+                "prisoner, however, that is a victim of circumstance. A stowaway who was in the wrong " ..
+                "naaru vessel at the wrong time.\n\nVenture to the Arcatraz and rescue the gnome, " ..
+                "Millhouse Manastorm. Ensure his survival.",
+        },
+        [10888] = {
+            description = "Four trials you must pass before you are deemed worthy by the naaru.\n\nOnly " ..
+                "one obstacle remains, mortal. Gather an army and travel to the lair of Magtheridon, deep " ..
+                "inside Hellfire Citadel. Battle your way to the heart of the chamber and destroy the " ..
+                "foul corrupter!",
+            rewardItems = {{31746, 1}},
+            rewardMoney = 132000,
+        },
+        [10897] = {
+            description = "As you know, plants have properties that allow alchemists to re-energize and " ..
+                "reinvigorate others through potions.\n\nMy familiarity with the plants of Outland allows " ..
+                "me to teach alchemists how to make the most out of them. If you're interested in " ..
+                "expanding your knowledge of potions, I have but one task to ask of you.\n\nHigh Botanist " ..
+                "Freywinn in Tempest Keep is rumored to have written a comprehensive botany guide. Bring " ..
+                "it to me along with samples of your work and I'll teach you the knowledge you seek.",
+        },
+        [10899] = {
+            description = "Any alchemist will tell you that matter is malleable, any substance can be " ..
+                "transformed into another - but nothing is really created or destroyed.\n\nA true master " ..
+                "of transmutation can learn to overcome this limitation - and I can teach you how to " ..
+                "obtain this mastery!\n\nAs a prospective transmuter you're undoubtedly familiar with " ..
+                "primal might - the combination of the material representation of all primal forces. Show " ..
+                "me proof of your transmuting prowess and I will share my knowledge with you.",
+        },
+        [10901] = {
+            description = "Bring me the elemental signets that the cudgel requires!\n\nThe earthen signet " ..
+                "is held by Gruul the Dragonkiller. Gruul can be found inside his lair in the Blade's " ..
+                "Edge Mountains.\n\nThe second signet is the blazing heart of a creature known as " ..
+                "Nightbane. This mythical beast is said to reside in the hallowed halls of the prophet, " ..
+                "Medivh.\n\nMake haste!",
+            rewardMoney = 132000,
+        },
+        [10902] = {
+            description = "I've devoted my life to perfecting my elixirs. Despite my success, I haven't " ..
+                "been able to create an elixir of eternal life.\n\nI think I know the reagent I'm " ..
+                "missing. I've heard of a place called the Caverns of Time in Azeroth where intruders " ..
+                "known as rift lords and rift keepers phase in and out of the timeline.\n\nThis intrusive " ..
+                "time-shifting creates tears in time itself, twisting it infinitely into crystallized " ..
+                "essences. Bring these to me along with samples of your work and I'll teach you all I " ..
+                "know.",
+        },
+        [10905] = {
+            description = "My knowledge of alchemy is vast. It is, however, general in nature. If you " ..
+                "wish to specialize, you will have to find others who have narrower fields of " ..
+                "study.\n\nIf you wish to specialize in potion creation, I would recommend that you seek " ..
+                "the help of Lauranna Thar'well of the Cenarion Expedition.\n\nHer knowledge of plants " ..
+                "will allow you to make the most of your raw materials. Look for her in Zangarmarsh and " ..
+                "tell her I sent you to her.",
+        },
+        [10906] = {
+            description = "My knowledge of alchemy is vast. It is, however, general in nature. If you " ..
+                "wish to specialize, you will have to find others who have narrower fields of " ..
+                "study.\n\nIf you wish to specialize in elixir creation, I would recommend that you seek " ..
+                "the help of the arakkoa known as Lorokeem.\n\nHis knowledge of elixirs is unmatched, yet " ..
+                "he squanders his skill pursuing an elixir of eternal life. Find him and see what he can " ..
+                "teach you.",
+        },
+        [10907] = {
+            description = "My knowledge of alchemy is vast. It is, however, general in nature. If you " ..
+                "wish to specialize, you will have to find others who have narrower fields of " ..
+                "study.\n\nIf you wish to specialize in transmutation, I would recommend that you seek " ..
+                "the help of the ethereal known as Zarevhi. He resides in the Stormspire in " ..
+                "Netherstorm.\n\nHis mastery of transmutation is... well, outlandish! See what you can " ..
+                "learn from him, but beware - ethereals drive a hard bargain.",
+        },
+        [10938] = {
+            description = "Now that you have gathered all of the Blessings cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{31856, 1}},
+        },
+        [10939] = {
+            description = "Now that you have gathered all of the Storms cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{31857, 1}},
+        },
+        [10940] = {
+            description = "Now that you have gathered all of the Furies cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{31858, 1}},
+        },
+        [10941] = {
+            description = "Now that you have gathered all of the Lunacy cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{31859, 1}},
+        },
+        [10944] = {
+            description = "Thanks again, <name>. I recognize your name. Akama has entrusted you with his " ..
+                "plans and so I will trust you as well.\n\nThe naga discovered I was working against " ..
+                "Illidan and tried to get me to speak by torturing me. I did not tell them a thing - " ..
+                "Akama himself taught me to master pain through meditation.\n\nIllidan asked the naga to " ..
+                "bring me to him. He would have seen right through my flesh and into my soul's deepest " ..
+                "secrets.\n\nAkama must be warned. Our plans are in jeopardy!",
+            rewardMoney = 88000,
+        },
+        [10946] = {
+            description = "Olum's sacrifice was tremendous. I would never have asked him to give up his " ..
+                "life myself. But it is done.\n\nIf we're to lure Illidan back into a false sense of " ..
+                "security, we need to do his bidding - at least for now.\n\nI command a vast army of " ..
+                "Ashtongue, but - aside from the Deathsworn - none can be trusted.\n\nYou are to perform " ..
+                "the deed that Illidan demands. Take this cowl; it is magical in nature. You will appear " ..
+                "to be one of my men to any who see you slaying Kael's phoenix, Al'ar.",
+            rewardMoney = 132000,
+        },
+        [10947] = {
+            description = "Illidan's attention is now on Kael'thas, thanks to you. The time has come to " ..
+                "make our move.\n\nI've had a vision of an artifact that will aid us in our final " ..
+                "struggle - the phylactery of a lich known as Winterchill. Unfortunately its power was " ..
+                "lost forever after his defeat in the Battle of Mount Hyjal.\n\nThere might be a way to " ..
+                "retrieve this artifact, however. Legend speaks of a place in Azeroth guarded by bronze " ..
+                "dragons... a place where past and present meet. It is there you will find what we seek.",
+        },
+        [10948] = {
+            description = "You might wonder why I go to such lengths to hide my intentions. Why not throw " ..
+                "my lot in openly with the naaru?\n\nMy very essence - my soul - is held prisoner inside " ..
+                "the Black Temple. Illidan could destroy me any moment... until now! This phylactery will " ..
+                "allow me to regain control of my soul.\n\nThe time has come, <name>. I'll lead Maiev and " ..
+                "my Deathsworn to Illidan's doorstep.\n\nSpeak to A'dal and and tell him of our plan. If " ..
+                "we strike together we'll break through Illidan's defenses.",
+        },
+        [10949] = {
+            description = "< A'dal shows you an image of a naaru outside of the Black Temple, fighting " ..
+                "alongside draenei vindicators and blood elf magisters. You immediately understand that " ..
+                "this is the distraction Akama is waiting for.>",
+            rewardMoney = 44000,
+        },
+        [10957] = {
+            description = "When Illidan obtained the Broken's allegiance, Akama was our wisest. He knew " ..
+                "that openly opposing the Betrayer would lead to the extinction of our race.\n\nInstead " ..
+                "he has plotted and schemed for this very moment under utmost secrecy. Failure would be " ..
+                "catastrophic... not just for Akama, not just for the Broken, but for all of Outland. No " ..
+                "one this close to Illidan has ever been able to deliver such a terrible blow to " ..
+                "him.\n\nHelp Akama free his soul and he will grant you access to Illidan's sanctum.",
+        },
+        [10958] = {
+            description = "<As you look up at Xi'ri, your mind becomes focused and your will determined. " ..
+                "Your work here is not done; you must go inside the Black Temple and find Akama's " ..
+                "followers.>\n\n<Much depends on Akama's success.>",
+        },
+        [10959] = {
+            description = "With Illidan's lieutenants defeated, Akama will be able to force open the " ..
+                "doors to Illidan's sanctum. Be ready to bring your force inside as soon as Akama " ..
+                "does.\n\nWe still do not know what has become of Maiev, but we must make our move " ..
+                "without her.\n\nI hope your force is up to the task. Illidan will not be pleased to see " ..
+                "Akama.",
+            rewardItems = {{32757, 1}},
+            rewardMoney = 132000,
         },
     },
     npcs = {
