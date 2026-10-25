@@ -879,9 +879,69 @@ ns.Overrides.wowhead = {
                 "then come back here and I'll give you a free lunch! Parker patrols the stretch of road " ..
                 "leading to Duskwood.",
         },
+        [130] = {
+            description = "Before you go back to Darcy, can you bring her some flowers for me? You can " ..
+                "get them at the herbalist shop back in Lakeshire, at the west end of town.\n\nBut when " ..
+                "you get the flowers...don't tell the herbalist, Martie, whom they're from, or whom " ..
+                "they're for...",
+        },
+        [131] = {
+            description = "Here is your bouquet. I chose Daffodils for you. They're my favorite!",
+            rewardItems = {{1326, 10}},
+        },
+        [132] = {
+            description = "What I am about to tell you could cost me my life. The Defias gang is up to " ..
+                "something big. Last I heard they were working in conjunction with various gnolls, " ..
+                "kobolds and even goblins.\n\nTake this note to Stoutmantle. It explains as much as I " ..
+                "know on the subject.",
+        },
+        [133] = {
+            description = "I live so far from the protection of town, it's a wonder the ghouls and the " ..
+                "walking dead haven't eaten me! In fact, just yesterday a pack of Bone Chewers was " ..
+                "pounding on the walls of my house!\n\nI want to make an effigy - a kind of \"scarecrow\" " ..
+                "for Ghouls. To do that I need some Ghoul Ribs. You can get them from Flesh Eaters, Bone " ..
+                "Chewers, Brain Eaters, Rotted Ones and Plague Spreaders.\n\nGet the ribs for me, and I " ..
+                "will repay you with some coin.",
+            rewardMoney = 2200,
+        },
+        [134] = {
+            description = "A few weeks ago I was picking herbs far from my house, and a band of ogres " ..
+                "attacked me! I ran, and I was forced to leave behind a crate of precious tools and " ..
+                "herbs.\n\nAfter they chased me off, the ogres swaggered back to the ogre mound in " ..
+                "southern Duskwood. I'm sure my crate is somewhere near the mound.\n\nPlease, <name>, " ..
+                "retrieve this crate for me for I miss it sorely.",
+            rewardMoney = 1400,
+        },
+        [135] = {
+            description = "I wonder what Wiley meant when he mentioned the Stonemasons. Perhaps that was " ..
+                "a slip of tongue. Could the Defias gang be related to the Stonemasons? Only one man " ..
+                "would know for sure: Mathias Shaw, head of SI:7. Show him Wiley's Note and see if he has " ..
+                "anything to add to this growing mystery. If you have trouble finding Shaw, check the " ..
+                "Barracks in Old Town.",
+        },
+        [136] = {
+            description = "If ye be readin' this, it means that Ol' Captain Sanders is in a watery grave. " ..
+                "So my treasure is yours now, ye jest need to follow the clues.\n\nFirst ye need to find " ..
+                "me footlocker. It's probably half-buried in sand by now, along the Western Coast of " ..
+                "Westfall near the shipwreck. There be lots of shipwrecks but only one rusty anchor on " ..
+                "the coast. Find that anchor and you'll find me locker! Look in there for the next clue.",
+        },
+        [138] = {
+            description = "The clue to the treasure reads: Good work, matey! Now ye need to head due " ..
+                "east. East up the bluffs, east to the road. Look for the ol' chimney ruins near the side " ..
+                "of the road. There you'll find an old barrel with your next clue.",
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
+        },
+        [4243] = {
+            description = "Unfortunately, something's happened to one of my greatest inventions. You've " ..
+                "seen mechanical squirrels, yes? Well, to get closer to the apes of Un'Goro Crater, I " ..
+                "created a mechanical ape to blend in with their kind--I call her A-Me 01.\n\nShe has " ..
+                "scrying gems for eyes so I could see everything she saw. She made it to Fungal Rock--the " ..
+                "apes' lair--just east of here, and that's when I lost contact. The last thing I saw was " ..
+                "one of their alpha males rushing up to say hello to her!\n\nCan you help me find her?",
         },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
@@ -3311,6 +3371,73 @@ ns.Overrides.wowhead = {
             rewardMoney = 44000,
         },
         [11031] = {rewardChoices = {{29290, 1}, {29279, 1}, {29283, 1}}},
+        [11032] = {rewardChoices = {{29290, 1}, {29287, 1}, {29283, 1}}},
+        [11033] = {rewardChoices = {{29290, 1}, {29279, 1}, {29287, 1}}},
+        [11034] = {rewardChoices = {{29283, 1}, {29279, 1}, {29287, 1}}},
+        [11035] = {
+            description = "On the northeast edge of this island exists a dock used for the packaging and " ..
+                "transport of Netherwing crystals and relics. Dragonmaw Transporters transport the goods " ..
+                "from the dock to Dragonmaw Fortress while Dragonmaw Ascendants guard the ground from any " ..
+                "would-be attackers.\n\nThis leaves one opening for you to make a strike at the " ..
+                "Dragonmaw: The Dragonmaw Skyway.\n\nFly to the shattered islands of the Dragonmaw Skyway " ..
+                "and ambush the transporters that use the route. Recover our stolen relics!",
+            rewardMoney = 44000,
+        },
+        [11041] = {
+            description = "In the name of our great master... For the glory of Illidan!\n\nBy order of " ..
+                "Overlord Mor'ghor, the great plateau of Netherwing Ledge is to be secured. With all " ..
+                "Netherwing drakes captured or forced off of the land, rock flayers are running rampant " ..
+                "and threatening crystal harvesting operations.\n\nDestroy them all, their den mother and " ..
+                "her consort, Arvoar.\n\nMor'ghor commands it!\n\n<It would appear that this orc failed " ..
+                "to take the plateau. It is time to prove your worth to Mor'ghor!>",
+            rewardChoices = {{32866, 1}, {32867, 1}, {32865, 1}, {32868, 1}},
+            rewardMoney = 132000,
+        },
+        [11049] = {
+            description = "Should you discover any Netherwing eggs while exploring, bring them to " ..
+                "me.\n\nBe warned, a Netherwing egg is a rare discovery. Do not become frustrated if you " ..
+                "cannot locate one. These Dragonmaw have been very thorough in collecting most of them " ..
+                "and shipping them off to parts unknown.\n\nEggs might be found on creatures of the " ..
+                "island, near crystal formations, in the mines, or even inside a nethercite node or " ..
+                "netherdust bush.\n\nKeep a low profile. We don't need Mor'ghor catching wind of your " ..
+                "actions.",
+            rewardMoney = 88000,
+        },
+        [11051] = {
+            description = "If we know the demons, and we do because we've studied them extensively, " ..
+                "they're fast at work repairing any damage that has been done to their precious " ..
+                "transporter.\n\nSo, if you want a chance at another darkrune, take our banishing crystal " ..
+                "back out there and eliminate more demons. Besides, you want to help us to lessen the " ..
+                "threat that the demons pose, yes?\n\nWe said \"chance\" because the process we use " ..
+                "yields mixed results. You might get a darkrune, or you might get something else entirely.",
+            rewardItems = {{32777, 1}, {32569, 15}},
+            rewardMoney = 44000,
+        },
+        [11052] = {
+            description = "< Akama inserts the crystal into the medallion in his hand.>\n\nI am not as " ..
+                "strong as I once was, <name>. Being so close to evil itself all these years - I do not " ..
+                "know if I can trust myself with an artifact as powerful as this.\n\nTake this as my " ..
+                "promise to you that when the time comes and you face Illidan, I will be on your side. " ..
+                "Take it to the one being we know we can trust with its power. Take the medallion to " ..
+                "A'dal in Shattrath City.",
+            rewardChoices = {{30932, 1}, {30999, 1}, {31000, 1}, {30943, 1}, {30984, 1}, {31417, 1}},
+        },
+        [11053] = {
+            description = "Rare it is that a peon survives for as long as you have. Rarer still is when a " ..
+                "peon rises from the dregs to attain a new rank.\n\n<Varkule claps.>\n\nThe Overlord has " ..
+                "called for you, grunt. A new rank awaits, no doubt.",
+            rewardItems = {{32694, 1}},
+            rewardMoney = 44000,
+        },
+        [11054] = {
+            description = "So you're the new overseer, eh? Well there's one thing any good overseer needs " ..
+                "and that's the proper disciplinary weapon. Before you can go out there and knock some " ..
+                "sense into these peons you need to have your \"piece.\" Each overseer has to gather the " ..
+                "materials required to make their own \"piece\" and you'll be no different.\n\nI'll need " ..
+                "knothide leather and the hardened hide of Tyrantus. You'll find Tyrantus in Eco-Dome " ..
+                "Farfield, located in the northern reaches of Netherstorm.",
+            rewardMoney = 44000,
+        },
     },
     npcs = {
         [15241] = {
