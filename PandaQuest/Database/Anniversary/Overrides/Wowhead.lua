@@ -819,10 +819,80 @@ ns.Overrides.wowhead = {
                 "Magistrate Solomon.\n\nDismissed, <class>!",
             rewardMoney = 150,
         },
+        [122] = {
+            description = "I need some underbelly scales from black dragon whelps to pay for the shoes " ..
+                "Argus sent me from Goldshire. If you can get 6 of them for me, then I can pay Argus with " ..
+                "some... and have enough left to fashion something for you.\n\nBlack dragon whelps are " ..
+                "often flying around south of Lakeshire, but they like to wander. You might have to just " ..
+                "keep an eye out and hunt them when you see them.",
+            rewardChoices = {{6092, 1}, {1302, 1}},
+        },
+        [123] = {
+            description = "This note is a schedule with a list of days and times when a person -- " ..
+                "described only as \"The Collector\" -- will receive a shipment of gold from the mines in " ..
+                "Elwynn Forest.\n\nFrom the schedule, it looks as if the Collector resides near the " ..
+                "Brackwell Pumpkin Patch in eastern Elwynn.\n\nThis sounds important. You should report " ..
+                "it to Marshal Dughan in Goldshire.",
+            rewardMoney = 85,
+        },
+        [124] = {
+            description = "As if the attacking orcs weren't enough! Now I have gnoll brutes and mystics " ..
+                "prowling along the ridge north of my stable, taking my horses when they stray...\n\nIf " ..
+                "you can get rid of those gnolls, my horses and I would be very grateful.",
+            rewardMoney = 900,
+        },
+        [125] = {
+            description = "I could really use a hand here, <name>. With the town under siege, it's been " ..
+                "hard to get supplies. My tools were being delivered from Goldshire by wagon but the " ..
+                "bridge was blown out. We put the tools in a boat but the orcs hit it with a catapult. " ..
+                "Just my luck, my toolbox sank right to the bottom of the lake.\n\nRetrieve my toolbox, " ..
+                "<name>, and I'll make it worth your while.",
+            rewardItems = {{2313, 2}},
+        },
+        [126] = {
+            description = "<name>, the gnolls are still out there. I can hear their baying as they hunt " ..
+                "in the hills above Lakeshire. And one cry is louder than the rest - Yowler, their " ..
+                "leader.\n\nKill Yowler and send his pack scattering! Bring me his paw as proof.\n\nAnd " ..
+                "be careful, this gnoll is their leader for a reason. He is no Mongrel...",
+            rewardChoices = {{1319, 1}, {2910, 1}},
+        },
+        [127] = {
+            description = "Lake Everstill is famous for its spotted sunfish. There's always demand for " ..
+                "them...and I'm running low!\n\nBring me a batch of 10 and I'll barter well for them. If " ..
+                "you can't fish yourself, then...maybe you can get them off the murlocs!",
+            rewardItems = {{3663, 1}, {3680, 1}, {1322, 5}},
+            rewardMoney = 1000,
+        },
+        [128] = {
+            description = "The Blackrock Clan must be destroyed. The Enemy has invaded our lands. These " ..
+                "mountains fall under the sovereign right of the King of Stormwind. Our sources tell us " ..
+                "that the leaders of each unit within the Clan are known as Champions. You'll find them " ..
+                "in their encampment to the north, just west of the road to the Burning " ..
+                "Steppes.\n\nMagistrate Solomon wants these foul brutes dead. Slay 15 Blackrock Champions " ..
+                "and return to me.",
+            rewardMoney = 1800,
+        },
+        [129] = {
+            description = "Can you do me a favor? I've prepared a lunch for Guard Parker, but he's out on " ..
+                "patrol...he's a big, strong Stormwind guard who can defend himself, but it's much too " ..
+                "dangerous out there for a townsperson like me.\n\nSo if you deliver his lunch for me, " ..
+                "then come back here and I'll give you a free lunch! Parker patrols the stretch of road " ..
+                "leading to Duskwood.",
+        },
+        [1462] = {
+            objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
+            rewardItems = {{6635, 1}},
+        },
         [7865] = {rewardItems = {{19152, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
+        [9004] = {
+            description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
+                "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
+                "eyes shut.\n\nAs to your reward, I believe I have a few things that you'll really enjoy.",
+            rewardItems = {{22005, 1}, {22009, 1}},
+        },
         [9427] = {
             description = "I must ask that you finish what we've set in motion. Now that the demonic " ..
                 "influence has weakened you must take this cleansing vial and pour it at the very source " ..
@@ -2902,6 +2972,345 @@ ns.Overrides.wowhead = {
             rewardItems = {{32757, 1}},
             rewardMoney = 132000,
         },
+        [10969] = {
+            description = "It would seem that an outside force has taken an interest in the business " ..
+                "practices of the Consortium. Five Consortium dealers have gone missing in the past two " ..
+                "days. We have reason to believe the Ethereum are involved. If you are interested in " ..
+                "assisting, seek out Commander Ameer at the Protectorate Watch Post.\n\nYou will find the " ..
+                "Protectorate Watch Post directly east of here on the next island.",
+            rewardMoney = 4400,
+        },
+        [10970] = {
+            description = "We salvaged this prison orb on our last scouting mission into Ethereum " ..
+                "territory. We'd have never found it had it not been for the distress signal that it was " ..
+                "faintly emitting.\n\nWe think one of our own might be locked up in there but we have no " ..
+                "way of opening the orb up without harming whatever is inside.\n\nWhat we know about the " ..
+                "Ethereum is that any of their members could - at any given time - be carrying a key to " ..
+                "unlock an orb. Retrieve one and return so that we may uncover the mysteries of this orb.",
+            rewardMoney = 44000,
+        },
+        [10971] = {
+            description = "<Ameer holds up a tag.>\n\nI found this prisoner I.D. tag with the remains of " ..
+                "the fallen vanguard. I can only assume that all of their prisoners are tagged in the " ..
+                "same manner.\n\nI'm going to start cataloguing the tags in hopes of making sense of " ..
+                "their penal system. If in your adventures you find more Ethereum prison keys, you can " ..
+                "use them to open the Ethereum prisons at the Ethereum Staging Grounds - directly south " ..
+                "of here. Bring me back any and all I.D. tags that you find.",
+            rewardMoney = 44000,
+        },
+        [10972] = {
+            description = "I am in need of more I.D tags, <name>. What I've discovered thus far is that " ..
+                "this is not just a way to catalogue prisoners but it also documents locations!\n\nOnce " ..
+                "this code is broken we'll be able to pinpoint exactly where all of our allies are held " ..
+                "and free them with minimal hostile action received.",
+        },
+        [10973] = {
+            description = "I have cracked the code! Each tag is broken up into several segments. The " ..
+                "front side of the tag is always the same and states: \"A Thousand Worlds...\" I am " ..
+                "unsure as to the meaning of this phrase but it sounds insidious.\n\nOn the back side of " ..
+                "the tag are the vital statistics. The first set of runes indicates location and the " ..
+                "second indicates prisoner type. Furthermore, it would seem that the keys can be combined " ..
+                "to form a special key that accesses another prison type. Now I just need more keys...",
+            rewardMoney = 132000,
+        },
+        [10974] = {
+            description = "The Ethereum have a settlement on the northernmost shelf of Blade's Edge " ..
+                "Mountains known as Bash'ir's Landing. According to the key tablet, much larger versions " ..
+                "of the prisons are kept at Bash'ir's. It should also be noted that the Ethereum refer to " ..
+                "those prisons as stasis chambers.\n\nThe key tablet grants access to a very specific " ..
+                "stasis chamber at the landing known as Stasis Chamber Alpha. Take the key and " ..
+                "investigate.\n\nMy image will be awaiting your return at Bash'ir's Landing. Speak to me " ..
+                "there.",
+            rewardItems = {{32064, 1}},
+        },
+        [10975] = {rewardItems = {{29750, 1}}, rewardMoney = 44000},
+        [10976] = {
+            description = "What I must now know is what the Ethereum have held inside the Mana-Tombs of " ..
+                "Auchindoun.\n\nIn your battles against the beasts of the stasis chambers of Bash'ir you " ..
+                "may run across an item known as the Mark of the Nexus-King. Should you find such an " ..
+                "item, return it to me immediately! It is the final piece in crafting a key that will " ..
+                "allow access to the stasis chamber inside the Mana-Tombs.",
+            rewardMoney = 44000,
+        },
+        [10977] = {
+            description = "The Mark of the Nexus-King that you recovered has allowed me to forge a new " ..
+                "key for the stasis chambers found inside the Mana-Tombs.\n\nAccording to the glyphs on " ..
+                "the mark, two exist: one near the front and one near Nexus-Prince Shaffar. This key that " ..
+                "I am about to give you will open the stasis chamber near the front.\n\nI want you to go " ..
+                "to the Mana-Tombs of Auchindoun and open the Mana-Tombs Stasis Chamber.",
+            rewardItems = {{29434, 5}},
+            rewardMoney = 132000,
+        },
+        [10981] = {rewardItems = {{32079, 1}}},
+        [10982] = {rewardItems = {{32092, 1}}, rewardMoney = 132000},
+        [10983] = {
+            description = "Mog'dorg wise! Him send Grok to city, look for help. Bloodmaul clan need " ..
+                "help.\n\nMog'dorg say, send powerful little ones to him at Blade's Edge Mountains. Him " ..
+                "stand on tower at Circle of Blood. Mog'dorg wise!",
+            rewardMoney = 4400,
+        },
+        [10984] = {
+            description = "< V'eru 's voice fills your mind with crystalline tone and clarity.>\n\nThere " ..
+                "is an ogre down in the Lower City, pleading for the assistance of passersby. They have " ..
+                "all turned a deaf ear upon his plight.\n\nDo you think you might aid him?\n\nHis name is " ..
+                "Grok, and he is sitting near the merchants to the southeast.\n\nThank you, <name>.",
+        },
+        [10985] = {
+            description = "< Xi'ri pulses with lights as the Aldor and Scryer forces around him respond " ..
+                "to his orders. Xi'ri 's army is ready to push Illidan's forces back and create a " ..
+                "distraction for Akama. The naaru awaits your request to begin the attack.>",
+            rewardItems = {{32649, 1}},
+        },
+        [10989] = {
+            description = "Mog'dorg the Wizened waits for you at top of da tower. He tells me to look for " ..
+                "a <race> <class> just like you. You go speak with him about smart things.\n\nGo now, but " ..
+                "don't tell no one. It's a secret!",
+        },
+        [10995] = {
+            description = "To the east, at the terminus of Dragons' End, is the Cursed Hollow. Therein, " ..
+                "Grulloc, son of Gruul, plots his dimwitted schemes.\n\nI heard that one of his " ..
+                "possessions was stolen from him through trickery. Was that you? Unfortunate that he was " ..
+                "not slain in the process.\n\nIf we are to regain our freedom, I would have you take his " ..
+                "most prized possession, a dragon skull from when he rejoiced in his father's slaying of " ..
+                "the Black Dragonflight. The only way you'll get the skull is to vanquish him.",
+            rewardMoney = 88000,
+        },
+        [10996] = {
+            description = "On the Razor Ridge, above and to the southeast, Maggoc patrols. His father " ..
+                "assigned him as the warden of the eastern mountain range, and he revels in terrorizing " ..
+                "any creature that gets in his way.\n\nAs a son of Gruul, he must be done away with if my " ..
+                "clan is to survive. That's where you come in.\n\nMaggoc carries a treasure chest with " ..
+                "him at all times. Prove to me that he has been slain by bringing me his precious chest. " ..
+                "Feel free to keep whatever you find within it.",
+            rewardMoney = 88000,
+        },
+        [10997] = {
+            description = "Are you familiar with Shattrath City, <class>? Above it to the northwest is a " ..
+                "place called the Barrier Hills, which you can only get to upon a flying mount.\n\nOne of " ..
+                "Gruul's sons, Slaag, exiled himself and took control of the Gordunni ogres that reside " ..
+                "there. Even at such a distance, we cannot afford to leave him in peace, lest he return " ..
+                "when the rest of his brothers have been slain.\n\n<name>, you must travel there, and " ..
+                "bring back his standard as proof that he has been dealt with.",
+            rewardMoney = 88000,
+        },
+        [10998] = {
+            description = "There is one more gronn to be slain: Skulloc Soulgrinder. He keeps himself " ..
+                "hidden away, but there is a way to coax him forth.\n\nHe was trained by an ogre warlock " ..
+                "known as Vim'gol the Vile, whose grimoire you must retrieve!\n\nVim'gol must be summoned " ..
+                "by yourself, and four others, each standing within a different fire ring at his circle. " ..
+                "Find Vim'gol's Circle in the mountains, to the northeast, near the Broken Wilds.\n\nAnd, " ..
+                "<name>, if you hear Vim'gol talk about growing bigger, get back to the fire rings!",
+            rewardMoney = 88000,
+        },
+        [11000] = {
+            description = "The grimoire is the key to Skulloc's downfall.\n\nRead aloud from the book at " ..
+                "Soulgrinder's Barrow to initiate the ritual. An object known as the Soulgrinder will " ..
+                "appear, as well as Skulloc's ghostly victims, who will try to destroy it. You must keep " ..
+                "them from doing so long enough to force Skulloc fully into the world.\n\nFind the barrow " ..
+                "by heading north through the Daggermaw Canyon on the other side of the Circle of Blood. " ..
+                "It is on the right side before Gruul's Lair.\n\nBring back Skulloc's soul.",
+            rewardMoney = 132000,
+        },
+        [11002] = {
+            description = "The source of Illidan Stormrage's fel orc army has been vanquished. The " ..
+                "manufactory halts production of its grim product - at least for now. All that remains " ..
+                "are a few trinkets and this severed head - a fitting trophy for a hero of the " ..
+                "Alliance.\n\nReturn Magtheridon's head to Danath Trollbane at Honor Hold.",
+            rewardChoices = {{28792, 1}, {28793, 1}, {28790, 1}, {28791, 1}},
+            rewardMoney = 132000,
+        },
+        [11003] = {
+            description = "The source of Illidan Stormrage's fel orc army has been vanquished. The " ..
+                "manufactory halts production of its grim product - at least for now. All that remains " ..
+                "are a few trinkets and this severed head - a fitting trophy for a hero of the " ..
+                "Horde.\n\nReturn Magtheridon's head to Nazgrel at Thrallmar.",
+            rewardChoices = {{28792, 1}, {28793, 1}, {28790, 1}, {28791, 1}},
+            rewardMoney = 132000,
+        },
+        [11004] = {
+            description = "Sky Commander Adaris was seriously injured during a Skettis incursion. He's " ..
+                "been in and out of consciousness since.\n\nI fear he has succumbed to a feverish " ..
+                "delirium. During brief lucid moments he demands that I prepare an elixir made from " ..
+                "shadow dust carried by the arakkoa. He seems to believe it will allow him to see into a " ..
+                "\"world of shadows\" where the arakkoa's true leaders dwell.\n\nI do not believe this " ..
+                "nonsense for a second, but I fear he won't rest until I obtain such an elixir. Will you " ..
+                "help?",
+            rewardItems = {{32446, 1}},
+            rewardMoney = 44000,
+        },
+        [11005] = {
+            description = "Thank you for paying heed to my fevered rants. All along we had been trying to " ..
+                "identify and destroy the Skettis chain of command; we had learned of three clerics known " ..
+                "as the talonpriests, but we'd never seen them with our own two eyes. Now we know " ..
+                "why.\n\nTalk to Severin to obtain more of the elixir he discovered. Use the elixir to " ..
+                "find and kill the three talonpriests: Ishaal, Skizzik and Zellek. They're rumored to " ..
+                "dwell in Veil Ala'rak, near the eastern shore of Blackwind Lake.",
+        },
+        [11006] = {rewardItems = {{32446, 1}}},
+        [11007] = {
+            description = "The air around you hums - a gentle hum. The naaru are aware of your victory. " ..
+                "Perhaps they are the reason you were compelled to pick up this sphere from the " ..
+                "still-twitching remains of Kael'thas Sunstrider. What secrets could it hold?\n\nPerhaps " ..
+                "A'dal in Shattrath City could make sense of the item.",
+            rewardChoices = {{30007, 1}, {30015, 1}, {30017, 1}, {30018, 1}},
+            rewardMoney = 132000,
+            rewardXP = 19000,
+        },
+        [11008] = {
+            description = "You think you have what it takes to be part of the Skyguard? We'll have to see " ..
+                "how you handle yerself in the air.\n\nThe arakkoa are breeding a gargantuan variety of " ..
+                "their attack pets and are using it against our scouts. I want you to take these blasting " ..
+                "charges and use them to destroy hatcheries above the arakkoa's dwellings. Avoid the " ..
+                "monstrous kaliri guarding the hatcheries. They'll knock you off your mount before you " ..
+                "know what hit you.",
+            rewardMoney = 44000,
+        },
+        [11009] = {
+            description = "Now that you have delivered us from bondage, we can begin the process of " ..
+                "reunifying the clans. This will take some time; old grudges are difficult to " ..
+                "overcome.\n\nBut more pressing, you must go to Ogri'la in the heavens above to the west. " ..
+                "You must defend it, and us, from those forces above that the gronn used to protect us " ..
+                "from: ethereals, demons, and worst of all, the black dragonflight.\n\nWhen you find ogre " ..
+                "heaven, seek out the wisdom of Chu'a'lor on how best to proceed.",
+        },
+        [11010] = {
+            description = "You have a flying mount... so what! You think you have what it takes to use it " ..
+                "properly?\n\nForge Camp: Wrath and Forge Camp: Terror, to the north and south, are a " ..
+                "major pain in my backside, as well as being a threat to peaceful Ogri'la. With all of " ..
+                "those fel cannons shooting down the Skyguard left and right, we can't get through there " ..
+                "to take care of business.\n\nYou want to prove yourself? Take these bombs and knock out " ..
+                "their ammo stacks. Just don't let them shoot you down, too!",
+            rewardMoney = 44000,
+        },
+        [11011] = {
+            description = "Your defeat of Anzu, the raven god, is truly a remarkable accomplishment. He " ..
+                "may not abandon his quest to return to Outland, I fear.\n\nAs long as he has followers " ..
+                "here, he will attempt to rise again. Keep the essence-infused moonstone with you in case " ..
+                "we have not heard the last of Anzu.",
+            rewardItems = {{32449, 1}},
+        },
+        [11013] = {
+            description = "Netherwing Ledge... What was once a bastion of sanctuary for the Netherwing is " ..
+                "now home to the Dragonmaw. While the orcs may have control of our territory, our magic " ..
+                "there is still strong. Strong enough to cloak your true identity and allow you to " ..
+                "infiltrate the ranks of Dragonmaw.\n\nI have prepared this letter for you to present to " ..
+                "their leader, Overlord Mor'ghor. Fly headlong into the maw of our enemy and seek out " ..
+                "Dragonmaw Base Camp to start your new life as a fel orc of Illidan Stormrage.",
+        },
+        [11014] = {
+            description = "<Mor'ghor crumples up the service letter and tosses it aside.>\n\nAlright " ..
+                "grunt, first things first. If you're gonna join my beloved Dragonmaw army, you'll need " ..
+                "to work. Everyone works up here on the ledge. Get a job and don't screw it up and I'll " ..
+                "see if there might be something more interesting for you to do later.\n\nGo talk to " ..
+                "Taskmaster Varkule Dragonbreath. He's standin' in the middle of town. He'll assess your " ..
+                "skills and assign work as he sees fit.\n\nNow get out of my face!",
+        },
+        [11015] = {
+            description = "No good at nothin'? That's fine. Even lunkheads like you can be used around " ..
+                "here. Just find creatures on the ledge and kill 'em. Sometimes they'll have nether " ..
+                "crystals on their carcasses. Gather those and bring 'em back to me and I'll consider " ..
+                "your work order for the day complete.",
+            rewardMoney = 44000,
+        },
+        [11016] = {
+            description = "A skinner, eh? Well you'll find plenty to skin here! You gotta search for " ..
+                "flayers around crystal formations. Take 'em down and take their hides. Sometimes they'll " ..
+                "have a hide worth keepin'. Bring those to me.",
+            rewardMoney = 44000,
+        },
+        [11017] = {
+            description = "A flower picker?! Hilarious... Unfortunately, our mages and shaman need your " ..
+                "services. The netherdust bushes that grow on this ledge have special pollen that is " ..
+                "apparently very useful in their magical dealings. Bring me that stuff and I'll consider " ..
+                "your work order complete.",
+            rewardMoney = 44000,
+        },
+        [11018] = {
+            description = "A miner!\n\n<Varkule salutes.>\n\nAn orc after my own heart! That's how " ..
+                "Varkule got his start - minin'! There ain't nothin' better than getting down and dirty " ..
+                "in the mines, is there?\n\nNow get out there and find those nethercite deposits. Strip " ..
+                "'em for all their worth and bring me back the ore.",
+            rewardMoney = 44000,
+        },
+        [11020] = {
+            description = "The Dragonmaw have peons stationed at nearly every crystal formation up here. " ..
+                "While the outright slaying of them would draw far too much unwanted attention to you, " ..
+                "there is a way that we can thin their numbers and remain below the suspicious eyes of " ..
+                "Mor'ghor.\n\nVenture into the wilds of Shadowmoon Valley and slay the tainted wildlife. " ..
+                "Take from them their corrupt fel glands. Use those fel glands with this mutton that I'll " ..
+                "give you near the peons. They'll take one bite and fall deathly ill!",
+            rewardMoney = 44000,
+        },
+        [11021] = {
+            description = "This mysterious tome was on Talonpriest Ishaal's body. It contains arcane " ..
+                "symbols and charts of celestial bodies beyond your comprehension.\n\nAll writing is in a " ..
+                "language you don't understand; likely an ancient version of the arakkoa written tongue. " ..
+                "Perhaps you should bring this to Sky Commander Adaris.",
+        },
+        [11022] = {
+            description = "<King/Queen> <name>! You speak with Mog'dorg the Wizened before you leave and " ..
+                "go to Ogri'la!",
+        },
+        [11023] = {
+            description = "We're still having problems with those flak cannons, <name>.\n\nDon't get me " ..
+                "wrong -- I think that you did an outstanding job the last time out -- but, that doesn't " ..
+                "change the fact that those damned demons seem to be replenishing their ammo supplies " ..
+                "faster than we can knock them out. And that means we're having a hell of a time getting " ..
+                "our people through there, not to mention the risk those demons pose to Ogri'la.\n\nWhat " ..
+                "do you say? Want to take another shot at it?",
+            rewardItems = {{32569, 15}},
+            rewardMoney = 44000,
+        },
+        [11024] = {
+            description = "There is an arakkoa in Lower City by the name of Rilak... He can be trusted. " ..
+                "Take the book... to him.\n\n<Adaris drifts into unconsciousness as he returns the book " ..
+                "to you.>",
+        },
+        [11025] = {
+            description = "When prepared correctly, the crystals of the mountains exhibit strange powers, " ..
+                "such as the clarity of mind that we have found here in Ogri'la.\n\nAll of the creatures " ..
+                "atop the mountains covet the crystal shards and use them to further their own goals. An " ..
+                "economy has even sprung up around them.\n\nTo assist us, you must first learn about the " ..
+                "Apexis shards. Bring me some. In addition to the creatures here having them, they can " ..
+                "sometimes be found where the flayers dig at the larger crystals.",
+            rewardMoney = 44000,
+        },
+        [11026] = {
+            description = "You've arrived at the perfect time, friend! We are in need of assistance. In " ..
+                "return, you will receive something very rare, which will help us both in the " ..
+                "end.\n\nWe're not a violent ogre any longer, but the demons nearby threaten to overrun " ..
+                "us and the Skyguard. The problem with demons is that, once killed, they come right back " ..
+                "in new bodies!\n\nBut, if you use this crystal to summon a banishing portal, when they " ..
+                "die near it, their essences will be drawn in and banished back from whence they came!",
+            rewardItems = {{32643, 1}},
+            rewardMoney = 44000,
+        },
+        [11028] = {
+            description = "This almanac presages the return of Terokk, the most powerful and terrible " ..
+                "Skettis king in arakkoa history.\n\nI always believed this to be the mere legend, " ..
+                "<name>. The return of the talonpriests and your recovery of this tome indicate " ..
+                "otherwise.\n\nWith each day, Terokk comes closer to returning to full strength. Your " ..
+                "only chance is to bring him to our world prematurely. Return to Skettis and speak to " ..
+                "Adaris about this. Let us hope he has the wisdom to do the right thing.",
+        },
+        [11029] = {
+            description = "Open the package, <name>. It is a disguise. It doesn't look very convincing, " ..
+                "does it?\n\nI craft them for ethereal smugglers in search of rare books. There is an " ..
+                "arakkoa scribe who dwells in the central island in Skettis, Terokk's Rest; his name is " ..
+                "Sahaak. He is old and nearly blind.\n\nUse the disguise to speak with him and obtain the " ..
+                "book known as the Adversarial Bloodlines. Be careful, <name>. The disguise won't fool " ..
+                "the other arakkoa.",
+        },
+        [11030] = {
+            description = "<class>, we've got a problem -- we have lots of sons. And ever since the " ..
+                "Skyguard moved in nearby, all our sons ever talk about is joining their ranks.\n\nAs a " ..
+                "proud father, we want them to have every advantage for when they apply. So, would you go " ..
+                "to the fel crystalforge at either forge camp to the north or south, and procure a magic " ..
+                "flask for our sons? You can't miss their green smoke.\n\nWe think that they take ten " ..
+                "apexis shards to make. We'd give you the shards, but we don't have any at the moment.",
+            rewardMoney = 44000,
+        },
+        [11031] = {rewardChoices = {{29290, 1}, {29279, 1}, {29283, 1}}},
     },
     npcs = {
         [15241] = {
