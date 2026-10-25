@@ -1080,6 +1080,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{4987, 1}},
             rewardMoney = 12500,
         },
+        [783] = {
+            description = "I hope you strapped your belt on tight, young <class>, because there is work " ..
+                "to do here in Northshire.\n\nAnd I don't mean farming.\n\nThe Stormwind guards are hard " ..
+                "pressed to keep the peace here, with so many of us in distant lands and so many threats " ..
+                "pressing close. And so we're enlisting the aid of anyone willing to defend their home. " ..
+                "And their alliance.\n\nIf you're here to answer the call, then speak with my superior, " ..
+                "Marshal McBride. He's inside the abbey behind me.",
+        },
         [809] = {
             description = "Since the last great war when the Burning Legion was defeated, I have searched " ..
                 "for sources of demonic corruption in orc society. The collar you brought me confirms my " ..
@@ -1165,6 +1173,14 @@ ns.Overrides.wowhead = {
                 "forked...\n\nThey say the forked tongues have a distinct flavor, and I want that flavor " ..
                 "in my dish...",
         },
+        [1389] = {
+            description = "The lost ones who live in the Fallow Sanctuary look as we look, but they are " ..
+                "monsters... driven mad by the rigors of our journey to Azeroth. Once our brethren, they " ..
+                "now live in the Fallow Sanctuary to the east, catching or killing any who wander " ..
+                "near.\n\nAnd they have stolen something sacred to us-- draenethyst crystals.\n\nWe lack " ..
+                "the force to enter the Fallow Sanctuary and reclaim our stolen draenethyst from among " ..
+                "their huts and campfires, but without those crystals... we too may lose our way.",
+        },
         [1427] = {
             description = "Before you take rest, speak to Tok'Kar again. While you were gone I believe he " ..
                 "finished a few weapons. For your help here, he would offer one of them to you. You would " ..
@@ -1172,9 +1188,41 @@ ns.Overrides.wowhead = {
                 "please me further.",
             rewardChoices = {{9680, 1}, {9678, 1}, {9679, 1}},
         },
+        [1457] = {
+            description = "Take Karnitol's things back to Roetten in Ironforge and he'll pay you for a " ..
+                "job well done.\n\nHaha, if you're not careful, he's gonna be so pleased with ya that " ..
+                "he'll ask you to join us full time.\n\nAgain, great job, <name>.\n\nBe careful on your " ..
+                "way back, and don't take too much time--Karnitol's not the most of patient of men, but " ..
+                "he's very generous nonetheless.",
+            rewardChoices = {{6791, 1}, {6792, 1}},
+        },
+        [1458] = {
+            description = "One of my tasks out here involves picking up some reagents for Leftwitch, a " ..
+                "gnome mage in Kharanos. Roetten seems to think it's easy coin in the bank since we're " ..
+                "out here already. He doesn't really care that we're short-handed as is.\n\nThe first few " ..
+                "items on his list should be easy enough to get, and it'd be a good chunk of coin for " ..
+                "anyone helping me out.\n\nI need some horns and claws from the Hatefury satyr to the " ..
+                "east of here. Bring 'em back to me and we'll get started on the rest of the list.",
+            rewardMoney = 3500,
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
+        },
+        [1480] = {
+            description = "The torn skin smells rotten, and is remarkably pliable for something that " ..
+                "appears to be dry and fragile.\n\nAs you unroll it, you can clearly see the red markings " ..
+                "of some kind of language on one side. At the bottom of the skin is a very clear symbol " ..
+                "that you guess is a signature of some kind.\n\nPerhaps it is something Maurin could tell " ..
+                "you more about?",
+        },
+        [1481] = {
+            description = "I believe I can find this demon lord given the proper reagents.\n\nIf he is " ..
+                "indeed as powerful as I suspect, I will need items gathered from deadly creatures. But " ..
+                "you act in the Warchief's name, so I am sure you will accept my task.\n\nFirst, I will " ..
+                "have to break any wards he has against scrying. For this, I will need the scalp from a " ..
+                "satyr--but not any satyr. The scalp must come from a Hatefury shadowstalker.\n\nSearch " ..
+                "for them among the ancient ruins in the northeast of Desolace.",
         },
         [1522] = {
             description = "Fire be witcha, mon. I see you be strong in da ways of earth already, an' me " ..
@@ -1739,6 +1787,13 @@ ns.Overrides.wowhead = {
                 "was on a hill... she said it was on a hill.\n\nPlease, <name>. You're my new friend! " ..
                 "Will you talk to my Auntie for me?",
         },
+        [5159] = {
+            description = "Thank the spirits, <name>. They are the ones that have come to your aid, not " ..
+                "me.\n\nI give this purified water to you now. Please give my regards to Greta and my " ..
+                "best wishes. She is tackling something greater than many of us... as I'm sure she will " ..
+                "soon find out.\n\nThe Shadow Council is not a force to be trifled with, <name>. Remember " ..
+                "that.\n\nGo now. Take the water and return to Greta.",
+        },
         [5160] = {
             description = "Travel to Kalimdor, <race>. Our flight makes its home in the frigid landscape " ..
                 "of Winterspring. Once you reach Winterspring, find the caves of Mazthoril.\n\nUpon the " ..
@@ -2170,6 +2225,15 @@ ns.Overrides.wowhead = {
                 "come through here looking for troll priests usually are very casual. This time, they " ..
                 "seemed to be in much more a hurry. Don't dally too long in Thunder Bluff. I'd return to " ..
                 "the Valley of Spirits as soon as possible.",
+        },
+        [5651] = {
+            description = "There are many lessons that the Forsaken have learned through " ..
+                "experience--things that some races can only begin to fathom. And although our path lies " ..
+                "in darkness, you will find that a great many things rely on both the light and the dark. " ..
+                "Your lessons shall teach you to use both... and with discretion. But heed my words: " ..
+                "never forget we were forged in corruption and left to rot like so much carrion. The " ..
+                "Darkness is our home.\n\nSeek out Dark Cleric Beryl in Brill when you're ready to learn " ..
+                "more.",
         },
         [5655] = {
             description = "I sent here to make sure that you not wander too far from home, <name>. They " ..
@@ -3249,6 +3313,11 @@ ns.Overrides.wowhead = {
                 "forces at Ahn'Qiraj.\n\nYou gonna help us out again <class>?",
             rewardItems = {{21436, 10}, {21513, 1}},
         },
+        [8519] = {
+            description = "As you regain your composure and focus your gaze, you notice that something " ..
+                "stirs within the crystal. Upon closer inspection, you realize that you are looking into " ..
+                "the past... a memory... long forgotten.",
+        },
         [8521] = {
             description = "It is very kind of you to offer to help me again <class>. It looks like we've " ..
                 "collected $2082w silk bandages, so we'll need more.",
@@ -3269,6 +3338,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{21438, 10}, {21512, 1}},
         },
         [8546] = {rewardItems = {{21438, 7}, {21512, 1}}},
+        [8593] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21352, 1}},
+        },
         [8608] = {rewardItems = {{21438, 7}, {21512, 1}}},
         [8613] = {
             description = "It be a nice day for fishin', don't'cha think mon? Good thing, cuz I be " ..

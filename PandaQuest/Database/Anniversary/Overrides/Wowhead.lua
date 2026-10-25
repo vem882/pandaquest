@@ -931,6 +931,65 @@ ns.Overrides.wowhead = {
                 "east. East up the bluffs, east to the road. Look for the ol' chimney ruins near the side " ..
                 "of the road. There you'll find an old barrel with your next clue.",
         },
+        [139] = {
+            description = "Searching through the barrel you discover another piece of parchment. This one " ..
+                "reads: Now from this here barrel, face ye North. Straight as the crow flies, keep ye " ..
+                "walkin' till you see the empty jug next to the lone windmill on the sea bluffs. If ye " ..
+                "poke around that jug, ye just might find what you're lookin' for.",
+        },
+        [140] = {
+            description = "Sure enough, deep within the Old Jug there is another clue to Sander's " ..
+                "treasure. The ink has run in some places and the paper smells like whiskey but you can " ..
+                "make out some of the text: Now that ye found me ol' whiskey jug, you're almost to the " ..
+                "treasure! Just face West from the bottle and walk down to the shore. Once ye get to the " ..
+                "water, keep going! Swim straight west till you find the island with me treasure chest!",
+            rewardItems = {{2842, 1}, {3342, 1}, {3344, 1}, {3343, 1}},
+            rewardMoney = 800,
+        },
+        [141] = {
+            description = "The Stonemasons' Guild was run by a man named Edwin VanCleef. VanCleef was " ..
+                "responsible for rebuilding Stormwind after the orcs razed it in the First War. " ..
+                "Apparently, VanCleef and his men were unhappy with their treatment by the King after the " ..
+                "reconstruction was complete. That just might explain a thing or two.\n\nI have written a " ..
+                "more detailed account for your Master in Westfall. Take this to him at once!",
+        },
+        [142] = {
+            description = "We need to discover the location of the Defias hideout. <name>, my scout " ..
+                "reports that a Defias Messenger has been seen on the roads between Moonbrook, the Gold " ..
+                "Coast Quarry and the Jangolode Mine. I want you to capture him. If he resists, kill him " ..
+                "and bring me whatever he is carrying.",
+        },
+        [143] = {
+            description = "Something odd is afoot with the Stormwind Army. They should have been here in " ..
+                "force by now. Time is a luxury we don't have, however. I will not stand by and watch the " ..
+                "people of Lakeshire give their lives without trying to enlist more help. I've heard word " ..
+                "of a people's militia forming in Westfall.\n\nTake this plea to their leader, Gryan " ..
+                "Stoutmantle. Perhaps Stoutmantle's men can lend some support here until the King sends " ..
+                "reserves.",
+        },
+        [144] = {
+            description = "Magistrate Solomon 's note pains me to read. But it is obvious he knows not " ..
+                "the war which is waged in Westfall or else he would know better than to expect aid from " ..
+                "the Militia. If Stormwind had not deserted us as well, we would not have the need for " ..
+                "the Militia.\n\nTake this response to your master in Redridge, <class>. And let him know " ..
+                "that my heart is heavy with the loss of good men.",
+            rewardMoney = 150,
+        },
+        [145] = {
+            description = "I require your assistance once again. I have written to Lord Ebonlocke, " ..
+                "requesting that he sends his trained guards, the Night Watch, to help with Lakeshire's " ..
+                "defense. It is imperative this message makes it to him swiftly. You must exercise " ..
+                "extreme caution. Ebonlocke is the mayor of Darkshire, in the heart of Duskwood. Do not " ..
+                "stray from the roads.",
+        },
+        [146] = {
+            description = "If I did not know Magistrate Solomon personally, I would say the man has gone " ..
+                "mad. Send the Night Watch to Lakeshire because Stormwind refuses aid? The Night Watch " ..
+                "was formed because Stormwind left us when this foul magic seeped into the land. If I " ..
+                "sent my Night Watch, this town would be overrun by evil before the guards even reached " ..
+                "the forest's edge.\n\nTake this letter of response to your Master in Lakeshire.",
+            rewardMoney = 250,
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
@@ -3437,6 +3496,23 @@ ns.Overrides.wowhead = {
                 "knothide leather and the hardened hide of Tyrantus. You'll find Tyrantus in Eco-Dome " ..
                 "Farfield, located in the northern reaches of Netherstorm.",
             rewardMoney = 44000,
+        },
+        [11055] = {
+            description = "This is your booterang. There are many like it but this one is yours.\n\nAs an " ..
+                "overseer you will use this booterang to sow terror into the hearts of defiant peons. " ..
+                "Proper use of the booterang will instill obedience and ensure subservience.\n\nVenture " ..
+                "forth to the crystal fields and discipline any peons that you see slacking off. Show " ..
+                "them the might of the booterang!",
+            rewardMoney = 44000,
+        },
+        [11056] = {
+            description = "Do not draw attention to our conversation. Adaris would not approve.\n\nI " ..
+                "belong to the lowest caste of arakkoa, <name>. During Terokk's rule I would've been " ..
+                "sacrificed to the dark powers worshipped by his talonpriests. If what you say is true " ..
+                "and the talonpriests are seeking Terokk's return, then you must prevent them from " ..
+                "succeeding - regardless of what your leader says!\n\nI've something to offer you that " ..
+                "you'll find useful. There is a package at my old dwelling in Upper Veil Shil'ak. Bring " ..
+                "it to me!",
         },
     },
     npcs = {
