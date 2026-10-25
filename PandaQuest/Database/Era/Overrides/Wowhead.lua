@@ -881,6 +881,13 @@ ns.Overrides.wowhead = {
             description = "Here is your bouquet. I chose Daffodils for you. They're my favorite!",
             rewardItems = {{1326, 10}},
         },
+        [145] = {
+            description = "I require your assistance once again. I have written to Lord Ebonlocke, " ..
+                "requesting that he sends his trained guards, the Night Watch, to help with Lakeshire's " ..
+                "defense. It is imperative this message makes it to him swiftly. You must exercise " ..
+                "extreme caution. Ebonlocke is the mayor of Darkshire, in the heart of Duskwood. Do not " ..
+                "stray from the roads.",
+        },
         [160] = {
             description = "Take this note to Ello Ebonlocke, the Mayor of Darkshire.\n\nHe and I are old " ..
                 "friends...and when he reads it and discovers what you did for me...I'm sure he'll be " ..
@@ -968,6 +975,14 @@ ns.Overrides.wowhead = {
                 "Stresses of Iron! I'm afraid the book was moved to the Northshire Abbey. The caretaker " ..
                 "of the Abbey's library, Brother Paxton, wanted to make a copy of the book for his own " ..
                 "shelves.\n\nBut that was months ago. I wonder why it's taking him so long...",
+        },
+        [387] = {
+            description = "The uprising must be quelled! I need your assistance. If word gets out that " ..
+                "the prison is overrun I will lose my job! This is a case of foul play if I've ever seen " ..
+                "one. But what's important now is forcing these prisoners into submission for the safety " ..
+                "of Stormwind.\n\nThe punishment for insurgency is death. Kill some of these deviants! " ..
+                "That ought to get things under control.",
+            rewardMoney = 4000,
         },
         [405] = {
             description = "Bethor Iceshard, a high-ranking and powerful mage in the Undercity to the " ..
@@ -1113,6 +1128,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{4987, 1}},
             rewardMoney = 12500,
         },
+        [781] = {
+            description = "After carefully evaluating the map, you realize that what you discovered are " ..
+                "the plans made by the Bristleback warchief for an extended siege on Camp " ..
+                "Narache.\n\nSurely Chief Hawkwind could use this information!",
+            rewardItems = {{4911, 1}},
+        },
         [783] = {
             description = "I hope you strapped your belt on tight, young <class>, because there is work " ..
                 "to do here in Northshire.\n\nAnd I don't mean farming.\n\nThe Stormwind guards are hard " ..
@@ -1162,6 +1183,15 @@ ns.Overrides.wowhead = {
                 "purpose. Pushing them aside and digging deeper into the console, you find the " ..
                 "samophlange. A tug removes it from its housing.",
             rewardChoices = {{5324, 1}, {5325, 1}},
+        },
+        [932] = {
+            description = "I must warn you, <name>, this matter must stay between us. The satyr are " ..
+                "enough of an embarrassment to us already, and this one is much too close to home.\n\nHe " ..
+                "is called Lord Melenas. He resides in the nearby cave of Fel Rock where he has gathered " ..
+                "a large group of grell warriors. His heart is black as night, and he plots something " ..
+                "most foul.\n\nYou must find him within his nearby cave just to the north of here, and " ..
+                "bring me his head.",
+            rewardChoices = {{5419, 1}, {2571, 1}},
         },
         [960] = {rewardItems = {{5251, 1}}},
         [969] = {
@@ -1337,6 +1367,17 @@ ns.Overrides.wowhead = {
                 "nothing!\n\nTake it to Innkeeper Grosk at the Razor Hill inn. Thank you!",
             rewardChoices = {{4540, 5}, {159, 5}},
         },
+        [2499] = {
+            description = "In a cave along the southern bank of the lake, a timberling named Oakenscowl " ..
+                "is spreading corruption to all the creatures that make Lake Al'Ameth their home.\n\nI " ..
+                "dared not get too close, but even from a distance, it is obvious: Oakenscowl is being " ..
+                "poisoned by the largest tumor I have ever seen... I would call it gargantuan, " ..
+                "even.\n\n<name>, you have already done much to aid my efforts, but I ask of you one more " ..
+                "task. Hunt down Oakenscowl and collect the tumor; remove this source of corruption from " ..
+                "my home.",
+            rewardChoices = {{5458, 1}, {5589, 1}},
+            rewardMoney = 600,
+        },
         [2606] = {
             description = "Blech! This stuff tastes terrible! So much for that idea...\n\nWait, what's " ..
                 "that? Oh, I know, I know, you think I shouldn't give up on this stuff. Well, okay " ..
@@ -1495,6 +1536,16 @@ ns.Overrides.wowhead = {
                 "the items you collected into a totem to fight Blazerunner.\n\nAquementas will not be " ..
                 "pleased to be awakened, but remember, you must remain in the circle for him to transform " ..
                 "the items.",
+        },
+        [4024] = {
+            description = "I wish to taste the searing flames of the mountain of fire. To let the molten " ..
+                "fires of Blackrock cascade across my being. That essence, that searing heat, it is what " ..
+                "I crave.\n\nBael'Gar resides in the Depths of Blackrock: A being of pure flame, born of " ..
+                "the fires of Ragnaros. Slay Bael'Gar and from his smoldering remains bring for me a " ..
+                "piece of his inner fire.\n\nUse the molt on his remains to safely extract the inner " ..
+                "flame.\n\nSucceed and be rewarded.",
+            rewardChoices = {{12066, 1}, {12082, 1}, {12083, 1}},
+            rewardMoney = 26500,
         },
         [4124] = {
             description = "An associate of mine, Ginro Hearthkindle, is looking for assistance concerning " ..
@@ -3316,6 +3367,13 @@ ns.Overrides.wowhead = {
                 "territories for the Horde.\n\nGo, <name>. Report back to me when this task is complete.",
             rewardMoney = 16500,
         },
+        [8151] = {
+            description = "Ogtinc of Azshara has sent out a call for seasoned hunters such as yourself. " ..
+                "He is a furbolg hunter who has left his tribe to aid the Cenarion Circle. His teachings " ..
+                "are meant to enrich the wisdom of others who share his craft, and guide them toward " ..
+                "maintaining a balance. You would do well to speak with him.\n\nOgtinc resides atop the " ..
+                "cliffs of Azshara, northeast from the Ruins of Eldarath.",
+        },
         [8169] = {
             description = "As you no doubt have heard, the League of Arathor is sending large numbers of " ..
                 "troops into Arathi Basin. Eager for food and supplies, these Alliance fools are intent " ..
@@ -3326,6 +3384,15 @@ ns.Overrides.wowhead = {
             rewardMoney = 13000,
         },
         [8191] = {rewardItems = {{19789, 1}}},
+        [8252] = {
+            description = "Take a look around you. The ruins and beaches are overrun with spitelash. " ..
+                "Recently, the wretched creatures have learned to recognize the rare components " ..
+                "indigenous to Azshara.\n\nSpecifically, I speak of enchanted coral -- they are drawn to " ..
+                "it by reasons unknown to me. Now there is little coral left in the bay, and it is vital " ..
+                "to my research. I need you to separate some enchanted coral from the spitelash sirens " ..
+                "and bring it to me.",
+            rewardMoney = 7500,
+        },
         [8255] = {
             description = "The mosshoof coursers of Azshara are magnificent animals who once lived in " ..
                 "Felwood. They naturally resist disease and poison, and were unaffected by the corruption " ..
@@ -3443,8 +3510,22 @@ ns.Overrides.wowhead = {
             rewardItems = {{21438, 10}, {21512, 1}},
         },
         [8614] = {rewardItems = {{21438, 7}, {21512, 1}}},
+        [8704] = {
+            description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
+                "abilities. The corrupted gems that adorn them could, in theory, be swapped out with more " ..
+                "pure materials to create uncorrupted versions of the rings.\n\nThe gems that adorn " ..
+                "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
+                "and idols and I'll create a powerful ring for you, <class>.",
+            rewardItems = {{21402, 1}},
+        },
         [8846] = {rewardItems = {{21509, 1}}},
         [8855] = {rewardItems = {{21513, 1}}},
+        [8932] = {
+            description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
+                "in order if I'm to keep you interested in saving my skin. Bring me an ordinary belt and " ..
+                "a set of gloves that you wish to upgrade.",
+            rewardItems = {{22062, 1}, {22066, 1}},
+        },
         [8947] = {
             description = "We didn't realize the importance of Valthalak's medallion, so it was divided " ..
                 "along with the rest of the spoils. The first piece was taken by a dwarf named Theldren. " ..
@@ -3452,6 +3533,22 @@ ns.Overrides.wowhead = {
                 "to take the fragment by force.\n\nLast I heard of him, he'd become a gladiator for the " ..
                 "Dark Iron dwarves. Getting him to fight you is going to present a bit of a challenge, " ..
                 "though.\n\nGather the following materials for me. You're going to need them.",
+        },
+        [8969] = {
+            description = "Now we have what we need, so it's time to discuss who it is that you'll be " ..
+                "summoning.\n\nKormok was ok for an ogre, right up until he turned to necromancy. After " ..
+                "that, things got creepy for just about everyone in the outfit. It was no surprise then " ..
+                "when he took his piece of the amulet and returned to his new home, Scholomance.\n\nBut " ..
+                "even there, or perhaps especially there, he was not safe from the spectral assassins. " ..
+                "They slew him right in front of his master, Ras Frostwhisper.",
+        },
+        [8994] = {
+            description = "We're nearly there, <class>. All that is left is to retrieve a few more " ..
+                "components so that I can attune the brazier and enable it to beckon forth Lord " ..
+                "Valthalak.\n\nTo begin I must ask you to journey forth into Blackrock Spire and slay the " ..
+                "orcs therein. They wear bracers that contain trace metals that I will need, so I'll need " ..
+                "more than a few to extract the right amount out of them. Then, to complete the imbuing " ..
+                "process, you'll need to bring me a Flask of Supreme Power.\n\nGood luck, <name>!",
         },
         [9003] = {
             description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
@@ -3464,6 +3561,12 @@ ns.Overrides.wowhead = {
                 "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
                 "eyes shut.\n\nAs to your reward, I believe I have a few things that you'll really enjoy.",
             rewardItems = {{22005, 1}, {22009, 1}},
+        },
+        [9040] = {
+            description = "During your battles with the Scourge in Naxxramas, should you come across " ..
+                "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
+                "you a piece of armor worn by heroes.",
+            rewardItems = {{22421, 1}},
         },
         [9075] = {
             description = "Would you honor me by returning the armor of those that fell in the defense of " ..
