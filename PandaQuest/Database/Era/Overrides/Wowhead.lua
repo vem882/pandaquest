@@ -577,6 +577,71 @@ ns.Overrides.wowhead = {
                 "here!",
             rewardChoices = {{1173, 1}, {1182, 1}, {11191, 1}},
         },
+        [89] = {
+            description = "During the last orc invasion we were forced to smelt our iron down to make " ..
+                "bullets, swords and armor. We sent word to Stormwind for a new shipment of materials but " ..
+                "a band of Redridge gnolls hijacked the caravan and ran off into the hills behind " ..
+                "Lakeshire.\n\nNow we're coming up short on supplies to get this bridge rebuilt. If you " ..
+                "can bring me 5 iron pikes and 5 iron rivets, <name>, I'll make sure you're " ..
+                "rewarded.\n\nNow let's get to work!",
+            rewardChoices = {{1310, 1}, {1303, 1}, {1304, 1}},
+        },
+        [90] = {
+            description = "Seasoned Wolf Kabobs are a house favorite! Sure, I can make you some. But " ..
+                "first I'll need the supplies. Bring me 10 Lean Wolf Flanks as well as some Stormwind " ..
+                "Seasoning Herbs. There are so many wolves here in the forest, I am sure finding the " ..
+                "Flanks will be no problem. For the herbs, seek out Felicia Gump in her canal district " ..
+                "flower shop in Stormwind.",
+            rewardItems = {{1017, 4}, {2701, 1}},
+            rewardMoney = 1800,
+        },
+        [91] = {
+            description = "An enemy of Stormwind has taken up residence in the eastern foothills of " ..
+                "Redridge. This wicked villain uses the Arcane to spread terror and misery upon our town " ..
+                "and our people. Under the name, Morganth, he conducts his evil business.\n\nMorganth now " ..
+                "controls the Shadowhide Gnoll Clan to perform his biddings. As stated by the Law of " ..
+                "Lakeshire, aiding a criminal of the Kingdom is punishable by death.\n\nThese vile gnolls " ..
+                "must be killed!\n\nTurn in 10 Shadowhide Pendants to me, and you shall be rewarded.",
+            rewardMoney = 1500,
+        },
+        [92] = {
+            description = "Nothing would please me more than to make you some Redridge Goulash. But " ..
+                "there's a slight problem. During the recent orc uprising I fed the entire brigade of " ..
+                "Stormwind troops. My cupboard is now bare. But if you can provide me with the " ..
+                "ingredients, I'd be happy to oblige.\n\nJust bring me five pieces of Tough Condor Meat, " ..
+                "five Great Goretusk Snouts and five helpings of Crisp Spider Meat.",
+            rewardItems = {{1082, 5}, {2699, 1}},
+            rewardMoney = 1000,
+        },
+        [93] = {
+            description = "I'll let you in on a little secret - Dusky \"Crab\" Cakes are really made from " ..
+                "spider legs! I know it's a bit disgusting, but the cakes have a nice, tangy flavor and " ..
+                "make great snacks! Bring me Gooey Spider Legs and I'll whip you up a few of them.\n\nI " ..
+                "hear Venom Web Spiders are a good source - they nest to the north, between the foothills " ..
+                "and the river.",
+            rewardItems = {{3683, 1}},
+        },
+        [94] = {
+            description = "My rival, Morganth, is a vicious mage of great power who lives in the Tower of " ..
+                "Ilgalar in Redridge. I have developed a means of spying on him, the Eye of Azora, and " ..
+                "can now view him from afar.\n\nBut to study his thoughts... I require further aid.\n\nIf " ..
+                "you are willing, then take my Glyph of Azora to the Tower of Ilgalar. Place it upon the " ..
+                "Lion Statue near the Tower.\n\nWhen this is done, the power of Azora will grant visions " ..
+                "of Morganth's future plans.",
+        },
+        [95] = {
+            description = "I used to work one of the farms to the southeast...until Dark Riders from " ..
+                "Deadwind Pass descended upon my farm and slaughtered my family when I was away!\n\nWhen " ..
+                "I returned I saw a shadowy figure skulking near my barn, burying something. He fled " ..
+                "before I could catch him, and I couldn't linger for I was hot on the heels of the Dark " ..
+                "Riders. So I never discovered what was hidden.\n\nIf you can find what that shadowy " ..
+                "figure buried, I would be grateful. The hiding spot is behind the old stump near my barn.",
+        },
+        [96] = {
+            description = "Take shard. Take shard and give life.\n\nGive life and understand. Understand " ..
+                "water is life... corruption stops life.\n\nYou protect and give life with water's power.",
+            rewardItems = {{5177, 1}},
+        },
         [105] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
                 "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
@@ -594,6 +659,14 @@ ns.Overrides.wowhead = {
                 "need numerous allies to even stand a chance of facing him successfully.\n\nDestroy Araj, " ..
                 "<name>, and bring me a shard from his phylactery as proof!",
             rewardItems = {{17759, 1}},
+        },
+        [317] = {
+            description = "I'm preparing to start a mission for the Siege Brigade. It's a long one, and I " ..
+                "need to stock Jetsteam with a month's worth of supplies. So while Steelgrill is working " ..
+                "on my tank, can you do some hunting for me?\n\nI'll need some fur for bedding, and boar " ..
+                "meat for food. You can get meat from boars and fur from the bears... you can find them " ..
+                "both in the snow fields south of the Grizzled Den.",
+            rewardMoney = 250,
         },
         [969] = {
             description = "Ah, I can tell just by lookin' at ya -- you be wantin' to make a lucky charm. " ..
@@ -617,6 +690,21 @@ ns.Overrides.wowhead = {
                 "hearty <men/women> just like you for a special mission.\n\nIf you're interested, head on " ..
                 "out to the Crimson Veil and speak with him below decks. She's anchored off the Wild " ..
                 "Coast east of here, next to the Riptide and the Damsel's Luck.",
+        },
+        [1524] = {
+            description = "You are powerful enough to wield the totem of fire, but that does not mean you " ..
+                "are ready.\n\nAlong the Southfury River in Durotar, before the Great Sea, lies a hidden " ..
+                "trail to one of the highest peaks in the land. Find your way to the top and you shall " ..
+                "find one of our holy shrines watched over by Telf Joolam --the Shrine of the Dormant " ..
+                "Flame.\n\nTake this torch to him--it marks that you attempt to tame fire. Return it to " ..
+                "me aflame by the brazier at the shrine and I will see you are given the totem of fire.",
+        },
+        [1618] = {
+            description = "We dwarves aren't the only ones fighting. Our human allies have their hands " ..
+                "full too!\n\nRedridge is under periodic attack from blackrock orcs, and their supply of " ..
+                "equipment is always low. If you were to help them out, I'm sure their resident " ..
+                "blacksmith, Verner Osgood, would teach you a trick or two.",
+            rewardItems = {{6735, 1}},
         },
         [2741] = {rewardItems = {{8647, 1}}},
         [2743] = {
@@ -655,6 +743,24 @@ ns.Overrides.wowhead = {
                 "of hope for all that view it - proof that heroes do exist in this war torn world.",
             rewardItems = {{10778, 1}, {10779, 1}, {10959, 1}},
             rewardMoney = 27000,
+        },
+        [3638] = {
+            description = "Goblin engineering is about practical uses for high profit and higher " ..
+                "explosive power! Our schemata allow us to make powerful bombs and mighty weaponry; the " ..
+                "manual you read covered this.\n\nThe manual also covered our ages old oath of secrecy on " ..
+                "our schemata. Once you become a goblin engineer, that's that. There is no access to " ..
+                "gnome engineering at all.\n\nIf you still want to become a goblin engineer, sign this " ..
+                "document pledging life-long secrecy and speak with me again. Think about it carefully, " ..
+                "<name>.",
+        },
+        [3643] = {
+            description = "As your mentor, I want some samples of your work. You're a skilled engineer; " ..
+                "there is no question of this, <name>. What I hope to do though is to analyze your work " ..
+                "for ways to emphasize gnome-oriented techniques in your future efforts. I need the " ..
+                "following samples: six mithril tubes, an accurate scope, and two advanced target " ..
+                "dummies.\n\nSubmit these items to me and I will issue you your own Gnome Engineer " ..
+                "Membership Card; it is required for access to all gnome engineering trainers!",
+            rewardItems = {{10790, 1}},
         },
         [4004] = {
             description = "You have slain my husband, <race>! My child will be born into this world " ..
@@ -1334,6 +1440,333 @@ ns.Overrides.wowhead = {
                 "deception.\n\nTo the south you will find Uther's tomb. An old and trusted confidant of " ..
                 "mine, Myranda, now resides there - seek her out. Show her the items and she will assist " ..
                 "you.",
+        },
+        [5862] = {
+            description = "I am what you would call, an illusionist. Though I may be able to create an " ..
+                "illusion to allow you entry into Hearthglen, be warned; my powers have their " ..
+                "limitations.\n\nShould you travel too far from these lands, the effects of the illusion " ..
+                "will cease. The spell itself takes a great amount of concentration and power from me, " ..
+                "and thus, I can only sustain the effect for a short time.\n\nSpeak to me again when you " ..
+                "are ready.",
+        },
+        [5941] = {
+            description = "You have gathered many relics of the battle of Darrowshire. Each time you " ..
+                "returned with more, my heart yearned for my village... yearned to protect it from its " ..
+                "fate.\n\nI know that cannot be, but Chromie, that strange gnome in Andorhal, tells me it " ..
+                "is possible. She says you can save Darrowshire!\n\nShe asked me to gather together the " ..
+                "relics, and to have you bring them to her. She said that she awaits you in the ruined " ..
+                "inn of Andorhal.",
+        },
+        [5942] = {
+            description = "Daddy told me to give you this key. He said it opens a chest out back behind " ..
+                "the house.\n\nHe also wanted me to thank you. Did you do a favor for him? Did you tell " ..
+                "him you found my doll?\n\nWell here's the key. And thank you <name>. Thank you! You're a " ..
+                "very nice <man/lady>!",
+            rewardItems = {{15855, 1}, {15856, 1}, {15857, 1}},
+        },
+        [5944] = {
+            description = "For so long, I have been a puppet of the Grand Crusader. What reason was there " ..
+                "to fight against what the Scarlet Crusade had become? It has been decades, yet the " ..
+                "memories of my father; those precious memories, they are what have kept me alive.\n\nI " ..
+                "have dreams, stranger. In these dreams my father is with me. He stands proudly at my " ..
+                "side as I am inducted into the Order. We battle legion of Scourge, side by side. We " ..
+                "bring honor to the Alliance, to Lordaeron.\n\nI want not to dream anymore.\n\nTake me to " ..
+                "him.",
+            rewardChoices = {{15411, 1}, {15413, 1}, {15418, 1}, {15421, 1}, {16058, 1}},
+        },
+        [5981] = {
+            description = "Around 4,000 years ago, Tyrande Whisperwind saved the life of the frostsaber " ..
+                "queen, at the hands of rampaging giants. Since then, the frostsabers have been allies of " ..
+                "the night elves.\n\nThese same giants that once were a danger to the frostsabers, still " ..
+                "exist not too far from here. They are called the frostmaul, and they have taken over the " ..
+                "large valley to the south.\n\nProve your loyalty to the frostsabers; kill these giants " ..
+                "in the name of the frostsaber queen, Shy-Rotam!",
+        },
+        [6024] = {
+            description = "Kill me. Before it's too late.\n\nI am Hameya. While traveling to Zul'Mashar, " ..
+                "my brethren and I ate some bad meat... and we changed. We are infected.\n\nI can feel " ..
+                "the lich's words now, urging me to reach Zul'Mashar and infect more of my people. I " ..
+                "cannot resist, and so I wrote this scroll before my will left me.\n\nI buried a chest in " ..
+                "dirt next to a wagon behind this crypt, but only my key will open it. I have the key. If " ..
+                "you want my treasure, then find me.\n\nKill me. Before it's too late.",
+            rewardItems = {{15814, 1}, {15815, 1}},
+            rewardMoney = 9000,
+        },
+        [6133] = {
+            description = "The high elves of the Quel'Lithien lodge possesses something that belongs to " ..
+                "me, <class>: A document detailing my life as a mortal.\n\nBefore you ask; no, you most " ..
+                "certainly are not privy to such information. Just do as I tell you, worm: Recover the " ..
+                "registry.\n\nAnd imbecile, be sure to leave as much strife and grief as possible in your " ..
+                "wake. Leave them suffering...",
+            rewardMoney = 9000,
+        },
+        [6135] = {
+            description = "Up until now, you have completed the missions I have assigned; even if not in " ..
+                "the most timely manner.\n\nI suppose you think that you are ready for a challenge. " ..
+                "Yes... Yes, imbecile, perhaps you are ready for a more involved set of missions.\n\nThe " ..
+                "albino demon bat, Duskwing, roams the countryside just north of here. Track him down and " ..
+                "destroy him. Return to me with a patch of his white fur and you shall be rewarded.",
+            rewardChoices = {{16994, 1}, {16995, 1}},
+            rewardMoney = 9000,
+        },
+        [6136] = {
+            description = "Past the Argent Dawn encampment of Light's Hope and west of Northdale, you " ..
+                "will find the corpulent maggot beast, Borelgore.\n\nI've lost entire regiments to that " ..
+                "monster. His size knows no bounds! The more he eats the greater his girth " ..
+                "becomes...\n\nWhile I would not suffer any emotional harm should the beast devour you, I " ..
+                "would prefer that you were the victor. I recommend you enlist the help of others for " ..
+                "this mission. Borelgore has been known to devour small battalions foolish enough to " ..
+                "attack him.",
+            rewardChoices = {{17002, 1}, {17003, 1}, {17004, 1}},
+            rewardMoney = 9000,
+        },
+        [6144] = {
+            description = "The order has come down, <class>. Varimathras himself has requested that I " ..
+                "send my most 'capable' agents back to the Undercity for a highly sensitive tactical " ..
+                "operation.\n\nUnfortunately, my most capable agents were killed over three years ago. In " ..
+                "their stead I have a collection of brain dead riff-raff.\n\n<Nathanos stares coldly at " ..
+                "you.>\n\nTravel to the Undercity at once and report to Varimathras. Do not embarrass me, " ..
+                "<class>!",
+        },
+        [6145] = {
+            description = "Just as the body cannot survive without the head, the head cannot survive " ..
+                "without the body. The defenses of the Scarlet Crusade's command inside Stratholme are " ..
+                "almost impenetrable. We must, instead, cut the body out from under the head.\n\nMy " ..
+                "Deathstalkers have been collecting data on the activity of the Crusade outside of " ..
+                "Stratholme. Each day, a report is sent from their central command to Tyr's Hand. This " ..
+                "report is the key, <race>! Find the Crimson Courier and recover that report. Return it " ..
+                "to Nathanos.",
+        },
+        [6146] = {
+            description = "I have made some adjustments to this command. Should our little ruse work, " ..
+                "they will expose the Scarlet Oracle and we shall strike!\n\nNow pay attention, <class>. " ..
+                "You are to deliver this command to the Crusader Lord, Valdelmar.\n\nHow? You are going " ..
+                "to hand it to him, imbecile.\n\nTake the command and this rotten apple to Tyr's Hand. " ..
+                "When you cross into the city, eat the apple. You will transform into something more... " ..
+                "palatable to the humans. Take the command and hand it to the Crusader Lord, Valdelmar.",
+        },
+        [6147] = {
+            description = "The Grand Crusader makes an unusual request. Hrm, regardless... what he asks " ..
+                "will be done. Return to the Scarlet Bastion and notify him that the Oracle will be en " ..
+                "route shortly.\n\nWe will take every precaution to ensure that she makes it to " ..
+                "Stratholme unharmed.",
+        },
+        [6148] = {
+            description = "Demetria is chief advisor to the Grand Crusader. She is called the Oracle due " ..
+                "to her 'otherworldly' senses. She has successfully assisted the Crusade in several of " ..
+                "their victories against the Scourge.\n\nWhile this ruse was successful in exposing her, " ..
+                "if she truly does possess psychic powers, she will undoubtedly be expecting some sort of " ..
+                "trouble. You are going to provide that 'trouble.'\n\nTrack down the Oracle and terminate " ..
+                "her. They should be moving out of Tyr's Hand as we speak. Make me proud, worm.",
+            rewardChoices = {{16996, 1}, {16997, 1}, {16998, 1}},
+            rewardMoney = 18000,
+        },
+        [6163] = {
+            description = "I was overwhelmed. On this very stead, I stood... held my ground in defense of " ..
+                "Lordaeron. The farm and all on it were waylaid by a gigantic wave of Scourge.\n\nThe " ..
+                "wretch. The filth. It hovered above me, entrails hanging from its gaping chest " ..
+                "cavity.\n\nI woke as Scourge. For so long I was helpless. My mind had coalesced with the " ..
+                "Lich King's.\n\nShe came for me... somewhere, somehow, I knew she would. Free.\n\nAnd " ..
+                "now, I must have my vengeance - my vengeance on that which took from me my life. Destroy " ..
+                "it.",
+            rewardChoices = {{18022, 1}, {17001, 1}},
+            rewardMoney = 18000,
+        },
+        [6182] = {
+            description = "Nathanos Marris was the first and last of the human ranger lords. A disciple " ..
+                "of Sylvanas Windrunner, now the Banshee Queen of the Forsaken.\n\nWe had thought that " ..
+                "Nathanos had been killed in action in the defense of Lordaeron five years ago. Although " ..
+                "his corpse was never recovered, it was assumed that he did not make it out of the " ..
+                "Eastern Plaguelands.\n\nMathias Shaw has been investigating the disappearance and may " ..
+                "have some new information. Report to him at once. He resides in Old Town, at the " ..
+                "Barracks.",
+        },
+        [6183] = {
+            description = "Five of my best field agents were assigned the Marris case. One returned, only " ..
+                "to end up dead in his sleep three days later.\n\nWhat little information we did manage " ..
+                "to get out of him was incoherent gibberish. We made out two words: \"Nathanos,\" and " ..
+                "\"Blightcaller.\"\n\nI do not have the available manpower to continue this investigation " ..
+                "and Ravenholdt will not assist us. We must get to the bottom of this; if only to provide " ..
+                "closure to the families of the deceased. Will you help?",
+        },
+        [6184] = {
+            description = "The only information we have thus far, then, is that Nathanos Marris may have " ..
+                "been slain by this Blightcaller. We assume the Blightcaller is the same fiend that " ..
+                "disposed of my agents.\n\nFlint Shadowmore, another SI:7 operative, is stationed at the " ..
+                "Alliance encampment of Chillwind Point in the Western Plaguelands. Seek him out; he will " ..
+                "debrief you on the current situation in the Plagues and give you an assignment.\n\nGood " ..
+                "luck, <name>.",
+        },
+        [6185] = {
+            description = "As I said, your first mission is one of reconnaissance. Nothing fancy, <name>. " ..
+                "You must travel to the Eastern Plaguelands and look for any clues as to this " ..
+                "Blightcaller.\n\nBe on the lookout for information about our missing operatives. We have " ..
+                "to assume that they are dead and if they are dead, they must have a corpse... " ..
+                "somewhere.\n\n<Flint swallows hard.>\n\nAll SI:7 agents carry this insignia.\n\n<Flint " ..
+                "shows you his SI:7 insignia.>\n\nBring any of those that you may find back to me.",
+        },
+        [6186] = {
+            description = "<The blood appears to have completely drained from Flint's face.>\n\nNa... " ..
+                "Nathanos did this? Nathanos is the Blightcaller?\n\nWhy? He was... was so noble - a " ..
+                "ranger lord respected by all. The only human ever allowed to train under the high elves. " ..
+                "Now a ruthless agent of the Forsaken?\n\nI... I am sorry to ask this of you, <name>, but " ..
+                "Highlord Fordragon must be informed of this turn of events at once. Please, return to " ..
+                "Stormwind and deliver the news.",
+        },
+        [6187] = {
+            description = "Do you know how many ranger lords exist in this world? How many human ranger " ..
+                "lords have ever existed?\n\nNathanos' accomplishments were unprecedented. He was a " ..
+                "tactical genius, responsible for Alliance victories spanning a decade of " ..
+                "conflict.\n\nAnd now... the champion of the Forsaken.\n\nNo. This cannot be. Order must " ..
+                "be restored.\n\nGather an army, <name>. Return to the Plagues with your army and destroy " ..
+                "the Blightcaller.\n\nI wish you luck, <name>. Truly, you will need it for this battle.",
+            rewardChoices = {{16996, 1}, {16997, 1}, {16998, 1}},
+        },
+        [6402] = {
+            description = "You are to meet with Windsor at the gates of Stormwind.\n\nWhat Windsor is " ..
+                "about to unveil will shake the very foundation of the kingdom!\n\nDo not attempt to " ..
+                "venture there alone, <name>. You must amass an army! Gather your compatriots. To arms!",
+        },
+        [6403] = {
+            description = "It has been quite the adventure, friend. I owe you a great debt of gratitude. " ..
+                "Perhaps, when all is said and done...\n\nAs you have no doubt ascertained by now, Lady " ..
+                "Prestor is Onyxia: Brood of Deathwing, twin to the tyrant of the Spire, Nefarian.\n\nFor " ..
+                "too long she has held our kingdom in her captivating gaze. Even the Highlord is " ..
+                "controlled by her trickery - a puppet. It all ends today... The spell will be " ..
+                "broken.\n\nWorry not, for together, we shall be victorious!\n\nAre you ready?",
+        },
+        [6501] = {
+            description = "A fragment of the shattered medallion is all that I can offer.\n\nYou must " ..
+                "find another of dragon blood willing to assist you in forging a new key. Once you secure " ..
+                "this key, you must travel to the Wyrmbog in Dustwallow Marsh. It is there that you will " ..
+                "find her lair, <name>.\n\nWhere to find other flights willing to help? Sadly, I do not " ..
+                "know... They are said to exist. Some may even work and live among us, disguised as one " ..
+                "of the humanoid races. I wish you luck.",
+        },
+        [6502] = {
+            description = "It is a piece of the dragon; a scale - enchanted and transformed. Whole, it " ..
+                "could have granted access to the beast's lair. Shattered, it is useless.\n\nIt is " ..
+                "possible to repair the item, but to do so would require the blood of a black dragon " ..
+                "champion. There is one... He is known as General Drakkisath, ruler of the dragonspawn " ..
+                "armies of Nefarian. Perhaps you have heard of him?\n\nReturn with his blood, <race>, and " ..
+                "I shall enchant the fragment into something that will grant you access to Onyxia's lair.",
+            rewardItems = {{16309, 1}},
+        },
+        [6566] = {
+            description = "It is good to see you again, <name>. The wind carries with it news from the " ..
+                "Eastern Kingdom.\n\nSit, listen.",
+        },
+        [6567] = {
+            description = "I have received word from one of my champions that a way into the lair of the " ..
+                "dragon may exist. You are to seek him out.\n\nRexxar wanders the desert wasteland of " ..
+                "Desolace, traveling between Stonetalon and Feralas. He awaits your arrival.",
+        },
+        [6568] = {
+            description = "What do you know of illusions, <name>? For you see, it is an illusion that you " ..
+                "must create in order to circumvent the Black Flight's defenses.\n\nI know of one that " ..
+                "may be willing to assist you in your quest of deception. She has assisted our kind in " ..
+                "the past when she has deemed the cause worthy.\n\nIn the Western Plaguelands you will " ..
+                "find Myranda the Hag, master illusionist - an exile of the Lordaeron alliance. Travel " ..
+                "there and take with you this message.",
+        },
+        [6569] = {
+            description = "So the <race> wishes to become one of the Black Flight, eh?\n\nThe creation of " ..
+                "the illusion you require is trivial, but the components required for the divination are " ..
+                "quite difficult to obtain. Rexxar and the Warchief have entrusted you with this mission, " ..
+                "so Myranda must assume you as capable.\n\nTravel to the upper citadel of Blackrock Spire " ..
+                "and slay enough of the black dragonspawn to fill up one of your packs with their " ..
+                "eyes.\n\nReturn to Myranda when you have gathered enough of the reagent.",
+        },
+        [6570] = {
+            description = "I have attuned this medallion with the magic necessary to create and maintain " ..
+                "an illusion within the bounds of the den of Emberstrife.\n\nEmberstrife is an ancient " ..
+                "drake; an old gatekeeper of Nefarian, burdened with the duty to test those dragonspawn " ..
+                "that would ascend to the rank of elite guard to Onyxia.\n\nTravel to the Wyrmbog of " ..
+                "Dustwallow Marsh and enter the lair of Emberstrife. Once there, put on the amulet and " ..
+                "follow where your destiny may lead!",
+        },
+        [6582] = {
+            description = "We are Deathwing's children, whelp. Our dominance over the lesser Aspects must " ..
+                "be enforced.\n\nIf you are truly worthy of ascension, the lesser dragonflight will wilt " ..
+                "in your presence.\n\nFind their champions and lay waste to them in the name of our " ..
+                "Father!\n\nTravel to Winterspring and track down the mighty blue drake, Scryer. Crush " ..
+                "him and any of the Blue Flight that stand in your path. Tear out his skull and return it " ..
+                "to me.",
+        },
+        [6583] = {
+            description = "Just as our Father crushes the Aspects themselves, so too must we strive to " ..
+                "bring chaos and destruction to their children.\n\nYou must test your battle prowess " ..
+                "against the sleepless dreamers: The children of the Green Flight.\n\nTravel to the Swamp " ..
+                "of Sorrows and track down Somnus, drake champion of the Green Flight. Let flow your " ..
+                "hatred; dominate the insect... Return to me with his skull...",
+        },
+        [6584] = {
+            description = "The time watchers, children of Nozdormu - Lord of the Centuriesss...\n\nIt is " ..
+                "three that guard the Caverns of Time, but only one that holds the interests of the Black " ..
+                "Flight: The Time Shifter, Chronalis, favored drakeling of Nozdormu.\n\nSsstrike at this " ..
+                "champion, a blow to make even the stoic sands of time weep. Return to me with his skull.",
+        },
+        [6585] = {
+            description = "It was over the mountains of Grim Batol that our Father raged against the " ..
+                "combined might of the Aspects. The cowardly act of the betrayer, Alexstrasza, bought the " ..
+                "other Aspects enough time to escape from Father's wrath.\n\nSssuch a shameful " ..
+                "act...\n\nThe Red Flight now guards Grim Batol, their lieutenant, Axtroz, must be " ..
+                "destroyed. Return the skull of Axtroz to me. For Father, whelp!",
+        },
+        [6601] = {
+            description = "From the skulls of our enemies is shaped a medallion. You know this medallion, " ..
+                "yesss? You have no doubt seen it worn by your elders.\n\nTake it, whelp. Return to the " ..
+                "Spire and present it to General Drakkisath. The General will place the final enchantment " ..
+                "upon the medallion, attuning the trinket to your spirit.\n\nYou will wear the finished " ..
+                "medallion as a badge of honor, symbolizing your ascension to one of our most guarded " ..
+                "ranks: Guardian to the brood mother.\n\nGo!",
+        },
+        [6602] = {
+            description = "You will pay the General a visit, yes, but not as one of the Black " ..
+                "Dragonflight.\n\nYou see, a ceremony is merely another term for blood letting to the " ..
+                "Black Flight.\n\nThe latent amulet merely needs the blood of the General in order to " ..
+                "become active. One of their crude failsafe mechanisms.\n\nReturn to Blackrock Spire and " ..
+                "destroy Drakkisath. Bring his blood back here and I shall activate the key to Onyxia's " ..
+                "lair.",
+            rewardItems = {{16309, 1}},
+        },
+        [6821] = {
+            description = "You have shown me that you can defeat our enemies and perform missions to " ..
+                "further the cause of the Waterlords. But until now you have only faced lesser foes... if " ..
+                "pitted against a powerful enemy, can you prevail?\n\nThat is your new task.\n\nHigh up " ..
+                "in Blackrock Spire the orcs have captured a servant of fire, the Pyroguard Emberseer. " ..
+                "Find his place of imprisonment, slay his captors, and then slay the emberseer. Bring me " ..
+                "his eye and it will show me your worth.",
+        },
+        [6822] = {
+            description = "<name>, perhaps it is time to give you a real test. Are you ready?\n\nAt the " ..
+                "bottom of Blackrock Depths is a passage to the Molten Core. This is a stronghold of our " ..
+                "enemy, held by the most powerful servants of fire on this world.\n\nGo to the Molten " ..
+                "Core, <name>. Show me you have the strength and the will to defeat what you find " ..
+                "there.\n\nAnd if you have allies among your people, then rally them. Nothing short of an " ..
+                "army can hope to enter the Molten Core and live.",
+        },
+        [6823] = {
+            description = "If you truly wish an allegiance with us, then I invite you to wage war on our " ..
+                "foes, the servants of air and earth and fire. Each defeat you heap upon them will weaken " ..
+                "their foothold here, and further prove your adherence to our cause.\n\nThe campaign will " ..
+                "be long, but if you persevere then your glory and honor will be great.",
+        },
+        [6824] = {
+            description = "<name>, your service is of great value to us, so we are reluctant to send you " ..
+                "on this last mission for we do not want to lose such a useful agent.\n\nBut its success " ..
+                "would further our war efforts tremendously and... it was deemed worth risking you.\n\nWe " ..
+                "want these captains in the Molten Core destroyed: Lucifron, Sulfuron, Gehennas and " ..
+                "Shazzrah. Kill them and bring me their hands!\n\nThis task will take every resource you " ..
+                "possess, <name>, but if can do it then the Firelords will be dealt a terrible blow.",
+        },
+        [8413] = {
+            description = "The spirit totem just isn't enough. We be needin' some voodoo magic to make it " ..
+                "work jus' right.\n\nThe trolls in the sunken temple have feathers strong with voodoo " ..
+                "magics. Go there and kill Gasher, Mijan, Zolo, Hukku, Zul'lor, and Loro. Then we have " ..
+                "magic enough for a real spirit totem.",
+            rewardChoices = {{20369, 1}, {20503, 1}, {20556, 1}},
+            rewardMoney = 15500,
         },
         [9075] = {
             description = "Would you honor me by returning the armor of those that fell in the defense of " ..
