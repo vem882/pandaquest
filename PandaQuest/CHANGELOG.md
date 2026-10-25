@@ -4,6 +4,130 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.261] - 2026-10-25
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,558 quests, 99 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 516 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 499 quests, 7 NPCs
+- quest 2561 - Druid of the Claw - updated
+  - description added
+  - reward choices: +2
+- quest 12819 - Just Around the Corner - updated
+  - description added
+- quest 12821 - Cell Block Tango - updated
+  - description added
+- quest 12822 - Know No Fear - updated
+  - description added
+- quest 12823 - A Flawless Plan - updated
+  - description added
+- quest 12826 - Slightly Unstable - updated
+  - description added
+- quest 12827 - Reclaimed Rations - updated
+  - description added
+- quest 12829 - Moving In - updated
+  - description added
+- quest 12830 - Ore Repossession - updated
+  - description added
+- quest 12831 - Only Partly Forgotten - updated
+  - description added
+- quest 12833 - Overstock - updated
+  - description added
+- quest 12836 - Expression of Gratitude - updated
+  - description added
+- quest 12838 - Intelligence Gathering - updated
+  - description added
+- quest 12839 - The Grand (Admiral's) Plan - updated
+  - description added
+- quest 12841 - The Crone's Bargain - updated
+  - description added
+- quest 12842 - Runeforging: Preparation For Battle - updated
+  - description added
+- quest 12844 - Equipment Recovery - updated
+  - description added
+- quest 12846 - Leave No Goblin Behind - updated
+  - description added
+- quest 12847 - Second Chances - updated
+  - description added
+- quest 12848 - The Endless Hunger - updated
+  - description added
+- quest 12850 - Report To Scourge Commander Thalanor - updated
+  - description added
+- quest 12851 - Bearly Hanging On - updated
+  - description added
+- quest 12853 - Luxurious Getaway! - updated
+  - description added
+- quest 12854 - On Brann's Trail - updated
+  - description added
+- quest 12855 - Sniffing Out the Perpetrator - updated
+  - description added
+- quest 12856 - Cold Hearted - updated
+  - description added
+- quest 12858 - Pieces to the Puzzle - updated
+  - description added
+- quest 12860 - Data Mining - updated
+  - description added
+- quest 12862 - When All Else Fails - updated
+  - description added
+- quest 12863 - Offering Thanks - updated
+  - description added
+- quest 12864 - Missing Scouts - updated
+  - description added
+- quest 12866 - Stemming the Aggressors - updated
+  - description added
+- quest 12867 - Baby Stealers - updated
+  - description added
+- quest 12869 - Pushed Too Far - updated
+  - description added
+- quest 12873 - The Frostborn King - updated
+  - description added
+- quest 12875 - An Experienced Guide - updated
+  - description added
+- quest 12876 - Unwelcome Guests - updated
+  - description added
+- quest 12877 - The Lonesome Watcher - updated
+  - description added
+- quest 12878 - The Hidden Relic - updated
+  - description added
+- quest 12879 - Fury of the Frostborn King - updated
+  - description added
+- quest 12880 - The Master Explorer - updated
+  - description added
+- quest 12883 - Orders From Drakuru - updated
+  - description added
+  - reward items: +1
+- quest 12884 - The Ebon Watch - updated
+  - description added
+- quest 12885 - The Exiles of Ulduar - updated
+  - description added
+- quest 12887 - It's All Fun and Games - updated
+  - description added
+- quest 12888 - SCRAP-E - updated
+  - description added
+- quest 12889 - The Prototype Console - updated
+  - description added
+- quest 12891 - I Have an Idea, But First... - updated
+  - description added
+- quest 12892 - It's All Fun and Games - updated
+  - description added
+- quest 12894 - Crusader Forward Camp - updated
+  - description added
+- quest 12896 - If He Cannot Be Turned - updated
+  - description added
+- quest 12897 - If He Cannot Be Turned - updated
+  - description added
+- quest 12901 - Making Something Out Of Nothing - updated
+  - description added
+  - reward items: +1
+- quest 12902 - In Search Of Answers - updated
+  - description added
+- quest 12904 - Light Won't Grant Me Vengeance - updated
+  - description added
+  - reward items: +1
+- quest 12905 - Mildred the Cruel - updated
+  - description added
+
 ## [0.2.260] - 2026-10-25
 
 Data from the PandaQuest portal.
