@@ -1041,6 +1041,21 @@ ns.Overrides.wowhead = {
                 "seal on Trollbane's tomb. Return it to Zengu, no doubt he has additional tasks for you " ..
                 "to complete.",
         },
+        [643] = {
+            description = "Though they can barely be said to control Stromgarde, let alone the whole of " ..
+                "Arathi Highlands, the human prince trots the remnants of his cavalry over the " ..
+                "countryside. I can't understand why he does it, but who understands the way the humans " ..
+                "think, hm?\n\nWhatever his reasoning, more importantly, he has given one of the sigils " ..
+                "to Lieutenant Valorcall, their cavalry leader. Locate him and bring his sigil back to me.",
+            rewardMoney = 5500,
+        },
+        [644] = {
+            description = "The final of the sigils needed to unlock the tomb of Thoras Trollbane is held " ..
+                "by his son personally. He resides deep within Stromgarde, in a chapel in the " ..
+                "militia-held districts. Prince Galen is well protected and no slouch of a warrior " ..
+                "himself, so this task could prove most difficult.",
+            rewardMoney = 5500,
+        },
         [648] = {
             description = "The gnome's voice crackles once again from the robot:\n\n\"I need to move " ..
                 "OOX-17/TN to an open, safe place so it can begin a lengthy take-off procedure. It has " ..

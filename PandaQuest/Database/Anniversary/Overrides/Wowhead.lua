@@ -1040,6 +1040,54 @@ ns.Overrides.wowhead = {
                 "and I'll see to it you are rewarded.",
             rewardChoices = {{3511, 1}, {5944, 1}, {12295, 1}},
         },
+        [154] = {
+            description = "NO!!!!!\n\nTake it, take this comb away from me!\n\nI'm a monster, and no one " ..
+                "will ever think me lovely again!",
+            rewardMoney = 175,
+        },
+        [155] = {
+            description = "So Stoutmantle sends a scrawny <race> like you to protect me? Guess you'll " ..
+                "have to do. Better bring some friends too.\n\nYou know the deal, right? You watch my " ..
+                "back and I'll take you to the Defias hideout. But you better be close by my side. The " ..
+                "Defias gang wants my head now. If they see me with you, they'll try to kill me.\n\nLet " ..
+                "me know when you and any friends you can round up are ready to go.",
+        },
+        [156] = {
+            description = "If you bring me some rot blossoms then I can brew you up a batch of zombie " ..
+                "juice.\n\nrot blossoms grow in strange places. In particular, I hear you can find them " ..
+                "inside the skulls of Skeletal Horrors and Skeletal Fiends... not that I've gotten close " ..
+                "enough to look!\n\nThe Raven Hill Cemetery is lousy with those skeletons. You may as " ..
+                "well get rid of them while you're looking for rot blossoms. The town of Darkshire would " ..
+                "be grateful.",
+        },
+        [157] = {
+            description = "Here is your thread, <name>. It has a thousand uses, from binding evil spirits " ..
+                "to sewing life into inanimate objects.",
+            rewardMoney = 1300,
+        },
+        [158] = {
+            description = "I need a bottle of a certain liquor - Zombie Juice. Tavernkeep Smitts at the " ..
+                "Scarlet Raven Tavern in Darkshire should have some.\n\nAnd please hurry, <name>. These " ..
+                "nights get cold, and I need that drink to put fire in my veins again!",
+        },
+        [159] = {
+            description = "Here's your Zombie Juice...\n\n...and be careful with this stuff. It's strong " ..
+                "enough to raise the dead!",
+            rewardMoney = 1700,
+        },
+        [160] = {
+            description = "Take this note to Ello Ebonlocke, the Mayor of Darkshire.\n\nHe and I are old " ..
+                "friends...and when he reads it and discovers what you did for me...I'm sure he'll be " ..
+                "just as happy as I am! Hahahaha!",
+        },
+        [643] = {
+            description = "Though they can barely be said to control Stromgarde, let alone the whole of " ..
+                "Arathi Highlands, the human prince trots the remnants of his cavalry over the " ..
+                "countryside. I can't understand why he does it, but who understands the way the humans " ..
+                "think, hm?\n\nWhatever his reasoning, more importantly, he has given one of the sigils " ..
+                "to Lieutenant Valorcall, their cavalry leader. Locate him and bring his sigil back to me.",
+            rewardMoney = 5500,
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
@@ -1333,6 +1381,30 @@ ns.Overrides.wowhead = {
         [9885] = {rewardItems = {{25422, 1}}},
         [9886] = {rewardItems = {{25424, 1}}},
         [9887] = {rewardItems = {{25423, 1}}},
+        [9995] = {
+            description = "I don't know about you, but I have no idea what all of those things are. I do " ..
+                "know one thing though - they look dangerous!\n\n<name>, I think you should take this box " ..
+                "of parts to Tooki at Stonebreaker Hold to the southeast. He may have some idea of what " ..
+                "these are.",
+            rewardMoney = 16000,
+        },
+        [10003] = {
+            description = "Over the past couple of days, I've observed a blood elf woman traveling to and " ..
+                "from the fel orc stronghold and conversing with the fel orc leader. From her body " ..
+                "language, she's clearly issuing orders. But why? Whose orders is she conveying?\n\nMy " ..
+                "curiosity got the better of my judgment and I shadowed her when she left the fel orc " ..
+                "encampment. She headed north, to Firewing Point. I stopped before reaching the perimeter " ..
+                "of the blood elf outpost.\n\nKill her before she leaves the fel orc camp again.",
+            rewardMoney = 31000,
+        },
+        [10039] = {
+            description = "I am informed that one of our scouts near Grangol'var Village is currently " ..
+                "observing a shadowy band that has recently moved in there.\n\n<name>, I want you to " ..
+                "speak with Scout Neftis and see how you can assist her in figuring out what this unknown " ..
+                "group is up to.\n\nJust head south out of here, and then due west, skirting the north of " ..
+                "the Bone Wastes. Her last report puts her position near the southern entrance to the " ..
+                "village.",
+        },
         [10091] = {
             description = "Gah! They've been torturing me, trying to get me to tell them everything that " ..
                 "I know.\n\nI failed - they fed the others to Hellmaw, and I was to be next. But I told " ..
@@ -1838,6 +1910,14 @@ ns.Overrides.wowhead = {
                 "recent or ancient. The outcome of the Battle of Mount Hyjal must be preserved.",
             rewardMoney = 132000,
         },
+        [10448] = {
+            description = "This calls for immediate action!\n\nWe have someone out in the field closer to " ..
+                "Firewing Point that I want you to speak with. She'll have a better idea of what our next " ..
+                "step should be.\n\nReport to Sergeant Chawni out at Stonebreaker Camp and apprise her of " ..
+                "the situation.\n\nTake the road north out of the hold. From the middle of Tuurem, follow " ..
+                "the road to the east. You'll find the camp on the bank of the river that lies just " ..
+                "southwest of Firewing Point.\n\nGood luck, <name>.",
+        },
         [10451] = {
             description = "Thank the Earthmother! I parted ways with the others several days ago. I was " ..
                 "intent on discovering the source of the disturbance that the spirits of water were " ..
@@ -2186,6 +2266,23 @@ ns.Overrides.wowhead = {
             rewardMoney = 132000,
             rewardXP = 19000,
         },
+        [10596] = {
+            description = "The fortress of Legion Hold is your target. You'll have no reinforcements, so " ..
+                "a frontal attack is out of the question.\n\nWhat little information we have shows that " ..
+                "the Legion stocks and prepares its infernals at the hold. With the help of a disguise " ..
+                "I'll give you, you must sneak into Legion Hold and discover their plans.\n\nYour best " ..
+                "hope is to intercept or overhear communication between their commanders.",
+            rewardMoney = 41000,
+        },
+        [10611] = {
+            description = "The best way to destroy the rest of the Legion's supplies is to use their own " ..
+                "weapons against them. I've been working on a rig that will let you take control of one " ..
+                "of those Fel Reaver Sentinels below.\n\nThere are a couple things I need to work out, " ..
+                "yet. For that, I'll need the manual that Doctor Maleficus keeps locked in a chest near " ..
+                "the bottom of the ramp. He probably won't give up the key without a fight, so you'll " ..
+                "need to capture it. Bring the fel reaver manual back to me and I'll do the rest.",
+            rewardMoney = 41000,
+        },
         [10619] = {
             description = "The Ashtongue tribe is feared among all Broken. It consists of the most " ..
                 "vicious and bloodthirsty individuals, handpicked by Akama himself. They are as fierce " ..
@@ -2352,6 +2449,15 @@ ns.Overrides.wowhead = {
                 "plenty of targets for you to go after. Kael's highest ranking soldiers wear Sunfury " ..
                 "signets to mark their ranks. You will find them all over Netherstorm and Shadowmoon " ..
                 "Valley.",
+        },
+        [10666] = {
+            description = "Recreating the enchantments on the blade requires several spells to be spoken " ..
+                "in demonic.\n\nIt's not something I was taught during my training as an apprentice, but " ..
+                "there's no way around it. There's a book, called the Lexicon Demonica, that will provide " ..
+                "most of the words I need, but it's in the hands of a powerful Shadow Council " ..
+                "warlock.\n\nDeep in the halls of Auchindoun's Shadow Labyrinth, it is held by " ..
+                "Grandmaster Vorpil. Do whatever you must to secure the book and bring it to me.",
+            rewardMoney = 41000,
         },
         [10667] = {
             description = "The frame that you brought me earlier will not be sufficient to hold molten " ..
@@ -3047,6 +3153,12 @@ ns.Overrides.wowhead = {
                 "Netherstorm.\n\nHis mastery of transmutation is... well, outlandish! See what you can " ..
                 "learn from him, but beware - ethereals drive a hard bargain.",
         },
+        [10914] = {
+            description = "It is not enough. A hero is needed. Our forces are overwhelmed as the Auchenai " ..
+                "continue to grow in number.\n\n< Commander Ra'vaj looks at you.>\n\nWill you be the " ..
+                "hero? Return to the field of battle and strike at their soldiers. Keep them occupied so " ..
+                "that my scouts can get behind their lines and see what they are creating.",
+        },
         [10938] = {
             description = "Now that you have gathered all of the Blessings cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -3590,6 +3702,7 @@ ns.Overrides.wowhead = {
             zoneID = 3520,
         },
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
+        [21502] = {spawns = {[3520] = {{23.4, 36.8}, {23.6, 36.8}}}, zoneID = 3520},
         [21877] = {spawns = {[3520] = {{58.2, 70.4}, {58.2, 70.8}}}, zoneID = 3520},
         [22076] = {
             spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.8}, {52, 73.6}}},
