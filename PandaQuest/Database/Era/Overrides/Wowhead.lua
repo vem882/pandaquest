@@ -1617,6 +1617,15 @@ ns.Overrides.wowhead = {
         [4805] = {rewardItems = {{12459, 3}}},
         [4806] = {rewardItems = {{12460, 3}}},
         [4807] = {rewardItems = {{12458, 3}}},
+        [4811] = {
+            description = "Hostile moonkin roam in ever increasing numbers to our east. They once were " ..
+                "thought to be gentle, almost mystical creatures. While some continue to hold reverence " ..
+                "for them, the safety of Auberdine forces me to keep a more realistic view.\n\nI've " ..
+                "received reports that moonkin are being drawn to a large red crystal along Darkshore 's " ..
+                "eastern mountain range. No one has any idea what that crystal is, or even if it really " ..
+                "exists. I want you to locate it over there and report back to me what you find.",
+            rewardMoney = 600,
+        },
         [4866] = {
             description = "It's probably one of the most potent poisons in the world, <race>!\n\nI've " ..
                 "overheard the Blackrock speaking about its lethality in my jaunts into the Spire. They " ..
@@ -3410,6 +3419,14 @@ ns.Overrides.wowhead = {
                 "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
                 "of purification and you shall know faith.",
             rewardItems = {{22517, 1}},
+        },
+        [9118] = {
+            description = "<Father Montoy makes some strange gestures in the air in front of " ..
+                "you.>\n\nBlessed <boy/girl>, have you found the vestments of the fallen? The poor souls " ..
+                "whose last breaths were taken on the field of battle - stripped of everything including " ..
+                "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
+                "of purification and you shall know faith.",
+            rewardItems = {{22519, 1}},
         },
         [9132] = {rewardItems = {{22523, 1}}, rewardMoney = 900},
         [9190] = {

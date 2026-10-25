@@ -4,6 +4,141 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.260] - 2026-10-25
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,548 quests, 99 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 514 quests, 7 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 483 quests, 6 NPCs
+- quest 12712 - The Key of Warlord Zol'Maz - updated
+  - description added
+- quest 12714 - The Will Of The Lich King - updated
+  - description added
+- quest 12715 - The Crypt of Remembrance - updated
+  - description added
+- quest 12723 - Behind Scarlet Lines - updated
+  - description added
+- quest 12725 - Brothers In Death - updated
+  - description added
+- quest 12726 - Song of Wind and Water - updated
+  - description added
+- quest 12729 - The Gods Have Spoken - updated
+  - description added
+  - reward items: +1
+- quest 12732 - The Heartblood's Strength - updated
+  - description added
+- quest 12734 - Rejek: First Blood - updated
+  - description added
+- quest 12735 - A Cleansing Song - updated
+  - description added
+- quest 12736 - Song of Reflection - updated
+  - description added
+- quest 12737 - Song of Fecundity - updated
+  - description added
+- quest 12738 - A Cry For Vengeance! - updated
+  - description added
+- quest 12739 - A Special Surprise - updated
+  - description added
+- quest 12741 - Strength of the Tempest - updated
+  - description added
+- quest 12742 - A Special Surprise - updated
+  - description added
+- quest 12743 - A Special Surprise - updated
+  - description added
+- quest 12744 - A Special Surprise - updated
+  - description added
+- quest 12745 - A Special Surprise - updated
+  - description added
+- quest 12746 - A Special Surprise - updated
+  - description added
+- quest 12747 - A Special Surprise - updated
+  - description added
+- quest 12748 - A Special Surprise - updated
+  - description added
+- quest 12749 - A Special Surprise - updated
+  - description added
+- quest 12750 - A Special Surprise - updated
+  - description added
+- quest 12754 - Ambush At The Overlook - updated
+  - description added
+- quest 12755 - A Meeting With Fate - updated
+  - description added
+- quest 12756 - The Scarlet Onslaught Emerges - updated
+  - description added
+- quest 12759 - Tools of War - updated
+  - description added
+- quest 12760 - Secret Strength of the Frenzyheart - updated
+  - description added
+- quest 12762 - Power of the Great Ones - updated
+  - description added
+- quest 12771 - Ironforge - updated
+  - quest giver added: Bishop Lazaril
+  - description added
+- quest 12773 - Darnassus - updated
+  - quest giver added: Bishop Lazaril
+  - description added
+- quest 12774 - Stormwind - updated
+  - quest giver added: Bishop Lazaril
+  - description added
+- quest 12776 - The Exodar - updated
+  - quest giver added: Bishop Lazaril
+  - description added
+- quest 12778 - The Scarlet Apocalypse - updated
+  - description added
+- quest 12785 - Orgrimmar - updated
+  - quest giver added: Grand Apothecary Putress
+  - description added
+- quest 12787 - The Undercity - updated
+  - quest giver added: Grand Apothecary Putress
+  - description added
+- quest 12788 - Silvermoon - updated
+  - quest giver added: Grand Apothecary Putress
+  - description added
+- quest 12789 - Into the Breach! - updated
+  - description added
+- quest 12792 - First Things First - updated
+  - description added
+- quest 12793 - Smoke on the Horizon - updated
+  - description added
+- quest 12795 - Taking a Stand - updated
+  - description added
+- quest 12797 - Back Through the Waygate - updated
+  - description added
+- quest 12799 - Siphoning the Spirits - updated
+  - description added
+- quest 12800 - The Lich King's Command - updated
+  - description added
+- quest 12803 - Force of Nature - updated
+  - description added
+- quest 12805 - Salvaging Life's Strength - updated
+  - description added
+  - reward items: +1
+- quest 12806 - To the Rise with all Due Haste! - updated
+  - description added
+- quest 12807 - The Story Thus Far... - updated
+  - description added
+- quest 12809 - Ironforge - updated
+  - quest giver added: Bishop Lazaril
+  - description added
+- quest 12810 - Blood in the Water - updated
+  - description added
+- quest 12812 - Orgrimmar - updated
+  - quest giver added: Grand Apothecary Putress
+  - description added
+- quest 12813 - From Their Corpses, Rise! - updated
+  - description added
+- quest 12815 - No Fly Zone - updated
+  - description added
+- quest 12818 - Clean Up - updated
+  - description added
+- quest 14093 - All Hell Breaks Loose - updated
+  - description added
+- npc 2784 - King Magni Bronzebeard - updated
+  - coordinates: 4 spawn points added in Ironforge
+- npc 7937 - High Tinker Mekkatorque - updated
+  - coordinates: 2 spawn points added in Ironforge
+
 ## [0.2.259] - 2026-10-25
 
 Data from the PandaQuest portal.
