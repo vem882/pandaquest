@@ -925,6 +925,14 @@ ns.Overrides.wowhead = {
                 "will use that as our lens!",
             rewardChoices = {{7106, 1}, {7107, 1}},
         },
+        [183] = {
+            description = "Nothing like a day of boar hunting, eh?\n\nThough, here in Coldridge Valley, " ..
+                "there are so many boars it almost takes the fun out of it. No need to get them charging. " ..
+                "They're all angry and ready without any help. In fact, recently, there've been so many " ..
+                "boars in the area, it's become dangerous for me to do my daily hunting.\n\nLong story " ..
+                "short, if you could help me kill some of the boars, I would appreciate it.",
+            rewardChoices = {{79, 1}, {61, 1}},
+        },
         [211] = {
             description = "Alas, the time to attack Andorhal and drive out the lich that controls it is " ..
                 "upon us!\n\nInside the ruins of the city is where the lich - Araj the Summoner - holds " ..
@@ -1198,6 +1206,10 @@ ns.Overrides.wowhead = {
                 "hands now.",
             rewardItems = {{4987, 1}},
             rewardMoney = 12500,
+        },
+        [777] = {
+            description = "Okay, here you go.\n\nI'm going to be over here... behind cover.\n\nFeel free " ..
+                "to join me.",
         },
         [781] = {
             description = "After carefully evaluating the map, you realize that what you discovered are " ..
@@ -1645,6 +1657,11 @@ ns.Overrides.wowhead = {
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
         },
+        [1698] = {
+            description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
+                "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
+                "pass his trial.",
+        },
         [1718] = {
             description = "Your renown as a warrior grows, <name>. Now it is time to pit yourself against " ..
                 "your peers and see where you stand.\n\nThere is an island off the coast of the Barrens, " ..
@@ -1659,6 +1676,32 @@ ns.Overrides.wowhead = {
                 "then speak with Jennea Cannon, in the wizard's sanctum in the mage district of " ..
                 "Stormwind. She has a task for you which will open your first window into the invisible " ..
                 "world.",
+        },
+        [1920] = {
+            description = "A disturbance has been reported at the Blue Recluse tavern in the Mage " ..
+                "Quarter. Strange, invisible creatures now wander the tavern, and I fear a mana rift has " ..
+                "formed there.\n\nI want you to investigate the tavern and capture those creatures. Use " ..
+                "the cantation of manifestation in the tavern to make the creatures visible, subdue them " ..
+                "then use a containment coffer to capture them. When you have enough, return to me with " ..
+                "your filled coffers, your empty coffers and the cantation.",
+        },
+        [1921] = {
+            description = "You have served your fellow mages well, and now it is time to don your " ..
+                "wizard's robe. Wynne Larson can make your robe, but you must bring her the needed " ..
+                "materials\n\nThe robe will be made of linen which is easy to find, but you must also " ..
+                "gain charged rift gems, and the only known location of the gems is in the Silver Stream " ..
+                "Mine of Loch Modan, left in crates by the dwarven miners' league.\n\nGather the linen " ..
+                "and the gems and bring them to Wynne Larson at the Larson Clothiers in the Mage District.",
+        },
+        [1939] = {
+            description = "High Sorcerer Andromath wishes to speak with you, <name>. He is at the top of " ..
+                "the wizard's sanctum, in the mage's district of Stormwind.\n\nIt would be wise to speak " ..
+                "with him, for Andromath is one of the most powerful mages not locked away in Dalaran. " ..
+                "Council with him is high council indeed.",
+        },
+        [1943] = {
+            description = "The troll mage Deino has need of your assistance, <name>. She resides in " ..
+                "Orgrimmar, in the Darkbriar Lodge.",
         },
         [1947] = {
             description = "Now it is time for you to earn your mage's wand. To begin this quest, speak " ..
@@ -1802,6 +1845,19 @@ ns.Overrides.wowhead = {
                 "the craft should be rewarded.\n\nYou have attained expertise over blacksmithing, <name>. " ..
                 "Reap the rewards!",
             rewardItems = {{8703, 1}},
+        },
+        [2861] = {
+            description = "Rumor is that Tabetha, a mage colleague who lives deep in Dustwallow Marsh, " ..
+                "has a bone to pick with a certain sand troll in Zul'Farrak. If you speak with Tabetha " ..
+                "she can tell you more.\n\nAnd bring some friends with you, <name>. If Tabetha has you go " ..
+                "to Zul'Farrak then you're not going to want to go alone.\n\nYou will find Tabetha 's " ..
+                "cottage west of Theramore, and just north of the Stonemaul Ruin.",
+        },
+        [2993] = {
+            description = "Sharpbeak is held in a cage, high on a cliff at the top of Jintha'Alor in the " ..
+                "Hinterlands. The key to this cage is possessed by the high priestess of the Vilebranch " ..
+                "trolls, Vile Priestess Hexx.\n\nThere. I have done my part. I bid you fortune on your " ..
+                "quest, <name>.",
         },
         [3082] = {
             description = "Ah, while you were gone a tablet came for you, <name>.\n\nRead it when you " ..
@@ -2949,10 +3005,31 @@ ns.Overrides.wowhead = {
                 "you've killed a fair number of those winged demons. Don't disappoint me.",
             rewardMoney = 9000,
         },
+        [6064] = {
+            description = "Hi there, <lad/lass>! So, you'd be wanting to know how you can gain a pet of " ..
+                "your own?\n\nWell, let's get started. There's nothing more important than yer equipment " ..
+                "when it comes to hunting, but we can chat about my new Shrapnel Blaster some other time. " ..
+                "Fer now, let's focus on something I'm sure you're quite interested in: a pet!\n\nThe " ..
+                "best way to learn is for you to try out several creatures as companions and see what ya " ..
+                "like. So, find a large crag boar, then use the taming rod to tame it.",
+        },
+        [6067] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Yaw Sharpmane in Bloodhoof " ..
+                "Village. He can put you on the path to earning a pet of your own.",
+        },
         [6071] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
                 "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
                 "you on the path to earning a pet of your own.",
+        },
+        [6102] = {
+            description = "You have tamed two creatures that inhabit the land, now you must tame one that " ..
+                "soars the skies. Use the taming rod to tame a strigid screecher, found west of here. " ..
+                "Practice your skills with this mighty owl at your side.\n\nWhen you return, I will " ..
+                "bestow you with the skills you will need to tame an animal of your choosing to be your " ..
+                "companion; this creature will face the challenges you face, and gain experience " ..
+                "alongside you. I will also show you how to call it and dismiss it as you wish.",
         },
         [6133] = {
             description = "The high elves of the Quel'Lithien lodge possesses something that belongs to " ..
@@ -4159,6 +4236,7 @@ ns.Overrides.wowhead = {
                 "with other minor components and I shall craft you leggings of great power.",
             rewardItems = {{21352, 1}},
         },
+        [8605] = {rewardItems = {{21438, 3}, {21510, 1}}},
         [8608] = {rewardItems = {{21438, 7}, {21512, 1}}},
         [8613] = {
             description = "It be a nice day for fishin', don't'cha think mon? Good thing, cuz I be " ..
