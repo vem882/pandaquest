@@ -4,6 +4,232 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.271] - 2026-10-26
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,205 quests, 115 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 667 quests, 10 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 677 quests, 11 NPCs
+- database - WoW Forever: data from the PandaQuest portal: none
+- quest 8194 - Apprentice Angler - updated
+  - reward money removed (14s)
+- quest 9392 - Rogue Training - updated
+  - description removed
+- quest 10736 - Down the Violet Path - updated
+  - description removed
+  - reward items: -1
+- quest 13830 - The Ghostfish - updated
+  - description removed
+  - reward items: -1
+- quest 24471 - Aid for the Wounded - updated
+  - description removed
+  - reward money removed (35c)
+- quest 24475 - All the Other Stuff - updated
+  - description removed
+  - reward money removed (35c)
+- quest 26442 - Rock Lobster - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - reward items: -1
+- quest 26542 - Hero's Call: The Hinterlands! - updated
+  - description removed
+  - reward money removed (21s)
+- quest 26727 - The Embalmer's Revenge - updated
+  - description removed
+  - reward money removed (45s)
+  - reward choices: -3
+- quest 28776 - Broken Earthen Figurine - updated
+  - description removed
+  - reward items: -1
+- quest 29320 - Like Pike? - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - reward items: -1
+- quest 29477 - Gnomish Engineering - updated
+  - description removed
+- quest 29562 - Jailbreak - updated
+  - description removed
+  - reward money removed (4g 90s)
+- quest 29619 - A Courteous Guest - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29628 - A Strong Back - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29639 - Flying Colors - updated
+  - description removed
+  - reward money removed (9g 80s)
+  - reward choices: -6
+- quest 29670 - Maul Gormal - updated
+  - description removed
+  - reward money removed (9g 80s)
+  - reward choices: -5
+- quest 29743 - Monstrosity - updated
+  - description removed
+- quest 29756 - A Humble Offering - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29821 - Missed Me By... That Much! - updated
+  - description removed
+- quest 29912 - The Fabulous Miss Fanny - updated
+  - description removed
+  - reward money removed (7g 70s)
+- quest 29919 - Great Minds Drink Alike - updated
+  - description removed
+  - reward money removed (5g 10s)
+- quest 29937 - Furious Fowl - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 30011 - A New Vision - updated
+  - description removed
+  - reward money removed (4g 90s)
+- quest 30015 - Dawn's Blossom - updated
+  - description removed
+  - reward money removed (4g 90s)
+- quest 30046 - Chen's Resolution - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 30206 - Runes in the Ruins - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30282 - Burning Away the Filth - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30293 - In Enemy Hands - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30304 - Hard as a Rock - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30485 - Last Piece of the Puzzle - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 30504 - Emergency Response - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 30535 - Learn and Grow I: Seeds - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30631 - The Shrine of Seven Stars - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30633 - Out with the Scouts - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30634 - Barring Entry - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30754 - Bright Bait - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30773 - Pitching In - updated
+  - description removed
+  - reward money removed (11g)
+  - reward items: -1
+- quest 30792 - Orbiss Fades - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30796 - An End to Everything - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 30807 - By the Falls, For the Fallen - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30816 - Checking In - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 30931 - My Father's Crossbow - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30954 - A Blade is a Blade - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30968 - The Sha of Hatred - updated
+  - description removed
+  - reward money removed (33g)
+  - reward choices: -9
+- quest 30977 - Grounded Welcome - updated
+  - description removed
+  - reward money removed (11g)
+  - reward choices: -9
+- quest 30979 - Devastation Below - updated
+  - description removed
+  - reward money removed (11g)
+  - reward choices: -9
+- quest 31048 - Grave Consequences - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31083 - Promises of Gold - updated
+  - description removed
+  - reward money removed (34g 20s)
+  - reward items: -1
+- quest 31114 - Assault Deadtalker's Plateau - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31199 - Destroy the Siege Weapons! - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31251 - Best Meals Anywhere! - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 31253 - Back to Eastwind Rest - updated
+  - description removed
+  - reward money removed (20g 40s)
+- quest 31268 - A Little Brain Work - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31285 - The Spring Drifter - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 31293 - Mogu Make Poor House Guests - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31319 - Emergency Response - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 31395 - A Celestial Experience - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 31451 - The Missing Merchant - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 31458 - Damage Control - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31542 - Incarnadine Ink - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - XP removed (236,000)
+  - reward items: -1
+- quest 31543 - Portrait of a Lady - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - XP removed (236,000)
+  - reward items: -1
+- quest 31558 - The Finer Things - updated
+  - description removed
+- quest 31695 - Beyond the Wall - updated
+  - description removed
+  - reward money removed (1g 6s)
+- quest 31742 - Fractured Forces - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 31777 - Choppertunity - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 31877 - The Inkmasters of the Arboretum - updated
+  - description removed
+  - reward money removed (1g 14s)
+- quest 31924 - Narrok - updated
+  - description removed
+  - reward money removed (2g 90s)
+- quest 33160 - Time Keeper Kairoz - updated
+  - description removed
+- quest 33230 - A Flash of Bronze... - updated
+  - description removed
+  - reward money removed (2g 85s)
+
 ## [0.2.270] - 2026-10-26
 
 ### Added
@@ -1185,299 +1411,6 @@ Data from the PandaQuest portal.
   - coordinates: 10 spawn points added in Desolace
 - npc 11863 - Azore Aldamort - updated
   - coordinates: 1 spawn point added in Desolace
-
-## [0.2.263] - 2026-10-25
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 10,580 quests, 103 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 538 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 557 quests, 8 NPCs
-- quest 12980 - The Armor's Secrets - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 12981 - Hot and Cold - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 12983 - The Last of Her Kind - updated
-  - description added
-- quest 12985 - Forging a Head - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 12987 - Placing Hodir's Helm - updated
-  - description added
-  - reward money added (1g 90s)
-- quest 12988 - Destroy the Forges! - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 12991 - Hit Them Where it Hurts - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 12993 - A Colossal Threat - updated
-  - description added
-- quest 12994 - Spy Hunter - updated
-  - description added
-- quest 12995 - Leave Our Mark - updated
-  - description added
-- quest 12996 - The Warm-Up - updated
-  - description added
-- quest 12999 - The Bone Witch - updated
-  - description added
-- quest 13001 - Forging Hodir's Spear - updated
-  - description added
-- quest 13003 - How To Slay Your Dragon - updated
-  - description added
-- quest 13006 - A Viscous Cleaning - updated
-  - description added
-- quest 13008 - Scourge Tactics - updated
-  - description added
-- quest 13009 - A New Beginning - updated
-  - description added
-- quest 13011 - Culling Jorcuttar - updated
-  - description added
-- quest 13034 - The Witness and the Hero - updated
-  - description added
-- quest 13035 - Loken's Lackeys - updated
-  - description added
-- quest 13037 - Memories of Stormhoof - updated
-  - description added
-- quest 13038 - Distortions in Time - updated
-  - description added
-- quest 13041 - Finish the Shipment - updated
-  - description added
-- quest 13042 - Deep in the Bowels of The Underhalls - updated
-  - description added
-- quest 13044 - If There Are Survivors... - updated
-  - description added
-- quest 13045 - Into The Wild Green Yonder - updated
-  - description added
-- quest 13046 - Feeding Arngrim - updated
-  - description added
-- quest 13048 - Where Time Went Wrong - updated
-  - description added
-- quest 13049 - The Hero's Arms - updated
-  - description added
-- quest 13050 - Veranus - updated
-  - description added
-- quest 13054 - The Missing Tracker - updated
-  - description added
-- quest 13055 - Cave Medicine - updated
-  - description added
-- quest 13057 - The Terrace of the Makers - updated
-  - description added
-- quest 13060 - When All Else Fails - updated
-  - description added
-- quest 13061 - Prepare for Glory - updated
-  - description added
-- quest 13062 - Lok'lira's Parting Gift - updated
-  - description added
-- quest 13063 - Deemed Worthy - updated
-  - description added
-- quest 13064 - Sibling Rivalry - updated
-  - description added
-- quest 13068 - A Tale of Valor - updated
-  - description added
-- quest 13069 - Shoot 'Em Up - updated
-  - description added
-- quest 13070 - A Cold Front Approaches - updated
-  - description added
-- quest 13071 - Vile Like Fire! - updated
-  - description added
-- quest 13072 - A Hero Remains - updated
-  - description added
-- quest 13073 - The Keeper's Favor - updated
-  - description added
-- quest 13075 - The Boon of Remulos - updated
-  - description added
-- quest 13076 - Time Yet Remains - updated
-  - description added
-- quest 13079 - The Boon of Alexstrasza - updated
-  - description added
-- quest 13080 - Hope Yet Remains - updated
-  - description added
-- quest 13081 - The Will of the Naaru - updated
-  - description added
-- quest 13082 - The Boon of A'dal - updated
-  - description added
-- quest 13084 - Vandalizing Jotunheim - updated
-  - description added
-- quest 13085 - Vaelen Has Returned - updated
-  - description added
-- quest 13093 - Reading the Bones - updated
-  - reward choices: +5
-- quest 13106 - Blackwatch - updated
-  - description added
-- quest 13118 - The Purging Of Scourgeholme - updated
-  - description added
-- quest 13119 - Destroying the Altars - updated
-  - description added
-- quest 13120 - Death's Gaze - updated
-  - description added
-- quest 13121 - Through the Eye - updated
-  - description added
-- quest 13122 - The Scourgestone - updated
-  - description added
-- quest 13124 - The Struggle Persists - updated
-  - quest giver added: Raelorasz
-  - description added
-  - reward choices: +4
-- quest 13126 - A Unified Front - updated
-  - description added
-- quest 13127 - Mage-Lord Urom - updated
-  - description added
-- quest 13133 - Find the Ancient Hero - updated
-  - description added
-- quest 13134 - Spill Their Blood - updated
-  - description added
-- quest 13135 - It Could Kill Us All - updated
-  - description added
-- quest 13136 - Jagged Shards - updated
-  - description added
-- quest 13138 - I'm Smelting... Smelting! - updated
-  - description added
-- quest 13139 - Into The Frozen Heart Of Northrend - updated
-  - description added
-- quest 13140 - The Runesmiths of Malykriss - updated
-  - description added
-- quest 13141 - The Battle For Crusaders' Pinnacle - updated
-  - description added
-- quest 26558 - Summoning Shadra - updated
-  - description added
-- quest 31291 - Uncovering the Past - updated
-  - description added
-- npc 30208 - Stormforged Ambusher - updated
-  - coordinates: 23 spawn points added in The Storm Peaks
-- npc 68715 - Magister Hathorel - updated
-  - NPC title added (The Sunreavers)
-- npc 68716 - Magister Surdiel - updated
-  - NPC title added (Wintergrasp Battle-Mage)
-- npc 68717 - Magistrix Vesara - updated
-  - NPC title added (Legacy Justice Quartermaster)
-
-## [0.2.262] - 2026-10-25
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 10,563 quests, 99 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 525 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 526 quests, 8 NPCs
-- quest 9452 - Red Snapper - Very Tasty! - updated
-  - description added
-  - reward items: +2
-- quest 12907 - Examples to be Made - updated
-  - description added
-- quest 12908 - A Certain Prisoner - updated
-  - description added
-- quest 12909 - The Nose Knows - updated
-  - description added
-- quest 12910 - Sniffing Out the Perpetrator - updated
-  - description added
-- quest 12912 - A Great Storm Approaches - updated
-  - description added
-- quest 12913 - Speak Orcish, Man! - updated
-  - description added
-- quest 12914 - Gymer's Salvation - updated
-  - description added
-- quest 12915 - Mending Fences - updated
-  - description added
-- quest 12917 - Speaking with the Wind's Voice - updated
-  - description added
-- quest 12920 - Catching up with Brann - updated
-  - description added
-- quest 12921 - A Change of Scenery - updated
-  - description added
-- quest 12922 - The Refiner's Fire - updated
-  - description added
-- quest 12925 - Aberrations - updated
-  - description added
-- quest 12926 - Pieces of the Puzzle - updated
-  - description added
-- quest 12927 - Data Mining - updated
-  - description added
-- quest 12929 - The Earthen of Ulduar - updated
-  - description added
-- quest 12930 - Rare Earth - updated
-  - description added
-- quest 12931 - Fighting Back - updated
-  - description added
-- quest 12932 - The Amphitheater of Anguish: Yggdras! - updated
-  - description added
-  - reward items: +1
-- quest 12933 - The Amphitheater of Anguish: Magnataur! - updated
-  - description added
-  - reward items: +1
-- quest 12934 - The Amphitheater of Anguish: From Beyond! - updated
-  - description added
-  - reward items: +1
-- quest 12936 - The Amphitheater of Anguish: Korrak the Bloodrager! - updated
-  - description added
-  - reward items: +1
-- quest 12938 - The Duke - updated
-  - description added
-- quest 12939 - Honor Challenge - updated
-  - description added
-- quest 12949 - Get the Key - updated
-  - description added
-- quest 12951 - Let the Baron Know - updated
-  - description added
-- quest 12954 - The Amphitheater of Anguish: Yggdras! - updated
-  - description added
-  - reward items: +1
-- quest 12956 - A Spark of Hope - updated
-  - description added
-- quest 12957 - Slaves of the Stormforged - updated
-  - description added
-- quest 12958 - Shipment: Blood Jade Amulet - updated
-  - description added
-- quest 12959 - Shipment: Glowing Ivory Figurine - updated
-  - description added
-- quest 12960 - Shipment: Wicked Sun Brooch - updated
-  - description added
-- quest 12961 - Shipment: Intricate Bone Figurine - updated
-  - description added
-- quest 12962 - Shipment: Bright Armor Relic - updated
-  - description added
-- quest 12963 - Shipment: Shifting Sun Curio - updated
-  - description added
-- quest 12964 - The Dark Ore - updated
-  - description added
-- quest 12966 - You Can't Miss Him - updated
-  - description added
-- quest 12967 - Battling the Elements - updated
-  - description added
-- quest 12968 - Yulda's Folly - updated
-  - description added
-- quest 12969 - Is That Your Goblin? - updated
-  - description added
-- quest 12970 - The Hyldsmeet - updated
-  - description added
-- quest 12972 - You'll Need a Bear - updated
-  - description added
-- quest 12974 - The Champion's Call! - updated
-  - description added
-  - reward items: +1
-- quest 12975 - In Memoriam - updated
-  - description added
-- quest 12976 - A Monument to the Fallen - updated
-  - description added
-- quest 12977 - Hodir's Call - updated
-  - description added
-- quest 12978 - Facing the Storm - updated
-  - description added
-- quest 12979 - Armor of Darkness - updated
-  - description added
-- quest 12980 - The Armor's Secrets - updated
-  - reward money removed (7g 40s)
-- quest 12981 - Hot and Cold - updated
-  - reward money removed (7g 40s)
-- quest 12985 - Forging a Head - updated
-  - reward money removed (7g 40s)
-- quest 12987 - Placing Hodir's Helm - updated
-  - reward money removed (1g 90s)
-- quest 12988 - Destroy the Forges! - updated
-  - reward money removed (7g 40s)
-- quest 12991 - Hit Them Where it Hurts - updated
-  - reward money removed (7g 40s)
 
 ## [0.2.246] - 2026-10-24
 

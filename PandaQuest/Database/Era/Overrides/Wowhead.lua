@@ -1973,6 +1973,7 @@ ns.Overrides.wowhead = {
                 "pleased to be awakened, but remember, you must remain in the circle for him to transform " ..
                 "the items.",
         },
+        [4023] = {description = "You seek out the Flight? Present to me proof of your worth, mortal."},
         [4024] = {
             description = "I wish to taste the searing flames of the mountain of fire. To let the molten " ..
                 "fires of Blackrock cascade across my being. That essence, that searing heat, it is what " ..
@@ -4039,6 +4040,12 @@ ns.Overrides.wowhead = {
                 "and bring it to me.",
             rewardMoney = 7500,
         },
+        [8254] = {
+            description = "It is the way of the divine to help those in need. The how is insignificant -- " ..
+                "only the why matters.\n\nThe Cenarion Circle has such a need. Speak with Ogtinc to lend " ..
+                "aid to their plight. He resides atop the cliffs to the northeast of the Ruins of " ..
+                "Eldarath in Azshara.",
+        },
         [8255] = {
             description = "The mosshoof coursers of Azshara are magnificent animals who once lived in " ..
                 "Felwood. They naturally resist disease and poison, and were unaffected by the corruption " ..
@@ -4388,6 +4395,12 @@ ns.Overrides.wowhead = {
                 "orcs therein. They wear bracers that contain trace metals that I will need, so I'll need " ..
                 "more than a few to extract the right amount out of them. Then, to complete the imbuing " ..
                 "process, you'll need to bring me a Flask of Supreme Power.\n\nGood luck, <name>!",
+        },
+        [9001] = {
+            description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
+                "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
+                "eyes shut.\n\nAs to your reward, I believe I have a few things that you'll really enjoy.",
+            rewardItems = {{22065, 1}, {22069, 1}},
         },
         [9003] = {
             description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
