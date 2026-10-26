@@ -975,6 +975,14 @@ ns.Overrides.wowhead = {
                 "both in the snow fields south of the Grizzled Den.",
             rewardMoney = 250,
         },
+        [333] = {
+            description = "We've been doing a lot of business lately. It seems like everyone is buying " ..
+                "armor and sturdy clothes. Almost like they expect a cold, harsh season ahead...\n\nBut " ..
+                "those are future worries. My worry today is that I'm running out of knitted clothing to " ..
+                "sell. I need another load from our supplier.\n\nIf you can take this request to Rema " ..
+                "Schneider at the Canal Tailor and Fit Shop, I'd be most grateful.",
+            rewardMoney = 17,
+        },
         [343] = {
             description = "I'm giving a speech on the Fortitude of the Spirit, and I'd like to recite " ..
                 "passages from a particular book on metallurgy - \"The Stresses of Iron.\" A copy of this " ..
@@ -1055,6 +1063,12 @@ ns.Overrides.wowhead = {
                 "him.\n\nHowever, Hildelve wrote in his journal his one, final wish:\n\nRevenge against " ..
                 "Mangeclaw.",
             rewardChoices = {{2218, 1}, {1009, 1}},
+        },
+        [442] = {
+            description = "Now is the time to assault the Scourge's place of strength in Silverpine: " ..
+                "Fenris Isle.\n\nYou must again go to the Isle and destroy Thule Ravenclaw. I want his " ..
+                "head!\n\nThis mission is as dangerous as it is vital, <name>. You must not fail.",
+            rewardChoices = {{3461, 1}, {3462, 1}},
         },
         [509] = {
             description = "Another day, another elixir to be made. If it were up to me, I'd just let the " ..
@@ -1575,6 +1589,24 @@ ns.Overrides.wowhead = {
                 "long.\n\nLast word tells of them passing through the Stonetalon Mountains a few weeks " ..
                 "ago.\n\nIf you find their wagon, please, come find me immediately.",
         },
+        [1445] = {
+            description = "So he spoke of Jammal'an's prophecy?\n\nThe Atal'ai spiritual leader believes " ..
+                "once Hakkar returns to Azeroth from the Nether, the god will grant the Atal'ai tribe " ..
+                "immortality.\n\nFoolish trickery to bring about a premature doomsday if you ask " ..
+                "me.\n\nBut you say the exile spoke of enchanted fetishes? This concerns me greatly. If " ..
+                "these are in fact the key to the Atal'ai ritual which caused this mess, we must " ..
+                "understand their intrinsic powers.\n\nVenture into the Temple, and seize the fetishes!",
+            rewardItems = {{1490, 1}},
+        },
+        [1451] = {
+            description = "Rhapsody took quite a liking to the booze. Now don't get me wrong -- all of us " ..
+                "dwarves up here at the aviary love a good ale when the time is right.\n\nBut ol' " ..
+                "Shindigger took to the liquor like a gryphon takes to the skies. And a damned shame it " ..
+                "was, too. No one could fly like Rhapsody.\n\nFirst sign of trouble was when he came " ..
+                "stumbling back from that mission with your buddy, Brohann. All went down hill quickly " ..
+                "after that. Had to let him go.\n\nLast I heard, he's set up a brew camp to the east of " ..
+                "here...",
+        },
         [1453] = {
             description = "There's work to be done in Desolace, <name>. It's an atrocious place, befouled " ..
                 "by centaur and other nasties. But if you're looking for a good week's honest work, then " ..
@@ -1626,6 +1658,14 @@ ns.Overrides.wowhead = {
                 "have to break any wards he has against scrying. For this, I will need the scalp from a " ..
                 "satyr--but not any satyr. The scalp must come from a Hatefury shadowstalker.\n\nSearch " ..
                 "for them among the ancient ruins in the northeast of Desolace.",
+        },
+        [1485] = {
+            description = "Those warlocks who came before us have earned the distrust of the Horde, and " ..
+                "while we are tolerated, we are not loved.\n\nThis has not brought the warlocks closer " ..
+                "together, however, as many choose to live reclusively, dabbling in their magics alone. I " ..
+                "will not seek to lead you down one path or the other, but only help you in your " ..
+                "maturation.\n\nBefore I teach you the art of summoning, bring me six heads of the vile " ..
+                "familiars from the cave to the northeast.",
         },
         [1490] = {
             description = "I entered the land of dreams, and dreamed of a cult of druids who dwell in the " ..
@@ -1687,6 +1727,16 @@ ns.Overrides.wowhead = {
                 "Macleod. If he finds you worthy, then Klannoc will lead you further down the warrior's " ..
                 "path.\n\nTo reach Fray Island, search for the sand bar shallows along the Merchant Coast.",
         },
+        [1740] = {
+            description = "When demons of the Legion fall out of favor, their spirits are imprisoned " ..
+                "within orbs and distributed to their mages and warlocks.\n\nMany were carried by their " ..
+                "servants in Azeroth. Even fragmented, they still possess the powers of the demons " ..
+                "trapped inside.\n\nThe orb of Soran'ruk was broken into two pieces, one was further " ..
+                "broken to be used by the acolytes of the Twilight's Hammer in Blackfathom Deeps. The " ..
+                "other, larger piece, was possessed by a wizard in Shadowfang Keep. Find them and I can " ..
+                "reform it.",
+            rewardChoices = {{6898, 1}, {15109, 1}},
+        },
         [1919] = {
             description = "Your knowledge of the craft grows, young <name>. Are you now ready to begin " ..
                 "your true lessons? Are you ready to take your place in the secret war we wage?\n\nIf so, " ..
@@ -1726,6 +1776,22 @@ ns.Overrides.wowhead = {
                 "marsh, west of Theramore.\n\nSpeak with her, for her knowledge is vast. You will find " ..
                 "Tabetha 's cottage west of Theramore, and just north of the Stonemaul Ruins.",
         },
+        [1948] = {
+            description = "The building of a mage's wand is not easy. Rare substances are required, and a " ..
+                "vessel must be made that can store great quantities of magical energy. You must gather " ..
+                "these things and bring them to me.\n\nI have written onto this parchment that which you " ..
+                "need, and instructions on how to get it. Bring me exactly what is on this list, and " ..
+                "follow my written directions to the letter, for if you do not then when we make your " ..
+                "wand things might go... badly.",
+        },
+        [1949] = {
+            description = "To make your wand, there are key passages in a certain book that I must read. " ..
+                "The book is called Rituals of Power, written by the Magus Tirth.\n\nI do not have a copy " ..
+                "of his book, and none of the world's great libraries possess it. So you must speak with " ..
+                "Tirth and gain it from him.\n\nGood luck. Tirth used to be a great mage and scholar, but " ..
+                "now he spends his time at the gnome and goblin races in the Shimmering Flats, drinking " ..
+                "and gambling.",
+        },
         [1953] = {
             description = "It is time, <name>, for you to speak with Tabetha... the hermit of Dustwallow " ..
                 "Marsh. She will instruct you on the creation of a powerful mage's implement.\n\nTabetha " ..
@@ -1763,6 +1829,14 @@ ns.Overrides.wowhead = {
                 "the way...\n\nCan you take it for me? I'm just a peon, but you're a hero. You fear " ..
                 "nothing!\n\nTake it to Innkeeper Grosk at the Razor Hill inn. Thank you!",
             rewardChoices = {{4540, 5}, {159, 5}},
+        },
+        [2280] = {
+            description = "Touching the Discs of Norgannon once again makes your hand tingle. This time, " ..
+                "however, a strange grinding noise is heard from inside the discs.\n\nYour backpack " ..
+                "suddenly becomes heavier than it was before. Inside, you discover a miniature version of " ..
+                "the discs!\n\nNo doubt, an item of this sort would be invaluable for someone interested " ..
+                "in the ancient history of Azeroth. The sages of Thunder Bluff are such historians, known " ..
+                "throughout the Horde; perhaps they can make good use of it.",
         },
         [2499] = {
             description = "In a cave along the southern bank of the lake, a timberling named Oakenscowl " ..
@@ -1881,11 +1955,28 @@ ns.Overrides.wowhead = {
                 "have time. If I'm not mistaken, it came from the hunter trainer Jen'shan. She would have " ..
                 "words with you when you're ready.",
         },
+        [3099] = {
+            description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
+                "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
+                "the warlock trainer Maximillion. I would take some time to read it before heading out " ..
+                "again.",
+        },
+        [3101] = {
+            description = "I was asked to bring this to your attention as soon as you returned from the " ..
+                "kobold camps, <name>. It appears to be a letter sealed with the insignia of Brother " ..
+                "Sammuel, our local paladin trainer. I wouldn't hesitate to read it before you go about " ..
+                "any other business here in the Abbey.",
+        },
         [3115] = {
             description = "While you were helping me out, this memorandum was given to me to pass on to " ..
                 "you. Take some time to read it when you have a chance. I'm thinkin' it came from the " ..
                 "warlock trainer Alamar. Take a gander at it and go find him inside Anvilmar when you've " ..
                 "a chance.\n\nAnd watch yerself, <name>, your kind ain't too trusted 'round these parts.",
+        },
+        [3626] = {
+            description = "The hour of redemption is near, <name>. You must return to the Blasted Lands " ..
+                "with your new-found weaponry and speak with the Fallen Hero of the Horde to receive your " ..
+                "final objective.",
         },
         [3627] = {
             description = "To reach the Defiler, you must first destroy the triad of power and recover " ..
@@ -2081,6 +2172,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{11482, 1}},
         },
         [4381] = {rewardItems = {{11562, 6}}},
+        [4383] = {rewardItems = {{11564, 6}}},
         [4491] = {
             description = "Ugh... It's so hot...\n\nI was exploring this area, when all of a sudden, the " ..
                 "heat just became unbearable. I must be suffering from heat exhaustion.\n\nPlease, help " ..
@@ -4388,6 +4480,15 @@ ns.Overrides.wowhead = {
                 "even there, or perhaps especially there, he was not safe from the spectral assassins. " ..
                 "They slew him right in front of his master, Ras Frostwhisper.",
         },
+        [8985] = {
+            description = "<class>, listen closely. Now that we have the location of the last amulet " ..
+                "piece, we still need another component to suffuse the brazier with; something that will " ..
+                "provide a focus strong enough to entice the spirit of my deceased, former " ..
+                "comrade.\n\nIsalien, our priestess, grew up in Winterspring at Starbreeze Village. I " ..
+                "need you to gather a Starbreeze Village Relic from the Frostmaul giants of Frostwhisper " ..
+                "Gorge in southern Winterspring, who are known for raiding to the north from time to time.",
+            rewardChoices = {{22192, 3}, {22193, 3}},
+        },
         [8987] = {
             description = "<class>, listen closely. Now that we have the location of the last amulet " ..
                 "piece, we still need another component to suffuse the brazier with; something that will " ..
@@ -4396,6 +4497,15 @@ ns.Overrides.wowhead = {
                 "Crusade. They aspired to knighthood within that vile organization. Go to Tyr's Hand in " ..
                 "Eastern Plaguelands and retrieve a Brilliant Sword of Zealotry from the praetorians " ..
                 "there.",
+            rewardChoices = {{22192, 3}, {22193, 3}},
+        },
+        [8988] = {
+            description = "<class>, listen closely. Now that we have the location of the last amulet " ..
+                "piece, we still need another component to suffuse the brazier with; something that will " ..
+                "provide a focus strong enough to entice the spirit of my deceased, former comrade.\n\nAn " ..
+                "ogre necromancer that traveled with us, Kormok, delighted in summoning forth the souls " ..
+                "of the banished dead of Purgation Isle, off the south coast of the Hillsbrad Foothills. " ..
+                "Go there and retrieve some Soul Ashes of the Banished from their remains.",
             rewardChoices = {{22192, 3}, {22193, 3}},
         },
         [8991] = {
@@ -4614,6 +4724,20 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [4411] = {
+            spawns = {
+                [15] = {
+                    {33.4, 45.6}, {34, 46}, {34.4, 41.4}, {34.4, 41.8}, {35.2, 45.6}, {35.4, 40.4},
+                    {35.4, 45.2}, {35.6, 40.4}, {35.6, 45.2}, {35.8, 15}, {36.8, 45.2}, {37, 12.2},
+                    {37.4, 25.8}, {37.4, 27.4}, {37.4, 38.4}, {37.4, 38.6}, {37.6, 27.4}, {37.6, 27.8},
+                    {37.6, 38.6}, {37.6, 44.2}, {37.8, 25.8}, {38, 18.6}, {38, 40.8}, {38, 43}, {38.2, 23.4},
+                    {38.2, 36.4}, {38.2, 40.4}, {38.4, 25}, {38.6, 25.8}, {38.6, 26.6}, {39, 19.4},
+                    {39, 19.6}, {39.2, 14.4}, {39.2, 18.2}, {39.2, 39.6}, {39.4, 14.6}, {39.4, 22.6},
+                    {39.6, 14.4}, {39.6, 18.4}, {39.6, 18.6},
+                },
+            },
+            zoneID = 15,
+        },
         [5470] = {
             spawns = {
                 [440] = {

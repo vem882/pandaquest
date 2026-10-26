@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.3.0+v1.0.8 (TBC Anniversary database + corrections from QuestieDB 1.0.8). DO NOT EDIT.
--- Built: 2026-10-26T10:07:59Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.3.1+v1.0.9 (TBC Anniversary database + corrections from QuestieDB 1.0.9). DO NOT EDIT.
+-- Built: 2026-10-26T18:11:19Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -8548,7 +8548,7 @@ ns.Data.objects = [=[return {
 [186264] = {"Missing: Kyle",nil,nil,{[215]={{48.22,53.25}}},215},
 [186265] = {"Kyle's Lunch",nil,nil,nil,0},
 [186266] = {"Deserter Propaganda",nil,nil,{[15]={{67.94,58.72}}},15},
-[186267] = {"Pumpkin Shrine",{11392,11401,11405},{11135,11220},{[796]={{-1,-1}}},796},
+[186267] = {"Pumpkin Shrine",{11392,11401,11404,11405},{11135,11220},{[796]={{-1,-1}}},796},
 [186272] = {"Tool Kit",nil,nil,{[15]={{62.44,18.88},{62.95,18.8},{63.05,18.55},{62.89,18.5}}},15},
 [186273] = {"Damaged Diving Gear",nil,nil,{[15]={{62.33,18.88},{62.64,18.23},{61.68,18.19}}},15},
 [186278] = {"Burning Wreckage",nil,nil,{[15]={{63.99,13.41},{66.52,19.19},{65.61,20.13},{64.4,16.1},{66.75,28.25},{67.06,20.79},{63.41,15.11},{64.78,20.12},{64.15,23.91},{65.58,24.54},{65.47,22.39},{64.18,22.11},{66.61,23.69},{66.37,21.1},{65.96,25.99},{65.44,16.55},{66.88,16.03},{66.49,15.33},{67.45,14.41},{66.74,13.71},{65.33,14.81},{66.49,17.78},{68.26,12.17},{66.85,11.92},{66.01,11.93},{64.93,12.94},{67.04,10.85},{66.85,26.06}}},15},
@@ -8565,7 +8565,7 @@ ns.Data.objects = [=[return {
 [186307] = {"Zul'Aman Exterior Crate B",nil,nil,{[3433]={{68.37,67.33},{68.37,67.32}}},3433},
 [186310] = {"Grimtotem Tent",nil,nil,{[15]={{46.6,45.93},{47.25,46.54},{47.53,47.65}}},15},
 [186312] = {"L70ETC Music Doodad",nil,nil,{[1585]={{-1,-1}},[3703]={{76.14,31.89}}},3703},
-[186314] = {"Loosely Turned Soil",nil,{11392,11401,11405},{[796]={{-1,-1}}},796},
+[186314] = {"Loosely Turned Soil",nil,{11392,11401,11404,11405},{[796]={{-1,-1}}},796},
 [186315] = {"Couronne",nil,nil,{[15]={{63.67,42.87}}},15},
 [186322] = {"Hyal Family Monument",nil,nil,{[15]={{63.68,42.82}}},15},
 [186323] = {"Burning Troll Hut",nil,nil,{[3433]={{69.99,70.33}}},3433},
