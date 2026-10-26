@@ -4,6 +4,64 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.266] - 2026-10-26
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,333 quests, 115 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 651 quests, 10 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 647 quests, 11 NPCs
+- quest 2751 - Barbaric Battlements - updated
+  - description added
+  - reward items: +1
+- quest 8325 - Reclaiming Sunstrider Isle - updated
+  - reward money removed (30c)
+- quest 9369 - Replenishing the Healing Crystals - updated
+  - reward money removed (15c)
+- quest 11668 - Shrimpin' Ain't Easy - updated
+  - description added
+  - reward items: +1
+- quest 25159 - The Latest Fashion! - updated
+  - description removed
+- quest 29944 - Leaders Among Breeders - updated
+  - description removed
+  - reward money removed (10g 20s)
+  - reward items: -1
+- quest 30038 - The Lesson of the Iron Bough - updated
+  - description removed
+  - reward money removed (15c)
+- quest 30257 - Learn and Grow V: Halfhill Market - updated
+  - description removed
+  - reward money removed (5g 10s)
+- quest 30507 - Admiral Taylor has Awakened - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 31011 - Enemies At Our Door - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 31021 - Living Amber - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31244 - Guo-Lai Encampment - updated
+  - description removed
+  - reward money removed (5g 70s)
+- quest 31245 - Mistfall Village - updated
+  - description removed
+  - reward money removed (5g 70s)
+- quest 31256 - Round 'Em Up - updated
+  - description removed
+  - reward money removed (10g 20s)
+  - reward choices: -9
+- quest 31587 - Got one! - updated
+  - description added
+  - reward money added (90s)
+- quest 31730 - A Not So Friendly Request - updated
+  - description removed
+  - reward money removed (1g 14s)
+- quest 32009 - Varzok - updated
+  - description added
+  - reward money added (90s)
+
 ## [0.2.265] - 2026-10-26
 
 Data from the PandaQuest portal.

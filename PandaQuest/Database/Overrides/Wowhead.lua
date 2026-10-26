@@ -1174,6 +1174,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9598, 1}, {18957, 1}},
             rewardMoney = 350,
         },
+        [2751] = {
+            description = "Twenty generations of Omosh have held this hammer, <name>. A hundred thousand " ..
+                "tons of metal we have molded. Tragically, it all ends at Orokk, failure of the Omosh: " ..
+                "Without kin and incapable of producing offspring.\n\nI cannot let the secret recipes of " ..
+                "Omosh die with me! Someone must continue the legacy, Omosh or not!\n\nProve to Orokk you " ..
+                "are capable, <name>. Bring for Orokk the following: Two patterned bronze bracers, two " ..
+                "bronze greatswords, and two sharp claws. Bring them for Orokk and we shall continue.",
+            rewardItems = {{7979, 1}},
+        },
         [2752] = {
             description = "Orokk sees the eagerness in your eyes, <name>. Like a sponge you soak in the " ..
                 "wisdom of the Omosh.\n\nThree lessons I shall teach!\n\nReturn to the anvil, soak in the " ..
@@ -2377,7 +2386,6 @@ ns.Overrides.wowhead = {
             rewardMoney = 8500,
         },
         [8324] = {rewardMoney = 4000},
-        [8325] = {rewardMoney = 30},
         [8326] = {rewardMoney = 50},
         [8327] = {
             description = "You are to report to my assistant, Lanthan Perilon. He will instruct you on " ..
@@ -3416,7 +3424,6 @@ ns.Overrides.wowhead = {
                 "blood. Slay them and retrieve as much felblood as you can. I'll make it worth your while.",
             rewardMoney = 27000,
         },
-        [9369] = {rewardMoney = 15},
         [9370] = {
             description = "Our scouts captured a draenei paladin at the Pools of Aggonar. He was to take " ..
                 "part in a cleansing ritual to purify the pools. We must stop the draenei from succeeding " ..
@@ -16081,6 +16088,14 @@ ns.Overrides.wowhead = {
                 "have to pull your line at the last possible second, because they nibble at the bait " ..
                 "before they take it.\n\nDrop your line in the rivers of Terokkar and bring me a blackfin " ..
                 "darter. Avoid the lakes, as the blackfin only thrive in moving water.",
+            rewardItems = {{34863, 1}},
+        },
+        [11668] = {
+            description = "There's a lot of big fish in the Zangarmarsh lakes. Ever wonder what they " ..
+                "eat?\n\nShrimp. Giant freshwater shrimp. The Rokk tells me the dishes you can make with " ..
+                "shrimp are nearly endless.\n\nBut shrimp are too small to catch with a fishing line. So " ..
+                "here's the trick: cut open the bloated barbed gill trout and you'll find a shrimp or two " ..
+                "if you're lucky.",
             rewardItems = {{34863, 1}},
         },
         [11670] = {
@@ -32834,14 +32849,6 @@ ns.Overrides.wowhead = {
                 "my workshop and swallowed every gem in sight! The thing can digest ANYTHING, and trust " ..
                 "me, you'd break your back trying to pick up its leavings.\n\nI need to get replacement " ..
                 "gems fast; the courier is coming in tonight. Help!",
-        },
-        [25159] = {
-            description = "Dr. Vernstrom has been working on this new stardust - what with the fashion in " ..
-                "Orgrimmar this season being about all things sparkly, I'm sure if we can get it to the " ..
-                "market it will be all the rage! The Jewelcrafter's Association, however, won't let us " ..
-                "market it until we've completed some \"live testing\" - something about tinkering with " ..
-                "magical dust being dangerous or some such nonsense. Well, I suppose we need to humor " ..
-                "them. Take this bag and test out Stardust No. 2 on humanoid subjects.",
         },
         [25160] = {
             description = "I'm trying to impress this trade ship captain Lila. I've been working on a " ..
@@ -62676,15 +62683,6 @@ ns.Overrides.wowhead = {
             },
             rewardMoney = 98000,
         },
-        [29944] = {
-            description = "Before any kegs are tapped, we have work to do. These virmen are no different " ..
-                "than the virmen on the Wandering Isle... a nuisance that breeds as fast as the rabbits " ..
-                "they resemble.\n\nSure, we could kill every last virmen we find, but what's the point in " ..
-                "needless bloodshed? Let's just take out their alphas, and they'll slow down with " ..
-                "their... reproduction.",
-            rewardItems = {{88375, 1}},
-            rewardMoney = 102000,
-        },
         [29945] = {
             description = "Uncle Chen says we're going to help this guy out with his virmen problem. Fine " ..
                 "by me! I LOVE messing with virmen.\n\nHere's the plan: we're going to paint some turnips " ..
@@ -63032,12 +63030,6 @@ ns.Overrides.wowhead = {
             description = "First, you will need weapons suited to your talents. Retrieve an axe and a " ..
                 "shield from one of the weapon racks below, bring them to me, and show me that you know " ..
                 "how to hold them properly.",
-            rewardMoney = 15,
-        },
-        [30038] = {
-            description = "First, you will need a weapon suited to your talents. Retrieve a sword from " ..
-                "one of the weapon racks below, bring it to me, and show me that you know how to hold it " ..
-                "properly.",
             rewardMoney = 15,
         },
         [30039] = {
@@ -64276,15 +64268,6 @@ ns.Overrides.wowhead = {
                 "harvest. I'll let you do the honors, of course!",
             rewardMoney = 102000,
         },
-        [30257] = {
-            description = "All right friend, all of that farming was just for practice!\n\nAre you ready " ..
-                "to try the real thing?\n\nThere's a lady by the name of Gina Mudclaw who runs the " ..
-                "Halfhill Market, which is across the street to the south.\n\nI heard she's looking to " ..
-                "buy some vegetables. Since it's your first time meeting her, you shouldn't go " ..
-                "empty-handed.\n\nWhy don't you look around the ranch and see if there are any items " ..
-                "hiding around?\n\nMight be that we'll find a good gift to take to our new neighbor!",
-            rewardMoney = 51000,
-        },
         [30258] = {
             description = "I've been thinkin' about how to get into the Tiller's good graces, " ..
                 "<name>.\n\nNow, the Tiller's Union accepts new farmers each year, and there are five " ..
@@ -65323,12 +65306,6 @@ ns.Overrides.wowhead = {
             description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
                 "his people are upstairs in the apothecary's house back in Binan Village.\n\nHe has " ..
                 "requested your presence.",
-            rewardMoney = 10200,
-        },
-        [30507] = {
-            description = "It would seem that your Admiral Taylor has awakened from his injuries. He and " ..
-                "his people are upstairs in the apothecary's house across the way.\n\nHe has requested " ..
-                "your presence.",
             rewardMoney = 10200,
         },
         [30508] = {
@@ -67810,11 +67787,6 @@ ns.Overrides.wowhead = {
                 "channel their whispers through you to break him free. Protect him if you can.",
             rewardMoney = 228000,
         },
-        [31011] = {
-            description = "The Zandalari have begun their attack! You must help defend the village!\n\nIf " ..
-                "we can't push them back, we will never find the Thunder King's remains!",
-            rewardMoney = 106000,
-        },
         [31012] = {
             description = "Here we are, <name>... Orgrimmar, heart of the Horde.\n\nWe can be helpful " ..
                 "beyond the edges of the Wandering Isle. There are innumerable problems out there, just " ..
@@ -67867,14 +67839,6 @@ ns.Overrides.wowhead = {
             description = "I must join the Klaxxi Council and the other paragons immediately, but I am " ..
                 "barely strong enough to stand.\n\nI must feed, Wakener.\n\nI sense the beating hearts of " ..
                 "creatures on the northern bank of the lake.\n\nKill them for me, and I shall do the rest.",
-            rewardMoney = 114000,
-        },
-        [31021] = {
-            description = "Liquid amber is most efficient for restoring a newly awakened paragon's " ..
-                "strength, and is usually provided at a wakening ceremony.\n\nUnfortunately, it seems you " ..
-                "did not receive these instructions, so we shall have to improvise.\n\nI can sense a vast " ..
-                "quantity of fossilized amber in the lake below us. It will serve, but I am too weak to " ..
-                "dig it up myself.\n\nDo this for me, and I will see to it that you are rewarded.",
             rewardMoney = 114000,
         },
         [31022] = {
@@ -69161,17 +69125,6 @@ ns.Overrides.wowhead = {
                 "delay. The villagers need you.",
             rewardMoney = 57000,
         },
-        [31244] = {
-            description = "Leven came by in quite a huff! Said something about mogu in the ruins.\n\nBest " ..
-                "be off to find him I think. Angry Leven is not a fun Leven.",
-            rewardMoney = 57000,
-        },
-        [31245] = {
-            description = "Che stopped by on the way to the village and ask if I'd seen you. I told him " ..
-                "no.\n\nYou can go see him if you want. But now you're not obligated to see him! I am so " ..
-                "marvelously considerate, am I not?",
-            rewardMoney = 57000,
-        },
         [31246] = {
             description = "I can see smoke from the village. And it's not my fault this time!\n\nBest go " ..
                 "and help.",
@@ -69243,18 +69196,6 @@ ns.Overrides.wowhead = {
                 "you in Kun-Lai. Very dangerous to travel there, yes, very dangerous.\n\nLook for guides " ..
                 "along the road to help you find your way.",
             rewardMoney = 10200,
-        },
-        [31256] = {
-            description = "Lok'tar, <class>.\n\nWe've made progress, but we're going to need mobility if " ..
-                "we want to maintain our foothold here in Kun-Lai.\n\nI don't see many worgs, kodo, or " ..
-                "the like around here. What I do see are yaks. Our pandaren allies have said they make " ..
-                "good mounts, so they'll have to do.\n\nGo round some up and return them here, so we can " ..
-                "get our people riding them!",
-            rewardChoices = {
-                {84509, 1}, {84510, 1}, {84511, 1}, {84512, 1}, {84513, 1}, {84514, 1}, {84515, 1},
-                {84516, 1}, {84517, 1},
-            },
-            rewardMoney = 102000,
         },
         [31260] = {
             description = "I am totally on to another great scam!\n\nWhen I was flying overhead I saw a " ..
@@ -70813,6 +70754,14 @@ ns.Overrides.wowhead = {
                 "another day! Visit Bezzil, our local stable master, to heal and revive your pets.",
             rewardMoney = 9000,
         },
+        [31587] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 9000,
+        },
         [31588] = {
             description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
                 "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
@@ -71343,13 +71292,6 @@ ns.Overrides.wowhead = {
                 "Stranglethorn. Seek him out and see who the superior tamer is!",
             rewardItems = {{89125, 1}},
             rewardMoney = 114000,
-        },
-        [31730] = {
-            description = "Scouts have reported a non-mantid presence near Kor'vess. Their intrusion and " ..
-                "their theft of amber would normally be dealt with swiftly, but our forces are needed " ..
-                "elsewhere.\n\nThis task seems suited to you, Wakener. You will convince them to leave " ..
-                "this land, or you will destroy them in the name of the Klaxxi'va.",
-            rewardMoney = 11400,
         },
         [31732] = {
             description = "I will NOT let the Horde gain a foothold on these shores before we do! If " ..
@@ -72658,6 +72600,13 @@ ns.Overrides.wowhead = {
                 "Stormwind. I have connections with some of the finest tamers in all of Azeroth, and I " ..
                 "can help you grow even more!",
             rewardMoney = 106000,
+        },
+        [32009] = {
+            description = "Lok'tar, <name>. My name is Varzok. I have heard much your accomplishments as " ..
+                "a tamer recently, and I would like to introduce you to trainers around Azeroth so that " ..
+                "you may further hone your skills.\n\nPlease speak with me in Orgrimmar so that we may " ..
+                "begin.",
+            rewardMoney = 9000,
         },
         [32018] = {
             description = "An unusual pandaren came through town a few days back. He told a better tale " ..
