@@ -6,7 +6,7 @@
 local _, ns = ...
 
 ns.ReleaseNotes = {
-    { version = "0.2.268", date = "2026-10-26", lines = {
+    { version = "0.2.267", date = "2026-10-26", lines = {
         "quest browser - a quest's page says which step of its chain it is and names the next quest",
         "quest browser - a quest ID typed in the name box finds that quest",
         "tooltips - item tooltips say where the item comes from: drops, chests, containers, vendors",

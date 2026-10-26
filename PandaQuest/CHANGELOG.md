@@ -4,7 +4,7 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
-## [0.2.268] - 2026-10-26
+## [0.2.267] - 2026-10-26
 
 ### Added
 - **Quest chains in the quest browser.** A quest's page has a new *Chain* line: which step of its
