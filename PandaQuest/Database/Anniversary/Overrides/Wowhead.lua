@@ -1583,6 +1583,13 @@ ns.Overrides.wowhead = {
                 "the tainted druids. But Nara is young and her spirit is fierce. She remained in the " ..
                 "dreaming when I fled.\n\nSpeak with Nara. She is in the tent, over yonder.",
         },
+        [1505] = {
+            description = "The Horde honors its warriors because their strength is unquestioned. But the " ..
+                "truly great warriors are great students as well.\n\nSeek out Uzzek. He is a veteran of " ..
+                "many battles and now instructs young warriors in the ways of combat. You will find him " ..
+                "south of Far Watch Post, the orc garrison on the border of the Barrens and Durotar.",
+            rewardXP = 85,
+        },
         [1698] = {
             description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
                 "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
@@ -1747,6 +1754,12 @@ ns.Overrides.wowhead = {
                 "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
                 "the warlock trainer Maximillion. I would take some time to read it before heading out " ..
                 "again.",
+        },
+        [3105] = {
+            description = "I was asked to bring this to your attention as soon as you returned from the " ..
+                "kobold camps, <name>. It appears to be a letter sealed with the insignia of Drusilla, " ..
+                "one of our local trainers. I wouldn't hesitate to read it before you go about any other " ..
+                "business here in the Abbey.",
         },
         [3454] = {
             description = "The torch must now be bound to its owner. Pick up the torch, <name>.",
@@ -2020,6 +2033,15 @@ ns.Overrides.wowhead = {
                 "might no entry is to be had without a proper key.\n\nAlchemist Arbington is well versed " ..
                 "on Scholomance, and has an idea how to obtain a key. You have proved your worth to me, " ..
                 "and now I entrust this task to you. Speak with him on this matter.",
+        },
+        [5624] = {
+            description = "Normally I put forth a small challenge to followers of the Light to test their " ..
+                "skill. I want to see if they are worthy of wearing their first robes--a sign that the " ..
+                "church outwardly approves of the <priest/priestess> and supports <him/her>.\n\nBut this " ..
+                "situation is a bit different. One of Goldshire's citizens saw an injured guard near the " ..
+                "lake to the east of here. His name is Roberts. Find him, heal him, fortify his body and " ..
+                "return here. If you can do that for me, then I will consider your test complete.",
+            rewardItems = {{16605, 1}},
         },
         [5647] = {
             description = "Your race is so very strong, <name>. We are proud to call you allies. And as " ..
@@ -2346,6 +2368,20 @@ ns.Overrides.wowhead = {
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22419, 1}},
         },
+        [9039] = {
+            description = "During your battles with the Scourge in Naxxramas, should you come across " ..
+                "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
+                "you a piece of armor worn by heroes.",
+            rewardItems = {{22420, 1}},
+        },
+        [9059] = {
+            description = "I have discovered a use for the carapace of the crypt fiend. I am able to " ..
+                "fashion an extremely light and very deadly set of armor by combining the fragments with " ..
+                "some of the desecrated magical armors lost in Naxxramas.\n\nBring me the items I require " ..
+                "and I shall fashion for you a suit of armor the likes of which has never before been " ..
+                "seen in our world!",
+            rewardItems = {{22441, 1}},
+        },
         [9060] = {
             description = "I have discovered a use for the carapace of the crypt fiend. I am able to " ..
                 "fashion an extremely light and very deadly set of armor by combining the fragments with " ..
@@ -2422,6 +2458,17 @@ ns.Overrides.wowhead = {
                 "Additional materials are also required but your main concern should be getting those " ..
                 "frozen runes. Bring me what I need and I will restore the ring to its former glory.",
             rewardItems = {{22707, 1}},
+        },
+        [9244] = {
+            description = "Thanks to you and Omarion, may he rest in peace, I am now able to create Icy " ..
+                "Scale bracers. All you need to do is bring me the materials and pay a small crafting fee.",
+            rewardItems = {{22665, 1}},
+        },
+        [9246] = {
+            description = "Thanks to you and Omarion (May he rest in peace), I am now able to create an " ..
+                "Icy Scale breastplate. All you need to do is bring me the materials and pay a small " ..
+                "crafting fee.",
+            rewardItems = {{22664, 1}},
         },
         [9313] = {
             description = "By all that is good, <name>, you must go at once to this Azure Watch and speak " ..

@@ -4,6 +4,67 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.274
+- database - Wowhead data as the PandaQuest portal read it: 10,361 quests, 118 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 696 quests, 11 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 736 quests, 13 NPCs
+- quest 26333 - No Tanks! - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +3
+- quest 26525 - Venomous Secrets - updated
+  - description added
+  - reward money added (35s)
+- quest 29344 - Fish fer Squirky - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 29581 - The Golden Dream - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 29815 - Forensic Science - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29872 - Lin Tenderpaw - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 29982 - Evacuation Orders - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30620 - Mogu?! Oh No-gu! - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30626 - Retreat! - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30635 - Killing the Quilen - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30789 - Arconiss - updated
+  - description added
+  - reward money added (11g)
+- quest 30820 - A Funeral - updated
+  - description added
+  - reward money added (20g 40s)
+  - reward choices: +9
+- quest 30964 - A Proper Poultice - updated
+  - description added
+  - reward money added (11g)
+- quest 31043 - Dark Arts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31465 - Extracting Answers - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward choices: +9
+- npc 10778 - Janice Felstone - updated
+  - coordinates: 1 spawn point added in Western Plaguelands
+- npc 68768 - "Numbers" Pfeiffer - updated
+  - NPC title added (Statistics)
+  - NPC level added (90)
+
 0.2.273
 - database - rebuilt from Questie 12.3.1+v1.0.9 (was 12.3.0+v1.0.8)
 - database - Classic Era rebuilt from Questie 12.3.1+v1.0.9 (was 12.3.0+v1.0.8)
