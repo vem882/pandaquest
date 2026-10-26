@@ -41,7 +41,7 @@ local extras = { quests = {}, npcs = {}, objects = {}, items = {} }  -- override
 local ready = false
 local loading = false
 local refusedGame = false                   -- the database is another game's: said once, never loaded
-local saidPending = false                   -- this game's database ships later (Database/Forever/Pending.lua)
+local saidPending = false                   -- a game whose TOC ships ns.Data.pending instead of a database
 local loadHandle
 local stats = { loadMs = 0, counts = {} }
 
@@ -69,8 +69,11 @@ local OVERRIDE_SETS = { "wowhead", "community", "portal" }
 
 -- Database/Overrides/Community.lua is ONE file every TOC lists: the sync app writes it into each game's
 -- install folder. A file that names no game was written for MoP Classic, the only game the portal's
--- community data comes from today; in another game it is set aside (ns.Overrides.foreignCommunity, kept,
--- never applied), so MoP's guides, respawns and nodes never land on another world (docs/13 section 9.3).
+-- community data came from until the hub wrote `game` into the file (2026-10-26); in another game it is
+-- set aside (ns.Overrides.foreignCommunity, kept, never applied) and DB.Load says so once in chat, so
+-- MoP's guides, respawns and nodes never land on another world (docs/13 section 9.3).
+local foreignCommunityGame                  -- the game a set-aside Community.lua was written for
+local saidForeignCommunity = false
 do
     local Overrides, Game = ns.Overrides, ns.Game
     local community = type(Overrides) == "table" and Overrides.community or nil
@@ -79,6 +82,7 @@ do
         if written ~= Game.id then
             Overrides.foreignCommunity = community
             Overrides.community = nil
+            foreignCommunityGame = written      -- DB.Load says so once in chat
         end
     end
 end
@@ -419,9 +423,18 @@ function DB.Load()
     if ready then return true end
     if loading then return true end
 
+    if foreignCommunityGame and not saidForeignCommunity then
+        saidForeignCommunity = true
+        local Game = ns.Game
+        Log.Print(L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."],
+            Game and Game.Name(foreignCommunityGame) or tostring(foreignCommunityGame),
+            Game and Game.Name(Game.id) or "?")
+    end
+
     local Data = ns.Data
-    -- A game whose TOC ships without its database yet (WoW Forever until its launch: no beta data) says
-    -- so once, in words, instead of reporting a broken install. ns.Data.pending names when it comes.
+    -- A game whose TOC ships without its database yet (a file that sets ns.Data.pending and no quests)
+    -- says so once, in words, instead of reporting a broken install. ns.Data.pending names when it comes.
+    -- No game does today: WoW Forever ships Questie's beta data since 0.2.270 (DB.BetaNote).
     if type(Data) == "table" and Data.pending and Data.quests == nil then
         if not saidPending then
             saidPending = true
@@ -466,6 +479,22 @@ end
 
 function DB.IsReady()
     return ready
+end
+
+-- WoW Forever's database is Questie's beta data until the game launches: labelled, like the portal does,
+-- until 2026-11-04 23:00 UTC (Unix 1793833200) by the clock. After that the label goes on its own.
+DB.FOREVER_BETA_UNTIL = 1793833200
+
+--- DB.BetaNote([now]) -> "WoW Forever beta data" while the loaded database is Forever's beta data, else nil.
+-- `now` (Unix seconds) is for the checks; the game asks GetServerTime(), else time().
+function DB.BetaNote(now)
+    local Data = ns.Data
+    if type(Data) ~= "table" or Data.game ~= "forever" then return nil end
+    if now == nil then
+        now = (_G.GetServerTime and _G.GetServerTime()) or (_G.time and _G.time()) or 0
+    end
+    if type(now) ~= "number" or now >= DB.FOREVER_BETA_UNTIL then return nil end
+    return L["WoW Forever beta data"]
 end
 
 function DB.IsLoading()

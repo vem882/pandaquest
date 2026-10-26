@@ -128,8 +128,8 @@ PandaQuest runs in **Mists of Pandaria Classic 5.5.4**, **WoW Classic Era 1.15**
 Classic Anniversary 2.5** and **WoW Forever 1.60**: one download, and each game loads its own quest
 database only. Features a game does not have stay off there: archaeology and the dig-site bar are MoP's,
 the quest tracker distances use MoP's tracker, and in WoW Forever the profession recipe scanner and kill
-counts are off for now. **WoW Forever's quest database arrives with the game's launch (4 November
-2026)**; until then PandaQuest loads there without quest data and says so once. Retail is not supported.
+counts are off for now. **WoW Forever's quest database is beta data until the game's launch (4 November
+2026)**: the quest window and `/pq status` say "WoW Forever beta data" until then. Retail is not supported.
 Optional: **TomTom** is detected automatically when present.
 
 ## Getting help and reporting problems
@@ -267,7 +267,7 @@ the options panel's *Profiles* tab. Deleting `PandaQuestDB.lua` from your SavedV
 (with the game closed) resets all settings.
 
 **Does it work on Retail, Classic Era or other Classic versions?** Classic Era (1.15), TBC
-Anniversary (2.5), Mists of Pandaria Classic (5.5.4) and WoW Forever (1.60, quest data from its launch)
+Anniversary (2.5), Mists of Pandaria Classic (5.5.4) and WoW Forever (1.60, beta quest data until its launch)
 yes; Retail and the other Classic versions no.
 
 ## Compatibility

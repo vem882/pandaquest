@@ -397,6 +397,8 @@ function M.SelectTab(key)
         local name = key
         for _, tab in ipairs(M.TABS) do if tab.key == key then name = tab.name end end
         widgets.title:SetText("PandaQuest  -  " .. name)
+        local Browser = ns.QuestBrowser
+        if Browser and Browser.RefreshBetaLabel then Browser.RefreshBetaLabel() end
     end
     R.HideList()
     return true
@@ -439,6 +441,8 @@ function M.Decorate(browserFrame, browserWidgets)
     if widgets.title then
         widgets.title:ClearAllPoints()
         widgets.title:SetPoint("TOPLEFT", frame, "TOPLEFT", 46, -6)
+        local Browser = ns.QuestBrowser
+        if Browser and Browser.RefreshBetaLabel then Browser.RefreshBetaLabel() end
     end
 
     -- tabs along the header, left of the Settings button

@@ -424,6 +424,10 @@ function ns.StatusLines()
     end
     local ready = ns.DB and ns.DB.IsReady and ns.DB.IsReady()
     add(L["Database: %s"], L[ready and "ready" or "loading"])
+    local beta = ns.DB and ns.DB.BetaNote and ns.DB.BetaNote()
+    if beta then
+        add("|cffff9933%s|r - %s", beta, L["quests can still change before the game's launch on 4 November 2026."])
+    end
     if ns.QuestLog and ns.QuestLog.GetAll then
         local n = 0
         for _ in pairs(ns.QuestLog.GetAll() or {}) do n = n + 1 end

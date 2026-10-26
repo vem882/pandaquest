@@ -19,9 +19,9 @@ Four games are shipped (the portal repository's docs/13-forever-and-versions.md,
 * Mists of Pandaria Classic -- the plain ``PandaQuest.toc`` and ``_Mists``, byte for byte as before;
 * Classic Era -- ``_Vanilla``, its database in ``Database/Era/``;
 * TBC Anniversary -- ``_TBC``, its database in ``Database/Anniversary/``;
-* WoW Forever -- ``_Forever`` and ``_Camelot``, byte-identical.  Its TOCs list ``Database/Forever/Pending.lua``
-  instead of a database until the game launches (4 November 2026): the owner's rule is no beta data, and
-  Questie's Forever data is the beta's.  The addon says so in one line in game.
+* WoW Forever -- ``_Forever`` and ``_Camelot``, byte-identical, its database in ``Database/Forever/``.
+  Until the game launches (4 November 2026) that is Questie's beta data, as on the portal (the owner's
+  decision of 2026-10-26); the addon labels it "WoW Forever beta data" until 2026-11-04 23:00 UTC.
 
 Each TOC lists only its own game's database, so a client never parses another game's data.  The CurseForge
 game version types are BigWigsMods/packager's (release.sh: ``classic) game_id=67408``, ``bcc) 73246``,
@@ -174,10 +174,11 @@ FOREVER = Game(
     shipped=True,
     notes=_notes("Quest helper and navigator for WoW Forever",
                  "Tehtäväapuri ja navigaattori WoW Foreveriin"),
-    # No beta data (the owner's decision): until Forever's live data exists the TOC carries Pending.lua,
-    # which tells the player in one line that the database comes at launch.  Then: zone_data =
-    # Database\Forever\ZoneData.lua and data = _database("Forever", seed=False).
-    data=("Database\\Forever\\Pending.lua", "Database\\Overrides\\Community.lua"),
+    # Questie's Forever data, beta until launch (the owner's decision of 2026-10-26, like the portal);
+    # Database/DB.lua's BetaNote() labels it in game until 2026-11-04 23:00 UTC.  No Seed.lua: pfQuest's
+    # respawn and drop seed is vanilla's world, not Forever's.
+    zone_data=("Database\\Forever\\ZoneData.lua",),
+    data=_database("Forever", seed=False),
 )
 
 #: Every game, in the order their TOCs are written and tagged.

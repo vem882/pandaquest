@@ -279,10 +279,17 @@ class TheDatabaseCheck(unittest.TestCase):
         self.assertEqual(ns.Game.DataGame(), "mop")
         self.assertTrue(ns.Game.DataMatches())
 
-    def _db(self, client_facts, data_game):
-        """Database/DB.lua over a two-quest database, with what it needs of the rest of the addon."""
+    def _db(self, client_facts, data_game, community_game=False):
+        """Database/DB.lua over a two-quest database, with what it needs of the rest of the addon.
+        ``community_game``: a Community.lua is installed, tagged with that game (None: untagged)."""
         rt = runtime()
         ns = load_game(rt, *client_facts)
+        if community_game is not False:
+            rt.eval("""
+                function(ns, game)
+                    ns.Overrides = { community = { game = game, quests = {} } }
+                end
+            """)(ns, community_game)
         setup = rt.eval("""
             function(ns, dataGame)
                 ns.Schema = { questKeys = { name = 1 }, npcKeys = { name = 1 }, objectKeys = { name = 1 },
@@ -304,6 +311,33 @@ class TheDatabaseCheck(unittest.TestCase):
                 self.assertTrue(ns.DB.IsReady())
                 self.assertEqual(ns.DB.GetQuestName(2), "B")
                 self.assertFalse(any("database is for" in line for line in chat(ns)))
+
+    def test_forever_beta_data_loads_in_forever_and_is_labelled_until_launch(self) -> None:
+        """Forever's database (Questie's beta data) loads in Forever; DB.BetaNote labels it until
+        2026-11-04 23:00 UTC and never labels another game's database."""
+        _rt, ns = self._db(FOREVER_CLIENT, "forever")
+        self.assertTrue(ns.DB.Load())
+        self.assertEqual(ns.DB.GetQuestName(1), "A")
+        self.assertEqual(ns.DB.FOREVER_BETA_UNTIL, 1793833200)
+        self.assertEqual(ns.DB.BetaNote(1793833199), "WoW Forever beta data")
+        self.assertIsNone(ns.DB.BetaNote(1793833200))
+        _rt, ns = self._db(MOP_CLIENT, "mop")
+        self.assertIsNone(ns.DB.BetaNote(0))
+
+    def test_a_community_guide_for_another_game_is_set_aside_with_one_line(self) -> None:
+        for client_facts, data_game, written, kept in ((ERA_CLIENT, "era", "mop", False), (ERA_CLIENT, "era", None, False),
+                                                      (ERA_CLIENT, "era", "era", True), (MOP_CLIENT, "mop", None, True),
+                                                      (FOREVER_CLIENT, "forever", "forever", True)):
+            with self.subTest(client=client_facts, written=written):
+                _rt, ns = self._db(client_facts, data_game, written)
+                self.assertEqual(ns.Overrides.community is not None, kept)
+                self.assertTrue(ns.DB.Load())
+                ns.DB.Load()
+                lines = [line for line in chat(ns) if "community guide" in line]
+                self.assertEqual(len(lines), 0 if kept else 1)
+                if not kept:
+                    self.assertIsNotNone(ns.Overrides.foreignCommunity, "set aside, not deleted")
+                    self.assertIn(ns.Game.Name(written or "mop"), lines[0])
 
     def test_another_games_data_is_refused_with_one_line(self) -> None:
         for client_facts, data_game in ((FOREVER_CLIENT, "mop"), (FOREVER_CLIENT, None), (MOP_CLIENT, "forever"),

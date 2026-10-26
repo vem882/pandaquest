@@ -66,11 +66,11 @@ The addon is built on Ace3 (modules, timers, saved variables, options).
 | Mists of Pandaria Classic | 50504 | `PandaQuest.toc`, `PandaQuest_Mists.toc` | `Database/Data/` |
 | Classic Era | 11509 | `PandaQuest_Vanilla.toc` | `Database/Era/` |
 | TBC Anniversary | 20506 | `PandaQuest_TBC.toc` | `Database/Anniversary/` |
-| WoW Forever | 16001 | `PandaQuest_Forever.toc`, `PandaQuest_Camelot.toc` | from its launch, 4 November 2026 |
+| WoW Forever | 16001 | `PandaQuest_Forever.toc`, `PandaQuest_Camelot.toc` | `Database/Forever/` (beta data until launch) |
 
-One download: each game's TOC loads the shared code and only its own game's database. WoW Forever has
-no quest data until its launch (no beta data); until then the addon loads there and says so in one
-line. `Core/Game.lua` detects the game and switches off what a game does not have (archaeology and the
+One download: each game's TOC loads the shared code and only its own game's database. WoW Forever's
+database is Questie's beta data until the game launches on 4 November 2026 (as on the portal); the
+quest window's header and `/pq status` say "WoW Forever beta data" until 2026-11-04 23:00 UTC. `Core/Game.lua` detects the game and switches off what a game does not have (archaeology and the
 dig-site bar are MoP's; the WatchFrame tracker distances use MoP's tracker; in Forever the recipe
 scanner and combat-log kill counts are off for now); `Core/Compat.lua` bridges Forever's
 Mainline-family API. The other games' databases are built by the portal's
@@ -372,4 +372,8 @@ Not checked anywhere in this repository: that every Lua file parses as Lua 5.1, 
 and that it loads against the WoW API. A Lua syntax error would reach a player. (The portal
 repository's tools run those against this tree: `tools/syntax_check.py`, `tools/luacheck_runner.py`
 and the `tools/wowstub` tests.)
+
+What only a game client can confirm is in a manual checklist per release, per game:
+[`docs/testing-0.2.267-268.md`](docs/testing-0.2.267-268.md) (quest chains, item sources, quest-ID search,
+the guild fields, Forever's beta data and the community guide's game check).
 
