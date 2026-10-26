@@ -50,9 +50,16 @@ Locales\ruRU.lua
 Locales\zhCN.lua
 Locales\zhTW.lua
 Database\Schema.lua
+Database\Forever\ZoneData.lua
 Database\Zones.lua
-Database\Forever\Pending.lua
+Database\Forever\Data\Meta.lua
+Database\Forever\Data\Quests.lua
+Database\Forever\Data\Npcs.lua
+Database\Forever\Data\Objects.lua
+Database\Forever\Data\Items.lua
+Database\Forever\Overrides\Wowhead.lua
 Database\Overrides\Community.lua
+Database\Forever\Overrides\Portal.lua
 Database\QuestieDB.lua
 Database\DB.lua
 Quest\Player.lua

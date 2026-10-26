@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.270] - 2026-10-26
+
+### Added
+- **WoW Forever has a quest database.** Forever's copy of PandaQuest now carries its own quest
+  database, built from Questie's Forever data the same way as the other games' (5,232 quests). Until
+  the game launches on 4 November 2026 that is the beta's data, as on the PandaQuest portal: the
+  quest window's header and `/pq status` say "WoW Forever beta data" until 2026-11-04 23:00 UTC.
+
+### Changed
+- **A community guide for another game is not loaded.** When `Community.lua` was written for another
+  game (the hub now writes the game into the file; a file without one is MoP's), PandaQuest sets it
+  aside, keeps it, and says so once in chat instead of showing that game's guides here.
+
 ## [0.2.269] - 2026-10-26
 
 Data from the PandaQuest portal.

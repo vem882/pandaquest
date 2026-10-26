@@ -90,6 +90,11 @@ local T = {
         "Pelin %s tallennetut tiedot siirrettiin sivuun, niitä ei poistettu (%s); tämä peli aloittaa omansa.",
     ["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] =
         "PandaQuestin tehtävätietokanta pelille %s tulee pelin julkaisun myötä (%s). Siihen asti nuolella, karttamerkeillä ja tehtävälistalla ei ole tietoja; kaikki muu toimii.",
+    ["WoW Forever beta data"] = "WoW Foreverin beetatiedot",
+    ["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] =
+        "Community.lua-tiedoston yhteisöopas on tehty pelille %s eikä pelille %s, joten sitä ei ladattu. Synkronoi PandaQuest-sovelluksella tämän pelin oma opas.",
+    ["quests can still change before the game's launch on 4 November 2026."] =
+        "tehtävät voivat vielä muuttua ennen pelin julkaisua 4. marraskuuta 2026.",
 
     -- Nav (arrow, router, TomTom)
     ["Arrow locked."] = "Nuoli lukittu.",

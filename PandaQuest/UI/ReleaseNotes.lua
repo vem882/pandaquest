@@ -6,6 +6,11 @@
 local _, ns = ...
 
 ns.ReleaseNotes = {
+    { version = "0.2.270", date = "2026-10-26", lines = {
+        "database - WoW Forever ships its quest database: Questie's beta data, built like the other games'",
+        "ui - Forever: the window header and /pq status say \"WoW Forever beta data\" until 4 Nov 23:00 UTC",
+        "community - a Community.lua for another game is set aside with one chat line, not loaded",
+    } },
     { version = "0.2.267", date = "2026-10-26", lines = {
         "quest browser - a quest's page says which step of its chain it is and names the next quest",
         "quest browser - a quest ID typed in the name box finds that quest",

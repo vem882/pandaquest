@@ -1358,6 +1358,20 @@ end
 
 function M.GetRowMenu() return rowMenu end
 
+--- RefreshBetaLabel(): show or hide the "WoW Forever beta data" label after the header's title; the
+-- window calls it whenever the title changes (UI/MainWindow.lua), so it follows the title's width.
+function M.RefreshBetaLabel()
+    local beta, title = widgets.beta, widgets.title
+    if not (beta and title) then return end
+    local note = ns.DB and ns.DB.BetaNote and ns.DB.BetaNote()
+    if not note then beta:Hide() return end
+    beta:SetText(note)
+    beta:ClearAllPoints()
+    local width = title.GetStringWidth and title:GetStringWidth() or 0
+    beta:SetPoint("LEFT", title, "LEFT", math.min(width, title:GetWidth() or width) + 10, 0)
+    beta:Show()
+end
+
 --- OpenSettings(): every PandaQuest setting, from the gear in the header: the window's Options tab.
 function M.OpenSettings()
     local Window = ns.MainWindow
@@ -1842,6 +1856,12 @@ local function build()
     local title = newText(frame, "GameFontNormal", "TOPLEFT", 12, -6, 220, 16, "LEFT", GOLD)
     title:SetText("PandaQuest - " .. L["Quests"])
     widgets.title = title
+    -- "WoW Forever beta data" right after the title while Forever's database is the beta's (DB.BetaNote).
+    local beta = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    beta:SetTextColor(1, 0.6, 0.2)
+    beta:Hide()
+    widgets.beta = beta
+    M.RefreshBetaLabel()
 
     local close = newButton(frame, "X", 22, 18, function() M.Hide() end)
     close:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -4)
@@ -1877,6 +1897,7 @@ local function build()
     frame:SetScript("OnShow", function()
         local Catalog = catalog()
         if Catalog and not Catalog.IsReady() then Catalog.Build() end
+        M.RefreshBetaLabel()
         resumePulses()
     end)
     frame:SetScript("OnHide", function()

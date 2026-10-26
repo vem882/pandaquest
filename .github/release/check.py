@@ -854,13 +854,15 @@ class TheTocFiles(unittest.TestCase):
             for entry in own:
                 self.assertTrue((ADDON_DIR / entry.replace("\\", "/")).is_file(), entry)
 
-    def test_forever_waits_for_launch_without_data(self) -> None:
-        """No beta data: Forever's TOC carries Pending.lua and no database file (the owner's decision)."""
+    def test_forever_ships_its_database(self) -> None:
+        """Forever's TOC lists its own generated database (beta data until launch), no Pending.lua."""
         _directives, files = toc_lines(build.toc_texts()["PandaQuest_Forever.toc"])
         forever = [entry for entry in files if entry.lower().startswith("database\\forever\\")]
-        self.assertEqual(forever, ["Database\\Forever\\Pending.lua"])
-        self.assertFalse((ADDON_DIR / "Database" / "Forever" / "Data").exists())
-        self.assertFalse([entry for entry in files if "ZoneData" in entry])
+        self.assertIn("Database\\Forever\\Data\\Quests.lua", forever)
+        self.assertIn("Database\\Forever\\ZoneData.lua", forever)
+        self.assertNotIn("Database\\Forever\\Pending.lua", forever)
+        self.assertNotIn("Database\\Data\\Seed.lua", files)
+        self.assertFalse((ADDON_DIR / "Database" / "Forever" / "Pending.lua").exists())
 
     def test_the_game_is_known_before_anything_reads_the_database(self) -> None:
         """Core/Game.lua is the first file, and the first after Core/Build.lua in the package."""

@@ -82,6 +82,9 @@ L["PandaQuest database not found. Reinstall the addon: the Database/Data files a
 L["This PandaQuest database is for %s, but this game is %s. Quest data is off; install PandaQuest for this game."] = true
 L["Saved data from %s was set aside, not deleted (%s); this game starts its own."] = true
 L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] = true
+L["WoW Forever beta data"] = true
+L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] = true
+L["quests can still change before the game's launch on 4 November 2026."] = true
 
 -- Nav (arrow, router, TomTom)
 L["Arrow locked."] = true
