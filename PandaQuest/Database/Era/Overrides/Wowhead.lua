@@ -983,6 +983,14 @@ ns.Overrides.wowhead = {
                 "of the Abbey's library, Brother Paxton, wanted to make a copy of the book for his own " ..
                 "shelves.\n\nBut that was months ago. I wonder why it's taking him so long...",
         },
+        [345] = {
+            description = "I've been meaning to finish my copy of The Stresses of Iron, but...\n\nWell " ..
+                "you see, I make my own ink for books I copy. It's my own recipe; it doesn't run or " ..
+                "smear, and it dries very quickly Unfortunately, it dries too quickly! My last batch " ..
+                "dried up before I could finish the copying job, and I haven't had the chance to make " ..
+                "more ink!\n\nTo make more I need Rethban Iron Ore from the Redridge Mountains. Foreman " ..
+                "Oslow in Lakeshire is my usual supplier.",
+        },
         [387] = {
             description = "The uprising must be quelled! I need your assistance. If word gets out that " ..
                 "the prison is overrun I will lose my job! This is a case of foul play if I've ever seen " ..
@@ -990,6 +998,15 @@ ns.Overrides.wowhead = {
                 "of Stormwind.\n\nThe punishment for insurgency is death. Kill some of these deviants! " ..
                 "That ought to get things under control.",
             rewardMoney = 4000,
+        },
+        [391] = {
+            description = "Let's get one thing straight, <name>: I don't trust you. But, with the " ..
+                "situation as it is, you probably won't make a difference.\n\nSo here's how it's going to " ..
+                "be: go down there and have your talk with Thredd. If you're really on our side, then " ..
+                "kill him and bring me his head when the job's done. And if it turns out you're on his " ..
+                "side, and don't come out... when we find you, you'll die along with the rest of the " ..
+                "maggots.",
+            rewardMoney = 2500,
         },
         [405] = {
             description = "Bethor Iceshard, a high-ranking and powerful mage in the Undercity to the " ..
@@ -1117,6 +1134,23 @@ ns.Overrides.wowhead = {
                 "returned to normal, we can explain to him the current state of the Horde, and we will " ..
                 "have a great warrior's assistance in our unceasing battles.",
         },
+        [709] = {
+            description = "Oh my! Oh my! There is a doom approaching. Mark me! A doom!\n\nNo, I cannot " ..
+                "speak of it...cannot utter their names or they may hear me! But if we learn, yes, if we " ..
+                "learn more of them...then maybe we can learn how to foil them!\n\nMaybe.\n\nGo into " ..
+                "Uldaman. No! I said it! You must find...find the tablet of...Ryun'eh. Yes, find it! And " ..
+                "don't make me speak that name again!\n\nIt is deep in that place, in an ancient chest. " ..
+                "That's where it hides...in a chest crafted before the works of any dwarf.",
+            rewardItems = {{4746, 1}},
+        },
+        [721] = {
+            description = "<name>, can ye find him? Can you find Hammertoe in Uldaman?\n\nIf those dirty " ..
+                "Shadowforge are holdin' him hostage to figure out what he knows about the titan " ..
+                "excavations, then all of Ironforge could be in huge trouble.\n\nFor a long time now " ..
+                "those Dark Irons have been lookin' for magics to make more powerful golems. Hammertoe " ..
+                "was doin' the same, of course, but only to stop them.\n\nThey're probably keepin' him " ..
+                "alive until they learn what he knows.Ye've got to hurry if you're gonna save him!",
+        },
         [727] = {
             description = "The Tablet tells much. But not enough! Not nearly enough!\n\nThere is a book, " ..
                 "a digest that Yagyin wrote in ages past. The... people I fled... they keep this book in " ..
@@ -1147,6 +1181,12 @@ ns.Overrides.wowhead = {
                 "Thunderhorn Cleansing Totem in your ritual. After you do this, return to me.\n\nMay the " ..
                 "spirits guide you.",
             rewardItems = {{4963, 1}},
+        },
+        [759] = {
+            description = "There is but one water well left to cleanse, named after the Wildmane clan. " ..
+                "For this well to be pure, the land must offer the teeth of a fierce predator, the " ..
+                "prairie wolf alpha. Find the alphas to the north, then return to me when your hunt is " ..
+                "finished.\n\nAlphas often wander around the base of our mighty city, Thunder Bluff.",
         },
         [762] = {
             description = "Ambassador Infernus was sent to Angor Fortress by Ragnaros himself to mind the " ..
@@ -1180,6 +1220,14 @@ ns.Overrides.wowhead = {
                 "power. It is called the Demon Seed, and it resides in the Barrens atop Dreadmist Peak. " ..
                 "It must be destroyed!\n\nGo to Far Watch Post, on the border of the Barrens to the west, " ..
                 "and speak with my assistant, Ak'Zeloth. He will direct you further.",
+        },
+        [845] = {
+            description = "The zhevra, although not the fiercest beast in the Barrens, are a shade " ..
+                "tougher than the plainstriders. Don't worry -- we'll send you against bigger prey in " ..
+                "good time, but for now your teeth could use a little more cutting.\n\nHunt the zhevra to " ..
+                "the north and south, and collect their hooves. Bring them to me and perhaps we'll next " ..
+                "send you against something tougher.",
+            rewardMoney = 600,
         },
         [851] = {
             description = "The centaur Verog the Dervish wanders the Barrens, and will be difficult to " ..
@@ -1249,6 +1297,14 @@ ns.Overrides.wowhead = {
                 "just bring dem to ol' Mau'ari, and she help ya out.\n\nWait here while I fix your charm.",
             rewardItems = {{12384, 1}},
         },
+        [1001] = {
+            description = "A tiny voice crackles from deep within the machine.\n\n\"Wizbang here! The " ..
+                "next Buzzbox is north of Auberdine, on the beach\n\nSo, that Buzzbox is number 411 and " ..
+                "it needs 3 Thresher Eyes for its repairs. They're just off the coast! The darkshore " ..
+                "threshers... *Hic*... Sorry about that...\n\nJust like last time, when you give the " ..
+                "Buzzbox the goods, it'll spit out your reward. *Hic*... What? No, I'm fine!\"",
+            rewardMoney = 1000,
+        },
         [1003] = {
             description = "Over the boiling noises and dripping sounds coming from the machine, you hear " ..
                 "Wizbang's wavering voice call out.\n\n\"Nexsht onesh far south down the road. Shouldn't " ..
@@ -1258,6 +1314,15 @@ ns.Overrides.wowhead = {
                 "gulping sounds as the machine cuts out. Then, suddenly, it bursts back to life.\n\n\"4!\"",
             rewardItems = {{2082, 1}, {11846, 5}},
             rewardMoney = 800,
+        },
+        [1008] = {
+            description = "There is evil lurking on our northwestern coast, known as the Zoram " ..
+                "Strand.\n\nIt is the resting place of the doomed city of Zoram, destroyed during the " ..
+                "Sundering and submerged beneath the seas. It has been lost to the night elves for ages. " ..
+                "Lost, and nearly forgotten.\n\nNow, the naga have returned, and for what reason we do " ..
+                "not know. But reason matters little; we must slay these fiends and throw them back to " ..
+                "the depths!\n\nReturn to me when your mission is complete.",
+            rewardMoney = 1100,
         },
         [1014] = {
             description = "Arugal still resides in Shadowfang Keep. We cannot claim Silverpine as a " ..
@@ -1315,6 +1380,14 @@ ns.Overrides.wowhead = {
                 "ready.\n\nBut I need a spell from a friend in Stormwind-- Collin Mauren is his name. You " ..
                 "can find him in the mage quarter there. He's human, so he shouldn't be hard to miss.",
         },
+        [1106] = {
+            description = "I'm developing a new engine that'll make the car go so fast! Fast enough to " ..
+                "fly, I know it! I just need to make pistons that can handle very very heavy stress. All " ..
+                "my trials have failed because I can't make pistons hard enough!\n\nBut there is someone " ..
+                "who might know how.\n\nHis name is Martek the Exiled. He is a great smith and knows more " ..
+                "about metal than anyone. Take him this letter, I know he can help!\n\nBut he's far far " ..
+                "away -- in Azeroth, in the Badlands, in a camp, with a goblin!\n\nFind him!",
+        },
         [1131] = {
             description = "At times we hunt for food. At times we hunt for honor. And at times we hunt to " ..
                 "earn the Earthmother's teachings.\n\nBut the hunt I now set upon you is none of these " ..
@@ -1344,6 +1417,15 @@ ns.Overrides.wowhead = {
                 "of power I can draw from the booster at any time. I told him I wanted it off! This is no " ..
                 "good.\n\nYou have to take this to the Gadgetzan Gizmorium in the Tanaris Desert and have " ..
                 "Shreev remove this.",
+        },
+        [1195] = {
+            description = "The Galak centaur in the Thousand Needles are protecting an artifact from the " ..
+                "time of the centaurs' creation.\n\nWe would like to retrieve it, but we require a phial " ..
+                "of water from one of the night elves' moonwells.\n\nTo collect the water, you will first " ..
+                "need to obtain one of the phials carried by the dryads near the Raynewood Retreat in the " ..
+                "heart of Ashenvale Forest. There is a moonwell near the western bank of the Falfarren " ..
+                "River, south of the main road, where you can fill the phial.",
+            rewardMoney = 3500,
         },
         [1196] = {
             description = "Bring the filled phial to Rau Cliffrunner at the Freewind Post in southeastern " ..
@@ -1421,6 +1503,19 @@ ns.Overrides.wowhead = {
                 "the force to enter the Fallow Sanctuary and reclaim our stolen draenethyst from among " ..
                 "their huts and campfires, but without those crystals... we too may lose our way.",
         },
+        [1396] = {
+            description = "My caravan was destined for the eastern coast, but we did not reach our goal. " ..
+                "Lost Ones attacked us, killing guards and dashing supplies.\n\nI alone survived their " ..
+                "assault. I have sworn to protect what supplies remain, but wild creatures skulk near. " ..
+                "Please, help me defend my camp from the beasts!",
+        },
+        [1398] = {
+            description = "I owe you greatly, <name>. An honorable heart beats within you. And now I have " ..
+                "another task for which I humbly ask your aid.\n\nIf I'm ever to reach Nethergarde, then " ..
+                "I must fix this wagon. And for that... I will need wood. Strong, dry wood--not the " ..
+                "spongy, tangled wood of the swamp's trees.\n\n<name>, go east to the coast and search " ..
+                "for driftwood that has been dried by the sun. Bring it to me.",
+        },
         [1421] = {
             description = "I was stunned during the attack by the Lost Ones, but before my sight went " ..
                 "black I spied one of our wagons being dragged to the Fallow Sanctuary, the lost one " ..
@@ -1434,6 +1529,22 @@ ns.Overrides.wowhead = {
                 "do well to test its strength against the fish men when you are ready... but only to " ..
                 "please me further.",
             rewardChoices = {{9680, 1}, {9678, 1}, {9679, 1}},
+        },
+        [1437] = {
+            description = "I am Vahlarriel, <name>. I've come here to discover the whereabouts of two " ..
+                "missing nobles of a Darnassian merchant family--House Malem. The father of the house " ..
+                "fears the worst, and I am to do everything I can to find his missing children. I have " ..
+                "yet to start my search for Tyranis or Dalinda, but I am hopeful I shall not be here " ..
+                "long.\n\nLast word tells of them passing through the Stonetalon Mountains a few weeks " ..
+                "ago.\n\nIf you find their wagon, please, come find me immediately.",
+        },
+        [1453] = {
+            description = "There's work to be done in Desolace, <name>. It's an atrocious place, befouled " ..
+                "by centaur and other nasties. But if you're looking for a good week's honest work, then " ..
+                "head there, meet with Kreldig Ungor, and tell him I sentcha.\n\nYou can find him holed " ..
+                "up at Nijel's Point--it's a little cozy camp hidden in the mountains of northern " ..
+                "Desolace. Just head east if you enter from the Stonetalon Mountains. It's easy to miss, " ..
+                "so be on the lookout.",
         },
         [1457] = {
             description = "Take Karnitol's things back to Roetten in Ironforge and he'll pay you for a " ..
@@ -1526,6 +1637,32 @@ ns.Overrides.wowhead = {
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
         },
+        [1718] = {
+            description = "Your renown as a warrior grows, <name>. Now it is time to pit yourself against " ..
+                "your peers and see where you stand.\n\nThere is an island off the coast of the Barrens, " ..
+                "south of Ratchet. It is called Fray Island and it is a place where warriors " ..
+                "meet.\n\nMeet, and fight.\n\nSpeak with the chief warrior of Fray Island, Klannoc " ..
+                "Macleod. If he finds you worthy, then Klannoc will lead you further down the warrior's " ..
+                "path.\n\nTo reach Fray Island, search for the sand bar shallows along the Merchant Coast.",
+        },
+        [1919] = {
+            description = "Your knowledge of the craft grows, young <name>. Are you now ready to begin " ..
+                "your true lessons? Are you ready to take your place in the secret war we wage?\n\nIf so, " ..
+                "then speak with Jennea Cannon, in the wizard's sanctum in the mage district of " ..
+                "Stormwind. She has a task for you which will open your first window into the invisible " ..
+                "world.",
+        },
+        [1947] = {
+            description = "Now it is time for you to earn your mage's wand. To begin this quest, speak " ..
+                "with the human hermit Tabetha in Dustwallow Marsh. You will find her shack deep in the " ..
+                "marsh, west of Theramore.\n\nSpeak with her, for her knowledge is vast. You will find " ..
+                "Tabetha 's cottage west of Theramore, and just north of the Stonemaul Ruins.",
+        },
+        [1953] = {
+            description = "It is time, <name>, for you to speak with Tabetha... the hermit of Dustwallow " ..
+                "Marsh. She will instruct you on the creation of a powerful mage's implement.\n\nTabetha " ..
+                "'s shack lies deep in Dustwallow Marsh, west of Theramore.",
+        },
         [2038] = {
             description = "As if crashing into the Loch wasn't bad enough, troggs from the nearby island " ..
                 "attacked me and stole my tools and special Blastenheimer Blastencapper explosives. With " ..
@@ -1610,6 +1747,15 @@ ns.Overrides.wowhead = {
         [2747] = {rewardItems = {{9541, 1}}},
         [2748] = {rewardItems = {{9540, 1}}},
         [2749] = {rewardItems = {{9539, 1}}},
+        [2751] = {
+            description = "Twenty generations of Omosh have held this hammer, <name>. A hundred thousand " ..
+                "tons of metal we have molded. Tragically, it all ends at Orokk, failure of the Omosh: " ..
+                "Without kin and incapable of producing offspring.\n\nI cannot let the secret recipes of " ..
+                "Omosh die with me! Someone must continue the legacy, Omosh or not!\n\nProve to Orokk you " ..
+                "are capable, <name>. Bring for Orokk the following: Two patterned bronze bracers, two " ..
+                "bronze greatswords, and two sharp claws. Bring them for Orokk and we shall continue.",
+            rewardItems = {{7979, 1}},
+        },
         [2758] = {
             description = "When I was about your age, a dwarf by the name of Galvan took me under his " ..
                 "wing and trained me in the ways of the armorsmith. Before he left for Booty Bay, he made " ..
@@ -1727,6 +1873,15 @@ ns.Overrides.wowhead = {
                 "post, <name>, but I must know what became of Sha'ni. Travel to the Burning Steppes and " ..
                 "search for her.",
         },
+        [3822] = {
+            description = "My whole platoon was captured, <name>. All were slain - except me.\n\nTheir " ..
+                "leader, Krom'Grul, wanted to save me for some sort of ritual.\n\nI was chained to this " ..
+                "altar and brutalized by the beast. My physical being ceased functioning after an hour of " ..
+                "this torture. The beast then ripped my wedding nose-ring off of my face and stuck it on " ..
+                "his finger. I had never seen such savagery!\n\nFind Krom'Grul and kill him! Take my ring " ..
+                "back to Thal'trak.\n\nAnd <name>, tell him that we will meet again... in another life.",
+            rewardItems = {{11869, 1}},
+        },
         [3907] = {
             description = "I can taste the foulness in the air that surrounds you, <name>. There is " ..
                 "another, hidden in the depths of Blackrock, who does control this foulness.\n\nThe wind " ..
@@ -1763,6 +1918,15 @@ ns.Overrides.wowhead = {
                 "flame.\n\nSucceed and be rewarded.",
             rewardChoices = {{12066, 1}, {12082, 1}, {12083, 1}},
             rewardMoney = 26500,
+        },
+        [4061] = {
+            description = "The machines made themselves known to us during our initial forays into the " ..
+                "Searing Gorge. Upon further investigation we discovered that they were being imported " ..
+                "from Burning Steppes, possibly Blackrock Depths. That is what we need you for, " ..
+                "<name>.\n\nYour first task is to venture to the Burning Steppes and recover elemental " ..
+                "shards from the rock automatons and lesser rock creations of the region. Once you have " ..
+                "collected a sufficient amount, return to me and I shall determine their source of origin.",
+            rewardMoney = 16500,
         },
         [4124] = {
             description = "An associate of mine, Ginro Hearthkindle, is looking for assistance concerning " ..
@@ -2596,6 +2760,14 @@ ns.Overrides.wowhead = {
                 "been transformed into rapacious, man eating beasts. I ask that you destroy those that " ..
                 "would strike from the skies: The Plaguebats.",
         },
+        [5628] = {
+            description = "Ah, yes, hello, <name>? I'm glad you stopped to talk for a moment. You are a " ..
+                "far way from home at such a young age--I admire such ambition. I wish when I was younger " ..
+                "I could have mustered the courage to travel the world.\n\nThere was a priestess of your " ..
+                "order here looking for you not too long ago. She said it was very urgent you returned to " ..
+                "the Temple of the Moon in Darnassus and speak to Priestess Alathea --it had something to " ..
+                "do with your training. I wouldn't dally too long if you can help it.",
+        },
         [5631] = {
             description = "A priestess recently visited our halls seeking you out, young <race>. She said " ..
                 "that she was on a mission to find you and that you should return to the Temple of the " ..
@@ -2614,6 +2786,14 @@ ns.Overrides.wowhead = {
                 "come through here looking for troll priests usually are very casual. This time, they " ..
                 "seemed to be in much more a hurry. Don't dally too long in Thunder Bluff. I'd return to " ..
                 "the Valley of Spirits as soon as possible.",
+        },
+        [5647] = {
+            description = "Your race is so very strong, <name>. We are proud to call you allies. And as " ..
+                "each day's sun sets, you and your kin grow closer to not only finding your true origins, " ..
+                "but find great confidence that you are on the right path in so many things. That feeling " ..
+                "must make you feel so triumphant.\n\nWord came from Ironforge just recently. It asked " ..
+                "that you return there and speak to High Priest Rohan in the Mystic Ward. I would not " ..
+                "keep him waiting. May Elune guide your travels.",
         },
         [5651] = {
             description = "There are many lessons that the Forsaken have learned through " ..
@@ -2746,6 +2926,15 @@ ns.Overrides.wowhead = {
                 "and we will learn much about our scaled foes!",
             rewardChoices = {{16791, 1}, {16793, 1}},
             rewardMoney = 4500,
+        },
+        [6042] = {
+            description = "You cannot take two steps off of this farm without running into one of those " ..
+                "obnoxious bats. I want to be able to take the hounds out and slaughter Scourge without " ..
+                "being accosted by any damned, dirty bats. Obviously, I have better things to do with my " ..
+                "time than mindlessly kill bats day in and day out. You, however, do not.\n\nWhat? Your " ..
+                "training? This is your training! Now get out of my sight and don't come back until " ..
+                "you've killed a fair number of those winged demons. Don't disappoint me.",
+            rewardMoney = 9000,
         },
         [6071] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
@@ -2889,6 +3078,14 @@ ns.Overrides.wowhead = {
                 "be restored.\n\nGather an army, <name>. Return to the Plagues with your army and destroy " ..
                 "the Blightcaller.\n\nI wish you luck, <name>. Truly, you will need it for this battle.",
             rewardChoices = {{16996, 1}, {16997, 1}, {16998, 1}},
+        },
+        [6284] = {
+            description = "Warning: Proceed into Sishir Canyon west of here at your own " ..
+                "risk.\n\nBesseleth and her eight-legged children of the forest have claimed this canyon " ..
+                "as their webbed lair.\n\nMaggran Earthbinder in Sun Rock Retreat has placed a bounty on " ..
+                "Besseleth. Slay her and bring proof of your killing to Maggran; there you will receive " ..
+                "your reward for disposing this eight-legged menace.",
+            rewardChoices = {{16891, 1}, {16894, 1}},
         },
         [6385] = {
             description = "I've written a letter of thanks to Zargh. Will you deliver it for me? If " ..
@@ -3372,6 +3569,15 @@ ns.Overrides.wowhead = {
                 "heated ancient blade into her smoldering corpse to fashion the treated ancient blade.",
             rewardItems = {{18348, 1}},
         },
+        [7562] = {
+            description = "<name>, your delvings into the dark arts are deep. Your mastery over " ..
+                "otherworldly denizens has grown so strong... perhaps you are ready to bind to you one of " ..
+                "the infamous dreadsteeds.\n\nThe ritual to summon the beast from its home requires great " ..
+                "power and resources, but if you desire to dominate that epic mount, then speak with " ..
+                "Mor'zul Bloodbringer. He is camped near the Altar of Storms in the Burning " ..
+                "Steppes.\n\nGo, <name>. This quest will be perilous, but a Warlock of your stature does " ..
+                "not shy from danger!",
+        },
         [7581] = {
             description = "You must retrieve bindings for the prison of the Doomguard from lesser " ..
                 "demons.\n\nThe blood of the Wildspawn satyr that occupy Dire Maul should do nicely. The " ..
@@ -3673,6 +3879,7 @@ ns.Overrides.wowhead = {
         },
         [7864] = {rewardItems = {{19151, 1}}},
         [7865] = {rewardItems = {{19152, 1}}},
+        [7866] = {rewardItems = {{19154, 1}}},
         [7907] = {
             description = "Now that you have gathered all of the Beast cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -3709,6 +3916,11 @@ ns.Overrides.wowhead = {
             rewardMoney = 13000,
         },
         [8191] = {rewardItems = {{19789, 1}}},
+        [8233] = {
+            description = "Lord Jorach Ravenholdt has requested your presence. The matter is secret, and " ..
+                "I cannot say any more.\n\nRavenholdt Manor is located in the Hillsbrad Foothills -- look " ..
+                "for a path in the mountains northwest of Durnhold Keep.",
+        },
         [8240] = {
             description = "The destruction of the various Hakkari Bijous is of grave importance to us, so " ..
                 "much so that we welcome outsiders of the tribe to do so for themselves!\n\nTake any one " ..
@@ -3720,6 +3932,14 @@ ns.Overrides.wowhead = {
             rewardMoney = 18000,
         },
         [8243] = {rewardChoices = {{20080, 1}, {20079, 1}, {20081, 1}}},
+        [8250] = {
+            description = "Archmage Xylem has been asking around lately... for someone of your " ..
+                "experience.\n\nIf you wish to seek him out, you can find him in Azshara. His tower is " ..
+                "built high atop the cliffs, and the only way up is a teleport spell invoked by his " ..
+                "arrogant servant, Sanath Lim-yo.\n\nSanath makes camp below his master's tower. To find " ..
+                "him, travel to where Azshara's main road forks at the entrance to the Ruins of Eldarath. " ..
+                "From that spot, head directly north until you reach the cliffs.",
+        },
         [8252] = {
             description = "Take a look around you. The ruins and beaches are overrun with spitelash. " ..
                 "Recently, the wretched creatures have learned to recognize the rare components " ..
@@ -3754,6 +3974,15 @@ ns.Overrides.wowhead = {
                 "shipment of morrowgrain was ravaged by a group of dredge strikers. I need you to thin " ..
                 "their numbers to ensure our supplies aren't jeopardized.",
             rewardMoney = 8500,
+        },
+        [8284] = {
+            description = "A camp of Twilight's Hammer cultists once thrived northwest of here. If you " ..
+                "were to venture there now, you'd find the area swarming with elementals and nothing but " ..
+                "scattered pieces of wood and canvas to mark the spot where the camp was.\n\nI've " ..
+                "recovered a few fragments of a clay tablet from the site, but I have too few of them to " ..
+                "piece together anything useful. See if you can find the remaining tablet fragments so we " ..
+                "can shed some light into the Twilight's Hammer presence here in Silithus.",
+            rewardMoney = 9000,
         },
         [8285] = {
             description = "There are rumors of a Twilight's Hammer member called Ortell having deserted " ..
@@ -3791,12 +4020,31 @@ ns.Overrides.wowhead = {
             rewardChoices = {{20369, 1}, {20503, 1}, {20556, 1}},
             rewardMoney = 15500,
         },
+        [8417] = {
+            description = "In the Blasted Lands, there is a troubled spirit who was once a great hero of " ..
+                "the horde. A warrior's honor does not die with the body, and it would serve you well to " ..
+                "speak with him.",
+        },
+        [8419] = {
+            description = "<name>, an imp in Felwood by the name of Impsy has requested your presence. It " ..
+                "is somewhat strange, as he has asked that you bring a piece of felcloth as a sign of " ..
+                "good faith. Considering the power you already wield as a warlock, I can only assume you " ..
+                "know the satyrs of Felwood carry this felcloth.\n\nYou can find Impsy just north of the " ..
+                "Bloodvenom Falls, which I've heard is quite lovely this time of year.",
+        },
         [8428] = {
             description = "The battle in Warsong Gulch against the Silverwing Sentinels is of great " ..
                 "importance. Under the guise of protecting a forest that doesn't belong to them, the " ..
                 "Alliance seeks to deny the Horde one of our largest sources for lumber.\n\nDo not let " ..
                 "this happen, <name>! Come back to me with proof of serving the Horde in a worthy manner!",
             rewardMoney = 7000,
+        },
+        [8462] = {
+            description = "Perhaps you are capable of handling a larger threat that we Timbermaw face. " ..
+                "You certainly have shown yourself capable here...\n\nAnother of my kind stands guard " ..
+                "outside the entrance to Timbermaw Hold, along this road far to the north. His name is " ..
+                "Nafien; while he may appear to be a feral and unsavory beast, fear him not. He only " ..
+                "seeks aid against the malign forces that threaten our home.",
         },
         [8495] = {
             description = "Back so soon? Stop making me re-evaluate my low opinion of you <class>, you're " ..
@@ -3892,6 +4140,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{21438, 10}, {21512, 1}},
         },
         [8614] = {rewardItems = {{21438, 7}, {21512, 1}}},
+        [8696] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21403, 1}},
+        },
         [8704] = {
             description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
                 "abilities. The corrupted gems that adorn them could, in theory, be swapped out with more " ..
@@ -3900,11 +4156,43 @@ ns.Overrides.wowhead = {
                 "and idols and I'll create a powerful ring for you, <class>.",
             rewardItems = {{21402, 1}},
         },
+        [8710] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21416, 1}},
+        },
+        [8712] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21401, 1}},
+        },
         [8772] = {
             description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
                 "been selected to target Hive'Zora waywatchers. Report back to Commander Mar'alith after " ..
                 "completing your task.",
             rewardItems = {{20802, 1}},
+        },
+        [8794] = {
+            description = "Hello, I'm glad that you've decided to hear me out. The Horde needs all of the " ..
+                "help that it can get to prepare for the Ahn'Qiraj War, and that means that we need you! " ..
+                "Even now as we speak, official collectors are gathering the necessary material needed " ..
+                "for the upcoming war, but we won't be able to meet our goals without your assistance, " ..
+                "<name>!\n\nYou should go speak with the guy in charge, Warlord Gorchuk. What do you say, " ..
+                "<class>? Will you help out with the vital preparations?",
+        },
+        [8796] = {
+            description = "Hello, I'm glad that you've decided to hear me out. The Alliance needs all of " ..
+                "the help that it can get to prepare for the Ahn'Qiraj War, and that means that we need " ..
+                "you! Even now as we speak, official collectors are gathering the necessary material " ..
+                "needed for the upcoming war, but we won't be able to meet our goals without your " ..
+                "assistance, <name>!\n\nYou should go speak with the guy in charge, Field Marshal " ..
+                "Snowfall. What do you say, <class>? Will you help out with the vital preparations?",
         },
         [8846] = {rewardItems = {{21509, 1}}},
         [8855] = {rewardItems = {{21513, 1}}},
@@ -3916,6 +4204,14 @@ ns.Overrides.wowhead = {
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
             rewardItems = {{22004, 1}},
+        },
+        [8928] = {
+            description = "The core will provide us with enough juice to power our device; now we just " ..
+                "have to build a rod that can channel that energy without melting.\n\nI met an imp in " ..
+                "Winterspring that sold all manner of exotic goods. He had an elemental rod that would do " ..
+                "perfectly. I'm kicking myself in the head right now for not having bought it.\n\nHe " ..
+                "lives inside a cave in the entrance to Darkwhisper Gorge. Sneak in there and try to find " ..
+                "him.\n\nMake sure he only charges you forty gold; that's the price he quoted me!",
         },
         [8932] = {
             description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
@@ -3931,6 +4227,14 @@ ns.Overrides.wowhead = {
                 "Dark Iron dwarves. Getting him to fight you is going to present a bit of a challenge, " ..
                 "though.\n\nGather the following materials for me. You're going to need them.",
         },
+        [8965] = {
+            description = "<class>, listen closely. Now that we have the brazier, and the means to light " ..
+                "it, we still need another component to suffuse it with; something that will provide a " ..
+                "focus strong enough to entice the spirit of my deceased, former comrade.\n\nAn ogre " ..
+                "necromancer that traveled with us, Kormok, delighted in summoning forth the souls of the " ..
+                "banished dead of Purgation Isle, off the south coast of the Hillsbrad Foothills. Go " ..
+                "there and retrieve some Soul Ashes of the Banished from their remains.",
+        },
         [8969] = {
             description = "Now we have what we need, so it's time to discuss who it is that you'll be " ..
                 "summoning.\n\nKormok was ok for an ogre, right up until he turned to necromancy. After " ..
@@ -3938,6 +4242,16 @@ ns.Overrides.wowhead = {
                 "when he took his piece of the amulet and returned to his new home, Scholomance.\n\nBut " ..
                 "even there, or perhaps especially there, he was not safe from the spectral assassins. " ..
                 "They slew him right in front of his master, Ras Frostwhisper.",
+        },
+        [8987] = {
+            description = "<class>, listen closely. Now that we have the location of the last amulet " ..
+                "piece, we still need another component to suffuse the brazier with; something that will " ..
+                "provide a focus strong enough to summon the remains of my deceased, former " ..
+                "comrades.\n\nThe siblings, Jarien and Sothos, were believers in the way of the Scarlet " ..
+                "Crusade. They aspired to knighthood within that vile organization. Go to Tyr's Hand in " ..
+                "Eastern Plaguelands and retrieve a Brilliant Sword of Zealotry from the praetorians " ..
+                "there.",
+            rewardChoices = {{22192, 3}, {22193, 3}},
         },
         [8991] = {
             description = "The siblings, Jarien and Sothos, decided to join the Scarlet Crusade upon the " ..
@@ -3975,11 +4289,25 @@ ns.Overrides.wowhead = {
                 "eyes shut.\n\nAs to your reward, I believe I have a few things that you'll really enjoy.",
             rewardItems = {{22005, 1}, {22009, 1}},
         },
+        [9032] = {
+            description = "The medallion contained Valthalak's soul? It's no surprise it was guarded by " ..
+                "such a powerful curse.\n\nLocating Bodley presents a bit of a problem. Last time I heard " ..
+                "of him, he was preparing to venture back into Blackrock Spire. He was never heard of " ..
+                "again.\n\nSeek him out in Blackrock Mountain, though I'm afraid to say he's probably " ..
+                "dead by now. I suggest taking the goblin's device with you, friend.",
+        },
         [9040] = {
             description = "During your battles with the Scourge in Naxxramas, should you come across " ..
                 "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22421, 1}},
+        },
+        [9047] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22430, 1}},
         },
         [9049] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
@@ -4003,6 +4331,14 @@ ns.Overrides.wowhead = {
                 "wartorn armor scraps and supply to me the other material components I require and I will " ..
                 "craft Dreamwalker armor.",
             rewardItems = {{22492, 1}},
+        },
+        [9103] = {
+            description = "I make no pretenses, maggot. The darkness Plagueheart items hold could very " ..
+                "well destroy the both of us. That is why the price is so high. If I'm going to die, it's " ..
+                "going to be as a rich man.\n\nAnd I don't give an ounce of gnoll spit how you die, only " ..
+                "that you do as I ask. Bring me what I require and we will both benefit - or die; but " ..
+                "I've already explained this...",
+            rewardItems = {{22504, 1}},
         },
         [9107] = {
             description = "I make no pretenses, maggot. The darkness Plagueheart items hold could very " ..
@@ -4065,6 +4401,12 @@ ns.Overrides.wowhead = {
                 "fee.",
             rewardItems = {{22671, 1}},
         },
+        [9239] = {
+            description = "Thanks to you and Omarion, may he rest in peace, I am now able to create " ..
+                "Glacial gloves. All you need to do is bring me the materials and pay a small crafting " ..
+                "fee.",
+            rewardItems = {{22654, 1}},
+        },
         [9240] = {
             description = "Thanks to you and Omarion, may he rest in peace, I am now able to create a " ..
                 "Glacial vest. All you need to do is bring me the materials and pay a small crafting fee.",
@@ -4074,6 +4416,15 @@ ns.Overrides.wowhead = {
             description = "Thanks to you and Omarion (May he rest in peace), I am now able to create " ..
                 "Polar bracers. All you need to do is bring me the materials and pay a small crafting fee.",
             rewardItems = {{22663, 1}},
+        },
+        [9257] = {
+            description = "This final task will be the most difficult of all, <name>. You have faced and " ..
+                "defeated both an Old God and the Lich King's General, but now you must face the hand of " ..
+                "Sargeras.\n\nTake the staff to Stratholme. It is there that you will find a piece of " ..
+                "consecrated earth: ground where the greatest knights of Lordaeron were murdered. Place " ..
+                "the befouled staff upon the holy ground and prepare for an entity of immense power to " ..
+                "break from within... Defeat the demonic being that controls the staff and return to me.",
+            rewardItems = {{22631, 1}},
         },
         [9271] = {
             description = "This final task will be the most difficult of all, <name>. You have faced and " ..
@@ -4101,6 +4452,7 @@ ns.Overrides.wowhead = {
                 "Light's Hope Chapel would be interested in examining it further...",
             rewardXP = 3300,
         },
+        [9317] = {rewardItems = {{23122, 1}}},
         [9333] = {rewardChoices = {{23084, 1}, {23081, 1}, {23082, 1}, {23078, 1}}},
         [9416] = {
             description = "You must be one of General Kirika 's new recruits. It's about time you showed " ..
@@ -4111,6 +4463,18 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [14435] = {
+            spawns = {
+                [1377] = {
+                    {20.8, 10.6}, {20.8, 13}, {21.2, 54.6}, {21.4, 8.4}, {22.2, 8}, {22.2, 9.4}, {22.4, 10},
+                    {22.4, 10.8}, {22.4, 11.8}, {22.6, 9.4}, {22.6, 10.4}, {23.2, 11.4}, {23.4, 11.8},
+                    {23.4, 12.6}, {23.6, 10.4}, {23.6, 11.2}, {23.6, 11.8}, {23.8, 9.2}, {23.8, 12.6},
+                    {25, 10.6}, {25.4, 10.2}, {39, 27}, {42, 12.2}, {43.4, 12.2}, {43.4, 20.2}, {50.2, 37},
+                    {51.6, 37},
+                },
+            },
+            zoneID = 1377,
+        },
         [14697] = {
             spawns = {
                 [139] = {
@@ -4194,6 +4558,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 139,
+        },
+        [16383] = {
+            spawns = {
+                [1519] = {
+                    {16.2, 52}, {17, 52.2}, {17.6, 50}, {17.6, 51.8}, {17.6, 54.2}, {17.8, 51}, {18.6, 49.2},
+                    {18.6, 52.2}, {19.4, 50.4}, {19.4, 51}, {19.6, 50.2}, {20, 48.4}, {20.4, 51.2},
+                    {20.4, 55.2}, {20.8, 50}, {21, 48.6}, {21, 57}, {21.6, 49.4}, {22, 57.6}, {22.2, 55.2},
+                    {22.4, 50.2}, {22.4, 54.4}, {22.6, 54.4}, {22.6, 56.2}, {23, 57}, {23.2, 51.2},
+                    {23.2, 53.4}, {23.2, 54.6}, {23.6, 55.8}, {23.8, 52.4}, {24.4, 51.2}, {24.6, 51.8},
+                    {26.2, 49.8}, {26.4, 50.8}, {27, 51.6}, {27.2, 50.2}, {27.4, 49.2}, {27.6, 51.4},
+                    {27.8, 49.8}, {28.6, 50.6},
+                },
+            },
+            zoneID = 1519,
         },
         [16531] = {
             spawns = {
