@@ -1645,6 +1645,11 @@ ns.Overrides.wowhead = {
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
         },
+        [1698] = {
+            description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
+                "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
+                "pass his trial.",
+        },
         [1718] = {
             description = "Your renown as a warrior grows, <name>. Now it is time to pit yourself against " ..
                 "your peers and see where you stand.\n\nThere is an island off the coast of the Barrens, " ..
@@ -1659,6 +1664,20 @@ ns.Overrides.wowhead = {
                 "then speak with Jennea Cannon, in the wizard's sanctum in the mage district of " ..
                 "Stormwind. She has a task for you which will open your first window into the invisible " ..
                 "world.",
+        },
+        [1920] = {
+            description = "A disturbance has been reported at the Blue Recluse tavern in the Mage " ..
+                "Quarter. Strange, invisible creatures now wander the tavern, and I fear a mana rift has " ..
+                "formed there.\n\nI want you to investigate the tavern and capture those creatures. Use " ..
+                "the cantation of manifestation in the tavern to make the creatures visible, subdue them " ..
+                "then use a containment coffer to capture them. When you have enough, return to me with " ..
+                "your filled coffers, your empty coffers and the cantation.",
+        },
+        [1939] = {
+            description = "High Sorcerer Andromath wishes to speak with you, <name>. He is at the top of " ..
+                "the wizard's sanctum, in the mage's district of Stormwind.\n\nIt would be wise to speak " ..
+                "with him, for Andromath is one of the most powerful mages not locked away in Dalaran. " ..
+                "Council with him is high council indeed.",
         },
         [1947] = {
             description = "Now it is time for you to earn your mage's wand. To begin this quest, speak " ..
@@ -1802,6 +1821,19 @@ ns.Overrides.wowhead = {
                 "the craft should be rewarded.\n\nYou have attained expertise over blacksmithing, <name>. " ..
                 "Reap the rewards!",
             rewardItems = {{8703, 1}},
+        },
+        [2861] = {
+            description = "Rumor is that Tabetha, a mage colleague who lives deep in Dustwallow Marsh, " ..
+                "has a bone to pick with a certain sand troll in Zul'Farrak. If you speak with Tabetha " ..
+                "she can tell you more.\n\nAnd bring some friends with you, <name>. If Tabetha has you go " ..
+                "to Zul'Farrak then you're not going to want to go alone.\n\nYou will find Tabetha 's " ..
+                "cottage west of Theramore, and just north of the Stonemaul Ruin.",
+        },
+        [2993] = {
+            description = "Sharpbeak is held in a cage, high on a cliff at the top of Jintha'Alor in the " ..
+                "Hinterlands. The key to this cage is possessed by the high priestess of the Vilebranch " ..
+                "trolls, Vile Priestess Hexx.\n\nThere. I have done my part. I bid you fortune on your " ..
+                "quest, <name>.",
         },
         [3082] = {
             description = "Ah, while you were gone a tablet came for you, <name>.\n\nRead it when you " ..

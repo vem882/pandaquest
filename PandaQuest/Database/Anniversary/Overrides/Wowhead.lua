@@ -1254,6 +1254,14 @@ ns.Overrides.wowhead = {
                 "to Lieutenant Valorcall, their cavalry leader. Locate him and bring his sigil back to me.",
             rewardMoney = 5500,
         },
+        [783] = {
+            description = "I hope you strapped your belt on tight, young <class>, because there is work " ..
+                "to do here in Northshire.\n\nAnd I don't mean farming.\n\nThe Stormwind guards are hard " ..
+                "pressed to keep the peace here, with so many of us in distant lands and so many threats " ..
+                "pressing close. And so we're enlisting the aid of anyone willing to defend their home. " ..
+                "And their alliance.\n\nIf you're here to answer the call, then speak with my superior, " ..
+                "Marshal McBride. He's inside the abbey behind me.",
+        },
         [824] = {
             description = "The Earthen Ring is a shamanistic group dedicated to studying and preserving " ..
                 "the elements. They have forgotten more about crazy old gods, ancient legends and lore " ..
@@ -1467,6 +1475,11 @@ ns.Overrides.wowhead = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
         },
+        [1698] = {
+            description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
+                "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
+                "pass his trial.",
+        },
         [1718] = {
             description = "Your renown as a warrior grows, <name>. Now it is time to pit yourself against " ..
                 "your peers and see where you stand.\n\nThere is an island off the coast of the Barrens, " ..
@@ -1482,6 +1495,24 @@ ns.Overrides.wowhead = {
                 "then speak with Jennea Cannon, in the wizard's sanctum in the mage district of " ..
                 "Stormwind. She has a task for you which will open your first window into the invisible " ..
                 "world.",
+        },
+        [1920] = {
+            description = "A disturbance has been reported at the Blue Recluse tavern in the Mage " ..
+                "Quarter. Strange, invisible creatures now wander the tavern, and I fear a mana rift has " ..
+                "formed there.\n\nI want you to investigate the tavern and capture those creatures. Use " ..
+                "the cantation of manifestation in the tavern to make the creatures visible, subdue them " ..
+                "then use a containment coffer to capture them. When you have enough, return to me with " ..
+                "your filled coffers, your empty coffers and the cantation.",
+        },
+        [1939] = {
+            description = "High Sorcerer Andromath wishes to speak with you, <name>. He is at the top of " ..
+                "the wizard's sanctum, in the mage's district of Stormwind.\n\nIt would be wise to speak " ..
+                "with him, for Andromath is one of the most powerful mages not locked away in Dalaran. " ..
+                "Council with him is high council indeed.",
+        },
+        [1943] = {
+            description = "The troll mage Deino has need of your assistance, <name>. She resides in " ..
+                "Orgrimmar, in the Darkbriar Lodge.",
         },
         [1947] = {
             description = "Now it is time for you to earn your mage's wand. To begin this quest, speak " ..
@@ -1508,6 +1539,13 @@ ns.Overrides.wowhead = {
             description = "I have just received word that Denalan at Lake Al'Ameth has discovered what " ..
                 "may be the cause of the tumors that plague the timberlings. Please speak with him, and " ..
                 "tell him I sent you.\n\nMake haste, <name>; he needs our help.",
+        },
+        [2861] = {
+            description = "Rumor is that Tabetha, a mage colleague who lives deep in Dustwallow Marsh, " ..
+                "has a bone to pick with a certain sand troll in Zul'Farrak. If you speak with Tabetha " ..
+                "she can tell you more.\n\nAnd bring some friends with you, <name>. If Tabetha has you go " ..
+                "to Zul'Farrak then you're not going to want to go alone.\n\nYou will find Tabetha 's " ..
+                "cottage west of Theramore, and just north of the Stonemaul Ruin.",
         },
         [2976] = {
             description = "What?!\n\nAh, so I did mention a bounty, didn't I? Well, that'll teach me to " ..
@@ -1770,6 +1808,14 @@ ns.Overrides.wowhead = {
         },
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
+        [8281] = {
+            description = "Your performance has been truly exemplary so far, <name>. Our supply lines are " ..
+                "not completely safe yet, however. In the absence of dredge strikers, their larger " ..
+                "southern cousins will surely move in to take their place in the north.\n\nYou'll have to " ..
+                "kill quite a few dredge crushers to keep them at bay, but we cannot leave the safety of " ..
+                "our supply lines to chance.",
+            rewardMoney = 17000,
+        },
         [8365] = {
             description = "You're the help the Cartel sent? I suppose you'll do. Listen carefully " ..
                 "<class>. As you know, I am a procurer of fashionable apparel for the elite of Azerothian " ..
@@ -2053,6 +2099,12 @@ ns.Overrides.wowhead = {
                 "him!\n\nIf a high ranking official of the Alliance has committed treasonous acts, who " ..
                 "knows how many others are corrupt?\n\nAnd <name>, use force if you have to...",
             rewardChoices = {{24433, 1}, {24431, 1}, {24430, 1}, {24434, 1}, {24432, 1}},
+        },
+        [9540] = {
+            description = "You begin to read the totem, better able to pronounce the words and phrases. " ..
+                "Words start to form in your head. You think that the totem is telling you to go across " ..
+                "the Crystalbrook river to the east. Perhaps your destination is on the other side of the " ..
+                "river.",
         },
         [9542] = {
             description = "You no longer see unrecognizable symbology in the totems. The totem of Yor " ..

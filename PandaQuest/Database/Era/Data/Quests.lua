@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.2.0+v1.0.7 (Classic Era database + corrections from QuestieDB 1.0.7). DO NOT EDIT.
--- Built: 2026-10-24T11:45:10Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.3.0+v1.0.8 (Classic Era database + corrections from QuestieDB 1.0.8). DO NOT EDIT.
+-- Built: 2026-10-26T10:07:59Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -313,7 +313,7 @@ ns.Data.quests = [=[return {
 [321] = {"Lightforge Iron",{{1217}},{nil,{2734}},20,29,77,nil,{"Search the wreckage of The Flying Osprey in the Wetlands."},nil,nil,nil,nil,{270},nil,nil,nil,10,nil,nil,nil,nil,324,8,nil,nil,{{72,25}}},
 [322] = {"Blessed Arm",{{1217}},{{1416}},20,29,77,nil,{"Take the Crate of Lightforge Ingots to Grimand Elmore in Stormwind."},nil,nil,2712,nil,{324},nil,nil,nil,10,nil,nil,nil,nil,325,nil,nil,nil,{{47,50}}},
 [323] = {"Proving Your Worth",{{311}},{{311}},20,28,77,nil,{"Kill 15 Skeletal Raiders, 3 Skeletal Healers and 3 Skeletal Warders, and then return to Sven."},nil,{{{1110},{787},{785}}},nil,nil,{268},nil,nil,nil,10,nil,nil,nil,nil,269,8,nil,nil,{{72,100}}},
-[324] = {"The Lost Ingots",{nil,{2734}},{{1217}},20,29,77,nil,{"Gather 5 Lightforge Ingots, then return to Glorin Steelbrow in the Wetlands."},nil,{nil,nil,{{2702}}},nil,nil,{321},nil,nil,nil,10,nil,nil,nil,nil,322,8,nil,nil,{{47,75}}},
+[324] = {"The Lost Ingots",{nil,{2734}},{{1217}},20,29,77,nil,{"Gather 5 Lightforge Ingots, then return to Glorin Steelbrow in the Wetlands."},nil,{nil,nil,{{2702}}},nil,nil,{321},nil,nil,{526},10,nil,nil,nil,nil,322,8,nil,nil,{{47,75}}},
 [325] = {"Armed and Ready",{{1416}},{{311}},20,29,77,nil,{"Bring Morbent's Bane to Sven in Duskwood."},nil,nil,7297,nil,{322},nil,nil,nil,10,nil,nil,nil,nil,55,nil,nil,nil,{{72,25}}},
 [328] = {"The Hidden Key",{nil,{287}},{nil,{288}},30,37,77,nil,{"Use the Small Brass Key to open Bookie Herod's Strongbox."},nil,nil,2719,nil,{200},nil,nil,nil,33,nil,nil,nil,nil,329,nil,nil,nil,{{72,50}}},
 [329] = {"The Spy Revealed!",{nil,{288}},{{469}},30,37,77,nil,{"Take the Muddy Note to Lieutenant Doren at the Rebel Camp."},nil,nil,2720,nil,{328},nil,nil,nil,33,nil,nil,nil,nil,330,nil,nil,nil,{{72,50}}},
@@ -506,7 +506,7 @@ ns.Data.quests = [=[return {
 [523] = {"Baron's Demise",{{2276}},{{2276}},30,40,77,nil,{"Bring the Head of Baron Vardus to Magistrate Maleb in Southshore."},nil,{nil,nil,{{3626}}},nil,nil,{522},nil,nil,nil,36,nil,nil,nil,nil,nil,8,nil,nil,{{72,100}}},
 [524] = {"Elixir of Agony",{{2216}},{nil,{1728}},24,30,178,nil,{"Place the Tainted Keg on the rug for the captured farmers."},nil,nil,3520,nil,{517},nil,nil,nil,267,nil,nil,nil,nil,nil,nil,nil,nil,{{68,200}}},
 [525] = {"Further Mysteries",{{1356}},{{2276}},30,34,77,nil,{"Bring the Decrypted Letter to Magistrate Maleb in Southshore."},nil,nil,3518,nil,{514},nil,nil,nil,36,nil,nil,nil,nil,537,nil,nil,nil,{{72,50}}},
-[526] = {"Lightforge Ingots",{{1217}},{{1217}},20,29,77,nil,{"Gather 5 lightforge ingots, then return to Glorin Steelbrow in the Wetlands."},nil,{nil,nil,{{2702}}},nil,nil,{324},nil,nil,{322,324},10,nil,nil,nil,nil,322,8,nil,nil,{{47,75}}},
+[526] = {"Lightforge Ingots",{{1217}},{{1217}},20,29,77,nil,{"Gather 5 lightforge ingots, then return to Glorin Steelbrow in the Wetlands."},nil,{nil,nil,{{2702}}},nil,nil,{321},nil,nil,{324},10,nil,nil,nil,nil,322,8,nil,nil,{{47,75}}},
 [527] = {"Battle of Hillsbrad",{{2215}},{{2215}},19,24,178,nil,{"Kill 6 Hillsbrad Farmhands, 6 Hillsbrad Farmers, Farmer Ray and Farmer Getz and report back to Darthalia in Tarren Mill."},nil,{{{2266},{2360},{232},{2403}}},nil,nil,nil,nil,nil,nil,267,nil,nil,nil,nil,528,8,nil,nil,{{68,100}}},
 [528] = {"Battle of Hillsbrad",{{2215}},{{2215}},19,25,178,nil,{"Kill 15 Hillsbrad Peasants and report back to Darthalia in Tarren Mill."},nil,{{{2267}}},nil,nil,{527},nil,nil,nil,267,nil,nil,nil,nil,529,8,nil,nil,{{68,100}}},
 [529] = {"Battle of Hillsbrad",{{2215}},{{2215}},19,26,178,nil,{"Kill Blacksmith Verringtan and 4 Hillsbrad Apprentice Blacksmiths.","","Retrieve a shipment of iron and report back to Darthalia in Tarren Mill."},nil,{{{2404},{2265}},nil,{{3564}}},nil,nil,{528},nil,nil,nil,267,nil,nil,nil,nil,532,8,nil,nil,{{68,100}}},
@@ -1064,15 +1064,15 @@ ns.Data.quests = [=[return {
 [1116] = {"Dream Dust in the Swamp",{{773}},{{773}},30,36,0,nil,{"Bring 10 Specks of Dream Dust to Krazek in Booty Bay. Dream Dust is gathered from the dragon whelps of the Swamp of Sorrows."},nil,{nil,nil,{{5803}}},nil,nil,{1115},nil,nil,nil,8,nil,nil,nil,nil,1117,8,nil,nil,{}},
 [1117] = {"Rumors for Kravel",{{773}},{{4452}},30,36,0,nil,{"Bring the Goblin Rumors to Kravel Koalbeard in the Shimmering Flats."},nil,nil,5804,nil,{1116},nil,nil,nil,400,nil,nil,nil,nil,1118,nil,nil,nil,{}},
 [1118] = {"Back to Booty Bay",{{4452}},{{2498}},35,43,0,nil,{"Bring Kravel's Scheme to Crank Fizzlebub in Booty Bay."},nil,nil,5826,nil,{1117},nil,{},nil,400,nil,nil,nil,nil,nil,nil,nil,nil,{}},
-[1119] = {"Zanzil's Mixture and a Fool's Stout",{{2498}},{{4452}},35,44,0,nil,{"Bring the Fool's Stout back to Kravel in the Shimmering Flats."},nil,nil,5806,{621,1118},nil,{1127},{},nil,400,nil,nil,nil,nil,nil,nil,nil,nil,{}},
+[1119] = {"Zanzil's Mixture and a Fool's Stout",{{2498}},{{4452}},35,44,0,nil,{"Bring the Fool's Stout back to Kravel in the Shimmering Flats."},nil,nil,5806,{621,1118},nil,nil,{},nil,400,nil,nil,nil,nil,nil,nil,nil,nil,{}},
 [1120] = {"Get the Gnomes Drunk",{{4452}},{{4495}},35,44,0,nil,{"Bring the Fool's Stout to the Gnome Pit Boss."},nil,nil,5806,nil,{1119},nil,nil,{1121},400,nil,nil,nil,nil,1122,nil,nil,nil,{}},
 [1121] = {"Get the Goblins Drunk",{{4452}},{{4496}},35,44,0,nil,{"Bring the Fool's Stout to the Goblin Pit Boss."},nil,nil,5806,nil,{1119},nil,nil,{1120},400,nil,nil,nil,nil,1122,nil,nil,nil,{}},
-[1122] = {"Report Back to Fizzlebub",{{4452}},{{2498}},35,44,0,nil,{"Bring the Fool's Stout report to Crank Fizzlebub in Booty Bay."},nil,nil,5807,nil,{1120,1121},nil,nil,nil,400,nil,nil,nil,nil,1127,nil,nil,nil,{}},
+[1122] = {"Report Back to Fizzlebub",{{4452}},{{2498}},35,44,0,nil,{"Bring the Fool's Stout report to Crank Fizzlebub in Booty Bay."},nil,nil,5807,nil,{1120,1121},nil,nil,nil,400,nil,nil,nil,nil,nil,nil,nil,nil,{}},
 [1123] = {"Rabine Saturna",{{5769}},{{11801}},54,55,178,nil,{"Speak with Rabine Saturna in the village of Nighthaven, Moonglade. Moonglade lies between Felwood and Winterspring, accessible through a path out of Timbermaw Hold."},nil,nil,nil,nil,{1000,1004,1018},nil,nil,nil,1638,nil,nil,nil,nil,1124,8,nil,nil,{{609,25}}},
 [1124] = {"Wasteland",{{11801}},{{13220}},54,55,0,nil,{"Speak with Layo Starstrike near the Valor's Rest graveyard of Silithus, showing him Rabine's Letter."},nil,nil,17355,nil,{1123,6762},nil,nil,nil,493,nil,nil,nil,nil,1125,nil,nil,nil,{{609,50}}},
 [1125] = {"The Spirits of Southwind",{{13220}},{{13220}},54,55,0,nil,{"Free the spirits of 8 Tortured Druids and 8 Tortured Sentinels in Southwind Village, and then return to Layo Starstrike at the Valor's Rest graveyard of Silithus."},nil,{{{12178},{12179}}},nil,nil,{1124},nil,nil,nil,1377,nil,nil,nil,nil,1126,8,nil,nil,{{609,100}}},
 [1126] = {"Hive in the Tower",{{13220}},{{13220}},54,57,0,nil,{"Scale the tower of Southwind Village and locate a means to stir the silithid hive into activity. Bring back anything unusual you may uncover when doing so to Layo Starstrike at the Valor's Rest graveyard of Silithus."},nil,{nil,nil,{{17346}}},nil,nil,{1125},nil,nil,nil,1377,nil,nil,nil,{17345},6844,8,nil,nil,{{609,100}}},
-[1127] = {"Fool's Stout",{{2498}},{{2498}},36,44,0,nil,{"Bring 12 of Zanzil's Mixture to Crank Fizzlebub in Booty Bay."},nil,{nil,nil,{{4016}}},nil,nil,{1122},nil,nil,nil,33,nil,nil,nil,nil,nil,8,1,1119,{}},
+[1127] = {"Fool's Stout",{{2498}},{{2498}},36,44,0,nil,{"Bring 12 of Zanzil's Mixture to Crank Fizzlebub in Booty Bay."},nil,{nil,nil,{{4016}}},nil,nil,{1122},nil,nil,nil,33,nil,nil,nil,nil,nil,8,1,nil,{}},
 [1130] = {"Melor Sends Word",{{3387}},{{3441}},20,30,178,nil,{"Speak with Melor Stonehoof in Thunder Bluff."},nil,nil,nil,nil,nil,nil,nil,nil,1638,nil,nil,nil,nil,1131,8,nil,nil,{},1131},
 [1131] = {"Steelsnap",{{3441}},{{3441}},20,30,178,nil,{"Bring Steelsnap's Rib to Melor Stonehoof in Thunder Bluff."},nil,{nil,nil,{{5837}}},nil,nil,{},nil,nil,nil,1638,nil,nil,nil,nil,1136,8,nil,nil,{{81,100}},nil,{1130}},
 [1132] = {"Fiora Longears",{{4455}},{{4456}},18,20,77,nil,{"Speak with Fiora Longears on the docks at Theramore in Dustwallow Marsh."},nil,nil,nil,nil,nil,nil,nil,nil,11,nil,nil,nil,nil,1133,8,nil,nil,{},1133},
@@ -1175,10 +1175,10 @@ ns.Data.quests = [=[return {
 [1269] = {"Lieutenant Paval Reethe",{nil,{21042}},{{4926}},30,37,178,nil,{"Bring Reethe's Badge to Krog in Brackenwall Village."},nil,nil,5950,nil,nil,nil,nil,nil,15,nil,nil,nil,nil,1273,nil,nil,nil,{}},
 [1270] = {"Stinky's Escape",{{4880}},{{3446}},30,37,178,nil,{"Escort \"Stinky\" Ignatz, then speak with Mebok Mizzyrix in Ratchet."},{"Help Stinky find Bogbean Leaves",{[15]={{48.87,24.58}}}},nil,nil,nil,nil,nil,nil,nil,15,nil,nil,nil,nil,nil,2,2,nil,{{470,100}}},
 [1271] = {"Feast at the Blue Recluse",{{1141}},{{1141}},30,37,77,nil,nil,nil,nil,nil,{},{1222},nil,nil,nil,15,nil,nil,nil,nil,nil,8,nil,nil,{}},
-[1273] = {"Questioning Reethe",{{4983}},{{4926}},30,37,178,nil,{"Go with Ogron to speak with Reethe, then return to Krog in Brackenwall Village."},{"Question Reethe with Ogron",{[15]={{42.47,38.07}}}},nil,nil,nil,{1269},nil,nil,nil,15,nil,nil,nil,nil,nil,2,2,nil,{}},
+[1273] = {"Questioning Reethe",{{4983}},{{4926}},30,37,178,nil,{"Go with Ogron to speak with Reethe, then return to Krog in Brackenwall Village."},nil,{{{4980,nil,3}}},nil,nil,{1269},nil,nil,nil,15,nil,nil,nil,nil,nil,2,2,nil,{}},
 [1274] = {"The Missing Diplomat",{{4982}},{{4960}},28,28,77,nil,{"Find Bishop DeLavey in Stormwind Keep."},nil,nil,nil,nil,nil,nil,nil,nil,1519,nil,nil,nil,nil,1241,8,nil,nil,{}},
 [1275] = {"Researching the Corruption",{{8997}},{{8997}},18,24,77,nil,{"Gershala Nightwhisper in Auberdine wants 8 Corrupt Brain stems."},nil,{nil,nil,{{5952}}},nil,nil,{},nil,nil,nil,719,nil,nil,nil,nil,nil,8,nil,nil,{{69,150}},nil,{3765}},
-[1276] = {"The Black Shield",{{4926}},{{4943}},30,37,178,nil,{"Show the Blackened Iron Shield to Mosarn in Thunder Bluff."},nil,nil,5919,nil,{1273},nil,nil,nil,15,nil,nil,nil,nil,nil,nil,nil,nil,{}},
+[1276] = {"The Black Shield",{{4926}},{{4943}},30,37,178,nil,{"Show the Blackened Iron Shield to Mosarn in Thunder Bluff."},nil,nil,5919,{1273,1323},{},nil,nil,nil,15,nil,nil,nil,nil,nil,nil,nil,nil,{}},
 [1282] = {"They Call Him Smiling Jim",{{4921}},{{4944}},30,35,77,nil,{"Speak with Captain Garran Vimes on the top floor of Foothold Citadel."},nil,nil,nil,nil,nil,nil,nil,{},15,nil,nil,nil,nil,nil,8,nil,nil,{},nil,nil,nil,nil,nil,nil,1302},
 [1284] = {"Suspicious Hoofprints",{nil,{21015,21016}},{{4944}},30,35,77,nil,{"Report about the suspicious prints at the Shady Rest Inn to Captain Garran Vimes in Theramore."},nil,nil,nil,nil,{1282,1302},nil,nil,nil,15,nil,nil,nil,nil,nil,8,nil,nil,{}},
 [1285] = {"Daelin's Men",{{4948}},{{4944}},30,38,77,nil,{"Return the information about Reethe to Captain Garran Vimes in Theramore."},nil,nil,nil,nil,{1259},nil,nil,nil,15,nil,nil,nil,nil,1286,8,nil,nil,{}},
