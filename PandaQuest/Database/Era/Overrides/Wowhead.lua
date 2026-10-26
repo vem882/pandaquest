@@ -951,6 +951,15 @@ ns.Overrides.wowhead = {
                 "and a word of advice, you'll want to avoid their venom if you can.",
             rewardItems = {{3559, 1}},
         },
+        [261] = {
+            description = "I will be frank. We are at war with the Scourge. It is an evil that corrupts " ..
+                "our people and infects our land. It must be stopped before it overwhelms us and drags " ..
+                "our world into shadow. We of the Scarlet Crusade have sworn to fight the Scourge with " ..
+                "body and soul.\n\nIf you are with us, then gather your courage and prove your " ..
+                "allegiance--destroy the undead ravagers of Desolace, in the Valley of Bones to the " ..
+                "south.\n\nDo this, and the Crusade will embrace you.",
+            rewardMoney = 4500,
+        },
         [278] = {
             description = "Begin collecting the disarming materials immediately, <name>. Lurker Venom can " ..
                 "be found on the indigenous spiders in Loch Modan. Crocolisk tears are found here in the " ..
@@ -1263,6 +1272,14 @@ ns.Overrides.wowhead = {
                 "kill enough centaur then they should raise an alarm. And Verog will come.\n\nBring me " ..
                 "his head and I will place it with Barak Kodobane's.",
             rewardMoney = 1000,
+        },
+        [881] = {
+            description = "Whitemist, Echeyakee in the Tauren tongue, is the king of the savannah cats. " ..
+                "He hunts with such stealth, they say he's like a thin, white mist on the earth. And he " ..
+                "kills so fast his prey have no time for fear, or pain.\n\nThe Tauren say he is both " ..
+                "mercy and death.\n\nYou will learn if that's true, for I now set you on the path to hunt " ..
+                "Echeyakee. His lair is northeast of the Crossroads, among the bones of giant Kodo\n\nGo. " ..
+                "Blow this horn when you reach his lair. Blow the horn, and he will come.",
         },
         [891] = {
             description = "Yet another ship from my fleet has been lost to those overzealous humans at " ..
@@ -1644,6 +1661,15 @@ ns.Overrides.wowhead = {
                 "think Vahlarriel at Nijel's Point should not only see the pendant you've found, but also " ..
                 "know about the signs of life to the south.",
         },
+        [1476] = {
+            description = "Coaxing a succubus will require the hearts of the pure. But is any mortal " ..
+                "without vice?\n\nThrough bits of overheard stories, I found two humans that should " ..
+                "do.\n\nThe first is Dalin Forgewright, who has dedicated himself to the care of the " ..
+                "Lordaeron refuges, whom are refused by their kin at the Greymane Wall.\n\nThe other is " ..
+                "Corma Villard, a woman who remains faithful to her lost love, wandering the Wetlands for " ..
+                "a sign of her.\n\nDeliver their hearts to Carendin. But first, let me show you your " ..
+                "quarry.",
+        },
         [1480] = {
             description = "The torn skin smells rotten, and is remarkably pliable for something that " ..
                 "appears to be dry and fragile.\n\nAs you unroll it, you can clearly see the red markings " ..
@@ -1727,6 +1753,14 @@ ns.Overrides.wowhead = {
                 "Macleod. If he finds you worthy, then Klannoc will lead you further down the warrior's " ..
                 "path.\n\nTo reach Fray Island, search for the sand bar shallows along the Merchant Coast.",
         },
+        [1738] = {
+            description = "In preparation for your coming, I used my sight to look over the world and " ..
+                "through the mists of time. I have found what it is you seek.\n\nIn the War of the " ..
+                "Ancients, two lovers fell together in battle. Where they took their last breaths, a tree " ..
+                "known as the heartswood grew, a symbol of their undying love.\n\nThat should be enough " ..
+                "to tempt a succubus. You will find it in the ruins of Ordil'Aran in the northwestern " ..
+                "part of the forest of Ashenvale.",
+        },
         [1740] = {
             description = "When demons of the Legion fall out of favor, their spirits are imprisoned " ..
                 "within orbs and distributed to their mages and warlocks.\n\nMany were carried by their " ..
@@ -1791,6 +1825,10 @@ ns.Overrides.wowhead = {
                 "Tirth and gain it from him.\n\nGood luck. Tirth used to be a great mage and scholar, but " ..
                 "now he spends his time at the gnome and goblin races in the Shimmering Flats, drinking " ..
                 "and gambling.",
+        },
+        [1952] = {
+            description = "I'll go make the wands now.",
+            rewardChoices = {{7514, 1}, {11263, 1}, {7513, 1}},
         },
         [1953] = {
             description = "It is time, <name>, for you to speak with Tabetha... the hermit of Dustwallow " ..
@@ -3009,6 +3047,15 @@ ns.Overrides.wowhead = {
                 "be saved. Speak with him, then return to his daughter Pamela.",
             rewardItems = {{15723, 1}},
         },
+        [5741] = {
+            description = "The Burning Blade in Thunder Axe Fortress to the east is rumored to have " ..
+                "acquired the Sceptre of Light from the Naga. Legend tells that the sceptre is able to " ..
+                "sink entire cities under the great seas. The Burning Blade must not be allowed to " ..
+                "possess such power.\n\nTo that end, you must retrieve the sceptre yourself! It is held " ..
+                "by a Burning Blade seer, who studies the sceptre from atop one of the Thunder Axe " ..
+                "watchtowers.",
+            rewardMoney = 3500,
+        },
         [5803] = {
             description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
                 "that he was the former leader of Scholomance before claiming the city as his own. To " ..
@@ -3024,6 +3071,15 @@ ns.Overrides.wowhead = {
                 "key.\n\nMake your way into the heart of Andorhal, and break his hold on the city now " ..
                 "that he is drawn into the open. Once destroyed, seize his scarab from his fallen " ..
                 "phylactery!\n\nThe Key to Scholomance awaits, <name>!",
+        },
+        [5821] = {
+            description = "Under normal circumstances, Rigger and I would lead our kodo past the Kolkar " ..
+                "Centaur. Every now and then we hear the Centaur war drums, and when we hear those we " ..
+                "stop. It's not good for business to be dead!\n\nI'll tell you what <class>, if you " ..
+                "protect us past the Kolkar village we'll make it worth your while.\n\nIt's just a short " ..
+                "distance, all you need to do is keep the caravan intact and you can pick up your reward " ..
+                "from Smeed Scrabblescrew - he is down the road a bit. We do a little business together.",
+            rewardItems = {{15689, 1}},
         },
         [5848] = {
             description = "The painting... It hung on the wall of my workshop - inside the Order's " ..
@@ -3054,6 +3110,7 @@ ns.Overrides.wowhead = {
         [5887] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5888] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5889] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
+        [5890] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5941] = {
             description = "You have gathered many relics of the battle of Darrowshire. Each time you " ..
                 "returned with more, my heart yearned for my village... yearned to protect it from its " ..
@@ -4088,6 +4145,7 @@ ns.Overrides.wowhead = {
                 "you will have to wait until they are here next.",
             rewardItems = {{19288, 1}},
         },
+        [8051] = {rewardItems = {{19593, 1}}},
         [8052] = {rewardItems = {{19594, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
         [8120] = {
@@ -4213,6 +4271,7 @@ ns.Overrides.wowhead = {
                 "head to me. Do this and you may begin the next step of your journey.",
         },
         [8324] = {rewardMoney = 4500},
+        [8333] = {rewardItems = {{20422, 1}}},
         [8368] = {
             description = "The battle in Warsong Gulch against the Silverwing Sentinels is of great " ..
                 "importance. Under the guise of protecting a forest that doesn't belong to them, the " ..

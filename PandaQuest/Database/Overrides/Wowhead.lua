@@ -40990,6 +40990,16 @@ ns.Overrides.wowhead = {
                 "watching...",
             rewardMoney = 4000,
         },
+        [26333] = {
+            description = "We've lost more than a couple scouts trying to find out what exactly Razlo " ..
+                "Crushcog plans to do with all those mechano-tanks his irradiated technicians are " ..
+                "repairing.\n\nWe can't afford to take it slowly anymore. We must act before Crushcog " ..
+                "turns his followers and his weapons on us.\n\nThis techno-grenade packs enough explosive " ..
+                "power to destroy the mechano-tanks and deny Crushcog their use. Take it north with you " ..
+                "along the road to Crushcog's Arsenal and take out those tanks!",
+            rewardChoices = {{59047, 1}, {59048, 1}, {59049, 1}},
+            rewardMoney = 75,
+        },
         [26334] = {
             description = "<race>. <race>, <race>, <race>... you didn't think I was a friend, did you, " ..
                 "<race>? Ah, ha ha haaaa!\n\nYou've served your purpose. I've returned to the realm of " ..
@@ -42355,6 +42365,12 @@ ns.Overrides.wowhead = {
                 "vessels, <name>. We need to examine them with the spiders and see just what's going on " ..
                 "here!",
             rewardChoices = {{59252, 1}, {59253, 1}, {59254, 1}, {59255, 1}},
+            rewardMoney = 3500,
+        },
+        [26525] = {
+            description = "If the sacrifice has already been made, Shadra's presence is going to start " ..
+                "creepin' into this realm. That cave's probably full of her spawn by now.\n\nDon't let " ..
+                "them escape, <name>. Slay any of those vile spiders you find!",
             rewardMoney = 3500,
         },
         [26526] = {
@@ -60239,6 +60255,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{67414, 1}},
             rewardMoney = 114000,
         },
+        [29344] = {
+            description = "Hae I introduced ye tae me pet, Squirky? I'm teachin' him tae fish all " ..
+                "proper-like. Fer now, I've been feedin' him minnows fished from the pool in this " ..
+                "cavern.\n\nMaybe ye'd like tae give it a try? Just cast yer lure in the pool over there " ..
+                "and feed Squirky any minnows ye happen tae fish up. He'll love ye ferever!",
+            rewardItems = {{67414, 1}},
+            rewardMoney = 20000,
+        },
         [29345] = {
             description = "A well-meaning goblin visitor introduced Azshara snakeheads to our waters and " ..
                 "now they're overrunning the pond.\n\nPlease, if you can catch some of these voracious " ..
@@ -60944,6 +60968,15 @@ ns.Overrides.wowhead = {
                 "motivation could muster a force capable of standing against the mogu.\n\nIf you can " ..
                 "bring back some tools from the orchard, I'll distribute them to anyone willing to fight.",
             rewardMoney = 98000,
+        },
+        [29581] = {
+            description = "Ashyo must have experienced what we call the golden dream.\n\nMany of us " ..
+                "working here have seen it, too - often after a long day of toiling in the pools. It is " ..
+                "said this vision--and the feeling of elation it brings--is a reward to the mind for " ..
+                "working the body.\n\nThere IS an easier way, though we rarely resort to it anymore: a " ..
+                "tea can be brewed using lotus root and dreamleaf, which grows around the shrine on the " ..
+                "upper tier.\n\nBring the dreamleaf to Yan back in town and he can brew the tea for you.",
+            rewardMoney = 102000,
         },
         [29582] = {
             description = "Grek had bad night last night.\n\nShiny mummy man came into Grek 's house and " ..
@@ -62120,6 +62153,15 @@ ns.Overrides.wowhead = {
                 "be returned to its people.",
             rewardMoney = 168000,
         },
+        [29815] = {
+            description = "These creatures are everywhere - and very hostile! We'll need to deal with " ..
+                "them before any more Alliance show up.\n\nThis one's taken quite a beating, but I've " ..
+                "still made some determinations about its anatomy.\n\nWith the proper reagents, I'll be " ..
+                "able to fashion a poison that should be quite effective against this species. In fact, " ..
+                "I'll just need to modify a bit of the poison I have with me.\n\nGo and find me some " ..
+                "viscous chlorophyll down by the water. Any semi-sentient flora should do.",
+            rewardMoney = 98000,
+        },
         [29821] = {
             description = "Listen, <pal/toots>.\n\nI sent out a coupla supply drones from the gunship, " ..
                 "and they've all been lost or crashed. Almost all, that is.\n\nOne of 'em buzzed right " ..
@@ -62335,6 +62377,14 @@ ns.Overrides.wowhead = {
                 "opposite, actually.\n\nAt least he's a capable fighter. He did well enough at Tian " ..
                 "Monastery to be selected for our training mission.\n\nIf you want to help him look for " ..
                 "the Hidden Master, you can find him along the Valley's northern border.",
+            rewardMoney = 10200,
+        },
+        [29872] = {
+            description = "Lin is more talented than she thinks she is. Strong of fist but weak of " ..
+                "spirit. With more confidence, she could be better than all of us.\n\nPerhaps she will " ..
+                "find the surety she needs on her trip into the west. She's probably on her way to " ..
+                "Stoneplow as we speak. Stop and speak to her, if you find yourself on that side of the " ..
+                "Valley.",
             rewardMoney = 10200,
         },
         [29873] = {
@@ -62917,6 +62967,18 @@ ns.Overrides.wowhead = {
                 "wall wasn't even there!\n\nThe only reason those spindly scouts aren't dying is because " ..
                 "they're attacking farmers, not soldiers. They wouldn't stand a chance against someone " ..
                 "like you.",
+            rewardMoney = 102000,
+        },
+        [29982] = {
+            description = "A few farmers remain in the fields... some perilously close to the crumbling " ..
+                "wall. I don't want any farmers pretending to be heroes. We will take care of this mantid " ..
+                "swarm, and then they can return to their homes.\n\nMy Shado-Pan are too busy defending " ..
+                "this town to organize evacuations. You want to prove yourself useful? Get those farmers " ..
+                "out of harm's way.",
+            rewardChoices = {
+                {88019, 1}, {88020, 1}, {88021, 1}, {88022, 1}, {88023, 1}, {88024, 1}, {88025, 1},
+                {88026, 1}, {88027, 1},
+            },
             rewardMoney = 102000,
         },
         [29983] = {
@@ -65962,6 +66024,18 @@ ns.Overrides.wowhead = {
             },
             rewardMoney = 204000,
         },
+        [30620] = {
+            description = "I know your friends are worried about the animating statues over at Mogujia, " ..
+                "but I'll tell you what you should really be worried about.\n\nWhere there are animated " ..
+                "statues, there are Mogu. I don't know if you've seen one before, but if you " ..
+                "haven't...\n\nWell, let's just say Mogu are bad, bad, news.\n\nWhile you're dealing with " ..
+                "whatever else you're doing, you need to get the Mogu behind the trouble!",
+            rewardChoices = {
+                {82487, 1}, {82488, 1}, {82489, 1}, {82490, 1}, {82491, 1}, {82492, 1}, {82493, 1},
+                {82494, 1}, {82495, 1},
+            },
+            rewardMoney = 204000,
+        },
         [30621] = {
             description = "My journeys through Kun-Lai have taught me two things. First, never sneak up " ..
                 "on a sleeping yak. Second, having luck on your side is both necessary and hard to come " ..
@@ -65999,6 +66073,12 @@ ns.Overrides.wowhead = {
                 "left.\n\nThere's dangerous creatures up there near the wall. If you find those students, " ..
                 "make sure that they haven't fallen to any of them.",
             rewardMoney = 204000,
+        },
+        [30626] = {
+            description = "I'm going to withdraw what few forces I have. We may have to fall back to the " ..
+                "Stormstout Brewery, or even Halfhill. That call is Commander Loon Mai 's to make.\n\nYou " ..
+                "go ahead. Deliver word to the Commander. My Shado-Pan will be shortly behind.",
+            rewardMoney = 10200,
         },
         [30627] = {
             description = "That commander speaks hastily. He has the weapon he needs to win this battle. " ..
@@ -66046,6 +66126,14 @@ ns.Overrides.wowhead = {
                 "head on, so you'll have to meet Lao Softfoot at the entrance to the ruins.\n\nHe'll help " ..
                 "you sneak in under the cover of stealth. Then, plant this keg of explosives at the mouth " ..
                 "of the cave.\n\nThe rest should take care of itself.",
+            rewardMoney = 114000,
+        },
+        [30635] = {
+            description = "We've taken care of the scout problem for now, but there are still advance " ..
+                "mogu forces inside the Guo-Lai Halls down the hill.\n\nUnfortunately, their vicious " ..
+                "guard dogs are protecting their operations deeper in the ruins.\n\nGo and dispatch of " ..
+                "their beasts. Be on your guard - they can be quite good at blending into their " ..
+                "surroundings.",
             rewardMoney = 114000,
         },
         [30636] = {
@@ -66894,6 +66982,13 @@ ns.Overrides.wowhead = {
                 "him, and he will join me in avenging our people.",
             rewardMoney = 110000,
         },
+        [30789] = {
+            description = "If I am to fight Jahesh, leader of the yaungol mist-shaman, I must have " ..
+                "Arconiss by my side. Arconiss ' ferocity is second to none.\n\nHe rests beneath the " ..
+                "mists of the Upper Sumprushes. Find his resting place, and then use these torches to " ..
+                "awaken him.",
+            rewardMoney = 110000,
+        },
         [30790] = {
             description = "Golgoss' strength is great, but he requires nutrition before he can use " ..
                 "it.\n\nThe snarlthorn bushes in the Upper Sumprushes have heavy, fibrous branches. These " ..
@@ -67065,6 +67160,16 @@ ns.Overrides.wowhead = {
                 "their funerals, and meet you at the graveyard.\n\nIn the meantime, however, please " ..
                 "return to my cousin and ask him to gather the villagers for the funeral.",
             rewardMoney = 10200,
+        },
+        [30820] = {
+            description = "As I said, I will gather the town - we will be at the funeral.\n\nAs the one " ..
+                "who has done so much to honor our friends, we feel it is only right that you will be the " ..
+                "one to light the Incense of Life and usher their spirits to the life beyond.",
+            rewardChoices = {
+                {82496, 1}, {82497, 1}, {82498, 1}, {82499, 1}, {82500, 1}, {82501, 1}, {82502, 1},
+                {82503, 1}, {82504, 1},
+            },
+            rewardMoney = 204000,
         },
         [30821] = {
             description = "Alright, it's time to take Kota Kon out for her \"walk.\"\n\nWe brewed two " ..
@@ -67582,6 +67687,14 @@ ns.Overrides.wowhead = {
             },
             rewardMoney = 110000,
         },
+        [30964] = {
+            description = "A dry bandage doesn't do much good, other than maybe keeping bugs out of the " ..
+                "wound. In some camps, that's the best you can hope for.\n\nNot in my camp, though.\n\nI " ..
+                "prefer to make a paste from whatever soothing herbs I can find, and layer that between " ..
+                "bandages. The most soothing herbs I've been able to find in the field are the " ..
+                "Mao-Willows from the fields in the northeast. If you run into any, bring them back.",
+            rewardMoney = 110000,
+        },
         [30967] = {
             description = "Not all of my fellow villagers from Inkgill are corrupted. Many heeded my " ..
                 "warnings and did not drink of the sha-tainted waters.\n\nThey are in hiding, terrified, " ..
@@ -68060,6 +68173,14 @@ ns.Overrides.wowhead = {
                 "sorcery.\n\nTheir creations, the Onyx Stormclaws, guard the island to the " ..
                 "northwest.\n\nI wish to study the magic binding these creatures. Bring me their hearts, " ..
                 "so that I can better understand what sorcery we are up against.",
+            rewardMoney = 114000,
+        },
+        [31043] = {
+            description = "It is said that Shan'ze Dao was once home to a great mogu temple.\n\nThere, " ..
+                "the Shan'ze studied and practiced the art of subjugating the dead or inanimate.\n\nMuch " ..
+                "of their knowledge still remains on the island to the northwest, buried among the " ..
+                "ruins.\n\nWe need to get our hands on their knowledge - both to keep it out of their " ..
+                "hands, and to understand the nature of their experiments.",
             rewardMoney = 114000,
         },
         [31044] = {
@@ -70135,6 +70256,18 @@ ns.Overrides.wowhead = {
                 "See if you've already completed this by typing: /run " ..
                     "print(C_QuestLog.IsQuestFlaggedCompleted(31464))",
             },
+        },
+        [31465] = {
+            description = "Kypari Ik is just one of many locations that houses some of Empress " ..
+                "Shek'zeer's offspring. In their juvenile state the young are reckless and difficult to " ..
+                "control. They are also deadly.\n\nSwarmborn are hatched with a highly toxic venom that " ..
+                "diminishes in potency with age. The venom can incapacitate even the strongest and most " ..
+                "skilled fighter if it hits flesh.\n\nI would like you to bring me some of this venom.",
+            rewardChoices = {
+                {88132, 1}, {88133, 1}, {88134, 1}, {88135, 1}, {88136, 1}, {88137, 1}, {88138, 1},
+                {88139, 1}, {88140, 1},
+            },
+            rewardMoney = 114000,
         },
         [31467] = {
             description = "With the grill, you can transform those raw tiger steaks into food that makes " ..
@@ -77459,6 +77592,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 361,
         },
+        [10778] = {spawns = {[28] = {{38.4, 54}}}, zoneID = 28},
         [10802] = {
             spawns = {
                 [47] = {{56.4, 85.2}, {56.6, 85.4}, {57.4, 86.4}, {57.4, 86.6}, {57.6, 86.4}, {57.6, 86.6}},
@@ -77768,6 +77902,7 @@ ns.Overrides.wowhead = {
         [68715] = {subName = "The Sunreavers"},
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
+        [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [69062] = {subName = "Trade Supplies"},
         [70678] = {maxLevel = 92, minLevel = 92},
         [70751] = {maxLevel = 90, minLevel = 90},
