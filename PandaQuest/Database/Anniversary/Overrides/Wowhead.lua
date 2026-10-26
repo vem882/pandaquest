@@ -1176,6 +1176,15 @@ ns.Overrides.wowhead = {
                 "task, but more importantly you will be doing your duty for the Horde!",
             rewardMoney = 1700,
         },
+        [423] = {
+            description = "After examining Arugal's work my worst suspicions were confirmed. The old hack " ..
+                "was not qualified to clean chamber pots in Dalaran let alone represent the Kirin Tor in " ..
+                "its most dire hour. Fools!\n\nArugal used enchanted items to reinforce his weak magic. I " ..
+                "need to examine these items first hand. Travel forth and slay Moonrage Gluttons and " ..
+                "Moonrage Darksouls until you have collected enough of their enchanted shackles for my " ..
+                "research. The foul creatures have been seen to the north and east.",
+            rewardMoney = 600,
+        },
         [424] = {
             description = "It will indeed take me longer than I had thought to uncover the dark secrets " ..
                 "behind the enchantments Arugal was using.\n\nBut in the meantime I need you to take care " ..
@@ -1331,6 +1340,15 @@ ns.Overrides.wowhead = {
                 "specifics, I can inform you that none other than Hamuul Runetotem is spearheading this " ..
                 "research.\n\nPlease - if you are interested, speak with him directly on the Elder Rise " ..
                 "within Thunder Bluff proper.",
+        },
+        [943] = {
+            description = "Prospector Whelgar now holds the original fossil at his site in the Wetlands. " ..
+                "When I discovered the Stone of Relu, I believed it to be the key to unlocking the " ..
+                "mystery of the fossil.\n\nWhile I traveled on the road to meet Whelgar, I was attacked " ..
+                "by raptors and the relic was lost. I don't know which one of the mottled beasts " ..
+                "swallowed the relic but if you can retrieve it, I can unleash the power of these " ..
+                "artifacts.\n\nBring me both the Stone of Relu, and the original fossil he holds.",
+            rewardChoices = {{5627, 1}, {5626, 1}},
         },
         [990] = {
             description = "<name>, my mistress, Raene Wolfrunner, awaits you in the city of Astranaar " ..
@@ -1625,6 +1643,14 @@ ns.Overrides.wowhead = {
                 "them wisely!",
             rewardMoney = 8500,
         },
+        [5181] = {
+            description = "The Annals of Darrowshire tells of the villains of that battle. It tells how " ..
+                "the ghoul lord Horgus the Ravager was destroyed by Alliance forces during the battle. " ..
+                "His body was cast into a lake, northwest of Corin's Crossing, and his skull remains " ..
+                "there.\n\nMarduk the Black was never defeated, but his fabled sword was shattered and " ..
+                "lost. It lies at the bottom of the gorge west of Corin's Crossing.\n\nRetrieve these " ..
+                "items, <name>. I know not why, but I am certain their fate lies with you.",
+        },
         [5216] = {
             description = "Of the four cauldrons here in the west, the one located at Felstone Field may " ..
                 "be the easiest one in obtaining access to. The Scourge have greener troops positioned " ..
@@ -1886,6 +1912,15 @@ ns.Overrides.wowhead = {
                 "follow the path and you should find Azure Watch.\n\nSee if you can convince them to send " ..
                 "us some aid and supplies. The rest of us will follow when we can.\n\nThank you, we " ..
                 "wouldn't have made it without you!",
+        },
+        [9314] = {
+            description = "<class>! A couple mutated beasts jumped me and my leg is injured.\n\nI was " ..
+                "sent on a scouting mission from Azure Watch after we received word from Zhanaa. Please, " ..
+                "could you go speak with Caregiver Chellan in my stead? She needs to know how many people " ..
+                "to expect in Azure Watch. Just cross the Crystalbrook River here and continue following " ..
+                "the road until you get to Azure Watch.\n\nBe sure to ask her for a place for yourself to " ..
+                "stay in.",
+            rewardChoices = {{6290, 5}, {159, 5}},
         },
         [9427] = {
             description = "I must ask that you finish what we've set in motion. Now that the demonic " ..

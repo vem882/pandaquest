@@ -1332,6 +1332,14 @@ ns.Overrides.wowhead = {
                 "spells once and for all. Bring to me the vile wizard's head!",
             rewardItems = {{6414, 1}},
         },
+        [1034] = {
+            description = "Elune's Tear washed clear some of my daughter's sickness. Her nightmares are " ..
+                "lessened and I thank the goddess for her blessing. But... fever still rages within " ..
+                "her.\n\nOrendil told me of a frosted dust found among the Ruins of Stardust. Perhaps it " ..
+                "will abate Relara's fever. Gather some of the dust, then please return to me.\n\nThe " ..
+                "Ruins of Stardust lie to the south, <name>. May Elune speed your journey.",
+            rewardMoney = 1500,
+        },
         [1036] = {
             description = "<name>... yeah, I've heard of you. I've heard that you're no friend of Booty " ..
                 "Bay - just like us Bloodsail Buccaneers. Fleet Master Firallon is looking for hale and " ..
@@ -1961,6 +1969,11 @@ ns.Overrides.wowhead = {
                 "Stormwind itself?\n\nYou must take this information to Highlord Bolvar Fordragon in " ..
                 "Stormwind at once! If this does not merit the aid of Stormwind, nothing will and all is " ..
                 "lost.",
+        },
+        [4223] = {
+            description = "< Magistrate Solomon sighs.>\n\nYou must return to the Burning Steppes, " ..
+                "<name>. As a deputy of Stormwind, you will be required to report to Marshal Maxwell. " ..
+                "Good luck.",
         },
         [4243] = {
             description = "Unfortunately, something's happened to one of my greatest inventions. You've " ..
@@ -3975,6 +3988,14 @@ ns.Overrides.wowhead = {
                 "their numbers to ensure our supplies aren't jeopardized.",
             rewardMoney = 8500,
         },
+        [8281] = {
+            description = "Your performance has been truly exemplary so far, <name>. Our supply lines are " ..
+                "not completely safe yet, however. In the absence of dredge strikers, their larger " ..
+                "southern cousins will surely move in to take their place in the north.\n\nYou'll have to " ..
+                "kill quite a few dredge crushers to keep them at bay, but we cannot leave the safety of " ..
+                "our supply lines to chance.",
+            rewardMoney = 17000,
+        },
         [8284] = {
             description = "A camp of Twilight's Hammer cultists once thrived northwest of here. If you " ..
                 "were to venture there now, you'd find the area swarming with elementals and nothing but " ..
@@ -4112,6 +4133,14 @@ ns.Overrides.wowhead = {
             description = "You cannot understand a single word on this ledger. You don't even know what " ..
                 "language it is written in!",
         },
+        [8586] = {
+            description = "My recipe is complete! What I need from you now is some rocket fuel and " ..
+                "deeprock salt. I'll handle the spices and the meat you brought me will cover the " ..
+                "rest.\n\nAfter you bring me what I asked for, the chicken will be ready to take back to " ..
+                "Narain.",
+            rewardItems = {{21025, 1}, {21023, 20}},
+            rewardMoney = 27000,
+        },
         [8588] = {
             description = "Since we're preparing for war, it might be best if we get all of the goods we " ..
                 "need first, don't you think, mon? One of the staples of the war materiel that we're " ..
@@ -4193,6 +4222,11 @@ ns.Overrides.wowhead = {
                 "needed for the upcoming war, but we won't be able to meet our goals without your " ..
                 "assistance, <name>!\n\nYou should go speak with the guy in charge, Field Marshal " ..
                 "Snowfall. What do you say, <class>? Will you help out with the vital preparations?",
+        },
+        [8808] = {
+            description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
+                "batch of uniform materials and bring them to Windcaller Proudhorn.",
+            rewardItems = {{20800, 1}, {21266, 1}},
         },
         [8846] = {rewardItems = {{21509, 1}}},
         [8855] = {rewardItems = {{21513, 1}}},
@@ -4463,6 +4497,17 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [5470] = {
+            spawns = {
+                [440] = {
+                    {32.4, 75.6}, {34.6, 77.8}, {36.2, 77.4}, {36.2, 78.4}, {36.2, 78.6}, {36.2, 80.4},
+                    {36.4, 74.8}, {36.4, 76.4}, {36.4, 80.8}, {36.8, 76}, {36.8, 79}, {37, 78}, {37.2, 76.6},
+                    {37.2, 81.4}, {37.4, 72.6}, {37.4, 79.6}, {37.4, 81.6}, {37.6, 76.8}, {37.6, 78},
+                    {37.6, 78.6}, {37.6, 80.4}, {37.6, 81.4}, {37.6, 81.6}, {38.8, 80.4}, {39.4, 79},
+                },
+            },
+            zoneID = 440,
+        },
         [14435] = {
             spawns = {
                 [1377] = {
