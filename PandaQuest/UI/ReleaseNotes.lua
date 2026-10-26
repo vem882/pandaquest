@@ -6,6 +6,11 @@
 local _, ns = ...
 
 ns.ReleaseNotes = {
+    { version = "0.2.268", date = "2026-10-26", lines = {
+        "quest browser - a quest's page says which step of its chain it is and names the next quest",
+        "quest browser - a quest ID typed in the name box finds that quest",
+        "tooltips - item tooltips say where the item comes from: drops, chests, containers, vendors",
+    } },
     { version = "0.2.242", date = "2026-10-23", lines = {
         "core - new files of an update made while the game ran did not load: PandaQuest now says to restart",
         "quest mobs - kill-credit objectives mark their own group, not another creature of the quest twice",

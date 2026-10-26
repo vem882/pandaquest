@@ -53,6 +53,16 @@ end
 
 local MAX_REWARD_CHARS = 60
 
+-- Where an item comes from (tooltips.itemSources): the creatures that drop it, the objects it is
+-- found in, the containers it comes out of and who sells it, from the item database.
+local COLOR_SOURCE = { 0.55, 0.78, 0.95 }
+local MAX_SOURCE_NAMES = 3
+
+local function showItemSources()
+    local p = profile()
+    return not p or not p.tooltips or p.tooltips.itemSources ~= false
+end
+
 ---------------------------------------------------------------------------
 -- Cache
 ---------------------------------------------------------------------------
@@ -211,7 +221,38 @@ function M.BuildObjectLines(objectID)
     return lines
 end
 
---- Tooltips.BuildItemLines(itemID) -> lines: quests the item starts and objectives it fills.
+-- "Drops from: Dappled Moth, Mistfall Ruffian and 4 more": names once each, hidden entries left out.
+local function sourceLine(lines, label, list, nameOf, isHidden)
+    if type(list) ~= "table" or #list == 0 then return end
+    local names, seen, total = {}, {}, 0
+    for i = 1, #list do
+        local id = list[i]
+        local name = type(id) == "number" and not (isHidden and isHidden(id)) and nameOf(id) or nil
+        if type(name) == "string" and name ~= "" and not seen[name] then
+            seen[name] = true
+            total = total + 1
+            if #names < MAX_SOURCE_NAMES then names[#names + 1] = name end
+        end
+    end
+    if total == 0 then return end
+    local text = table.concat(names, ", ")
+    if total > #names then text = format(L["%s and %d more"], text, total - #names) end
+    addLine(lines, format(label, text), COLOR_SOURCE)
+end
+
+local function addSources(lines, itemID)
+    local DB = ns.DB
+    if not (DB and DB.GetItemSources and showItemSources()) then return end
+    local sources = DB.GetItemSources(itemID)
+    if type(sources) ~= "table" then return end
+    sourceLine(lines, L["Drops from: %s"], sources.npcs, DB.GetNpcName, DB.IsNpcHidden)
+    sourceLine(lines, L["Found in: %s"], sources.objects, DB.GetObjectName, DB.IsObjectHidden)
+    sourceLine(lines, L["Comes out of: %s"], sources.items, DB.GetItemName, DB.IsItemHidden)
+    sourceLine(lines, L["Sold by: %s"], sources.vendors, DB.GetNpcName, DB.IsNpcHidden)
+end
+
+--- Tooltips.BuildItemLines(itemID) -> lines: quests the item starts, objectives it fills, and where
+--- it comes from.
 function M.BuildItemLines(itemID)
     if type(itemID) ~= "number" then return nil end
     local key = "item:" .. itemID
@@ -221,6 +262,7 @@ function M.BuildItemLines(itemID)
     local count = 0
     count = addObjectives(lines, "item", itemID, count)
     addStarters(lines, "item", itemID, count)
+    addSources(lines, itemID)
     if cacheCount >= MAX_CACHE_ENTRIES then M.InvalidateCache() end
     cache[key] = lines
     cacheCount = cacheCount + 1
@@ -311,6 +353,7 @@ function M.OnEnable()
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", M.InvalidateCache)
     M:RegisterMessage("PQ_TARGETS_UPDATED", M.InvalidateCache)
     M:RegisterMessage("PQ_AVAILABLE_UPDATED", M.InvalidateCache)
+    M:RegisterMessage("PQ_SETTING_CHANGED", M.InvalidateCache)     -- a tooltip switch: build it again
     Log.Debug("Tooltips", "enabled")
 end
 

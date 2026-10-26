@@ -133,9 +133,34 @@ local function makeRecord(DB, id)
     }
 end
 
+-- Quest chains (M.Chain): who comes before a quest and who after it, read off the same pass.
+-- prevOf[id] = the quest whose nextQuestInChain is id; afterOf[id] = the quests that name id as a
+-- prerequisite (preQuestSingle or preQuestGroup).
+local prevOf, afterOf
+local PREREQUISITE_KEYS = { "preQuestSingle", "preQuestGroup" }
+
+local function noteChain(DB, id, prev, after)
+    local nextID = DB.GetQuestField(id, "nextQuestInChain")
+    if type(nextID) == "number" and nextID > 0 and nextID ~= id and not prev[nextID] then prev[nextID] = id end
+    for _, key in ipairs(PREREQUISITE_KEYS) do
+        local list = DB.GetQuestField(id, key)
+        if type(list) == "table" then
+            for i = 1, #list do
+                local before = list[i]
+                if type(before) == "number" and before ~= id then
+                    local bucket = after[before]
+                    if not bucket then bucket = {}; after[before] = bucket end
+                    bucket[#bucket + 1] = id
+                end
+            end
+        end
+    end
+end
+
 local function runBuild(token)
     local DB = ns.DB
     local list, index, n = {}, {}, 0
+    local prev, after = {}, {}
     local Thread = ns.Thread
     local count = 0
     for id in DB.IterateQuestIDs() do
@@ -144,6 +169,7 @@ local function runBuild(token)
             n = n + 1
             list[n] = record
             index[id] = record
+            noteChain(DB, id, prev, after)
         end
         count = count + 1
         if count % 400 == 0 and Thread and Thread.Yield then
@@ -153,6 +179,7 @@ local function runBuild(token)
     end
     tsort(list, function(a, b) return a.id < b.id end)
     records, byId = list, index
+    prevOf, afterOf = prev, after
     building, ready = false, true
     local PQ = ns.PQ
     if PQ and PQ.SendMessage then PQ:SendMessage("PQ_CATALOG_READY") end
@@ -186,6 +213,7 @@ function M.IsBuilding() return building end
 function M.Invalidate()
     generation = generation + 1
     records, byId, ready, building = nil, nil, false, false
+    prevOf, afterOf = nil, nil
     M.areaCache = nil
 end
 
@@ -340,7 +368,11 @@ end
 --            kinds = { dungeon = true, ... } | nil, category = key|nil, zone = areaID|nil,
 --            playerLevel = n|nil (only quests the player can already take), classMask = n|nil }
 function M.Matches(record, filter)
-    if filter.text and filter.text ~= "" and not find(record.lower, filter.text, 1, true) then return false end
+    -- the name box matches the name, or a quest ID typed whole ("31011")
+    if filter.text and filter.text ~= "" and not find(record.lower, filter.text, 1, true)
+        and tostring(record.id) ~= filter.text then
+        return false
+    end
     if filter.minLevel and record.level < filter.minLevel then return false end
     if filter.maxLevel and record.level > filter.maxLevel then return false end
     if filter.side then
@@ -450,6 +482,91 @@ function M.QuestText(questID)
     if type(race) == "string" then text = gsub(text, "<race>", race) end
     if type(class) == "string" then text = gsub(text, "<class>", class) end
     return text
+end
+
+---------------------------------------------------------------------------
+-- Quest chains
+---------------------------------------------------------------------------
+
+local MAX_CHAIN = 40                 -- a guard against a loop in the data, not a real chain length
+
+-- A quest this character could ever take: its side (or neutral) and its class (or any class).
+local function suits(id, side, classMask)
+    local record = byId and byId[id]
+    if not record then return false end
+    if side and record.side ~= "both" and record.side ~= side then return false end
+    if classMask and record.classes ~= 0 and band and band(record.classes, classMask) == 0 then return false end
+    return true
+end
+
+local function firstSuiting(list, side, classMask, seen)
+    if type(list) ~= "table" then return nil end
+    local pick
+    for i = 1, #list do
+        local id = list[i]
+        if not seen[id] and suits(id, side, classMask) and (not pick or id < pick) then
+            pick = id                                       -- the lowest ID: the same pick every time
+        end
+    end
+    return pick
+end
+
+local function before(DB, id, side, classMask, seen)
+    local prev = prevOf and prevOf[id]
+    if prev and not seen[prev] and suits(prev, side, classMask) then return prev end
+    local pick = firstSuiting(DB.GetQuestField(id, "preQuestSingle"), side, classMask, seen)
+    if pick then return pick end
+    return (firstSuiting(DB.GetQuestField(id, "preQuestGroup"), side, classMask, seen))
+end
+
+local function after(DB, id, side, classMask, seen)
+    local nextID = DB.GetQuestField(id, "nextQuestInChain")
+    if type(nextID) == "number" and nextID > 0 and not seen[nextID] and suits(nextID, side, classMask) then
+        return nextID
+    end
+    return firstSuiting(afterOf and afterOf[id], side, classMask, seen)
+end
+
+--- Chain(questID[, side[, classMask]]) -> { steps = {questID,...}, index = n } | nil
+-- The line of quests this one belongs to: back through its prerequisites, forward through the
+-- quest it leads to. Where the data forks, the lowest quest ID for this side and class is
+-- followed, so the same quest always shows the same chain. `index` is this quest's step.
+-- nil when the catalog is not built, or the quest stands alone.
+function M.Chain(questID, side, classMask)
+    local DB = ns.DB
+    if not (ready and byId and byId[questID] and DB and DB.GetQuestField) then return nil end
+    if side == nil then side = M.PlayerSide() end
+    local seen = { [questID] = true }
+    local back = {}
+    local id = questID
+    for _ = 1, MAX_CHAIN do
+        id = before(DB, id, side, classMask, seen)
+        if not id then break end
+        seen[id] = true
+        back[#back + 1] = id
+    end
+    local steps = {}
+    for i = #back, 1, -1 do steps[#steps + 1] = back[i] end
+    steps[#steps + 1] = questID
+    local index = #steps
+    id = questID
+    for _ = 1, MAX_CHAIN do
+        local nextID = after(DB, id, side, classMask, seen)
+        if not nextID then break end
+        seen[nextID] = true
+        steps[#steps + 1] = nextID
+        id = nextID
+    end
+    if #steps < 2 then return nil end
+    return { steps = steps, index = index }
+end
+
+--- ChainState(questID) -> "done" | "active" | "open": done, in the quest log, or neither.
+function M.ChainState(questID)
+    local Player, QuestLog = ns.Player, ns.QuestLog
+    if Player and Player.IsQuestCompleted and Player.IsQuestCompleted(questID) then return "done" end
+    if QuestLog and QuestLog.IsOnQuest and QuestLog.IsOnQuest(questID) then return "active" end
+    return "open"
 end
 
 --- Players "side" filter default: the player's faction, or nil (any) for a neutral Pandaren.
