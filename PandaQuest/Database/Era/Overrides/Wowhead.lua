@@ -1275,6 +1275,7 @@ ns.Overrides.wowhead = {
                 "samophlange. A tug removes it from its housing.",
             rewardChoices = {{5324, 1}, {5325, 1}},
         },
+        [926] = {rewardItems = {{4986, 1}}},
         [932] = {
             description = "I must warn you, <name>, this matter must stay between us. The satyr are " ..
                 "enough of an embarrassment to us already, and this one is much too close to home.\n\nHe " ..
@@ -1383,6 +1384,14 @@ ns.Overrides.wowhead = {
                 "men and women were tortured because they were supposedly plagued.\n\nThe Scarlet Crusade " ..
                 "must be crushed in the name of the Light. You, <name>, must destroy the deranged regime.",
             rewardChoices = {{6829, 1}, {6830, 1}, {6831, 1}, {11262, 1}},
+        },
+        [1056] = {
+            description = "The forest spirits tell me you are brave and willing to travel.\n\nTo the " ..
+                "south, not far from Mystral Lake, there lies a tunnel named The Talondeep Path. Through " ..
+                "this tunnel you will come to an area known as Windshear Crag in the Stonetalon " ..
+                "Mountains. Once there, journey to the southwest past Cragpool Lake and then north, up " ..
+                "the steep slope until you reach Stonetalon Peak.\n\nThere awaits Keeper Albagorm. Heed " ..
+                "his bidding, <race>.\n\nThe journey will be perilous.",
         },
         [1063] = {
             description = "To truly tend the spirits of Stonetalon we must consult the tauren " ..
@@ -1514,6 +1523,14 @@ ns.Overrides.wowhead = {
             description = "The Kolkar think they are strong, but we laugh at them! We laugh and we kill " ..
                 "them! You kill them too. Show me you can kill Kolkar like we do. Head north and slay " ..
                 "them all!",
+        },
+        [1387] = {
+            description = "Many clans make up the centaur race. Each has its own leader and agenda, but " ..
+                "all the clans have one thing in common. Cruelty.\n\nIf we are to ever find peace, then " ..
+                "the centaurs must be removed. And so I put you on the task to do just that.\n\nWhile " ..
+                "wandering Desolace, hunt centaur and take their ears. Bring me many, many ears.\n\nDo " ..
+                "this in service of the Alliance, <name>, and we will be one step closer to war's end.",
+            rewardItems = {{6790, 1}},
         },
         [1389] = {
             description = "The lost ones who live in the Fallow Sanctuary look as we look, but they are " ..
@@ -4143,6 +4160,15 @@ ns.Overrides.wowhead = {
                 "Alliance seeks to deny the Horde one of our largest sources for lumber.\n\nDo not let " ..
                 "this happen, <name>! Come back to me with proof of serving the Horde in a worthy manner!",
             rewardMoney = 7000,
+        },
+        [8461] = {
+            description = "There is a camp of Deadwood furbolgs directly to our southwest. Corruption " ..
+                "permeates the camp, and I wish to put an end to it before they become a problem.\n\nThe " ..
+                "Deadwood tribe is evil, but it is the effects of the fel that pollutes their minds. " ..
+                "Their hostility is not truly an innate quality, yet they cannot be helped. It saddens me " ..
+                "that we must fight our own brethren.\n\nPlease, <name> - I ask you to do what must be " ..
+                "done. Simply spare me the details; such troublesome images upset me far too much.",
+            rewardChoices = {{21316, 1}, {21317, 1}},
         },
         [8462] = {
             description = "Perhaps you are capable of handling a larger threat that we Timbermaw face. " ..

@@ -4,6 +4,244 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.272
+- database - Wowhead data as the PandaQuest portal read it: 10,280 quests, 115 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 671 quests, 10 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 697 quests, 11 NPCs
+- quest 8122 - Take Five Bases - updated
+  - description added
+  - reward items: +1
+- quest 8194 - Apprentice Angler - updated
+  - reward money added (14s)
+- quest 9392 - Rogue Training - updated
+  - description added
+- quest 10736 - Down the Violet Path - updated
+  - description added
+  - reward items: +1
+- quest 11669 - Felblood Fillet - updated
+  - description added
+  - reward items: +1
+- quest 13830 - The Ghostfish - updated
+  - description added
+  - reward items: +1
+- quest 13843 - The Scrapbot Construction Kit - updated
+  - description added
+- quest 14448 - Takes One to Know One - updated
+  - description added
+- quest 24471 - Aid for the Wounded - updated
+  - description added
+  - reward money added (35c)
+- quest 24475 - All the Other Stuff - updated
+  - description added
+  - reward money added (35c)
+- quest 26442 - Rock Lobster - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 26542 - Hero's Call: The Hinterlands! - updated
+  - description added
+  - reward money added (21s)
+- quest 26727 - The Embalmer's Revenge - updated
+  - description added
+  - reward money added (45s)
+  - reward choices: +3
+- quest 28776 - Broken Earthen Figurine - updated
+  - description added
+  - reward items: +1
+- quest 29320 - Like Pike? - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 29477 - Gnomish Engineering - updated
+  - description added
+- quest 29562 - Jailbreak - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 29619 - A Courteous Guest - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29628 - A Strong Back - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29639 - Flying Colors - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +6
+- quest 29670 - Maul Gormal - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +5
+- quest 29743 - Monstrosity - updated
+  - description added
+- quest 29756 - A Humble Offering - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29821 - Missed Me By... That Much! - updated
+  - description added
+- quest 29912 - The Fabulous Miss Fanny - updated
+  - description added
+  - reward money added (7g 70s)
+- quest 29919 - Great Minds Drink Alike - updated
+  - description added
+  - reward money added (5g 10s)
+- quest 29937 - Furious Fowl - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30011 - A New Vision - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 30015 - Dawn's Blossom - updated
+  - description added
+  - reward money added (4g 90s)
+- quest 30046 - Chen's Resolution - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30206 - Runes in the Ruins - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30282 - Burning Away the Filth - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30293 - In Enemy Hands - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30304 - Hard as a Rock - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30485 - Last Piece of the Puzzle - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30504 - Emergency Response - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30535 - Learn and Grow I: Seeds - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30597 - Strange Spherical Stone - updated
+  - description added
+  - XP added (69,400)
+  - reward items: +1
+- quest 30631 - The Shrine of Seven Stars - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30633 - Out with the Scouts - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30634 - Barring Entry - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30754 - Bright Bait - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30773 - Pitching In - updated
+  - description added
+  - reward money added (11g)
+  - reward items: +1
+- quest 30792 - Orbiss Fades - updated
+  - description added
+  - reward money added (11g)
+- quest 30796 - An End to Everything - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30807 - By the Falls, For the Fallen - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30816 - Checking In - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30931 - My Father's Crossbow - updated
+  - description added
+  - reward money added (11g)
+- quest 30954 - A Blade is a Blade - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30968 - The Sha of Hatred - updated
+  - description added
+  - reward money added (33g)
+  - reward choices: +9
+- quest 30977 - Grounded Welcome - updated
+  - description added
+  - reward money added (11g)
+  - reward choices: +9
+- quest 30979 - Devastation Below - updated
+  - description added
+  - reward money added (11g)
+  - reward choices: +9
+- quest 31048 - Grave Consequences - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31083 - Promises of Gold - updated
+  - description added
+  - reward money added (34g 20s)
+  - reward items: +1
+- quest 31114 - Assault Deadtalker's Plateau - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31199 - Destroy the Siege Weapons! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31251 - Best Meals Anywhere! - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 31253 - Back to Eastwind Rest - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 31268 - A Little Brain Work - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31285 - The Spring Drifter - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 31293 - Mogu Make Poor House Guests - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31319 - Emergency Response - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31395 - A Celestial Experience - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 31451 - The Missing Merchant - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 31458 - Damage Control - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31542 - Incarnadine Ink - updated
+  - description added
+  - reward money added (11g 40s)
+  - XP added (236,000)
+  - reward items: +1
+- quest 31543 - Portrait of a Lady - updated
+  - description added
+  - reward money added (11g 40s)
+  - XP added (236,000)
+  - reward items: +1
+- quest 31558 - The Finer Things - updated
+  - description added
+- quest 31695 - Beyond the Wall - updated
+  - description added
+  - reward money added (1g 6s)
+- quest 31742 - Fractured Forces - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31777 - Choppertunity - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 31877 - The Inkmasters of the Arboretum - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 31924 - Narrok - updated
+  - description added
+  - reward money added (2g 90s)
+- quest 33160 - Time Keeper Kairoz - updated
+  - description added
+- quest 33230 - A Flash of Bronze... - updated
+  - description added
+  - reward money added (2g 85s)
+- quest 92337 - Elixir Master - updated
+  - description added
+
 0.2.271
 - database - Wowhead data as the PandaQuest portal read it: 10,205 quests, 115 NPCs, 5 objects
 - database - Classic Era: data from the PandaQuest portal: 667 quests, 10 NPCs, 1 object
@@ -1245,138 +1483,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (92)
 - npc 70751 - Card Trader Ami - updated
   - NPC level added (90)
-
-0.2.264
-- database - Wowhead data as the PandaQuest portal read it: 10,583 quests, 107 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 599 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 621 quests, 9 NPCs
-- quest 13143 - New Recruit - updated
-  - description added
-- quest 13146 - Generosity Abounds - updated
-  - description added
-- quest 13147 - Matchmaker - updated
-  - description added
-- quest 13148 - Necklace Repair - updated
-  - description added
-- quest 13149 - Dispelling Illusions - updated
-  - description added
-- quest 13152 - A Visit to the Doctor - updated
-  - description added
-- quest 13153 - Warding the Warriors - updated
-  - quest giver added: Sorceress Kaylana
-  - description added
-- quest 13154 - Bones and Arrows - updated
-  - quest giver added: Bowyer Randolph
-  - description added
-- quest 13155 - Vereth the Cunning - updated
-  - description added
-- quest 13156 - A Rare Herb - updated
-  - quest giver added: Anchorite Tessa
-  - description added
-- quest 13160 - Stunning View - updated
-  - description added
-- quest 13165 - Taking Back Acherus - updated
-  - description added
-- quest 13166 - The Battle For The Ebon Hold - updated
-  - description added
-- quest 13168 - Parting Gifts - updated
-  - description added
-- quest 13169 - An Undead's Best Friend - updated
-  - description added
-- quest 13170 - Honor is for the Weak - updated
-  - description added
-- quest 13174 - Amidst the Confusion - updated
-  - description added
-- quest 13178 - Slay them all! - updated
-  - quest giver added: Commander Dardosh
-  - description added
-- quest 13179 - No Mercy for the Merciless - updated
-  - description added
-- quest 13181 - Victory in Wintergrasp - updated
-  - description added
-- quest 13183 - Victory in Wintergrasp - updated
-  - description added
-- quest 13188 - Where Kings Walk - updated
-  - description added
-- quest 13191 - Fueling the Demolishers - updated
-  - quest giver added: Siegesmith Stronghoof
-  - description added
-- quest 13193 - Bones and Arrows - updated
-  - quest giver added: Vieron Blazefeather
-  - description added
-- quest 13194 - Healing with Roses - updated
-  - quest giver added: Primalist Mulfort
-  - description added
-- quest 13195 - A Rare Herb - updated
-  - description added
-- quest 13196 - Bones and Arrows - updated
-  - description added
-- quest 13197 - Fueling the Demolishers - updated
-  - description added
-- quest 13199 - Bones and Arrows - updated
-  - description added
-- quest 13200 - Fueling the Demolishers - updated
-  - description added
-- quest 13201 - Healing with Roses - updated
-  - description added
-- quest 13202 - Jinxing the Walls - updated
-  - description added
-- quest 13213 - Battle at Valhalas - updated
-  - description added
-- quest 13214 - Battle at Valhalas: Fallen Heroes - updated
-  - description added
-- quest 13215 - Battle at Valhalas: Khit'rix the Dark Master - updated
-  - description added
-- quest 13217 - Battle at Valhalas: Carnage! - updated
-  - description added
-- quest 13220 - Putting Olakin Back Together Again - updated
-  - description added
-- quest 13221 - I'm Not Dead Yet! - updated
-  - description added
-- quest 13222 - Defend the Siege - updated
-  - description added
-- quest 13223 - Defend the Siege - updated
-  - reward money removed (11g 40s)
-- quest 13228 - The Broken Front - updated
-  - reward money removed (7g 40s)
-- quest 13229 - I'm Not Dead Yet! - updated
-  - reward money removed (7g 40s)
-- quest 13230 - Avenge Me! - updated
-  - reward money removed (7g 40s)
-- quest 13231 - The Broken Front - updated
-  - description added
-- quest 13232 - Finish Me! - updated
-  - description added
-- quest 13233 - No Mercy! - updated
-  - description added
-- quest 13234 - Make Them Pay! - updated
-  - description added
-- quest 13236 - Army of the Damned - updated
-  - description added
-- quest 13238 - Good For Something? - updated
-  - description added
-- quest 13258 - Opportunity - updated
-  - description added
-- quest 13260 - Takes One to Know One - updated
-  - description added
-- quest 13261 - Volatility - updated
-  - description added
-- quest 13262 - Blow it Up! - updated
-  - description added
-- quest 13271 - A Voice in the Dark - updated
-  - description added
-- quest 13273 - Going After the Core - updated
-  - description added
-- quest 13274 - The Core's Keeper - updated
-  - description added
-- npc 5397 - Uthek the Wise - updated
-  - coordinates: 1 spawn point added in Desolace
-- npc 5398 - Warug - updated
-  - coordinates: 1 spawn point added in Desolace
-- npc 5644 - Dalinda Malem - updated
-  - coordinates: 10 spawn points added in Desolace
-- npc 11863 - Azore Aldamort - updated
-  - coordinates: 1 spawn point added in Desolace
 
 0.2.246
 - packaging - the CurseForge package made from the repository carries all four games again
