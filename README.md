@@ -40,10 +40,12 @@ Restart the game, or `/reload` if it was running.
 - **Navigation arrow** to the next objective, turn-in or nearby quest, with distance and travel time.
 - **Waypoints:** a label and chevrons (Pinpoint) over the target NPC's nameplate when close, a
   column of light with the distance when further away.
-- **Quest browser** of every quest, with categories, filters and a zone map per quest.
+- **Quest browser** of every quest, with categories, filters, a zone map per quest and the quest's
+  chain: which step it is, what comes next, and every step you have done.
 - **Map pins** for objectives, turn-ins and available quests on the world map and minimap.
 - **Quest-mob icons** on the nameplates of mobs your active quests need, plus a tooltip line.
-- **Tooltips** on NPCs, items and pins: quests, level, respawn time, drop rate.
+- **Tooltips** on NPCs, items and pins: quests, level, respawn time, drop rate, and where an item
+  comes from (the creatures that drop it, chests, containers, vendors).
 - **Gathering nodes** (ore, herbs, fishing, chests, rares) with respawn countdowns.
 - **Flight times:** the flight master's tooltip shows the expected time before you fly, and a bar
   shows the time left during the flight. Your own measured flights come first, then the players'

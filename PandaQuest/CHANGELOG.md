@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.267] - 2026-10-26
+
+### Added
+- **Quest chains in the quest browser.** A quest's page has a new *Chain* line: which step of its
+  chain the quest is ("Step 3 of 7") and the quest that comes next. Hover it for the whole chain,
+  with the steps you have done in green and the ones in your quest log in gold; click it to open the
+  next step's page, right-click for the step before. The chain is worked out from the quest
+  database's prerequisites and follow-up quests, for the quest's own side.
+- **Where an item comes from, on its tooltip.** Item tooltips list the creatures that drop the item,
+  the objects it is found in, the containers it comes out of and the vendors who sell it (the first
+  three names and how many more). *Options > Tooltips > Show where items come from* switches it off.
+- **Find a quest by its ID.** Typing a quest ID in the quest browser's name box finds that quest.
+
 ## [0.2.266] - 2026-10-26
 
 Data from the PandaQuest portal.

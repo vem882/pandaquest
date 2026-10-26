@@ -39,7 +39,8 @@ local tconcat, tsort = table.concat, table.sort
 
 -- Layout ---------------------------------------------------------------------------------------
 local WIDTH = 960
-local ROW_H, ROWS = 20, 25                 -- list rows (and tree rows: the three panels are one height)
+local ROW_H, ROWS = 20, 26                 -- list rows (and tree rows: the three panels are one height);
+                                           -- the 26th row made room for the Chain line on the page
 local TREE_ROWS = ROWS
 local HEAD_H = 24                          -- the heading strip at the top of the tree and the list
 local PANEL_TOP = 78
@@ -711,6 +712,11 @@ M.Select = selectQuest
 -- Detail page
 ---------------------------------------------------------------------------
 
+local function questName(questID)
+    local DB = ns.DB
+    return (DB and DB.GetQuestName and DB.GetQuestName(questID)) or tostring(questID)
+end
+
 local function npcName(id)
     local DB = ns.DB
     return DB.GetNpcName and DB.GetNpcName(id) or ("NPC " .. tostring(id))
@@ -1055,6 +1061,22 @@ function refreshDetail(animate)
     d.rewardHit.questID = (hasItems or shownRewards ~= rewardText) and selectedId or nil
     dropTooltip(d.rewardHit)
 
+    -- the chain the quest belongs to: which step, and the next one
+    local chain = M.ChainFor(selectedId, side)
+    d.chainHit.chain = chain
+    dropTooltip(d.chainHit)
+    if chain then
+        local nextID = chain.steps[chain.index + 1]
+        local where = format(L["Step %d of %d"], chain.index, #chain.steps)
+        if nextID then
+            d.chainText:SetText(Util.Truncate(format(L["%s, then: %s"], where, questName(nextID)), VALUE_CHARS))
+        else
+            d.chainText:SetText(format(L["%s, the last one"], where))
+        end
+    else
+        d.chainText:SetText(L["Not part of a chain."])
+    end
+
     -- start / end
     d.startText:SetText(pointText(endpoints(quest, "startedBy")))
     d.endText:SetText(pointText(endpoints(quest, "finishedBy")))
@@ -1113,6 +1135,67 @@ function M.ShowRewardTooltip(owner, questID)
     GameTooltip:Show()
 end
 
+---------------------------------------------------------------------------
+-- Quest chain line
+---------------------------------------------------------------------------
+
+local CHAIN_COLORS = { done = { 0.25, 1, 0.25 }, active = GOLD, open = MUTED }
+local CHAIN_MARKS = { done = "+", active = ">", open = "-" }
+local CHAIN_TOOLTIP_STEPS = 18                  -- a long chain shows the steps around this one
+
+--- ChainFor(questID, side) -> Catalog.Chain for the quest's own side (the player's for a neutral one).
+function M.ChainFor(questID, side)
+    local Catalog = catalog()
+    if not (Catalog and Catalog.Chain) then return nil end
+    if side ~= "alliance" and side ~= "horde" then side = Catalog.PlayerSide() end
+    return Catalog.Chain(questID, side)
+end
+
+--- ChainLines(chain) -> { {text, r, g, b}, ... }: every step, done ones green, ones in the log gold.
+function M.ChainLines(chain)
+    local lines = {}
+    if not chain then return lines end
+    local Catalog = catalog()
+    local first, last = 1, #chain.steps
+    if last > CHAIN_TOOLTIP_STEPS then
+        first = max(1, chain.index - floor(CHAIN_TOOLTIP_STEPS / 2))
+        last = min(#chain.steps, first + CHAIN_TOOLTIP_STEPS - 1)
+        first = max(1, last - CHAIN_TOOLTIP_STEPS + 1)
+    end
+    if first > 1 then lines[#lines + 1] = { "...", MUTED[1], MUTED[2], MUTED[3] } end
+    for i = first, last do
+        local id = chain.steps[i]
+        local state = Catalog.ChainState(id)
+        local color = CHAIN_COLORS[state]
+        local text = format("%s %d. %s", CHAIN_MARKS[state], i, questName(id))
+        if i == chain.index then text = format(L["%s (this quest)"], text) end
+        lines[#lines + 1] = { text, color[1], color[2], color[3] }
+    end
+    if last < #chain.steps then lines[#lines + 1] = { "...", MUTED[1], MUTED[2], MUTED[3] } end
+    return lines
+end
+
+local function showChainTooltip(owner)
+    local chain = owner and owner.chain
+    if not (chain and GameTooltip) then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_LEFT")
+    GameTooltip:SetText(L["Quest chain"], GOLD[1], GOLD[2], GOLD[3])
+    for _, line in ipairs(M.ChainLines(chain)) do
+        GameTooltip:AddLine(line[1], line[2], line[3], line[4])
+    end
+    GameTooltip:AddLine(L["Click: the next step. Right-click: the step before."], MUTED[1], MUTED[2], MUTED[3], true)
+    GameTooltip:Show()
+end
+
+--- ChainStep(delta): opens the page of the quest delta steps along the selected quest's chain.
+function M.ChainStep(delta)
+    local chain = widgets.detail and widgets.detail.chainHit and widgets.detail.chainHit.chain
+    if not chain then return nil end
+    local id = chain.steps[chain.index + delta]
+    if id then M.Select(id) end
+    return id
+end
+
 local function onAreaTab(index)
     local quest = widgets.detail.quest
     if quest then showMapArea(quest, index) end
@@ -1121,11 +1204,6 @@ end
 ---------------------------------------------------------------------------
 -- What can be done with one quest: the page's buttons and a row's right-click menu
 ---------------------------------------------------------------------------
-
-local function questName(questID)
-    local DB = ns.DB
-    return (DB and DB.GetQuestName and DB.GetQuestName(questID)) or tostring(questID)
-end
 
 local browserPin                   -- the custom target the browser made for a quest not in the log
 
@@ -1643,6 +1721,16 @@ local function buildDetail(parent)
     y = y - cell - 5
 
     y = addLine(p, L["Rewards"], "rewards", y, 26, d) - 2
+    y = addLine(p, L["Chain"], "chainText", y, 13, d) - 2
+    -- the whole chain on hover; a click walks along it
+    d.chainHit = CreateFrame("Button", nil, p)
+    d.chainHit:SetAllPoints(d.chainText)
+    d.chainHit:EnableMouse(true)
+    if d.chainHit.RegisterForClicks then d.chainHit:RegisterForClicks("LeftButtonUp", "RightButtonUp") end
+    d.chainHit:SetScript("OnClick", function(_, button) M.ChainStep(button == "RightButton" and -1 or 1) end)
+    d.chainHit:SetScript("OnEnter", function(self) showChainTooltip(self) end)
+    d.chainHit:SetScript("OnLeave", function(self) dropTooltip(self) end)
+    d.chainHit:SetScript("OnHide", function(self) dropTooltip(self) end)
     -- the whole reward list, when the line has items or had to be cut
     d.rewardHit = CreateFrame("Frame", nil, p)
     d.rewardHit:SetAllPoints(d.rewards)

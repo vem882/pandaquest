@@ -731,3 +731,20 @@ L["Quest givers and turn-ins are friendly NPCs: their marks need friendly namepl
 
 -- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
 L["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] = true
+
+-- Where an item comes from (Map/Tooltips.lua) and quest chains (Quest/Catalog.lua, UI/QuestBrowser.lua)
+L["Show where items come from"] = true
+L["On item tooltips: the creatures that drop it, where it is found and who sells it."] = true
+L["Drops from: %s"] = true
+L["Found in: %s"] = true
+L["Comes out of: %s"] = true
+L["Sold by: %s"] = true
+L["%s and %d more"] = true
+L["Chain"] = true
+L["Quest chain"] = true
+L["Step %d of %d"] = true
+L["%s, then: %s"] = true
+L["%s, the last one"] = true
+L["%s (this quest)"] = true
+L["Not part of a chain."] = true
+L["Click: the next step. Right-click: the step before."] = true

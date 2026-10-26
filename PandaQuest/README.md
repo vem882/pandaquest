@@ -38,13 +38,17 @@ is where the addon's content is completed and corrected — and you are welcome 
   side, shareable, quest ID and a map of the zone with the start (!), the end (?) and the objectives
   marked. It lists your own side's quests (Alliance or Horde) and the neutral ones; one click
   switches to the other side or to both. Quests only QuestieDB knows are included when that addon
-  is installed (see "Compatibility"). Filters: name, quest level, "my level", side, and kind
-  (dungeon, raid, group, PvP, daily, event).
+  is installed (see "Compatibility"). Filters: name (or a quest ID), quest level, "my level", side,
+  and kind (dungeon, raid, group, PvP, daily, event). A quest's *Chain* line says which step of its
+  chain it is and names the next quest; hover it for every step (done ones green, ones in your log
+  gold), click it for the next step's page and right-click for the step before.
 - **Quest availability** – works out which quests you can pick up: level, race, class,
   prerequisites, reputation, skill and exclusivity.
 - **Map pins** – objectives, turn-ins and available quests on the world map and minimap, merged per
   spawn cluster, with tooltips and a right-click menu. The current target is highlighted.
-- **Tooltips** – NPC and item tooltips list the quests they start, end or count towards. Hovering a
+- **Tooltips** – NPC and item tooltips list the quests they start, end or count towards. Item
+  tooltips also say where the item comes from: the creatures that drop it, the objects it is found
+  in, the containers it comes out of and who sells it (Options → Tooltips). Hovering a
   pin shows the creature's level range, type, respawn time and the quests that want it, with live
   progress and drop rate. A line whose value is not known is left out — never a `?` or a zero.
 - **Respawn timers** – from three sources, and the tooltip always says which: a static seed,
@@ -201,7 +205,7 @@ The same options are in the game's own Settings panel and in `/pq config`.
 | Waypoints | on/off; follow the tracked quest; also objectives; show TomTom's waypoint; the distance on the arrow, the Pinpoint label, its distance, the beam and its colour, size; forget a `/way` point on arrival; friendly NPC nameplates (a button, never on its own); clear the waypoint |
 | Map | objective / turn-in / available pins, minimap pins, pin sizes, how many nodes the minimap carries, which quests to show |
 | Gathering | the node layer on/off, mining / herbalism / fishing / chests / rares, only my professions, fade nodes until they respawn |
-| Tooltips | quest info in tooltips, quest IDs |
+| Tooltips | quest info in tooltips, quest IDs, quest rewards, NPC titles, where items come from |
 | Flight master | the flight time line, the in-flight bar, its lock, size and position |
 | Tracker | enhance the Blizzard tracker, show distance |
 | Notifications | on/off, quest complete, next objective, sound |

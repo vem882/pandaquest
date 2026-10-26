@@ -99,7 +99,8 @@ ns.DEFAULTS = {
                         barPoint = "CENTER", barX = 0, barY = -260 },
         -- `npcTitles` is the <title> line on map pins, `questRewards` a quest's rewards under a quest the
         -- player can pick up (unit tooltips and map pins alike).
-        tooltips = { enabled = true, showIds = false, npcTitles = true, questRewards = true },
+        -- `itemSources` the "Drops from / Found in / Sold by" lines on item tooltips.
+        tooltips = { enabled = true, showIds = false, npcTitles = true, questRewards = true, itemSources = true },
         -- The quest browser's page (UI/QuestBrowser.lua): `questText` is the quest giver's text under the
         -- objectives, `rewards` the money and items in the Rewards line, both as the PandaQuest portal
         -- read them off Wowhead.

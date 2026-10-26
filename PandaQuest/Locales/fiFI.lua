@@ -1030,6 +1030,22 @@ local T = {
     -- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
     ["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] =
         "PandaQuest päivittyi pelin ollessa käynnissä, ja peli käyttää yhä vanhaa tiedostoluetteloa: %s ei latautunut. Sulje World of Warcraft kokonaan ja käynnistä se uudelleen; /reload ei riitä.",
+    -- Where an item comes from (Map/Tooltips.lua) and quest chains (Quest/Catalog.lua, UI/QuestBrowser.lua)
+    ["Show where items come from"] = "Näytä, mistä esineet saa",
+    ["On item tooltips: the creatures that drop it, where it is found and who sells it."] = "Esineiden vihjeissä: mitkä olennot sitä pudottavat, mistä sen löytää ja kuka sitä myy.",
+    ["Drops from: %s"] = "Pudottaa: %s",
+    ["Found in: %s"] = "Löytyy: %s",
+    ["Comes out of: %s"] = "Saa avaamalla: %s",
+    ["Sold by: %s"] = "Myyjä: %s",
+    ["%s and %d more"] = "%s ja %d muuta",
+    ["Chain"] = "Ketju",
+    ["Quest chain"] = "Tehtäväketju",
+    ["Step %d of %d"] = "Vaihe %d/%d",
+    ["%s, then: %s"] = "%s, seuraavaksi: %s",
+    ["%s, the last one"] = "%s, viimeinen",
+    ["%s (this quest)"] = "%s (tämä tehtävä)",
+    ["Not part of a chain."] = "Ei kuulu ketjuun.",
+    ["Click: the next step. Right-click: the step before."] = "Napsautus: seuraava vaihe. Oikea napsautus: edellinen vaihe.",
 }
 
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}

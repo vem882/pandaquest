@@ -773,6 +773,9 @@ local function buildTable()
                         "tooltips.questRewards"),
                     npcTitles = toggle(4, L["Show NPC titles"],
                         L["The title under an NPC's name on map pins, such as <Innkeeper>."], "tooltips.npcTitles"),
+                    itemSources = toggle(5, L["Show where items come from"],
+                        L["On item tooltips: the creatures that drop it, where it is found and who sells it."],
+                        "tooltips.itemSources"),
                 },
             },
             tracker = {
