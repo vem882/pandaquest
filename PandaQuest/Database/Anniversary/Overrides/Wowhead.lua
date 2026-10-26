@@ -1482,6 +1482,15 @@ ns.Overrides.wowhead = {
                 "the hearts acquired. Take them to my colleague, Apothecary Zinge. You will find her in " ..
                 "our headquarters in the Undercity.",
         },
+        [1451] = {
+            description = "Rhapsody took quite a liking to the booze. Now don't get me wrong -- all of us " ..
+                "dwarves up here at the aviary love a good ale when the time is right.\n\nBut ol' " ..
+                "Shindigger took to the liquor like a gryphon takes to the skies. And a damned shame it " ..
+                "was, too. No one could fly like Rhapsody.\n\nFirst sign of trouble was when he came " ..
+                "stumbling back from that mission with your buddy, Brohann. All went down hill quickly " ..
+                "after that. Had to let him go.\n\nLast I heard, he's set up a brew camp to the east of " ..
+                "here...",
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
@@ -2076,6 +2085,16 @@ ns.Overrides.wowhead = {
                 "end of the pools. Beware, I sense that Aggonar's essence has not quite left this world.",
             rewardChoices = {{25484, 1}, {25486, 1}, {25485, 1}},
         },
+        [9456] = {
+            description = "I'm not going to make any excuses for what you've found. This is clearly our " ..
+                "fault. We had gotten reports of crushed crystal fragments showing up in the river to the " ..
+                "east but chose to ignore the implications. Now we can either sit around on this island " ..
+                "and cry about the tragedy that has befallen this land or we can do something about it " ..
+                "and prevent it from spreading.\n\nIf you've got the stomach for it, I want you to go " ..
+                "back into the wilds and kill as many of the infected nightstalkers as you can find.",
+            rewardChoices = {{24436, 1}, {24435, 1}, {24437, 1}},
+            rewardMoney = 225,
+        },
         [9463] = {
             description = "I have found that lashers milling about on the island hold restorative " ..
                 "medicinal properties in their vines. Through proper treatment, the vines can be broken " ..
@@ -2272,6 +2291,26 @@ ns.Overrides.wowhead = {
                 "might give us an opportunity to strike!\n\nFind Chieftain Oomooroo and destroy him. Slay " ..
                 "any crazed wildkin that you encounter inside as well.",
             rewardChoices = {{24446, 1}, {24445, 1}},
+        },
+        [9607] = {
+            description = "<class>, put together a force to investigate the Blood Furnace inside Hellfire " ..
+                "Citadel at once! And that means today, princess!\n\nThe magic we have at our disposal " ..
+                "indicates that something unnatural is occurring in there. But something more powerful " ..
+                "inside is blocking any detailed arcane investigations. It figures!\n\nYou can expect " ..
+                "heavy resistance - no other mission that we've sent in there has yet to return!\n\nScout " ..
+                "it entirely and then report back to the force commander with what you witness.",
+            rewardChoices = {{25714, 1}, {25713, 1}, {25712, 1}},
+            rewardMoney = 58000,
+        },
+        [9608] = {
+            description = "<class>, you must gather a group to investigate the Blood Furnace inside " ..
+                "Hellfire Citadel at once!\n\nThe magical scrying that we have at our disposal indicates " ..
+                "that something unnatural is occurring in there. But a powerful force inside is blocking " ..
+                "any detailed arcane investigations, so it must be very important.\n\nYou should expect " ..
+                "heavy resistance - no other mission that we've sent in there has ever returned!\n\nScout " ..
+                "it entirely and then report back to Nazgrel, advisor to Thrall, with what you witness.",
+            rewardChoices = {{25714, 1}, {25713, 1}, {25712, 1}},
+            rewardMoney = 58000,
         },
         [9612] = {
             description = "You saved my life, <name>! Thank you so much! That beast would have torn me to " ..
@@ -2575,6 +2614,16 @@ ns.Overrides.wowhead = {
                 "home.",
             rewardMoney = 31000,
         },
+        [10027] = {
+            description = "There's nothing more annoying than preparing to cast a spell, only to have it " ..
+                "interrupted by some unseen force. After the fourth time, I knew it couldn't be " ..
+                "coincidence and I sent Keb'ezil out to investigate.\n\nI guarantee you'll never " ..
+                "encounter an imp that talks back more than Keb.\n\nAnyway, he managed to find the source " ..
+                "of the problem, a pesky creature known as a warp stalker. They have a habit of " ..
+                "disturbing the magical energy wherever they blink into existence. I've had enough of " ..
+                "their interference.",
+            rewardMoney = 31000,
+        },
         [10039] = {
             description = "I am informed that one of our scouts near Grangol'var Village is currently " ..
                 "observing a shadowy band that has recently moved in there.\n\n<name>, I want you to " ..
@@ -2582,6 +2631,16 @@ ns.Overrides.wowhead = {
                 "group is up to.\n\nJust head south out of here, and then due west, skirting the north of " ..
                 "the Bone Wastes. Her last report puts her position near the southern entrance to the " ..
                 "village.",
+        },
+        [10086] = {
+            description = "Would you believe it? These orcs hired me to help them shore up damaged " ..
+                "fortifications and build explosives. What a dream job! It's too bad we're so short on " ..
+                "materials, but a clever goblin like myself learns how to make do!\n\nCan you help me? I " ..
+                "need salvaged wood and metal from the ruined battlements along the Path of Glory. Go " ..
+                "down there and salvage, and watch out for those red-skinned orcs!\n\nWhen you're done, " ..
+                "come back for big rewards!",
+            rewardChoices = {{29931, 1}, {29938, 1}, {29943, 1}, {29945, 1}},
+            rewardMoney = 20000,
         },
         [10091] = {
             description = "Gah! They've been torturing me, trying to get me to tell them everything that " ..
@@ -4026,6 +4085,14 @@ ns.Overrides.wowhead = {
                 "Take this mold and plunge it into a fallen fel reaver. I recommend you get yourself some " ..
                 "friends if you plan to take one down.",
             rewardItems = {{28395, 1}},
+        },
+        [10759] = {
+            description = "I get the feeling that all the pieces are here, but I just can't put them " ..
+                "together in a way that makes sense.\n\nI think our best lead is to attempt to locate " ..
+                "this deserter. If he left his comrades at the camp, there's a chance you might be able " ..
+                "to persuade him to help us understand what the dark conclave arakkoa are " ..
+                "planning.\n\nStart your search for him along the road in Magma Fields to the northwest. " ..
+                "It seems a likely place for him to take refuge.",
         },
         [10762] = {
             description = "The symbol on the key's handle... it is hard to make it out inside the mold, " ..
