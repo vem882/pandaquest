@@ -194,7 +194,35 @@ local function clientBuild()
     return version .. "." .. build
 end
 
---- Writes/refreshes the character row. Only the fields the contract lists (no guild, no spec).
+--- Writes the guild fields of a character row in place: `guild` (name, "" when the character is
+-- not in a guild), `guildRank` (rank name), `guildRankIndex` (0 = Guild Master) and `guildRealm`
+-- (the guild's home realm, normalised like characterKey(), only when it differs from the player's).
+-- GetGuildInfo() answers nil until the client has the guild loaded, so a known guild is never
+-- cleared on a nil answer while IsInGuild() is still true: the previous values stay.
+local function updateGuild(row)
+    if type(row) ~= "table" or not IsInGuild then return row end
+    if not IsInGuild() then
+        row.guild = ""
+        row.guildRank, row.guildRankIndex, row.guildRealm = nil, nil, nil
+        return row
+    end
+    if not GetGuildInfo then return row end
+    local guildName, rankName, rankIndex, guildRealm = GetGuildInfo("player")
+    if type(guildName) ~= "string" or guildName == "" then return row end
+    row.guild = guildName
+    row.guildRank = (type(rankName) == "string" and rankName ~= "") and rankName or nil
+    row.guildRankIndex = tonumber(rankIndex) and floor(tonumber(rankIndex)) or nil
+    if type(guildRealm) == "string" and guildRealm ~= "" then
+        guildRealm = guildRealm:gsub("[%s%-]", "")
+        row.guildRealm = guildRealm ~= "" and guildRealm or nil
+    else
+        row.guildRealm = nil
+    end
+    return row
+end
+
+--- Writes/refreshes the character row. Only the fields the contract lists: name, realm, region,
+-- class, race, faction, level, lastSeen and the guild fields of updateGuild() (no spec).
 local function updateCharacter(key, name, realm)
     local characters = M.GetStore().characters
     local row = characters[key]
@@ -216,8 +244,19 @@ local function updateCharacter(key, name, realm)
     row.faction = (ns.Player and ns.Player.GetFaction and ns.Player.GetFaction())
         or (UnitFactionGroup and UnitFactionGroup("player")) or nil
     row.level = playerLevel()
+    updateGuild(row)
     row.lastSeen = unixNow()
     return row
+end
+
+--- The logged-in character's existing row, or nil. Never creates one.
+local function currentRow()
+    local characters = store and store.characters
+    if type(characters) ~= "table" then return nil end
+    local key = (session and session.character) or characterKey()
+    local row = characters[key]
+    if type(row) == "table" then return row end
+    return nil
 end
 
 --- GetCharacterRow() -> the logged-in character's row of PandaQuestSync.characters, or nil while
@@ -279,7 +318,11 @@ function M.EndSession()
     if not session then return end
     session["end"] = unixNow()
     if session.character and store and store.characters and store.characters[session.character] then
-        store.characters[session.character].lastSeen = session["end"]
+        local row = store.characters[session.character]
+        -- The uploaded row is the final state: refresh the guild while the API still answers.
+        -- On a disable `active` is already false, and nothing new is read then.
+        if active then updateGuild(row) end
+        row.lastSeen = session["end"]
     end
     Log.Debug("Telemetry", "session %s ended with %d events (%d dropped)",
         tostring(session.id), #session.events, droppedCount)
@@ -697,6 +740,12 @@ local function onLevelUp(_, level)
     if row then row.level = level end
 end
 
+--- PLAYER_GUILD_UPDATE / GUILD_ROSTER_UPDATE: only the four guild fields of this character's row.
+local function onGuildChanged()
+    if not active then return end
+    updateGuild(currentRow())
+end
+
 local function onZoneChanged(_, uiMapID)
     if not active then return end
     if type(uiMapID) ~= "number" then
@@ -900,6 +949,8 @@ function M.OnEnable()
     M:RegisterEvent("PLAYER_LEVEL_UP", onLevelUp)
     M:RegisterEvent("PLAYER_DEAD", onPlayerDead)
     M:RegisterEvent("CHAT_MSG_LOOT", onChatMsgLoot)
+    M:RegisterEvent("PLAYER_GUILD_UPDATE", onGuildChanged)
+    M:RegisterEvent("GUILD_ROSTER_UPDATE", onGuildChanged)
     M:RegisterEvent("PLAYER_LOGOUT", function() M.EndSession() end)
 
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)

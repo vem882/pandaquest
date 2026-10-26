@@ -81,8 +81,8 @@ supported.
 
 - The addon **cannot send anything**; the WoW client does not allow it.
 - Sharing is **off by default**. If you say yes (`/pq consent` or Options), the addon writes what
-  you do while questing — quest progress, positions outside instances, flights, your gear — into
-  `PandaQuestSync` in your SavedVariables. No chat, no names of other players, no bag contents.
+  you do while questing — quest progress, positions outside instances, flights, your gear, your
+  guild's name and your rank in it — into `PandaQuestSync` in your SavedVariables. No chat, no names of other players, no bag contents.
 - The separate **PandaQuest Sync** app, which you install and run yourself (from
   <https://pd.zroot.it/setup> or the Microsoft Store), reads that file and uploads it to the site.
 - Turn sharing off at any time; nothing is recorded while it is off. The site's privacy statement

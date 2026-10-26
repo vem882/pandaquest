@@ -822,8 +822,8 @@ local T = {
         "Kaikki chat-komennot toimivat yhä makroja varten. Mitään niistä ei tarvita: kaikki löytyy näistä asetuksista.",
     ["Synchronisation and privacy"] =
         "Synkronointi ja yksityisyys",
-    ["Recorded when on: quests accepted and finished, objective progress, where on the map, your level and how long it took."] =
-        "Tallennetaan, kun päällä: hyväksytyt ja suoritetut tehtävät, tavoitteiden edistyminen, sijainti kartalla, tasosi ja kesto.",
+    ["Recorded when on: quests accepted and finished, objective progress, where on the map, your level, your guild name and rank, and how long it took."] =
+        "Tallennetaan, kun päällä: hyväksytyt ja suoritetut tehtävät, tavoitteiden edistyminen, sijainti kartalla, tasosi, kiltasi nimi ja arvo sekä kesto.",
     ["Per character. Never chat, never other players' names. It stays on your computer unless you upload it with the PandaQuest app."] =
         "Hahmokohtaisesti. Ei koskaan chattia eikä muiden pelaajien nimiä. Tiedot pysyvät koneellasi, ellet lähetä niitä PandaQuest-sovelluksella.",
     ["Moving frames"] =

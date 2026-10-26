@@ -4,6 +4,11 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.268
+- sync - the shared character row also keeps the guild: its name, your rank and its realm
+  - refreshed at login, when the guild or its roster changes and at logout, only while sharing is on
+  - the privacy line in the options says so
+
 0.2.267
 - quest browser - a quest's page says which step of its chain it is and names the next quest
   - hover the Chain line for every step: done in green, in your log in gold
