@@ -4,6 +4,337 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.269
+- database - rebuilt from Questie 12.3.0+v1.0.8 (was 12.2.0+v1.0.7)
+- database - Classic Era rebuilt from Questie 12.3.0+v1.0.8 (was 12.2.0+v1.0.7)
+- database - TBC Anniversary rebuilt from Questie 12.3.0+v1.0.8 (was 12.2.0+v1.0.7)
+- database - Wowhead data as the PandaQuest portal read it: 10,275 quests, 115 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 664 quests, 10 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 670 quests, 11 NPCs
+- quest 324 - The Lost Ingots - updated
+  - exclusive quests: +1
+- quest 526 - Lightforge Ingots - updated
+  - earlier quests (any one): +1, -1
+  - exclusive quests: -1
+- quest 1119 - Zanzil's Mixture and a Fool's Stout - updated
+  - child quests: -1
+- quest 1122 - Report Back to Fizzlebub - updated
+  - next quest in the chain removed
+- quest 1127 - Fool's Stout - updated
+  - parent quest removed
+  - special flags removed
+- quest 1618 - Gearing Redridge - updated
+  - description added
+  - reward items: +1
+- quest 2752 - On Iron Pauldrons - updated
+  - description removed
+  - reward items: -1
+- quest 2753 - Trampled Under Foot - updated
+  - description added
+  - reward items: +1
+- quest 2755 - Joys of Omosh - updated
+  - description added
+  - reward items: +1
+- quest 8325 - Reclaiming Sunstrider Isle - updated
+  - description added
+  - reward money added (30c)
+  - reward choices: +2
+- quest 8326 - Unfortunate Measures - updated
+  - reward money removed (50c)
+- quest 8634 - Enigma Boots - updated
+  - description added
+  - reward items: +1
+- quest 9280 - Replenishing the Healing Crystals - updated
+  - description removed
+  - reward money removed (15c)
+  - reward choices: -3
+- quest 9369 - Replenishing the Healing Crystals - updated
+  - description added
+  - reward money added (15c)
+  - reward choices: +3
+- quest 9635 - The Zapthrottle Mote Extractor! - updated
+  - description added
+  - reward items: +1
+- quest 11130 - Oooh, Shinies! - updated
+  - breadcrumb target added
+- quest 11132 - Promises, Promises... - updated
+  - breadcrumb quests: +1
+- quest 11531 - Strange Engine Part - updated
+  - description removed
+  - reward money removed (2g 95s)
+- quest 13537 - A Taste for Grouper - updated
+  - reward money removed (4s)
+- quest 13836 - Disarmed! - updated
+  - description added
+- quest 24913 - Remember the Light - updated
+  - description removed
+  - reward money removed (1g 65s)
+  - reward items: -1
+- quest 24970 - No Better Than the Zombies - updated
+  - reward items: counts corrected
+- quest 25159 - The Latest Fashion! - updated
+  - description added
+- quest 25160 - A Present for Lila - updated
+  - description removed
+- quest 26202 - The Future of Gnomeregan - updated
+  - description removed
+  - reward money removed (8c)
+- quest 26206 - The Future of Gnomeregan - updated
+  - description removed
+  - reward money removed (8c)
+- quest 26333 - No Tanks! - updated
+  - description removed
+  - reward money removed (75c)
+  - reward choices: -3
+- quest 26525 - Venomous Secrets - updated
+  - description removed
+  - reward money removed (35s)
+- quest 26548 - Out to the Front - updated
+  - description removed
+  - reward money removed (22s)
+- quest 27200 - Siren's Song - updated
+  - description removed
+  - reward money removed (9g)
+  - reward choices: -3
+- quest 27675 - Forged Documents - updated
+  - description removed
+  - reward items: -1
+- quest 28778 - Broken Boar Figurine - updated
+  - description removed
+  - reward items: -1
+- quest 28860 - Keeping the Dragonmaw at Bay - updated
+  - description removed
+  - reward money removed (9g)
+- quest 29317 - Fish Head - updated
+  - description removed
+  - reward money removed (9g)
+  - reward items: -1
+- quest 29322 - Time for Slime - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - reward items: -1
+- quest 29344 - Fish fer Squirky - updated
+  - description removed
+  - reward money removed (2g)
+  - reward items: -1
+- quest 29581 - The Golden Dream - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 29598 - Taretha's Diversion - updated
+  - description added
+- quest 29728 - Explosive Evidence - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29747 - Break the Cycle - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29815 - Forensic Science - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29872 - Lin Tenderpaw - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 29944 - Leaders Among Breeders - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward items: +1
+- quest 29982 - Evacuation Orders - updated
+  - description removed
+  - reward money removed (10g 20s)
+  - reward choices: -9
+- quest 29983 - The Hidden Master - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 30028 - Grain Recovery - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30029 - Wee Little Shenanigans - updated
+  - description removed
+  - reward money removed (10g 20s)
+  - reward choices: -5
+- quest 30031 - Taste Test - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30034 - The Lesson of the Iron Bough - updated
+  - description removed
+  - reward money removed (15c)
+- quest 30038 - The Lesson of the Iron Bough - updated
+  - description added
+  - reward money added (15c)
+- quest 30047 - The Chen Taste Test - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30078 - Cleaning House - updated
+  - description removed
+  - reward money removed (30g 60s)
+  - reward choices: -9
+- quest 30122 - Silver Filigree Flask - updated
+  - description removed
+  - reward items: -1
+- quest 30181 - Mushan Mastery - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30185 - Tortoise Mastery - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30257 - Learn and Grow V: Halfhill Market - updated
+  - description added
+  - reward money added (5g 10s)
+- quest 30507 - Admiral Taylor has Awakened - updated
+  - description added
+  - reward money added (1g 2s)
+- quest 30569 - Trouble on the Farmstead - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 30620 - Mogu?! Oh No-gu! - updated
+  - description removed
+  - reward money removed (20g 40s)
+  - reward choices: -9
+- quest 30624 - It Does You No Good In The Keg - updated
+  - description removed
+- quest 30626 - Retreat! - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 30635 - Killing the Quilen - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30651 - Barrels of Fun - updated
+  - description removed
+  - reward money removed (10g 20s)
+  - reward items: -1
+- quest 30655 - Pandaren Prisoners - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 30658 - Huff & Puff - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30751 - A Terrible Sacrifice - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 30778 - Dust to Dust - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30779 - Slaying the Scavengers - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30789 - Arconiss - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30808 - A Grummle's Luck - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 30820 - A Funeral - updated
+  - description removed
+  - reward money removed (20g 40s)
+  - reward choices: -9
+- quest 30824 - Gourmet Kafa - updated
+  - description removed
+  - reward money removed (10g 60s)
+  - reward items: -1
+- quest 30887 - Unwelcome Intruders - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30924 - The Wisdom of Niuzao - updated
+  - description removed
+  - reward money removed (11g)
+- quest 30929 - Bad Yak - updated
+  - description removed
+  - reward money removed (5g 50s)
+- quest 30953 - Fallen Sentinels - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30964 - A Proper Poultice - updated
+  - description removed
+  - reward money removed (11g)
+- quest 31011 - Enemies At Our Door - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31021 - Living Amber - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31024 - Kunchong Treats - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31043 - Dark Arts - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31078 - Han Stormstout - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31108 - Concentrated Fear - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31244 - Guo-Lai Encampment - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 31245 - Mistfall Village - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 31250 - Setting Sun Garrison - updated
+  - description removed
+  - reward money removed (5g 70s)
+- quest 31256 - Round 'Em Up - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 31382 - Defense At Niuzao Temple - updated
+  - description removed
+- quest 31383 - Defense At Niuzao Temple - updated
+  - description removed
+- quest 31386 - The Shado-Pan Offensive - updated
+  - description removed
+  - reward money removed (1g 10s)
+- quest 31457 - Muskpaw Ranch - updated
+  - description removed
+  - reward money removed (1g 2s)
+- quest 31465 - Extracting Answers - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - reward choices: -9
+- quest 31509 - Fear Takes Root - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31510 - Quiet Now - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31544 - A Tribute to the Dead - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - XP removed (236,000)
+  - reward items: -1
+- quest 31563 - The Finer Things - updated
+  - description removed
+- quest 31567 - The Finer Things - updated
+  - description removed
+- quest 31603 - Seeds of Fear - updated
+  - reward money removed (1g 14s)
+- quest 31688 - The Search for Restless Leng - updated
+  - description removed
+  - reward money removed (11g)
+- quest 31730 - A Not So Friendly Request - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 31755 - Acts of Cruelty - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31819 - Dagra the Fierce - updated
+  - description removed
+  - reward money removed (2s 25c)
+- quest 31886 - Dread Space - updated
+  - description removed
+  - reward money removed (1g 14s)
+- quest 32521 - Encroaching Force - updated
+  - description removed
+  - reward money removed (22g 80s)
+  - reward items: -1
+- quest 32539 - Dark Offerings - updated
+  - description removed
+  - reward money removed (11g 40s)
+- npc 65804 - Golden Lotus Guard - updated
+  - coordinates: 28 spawn points removed in Vale of Eternal Blossoms
+- npc 69062 - "Red" Jack Findle - updated
+  - NPC title added (Trade Supplies)
+
 0.2.268
 - sync - the shared character row also keeps the guild: its name, your rank and its realm
   - refreshed at login, when the guild or its roster changes and at logout, only while sharing is on
@@ -1105,386 +1436,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - reward money removed (7g 40s)
 - quest 12991 - Hit Them Where it Hurts - updated
   - reward money removed (7g 40s)
-
-0.2.261
-- database - Wowhead data as the PandaQuest portal read it: 10,558 quests, 99 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 516 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 499 quests, 7 NPCs
-- quest 2561 - Druid of the Claw - updated
-  - description added
-  - reward choices: +2
-- quest 12819 - Just Around the Corner - updated
-  - description added
-- quest 12821 - Cell Block Tango - updated
-  - description added
-- quest 12822 - Know No Fear - updated
-  - description added
-- quest 12823 - A Flawless Plan - updated
-  - description added
-- quest 12826 - Slightly Unstable - updated
-  - description added
-- quest 12827 - Reclaimed Rations - updated
-  - description added
-- quest 12829 - Moving In - updated
-  - description added
-- quest 12830 - Ore Repossession - updated
-  - description added
-- quest 12831 - Only Partly Forgotten - updated
-  - description added
-- quest 12833 - Overstock - updated
-  - description added
-- quest 12836 - Expression of Gratitude - updated
-  - description added
-- quest 12838 - Intelligence Gathering - updated
-  - description added
-- quest 12839 - The Grand (Admiral's) Plan - updated
-  - description added
-- quest 12841 - The Crone's Bargain - updated
-  - description added
-- quest 12842 - Runeforging: Preparation For Battle - updated
-  - description added
-- quest 12844 - Equipment Recovery - updated
-  - description added
-- quest 12846 - Leave No Goblin Behind - updated
-  - description added
-- quest 12847 - Second Chances - updated
-  - description added
-- quest 12848 - The Endless Hunger - updated
-  - description added
-- quest 12850 - Report To Scourge Commander Thalanor - updated
-  - description added
-- quest 12851 - Bearly Hanging On - updated
-  - description added
-- quest 12853 - Luxurious Getaway! - updated
-  - description added
-- quest 12854 - On Brann's Trail - updated
-  - description added
-- quest 12855 - Sniffing Out the Perpetrator - updated
-  - description added
-- quest 12856 - Cold Hearted - updated
-  - description added
-- quest 12858 - Pieces to the Puzzle - updated
-  - description added
-- quest 12860 - Data Mining - updated
-  - description added
-- quest 12862 - When All Else Fails - updated
-  - description added
-- quest 12863 - Offering Thanks - updated
-  - description added
-- quest 12864 - Missing Scouts - updated
-  - description added
-- quest 12866 - Stemming the Aggressors - updated
-  - description added
-- quest 12867 - Baby Stealers - updated
-  - description added
-- quest 12869 - Pushed Too Far - updated
-  - description added
-- quest 12873 - The Frostborn King - updated
-  - description added
-- quest 12875 - An Experienced Guide - updated
-  - description added
-- quest 12876 - Unwelcome Guests - updated
-  - description added
-- quest 12877 - The Lonesome Watcher - updated
-  - description added
-- quest 12878 - The Hidden Relic - updated
-  - description added
-- quest 12879 - Fury of the Frostborn King - updated
-  - description added
-- quest 12880 - The Master Explorer - updated
-  - description added
-- quest 12883 - Orders From Drakuru - updated
-  - description added
-  - reward items: +1
-- quest 12884 - The Ebon Watch - updated
-  - description added
-- quest 12885 - The Exiles of Ulduar - updated
-  - description added
-- quest 12887 - It's All Fun and Games - updated
-  - description added
-- quest 12888 - SCRAP-E - updated
-  - description added
-- quest 12889 - The Prototype Console - updated
-  - description added
-- quest 12891 - I Have an Idea, But First... - updated
-  - description added
-- quest 12892 - It's All Fun and Games - updated
-  - description added
-- quest 12894 - Crusader Forward Camp - updated
-  - description added
-- quest 12896 - If He Cannot Be Turned - updated
-  - description added
-- quest 12897 - If He Cannot Be Turned - updated
-  - description added
-- quest 12901 - Making Something Out Of Nothing - updated
-  - description added
-  - reward items: +1
-- quest 12902 - In Search Of Answers - updated
-  - description added
-- quest 12904 - Light Won't Grant Me Vengeance - updated
-  - description added
-  - reward items: +1
-- quest 12905 - Mildred the Cruel - updated
-  - description added
-
-0.2.260
-- database - Wowhead data as the PandaQuest portal read it: 10,548 quests, 99 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 514 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 483 quests, 6 NPCs
-- quest 12712 - The Key of Warlord Zol'Maz - updated
-  - description added
-- quest 12714 - The Will Of The Lich King - updated
-  - description added
-- quest 12715 - The Crypt of Remembrance - updated
-  - description added
-- quest 12723 - Behind Scarlet Lines - updated
-  - description added
-- quest 12725 - Brothers In Death - updated
-  - description added
-- quest 12726 - Song of Wind and Water - updated
-  - description added
-- quest 12729 - The Gods Have Spoken - updated
-  - description added
-  - reward items: +1
-- quest 12732 - The Heartblood's Strength - updated
-  - description added
-- quest 12734 - Rejek: First Blood - updated
-  - description added
-- quest 12735 - A Cleansing Song - updated
-  - description added
-- quest 12736 - Song of Reflection - updated
-  - description added
-- quest 12737 - Song of Fecundity - updated
-  - description added
-- quest 12738 - A Cry For Vengeance! - updated
-  - description added
-- quest 12739 - A Special Surprise - updated
-  - description added
-- quest 12741 - Strength of the Tempest - updated
-  - description added
-- quest 12742 - A Special Surprise - updated
-  - description added
-- quest 12743 - A Special Surprise - updated
-  - description added
-- quest 12744 - A Special Surprise - updated
-  - description added
-- quest 12745 - A Special Surprise - updated
-  - description added
-- quest 12746 - A Special Surprise - updated
-  - description added
-- quest 12747 - A Special Surprise - updated
-  - description added
-- quest 12748 - A Special Surprise - updated
-  - description added
-- quest 12749 - A Special Surprise - updated
-  - description added
-- quest 12750 - A Special Surprise - updated
-  - description added
-- quest 12754 - Ambush At The Overlook - updated
-  - description added
-- quest 12755 - A Meeting With Fate - updated
-  - description added
-- quest 12756 - The Scarlet Onslaught Emerges - updated
-  - description added
-- quest 12759 - Tools of War - updated
-  - description added
-- quest 12760 - Secret Strength of the Frenzyheart - updated
-  - description added
-- quest 12762 - Power of the Great Ones - updated
-  - description added
-- quest 12771 - Ironforge - updated
-  - quest giver added: Bishop Lazaril
-  - description added
-- quest 12773 - Darnassus - updated
-  - quest giver added: Bishop Lazaril
-  - description added
-- quest 12774 - Stormwind - updated
-  - quest giver added: Bishop Lazaril
-  - description added
-- quest 12776 - The Exodar - updated
-  - quest giver added: Bishop Lazaril
-  - description added
-- quest 12778 - The Scarlet Apocalypse - updated
-  - description added
-- quest 12785 - Orgrimmar - updated
-  - quest giver added: Grand Apothecary Putress
-  - description added
-- quest 12787 - The Undercity - updated
-  - quest giver added: Grand Apothecary Putress
-  - description added
-- quest 12788 - Silvermoon - updated
-  - quest giver added: Grand Apothecary Putress
-  - description added
-- quest 12789 - Into the Breach! - updated
-  - description added
-- quest 12792 - First Things First - updated
-  - description added
-- quest 12793 - Smoke on the Horizon - updated
-  - description added
-- quest 12795 - Taking a Stand - updated
-  - description added
-- quest 12797 - Back Through the Waygate - updated
-  - description added
-- quest 12799 - Siphoning the Spirits - updated
-  - description added
-- quest 12800 - The Lich King's Command - updated
-  - description added
-- quest 12803 - Force of Nature - updated
-  - description added
-- quest 12805 - Salvaging Life's Strength - updated
-  - description added
-  - reward items: +1
-- quest 12806 - To the Rise with all Due Haste! - updated
-  - description added
-- quest 12807 - The Story Thus Far... - updated
-  - description added
-- quest 12809 - Ironforge - updated
-  - quest giver added: Bishop Lazaril
-  - description added
-- quest 12810 - Blood in the Water - updated
-  - description added
-- quest 12812 - Orgrimmar - updated
-  - quest giver added: Grand Apothecary Putress
-  - description added
-- quest 12813 - From Their Corpses, Rise! - updated
-  - description added
-- quest 12815 - No Fly Zone - updated
-  - description added
-- quest 12818 - Clean Up - updated
-  - description added
-- quest 14093 - All Hell Breaks Loose - updated
-  - description added
-- npc 2784 - King Magni Bronzebeard - updated
-  - coordinates: 4 spawn points added in Ironforge
-- npc 7937 - High Tinker Mekkatorque - updated
-  - coordinates: 2 spawn points added in Ironforge
-
-0.2.259
-- database - Wowhead data as the PandaQuest portal read it: 10,535 quests, 97 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 512 quests, 7 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 476 quests, 6 NPCs
-- quest 12604 - Congratulations! - updated
-  - reward items: +1
-- quest 12605 - Securing the Bait - updated
-  - description added
-- quest 12606 - Cocooned! - updated
-  - description added
-- quest 12607 - A Mammoth Undertaking - updated
-  - description added
-- quest 12608 - Cultist Incursion - updated
-  - description added
-- quest 12612 - The Fallen Pillar - updated
-  - description added
-- quest 12613 - Powering the Waygate - The Makers' Overlook - updated
-  - description added
-- quest 12615 - The Blessing of Zim'Torga - updated
-  - description added
-- quest 12620 - The Lifewarden's Wrath - updated
-  - description added
-- quest 12621 - Freya's Pact - updated
-  - description added
-- quest 12623 - To the Witch Doctor - updated
-  - description added
-- quest 12627 - Breaking Through Jin'Alai - updated
-  - description added
-- quest 12628 - To Speak With Har'koa - updated
-  - description added
-- quest 12629 - You Can Run, But You Can't Hide - updated
-  - description added
-- quest 12631 - An Invitation, of Sorts... - updated
-  - description added
-- quest 12633 - Darkness Calling - updated
-  - description added
-- quest 12634 - Some Make Lemonade, Some Make Liquor - updated
-  - description added
-- quest 12635 - Relics of the Snow Leopard Goddess - updated
-  - description added
-- quest 12636 - The Eye Of Acherus - updated
-  - description added
-- quest 12638 - Close Call - updated
-  - description added
-- quest 12640 - Sealing the Rifts - updated
-  - description added
-- quest 12641 - Death Comes From On High - updated
-  - description added
-- quest 12642 - Spirit of Rhunok - updated
-  - description added
-- quest 12643 - Silver Lining - updated
-  - description added
-- quest 12644 - Still At It - updated
-  - description added
-- quest 12646 - My Prophet, My Enemy - updated
-  - description added
-- quest 12648 - Dressing Down - updated
-  - description added
-- quest 12649 - Suit Up! - updated
-  - description added
-- quest 12650 - Plundering Their Own - updated
-  - description added
-- quest 12651 - Lakeside Landing - updated
-  - description added
-- quest 12653 - Back to Har'koa - updated
-  - description added
-- quest 12654 - The Part-time Hunter - updated
-  - description added
-- quest 12655 - The Blessing of Zim'Rhuk - updated
-  - description added
-- quest 12658 - My Pet Roc - updated
-  - description added
-- quest 12659 - Scalps! - updated
-  - description added
-- quest 12660 - Weapons of Destruction - updated
-  - description added
-- quest 12663 - Reunited - updated
-  - description added
-- quest 12664 - Dark Horizon - updated
-  - description added
-- quest 12666 - Preparations for the Underworld - updated
-  - description added
-- quest 12667 - Seek the Wind Serpent Goddess - updated
-  - description added
-- quest 12668 - Foundation for Revenge - updated
-  - description added
-- quest 12670 - The Scarlet Harvest - updated
-  - description added
-- quest 12671 - Reconnaissance Flight - updated
-  - description added
-- quest 12672 - Setting the Stage - updated
-  - description added
-- quest 12673 - It Rolls Downhill - updated
-  - description added
-- quest 12675 - One Last Thing - updated
-  - description added
-- quest 12680 - Grand Theft Palomino - updated
-  - description added
-- quest 12683 - Burning to Help - updated
-  - description added
-- quest 12684 - Blood of a Dead God - updated
-  - description added
-- quest 12688 - Engineering a Disaster - updated
-  - description added
-- quest 12692 - Return of the Lich Hunter - updated
-  - description added
-- quest 12695 - Return of the Friendly Dryskin - updated
-  - description added
-- quest 12696 - Aerial Surveillance - updated
-  - description added
-- quest 12699 - An Embarassing Incident - updated
-  - description added
-- quest 12700 - An Attack Of Opportunity - updated
-  - description added
-- quest 12702 - Chicken Party! - updated
-  - description added
-- quest 12703 - Kartak's Rampage - updated
-  - description added
-- quest 12704 - Appeasing the Great Rain Stone - updated
-  - description added
-- quest 12705 - Will of the Titans - updated
-  - description added
-- quest 12708 - Enchanted Tiki Warriors - updated
-  - description added
-- quest 12710 - Disclosure - updated
-  - description added
 
 0.2.246
 - packaging - the CurseForge package made from the repository carries all four games again
