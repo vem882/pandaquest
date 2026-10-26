@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.3.0+v1.0.8 (MoP database + corrections from QuestieDB 1.0.8). DO NOT EDIT.
--- Built: 2026-10-26T10:07:59Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.3.1+v1.0.9 (MoP database + corrections from QuestieDB 1.0.9). DO NOT EDIT.
+-- Built: 2026-10-26T18:11:19Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -8500,7 +8500,7 @@ ns.Data.objects = [=[return {
 [186264] = {"Missing: Kyle",nil,nil,{[215]={{48.32,53.06}}},215},
 [186265] = {"Kyle's Lunch",nil,nil,{[215]={{49.42,59.36},{48.35,61.32}}},215},
 [186266] = {"Deserter Propaganda",nil,nil,{[15]={{67.94,58.72}}},15},
-[186267] = {"Pumpkin Shrine",{11392,11401,11405},{11135,11220},{[796]={{-1,-1}}},796},
+[186267] = {"Pumpkin Shrine",{11392,11401,11404,11405},{11135,11220},{[796]={{-1,-1}}},796},
 [186272] = {"Tool Kit",nil,nil,{[15]={{62.95,18.8}}},15},
 [186273] = {"Damaged Diving Gear",nil,nil,{[15]={{62.64,18.23},{62.33,18.88},{61.68,18.19}}},15},
 [186278] = {"Burning Wreckage",nil,nil,{[15]={{67.06,20.79},{66.61,23.69},{66.49,17.78},{65.58,24.54},{66.88,16.03},{64.78,20.12},{65.61,20.13},{65.44,16.55},{66.75,28.25},{66.85,26.06}}},15},

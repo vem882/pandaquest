@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.3.0+v1.0.8 (Forever database + corrections from QuestieDB 1.0.8). DO NOT EDIT.
--- Built: 2026-10-26T10:07:59Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.3.1+v1.0.9 (Forever database + corrections from QuestieDB 1.0.9). DO NOT EDIT.
+-- Built: 2026-10-26T18:11:19Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "forever"
 ns.Data.meta = {
-  ["built"] = "2026-10-26T10:07:59Z",
+  ["built"] = "2026-10-26T18:11:19Z",
   ["contentPhase"] = 0,
   ["counts"] = {["items"]=21294,["npcs"]=13396,["objects"]=7035,["questXP"]=3494,["quests"]=5232},
   ["expansion"] = "Forever",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.3.0+v1.0.8",
+  ["source"] = "Questie 12.3.1+v1.0.9",
 }
 ns.Data.questTagCorrections = {
   [17] = {81,"Dungeon"},
