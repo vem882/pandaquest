@@ -4,6 +4,770 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.283] - 2026-10-27
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 9,463 quests, 127 NPCs, 4 objects
+- database - Classic Era: data from the PandaQuest portal: 1,030 quests, 14 NPCs, 2 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,125 quests, 16 NPCs
+- quest 941 - Planting the Heart - updated
+  - description added
+  - reward items: +1
+- quest 8278 - Noggle's Last Hope - updated
+  - reward money removed (65s)
+- quest 8472 - Major Malfunction - updated
+  - reward money removed (1s)
+- quest 8559 - Conqueror's Greaves - updated
+  - description added
+  - reward items: +1
+- quest 8626 - Striker's Footguards - updated
+  - description removed
+  - reward items: -1
+- quest 9148 - Delivery to Tranquillien - updated
+  - reward money removed (1s 75c)
+- quest 9404 - Recently Living - updated
+  - description added
+  - reward choices: +2
+- quest 9515 - Warlord Sriss'tiz - updated
+  - reward money removed (10s)
+- quest 9528 - A Cry For Help - updated
+  - description added
+  - reward items: +1
+- quest 9860 - The New Directive - updated
+  - reward money removed (13g 20s)
+- quest 10959 - The Fall of the Betrayer - updated
+  - reward money removed (13g 20s)
+- quest 11383 - Wanted: Rift Lords - updated
+  - description added
+  - reward items: +1
+- quest 11547 - Know Your Ley Lines - updated
+  - reward money removed (4g 40s)
+- quest 12037 - Search and Rescue - updated
+  - reward money removed (22g 40s)
+- quest 12973 - The Brothers Bronzebeard - updated
+  - reward money removed (22g 20s)
+- quest 13040 - Curing The Incurable - updated
+  - reward money removed (6g 80s)
+- quest 13137 - Not-So-Honorable Combat - updated
+  - reward money removed (14g 80s)
+- quest 13324 - Darkmoon Prisms Deck - updated
+  - description added
+  - reward items: +1
+- quest 13512 - Strategic Strikes - updated
+  - reward money removed (6s)
+- quest 13570 - Remembrance of Auberdine - updated
+  - reward money removed (7s)
+  - reward items: -1
+  - reward choices: -3
+- quest 13580 - Soothing the Elements - updated
+  - description added
+  - reward choices: +2
+- quest 13745 - The Grand Melee - updated
+  - reward money removed (7g 40s)
+- quest 13771 - A Valiant's Field Training - updated
+  - reward money removed (7g 40s)
+- quest 13779 - A Worthy Weapon - updated
+  - reward money removed (7g 40s)
+- quest 13812 - Threat From Above - updated
+  - reward items: -1
+  - reward choices: -2
+- quest 13814 - Among the Champions - updated
+  - reward choices: -2
+- quest 13831 - A Troubling Prescription - updated
+  - reward money removed (4s)
+- quest 13857 - At The Enemy's Gates - updated
+  - reward money removed (7g 40s)
+  - reward items: -1
+- quest 13863 - Battle Before The Citadel - updated
+  - description added
+- quest 14288 - Safety in Numbers - updated
+  - reward money removed (13c)
+- quest 14290 - Safety in Numbers - updated
+  - description added
+- quest 14320 - In Need of Ingredients - updated
+  - description added
+- quest 24457 - Rite of Vision - updated
+  - description removed
+- quest 24563 - Thalorien Dawnseeker - updated
+  - description removed
+  - reward money removed (7g 40s)
+- quest 24589 - Lord Jaraxxus Must Die! - updated
+  - description removed
+  - reward money removed (29g 60s)
+- quest 24717 - The Apes of Un'Goro - updated
+  - description removed
+  - reward money removed (1g 55s)
+- quest 24725 - Crystal Charge - updated
+  - reward items: -1
+- quest 24729 - Crystal Yield - updated
+  - reward items: -1
+- quest 24775 - More Than Expected - updated
+  - description removed
+  - reward money removed (25c)
+- quest 24839 - A Change of Heart - updated
+  - reward choices: -4
+- quest 24934 - Repel Boarders! - updated
+  - description removed
+  - reward money removed (25s)
+- quest 24952 - Rocket Boot Boost - updated
+  - description removed
+- quest 24980 - The Scarlet Palisade - updated
+  - description removed
+  - reward money removed (1s 25c)
+- quest 24989 - Return to the Magistrate - updated
+  - description removed
+  - reward money removed (22c)
+- quest 24990 - Darkhound Pounding - updated
+  - reward items: counts corrected
+- quest 25004 - The Mills Overrun - updated
+  - description removed
+  - reward money removed (4s 50c)
+- quest 25009 - At War With The Scarlet Crusade - updated
+  - description removed
+  - reward money removed (3s)
+- quest 25034 - To the Front! - updated
+  - description removed
+- quest 25122 - Morale Boost - updated
+  - description removed
+  - reward money removed (3s)
+- quest 25177 - Storming the Beaches - updated
+  - description removed
+  - reward money removed (3s 50c)
+- quest 25178 - Shipwreck Searching - updated
+  - description removed
+  - reward money removed (1s 75c)
+- quest 25190 - Raggaran's Rage - updated
+  - description removed
+  - reward money removed (2s 25c)
+- quest 25200 - Shredder Shutdown - updated
+  - description removed
+  - reward money removed (3s 50c)
+- quest 25205 - The Wolf and The Kodo - updated
+  - description removed
+  - reward money removed (3s 50c)
+- quest 25259 - Gaur Icehorn - updated
+  - description removed
+  - reward money removed (7s)
+- quest 25260 - Fizzled - updated
+  - description removed
+  - reward money removed (3s 50c)
+  - reward choices: -2
+- quest 25312 - Return to Duskwhisper - updated
+  - description removed
+  - reward money removed (15g 60s)
+- quest 25392 - Oh, Deer! - updated
+  - description removed
+  - reward money removed (7g 80s)
+  - reward choices: -3
+- quest 25396 - Tears of Stone - updated
+  - description removed
+  - reward money removed (40s)
+- quest 25398 - Sealing the Dream - updated
+  - description removed
+  - reward money removed (75s)
+  - reward choices: -2
+- quest 25432 - It's Not "Ogre" Yet - updated
+  - description removed
+  - reward money removed (45s)
+- quest 25447 - Signs of Change - updated
+  - description removed
+  - reward money removed (40s)
+- quest 25463 - Report to Silvia - updated
+  - description removed
+  - reward money removed (10s)
+- quest 25490 - Smashing Through Ashes - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25499 - Agility Training: Run Like Hell! - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25504 - Do Me a Favor? - updated
+  - description removed
+- quest 25509 - Physical Training: Forced Labor - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25514 - Breaking the Bonds - updated
+  - description removed
+- quest 25525 - Wave One - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25531 - Twilight Riot - updated
+  - description removed
+- quest 25537 - Art of Attraction - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25540 - Bellies Await - updated
+  - description removed
+  - reward money removed (7g 80s)
+  - reward choices: -3
+- quest 25546 - Traveling on Our Stomachs - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25549 - The Sanctum of the Prophets - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25638 - A Desperate Plea - updated
+  - description removed
+  - reward money removed (5g 90s)
+- quest 25716 - Cultists at our Doorstep - updated
+  - description removed
+  - reward money removed (85s)
+  - reward choices: -4
+- quest 25763 - The Codex of Shadows - updated
+  - description removed
+  - reward money removed (78s)
+- quest 25790 - Back to Crazzle - updated
+  - description removed
+  - reward money removed (55s)
+  - reward choices: -4
+- quest 25813 - Go Blow that Horn - updated
+  - description removed
+  - reward money removed (1g 15s)
+- quest 25818 - Lifting the Curse - updated
+  - description removed
+- quest 25853 - Tooling Around - updated
+  - description removed
+  - reward money removed (15s)
+  - reward choices: -4
+- quest 25878 - Schemin' That Sabotage - updated
+  - description removed
+  - reward money removed (25s)
+  - reward choices: -3
+- quest 25885 - What? What? In My Gut...? - updated
+  - description removed
+- quest 25895 - Come Prepared - updated
+  - description removed
+  - reward money removed (7g 80s)
+  - reward choices: -3
+- quest 25901 - Hyjal Recycling Program - updated
+  - description removed
+  - reward money removed (7g 80s)
+  - reward choices: -3
+- quest 25946 - Helm's Deep - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 25977 - A Standard Day for Azrajar - updated
+  - description removed
+  - reward money removed (16g 40s)
+  - reward choices: -2
+- quest 25980 - A Standard Day for Azrajar - updated
+  - description removed
+  - reward money removed (16g 40s)
+  - reward choices: -2
+- quest 25984 - Promontory Point - updated
+  - description removed
+- quest 25998 - Get to the Airfield - updated
+  - description removed
+- quest 26078 - Extinguish the Fires - updated
+  - description removed
+  - reward money removed (3s 50c)
+- quest 26086 - Orako - updated
+  - description removed
+  - reward money removed (78s)
+- quest 26095 - Stromgarde Badges - updated
+  - description removed
+  - reward money removed (50s)
+  - reward choices: -4
+- quest 26122 - Environmental Awareness - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 26124 - Secure Seabrush - updated
+  - description removed
+  - reward money removed (7g 80s)
+- quest 26141 - Runestones of Binding - updated
+  - description removed
+  - reward money removed (8g 20s)
+- quest 26147 - Bigger and Uglier - updated
+  - reward items: counts corrected
+- quest 26174 - Watching Our Back - updated
+  - description removed
+  - reward money removed (85s)
+  - reward choices: -3
+- quest 26182 - Back to the Tenebrous Cavern - updated
+  - description removed
+- quest 26211 - Snapjaws, Mon! - updated
+  - reward money removed (30s)
+- quest 26271 - Feeding the Hungry and the Hopeless - updated
+  - description removed
+- quest 26308 - It's Ours Now - updated
+  - reward money removed (35s)
+- quest 26313 - Core of Our Troubles - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 26372 - Pre-Flight Checklist - updated
+  - description removed
+- quest 26389 - Blackrock Invasion - updated
+  - description removed
+  - reward money removed (1s 50c)
+  - reward choices: -5
+- quest 26469 - Satyr Slaying! - updated
+  - description removed
+  - reward money removed (13s)
+- quest 26474 - Orendil's Cure - updated
+  - description removed
+  - reward money removed (30s)
+- quest 26491 - Skulk Rock Clean-Up - updated
+  - description removed
+  - reward money removed (30s)
+- quest 26502 - Thunder Stones - updated
+  - description removed
+  - reward money removed (8g 20s)
+- quest 26509 - An Unwelcome Guest - updated
+  - description removed
+  - reward money removed (8s)
+  - reward items: -1
+- quest 26511 - Lake Everstill Clean Up - updated
+  - description removed
+  - reward choices: -4
+- quest 26512 - Tuning the Gnomecorder - updated
+  - description removed
+- quest 26513 - Like a Fart in the Wind - updated
+  - description removed
+  - reward money removed (16s)
+  - reward choices: -4
+- quest 26521 - Faces of Evil - updated
+  - description removed
+  - reward money removed (35s)
+  - reward choices: -3
+- quest 26537 - Shatter Them! - updated
+  - description removed
+  - reward money removed (8g 20s)
+- quest 26544 - They've Wised Up... - updated
+  - description removed
+  - reward money removed (8s)
+- quest 26564 - Fixer Upper - updated
+  - description removed
+  - reward money removed (8g 20s)
+  - reward choices: -3
+- quest 26591 - Battlefront Triage - updated
+  - description removed
+  - reward money removed (8g 20s)
+- quest 26639 - Point of Contact: Brubaker - updated
+  - description removed
+- quest 26717 - The Yorgen Worgen - updated
+  - description removed
+  - reward money removed (17s)
+- quest 26733 - Control Sample - updated
+  - description removed
+- quest 26735 - The Fate of Kurzen - updated
+  - description removed
+  - reward money removed (18s)
+- quest 26810 - Eliminate the Outcast - updated
+  - description removed
+  - reward money removed (25s)
+- quest 26825 - Dask "The Flask" Gobfizzle - updated
+  - description removed
+  - reward money removed (2s 50c)
+- quest 26863 - Filthy Paws - updated
+  - description removed
+  - reward money removed (6s)
+  - reward choices: -3
+- quest 26864 - The Bearer of Gnoll-edge - updated
+  - description removed
+  - reward money removed (3s)
+- quest 26890 - The Essence of Aku'Mai - updated
+  - description removed
+  - reward money removed (14s)
+- quest 26932 - Buzz Off - updated
+  - description removed
+  - reward money removed (7s)
+- quest 26934 - Latent Disease - updated
+  - description removed
+  - reward money removed (40s)
+- quest 27008 - Fly Over - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 27017 - Memories from a Lost Past - updated
+  - reward money removed (45s)
+- quest 27041 - Decryption Made Easy - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 27088 - It's Only Poisonous if You Ingest It - updated
+  - description removed
+  - reward items: -1
+  - reward choices: -3
+- quest 27104 - Alzzin the Wildshaper - updated
+  - description removed
+  - reward money removed (2g 13s)
+  - reward choices: -4
+- quest 27131 - The Highborne - updated
+  - description removed
+  - reward money removed (6s)
+- quest 27164 - Araj the Summoner - updated
+  - description removed
+  - reward money removed (75s)
+- quest 27213 - The End of the Deserters - updated
+  - description removed
+  - reward money removed (75s)
+  - reward choices: -3
+- quest 27219 - Is it Real? - updated
+  - description removed
+- quest 27232 - The Waters Run Red... - updated
+  - description removed
+  - reward choices: -2
+- quest 27240 - Proof of Treachery - updated
+  - description removed
+- quest 27262 - Suspicious Hoofprints - updated
+  - description removed
+- quest 27331 - The Seer's Call - updated
+  - description removed
+- quest 27334 - Dark Cleric Cecille - updated
+  - description removed
+- quest 27338 - Our Boys on the Shore - updated
+  - description removed
+  - reward money removed (4g 50s)
+- quest 27341 - Scouting the Shore - updated
+  - description removed
+  - reward money removed (4g 50s)
+- quest 27365 - A Fitting Weapon - updated
+  - description removed
+  - reward choices: -2
+- quest 27369 - Greasing the Wheel - updated
+  - reward money removed (50s)
+- quest 27372 - A Gift For Fiona - updated
+  - reward money removed (50s)
+- quest 27390 - The Battle of Darrowshire - updated
+  - description removed
+  - reward money removed (1g 10s)
+  - reward items: -1
+  - reward choices: -3
+- quest 27426 - Confirming the Suspicion - updated
+  - description removed
+  - reward money removed (45s)
+- quest 27460 - Soft Landing - updated
+  - description removed
+- quest 27462 - To Take the Barracks - updated
+  - description removed
+  - reward money removed (6s)
+- quest 27468 - Siege Tank Rescue - updated
+  - description removed
+  - reward money removed (9g)
+  - reward choices: -3
+- quest 27475 - Unyielding Servitors - updated
+  - description removed
+  - reward money removed (9s)
+- quest 27484 - Only One May Enter - updated
+  - description removed
+- quest 27521 - Wretched Hive of Scum and Villainy - updated
+  - description removed
+  - reward money removed (65s)
+- quest 27619 - The Commander - updated
+  - description removed
+  - reward money removed (55s)
+  - reward choices: -3
+- quest 27621 - Firebeard's Patrol - updated
+  - description removed
+  - reward money removed (4g 50s)
+- quest 27705 - Step One: The Priestess - updated
+  - description removed
+  - reward money removed (80s)
+- quest 27748 - Fortune and Glory - updated
+  - description removed
+  - reward money removed (17g 20s)
+  - reward choices: -3
+- quest 27750 - War Forage - updated
+  - description removed
+  - reward money removed (9g)
+- quest 27756 - The Foreman - updated
+  - description removed
+  - reward money removed (33s)
+- quest 27761 - A Disarming Distraction - updated
+  - description removed
+  - reward money removed (8g 60s)
+  - reward choices: -3
+- quest 27762 - Fuselight, Ho! - updated
+  - description removed
+- quest 27778 - Hacking the Wibson - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 27837 - Trespassers in the Water - updated
+  - description removed
+  - reward money removed (8g 60s)
+  - reward choices: -3
+- quest 27839 - Ancient Weapons - updated
+  - description removed
+  - reward money removed (8g 60s)
+  - reward choices: -3
+- quest 27843 - Reinforcements Denied - updated
+  - description removed
+  - reward money removed (80s)
+- quest 27850 - The Defias Kingpin - updated
+  - description removed
+  - reward money removed (33s)
+  - reward choices: -3
+- quest 27855 - Reinforcements Denied - updated
+  - description removed
+  - reward money removed (80s)
+- quest 27881 - Bloodwatcher Point - updated
+  - description removed
+  - reward money removed (7s)
+- quest 27908 - Secrets of the Mire - updated
+  - description removed
+  - reward money removed (85s)
+- quest 27914 - Blessing of the Green Dragonflight - updated
+  - description removed
+  - reward money removed (1g 65s)
+  - reward choices: -3
+- quest 27920 - Armored to the Teeth - updated
+  - description removed
+  - reward money removed (40s)
+- quest 27929 - Drag 'em Down - updated
+  - description removed
+  - reward money removed (9g)
+- quest 27930 - Devastation - updated
+  - description removed
+  - reward money removed (7s)
+- quest 27932 - The Axe of Earthly Sundering - updated
+  - description removed
+  - reward money removed (8g 20s)
+  - reward choices: -1
+- quest 27943 - Angered Spirits - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 27960 - The Fewer, the Better - updated
+  - description removed
+  - reward money removed (70s)
+- quest 27962 - A Lumbering Relic - updated
+  - description removed
+  - reward money removed (70s)
+- quest 27980 - The Spiders Have to Go - updated
+  - description removed
+  - reward money removed (2g 10s)
+- quest 28029 - Set Them Ablaze! - updated
+  - description removed
+  - reward money removed (70s)
+- quest 28111 - Trouble at Azurelode - updated
+  - description removed
+- quest 28112 - Escape From the Lost City - updated
+  - description removed
+  - reward choices: -2
+- quest 28231 - Do it for Twinkles - updated
+  - description removed
+  - reward choices: -3
+- quest 28237 - A Blight Upon the Land - updated
+  - description removed
+  - reward choices: -3
+- quest 28252 - The Kodocaller's Horn - updated
+  - description removed
+- quest 28266 - Trial by Magma - updated
+  - description removed
+  - reward money removed (1g 50s)
+  - reward choices: -4
+- quest 28274 - Two Tents - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 28298 - Meet with Gordul - updated
+  - description removed
+- quest 28331 - Helcular's Rod Giveth... - updated
+  - description removed
+  - reward items: -1
+- quest 28337 - The Shredders of Irontree - updated
+  - description removed
+  - reward money removed (70s)
+- quest 28353 - Jonesy Sent For You - updated
+  - description removed
+  - reward money removed (86s)
+- quest 28375 - The Road to Purgation - updated
+  - description removed
+- quest 28386 - Borrowed Bombs - updated
+  - description removed
+  - reward money removed (1g 40s)
+  - reward choices: -4
+- quest 28390 - Glop, Son of Glop - updated
+  - description removed
+  - reward money removed (17g 20s)
+- quest 28393 - A Dangerous Alliance - updated
+  - description removed
+  - reward money removed (1g 45s)
+  - reward choices: -2
+- quest 28403 - Bad Datas - updated
+  - description removed
+  - reward money removed (2g 15s)
+- quest 28417 - Done Nothing Wrong - updated
+  - description removed
+  - reward money removed (75s)
+  - reward choices: -3
+- quest 28531 - Hero's Call: Desolace! - updated
+  - description removed
+- quest 28578 - Hero's Call: Eastern Plaguelands! - updated
+  - description removed
+- quest 28703 - Step Into My Barrow - updated
+  - description removed
+  - reward money removed (1g 60s)
+- quest 28755 - Annals of the Silver Hand - updated
+  - description removed
+- quest 28786 - Join the Battle! - updated
+  - description removed
+  - reward money removed (13c)
+- quest 28818 - The Rear is Clear - updated
+  - description removed
+  - reward money removed (7c)
+- quest 28861 - Fight Like a Wildhammer - updated
+  - description removed
+  - reward money removed (9g)
+- quest 28874 - Hook 'em High - updated
+  - description removed
+  - reward money removed (9g)
+- quest 28875 - Bring Down the High Shaman - updated
+  - description removed
+  - reward money removed (18g)
+- quest 28885 - Mr. Goldmine's Wild Ride - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29086 - Competition Schmompetition - updated
+  - description removed
+- quest 29101 - Punting Season - updated
+  - description removed
+- quest 29111 - Mor'shan Caravan Delivery - updated
+  - description removed
+  - reward money removed (9s)
+  - reward choices: -3
+- quest 29121 - Bury Me With Me Boots... - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29125 - Between the Trees - updated
+  - description removed
+- quest 29127 - Rage Against the Flames - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29134 - A Wrinkle in Time - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29195 - A Ritual of Flame - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29202 - The Fate of Runetotem - updated
+  - description removed
+  - reward money removed (94s)
+- quest 29211 - Solar Core Destruction - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29235 - Defend Grom'gol - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29281 - Additional Armaments - updated
+  - description removed
+  - reward money removed (18g 80s)
+- quest 29283 - Calling the Ancients - updated
+  - description removed
+  - reward money removed (18g 80s)
+- quest 29336 - Into Coaxing Tides - updated
+  - description removed
+- quest 29387 - Guardians of Hyjal: Firelands Invasion! - updated
+  - description removed
+- quest 29424 - Items of Utmost Importance - updated
+  - description removed
+  - reward money removed (50c)
+- quest 29590 - The Dead Watcher - updated
+  - description removed
+  - reward money removed (7g 40s)
+- quest 29640 - Find Spy To'gun - updated
+  - description removed
+- quest 29642 - Trouble at Auchindoun - updated
+  - description removed
+  - reward money removed (44s)
+- quest 29650 - Fel Ember - updated
+  - description removed
+  - reward money removed (13g 20s)
+  - reward choices: -5
+- quest 29755 - Pei-Back - updated
+  - description removed
+  - reward money removed (19g 60s)
+  - reward choices: -9
+- quest 29772 - Raucous Rousing - updated
+  - description removed
+  - reward money removed (1s 25c)
+- quest 29807 - Death to the Traitor King - updated
+  - description removed
+  - reward money removed (22g 40s)
+  - reward choices: -4
+- quest 29808 - Don't Forget the Eggs! - updated
+  - description removed
+  - reward money removed (22g 40s)
+  - reward choices: -4
+- quest 29930 - What's Mined Is Yours - updated
+  - description removed
+  - reward money removed (9g 80s)
+  - reward choices: -5
+- quest 30118 - Patricide - updated
+  - description removed
+  - reward money removed (9g 40s)
+  - reward items: -2
+- quest 30142 - It's A... - updated
+  - description removed
+  - reward money removed (5g 70s)
+- quest 30285 - Wu Kao Scouting Reports - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30602 - The Rabbitsfoot - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 30646 - The Final Power - updated
+  - description removed
+  - reward money removed (22g 80s)
+  - reward choices: -5
+- quest 30821 - The Burlap Grind - updated
+  - description removed
+  - reward money removed (10g 60s)
+- quest 30882 - Round 2: Kang Bramblestaff - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 30982 - Animal Control - updated
+  - description removed
+  - reward money removed (33s)
+- quest 30983 - The Dark Shaman - updated
+  - description removed
+  - reward money removed (33s)
+- quest 31007 - The Dread Clutches - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31031 - Into the Monastery - updated
+  - description removed
+  - reward money removed (1g 6s)
+- quest 31079 - The Horror Comes A-Rising - updated
+  - description removed
+  - reward money removed (11g 40s)
+  - reward choices: -10
+- quest 31095 - The Dark Heart of the Mogu - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31119 - The Enemy of My Enemy... Is Still My Enemy! - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31311 - Way of the Grill - updated
+  - reward items: counts corrected
+- quest 31588 - Learning the Ropes - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31709 - Lingering Doubt - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31716 - Pooped - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31737 - The Cost of War - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 32900 - Heroic Deeds - updated
+  - description removed
+  - reward money removed (34g 20s)
+  - reward items: -1
+- npc 1160 - Captain Halyndor - updated
+  - coordinates: 3 spawn points removed in Wetlands
+- npc 45610 - Daschla - updated
+  - coordinates: 1 spawn point removed in Silverpine Forest
+- npc 59874 - Manifestation of Fear - updated
+  - coordinates: 40 spawn points added in Valley of the Four Winds
+- npc 64192 - Shao-Tien Subjugator - updated
+  - coordinates: 16 spawn points removed in Vale of Eternal Blossoms
+- npc 64201 - Shao-Tien Subjugator - updated
+  - coordinates: 40 spawn points removed in Vale of Eternal Blossoms
+- npc 69360 - Bozzle Blastinfuse - updated
+  - NPC title added (Jurassic Expedition)
+- object 214863 - Hatchling Poop - updated
+  - coordinates: 24 spawn points removed in The Jade Forest
+
 ## [0.2.282] - 2026-10-27
 
 Data from the PandaQuest portal.
@@ -440,1108 +1204,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 69668 - Danara Silverglass - updated
   - NPC title added (Kirin Tor)
-
-## [0.2.281] - 2026-10-27
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 9,810 quests, 127 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 986 quests, 14 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 1,056 quests, 16 NPCs
-- quest 8115 - Control Five Bases - updated
-  - reward money removed (2g 70s)
-- quest 8335 - Felendren the Banished - updated
-  - description added
-  - reward choices: +2
-- quest 8486 - Arcane Instability - updated
-  - description removed
-  - reward choices: -2
-- quest 8707 - Blade of Vaulted Secrets - updated
-  - description added
-  - reward items: +1
-- quest 8890 - Word from the Spire - updated
-  - description added
-  - reward items: +1
-- quest 9199 - Troll Juju - updated
-  - description added
-  - reward choices: +3
-- quest 9212 - Escape from the Catacombs - updated
-  - reward money removed (9s)
-- quest 9363 - Warning Fairbreeze Village - updated
-  - reward money removed (2s)
-- quest 10457 - Protecting Our Own - updated
-  - description removed
-  - reward money removed (3g 50s)
-  - reward choices: -4
-- quest 10466 - Champion's Vow - updated
-  - description added
-  - reward items: +1
-- quest 12779 - An End To All Things... - updated
-  - reward money removed (2g 50s)
-- quest 12870 - Ancient Relics - updated
-  - reward money removed (6g 80s)
-- quest 12871 - Aid from the Explorers' League - updated
-  - coordinates: 2 objective points removed in The Storm Peaks
-  - description removed
-  - reward money removed (74s)
-- quest 12886 - The Drakkensryd - updated
-  - description added
-  - reward choices: +4
-- quest 12903 - That's What Friends Are For... - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12924 - Forging an Alliance - updated
-  - reward money removed (7g 40s)
-- quest 12955 - Eliminate the Competition - updated
-  - reward money removed (7g 40s)
-- quest 12971 - Taking on All Challengers - updated
-  - description added
-  - reward choices: +4
-- quest 13000 - Emergency Measures - updated
-  - description added
-  - reward choices: +4
-- quest 13129 - Head Games - updated
-  - reward money removed (22g 40s)
-- quest 13279 - Basic Chemistry - updated
-  - description added
-  - reward choices: +3
-- quest 13305 - Do Your Worst - updated
-  - description added
-  - reward choices: +5
-- quest 13554 - A Cure In The Dark - updated
-  - description added
-  - reward choices: +3
-- quest 13578 - Aroom's Farewell - updated
-  - reward money removed (9s)
-- quest 13603 - A Blade Fit For A Champion - updated
-  - description added
-  - reward items: +1
-- quest 13629 - Val'anyr, Hammer of Ancient Kings - updated
-  - reward money removed (22g 20s)
-- quest 13752 - A Blade Fit For A Champion - updated
-  - description added
-  - reward items: +1
-- quest 13758 - A Worthy Weapon - updated
-  - reward money removed (7g 40s)
-- quest 13760 - A Valiant's Field Training - updated
-  - reward money removed (7g 40s)
-- quest 13769 - A Worthy Weapon - updated
-  - description added
-  - reward items: +1
-- quest 13770 - The Edge Of Winter - updated
-  - reward money removed (7g 40s)
-- quest 13773 - A Blade Fit For A Champion - updated
-  - reward money removed (7g 40s)
-- quest 13774 - A Worthy Weapon - updated
-  - description added
-  - reward items: +1
-- quest 13835 - Mastery Of The Shield-Breaker - updated
-  - description added
-- quest 13838 - Mastery Of The Shield-Breaker - updated
-  - description added
-- quest 13844 - The Looting of Althalaxx - updated
-  - description added
-- quest 13881 - Consumed - updated
-  - description added
-- quest 13882 - The Seeds of Life - updated
-  - reward money removed (10s)
-  - reward choices: -2
-- quest 13896 - Unearthed Knowledge - updated
-  - reward money removed (5s)
-- quest 14099 - Royal Orders - updated
-  - reward money removed (50c)
-- quest 14143 - A Leg Up - updated
-  - reward money removed (7g 40s)
-- quest 14218 - By Blood and Ash - updated
-  - reward money removed (1s)
-  - reward choices: -2
-- quest 24461 - Reforging The Sword - updated
-  - description added
-- quest 24487 - Whitebeard Needs Ye - updated
-  - reward money removed (5c)
-- quest 24545 - The Sacred and the Corrupt - updated
-  - reward money removed (14g 80s)
-- quest 24556 - A Suitable Disguise - updated
-  - description added
-- quest 24567 - Report for Tryouts - updated
-  - description removed
-- quest 24581 - Noth the Plaguebringer Must Die! - updated
-  - description removed
-  - reward money removed (29g 60s)
-- quest 24721 - The Eastern Pylon - updated
-  - description removed
-  - reward money removed (80s)
-- quest 24727 - Crystal Spire - updated
-  - reward items: -1
-- quest 24782 - The Rise of the Darkspear - updated
-  - description removed
-  - reward money removed (25c)
-- quest 24840 - A Change of Heart - updated
-  - reward choices: -4
-- quest 24926 - Serving A-Me 01 - updated
-  - description removed
-  - reward money removed (1g 55s)
-  - reward choices: -3
-- quest 24972 - Vital Intelligence - updated
-  - description removed
-  - reward money removed (75c)
-- quest 24983 - Forsaken Duties - updated
-  - description removed
-  - reward money removed (55c)
-- quest 25019 - Laying Claim - updated
-  - description removed
-  - reward money removed (70s)
-- quest 25153 - Bael'dun Rescue - updated
-  - description removed
-  - reward money removed (35s)
-  - reward choices: -3
-- quest 25207 - Good-bye, Sweet Oil - updated
-  - description removed
-  - reward money removed (3s 50c)
-  - reward choices: -2
-- quest 25232 - The Burning Blade - updated
-  - description removed
-  - reward money removed (3s 50c)
-- quest 25269 - The Voice of Lo'Gosh - updated
-  - description removed
-- quest 25310 - The Greater of Two Evils - updated
-  - description removed
-  - reward money removed (15g 60s)
-- quest 25354 - Sweeping the Shelf - updated
-  - description removed
-  - reward money removed (7g 80s)
-  - reward choices: -4
-- quest 25382 - Disrupting the Rituals - updated
-  - description removed
-  - reward money removed (7g 80s)
-  - reward choices: -3
-- quest 25385 - Save the Wee Animals - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25389 - A Taste For Tail - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25510 - Tortolla Speaks - updated
-  - description removed
-- quest 25547 - On Our Own Terms - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25594 - Crafty Crabs - updated
-  - description removed
-  - reward money removed (7g 80s)
-  - reward choices: -3
-- quest 25620 - The Revered Lady - updated
-  - description removed
-- quest 25743 - Decisions, Decisions - updated
-  - description removed
-  - reward money removed (7g 80s)
-  - reward choices: -3
-- quest 25766 - Arcane Legacy - updated
-  - description removed
-- quest 25805 - Return the Statuette - updated
-  - description removed
-  - reward money removed (30s)
-  - reward choices: -3
-- quest 25830 - The Last Living Lorekeeper - updated
-  - description removed
-- quest 25843 - Tortolla's Revenge - updated
-  - description removed
-  - reward money removed (78s)
-- quest 25863 - Chosen Burden - updated
-  - description removed
-- quest 25883 - How Disarming - updated
-  - description removed
-- quest 25909 - Capture the Crab - updated
-  - description removed
-  - reward money removed (5g 90s)
-- quest 25925 - Thal'darah's Vengeance - updated
-  - description removed
-  - reward money removed (80s)
-- quest 25997 - Dark Iron Scheming - updated
-  - description removed
-  - reward money removed (3s 50c)
-  - reward choices: -3
-- quest 26021 - The Brothers Digsong 2: Eel-Egg-Trick Boogaloo - updated
-  - description removed
-  - reward money removed (15g 60s)
-  - reward choices: -3
-- quest 26080 - One Last Favor - updated
-  - description removed
-  - reward money removed (78s)
-  - reward choices: -3
-- quest 26194 - Defending the Rift - updated
-  - description removed
-  - reward money removed (24g 60s)
-  - reward choices: -3
-- quest 26214 - Hot On the Trail: Murlocs - updated
-  - description removed
-  - reward money removed (4s)
-- quest 26251 - Take No Prisoners - updated
-  - description removed
-  - reward money removed (8g 20s)
-- quest 26254 - Some Spraining to Do - updated
-  - description removed
-  - reward money removed (6g 20s)
-  - reward choices: -3
-- quest 26260 - The Forgemaster's Log - updated
-  - description removed
-  - reward money removed (8g 20s)
-- quest 26288 - Jango Spothide - updated
-  - description removed
-  - reward money removed (6s)
-  - reward choices: -3
-- quest 26296 - Evidence Collection - updated
-  - description removed
-  - reward choices: -3
-- quest 26418 - The Shell of Shadra - updated
-  - reward money removed (35s)
-- quest 26539 - Stalled Negotiations - updated
-  - description removed
-  - reward money removed (4g 50s)
-- quest 26654 - Return the Comb - updated
-  - description removed
-  - reward money removed (7s)
-- quest 26684 - The Insane Ghoul - updated
-  - description removed
-  - reward money removed (13s)
-- quest 26730 - You Can Take the Murloc Out of the Ocean... - updated
-  - description removed
-  - reward money removed (20s)
-- quest 26742 - Bloodscalp Insight - updated
-  - description added
-  - reward money added (20s)
-- quest 26804 - Flight to Razor Hill - updated
-  - description removed
-- quest 26809 - Backdoor Dealings - updated
-  - description removed
-  - reward money removed (30s)
-  - reward choices: -3
-- quest 26818 - Plush Pelts - updated
-  - description removed
-  - reward money removed (25s)
-  - reward choices: -4
-- quest 26834 - Down Into the Chasm - updated
-  - description removed
-- quest 26868 - Axis of Awful - updated
-  - description removed
-  - reward money removed (7s)
-- quest 26888 - Nightmare of the Deeps - updated
-  - reward money removed (87s)
-- quest 26910 - Etched Letter - updated
-  - description removed
-- quest 26958 - Your First Lesson - updated
-  - description removed
-- quest 26980 - Swiftgear Station - updated
-  - description removed
-  - reward money removed (8s)
-- quest 27027 - Primal Strike - updated
-  - description removed
-- quest 27038 - Missing Parts - updated
-  - description removed
-  - reward money removed (9g)
-  - reward choices: -3
-- quest 27039 - Dangerous Intentions - updated
-  - description removed
-- quest 27040 - Decryption Made Easy - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 27044 - Peasant Problems - updated
-  - description removed
-  - reward money removed (4g 50s)
-- quest 27046 - Fear of Boring - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 27093 - Lost in the Darkness - updated
-  - description removed
-  - reward money removed (10s)
-- quest 27111 - The Treasure of the Shen'dralar - updated
-  - description removed
-  - reward money removed (1g 90s)
-  - reward choices: -4
-- quest 27113 - The Shen'dralar Ancient - updated
-  - description removed
-  - reward money removed (6s)
-- quest 27114 - The Gordok Taste Test - updated
-  - reward items: -2
-- quest 27116 - The Winds of Loch Modan - updated
-  - description removed
-  - reward money removed (10s)
-- quest 27198 - Supporting the Troops - updated
-  - description removed
-  - reward money removed (1g)
-  - reward choices: -4
-- quest 27272 - Demisette Sends Word - updated
-  - description removed
-- quest 27299 - Torn Ground - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27327 - Grimtotem Chiefs: The Chief of Chiefs - updated
-  - description removed
-  - reward money removed (1g 20s)
-  - reward choices: -3
-- quest 27393 - The Call of the Blade - updated
-  - description removed
-  - reward money removed (78s)
-- quest 27448 - The Trek Continues - updated
-  - description removed
-  - reward money removed (30s)
-- quest 27532 - The Plaguewood Tower - updated
-  - description removed
-  - reward money removed (6s)
-- quest 27584 - Blood in the Surf - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27610 - Scouting the Shore - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27631 - The High Commander's Vote - updated
-  - description removed
-- quest 27796 - The Warden's Pawn - updated
-  - description removed
-- quest 27923 - Smoke in Their Eyes - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 28114 - Glorious Harvest - updated
-  - description removed
-  - reward choices: -3
-- quest 28172 - Done Nothing Wrong - updated
-  - description removed
-  - reward money removed (75s)
-  - reward choices: -3
-- quest 28199 - For Science! - updated
-  - description removed
-  - reward money removed (13s)
-- quest 28201 - Ploughshares to Swords - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 28230 - Protocol - updated
-  - description removed
-  - reward money removed (25s)
-- quest 28262 - Meet with Lord Tony Romano - updated
-  - description removed
-- quest 28291 - Return to Camp - updated
-  - description removed
-  - reward money removed (6g 50s)
-- quest 28325 - Green Living - updated
-  - description removed
-  - reward money removed (14s)
-- quest 28363 - Stirred the Hornet's Nest - updated
-  - description removed
-  - reward money removed (86s)
-- quest 28382 - Enemy at our Roots - updated
-  - description removed
-  - reward money removed (70s)
-  - reward choices: -4
-- quest 28455 - Glory Amidst Chaos - updated
-  - description removed
-  - reward money removed (2g 30s)
-- quest 28456 - The Spoils of War - updated
-  - description removed
-  - reward items: -1
-  - reward choices: -5
-- quest 28478 - Twilight Scheming - updated
-  - description removed
-  - reward money removed (1g 45s)
-  - reward items: -1
-- quest 28500 - The Cypher of Keset - updated
-  - description removed
-  - reward money removed (6g 80s)
-- quest 28503 - Hero's Call: Thousand Needles! - updated
-  - description removed
-- quest 28613 - See You on the Other Side! - updated
-  - description removed
-- quest 28647 - The Durnholde Challenge: D-1000 - updated
-  - description added
-  - reward choices: +3
-- quest 28702 - Hero's Call: The Cape of Stranglethorn! - updated
-  - description removed
-- quest 28747 - Someone Setup the Pumpkin Bomb - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 28769 - Lions for Lambs - updated
-  - description removed
-  - reward money removed (40c)
-  - reward items: -1
-- quest 28771 - Lions for Lambs - updated
-  - description removed
-  - reward money removed (40c)
-  - reward items: -1
-- quest 29034 - They Grow Up So Fast - updated
-  - description removed
-  - reward items: -2
-- quest 29035 - A Cub's Cravings - updated
-  - description removed
-  - reward items: -1
-- quest 29089 - Sludge Beast! - updated
-  - description removed
-  - reward money removed (8s)
-  - reward choices: -2
-- quest 29090 - A Burning Threat - updated
-  - description removed
-  - reward money removed (8s)
-- quest 29094 - The Short Way Home - updated
-  - description removed
-  - reward choices: -2
-- quest 29137 - Breach in the Defenses - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29142 - Traitors Return - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29151 - Bad Supplies - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29152 - Making Contact - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29181 - Druids of the Talon - updated
-  - description removed
-  - reward money removed (18g 80s)
-- quest 29201 - Through the Gates of Hell - updated
-  - description removed
-  - reward money removed (18g 80s)
-- quest 29237 - Voodoo Zombies - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29241 - Break the Godbreaker - updated
-  - description removed
-  - reward money removed (37g 60s)
-- quest 29242 - Putting a Price on Priceless - updated
-  - description removed
-  - reward money removed (37g 60s)
-- quest 29417 - The Way of the Huojin - updated
-  - description removed
-  - reward money removed (75c)
-  - reward choices: -3
-- quest 29528 - War on the Ramparts - updated
-  - description removed
-  - reward money removed (5g 40s)
-  - reward choices: -4
-- quest 29678 - Shu, the Spirit of Water - updated
-  - description removed
-  - reward money removed (25c)
-- quest 29686 - A Radical Notion - updated
-  - description removed
-  - reward money removed (4g 40s)
-- quest 29687 - Twisted Associations - updated
-  - description removed
-  - reward money removed (4g 40s)
-- quest 29731 - Scouting Report: On the Right Track - updated
-  - description removed
-- quest 29768 - Missing Mallet - updated
-  - description removed
-  - reward money removed (1s 25c)
-  - reward choices: -3
-- quest 29794 - None Left Behind - updated
-  - description removed
-  - reward money removed (3s)
-  - reward choices: -3
-- quest 29879 - Swallowed Whole - updated
-  - description removed
-  - reward money removed (9g 80s)
-- quest 30101 - The Path to the Dragon Soul - updated
-  - description removed
-  - reward money removed (37g 60s)
-  - reward choices: -4
-- quest 30139 - The Rider's Journey - updated
-  - description removed
-  - reward money removed (5g 70s)
-- quest 30341 - Under Watchful Eyes - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 30477 - A Gift For Haohan - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 30516 - Growing the Farm I: A Little Problem - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 30534 - A Second Hand - updated
-  - description removed
-  - reward money removed (5g 70s)
-- quest 30692 - The Burlap Trail: To Kota Basecamp - updated
-  - description removed
-  - reward money removed (10g 60s)
-  - reward choices: -5
-- quest 30745 - Trouble Brewing - updated
-  - description removed
-  - reward money removed (10g 60s)
-  - reward items: -1
-- quest 30801 - Lessons from History - updated
-  - description removed
-  - reward money removed (10g 60s)
-- quest 30826 - Trouble Brewing - updated
-  - reward items: counts corrected
-- quest 31058 - The Funky Monkey Brew - updated
-  - description removed
-  - reward money removed (22g 80s)
-- quest 31061 - Riding the Storm - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31074 - Wood and Shade - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31117 - Uruk! - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31163 - More Than Expected - updated
-  - description removed
-  - reward money removed (25c)
-- quest 31355 - Restoring Jade's Purity - updated
-  - description removed
-  - reward money removed (40g 80s)
-  - reward choices: -9
-- quest 31472 - Way of the Pot - updated
-  - reward items: counts corrected
-- quest 31528 - A Worthy Challenge: Darkmaster Gandling - updated
-  - description removed
-  - reward money removed (34g 20s)
-- quest 31702 - On The Prowl - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31708 - Serpent's Scale - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31728 - Bill Buckler - updated
-  - description removed
-  - reward money removed (8g 20s)
-  - reward items: -1
-- quest 31842 - Practice Makes Perfect: Master Kistane - updated
-  - description removed
-- quest 31911 - Deiza Plaguehorn - updated
-  - description removed
-  - reward money removed (90s)
-- npc 7435 - Cobalt Wyrmkin - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 7436 - Cobalt Scalebane - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 7437 - Cobalt Mageweaver - updated
-  - coordinates: 31 spawn points removed in Winterspring
-- npc 7445 - Elder Shardtooth - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 7447 - Fledgling Chillwind - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 7449 - Chillwind Ravager - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 7462 - Hederine Manastalker - updated
-  - coordinates: 40 spawn points removed in Winterspring
-- npc 52258 - Gri'lek - updated
-  - coordinates: 1 spawn point removed in Zul'Gurub
-- npc 52269 - Renataki - updated
-  - coordinates: 1 spawn point removed in Zul'Gurub
-- npc 52286 - Wushoolay - updated
-  - coordinates: 1 spawn point removed in Zul'Gurub
-- npc 69371 - Amalia Penshire - updated
-  - NPC title added (Plague Consultant)
-- npc 71424 - Wrathion - updated
-  - NPC title added (The Black Prince)
-- npc 73348 - Watcher Lara - updated
-  - NPC title added (The Timewalkers)
-
-## [0.2.280] - 2026-10-27
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 9,971 quests, 134 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 949 quests, 14 NPCs, 1 object
-- database - TBC Anniversary: data from the PandaQuest portal: 1,012 quests, 15 NPCs
-- quest 8703 - Ring of Eternal Justice - updated
-  - description added
-  - reward items: +1
-- quest 8789 - Imperial Qiraji Armaments - updated
-  - description added
-  - reward choices: +4
-- quest 9303 - Inoculation - updated
-  - description added
-  - reward items: +1
-  - reward choices: +2
-- quest 9314 - Word from Azure Watch - updated
-  - description added
-  - reward choices: +2
-- quest 9315 - Anok'suten - updated
-  - description added
-  - reward choices: +4
-- quest 9571 - The Kurken's Hide - updated
-  - description added
-  - reward choices: +2
-- quest 11212 - Tabetha's Farm - updated
-  - description removed
-- quest 11546 - Open for Business - updated
-  - description added
-  - reward items: +1
-- quest 12512 - Leave No One Behind - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 12515 - Nice Hat... - updated
-  - description added
-  - reward items: +1
-- quest 12928 - Norgannon's Shell - updated
-  - description added
-  - reward choices: +5
-- quest 12982 - Ebon Blade Prisoners - updated
-  - description added
-  - reward choices: +4
-- quest 13005 - The Earthen Oath - updated
-  - reward money removed (14g 80s)
-- quest 13010 - Krolmir, Hammer of Storms - updated
-  - description added
-  - reward choices: +4
-- quest 13142 - Banshee's Revenge - updated
-  - reward money removed (22g 20s)
-- quest 13319 - Chain of Command - updated
-  - reward money removed (7g 40s)
-- quest 13542 - Against the Wind - updated
-  - description added
-  - reward choices: +2
-- quest 13546 - The Defiler - updated
-  - reward money removed (11s)
-- quest 13568 - Spirit of the Moonstalker - updated
-  - description added
-- quest 13765 - A Valiant's Field Training - updated
-  - reward money removed (7g 40s)
-- quest 13847 - At The Enemy's Gates - updated
-  - description added
-- quest 13892 - Leave No Tracks - updated
-  - description added
-- quest 13902 - Mounting the Offensive - updated
-  - description added
-- quest 14108 - Get Kraken! - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 14266 - Charge - updated
-  - description added
-- quest 24526 - Filling Up the Spellbook - updated
-  - description added
-- quest 24548 - The Splintered Throne - updated
-  - reward money removed (14g 80s)
-- quest 24697 - How to Make Meat Fresh Again - updated
-  - description removed
-  - reward money removed (75s)
-  - reward choices: -3
-- quest 24698 - Adventures in Archaeology - updated
-  - description removed
-  - reward money removed (8s)
-- quest 24699 - Gormashh the Glutinous - updated
-  - description removed
-  - reward money removed (1g 65s)
-  - reward choices: -2
-- quest 24722 - The Northern Pylon - updated
-  - description removed
-  - reward money removed (80s)
-- quest 24726 - Crystal Force - updated
-  - reward items: counts corrected
-- quest 24743 - Shadow's Edge - updated
-  - reward items: -1
-- quest 24781 - More Than Expected - updated
-  - description removed
-  - reward money removed (25c)
-- quest 24858 - Bilgewater Cartel Represent - updated
-  - description removed
-  - reward money removed (2s 25c)
-  - reward choices: -2
-- quest 24859 - Naga Hide - updated
-  - description removed
-  - reward money removed (2s 25c)
-- quest 24866 - An Abandoned Research Camp - updated
-  - description removed
-  - reward money removed (40s)
-- quest 24868 - Surrender or Else! - updated
-  - description removed
-  - reward money removed (4s 50c)
-  - reward choices: -2
-- quest 24911 - Tropical Paradise Beckons - updated
-  - description removed
-  - reward money removed (40s)
-- quest 24924 - Oomlot Village - updated
-  - description removed
-- quest 24969 - Charging into Battle - updated
-  - description removed
-  - reward money removed (25c)
-- quest 25118 - Looking for Lurkers - updated
-  - description removed
-  - reward money removed (6s)
-- quest 25170 - Cleaning Up the Coastline - updated
-  - description removed
-  - reward money removed (1s 25c)
-- quest 25172 - Invaders in Our Home - updated
-  - description removed
-  - reward money removed (50c)
-  - reward choices: -3
-- quest 25211 - Cleaning Hovel - updated
-  - description removed
-  - reward money removed (13s)
-- quest 25280 - The Shrine Reclaimed - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25325 - Through the Dream - updated
-  - description added
-  - reward money added (5g 90s)
-  - reward choices: +3
-- quest 25330 - Waste of Flesh - updated
-  - description removed
-  - reward money removed (5g 90s)
-- quest 25443 - The Name Never Spoken - updated
-  - description removed
-- quest 25471 - Across the Great Divide - updated
-  - description removed
-  - reward money removed (78s)
-- quest 25553 - Death to the Broodmother - updated
-  - description removed
-  - reward money removed (16g 40s)
-  - reward choices: -3
-- quest 25584 - The Return of the Ancients - updated
-  - description removed
-  - reward money removed (3g 90s)
-- quest 25597 - Commander Jarod Shadowsong - updated
-  - description removed
-  - reward money removed (5g 90s)
-- quest 25656 - Scrambling for Eggs - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25670 - DUN-dun-DUN-dun-DUN-dun - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25732 - A Bone to Pick - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25746 - Sethria's Brood - updated
-  - description removed
-  - reward money removed (7g 80s)
-- quest 25825 - Deliver the Goods - updated
-  - description removed
-  - reward choices: -3
-- quest 25847 - Grimtotem Supremacy - updated
-  - description removed
-  - reward money removed (25s)
-- quest 25968 - Desperate Plan - updated
-  - description removed
-  - reward money removed (1g 95s)
-- quest 26000 - Spelunking - updated
-  - description removed
-- quest 26007 - Debriefing - updated
-  - description removed
-- quest 26057 - The Wavespeaker - updated
-  - description removed
-- quest 26353 - Captain Sanders' Hidden Treasure - updated
-  - description removed
-- quest 26365 - Hero's Call: Redridge Mountains! - updated
-  - description removed
-  - reward money removed (7s)
-  - reward choices: -4
-- quest 26395 - Dungar Longdrink - updated
-  - description removed
-- quest 26462 - The Wicked Revantusk - updated
-  - description removed
-  - reward money removed (30s)
-- quest 26505 - Parker's Report - updated
-  - description removed
-- quest 26638 - Hunting the Hunters - updated
-  - description removed
-  - reward money removed (10s)
-- quest 26686 - Bones That Walk - updated
-  - description removed
-  - reward money removed (13s)
-  - reward choices: -3
-- quest 26689 - The Rotting Orchard - updated
-  - description removed
-  - reward money removed (15s)
-- quest 26731 - The Altar of Naias - updated
-  - description added
-  - reward money added (20s)
-  - reward choices: +3
-- quest 26742 - Bloodscalp Insight - updated
-  - description removed
-  - reward money removed (20s)
-- quest 26762 - Reactivate the Constructs - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 26795 - Mor'Ladim - updated
-  - description removed
-  - reward money removed (18s)
-- quest 26817 - Perfectly Pure - updated
-  - description removed
-  - reward money removed (25s)
-- quest 26998 - Iterating Upon Success - updated
-  - description removed
-  - reward choices: -3
-- quest 27001 - This Means WAR (Wild Arachnid Roundup) - updated
-  - reward money removed (40s)
-- quest 27024 - Partners in Crime - updated
-  - description removed
-  - reward money removed (2g 53s)
-- quest 27031 - Wing Nut - updated
-  - description removed
-  - reward money removed (9s)
-- quest 27042 - Fight Fire and Water and Air with... - updated
-  - description removed
-  - reward money removed (17g 20s)
-  - reward choices: -3
-- quest 27101 - Maziel's Revelation - updated
-  - description removed
-- quest 27139 - Hobart Needs You - updated
-  - description removed
-- quest 27152 - Unusual Behavior... Even For Gnolls - updated
-  - description removed
-  - reward money removed (40s)
-- quest 27170 - The Abandoned Crypt - updated
-  - description removed
-  - reward money removed (20s)
-- quest 27226 - Hair of the Dog - updated
-  - description removed
-  - reward items: -1
-  - reward choices: -3
-- quest 27238 - Jaina Must Know - updated
-  - description removed
-- quest 27381 - Traveling Companions - updated
-  - description removed
-  - reward money removed (40s)
-- quest 27383 - Little Pamela - updated
-  - description removed
-  - reward money removed (25s)
-- quest 27433 - Shredderectomy - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27457 - An Opportune Alliance - updated
-  - description removed
-  - reward money removed (30s)
-- quest 27518 - Transdimensional Warfare: Chapter III - updated
-  - description removed
-  - reward choices: -3
-- quest 27535 - Just a Little Touched - updated
-  - description removed
-  - reward money removed (6s)
-- quest 27575 - From the Belly of the Beast - updated
-  - description removed
-  - reward money removed (20s)
-  - reward choices: -3
-- quest 27600 - In With a Bang - updated
-  - description removed
-  - reward money removed (1g 55s)
-  - reward choices: -4
-- quest 27620 - Like Rats - updated
-  - description removed
-  - reward money removed (1g 80s)
-  - reward choices: -3
-- quest 27647 - Anything But Water - updated
-  - description removed
-  - reward money removed (9g)
-  - reward choices: -3
-- quest 27725 - Quel'Danil Lodge - updated
-  - description removed
-  - reward money removed (17s)
-- quest 27772 - The Venerable Doctor Blam - updated
-  - description removed
-  - reward money removed (30s)
-- quest 27775 - When the Going Gets Tough, Cheat - updated
-  - description removed
-  - reward money removed (65s)
-  - reward choices: -5
-- quest 27803 - Welcome Relief - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27805 - Small Comforts - updated
-  - description removed
-  - reward money removed (9g)
-  - reward choices: -4
-- quest 27808 - Stubborn as a Doyle - updated
-  - description removed
-  - reward money removed (9g)
-- quest 27815 - Somethin' for the Boys - updated
-  - description removed
-  - reward money removed (4g 50s)
-  - reward choices: -3
-- quest 27829 - The Wrath of a Dragonflight - updated
-  - description removed
-- quest 27840 - Draenethyst Crystals - updated
-  - description removed
-  - reward money removed (80s)
-- quest 27859 - The Egg Lives On - updated
-  - objectives text removed
-  - reward money removed (2g 5s)
-  - reward items: -1
-- quest 27883 - The Warden's Pawn - updated
-  - description removed
-- quest 27894 - The Wrath of a Dragonflight - updated
-  - description removed
-- quest 27905 - Tailgunner! - updated
-  - description removed
-  - reward money removed (8g 60s)
-  - reward choices: -3
-- quest 27919 - Onward to the Blasted Lands - updated
-  - description removed
-  - reward money removed (40s)
-- quest 27951 - We All Must Sacrifice - updated
-  - description removed
-- quest 28028 - Siege! - updated
-  - description removed
-  - reward money removed (70s)
-- quest 28034 - Lunk's Adventure: Rendan's Weakness - updated
-  - description removed
-  - reward money removed (35s)
-- quest 28200 - The Element of Supplies - updated
-  - description removed
-  - reward money removed (8g 60s)
-  - reward choices: -4
-- quest 28254 - A Needle in a Hellhole - updated
-  - description removed
-  - reward money removed (7s)
-- quest 28271 - Reduced Productivity - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 28344 - Can You Smell What the Lok'tar is Cooking? - updated
-  - description removed
-- quest 28397 - They Will Never Expect This... - updated
-  - description removed
-  - reward money removed (15s)
-- quest 28458 - The Pyromancer's Grimoire - updated
-  - description removed
-  - reward money removed (1g 45s)
-  - reward items: -1
-- quest 28539 - Hero's Call: Stonetalon Mountains! - updated
-  - description removed
-- quest 28593 - Of Utmost Importance - updated
-  - description removed
-  - reward money removed (9g)
-- quest 28604 - Deception and Trickery - updated
-  - description removed
-  - reward choices: -4
-- quest 28633 - The Coffer of Promise - updated
-  - description removed
-  - reward money removed (8g 60s)
-- quest 28672 - The Executor In the Field - updated
-  - description removed
-  - reward money removed (25c)
-- quest 28797 - They Sent Assassins - updated
-  - description removed
-  - reward money removed (50c)
-  - reward items: -1
-- quest 28809 - Fear No Evil - updated
-  - description removed
-  - reward money removed (50c)
-  - reward items: -1
-- quest 29078 - Beating Them Back! - updated
-  - description removed
-  - reward money removed (50c)
-  - reward items: -1
-- quest 29120 - Mauti - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29196 - To the Sanctuary! - updated
-  - description removed
-  - reward money removed (94s)
-- quest 29198 - The Sanctuary Must Not Fall - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29199 - Calling for Reinforcements - updated
-  - description removed
-- quest 29275 - Fandral's Methods - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 29311 - The Rest is History - updated
-  - description removed
-  - reward money removed (37g 60s)
-  - reward items: -1
-- quest 29335 - Into Slashing Winds - updated
-  - description removed
-- quest 29401 - Blown Away - updated
-  - description removed
-  - reward money removed (12s)
-  - reward items: -1
-- quest 29414 - The Way of the Tushui - updated
-  - description removed
-  - reward money removed (50c)
-  - reward choices: -3
-- quest 29419 - The Missing Driver - updated
-  - description removed
-  - reward money removed (50c)
-  - reward items: -2
-- quest 29555 - The White Pawn - updated
-  - description removed
-  - reward money removed (9g 80s)
-  - reward items: -1
-- quest 29583 - Eckert the Mad - updated
-  - description removed
-  - reward money removed (36s)
-- quest 29677 - The Sun Pearl - updated
-  - description removed
-  - reward money removed (1s)
-  - reward choices: -3
-- quest 29730 - Scouting Report: Hostile Natives - updated
-  - description removed
-- quest 29791 - The Suffering of Shen-zin Su - updated
-  - description removed
-  - reward money removed (2s 25c)
-- quest 29796 - Urgent News - updated
-  - description removed
-  - reward money removed (3s)
-- quest 29835 - Gal'darah Must Pay - updated
-  - description removed
-  - reward money removed (27g 20s)
-  - reward choices: -4
-- quest 29933 - The Bees' Knees - updated
-  - description removed
-  - reward money removed (9g 80s)
-- quest 30065 - Arrows of Fortune - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 30092 - Our Man in Gilneas - updated
-  - description removed
-- quest 30099 - In Unending Numbers - updated
-  - description removed
-  - reward money removed (37g 60s)
-- quest 30152 - The Sky Race - updated
-  - description removed
-  - reward money removed (11g 40s)
-  - reward items: -1
-- quest 30157 - Emptier Nests - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 30592 - The Burlap Trail: To Burlap Waystation - updated
-  - description removed
-  - reward money removed (10g 60s)
-  - reward items: -1
-- quest 30611 - Unleash The Yeti! - updated
-  - description removed
-  - reward money removed (10g 60s)
-- quest 30969 - A New Enemy - updated
-  - description removed
-  - reward money removed (33s)
-- quest 30989 - An Old Pit Fighter - updated
-  - description removed
-  - reward money removed (35c)
-- quest 31106 - The Mogu Menace - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31182 - You Otter Know - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31220 - The Challenger's Ring: Hawkmaster Nurong - updated
-  - description removed
-  - reward money removed (22g 80s)
-- quest 31239 - What's in a Name Name? - updated
-  - description added
-- quest 31377 - Attack At The Temple of the Jade Serpent - updated
-  - description removed
-- quest 31474 - The Soup of Contemplation - updated
-  - description removed
-  - reward money removed (1g 14s)
-- quest 31551 - Got one! - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31780 - Old MacDonald - updated
-  - description removed
-  - reward money removed (70s)
-- npc 28136 - Crusader Jonathan - updated
-  - coordinates: 11 spawn points added in Zul'Drak
-- npc 28142 - Crusader Lamoof - updated
-  - coordinates: 7 spawn points added in Zul'Drak
-- npc 28148 - Crusader Josephine - updated
-  - coordinates: 5 spawn points added in Zul'Drak
-- npc 41098 - Gnaws - updated
-  - coordinates: 2 spawn points removed in Kelp'thar Forest
-- npc 68908 - Amber Kearnen - updated
-  - NPC title added (SI:7)
 
 ## [0.2.270] - 2026-10-26
 
