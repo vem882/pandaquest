@@ -2511,6 +2511,14 @@ ns.Overrides.wowhead = {
                 "please me further.",
             rewardChoices = {{9680, 1}, {9678, 1}, {9679, 1}},
         },
+        [1432] = {
+            description = "As the Alliance progresses deeper and deeper into Kalimdor, incorrect " ..
+                "conclusions may be drawn about the Horde making pacts with the Burning Legion. The " ..
+                "Warchief cannot allow that to happen. And with his blessing, I am taking control of " ..
+                "overseeing them removed.\n\nI have agents in the area of Desolace at the Ghost Walker " ..
+                "Post north of the great Kodo Graveyard. Head south of the Charred Vale in the Stonetalon " ..
+                "Mountains and you shall come across it. When you arrive, seek out Takata Steelblade.",
+        },
         [1437] = {
             description = "I am Vahlarriel, <name>. I've come here to discover the whereabouts of two " ..
                 "missing nobles of a Darnassian merchant family--House Malem. The father of the house " ..
@@ -3195,6 +3203,11 @@ ns.Overrides.wowhead = {
                 "have time. If I'm not mistaken, it came from the hunter trainer Jen'shan. She would have " ..
                 "words with you when you're ready.",
         },
+        [3084] = {
+            description = "Ah, while you were gone a tablet came for you, <name>.\n\nRead it when you " ..
+                "have time. If I'm not mistaken, it came from the shaman trainer Shikrik. She would have " ..
+                "words with you when you're ready.",
+        },
         [3085] = {
             description = "Ah, while you were gone a tablet came for you, <name>.\n\nRead it when you " ..
                 "have time. If I'm not mistaken, it came from the priest trainer Ken'jai. He would have " ..
@@ -3350,6 +3363,16 @@ ns.Overrides.wowhead = {
                 "gnome engineering at all.\n\nIf you still want to become a goblin engineer, sign this " ..
                 "document pledging life-long secrecy and speak with me again. Think about it carefully, " ..
                 "<name>.",
+        },
+        [3639] = {
+            description = "As your mentor, I want samples of your work. You're a skilled engineer; there " ..
+                "is no question of this, <name>. What I hope to do though is analyze them for ways to " ..
+                "emphasize goblin-oriented techniques in your future efforts. I need the following: " ..
+                "twenty big iron bombs, twenty sticks of solid dynamite, and five explosive sheep - and " ..
+                "keep the safeties armed!\n\nSubmit these items to me and I will issue you your own " ..
+                "Goblin Engineer Membership Card; it is required for access to all goblin engineering " ..
+                "trainers!",
+            rewardItems = {{10791, 1}},
         },
         [3643] = {
             description = "As your mentor, I want some samples of your work. You're a skilled engineer; " ..
