@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.276] - 2026-10-27
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,362 quests, 119 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 852 quests, 13 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 878 quests, 14 NPCs
+- quest 24432 - Sea Legs - updated
+  - description added
+- quest 24510 - Inside the Frozen Citadel - updated
+  - description added
+- quest 29556 - Hozen Aren't Your Friends, Hozen Are Your Enemies - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29992 - Tenderpaw By Name, Tender Paw By Reputation - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 31184 - Old Age and Treachery - updated
+  - description added
+  - reward money added (11g 40s)
+
 ## [0.2.275] - 2026-10-27
 
 Data from the PandaQuest portal.
