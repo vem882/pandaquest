@@ -2062,6 +2062,12 @@ ns.Overrides.wowhead = {
                 "bracers, and two green iron leggings - for this you learn and your enemies suffer!",
             rewardItems = {{7981, 1}},
         },
+        [2754] = {
+            description = "The final lesson Orokk teaches you, <name>. To the sacred anvil and forge you " ..
+                "return! Bring for Orokk two solid iron mauls, two silvered bronze boots, and two " ..
+                "silvered bronze gauntlets.\n\nSee the fear in their eyes as you approach!",
+            rewardItems = {{7980, 1}},
+        },
         [2755] = {
             description = "Orokk is not crying, <name>. Soot is in eye.\n\n<Orokk wipes a tear " ..
                 "away.>\n\nThere is one last Omosh family secret Orokk will teach you. Orokk will die " ..
@@ -2588,6 +2594,15 @@ ns.Overrides.wowhead = {
                 "Darkness is our home.\n\nSeek out Dark Cleric Beryl in Brill when you're ready to learn " ..
                 "more.",
         },
+        [6026] = {
+            description = "These here Argent Dawn people commissioned ol' Smokey to do a little " ..
+                "demolition work for 'em. Smokey's mammy ain't raised no dummy. When gold coin is slapped " ..
+                "on the table, Smokey's services are available. That's my motto!\n\nNow I'd be willing to " ..
+                "split the commission with you if you're willing to do a little legwork. Here's the deal: " ..
+                "I'm going to head over to Plaguewood and mark the buildings we need destroyed. You " ..
+                "gather the components for the bombs. Meet back here when you've got everything. Deal?",
+            rewardMoney = 17500,
+        },
         [6042] = {
             description = "You cannot take two steps off of this farm without running into one of those " ..
                 "obnoxious bats. I want to be able to take the hounds out and slaughter Scourge without " ..
@@ -2605,6 +2620,14 @@ ns.Overrides.wowhead = {
                 "best way to learn is for you to try out several creatures as companions and see what ya " ..
                 "like. So, find a large crag boar, then use the taming rod to tame it.",
             rewardXP = 840,
+        },
+        [6185] = {
+            description = "As I said, your first mission is one of reconnaissance. Nothing fancy, <name>. " ..
+                "You must travel to the Eastern Plaguelands and look for any clues as to this " ..
+                "Blightcaller.\n\nBe on the lookout for information about our missing operatives. We have " ..
+                "to assume that they are dead and if they are dead, they must have a corpse... " ..
+                "somewhere.\n\n<Flint swallows hard.>\n\nAll SI:7 agents carry this insignia.\n\n<Flint " ..
+                "shows you his SI:7 insignia.>\n\nBring any of those that you may find back to me.",
         },
         [6322] = {
             description = "I have placed the Sepulcher's supplies into this crate. If you have already " ..
@@ -3174,6 +3197,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{22516, 1}},
         },
         [9137] = {rewardChoices = {{22523, 1}, {22524, 1}}, rewardMoney = 900},
+        [9142] = {rewardItems = {{22568, 1}}},
+        [9182] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order BS-6020:\n\n3 " ..
+                "Huge Thorium Battleaxes.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
         [9184] = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order LW-971:\n\n10 " ..
@@ -3190,12 +3222,26 @@ ns.Overrides.wowhead = {
                 "tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
+        [9196] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order EN-7:\n\n20 " ..
+                "Thorium Grenades.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
         [9221] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
                 "would like to redeem for items of power?\n\nI must warn you; purchases made at a " ..
                 "friendly reputation with the Dawn come with a hefty surcharge. I would advise that you " ..
                 "gain a better reputation with the Dawn before moving forward with your plans.",
             rewardChoices = {{22681, 1}, {22680, 1}, {22688, 1}, {22679, 1}, {22690, 1}, {22689, 1}},
+        },
+        [9228] = {
+            description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
+                "would like to redeem for items of great power?\n\nThose exalted amongst the Dawn receive " ..
+                "our greatest discounts! I encourage you to make a purchase.",
+            rewardChoices = {{22657, 1}, {22667, 1}, {22668, 1}, {22659, 1}, {22678, 1}, {22656, 1}},
         },
         [9230] = {
             description = "Fixing this band may prove to be quite challenging, <name>. You see, it was " ..
