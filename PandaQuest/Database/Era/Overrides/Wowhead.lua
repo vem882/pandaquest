@@ -2161,6 +2161,14 @@ ns.Overrides.wowhead = {
                 "the tainted druids. But Nara is young and her spirit is fierce. She remained in the " ..
                 "dreaming when I fled.\n\nSpeak with Nara. She is in the tent, over yonder.",
         },
+        [1504] = {
+            description = "Now, observe the Tablet of Verga, for it contains the glyphs you will need for " ..
+                "the summoning. Take them to the circle in Neeru Fireblade's tent on the other side of " ..
+                "the cavern. There you will be able to call for the voidwalker.\n\nYou must defeat it " ..
+                "using whatever physical and magical means you have at your disposal. When this is " ..
+                "completed, return to me with the glyphs of summoning and I will demonstrate how you may " ..
+                "bind the creature to your will.",
+        },
         [1505] = {
             description = "The Horde honors its warriors because their strength is unquestioned. But the " ..
                 "truly great warriors are great students as well.\n\nSeek out Uzzek. He is a veteran of " ..
@@ -5019,6 +5027,12 @@ ns.Overrides.wowhead = {
                 "Thunderfury.",
             rewardItems = {{19019, 1}},
         },
+        [7842] = {
+            description = "They say the Wildhammer and gryphon are as close to each other as troll and " ..
+                "mate. Disgusting, but we be able to use this to our advantage, mon. We send them another " ..
+                "message.\n\nKill all the gryphons you see in the Hinterlands, collect their feathers. " ..
+                "From this we make the final message.",
+        },
         [7848] = {
             description = "Rifts stir, tear, and collapse all around us, <race>. Not two paces from where " ..
                 "I stand is a tear leading through the depths of Blackrock Mountain, into the maw of the " ..
@@ -5903,6 +5917,17 @@ ns.Overrides.wowhead = {
             rewardItems = {{22243, 1}},
             rewardXP = 1150,
         },
+        [65604] = {
+            description = "Yes... I see. I feel the residual emotions bound within these threads. Love is " ..
+                "woven into its stitches. The incubus will not be able to resist.\n\nTake this to the " ..
+                "summoning circle in Neeru's tent, <name>. Summon forth a malevolent incubus, then show " ..
+                "it your mastery. Do not expect it to be subdued quietly. Ready your magic and prepare " ..
+                "yourself for a fight. Underestimating a demon has been many a warlock's final " ..
+                "mistake.\n\nWhen you have defeated it, return the cloth to me. I will let Magar know " ..
+                "what you found.",
+            rewardItems = {{22243, 1}},
+            rewardXP = 1150,
+        },
     },
     npcs = {
         [4411] = {
@@ -5929,6 +5954,14 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 440,
+        },
+        [5676] = {
+            spawns = {
+                [1497] = {{86.4, 26.4}, {86.4, 26.6}, {86.6, 27}},
+                [1519] = {{25.2, 77.4}, {25.2, 77.6}, {25.6, 76.8}},
+                [1637] = {{49.4, 50}, {49.6, 50}},
+            },
+            zoneID = 1497,
         },
         [5677] = {
             spawns = {

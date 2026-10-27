@@ -4,6 +4,202 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.277] - 2026-10-27
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,320 quests, 122 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 855 quests, 14 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 885 quests, 14 NPCs
+- quest 8350 - Completing the Delivery - updated
+  - description added
+  - reward choices: +2
+- quest 8659 - Striker's Pauldrons - updated
+  - description added
+  - reward items: +1
+- quest 10303 - The Blood Elves - updated
+  - description added
+  - reward choices: +3
+- quest 12534 - The Sapphire Queen - updated
+  - description added
+  - reward choices: +4
+- quest 12554 - Malas the Corrupter - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 12720 - How To Win Friends And Influence Enemies - updated
+  - reward money removed (85s)
+- quest 12852 - The Admiral Revealed - updated
+  - reward money removed (14g 80s)
+- quest 12859 - This Just In: Fire Still Hot! - updated
+  - description added
+  - reward items: +2
+- quest 13132 - Vengeance Be Mine! - updated
+  - description added
+  - reward choices: +5
+- quest 13151 - A Royal Escort - updated
+  - description added
+  - reward choices: +4
+- quest 13560 - An Ocean Not So Deep - updated
+  - description added
+  - reward choices: +2
+- quest 13747 - A Worthy Weapon - updated
+  - description added
+  - reward items: +1
+- quest 13762 - A Blade Fit For A Champion - updated
+  - reward money removed (7g 40s)
+- quest 13783 - A Blade Fit For A Champion - updated
+  - description added
+  - reward items: +1
+- quest 13852 - At The Enemy's Gates - updated
+  - reward money removed (7g 40s)
+  - reward items: -1
+- quest 13953 - Naga In Our Midst - updated
+  - reward money removed (5s)
+- quest 14017 - The Black Knight's Fate - updated
+  - description added
+- quest 14412 - Washed Up - updated
+  - description added
+- quest 24428 - A Most Puzzling Circumstance - updated
+  - description added
+- quest 24495 - Pieces of the Past - updated
+  - description added
+- quest 24728 - Crystal Ward - updated
+  - reward items: counts corrected
+- quest 24981 - A Thorn in our Side - updated
+  - description removed
+  - reward money removed (2s 25c)
+- quest 25050 - Rocket Rescue - updated
+  - description removed
+  - reward money removed (65s)
+  - reward choices: -4
+- quest 25108 - Feegly the Exiled - updated
+  - description removed
+  - reward money removed (35s)
+  - reward choices: -3
+- quest 25110 - Kaja'Cola Gives You IDEAS! (TM) - updated
+  - description removed
+  - reward money removed (3s)
+- quest 25136 - Galgar's Cactus Apple Surprise - updated
+  - reward items: counts corrected
+- quest 25214 - Escape Velocity - updated
+  - description removed
+  - reward money removed (3s 50c)
+  - reward choices: -3
+- quest 25806 - They Put the Assass in... Never Mind - updated
+  - description removed
+- quest 25939 - For Peat's Sake - updated
+  - description removed
+  - reward money removed (17s)
+  - reward choices: -4
+- quest 26210 - Gammerita, Mon! - updated
+  - reward money removed (30s)
+- quest 26263 - Thornar Thunderclash - updated
+  - description added
+  - reward choices: +4
+- quest 26382 - Can't Make An Omelette Without... - updated
+  - reward money removed (35s)
+- quest 26645 - The Night Watch - updated
+  - description removed
+  - reward money removed (13s)
+- quest 26777 - Soothing Spirits - updated
+  - description removed
+  - reward money removed (17s)
+- quest 26904 - Corruption - updated
+  - description removed
+  - reward money removed (25c)
+- quest 26923 - War Machines - updated
+  - description added
+  - reward choices: +4
+- quest 27323 - Grimtotem Chiefs: Grundig Darkcloud - updated
+  - description removed
+  - reward money removed (1g 15s)
+- quest 27397 - Dreamseeker's Task - updated
+  - description removed
+  - reward choices: -2
+- quest 27580 - Sowing Discord - updated
+  - description removed
+- quest 27623 - Colossal Guardians - updated
+  - description removed
+  - reward money removed (8g 60s)
+- quest 27785 - The Admiral - updated
+  - description removed
+  - reward money removed (33s)
+- quest 27822 - Lumbering Oafs - updated
+  - description removed
+  - reward money removed (80s)
+  - reward choices: -3
+- quest 27833 - Half-Ton Holdouts - updated
+  - description removed
+  - reward choices: -5
+- quest 28120 - Learning From The Past - updated
+  - description removed
+  - reward money removed (18g 80s)
+- quest 28186 - Cursed Shackles - updated
+  - description removed
+  - reward money removed (18g 80s)
+- quest 28205 - A Perfect Costume - updated
+  - description removed
+  - reward money removed (1g 45s)
+- quest 28265 - General Thorg'izog - updated
+  - description removed
+  - reward money removed (40s)
+- quest 28591 - Off The Wall - updated
+  - description removed
+  - reward money removed (9g)
+- quest 28709 - Hero's Call: Northrend! - updated
+  - description removed
+- quest 29088 - Hyena Extermination - updated
+  - description removed
+  - reward money removed (8s)
+- quest 29251 - Booty Bay's Interests - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 29420 - The Spirit's Guardian - updated
+  - description removed
+  - reward money removed (20c)
+- quest 29587 - Unbound - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29726 - SI:7 Report: Hostile Natives - updated
+  - description removed
+- quest 29863 - Stormherald Eljrrin - updated
+  - description removed
+  - reward money removed (74s)
+- quest 29887 - The Elder's Instruments - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 30280 - The Thunder Below - updated
+  - description removed
+  - reward money removed (45g 60s)
+- quest 30600 - No Pack Left Behind - updated
+  - description removed
+  - reward money removed (10g 60s)
+  - reward items: -1
+- quest 31062 - When The Dead Speak - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31204 - Target of Opportunity: Sra'thik Hivelord - updated
+  - description removed
+  - reward money removed (11g 40s)
+- quest 31380 - Trial At The Temple of the White Tiger - updated
+  - description removed
+- quest 31526 - A Worthy Challenge: Durand - updated
+  - description removed
+  - reward money removed (45g 60s)
+- quest 31549 - On The Mend - updated
+  - description removed
+  - reward money removed (4g 10s)
+- quest 31822 - Level Up! - updated
+  - description removed
+  - reward money removed (2s 25c)
+- npc 67905 - 7th Legion Paratrooper - updated
+  - data rewritten, nothing a player sees changed
+- npc 67997 - Narasi Snowdawn - updated
+  - NPC level added (90)
+- npc 68462 - Flowing Pandaren Spirit - updated
+  - NPC title added (Grand Master Pet Tamer)
+
 ## [0.2.276] - 2026-10-27
 
 Data from the PandaQuest portal.
