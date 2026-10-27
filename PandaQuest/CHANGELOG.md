@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.275] - 2026-10-27
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 10,358 quests, 119 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 777 quests, 12 NPCs, 1 object
+- database - TBC Anniversary: data from the PandaQuest portal: 784 quests, 14 NPCs
+- quest 29556 - Hozen Aren't Your Friends, Hozen Are Your Enemies - updated
+  - description removed
+  - reward money removed (9g 80s)
+- quest 29992 - Tenderpaw By Name, Tender Paw By Reputation - updated
+  - description removed
+  - reward money removed (10g 20s)
+- quest 31184 - Old Age and Treachery - updated
+  - description removed
+  - reward money removed (11g 40s)
+- npc 8518 - Rynthariel the Keymaster - updated
+  - coordinates: 6 spawn points added in Stonetalon Mountains
+
 ## [0.2.274] - 2026-10-26
 
 Data from the PandaQuest portal.

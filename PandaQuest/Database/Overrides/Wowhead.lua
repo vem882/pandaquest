@@ -60825,16 +60825,6 @@ ns.Overrides.wowhead = {
             rewardItems = {{73410, 1}},
             rewardMoney = 98000,
         },
-        [29556] = {
-            description = "We've located an Alliance wreck to the south. Unfortunately, the locals have " ..
-                "informed us that it's currently being scavenged by a group of creatures called " ..
-                "\"hozen.\"\n\nBy pillaging our wrecked ships, these creatures have already shown that " ..
-                "they aren't friendly. We can't have them taking spoils from our ships, stealing our " ..
-                "supplies, and worse, potentially capturing or killing any survivors.\n\nGet down there " ..
-                "and take them out! When you're done, meet up with Nodd Codejack, our SI:7 agent in the " ..
-                "area.",
-            rewardMoney = 98000,
-        },
         [29558] = {
             description = "I see you want to save your friend. I can help you, if you will help " ..
                 "me.\n\nFirst of all, it should be obvious that the fewer the Slingtail roaming around, " ..
@@ -63038,15 +63028,6 @@ ns.Overrides.wowhead = {
                 "Commander for me.\n\nOh, and if you run into the others, maybe you should tell them " ..
                 "where the Hidden Master is...",
             rewardMoney = 10200,
-        },
-        [29992] = {
-            description = "I'd like to go tell Xiao, Kang, and the others that I've found the hidden " ..
-                "master, but now he won't let me leave! He says I have to pass that test of bamboo " ..
-                "first.\n\n<Lin whispers:> How'd you do that, by the way?\n\nIt looks like, for the time " ..
-                "being, I'm stuck here practicing my punches against this rock. And my knuckles are about " ..
-                "to cave in.\n\nIf you could gather some jademoon leaves, I could prepare an ointment and " ..
-                "at least numb some of this pain.",
-            rewardMoney = 102000,
         },
         [29993] = {
             description = "Have you seen my son, Lo? He was here a moment ago and I told him we were " ..
@@ -69048,15 +69029,6 @@ ns.Overrides.wowhead = {
                 "think he's getting restless in that pen. Why don't you go talk to Soggy and let him " ..
                 "know.\n\nI'd say it's about time you meet the cap'n anyway.",
             rewardMoney = 11400,
-        },
-        [31184] = {
-            description = "Look, I ain't got reason to trust you, but there's a task I can't give to my " ..
-                "crew.\n\nI need you to search the wreck of our old ship, the Mist-Hopper, and bring back " ..
-                "the charter. It'd be sealed up in a silver tube, in a footlocker.\n\nIt's sort of, uh... " ..
-                "incriminating. I can't risk any of the crew finding it if they decide to visit the ol' " ..
-                "girl. She's resting on the Shelf of Mazu, to the west.\n\nI'd suggest riding a rip " ..
-                "current out there, if you got the stomach. They're all over the shelf.",
-            rewardMoney = 114000,
         },
         [31185] = {
             description = "Dog ain't my \"pet.\" He's a member of this crew, and my best friend. Saved my " ..
@@ -77569,6 +77541,12 @@ ns.Overrides.wowhead = {
         },
         [7937] = {spawns = {[1537] = {{69, 49}, {69.8, 49.2}}}, zoneID = 1537},
         [8125] = {spawns = {[440] = {{52.6, 28}}}, zoneID = 440},
+        [8518] = {
+            spawns = {
+                [406] = {{29.4, 16}, {29.4, 16.6}, {29.4, 18}, {29.6, 16.4}, {29.6, 17.2}, {29.8, 17.6}},
+            },
+            zoneID = 406,
+        },
         [9165] = {
             spawns = {
                 [490] = {
