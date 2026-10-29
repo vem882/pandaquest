@@ -4,6 +4,28 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.286] - 2026-10-29
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 286 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,767 quests, 19 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,794 quests, 30 NPCs, 1 object
+- npc 3650 - Asterion - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 5394 - Neeka Bloodscar - updated
+  - coordinates: 1 spawn point added in Badlands
+- npc 7777 - Rok Orhan - updated
+  - coordinates: 9 spawn points added in Feralas
+- npc 9274 - Dadanga - updated
+  - coordinates: 2 spawn points added in Un'Goro Crater
+- npc 9836 - Mathredis Firestar - updated
+  - coordinates: 2 spawn points added in Burning Steppes
+- npc 68504 - Dreadweaver Avartu - updated
+  - NPC level added (90)
+- npc 71139 - Wrathion - updated
+  - NPC title added (The Black Prince)
+
 ## [0.2.285] - 2026-10-29
 
 Data from the PandaQuest portal.
