@@ -4,6 +4,43 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.287] - 2026-10-29
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 300 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,786 quests, 19 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,804 quests, 30 NPCs, 1 object
+- npc 3516 - Arch Druid Fandral Staghelm - updated
+  - coordinates: 4 spawn points added in Darnassus
+- npc 3994 - Keeper Albagorm - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+- npc 4484 - Feero Ironhand - updated
+  - coordinates: 8 spawn points added in Ashenvale
+  - coordinates: 7 spawn points added in Darkshore
+- npc 6394 - Ruga Ragetotem - updated
+  - coordinates: 1 spawn point added in The Barrens
+- npc 6868 - Jarkal Mossmeld - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 8378 - Alexandra Blazen - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 9078 - Shadowmage Vivian Lagrave - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 9459 - Cyrus Therepentous - updated
+  - coordinates: 2 spawn points added in Burning Steppes
+- npc 10306 - Trull Failbane - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 11860 - Maggran Earthbinder - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+- npc 14921 - Rin'wosho the Trader - updated
+  - coordinates: 1 spawn point added in Northern Stranglethorn
+- npc 41098 - Gnaws - updated
+  - coordinates: 2 spawn points added in Kelp'thar Forest
+- npc 68430 - Arcanis Mechanica - updated
+  - NPC title added (Grand Magister Rommath's Guar...)
+- npc 71108 - Wrathion - updated
+  - NPC title added (The Black Prince)
+
 ## [0.2.286] - 2026-10-29
 
 Data from the PandaQuest portal.
