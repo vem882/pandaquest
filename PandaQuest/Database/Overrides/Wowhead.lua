@@ -61804,6 +61804,7 @@ ns.Overrides.wowhead = {
         [3430] = {spawns = {[17] = {{44.4, 59.2}, {44.6, 59.2}}}, zoneID = 17},
         [3639] = {spawns = {[148] = {{40.2, 59.4}, {40.2, 59.8}}}, zoneID = 148},
         [3644] = {spawns = {[148] = {{35.6, 43.4}, {35.8, 43.6}}}, zoneID = 148},
+        [3650] = {spawns = {[148] = {{44.2, 36.2}}}, zoneID = 148},
         [3663] = {spawns = {[331] = {{26.2, 38.4}, {26.2, 38.6}}}, zoneID = 331},
         [3667] = {
             spawns = {
@@ -61887,6 +61888,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 8,
         },
+        [5394] = {spawns = {[3] = {{6.4, 47}}}, zoneID = 3},
         [5397] = {spawns = {[405] = {{36.2, 79.2}}}, zoneID = 405},
         [5398] = {spawns = {[405] = {{74.8, 68}}}, zoneID = 405},
         [5428] = {
@@ -62221,6 +62223,15 @@ ns.Overrides.wowhead = {
         [7766] = {spawns = {[1519] = {{69.2, 14.6}, {73.2, 35.4}, {73.2, 35.6}}}, zoneID = 1519},
         [7771] = {spawns = {[440] = {{52.6, 45.8}}}, zoneID = 440},
         [7774] = {spawns = {[357] = {{37.6, 11.4}, {38.2, 10.2}, {42.4, 21.8}}}, zoneID = 357},
+        [7777] = {
+            spawns = {
+                [357] = {
+                    {73.4, 45.4}, {73.4, 46.2}, {73.4, 46.6}, {73.6, 46.2}, {74.2, 44.6}, {74.4, 44},
+                    {75.4, 43.6}, {75.6, 43.6}, {76.2, 43.4},
+                },
+            },
+            zoneID = 357,
+        },
         [7780] = {
             spawns = {
                 [47] = {
@@ -62301,6 +62312,7 @@ ns.Overrides.wowhead = {
             zoneID = 490,
         },
         [9238] = {spawns = {[400] = {{78.4, 74.4}, {78.4, 74.8}}}, zoneID = 400},
+        [9274] = {spawns = {[490] = {{43.4, 6.8}, {43.6, 7.2}}}, zoneID = 490},
         [9464] = {
             spawns = {
                 [361] = {
@@ -62322,6 +62334,7 @@ ns.Overrides.wowhead = {
         },
         [9560] = {spawns = {[46] = {{84.6, 68.8}}}, zoneID = 46},
         [9565] = {spawns = {[46] = {{84.8, 69}}}, zoneID = 46},
+        [9836] = {spawns = {[46] = {{65, 23.4}, {65, 23.6}}}, zoneID = 46},
         [9996] = {spawns = {[361] = {{34.2, 52.4}, {34.2, 52.6}}}, zoneID = 361},
         [10267] = {spawns = {[46] = {{65.2, 23.8}}}, zoneID = 46},
         [10300] = {
@@ -62773,6 +62786,7 @@ ns.Overrides.wowhead = {
         [68464] = {subName = "Grand Master Pet Tamer"},
         [68465] = {subName = "Grand Master Pet Tamer"},
         [68492] = {subName = "Tallstrider Handler"},
+        [68504] = {maxLevel = 90, minLevel = 90},
         [68560] = {subName = "Calf of Darkhide"},
         [68653] = {maxLevel = 90, minLevel = 90},
         [68695] = {maxLevel = 90, minLevel = 90},
@@ -62808,6 +62822,7 @@ ns.Overrides.wowhead = {
         [70921] = {subName = "The Black Prince"},
         [71027] = {subName = "SI:7"},
         [71085] = {maxLevel = 93, minLevel = 93, subName = "Terror of the High Seas"},
+        [71139] = {subName = "The Black Prince"},
         [71424] = {subName = "The Black Prince"},
         [71865] = {subName = "Warchief"},
         [71953] = {subName = "The White Tiger"},
