@@ -3516,6 +3516,13 @@ ns.Overrides.wowhead = {
                 "Marsh. She will instruct you on the creation of a powerful mage's implement.\n\nTabetha " ..
                 "'s shack lies deep in Dustwallow Marsh, west of Theramore.",
         },
+        [1954] = {
+            description = "The first step is to acquire an orb with power. The warlocks of the Burning " ..
+                "Blade have nice, high quality orbs... it's too bad they've bound demons into them! But " ..
+                "we can fix that, yes we can.\n\nGo to Desolace and snatch an infernal orb from a Burning " ..
+                "Blade summoner. You'll find summoners at the Mannoroc Coven.\n\nWhen you have the orb, " ..
+                "return to me.",
+        },
         [1955] = {
             description = "Now that we have a summoner's orb, we must exorcise the demon within it. I can " ..
                 "do that. That's the easy part.\n\nYou're the one who has the hard job. You're the one " ..
@@ -4381,6 +4388,14 @@ ns.Overrides.wowhead = {
                 "and the tauren barking orders. He means well, just don't get him riled up though!",
             rewardMoney = 14500,
         },
+        [3765] = {
+            description = "Stormwind -- such a bustling hub of activity.\n\nI have traveled from afar to " ..
+                "seek help. Often it is heard that brave adventurers roam these city streets.\n\nMy " ..
+                "brother, Gershala, requires assistance in Darkshore. He resides in the seaside town of " ..
+                "Auberdine.\n\nThe journey is a long and epic one. It is for this reason that I ask the " ..
+                "help of a seasoned <class> such as yourself.",
+            rewardMoney = 1300,
+        },
         [3782] = {
             description = "With what we call an Evergreen Pouch, we have cultivated Tharlendris seeds in " ..
                 "the soil from Un'Goro Crater. These seeds have blossomed into an array of random, potent " ..
@@ -4423,6 +4438,14 @@ ns.Overrides.wowhead = {
                 "you for all of your hard work.\n\n< Oralius seems to be losing touch with reality.>",
             rewardChoices = {{11867, 1}, {11868, 1}},
             rewardMoney = 24000,
+        },
+        [3843] = {
+            description = "A magnificent specimen, <name>. If this creature survives gestation, then " ..
+                "it'll be a healthy pet indeed!\n\nThere is one last thing I would suggest doing if you " ..
+                "plan on following through with this--head to Aerie Peak in the Hinterlands. Speak to a " ..
+                "dwarf there named Agnar Beastamer, he's a master animal handler and should be able to " ..
+                "guide you in the final steps of incubation.\n\nBut hurry, <name>, this egg is fragile " ..
+                "and will not last long without proper care.",
         },
         [3844] = {
             description = "A destroyed raft rests along the shoreline. Considering this is only a small " ..
@@ -4785,6 +4808,16 @@ ns.Overrides.wowhead = {
                 "sample of its bones could be delivered to Gwennyth Bly'Leggonde in Auberdine.",
             rewardMoney = 400,
         },
+        [4734] = {
+            description = "<name>, I've been working hard on a new device, the eggscilloscope! It's " ..
+                "designed to project a burst of cold energy at the egg of a black dragon... and freeze it " ..
+                "solid! Can you test it for me?\n\nI heard that high up in Blackrock Spire, the dragons " ..
+                "have a rookery where they hatch their eggs. That's where you'll have to go to test the " ..
+                "eggscilloscope, and then let me know how it worked!\n\nAnd don't worry. Frozen dragon " ..
+                "eggs should be harmless. It's the unfrozen ones you have to worry about!",
+            rewardItems = {{12144, 1}},
+            rewardMoney = 18000,
+        },
         [4735] = {
             description = "<name>, I'm finally ready for real samples of dragon eggs! Here, take this " ..
                 "collectronic module. It's designed to extract a dragon egg and prepare it for transport. " ..
@@ -4970,6 +5003,17 @@ ns.Overrides.wowhead = {
                 "that separate chests in Darkcloud Pinnacle hold these guarded messages.\n\n<name>, if " ..
                 "you succeed in this dangerous mission, I will reward you in kind.",
             rewardChoices = {{15457, 1}, {15458, 1}, {15459, 1}},
+        },
+        [5081] = {
+            description = "This information fills in the gaps to our otherwise impeccable intelligence of " ..
+                "Blackrock Spire.\n\nThe attack must be decisive, <name>.\n\nFirst their war master, the " ..
+                "troll Voone, must be destroyed. Without his battle plans, the Blackrock orcs will be " ..
+                "thrown into chaos.\n\nYou must then take out the ogre Highlord, Omokk. The cowardly " ..
+                "ogres of Blackrock are powerless without his leadership.\n\nLastly, the overlord of the " ..
+                "citadel: Wyrmthalak. With Wyrmthalak dead, their central command unit is without a " ..
+                "conduit.",
+            rewardChoices = {{13958, 1}, {13959, 1}, {13961, 1}, {13962, 1}, {13963, 1}},
+            rewardMoney = 18000,
         },
         [5086] = {
             description = "I've studied the sample you returned with, and while I can't say for sure, I " ..
@@ -5517,6 +5561,15 @@ ns.Overrides.wowhead = {
                 "arrival to begin your lesson.",
             rewardXP = 100,
         },
+        [6128] = {
+            description = "The water will serve as the base of the curative salve I shall make for the " ..
+                "gazelles. For curative properties, I need some earthroot. Herbalists know how to find " ..
+                "it, so if you are not familiar with this skill you'll need to find one to help us " ..
+                "out.\n\nFinally for potency, I need kodo horns - mere chips and fragments will not " ..
+                "suffice. Kodos you can handle wander the northern part of the Barrens; bring some down " ..
+                "for the greater good of the balance <name>, and fetch the horns for me.",
+            rewardXP = 740,
+        },
         [6130] = {
             description = "You've learned what it means to cure poison without the benefit of spiritual " ..
                 "aid. Remember what others must endure in fighting poisonous afflictions as you soon " ..
@@ -5665,6 +5718,10 @@ ns.Overrides.wowhead = {
                 "traveling through Windshear Crag or by heading north through Barrens. Zoram Strand is " ..
                 "far to the west of the forest. Be careful, <name>. There are forces there that will not " ..
                 "take to your presence kindly.",
+        },
+        [6566] = {
+            description = "It is good to see you again, <name>. The wind carries with it news from the " ..
+                "Eastern Kingdom.\n\nSit, listen.",
         },
         [6571] = {
             description = "We are in short supply of a few items at the Warsong lumber camp!\n\nPixel at " ..
@@ -5869,6 +5926,15 @@ ns.Overrides.wowhead = {
                 "blessing. For that, special horse feed is needed. Travel to Southshore first and speak " ..
                 "with Merideth Carlson on this... and prepare for more sacrifice.",
             rewardXP = 14300,
+        },
+        [7648] = {
+            description = "<Grimand wipes sweat from his brow, beaming with a sense of pride.>\n\nThere " ..
+                "you are, my friend. This is some of my finest work - as good as the barding I personally " ..
+                "made for Lord Shadowbreaker when he went for his own charger. I thank you for your trust " ..
+                "in me to provide for you the best.\n\nNo doubt Grayson will want to see the work for " ..
+                "himself as well. Take your barding to him, and give him my thanks for his honorable " ..
+                "business.",
+            rewardXP = 9550,
         },
         [7659] = {rewardItems = {{12687, 1}}},
         [7669] = {rewardItems = {{18746, 1}}},
@@ -6325,6 +6391,15 @@ ns.Overrides.wowhead = {
                 "with other minor components and I shall craft you leggings of great power.",
             rewardItems = {{21375, 1}},
         },
+        [8628] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21387, 1}},
+        },
         [8629] = {
             description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
                 "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
@@ -6536,6 +6611,15 @@ ns.Overrides.wowhead = {
                 "to take the fragment by force.\n\nLast I heard of him, he'd become a gladiator for the " ..
                 "Dark Iron dwarves. Getting him to fight you is going to present a bit of a challenge, " ..
                 "though.\n\nGather the following materials for me. You're going to need them.",
+        },
+        [8956] = {
+            description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
+                "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
+                "Valthalak's spell is to put the medallion back together. Return to Deliana and tell her " ..
+                "that Bodley is her only hope for finding the remaining pieces. Speak to her about any " ..
+                "rewards you've arranged for.\n\nI, for once, shall rest in peace. I wish you the best of " ..
+                "luck; you shall need every bit of it!",
+            rewardItems = {{22003, 1}, {22007, 1}, {22008, 1}},
         },
         [8969] = {
             description = "Now we have what we need, so it's time to discuss who it is that you'll be " ..
@@ -6997,6 +7081,11 @@ ns.Overrides.wowhead = {
                 "Additional materials are also required but your main concern should be getting those " ..
                 "frozen runes. Bring me what I need and I will restore the ring to its former glory.",
             rewardItems = {{22707, 1}},
+        },
+        [9242] = {
+            description = "Thanks to you and Omarion (May he rest in peace), I am now able to create " ..
+                "Polar gloves. All you need to do is bring me the materials and pay a small crafting fee.",
+            rewardItems = {{22662, 1}},
         },
         [9244] = {
             description = "Thanks to you and Omarion, may he rest in peace, I am now able to create Icy " ..
@@ -7768,6 +7857,15 @@ ns.Overrides.wowhead = {
                 "of the deceased, but the spirits of the brood have grown restless due to this " ..
                 "sacrilege.\n\nTo the west, across the Crimson Reach, you will find Ragefeather Ridge. " ..
                 "Venture to the owlkin encampments and recover the pilfered dragon bones.",
+        },
+        [9689] = {
+            description = "Many of the black dragonflight were slain during the attacks. One of them, a " ..
+                "lieutenant of Deathwing himself, still haunts this place. If you look to the heavens, " ..
+                "you can see his spectral countenance circling the skies. His hatred is so great that he " ..
+                "remains even in death.\n\nTake the bones that you gathered for me earlier to the top of " ..
+                "the mountain on this island and place them in the ever-burning pyre. This act should " ..
+                "signal Razormaw to descend. When he does, slay his undead form.",
+            rewardChoices = {{24346, 1}, {24348, 1}, {24347, 1}},
         },
         [9693] = {
             description = "What does Argus mean to you, <name>? Many draenei probably do not know or " ..
@@ -13052,6 +13150,7 @@ ns.Overrides.wowhead = {
                 "crush them when you are ready. Just give me the word.",
             rewardMoney = 88000,
         },
+        [11104] = {rewardChoices = {{29301, 1}, {29297, 1}, {29305, 1}}},
         [11108] = {description = "Come, highlord <name>. Illidan himself awaits us!", rewardMoney = 132000},
         [11111] = {rewardItems = {{32857, 1}}},
         [11113] = {rewardItems = {{32862, 1}}},
@@ -13581,6 +13680,8 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
     },
-    objects = {},
+    objects = {
+        [3714] = {spawns = {[17] = {{48.6, 84.8}, {49.4, 83.7}, {49.6, 83.6}}}, zoneID = 17},
+    },
     items = {},
 }
