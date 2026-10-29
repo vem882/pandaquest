@@ -1873,6 +1873,14 @@ ns.Overrides.wowhead = {
                 "belligerent beggar, but the naga are too much for me. You've got to help me, <name>!",
             rewardItems = {{3755, 1}},
         },
+        [572] = {
+            description = "The items you gathered from the feline beasts of the Vale are only the first " ..
+                "requirement for a powerful enchanted item. These jungle trinkets combined with my " ..
+                "shamanistic ritual will provide you with a very useful tool in assisting the Horde and " ..
+                "the Warchief.\n\nBut now you must gather for me some Jungle Stalker Feathers. The " ..
+                "feathers are traditionally worn by the beasts on their armbands. You will find a tribe " ..
+                "of the raptors directly south of Grom'gol, not far from the great arena.",
+        },
         [589] = {
             description = "Legends tell of a jewel, hidden deep in the heart of Stranglethorn. We call it " ..
                 "the Mind's Eye, and it has great powers. If you gain this Eye then, perhaps, we can use " ..
@@ -4806,6 +4814,10 @@ ns.Overrides.wowhead = {
                 "protectors or somethin', I don't know.\n\nI'll take care of the egg for now, why don't " ..
                 "you get me some good Silvermane stalker flanks for 'em to eat when he's hatched.",
         },
+        [4361] = {
+            description = "You must take this information back to King Magni, <name>. He will know what " ..
+                "to do!",
+        },
         [4386] = {rewardItems = {{11567, 6}}},
         [4402] = {
             description = "It sure gets hot out here in the Valley of Trials.\n\n< Galgar wipes his " ..
@@ -4902,6 +4914,16 @@ ns.Overrides.wowhead = {
                 "murlocs have scavenged this beast, enough of it remains to gather a suitable sample for " ..
                 "Gwennyth Bly'Leggonde in Auberdine.",
             rewardMoney = 300,
+        },
+        [4729] = {
+            description = "You're probably wondering what I'm doing out here. Look at the cages! Ain't it " ..
+                "obvious?\n\nI'm an animal lover, first and foremost, but a salesman by trade. I track " ..
+                "down exotic animals for the rich and famous and domesticate the beasts so they behave as " ..
+                "proper pets.\n\nNow you're probably wondering, \"What can I do for you, Kibler.\" The " ..
+                "answer is simple: Take this here beast cage and find me some worg pups. For that, I'll " ..
+                "domesticate a worg for you!",
+            rewardItems = {{12264, 1}},
+            rewardMoney = 9000,
         },
         [4730] = {
             description = "The half-devoured corpse of what might have been a giant sea mammal lies on " ..
@@ -5518,6 +5540,13 @@ ns.Overrides.wowhead = {
                 "world. To know that power exists that is not arcane and well within our grasp. That's " ..
                 "why it is my honor to direct you home, <name>.\n\nUr'kyo, your great priest in " ..
                 "Orgrimmar, has asked for your presence. You can find him in the Valley of Spirits.",
+        },
+        [5662] = {
+            description = "My respect to you and your kind, <name>. I normally teach only those of my own " ..
+                "tribe. Your lessons come from Aelthalyste in the city once called Lordaeron.\n\nYou " ..
+                "should return to her if you're to learn those abilities that set you apart from other " ..
+                "faiths.\n\nGo to the War Quarter in the Undercity and find your mistress there.",
+            rewardXP = 210,
         },
         [5678] = {
             description = "It is time for you to return to Stormwind, young one. Your superiors there " ..
@@ -6688,6 +6717,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{21531, 1}, {21532, 1}},
         },
         [8765] = {rewardChoices = {{21200, 1}, {21205, 1}}},
+        [8772] = {
+            description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
+                "been selected to target Hive'Zora waywatchers. Report back to Commander Mar'alith after " ..
+                "completing your task.",
+            rewardItems = {{20802, 1}},
+        },
         [8782] = {
             description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
                 "batch of uniform materials and bring them to Windcaller Proudhorn.",
@@ -6744,6 +6779,13 @@ ns.Overrides.wowhead = {
                 "ghosts and banshees of the Eastern Plaguelands should give us the different types of " ..
                 "ectoplasm we need. Be sure to place the distiller nearby before you harvest them!",
             rewardMoney = 9000,
+        },
+        [8939] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22062, 1}, {22066, 1}},
         },
         [8944] = {
             description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
@@ -7038,6 +7080,14 @@ ns.Overrides.wowhead = {
                 "craft Dreamwalker armor.",
             rewardItems = {{22490, 1}},
         },
+        [9093] = {
+            description = "Many heroes fell in the last war and many continue to perish at the hands of " ..
+                "the Scourge to this day. From the corpses of the fallen, the armor is stripped and taken " ..
+                "back to Naxxramas to be used for unknown purposes.\n\nRecover the desecrated armor and " ..
+                "wartorn armor scraps and supply to me the other material components I require and I will " ..
+                "craft Dreamwalker armor.",
+            rewardItems = {{22495, 1}},
+        },
         [9096] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
                 "those items, I found the tomes most enlightening. While the majority of the books were " ..
@@ -7185,6 +7235,14 @@ ns.Overrides.wowhead = {
                 "Wicked Leather Headbands.\n\nAll filled orders should be delivered to Packmaster " ..
                 "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
                 "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9185] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order LW-448:\n\n25 " ..
+                "Rugged Armor Kits.\n\nAll filled orders should be delivered to Packmaster Stonebruiser " ..
+                "at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if " ..
+                "tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9188] = {
@@ -9316,6 +9374,13 @@ ns.Overrides.wowhead = {
                 "are takin' gnomes now, and this particular one has a fascination with murlocs!\n\nWell, " ..
                 "he's gone off and set up shop in an old turtle shell on the northern shore of the " ..
                 "island. Go and have a look if you don't believe me!",
+        },
+        [10064] = {
+            description = "The Hand of Argus has established a forward base at Vindicator's Rest, but " ..
+                "they are sorely outnumbered by both the blood elves and mutated wildlife. Without " ..
+                "backup, their outpost is in danger of falling, and we'd have no way to keep an eye on " ..
+                "events near the Vector Coil.\n\nReport to Scout Jorli at Vindicator's Rest to the " ..
+                "northwest and offer her your assistance, <name>.",
         },
         [10065] = {
             description = "During our mission to reconnoiter the Sunhawks and their portal, I sustained a " ..
@@ -13366,6 +13431,15 @@ ns.Overrides.wowhead = {
                 "friends spirits to rest and avenge them, but Brogg need help preparing. For ritual, " ..
                 "Brogg need feathers with strong magic, like ones worn by raptors at Bloodfen Burrow to " ..
                 "the west of town.",
+            rewardMoney = 4500,
+        },
+        [11161] = {
+            description = "To make the totem Brogg will need for his ritual, he must use the essences of " ..
+                "the creatures who killed his friends. The hate and anger of Brogg 's enemies will fuel " ..
+                "the magic of his vengeance.\n\nTrack down Firemane ash tails, scouts, or scalebanes and " ..
+                "use Brogg's totem on their corpses. Only when the dragonkin die will they give up their " ..
+                "essences.\n\nThe creatures you seek swarm over the Den of Flame to the northwest and the " ..
+                "Stonemaul Ruins to the north.",
             rewardMoney = 4500,
         },
         [11181] = {
