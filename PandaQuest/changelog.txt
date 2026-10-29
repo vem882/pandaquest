@@ -4,6 +4,32 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.288
+- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 309 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,804 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,821 quests, 30 NPCs, 1 object
+- quest 13091 - The Art of Being a Water Terror - updated
+  - description added
+  - reward choices: +4
+- npc 2058 - Deathstalker Faerleia - updated
+  - coordinates: 2 spawn points added in Silverpine Forest
+- npc 2982 - Seer Graytongue - updated
+  - coordinates: 2 spawn points added in Mulgore
+- npc 4048 - [Deprecated for 4.x]Falfindel Waywarder - updated
+  - coordinates: 3 spawn points added in Feralas
+- npc 7852 - Pratt McGrubben - updated
+  - coordinates: 2 spawn points added in Feralas
+- npc 8380 - Captain Vanessa Beltis - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 9079 - Hierophant Theodora Mulvadania - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 14355 - Azj'Tordin - updated
+  - NPC title added (House of Shen'dralar)
+- npc 15481 - Spirit of Azuregos - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 71952 - Chi-Ji - updated
+  - NPC title added (The Red Crane)
+
 0.2.287
 - database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 300 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 1,786 quests, 19 NPCs, 3 objects
