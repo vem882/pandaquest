@@ -13322,7 +13322,6 @@ ns.Overrides.wowhead = {
             rewardItems = {{32863, 1}},
             rewardMoney = 132000,
         },
-        [11073] = {rewardMoney = 132000},
         [11075] = {
             description = "Your help is required at the Netherwing Mines, overseer <name>.\n\nTwo days " ..
                 "ago our mining operations came to a grinding halt when we made a grim discovery. A miner " ..
@@ -23859,7 +23858,6 @@ ns.Overrides.wowhead = {
             rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
             rewardMoney = 195000,
         },
-        [12935] = {rewardMoney = 195000},
         [12936] = {
             description = "You're not gonna believe this, pal. Your next fight is against Korrak the " ..
                 "Bloodrager! Looks like the Drakkari trolls are pulling a power play! And let me tell " ..
@@ -24379,7 +24377,6 @@ ns.Overrides.wowhead = {
                 "assistant.\n\nBeat the information out of his apprentice, and then dispose of the body.",
             rewardMoney = 74000,
         },
-        [13043] = {rewardMoney = 148000},
         [13044] = {
             description = "Across the Valley of Echoes, west of here, and through the Breach, is the " ..
                 "first Scourge encampment in Icecrown known as Scourgeholme. We fought a good fight at " ..
@@ -25077,9 +25074,6 @@ ns.Overrides.wowhead = {
                 "leap up to their ledges and devastate them while they sleep.",
             rewardMoney = 74000,
         },
-        [13161] = {rewardMoney = 148000},
-        [13162] = {rewardMoney = 148000},
-        [13164] = {rewardMoney = 222000},
         [13165] = {
             description = "The haze has been lifted. I can see as clearly now as the day that I plunged " ..
                 "the Ashbringer into my own heart to free my father's cursed soul: my last memory as a " ..
@@ -25630,7 +25624,6 @@ ns.Overrides.wowhead = {
                 "you were in for a fight.",
             rewardMoney = 74000,
         },
-        [13275] = {rewardMoney = 58000},
         [13276] = {
             description = "You know what to do, <class>.\n\nTake this kit and use the guts from their " ..
                 "abominations to create one of your own, then command it to attack the enemy forces at " ..
@@ -25826,7 +25819,6 @@ ns.Overrides.wowhead = {
             rewardChoices = {{43847, 1}, {43881, 1}, {43892, 1}, {43930, 1}, {43932, 1}},
             rewardMoney = 74000,
         },
-        [13321] = {rewardMoney = 74000},
         [13324] = {
             description = "Now that you have gathered all of the Prism cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -25864,8 +25856,6 @@ ns.Overrides.wowhead = {
             rewardChoices = {{39115, 1}, {39130, 1}, {39133, 1}, {39135, 1}, {39136, 1}},
             rewardMoney = 74000,
         },
-        [13354] = {rewardMoney = 74000},
-        [13356] = {rewardMoney = 74000},
         [13361] = {
             description = "Before the prince became a king, he fought many battles... but only one where " ..
                 "he came close to dying.\n\nIt was fought right here. After you let me show you what " ..
@@ -25930,7 +25920,6 @@ ns.Overrides.wowhead = {
             startedBy = {{32376}},
         },
         [13387] = {rewardMoney = 74000},
-        [13391] = {rewardMoney = 58000},
         [13394] = {
             description = "You're going to use this machine against the Scourge? You're not going to win " ..
                 "against them like that.\n\nYou can destroy hundreds... even thousands of them. But you " ..
@@ -25956,8 +25945,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{39115, 1}, {39130, 1}, {39133, 1}, {39135, 1}, {39136, 1}},
             rewardMoney = 74000,
         },
-        [13400] = {rewardMoney = 148000},
-        [13403] = {rewardMoney = 222000},
+        [13403] = {
+            description = "Just this morning, my scouts informed me of a Cult of the Damned procession " ..
+                "leaving from Icecrown Citadel to the Cathedral of Darkness, bearing an artifact.\n\nAnd " ..
+                "now I learn that it might be Arthas's own heart... a thing containing the last bit of " ..
+                "his remaining humanity.\n\nThis is a sign of the Light. As long as such an artifact " ..
+                "exists, there is a chance that Arthas Menethil can become a man again!\n\nMeet me at the " ..
+                "cathedral's entrance. Be sure to bring a cultist's hood -- we're going incognito.",
+            rewardChoices = {{44745, 1}, {44746, 1}, {44747, 1}, {44748, 1}},
+            rewardMoney = 222000,
+        },
         [13408] = {
             description = "The Hellfire Citadel wages constant battles with our forces. We are holding " ..
                 "our own so far, but we can't yet launch a real offensive against them. To do that, we " ..
@@ -27003,12 +27000,7 @@ ns.Overrides.wowhead = {
                 "to summon our operative there. Do whatever he might require of you.\n\nDismissed!",
             rewardMoney = 700,
         },
-        [13809] = {
-            rewardChoices = {{46114, 1}, {45724, 1}},
-            rewardItems = {{199210, 1, "Northrend Adventuring Supplies"}},
-        },
         [13810] = {rewardChoices = {{46114, 1}, {45724, 1}}},
-        [13811] = {rewardChoices = {{46114, 1}, {45724, 1}}},
         [13815] = {
             description = "As you've been told by now, we are to escort a diplomat from within the " ..
                 "besieged lumber camp to safety.\n\nAs it stands, that's simply impossible. The elves " ..
@@ -27202,7 +27194,6 @@ ns.Overrides.wowhead = {
             rewardItems = {{44987, 1}},
             rewardMoney = 74000,
         },
-        [13861] = {rewardChoices = {{46114, 1}, {45724, 1}}, rewardMoney = 74000},
         [13863] = {
             description = "As some crusaders prepare for the tournament, they have sent others to make an " ..
                 "assault on the enemy's stronghold of Icecrown Citadel.\n\nIn the Court of Bones in " ..
@@ -27397,6 +27388,15 @@ ns.Overrides.wowhead = {
                 "Magmathar so that we may bring him into balance once more.",
             rewardChoices = {{56687, 1}, {56688, 1}, {56686, 1}},
             rewardMoney = 3500,
+        },
+        [13889] = {
+            description = "The venomhide hatchling looks at you expectantly, then begins to scrawl a " ..
+                "pictogram into the dirt.\n\nThe drawings are rough, but you can make out the shapes of " ..
+                "diemetradons, stegodons, and pterrordaxes. As the raptor finishes the sketch, it looks " ..
+                "up at you, bares its teeth, and makes a biting motion.\n\nYour venomhide hatchling must " ..
+                "be craving fresh meat from these animals. Find and kill any type of diematradon, " ..
+                "stegodon, or pterrordax in Un'Goro Crater and feed its meat to your hungry hatchling.",
+            rewardItems = {{47196, 1}},
         },
         [13890] = {
             description = "This is no small task, <race>!\n\nWe have more ships arriving, and without the " ..
@@ -31096,10 +31096,6 @@ ns.Overrides.wowhead = {
             description = "Quickly, through the portal! I'll find you on the other side.",
             rewardMoney = 19000,
         },
-        [24683] = {
-            description = "Quickly, through the portal! I'll meet you on the other side.",
-            rewardMoney = 19000,
-        },
         [24684] = {
             description = "<Gann grasps you with a blood-caked hand.>\n\nMy wounds are great but I will " ..
                 "not rest until the dwarves of Bael Modan pay for their crimes. <Wheeze> We smuggled a " ..
@@ -31230,13 +31226,6 @@ ns.Overrides.wowhead = {
                 "to escape with so many men lost and so few to keep our path in secure.\n\nContinue on. I " ..
                 "will meet you in the Halls of Reflection.",
             rewardMoney = 19000,
-        },
-        [24712] = {
-            description = "We need to make our way up the main path and through the cave to Tyrannus' " ..
-                "rise.\n\nThere, he will be forced to confront us there lest we make our way into the " ..
-                "citadel proper.\n\nGo now, <class>. My men and I will be there to stand by you when the " ..
-                "confrontation with Tyrannus comes.",
-            rewardMoney = 296000,
         },
         [24713] = {
             description = "Keep moving, the sword is close.\n\nI need a moment to send one of my dark " ..
@@ -37315,16 +37304,6 @@ ns.Overrides.wowhead = {
             rewardChoices = {{61120, 1}, {61121, 1}, {61122, 1}, {61123, 1}},
             rewardMoney = 5000,
         },
-        [26364] = {
-            description = "Our cousins, the dwarves of Ironforge, have agreed to help us in the battle " ..
-                "against Razlo Crushcog. Mountaineer Stonegrind is a veteran who knows Dun Morogh well. " ..
-                "He and High Tinker Mekkatorque stand ready on a small snow-covered island in Iceflow " ..
-                "Lake to the north. Meet up with them there and let the high tinker know when you are " ..
-                "ready to face the traitor Crushcog.\n\nTake this orbital targeting device and use it " ..
-                "during the battle. It will help guide the high tinker's special weapons.",
-            rewardChoices = {{59050, 1}, {59051, 1}, {59052, 1}},
-            rewardMoney = 200,
-        },
         [26371] = {
             description = "Have you heard of Captain Grayson? Some say that he's the figment of a drunken " ..
                 "sailor's imagination, but anyone in Westfall will tell you that Grayson is real! He's a " ..
@@ -42426,13 +42405,6 @@ ns.Overrides.wowhead = {
                 "that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardChoices = {{62051, 1}, {62049, 1}},
         },
-        [27667] = {
-            description = "Now that you have gathered all of the Stone cards together into a deck, a " ..
-                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
-                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
-                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
-            rewardItems = {{62048, 1}},
-        },
         [27670] = {
             description = "My name is Nevin Twistwrench and I'm the commander of the Survivor Assistance " ..
                 "Facilitation Expedition, or S.A.F.E.\n\nI don't know how you managed to survive the " ..
@@ -46411,13 +46383,6 @@ ns.Overrides.wowhead = {
             rewardChoices = {{66887, 1}, {66889, 1}, {66890, 1}},
             rewardMoney = 328000,
         },
-        [28741] = {
-            description = "<Pip's helm buzzes.>\n\nGOOD GOLLY! Look at this place! A... Are those " ..
-                "Deathwing's claw marks on the ceiling?! And what's that creature in the center of the " ..
-                "chamber?\n\nI don't see Raz anywhere. Let's take care of this monster and find Raz!",
-            rewardChoices = {{66884, 1}, {66885, 1}, {66886, 1}},
-            rewardMoney = 328000,
-        },
         [28742] = {
             description = "Time for the big kill, pal! Shy-Rotam lurks in the north, the largest " ..
                 "frostsaber of them all.\n\nYou should feel honored. There's no fiercer game for a hunter " ..
@@ -48691,14 +48656,6 @@ ns.Overrides.wowhead = {
                 "our monastery.",
             rewardChoices = {{80798, 1}, {80799, 1}, {80800, 1}, {80801, 1}, {80802, 1}, {80803, 1}},
             rewardMoney = 98000,
-        },
-        [29641] = {
-            description = "They've been torturing me, trying to get me to tell them everything that I " ..
-                "know.\n\nThey fed the others to Hellmaw, and I was to be next. But I told them " ..
-                "nothing!\n\nThey're using special devices to make their summoning more powerful. You " ..
-                "must steal these devices!",
-            rewardChoices = {{28167, 1}, {28170, 1}, {28171, 1}, {28174, 1}},
-            rewardMoney = 88000,
         },
         [29644] = {
             description = "The Shadow Council has lost control of the cosmic being that they summoned " ..
@@ -56002,12 +55959,6 @@ ns.Overrides.wowhead = {
                 "least one pet at level 3 to use your trap!",
             rewardMoney = 114000,
         },
-        [31591] = {
-            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
-                "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
-                "I will continue your training. Good luck!",
-            rewardMoney = 106000,
-        },
         [31592] = {
             description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
                 "another day! Visit Jenova Stoneshield, our local stable master, to heal and revive your " ..
@@ -61790,6 +61741,7 @@ ns.Overrides.wowhead = {
             zoneID = 148,
         },
         [2921] = {spawns = {[3] = {{25.8, 44.4}, {25.8, 45}, {26, 45.6}}}, zoneID = 3},
+        [2930] = {spawns = {[148] = {{37.6, 43.4}}}, zoneID = 148},
         [2982] = {spawns = {[215] = {{42.4, 92}, {42.6, 92}}}, zoneID = 215},
         [2984] = {spawns = {[215] = {{32.8, 36}}}, zoneID = 215},
         [2991] = {spawns = {[215] = {{50, 81}}}, zoneID = 215},
@@ -62340,6 +62292,7 @@ ns.Overrides.wowhead = {
             zoneID = 406,
         },
         [8579] = {spawns = {[440] = {{67, 22.4}}}, zoneID = 440},
+        [8587] = {spawns = {[16] = {{22.4, 51.4}, {22.6, 51.4}}}, zoneID = 16},
         [9078] = {spawns = {[3] = {{3, 47.4}, {3, 47.6}}}, zoneID = 3},
         [9079] = {spawns = {[3] = {{3, 47.4}, {3, 47.8}}}, zoneID = 3},
         [9080] = {spawns = {[3] = {{5.8, 47.4}, {5.8, 47.6}}}, zoneID = 3},
@@ -62434,6 +62387,7 @@ ns.Overrides.wowhead = {
             zoneID = 361,
         },
         [11020] = {spawns = {[361] = {{38.4, 50.4}, {38.6, 50.4}}}, zoneID = 361},
+        [11023] = {spawns = {[28] = {{43.4, 83.4}, {43.4, 83.6}, {43.6, 83.4}, {43.6, 83.6}}}, zoneID = 28},
         [11610] = {spawns = {[28] = {{52, 28}}}, zoneID = 28},
         [11613] = {spawns = {[28] = {{57.4, 35.4}, {57.4, 35.8}, {57.8, 36}}}, zoneID = 28},
         [11629] = {spawns = {[618] = {{61.2, 38.8}}}, zoneID = 618},
@@ -62839,6 +62793,7 @@ ns.Overrides.wowhead = {
         [67628] = {maxLevel = 90, minLevel = 90},
         [67847] = {maxLevel = 90, minLevel = 90},
         [67905] = {rank = 0},
+        [67948] = {maxLevel = 15, minLevel = 15},
         [67951] = {rank = 0},
         [67993] = {maxLevel = 9999, minLevel = 9999},
         [67997] = {maxLevel = 90, minLevel = 90},
@@ -62849,6 +62804,7 @@ ns.Overrides.wowhead = {
         [68287] = {subName = "High Chieftain"},
         [68337] = {maxLevel = 90, minLevel = 90, subName = "Blademaster"},
         [68357] = {subName = "Korune Warlord"},
+        [68378] = {maxLevel = 90, minLevel = 90, subName = "Korune Warlord"},
         [68410] = {maxLevel = 90, minLevel = 90},
         [68430] = {subName = "Grand Magister Rommath's Guardian"},
         [68462] = {subName = "Grand Master Pet Tamer"},
@@ -62883,7 +62839,9 @@ ns.Overrides.wowhead = {
         [70270] = {subName = "Master Demonologist"},
         [70360] = {subName = "Ranger General of the Silver Covenant"},
         [70398] = {subName = "Fishing Trainer"},
+        [70438] = {subName = "The Black Prince"},
         [70476] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [70544] = {subName = "Herald of Rastakhan"},
         [70666] = {maxLevel = 92, minLevel = 92},
         [70678] = {maxLevel = 92, minLevel = 92},
         [70751] = {maxLevel = 90, minLevel = 90},

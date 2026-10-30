@@ -4,6 +4,88 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.290
+- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 322 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,841 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,846 quests, 32 NPCs, 1 object
+- quest 11073 - Terokk's Downfall - updated
+  - reward money removed (13g 20s)
+- quest 12935 - The Amphitheater of Anguish: Tuskarrmageddon! - updated
+  - reward money removed (19g 50s)
+- quest 13043 - The Sum is Greater than the Parts - updated
+  - reward money removed (14g 80s)
+- quest 13161 - The Rider of the Unholy - updated
+  - reward money removed (14g 80s)
+- quest 13162 - The Rider of Frost - updated
+  - reward money removed (14g 80s)
+- quest 13164 - The Fate of Bloodbane - updated
+  - reward money removed (22g 20s)
+- quest 13275 - Time to Hide - updated
+  - reward money removed (5g 80s)
+- quest 13321 - Retest Now - updated
+  - reward money removed (7g 40s)
+- quest 13354 - Chain of Command - updated
+  - reward money removed (7g 40s)
+- quest 13356 - Retest Now - updated
+  - reward money removed (7g 40s)
+- quest 13391 - Time to Hide - updated
+  - reward money removed (5g 80s)
+- quest 13400 - The Hunter and the Prince - updated
+  - reward money removed (14g 80s)
+- quest 13403 - Tirion's Gambit - updated
+  - description added
+  - reward choices: +4
+- quest 13809 - Threat From Above - updated
+  - reward items: -1
+  - reward choices: -2
+- quest 13811 - Among the Champions - updated
+  - reward choices: -2
+- quest 13861 - Battle Before The Citadel - updated
+  - reward money removed (7g 40s)
+  - reward choices: -2
+- quest 13889 - Hungry, Hungry Hatchling - updated
+  - description added
+  - reward items: +1
+- quest 24683 - The Pit of Saron - updated
+  - description removed
+  - reward money removed (1g 90s)
+- quest 24712 - Deliverance from the Pit - updated
+  - description removed
+  - reward money removed (29g 60s)
+- quest 26364 - Down with Crushcog! - updated
+  - description removed
+  - reward money removed (2s)
+  - reward choices: -3
+- quest 27667 - Darkmoon Earthquake Deck - updated
+  - description removed
+  - reward items: -1
+- quest 28741 - Ascendant Lord Obsidius - updated
+  - description removed
+  - reward money removed (32g 80s)
+  - reward choices: -3
+- quest 29641 - The Soul Devices - updated
+  - description removed
+  - reward money removed (8g 80s)
+  - reward choices: -4
+- quest 31591 - Learning the Ropes - updated
+  - description removed
+  - reward money removed (10g 60s)
+- npc 2930 - Sentinel Glynda Nal'Shea - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 8587 - Jediga - updated
+  - coordinates: 2 spawn points added in Azshara
+- npc 11023 - Weldon Barov - updated
+  - coordinates: 4 spawn points added in Western Plaguelands
+- npc 67948 - Anduin Wrynn - updated
+  - NPC level added (15)
+- npc 68378 - Shan Kien - updated
+  - NPC title added (Korune Warlord)
+  - NPC level added (90)
+- npc 70438 - Wrathion - updated
+  - NPC title added (The Black Prince)
+- npc 70544 - Hekima the Wise - updated
+  - NPC title added (Herald of Rastakhan)
+
 0.2.289
 - database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 315 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 1,823 quests, 20 NPCs, 3 objects
