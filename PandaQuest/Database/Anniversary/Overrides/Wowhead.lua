@@ -1413,6 +1413,10 @@ ns.Overrides.wowhead = {
                 "self respecting dwarf would be - but if you can take care of those animals for us, then " ..
                 "we'd have more time for our crafting and brewing.",
         },
+        [325] = {
+            description = "Here is the weapon against the fiend of which you spoke. You're all ready, " ..
+                "<name>. Best of luck to you, and I look forward to your tale of glory!",
+        },
         [331] = {
             description = "Did Lieutenant Doren want you to report back to him with that patrol information?",
             rewardChoices = {{4139, 1}, {4123, 1}},
@@ -2124,6 +2128,12 @@ ns.Overrides.wowhead = {
                 "bodyguard Otto, although not a strategic target, is a fierce opponent and has killed " ..
                 "dozens of our defenders.\n\nTheir bounties may be collected from Captain Nials.",
             rewardChoices = {{5247, 1}, {4745, 1}},
+        },
+        [701] = {
+            description = "With some additional objects, I will be able to create an item that will imbue " ..
+                "Gor'mul with the guile of the raptor! With the power of the raptor flowing through him, " ..
+                "Gor'mul will know our new power and rediscover the warrior that lies dormant!\n\nI will " ..
+                "require raptor hearts to fashion the item and spell.",
         },
         [706] = {
             description = "As an apprentice to Feranor Steeltoe, I learned his special technique for " ..
@@ -5394,6 +5404,14 @@ ns.Overrides.wowhead = {
                 "was on a hill... she said it was on a hill.\n\nPlease, <name>. You're my new friend! " ..
                 "Will you talk to my Auntie for me?",
         },
+        [5157] = {
+            description = "Deep within Jaedenar lies Shadow Hold--the main fortress of their corruption " ..
+                "and evil.\n\nThe Shadow Council has protective spells surrounding their lair in the form " ..
+                "of braziers. If I am to find out any more information about our enemy through scrying, " ..
+                "then those braziers must be extinguished. By doing so, I should be able to spy on the " ..
+                "Council and find out who leads them.\n\nIf you can, take this canteen and fill it at the " ..
+                "Moon Well in the center of Jaedenar. Return to me afterwards.",
+        },
         [5159] = {
             description = "Thank the spirits, <name>. They are the ones that have come to your aid, not " ..
                 "me.\n\nI give this purified water to you now. Please give my regards to Greta and my " ..
@@ -6416,6 +6434,7 @@ ns.Overrides.wowhead = {
         [8104] = {rewardItems = {{19601, 1}}},
         [8108] = {rewardItems = {{19604, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
+        [8146] = {rewardItems = {{19619, 1}}},
         [8147] = {rewardItems = {{19620, 1}}},
         [8151] = {
             description = "Ogtinc of Azshara has sent out a call for seasoned hunters such as yourself. " ..
@@ -9128,6 +9147,13 @@ ns.Overrides.wowhead = {
                 "reasonable amount of moral flexibility. If you're interested, speak to Gezhe, our ground " ..
                 "operations leader. You will find him at Aeris Landing, north of Oshu'gun.",
         },
+        [9916] = {
+            description = "The Boulderfist have moved the supplies they stole from our village to the " ..
+                "twin clefts of Nagrand, found west of here in the Halaani Basin.\n\nWhile you are in the " ..
+                "area, keep your eye out for the supply crates. If we can get those back, it would ease " ..
+                "much of the burden that has fallen upon the matrons of Garadar.",
+            rewardChoices = {{25630, 1}, {25629, 1}, {25628, 1}},
+        },
         [9917] = {
             description = "Do my eyes deceive me or is there an ogre hunting party over yonder? What " ..
                 "could ogres be doing this far from their mound? I don't like this one bit, stranger. " ..
@@ -9315,6 +9341,14 @@ ns.Overrides.wowhead = {
                 "answers, go talk with him!",
         },
         [9982] = {
+            description = "A being riding atop a nether drake arrived in town late last week. He " ..
+                "introduced himself as Altruis and then proceeded to ask us several questions about " ..
+                "Nagrand.\n\nHe claimed that he was hunting Legion. That such insanity was actually his " ..
+                "job. Can you imagine? A person that would willingly hunt demons?\n\nBefore he left, he " ..
+                "asked that we let the would-be heroes in town know that he will be staying in western " ..
+                "Nagrand for awhile and that should they seek a purpose, to find him.",
+        },
+        [9983] = {
             description = "A being riding atop a nether drake arrived in town late last week. He " ..
                 "introduced himself as Altruis and then proceeded to ask us several questions about " ..
                 "Nagrand.\n\nHe claimed that he was hunting Legion. That such insanity was actually his " ..
@@ -10150,6 +10184,14 @@ ns.Overrides.wowhead = {
                 "took out their leader, I had to escape here to Area 52.\n\n<class>, go down there and " ..
                 "bring back their insignias. Of course, not all wear them because they're cowards.",
             rewardMoney = 39000,
+        },
+        [10264] = {
+            description = "The naaru of Shattrath City have been trying to find a means to bring the " ..
+                "Consortium over to their way of seeing things.\n\nLuck would have it that the business " ..
+                "relationship between the ethereals and the blood elves of the Netherstorm has recently " ..
+                "soured.\n\nThere's a Consortium representative in town named Nether-Stalker Khay'ji who " ..
+                "recently ran into trouble with a pack of renegade ethereals. As a representative of the " ..
+                "Scryers, I would like for you to help him in any way that you can.",
         },
         [10266] = {
             description = "While you were at the Arklon Ruins, I received a request for assistance from " ..
@@ -14014,6 +14056,15 @@ ns.Overrides.wowhead = {
                 "escaped.\n\nA fisherman of your caliber doesn't need to be told what to do--your destiny " ..
                 "awaits in the lakes of Nagrand.",
             rewardItems = {{34863, 1}},
+        },
+        [11885] = {
+            description = "The descendants held prisoner by the Skettis talonpriests are listed in this " ..
+                "book: Gezzarak the Huntress, Karrog the crystal giant, the heretic known as " ..
+                "Darkscreecher Akkarai and Vakkiz the Windrager. They will all need to be slain before " ..
+                "Terokk returns to this world.\n\nYou will need the scrolls carried by the time-lost " ..
+                "arakkoa to call them forth at the summoning circles in Skettis. These are powerful " ..
+                "beings you will be facing; you would do well to bring friends.",
+            rewardItems = {{32720, 1}},
         },
         [12515] = {
             description = "My hat? Yes, it's an unusual style, I know, from far away... few tailors here " ..

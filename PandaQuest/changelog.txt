@@ -4,6 +4,46 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.292
+- database - Wowhead data as the PandaQuest portal read it: 7,889 quests, 343 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,864 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,872 quests, 32 NPCs, 1 object
+- quest 14101 - Drottinn Hrothgar - updated
+  - reward money removed (7g 40s)
+- quest 27124 - Unfinished Gordok Business - updated
+  - description removed
+  - reward choices: -4
+- quest 29674 - Unbound Darkness - updated
+  - description removed
+- quest 31828 - Level Up! - updated
+  - description added
+  - reward money added (90s)
+- npc 531 - Skeletal Fiend - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 1008 - Mosshide Mongrel - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 2053 - Haggard Refugee - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 2103 - Dragonmaw Scout - updated
+  - coordinates: 21 spawn points added in Wetlands
+- npc 3980 - Raleigh the Devout - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 8961 - Felpaw Ravager - updated
+  - coordinates: 40 spawn points added in Felwood
+- npc 12296 - Sickly Gazelle - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 15424 - Anubisath Conqueror - updated
+  - coordinates: 11 spawn points added in Silithus
+- npc 17115 - Cursed Lost One - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 69009 - A.C.E. Saboteur - updated
+  - NPC level added (90)
+- npc 70276 - No'ku Stormsayer - updated
+  - NPC title added (Lord of Tempest)
+  - NPC level added (92)
+- npc 71955 - Yu'lon - updated
+  - NPC title added (The Jade Serpent)
+
 0.2.291
 - database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 331 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 1,852 quests, 20 NPCs, 3 objects
