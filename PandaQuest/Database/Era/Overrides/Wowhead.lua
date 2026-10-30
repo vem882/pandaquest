@@ -2936,6 +2936,14 @@ ns.Overrides.wowhead = {
                 "you won't be needing any of that, will you?",
             rewardChoices = {{4919, 1}, {4920, 1}},
         },
+        [790] = {
+            description = "<class>! I thought I would die out here with none to know of it. While I was " ..
+                "hunting the scorpids of the Valley, I came across a particularly vicious-looking one. " ..
+                "Hurling myself at it, I managed to inflict a massive blow to its claw before it closed " ..
+                "around my leg.\n\nI wasn't ready for its stinger though, and it sliced down and into my " ..
+                "chest, cutting into my flesh and letting my blood. Please, you must kill the scorpid for " ..
+                "me! My honor must be upheld! I fought it up on the plateau to the south.",
+        },
         [791] = {
             description = "Age has rendered me useless in battle. Now I make myself useful in other " ..
                 "ways.\n\nFrom this vantage point I watch for invaders. As our strength here grows, I " ..
@@ -3214,6 +3222,7 @@ ns.Overrides.wowhead = {
                 "Echeyakee. His lair is northeast of the Crossroads, among the bones of giant Kodo\n\nGo. " ..
                 "Blow this horn when you reach his lair. Blow the horn, and he will come.",
         },
+        [883] = {description = "The Hoof of Lakota'mani is a symbol of the strength of the great kodo."},
         [890] = {
             description = "I've been waiting forever for my last shipment of goods from Booty Bay! I'm " ..
                 "pretty sure that it must have been stolen by the Freebooters, but just to make sure, " ..
@@ -3886,6 +3895,15 @@ ns.Overrides.wowhead = {
                 "Shadowspear there to investigate what's happening to the land, but I have yet to hear " ..
                 "word back from her. I'm even more concerned because the Alliance sent a gnome mage along " ..
                 "with her... a sign of trouble for sure.\n\nWould you find her and report back to me?",
+        },
+        [1071] = {
+            description = "You see, <name>, I'm a member of the Enlightened Assembly of Arcanology, " ..
+                "Alchemy and Engineering Sciences, and it's my goal... nay, my DUTY! to show the night " ..
+                "elves that a blend of magic, mixtures, and mechanisms can help save their " ..
+                "forests.\n\nBut it's a hard fought war, and the goblins reproduce like rabbits it seems. " ..
+                "I haven't even had time to build my newest inventions!\n\nI need some time to plan and " ..
+                "organize. But to do that, I need your help keeping the goblins at bay in Windshear Crag " ..
+                "to the east...",
         },
         [1073] = {
             description = "Hahaha... you need Nitromirglyceronium to stop goblins from destroying a " ..
@@ -7378,6 +7396,15 @@ ns.Overrides.wowhead = {
                 "to the \"On\" position.\n\nThis is your last chance... are you sure this is what you " ..
                 "want to do?",
             rewardMoney = 16000,
+        },
+        [4261] = {
+            description = "Felwood was once a peaceful and serene land... Until the legion took hold. The " ..
+                "infernals, destruction, chaos...\n\nThe skull of Gul'dan ensured that none were spared " ..
+                "here. All fell to the corruption.\n\nEven now, as a spirit, I still find myself trapped, " ..
+                "bearing the suffering of this land. Help me find my way home. Please, <name>, tell me " ..
+                "you will lead an ancient spirit away from here, where I may finally rest.\n\nOnce I am " ..
+                "free, seek out Kayneth Stillwind, a druid that resides in Forest Song, to the east.",
+            rewardChoices = {{11873, 1}, {11874, 1}},
         },
         [4262] = {
             description = "The last five of my mages that went snooping around in Blackrock Mountain came " ..
@@ -11661,6 +11688,7 @@ ns.Overrides.wowhead = {
                 "Basin, <name>.",
             rewardMoney = 2500,
         },
+        [8379] = {rewardItems = {{20707, 1}, {20717, 1}}},
         [8380] = {rewardItems = {{20701, 1}, {20712, 1}}},
         [8388] = {rewardMoney = 9000, rewardXP = 6600},
         [8396] = {
@@ -12931,6 +12959,12 @@ ns.Overrides.wowhead = {
                 "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22421, 1}},
+        },
+        [9041] = {
+            description = "During your battles with the Scourge in Naxxramas, should you come across " ..
+                "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
+                "you a piece of armor worn by heroes.",
+            rewardItems = {{22422, 1}},
         },
         [9044] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
