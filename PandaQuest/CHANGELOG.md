@@ -4,6 +4,48 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.295] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 383 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,907 quests, 20 NPCs, 4 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,896 quests, 33 NPCs, 1 object
+- quest 27665 - Darkmoon Hurricane Deck - updated
+  - description removed
+  - reward choices: -2
+- npc 747 - Marsh Murloc - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 787 - Skeletal Healer - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 944 - Marryk Nurribit - updated
+  - coordinates: 1 spawn point added in Dun Morogh
+- npc 1022 - Mottled Scytheclaw - updated
+  - coordinates: 36 spawn points added in Wetlands
+- npc 1076 - Merrin Rockweaver - updated
+  - coordinates: 1 spawn point added in Wetlands
+- npc 1192 - Elder Mountain Boar - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 2261 - Syndicate Watchman - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2404 - Blacksmith Verringtan - updated
+  - coordinates: 18 spawn points added in Hillsbrad Foothills
+- npc 2438 - Bartolo Ginsetti - updated
+  - coordinates: 4 spawn points added in Hillsbrad Foothills
+- npc 3661 - Balthule Shadowstrike - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 3692 - Volcor - updated
+  - coordinates: 7 spawn points added in Darkshore
+- npc 10460 - Prospector Ironboot - updated
+  - coordinates: 1 spawn point added in Tanaris
+- npc 10537 - [Deprecated for 4.x]Cliffwatcher Longhorn - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 68342 - Kor'kron Soulbreaker - updated
+  - NPC level added (90)
+- npc 246242 - General Temuja - updated
+  - NPC level added (90)
+  - rank added (elite)
+
 ## [0.2.294] - 2026-10-30
 
 Data from the PandaQuest portal.
