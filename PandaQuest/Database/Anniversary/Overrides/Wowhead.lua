@@ -1461,6 +1461,14 @@ ns.Overrides.wowhead = {
                 "are out there somewhere...",
             rewardItems = {{2758, 1}},
         },
+        [343] = {
+            description = "I'm giving a speech on the Fortitude of the Spirit, and I'd like to recite " ..
+                "passages from a particular book on metallurgy - \"The Stresses of Iron.\" A copy of this " ..
+                "book should be in the Royal Library, within Stormwind Keep. Can you retrieve it for me? " ..
+                "If so, then may the blessings of the Light be with you!\n\nThe Royal Library is very " ..
+                "large, but the head librarian, Milton Sheaf, knows each shelf like it was his own son. " ..
+                "Speak to him, he'll retrieve the book for you.",
+        },
         [344] = {
             description = "The Stresses of Iron? Yes, I know the book. Quite a good one, written by the " ..
                 "Dwarven miner Margulf Blaggon a few decades ago. He spent most his time deep in the " ..
@@ -1542,6 +1550,12 @@ ns.Overrides.wowhead = {
                 "Vachon.\n\nKill Vachon along with 5 Scarlet Friars. It should prove to be a devastating " ..
                 "blow to the Crusade!",
             rewardMoney = 350,
+        },
+        [373] = {
+            description = "Searching Edwin VanCleef's person, you discover, among other things, an unsent " ..
+                "letter. It is addressed to Baros Alexston, the City Architect of Stormwind, City Hall, " ..
+                "Cathedral Square.\n\nIt appears to be recently written and sealed.",
+            rewardMoney = 700,
         },
         [374] = {
             description = "Executor Zygand tells me you've been out killing Scarlet Crusaders. Tirisfal " ..
@@ -1878,6 +1892,15 @@ ns.Overrides.wowhead = {
                 "is the closest town to the Ruins of Alterac. Go there and speak with Loremaster Dibbs. " ..
                 "He can direct you to the ruins, and to what books may be found there.",
         },
+        [539] = {
+            description = "The Hillsbrad Town Registry indicates that the Azureload Mine is under " ..
+                "Alliance control. Furthermore, the mine is a prime source of iron ore for the Alliance " ..
+                "armories.\n\nEven though we've struck a decisive blow to the town of Hillsbrad, the " ..
+                "Alliance still supports and protects the Azureload Mine fervently.\n\nThe mine lies due " ..
+                "south of Hillsbrad. Go there and slay the foreman, a human by the name of Bonds. Kill " ..
+                "his miners as well. That should send a clear message to the Alliance.",
+            rewardMoney = 2500,
+        },
         [540] = {
             description = "Those beastly ogres now reside within Alterac's ruins, and I shudder to think " ..
                 "what they're doing with the precious books still there. You must recover what you " ..
@@ -2135,6 +2158,15 @@ ns.Overrides.wowhead = {
                 "bodyguard Otto, although not a strategic target, is a fierce opponent and has killed " ..
                 "dozens of our defenders.\n\nTheir bounties may be collected from Captain Nials.",
             rewardChoices = {{5247, 1}, {4745, 1}},
+        },
+        [693] = {
+            description = "Hey, <name>. Sorry to be so short with ye earlier... and no, that ain't a " ..
+                "pun.\n\nI figured out where Trelane's first item ended up: Kor'gresh has it in " ..
+                "Boulderfist Hall. An' by the way he was throwing down blasts of ice at his kin to keep " ..
+                "them in line, he must be close to figurin' out how to use all of its " ..
+                "powers.\n\nBoulderfist Hall's south of here an' then east of Thandol Span. Find the ogre " ..
+                "an' get back that wand.\n\nWhile you're gone, I'll figure out what we're gonna do about " ..
+                "Stromgarde.",
         },
         [701] = {
             description = "With some additional objects, I will be able to create an item that will imbue " ..
@@ -2492,6 +2524,14 @@ ns.Overrides.wowhead = {
                 "the feathers they wear. Place the feathers on the scytheclaw nests southwest of the " ..
                 "Stagnant Oasis. Show their brethren you do not fear them!",
             rewardMoney = 900,
+        },
+        [906] = {
+            description = "Take Lok's head to Thork in the Crossroads, <race>. <snort> He should know " ..
+                "what has happened to my tribe without any words--ha, not that he would believe " ..
+                "Mangletooth helped in <snort> such things. But I am sure he'll reward you for carrying " ..
+                "out such a great deed. <snort>\n\nI will continue to bless you with Agamaggan's power " ..
+                "for as long as I remain in this cage, <race>. Until then, farewell.",
+            rewardChoices = {{5316, 1}, {5317, 1}},
         },
         [914] = {
             description = "The druids in the Wailing Caverns, the Druids of the Fang, are an aberration. " ..
@@ -8375,6 +8415,14 @@ ns.Overrides.wowhead = {
                 "a mission that I need you to accomplish. Will you do it? Will you seek out Edward on " ..
                 "Wyrmscar Island, northeast of your base?\n\nRegards,\n\nAdmiral Odesyus",
         },
+        [9673] = {
+            description = "Beyond bonding with your chosen pet, there remains the intricacies of caring " ..
+                "and training it. For this, Halthenis the beast trainer of Silvermoon City can show you " ..
+                "the way.\n\nHe always shows the utmost respect for my students, if they do the same for " ..
+                "him. Do not disappoint me.",
+            rewardItems = {{24136, 1}},
+            rewardXP = 420,
+        },
         [9678] = {
             description = "You have learned much of combat and bloodshed, initiate, but there is much " ..
                 "more to our order.\n\nMastery of the Light requires a focused mind and tremendous " ..
@@ -9184,6 +9232,10 @@ ns.Overrides.wowhead = {
                 "Their forward camp is about 200 paces east of here. You'll know you're at the right " ..
                 "place if you see the Boulderfist hunters. Kill them to find the plans!",
         },
+        [9920] = {
+            description = "You must seek out Mo'mor immediately! You will find him in the center of " ..
+                "Telaar, by the fountain. Tell him exactly what the ogre told you.",
+        },
         [9921] = {
             description = "These ogre hunting parties are a precursor to invasion. We must strike at them " ..
                 "before they have a chance to amass an army big enough to take over our town.\n\nYou're " ..
@@ -9862,6 +9914,14 @@ ns.Overrides.wowhead = {
                 "Oshu'gun fell silent. The ancestors turned their backs on us.\n\nYet something now draws " ..
                 "them from their rest. Venture to Oshu'gun and discover what could trouble the spirits so.",
         },
+        [10104] = {
+            description = "The rumors from Tuurem are unsettling. Some say the town's ruins are overrun " ..
+                "with crazed Broken and Lost Ones, while opportunistic artifact hunters steal draenei " ..
+                "relics.\n\nIt's hard to know which are true and which aren't, but we have a " ..
+                "responsibility to safeguard the ruins as best we can. Find Andarl at the Allerian " ..
+                "Stronghold in Terokkar Forest. He is something of a student of magical relics. More than " ..
+                "anyone else, he's likely to know what's going on there.",
+        },
         [10107] = {
             description = "Kilrath sends news of the Boulderfist leader: He is an orc! An ancient orc " ..
                 "that passed through the Dark Portal in the time of our fathers and has since returned to " ..
@@ -10321,6 +10381,14 @@ ns.Overrides.wowhead = {
                 "know it - will cease to exist.\n\nGather a group of adventurers and take the timeway to " ..
                 "old Hillsbrad. Two of our agents await you inside.\n\nSpeak with Erozion on the other " ..
                 "side.",
+        },
+        [10283] = {
+            description = "Taretha was integral in Thrall 's survival and upbringing and instrumental in " ..
+                "shaping Thrall 's life.\n\nIt was Taretha who created the original diversion at " ..
+                "Durnholde, allowing Thrall to escape.\n\nNow the Infinite have captured Taretha and hold " ..
+                "her at Tarren Mill. The diversion will not happen without our involvement. You must use " ..
+                "the incendiary devices that I give you and burn down the internment lodges in Durnholde. " ..
+                "When you have done this, speak with young Thrall in the basement prison of Durnholde.",
         },
         [10287] = {
             description = "I'm Arelion's friend, but I'm not going to take the beating of my life for " ..
@@ -12600,6 +12668,14 @@ ns.Overrides.wowhead = {
                 "his children has moved his heart. Seek Neltharaku out and enlist his aid. Together, you " ..
                 "may be able to solve the plight of the Netherwing drakes.\n\n< Mordenai points to the " ..
                 "sky.>\n\nFly high, friend...",
+        },
+        [10812] = {
+            description = "Ok, it should work now. What is it, you ask? Why, it's a communication device " ..
+                "- it allows those blockheads to communicate with each other. You know, the Burning " ..
+                "Legion! I would suggest that you hand this mask to Wildlord Antelarion. He's over there " ..
+                "pacing around. Always moving, he is.\n\nWell get moving, he's been trying to get his " ..
+                "hands on one of these for sometime now.",
+            rewardMoney = 10000,
         },
         [10814] = {
             description = "I have information that you may find useful. Please listen to what I have to " ..
