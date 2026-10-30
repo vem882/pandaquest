@@ -4,6 +4,70 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.296] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 406 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,916 quests, 20 NPCs, 4 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,913 quests, 33 NPCs, 1 object
+- quest 24845 - A Change of Heart - updated
+  - reward choices: +4
+- quest 29210 - Enduring the Heat - updated
+  - description removed
+  - reward money removed (9g 40s)
+- quest 31636 - Scarlet Halls Challenge Mode - Bronze Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- npc 1205 - Grawmug - updated
+  - coordinates: 6 spawn points added in Loch Modan
+- npc 2214 - Deathstalker Lesh - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 2263 - Marshal Redpath - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 2430 - Chef Jessen - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2788 - Apprentice Kryten - updated
+  - coordinates: 2 spawn points added in Arathi Highlands
+- npc 2792 - Gor'mul - updated
+  - coordinates: 1 spawn point added in Arathi Highlands
+- npc 4023 - Bloodfury Roguefeather - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4046 - Magatha Grimtotem - updated
+  - coordinates: 3 spawn points added in Thunder Bluff
+- npc 4150 - [Deprecated for 4.x]Saltstone Gazer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 5418 - Deathstalker Zraedus - updated
+  - coordinates: 3 spawn points added in Duskwood
+- npc 5677 - Summoned Succubus - updated
+  - coordinates: 9 spawn points added in Undercity
+  - coordinates: 4 spawn points added in Stormwind City
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 6886 - Onin MacHammar - updated
+  - coordinates: 2 spawn points added in Dun Morogh
+- npc 7765 - Rockbiter - updated
+  - coordinates: 1 spawn point added in Feralas
+- npc 7867 - Thorkaf Dragoneye - updated
+  - coordinates: 4 spawn points added in Badlands
+- npc 7884 - Fraggar Thundermantle - updated
+  - coordinates: 2 spawn points added in The Hinterlands
+- npc 9082 - Thal'trak Proudtusk - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 9084 - Thunderheart - updated
+  - coordinates: 3 spawn points added in Badlands
+- npc 10216 - Gubber Blump - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 11022 - Alexi Barov - updated
+  - coordinates: 2 spawn points added in Tirisfal Glades
+- npc 12738 - Nori Pridedrift - updated
+  - coordinates: 1 spawn point added in Dun Morogh
+- npc 12862 - Warsong Scout - updated
+  - coordinates: 2 spawn points added in Ashenvale
+- npc 14383 - Lorekeeper Kildrath - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14470 - Impsy - updated
+  - coordinates: 2 spawn points added in Felwood
+
 ## [0.2.295] - 2026-10-30
 
 Data from the PandaQuest portal.
@@ -394,64 +458,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 71139 - Wrathion - updated
   - NPC title added (The Black Prince)
-
-## [0.2.285] - 2026-10-29
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 279 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,753 quests, 19 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,769 quests, 30 NPCs, 1 object
-- quest 13288 - That's Abominable! - updated
-  - description added
-  - reward choices: +4
-- quest 29034 - They Grow Up So Fast - updated
-  - description added
-  - reward items: +2
-- npc 257 - Kobold Worker - updated
-  - coordinates: 35 spawn points added in Elwynn Forest
-- npc 724 - Burly Rockjaw Trogg - updated
-  - coordinates: 40 spawn points added in Dun Morogh
-- npc 1978 - Deathstalker Erland - updated
-  - coordinates: 7 spawn points added in Silverpine Forest
-- npc 3373 - Arnok - updated
-  - coordinates: 1 spawn point added in Orgrimmar
-- npc 7435 - Cobalt Wyrmkin - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7436 - Cobalt Scalebane - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7437 - Cobalt Mageweaver - updated
-  - coordinates: 31 spawn points added in Winterspring
-- npc 7447 - Fledgling Chillwind - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7449 - Chillwind Ravager - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7462 - Hederine Manastalker - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 7736 - Innkeeper Shyria - updated
-  - coordinates: 1 spawn point added in Feralas
-- npc 8509 - Squire Maltrake - updated
-  - coordinates: 2 spawn points added in Searing Gorge
-- npc 8579 - Yeh'kinya - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 10427 - [Deprecated for 4.x]Pao'ka Swiftmountain - updated
-  - coordinates: 14 spawn points added in Thousand Needles
-- npc 10739 - Mulgris Deepriver - updated
-  - coordinates: 1 spawn point added in Western Plaguelands
-- npc 11758 - Andi Lynn - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 14904 - Maywiki of Zuldazar - updated
-  - coordinates: 1 spawn point added in Northern Stranglethorn
-- npc 16113 - Father Inigo Montoy - updated
-  - coordinates: 1 spawn point added in Eastern Plaguelands
-- npc 16131 - Rohan the Assassin - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 16132 - Huntsman Leopold - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 68695 - Sunreaver Citizen - updated
-  - NPC level added (90)
-- npc 70666 - Ty'thar - updated
-  - NPC level added (92)
 
 ## [0.2.270] - 2026-10-26
 
