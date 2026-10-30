@@ -24637,7 +24637,13 @@ ns.Overrides.wowhead = {
                 "remain with you.",
             rewardMoney = 74000,
         },
-        [13083] = {rewardMoney = 222000},
+        [13083] = {
+            description = "< Crusader Bridenbrad's tabard rests in the bottom of the chest, shifting " ..
+                "slightly as the howling wind finds its way in.>\n\nTirion will desire this last remnant " ..
+                "of the great crusader.",
+            rewardChoices = {{44018, 1}, {44041, 1}, {44042, 1}, {44043, 1}, {44039, 1}},
+            rewardMoney = 222000,
+        },
         [13084] = {
             description = "Let us see if we can further weaken the resolve of the vrykul, <name>.\n\nEach " ..
                 "day I wish you to travel to Jotunheim and put their banners to the torch. It may seem a " ..
@@ -24685,7 +24691,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{43863, 1}, {43907, 1}, {43942, 1}, {43977, 1}},
             rewardMoney = 74000,
         },
-        [13092] = {rewardMoney = 74000},
+        [13092] = {
+            description = "One of the benefits of possessing this creature is that I have access to all " ..
+                "of her powers. As a bone witch and rune reader, she has the power to throw the bones and " ..
+                "determine one's fate.\n\n< The Bone Witch smirks.>\n\nLucky for you and I that I have it " ..
+                "within my power to influence those readings.\n\nBring me the bones of the vrykul that " ..
+                "you kill here in Jotunheim and I will toss them to allow you to determine your own fate.",
+            rewardChoices = {{43090, 1}, {43135, 1}, {43094, 1}, {43134, 1}, {43141, 1}},
+            rewardMoney = 74000,
+        },
         [13093] = {rewardChoices = {{43090, 1}, {43135, 1}, {43094, 1}, {43134, 1}, {43141, 1}}},
         [13094] = {
             description = "Archmage Berinand loaned me his research on the Arcanomicron, some sort of map " ..
@@ -61622,6 +61636,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 8,
         },
+        [751] = {
+            spawns = {
+                [8] = {
+                    {60.4, 85.4}, {60.6, 85.4}, {60.8, 83.4}, {62, 82.2}, {62.4, 84}, {62.4, 89},
+                    {62.8, 80.6}, {63, 89.2}, {63.2, 84.8}, {63.4, 86.6}, {63.6, 84.6}, {63.6, 91.6},
+                    {64, 83}, {64.2, 88.4}, {64.4, 90.2}, {64.6, 88.8}, {65, 86.8}, {65.6, 86.6}, {66, 75.4},
+                    {66.2, 76.4}, {66.2, 83.6}, {66.6, 85}, {67.4, 76.6}, {70.2, 96.6}, {82.4, 91},
+                    {83.4, 89}, {83.8, 89.4}, {86, 80.2}, {86.4, 79.2}, {87.4, 78}, {87.4, 80.8}, {88, 78.6},
+                    {88.2, 78.4}, {88.6, 75.8}, {88.8, 78.6}, {89.8, 74}, {89.8, 79.8}, {90.4, 68.6},
+                    {90.4, 72.6}, {91, 66.4},
+                },
+            },
+            zoneID = 8,
+        },
         [767] = {
             spawns = {
                 [8] = {
@@ -61635,6 +61663,19 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 8,
+        },
+        [785] = {
+            spawns = {
+                [10] = {
+                    {13.4, 33.4}, {13.6, 33.4}, {13.8, 33.6}, {14, 36.4}, {14, 36.6}, {15, 36.2},
+                    {15.4, 33.8}, {15.4, 37.4}, {15.4, 37.6}, {15.4, 38.6}, {15.6, 36.4}, {15.6, 37.2},
+                    {15.6, 38.6}, {15.8, 34.4}, {15.8, 34.8}, {16, 30.6}, {16, 37.6}, {16.2, 32.4},
+                    {16.2, 33.2}, {16.6, 31.8}, {16.6, 37.6}, {16.8, 28.6}, {16.8, 29.6}, {16.8, 37.4},
+                    {17, 31}, {17, 35.2}, {17.4, 28.2}, {17.4, 33.4}, {17.4, 33.6}, {17.6, 33.4},
+                    {17.6, 33.6}, {17.8, 28.4}, {17.8, 28.6}, {17.8, 35.4}, {18, 35.6},
+                },
+            },
+            zoneID = 10,
         },
         [787] = {
             spawns = {
@@ -61942,6 +61983,18 @@ ns.Overrides.wowhead = {
         [2093] = {spawns = {[11] = {{49.8, 39.4}, {50, 39.6}}}, zoneID = 11},
         [2094] = {spawns = {[11] = {{8.4, 55.8}, {8.6, 55.6}}}, zoneID = 11},
         [2097] = {spawns = {[11] = {{10.8, 55.8}}}, zoneID = 11},
+        [2102] = {
+            spawns = {
+                [11] = {
+                    {46.4, 76.4}, {47.2, 76.8}, {47.2, 77.6}, {47.4, 75.2}, {47.4, 76.2}, {47.6, 76},
+                    {47.8, 76.8}, {48, 74}, {48, 74.8}, {48, 77.6}, {48.6, 75.4}, {48.8, 77.8}, {49, 77},
+                    {49.2, 79.8}, {49.2, 82.4}, {49.4, 68.6}, {49.4, 76.4}, {49.4, 79.2}, {49.6, 76.8},
+                    {49.6, 79.4}, {49.6, 79.6}, {49.6, 80.6}, {49.8, 69.2}, {50, 69.8}, {50, 76.2},
+                    {50.2, 70.6}, {50.4, 82.4}, {50.6, 77}, {50.8, 79.6}, {51, 78.8}, {51.4, 78.4},
+                },
+            },
+            zoneID = 11,
+        },
         [2103] = {
             spawns = {
                 [11] = {
@@ -62260,6 +62313,7 @@ ns.Overrides.wowhead = {
         [4496] = {spawns = {[400] = {{79.8, 76.4}, {79.8, 76.6}}}, zoneID = 400},
         [4709] = {spawns = {[400] = {{79.8, 77}}}, zoneID = 400},
         [4722] = {spawns = {[400] = {{46, 51.4}, {46, 51.6}}}, zoneID = 400},
+        [4877] = {spawns = {[400] = {{46, 51.4}, {46, 51.6}}}, zoneID = 400},
         [4949] = {spawns = {[1637] = {{32, 37.8}, {32.6, 37.6}}}, zoneID = 1637},
         [5232] = {
             spawns = {
@@ -62800,6 +62854,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 361,
         },
+        [9077] = {spawns = {[3] = {{3, 47.6}, {5.8, 47.4}, {5.8, 47.6}}}, zoneID = 3},
         [9078] = {spawns = {[3] = {{3, 47.4}, {3, 47.6}}}, zoneID = 3},
         [9079] = {spawns = {[3] = {{3, 47.4}, {3, 47.8}}}, zoneID = 3},
         [9080] = {spawns = {[3] = {{5.8, 47.4}, {5.8, 47.6}}}, zoneID = 3},
@@ -62896,6 +62951,15 @@ ns.Overrides.wowhead = {
             zoneID = 14,
         },
         [10638] = {spawns = {[400] = {{21.2, 32}}}, zoneID = 400},
+        [10646] = {
+            spawns = {
+                [400] = {
+                    {30.8, 37}, {35.2, 31}, {37.2, 32}, {38, 26.4}, {38, 26.6}, {38.4, 30.2}, {38.6, 30},
+                    {38.8, 28.2}, {39, 29.4},
+                },
+            },
+            zoneID = 400,
+        },
         [10648] = {spawns = {[361] = {{39, 22.2}, {39.2, 21.4}, {39.6, 22.2}}}, zoneID = 361},
         [10739] = {spawns = {[28] = {{53.6, 64.6}}}, zoneID = 28},
         [10778] = {spawns = {[28] = {{38.4, 54}}}, zoneID = 28},
@@ -63377,10 +63441,12 @@ ns.Overrides.wowhead = {
         [67951] = {rank = 0},
         [67993] = {maxLevel = 9999, minLevel = 9999},
         [67997] = {maxLevel = 90, minLevel = 90},
+        [68041] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
         [68108] = {subName = "Leader of the Kirin Tor"},
         [68128] = {maxLevel = 90, minLevel = 90, subName = "The Metal Brewmaster"},
         [68150] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
+        [68169] = {maxLevel = 90, minLevel = 90, subName = "Champion of Ogudei"},
         [68223] = {subName = "Warchief"},
         [68287] = {subName = "High Chieftain"},
         [68337] = {maxLevel = 90, minLevel = 90, subName = "Blademaster"},
@@ -63402,6 +63468,8 @@ ns.Overrides.wowhead = {
         [68717] = {subName = "Legacy Justice Quartermaster"},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68908] = {subName = "SI:7"},
+        [68960] = {maxLevel = 90, minLevel = 90},
+        [69007] = {maxLevel = 90, minLevel = 90},
         [69009] = {maxLevel = 90, minLevel = 90},
         [69062] = {subName = "Trade Supplies"},
         [69293] = {maxLevel = 90, minLevel = 90},
@@ -63437,6 +63505,7 @@ ns.Overrides.wowhead = {
         [71108] = {subName = "The Black Prince"},
         [71139] = {subName = "The Black Prince"},
         [71424] = {subName = "The Black Prince"},
+        [71638] = {maxLevel = 91, minLevel = 91},
         [71865] = {subName = "Warchief"},
         [71952] = {subName = "The Red Crane"},
         [71953] = {subName = "The White Tiger"},
