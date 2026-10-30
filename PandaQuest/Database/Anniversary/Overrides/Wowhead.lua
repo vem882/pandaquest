@@ -1974,6 +1974,17 @@ ns.Overrides.wowhead = {
                 "tell him you spoke with me - I've been sending him quite a lot of business lately.",
             rewardMoney = 5000,
         },
+        [555] = {
+            description = "If there's one thing you'll learn about Southshore it's that we have some of " ..
+                "the best cuisine north of Stormwind!\n\nTake my secret recipe for Turtle Bisque, for " ..
+                "example. I've known folks to travel from as far as Darkshire just to enjoy a bowl. " ..
+                "Speaking of which, I haven't been able to make any lately. I used to head up past " ..
+                "Dalaran to Lake Lordamere myself to hunt Snapjaws but it's just too dangerous now. If " ..
+                "you bring me some Turtle Meat from the Snapjaws up north and Soothing Spices, I'll whip " ..
+                "some up!",
+            rewardItems = {{3737, 1}, {3729, 3}},
+            rewardMoney = 3000,
+        },
         [557] = {
             description = "The Magus will be busy studying those stone tokens you gathered, but I know " ..
                 "he'll eventually want examples of their counterpart: bracers of binding. These are set " ..
@@ -2891,6 +2902,16 @@ ns.Overrides.wowhead = {
                 "they were killed recently... it's something I don't like to think about much.\n\nWhen " ..
                 "you find the final piece, bring it to me and I will help you reconstruct the rod.",
         },
+        [1028] = {
+            description = "Here is the completed rod, <name>. Reconstructing it was simple... it's " ..
+                "finding the shrine that has the power to recharge it that will be the hard part.\n\nWith " ..
+                "some focus and effort it shouldn't be too hard for someone like you, who's already " ..
+                "accomplished so much.\n\nHead southeast of here--there are very few paths, so be " ..
+                "careful--and keep your eyes to the north. The shrine is hidden within the mountains that " ..
+                "surround this glade.\n\nOnce there, place the rod within the shrine... the rest is " ..
+                "magic. Hehe.",
+            rewardItems = {{5462, 1}},
+        },
         [1029] = {
             description = "I suggest you find Raene and let her know the rod is finished. I'm sure she'll " ..
                 "know what your next course should be.\n\nGood luck, <name>.",
@@ -3259,6 +3280,13 @@ ns.Overrides.wowhead = {
                 "surrounded! Can you help me out of here, and watch my back as I look for the bogbean?",
             rewardItems = {{3825, 1}},
             rewardMoney = 4000,
+        },
+        [1240] = {
+            description = "We must know the events surrounding Marg's death! And the only way to do that, " ..
+                "<name>, is through the witch-magic of trolls.\n\nBring Marg's head to Kin'weelay in " ..
+                "Stranglethorn Vale, at the Grom'gol Base Camp.\n\nKin'weelay is the most powerful " ..
+                "witchdoctor of the Darkspear trolls. If anyone can speak to Marg Nighteye's spirit, it " ..
+                "is he.",
         },
         [1243] = {
             description = "Jorgen, you ol' sonuva.... So, that's how it's going to be, huh?\n\nAll right, " ..
@@ -4923,6 +4951,14 @@ ns.Overrides.wowhead = {
                 "Enclave within Darnassus proper.",
         },
         [3804] = {rewardItems = {{11887, 1}}},
+        [3823] = {
+            description = "We must strike at our enemies before they strike at us!\n\nI'll make this " ..
+                "brief, soldier.\n\nThe Firegut ogres of the Burning Steppes are allies of the Blackrock " ..
+                "orcs. They work closely with those vile orcs, keeping the mineral rich Dreadmaul Rock " ..
+                "guarded and the supply lines open at all times.\n\nLeave your mark, <name>. Cripple " ..
+                "their forces and return to me when the job is done.\n\n< Oralius grabs at the air and " ..
+                "makes a choking motion.>\n\nI WILL KILL YOU, WINKY!",
+        },
         [3825] = {
             description = "Just one last thing you must do, soldier.\n\nI've taken the liberty of putting " ..
                 "Gor'tesh's head on a pike. Now all you have to do is take this head to the top of " ..
@@ -5236,6 +5272,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{11584, 10}},
             rewardMoney = 50,
         },
+        [4481] = {rewardItems = {{11642, 1}}},
         [4482] = {rewardItems = {{11643, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
         [4492] = {
@@ -5410,6 +5447,13 @@ ns.Overrides.wowhead = {
                 "also of the Burning Legion.\n\nFrom the Hatefury satyr in the northeast, bring me their " ..
                 "blood. From the lesser infernals in Mannoroc Coven, bring me a lesser infernal " ..
                 "stone.\n\nWe will use both in the construction of your robe.",
+        },
+        [4808] = {
+            description = "I have another favor to ask of you.\n\nMy initial study of the essence you " ..
+                "collected shows that it might be possible to freeze dragon whelp eggs and preserve them! " ..
+                "I want to test this theory, but first I need specially made engineering components. My " ..
+                "colleague, Felnok Steelspring, can make them.\n\nHere, take this letter to Felnok. It " ..
+                "tells him what I need. You'll find Felnok in Winterspring, in the town of Everlook.",
         },
         [4811] = {
             description = "Hostile moonkin roam in ever increasing numbers to our east. They once were " ..
@@ -6752,6 +6796,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{19287, 1}},
         },
         [8041] = {rewardItems = {{19574, 1}}},
+        [8046] = {rewardItems = {{19585, 1}}},
         [8047] = {rewardItems = {{19586, 1}}},
         [8070] = {
             description = "Shortly after the fall of the Gurubashi, we Zandalar almost succumbed to a " ..
@@ -7057,6 +7102,12 @@ ns.Overrides.wowhead = {
                 "them!",
             rewardMoney = 300,
         },
+        [8498] = {
+            description = "Our scouts have reported new battle orders being issued by the Twilight's " ..
+                "Hammer leaders. The orders are being distributed by Twilight Prophets under heavy " ..
+                "escort. Intercept the orders and bring them to Commander Mar'alith.",
+            rewardItems = {{20801, 1}, {20809, 1}},
+        },
         [8539] = {
             description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
                 "been selected to target Hive'Zora hive sisters. Report back to Commander Mar'alith after " ..
@@ -7309,6 +7360,13 @@ ns.Overrides.wowhead = {
             description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
                 "been selected to target Hive'Zora waywatchers. Report back to Commander Mar'alith after " ..
                 "completing your task.",
+            rewardItems = {{20802, 1}},
+        },
+        [8777] = {
+            description = "As the war effort mounts, the silithid presence in the area presents an ever " ..
+                "increasing threat to our operations. You've been selected to partake on an assault on " ..
+                "Hive'Regal where your primary target will consist of Hive'Regal burrowers.\n\nReport " ..
+                "back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
         },
         [8782] = {
@@ -8700,6 +8758,15 @@ ns.Overrides.wowhead = {
                 "journals serve as a record of their memories, Medivh's is literally just that?\n\nTry " ..
                 "it. Go to the Master's Terrace and read the page; you'll see just what I mean. Might as " ..
                 "well report to Alturus while you're at it. I'm afraid I'll be here for a while.",
+        },
+        [9646] = {
+            description = "By order of Harbinger Mikolaas: A bounty of 18 silver to be paid to the brave " ..
+                "soul who returns with proof of the marauding bear Deathclaw's demise.\n\nDeathclaw " ..
+                "should be considered extremely dangerous and is responsible for the killing of a survey " ..
+                "team on the coast to the northwest of Blood Watch. Travelers are advised to avoid the " ..
+                "area.",
+            rewardChoices = {{27398, 1}, {27400, 1}},
+            rewardMoney = 1800,
         },
         [9664] = {
             description = "Welcome to the Plaguelands, <name>. As you know, the Forsaken and their allies " ..
@@ -12973,6 +13040,14 @@ ns.Overrides.wowhead = {
                 "effects of the dust won't last long.",
             rewardMoney = 37000,
         },
+        [10801] = {
+            description = "There's nothing more that I hate in this world than the sons of Gruul and " ..
+                "their father! They slaughtered my people, and my children, and now I will have a taste " ..
+                "of revenge!\n\nI have fashioned a trap from some dragon fire, and if you're clever " ..
+                "enough, you might just be able to use it to kill a gronn.\n\nI'm sure that you have a " ..
+                "particular gronn in mind; it matters not to me which one you kill. Just hurry, take the " ..
+                "trap to your Commander Stonewall.\n\nMy thirst for revenge must be quenched!",
+        },
         [10802] = {
             description = "We must show the ogres that we are not to be trifled with. We must send a " ..
                 "message.\n\nTravel to Boulder'mok and kill the ogres there. Make sure you keep their " ..
@@ -14889,6 +14964,8 @@ ns.Overrides.wowhead = {
             zoneID = 3519,
         },
         [23096] = {spawns = {[3519] = {{44.4, 41.2}, {44.6, 41.2}}}, zoneID = 3519},
+        [23098] = {spawns = {[3519] = {{46.4, 38.6}, {46.8, 38.4}, {46.8, 38.6}}}, zoneID = 3519},
+        [23099] = {spawns = {[3519] = {{48.4, 39.6}, {48.6, 39.6}}}, zoneID = 3519},
         [23343] = {
             spawns = {
                 [3522] = {

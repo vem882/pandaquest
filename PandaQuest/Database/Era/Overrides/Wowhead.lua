@@ -2962,6 +2962,15 @@ ns.Overrides.wowhead = {
                 "It must be destroyed!\n\nGo to Far Watch Post, on the border of the Barrens to the west, " ..
                 "and speak with my assistant, Ak'Zeloth. He will direct you further.",
         },
+        [812] = {
+            description = "<name>... your timing is perfect. I just hope I can compliment your haste as " ..
+                "well.\n\nI was careless while fighting a few of the venomtails nearby, and one of them " ..
+                "stung me deeply. I can feel its poison weakening me even as we speak. At this rate, I " ..
+                "got maybe an hour left to live. But I'll need your help if I'm to do so...\n\nKor'ghan " ..
+                "in Orgrimmar knows how to make the antidote. Find him... and hurry, <name>. I won't be " ..
+                "able to last much longer. He should be in the Cleft of Shadow.",
+            rewardChoices = {{4937, 1}, {4929, 1}},
+        },
         [813] = {
             description = "Venomtails are some of the deadliest scorpids in Durotar. It was unwise for " ..
                 "Rhinag to hunt them without having some of the antidote with him, but right now, " ..
@@ -4250,6 +4259,13 @@ ns.Overrides.wowhead = {
                 "of power I can draw from the booster at any time. I told him I wanted it off! This is no " ..
                 "good.\n\nYou have to take this to the Gadgetzan Gizmorium in the Tanaris Desert and have " ..
                 "Shreev remove this.",
+        },
+        [1194] = {
+            description = "Rizzle's schematics describe the process of the refinement of indurium ore. " ..
+                "From his scrawls, it is apparent that indurium ore is being obtained from the dwarven " ..
+                "excavation site of Uldaman in the Badlands.\n\nMuch of the other notes relate to the " ..
+                "heat resistant properties.\n\nUsed as a paperweight for the plans is a hunk of what " ..
+                "appears to be unrefined indurium ore.",
         },
         [1195] = {
             description = "The Galak centaur in the Thousand Needles are protecting an artifact from the " ..
@@ -7229,6 +7245,7 @@ ns.Overrides.wowhead = {
         [4104] = {rewardItems = {{11516, 2}}},
         [4105] = {rewardItems = {{11516, 2}}},
         [4106] = {rewardItems = {{11516, 2}}},
+        [4108] = {rewardItems = {{11516, 2}}},
         [4109] = {rewardItems = {{11516, 2}}},
         [4111] = {rewardItems = {{11516, 2}}},
         [4112] = {rewardItems = {{11516, 2}}},
@@ -7653,6 +7670,14 @@ ns.Overrides.wowhead = {
                 "dangerous.\n\n< Kaltunk laughs.>\n\nReport to Gornek, he should be able to assign a task " ..
                 "better suited to a young <class>. You will find Gornek in the Den, to the west.",
         },
+        [4642] = {
+            description = "Here is some encased ooze created from the Felwood samples you recovered. Take " ..
+                "the case to Un'Goro Crater and find a pure ooze... the primal variety will do nicely. " ..
+                "When you get close enough, release the ooze in the case, and let us see what the two " ..
+                "think of one another.\n\nAfter the experiment concludes, bring me a sample of whatever " ..
+                "is left over. I will await you here in the Apothecarium.",
+            rewardChoices = {{15702, 1}, {15703, 1}},
+        },
         [4661] = {rewardItems = {{15103, 1}}},
         [4701] = {
             description = "You have no doubt seen the worgs which the Blackrock orcs command.\n\nIt is " ..
@@ -7838,6 +7863,13 @@ ns.Overrides.wowhead = {
         [4805] = {rewardItems = {{12459, 3}}},
         [4806] = {rewardItems = {{12460, 3}}},
         [4807] = {rewardItems = {{12458, 3}}},
+        [4809] = {
+            description = "I have most of what Tinkee needs, but I'm missing one important component, and " ..
+                "that's chillwind horns. The horns of the chillwind chimaera in Winterspring are a " ..
+                "concentrated source of cold, but only pristine, uncracked horns will do! I'll need a " ..
+                "supply of those to complete Tinkee's order.\n\nBring me the uncracked chillwind horns, " ..
+                "and I'll prepare a package for Tinkee.",
+        },
         [4811] = {
             description = "Hostile moonkin roam in ever increasing numbers to our east. They once were " ..
                 "thought to be gentle, almost mystical creatures. While some continue to hold reverence " ..
@@ -8060,6 +8092,14 @@ ns.Overrides.wowhead = {
                 "the Cap of the Scarlet Savant:\n\n*The pristine hide of the beast.\n\n* Frayed " ..
                 "abomination stitchings.\n\n* Arcane crystals.\n\n* Enchanted scarlet thread.\n\nBEHOLD!",
             rewardItems = {{12752, 1}},
+        },
+        [5066] = {
+            description = "Hear ye, hear ye! All heroes are called upon to heed these words!\n\nA call to " ..
+                "arms has been issued by the Kingdom of Stormwind! All able bodied individuals are " ..
+                "entreated to take up arms against the dark threat of the Scourge in the northern lands " ..
+                "of the Eastern Kingdoms! Rumors fly of new threats rising from the ruins of the " ..
+                "Plaguelands!\n\nHeroes of the realm - seek out Commander Ashlam Valorfist who has set up " ..
+                "his base camp in Chillwind Camp, north of the Alterac Mountains!",
         },
         [5067] = {
             description = "While the crafting of such an item has never successfully been accomplished, " ..
@@ -8807,6 +8847,11 @@ ns.Overrides.wowhead = {
             rewardChoices = {{16794, 1}, {16873, 1}},
             rewardMoney = 4500,
         },
+        [5582] = {
+            description = "This is a scale shed from a plagued dragon hatchling. But unlike the other " ..
+                "pocked, oozing scales on the infant beast, this rare scale is healthy and " ..
+                "unmarred.\n\nBetina Bigglezink will want a sample of this to study.",
+        },
         [5622] = {
             description = "<name>, you must travel to Dolanaar when your business here in Shadowglen is " ..
                 "done. There, you will find Laurna Morninglight. She will instruct you further in the " ..
@@ -8984,6 +9029,13 @@ ns.Overrides.wowhead = {
                 "me to train you. You must return to the Temple of the Moon and speak to Priestess " ..
                 "Alathea as soon as your business here is concluded. She will test you to ensure you're " ..
                 "prepared, and only then will she teach you Elune's Grace.",
+        },
+        [5675] = {
+            description = "Time's a wastin', <lad/lass>. It's time for you to return home to Darnassus. " ..
+                "Priestess Alathea 's sent word here that you're to return there for training. Seems they " ..
+                "feel you're ready to be tested much like those who serve the Light. You should head out " ..
+                "whenever you can. Alathea's message said that she'd be waitin' for you in the Temple of " ..
+                "the Moon. Good luck.",
         },
         [5678] = {
             description = "It is time for you to return to Stormwind, young one. Your superiors there " ..
@@ -9275,6 +9327,15 @@ ns.Overrides.wowhead = {
                 "and we will learn much about our scaled foes!",
             rewardChoices = {{16791, 1}, {16793, 1}},
             rewardMoney = 4500,
+        },
+        [6030] = {
+            description = "A recluse medium found in these parts by the name of Umbranse has provided the " ..
+                "Argent Dawn with quite a literary masterpiece... one that amounts to quite possibly the " ..
+                "largest collection of jibber-jabber I've ever seen written.\n\nOne of the Dawn's most " ..
+                "respected leaders, Duke Nicholas Zverenhoff, is a brilliant linguist. Could you take " ..
+                "this to him for me - for a reward, of course? Light's Hope Chapel - that's where he's " ..
+                "currently at, far in the eastern part of the Eastern Plaguelands.",
+            rewardMoney = 4000,
         },
         [6032] = {
             description = "Although the people of Timbermaw delight in the feel of runecloth, it is not " ..
@@ -9684,6 +9745,12 @@ ns.Overrides.wowhead = {
             rewardMoney = 350,
         },
         [6389] = {
+            description = "You look around the lumber mill for something suitable to open the barrel " ..
+                "with. You find a crowbar that looks like it will do the trick.\n\nYou set your feet and " ..
+                "pray that you'll be able to get out of the mill before the termites get to you.",
+            rewardMoney = 8500,
+        },
+        [6390] = {
             description = "You look around the lumber mill for something suitable to open the barrel " ..
                 "with. You find a crowbar that looks like it will do the trick.\n\nYou set your feet and " ..
                 "pray that you'll be able to get out of the mill before the termites get to you.",
@@ -10851,6 +10918,15 @@ ns.Overrides.wowhead = {
                 "to kill 'em.",
             rewardItems = {{19125, 1}},
             rewardMoney = 7000,
+        },
+        [7731] = {
+            description = "In surveying the Writhing Deep, one of our scouts reported seeing a giant " ..
+                "insect - much larger than the other insects spotted - wandering about the twisted " ..
+                "terrain. Not only is it larger, it also seems to secrete some sort of aura that the " ..
+                "other insects don't. We've given it a name - Stinglasher.\n\nThe innards of this beast " ..
+                "would be invaluable to study as we figure out the best way to deal with this new threat. " ..
+                "Cut out its secretion glands and bring it back to me immediately!",
+            rewardMoney = 13500,
         },
         [7761] = {
             description = "Imbecile,\n\nI hold very little faith in your ability to prevent outsiders " ..
@@ -13380,6 +13456,7 @@ ns.Overrides.wowhead = {
         },
         [9317] = {rewardItems = {{23122, 1}}},
         [9318] = {rewardItems = {{23123, 1}}},
+        [9321] = {rewardItems = {{13446, 1}}},
         [9333] = {rewardChoices = {{23084, 1}, {23081, 1}, {23082, 1}, {23078, 1}}},
         [9335] = {rewardItems = {{23122, 1}}},
         [9336] = {rewardItems = {{13446, 1}}},
