@@ -22012,7 +22012,14 @@ ns.Overrides.wowhead = {
                 "the fate that nearly befell you.",
             rewardMoney = 30000,
         },
-        [12639] = {rewardMoney = 65000},
+        [12639] = {
+            description = "We captured these elementals from nearby, and I have plenty of defenders now. " ..
+                "But, it takes a great deal of power to make them strong enough to stand up to our " ..
+                "enemies.\n\nThe frozen earth at Drak'Mabwa to the northwest have what I need to maintain " ..
+                "our defenses. I'll need more of their essence if I'm to keep this up.",
+            rewardChoices = {{39772, 1}, {39783, 1}, {39835, 1}, {39786, 1}},
+            rewardMoney = 65000,
+        },
         [12640] = {
             description = "Dagoda gonna be sendin' you northwest to Drak'Mabwa to get her more stuff for " ..
                 "her defenders if she didn't already.\n\nWhile you up there, Ahunae be wantin' you to " ..
@@ -28210,7 +28217,16 @@ ns.Overrides.wowhead = {
                 "will want to see this.",
             rewardMoney = 74000,
         },
-        [14096] = {rewardMoney = 74000},
+        [14096] = {
+            description = "Crusader Kul has gone and gotten himself into trouble again, only this time " ..
+                "he's not alone. When he saw the cultists making camp at Deathspeaker's Watch, west of " ..
+                "the tournament grounds, Kul gathered the aspirants for an assault.\n\nWithout " ..
+                "reinforcements, Kul and his followers were easily captured. I have no doubt that the " ..
+                "cult will sacrifice the prisoners unless we can mount a rescue. Any of those cultists " ..
+                "could carry keys to the black cages. Find the keys and free Kul and the captive " ..
+                "aspirants.",
+            rewardMoney = 74000,
+        },
         [14102] = {
             description = "The Kvaldir have returned to the coasts of Northrend and if left unchecked, " ..
                 "they will prevent our supplies and reinforcements from arriving. One of them, known as " ..
@@ -47623,14 +47639,6 @@ ns.Overrides.wowhead = {
             rewardItems = {{71085, 1}},
             rewardMoney = 282000,
         },
-        [29288] = {
-            description = "Our scouts are bringing back reports of fire hawk hatchlings all over the " ..
-                "peak... their eggs must have hatched very recently. Better yet, it seems that they're " ..
-                "extremely docile.\n\nI know it may sound a strange and perhaps unsavory request, but if " ..
-                "you were able to bring some of those hatchlings back to me, I might be able to train " ..
-                "them to aid us in our war efforts.\n\nAre you willing?",
-            rewardMoney = 94000,
-        },
         [29293] = {
             description = "Many of our Storm Crows have gone ahead to scout the peak and attempt to " ..
                 "retrieve some of the fire hawk eggs, but to very little success I'm afraid. The thermals " ..
@@ -61534,6 +61542,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 10,
         },
+        [539] = {
+            spawns = {
+                [10] = {
+                    {8, 39.4}, {8, 41.8}, {8.4, 44.8}, {9, 46.2}, {9.4, 39.8}, {9.4, 53.2}, {9.4, 56.4},
+                    {9.4, 60.8}, {9.6, 52.4}, {9.6, 55.2}, {9.6, 60}, {9.8, 43.6}, {9.8, 57.6}, {10, 50.6},
+                    {10.2, 40.6}, {10.6, 45}, {11, 46}, {11.2, 46.8}, {11.4, 68.6}, {11.6, 68.4}, {12, 54.2},
+                    {12.2, 51.2}, {12.2, 69.8}, {12.4, 62.2}, {12.8, 70.4}, {13.2, 67.4}, {14.6, 72.2},
+                    {16.6, 26.2}, {19.4, 28.2}, {21.6, 27.6}, {24.6, 28.6}, {27.4, 29.6}, {28.4, 30.2},
+                    {29, 29.2}, {32, 25.6}, {37.4, 21.8}, {40.4, 20.2}, {42.6, 20.2}, {46.8, 16.8},
+                    {49.8, 14},
+                },
+            },
+            zoneID = 10,
+        },
         [565] = {
             spawns = {
                 [10] = {
@@ -61898,6 +61920,29 @@ ns.Overrides.wowhead = {
             },
             zoneID = 400,
         },
+        [4131] = {
+            spawns = {
+                [400] = {
+                    {63.8, 85.4}, {64.4, 85.8}, {64.6, 85.8}, {64.8, 84.4}, {65.2, 85.2}, {65.4, 86.6},
+                    {65.6, 85.4}, {65.8, 86.2}, {67, 86}, {67.6, 86},
+                },
+            },
+            zoneID = 400,
+        },
+        [4147] = {
+            spawns = {
+                [400] = {
+                    {69.2, 63.2}, {69.4, 59.4}, {69.4, 61.6}, {69.4, 68.4}, {69.6, 65.4}, {70, 60.4},
+                    {70.2, 66.2}, {70.4, 62.4}, {70.4, 69.6}, {70.6, 62.4}, {70.8, 57.6}, {71, 55.2},
+                    {71.2, 54.4}, {71.4, 64.4}, {71.6, 64.4}, {71.6, 67.8}, {72, 66.2}, {72.4, 54.4},
+                    {72.4, 57.6}, {72.4, 61.6}, {72.6, 69}, {72.8, 64.2}, {73, 59.6}, {73.4, 59},
+                    {73.6, 59.4}, {74, 61.2}, {74.2, 58}, {74.4, 62.8}, {74.6, 53.4}, {74.8, 61.2}, {75, 60},
+                    {75.4, 51}, {75.4, 57.2}, {75.4, 64.2}, {75.6, 62.4}, {75.8, 51}, {75.8, 57.8},
+                    {76.4, 54.4}, {76.4, 64.6}, {76.6, 56.4},
+                },
+            },
+            zoneID = 400,
+        },
         [4191] = {spawns = {[148] = {{37, 43.4}, {37, 43.6}}}, zoneID = 148},
         [4198] = {spawns = {[406] = {{46, 60.4}, {46, 60.6}}}, zoneID = 406},
         [4200] = {spawns = {[148] = {{36.8, 44.2}}}, zoneID = 148},
@@ -62123,7 +62168,21 @@ ns.Overrides.wowhead = {
         },
         [5888] = {spawns = {[215] = {{44.8, 76.2}}}, zoneID = 215},
         [5908] = {spawns = {[17] = {{43.2, 47.8}}}, zoneID = 17},
+        [6018] = {spawns = {[1637] = {{35.4, 87.4}, {35.4, 87.6}, {35.6, 87.4}, {35.6, 87.6}}}, zoneID = 1637},
         [6134] = {spawns = {[16] = {{77.2, 42.8}}}, zoneID = 16},
+        [6198] = {
+            spawns = {
+                [16] = {
+                    {55.2, 27.4}, {55.4, 25.4}, {55.4, 26.2}, {55.4, 28.4}, {55.4, 28.6}, {55.4, 29.6},
+                    {55.6, 29.2}, {55.8, 27}, {55.8, 30.6}, {56.2, 29.6}, {56.4, 25.4}, {56.4, 25.6},
+                    {56.4, 28.4}, {56.6, 25.4}, {56.8, 27.4}, {56.8, 29}, {56.8, 30.2}, {57, 28.4},
+                    {57, 30.6}, {57.4, 26.2}, {57.8, 26.4}, {57.8, 30.4}, {58, 27.4}, {58, 27.6}, {58, 30.6},
+                    {58.4, 28.8}, {58.6, 26.4}, {58.6, 27.4}, {58.6, 28.4}, {58.6, 29}, {58.6, 31},
+                    {59, 29.6}, {59.8, 28.6},
+                },
+            },
+            zoneID = 16,
+        },
         [6221] = {
             spawns = {
                 [1] = {
@@ -62315,6 +62374,7 @@ ns.Overrides.wowhead = {
         },
         [7666] = {spawns = {[4] = {{66.8, 29.4}, {66.8, 29.6}, {67.6, 29.8}}}, zoneID = 4},
         [7667] = {spawns = {[4] = {{40.4, 30}, {40.6, 30.2}, {40.8, 29.4}, {40.8, 30.6}}}, zoneID = 4},
+        [7724] = {spawns = {[440] = {{50.2, 27.4}}}, zoneID = 440},
         [7736] = {spawns = {[357] = {{31, 43.4}}}, zoneID = 357},
         [7763] = {spawns = {[440] = {{52.2, 26.8}}}, zoneID = 440},
         [7766] = {spawns = {[1519] = {{69.2, 14.6}, {73.2, 35.4}, {73.2, 35.6}}}, zoneID = 1519},
@@ -62603,6 +62663,7 @@ ns.Overrides.wowhead = {
             spawns = {[1537] = {{42.8, 33.2}, {43.2, 31.4}, {43.2, 32}, {43.6, 31.8}, {43.8, 33}}},
             zoneID = 1537,
         },
+        [14726] = {spawns = {[1637] = {{63.4, 51}, {63.6, 51}}}, zoneID = 1637},
         [14903] = {spawns = {[33] = {{15.2, 16}}}, zoneID = 33},
         [14904] = {spawns = {[33] = {{15.2, 16}}}, zoneID = 33},
         [14905] = {spawns = {[33] = {{14, 13.6}}}, zoneID = 33},
@@ -62955,6 +63016,7 @@ ns.Overrides.wowhead = {
         [67993] = {maxLevel = 9999, minLevel = 9999},
         [67997] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
+        [68108] = {subName = "Leader of the Kirin Tor"},
         [68128] = {maxLevel = 90, minLevel = 90, subName = "The Metal Brewmaster"},
         [68150] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
         [68223] = {subName = "Warchief"},
@@ -63018,6 +63080,7 @@ ns.Overrides.wowhead = {
         [71955] = {subName = "The Jade Serpent"},
         [72426] = {maxLevel = 90, minLevel = 90},
         [72695] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
