@@ -4,6 +4,51 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.297] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 424 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,928 quests, 21 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,938 quests, 33 NPCs, 1 object
+- npc 1051 - Dark Iron Dwarf - updated
+  - coordinates: 35 spawn points added in Wetlands
+- npc 1091 - Mountaineer Gravelgaw - updated
+  - coordinates: 2 spawn points added in Loch Modan
+- npc 1242 - Karl Boran - updated
+  - coordinates: 3 spawn points added in Wetlands
+- npc 1855 - Tirion Fordring - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 2093 - Einar Stonegrip - updated
+  - coordinates: 2 spawn points added in Wetlands
+- npc 2241 - Syndicate Thief - updated
+  - coordinates: 9 spawn points added in Hillsbrad Foothills
+- npc 2260 - Syndicate Rogue - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2382 - Darren Malvew - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 4151 - [Deprecated for 4.x]Saltstone Crystalhide - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 5490 - Gnarled Thistleshrub - updated
+  - coordinates: 25 spawn points added in Tanaris
+- npc 6127 - Haldarr Felsworn - updated
+  - coordinates: 14 spawn points added in Azshara
+- npc 7876 - Tran'rek - updated
+  - coordinates: 2 spawn points added in Tanaris
+- npc 9536 - Maxwort Uberglint - updated
+  - coordinates: 1 spawn point added in Burning Steppes
+- npc 9544 - Yuka Screwspigot - updated
+  - coordinates: 1 spawn point added in Burning Steppes
+- npc 9620 - Dreka'Sur - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 9878 - Entropic Beast - updated
+  - coordinates: 40 spawn points added in Felwood
+- npc 17236 - Tcha'kaz - updated
+  - coordinates: 5 spawn points added in The Hinterlands
+- npc 246384 - Vyraxxis - updated
+  - NPC level added (91)
+  - rank added (elite)
+
 ## [0.2.296] - 2026-10-30
 
 Data from the PandaQuest portal.
@@ -435,28 +480,6 @@ Data from the PandaQuest portal.
 - npc 68430 - Arcanis Mechanica - updated
   - NPC title added (Grand Magister Rommath's Guar...)
 - npc 71108 - Wrathion - updated
-  - NPC title added (The Black Prince)
-
-## [0.2.286] - 2026-10-29
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 286 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,767 quests, 19 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,794 quests, 30 NPCs, 1 object
-- npc 3650 - Asterion - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 5394 - Neeka Bloodscar - updated
-  - coordinates: 1 spawn point added in Badlands
-- npc 7777 - Rok Orhan - updated
-  - coordinates: 9 spawn points added in Feralas
-- npc 9274 - Dadanga - updated
-  - coordinates: 2 spawn points added in Un'Goro Crater
-- npc 9836 - Mathredis Firestar - updated
-  - coordinates: 2 spawn points added in Burning Steppes
-- npc 68504 - Dreadweaver Avartu - updated
-  - NPC level added (90)
-- npc 71139 - Wrathion - updated
   - NPC title added (The Black Prince)
 
 ## [0.2.270] - 2026-10-26
