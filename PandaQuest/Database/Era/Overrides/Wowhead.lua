@@ -940,6 +940,14 @@ ns.Overrides.wowhead = {
                 "and I might have something for you...",
             rewardItems = {{3567, 1}},
         },
+        [152] = {
+            description = "You probably noticed all of the shipwrecks along the coast. The Great Sea is " ..
+                "treacherous indeed. The coast of Westfall needs to be kept clear, so that if sailors " ..
+                "find their way to our beaches, they are safe. The Murlocs are trouble though.\n\nKill 7 " ..
+                "Tidehunters, 7 Warriors, 7 Oracles and 7 Coastrunners and I will see to it that you are " ..
+                "rewarded.",
+            rewardMoney = 1100,
+        },
         [154] = {
             description = "NO!!!!!\n\nTake it, take this comb away from me!\n\nI'm a monster, and no one " ..
                 "will ever think me lovely again!",
@@ -4691,6 +4699,14 @@ ns.Overrides.wowhead = {
                 "trust a blind man to lead you, <name>, then listen. In the bluffs of Orgrimmar, west of " ..
                 "the wind rider tower, lives Zankaja. She waits for the return of her mate.\n\nGo to her.",
         },
+        [1510] = {
+            description = "He was stationed at Camp Taurajo, where we've been trying to weed out the " ..
+                "quilboar. He led a few grunts to one of their camps, where he was hurt bad. The others " ..
+                "made it back and tried to rescue him. He was in bad shape, his wounds festered, so they " ..
+                "were afraid to move him without patching him up first.\n\nThey sent a message here, " ..
+                "requesting a healing draught from the trolls at the Malaka'jin at the base of the " ..
+                "Stonetalon Mountains. We sent someone to get it, but they haven't returned yet.",
+        },
         [1516] = {
             description = "The time is now, young <class>. You've grown strong and your spirit endures " ..
                 "like the earth. Following the shaman's path shows you have wisdom before even proving " ..
@@ -5367,6 +5383,16 @@ ns.Overrides.wowhead = {
                 "and he may give you a small task or two.\n\nGet cracking.",
             rewardMoney = 85,
         },
+        [2206] = {
+            description = "Our operatives in the field are reporting heavy Defias activity south of " ..
+                "Goldshire. The reports indicate that the Defias have taken over Jerod's Landing and are " ..
+                "now using it as a way to smuggle large quantities of contraband from Redridge to " ..
+                "Westfall.\n\nI need you to infiltrate the dock house and get me that shipping schedule, " ..
+                "<name>. You will probably find it buried deep in the pockets of the " ..
+                "Dockmaster.\n\n...and <name>, should you be discovered, SI:7 will disavow all knowledge " ..
+                "of your existence.",
+            rewardItems = {{7298, 1}},
+        },
         [2242] = {
             description = "We believe there is one being that may be able to help us understand what is " ..
                 "happening to the forests of Teldrassil. Unfortunately, getting the creature to cooperate " ..
@@ -5737,6 +5763,15 @@ ns.Overrides.wowhead = {
                 "distress would probably do anything to find his way out of trouble...",
         },
         [2801] = {description = "Before we may continue, you must hear my story."},
+        [2857] = {
+            description = "A Wild Leather helmet offers the wearer superior protection to the vital areas " ..
+                "of the head without a sacrifice in comfort. As with all Wild Leather armor, the " ..
+                "integrated wildvine yields a powerful but random magic imbuement to the helm's frame. " ..
+                "Leather wearers will definitely want this piece!\n\nFor this pattern, I will need two " ..
+                "Nightscape tunics, 2 Nightscape headbands, and a wildvine. Complete this lesson and the " ..
+                "pattern will be yours!",
+            rewardItems = {{8405, 1}},
+        },
         [2858] = {
             description = "Your knowledge of Wild Leather armor grows, <name>; still, there is more for " ..
                 "you to learn.\n\nWild Leather boots are the cornerstone of any set. Such boots are " ..
@@ -6405,6 +6440,11 @@ ns.Overrides.wowhead = {
                 "I have need of your services again, <name>.",
             rewardMoney = 6000,
         },
+        [3565] = {
+            description = "What is it? Oh yes, your payment. Of course.\n\nTake this and be off with you. " ..
+                "I'm sure Jediga is awaiting oh so patiently for your return.",
+            rewardMoney = 6000,
+        },
         [3566] = {
             description = "It... It... It was all a trap.\n\nForgive... me.\n\nKill the bastard... Kill " ..
                 "him for us... for Thorius.",
@@ -6427,6 +6467,14 @@ ns.Overrides.wowhead = {
                 "specifications. You will find his encampment between Zul'Gurub and the Mosh'Ogg ogre " ..
                 "mound.\n\nMay your determination and faith carry you through this ordeal. Should you " ..
                 "fail, know that your God smiles down upon you, mortal.",
+        },
+        [3625] = {
+            description = "<name>, the creation of each weapon will take some time.\n\nAdditionally, you " ..
+                "may only use the power of the Felcurse once per three minutes. Its weakening properties " ..
+                "against Razelikh the Defiler and his minions may be variable in duration. This is why " ..
+                "you must release the Felcurse only when the moment is right!\n\nNow give me a moment to " ..
+                "craft your weapon, <name>.",
+            rewardChoices = {{10697, 1}, {10698, 1}, {10696, 1}},
         },
         [3626] = {
             description = "The hour of redemption is near, <name>. You must return to the Blasted Lands " ..
@@ -7950,6 +7998,13 @@ ns.Overrides.wowhead = {
                 "burn down his archives! Should you succeed, return to me and be rewarded.",
             rewardMoney = 18000,
         },
+        [5252] = {
+            description = "The... the crystal...\n\nThe highborne here are clouded by their own " ..
+                "misssery...\n\nI am sorrrrrowful, but I realize the errorrrr of what happened so long " ..
+                "ago. Even though there is no waaaay to change the past, I am now at peacccce knowing " ..
+                "that you have recovered the crystal of Zin-Malor...\n\nYouuu must return it...\n\nIt " ..
+                "muuuussst be returrrned.",
+        },
         [5261] = {
             description = "Eagan Peltskinner is looking for someone to hunt wolves for him. That's good " ..
                 "news, because we're seeing a lot more wolves in Northshire Valley lately.\n\nIf you're " ..
@@ -8409,6 +8464,13 @@ ns.Overrides.wowhead = {
                 "demeanor seemed positive... as though it were good news. I wouldn't take too long in " ..
                 "making my way there if I were you.\n\nElune be with you, good <race>.",
             rewardXP = 210,
+        },
+        [5639] = {
+            description = "You're needed in Stormwind, <name>. The High Priestess there, Laurena, says " ..
+                "it's time for you to prove you're worthy of the next level of your training. Don't waste " ..
+                "too much time finding your way there. You can find her in the Cathedral of Light in the " ..
+                "center of the city. Give her my regards, and prove how worthy you are of such a calling. " ..
+                "The Light be with you, <name>.",
         },
         [5642] = {
             description = "Something important is up in Orgrimmar, <name>.\n\nThe normal messengers that " ..
@@ -11179,6 +11241,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{20808, 1}, {21132, 1}, {20809, 1}},
         },
         [8508] = {rewardItems = {{20810, 1}}},
+        [8509] = {
+            description = "I'll keep it simple and to the point, <class>. The Alliance needs to collect a " ..
+                "large quantity of Arthas' Tears for the Ahn'Qiraj war effort. Don't ask me what for; I'm " ..
+                "just following orders. But I'd like you to gather up as many of the herbs as you can and " ..
+                "bring them back to me here. Are you willing to do that?",
+            rewardItems = {{21436, 10}, {21513, 1}},
+        },
         [8510] = {
             description = "Ok, so it looks like I still need more Arthas' Tears. I would imagine that you " ..
                 "will be able to find them in the general location that you gathered them up for me last " ..
@@ -11678,6 +11747,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{20808, 1}, {21266, 1}, {20809, 1}},
         },
         [8732] = {rewardItems = {{20810, 1}}},
+        [8733] = {
+            description = "This is a journey of redemption, hero. Would it be that I was slain today, I " ..
+                "would have died for a just and righteous cause. You must recover the green scepter " ..
+                "shard. You must cleanse Eranikus of the taint placed upon him by the Old Gods.\n\nTravel " ..
+                "to Darnassus. Just outside the city walls you will find one of my agents. This agent " ..
+                "will set things in motion for us and inform Tyrande of our plans without alerting " ..
+                "Staghelm.\n\n<Malfurion sighs.>\n\nA fall from grace a thousand years in the making...",
+        },
         [8734] = {
             description = "Tyrande will be notifed, mortal. Shan'do Stormrage has prepared me for this " ..
                 "contingency.\n\nNow you must venture to the Moonglade and speak with Remulos. He will " ..
@@ -12542,6 +12619,12 @@ ns.Overrides.wowhead = {
                 "various points in the invaded areas. We have determined that destroying the mindless " ..
                 "hordes that surround these circles will destroy their defenses.",
             rewardChoices = {{23123, 2}, {23122, 2}},
+        },
+        [9154] = {
+            description = "The Scourge have returned in greater numbers than we have seen before. The " ..
+                "Argent Dawn is recruiting all willing and capable men and women to defend our " ..
+                "lands.\n\nIf we share common cause, take this document to the Keeper of the Rolls at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.",
         },
         [9165] = {
             description = "Without the help of adventurers, my caravan would have never made it! Scourge " ..

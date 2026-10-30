@@ -4,6 +4,34 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.291] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 331 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,852 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,864 quests, 32 NPCs, 1 object
+- quest 12730 - Convocation at Zol'Heb - updated
+  - reward money removed (20g 40s)
+- npc 1084 - Young Sawtooth Crocolisk - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 1769 - Moonrage Whitescalp - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 2277 - Loremaster Dibbs - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 2893 - Stonevault Bonesnapper - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2993 - Baine Bloodhoof - updated
+  - coordinates: 2 spawn points added in Mulgore
+- npc 3585 - Therysil - updated
+  - coordinates: 1 spawn point added in Ashenvale
+- npc 4130 - [Deprecated for 4.x]Silithid Searcher - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 14494 - Eris Havenfire - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 14903 - Al'tabim the All-Seeing - updated
+  - coordinates: 1 spawn point added in Northern Stranglethorn
+
 ## [0.2.290] - 2026-10-30
 
 Data from the PandaQuest portal.
