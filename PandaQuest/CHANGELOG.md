@@ -4,6 +4,44 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.300] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 469 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,959 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,969 quests, 35 NPCs, 1 object
+- quest 29264 - Flamewakers of the Molten Flow - updated
+  - description removed
+  - reward money removed (9g 40s)
+- npc 1007 - Mosshide Gnoll - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1179 - Mo'grosh Enforcer - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 3128 - Kul Tiras Sailor - updated
+  - coordinates: 38 spawn points added in Durotar
+- npc 3381 - Southsea Brigand - updated
+  - coordinates: 15 spawn points added in The Barrens
+- npc 6116 - Highborne Apparition - updated
+  - coordinates: 27 spawn points added in Azshara
+- npc 8444 - Trade Master Kovic - updated
+  - coordinates: 5 spawn points added in Searing Gorge
+- npc 8588 - Umbranse the Spiritspeaker - updated
+  - coordinates: 1 spawn point added in Winterspring
+- npc 14729 - Ralston Farnsley - updated
+  - coordinates: 7 spawn points added in Undercity
+- npc 15751 - Anubisath Warbringer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 16001 - Aldris Fourclouds - updated
+  - coordinates: 9 spawn points added in Darnassus
+- npc 67866 - Chen Stormstout - updated
+  - NPC level added (90)
+- npc 69136 - Zandalari Speaker - updated
+  - NPC title added (Harbinger of the Loa)
+  - NPC level added (91)
+- npc 70166 - Jubeka Shadowbreaker - updated
+  - NPC title added (Master Demonologist)
+
 ## [0.2.299] - 2026-10-30
 
 Data from the PandaQuest portal.
@@ -491,30 +529,6 @@ Data from the PandaQuest portal.
   - NPC title added (The Black Prince)
 - npc 70544 - Hekima the Wise - updated
   - NPC title added (Herald of Rastakhan)
-
-## [0.2.289] - 2026-10-30
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 315 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,823 quests, 20 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,832 quests, 30 NPCs, 1 object
-- quest 13235 - The Flesh Giant Champion - updated
-  - description added
-  - reward choices: +4
-- npc 893 - Lars - updated
-  - coordinates: 2 spawn points added in Duskwood
-- npc 2991 - Greatmother Hawkwind - updated
-  - coordinates: 1 spawn point added in Mulgore
-- npc 3616 - Onu - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 11610 - Kirsta Deepshadow - updated
-  - coordinates: 1 spawn point added in Western Plaguelands
-- npc 68150 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
-  - NPC level added (90)
-- npc 70249 - Focused Eye - updated
-  - NPC level added (92)
 
 ## [0.2.270] - 2026-10-26
 
