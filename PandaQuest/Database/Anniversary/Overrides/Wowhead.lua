@@ -1613,6 +1613,14 @@ ns.Overrides.wowhead = {
                 "jaws of the beasts.\n\nWhy, this one time...",
             rewardItems = {{3678, 1}, {2240, 1}},
         },
+        [392] = {
+            description = "During the first years of Thredd's imprisonment, he never had any visitors. I " ..
+                "figured that he was no longer of use to the Brotherhood, so they abandoned " ..
+                "him.\n\nAnyway, a few months ago, that all changed; he started to get regular visits... " ..
+                "once, maybe twice a week. It was a strange man--the quiet type. I had my suspicions, but " ..
+                "all his papers checked out.\n\nHis documents claimed his name was Maelik; here's his " ..
+                "description. I don't think he'll be coming to visit Thredd anymore.",
+        },
         [393] = {
             description = "I really haven't a clue, <name>. There is someone else who might be able to " ..
                 "help you, and it so happens that he owes me a favor for--well, let's not get into that. " ..
@@ -1705,6 +1713,7 @@ ns.Overrides.wowhead = {
                 "it confirmed. Find these Deathstalkers.\n\nTheir first objective was to scout the farms " ..
                 "in northern Silverpine. You should begin your search there.",
         },
+        [431] = {rewardItems = {{3080, 1}}},
         [434] = {
             description = "After I put on Spybot's disguise, he'll head in to talk to Lescovar. The " ..
                 "guards should let him pass no problem.\n\nWhile you were getting materials for me, I " ..
@@ -2194,6 +2203,14 @@ ns.Overrides.wowhead = {
                 "seas.\n\nThe naga will be coming from the sea. I need you to remain up here with me to " ..
                 "fend off the attack. Man the cannon and drive them back.\n\nAre you ready, <name>?",
             rewardChoices = {{4550, 1}, {4549, 1}},
+        },
+        [671] = {
+            description = "I have felt a strangeness in the air... a feeling that simmers in my blood. I " ..
+                "had my suspicions. I set off to find the source of my unease and discovered to the west, " ..
+                "at Northfold Manor, the residual traces of demonic summoning. As I got close, my blood " ..
+                "began to boil and the rage within me grew.\n\nOn the ground I spied an amulet of " ..
+                "bloodstone, used to assist in demonic summoning. The one I found was depleted, however. " ..
+                "I'll need another to examine, but I dare not return to the manor. Can you bring me some?",
         },
         [677] = {
             description = "The Witherbark trolls and Boulderfist ogres of Arathi are working together to " ..
@@ -3311,6 +3328,11 @@ ns.Overrides.wowhead = {
                 "when plan A failed... damn adventurers.\n\nThe guy we got on the inside for plan B came " ..
                 "out of Menethil; guy called Slim. That's all I know regarding their backup plan.",
         },
+        [1251] = {
+            description = "An iron shield, blackened by the fire that raged through the inn, is affixed " ..
+                "to the crumbling chimney, one of the few remaining parts of the structure that once made " ..
+                "up the Shady Rest Inn.\n\nThe shield can be removed from the brick of the chimney.",
+        },
         [1252] = {
             description = "A glint of light on the ground catches your eye from underneath the rubble. " ..
                 "Brushing away debris and ash caked onto the object reveals the insignia of a gold anchor " ..
@@ -3381,6 +3403,11 @@ ns.Overrides.wowhead = {
             description = "Oh, I think I might have dropped too much acid onto the shield. Let me just " ..
                 "rub a little...\n\nHm, kind of hard to read, but it looks like the name Mosarn. Never " ..
                 "heard of him. Maybe Krog knows. Krog knows many people.",
+        },
+        [1324] = {
+            description = "What?! You come here accusing me of allying with the Defias, and think I'll " ..
+                "just stand here while you insult me?! Something tells me you've had this coming for a " ..
+                "long time.",
         },
         [1339] = {
             description = "I hear Mountaineer Stormpike is looking for a runner. Someone to do a little " ..
@@ -6889,6 +6916,7 @@ ns.Overrides.wowhead = {
                 "his demise will reverse the damage done to the spirit realm!",
             rewardItems = {{20134, 1}},
         },
+        [8261] = {rewardItems = {{20236, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
         [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}, rewardXP = 705},
@@ -7233,6 +7261,15 @@ ns.Overrides.wowhead = {
                 "his existence to an end.\n\nDo this and bring me a piece of his husk. I shall grant you " ..
                 "armor no mortal has ever worn... armor fit for one who has slain a god!",
             rewardItems = {{21364, 1}},
+        },
+        [8639] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21360, 1}},
         },
         [8657] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
@@ -8741,6 +8778,15 @@ ns.Overrides.wowhead = {
                 "all coming back to me now.\n\nI believe I had the journal you're looking for before I " ..
                 "started to read these scrolls...\n\nAran... yes, Aran asked me for the book. So nicely " ..
                 "too. I just had to give it to him. He's Medivh's father after all, did you know?",
+        },
+        [9641] = {
+            description = "The Exodar's crash scattered pieces of fouled crystals all over Bloodmyst " ..
+                "Isle, corrupting the water and the landscape.\n\nWe've even begun finding pieces of the " ..
+                "crystals inside the flesh of animals taken for meat. I've uncovered a way to purify the " ..
+                "shard and turn them into functional crystals, so if you bring me enough shards, I'll " ..
+                "trade one of my completed crystals for them. So far I've found the shards in the bodies " ..
+                "of bears, ravagers, flutterers, and treants inhabiting the corrupted part of the island.",
+            rewardChoices = {{23985, 1}, {23986, 1}, {23989, 1}},
         },
         [9644] = {
             description = "Our preparations are complete. I have put the materials you gathered into this " ..
@@ -14324,6 +14370,14 @@ ns.Overrides.wowhead = {
         [11108] = {description = "Come, highlord <name>. Illidan himself awaits us!", rewardMoney = 132000},
         [11111] = {rewardItems = {{32857, 1}}},
         [11113] = {rewardItems = {{32862, 1}}},
+        [11123] = {
+            description = "Poor James never recovered from the destruction of the Shady Rest and the " ..
+                "murder of his family. The boys and I are doing what we can to find the bastards who did " ..
+                "this.\n\nI've sent our best investigator, Inspector Tarem, out to the ruins, but this is " ..
+                "too big a job for any one man. If you'd lend Tarem a hand, we'd appreciate it. Light " ..
+                "knows, we'd all like to be out there helping.\n\nThe main road will lead you to the inn, " ..
+                "but take care. Your journey will take you beyond the protection of my soldiers.",
+        },
         [11129] = {
             description = "Help, <name>! My prized puppy, Kyle, has run away! I just know he's running " ..
                 "around Bloodhoof Village, lost and hungry.\n\nWill you find him and feed him? Once he " ..
