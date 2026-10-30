@@ -2255,6 +2255,12 @@ ns.Overrides.wowhead = {
                 "waste to them in the name of our Dark Lady.\n\nDismissed!",
             rewardMoney = 1800,
         },
+        [535] = {
+            description = "Urrgh... Injured and dying and confronted with the enemy.\n\nNo doubt you'll " ..
+                "kill me anyway, but if you bring me some Southshore stout --your kind does drink, don't " ..
+                "they?--I'll tell you what you want to know.",
+            rewardItems = {{3601, 1}},
+        },
         [540] = {
             description = "Those beastly ogres now reside within Alterac's ruins, and I shudder to think " ..
                 "what they're doing with the precious books still there. You must recover what you " ..
@@ -2361,6 +2367,14 @@ ns.Overrides.wowhead = {
                 "basilisk, but the less nasty ones are along the shores south of Zul'Kunda, to the north.",
             rewardMoney = 3500,
         },
+        [606] = {
+            description = "If there's one thing I can't stand, it's people who don't pay their gambling " ..
+                "debts! And there are a lot of people who owe me. Think you can help me " ..
+                "collect?\n\nFirst, there's \"Shaky\" Phillipe down by the docks. He owes me plenty after " ..
+                "last week's game and I want my due! But to get it, we'll have to scare him.\n\nGo out of " ..
+                "town and hunt Elder Mistvale Gorillas. Find a nice selection of giblets, then take them " ..
+                "to Shaky. Don't let on that they're from an animal; let him think the worst.",
+        },
         [607] = {
             description = "Here, take this pouch and give it to Sea Wolf. And tell him I meant to pay him " ..
                 "back! I swear!!\n\nI just got a little drunk and lost my way, and...you know how things " ..
@@ -2459,6 +2473,15 @@ ns.Overrides.wowhead = {
                 "placed upon Trollbane's tomb.\n\nTrollbane's remains are entombed in the Sanctum behind " ..
                 "the chapel in Stromgarde. Retrieve Trol'kalar.",
         },
+        [647] = {
+            description = "Had quite a bit of the ol' Moonshine last night! Longbraid would have my head " ..
+                "if he knew that I passed out during my watch.\n\nThe noggin hurts something fierce. Felt " ..
+                "as though a whole brigade of siege engines passed overhead, all that rumbling.\n\nOh my, " ..
+                "look at the time! I promised Brewmeister Bilger in Southshore that I'd repay my debt to " ..
+                "him by sending some Moonshine.\n\nBut there are just 15 minutes left before I'm overdue! " ..
+                "Take him this batch, would you please? And hurry!",
+            rewardMoney = 5500,
+        },
         [648] = {
             description = "The gnome's voice crackles once again from the robot:\n\n\"I need to move " ..
                 "OOX-17/TN to an open, safe place so it can begin a lengthy take-off procedure. It has " ..
@@ -2467,6 +2490,14 @@ ns.Overrides.wowhead = {
                 "be a perfect place, and long enough, to get things on line!\"\n\n\"Escort it safely to " ..
                 "the port, and then come talk to me in Booty Bay! Oglethorpe Obnoticus - out!\"",
             rewardChoices = {{9643, 1}, {9644, 1}},
+        },
+        [649] = {
+            description = "I've got some salvage work for you, and if you're an aficionado of fine ripple " ..
+                "like I am, then you'll love this task. Ripple!\n\nIt's a drink, you dummy.\n\nAn " ..
+                "abandoned Horde outpost has a stash of Hinterlands Honey Ripple from when they were in " ..
+                "business. You can't get fine ripple like that anymore! One of Malton's dummy associates " ..
+                "knows the shot, so you'll go out there and bring me a case of packaged ripple, and two " ..
+                "for my own collection! Talk to Malton, he'll fill you in on the details.",
         },
         [650] = {
             description = "The elf you will need to talk to is Gilveradin Sunchaser. He can name any " ..
@@ -3800,6 +3831,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{7334, 1}, {7335, 1}, {7336, 1}},
             rewardItems = {{6678, 1}},
         },
+        [1083] = {
+            description = "I'm unsure what the Venture Co. did to the Vale, but it's obvious they were " ..
+                "overpowered by the creatures there.\n\nThey set the forest aflame, and used their " ..
+                "inventions of destruction to decimate as much of the Vale as possible.\n\nBut in their " ..
+                "ignorance they also released something else: burning spirits, elementals of flame, stone " ..
+                "and rage.\n\nThe land has no chance to see Elune's smile while these creatures roam " ..
+                "free.\n\nBring me their smoldering embers to show you've reduced their numbers.",
+            rewardMoney = 2000,
+        },
         [1084] = {
             description = "It seems obvious to me that the protectors of the Vale--the treants--had " ..
                 "something to do with the Venture Co. being driven back. Unfortunately, even those once " ..
@@ -4211,6 +4251,13 @@ ns.Overrides.wowhead = {
                 "surrounded! Can you help me out of here, and watch my back as I look for the bogbean?",
             rewardItems = {{3825, 1}},
             rewardMoney = 4000,
+        },
+        [1238] = {
+            description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
+                "clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained " ..
+                "parchment.\n\nThe parchment is a report made by an orc who spent weeks spying on the " ..
+                "city of Theramore.\n\nAfter scanning the parchment, it is clear that it must be brought " ..
+                "to the orc spymaster in Brackenwall Village.",
         },
         [1246] = {
             description = "Yeah, now that I think about it... Dashel... Dashel something... What was his " ..
@@ -5218,6 +5265,12 @@ ns.Overrides.wowhead = {
             description = "You are a warrior of skill and growing renown. Perhaps you are ready for Ruga " ..
                 "Ragetotem 's trial? If so, then find Ruga in Camp Taurajo in the Barrens.\n\nHe awaits " ..
                 "those warriors who answer his call.",
+        },
+        [1825] = {
+            description = "Thun'grim Firegaze, an orc blacksmith of renown, has heard of your continued " ..
+                "deeds of valor in service of the Horde. He would like to fashion for you a suit of " ..
+                "armor, and bids you speak with him immediately.\n\nThun'grim is camped east of the " ..
+                "Crossroads in the Barrens.",
         },
         [1841] = {
             description = "It is said that, before her death, Velora Nitely was one of the finest " ..
@@ -6958,6 +7011,16 @@ ns.Overrides.wowhead = {
                 "collected a sufficient amount, return to me and I shall determine their source of origin.",
             rewardMoney = 16500,
         },
+        [4063] = {
+            description = "This can't be Argelmach! Argelmach was killed ten years ago. How can I be " ..
+                "sure? I was the one who killed him.\n\nHe was a despicable dwarf, hell-bent on twisting " ..
+                "my life's work to meet his diabolical needs. It seems that the wicked always find a way " ..
+                "to escape justice.\n\nIf this is Argelmach's handiwork then he must be destroyed. I will " ..
+                "need samplings of his latest creations. With the proper samples, I may be able to stop " ..
+                "this uprising. The creations guard Argelmach in Blackrock Depths.",
+            rewardChoices = {{12109, 1}, {12110, 1}, {12108, 1}, {12111, 1}},
+            rewardMoney = 26500,
+        },
         [4104] = {rewardItems = {{11516, 2}}},
         [4105] = {rewardItems = {{11516, 2}}},
         [4106] = {rewardItems = {{11516, 2}}},
@@ -7233,6 +7296,10 @@ ns.Overrides.wowhead = {
             rewardChoices = {{12061, 1}, {12062, 1}},
             rewardItems = {{12065, 1}},
             rewardMoney = 17500,
+        },
+        [4361] = {
+            description = "You must take this information back to King Magni, <name>. He will know what " ..
+                "to do!",
         },
         [4381] = {rewardItems = {{11562, 6}}},
         [4382] = {rewardItems = {{11563, 6}}},
@@ -13313,6 +13380,7 @@ ns.Overrides.wowhead = {
         },
     },
     objects = {
+        [1738] = {spawns = {[36] = {{58.2, 67.9}}}, zoneID = 36},
         [1739] = {spawns = {[36] = {{58.2, 67.9}}}, zoneID = 36},
         [3714] = {spawns = {[17] = {{48.6, 84.7}, {49.4, 83.7}, {49.6, 83.6}}}, zoneID = 17},
         [105570] = {

@@ -4,6 +4,53 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.294] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 368 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,889 quests, 20 NPCs, 4 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,887 quests, 32 NPCs, 1 object
+- quest 11885 - Adversarial Blood - updated
+  - description added
+  - reward items: +1
+- quest 29860 - Diametrically Opposed - updated
+  - description removed
+  - reward money removed (22g 20s)
+  - reward choices: -5
+- npc 80 - Kobold Laborer - updated
+  - coordinates: 15 spawn points added in Elwynn Forest
+- npc 95 - Defias Smuggler - updated
+  - coordinates: 40 spawn points added in Westfall
+- npc 892 - Splinter Fist Taskmaster - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 909 - Defias Night Blade - updated
+  - coordinates: 38 spawn points added in Duskwood
+- npc 923 - Young Black Ravager - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 1158 - Cursed Marine - updated
+  - coordinates: 14 spawn points added in Wetlands
+- npc 2111 - Sida - updated
+  - coordinates: 1 spawn point added in Wetlands
+- npc 2274 - Stanley - updated
+  - coordinates: 4 spawn points added in Hillsbrad Foothills
+- npc 3207 - Hexed Troll - updated
+  - coordinates: 30 spawn points added in Durotar
+- npc 3746 - Foulweald Den Watcher - updated
+  - coordinates: 22 spawn points added in Ashenvale
+- npc 4722 - [Deprecated for 4.x]Rau Cliffrunner - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 5232 - Gordunni Brute - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5905 - Prate Cloudseer - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 7826 - Ambassador Ardalan - updated
+  - coordinates: 2 spawn points added in Blasted Lands
+- npc 14722 - Clavicus Knavingham - updated
+  - coordinates: 2 spawn points added in Stormwind City
+- npc 53443 - Pechanga - updated
+  - coordinates: 2 spawn points added in Northern Stranglethorn
+
 ## [0.2.293] - 2026-10-30
 
 Data from the PandaQuest portal.
