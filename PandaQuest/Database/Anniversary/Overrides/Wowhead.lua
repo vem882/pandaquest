@@ -1651,6 +1651,13 @@ ns.Overrides.wowhead = {
                 "foreman of the mine, Grimson the Pale. With his death, the mine shall be ours.",
             rewardMoney = 700,
         },
+        [428] = {
+            description = "A couple weeks ago two of our Deathstalkers, Rane and Quinn Yorick, were sent " ..
+                "on a reconnaissance mission through northern Silverpine. We have not heard from " ..
+                "them.\n\nThey may have become victim to the Scourge, though if that is true then I want " ..
+                "it confirmed. Find these Deathstalkers.\n\nTheir first objective was to scout the farms " ..
+                "in northern Silverpine. You should begin your search there.",
+        },
         [435] = {
             description = "The wolves outside won't leave, and they eye me evilly every time I step foot " ..
                 "out that door. They must be incredibly hungry to think I'm worth eating.\n\nI have to " ..
@@ -3162,6 +3169,14 @@ ns.Overrides.wowhead = {
                 "my dish.\n\nSo, <name>... are you willing to travel?",
             rewardItems = {{6801, 1}},
         },
+        [1262] = {
+            description = "It is strange that the pendant Marg stole was in the hands of common soldiers. " ..
+                "Perhaps its owner was in disguise, or perhaps the soldiers themselves stole " ..
+                "it!\n\nRegardless of which is true, this is a noble's pendant and we must discover its " ..
+                "true owner if we are to unravel its mystery.\n\nTake the pendant to Zor Lonetree in " ..
+                "Orgrimmar. He is well schooled in Alliance politics, and will know if this pendant has a " ..
+                "history among the nobles of Stormwind.",
+        },
         [1269] = {
             description = "A glint of light on the ground catches your eye from underneath the rubble. " ..
                 "Brushing debris and ash caked onto the object reveals the insignia of a gold anchor on " ..
@@ -3646,6 +3661,7 @@ ns.Overrides.wowhead = {
                 "with him, for Andromath is one of the most powerful mages not locked away in Dalaran. " ..
                 "Council with him is high council indeed.",
         },
+        [1941] = {rewardItems = {{7509, 1}}},
         [1943] = {
             description = "The troll mage Deino has need of your assistance, <name>. She resides in " ..
                 "Orgrimmar, in the Darkbriar Lodge.",
@@ -6716,6 +6732,12 @@ ns.Overrides.wowhead = {
             description = "Something's wrong, <name>. I sense the presence of Scourge. Be ready to fight " ..
                 "them!",
             rewardMoney = 300,
+        },
+        [8539] = {
+            description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
+                "been selected to target Hive'Zora hive sisters. Report back to Commander Mar'alith after " ..
+                "completing your task.",
+            rewardItems = {{20802, 1}},
         },
         [8544] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
@@ -13908,6 +13930,15 @@ ns.Overrides.wowhead = {
                 "has in Azeroth.",
             rewardItems = {{29024, 3}},
             rewardMoney = 9000,
+        },
+        [11338] = {
+            description = "The Silverwing Sentinels fight to protect the forest in Warsong Gulch. We aid " ..
+                "them, not because we're tree-lovers, but because the forest forms a natural protective " ..
+                "barrier for Alliance territory.\n\nTheir need is greater today than it's ever been. We " ..
+                "need to deploy reinforcements right away unless we want to see Ashenvale annexed to the " ..
+                "Barrens!",
+            rewardItems = {{20558, 3}},
+            rewardMoney = 125,
         },
         [11354] = {
             description = "Today I have a buyer who is interested in a piece that's held by the mount of " ..

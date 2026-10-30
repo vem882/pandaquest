@@ -4,6 +4,37 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.293
+- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 352 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,880 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,877 quests, 32 NPCs, 1 object
+- quest 12639 - The Frozen Earth - updated
+  - description added
+  - reward choices: +4
+- quest 14096 - You've Really Done It This Time, Kul - updated
+  - description added
+- quest 29288 - Starting Young - updated
+  - description removed
+  - reward money removed (9g 40s)
+- npc 539 - Pygmy Venom Web Spider - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 4131 - [Deprecated for 4.x]Silithid Invader - updated
+  - coordinates: 10 spawn points added in Thousand Needles
+- npc 4147 - [Deprecated for 4.x]Saltstone Basilisk - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 6018 - Ur'kyo - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 6198 - Blood Elf Surveyor - updated
+  - coordinates: 33 spawn points added in Azshara
+- npc 7724 - Senior Surveyor Fizzledowser - updated
+  - coordinates: 1 spawn point added in Tanaris
+- npc 14726 - Rashona Straglash - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 68108 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+- npc 73306 - Mistweaver Ku - updated
+  - NPC title added (Lost Treasures of Shaohao)
+
 0.2.292
 - database - Wowhead data as the PandaQuest portal read it: 7,889 quests, 343 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 1,864 quests, 20 NPCs, 3 objects
