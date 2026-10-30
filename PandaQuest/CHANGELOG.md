@@ -4,6 +4,30 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.289] - 2026-10-30
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,913 quests, 315 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,823 quests, 20 NPCs, 3 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,832 quests, 30 NPCs, 1 object
+- quest 13235 - The Flesh Giant Champion - updated
+  - description added
+  - reward choices: +4
+- npc 893 - Lars - updated
+  - coordinates: 2 spawn points added in Duskwood
+- npc 2991 - Greatmother Hawkwind - updated
+  - coordinates: 1 spawn point added in Mulgore
+- npc 3616 - Onu - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 11610 - Kirsta Deepshadow - updated
+  - coordinates: 1 spawn point added in Western Plaguelands
+- npc 68150 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+- npc 70249 - Focused Eye - updated
+  - NPC level added (92)
+
 ## [0.2.288] - 2026-10-29
 
 Data from the PandaQuest portal.
