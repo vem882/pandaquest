@@ -1331,6 +1331,12 @@ ns.Overrides.wowhead = {
                 "you assisted me? Can't let them think I'm not working hard out here, you know?",
             rewardMoney = 175,
         },
+        [292] = {
+            description = "Opening the chest reveals a blackened orb, pulsing with an eerie light. It is " ..
+                "the treasure of which Fitzsimmons spoke: a Cursed Eye of Paleth.\n\nTake the Cursed Eye " ..
+                "of Paleth to the dwarven priest Glorin Steelbrow, in Menethil Harbor. Ask him how to " ..
+                "remove the Eye's curse.",
+        },
         [296] = {
             description = "While you were down there I happened to notice that one of those beasts stood " ..
                 "out from the rest. He was bigger and more menacing. I bet he's the one who led the " ..
@@ -2066,6 +2072,15 @@ ns.Overrides.wowhead = {
                 "to me in body when you are successful, or come to me in spirit when you fail. I shall " ..
                 "give praise to your tenacity in battle either way.",
         },
+        [679] = {
+            description = "The head of the beast is ready to be taken off... with great force, <name>. " ..
+                "You have shown every sign that you are able to help us with this final mighty blow. The " ..
+                "leaders of these attacks have made their lair within the ruins of Stromgarde, a glaring " ..
+                "symbol of human frailty.\n\nFind and slay those Boulderfist lords and their lackey " ..
+                "shaman who would try and drive us from these lands.",
+            rewardChoices = {{9520, 1}, {9521, 1}},
+            rewardMoney = 5000,
+        },
         [681] = {
             description = "We are fighting a war for Stromgarde, and we are losing. The ogres, the " ..
                 "Syndicate and we have divided our once great city, and each faction battles the other " ..
@@ -2187,6 +2202,12 @@ ns.Overrides.wowhead = {
                 "Thunderhorn Cleansing Totem in your ritual. After you do this, return to me.\n\nMay the " ..
                 "spirits guide you.",
             rewardItems = {{4963, 1}},
+        },
+        [759] = {
+            description = "There is but one water well left to cleanse, named after the Wildmane clan. " ..
+                "For this well to be pure, the land must offer the teeth of a fierce predator, the " ..
+                "prairie wolf alpha. Find the alphas to the north, then return to me when your hunt is " ..
+                "finished.\n\nAlphas often wander around the base of our mighty city, Thunder Bluff.",
         },
         [760] = {
             description = "Your cleansing of the Winterhoof and Thunderhorn wells is spoken among the " ..
@@ -2661,6 +2682,13 @@ ns.Overrides.wowhead = {
                 "must show him what happens to those who annoy the Sentinels.\n\nDestroy him and bring me " ..
                 "his head. Be wary though, the Horde may be watching for you.",
             rewardItems = {{5816, 1}},
+        },
+        [1021] = {
+            description = "Listen, I don't know who you are, but I need your help. My sisters went to " ..
+                "take back the Branch of Cenarius from the satyr. They said they'd be back soon, but it's " ..
+                "been two whole days!\n\n<name>, you have to find them! They were looking for the ruins " ..
+                "of a night elf temple in Xavian to the northwest. I don't know what to think. Look for " ..
+                "Anilia, she was leading them on the search.",
         },
         [1022] = {
             description = "Though we have put many resources and much effort into driving the remaining " ..
@@ -3684,6 +3712,16 @@ ns.Overrides.wowhead = {
                 "her.",
             rewardChoices = {{7738, 1}, {7739, 1}},
         },
+        [2202] = {
+            description = "I've heard about a newly discovered plant called the magenta fungus caps. They " ..
+                "grow in clusters at the Uldaman dig site and can be found in the early tunnels and deep " ..
+                "within the less-explored areas. I want to study their potential use in alchemy, and " ..
+                "that's where you come in.\n\nFind the magenta cap clusters and bring me a dozen caps. Be " ..
+                "warned, the clusters may spew out poison spores if jostled.\n\nDo this for me, and I'll " ..
+                "whip up a batch of one of my famous restorative elixirs for you!",
+            rewardItems = {{9030, 5}},
+            rewardMoney = 5500,
+        },
         [2206] = {
             description = "Our operatives in the field are reporting heavy Defias activity south of " ..
                 "Goldshire. The reports indicate that the Defias have taken over Jerod's Landing and are " ..
@@ -3744,6 +3782,12 @@ ns.Overrides.wowhead = {
                 "they train all of their thieves.\n\nBoard that ship, steal the treasure, and bring it " ..
                 "back to me. Use the pirate's den if you need to practice your thievery, but be careful!",
             rewardItems = {{7676, 10}},
+        },
+        [2382] = {
+            description = "Zando'zan has seen it! Yes, the day comes! Thrall's death... the dagger in his " ..
+                "back, poison seeping through to his every vein... Zando'zan has said too " ..
+                "much.\n\n<name>! Zando'zan has a task for <name>! <name> must travel to Ratchet, east of " ..
+                "the Crossroads, and speak with Wrenix the Wretched. Go!",
         },
         [2383] = {
             description = "Ah, while you were gone a parchment came for you, <name>.\n\nRead it when you " ..
@@ -6074,6 +6118,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 111000,
             rewardXP = 10600,
         },
+        [7163] = {rewardItems = {{17905, 1}}, rewardXP = 7070},
         [7167] = {rewardItems = {{17909, 1}}, rewardXP = 10600},
         [7170] = {rewardItems = {{17902, 1}}, rewardXP = 8800},
         [7342] = {rewardItems = {{18042, 200}}},
@@ -6269,6 +6314,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{20033, 1}},
         },
         [8104] = {rewardItems = {{19601, 1}}},
+        [8108] = {rewardItems = {{19604, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
         [8147] = {rewardItems = {{19620, 1}}},
         [8151] = {
@@ -8495,6 +8541,7 @@ ns.Overrides.wowhead = {
                 "debt.",
             rewardItems = {{24245, 1}},
         },
+        [9807] = {rewardItems = {{24245, 1}}},
         [9808] = {
             description = "I've seen your kind use shiny round pieces of metal to trade for things that " ..
                 "you need. We're not so different from you. We use shiny round mushrooms as our " ..
@@ -10826,6 +10873,15 @@ ns.Overrides.wowhead = {
                 "turn on you.",
             rewardChoices = {{31481, 1}, {31482, 1}, {31483, 1}, {31484, 1}},
             rewardMoney = 35000,
+        },
+        [10492] = {
+            description = "Well met, <class>. I've something that might interest you.\n\nI have in my " ..
+                "possession a set of armor much like the one worn by those of your profession, but of " ..
+                "much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange " ..
+                "for a small favor.\n\nThe blood of the frostsabers and bears that inhabit Winterspring " ..
+                "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
+                "the bracers and a small amount of gold. You shall find the effort worth your while.",
+            rewardItems = {{22095, 1}},
         },
         [10497] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
@@ -13514,6 +13570,16 @@ ns.Overrides.wowhead = {
                 "striders. Hunt one down and take its succulent meat to Kyle. When you see Kyle in town, " ..
                 "put the meat down and he is sure to come to you.",
             rewardMoney = 175,
+        },
+        [11134] = {
+            description = "Now that we've eliminated the deserters from Theramore, it's time to complete " ..
+                "this operation. My local contacts have reported that the deserters base their operations " ..
+                "in a ship moored on a small island to the southeast of the docks.\n\nArresting their " ..
+                "leader, Gavis Greyshield, should cause the others to lose their will to fight. Find him " ..
+                "within the ship and convince him to surrender. I wouldn't be surprised if he puts up a " ..
+                "bit of a fight for show, but then surrenders when he understands he can't win.",
+            rewardChoices = {{33232, 1}, {33249, 1}, {33274, 1}},
+            rewardMoney = 8000,
         },
         [11138] = {
             description = "From the wording of the orders you recovered, it looks like the first priority " ..

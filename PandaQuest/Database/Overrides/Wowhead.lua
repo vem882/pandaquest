@@ -25507,7 +25507,16 @@ ns.Overrides.wowhead = {
                 "live!",
             rewardMoney = 74000,
         },
-        [13235] = {rewardMoney = 148000},
+        [13235] = {
+            description = "You've done well in destroying the Fleshwerks and slaughtering the Lich King's " ..
+                "servants. Now, all that remains is to defeat the Fleshwerks' greatest accomplishment -- " ..
+                "the flesh giant known as Morbidus.\n\nIt will not be an easy fight, but the Shadow Vault " ..
+                "has dispatched Margrave Dhakar with some reinforcements. Meet up with him at the highest " ..
+                "point at the western end of the Fleshwerks. Tell him when you're ready to begin the " ..
+                "attack and he'll order his forces into battle.",
+            rewardChoices = {{44378, 1}, {44379, 1}, {44380, 1}, {44381, 1}},
+            rewardMoney = 148000,
+        },
         [13236] = {
             description = "You probably think you're quite strong -- fighting these undead and crushing " ..
                 "their bones beneath your war machines.\n\nThat is nothing compared to the strength it " ..
@@ -61639,6 +61648,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 33,
         },
+        [893] = {spawns = {[10] = {{7.6, 33.4}, {7.6, 33.6}}}, zoneID = 10},
         [1024] = {
             spawns = {
                 [11] = {
@@ -61782,6 +61792,7 @@ ns.Overrides.wowhead = {
         [2921] = {spawns = {[3] = {{25.8, 44.4}, {25.8, 45}, {26, 45.6}}}, zoneID = 3},
         [2982] = {spawns = {[215] = {{42.4, 92}, {42.6, 92}}}, zoneID = 215},
         [2984] = {spawns = {[215] = {{32.8, 36}}}, zoneID = 215},
+        [2991] = {spawns = {[215] = {{50, 81}}}, zoneID = 215},
         [3147] = {spawns = {[14] = {{49.8, 40.4}}}, zoneID = 14},
         [3154] = {spawns = {[14] = {{42.8, 69.2}}}, zoneID = 14},
         [3260] = {
@@ -61814,6 +61825,7 @@ ns.Overrides.wowhead = {
         [3421] = {spawns = {[17] = {{49, 86.2}}}, zoneID = 17},
         [3430] = {spawns = {[17] = {{44.4, 59.2}, {44.6, 59.2}}}, zoneID = 17},
         [3516] = {spawns = {[1657] = {{34.4, 8.4}, {34.4, 8.6}, {34.6, 8.4}, {34.8, 8.8}}}, zoneID = 1657},
+        [3616] = {spawns = {[148] = {{43.4, 76.2}, {43.6, 76.4}}}, zoneID = 148},
         [3639] = {spawns = {[148] = {{40.2, 59.4}, {40.2, 59.8}}}, zoneID = 148},
         [3644] = {spawns = {[148] = {{35.6, 43.4}, {35.8, 43.6}}}, zoneID = 148},
         [3650] = {spawns = {[148] = {{44.2, 36.2}}}, zoneID = 148},
@@ -62422,6 +62434,7 @@ ns.Overrides.wowhead = {
             zoneID = 361,
         },
         [11020] = {spawns = {[361] = {{38.4, 50.4}, {38.6, 50.4}}}, zoneID = 361},
+        [11610] = {spawns = {[28] = {{52, 28}}}, zoneID = 28},
         [11613] = {spawns = {[28] = {{57.4, 35.4}, {57.4, 35.8}, {57.8, 36}}}, zoneID = 28},
         [11629] = {spawns = {[618] = {{61.2, 38.8}}}, zoneID = 618},
         [11758] = {spawns = {[440] = {{52.8, 27.4}}}, zoneID = 440},
@@ -62831,6 +62844,7 @@ ns.Overrides.wowhead = {
         [67997] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
         [68128] = {maxLevel = 90, minLevel = 90, subName = "The Metal Brewmaster"},
+        [68150] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
         [68223] = {subName = "Warchief"},
         [68287] = {subName = "High Chieftain"},
         [68337] = {maxLevel = 90, minLevel = 90, subName = "Blademaster"},
@@ -62865,6 +62879,7 @@ ns.Overrides.wowhead = {
         [69966] = {maxLevel = 91, minLevel = 91, subName = "Glorious Conquest Quartermaster"},
         [70022] = {subName = "The Bone Collector"},
         [70100] = {maxLevel = 90, minLevel = 90},
+        [70249] = {maxLevel = 92, minLevel = 92},
         [70270] = {subName = "Master Demonologist"},
         [70360] = {subName = "Ranger General of the Silver Covenant"},
         [70398] = {subName = "Fishing Trainer"},
