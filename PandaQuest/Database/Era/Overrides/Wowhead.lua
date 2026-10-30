@@ -2102,6 +2102,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9599, 1}, {9603, 1}},
             rewardMoney = 300,
         },
+        [484] = {
+            description = "I'm James Halloran, the tanner. My cured crocolisk skins are sought after all " ..
+                "over, shipments leaving by boat to ports around the world.\n\nMet Einar? He's one of the " ..
+                "hunters that brings crocolisk skins in for me.\n\nI'm a bit short on the softer skins " ..
+                "that come off crocolisk young.\n\nBeing that I'm running low, I'll pay you top coin for " ..
+                "a stack of the skins. You can find the young crocs in the marshes right outside of town.",
+            rewardMoney = 1400,
+        },
         [485] = {
             description = "You have uncovered some sort of strange, egg-shaped device made from metal. " ..
                 "Fiddling with one of its knobs springs the egg to life, as it opens up into some sort of " ..
@@ -2493,6 +2501,22 @@ ns.Overrides.wowhead = {
                 "recovering some of the items he left behind.\n\nThe city fell under siege, and he " ..
                 "attempted to defend the Tower of Arathor, but to no avail. I have agents in the " ..
                 "Highlands already, but they've requested I send more aid. Are you interested?",
+        },
+        [691] = {
+            description = "Archmage Malin sent Skuerto and I here to collect reagents for him. I was at a " ..
+                "loss as to how I was going to collect the items, but now that you're here, I think my " ..
+                "problem's solved.\n\nI need the following: Witherbark tusks, Witherbark medicine pouches " ..
+                "and a shadow hunter knife.\n\nCould you find those for me? The Witherbark live to the " ..
+                "southeast of Arathi.",
+            rewardMoney = 7500,
+        },
+        [694] = {
+            description = "All rested?\n\nHere's our next step: there're ogres all around the Tower of " ..
+                "Arathor in Stromgarde. We're gonna need to activate the tower's defenses if you're gonna " ..
+                "stand a chance against 'em an' still make it to the items alive. To do that, we're gonna " ..
+                "need some gems the Boulderfist shaman have taken a liking to. They took 'em from the " ..
+                "tower, but they're not gonna stay in their possession for long.\n\nGet one of them gems " ..
+                "an' bring 'em to Kryten--he knows the spell to enchant 'em so they'll work as a key.",
         },
         [698] = {
             description = "I'm working on getting some supplies together for our outpost near the beach " ..
@@ -3072,6 +3096,10 @@ ns.Overrides.wowhead = {
                 "your fist. I know a few buyers who'd be interested in getting their hands on something " ..
                 "like that, and I'd be willing to go half and half on its sale.",
             rewardItems = {{5335, 1}},
+        },
+        [897] = {
+            description = "This strange, insect-like creature looks outside of the natural order, as " ..
+                "though it does not belong in the Barrens.",
         },
         [898] = {
             description = "Finally! Someone to rescue me!\n\nI can't believe you got past the guards. " ..
@@ -3819,6 +3847,13 @@ ns.Overrides.wowhead = {
                 "this parts order to Wharfmaster Dizzywig -- he'll probably be at the docks.\n\nDo this " ..
                 "for me, and I'll have more jobs for you.\n\nJobs, my friend, with serious profit " ..
                 "potential...",
+        },
+        [1114] = {
+            description = "Now that I have what I need, give these parts to Fizzle Brassbolts. He's been " ..
+                "waiting a long time for them -- I'm sure he won't miss the little piece I removed from " ..
+                "his order...\n\nAnd I wouldn't bother mentioning it to him. It was small and " ..
+                "worthless.\n\nTrust me.",
+            rewardMoney = 1000,
         },
         [1118] = {
             description = "<name>, you're a <class> I can trust, both to get the job done and to keep " ..
@@ -5375,6 +5410,14 @@ ns.Overrides.wowhead = {
                 "show you the ways of strider stew.",
             rewardItems = {{5486, 1}, {5477, 5}},
         },
+        [2201] = {
+            description = "The paladin's journal has provided perhaps the only clues that Uldaman will " ..
+                "yield as to the location of the necklace's gems. If the paladin's scribing remains " ..
+                "accurate, then the Shadowforge dwarves and the troggs that vie for control of the dig " ..
+                "site will need to be dealt with.\n\nArmed with this knowledge, the search for the gems " ..
+                "begins in earnest. When all the gems have been acquired, Talvash in Ironforge should be " ..
+                "notified via the Phial of Scrying as per his instructions.",
+        },
         [2205] = {
             description = "The badge? Oh, it's nothing, fish - nothing you could handle anyhow. By the " ..
                 "looks of you, I'd say Mathias is likely to mistake you for the cheese delivery " ..
@@ -5596,6 +5639,14 @@ ns.Overrides.wowhead = {
         [2661] = {
             description = "Here's the Violet Powder, <name>. Take it to Marin and tell him he owes me a " ..
                 "favor!",
+        },
+        [2721] = {
+            description = "As one chapter of your adventure closes, another one begins, <name>.\n\nOne of " ..
+                "my men is still unaccounted for, lost somewhere in the Blasted Lands. I am talking about " ..
+                "Lieutenant Kirith, of course.\n\nAs I had mentioned earlier, we were both imprisoned and " ..
+                "tortured by Allistarj, but poor Kirith, his strength of will faltered. I could hear the " ..
+                "experiments from my cage; the tortured screams rang through the halls of the cave. That " ..
+                "was the last I saw or heard of Kirith.",
         },
         [2741] = {rewardItems = {{8647, 1}}},
         [2742] = {
@@ -6505,6 +6556,14 @@ ns.Overrides.wowhead = {
                 "then take it to Nixx Sprocketspring in Gadgetzan. Remember - membership is permanent and " ..
                 "prevents joining the other discipline, so make sure this is what you want before " ..
                 "finishing his task.",
+        },
+        [3630] = {
+            description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
+                "Gnome engineering represents by far the superior of the two! It's about the construction " ..
+                "of wonderful gadgets and devices that make life better!\n\n<name>, read this manual. If " ..
+                "you want to learn more on gnome engineering, then take that manual to Tinkmaster " ..
+                "Overspark in Ironforge. Remember - membership is permanent and prevents joining the " ..
+                "other discipline, so make sure you are sure before finishing his task!",
         },
         [3632] = {
             description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
@@ -9227,6 +9286,12 @@ ns.Overrides.wowhead = {
                 "letter to Zargh.\n\nSpeak with me when you are ready to go.",
             rewardMoney = 350,
         },
+        [6389] = {
+            description = "You look around the lumber mill for something suitable to open the barrel " ..
+                "with. You find a crowbar that looks like it will do the trick.\n\nYou set your feet and " ..
+                "pray that you'll be able to get out of the mill before the termites get to you.",
+            rewardMoney = 8500,
+        },
         [6402] = {
             description = "You are to meet with Windsor at the gates of Stormwind.\n\nWhat Windsor is " ..
                 "about to unveil will shake the very foundation of the kingdom!\n\nDo not attempt to " ..
@@ -10742,6 +10807,7 @@ ns.Overrides.wowhead = {
         [8192] = {rewardItems = {{19790, 1}}},
         [8193] = {rewardChoices = {{19970, 1}, {19979, 1}}, rewardMoney = 18000},
         [8194] = {rewardMoney = 2300},
+        [8196] = {rewardItems = {{20031, 10}}},
         [8224] = {rewardItems = {{19971, 1}}, rewardMoney = 2300},
         [8227] = {
             description = "Amongst the shattered fishing lures and tackle is a rolled, silken measuring " ..
@@ -11384,6 +11450,15 @@ ns.Overrides.wowhead = {
                 "you.\n\nYou will find them useful in the fight against the enemy.",
             rewardItems = {{21333, 1}},
         },
+        [8561] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21329, 1}},
+        },
         [8572] = {
             description = "The badges you collect from performing combat, logistics and tactical " ..
                 "assignments for Cenarion Hold are more than just for show, <name>.\n\nYou'd be wise to " ..
@@ -11971,6 +12046,15 @@ ns.Overrides.wowhead = {
                 "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
                 "coins and I'll perform the exchange.",
             rewardItems = {{22063, 1}},
+        },
+        [8919] = {
+            description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
+                "this world. Yet I'm willing to wager you haven't seen a piece of armor like " ..
+                "this.\n\nPerform a small favor for me and I'll be willing to trade it to you for an " ..
+                "ordinary set of bracers.\n\nI'm in need of a sizeable sample of venom drawn from the " ..
+                "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
+                "coins and I'll perform the exchange.",
+            rewardItems = {{22071, 1}},
         },
         [8920] = {
             description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
