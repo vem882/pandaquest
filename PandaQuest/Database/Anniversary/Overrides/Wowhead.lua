@@ -3604,6 +3604,12 @@ ns.Overrides.wowhead = {
                 "the hearts acquired. Take them to my colleague, Apothecary Zinge. You will find her in " ..
                 "our headquarters in the Undercity.",
         },
+        [1361] = {
+            description = "A warrior of the Horde, Regthar Deathgate, is recruiting agents for a mission " ..
+                "into the land of Desolace. Speak with him if you wish to volunteer. He is stationed in " ..
+                "the Barrens, in a series of bunkers west of the Crossroads.\n\nAnd sharpen your weapons. " ..
+                "Desolace is a place torn by war.",
+        },
         [1362] = {
             description = "The Kolkar centaur live in Desolace, and their forces have spread into the " ..
                 "Barrens. This is a known fact and we have Horde agents dealing with them here.\n\nBut as " ..
@@ -7157,6 +7163,14 @@ ns.Overrides.wowhead = {
                 "enough.\n\nYou'll know when they're bloody enough so don't ask.",
             rewardMoney = 21000,
         },
+        [7815] = {
+            description = "Don't let their big eyes fool you, mon! Those saltwater snapjaws be a menace. " ..
+                "I can't fish for five minutes without getting a broken line from one of those oversized " ..
+                "fish vacuums stealing my bait.\n\nDo me and the people of Revantusk Village a service " ..
+                "and kill em, mon.\n\nKill the whole lot of em!",
+            rewardItems = {{19022, 1}},
+            rewardMoney = 7500,
+        },
         [7816] = {
             description = "Yo! There be a turtle out there not like the others. She be the Gammerita, " ..
                 "leader of the saltwater snapjaws - a downright dirty thievin' reptile.\n\nMon, she stole " ..
@@ -7465,6 +7479,15 @@ ns.Overrides.wowhead = {
                 "will need a large brilliant shard, and crests worn by the Abyssal Templar.\n\nBring " ..
                 "these to me and I will do the rest.",
             rewardItems = {{20422, 1}},
+        },
+        [8345] = {
+            description = "Day after day I stand here, watching, waiting. I've been accused of dwelling " ..
+                "too much on our past, while my eyes look to the horizon. But it is my firm belief that " ..
+                "each visitor to this island should honor those who have sacrificed all so that they may " ..
+                "continue to do so.\n\nDath'Remar Sunstrider was our first king. He led us here from " ..
+                "Kalimdor through the Maelstrom.\n\nSeek out his shrine to the west and do not return to " ..
+                "me until you have read the plaque upon it in his honor.",
+            rewardMoney = 150,
         },
         [8365] = {
             description = "You're the help the Cartel sent? I suppose you'll do. Listen carefully " ..
@@ -9408,6 +9431,14 @@ ns.Overrides.wowhead = {
                 "him. Do not disappoint me.",
             rewardItems = {{24136, 1}},
             rewardXP = 420,
+        },
+        [9676] = {
+            description = "As you advance within your class, you will want to take advantage of the " ..
+                "training that your class trainer can provide you. For young paladins here on Sunstrider " ..
+                "Isle, your trainer is Jesthenis Sunstriker. Speak with Jesthenis and see what training " ..
+                "he has available for you. The things he will teach do have a cost, so bring some coin " ..
+                "with you.\n\nYour trainer - as with all the trainers on Sunstrider Isle - is inside the " ..
+                "Sunspire on the lower level.",
         },
         [9678] = {
             description = "You have learned much of combat and bloodshed, initiate, but there is much " ..
