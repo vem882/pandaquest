@@ -1614,6 +1614,12 @@ ns.Overrides.wowhead = {
                 "more ink!\n\nTo make more I need Rethban Iron Ore from the Redridge Mountains. Foreman " ..
                 "Oslow in Lakeshire is my usual supplier.",
         },
+        [346] = {
+            description = "Now that I've finished copying the book, here's the original Stresses of Iron. " ..
+                "Thank you for your patience, and if you see Milton please tell him I'm sorry for the " ..
+                "long delay.",
+            rewardItems = {{6095, 1}},
+        },
         [348] = {
             description = "Sick...so...very s-s-sick....\n\n...have contracted Stranglethorn " ..
                 "Fever...deadly v-v-virus...\n\n...only cure...is...is...to eat the heart of M-m-m-m-mokk " ..
@@ -2549,6 +2555,15 @@ ns.Overrides.wowhead = {
                 "mound he was chased off after winning too much. Maybe the Ogres there have his " ..
                 "key.\n\nBut if they do, you might have to kill a load of them to find the right one...",
             rewardItems = {{4129, 1}},
+        },
+        [623] = {
+            description = "<name>, since I have you here, I got a message from Groy while you were gone. " ..
+                "He mentioned bein' satisfied with the last shipment that arrived and has a client that " ..
+                "wants some more of the stuff right away.\n\nI won't be headin' to Theramore for a week, " ..
+                "but if you're willin' to make the journey, there's no reason you can't take the stuff " ..
+                "for me.\n\nFeeling adventurous? You do know where Dustwallow Marsh is, doncha? I'd be " ..
+                "careful though, Theramore can be dangerous if you're the wrong kind of crowd.",
+            rewardMoney = 4500,
         },
         [624] = {
             description = "There is an ornate, well-traveled bridge East of Deadwind and south of " ..
@@ -4718,6 +4733,13 @@ ns.Overrides.wowhead = {
                 "Ran an inn out in the marsh for a while, wonderful place.\n\nLook, I don't really want " ..
                 "to talk about it. Bring it up with Captain Vimes if you really have to.",
         },
+        [1287] = {
+            description = "Reethe? That coward?\n\nWe threw him out of camp because he insisted on " ..
+                "raiding the supplies of the ogres up at Brackenwall Village. We're not so many in number " ..
+                "that we could stand up to those mindless brutes.\n\nHe crossed the line one too many " ..
+                "times, so we left him to fend for himself.\n\nNow, I helped you out... So, why don't you " ..
+                "help us out and forget you bumped into us?",
+        },
         [1322] = {
             description = "Hmmm, there's writing right here on the rim of the shield, but it's hard to " ..
                 "read from all the burned stuff.\n\nI need acid to make it clear. Venom from the Darkfang " ..
@@ -5694,6 +5716,15 @@ ns.Overrides.wowhead = {
         [1792] = {rewardChoices = {{6975, 1}, {6977, 1}, {6976, 1}}},
         [1793] = {rewardItems = {{6776, 1}}},
         [1794] = {rewardItems = {{6776, 1}}},
+        [1795] = {
+            description = "If you're are sufficiently prepared, then we should begin. Let me explain the " ..
+                "process to you.\n\nI will begin by creating the basic summoning circle. When that is " ..
+                "finished, my acolytes will use the rods of channeling to create the greater " ..
+                "circle.\n\nOnce that is done, read the incantation from the Tome of the Cabal, and the " ..
+                "felhunter will be pulled forth. Be careful, <name>. A felhunter is a powerful foe, and " ..
+                "I'd like to see you keep your head on your shoulders.",
+            rewardItems = {{22244, 1}},
+        },
         [1796] = {
             description = "The first item I will aid you in creating is a robe. You will gather the items " ..
                 "for me, and we will put them together. Afterwards, assuming you succeed, you will have " ..
@@ -7239,6 +7270,10 @@ ns.Overrides.wowhead = {
             rewardChoices = {{10740, 1}, {10741, 1}, {10739, 1}},
             rewardMoney = 15500,
         },
+        [3569] = {
+            description = "Give this to Thersa. Perhaps it will cure her... perhaps not. We really won't " ..
+                "know until after she drinks it.",
+        },
         [3602] = {
             description = "The ancient cliff giants of the southern region of Azshara consume the rock " ..
                 "and buildings of the land for sustenance. The excrement from their consumption is a " ..
@@ -8101,6 +8136,7 @@ ns.Overrides.wowhead = {
                 "I'll give you containers, you use them to collect a sample from the deceased creatures.",
             rewardMoney = 7500,
         },
+        [4561] = {rewardItems = {{15102, 1}}},
         [4581] = {
             description = "The druid Kayneth Stillwind sent word to me. He would like a report of the " ..
                 "happenings along our coast and in the forests surrounding Astranaar. He fears there is a " ..
@@ -12992,6 +13028,11 @@ ns.Overrides.wowhead = {
                 "components. Gather them and bring them to Mr. Nozzlespring from the Ironforge Brigade.",
             rewardItems = {{20800, 1}, {20805, 1}},
         },
+        [8782] = {
+            description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
+                "batch of uniform materials and bring them to Windcaller Proudhorn.",
+            rewardItems = {{20800, 1}, {21132, 1}},
+        },
         [8783] = {
             description = "Vargus, Cenarion Hold's blacksmith, has requested enchanted materials to be " ..
                 "used in the crafting of powerful weapons for our forces. Obtain these and bring them " ..
@@ -13241,6 +13282,13 @@ ns.Overrides.wowhead = {
                 "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
                 "both see this through I shall make the rest of the pieces available to you.",
             rewardItems = {{22078, 1}, {22081, 1}},
+        },
+        [8944] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gauntlets. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{21994, 1}, {21998, 1}},
         },
         [8947] = {
             description = "We didn't realize the importance of Valthalak's medallion, so it was divided " ..
