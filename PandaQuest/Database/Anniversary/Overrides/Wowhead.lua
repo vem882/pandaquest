@@ -1944,6 +1944,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{2230, 1}, {3741, 1}, {6482, 1}},
             rewardItems = {{3735, 1}},
         },
+        [506] = {
+            description = "A day or two ago, I was visited by the leader of this Syndicate. His name was " ..
+                "Aliden Perenolde, and styled himself lord of this land. He confided in me his plans to " ..
+                "take the orcs that stood against him as slaves, just as his father and his mentor, the " ..
+                "despised Blackmoore, had planned.\n\nMore important was that he brought his mistress, a " ..
+                "wisp of a girl named Elysa. Around her neck was the pendant the Warchief desires.\n\nNow " ..
+                "go, I will make my own way, after I have settled my business here.",
+            rewardMoney = 3000,
+        },
         [516] = {
             description = "I have received reports that a group of undead are holing up to prepare for an " ..
                 "attack against us. Armed with this information, we can turn the tables and attack them " ..
@@ -3190,6 +3199,14 @@ ns.Overrides.wowhead = {
                 "should take the ore sample to Ziz right away. He told me that he'd set up camp somewhere " ..
                 "on the western side of Windshear Crag. Good luck.",
             rewardItems = {{6666, 1}},
+        },
+        [1093] = {
+            description = "Terrible what the Venture Company has done here, eh? What were they thinking? " ..
+                "Goblin company hiring a gnome!\n\nLucky for me, Sputtervalve knows a genius when he sees " ..
+                "one. Hired me just after I'd been kicked out!\n\nTells me they built some enormous " ..
+                "woodcutting machine, and Sput' wants me to steal the plans for him. Unfortunately, " ..
+                "Gerenzo--bloody gnome--wants me dead on sight... maybe you could steal the plans for me? " ..
+                "You should be able to find them on one of their operators.",
         },
         [1097] = {
             description = "There's a dwarven weaponsmith in Stormwind, Grimand Elmore, who sent word that " ..
@@ -5797,6 +5814,11 @@ ns.Overrides.wowhead = {
                 "will so easily.\n\nIf you're interested, she's in Strahad's tower above Ratchet in the " ..
                 "Barrens.",
         },
+        [4966] = {
+            description = "But, there may be more centaur than I thought, I ask you, <name>, to fight " ..
+                "with me against these vile assassins.",
+            rewardChoices = {{15461, 1}, {15462, 1}, {15463, 1}},
+        },
         [4967] = {
             description = "Still a fool, and still seeking the trappings of mortals. Yes, I speak to you " ..
                 "with arrogance. I see you before me and I laugh. You're pathetic!\n\nBut it matters not " ..
@@ -7066,6 +7088,14 @@ ns.Overrides.wowhead = {
                 "message.\n\nKill all the gryphons you see in the Hinterlands, collect their feathers. " ..
                 "From this we make the final message.",
         },
+        [7843] = {
+            description = "<Otho hands you a long, blood drenched spear, wrapped in several gryphon " ..
+                "feathers.>\n\nYou take this, mon. You take this to Aerie Peak, dead center of town by " ..
+                "the well. You plant it! Drive it right into the ground! Show those dwarves that troll " ..
+                "mean business! Come back when you do this. Hopefully you come back alive.",
+            rewardItems = {{19119, 1}},
+            rewardMoney = 22000,
+        },
         [7845] = {
             description = "My mate was taken by Vilebranch savages in a bold midnight raid on our " ..
                 "village. Our spies have told me that he is still alive and being held prisoner atop " ..
@@ -7199,6 +7229,14 @@ ns.Overrides.wowhead = {
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
         [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}, rewardXP = 705},
+        [8275] = {
+            description = "Attention, heroes of the Alliance! The silithid menace has been left unchecked " ..
+                "for too long. Unfettered by any real opposition, they've been preparing all this time " ..
+                "for a large-scale expansion.\n\nCenarion Circle forces are gathering in Silithus to take " ..
+                "the fight to these wretched creatures and all able-bodied adventurers are hereby called " ..
+                "to join us!\n\nDon't wait until it's too late! Aid us in the defense of Azeroth! Report " ..
+                "to Windcaller Proudhorn at Cenarion Hold for specific instructions!",
+        },
         [8276] = {
             description = "Attention, champions of the Horde! There's a threat we've left unchallenged " ..
                 "for too long. Tremors in the earth near silithid hives all around Azeroth have alerted " ..
@@ -8617,6 +8655,13 @@ ns.Overrides.wowhead = {
                 "the south, preying on hapless travelers who wander into the Ghostlands.\n\nUse this " ..
                 "final taming rod to befriend a mistbat and return to me when you have finished.",
             rewardXP = 840,
+        },
+        [9488] = {
+            description = "The arcane fragments you collected will do nicely.\n\nNicely for what, you " ..
+                "ask? For making a splendid robe fit for a <class> like yourself!\n\nAll we need now is " ..
+                "some linen cloth and a spindleweb silk gland. You can find the silk gland from any " ..
+                "spindleweb spider, preferably after killing them.",
+            rewardItems = {{7509, 1}},
         },
         [9491] = {
             description = "A rich, and I mean filthy rich, merchant came through here yesterday talking " ..
@@ -10180,6 +10225,13 @@ ns.Overrides.wowhead = {
                 "arrive.\n\nThis fight is against Brokentoe, a ferocious clefthoof.\n\nGood luck! I hope " ..
                 "you brought friends.\n\nAnd remember, the fight's over when either you or your opponent " ..
                 "are lying face down on the arena floor.",
+            rewardMoney = 111000,
+        },
+        [9967] = {
+            description = "This next battle involves a duo - twin brothers to be precise. They call " ..
+                "themselves the \"Blue Brothers.\"\n\nIt's not too late to chicken out, <name>. I'd " ..
+                "certainly understand.\n\nBut if you're ready for some action, step in the Ring of Blood " ..
+                "and wait for the Murkblood twins to arrive.\n\nLast one standing is the winner!",
             rewardMoney = 111000,
         },
         [9968] = {
@@ -14903,6 +14955,15 @@ ns.Overrides.wowhead = {
                 "the collectin' to me!",
             rewardMoney = 88000,
         },
+        [11180] = {
+            description = "I traveled out here to pay Jarl a visit at his new home and it's been a " ..
+                "nonstop horror show ever since! There's something seriously wrong here and I can't be " ..
+                "the only one who sees it...\n\nHave you seen the ghosts and corpses shambling about " ..
+                "Witch Hill? I've a feeling that if anyone knows what happened here, it is them. Seek out " ..
+                "these risen husks and risen spirits in the surrounding area, grant them rest through " ..
+                "combat, and see what you can learn from them before this evil consumes Jarl!",
+            rewardMoney = 4000,
+        },
         [11181] = {
             description = "In my years as an herbalist, I've often observed that nature will provide " ..
                 "subtle cures to the most vexing of problems. I've read that hedge mages and witch " ..
@@ -15378,6 +15439,7 @@ ns.Overrides.wowhead = {
             spawns = {[3522] = {{46.4, 74.4}, {46.4, 74.6}, {46.6, 74.4}, {46.6, 74.8}}},
             zoneID = 3522,
         },
+        [20199] = {spawns = {[3523] = {{45.4, 36}, {45.8, 36}}}, zoneID = 3523},
         [20427] = {
             spawns = {
                 [3520] = {

@@ -4,6 +4,50 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.306
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 540 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,027 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,022 quests, 37 NPCs, 1 object
+- quest 11074 - Tokens of the Descendants - updated
+  - description added
+  - reward items: +1
+- quest 31845 - Practice Makes Perfect: Master Tsang - updated
+  - description added
+- npc 1127 - Elder Crag Boar - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 2305 - Foreman Bonds - updated
+  - coordinates: 6 spawn points added in Hillsbrad Foothills
+- npc 2711 - Phin Odelic - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 4100 - Screeching Harpy - updated
+  - coordinates: 23 spawn points added in Thousand Needles
+- npc 6138 - Arkkoran Oracle - updated
+  - coordinates: 39 spawn points added in Azshara
+- npc 9528 - Arathandris Silversky - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 10431 - Gregor Greystone - updated
+  - coordinates: 1 spawn point added in Winterspring
+- npc 16458 - Innkeeper Faralia - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 51236 - Aeonaxx - updated
+  - coordinates: 40 spawn points added in Deepholm
+- npc 67999 - Miura Brightweaver - updated
+  - NPC level added (90)
+- npc 68049 - Arcanist Rathaella - updated
+  - NPC level added (90)
+- npc 68050 - Sunreaver Mage - updated
+  - NPC level added (90)
+- npc 70677 - Master Boom Boom - updated
+  - NPC title added (The Dynamite Monkey Monk)
+  - NPC level added (92)
+- npc 70748 - Argh - updated
+  - NPC title added ("The Lady")
+  - NPC level added (92)
+- npc 72758 - 5.4 Tradeskills - Cooking Noodle Cart - Tier 1 - 10p - Vendor - updated
+  - coordinates: 4 spawn points added in Timeless Isle
+  - coordinates: 2 spawn points added in Valley of the Four Winds
+  - coordinates: 1 spawn point added in Dragonblight
+
 0.2.305
 - database - Wowhead data as the PandaQuest portal read it: 7,884 quests, 525 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,019 quests, 22 NPCs, 5 objects
@@ -417,45 +461,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC title added (House of Shen'dralar)
 - npc 14470 - Impsy - updated
   - coordinates: 2 spawn points added in Felwood
-
-0.2.295
-- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 383 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,907 quests, 20 NPCs, 4 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,896 quests, 33 NPCs, 1 object
-- quest 27665 - Darkmoon Hurricane Deck - updated
-  - description removed
-  - reward choices: -2
-- npc 747 - Marsh Murloc - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 787 - Skeletal Healer - updated
-  - coordinates: 40 spawn points added in Duskwood
-- npc 944 - Marryk Nurribit - updated
-  - coordinates: 1 spawn point added in Dun Morogh
-- npc 1022 - Mottled Scytheclaw - updated
-  - coordinates: 36 spawn points added in Wetlands
-- npc 1076 - Merrin Rockweaver - updated
-  - coordinates: 1 spawn point added in Wetlands
-- npc 1192 - Elder Mountain Boar - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 2261 - Syndicate Watchman - updated
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 2404 - Blacksmith Verringtan - updated
-  - coordinates: 18 spawn points added in Hillsbrad Foothills
-- npc 2438 - Bartolo Ginsetti - updated
-  - coordinates: 4 spawn points added in Hillsbrad Foothills
-- npc 3661 - Balthule Shadowstrike - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 3692 - Volcor - updated
-  - coordinates: 7 spawn points added in Darkshore
-- npc 10460 - Prospector Ironboot - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 10537 - [Deprecated for 4.x]Cliffwatcher Longhorn - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 68342 - Kor'kron Soulbreaker - updated
-  - NPC level added (90)
-- npc 246242 - General Temuja - updated
-  - NPC level added (90)
-  - rank added (elite)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
