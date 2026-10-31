@@ -4,6 +4,40 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.311
+- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 582 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,077 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,067 quests, 38 NPCs, 1 object
+- quest 14080 - Stop The Aggressors - updated
+  - description added
+- quest 24820 - A Change of Heart - updated
+  - reward choices: +4
+- npc 2335 - Magistrate Burnside - updated
+  - coordinates: 4 spawn points added in Hillsbrad Foothills
+- npc 2692 - Highvale Scout - updated
+  - coordinates: 38 spawn points added in The Hinterlands
+- npc 3401 - Shenthul - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 4024 - Bloodfury Slayer - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4495 - Gnome Pit Boss - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 7881 - Stoley - updated
+  - coordinates: 1 spawn point added in Tanaris
+- npc 16436 - Argent Dawn Priest - updated
+  - coordinates: 9 spawn points added in Undercity
+  - coordinates: 7 spawn points added in Thunder Bluff
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 23453 - Altar Defender - updated
+  - coordinates: 6 spawn points added in Shadowmoon Valley
+- npc 68043 - Silver Covenant Spellbow - updated
+  - NPC level added (90)
+- npc 69663 - Nurkala - updated
+  - NPC title added (The Hunt Master)
+- npc 246176 - Vicejaw - updated
+  - NPC level added (91)
+  - rank added (elite)
+
 0.2.310
 - database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 571 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,063 quests, 22 NPCs, 5 objects
@@ -326,41 +360,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 9 spawn points added in Undercity
   - coordinates: 7 spawn points added in Orgrimmar
   - coordinates: 2 spawn points added in Stormwind City
-
-0.2.300
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 469 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,959 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,969 quests, 35 NPCs, 1 object
-- quest 29264 - Flamewakers of the Molten Flow - updated
-  - description removed
-  - reward money removed (9g 40s)
-- npc 1007 - Mosshide Gnoll - updated
-  - coordinates: 40 spawn points added in Wetlands
-- npc 1179 - Mo'grosh Enforcer - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 3128 - Kul Tiras Sailor - updated
-  - coordinates: 38 spawn points added in Durotar
-- npc 3381 - Southsea Brigand - updated
-  - coordinates: 15 spawn points added in The Barrens
-- npc 6116 - Highborne Apparition - updated
-  - coordinates: 27 spawn points added in Azshara
-- npc 8444 - Trade Master Kovic - updated
-  - coordinates: 5 spawn points added in Searing Gorge
-- npc 8588 - Umbranse the Spiritspeaker - updated
-  - coordinates: 1 spawn point added in Winterspring
-- npc 14729 - Ralston Farnsley - updated
-  - coordinates: 7 spawn points added in Undercity
-- npc 15751 - Anubisath Warbringer - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 16001 - Aldris Fourclouds - updated
-  - coordinates: 9 spawn points added in Darnassus
-- npc 67866 - Chen Stormstout - updated
-  - NPC level added (90)
-- npc 69136 - Zandalari Speaker - updated
-  - NPC title added (Harbinger of the Loa)
-  - NPC level added (91)
-- npc 70166 - Jubeka Shadowbreaker - updated
-  - NPC title added (Master Demonologist)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

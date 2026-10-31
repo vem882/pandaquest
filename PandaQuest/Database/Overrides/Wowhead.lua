@@ -28322,7 +28322,15 @@ ns.Overrides.wowhead = {
                 "evacuation.",
             rewardMoney = 15,
         },
-        [14080] = {rewardMoney = 74000},
+        [14080] = {
+            description = "The Kvaldir, fearsome vrykul raiders, have disrupted our shipments and " ..
+                "murdered the tuskarr inhabitants of an island to the north, renaming it Hrothgar's " ..
+                "Landing. If they are allowed to get a foothold there, there is no doubt that we will be " ..
+                "their next target.\n\nThe crusade's forces have their hands full dealing with the " ..
+                "Scourge, and we must defend the tournament grounds. Fly north from the grounds until you " ..
+                "reach the island and take on the Kvaldir before they can destroy anything else.",
+            rewardMoney = 74000,
+        },
         [14092] = {
             description = "Now that the coliseum is complete, the Argent Crusade has asked us to help " ..
                 "look after the creatures that champions will be fighting.\n\nThe giant jormungar have " ..
@@ -31713,6 +31721,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 450,
         },
         [24819] = {rewardChoices = {{50378, 1}, {50376, 1}, {50375, 1}, {52569, 1}}},
+        [24820] = {rewardChoices = {{50378, 1}, {50377, 1}, {50375, 1}, {52569, 1}}},
         [24821] = {rewardChoices = {{50378, 1}, {50377, 1}, {50376, 1}, {52569, 1}}},
         [24822] = {rewardChoices = {{50377, 1}, {50376, 1}, {50375, 1}, {52569, 1}}},
         [24824] = {
@@ -62372,6 +62381,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 267,
         },
+        [2335] = {spawns = {[267] = {{29.4, 42}, {29.4, 42.6}, {29.6, 41.8}, {30, 42.8}}}, zoneID = 267},
         [2360] = {
             spawns = {
                 [267] = {
@@ -62435,6 +62445,20 @@ ns.Overrides.wowhead = {
                     {32.2, 51}, {32.2, 51.6}, {32.4, 50.4}, {32.6, 50.4}, {33, 51.4}, {33, 51.6},
                     {33.2, 42.4}, {33.2, 42.6}, {33.2, 47}, {33.4, 47.6}, {33.6, 53.4}, {33.6, 53.8},
                     {33.8, 43.4}, {33.8, 43.6}, {33.8, 44.8}, {33.8, 48.4}, {33.8, 48.6}, {33.8, 50},
+                },
+            },
+            zoneID = 47,
+        },
+        [2692] = {
+            spawns = {
+                [47] = {
+                    {29.2, 48.4}, {29.2, 49.4}, {29.4, 49.8}, {29.4, 50.8}, {29.6, 48.4}, {30.2, 49.6},
+                    {30.4, 49.2}, {30.4, 50.6}, {30.6, 49.8}, {30.6, 50.6}, {30.8, 47.4}, {31.2, 48.2},
+                    {31.4, 48.6}, {31.6, 49.2}, {31.8, 49.6}, {32, 48.4}, {32.2, 47.4}, {32.2, 50.6},
+                    {32.4, 43.4}, {32.4, 43.6}, {32.4, 45.4}, {32.4, 45.6}, {32.6, 50.6}, {32.8, 43.4},
+                    {32.8, 48.6}, {32.8, 50.2}, {33, 43.6}, {33, 44.8}, {33.2, 46.4}, {33.2, 46.6},
+                    {33.2, 48.4}, {33.6, 44}, {33.6, 45.4}, {33.6, 45.6}, {33.6, 47.4}, {33.6, 48.4},
+                    {33.6, 49.8}, {33.8, 48.6},
                 },
             },
             zoneID = 47,
@@ -62579,6 +62603,7 @@ ns.Overrides.wowhead = {
             zoneID = 17,
         },
         [3393] = {spawns = {[17] = {{61.8, 54.8}}}, zoneID = 17},
+        [3401] = {spawns = {[1637] = {{43, 53.4}, {43, 53.6}}}, zoneID = 1637},
         [3402] = {spawns = {[1637] = {{42.8, 53}}}, zoneID = 1637},
         [3421] = {spawns = {[17] = {{49, 86.2}}}, zoneID = 17},
         [3430] = {spawns = {[17] = {{44.4, 59.2}, {44.6, 59.2}}}, zoneID = 17},
@@ -62678,6 +62703,20 @@ ns.Overrides.wowhead = {
                     {34.4, 69.2}, {34.6, 66.4}, {34.8, 71}, {35, 67.4}, {35, 70.2}, {35.4, 68.6},
                     {35.6, 66.4}, {35.6, 67.4}, {35.6, 70.6}, {36.4, 68.2}, {36.8, 67.4}, {36.8, 68.8},
                     {36.8, 69.8}, {37.2, 65.4}, {37.2, 66}, {37.6, 66.6},
+                },
+            },
+            zoneID = 406,
+        },
+        [4024] = {
+            spawns = {
+                [406] = {
+                    {26.4, 68}, {26.4, 69.8}, {27, 69.4}, {27, 71}, {27.4, 69.8}, {27.8, 66.2}, {28.2, 67.4},
+                    {28.2, 68.2}, {28.4, 70.8}, {28.4, 71.6}, {29.2, 70.6}, {29.4, 68.4}, {29.4, 70.4},
+                    {29.4, 71.6}, {29.6, 69.4}, {30, 71.6}, {30.2, 67.4}, {30.2, 69.8}, {30.6, 66},
+                    {30.6, 67}, {30.6, 70.8}, {31, 68.2}, {31.6, 68.6}, {34.2, 69.6}, {34.4, 67.4},
+                    {34.4, 69}, {34.8, 66.4}, {35, 67.4}, {35, 70}, {35.2, 67.8}, {35.4, 68.6}, {35.6, 70.6},
+                    {36, 67.2}, {36.4, 69.6}, {36.6, 68.4}, {36.8, 68.8}, {36.8, 69.8}, {37.2, 65.4},
+                    {37.2, 66}, {37.6, 67.2},
                 },
             },
             zoneID = 406,
@@ -62857,6 +62896,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 331,
         },
+        [4495] = {spawns = {[400] = {{77.4, 76.8}, {77.6, 77}}}, zoneID = 400},
         [4496] = {spawns = {[400] = {{79.8, 76.4}, {79.8, 76.6}}}, zoneID = 400},
         [4709] = {spawns = {[400] = {{79.8, 77}}}, zoneID = 400},
         [4722] = {spawns = {[400] = {{46, 51.4}, {46, 51.6}}}, zoneID = 400},
@@ -63453,6 +63493,7 @@ ns.Overrides.wowhead = {
         [7876] = {spawns = {[440] = {{51.4, 26.8}, {51.6, 26.8}}}, zoneID = 440},
         [7877] = {spawns = {[357] = {{30.4, 46}}}, zoneID = 357},
         [7879] = {spawns = {[357] = {{32.4, 43.8}}}, zoneID = 357},
+        [7881] = {spawns = {[440] = {{67, 23.8}}}, zoneID = 440},
         [7882] = {spawns = {[440] = {{67, 23.8}}}, zoneID = 440},
         [7883] = {
             spawns = {
@@ -63979,6 +64020,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1497,
         },
+        [16436] = {
+            spawns = {
+                [1497] = {
+                    {64.2, 46.4}, {64.2, 46.6}, {64.4, 45.4}, {64.6, 45.2}, {64.8, 44.4}, {65, 46.2},
+                    {65, 46.6}, {65.6, 47.2}, {66, 46.2},
+                },
+                [1637] = {{51.4, 74}, {51.6, 73.2}, {52, 74}, {52.2, 74.8}},
+                [1638] = {
+                    {42, 57.4}, {42.4, 58.2}, {42.4, 58.6}, {42.4, 59.8}, {42.6, 58.4}, {42.6, 58.6},
+                    {42.8, 57.4},
+                },
+            },
+            zoneID = 1497,
+        },
         [16458] = {spawns = {[406] = {{35.4, 6.2}, {35.6, 5.8}}}, zoneID = 406},
         [17039] = {
             spawns = {
@@ -64059,6 +64114,12 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3519,
+        },
+        [23453] = {
+            spawns = {
+                [3520] = {{63.4, 30.4}, {63.8, 30}, {64.2, 31.8}, {64.4, 31}, {64.6, 31.2}, {64.6, 31.6}},
+            },
+            zoneID = 3520,
         },
         [23768] = {spawns = {[15] = {{63.6, 42.8}}}, zoneID = 15},
         [24836] = {
@@ -64313,6 +64374,7 @@ ns.Overrides.wowhead = {
         [67999] = {maxLevel = 90, minLevel = 90},
         [68041] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
+        [68043] = {maxLevel = 90, minLevel = 90},
         [68049] = {maxLevel = 90, minLevel = 90},
         [68050] = {maxLevel = 90, minLevel = 90},
         [68108] = {subName = "Leader of the Kirin Tor"},
@@ -64365,6 +64427,7 @@ ns.Overrides.wowhead = {
         [69357] = {subName = "The Sunreavers"},
         [69360] = {subName = "Jurassic Expedition"},
         [69371] = {subName = "Plague Consultant"},
+        [69663] = {subName = "The Hunt Master"},
         [69668] = {subName = "Kirin Tor"},
         [69670] = {subName = "The Silver Covenant"},
         [69677] = {subName = "Kirin Tor"},
@@ -64439,6 +64502,7 @@ ns.Overrides.wowhead = {
         },
         [198875] = {rank = 1},
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
+        [246176] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246242] = {maxLevel = 90, minLevel = 90, rank = 1},
         [246383] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246384] = {maxLevel = 91, minLevel = 91, rank = 1},
