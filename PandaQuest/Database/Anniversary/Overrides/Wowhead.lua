@@ -2585,6 +2585,7 @@ ns.Overrides.wowhead = {
                 "them.",
             rewardMoney = 800,
         },
+        [883] = {description = "The Hoof of Lakota'mani is a symbol of the strength of the great kodo."},
         [884] = {description = "When touched, sparks fly from the tailspike of Owatanka."},
         [886] = {
             description = "The druids of Thunder Bluff sense a strange power leaking into the Barrens, " ..
@@ -4199,6 +4200,14 @@ ns.Overrides.wowhead = {
                 "me.",
             rewardMoney = 1000,
         },
+        [2522] = {
+            description = "Even though the portal conjuration was a failure, I remain hopeful that my " ..
+                "next attempt will be successful.\n\nThe hope of the Draenei is as fervent as your greed " ..
+                "for trinkets, <race>. Go back out into these cursed lands and recover another flawless " ..
+                "draenethyst sphere.\n\nOf course, the choice to take on this task is completely left to " ..
+                "you *grin*.",
+            rewardItems = {{10752, 1}},
+        },
         [2583] = {
             description = "Within these blasted lands exists two species of boar: the ash-mane boar and " ..
                 "the helboar.\n\nIt would appear that the stamina of these beasts renders them nearly " ..
@@ -4582,6 +4591,12 @@ ns.Overrides.wowhead = {
             description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
                 "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
                 "the warrior trainer Dannal. I would take some time to read it before heading out again.",
+        },
+        [3096] = {
+            description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
+                "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
+                "the rogue trainer David Trias. I would take some time to read it before heading out " ..
+                "again.",
         },
         [3098] = {
             description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
@@ -7257,6 +7272,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{21025, 1}, {21023, 20}},
             rewardMoney = 27000,
         },
+        [8592] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21348, 1}},
+        },
         [8602] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -7313,6 +7337,13 @@ ns.Overrides.wowhead = {
                 "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21391, 1}},
+        },
+        [8634] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "dominance and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21344, 1}},
         },
         [8638] = {
             description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
@@ -9972,6 +10003,15 @@ ns.Overrides.wowhead = {
                 "comprises the camps' defenses.\n\nNethrandamus is ready when you are, <name>. Do not be " ..
                 "afraid, he will keep you safe from harm.",
         },
+        [9992] = {
+            description = "Aren't the trees in the forest beautiful? I've often wondered if they would " ..
+                "survive on Azeroth.\n\nI'm hesitant to send back seedlings, though. It's a rough trip " ..
+                "and they're much harder to transport than something like a sack of seeds. The seeds are " ..
+                "stored in tough cones that fall from the tree's branches once they've reached " ..
+                "maturity.\n\nIf you come upon some of those cones in your travels, would you mind " ..
+                "bringing some of the seeds back to me?",
+            rewardMoney = 29000,
+        },
         [9993] = {
             description = "The oily seeds from the forest's olemba trees could prove very valuable. I'd " ..
                 "like to gather a larger quantity of them, press them for their oil, and then see what I " ..
@@ -10506,6 +10546,14 @@ ns.Overrides.wowhead = {
                 "there, speak with Marshal Isildor and give him Duron's report. He'll be happy to see " ..
                 "another recruit from the homelands, and I'm sure the information in that report is " ..
                 "important stuff!",
+        },
+        [10168] = {
+            description = "For several centuries, the spirits of Auchindoun coalesced into my darkened " ..
+                "essence. Many of the catastrophes that befell this crypt were a direct result of my " ..
+                "weakened state.\n\nRegrettably, there is nothing that can be done to stop this cycle. It " ..
+                "is a facet of the naaru condition - without the void, the Light cannot exist.\n\nYour " ..
+                "only recourse is to destroy the ancient spirits of Nagrand before they transform into " ..
+                "creatures of the void. Use the soul mirrors found throughout this crypt to free them...",
         },
         [10172] = {
             description = "You are an honorable <race>, <name>. You have done much for the Mag'har. No " ..
@@ -13135,6 +13183,11 @@ ns.Overrides.wowhead = {
                 "the ramp out of the Ruuan Weald and you will find it. I want you to kill their leader, " ..
                 "Dorgok!",
             rewardMoney = 37000,
+        },
+        [10797] = {
+            description = "A token in the form of a small statuette falls from Dorgok's dead clutch. It " ..
+                "bears a striking resemblance to one of the gronn.\n\nSurely, Commander Haephus Stonewall " ..
+                "at Evergrove in the Ruuan Weald, up the ramp to the east, would be interested in this!",
         },
         [10798] = {
             description = "This is bad news. Gorgrom the Dragon-Eater is behind the recent Bloodmaul " ..
