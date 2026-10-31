@@ -2366,6 +2366,15 @@ ns.Overrides.wowhead = {
                 "they?--I'll tell you what you want to know.",
             rewardItems = {{3601, 1}},
         },
+        [537] = {
+            description = "The letter you brought me was written by a being who calls himself Nagaz, a " ..
+                "member of the Argus Wake. I don't know what this Argus Wake is, but if they're in " ..
+                "alliance with the Syndicate then they must be a threat.\n\nI want you to find Nagaz and " ..
+                "the Argus Shadow Mages mentioned in that letter. I want you to find them, and kill " ..
+                "them.\n\nSearch in the Uplands, where the Syndicate is strongest. It is north of " ..
+                "Strahnbrad.\n\nWith luck, you'll find these envoys of the Argus Wake there.",
+            rewardMoney = 5000,
+        },
         [540] = {
             description = "Those beastly ogres now reside within Alterac's ruins, and I shudder to think " ..
                 "what they're doing with the precious books still there. You must recover what you " ..
@@ -4308,6 +4317,14 @@ ns.Overrides.wowhead = {
                 "for me, and I'll have more jobs for you.\n\nJobs, my friend, with serious profit " ..
                 "potential...",
         },
+        [1113] = {
+            description = "Why do I need a rare type of guano, you might ask. Well, for this experiment I " ..
+                "want to see what effect two diametrically opposed chemical substances can have on each " ..
+                "other, especially when both are combined with an ever-toxic agent to ensure the most... " ..
+                "ghastly results.\n\nIn the northeastern peaks of Tirisfal Glades lies the Scarlet " ..
+                "Monastery. There the crazed disciples of the Scarlet Crusade congregate. Slay them and " ..
+                "bring me their zealous hearts.\n\nOur concoction will be most wicked!",
+        },
         [1114] = {
             description = "Now that I have what I need, give these parts to Fizzle Brassbolts. He's been " ..
                 "waiting a long time for them -- I'm sure he won't miss the little piece I removed from " ..
@@ -4740,6 +4757,11 @@ ns.Overrides.wowhead = {
                 "cautious.",
         },
         [1267] = {rewardItems = {{6757, 1}}, rewardMoney = 13000},
+        [1268] = {
+            description = "Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest " ..
+                "Inn. There are at least a few visible impressions, with more rows of prints almost " ..
+                "imperceptible in the soft mud of the marsh.",
+        },
         [1273] = {
             description = "It took a long time, but I found Reethe. He hide good for a human.\n\nOgron " ..
                 "worried that he might be crazy after so much time in swamp. You come with me for we go " ..
@@ -4975,6 +4997,15 @@ ns.Overrides.wowhead = {
                 "needing help with patrols along the beach, and I'd rather see you keep your wits and " ..
                 "weapons prepared instead of getting drunk with some of the other louses I share this " ..
                 "camp with.",
+        },
+        [1424] = {
+            description = "The Warchief sent us to investigate strange happenings at The Temple of " ..
+                "Atal'Hakkar.\n\nThe Atal'ai trolls are a tribe of dark casters, known for practicing " ..
+                "forbidden magic. You can imagine how astonished we were when we arrived here to discover " ..
+                "the temple had been sunk.\n\nThe green dragons now guard the site, claiming to be " ..
+                "protectors of Azeroth.\n\nWe need to discover what happened. Explore around the Pool of " ..
+                "Tears and gather Atal'ai artifacts. From those I can begin to piece together this puzzle.",
+            rewardMoney = 12000,
         },
         [1425] = {
             description = "While I fix this wagon, <name>, I have one last task for you.\n\nI have packed " ..
@@ -5999,6 +6030,14 @@ ns.Overrides.wowhead = {
                 "Gregorian at the Magic Quarter's tailor shop.",
         },
         [1962] = {rewardItems = {{7510, 1}}},
+        [1999] = {
+            description = "The wizards of the Kirin Tor at Ambermill have stored away important documents " ..
+                "pertaining to the current state of Dalaran. This we know from the admissions of one of " ..
+                "our prisoners. Lord Varimathras has placed the duty of recovering them in the hands of " ..
+                "the Deathstalkers.\n\nThis task falls to you, <name>. You will need some equipment, " ..
+                "however, and the knowledge of lockpicking. Speak with Estelle Gendry, our outfitter, and " ..
+                "ask her for a set of tools before you set out.",
+        },
         [2038] = {
             description = "As if crashing into the Loch wasn't bad enough, troggs from the nearby island " ..
                 "attacked me and stole my tools and special Blastenheimer Blastencapper explosives. With " ..
@@ -6344,6 +6383,15 @@ ns.Overrides.wowhead = {
                 "detail? Ultimately, it was my fault. All of it was my fault.\n\nSo here I stand, " ..
                 "awaiting orders. I must know. I must have those orders.\n\nDispatch Commander Ruag " ..
                 "resides in Stonard. Find him and find out what became of the orders.",
+        },
+        [2622] = {
+            description = "The orders? What could you possibly want with the orders?\n\nWhat are you " ..
+                "implying, <name>? Of course I relayed those orders! The soldiers I sent the orders with " ..
+                "were ambushed and brutally beaten by murlocs. Only one survived, if you can call that " ..
+                "surviving. He can hardly speak, cannot walk, and must be fed through a tube. If you want " ..
+                "to know what happened to those orders, speak with Bengor. I'm sure he is around here " ..
+                "somewhere... and, <name>, be mindful of what you stick your nose into - it may get " ..
+                "bitten off.",
         },
         [2623] = {
             description = "Orders were given by the dispatch commander. We took... took orders. On way to " ..
@@ -11575,6 +11623,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{19125, 1}},
             rewardMoney = 7000,
         },
+        [7730] = {
+            description = "From what scouting we have managed to muster, we believe that the foe south of " ..
+                "the gnolls is an insect-like race. Frankly, it is irrelevant whether or not if they're " ..
+                "sentient. If they are driving the gnolls to frenzy against us, then they are as big of a " ..
+                "threat - if not more - than the gnolls.\n\nDrive deep into where these Zukk'ash insects " ..
+                "dwell; it is known as the Writhing Deep. Thin their numbers and report back to me what " ..
+                "you find, bringing back their carapaces as evidence of your handiwork.",
+            rewardMoney = 6500,
+        },
         [7731] = {
             description = "In surveying the Writhing Deep, one of our scouts reported seeing a giant " ..
                 "insect - much larger than the other insects spotted - wandering about the twisted " ..
@@ -12034,6 +12091,16 @@ ns.Overrides.wowhead = {
                 "to my research. I need you to separate some enchanted coral from the spitelash sirens " ..
                 "and bring it to me.",
             rewardMoney = 7500,
+        },
+        [8253] = {
+            description = "There is a green drake deep in the sunken temple of Atal'Hakkar by the name of " ..
+                "Morphaz.\n\nYears ago, he overwhelmed me in a bold ambush and consumed my apprentice " ..
+                "whole. While the loss of an apprentice is not unknown to me, this particular one carried " ..
+                "an arcane shard of unsurpassed size and quality.\n\nYou must gather powerful allies and " ..
+                "delve into the temple. Destroy Morphaz and recover the arcane shard from his ageless " ..
+                "stomach.",
+            rewardChoices = {{20035, 1}, {20037, 1}, {20036, 1}},
+            rewardMoney = 15500,
         },
         [8254] = {
             description = "It is the way of the divine to help those in need. The how is insignificant -- " ..
