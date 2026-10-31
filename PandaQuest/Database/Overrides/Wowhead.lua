@@ -26022,7 +26022,13 @@ ns.Overrides.wowhead = {
             rewardMoney = 224000,
             startedBy = {{32376}},
         },
-        [13387] = {rewardMoney = 74000},
+        [13387] = {
+            description = "The saronite bombs are in place, <name>. We're only going to get one shot at " ..
+                "this, however. Let's make it count.\n\nWe need temporary control of the area for a safe " ..
+                "detonation. Let's try to put a dent in the Scourge's numbers.",
+            rewardChoices = {{38737, 1}, {39036, 1}, {39070, 1}, {39102, 1}},
+            rewardMoney = 74000,
+        },
         [13394] = {
             description = "You're going to use this machine against the Scourge? You're not going to win " ..
                 "against them like that.\n\nYou can destroy hundreds... even thousands of them. But you " ..
@@ -61639,6 +61645,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 12,
         },
+        [311] = {spawns = {[10] = {{7.8, 34}}}, zoneID = 10},
         [349] = {
             spawns = {
                 [44] = {
@@ -62176,6 +62183,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 85,
         },
+        [1719] = {spawns = {[1519] = {{51.4, 69.2}, {51.6, 69.4}, {51.6, 69.6}}}, zoneID = 1519},
         [1748] = {
             spawns = {
                 [1497] = {{50.2, 87.4}, {50.6, 88.6}, {53.6, 92.4}, {55.8, 96.4}, {55.8, 96.6}},
@@ -62378,6 +62386,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 267,
         },
+        [2366] = {spawns = {[267] = {{51.4, 58.4}, {51.4, 58.6}, {51.6, 58.6}}}, zoneID = 267},
         [2382] = {spawns = {[267] = {{52.4, 56}}}, zoneID = 267},
         [2404] = {
             spawns = {
@@ -62804,6 +62813,20 @@ ns.Overrides.wowhead = {
                     {57.8, 19.4}, {58, 20.6},
                 },
             },
+        },
+        [4392] = {
+            spawns = {
+                [15] = {
+                    {41, 41.6}, {43.6, 46.6}, {44.2, 51.2}, {44.4, 48.2}, {45.2, 42.2}, {45.2, 51.8},
+                    {45.4, 45.6}, {45.4, 50.6}, {45.6, 50.6}, {45.8, 43.2}, {46.2, 47}, {46.4, 46.4},
+                    {46.4, 52.6}, {46.6, 46.4}, {46.6, 51}, {46.8, 45.4}, {47.2, 53.8}, {47.6, 46.4},
+                    {47.6, 51.8}, {48.2, 47.8}, {48.4, 54.6}, {48.6, 47.6}, {48.8, 54.2}, {49.2, 55.4},
+                    {49.4, 49.4}, {49.4, 58.8}, {49.6, 52.8}, {49.6, 55.6}, {50, 50.2}, {50.4, 57.6},
+                    {51, 51}, {51.2, 51.6}, {51.2, 56.2}, {51.4, 49.2}, {51.6, 59.8}, {52, 49.4},
+                    {52.2, 53.2}, {52.4, 51.4}, {52.6, 54}, {52.6, 57.6},
+                },
+            },
+            zoneID = 15,
         },
         [4411] = {
             spawns = {
@@ -63941,6 +63964,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1657,
         },
+        [16032] = {subName = "House of Shen'dralar"},
         [16113] = {spawns = {[139] = {{75.6, 52.2}}}, zoneID = 139},
         [16131] = {spawns = {[139] = {{75.6, 52.4}, {75.6, 52.6}}}, zoneID = 139},
         [16132] = {spawns = {[139] = {{75.6, 52.4}, {75.6, 52.6}}}, zoneID = 139},
@@ -63966,6 +63990,7 @@ ns.Overrides.wowhead = {
             zoneID = 3483,
         },
         [17097] = {spawns = {[3] = {{5.8, 48}, {6, 47.4}}}, zoneID = 3},
+        [17111] = {spawns = {[8] = {{65.2, 22.6}, {65.4, 22.2}, {65.6, 22.2}, {65.6, 23.2}}}, zoneID = 8},
         [17113] = {
             spawns = {[8] = {{60.4, 21.4}, {60.4, 22.4}, {60.4, 22.6}, {60.6, 22.4}, {60.6, 22.6}}},
             zoneID = 8,

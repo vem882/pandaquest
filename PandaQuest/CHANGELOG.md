@@ -4,6 +4,29 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.310] - 2026-10-31
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 571 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,063 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,052 quests, 38 NPCs, 1 object
+- quest 13387 - Securing the Perimeter - updated
+  - description added
+  - reward choices: +4
+- npc 311 - Sven Yorgen - updated
+  - coordinates: 1 spawn point added in Duskwood
+- npc 1719 - Warden Thelwater - updated
+  - coordinates: 3 spawn points added in Stormwind City
+- npc 2366 - Barkeep Kelly - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 4392 - Corrosive Swamp Ooze - updated
+  - coordinates: 40 spawn points added in Dustwallow Marsh
+- npc 16032 - Falrin Treeshaper - updated
+  - NPC title added (House of Shen'dralar)
+- npc 17111 - Captured Jaguar - updated
+  - coordinates: 4 spawn points added in Swamp of Sorrows
+
 ## [0.2.309] - 2026-10-31
 
 Data from the PandaQuest portal.
@@ -371,69 +394,6 @@ Data from the PandaQuest portal.
   - NPC level added (91)
 - npc 70166 - Jubeka Shadowbreaker - updated
   - NPC title added (Master Demonologist)
-
-## [0.2.299] - 2026-10-30
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 456 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,946 quests, 21 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,958 quests, 35 NPCs, 1 object
-- quest 13144 - Killing Two Scourge With One Skeleton - updated
-  - description added
-  - reward choices: +4
-- quest 13846 - Contributin' To The Cause - updated
-  - description added
-- quest 13915 - Hungry, Hungry Hatchling - updated
-  - description added
-  - reward items: +1
-- quest 31922 - Nicki Tinytech - updated
-  - description removed
-  - reward money removed (2g 90s)
-- npc 504 - Defias Trapper - updated
-  - coordinates: 40 spawn points added in Westfall
-- npc 1021 - Mottled Screecher - updated
-  - coordinates: 31 spawn points added in Wetlands
-- npc 1078 - Ormer Ironbraid - updated
-  - coordinates: 1 spawn point added in Wetlands
-- npc 1157 - Cursed Sailor - updated
-  - coordinates: 12 spawn points added in Wetlands
-- npc 1163 - Stonesplinter Skullthumper - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 3057 - Cairne Bloodhoof - updated
-  - coordinates: 4 spawn points added in Thunder Bluff
-- npc 3192 - Lieutenant Benedict - updated
-  - coordinates: 2 spawn points added in Durotar
-- npc 3584 - Therylune - updated
-  - coordinates: 6 spawn points added in Darkshore
-- npc 4025 - Bloodfury Ambusher - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4093 - [Deprecated for 4.x]Galak Wrangler - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4456 - Fiora Longears - updated
-  - coordinates: 2 spawn points added in Darkshore
-  - coordinates: 1 spawn point added in Dustwallow Marsh
-- npc 6126 - Haldarr Trickster - updated
-  - coordinates: 17 spawn points added in Azshara
-- npc 7670 - Servant of Allistarj - updated
-  - coordinates: 13 spawn points added in Blasted Lands
-- npc 8447 - Clunk - updated
-  - coordinates: 6 spawn points added in Searing Gorge
-- npc 8957 - Angerclaw Grizzly - updated
-  - coordinates: 40 spawn points added in Felwood
-- npc 10684 - Remorseful Highborne - updated
-  - coordinates: 3 spawn points added in Winterspring
-- npc 11218 - Kerlonian Evershade - updated
-  - coordinates: 22 spawn points added in Ashenvale
-  - coordinates: 8 spawn points added in Darkshore
-- npc 14725 - Raedon Duskstriker - updated
-  - coordinates: 4 spawn points added in Darnassus
-- npc 14728 - Rumstag Proudstrider - updated
-  - coordinates: 4 spawn points added in Thunder Bluff
-- npc 15288 - Aluntir - updated
-  - coordinates: 40 spawn points added in Silithus
-- npc 68417 - Cousin Goottooth - updated
-  - NPC level added (88)
 
 ## [0.2.270] - 2026-10-26
 

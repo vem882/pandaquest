@@ -2441,6 +2441,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{3737, 1}, {3729, 3}},
             rewardMoney = 3000,
         },
+        [563] = {
+            description = "It shouldn't be a problem getting my report seen. The new captain of the " ..
+                "guard, Major Samuelson, was my mentor while I was stationed in Stormwind. It should give " ..
+                "him more than enough excuse to have me transferred back to the city. I'll need you to " ..
+                "carry my report to him, though... wouldn't want ol' Redpath to catch on.",
+        },
         [565] = {
             description = "I, the great Bartolo, shall make for you the world famous, Alliance renowned, " ..
                 "Yeti Fur Cloak!\n\nTravel the planet and find yourself a better cloak, I dare you. Oh " ..
@@ -2796,6 +2802,15 @@ ns.Overrides.wowhead = {
                 "dozens of our defenders.\n\nTheir bounties may be collected from Captain Nials.",
             rewardChoices = {{5247, 1}, {4745, 1}},
         },
+        [686] = {
+            description = "I do not expect good dwarves like Mrs. Balloo to understand why the travesties " ..
+                "of war must be endured for the greater good of our people. The loss of her husband, and " ..
+                "the loss of every dwarf that fights in the name of the Alliance, weighs heavy on my " ..
+                "soul.\n\nWhile I cannot bring her husband back from the Twisting Nether, I can pay " ..
+                "tribute to him.\n\nI am going to commission a memorial to Sully Balloo to be built by " ..
+                "Grand Mason Mablesten.\n\nSend word to him now, <class>. You shall be custodian of my " ..
+                "bidding.",
+        },
         [690] = {
             description = "Greetings, <name>. You have the look of an adventurer about you, and I have a " ..
                 "task that needs some tending to.\n\nArchmage Trelane, my original master, fled " ..
@@ -2827,6 +2842,13 @@ ns.Overrides.wowhead = {
                 "sawtooth meat when they can, but I haven't had time to get them another shipment. Would " ..
                 "you mind helping them out?\n\nThe young sawtooths aren't as tasty as the older ones, so " ..
                 "stay clear of those; give them a year or two to get to full size.",
+        },
+        [700] = {
+            description = "Ah, such fine stone comes from Lordaeron. Such a shame the land is in such " ..
+                "shambles.\n\nBut the Memorial came out quite well! I should think the King will be most " ..
+                "pleased with it.\n\nNow if you will, please send word to His Majesty that the Memorial " ..
+                "is complete as requested.",
+            rewardItems = {{4535, 1}},
         },
         [701] = {
             description = "With some additional objects, I will be able to create an item that will imbue " ..
@@ -2954,6 +2976,12 @@ ns.Overrides.wowhead = {
                 "aid each other, yes? That is how we flourish.\n\nI require three items of power. Bring " ..
                 "them to me and I will give you the digest.\n\nI will not speak their names. Ears may be " ..
                 "on us. But here, I will write them down.",
+        },
+        [737] = {
+            description = "I have the digest for you, <name>. I need not tell you to take great care with " ..
+                "it. And to keep it far from unfriendly hands.\n\nThis book holds many " ..
+                "truths...\n\n...And the truth can burn.",
+            rewardItems = {{4984, 1}},
         },
         [744] = {
             description = "<name>, my brother soon stands before Chief Bloodhoof, and it is my honor to " ..
@@ -3094,6 +3122,13 @@ ns.Overrides.wowhead = {
         [777] = {
             description = "Okay, here you go.\n\nI'm going to be over here... behind cover.\n\nFeel free " ..
                 "to join me.",
+        },
+        [778] = {
+            description = "Haha! Done! The shackles are done!\n\nIt's time, Lucien. It's time, " ..
+                "Servo!\n\nAre you ready to bear witness to the perfect blend of alchemy, engineering, " ..
+                "and the arcane, <name>?\n\nI shall summon forth a powerful elemental now. This is a " ..
+                "groundbreaking day for all of us.",
+            rewardItems = {{2820, 1}},
         },
         [780] = {
             description = "The Battleboars of Brambleblade Ravine to the east are encroaching on our " ..
@@ -4332,6 +4367,14 @@ ns.Overrides.wowhead = {
                 "worthless.\n\nTrust me.",
             rewardMoney = 1000,
         },
+        [1116] = {
+            description = "Getting the information on Nazz is quite a favor, <name>. Yes, quite a favor. " ..
+                "But you've come all the way from the Shimmering Flats to get it... are you willing to " ..
+                "travel some more?\n\nWhile I contact my sources, why don't you gather something for me, " ..
+                "eh?\n\nHm... what will it be? How about dream dust, from the dragon whelps of the Swamp " ..
+                "of Sorrows. Yes, I'd love some dream dust for my snuff pouch!\n\nGet it for me, <name>, " ..
+                "and I'll give you the information you seek.",
+        },
         [1118] = {
             description = "<name>, you're a <class> I can trust, both to get the job done and to keep " ..
                 "your mouth shut while doing it.\n\nI've been brewing up a new scheme. It's risky, but if " ..
@@ -4533,6 +4576,12 @@ ns.Overrides.wowhead = {
                 "an ogre?\n\nNow back to business, bring to me the hearts and tongues from the whelps and " ..
                 "hatchlings. I shall trace the root of this evil...",
             rewardChoices = {{9703, 1}, {9704, 1}},
+        },
+        [1170] = {
+            description = "Stonemaul Village was invaded by the brood of Onyxia. But why would the " ..
+                "daughter of the black dragonlord, Deathwing, descend upon our lands?\n\nThis is most " ..
+                "troubling. Surely, Onyxia was driven here for a purpose beyond laying siege to a small " ..
+                "band of ogres.\n\nNotify Mok'Morokk at once! Action must be taken.",
         },
         [1171] = {
             description = "You leave me alone now. Go tell Draz'Zilb we stay here. No black dragon here.",
@@ -4738,6 +4787,14 @@ ns.Overrides.wowhead = {
                 "now, <name>, but the gentleman over by the exit is looking over here. He's listening to " ..
                 "our conversation a little too intently if you catch my meaning? If I were you, I'd do " ..
                 "what you can to subdue him before he makes a break for the door.",
+        },
+        [1262] = {
+            description = "It is strange that the pendant Marg stole was in the hands of common soldiers. " ..
+                "Perhaps its owner was in disguise, or perhaps the soldiers themselves stole " ..
+                "it!\n\nRegardless of which is true, this is a noble's pendant and we must discover its " ..
+                "true owner if we are to unravel its mystery.\n\nTake the pendant to Zor Lonetree in " ..
+                "Orgrimmar. He is well schooled in Alliance politics, and will know if this pendant has a " ..
+                "history among the nobles of Stormwind.",
         },
         [1264] = {
             description = "The beginning of every month the Kul Tiras Marines all get paid and usually " ..
@@ -7066,6 +7123,12 @@ ns.Overrides.wowhead = {
                 "rogue trainer Solm. Take a gander at it and go find him inside Anvilmar when you've a " ..
                 "chance.",
         },
+        [3114] = {
+            description = "While you were helping me out, this memorandum was given to me to pass on to " ..
+                "you. Take some time to read it when you have a chance. I'm thinkin' it came from the " ..
+                "mage trainer Marryk. Take a gander at it and go find him inside Anvilmar when you've a " ..
+                "chance.",
+        },
         [3115] = {
             description = "While you were helping me out, this memorandum was given to me to pass on to " ..
                 "you. Take some time to read it when you have a chance. I'm thinkin' it came from the " ..
@@ -7388,6 +7451,7 @@ ns.Overrides.wowhead = {
             description = "Give this to Thersa. Perhaps it will cure her... perhaps not. We really won't " ..
                 "know until after she drinks it.",
         },
+        [3570] = {rewardMoney = 7500},
         [3602] = {
             description = "The ancient cliff giants of the southern region of Azshara consume the rock " ..
                 "and buildings of the land for sustenance. The excrement from their consumption is a " ..
@@ -9182,6 +9246,14 @@ ns.Overrides.wowhead = {
                 "need to show me that you can make me a silver or two - I mean, show me that you've got " ..
                 "what it takes to be the go to <guy/girl> when people need superior quality weapons. Get " ..
                 "to work!",
+        },
+        [5301] = {
+            description = "Satisfaction. It is what I draw from the hammer and the anvil. To see a proud " ..
+                "Horde warrior protected under my steel reminds me of what it is to be alive. It is an " ..
+                "addiction that I dare never give up, <name>.\n\nI can not grant you this satisfaction, " ..
+                "merely set you upon the path. As with all of life's endeavors, the path of the " ..
+                "armorsmith is a journey.\n\nIf you wish to be one of the select few, you need only to " ..
+                "ask and I shall train, but, a task you must first complete.",
         },
         [5302] = {
             description = "One day, I will create a legendary hammer. A hammer fit for a Warchief!\n\nIt " ..
@@ -11061,6 +11133,7 @@ ns.Overrides.wowhead = {
         [7167] = {rewardItems = {{17909, 1}}},
         [7168] = {rewardItems = {{17900, 1}}},
         [7169] = {rewardItems = {{17901, 1}}},
+        [7170] = {rewardItems = {{17902, 1}}},
         [7171] = {rewardItems = {{17903, 1}}},
         [7172] = {rewardItems = {{17904, 1}}},
         [7181] = {
@@ -12455,6 +12528,15 @@ ns.Overrides.wowhead = {
                 "good faith. Considering the power you already wield as a warlock, I can only assume you " ..
                 "know the satyrs of Felwood carry this felcloth.\n\nYou can find Impsy just north of the " ..
                 "Bloodvenom Falls, which I've heard is quite lovely this time of year.",
+        },
+        [8422] = {
+            description = "My pet is almost done. Now I just need something to stuff it with.\n\nOnly the " ..
+                "voodoo feathers from the trolls in the sunken temple will do. They go by the names " ..
+                "Gasher, Mijan, Zolo, Hukku, Zul'lor, and Loro. Kill them. Kill them all.\n\nThis is no " ..
+                "trivial task <name>, so I'll make it worth your while by giving you something of Niby's " ..
+                "-- he probably doesn't need it anyhow.",
+            rewardChoices = {{20536, 1}, {20534, 1}, {20530, 1}},
+            rewardMoney = 15500,
         },
         [8423] = {
             description = "<The Hero looks you over.>\n\nYou are a <class>, no doubt. I would ask an " ..
@@ -14128,6 +14210,13 @@ ns.Overrides.wowhead = {
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9208] = {
+            description = "Zanza can create many ancient troll enchantments with proper components! Have " ..
+                "you heard of the Savage Guard? No, of course you haven't. Your mind is addled with the " ..
+                "inferior elven magic.\n\nBring me an arcanum of elven creation so that I may destroy the " ..
+                "aberration. Do this and the Savage Guard will be yours.",
+            rewardItems = {{22635, 1}},
         },
         [9209] = {
             description = "Zanza can create many ancient troll enchantments with proper components! Have " ..
