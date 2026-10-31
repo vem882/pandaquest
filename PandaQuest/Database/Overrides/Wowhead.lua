@@ -28321,7 +28321,15 @@ ns.Overrides.wowhead = {
             rewardMoney = 74000,
         },
         [14103] = {rewardMoney = 11400},
-        [14107] = {rewardMoney = 74000},
+        [14107] = {
+            description = "The Argent Crusade is hardly the first force to challenge the Lich King. Our " ..
+                "enemy turns spirits of the fallen against us.\n\nTheir spirits wander the Valley of " ..
+                "Fallen Heroes, southwest of the grounds and between Aldur'thar and the Ironwall Rampart. " ..
+                "The area is littered with discarded soul crystals, used by the Scourge to control the " ..
+                "spirits. Gather those soul crystals and use them with this Light-blessed relic to bestow " ..
+                "the blessing of peace upon the spirits. They have more than earned their rest.",
+            rewardMoney = 74000,
+        },
         [14108] = {
             description = "The Sunreavers and Silver Covenant sent ships north to engage the Kvaldir at " ..
                 "Hrothgar's Landing, but were intercepted and detained by a Kvaldir Raiding vessel. To " ..
@@ -40700,15 +40708,6 @@ ns.Overrides.wowhead = {
                 "attention.",
             rewardChoices = {{33247, 1}, {57842, 1}, {57849, 1}},
             rewardMoney = 8000,
-        },
-        [27223] = {
-            description = "Where Market Row meets Festival Lane, you will encounter The Unforgiven. If " ..
-                "you slay the entirety of Crusaders' Square, you will coax out Timmy the Cruel. Both of " ..
-                "these former champions committed heinous acts against innocents here in the name of " ..
-                "gaining unholy power.\n\nYou must destroy both of them and rid Stratholme of their foul " ..
-                "presence. Take caution, for they were powerful fighters in life, and their new dark " ..
-                "powers will only have made them even more deadly.",
-            rewardMoney = 27300,
         },
         [27227] = {
             description = "This Chapel is the last Light amongst so much darkness. Ras Frostwhisper took " ..
@@ -61558,6 +61557,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 40,
         },
+        [213] = {
+            spawns = {
+                [10] = {
+                    {8.8, 45.4}, {9.2, 40.6}, {9.6, 46.2}, {10.2, 60.4}, {10.4, 47.8}, {10.6, 30},
+                    {10.6, 59.8}, {10.8, 56.6}, {11.4, 29.4}, {11.6, 29.8}, {12, 29}, {12.6, 28.4},
+                    {13, 29.8}, {13.2, 69}, {13.6, 30.2}, {13.8, 30.6}, {15.4, 24.8}, {15.6, 25.6},
+                    {16.2, 22.4}, {16.8, 23.6}, {17.8, 23.6}, {19.2, 23.4}, {19.2, 25.8}, {20, 25.6},
+                    {21.4, 25.8}, {22, 28.6}, {22.4, 25.8}, {22.6, 29.8}, {23.4, 28.8}, {25.2, 26.6},
+                    {25.6, 26.4}, {27.2, 26.8}, {27.6, 26.6}, {28.8, 27.6}, {29.4, 26.6}, {29.6, 28.4},
+                    {31.2, 26}, {31.4, 24.6}, {31.8, 26}, {32.4, 23.4},
+                },
+            },
+            zoneID = 10,
+        },
         [257] = {
             spawns = {
                 [12] = {
@@ -61715,6 +61728,20 @@ ns.Overrides.wowhead = {
                     {26.4, 59.4}, {26.6, 46.4}, {26.6, 59.4}, {26.8, 34.2}, {27, 40}, {27.2, 61.8},
                     {27.6, 39.4}, {27.6, 62.4}, {28.4, 33.4}, {28.4, 43.6}, {28.8, 43.2}, {29.2, 52.2},
                     {29.6, 53}, {30.8, 50.6}, {31.6, 50.2}, {31.8, 50.6},
+                },
+            },
+            zoneID = 8,
+        },
+        [769] = {
+            spawns = {
+                [8] = {
+                    {47.4, 57.2}, {49, 59}, {50, 59}, {51, 59.2}, {52.2, 61}, {53.2, 49.6}, {53.4, 61.2},
+                    {53.8, 59.2}, {54, 65.2}, {54.4, 64}, {54.6, 65.2}, {55, 62.2}, {55.2, 60.2},
+                    {55.4, 57.6}, {55.6, 57}, {55.8, 60.4}, {56, 66}, {56.2, 64}, {56.4, 64.6}, {56.6, 61.2},
+                    {57, 60.2}, {57.2, 64}, {57.4, 62.8}, {57.6, 61}, {57.8, 59}, {58.2, 56}, {58.4, 57.8},
+                    {58.4, 67}, {58.8, 57}, {59, 58.4}, {59.2, 52.2}, {59.4, 60.8}, {59.4, 70.6},
+                    {59.8, 57.4}, {59.8, 62.8}, {60.2, 56.4}, {60.4, 65.8}, {60.6, 57.6}, {60.6, 61.4},
+                    {60.8, 55.8},
                 },
             },
             zoneID = 8,
@@ -62100,6 +62127,7 @@ ns.Overrides.wowhead = {
             zoneID = 28,
         },
         [1855] = {spawns = {[139] = {{4.6, 38.4}, {4.6, 38.6}}}, zoneID = 139},
+        [1950] = {spawns = {[130] = {{53.4, 13.4}, {53.4, 13.6}, {53.6, 13.4}}}, zoneID = 130},
         [1978] = {
             spawns = {
                 [130] = {
@@ -62151,6 +62179,17 @@ ns.Overrides.wowhead = {
             zoneID = 11,
         },
         [2111] = {spawns = {[11] = {{11.8, 58}}}, zoneID = 11},
+        [2183] = {
+            spawns = {
+                [148] = {
+                    {59.4, 19}, {59.4, 20.2}, {60, 18.2}, {60.2, 20.2}, {60.2, 22.4}, {60.2, 22.6},
+                    {60.4, 18.8}, {60.4, 21.4}, {60.8, 23.2}, {60.8, 23.6}, {61, 20.8}, {61, 21.6},
+                    {61.2, 18.4}, {61.2, 18.6}, {61.2, 19.8}, {61.4, 17.4}, {61.6, 17.4}, {61.6, 17.8},
+                    {61.6, 19.2}, {61.6, 20}, {61.8, 21.4}, {61.8, 22.2},
+                },
+            },
+            zoneID = 148,
+        },
         [2214] = {spawns = {[267] = {{20.4, 47.2}, {20.8, 47.4}, {20.8, 47.6}}}, zoneID = 267},
         [2216] = {spawns = {[267] = {{61.4, 19.2}}}, zoneID = 267},
         [2228] = {spawns = {[267] = {{51.4, 58.4}, {51.4, 58.6}}}, zoneID = 267},
@@ -62800,6 +62839,20 @@ ns.Overrides.wowhead = {
             zoneID = 16,
         },
         [6134] = {spawns = {[16] = {{77.2, 42.8}}}, zoneID = 16},
+        [6137] = {
+            spawns = {
+                [16] = {
+                    {74.2, 40.2}, {74.4, 39.2}, {74.4, 40.6}, {74.6, 40.2}, {74.8, 38}, {74.8, 39},
+                    {75, 37.4}, {75, 41.8}, {75, 44}, {75.2, 42.8}, {75.2, 44.6}, {75.6, 45.8}, {75.8, 42},
+                    {76, 43.4}, {76, 43.6}, {76.4, 40.2}, {76.4, 41.4}, {76.4, 45.2}, {76.6, 45}, {77, 39.2},
+                    {77.2, 42.2}, {77.2, 42.6}, {77.4, 40.4}, {77.4, 41.2}, {77.4, 44.4}, {77.4, 46.2},
+                    {77.6, 40.8}, {77.6, 41.8}, {77.6, 43}, {77.6, 44.4}, {77.6, 44.6}, {77.8, 40.2},
+                    {77.8, 45.8}, {78, 37.4}, {78, 39.4}, {78.4, 38}, {78.6, 38}, {79, 44.4}, {79, 44.6},
+                    {79.2, 31.2},
+                },
+            },
+            zoneID = 16,
+        },
         [6198] = {
             spawns = {
                 [16] = {
@@ -63836,6 +63889,7 @@ ns.Overrides.wowhead = {
         [68150] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
         [68169] = {maxLevel = 90, minLevel = 90, subName = "Champion of Ogudei"},
         [68223] = {subName = "Warchief"},
+        [68259] = {maxLevel = 90, minLevel = 90},
         [68287] = {subName = "High Chieftain"},
         [68337] = {maxLevel = 90, minLevel = 90, subName = "Blademaster"},
         [68342] = {maxLevel = 90, minLevel = 90},
@@ -63867,6 +63921,7 @@ ns.Overrides.wowhead = {
         [69136] = {maxLevel = 91, minLevel = 91, subName = "Harbinger of the Loa"},
         [69293] = {maxLevel = 90, minLevel = 90},
         [69309] = {maxLevel = 90, minLevel = 90},
+        [69334] = {subName = "Tushui Quartermaster"},
         [69339] = {maxLevel = 92, minLevel = 92},
         [69355] = {subName = "The Sunreavers"},
         [69356] = {subName = "The Sunreavers"},
@@ -63914,6 +63969,7 @@ ns.Overrides.wowhead = {
         [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
+        [73691] = {subName = "The Timewalkers"},
         [185335] = {
             rank = 0,
             spawns = {

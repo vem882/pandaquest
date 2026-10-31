@@ -4,6 +4,35 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.303] - 2026-10-31
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,885 quests, 498 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,003 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,999 quests, 35 NPCs, 1 object
+- quest 14107 - The Fate Of The Fallen - updated
+  - description added
+- quest 27223 - Retribution - updated
+  - description removed
+  - reward money removed (2g 73s)
+- npc 213 - Starving Dire Wolf - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 769 - Deathstrike Tarantula - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 1950 - Rane Yorick - updated
+  - coordinates: 3 spawn points added in Silverpine Forest
+- npc 2183 - Stormscale Warrior - updated
+  - coordinates: 22 spawn points added in Darkshore
+- npc 6137 - Arkkoran Pincer - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 68259 - Concentrated Sha - updated
+  - NPC level added (90)
+- npc 69334 - Adherent Hanjun - updated
+  - NPC title added (Tushui Quartermaster)
+- npc 73691 - Chromie - updated
+  - NPC title added (The Timewalkers)
+
 ## [0.2.302] - 2026-10-31
 
 Data from the PandaQuest portal.
@@ -458,49 +487,6 @@ Data from the PandaQuest portal.
   - NPC title added (Leader of the Kirin Tor)
 - npc 73306 - Mistweaver Ku - updated
   - NPC title added (Lost Treasures of Shaohao)
-
-## [0.2.292] - 2026-10-30
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,889 quests, 343 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,864 quests, 20 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,872 quests, 32 NPCs, 1 object
-- quest 14101 - Drottinn Hrothgar - updated
-  - reward money removed (7g 40s)
-- quest 27124 - Unfinished Gordok Business - updated
-  - description removed
-  - reward choices: -4
-- quest 29674 - Unbound Darkness - updated
-  - description removed
-- quest 31828 - Level Up! - updated
-  - description added
-  - reward money added (90s)
-- npc 531 - Skeletal Fiend - updated
-  - coordinates: 40 spawn points added in Duskwood
-- npc 1008 - Mosshide Mongrel - updated
-  - coordinates: 40 spawn points added in Wetlands
-- npc 2053 - Haggard Refugee - updated
-  - coordinates: 40 spawn points added in Silverpine Forest
-- npc 2103 - Dragonmaw Scout - updated
-  - coordinates: 21 spawn points added in Wetlands
-- npc 3980 - Raleigh the Devout - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 8961 - Felpaw Ravager - updated
-  - coordinates: 40 spawn points added in Felwood
-- npc 12296 - Sickly Gazelle - updated
-  - coordinates: 40 spawn points added in The Barrens
-- npc 15424 - Anubisath Conqueror - updated
-  - coordinates: 11 spawn points added in Silithus
-- npc 17115 - Cursed Lost One - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 69009 - A.C.E. Saboteur - updated
-  - NPC level added (90)
-- npc 70276 - No'ku Stormsayer - updated
-  - NPC title added (Lord of Tempest)
-  - NPC level added (92)
-- npc 71955 - Yu'lon - updated
-  - NPC title added (The Jade Serpent)
 
 ## [0.2.270] - 2026-10-26
 
