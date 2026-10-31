@@ -4,6 +4,43 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.312] - 2026-10-31
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 592 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,090 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,078 quests, 38 NPCs, 1 object
+- quest 25246 - A Change of Heart - updated
+  - reward choices: +4
+- quest 30918 - Hui's Vengeance - updated
+  - description removed
+- npc 755 - Lost One Mudlurker - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 2181 - Stormscale Myrmidon - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2276 - Magistrate Henry Maleb - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 4074 - XT:9 - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 5414 - Apothecary Faustin - updated
+  - coordinates: 4 spawn points added in Duskwood
+- npc 11864 - Tammra Windfield - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 16395 - Argent Dawn Paladin - updated
+  - coordinates: 9 spawn points added in Ironforge
+  - coordinates: 4 spawn points added in Darnassus
+  - coordinates: 2 spawn points added in Stormwind City
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+- npc 16434 - Argent Dawn Champion - updated
+  - coordinates: 6 spawn points added in Ironforge
+  - coordinates: 5 spawn points added in Darnassus
+  - coordinates: 3 spawn points added in Stormwind City
+- npc 28604 - Adventurous Dwarf - updated
+  - coordinates: 40 spawn points added in Sholazar Basin
+- npc 70430 - Rocky Horror - updated
+  - NPC level added (92)
+
 ## [0.2.311] - 2026-10-31
 
 Data from the PandaQuest portal.
@@ -348,51 +385,6 @@ Data from the PandaQuest portal.
   - data rewritten, nothing a player sees changed
 - npc 71939 - Chi-Ro the Skytamer - updated
   - NPC title added (Flightmaster)
-
-## [0.2.301] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 481 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,970 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,977 quests, 35 NPCs, 1 object
-- quest 13172 - Seeds of Chaos - updated
-  - reward money removed (7g 40s)
-- quest 13916 - Poached, Scrambled, Or Raw? - updated
-  - description added
-  - reward items: +1
-- quest 30067 - The Shadow of Doubt - updated
-  - description removed
-  - reward money removed (11g 40s)
-- quest 31582 - Learning the Ropes - updated
-  - description added
-  - reward money added (10g 60s)
-- npc 1023 - Mottled Razormaw - updated
-  - coordinates: 29 spawn points added in Wetlands
-- npc 3206 - Voodoo Troll - updated
-  - coordinates: 27 spawn points added in Durotar
-- npc 15290 - Arakis - updated
-  - coordinates: 40 spawn points added in Silithus
-- npc 53604 - Feralas Sentinel - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 68690 - King Varian Wrynn - updated
-  - NPC title added (King of Stormwind)
-- npc 68753 - Gearmage Astalon - updated
-  - NPC level added (90)
-- npc 68987 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
-- npc 69309 - Magister Sarien - updated
-  - NPC level added (90)
-- npc 69754 - Agent Crowley - updated
-  - NPC title added (Kirin Tor)
-- npc 70238 - Unblinking Eye - updated
-  - NPC level added (92)
-- npc 73145 - Acon Deathwielder - updated
-  - NPC title added (Glorious Conquest Quartermaster)
-- npc 185335 - Summoned Incubus - updated
-  - coordinates: 9 spawn points added in Undercity
-  - coordinates: 7 spawn points added in Orgrimmar
-  - coordinates: 2 spawn points added in Stormwind City
 
 ## [0.2.270] - 2026-10-26
 

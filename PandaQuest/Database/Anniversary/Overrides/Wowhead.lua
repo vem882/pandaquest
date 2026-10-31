@@ -2603,6 +2603,14 @@ ns.Overrides.wowhead = {
                 "send you against something tougher.",
             rewardMoney = 600,
         },
+        [848] = {
+            description = "The oases of the Barrens hide a mystery. Life energy flows from their waters, " ..
+                "invigorating the plants and beasts that drink it.\n\nInvigorating, and " ..
+                "altering.\n\nThere is a mushroom that grows near these oases. Its spores hold properties " ..
+                "that we, the apothecaries of Lordaeron, find useful.\n\nBring me these spores and you " ..
+                "will earn our gratitude.",
+            rewardMoney = 700,
+        },
         [854] = {
             description = "I have foreseen your arrival, young <class>. Though perhaps you are not so " ..
                 "young anymore.\n\nI think that it is time for you to move deeper into this land. I can " ..
@@ -4478,6 +4486,11 @@ ns.Overrides.wowhead = {
                 "minute... after I have perfected the fabulous Noggenfogger Elixir!",
             rewardItems = {{8529, 5}},
             rewardMoney = 7000,
+        },
+        [2701] = {
+            description = "Please, take from this a relic of old. We no longer have a use for the " ..
+                "item.\n\nMay it serve you well in your fight against the legion.",
+            rewardItems = {{10659, 1}},
         },
         [2702] = {
             description = "You have honored me with your nobility and heroism, <name>.\n\nYou have also " ..
@@ -6769,6 +6782,15 @@ ns.Overrides.wowhead = {
                 "through Thor, our gryphon master. He's just down the hill; bring him my note, and then " ..
                 "take a gryphon to Stormwind.",
         },
+        [6182] = {
+            description = "Nathanos Marris was the first and last of the human ranger lords. A disciple " ..
+                "of Sylvanas Windrunner, now the Banshee Queen of the Forsaken.\n\nWe had thought that " ..
+                "Nathanos had been killed in action in the defense of Lordaeron five years ago. Although " ..
+                "his corpse was never recovered, it was assumed that he did not make it out of the " ..
+                "Eastern Plaguelands.\n\nMathias Shaw has been investigating the disappearance and may " ..
+                "have some new information. Report to him at once. He resides in Old Town, at the " ..
+                "Barracks.",
+        },
         [6185] = {
             description = "As I said, your first mission is one of reconnaissance. Nothing fancy, <name>. " ..
                 "You must travel to the Eastern Plaguelands and look for any clues as to this " ..
@@ -7540,6 +7562,17 @@ ns.Overrides.wowhead = {
                 "best part.\n\nSo here's what's going to happen. You head down to Lost Rigger Cove and " ..
                 "acquire a lot of pirate hats by whatever means. Do you think you can handle that?",
             rewardMoney = 6500,
+        },
+        [8371] = {
+            description = "We're not fighting isolated battles against the Horde anymore, " ..
+                "<lad/lass>.\n\nVictory in one front means denying the Horde resources they'd use against " ..
+                "us in a different battle. By the same token, abandoning any given battle could give the " ..
+                "advantage to our opponent somewhere else around the world.\n\nThe Alliance is in need of " ..
+                "more combatants with this sort of worldly understanding... truly seasoned veterans! " ..
+                "<name>, come back to me after you've served against the Horde at all of our active " ..
+                "battlegrounds.",
+            rewardMoney = 22000,
+            rewardXP = 4850,
         },
         [8378] = {rewardItems = {{20703, 1}, {20715, 1}}},
         [8410] = {
@@ -10360,6 +10393,13 @@ ns.Overrides.wowhead = {
                 "Their forward camp is about 200 paces east of here. You'll know you're at the right " ..
                 "place if you see the Boulderfist hunters. Kill them to find the plans!",
         },
+        [9918] = {
+            description = "The battle plans were written up by an ogre lieutenant. His name is either " ..
+                "Dump or Lump.\n\n<Bintook turns the parchment sideways and cocks her head.>\n\nIt could " ..
+                "also be Billy.\n\nAnyhow, I think you should go back out there and have a word with " ..
+                "Billy or Lump or Dumpy or whatever! Try to approach him diplomatically. If that doesn't " ..
+                "work, try using some muscle.",
+        },
         [9920] = {
             description = "You must seek out Mo'mor immediately! You will find him in the center of " ..
                 "Telaar, by the fountain. Tell him exactly what the ogre told you.",
@@ -10378,6 +10418,12 @@ ns.Overrides.wowhead = {
                 "northwest of here in the Halaani Basin.\n\nVenture forth to the clefts and deal with the " ..
                 "remaining Boulderfist ogres.",
             rewardChoices = {{25623, 1}, {25624, 1}, {25622, 1}},
+        },
+        [9923] = {
+            description = "HELP! They're gonna eat me! I just know it!\n\nFind the key, I know it has to " ..
+                "be on one of these ogres.\n\nIf you get me out of here, my father will reward you " ..
+                "handsomely! He's the leader of Telaar, Arechron.",
+            rewardMoney = 99000,
         },
         [9924] = {
             description = "< Arechron sighs.>\n\nThis is so embarrassing. Do you remember my boy, Corki? " ..
@@ -11254,6 +11300,15 @@ ns.Overrides.wowhead = {
                 "the results of my magic much more convincing.",
             rewardMoney = 39000,
         },
+        [10198] = {
+            description = "I've prepared a uniform with the pieces you obtained. It is magically enhanced " ..
+                "to complete the illusion.\n\nWe spotted Commander Dawnforge going in to meet Arcanist " ..
+                "Ardonis a few minutes ago. He had a full retinue of guards with him, so whatever they're " ..
+                "discussing is bound to be incredibly important; see if you can catch any of it.\n\nOh, I " ..
+                "almost forgot. You'll want to stay away from the arcane golems patrolling the manaforge. " ..
+                "They will see right through the illusion.",
+            rewardChoices = {{30397, 1}, {30383, 1}, {30384, 1}, {30386, 1}},
+        },
         [10199] = {
             description = "So, I'm just missing the one ingredient that'll give my concoction that little " ..
                 "extra kick that it needs.\n\nThe sting of the nether rays, roaming around near the " ..
@@ -11330,6 +11385,14 @@ ns.Overrides.wowhead = {
                 "attempt to control the area. Find him, <name>, and silence his bow for good.",
             rewardChoices = {{29792, 1}, {29793, 1}, {30399, 1}, {29794, 1}},
             rewardMoney = 41000,
+        },
+        [10227] = {
+            description = "I see dead draenei. They're all around us.\n\nBah, nobody believes me because " ..
+                "I'm a child. Not even my own mommy believes me.\n\n< Ha'lei points to Ramdor.>\n\nHe " ..
+                "believes me, though... He sees them too. Boy does he get angry about it!\n\nIt's kind of " ..
+                "funny. I see ghosts and people just smile and pat me on the head, trying to placate me. " ..
+                "Ramdor sees ghosts and people label him as crazy. I sure hope I never grow up!\n\nYou " ..
+                "should probably talk to Ramdor before you go inside. He was once a death priest.",
         },
         [10228] = {
             description = "I believe that the dead, which we have been caring for these last 500 odd " ..
@@ -11433,6 +11496,14 @@ ns.Overrides.wowhead = {
                 "took out their leader, I had to escape here to Area 52.\n\n<class>, go down there and " ..
                 "bring back their insignias. Of course, not all wear them because they're cowards.",
             rewardMoney = 39000,
+        },
+        [10263] = {
+            description = "The naaru of Shattrath City have been trying to find a means to bring the " ..
+                "Consortium over to their way of seeing things.\n\nLuck would have it that the business " ..
+                "relationship between the ethereals and the blood elves of the Netherstorm has recently " ..
+                "soured.\n\nThere's a Consortium representative in town named Nether-Stalker Khay'ji who " ..
+                "recently ran into trouble with a pack of renegade ethereals. As a representative of the " ..
+                "Aldor, I would like for you to help him in any way that you can.",
         },
         [10264] = {
             description = "The naaru of Shattrath City have been trying to find a means to bring the " ..
@@ -12717,6 +12788,15 @@ ns.Overrides.wowhead = {
                 "might have collected.",
             rewardMoney = 41000,
         },
+        [10584] = {
+            description = "Those dumb ogres at the Bladespire Outpost to the north have been raiding our " ..
+                "power converters! And you're going to get them back for me, sort of.\n\nNo doubt, with " ..
+                "their big, clumsy hands, the ogres have damaged the converters. So, what I want you to " ..
+                "do is release the energy from them and then use this protovoltaic magneto collector on " ..
+                "the resultant electromental to encase it.\n\nIt'll likely be sore with you, so you'll " ..
+                "need to 'kill' it while it's contained in the magneto sphere.",
+            rewardMoney = 37000,
+        },
         [10587] = {
             description = "Our scouts have reported a massive influx of Sunfury blood elf recruits " ..
                 "heading to the Ruins of Karabor. Normally this would represent a purely military threat, " ..
@@ -13802,6 +13882,14 @@ ns.Overrides.wowhead = {
                 "bud!\n\nBloodmaul Camp is where the attacks are to be staged from. Head northwest down " ..
                 "the ramp out of the Ruuan Weald and you will find it. I want you to kill their leader, " ..
                 "Dorgok!",
+            rewardMoney = 37000,
+        },
+        [10796] = {
+            description = "I've heard that you've done us more than proud in the fight against the ogres " ..
+                "thus far. Now, I would ask that you face them again. I want you to crush the ogres at " ..
+                "Bloodmaul Camp!\n\nTo get down there, head northwest down the ramp out of the Ruuan " ..
+                "Weald. You'll find them at the base of the ramp.\n\nGood luck, <class>!",
+            rewardChoices = {{31537, 1}, {31538, 1}, {31539, 1}, {31540, 1}},
             rewardMoney = 37000,
         },
         [10797] = {
