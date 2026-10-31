@@ -1148,6 +1148,11 @@ ns.Overrides.wowhead = {
                 "tactics against him.\n\nEnter his camp to the east and kill his men. Lots of them. And " ..
                 "get out before reinforcements can close on you.",
         },
+        [205] = {
+            description = "While I study those legends you acquired, gather for me implements of evil " ..
+                "troll magic. Enter the territory of the Skullsplitter trolls, a second tribe to the " ..
+                "distant south, and acquire Skullsplitter Fetishes from their Witchdoctors and Mystics.",
+        },
         [207] = {
             description = "Colonel Kurzen was once a great, noble man - I must find what caused his fall " ..
                 "into depravity! He may be under the sway of troll magic. To confirm this, I must study " ..
@@ -4598,6 +4603,11 @@ ns.Overrides.wowhead = {
                 "forked...\n\nThey say the forked tongues have a distinct flavor, and I want that flavor " ..
                 "in my dish...",
         },
+        [1219] = {
+            description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
+                "clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained " ..
+                "parchment.\n\nThe parchment is written in orcish... and it looks important.",
+        },
         [1220] = {
             description = "Captain Vimes should see the orc report you found, <name>. He knows the orcish " ..
                 "language better than most. And he should know that there are Horde spies near " ..
@@ -4627,6 +4637,14 @@ ns.Overrides.wowhead = {
                 "parchment.\n\nThe parchment is a report made by an orc who spent weeks spying on the " ..
                 "city of Theramore.\n\nAfter scanning the parchment, it is clear that it must be brought " ..
                 "to the orc spymaster in Brackenwall Village.",
+        },
+        [1245] = {
+            description = "Whoa, this looks way too complex to be something to just lead you astray. I " ..
+                "shouldn't even be looking at this stuff. Take it to Trias--he'll be able to make sense " ..
+                "of it. And DON'T let anyone get in your way. This is bigger than me. It might even be " ..
+                "bigger than him, but we'll see.\n\nAnd do me a favor, <name>, don't tell anyone I helped " ..
+                "you. If my superiors found out I knew about any of this and didn't share it with them " ..
+                "they'd probably hang me.",
         },
         [1246] = {
             description = "Yeah, now that I think about it... Dashel... Dashel something... What was his " ..
@@ -4910,6 +4928,15 @@ ns.Overrides.wowhead = {
                 "do well to test its strength against the fish men when you are ready... but only to " ..
                 "please me further.",
             rewardChoices = {{9680, 1}, {9678, 1}, {9679, 1}},
+        },
+        [1430] = {
+            description = "There's a high demand for the succulent taste of crawler meat among my " ..
+                "customers; especially the meat from the monstrous crawlers.\n\nIf you plan on heading to " ..
+                "the coast, then I could easily make it worth your while to bring me back some of their " ..
+                "legs to have transported back to Orgrimmar.\n\nThe coast is to the east from here, and " ..
+                "you should have no problem finding the creatures scurrying along the beaches and under " ..
+                "the sea.",
+            rewardItems = {{9681, 10}, {9682, 1}},
         },
         [1432] = {
             description = "As the Alliance progresses deeper and deeper into Kalimdor, incorrect " ..
@@ -9479,6 +9506,12 @@ ns.Overrides.wowhead = {
                 "Like my tribe, there things you must learn only from her. Don't be stayin' here too " ..
                 "long. You should be headin' to the War Quarter as fast as a zeppelin can carry you.",
         },
+        [5663] = {
+            description = "Aelthalyste sent word out to all her priests. We're to direct the younger of " ..
+                "our order to the Undercity for more training. If you truly count yourself among our " ..
+                "faithful, then you should return there also.\n\nYou can find Aelthalyste in the War " ..
+                "Quarter deep in the Undercity.",
+        },
         [5673] = {
             description = "You know you have access to any of our trainers at any time, <name>, but there " ..
                 "are some things that we cannot pass on to you. One of those things are the teachings of " ..
@@ -10223,6 +10256,12 @@ ns.Overrides.wowhead = {
                 "with. You find a crowbar that looks like it will do the trick.\n\nYou set your feet and " ..
                 "pray that you'll be able to get out of the mill before the termites get to you.",
             rewardMoney = 8500,
+        },
+        [6401] = {
+            description = "Tell Tammra Windfield, Kaya's aunt who's at Sun Rock Retreat, about the good " ..
+                "news! Kaya is alive! We had thought she was lost after the brutal attack on our village. " ..
+                "Follow the path to the west to get to Sun Rock Retreat.",
+            rewardMoney = 700,
         },
         [6402] = {
             description = "You are to meet with Windsor at the gates of Stormwind.\n\nWhat Windsor is " ..
