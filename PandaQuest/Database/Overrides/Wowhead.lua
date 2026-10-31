@@ -21907,6 +21907,15 @@ ns.Overrides.wowhead = {
                 "Zim'Abwa, if you were to give offerings of the Drakkari to her, she is sure to give you " ..
                 "her blessing.",
         },
+        [12619] = {
+            description = "The single most important piece of equipment to a death knight is the " ..
+                "runeblade. It is through the runeblade that a death knight commands the powers of frost, " ..
+                "blood and the unholy. The runeblade also acts as a vessel to store the death knight's " ..
+                "runic power.\n\nThe time has come to create your first runeblade. Search the weapon " ..
+                "racks on this floor and locate a battle-worn sword. Once found, take the sword to a " ..
+                "nearby runeforge and use it to create a runeblade.",
+            rewardItems = {{38707, 1}},
+        },
         [12620] = {
             description = "We were not quick enough, <name>. The cultist scum have arrived at the " ..
                 "Glimmering Pillar and are making preparations to destroy it, I can sense them.\n\nWe " ..
@@ -21919,7 +21928,17 @@ ns.Overrides.wowhead = {
                 "slowed down. The situation is becoming desperate, <name>.\n\nThere exists a last resort. " ..
                 "Before I reveal any more, however, I must be sure I have your absolute trust.",
         },
-        [12622] = {rewardMoney = 65000},
+        [12622] = {
+            description = "You thinkin' what Ahunae thinkin', mon?\n\nSome of the Drakkari trolls have " ..
+                "gathered at the Pools of Jin'Alai to the southwest. We be needin' to draw out their " ..
+                "leaders, and Ahunae knows just how you be doin' it, too!\n\nGo in there and kill those " ..
+                "trolls. When you kill enough, their leaders show up.\n\nWhen they show up next to their " ..
+                "totems, you make sure to be gettin' the treasure of Kutube'sa, Gawanil, and Chulo the " ..
+                "Mad, mon.",
+            rewardChoices = {{39775, 1}, {39796, 1}, {39838, 1}, {39798, 1}},
+            rewardItems = {{20390, 5}},
+            rewardMoney = 65000,
+        },
         [12623] = {
             description = "We Zandalari could use your help, <name>. We must put an end to what the " ..
                 "Drakkari are doing to their gods!\n\nTo the northeast, up the great steps that lead to " ..
@@ -24474,7 +24493,16 @@ ns.Overrides.wowhead = {
                 "the Terrace of the Makers and face my brother's forces. The fool will regret ever " ..
                 "crossing me.",
         },
-        [13059] = {rewardMoney = 148000},
+        [13059] = {
+            description = "I've been praying to The Lady of the Sword for one to come and strike down my " ..
+                "enemy. Thane Illskar must pay for what he did to me!\n\nI was the champion of Thane " ..
+                "Ufrang the Mighty. During my fight for ascendance in Valhalas, Illskar sabotaged me with " ..
+                "dark magic, causing me to lose and be reduced to this.\n\nThe thane and his champions " ..
+                "can be found below in The Circle of Suffering. Challenge him on my behalf. Defeat " ..
+                "him.\n\nMake him know the suffering that I know!",
+            rewardChoices = {{43862, 1}, {43908, 1}, {43924, 1}, {43943, 1}, {43978, 1}},
+            rewardMoney = 148000,
+        },
         [13060] = {
             description = "So... so I don't think we're going to be getting a good foothold in those " ..
                 "mountains.\n\nTrust me, I'm not one to give up easily... but between freezing engines, " ..
@@ -47331,13 +47359,6 @@ ns.Overrides.wowhead = {
                 "you find. Every enemy defeated purchases more time for Hyjal.",
             rewardMoney = 94000,
         },
-        [29155] = {
-            description = "There is a stash of loot located in the statue on Janeiro's Point just " ..
-                "northwest of Booty Bay in Stranglethorn Vale.\n\nHead to the statue and claim your " ..
-                "prize, <class>.",
-            rewardItems = {{69262, 1}, {69863, 1}, {69864, 1}, {69865, 1}},
-            rewardMoney = 94000,
-        },
         [29159] = {
             description = "We've fought hard to secure this area, but our foothold is tenuous.\n\nOur " ..
                 "scouts report that the area around us is teeming with vicious fire spiders. They are the " ..
@@ -61876,6 +61897,18 @@ ns.Overrides.wowhead = {
             },
             zoneID = 11,
         },
+        [1053] = {
+            spawns = {
+                [11] = {
+                    {46.4, 16.4}, {46.4, 16.6}, {46.6, 18.6}, {47, 17.4}, {47, 17.6}, {47.4, 15.4},
+                    {47.4, 15.8}, {47.6, 15.8}, {47.6, 16.6}, {48, 15.2}, {48, 18}, {48, 18.6}, {60, 24.4},
+                    {60, 24.8}, {60.2, 25.6}, {60.8, 24.4}, {60.8, 30}, {61, 25.8}, {61.2, 25.4},
+                    {61.2, 27.2}, {61.2, 27.6}, {61.4, 28.6}, {61.6, 25.4}, {61.6, 26}, {61.6, 27.4},
+                    {61.6, 30}, {62, 29}, {62.2, 28.2}, {63, 25.8},
+                },
+            },
+            zoneID = 11,
+        },
         [1076] = {spawns = {[11] = {{38.8, 52.2}}}, zoneID = 11},
         [1077] = {spawns = {[11] = {{38.8, 52.2}}}, zoneID = 11},
         [1078] = {spawns = {[11] = {{38, 51.2}}}, zoneID = 11},
@@ -62374,6 +62407,7 @@ ns.Overrides.wowhead = {
         },
         [4046] = {spawns = {[1638] = {{70.2, 30.8}, {70.6, 30.4}, {70.6, 30.6}}}, zoneID = 1638},
         [4048] = {spawns = {[357] = {{89.4, 45.8}, {89.6, 46.4}, {89.6, 46.6}}}, zoneID = 357},
+        [4086] = {spawns = {[406] = {{58.2, 51.6}}}, zoneID = 406},
         [4093] = {
             spawns = {
                 [400] = {
@@ -62384,6 +62418,18 @@ ns.Overrides.wowhead = {
                     {45.2, 42.2}, {45.4, 43.4}, {45.4, 43.8}, {45.8, 40.4}, {45.8, 42.8}, {46, 41.8},
                     {46.6, 41.2}, {47.2, 41.8}, {47.8, 42.4}, {48.2, 42.8}, {48.4, 43.8}, {48.6, 43.6},
                     {48.8, 41.6}, {49.6, 41.4},
+                },
+            },
+            zoneID = 400,
+        },
+        [4101] = {
+            spawns = {
+                [400] = {
+                    {26, 54.8}, {26, 55.6}, {26.2, 52.6}, {26.4, 47}, {26.4, 47.8}, {26.4, 52.4},
+                    {26.4, 53.6}, {26.4, 56.6}, {26.6, 53.4}, {26.6, 55.8}, {26.8, 47.8}, {26.8, 55.4},
+                    {27, 52}, {27.2, 48.6}, {27.2, 51.4}, {27.2, 54}, {27.4, 49.8}, {27.6, 47.4}, {27.6, 50},
+                    {27.8, 48.2}, {27.8, 49.4}, {28, 51.2}, {28.6, 48.4}, {28.6, 48.6}, {28.6, 50.2},
+                    {28.6, 51.2},
                 },
             },
             zoneID = 400,
@@ -62480,6 +62526,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 15,
         },
+        [4454] = {spawns = {[400] = {{78, 77}}}, zoneID = 400},
         [4456] = {spawns = {[15] = {{66.4, 45.2}}, [148] = {{33.8, 42.4}, {33.8, 42.6}}}, zoneID = 148},
         [4484] = {
             spawns = {
@@ -63017,6 +63064,7 @@ ns.Overrides.wowhead = {
             zoneID = 440,
         },
         [7867] = {spawns = {[3] = {{62.4, 57.4}, {62.4, 57.6}, {62.6, 57.4}, {62.6, 57.6}}}, zoneID = 3},
+        [7868] = {spawns = {[51] = {{63.2, 75.4}, {63.4, 76}, {63.6, 75.4}, {63.6, 75.8}}}, zoneID = 51},
         [7870] = {spawns = {[357] = {{89.4, 46.4}, {89.4, 46.6}}}, zoneID = 357},
         [7876] = {spawns = {[440] = {{51.4, 26.8}, {51.6, 26.8}}}, zoneID = 440},
         [7877] = {spawns = {[357] = {{30.4, 46}}}, zoneID = 357},
@@ -63304,6 +63352,20 @@ ns.Overrides.wowhead = {
         [12718] = {spawns = {[331] = {{70, 71}}}, zoneID = 331},
         [12738] = {spawns = {[1] = {{25, 75.8}}}, zoneID = 1},
         [12862] = {spawns = {[331] = {{71, 68.2}, {71, 68.6}}}, zoneID = 331},
+        [14182] = {
+            spawns = {
+                [1637] = {
+                    {68.2, 14.4}, {68.4, 14.6}, {68.4, 15.6}, {68.8, 15.2}, {69, 16}, {69.4, 17.6},
+                    {69.4, 18.6}, {69.6, 15.6}, {69.6, 17.8}, {69.8, 19.6}, {70.6, 18.4}, {71.2, 25.2},
+                    {71.4, 19.6}, {71.4, 26.4}, {71.4, 27.2}, {71.6, 18.2}, {71.6, 19.4}, {71.8, 25.6},
+                    {71.8, 27.2}, {72.2, 20.6}, {72.4, 19.8}, {72.4, 22.8}, {72.4, 28.6}, {72.4, 29.8},
+                    {72.8, 19.4}, {72.8, 20}, {73, 23}, {73.2, 21.4}, {73.2, 21.6}, {73.4, 28.6},
+                    {73.6, 20.2}, {73.6, 28.4}, {73.6, 28.6}, {74.4, 24.4}, {74.4, 25.2}, {74.4, 26},
+                    {74.6, 24.2}, {74.6, 24.6}, {74.6, 26.6}, {74.6, 27.8},
+                },
+            },
+            zoneID = 1637,
+        },
         [14355] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
         [14469] = {spawns = {[361] = {{41.4, 44.8}, {41.6, 44.8}}}, zoneID = 361},
@@ -63610,6 +63672,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 67,
         },
+        [32363] = {spawns = {[1637] = {{32, 37.8}, {32.4, 37.4}, {32.6, 37.4}, {32.6, 37.6}}}, zoneID = 1637},
         [36689] = {spawns = {[16] = {{71.8, 16.4}, {71.8, 16.6}}}, zoneID = 16},
         [39273] = {
             spawns = {
@@ -63758,6 +63821,7 @@ ns.Overrides.wowhead = {
         [67439] = {rank = 1},
         [67554] = {maxLevel = 90, minLevel = 90},
         [67628] = {maxLevel = 90, minLevel = 90},
+        [67812] = {rank = 0},
         [67847] = {maxLevel = 90, minLevel = 90},
         [67866] = {maxLevel = 90, minLevel = 90},
         [67905] = {rank = 0},
@@ -63840,6 +63904,7 @@ ns.Overrides.wowhead = {
         [71424] = {subName = "The Black Prince"},
         [71638] = {maxLevel = 91, minLevel = 91},
         [71865] = {subName = "Warchief"},
+        [71939] = {subName = "Flightmaster"},
         [71952] = {subName = "The Red Crane"},
         [71953] = {subName = "The White Tiger"},
         [71955] = {subName = "The Jade Serpent"},

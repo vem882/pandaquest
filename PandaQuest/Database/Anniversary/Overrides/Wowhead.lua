@@ -2020,6 +2020,10 @@ ns.Overrides.wowhead = {
                 "Magus will be pleased.",
             rewardMoney = 3500,
         },
+        [560] = {
+            description = "You know, <name>, I'd really rather not take these heads... Since you've " ..
+                "already got a handle on them, would you mind delivering them to Redpath for me?",
+        },
         [562] = {
             description = "My former mentor in the Stormwind city guard sent a message to me that " ..
                 "Alliance High Command is becoming concerned with the threat posed by the naga. From what " ..
@@ -2156,6 +2160,15 @@ ns.Overrides.wowhead = {
                 "Highlands at Refuge Pointe.\n\nTravel there and seek out Captain Nials. Ask the good " ..
                 "Captain if the Alliance can spare some soldiers to help us reclaim Dun Modr and the " ..
                 "Thandol Span.",
+        },
+        [640] = {
+            description = "Thoras Trollbane's tomb is protected by three sigils--the first of which you " ..
+                "retrieved from the Syndicate. The other two will be harder to get, as they're held by " ..
+                "the firmly entrenched Stromgarde militia.\n\nThe sigil of Thoradin was divided into five " ..
+                "pieces by Thoras' son, Galen, and dispersed among the Stromgarde defenders. Retrieve the " ..
+                "pieces and bring them to Tor'gan, the troll shaman, he will be able to bind them into " ..
+                "the complete sigil.",
+            rewardMoney = 5000,
         },
         [642] = {
             description = "My name is Myzrael. I am a princess of the earth, and my captors, the giants, " ..
@@ -2817,6 +2830,13 @@ ns.Overrides.wowhead = {
                 "trolls around there. Bring the tapped widget back to me when you're done!",
             rewardMoney = 3500,
         },
+        [995] = {
+            description = "All right then... if you're sure, we'll sneak out of here. Let us leave when " ..
+                "you're ready.\n\nRemember, after you've escaped, meet Terenthis back in Auberdine. I'll " ..
+                "head there on my own since I'll probably be moving faster than you.",
+            rewardItems = {{6659, 1}},
+            rewardMoney = 600,
+        },
         [1001] = {
             description = "A tiny voice crackles from deep within the machine.\n\n\"Wizbang here! The " ..
                 "next Buzzbox is north of Auberdine, on the beach\n\nSo, that Buzzbox is number 411 and " ..
@@ -3134,6 +3154,15 @@ ns.Overrides.wowhead = {
                 "with the dwarves.\n\nYou can find Grimand Elmore at the weapon shop in the Dwarven " ..
                 "District of Stormwind, in the northeast section of town.",
         },
+        [1103] = {
+            description = "Greetin's, <brotha/sista>! Have you too come to purify the waters here and " ..
+                "prove your understandin' to Islen?\n\nI've just defeated the corrupt water spirit " ..
+                "meself, and I'm just 'bout to put da bracers and remaining drops o' water on the " ..
+                "brazier.\n\nWhat's dat? Ahhh. Tiev understan' all too well when somethin' goes wrong. " ..
+                "Well, Tiev can help you plenty if you be needin' to see the pure water spirit " ..
+                "again.\n\nBring me a water sapta from Islen as proof that you be ready, an' I'll wait to " ..
+                "turn in me parts.",
+        },
         [1104] = {
             description = "I have so many designs for our rocket car! So many! And I must try them " ..
                 "all!!\n\nI'm working on a new type of fuel. One that burns really really really hot!! I " ..
@@ -3435,6 +3464,12 @@ ns.Overrides.wowhead = {
                 "was.\n\nI haven't heard from him for a while now--too busy with his inn, I'd wager--but " ..
                 "the clerk in Theramore could probably point you to him. Look for him on the top floor of " ..
                 "that keep near the middle of the city. What's it called... Foothold Citadel, that's it.",
+        },
+        [1320] = {
+            description = "Ah, I almost missed this... The leather strap on the back must have burned " ..
+                "off, but it seems like it was made to fit a large person. I'd guess a tauren, " ..
+                "actually.\n\nThat's about all I can tell you. Tell Captain Vimes I'm sorry I couldn't be " ..
+                "of more help.",
         },
         [1323] = {
             description = "Oh, I think I might have dropped too much acid onto the shield. Let me just " ..
@@ -6703,6 +6738,15 @@ ns.Overrides.wowhead = {
                 "slay Theradras so we may recover Zaetar's remains before returning to Stonetalon.",
             rewardChoices = {{17705, 1}, {17743, 1}, {17753, 1}},
         },
+        [7122] = {
+            description = "The mines in Alterac Valley hold more than just minerals. Both the Frostwolf " ..
+                "and Stormpike have cached excess supplies in the Irondeep and Coldtooth mines... that's " ..
+                "not a bad idea, if we could only maintain control of them!\n\nCapture a mine, then " ..
+                "return to me. To capture a mine, enter one that we do not control and kill its leader. " ..
+                "When you do that, the mine will be ours, and we'll send troops to protect it!",
+            rewardMoney = 44000,
+            rewardXP = 7070,
+        },
         [7142] = {
             description = "The Stormpike dwarves and their allies have invaded Alterac Valley, and we " ..
                 "must drive them out! To win the battle for Alterac, we must defeat their general, " ..
@@ -6909,6 +6953,15 @@ ns.Overrides.wowhead = {
                 "forth into Zul'Gurub and witness first hand the depravity of Hakkar and the Gurubashi. " ..
                 "Wrest the Paragons of Power that we seek from them; success will be rewarded!",
             rewardItems = {{19842, 1}},
+        },
+        [8075] = {
+            description = "The augurs of the Zandalar all wear a distinctive chest piece called a " ..
+                "hauberk. It's fitted with the finest of silks and cloths, interwoven with strong chain. " ..
+                "It's a symbol of not only their divinity, but also of their authority, mon. It's never " ..
+                "wise to cross one whose life is devoted to speakin' with the spirits...\n\nBring me an " ..
+                "offerin' of the Paragons of Power from inside Zul'Gurub and prove your worth to us. Do " ..
+                "it and I'll give ya one of the finest hauberks our augurs would ever hope to wear!",
+            rewardItems = {{19828, 1}},
         },
         [8077] = {
             description = "The ultimate symbol of power amongst the tribe is the garb we wear in battle. " ..
@@ -8353,6 +8406,16 @@ ns.Overrides.wowhead = {
                 "myself, except that I cannot leave the confines of Aerie Peak while awaiting my " ..
                 "audience. Visit Featherbeard at his residence to the south and ask if he will speak with " ..
                 "me.",
+        },
+        [9470] = {
+            description = "The rugged terrain of the Hinterlands is not only home to the Wildhammer " ..
+                "dwarves and their gryphons, but also to a number of forest troll tribes.\n\nThe trolls " ..
+                "view the Wildhammers as squatters on their ancestral lands and spare no opportunity to " ..
+                "accost the dwarves by attacking the gryphon aeries. One way to prove ourselves in the " ..
+                "eyes of the Wildhammer is to help staunch these attacks by killing a Witherbark leader, " ..
+                "Witch Doctor Mai'jin, who shelters in a cave at Bogen's Ledge, to the west of " ..
+                "Shadra'Alor.",
+            rewardMoney = 6500,
         },
         [9475] = {
             description = "Looking over the remains, you surmise that this broken and battered skeleton " ..
