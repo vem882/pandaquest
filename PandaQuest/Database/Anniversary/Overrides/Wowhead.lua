@@ -1697,6 +1697,15 @@ ns.Overrides.wowhead = {
                 "Mangeclaw.",
             rewardChoices = {{2218, 1}, {1009, 1}},
         },
+        [421] = {
+            description = "Lady Sylvanas has charged Varimathras with the conquering of the human and " ..
+                "dwarven lands to the south.\n\nBut that fool, Arugal -- charlatan of Dalaran and now " ..
+                "cursed beast of Shadowfang Keep -- let his reckless magic wreak havoc with the strategic " ..
+                "stronghold of Silverpine Forest.\n\nI need someone skilled in the ways of combat to help " ..
+                "clean up Arugal's mess. Prove yourself to me by killing 5 Moonrage Whitescalps. The " ..
+                "wretched beasts can often be found just off the road, down the hill below.",
+            rewardMoney = 350,
+        },
         [422] = {
             description = "How Arugal gained acceptance within the Kirin Tor is beyond me. His " ..
                 "spell-casting knowledge seemed as transparent as a blown glass bauble.\n\nWhat's " ..
@@ -2106,6 +2115,13 @@ ns.Overrides.wowhead = {
             description = "What?\n\nWhat?!\n\nYou want money? I don't owe you any money.\n\nLetter? What " ..
                 "letter? Oh, you wanna fight then? All right, mate... let's do this! Owe you any money...",
             rewardMoney = 25,
+        },
+        [592] = {
+            description = "I have reshaped the Mind's Eye into a Soul Gem. Its purpose is twofold: you " ..
+                "must use it to stun Yenniku, and once stunned place it upon his head to entrap his " ..
+                "soul.\n\nThen, bring the gem to Nimboya.\n\nYenniku dwells with Zanzil the Outcast, at " ..
+                "the Ruins of Aboraz, along the Crystal Shore on the distant Cape of Stranglethorn.",
+            rewardChoices = {{4134, 1}, {6723, 1}},
         },
         [593] = {rewardItems = {{3913, 1}}},
         [602] = {
@@ -2628,6 +2644,16 @@ ns.Overrides.wowhead = {
                 "hunts the great water beasts along the coast. She will be your teacher in their " ..
                 "ways.\n\nBut be wary in your search for her, for the Barrens ' coast is held by humans.",
         },
+        [875] = {
+            description = "Hahaha, <name>. Back for more? Good, I like to hear that.\n\nThis time I want " ..
+                "you to assassinate some of the harpy lieutenants in the Dry Hills. Only Witchwing " ..
+                "Slayers can be lieutenants, and you can tell them apart by the rings they carry. They " ..
+                "are a nasty bunch, but they lead some of the underlings in that area. Taking out 6 of " ..
+                "them will be a decisive strike against their matriarchy.\n\nMake sure they die " ..
+                "painfully, <name>. We want those harpy wenches to know the idiocy of picking fights with " ..
+                "the Horde.",
+            rewardMoney = 800,
+        },
         [877] = {
             description = "Like the one you found at the Forgotten Pools, there may be fissures at the " ..
                 "other oases in the Barrens. If so, then perhaps the fissures are the oases' source of " ..
@@ -3115,6 +3141,14 @@ ns.Overrides.wowhead = {
         [1055] = {
             description = "The rod, now complete, lies in your hands. Shael'dryn will want to hear of " ..
                 "your success.",
+        },
+        [1061] = {
+            description = "The spirits of the Stonetalon Mountains are angered, for goblins and their " ..
+                "servants are plundering and burning the land. So the land has cried out, and those who " ..
+                "listen for such things... have heard.\n\nSeereth Stonebreak, a promising shaman of the " ..
+                "Horde, was sent to Stonetalon. She reports massive deforestation at the hands of the " ..
+                "goblins, and requests aid.\n\nMeet Seereth in Stonetalon. To reach her, follow the road " ..
+                "west of the Barrens' Crossroads. She is camped near the Greatwood Vale.",
         },
         [1069] = {
             description = "Spider egg omelettes are a new fad in Booty Bay! The problem is... Booty Bay's " ..
@@ -4558,6 +4592,15 @@ ns.Overrides.wowhead = {
                 "Shandris Feathermoon what has been discovered here.",
             rewardMoney = 4500,
         },
+        [2880] = {
+            description = "Get this straight, <race> - we are NOT part of the Alliance! The Wildhammers " ..
+                "are independent, relying on deeds and actions to prove one's worth, rather than the " ..
+                "blather of those who use jibber-jabber to bolster their do-nothing attitudes!\n\nIf " ..
+                "you're looking for friends here, then prove your worth to us first! The foul trolls that " ..
+                "choke the hillsides of the Hinterlands sometimes carry tribal necklaces. Bring five of " ..
+                "them to me, and we'll mark it down as a step in the right direction for you.",
+            rewardMoney = 6500,
+        },
         [2923] = {
             description = "Tinkmaster Overspark is very upset with the fate of his mechanical creation, " ..
                 "Techbot. I remember Techbot as a kind and helpful tool for the gnomes, but Overspark " ..
@@ -5726,6 +5769,16 @@ ns.Overrides.wowhead = {
                 "your findings to date on the furbolg situation.\n\nI believe he has some ideas of his " ..
                 "own on the reasons behind their corruption. Perhaps you can work with him to enact a " ..
                 "plan to restore the balance of nature here!",
+        },
+        [4763] = {
+            description = "We've learned that a source of furbolg corruption is from the satyr. They hold " ..
+                "sway via talismans that they channel magic through. If the furbolg have a chance at " ..
+                "salvation, we must lure out the satyr corruptor and take that talisman!\n\nFill this " ..
+                "bowl at our moonwell and take samples of the furbolgs' food from their northern camp. " ..
+                "Mix them and place it near the bonfire by the river; any furbolgs who eat will be " ..
+                "cleansed just long enough to lure out the satyr corruptor... who then you must slay!",
+            rewardChoices = {{15204, 1}, {15202, 1}, {15203, 1}},
+            rewardMoney = 2000,
         },
         [4764] = {
             description = "There is a chamber, high in Blackrock Spire, that was once called the Hall of " ..
@@ -7062,6 +7115,15 @@ ns.Overrides.wowhead = {
         [7658] = {rewardItems = {{12715, 1}}},
         [7659] = {rewardItems = {{12687, 1}}},
         [7669] = {rewardItems = {{18746, 1}}},
+        [7670] = {
+            description = "The time has come, <name>, for you to learn about what it will take for you to " ..
+                "acquire something you have no doubt waited on for some time... your charger.\n\nSpeak " ..
+                "with Lord Grayson Shadowbreaker in Stormwind's Cathedral District. It is he who will " ..
+                "guide you not only though the legerdemain of a Paladin's most trusted mount, but the " ..
+                "tasks before you to acquire one of your own.\n\nI wish you the best in this trial. For " ..
+                "the Light, noble <brother/sister>!",
+            rewardXP = 955,
+        },
         [7701] = {
             description = "By order o' 'is eminence, Overseer Oilfist, the rogue Thorium Brotherhood " ..
                 "agent an' newly hired commander o' the Dark Iron Slag Pit crew o' the Cauldron, Overseer " ..
@@ -7691,6 +7753,13 @@ ns.Overrides.wowhead = {
                 "headpiece of unmatched power.",
             rewardItems = {{21337, 1}},
         },
+        [8665] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "dominance and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21355, 1}},
+        },
         [8667] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
                 "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
@@ -8035,6 +8104,14 @@ ns.Overrides.wowhead = {
                 "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
                 "piece of armor for you.",
             rewardItems = {{22428, 1}},
+        },
+        [9053] = {
+            description = "It is as I feared -- the toxin is simply too weak for such a powerful " ..
+                "creature.\n\nIf we are to create a toxin of high enough potency, you must venture to the " ..
+                "bottom of the Temple of Atal'Hakkar, unlock the secrets of the altar and recover a " ..
+                "putrid vine from the guardian there. The temple is dangerous, and it would behoove you " ..
+                "to bring friends.\n\nReturn to me when this is done.",
+            rewardChoices = {{22274, 1}, {22272, 1}, {22458, 1}},
         },
         [9054] = {
             description = "I have discovered a use for the carapace of the crypt fiend. I am able to " ..
@@ -8582,6 +8659,13 @@ ns.Overrides.wowhead = {
                 "available for you. The things he will teach do have a cost, so bring some coin with " ..
                 "you.\n\nAvokor - as with all the trainers on Sunstrider Isle - is inside the Sunspire on " ..
                 "the lower level.",
+        },
+        [9400] = {
+            description = "<name>, we recently uncovered a plot to assassinate our envoy to Falcon Watch. " ..
+                "Hellfire Citadel learned of our plans to send an expedition there earlier this morning " ..
+                "and set up an ambush.\n\nOur scouts have informed me that an assassin known as Krun " ..
+                "Spinebreaker waits along the road north of the Citadel. Go there and slay this assassin. " ..
+                "Show the fel orcs we're not to be trifled with!",
         },
         [9407] = {
             description = "For years the Dark Portal loomed silent... forgotten. But it is silent no " ..
@@ -10684,6 +10768,14 @@ ns.Overrides.wowhead = {
                 "at Stonebreaker Hold.\n\nGood luck, <class>!",
             rewardChoices = {{25933, 1}, {25935, 1}, {25934, 1}},
             rewardMoney = 66000,
+        },
+        [10045] = {
+            description = "Mother Kashur wishes to speak with you, <name>. Before this becomes possible, " ..
+                "you must collect the herbs required to create a potion that will expand your mind, " ..
+                "allowing you to commune with the spirits.\n\nYou must gather Olemba root from Terokkar, " ..
+                "marshberries from Zangarmarsh, Telaari fronds from Nagrand and dragonspine from the " ..
+                "Blade's Edge mountains. I have written down instructions on this parchment as to the " ..
+                "cultivation of these herbs. Return to me when you have gathered the materials.",
         },
         [10051] = {
             description = "Thank goodness for you!\n\n<class>, I need you to help me escape. I have " ..
@@ -15579,6 +15671,7 @@ ns.Overrides.wowhead = {
         },
         [21425] = {spawns = {[3523] = {{53.4, 42}, {53.6, 42.2}, {54, 42.6}}}, zoneID = 3523},
         [21502] = {spawns = {[3520] = {{23.4, 36.8}, {23.6, 36.8}}}, zoneID = 3520},
+        [21636] = {spawns = {[3519] = {{49.4, 54.8}, {50.4, 54.8}, {50.6, 54.8}}}, zoneID = 3519},
         [21877] = {spawns = {[3520] = {{58.2, 70.4}, {58.2, 70.8}}}, zoneID = 3520},
         [22038] = {
             spawns = {

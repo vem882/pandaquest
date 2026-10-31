@@ -4,6 +4,26 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.309] - 2026-10-31
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 565 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,049 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,048 quests, 38 NPCs, 1 object
+- npc 757 - Lost One Fisherman - updated
+  - coordinates: 24 spawn points added in Swamp of Sorrows
+- npc 1054 - Dark Iron Demolitionist - updated
+  - coordinates: 25 spawn points added in Wetlands
+- npc 2360 - Hillsbrad Farmhand - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 14727 - Vehena - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 68130 - The Monkey King - updated
+  - NPC level added (9,999)
+- npc 70160 - Taran Zhu - updated
+  - NPC title added (Lord of the Shado-Pan)
+
 ## [0.2.308] - 2026-10-31
 
 Data from the PandaQuest portal.
@@ -414,43 +434,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Silithus
 - npc 68417 - Cousin Goottooth - updated
   - NPC level added (88)
-
-## [0.2.298] - 2026-10-30
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 435 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,940 quests, 21 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,949 quests, 35 NPCs, 1 object
-- quest 13083 - Light Within the Darkness - updated
-  - description added
-  - reward choices: +5
-- quest 13092 - Reading the Bones - updated
-  - description added
-  - reward choices: +5
-- npc 751 - Marsh Flesheater - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 785 - Skeletal Warder - updated
-  - coordinates: 35 spawn points added in Duskwood
-- npc 2102 - Dragonmaw Grunt - updated
-  - coordinates: 31 spawn points added in Wetlands
-- npc 4877 - Jandia - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 9077 - Warlord Goretooth - updated
-  - coordinates: 3 spawn points added in Badlands
-- npc 10646 - [Deprecated for 4.x]Lakota Windsong - updated
-  - coordinates: 9 spawn points added in Thousand Needles
-- npc 68041 - Kor'kron Overseer - updated
-  - NPC level added (90)
-- npc 68169 - Gen-li, Twister of Words - updated
-  - NPC title added (Champion of Ogudei)
-  - NPC level added (90)
-- npc 68960 - 7th Legion Champion - updated
-  - NPC level added (90)
-- npc 69007 - A.C.E. Medic - updated
-  - NPC level added (90)
-- npc 71638 - Activated Missile Turret - updated
-  - NPC level added (91)
 
 ## [0.2.270] - 2026-10-26
 
