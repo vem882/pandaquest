@@ -4,6 +4,37 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.307
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 549 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,035 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,028 quests, 37 NPCs, 1 object
+- quest 12687 - Into the Realm of Shadows - updated
+  - description added
+  - reward items: +1
+- quest 13364 - Tirion's Gambit - updated
+  - description added
+  - reward choices: +4
+- npc 565 - Rabid Dire Wolf - updated
+  - coordinates in Duskwood: 13 spawn points added, 7 refined, 13 removed
+- npc 766 - Tangled Horror - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 2986 - [Deprecated for 4.x]Dorn Plainstalker - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 3229 - "Squealer" Thornmantle - updated
+  - coordinates: 3 spawn points added in Mulgore
+- npc 3693 - Terenthis - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 3989 - Venture Co. Logger - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 11870 - Archibald - updated
+  - coordinates: 7 spawn points added in Undercity
+- npc 14467 - Kroshius - updated
+  - coordinates: 7 spawn points added in Felwood
+- npc 17097 - Advisor Sarophas - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 71696 - Activated Electromagnet - updated
+  - NPC level added (91)
+
 0.2.306
 - database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 540 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,027 quests, 22 NPCs, 5 objects
@@ -400,67 +431,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - npc 246384 - Vyraxxis - updated
   - NPC level added (91)
   - rank added (elite)
-
-0.2.296
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 406 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,916 quests, 20 NPCs, 4 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,913 quests, 33 NPCs, 1 object
-- quest 24845 - A Change of Heart - updated
-  - reward choices: +4
-- quest 29210 - Enduring the Heat - updated
-  - description removed
-  - reward money removed (9g 40s)
-- quest 31636 - Scarlet Halls Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- npc 1205 - Grawmug - updated
-  - coordinates: 6 spawn points added in Loch Modan
-- npc 2214 - Deathstalker Lesh - updated
-  - coordinates: 3 spawn points added in Hillsbrad Foothills
-- npc 2263 - Marshal Redpath - updated
-  - coordinates: 3 spawn points added in Hillsbrad Foothills
-- npc 2430 - Chef Jessen - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
-- npc 2788 - Apprentice Kryten - updated
-  - coordinates: 2 spawn points added in Arathi Highlands
-- npc 2792 - Gor'mul - updated
-  - coordinates: 1 spawn point added in Arathi Highlands
-- npc 4023 - Bloodfury Roguefeather - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4046 - Magatha Grimtotem - updated
-  - coordinates: 3 spawn points added in Thunder Bluff
-- npc 4150 - [Deprecated for 4.x]Saltstone Gazer - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 5418 - Deathstalker Zraedus - updated
-  - coordinates: 3 spawn points added in Duskwood
-- npc 5677 - Summoned Succubus - updated
-  - coordinates: 9 spawn points added in Undercity
-  - coordinates: 4 spawn points added in Stormwind City
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 6886 - Onin MacHammar - updated
-  - coordinates: 2 spawn points added in Dun Morogh
-- npc 7765 - Rockbiter - updated
-  - coordinates: 1 spawn point added in Feralas
-- npc 7867 - Thorkaf Dragoneye - updated
-  - coordinates: 4 spawn points added in Badlands
-- npc 7884 - Fraggar Thundermantle - updated
-  - coordinates: 2 spawn points added in The Hinterlands
-- npc 9082 - Thal'trak Proudtusk - updated
-  - coordinates: 2 spawn points added in Badlands
-- npc 9084 - Thunderheart - updated
-  - coordinates: 3 spawn points added in Badlands
-- npc 10216 - Gubber Blump - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 11022 - Alexi Barov - updated
-  - coordinates: 2 spawn points added in Tirisfal Glades
-- npc 12738 - Nori Pridedrift - updated
-  - coordinates: 1 spawn point added in Dun Morogh
-- npc 12862 - Warsong Scout - updated
-  - coordinates: 2 spawn points added in Ashenvale
-- npc 14383 - Lorekeeper Kildrath - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14470 - Impsy - updated
-  - coordinates: 2 spawn points added in Felwood
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

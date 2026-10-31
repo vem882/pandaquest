@@ -22371,7 +22371,17 @@ ns.Overrides.wowhead = {
                 "to da south.\n\nLet dat be an example to all, mon. Don't be failin' Drakuru!",
             rewardMoney = 30000,
         },
-        [12687] = {rewardMoney = 8500},
+        [12687] = {
+            description = "The horse you stole has been taken to the Realm of Shadows. It is there that " ..
+                "my dark rider will slay the beast and raise it as a deathcharger. Do you think yourself " ..
+                "brave enough to enter the Realm of Shadows in pursuit of the deathcharger?\n\nIf you " ..
+                "accept, I will transport you to the shadow world. Once there, seek out a dark rider in " ..
+                "the open fields south of us. To emerge victorious you must slay him, overtake his " ..
+                "deathcharger and return it to Death's Breach. Issue the Horseman's Call should you " ..
+                "succeed.",
+            rewardItems = {{39208, 1}},
+            rewardMoney = 8500,
+        },
         [12688] = {
             description = "These goblin goons and their minions have decided that they own this pillar " ..
                 "and its crystals. I came here to explore the crystals and take samples, but they " ..
@@ -25939,7 +25949,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{38741, 1}, {39040, 1}, {39066, 1}, {39108, 1}},
             rewardMoney = 148000,
         },
-        [13364] = {rewardMoney = 222000},
+        [13364] = {
+            description = "Just this morning, my scouts informed me of a Cult of the Damned procession " ..
+                "leaving from Icecrown Citadel to the Cathedral of Darkness, bearing an artifact.\n\nAnd " ..
+                "now I learn that it might be Arthas's own heart... a thing containing the last bit of " ..
+                "his remaining humanity.\n\nThis is a sign of the Light. As long as such an artifact " ..
+                "exists, there is a chance that Arthas Menethil can become a man again!\n\nMeet me at the " ..
+                "cathedral's entrance. Be sure to bring a cultist's hood -- we're going incognito.",
+            rewardChoices = {{44745, 1}, {44746, 1}, {44747, 1}, {44748, 1}},
+            rewardMoney = 222000,
+        },
         [13367] = {
             description = "These fools have actually stumbled upon something that could pose a serious " ..
                 "threat to our plans!\n\nThe leader of this particular sect, Alumeth, has ritualistically " ..
@@ -61678,13 +61697,13 @@ ns.Overrides.wowhead = {
         [565] = {
             spawns = {
                 [10] = {
-                    {7.2, 34.2}, {7.6, 33.4}, {8, 45.6}, {8.2, 41.8}, {8.4, 41.4}, {8.4, 45.2}, {9.2, 39},
-                    {9.2, 41.6}, {9.2, 45}, {9.2, 46.2}, {9.4, 32.4}, {9.4, 33}, {9.4, 40.2}, {9.4, 40.6},
-                    {9.4, 47.8}, {9.6, 40.2}, {9.6, 45.4}, {9.6, 46.2}, {10.2, 31.4}, {10.2, 35.6},
-                    {10.2, 48}, {10.2, 50.4}, {10.2, 53.8}, {10.2, 59.2}, {10.4, 32.2}, {10.4, 33.4},
-                    {10.4, 34.6}, {10.4, 48.6}, {10.4, 52.6}, {10.4, 55.4}, {10.4, 60.4}, {10.4, 61.6},
-                    {10.6, 48.2}, {10.6, 48.6}, {10.6, 52}, {10.6, 60.4}, {10.6, 61.6}, {10.8, 32.2},
-                    {10.8, 34.2}, {10.8, 34.6},
+                    {7.2, 34.2}, {8, 45.6}, {8.4, 41.4}, {9.2, 39}, {9.2, 45}, {9.4, 32.4}, {9.4, 40.2},
+                    {9.4, 47.8}, {9.6, 45.4}, {10.2, 31.4}, {10.2, 48}, {10.2, 53.8}, {10.4, 32.2},
+                    {10.4, 34.6}, {10.4, 52.6}, {10.4, 60.4}, {10.6, 48.2}, {10.6, 52}, {10.6, 61.6},
+                    {10.8, 34.2}, {11, 52.8}, {11.4, 29.2}, {11.4, 35.8}, {11.4, 57}, {11.4, 65.6},
+                    {11.6, 31.8}, {11.6, 34.6}, {11.6, 56.4}, {11.6, 58.6}, {11.8, 35.6}, {12, 28.6},
+                    {12.2, 67.6}, {12.4, 26.8}, {12.6, 31.6}, {12.6, 67.4}, {13, 29.2}, {13.2, 30.6},
+                    {13.4, 25.2}, {13.4, 69.6}, {13.6, 30.6},
                 },
             },
             zoneID = 10,
@@ -61750,6 +61769,20 @@ ns.Overrides.wowhead = {
                 [8] = {
                     {60, 22.4}, {60, 22.6}, {60.6, 22.4}, {60.8, 23.2}, {61, 24}, {61.8, 20.8}, {64, 23.2},
                     {64, 23.6}, {64.4, 22.2}, {64.6, 22.2}, {64.6, 22.6}, {65, 20.2}, {65, 20.6},
+                },
+            },
+            zoneID = 8,
+        },
+        [766] = {
+            spawns = {
+                [8] = {
+                    {5, 31.4}, {7, 34.8}, {7.4, 29.4}, {7.8, 33.4}, {8.2, 33.8}, {8.4, 31.8}, {8.6, 35},
+                    {9, 31.4}, {9.2, 31.6}, {9.8, 30.4}, {10, 32.8}, {10.4, 31.2}, {10.4, 36.4}, {10.6, 28.2},
+                    {10.6, 33.6}, {10.8, 33.2}, {11.2, 37.8}, {11.6, 31.4}, {11.8, 32.6}, {11.8, 36.4},
+                    {12, 38.6}, {12.6, 28.6}, {12.6, 33.4}, {12.6, 40.2}, {12.8, 40.6}, {13.2, 35.4},
+                    {13.6, 34.8}, {13.8, 37.4}, {14, 39}, {14.6, 38.2}, {14.8, 37.2}, {15.4, 33.2},
+                    {17.8, 42.2}, {54, 41.2}, {54.8, 48.2}, {55.4, 38.2}, {55.4, 49}, {55.6, 46.4},
+                    {55.8, 57}, {56, 52.8},
                 },
             },
             zoneID = 8,
@@ -62409,6 +62442,7 @@ ns.Overrides.wowhead = {
         },
         [2982] = {spawns = {[215] = {{42.4, 92}, {42.6, 92}}}, zoneID = 215},
         [2984] = {spawns = {[215] = {{32.8, 36}}}, zoneID = 215},
+        [2986] = {spawns = {[400] = {{53.8, 41.4}, {53.8, 41.6}}}, zoneID = 400},
         [2991] = {spawns = {[215] = {{50, 81}}}, zoneID = 215},
         [2993] = {spawns = {[215] = {{47.4, 60.2}, {47.6, 60.2}}}, zoneID = 215},
         [3057] = {spawns = {[1638] = {{59.4, 51.4}, {59.4, 51.6}, {59.8, 51.4}, {59.8, 51.6}}}, zoneID = 1638},
@@ -62453,6 +62487,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 14,
         },
+        [3229] = {spawns = {[215] = {{63.2, 82.4}, {63.2, 82.6}, {63.6, 81.8}}}, zoneID = 215},
         [3260] = {
             spawns = {
                 [17] = {
@@ -62525,6 +62560,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 148,
         },
+        [3693] = {spawns = {[148] = {{39.2, 43.4}}}, zoneID = 148},
         [3746] = {
             spawns = {
                 [331] = {
@@ -62537,6 +62573,20 @@ ns.Overrides.wowhead = {
             zoneID = 331,
         },
         [3980] = {spawns = {[267] = {{51.4, 58.4}, {51.4, 58.6}}}, zoneID = 267},
+        [3989] = {
+            spawns = {
+                [406] = {
+                    {59.4, 52.4}, {59.6, 52.4}, {60.4, 55}, {60.8, 51.2}, {62, 54.4}, {62.6, 55.4},
+                    {63.2, 45.8}, {63.6, 54.4}, {64.2, 46.2}, {64.2, 49}, {64.4, 45.2}, {64.8, 46},
+                    {64.8, 52.4}, {65.2, 54}, {65.4, 45.4}, {65.4, 55.4}, {65.6, 47.2}, {65.6, 55.4},
+                    {66, 58.6}, {66.2, 56.6}, {66.4, 52.6}, {66.6, 55}, {67, 45.2}, {67.4, 50.2},
+                    {67.6, 48.2}, {68, 49}, {68, 57.2}, {68.6, 54}, {69.4, 55}, {69.6, 54.8}, {70.2, 56.6},
+                    {71, 48.4}, {71.4, 56.4}, {71.6, 56.4}, {72, 51}, {72.4, 49.2}, {72.8, 51.4}, {73, 54.2},
+                    {74.4, 58.4}, {74.6, 59.2},
+                },
+            },
+            zoneID = 406,
+        },
         [3994] = {spawns = {[406] = {{37, 8}}}, zoneID = 406},
         [4023] = {
             spawns = {
@@ -63540,6 +63590,15 @@ ns.Overrides.wowhead = {
         [11860] = {spawns = {[406] = {{47.2, 61}}}, zoneID = 406},
         [11862] = {spawns = {[406] = {{47.2, 64.2}}}, zoneID = 406},
         [11863] = {spawns = {[405] = {{38.8, 27.2}}}, zoneID = 405},
+        [11870] = {
+            spawns = {
+                [1497] = {
+                    {56.4, 33.2}, {56.6, 33.8}, {57, 32.8}, {57.2, 32.4}, {57.6, 32.6}, {57.8, 31.4},
+                    {57.8, 31.6},
+                },
+            },
+            zoneID = 1497,
+        },
         [11878] = {spawns = {[139] = {{23, 68.2}}}, zoneID = 139},
         [11898] = {
             spawns = {
@@ -63609,6 +63668,15 @@ ns.Overrides.wowhead = {
         },
         [14355] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
+        [14467] = {
+            spawns = {
+                [361] = {
+                    {45.4, 35.4}, {45.4, 35.6}, {45.4, 36.6}, {45.6, 34.8}, {45.6, 35.6}, {45.6, 37},
+                    {45.8, 34.4},
+                },
+            },
+            zoneID = 361,
+        },
         [14469] = {spawns = {[361] = {{41.4, 44.8}, {41.6, 44.8}}}, zoneID = 361},
         [14470] = {spawns = {[361] = {{41.4, 44.8}, {41.6, 44.8}}}, zoneID = 361},
         [14494] = {spawns = {[139] = {{17.4, 14}, {17.6, 14}}}, zoneID = 139},
@@ -63796,6 +63864,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 3483,
         },
+        [17097] = {spawns = {[3] = {{5.8, 48}, {6, 47.4}}}, zoneID = 3},
         [17115] = {
             spawns = {
                 [8] = {
@@ -64197,6 +64266,7 @@ ns.Overrides.wowhead = {
         [71139] = {subName = "The Black Prince"},
         [71424] = {subName = "The Black Prince"},
         [71638] = {maxLevel = 91, minLevel = 91},
+        [71696] = {maxLevel = 91, minLevel = 91},
         [71865] = {subName = "Warchief"},
         [71939] = {subName = "Flightmaster"},
         [71952] = {subName = "The Red Crane"},

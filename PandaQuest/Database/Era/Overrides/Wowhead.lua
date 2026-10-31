@@ -2575,6 +2575,13 @@ ns.Overrides.wowhead = {
                 "of Barrens the weather is harsh Gloom and danger pock Dustwallow Marsh But there lies a " ..
                 "clue for those up to the test Waiting to be found in a cave in the southwest",
         },
+        [626] = {
+            description = "To Lordaeron! The great land of turmoil Where brave soldiers with death do " ..
+                "toil Find your way through the great unrest There you will find the end to this quest " ..
+                "Along the coast of the Hinterlands, at the base of the great falls Underneath the water " ..
+                "there does your treasure call!",
+            rewardItems = {{11324, 1}},
+        },
         [627] = {
             description = "There is a mountain cave in Drywhisker Gorge, far to the north in the Arathi " ..
                 "Highlands. In that cave is rare ore: bloodstone. The bloodstone in this cave is not of " ..
@@ -3736,6 +3743,14 @@ ns.Overrides.wowhead = {
                 "gulping sounds as the machine cuts out. Then, suddenly, it bursts back to life.\n\n\"4!\"",
             rewardItems = {{2082, 1}, {11846, 5}},
             rewardMoney = 800,
+        },
+        [1004] = {
+            description = "Attention, heroes!\n\nThe Cenarion Circle seeks able bodied individuals to " ..
+                "assist them in exploring the vast new frontiers of Kalimdor! A forbidden wasteland of " ..
+                "unimaginable dangers lies far to the west of Tanaris and Gadgetzan, and the Circle needs " ..
+                "willing and honorable proxies to act in their stead.\n\nAll interested individuals " ..
+                "should seek audience with the Cenarion Circle. Speak with the Arch Druid Hamuul " ..
+                "Runetotem on the Elder's Rise of Thunder Bluff for more information!",
         },
         [1007] = {
             description = "I would charge you with a task, <name>.\n\nI was on my small vessel, skimming " ..
@@ -6149,6 +6164,15 @@ ns.Overrides.wowhead = {
                 "words with you when you're ready. You'll find him outside the Den, taking cover in the " ..
                 "shade.",
         },
+        [2438] = {
+            description = "I was once given an emerald dreamcatcher from Gaerolas Talvethen, the warden " ..
+                "of the druids in the Ban'ethil Barrow Den. This powerful amulet is able to siphon energy " ..
+                "from the Emerald Dream, bestowing luck upon those who carry it.\n\nSadly, I have not " ..
+                "been able to retrieve it from my dresser in Starbreeze Village... Although Starbreeze " ..
+                "was once a tranquil place, it has now succumbed to the corruption of the furbolg that " ..
+                "reside there.\n\nPerhaps you would be willing to recover my dreamcatcher, <class>?",
+            rewardMoney = 100,
+        },
         [2440] = {
             description = "I shall focus my energies on these discs; they will reveal their true workings " ..
                 "to me in due time.\n\nAs for you <name>, I will now reward you for your diligence in " ..
@@ -6704,6 +6728,14 @@ ns.Overrides.wowhead = {
                 "her know that we are well and give credit to your story.\n\nWe both thank you, <name>.",
             rewardChoices = {{10705, 1}, {10706, 1}},
         },
+        [2973] = {
+            description = "Well met, <class>. I've traveled with my companions down to the Feralas on a " ..
+                "mission for our Orgrimmar masters.\n\nMy life-mate Korrin finds great pleasure in new " ..
+                "clothing, so I aim to make her a new cloak adorned with the gossamer wings of faerie " ..
+                "dragons. Would you be able to help me? Sprite darters with gorgeous wings I want are " ..
+                "west of Camp Mojache.",
+            rewardMoney = 6500,
+        },
         [2974] = {
             description = "What!? You came across tauren in the area? You're joking! What did they look " ..
                 "like!?\n\nThe Grimtotem clan! You found some of them? Belgrom, one of our masters, has " ..
@@ -7234,6 +7266,16 @@ ns.Overrides.wowhead = {
                 "Velratha, near the sacred pool of Gahz'rilla.\n\nWhen you have the tablets, bring them " ..
                 "to me.",
         },
+        [3528] = {
+            description = "Now it is time to capture the essence of the avatar of Hakkar.\n\nTake the Egg " ..
+                "of Hakkar to the Sanctum of the Fallen God in the Sunken Temple in Azeroth. Invoke the " ..
+                "egg's power to stir the dead god.\n\nHe will send his minions against you. Defeat his " ..
+                "bloodrinkers and take their Hakkari blood, then use the blood to dowse the eternal " ..
+                "flames that hold Hakkar's spirit. When all the flames go out, the avatar of Hakkar will " ..
+                "enter our world.\n\nDefeat him, and place his essence within the Egg of Hakkar.",
+            rewardChoices = {{10749, 1}, {10750, 1}, {10751, 1}},
+            rewardMoney = 24000,
+        },
         [3541] = {
             description = "I have a fence in Orgrimmar. He resides in The Drag. He's difficult to nail " ..
                 "down if you don't know where to look, but if you go looking in one of the highest " ..
@@ -7442,6 +7484,15 @@ ns.Overrides.wowhead = {
                 "this mystery.\n\nTake this to Mathrengyl downstairs, and he will give you some seeds so " ..
                 "you can get started. If you run out, you will need to purchase more from him.",
             rewardItems = {{11022, 20}},
+        },
+        [3783] = {
+            description = "My friends are always coming up with great ideas. I've never felt like I could " ..
+                "match them... until today! I just drew up the plans for something great! If you promise " ..
+                "not to tell, I'll let you in on the secret...\n\nI'm going to make a mechanical yeti! " ..
+                "Not only are my friends sure to be freaked out when they see it, but when they get over " ..
+                "that, I know they'll be impressed!\n\nI need thick yeti fur from the ice thistle yeti to " ..
+                "start with. Will you help? You'll find them to the southeast.",
+            rewardMoney = 8500,
         },
         [3785] = {
             description = "Here's your Evergreen Pouch that you'll need to use the Tharlendis seeds with. " ..
@@ -11973,6 +12024,7 @@ ns.Overrides.wowhead = {
         },
         [8261] = {rewardItems = {{20236, 1}}},
         [8262] = {rewardItems = {{20231, 1}}},
+        [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}},
         [8272] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}},
         [8273] = {rewardChoices = {{20643, 1}, {20642, 1}}, rewardMoney = 7000},
         [8275] = {
@@ -13963,6 +14015,13 @@ ns.Overrides.wowhead = {
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9209] = {
+            description = "Zanza can create many ancient troll enchantments with proper components! Have " ..
+                "you heard of the Savage Guard? No, of course you haven't. Your mind is addled with the " ..
+                "inferior elven magic.\n\nBring me an arcanum of elven creation so that I may destroy the " ..
+                "aberration. Do this and the Savage Guard will be yours.",
+            rewardItems = {{22635, 1}},
         },
         [9222] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
