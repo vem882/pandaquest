@@ -4,6 +4,43 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.302
+- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 490 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 1,990 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 1,985 quests, 35 NPCs, 1 object
+- quest 12619 - The Emblazoned Runeblade - updated
+  - description added
+  - reward items: +1
+- quest 12622 - The Leaders at Jin'Alai - updated
+  - description added
+  - reward items: +1
+  - reward choices: +4
+- quest 13059 - Revenge for the Vargul - updated
+  - description added
+  - reward choices: +5
+- quest 29155 - A Shiny Reward - updated
+  - description removed
+  - reward money removed (9g 40s)
+  - reward items: -4
+- npc 1053 - Dark Iron Tunneler - updated
+  - coordinates: 29 spawn points added in Wetlands
+- npc 4086 - Veenix - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+- npc 4101 - Screeching Roguefeather - updated
+  - coordinates: 26 spawn points added in Thousand Needles
+- npc 4454 - [Deprecated for 4.x]Fizzle Brassbolts - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 7868 - Sarah Tanner - updated
+  - coordinates: 4 spawn points added in Searing Gorge
+- npc 14182 - Bounty Hunter Kolark - updated
+  - coordinates: 40 spawn points added in Orgrimmar
+- npc 32363 - Thrall - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 67812 - Scout Rokia - updated
+  - data rewritten, nothing a player sees changed
+- npc 71939 - Chi-Ro the Skytamer - updated
+  - NPC title added (Flightmaster)
+
 0.2.301
 - database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 481 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 1,970 quests, 22 NPCs, 5 objects
@@ -431,31 +468,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (92)
 - npc 71955 - Yu'lon - updated
   - NPC title added (The Jade Serpent)
-
-0.2.291
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 331 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,852 quests, 20 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,864 quests, 32 NPCs, 1 object
-- quest 12730 - Convocation at Zol'Heb - updated
-  - reward money removed (20g 40s)
-- npc 1084 - Young Sawtooth Crocolisk - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 1769 - Moonrage Whitescalp - updated
-  - coordinates: 40 spawn points added in Silverpine Forest
-- npc 2277 - Loremaster Dibbs - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 2893 - Stonevault Bonesnapper - updated
-  - coordinates: 40 spawn points added in Badlands
-- npc 2993 - Baine Bloodhoof - updated
-  - coordinates: 2 spawn points added in Mulgore
-- npc 3585 - Therysil - updated
-  - coordinates: 1 spawn point added in Ashenvale
-- npc 4130 - [Deprecated for 4.x]Silithid Searcher - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 14494 - Eris Havenfire - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 14903 - Al'tabim the All-Seeing - updated
-  - coordinates: 1 spawn point added in Northern Stranglethorn
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
