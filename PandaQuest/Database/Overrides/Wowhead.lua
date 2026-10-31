@@ -25163,7 +25163,6 @@ ns.Overrides.wowhead = {
                 "those crystals that you find.",
             rewardMoney = 74000,
         },
-        [13172] = {rewardMoney = 74000},
         [13174] = {
             description = "Shutting down their operation is just half of the plan. The other important " ..
                 "goal here is to find out where all that saronite is being sent. We know of a few places " ..
@@ -27539,6 +27538,15 @@ ns.Overrides.wowhead = {
                 "up at you, bares its teeth, and makes a biting motion.\n\nYour venomhide hatchling must " ..
                 "be craving fresh meat from these animals. Find and kill any type of diematradon, " ..
                 "stegodon, or pterrordax in Un'Goro Crater and feed its meat to your hungry hatchling.",
+            rewardItems = {{47196, 1}},
+        },
+        [13916] = {
+            description = "The venomhide hatchling 's stomach growls as it gestures to get your " ..
+                "attention. It begins scratching pictures of silithids into the dirt, adding small ovals " ..
+                "underneath them. It looks at you hopefully and gestures at the circles.\n\nThey can only " ..
+                "mean silithid eggs. The Noxious Lair, in western Tanaris and near the border with " ..
+                "Un'Goro Crater, would probably be a great place to find the eggs your little hatchling " ..
+                "wants.",
             rewardItems = {{47196, 1}},
         },
         [13918] = {
@@ -50105,13 +50113,6 @@ ns.Overrides.wowhead = {
                 "moth rebellion. Can you use your <class>iness and destroy some of these mutants?",
             rewardMoney = 102000,
         },
-        [30067] = {
-            description = "A terrible manifestation of the sha has appeared to the south.\n\nIt is trying " ..
-                "to destroy an ancient relic, the Bell of a Thousand Whispers.\n\nThis bell has never " ..
-                "been rung in the temple's history, for it is rumored to be an ancient instrument of " ..
-                "power.\n\nPlease go and defeat this demon where it stands! We must save this relic!",
-            rewardMoney = 114000,
-        },
         [30068] = {
             description = "Do you see the violent black and white flames erupting all around the " ..
                 "temple?\n\nThe greater our doubt, the stronger they rage. Unchecked, they will devour " ..
@@ -55929,6 +55930,12 @@ ns.Overrides.wowhead = {
                 "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
                 "least one pet at level 3 to use your trap!",
             rewardMoney = 9000,
+        },
+        [31582] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
+                "and I will continue your training. Good luck!",
+            rewardMoney = 106000,
         },
         [31584] = {
             description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
@@ -61830,6 +61837,18 @@ ns.Overrides.wowhead = {
             },
             zoneID = 11,
         },
+        [1023] = {
+            spawns = {
+                [11] = {
+                    {31.4, 48.6}, {32.2, 48.4}, {32.4, 49.2}, {32.8, 47.4}, {32.8, 47.8}, {32.8, 48.6},
+                    {33.2, 46.4}, {33.4, 49.8}, {33.8, 45.2}, {33.8, 46.6}, {33.8, 49.8}, {34, 46.2},
+                    {34.2, 49.4}, {34.4, 44}, {34.4, 47.6}, {34.4, 50.6}, {34.6, 47.2}, {34.6, 50.8},
+                    {35, 46}, {35.2, 48.6}, {35.4, 45}, {35.4, 47.6}, {35.4, 49.6}, {35.6, 45.2},
+                    {35.6, 46.4}, {35.6, 46.6}, {35.6, 48.4}, {35.6, 48.6}, {35.6, 49.6},
+                },
+            },
+            zoneID = 11,
+        },
         [1024] = {
             spawns = {
                 [11] = {
@@ -62216,6 +62235,18 @@ ns.Overrides.wowhead = {
         [3147] = {spawns = {[14] = {{49.8, 40.4}}}, zoneID = 14},
         [3154] = {spawns = {[14] = {{42.8, 69.2}}}, zoneID = 14},
         [3192] = {spawns = {[14] = {{59.4, 58.2}, {59.6, 58.2}}}, zoneID = 14},
+        [3206] = {
+            spawns = {
+                [14] = {
+                    {65.4, 83.4}, {65.4, 83.6}, {65.4, 86}, {65.6, 86}, {65.8, 83.8}, {65.8, 84.8},
+                    {66, 82.8}, {66.2, 82.4}, {66.4, 87.4}, {66.4, 87.6}, {66.6, 87.6}, {66.8, 82.4},
+                    {67.2, 85}, {67.2, 87}, {67.2, 88.6}, {67.4, 83.4}, {67.4, 83.6}, {67.4, 86.4},
+                    {67.6, 83.4}, {67.6, 83.6}, {67.6, 86.4}, {67.6, 86.6}, {67.6, 87.6}, {67.8, 82.4},
+                    {68, 84.8}, {68.2, 81.4}, {68.6, 82.8},
+                },
+            },
+            zoneID = 14,
+        },
         [3207] = {
             spawns = {
                 [14] = {
@@ -63344,6 +63375,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1377,
         },
+        [15290] = {
+            spawns = {
+                [1377] = {
+                    {41.4, 82.6}, {42.2, 83.2}, {43.8, 80}, {44.8, 56}, {45.2, 52.4}, {45.4, 53.8},
+                    {45.4, 54.6}, {45.8, 53.4}, {46.4, 51.8}, {46.4, 54.4}, {46.4, 56.6}, {46.4, 57.6},
+                    {46.8, 53.2}, {46.8, 57.6}, {47, 54.8}, {47, 59.4}, {47.2, 49.6}, {47.2, 60.4},
+                    {47.4, 55.6}, {47.6, 55.4}, {47.6, 55.8}, {47.6, 58.8}, {47.8, 57.6}, {48.2, 52.6},
+                    {48.6, 56.2}, {48.6, 56.8}, {48.8, 55}, {48.8, 60.6}, {49, 53.4}, {49.2, 62.4},
+                    {49.6, 59.2}, {49.8, 55.4}, {49.8, 65.8}, {50, 52}, {50.4, 57.4}, {50.4, 57.6},
+                    {50.8, 64.8}, {51.2, 54.4}, {54, 62.8}, {55.4, 60.6},
+                },
+            },
+            zoneID = 1377,
+        },
         [15424] = {
             spawns = {
                 [1377] = {
@@ -63664,6 +63709,7 @@ ns.Overrides.wowhead = {
             zoneID = 1519,
         },
         [53443] = {spawns = {[33] = {{63.4, 40.4}, {63.6, 40.4}}}, zoneID = 33},
+        [53604] = {spawns = {[400] = {{39.2, 25.8}}}, zoneID = 400},
         [58408] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [58465] = {spawns = {[5840] = {{34, 38.2}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [58468] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
@@ -63741,18 +63787,22 @@ ns.Overrides.wowhead = {
         [68504] = {maxLevel = 90, minLevel = 90},
         [68560] = {subName = "Calf of Darkhide"},
         [68653] = {maxLevel = 90, minLevel = 90},
+        [68690] = {subName = "King of Stormwind"},
         [68695] = {maxLevel = 90, minLevel = 90},
         [68715] = {subName = "The Sunreavers"},
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
+        [68753] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68908] = {subName = "SI:7"},
         [68960] = {maxLevel = 90, minLevel = 90},
+        [68987] = {subName = "Prince of Stormwind"},
         [69007] = {maxLevel = 90, minLevel = 90},
         [69009] = {maxLevel = 90, minLevel = 90},
         [69062] = {subName = "Trade Supplies"},
         [69136] = {maxLevel = 91, minLevel = 91, subName = "Harbinger of the Loa"},
         [69293] = {maxLevel = 90, minLevel = 90},
+        [69309] = {maxLevel = 90, minLevel = 90},
         [69339] = {maxLevel = 92, minLevel = 92},
         [69355] = {subName = "The Sunreavers"},
         [69356] = {subName = "The Sunreavers"},
@@ -63762,11 +63812,13 @@ ns.Overrides.wowhead = {
         [69668] = {subName = "Kirin Tor"},
         [69670] = {subName = "The Silver Covenant"},
         [69677] = {subName = "Kirin Tor"},
+        [69754] = {subName = "Kirin Tor"},
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [69966] = {maxLevel = 91, minLevel = 91, subName = "Glorious Conquest Quartermaster"},
         [70022] = {subName = "The Bone Collector"},
         [70100] = {maxLevel = 90, minLevel = 90},
         [70166] = {subName = "Master Demonologist"},
+        [70238] = {maxLevel = 92, minLevel = 92},
         [70249] = {maxLevel = 92, minLevel = 92},
         [70270] = {subName = "Master Demonologist"},
         [70276] = {maxLevel = 92, minLevel = 92, subName = "Lord of Tempest"},
@@ -63793,9 +63845,25 @@ ns.Overrides.wowhead = {
         [71955] = {subName = "The Jade Serpent"},
         [72426] = {maxLevel = 90, minLevel = 90},
         [72695] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [73145] = {subName = "Glorious Conquest Quartermaster"},
         [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
+        [185335] = {
+            rank = 0,
+            spawns = {
+                [1497] = {
+                    {85, 26.8}, {85, 28.4}, {85.2, 24}, {86.4, 26.2}, {86.4, 26.6}, {86.6, 26.8},
+                    {87.2, 29.6}, {87.4, 26.4}, {88.6, 25.4},
+                },
+                [1519] = {{39.2, 84.4}, {39.2, 84.6}},
+                [1637] = {
+                    {47.4, 48}, {47.8, 49.8}, {48.2, 46.8}, {49.4, 50}, {49.6, 50}, {50.6, 50.6},
+                    {50.8, 50.4},
+                },
+            },
+            zoneID = 1497,
+        },
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246242] = {maxLevel = 90, minLevel = 90, rank = 1},
         [246383] = {maxLevel = 91, minLevel = 91, rank = 1},

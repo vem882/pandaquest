@@ -953,6 +953,11 @@ ns.Overrides.wowhead = {
                 "will ever think me lovely again!",
             rewardMoney = 175,
         },
+        [157] = {
+            description = "Here is your thread, <name>. It has a thousand uses, from binding evil spirits " ..
+                "to sewing life into inanimate objects.",
+            rewardMoney = 1300,
+        },
         [159] = {
             description = "Here's your Zombie Juice...\n\n...and be careful with this stuff. It's strong " ..
                 "enough to raise the dead!",
@@ -2370,6 +2375,15 @@ ns.Overrides.wowhead = {
                 "you shall be a happy customer!",
             rewardItems = {{2805, 1}},
         },
+        [573] = {
+            description = "There is but one final reagent needed to complete the enchantment.\n\nIn the " ..
+                "south, towards the western coast, high above the bluffs, lies a Holy Spring. This spring " ..
+                "is the subject of great conflict amongst religious and mystical scholars. Every race in " ..
+                "Azeroth claims that the spring waters were made divine for their people.\n\nMy final " ..
+                "request of you: bring to me Holy Spring Water. Be warned. An expedition of naga " ..
+                "explorers have advanced upon the spring. They will need to be dealt with as well.",
+            rewardItems = {{4112, 1}},
+        },
         [576] = {
             description = "Avast! Who goes there?\n\nArgh, I am but useless without me special enchanted " ..
                 "eye. Bad enough to have lost me eyes in battle in the first place! But by some stroke o' " ..
@@ -2378,6 +2392,14 @@ ns.Overrides.wowhead = {
                 "way out. Took me eye, they did! Seems those blokes have found their way to Booty " ..
                 "Bay.\n\nHelp an old sea dog out by gettin' me eye back?",
             rewardItems = {{4114, 1}},
+        },
+        [581] = {
+            description = "A doom, there is. A doom on my chief's youngest son, Yenniku. As is a custom " ..
+                "with our people, he was given to the Gurubashi Trolls of Zul'Gurub, but after my tribe, " ..
+                "the Darkspear tribe, left with the orc Thrall, poor Yenniku was lost to us. I was sent " ..
+                "from distant Orgrimmar, back to Stranglethorn, to search for my chief's son.\n\nAnd I " ..
+                "believe the Bloodscalp tribe has him.\n\nIf you would help me, then hunt the " ..
+                "Bloodscalps. You may find them to the north. Gather their tusks and return to me.",
         },
         [582] = {
             description = "We must find if Yenniku is dead.\n\nSlay the Bloodscalp Headhunters and take " ..
@@ -4211,6 +4233,15 @@ ns.Overrides.wowhead = {
                 "satyrs' blood-soaked temples can be unsettling even for a seasoned <class> such as " ..
                 "yourself.",
         },
+        [1147] = {
+            description = "Hmm. Seems Belgrom thinks those monsters are a threat. He wants them pushed " ..
+                "back into whatever depths they crawled up out of.\n\nI guess killing the dwarves sent by " ..
+                "the Explorers' League wasn't enough--now I have to send a half-dead war party into " ..
+                "another battle. We won't be able to do it ourselves; not while we're in this condition. " ..
+                "The dig site's to the south of here. There shouldn't be anymore dwarves to deal with. " ..
+                "Feel up to wielding a blade or staff and doing your part to aid us?",
+            rewardMoney = 3500,
+        },
         [1148] = {
             description = "You inspect the carapace carefully. As you turn it over in your hands you " ..
                 "realize that the chitinous plating is interlaced in such a way that makes it incredibly " ..
@@ -4279,6 +4310,14 @@ ns.Overrides.wowhead = {
         },
         [1171] = {
             description = "You leave me alone now. Go tell Draz'Zilb we stay here. No black dragon here.",
+        },
+        [1172] = {
+            description = "Onyxia's brood has been scattered across the Dragonmurk. It is imperative that " ..
+                "no more whelps be permitted to hatch.\n\nMake haste to Wyrmbog in the south of " ..
+                "Dustwallow Marsh. Surely, she has made her lair there. Track down the evil dragon's eggs " ..
+                "and destroy them.\n\nWe will never reclaim Stonemaul Village if the surrounding area " ..
+                "remains a breeding ground.\n\nAs for Mok'Morokk... I have other plans for the sod.",
+            rewardChoices = {{10700, 1}, {10701, 1}},
         },
         [1175] = {
             description = "After the big crash with the goblins' Red Thunder racer and a basilisk, " ..
@@ -5694,6 +5733,12 @@ ns.Overrides.wowhead = {
                 "the way for a gnomish assault!",
             rewardChoices = {{7606, 1}, {7607, 1}},
         },
+        [2041] = {
+            description = "Perhaps... Perhaps you can help us in the battle for Gnomeregan.\n\nIn " ..
+                "Stormwind you will find the commander of our underground assault crew, Shoni the " ..
+                "Shilent. Shoni needs assistance with her gyrodrillmatic excavationators.\n\nYou will " ..
+                "probably find her amongst the dwarves in Stormwind.\n\nGood luck, <name>.",
+        },
         [2098] = {
             description = "A pirate's life ain't an easy one, landlubber. It ain't all about plunderin' " ..
                 "and booze! Alas, me ship be sunk just off shore thanks to them pesky " ..
@@ -6296,6 +6341,16 @@ ns.Overrides.wowhead = {
                 "test our theory, we're going to need a few things; namely, fallout from the irradiated " ..
                 "troggs in Gnomeregan. Fill up this phial with the green glow and bring it back!",
             rewardMoney = 2200,
+        },
+        [2929] = {
+            description = "I trusted Thermaplugg, <race>. Never did I expect that he would betray me and " ..
+                "the entire gnomish people. And for what? Power? Wealth? All things that he would have " ..
+                "had in time. Now we have been displaced from our home and that madman is in charge. The " ..
+                "king of nothing....\n\nWe will retake Gnomeregan, <name>. We will not stop until the " ..
+                "city is back in our control. If you wish to join in our fight, a simple task I ask of " ..
+                "you: Kill the betrayer. Destroy Mekgineer Thermaplugg.",
+            rewardChoices = {{9623, 1}, {9624, 1}, {9625, 1}},
+            rewardMoney = 3500,
         },
         [2936] = {
             description = "The Witherbarks worship a spider god, and from her they collect their most " ..
@@ -7244,6 +7299,14 @@ ns.Overrides.wowhead = {
                 "somehow acquire a Videre Elixir. The only one I know that can help you with that is " ..
                 "Gregan Brewspewer. He's hard to track down, but last I knew he was camping in the wilds " ..
                 "of Feralas.",
+        },
+        [3922] = {
+            description = "I want to fix this samophlange, but to do that I'm going to need some " ..
+                "supplies. I ran out of seventeen-point-five gauge nugget slugs and I'm going to need a " ..
+                "bunch of those for the work ahead.\n\nThe closest place to get them is the Sludge Fen to " ..
+                "the east. The Venture Company usually keeps them in their tool buckets. Go to the Sludge " ..
+                "Fen and look in the tool buckets you find there, then return to me when you've gathered " ..
+                "enough nugget slugs.",
         },
         [3942] = {
             description = "Oh... Linken? Yeah, he's a funny one. When he first got here, he was mumbling " ..
@@ -8196,6 +8259,15 @@ ns.Overrides.wowhead = {
                 "teach you. He will complete your training, allowing you to become one with the " ..
                 "water.\n\nGoodbye, young druid. We shall speak again.",
             rewardItems = {{16608, 1}},
+        },
+        [5062] = {
+            description = "Arikara is a deadly creature that must be dealt with swiftly. In order to hunt " ..
+                "her down you will need to light the sacred fire of life - this will summon " ..
+                "Arikara.\n\nGo now and harvest the rare Incendia agave plant. Once you have harvested " ..
+                "enough agave, seek council with Magatha Grimtotem on Elder Rise in Thunder Bluff. She is " ..
+                "a powerful shaman that can enchant the agave plant to create a powder that will light " ..
+                "the fire.\n\nTravel northeast to the Boiling Pool and gather Incendia agave.",
+            rewardMoney = 2200,
         },
         [5063] = {
             description = "A finer cap you may never see. From the pristine hide of the beast, our expert " ..
@@ -9863,6 +9935,11 @@ ns.Overrides.wowhead = {
                 "directly to him from here. Once you're at the Crossroads, you can deliver Gryshka's " ..
                 "letter to Zargh.\n\nSpeak with me when you are ready to go.",
             rewardMoney = 350,
+        },
+        [6388] = {
+            description = "Here are the honorary picks for Brock's students. If you've already been to " ..
+                "Thelsamar, then you should fly a gryphon back there!\n\nTake the picks to our gryphon " ..
+                "master, Gryth Thurden, and speak with him about a ride back to Thelsamar.",
         },
         [6389] = {
             description = "You look around the lumber mill for something suitable to open the barrel " ..
@@ -12195,6 +12272,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{21350, 1}},
         },
         [8595] = {rewardXP = 3300},
+        [8596] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "command and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21349, 1}},
+        },
         [8597] = {
             description = "I knew that book would come in handy some day! Thankfully, I had the wit and " ..
                 "foresight to stow it somewhere safe.\n\nDon't worry, it's in a place that nobody could " ..
