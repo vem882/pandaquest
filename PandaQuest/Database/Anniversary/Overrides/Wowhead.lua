@@ -2577,6 +2577,16 @@ ns.Overrides.wowhead = {
                 "heap of bracers and the Horde will reward you well.",
             rewardChoices = {{5346, 1}, {5344, 1}, {5345, 1}},
         },
+        [866] = {
+            description = "The herbs of the Barrens are not quite like herbs in other lands. Their " ..
+                "properties are mostly the same, but the oasis water here alters the plants; they are " ..
+                "just slightly different.\n\nI want to study those differences... to see if they're " ..
+                "exploitable!\n\nIf you are skilled in herbalism, then gather root samples off the herbs " ..
+                "you find in the Barrens. Bring back these samples so that I may compare them with herbs " ..
+                "from other regions.",
+            rewardItems = {{5341, 1}},
+            rewardMoney = 800,
+        },
         [869] = {
             description = "Not long ago, a shipment of silver was stolen from our guard tower. It was " ..
                 "meant as payroll to the Crossroads' guards, and we want that silver back.\n\nThe strange " ..
@@ -5073,6 +5083,7 @@ ns.Overrides.wowhead = {
                 "life-long secrecy and speak with me again. Think about it carefully, <name>.",
         },
         [3647] = {rewardItems = {{10790, 1}}},
+        [3721] = {rewardItems = {{10398, 1}}},
         [3761] = {
             description = "The soil of Un'Goro Crater is reportedly enriched with potent magical " ..
                 "qualities. The Cenarion Circle wants to study this soil in large quantities; go into the " ..
@@ -5745,6 +5756,15 @@ ns.Overrides.wowhead = {
                 "corruption of channeling the arcane would have seeped into your very soul and driven you " ..
                 "mad by now. How about we try and push you further then?\n\nIf you want to test your " ..
                 "skill, seek out Menara Voidrender above Ratchet in Strahad's tower. She will guide you.",
+        },
+        [4971] = {
+            description = "Tampering of the timeline by a sinister force - most likely the Scourge - has " ..
+                "occurred in Andorhal! I can try to keep the passage of time here intact and mend what " ..
+                "has been damaged, but I'll need your help to do so uninterrupted.\n\nTemporal parasites " ..
+                "- carrion that feed on the strands of time's altered flow - now infest the silos of " ..
+                "Andorhal. A blue pulse of distortion is their only visual marker. They slow my auguries; " ..
+                "please <name>, help me by using this temporal displacer to root out these parasites.",
+            rewardChoices = {{15812, 1}, {15813, 1}},
         },
         [4972] = {
             description = "I need you to reach into the world beyond this room, <name>. Allow me to " ..
@@ -7315,6 +7335,15 @@ ns.Overrides.wowhead = {
                 "done. Simply spare me the details; such troublesome images upset me far too much.",
             rewardChoices = {{21316, 1}, {21317, 1}},
         },
+        [8463] = {
+            description = "A group of Wretched recently raided a supply of unstable mana crystals from " ..
+                "one of our arcane sanctums. If not handled properly, the crystals could explode with " ..
+                "enough force to blow a hole into the city walls.\n\nNow, <name>, I don't quite care if " ..
+                "they blow themselves up while tapping unstable arcane sources, but the whole incident " ..
+                "would make my men look bad.\n\nBring me back any remaining stolen crystals you find; " ..
+                "they might still be inside their original crates.",
+            rewardMoney = 100,
+        },
         [8484] = {
             description = "Your deeds go beyond the tale of a simple hero, <name>. If you are a " ..
                 "representative of your people, then your people are ones we would work to make peace " ..
@@ -7667,6 +7696,15 @@ ns.Overrides.wowhead = {
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
             rewardItems = {{22011, 1}},
+        },
+        [8919] = {
+            description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
+                "this world. Yet I'm willing to wager you haven't seen a piece of armor like " ..
+                "this.\n\nPerform a small favor for me and I'll be willing to trade it to you for an " ..
+                "ordinary set of bracers.\n\nI'm in need of a sizeable sample of venom drawn from the " ..
+                "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
+                "coins and I'll perform the exchange.",
+            rewardItems = {{22071, 1}},
         },
         [8920] = {
             description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
@@ -11626,6 +11664,15 @@ ns.Overrides.wowhead = {
                 "Azuremyst.\n\nWith all that has been happening, no one has had the opportunity to look " ..
                 "into it, but I do feel a bit of worry. Perhaps there's something you can do, <name>?",
         },
+        [10429] = {
+            description = "The dome technology possesses such power! Certainly, there are bounds beyond " ..
+                "which we dare not go, <name>.\n\nCreatures allowed to grow too large or too fast could " ..
+                "be just as bad as a barren landscape.\n\nI have heard rumors of just such a creature in " ..
+                "the pool to the east. I've heard the ethereal merchants conspiring to catch the " ..
+                "overgrown hydra for sport, but I have another purpose in mind for the giant. Bring me " ..
+                "the creature's heart so I may study it.",
+            rewardMoney = 41000,
+        },
         [10431] = {
             description = "The Sunfury briefings support the theory that Kael'thas has been receiving " ..
                 "outside help in constructing and running these manaforges. Who this is remains a bit of " ..
@@ -14625,6 +14672,12 @@ ns.Overrides.wowhead = {
                 "Looking at all of the corpses littering the mine, it would be safe to assume that their " ..
                 "plans failed.\n\nReturn the escape plans to the Mistress of the Mines.",
         },
+        [11085] = {
+            description = "Hail, <name>. I thank you for coming to my aid.\n\nThe arakkoa's monstrous " ..
+                "birds knocked me from my nether ray while on a scouting mission.\n\nLet's get out of " ..
+                "here, while we can.",
+            rewardMoney = 34000,
+        },
         [11086] = {
             description = "One of your responsibilities as a captain of Dragonmaw is to snuff out Burning " ..
                 "Legion activity in Outland. It is your duty to silence those that defy Lord " ..
@@ -15096,6 +15149,7 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [6240] = {spawns = {[17] = {{68.4, 48.6}, {68.6, 48.4}, {68.6, 48.6}}}, zoneID = 17},
+        [8608] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
         [14697] = {
             spawns = {

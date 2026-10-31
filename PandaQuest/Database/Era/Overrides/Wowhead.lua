@@ -2736,6 +2736,13 @@ ns.Overrides.wowhead = {
                 "Pah! Why he feels some mercy towards me I would not understand. Mercy was denied me when " ..
                 "I was not allowed to die with my Warchief in battle. A cruel blow fate has dealt me...",
         },
+        [683] = {
+            description = "<name>, I have but a small request to ask of you.\n\nTake this note I have " ..
+                "prepared to our great monarch of Ironforge, King Magni Bronzebeard. 'Tis a small task to " ..
+                "ask of one such as yourself, someone who has shown great valor to the cause of the " ..
+                "Alliance thus far.\n\nFor me to go before the King in my grief-ridden state would not " ..
+                "serve the purpose of my cause. Surely you understand.",
+        },
         [685] = {
             description = "The Stromgarde Militia has placed bounties on the heads of Lord Falconcrest, " ..
                 "and his bodyguard Otto. Falconcrest heads the Syndicate's efforts in the Arathi " ..
@@ -2795,6 +2802,14 @@ ns.Overrides.wowhead = {
                 "want some then get me the buzzard wings. Bring me enough, and I might even share the " ..
                 "recipe with you!",
             rewardItems = {{4457, 2}, {4609, 1}},
+        },
+        [704] = {
+            description = "The last report I received from Agmond is troubling, more so now that he's " ..
+                "dead! He mentioned that his diggers uncovered \"ancient urns\" at the dig site outside " ..
+                "Uldaman. I fear that the urns he found at that site incited the troggs, just as did the " ..
+                "idols I found here.\n\nI need you to get those urns for our studies. Go to the Uldaman " ..
+                "site, gather the urns, then return to me.",
+            rewardItems = {{4980, 1}},
         },
         [706] = {
             description = "As an apprentice to Feranor Steeltoe, I learned his special technique for " ..
@@ -5642,6 +5657,12 @@ ns.Overrides.wowhead = {
                 "the island?\n\nIf you're able to get them, bring them back to Gazin and let him know I'm " ..
                 "all right.",
         },
+        [1788] = {
+            description = "I'll take the script to the King's advisors after Duthorian's taken a look at " ..
+                "them, but in the meantime, you should go speak to Duthorian now. He'll be wanting to pat " ..
+                "you on the back for sure!\n\nThank you again, <name>. I hope we meet again. You're " ..
+                "surely an ally I'm proud to call friend.",
+        },
         [1790] = {rewardItems = {{6866, 1}}},
         [1792] = {rewardChoices = {{6975, 1}, {6977, 1}, {6976, 1}}},
         [1793] = {rewardItems = {{6776, 1}}},
@@ -5674,6 +5695,12 @@ ns.Overrides.wowhead = {
                 "willing to show your value to the Dark Lady's forces, then report to Dillinger " ..
                 "immediately.\n\nDeathguard Dillinger 's post is on the west end of Brill, near the " ..
                 "graveyard.",
+        },
+        [1820] = {
+            description = "You have proven your value to the Dark Lady, now perhaps you can prove " ..
+                "yourself to one of her subjects.\n\nColeman Farthing awaits a warrior who is willing to " ..
+                "be his instrument of revenge against the Forsaken's enemies.\n\nYou will find him in the " ..
+                "Gallow's End Tavern in eastern Brill.",
         },
         [1821] = {
             description = "The Agamand family were my employers in life, and they were the cause of my " ..
@@ -6553,6 +6580,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9649, 1}, {9650, 1}, {10686, 1}},
             rewardMoney = 25000,
         },
+        [2941] = {
+            description = "I have studied many subjects in my time, and my latest fascination is with the " ..
+                "snapjaw that occupy the beach in the Hinterlands. There's one in particular I'd like to " ..
+                "see, a giant snapjaw named Gammerita. I'd like to go myself, but my research keeps me " ..
+                "here. I think a picture of her would be the next best thing.\n\nTake this letter to " ..
+                "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
+                "picture. She called it a \"snapshot,\" I think...",
+        },
         [2947] = {
             description = "Opening the box produced by the Sparklematic 5200 reveals what you had " ..
                 "suspected - a shiny ring! Wearing the ring, you feel magic power surge through you " ..
@@ -6699,6 +6734,13 @@ ns.Overrides.wowhead = {
                 "powerful and should be respected. He can teach you about greater summonings, summonings " ..
                 "I feel you are prepared for. Go to him now.\n\nYou can find him in Ratchet... above the " ..
                 "port town next to the tower there.",
+        },
+        [3042] = {
+            description = "The Sandfury trolls of Zul'Farrak make a tempering agent from sandstones, and " ..
+                "I can use that to temper the goods I craft, yes I can! It is highly prized by " ..
+                "connoisseurs, so if you bring me a good supply of the temper, then I'll reward you " ..
+                "well.\n\nZul'Farrak is northwest of Gadgetzan. Good luck.",
+            rewardMoney = 19500,
         },
         [3062] = {
             description = "Edana Hatetalon is the queen of the Northspring harpies that reside in the " ..
@@ -8844,6 +8886,7 @@ ns.Overrides.wowhead = {
                 "return to Shadow Priestess Vandis at the Bulwark to complete the mission.",
             rewardMoney = 9000,
         },
+        [5237] = {rewardChoices = {{15801, 1}, {15800, 1}}, rewardItems = {{15799, 1}}},
         [5243] = {
             description = "I look at my undeath as a malady, <race>. An illness that merely requires " ..
                 "treatment; however, it is also a great blessing for the Argent Dawn. What better vessel " ..
@@ -10238,6 +10281,14 @@ ns.Overrides.wowhead = {
                 "in chests in Thistlefur Hold, a cave at the end of Thistlefur Village, north of " ..
                 "Astranaar.",
             rewardMoney = 1700,
+        },
+        [6481] = {
+            description = "You have uncovered a dark threat to the land, <class>. The Resonite cask you " ..
+                "have found in that cave houses a slumbering Earthen by the name of Goggeroc.\n\nI have " ..
+                "changed the mixture of the Resonite crystals that you gathered with my shamanistic " ..
+                "powers. Take the enchanted Resonite crystal and smash open the Resonite cask, which " ..
+                "houses the Earthen.\n\nWhen awakened, Goggeroc will be weakened... Slay him, <name>!",
+            rewardChoices = {{16981, 1}, {1306, 1}},
         },
         [6482] = {
             description = "Eh? Who are you?\n\n<name>? You're no furbolg. They are cursed! They thought I " ..
@@ -12857,6 +12908,13 @@ ns.Overrides.wowhead = {
         [8756] = {rewardItems = {{21205, 1}}},
         [8765] = {rewardChoices = {{21200, 1}, {21205, 1}}},
         [8766] = {rewardChoices = {{21200, 1}, {21210, 1}}},
+        [8771] = {
+            description = "As the war effort mounts, the silithid presence in the area presents an ever " ..
+                "increasing threat to our operations. You've been selected to partake on an assault on " ..
+                "Hive'Ashi where your primary target will consist of Hive'Ashi sandstalkers.\n\nReport " ..
+                "back to Commander Mar'alith after your task is completed.",
+            rewardItems = {{20802, 1}},
+        },
         [8772] = {
             description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
                 "been selected to target Hive'Zora waywatchers. Report back to Commander Mar'alith after " ..
@@ -13415,6 +13473,12 @@ ns.Overrides.wowhead = {
                 "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22422, 1}},
+        },
+        [9042] = {
+            description = "During your battles with the Scourge in Naxxramas, should you come across " ..
+                "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
+                "you a piece of armor worn by heroes.",
+            rewardItems = {{22423, 1}},
         },
         [9044] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
