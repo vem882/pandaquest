@@ -3199,6 +3199,16 @@ ns.Overrides.wowhead = {
                 "with the dwarves.\n\nYou can find Grimand Elmore at the weapon shop in the Dwarven " ..
                 "District of Stormwind, in the northeast section of town.",
         },
+        [1098] = {
+            description = "In preparation for an assault on Shadowfang, two deathstalkers were sent to " ..
+                "the keep to gather intelligence. It has been many days and they have not returned, but " ..
+                "we must receive their report if we're to have any hope of a successful attack!\n\nSo " ..
+                "here is your task, <name>. Go to Shadowfang Keep to the south and find the Deathstalkers " ..
+                "Adamant and Vincent. Find them, and if they require aid then give it.\n\nThis mission is " ..
+                "as dangerous as is it critical, <name>. Do not fail.",
+            rewardItems = {{3324, 1}},
+            rewardMoney = 1800,
+        },
         [1103] = {
             description = "Greetin's, <brotha/sista>! Have you too come to purify the waters here and " ..
                 "prove your understandin' to Islen?\n\nI've just defeated the corrupt water spirit " ..
@@ -3562,6 +3572,13 @@ ns.Overrides.wowhead = {
                 "thoughts of expansion.\n\nGood hunting, <name>.",
             rewardChoices = {{6780, 1}, {6784, 1}},
         },
+        [1370] = {
+            description = "When we are not at war, we hunt for meat. Meat gives us strength, and full " ..
+                "bellies fight harder than empty ones.\n\nIt is the same with the Magram. They store " ..
+                "extra meat so they may fight longer between hunts. If you raid their village to the east " ..
+                "and take their stores of meat, then their strength will fail.",
+            rewardChoices = {{32378, 1}, {3464, 200}, {3465, 200}},
+        },
         [1372] = {
             description = "Our expeditionary force was sent at Varimathras's behest to survey lower " ..
                 "Azeroth.\n\nWhile out scouting I noticed a human Infiltrator spying on Beggar's Haunt. " ..
@@ -3601,6 +3618,15 @@ ns.Overrides.wowhead = {
                 "wax. Stamped on the bottom of the barrel are the words:\n\nQUARTERMASTER " ..
                 "LUNGERTZ\n\nNETHERGARDE KEEP",
             rewardItems = {{6827, 1}},
+        },
+        [1429] = {
+            description = "While you were braving the dangers of the Pool of Tears, one of my scouts " ..
+                "returned with a scroll written in blood on dried flesh. It seems to be a judicial " ..
+                "sentence against a priest of the Atal'ai tribe.\n\nThis priest was sentenced to a fate " ..
+                "worse than death amongst the Atal'ai.\n\nHe was exiled to live far north in the " ..
+                "Hinterlands, with the Witherbark trolls.\n\nI will bundle these artifacts. You are to " ..
+                "seek out the exile and discover their true use. Return to me once your journey is " ..
+                "complete.",
         },
         [1431] = {
             description = "Be still, <class>, and allow me to share with you something important to our " ..
@@ -3643,6 +3669,15 @@ ns.Overrides.wowhead = {
                 "some Groddoc and Ironfur livers from Feralas...\n\nA nice stiff Kalimdor Kocktail... " ..
                 "that'll get me talking!",
         },
+        [1458] = {
+            description = "One of my tasks out here involves picking up some reagents for Leftwitch, a " ..
+                "gnome mage in Kharanos. Roetten seems to think it's easy coin in the bank since we're " ..
+                "out here already. He doesn't really care that we're short-handed as is.\n\nThe first few " ..
+                "items on his list should be easy enough to get, and it'd be a good chunk of coin for " ..
+                "anyone helping me out.\n\nI need some horns and claws from the Hatefury satyr to the " ..
+                "east of here. Bring 'em back to me and we'll get started on the rest of the list.",
+            rewardMoney = 3500,
+        },
         [1462] = {
             objectivesText = {"Speak to Seer Ravenfeather for another Earth Sapta."},
             rewardItems = {{6635, 1}},
@@ -3665,6 +3700,16 @@ ns.Overrides.wowhead = {
                 "from us by an agent of the Scarlet Crusade who has it secreted away in his base at a " ..
                 "tower to the west. Bring it to me, and I will impart the knowledge to you.",
             rewardXP = 630,
+        },
+        [1476] = {
+            description = "Coaxing a succubus will require the hearts of the pure. But is any mortal " ..
+                "without vice?\n\nThrough bits of overheard stories, I found two humans that should " ..
+                "do.\n\nThe first is Dalin Forgewright, who has dedicated himself to the care of the " ..
+                "Lordaeron refuges, whom are refused by their kin at the Greymane Wall.\n\nThe other is " ..
+                "Corma Villard, a woman who remains faithful to her lost love, wandering the Wetlands for " ..
+                "a sign of her.\n\nDeliver their hearts to Carendin. But first, let me show you your " ..
+                "quarry.",
+            rewardXP = 1550,
         },
         [1488] = {
             description = "Although I have no knowledge of this Lord Azrethoc, I agree with Maurin, he " ..
@@ -3963,6 +4008,15 @@ ns.Overrides.wowhead = {
                 "<name>.\n\nYou must go to the Charred Vale and find a chimaera matriarch. Slay her, free " ..
                 "her of her misery. Bring me her galvanized horn as proof, and I shall make for you the " ..
                 "helm.",
+        },
+        [1858] = {
+            description = "I'll leave it to you to get Tazan's satchel open, and return to me with its " ..
+                "contents. The locking mechanism is complex, so it would probably be easiest if you " ..
+                "obtained the key.\n\nAs you didn't find it on Tazan's body, I can only assume that he " ..
+                "left the key in the care of another... Ah, yes, that's right. He had an assistant named " ..
+                "Gamon. A drunkard, you'll most likely find him at the tavern. Perhaps you could quietly " ..
+                "relieve him of the key.",
+            rewardItems = {{7298, 1}},
         },
         [1879] = {
             description = "<name>! Bink, my gnome colleague in Ironforge, sends word. She has a task that " ..
@@ -6983,6 +7037,13 @@ ns.Overrides.wowhead = {
                 "the Silvermane. Stalk the stalkers! Slay them all!",
             rewardMoney = 14000,
         },
+        [7829] = {
+            description = "Among the more ornery of the wildlife of the Hinterlands are the savage " ..
+                "owlbeasts. Many a good Revantusk warrior has been lost to the ferocious claws and beak " ..
+                "of the beasts.\n\nKill every savage owlbeast you see, <race>. Return to me when you can " ..
+                "stand no more bloodshed. Your contribution will then be weighed, measured, and judged.",
+            rewardMoney = 14000,
+        },
         [7839] = {
             description = "Vilebranch scum invaded our village and stole my tools! I have backup tools " ..
                 "but the set they stole was a gift given to me by a kind hearted gnome that saved my life " ..
@@ -8150,6 +8211,14 @@ ns.Overrides.wowhead = {
         },
         [9137] = {rewardChoices = {{22523, 1}, {22524, 1}}, rewardMoney = 900},
         [9142] = {rewardItems = {{22568, 1}}},
+        [9162] = {
+            description = "As you skim through the pages in the journal you're overcome by an unnerving " ..
+                "sense of being watched.\n\nThe contents are unsettling. Dar'Khan's soul was one filled " ..
+                "with hatred and contempt for his own people. The extent of his machinations and plots " ..
+                "are all documented in great detail.\n\nPerhaps there is something here that Vynna will " ..
+                "find useful.",
+            rewardMoney = 800,
+        },
         [9166] = {
             description = "You must deliver the recovered night elf plans to An'telas for me. It is to " ..
                 "the east, on the southern slopes of Sungraze Peak, just to the northeast of the Sanctum " ..
