@@ -4749,6 +4749,11 @@ ns.Overrides.wowhead = {
                 "the rogue trainer David Trias. I would take some time to read it before heading out " ..
                 "again.",
         },
+        [3097] = {
+            description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
+                "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
+                "the priest trainer Duesten. I would take some time to read it before heading out again.",
+        },
         [3098] = {
             description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
                 "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
@@ -7760,6 +7765,12 @@ ns.Overrides.wowhead = {
                 "element and I shall infuse weapons of great power.",
             rewardChoices = {{21273, 1}, {21275, 1}, {21268, 1}},
         },
+        [8810] = {
+            description = "Our supply of bandages in the battlefield is running dangerously low after the " ..
+                "recent casualties we have incurred. Obtain a batch of first-aid supplies and deliver " ..
+                "them to Windcaller Proudhorn in Cenarion Hold.",
+            rewardItems = {{20800, 1}, {21386, 1}},
+        },
         [8885] = {
             description = "The Grimscale murlocs have not been scared off by your efforts. But, I think I " ..
                 "know what will send them packing, as well as get me some personal retribution.\n\nThey " ..
@@ -9321,6 +9332,14 @@ ns.Overrides.wowhead = {
                 "wipe them out!\n\nHere's what we'll do: I'll stay here and you head to the Quagg Ridge " ..
                 "to the east and look for dietary clues as to why they're raiding the sporelings.",
             rewardMoney = 31000,
+        },
+        [9704] = {
+            description = "It's hard work being an outrunner between Sunstrider Isle and Falconwing " ..
+                "Square. Tight deadlines, long hours and worst of all... the Wretched!\n\nThe road south " ..
+                "goes through the ruins of Silvermoon... the place is crawling with Wretched ready to " ..
+                "kill you for a few mana crystals. Unfortunately, I think that's what happened to the " ..
+                "last outrunner we sent with one of Erona's packages.\n\nI see you're eager to prove " ..
+                "yourself. Venture into Dawning Lane and see if you can find any traces of our outrunner.",
         },
         [9708] = {
             description = "Yes, that's it, I knew I had seen this particular phylum of mushroom elsewhere " ..
@@ -13026,6 +13045,15 @@ ns.Overrides.wowhead = {
                 "kill 'em all!",
             rewardMoney = 123000,
         },
+        [10703] = {
+            description = "It's time to get down in the muck and get dirty. What were you expectin'? You " ..
+                "gotta learn to walk before you can crawl, right? Er, reverse that...\n\nAnyway, we got " ..
+                "all hands on deck fer killin' the garbage being thrown at us by the Burning Legion. That " ..
+                "leaves you with the honor of cleaning up the crazed wildlife of Shadowmoon " ..
+                "Valley.\n\nGrab a sword, staff, whatever it is that makes you happy, and kill as much of " ..
+                "the wildlife as you can see. That'll clear a way out for our supply caravans!",
+            rewardMoney = 123000,
+        },
         [10704] = {
             description = "A message was embedded in the ata'mal crystal that you recovered. Nexus-Prince " ..
                 "Haramad has given us information vital to our campaign against Tempest Keep.\n\nHe tells " ..
@@ -14064,6 +14092,15 @@ ns.Overrides.wowhead = {
                 "souls.\n\nDestroy whatever is inside that coffin!",
             rewardChoices = {{31798, 1}, {31797, 1}, {31796, 1}, {31794, 1}},
         },
+        [10917] = {
+            description = "As an outcast, I am marked by death by arakkoa loyal to the city of Skettis. I " ..
+                "cannot leave these walls for fear of my life, but that doesn't mean I cannot strike at " ..
+                "them in retaliation.\n\nI have a small cache of treasure that I'm willing to part with, " ..
+                "should you help me strike back at my would-be assassins. Bring me feathers from the " ..
+                "denizens of the various Veils of Terokkar as proof of their demise.",
+            rewardItems = {{31800, 1}},
+            rewardMoney = 33000,
+        },
         [10918] = {rewardItems = {{31800, 1}}},
         [10921] = {
             description = "You have slain many of the dreadfang widows but they will continue to spawn " ..
@@ -14786,6 +14823,13 @@ ns.Overrides.wowhead = {
                 "mine is to collect the cargo left behind by the miners and deep mine workers.\n\nGather " ..
                 "the nethermine cargo and return it to me or my sister.",
             rewardMoney = 88000,
+        },
+        [11077] = {
+            description = "That dragon waking up riled up a host of other nasty creatures in these mines. " ..
+                "Two types are proving to be a thorn in the side of the Dragonmaw: Nethermine flayers and " ..
+                "Nethermine ravagers. You must help us by killing them off. All I ask is your involvement " ..
+                "once per day.\n\nGet in there and kill as many as you can!",
+            rewardMoney = 44000,
         },
         [11081] = {
             description = "This document outlines a revolt planned by the Murkblood broken. It seems that " ..
