@@ -4,6 +4,52 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.304
+- database - Wowhead data as the PandaQuest portal read it: 7,885 quests, 514 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,013 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,006 quests, 36 NPCs, 1 object
+- quest 14136 - Rescue at Sea - updated
+  - reward money removed (5g 80s)
+- quest 27667 - Darkmoon Earthquake Deck - updated
+  - description added
+  - reward items: +1
+- npc 122 - Defias Highwayman - updated
+  - coordinates: 40 spawn points added in Westfall
+- npc 762 - Lost One Riftseeker - updated
+  - coordinates: 13 spawn points added in Swamp of Sorrows
+- npc 1951 - Quinn Yorick - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 1973 - Ravenclaw Guardian - updated
+  - coordinates: 12 spawn points added in Silverpine Forest
+- npc 2448 - Clerk Horrace Whitesteed - updated
+  - coordinates: 5 spawn points added in Hillsbrad Foothills
+- npc 2449 - Citizen Wilkes - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2691 - Highvale Outrunner - updated
+  - coordinates: 24 spawn points added in The Hinterlands
+- npc 2693 - Highvale Marksman - updated
+  - coordinates: 23 spawn points added in The Hinterlands
+- npc 2696 - Foggy MacKreel - updated
+  - coordinates: 2 spawn points added in Arathi Highlands
+- npc 6015 - Torta - updated
+  - coordinates: 4 spawn points added in Tanaris
+- npc 6300 - Elisa Steelhand - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 7671 - Servant of Sevine - updated
+  - coordinates: 12 spawn points added in Blasted Lands
+- npc 16359 - Argent Messenger - updated
+  - coordinates: 8 spawn points added in Undercity
+  - coordinates: 6 spawn points added in Thunder Bluff
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 68275 - Hilda Hornswaggle - updated
+  - NPC title added (Explorer's League)
+  - NPC level added (90)
+- npc 68384 - Aenea - updated
+  - NPC title added (Blood Knight)
+- npc 70429 - Flesh'rok the Diseased - updated
+  - NPC title added (Primordial Saurok Horror)
+  - NPC level added (92)
+
 0.2.303
 - database - Wowhead data as the PandaQuest portal read it: 7,885 quests, 498 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,003 quests, 22 NPCs, 5 objects
@@ -423,37 +469,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 2 spawn points added in Stormwind City
 - npc 53443 - Pechanga - updated
   - coordinates: 2 spawn points added in Northern Stranglethorn
-
-0.2.293
-- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 352 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,880 quests, 20 NPCs, 3 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,877 quests, 32 NPCs, 1 object
-- quest 12639 - The Frozen Earth - updated
-  - description added
-  - reward choices: +4
-- quest 14096 - You've Really Done It This Time, Kul - updated
-  - description added
-- quest 29288 - Starting Young - updated
-  - description removed
-  - reward money removed (9g 40s)
-- npc 539 - Pygmy Venom Web Spider - updated
-  - coordinates: 40 spawn points added in Duskwood
-- npc 4131 - [Deprecated for 4.x]Silithid Invader - updated
-  - coordinates: 10 spawn points added in Thousand Needles
-- npc 4147 - [Deprecated for 4.x]Saltstone Basilisk - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 6018 - Ur'kyo - updated
-  - coordinates: 4 spawn points added in Orgrimmar
-- npc 6198 - Blood Elf Surveyor - updated
-  - coordinates: 33 spawn points added in Azshara
-- npc 7724 - Senior Surveyor Fizzledowser - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 14726 - Rashona Straglash - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 68108 - Lady Jaina Proudmoore - updated
-  - NPC title added (Leader of the Kirin Tor)
-- npc 73306 - Mistweaver Ku - updated
-  - NPC title added (Lost Treasures of Shaohao)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
