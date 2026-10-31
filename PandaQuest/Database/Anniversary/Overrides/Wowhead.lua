@@ -3393,6 +3393,11 @@ ns.Overrides.wowhead = {
                 "<race>!\n\nYou tell me when ready for good beating.",
             rewardChoices = {{10703, 1}, {10704, 1}},
         },
+        [1177] = {
+            description = "Mud big ogre.\n\nMe hungry.\n\nGo bash fishy. Bring Mud food.\n\nYou feed Mud " ..
+                "or Mud eat you.",
+            rewardChoices = {{9518, 1}, {9519, 1}},
+        },
         [1186] = {
             description = "I'm going to be busy with working on integrating this new fuel regulator to " ..
                 "our racer designs, but if you'd like to help out the team some more, talk to Razzeric. " ..
@@ -4223,6 +4228,15 @@ ns.Overrides.wowhead = {
                 "<name>.\n\nIn a cave to the northeast, near Bashal'Aran, resides the Den Mother. Slay " ..
                 "her.",
             rewardChoices = {{7738, 1}, {7739, 1}},
+        },
+        [2199] = {
+            description = "I am a jeweler of great renown here in Ironforge! Well, former renown " ..
+                "anyway... I have fallen onto hard times due to the chicanery of a competitor! A bad " ..
+                "reputation in this business spells financial disaster. As a result, I find myself " ..
+                "without a copper to my good-though-currently-sullied name.\n\nI want you to get me five " ..
+                "silver bars to finish an order I received - the first in what seems like an " ..
+                "eternity.\n\nYou get me those five silver bars, and I'll answer your questions on the " ..
+                "necklace.",
         },
         [2202] = {
             description = "I've heard about a newly discovered plant called the magenta fungus caps. They " ..
@@ -5093,6 +5107,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{10830, 3}},
             rewardMoney = 800,
         },
+        [3625] = {
+            description = "<name>, the creation of each weapon will take some time.\n\nAdditionally, you " ..
+                "may only use the power of the Felcurse once per three minutes. Its weakening properties " ..
+                "against Razelikh the Defiler and his minions may be variable in duration. This is why " ..
+                "you must release the Felcurse only when the moment is right!\n\nNow give me a moment to " ..
+                "craft your weapon, <name>.",
+            rewardChoices = {{10697, 1}, {10698, 1}, {10696, 1}},
+        },
         [3630] = {
             description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
                 "Gnome engineering represents by far the superior of the two! It's about the construction " ..
@@ -5483,6 +5505,15 @@ ns.Overrides.wowhead = {
                 "knowledge on these kinds of creatures, and her receiving this report would benefit us " ..
                 "all.\n\nYou're dismissed - good luck, <name>; may Elune watch over us all.",
             rewardChoices = {{34416, 1}, {34417, 1}},
+        },
+        [4282] = {
+            description = "< Marshal Windsor shakes the note excitedly.>\n\nDo you realize what this " ..
+                "means, <name>?\n\nPerhaps all is not lost! From what I can ascertain, the information is " ..
+                "being held by two Dark Iron dwarves: General Angerforge and the golem lord, Argelmach. I " ..
+                "have a feeling that they won't just hand over the information if we ask nicely.\n\nI " ..
+                "hope you are ready to battle.\n\nVenture forth and find these two villains! Destroy them " ..
+                "and return my lost information.",
+            rewardMoney = 9000,
         },
         [4283] = {
             description = "I'm going to let you in on a little secret, soldier. Come a little " ..
@@ -6260,6 +6291,14 @@ ns.Overrides.wowhead = {
                 "the Haldarr clan. Return to me after you've tested yourself against their power.",
             rewardMoney = 7000,
         },
+        [5543] = {
+            description = "Woe to those that foolishly wander into the Plaguelands. All manner of " ..
+                "foulness inhabit these woods - from the fanatical Scarlet Crusade, who will kill any " ..
+                "that do not bear the mark of the Crusade, to the murderous Scourge, who only look to " ..
+                "bolster their numbers by adding more undead to their ranks.\n\nEven the wildlife have " ..
+                "been transformed into rapacious, man eating beasts. I ask that you destroy those that " ..
+                "would strike from the skies: The Plaguebats.",
+        },
         [5622] = {
             description = "<name>, you must travel to Dolanaar when your business here in Shadowglen is " ..
                 "done. There, you will find Laurna Morninglight. She will instruct you further in the " ..
@@ -7023,6 +7062,13 @@ ns.Overrides.wowhead = {
         [7658] = {rewardItems = {{12715, 1}}},
         [7659] = {rewardItems = {{12687, 1}}},
         [7669] = {rewardItems = {{18746, 1}}},
+        [7701] = {
+            description = "By order o' 'is eminence, Overseer Oilfist, the rogue Thorium Brotherhood " ..
+                "agent an' newly hired commander o' the Dark Iron Slag Pit crew o' the Cauldron, Overseer " ..
+                "Maltorius, is to be killed an' 'is head brung back as proof o' the deed.\n\nSee Lookout " ..
+                "Captan Lolo Longstriker fer the reward on this bounty.",
+            rewardChoices = {{19128, 1}, {19127, 1}},
+        },
         [7721] = {
             description = "If I bet against my own better judgment and stay to run an engineering shop " ..
                 "along the Forgotten Coast, I will need to deal with these pesky elementals. Curse the " ..
@@ -7885,6 +7931,14 @@ ns.Overrides.wowhead = {
             description = "It's been great working with you, <name>. Here is the finished product.\n\nI " ..
                 "hope it helps you in your current endeavors. And hey, if you don't mind, help spread the " ..
                 "word. I wouldn't mind having more customers!",
+        },
+        [8990] = {
+            description = "It became known to us in later days, as we were doing what we could ourselves " ..
+                "to survive, that Isalien, a night elf priestess of our company, had gone to the night " ..
+                "elvic ancestral city, now known as Dire Maul. From what we gathered, she went there both " ..
+                "for personal reasons and also to unlock the secrets of the piece of the amulet that she " ..
+                "had in her possession.\n\nShe didn't quite make it, though. Word got back to us that she " ..
+                "was ambushed at the Shrine of Eldretharr by Alzzin the Wildshaper and his forces.",
         },
         [8991] = {
             description = "The siblings, Jarien and Sothos, decided to join the Scarlet Crusade upon the " ..
@@ -9304,6 +9358,13 @@ ns.Overrides.wowhead = {
                 "the mountain on this island and place them in the ever-burning pyre. This act should " ..
                 "signal Razormaw to descend. When he does, slay his undead form.",
             rewardChoices = {{24346, 1}, {24348, 1}, {24347, 1}},
+        },
+        [9691] = {
+            description = "Return to Silvermoon City and report to Knight-Lord Bloodvalor promptly. Your " ..
+                "arrival will tell him all he needs to know about the outcome of the trial.\n\nHe will " ..
+                "tell you of your remaining tasks on the road to becoming an adept. Hold your head high, " ..
+                "<name>. Many undertake this trial, but very few return to tell of their success.",
+            rewardXP = 780,
         },
         [9693] = {
             description = "What does Argus mean to you, <name>? Many draenei probably do not know or " ..
@@ -13520,6 +13581,14 @@ ns.Overrides.wowhead = {
                 "held at a post known as Crimson Watch, located at the southern end of the Path of " ..
                 "Conquest. A mysterious faction, calling itself the Crimson Sigil, is charged with his " ..
                 "incarceration. If you choose to investigate, it would be wise to bring allies.",
+        },
+        [10794] = {
+            description = "<name>, there are secrets in the world that we do not yet possess. The " ..
+                "Shattered Hand in Orgrimmar can lead you to one of these secrets: the method for brewing " ..
+                "deadly poisons. Do as they ask and you will gain their trust.\n\nTo reach Orgrimmar, " ..
+                "take the portal in Silvermoon City to Undercity. Then, travel outside the city and find " ..
+                "the nearby tower where the goblin Zepplins pick up their passengers. From there, fly to " ..
+                "the city of Orgrimmar where you can find Shenthul in the Cleft of Shadow.",
         },
         [10795] = {
             description = "Good, I've seen you around and I've been meaning to speak to you about a " ..

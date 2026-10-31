@@ -1153,6 +1153,15 @@ ns.Overrides.wowhead = {
                 "troll magic. Enter the territory of the Skullsplitter trolls, a second tribe to the " ..
                 "distant south, and acquire Skullsplitter Fetishes from their Witchdoctors and Mystics.",
         },
+        [206] = {
+            description = "Kurzen may be dead, but...that which drove him to evil still lives! Through my " ..
+                "studies I have discovered this: An Ogre Mage - Mai'Zoth - dwells in an Ogre Mound within " ..
+                "the eastern mountains of Stranglethorn. He is rumored to employ mind-controlling magic, " ..
+                "and I am positive that he corrupted Kurzen.\n\nIf Mai'Zoth is allowed to live, then his " ..
+                "evil may influence others, and may even cause another Kurzen to surface.\n\nKill him, " ..
+                "and bring me his Mind's Eye, the artifact he uses to corrupt others.",
+            rewardItems = {{4125, 1}},
+        },
         [207] = {
             description = "Colonel Kurzen was once a great, noble man - I must find what caused his fall " ..
                 "into depravity! He may be under the sway of troll magic. To confirm this, I must study " ..
@@ -3595,6 +3604,13 @@ ns.Overrides.wowhead = {
                 "of scrying. Use it to create a scrying bowl after searching the Master's Glaive. Then " ..
                 "speak to me through the bowl.",
         },
+        [945] = {
+            description = "Help!\n\nI was wandering around the Master's Glaive, and these dirty cultists " ..
+                "surrounded me. Lucky I'm good at hiding!!\n\nCan you help me out of here? And I need to " ..
+                "send word to my sister Therysil that I'm all right. She's in Ashenvale to the south, at " ..
+                "the Shrine of Aessina.",
+            rewardMoney = 1000,
+        },
         [952] = {
             description = "If you had enough time to run messages for the Oracle Tree, then I'm sure that " ..
                 "I can press you into service to deliver a message to the Grove of the Ancients in " ..
@@ -4754,6 +4770,14 @@ ns.Overrides.wowhead = {
                 "that we could stand up to those mindless brutes.\n\nHe crossed the line one too many " ..
                 "times, so we left him to fend for himself.\n\nNow, I helped you out... So, why don't you " ..
                 "help us out and forget you bumped into us?",
+        },
+        [1301] = {
+            description = "Before working here at the Blue Recluse, I was trained by one of the best " ..
+                "chefs and innkeepers I'd ever met. His name was James Hyal. Everything I have and " ..
+                "everywhere I've gotten in life is thanks to him.\n\nI wonder how he's doing. His brother " ..
+                "Vincent and he went to work in a tavern in Menethil Harbor, but I haven't heard from him " ..
+                "recently.\n\nIf you ever happen to be headed in that direction, maybe you could say " ..
+                "hello to him for me?",
         },
         [1322] = {
             description = "Hmmm, there's writing right here on the rim of the shield, but it's hard to " ..
@@ -7648,6 +7672,14 @@ ns.Overrides.wowhead = {
                 "Gregan Brewspewer. He's hard to track down, but last I knew he was camping in the wilds " ..
                 "of Feralas.",
         },
+        [3921] = {
+            description = "I think I might have broken that Samophlange. That's not good, because I " ..
+                "already told some colleagues in Undermine about it and they were very intrigued. We must " ..
+                "find a way to fix it!\n\nTake the broken samophlange to Wenikee Boltbucket, just south " ..
+                "of Mor'shan Rampart, the horde outpost between the Barrens and Ashenvale. She is very " ..
+                "clever and inquisitive. If you show her the samophlange I bet she'd jump at the chance " ..
+                "to fix it.",
+        },
         [3922] = {
             description = "I want to fix this samophlange, but to do that I'm going to need some " ..
                 "supplies. I ran out of seventeen-point-five gauge nugget slugs and I'm going to need a " ..
@@ -9647,6 +9679,15 @@ ns.Overrides.wowhead = {
                 "it overwhelms the Horde from below. Find Ragefire Chasm and destroy them all.",
             rewardMoney = 700,
         },
+        [5725] = {
+            description = "Many denizens of the Legion bestow gifts on their followers as you may well " ..
+                "know. Some of these gifts the Dark Lady feels would be better off in her hands than in " ..
+                "the hands of those with... lesser vision.\n\nA sect of the Shadow Council hidden in " ..
+                "caverns below Orgrimmar known as the Searing Blade are a prime example. The Lady tells " ..
+                "me that members of the Searing Blade have come into the possession of two powerful spell " ..
+                "books--she would like to \"borrow\" these books from them. You will get them for her.",
+            rewardChoices = {{15449, 1}, {15450, 1}, {15451, 1}},
+        },
         [5727] = {
             description = "Now let us see if this insignia you found is worth the effort.\n\nThere is a " ..
                 "warlock within the city who believes he has my trust. He does not know that I realize " ..
@@ -9976,6 +10017,11 @@ ns.Overrides.wowhead = {
                 "you on the path to earning a pet of your own.",
         },
         [6071] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
+                "you on the path to earning a pet of your own.",
+        },
+        [6073] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
                 "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
                 "you on the path to earning a pet of your own.",

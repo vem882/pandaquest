@@ -4,6 +4,38 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.308] - 2026-10-31
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 559 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,041 quests, 22 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,037 quests, 37 NPCs, 1 object
+- quest 12721 - Rampage - updated
+  - description added
+  - reward choices: +4
+- npc 2230 - Umpi - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 3749 - Foulweald Ursa - updated
+  - coordinates: 24 spawn points added in Ashenvale
+- npc 4022 - Bloodfury Harpy - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 6136 - Arkkoran Muckdweller - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 6297 - Kurdram Stonehammer - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 14531 - Artorius the Amiable - updated
+  - coordinates: 40 spawn points added in Winterspring
+- npc 17113 - Captured Crocolisk - updated
+  - coordinates: 5 spawn points added in Swamp of Sorrows
+- npc 68647 - Sunreaver Duelist - updated
+  - NPC level added (90)
+- npc 70321 - Tenwu of the Red Smoke - updated
+  - NPC level added (90)
+- npc 72723 - Wrathion - updated
+  - NPC title added (The Black Prince)
+  - NPC level added (90)
+
 ## [0.2.307] - 2026-10-31
 
 Data from the PandaQuest portal.
@@ -419,51 +451,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 71638 - Activated Missile Turret - updated
   - NPC level added (91)
-
-## [0.2.297] - 2026-10-30
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 424 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,928 quests, 21 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,938 quests, 33 NPCs, 1 object
-- npc 1051 - Dark Iron Dwarf - updated
-  - coordinates: 35 spawn points added in Wetlands
-- npc 1091 - Mountaineer Gravelgaw - updated
-  - coordinates: 2 spawn points added in Loch Modan
-- npc 1242 - Karl Boran - updated
-  - coordinates: 3 spawn points added in Wetlands
-- npc 1855 - Tirion Fordring - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 2093 - Einar Stonegrip - updated
-  - coordinates: 2 spawn points added in Wetlands
-- npc 2241 - Syndicate Thief - updated
-  - coordinates: 9 spawn points added in Hillsbrad Foothills
-- npc 2260 - Syndicate Rogue - updated
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 2382 - Darren Malvew - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
-- npc 4151 - [Deprecated for 4.x]Saltstone Crystalhide - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 5490 - Gnarled Thistleshrub - updated
-  - coordinates: 25 spawn points added in Tanaris
-- npc 6127 - Haldarr Felsworn - updated
-  - coordinates: 14 spawn points added in Azshara
-- npc 7876 - Tran'rek - updated
-  - coordinates: 2 spawn points added in Tanaris
-- npc 9536 - Maxwort Uberglint - updated
-  - coordinates: 1 spawn point added in Burning Steppes
-- npc 9544 - Yuka Screwspigot - updated
-  - coordinates: 1 spawn point added in Burning Steppes
-- npc 9620 - Dreka'Sur - updated
-  - coordinates: 1 spawn point added in Felwood
-- npc 9878 - Entropic Beast - updated
-  - coordinates: 40 spawn points added in Felwood
-- npc 17236 - Tcha'kaz - updated
-  - coordinates: 5 spawn points added in The Hinterlands
-- npc 246384 - Vyraxxis - updated
-  - NPC level added (91)
-  - rank added (elite)
 
 ## [0.2.270] - 2026-10-26
 
