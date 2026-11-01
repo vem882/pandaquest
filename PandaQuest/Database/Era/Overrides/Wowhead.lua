@@ -4766,6 +4766,14 @@ ns.Overrides.wowhead = {
                 "it hasn't come yet. He's usually very prompt... Maybe you wouldn't mind going to Ratchet " ..
                 "to ask him about it? I wouldn't be so pushy, but the gnomes are gaining on us!",
         },
+        [1179] = {
+            description = "You ever heard of the Shimmering Flats? It's a stretch of salt flats way over " ..
+                "in Kalimdor, just south of the Thousand Needles canyon. It's a great place for racing " ..
+                "because, well, it's so flat!\n\nA couple of gnome brothers are out there, friends of " ..
+                "mine, trying out their new rocket car, and from what I hear it's fast! Heh, so fast that " ..
+                "their pilots keep crashing. Giving themselves concussions.\n\nSo they asked me for some " ..
+                "Siege Engine helmets, but I have duties here. I can't make the trip!\n\nCan you?",
+        },
         [1180] = {
             description = "Back to what you came here about. I know I promised Pozzik that I'd deliver a " ..
                 "new fuel regulator for him, but I still haven't received it yet. Revilgaz over in Booty " ..
@@ -6408,6 +6416,15 @@ ns.Overrides.wowhead = {
                 "of your existence.",
             rewardItems = {{7298, 1}},
         },
+        [2218] = {
+            description = "Another lost soul looking for guidance, eh? I suppose you want to find a " ..
+                "purpose - your purpose. I've seen it a thousand times, another hero looking for " ..
+                "work.\n\nWell, today's your lucky day, friend. Hogral's got the cure for your " ..
+                "ailment.\n\nHere's what you do: Take this road here up to Ironforge and make your way to " ..
+                "the Forlorn Cavern. Once there, locate the thieves' guild and speak with Hulfdan " ..
+                "Blackbeard. He'll put you on the road to salvation.",
+            rewardMoney = 175,
+        },
         [2242] = {
             description = "We believe there is one being that may be able to help us understand what is " ..
                 "happening to the forests of Teldrassil. Unfortunately, getting the creature to cooperate " ..
@@ -7598,6 +7615,14 @@ ns.Overrides.wowhead = {
                 "hearts of flame and four golem oil and I shall craft the torch of flawless flame.\n\nThe " ..
                 "golems and elementals in these lands should be your first target.",
             rewardMoney = 14000,
+        },
+        [3444] = {
+            description = "I once entered the foreboding chambers of the Sunken Temple. The evil in that " ..
+                "place penetrates all that enter; I barely managed to find my way out, wading through the " ..
+                "ooze that now covers the floors. All I can remember is stumbling through a large " ..
+                "circular room, filled with serpent statues...\n\nRecently, I discovered a round stone " ..
+                "that appeared to have the same serpent symbol imprinted on it. I had it packed up and " ..
+                "shipped to my workshop in Ratchet. Retrieve it, and I might be able to tell you more.",
         },
         [3445] = {
             description = "I have heard of a place that lies deep below the surface of the earth -- " ..
@@ -9606,6 +9631,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{13315, 1}},
             rewardMoney = 18000,
         },
+        [5283] = {
+            description = "So ye made the smart decision.\n\nThere ain't no love lost betwixt me an old " ..
+                "Ironus here. That good for nothing toy maker knows who the true craftsmen round here " ..
+                "be.\n\nThe truly great wars are won with a good defense. When it be go time, no offense " ..
+                "is gonna be helping ye out.\n\nRight, so let's get to work. All ye need to do is show me " ..
+                "that ye've got some raw talent. After that, I'll yank whatever impurities be left in ye " ..
+                "and mold ye into an armorsmith. Ye do know how to make ornate mithril, don't ye?",
+        },
         [5284] = {
             description = "As a weaponsmith you'll find that more often than not, heroes and adventurers " ..
                 "will be coming to you for gear. While the workload can be unbearable at times, the " ..
@@ -10821,6 +10854,14 @@ ns.Overrides.wowhead = {
                 "speak with me again when you're ready to take a gryphon to Westfall. Once there, you can " ..
                 "deliver Osric's Crate to Quartermaster Lewis.",
             rewardMoney = 350,
+        },
+        [6321] = {
+            description = "Executor Hadrec asked me to take stock of our equipment at the Sepulcher. With " ..
+                "the Scourge, and worse, lurking in the woods, he doesn't want the Deathguards to lack " ..
+                "gear they might need.\n\nI found that we are, in general, well stocked, but we do need " ..
+                "more weapons to replace those lost in the field.\n\nHere is a requisition order of what " ..
+                "is needed, for the weapon dealer Gordon Wendham in the Undercity. Take the order to our " ..
+                "bat master, Karos Razok, and speak with him about transport to the Undercity.",
         },
         [6322] = {
             description = "I have placed the Sepulcher's supplies into this crate. If you have already " ..
@@ -14410,6 +14451,14 @@ ns.Overrides.wowhead = {
                 "him.\n\nThere is a road that connects the Un'Goro Crater and the desert of Tanaris. As " ..
                 "that road enters the crater, you will find Torwa close by.",
         },
+        [9068] = {
+            description = "Would you honor me by returning the armor of those that fell in the defense of " ..
+                "these lands?\n\nThe armor has been desecrated and is undoubtedly being used for evil; " ..
+                "however, with wartorn armor scraps, the desecrated armor can be renewed and worn for " ..
+                "battle once more.\n\nBring me the remnants of the fallen along with purification " ..
+                "materials and Earthshatter shall be yours to don.\n\nSearch Naxxramas.",
+            rewardItems = {{22464, 1}},
+        },
         [9069] = {
             description = "Would you honor me by returning the armor of those that fell in the defense of " ..
                 "these lands?\n\nThe armor has been desecrated and is undoubtedly being used for evil; " ..
@@ -14892,6 +14941,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{23123, 1}, {23122, 1}},
         },
         [9295] = {
+            description = "You found this letter on one of the many Scourge minions you've slain. From " ..
+                "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
+                "Light's Hope Chapel would be interested in examining it further...",
+            rewardXP = 3300,
+        },
+        [9300] = {
             description = "You found this letter on one of the many Scourge minions you've slain. From " ..
                 "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
                 "Light's Hope Chapel would be interested in examining it further...",

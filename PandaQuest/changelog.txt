@@ -4,6 +4,21 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.320
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 634 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,146 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,136 quests, 39 NPCs, 1 object
+- npc 746 - Elder Dragonkin - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 10645 - [Deprecated for 4.x]Thalia Amberhide - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 11117 - Awenasa - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 67682 - Brann Bronzebeard - updated
+  - rank added (elite)
+- npc 68587 - Sorin Magehand - updated
+  - NPC level added (90)
+
 0.2.319
 - database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 629 NPCs, 2 objects
 - database - flight times: 3 measured, 1,629 estimated
@@ -217,23 +232,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC title added (House of Shen'dralar)
 - npc 17111 - Captured Jaguar - updated
   - coordinates: 4 spawn points added in Swamp of Sorrows
-
-0.2.309
-- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 565 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,049 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,048 quests, 38 NPCs, 1 object
-- npc 757 - Lost One Fisherman - updated
-  - coordinates: 24 spawn points added in Swamp of Sorrows
-- npc 1054 - Dark Iron Demolitionist - updated
-  - coordinates: 25 spawn points added in Wetlands
-- npc 2360 - Hillsbrad Farmhand - updated
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 14727 - Vehena - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 68130 - The Monkey King - updated
-  - NPC level added (9,999)
-- npc 70160 - Taran Zhu - updated
-  - NPC title added (Lord of the Shado-Pan)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
