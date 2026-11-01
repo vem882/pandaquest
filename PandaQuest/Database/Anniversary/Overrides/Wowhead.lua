@@ -6243,6 +6243,15 @@ ns.Overrides.wowhead = {
                 "walks the distance between their village and Felwood. Find and defeat them, and steal " ..
                 "their shipment.",
         },
+        [5092] = {
+            description = "With Andorhal's western and northern roads into the city well fortified, I'm " ..
+                "looking to strike at it from the less defended eastern road. The Scourge relies on the " ..
+                "buffer of undead that infests Sorrow Hill as a first line of defense. If we are to " ..
+                "advance on Andorhal, we will need to do it through Sorrow Hill.\n\nYour first assignment " ..
+                "will be to clear the way through Sorrow Hill. Thin out the skeletons and ghouls that " ..
+                "haunt the area; report back to me when this is done!",
+            rewardMoney = 7500,
+        },
         [5093] = {
             description = "Heroes of the realm, hear me - the Horde calls upon you for swift action!\n\nA " ..
                 "call to arms has been issued for all able bodied individuals to take up arms against the " ..
@@ -7544,6 +7553,15 @@ ns.Overrides.wowhead = {
                 "such antlers will bestow the same confidence in you.\n\nHunt the mosshoof courser, find " ..
                 "the perfect antlers and bring them to me.",
         },
+        [8171] = {
+            description = "As you no doubt have heard, the League of Arathor is sending large numbers of " ..
+                "troops into Arathi Basin. Eager for food and supplies, these Alliance fools are intent " ..
+                "to take and control the rich resources there. We must show them that Arathi will never " ..
+                "again be a home for humans!\n\nGo to Arathi Basin and assault the mine, the lumber mill, " ..
+                "the blacksmith and the stables. Pull down the enemies' banners, declaring those " ..
+                "territories for the Horde.\n\nGo, <name>. Report back to me when this task is complete.",
+            rewardMoney = 3500,
+        },
         [8188] = {rewardItems = {{19786, 1}}},
         [8190] = {rewardItems = {{19788, 1}}},
         [8221] = {rewardItems = {{19972, 1}}, rewardMoney = 250},
@@ -7854,6 +7872,15 @@ ns.Overrides.wowhead = {
             description = "Something's wrong, <name>. I sense the presence of Scourge. Be ready to fight " ..
                 "them!",
             rewardMoney = 300,
+        },
+        [8490] = {
+            description = "Ancient runestones once powered a protective barrier across the Eversong " ..
+                "border. Many were destroyed during Arthas' attack; others were stolen.\n\nOf the three " ..
+                "that remain, only this one has retained its powers. The runestone to the east might be " ..
+                "salvageable, though.\n\nTake this crystal and instill its energy on the Eastern " ..
+                "Runestone. The process should take but a minute. Beware though, nearby Scourge will be " ..
+                "drawn to it and will seek to destroy it. Do not let them!",
+            rewardMoney = 350,
         },
         [8498] = {
             description = "Our scouts have reported new battle orders being issued by the Twilight's " ..
@@ -8730,6 +8757,14 @@ ns.Overrides.wowhead = {
         },
         [9137] = {rewardChoices = {{22523, 1}, {22524, 1}}, rewardMoney = 900},
         [9142] = {rewardItems = {{22568, 1}}},
+        [9145] = {
+            description = "<class>, I can't just sit here waiting for an audience with the high executor " ..
+                "or Dame Auriferous! This cannot wait!\n\nWe were dealing with the Shadowpine trolls of " ..
+                "Zeb'Sora to the northeast across Lake Elrendar. But the lieutenant mishandled the attack " ..
+                "and we lost a lot of Farstriders. Then he just fell to pieces afterward. Ranger Valanna " ..
+                "sent me here, and Ranger Salissa to the Farstrider Enclave for help.\n\nPlease find " ..
+                "them, <class>. Valanna was badly injured and the lieutenant's useless.",
+        },
         [9153] = {
             description = "The floating necropolises of the Scourge plague the lands of Horde and " ..
                 "Alliance alike. Tanaris, the Blasted Lands, Winterspring and the Burning Steppes are " ..
@@ -9595,6 +9630,11 @@ ns.Overrides.wowhead = {
                 "able hunters. It would greatly benefit you to seek her out, <name>. She is a beacon of " ..
                 "wisdom for those of our calling.\n\nFarstrider Retreat lies south of Silvermoon City.",
             rewardXP = 85,
+        },
+        [9618] = {
+            description = "Your sleight of hand was most impressive. There's no question that I can trust " ..
+                "you to take these reports to Zelanis.",
+            rewardItems = {{7298, 1}},
         },
         [9620] = {
             description = "As we've gotten ourselves established here at Blood Watch, I've been sending " ..
@@ -16135,6 +16175,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 139,
         },
+        [16364] = {spawns = {[3430] = {{55.2, 84.4}, {55.2, 84.6}, {55.6, 84.2}}}, zoneID = 3430},
         [16379] = {
             spawns = {
                 [139] = {
