@@ -3800,6 +3800,13 @@ ns.Overrides.wowhead = {
                 "the Ancient of Lore. He has been awaiting word from me, even as I waited for news from " ..
                 "the Oracle Glade.",
         },
+        [956] = {
+            description = "If the grells have come into close contact with the seal that binds my eternal " ..
+                "prison, I suspect I know the cause. No doubt the seal has come into the possession of " ..
+                "the satyr that lead them.\n\nI feel strongly that this must be true, <name>. One of the " ..
+                "satyr must surely possess it. If you can obtain it, you would bring me so close to " ..
+                "passing the bars of my prison that tears would come to my eyes.",
+        },
         [960] = {rewardItems = {{5251, 1}}},
         [961] = {rewardItems = {{5251, 1}}},
         [962] = {
@@ -13431,6 +13438,16 @@ ns.Overrides.wowhead = {
                 "a message to him for me. I must tell him how I feel! I know it's love! I just know " ..
                 "it!\n\nCould you possibly deliver a message to Narain? I would be forever indebted to " ..
                 "you!",
+        },
+        [8600] = {
+            description = "I find that the fit of the knife in your palm is more important than the edge " ..
+                "on it. Even the dullest blade can be made to cut if pressure is being properly applied " ..
+                "through it, wouldn't you agree, <class>? But you and I don't have such problems as we " ..
+                "maintain the sharpest of edges, yes?\n\nWell, no matter, I have a task for you. In " ..
+                "service to the Horde, and to do your part for the Ahn'Qiraj war effort, I want you to " ..
+                "return to me with a number of rugged leather skins. This is something that you will do, " ..
+                "no?",
+            rewardItems = {{21438, 10}, {21513, 1}},
         },
         [8601] = {rewardItems = {{21438, 10}, {21513, 1}}},
         [8602] = {

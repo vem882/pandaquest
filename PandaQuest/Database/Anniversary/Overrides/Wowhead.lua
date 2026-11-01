@@ -7433,6 +7433,17 @@ ns.Overrides.wowhead = {
                 "ears.\n\nBelieve me <sir/madam> when I say that these goblins have quite large ears.",
             rewardMoney = 2100,
         },
+        [7728] = {
+            description = "The following items have been stolen:\n\n*One Dark Iron Tuyere.\n\n*One " ..
+                "Lookout's Spyglass.\n\nA reward is being offered to individuals who find and return " ..
+                "these pilfered items.\n\nThe Thorium Brotherhood is certain that these items were stolen " ..
+                "by unscrupulous and jealous Dark Iron dwarves that inhabit the Searing Gorge.\n\nThe " ..
+                "spyglass in question was an excellent tool for the lookouts and the tuyere was an " ..
+                "irreplaceable smithing tool.\n\nShould you find the missing items, return them to " ..
+                "Scrange.",
+            rewardChoices = {{19124, 1}, {19123, 1}},
+            rewardMoney = 14000,
+        },
         [7729] = {
             description = "Taskmaster Scrange is looking for a few good men and women to help 'cull the " ..
                 "competition' in the Searing Gorge.\n\nIf you are interested in this position, venture " ..
@@ -16328,6 +16339,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3520,
+        },
+        [21328] = {
+            spawns = {
+                [3523] = {
+                    {47.4, 62}, {48.2, 63.2}, {49.2, 62.4}, {49.4, 64.6}, {49.8, 67}, {50, 64.8},
+                    {50.2, 68.4}, {50.2, 68.6}, {51.2, 64.6}, {51.2, 68.4}, {51.2, 76}, {51.4, 66.4},
+                    {51.4, 67.4}, {51.4, 69.6}, {51.4, 72}, {51.4, 74.4}, {51.4, 74.8}, {51.4, 78},
+                    {51.6, 69.2}, {51.6, 69.6}, {51.6, 73.8}, {51.6, 75}, {51.6, 75.6}, {52, 70.6},
+                    {52.2, 64.4}, {52.4, 66.4}, {52.6, 66.4}, {52.8, 68.2}, {53, 64.4}, {53, 64.8},
+                    {53.4, 66.8}, {53.6, 63}, {53.6, 64}, {53.6, 66.2}, {53.8, 66.8}, {54.4, 80}, {54.6, 65},
+                    {54.6, 66.4}, {55, 62.6}, {55.4, 62},
+                },
+            },
+            zoneID = 3523,
         },
         [21373] = {
             spawns = {
