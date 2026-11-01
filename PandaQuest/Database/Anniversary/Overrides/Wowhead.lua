@@ -2569,6 +2569,13 @@ ns.Overrides.wowhead = {
                 "their mine northeast of the ravaged caravan and send them a message.",
             rewardMoney = 250,
         },
+        [769] = {
+            description = "The kodo beasts of Mulgore are strong and sturdy -- traits much respected " ..
+                "among us. If you are skilled in leatherworking and wish the knowledge to make a Kodo " ..
+                "Hide Bag, then bring me supplies for my trade.\n\nDo this, and I will share my knowledge " ..
+                "with you.",
+            rewardItems = {{5083, 1}},
+        },
         [783] = {
             description = "I hope you strapped your belt on tight, young <class>, because there is work " ..
                 "to do here in Northshire.\n\nAnd I don't mean farming.\n\nThe Stormwind guards are hard " ..
@@ -4063,6 +4070,15 @@ ns.Overrides.wowhead = {
                 "when time permits, this will be a much greater challenge to all paladins who choose to " ..
                 "undertake my quest.\n\nSpeak to me again and I shall grant you a great boon.",
         },
+        [1683] = {
+            description = "Before I can teach you, you must show me your resolve.\n\nThe satyr Vorlus " ..
+                "Vilehoof has found one of our remote moonwells, southeast of the Ban'ethil Barrow Den. " ..
+                "He now splashes within it, defiling its pure waters with his filth.\n\nFind Vorlus at " ..
+                "the moonwell and destroy him. Bring me his horn as proof and I will begin your advanced " ..
+                "training as a warrior.\n\nThe path to the moonwell is hidden well, <name>, but stay " ..
+                "focused and alert and you will find it.",
+            rewardXP = 840,
+        },
         [1698] = {
             description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
                 "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
@@ -4914,6 +4930,15 @@ ns.Overrides.wowhead = {
                 "you've performed thus far.\n\nIf I were you, I'd head to Stormwind and speak to him when " ..
                 "you have time. I'm sure he's in the Cathedral of Light--that's where he spends most of " ..
                 "his time.",
+            rewardXP = 225,
+        },
+        [3000] = {
+            description = "Hello, <name>. I know you're busy helping out the people of Azeroth, but when " ..
+                "you have the time, you should return to Ironforge and speak to one of the most respected " ..
+                "paladins of your home: Tiza Battleforge. She's the one the younger dwarven paladins go " ..
+                "to when it is time they learn more about the Light and what's expected of all of " ..
+                "us.\n\nYou can find her upstairs in the Hall of Mysteries which is located in the Mystic " ..
+                "Ward.",
             rewardXP = 225,
         },
         [3022] = {
@@ -6726,6 +6751,14 @@ ns.Overrides.wowhead = {
                 "to High Priestess Laurena when you arrive.",
             rewardXP = 390,
         },
+        [5729] = {
+            description = "I think our next step should be to have you placed close to Neeru. If he is as " ..
+                "agitated as reports suggest, then we may accomplish two things. One, you may be able to " ..
+                "gain some greater knowledge about the Council or at least the Burning Blade, and two, he " ..
+                "may just begin to trust you enough that he asks you to start to aid him. He may very " ..
+                "well look at you as someone who can fill the void now that some of the leadership is in " ..
+                "turmoil.\n\nReturn to the Cleft and speak to him again, but do not be too overt.",
+        },
         [5730] = {
             description = "You are one of my lieutenants! Prepare yourself, <class>. I will call upon you " ..
                 "soon.\n\nMy time spent on the Searing Blade may be all but wasted now, but that does not " ..
@@ -7637,6 +7670,16 @@ ns.Overrides.wowhead = {
                 "and bring it to me.",
             rewardMoney = 7500,
         },
+        [8253] = {
+            description = "There is a green drake deep in the sunken temple of Atal'Hakkar by the name of " ..
+                "Morphaz.\n\nYears ago, he overwhelmed me in a bold ambush and consumed my apprentice " ..
+                "whole. While the loss of an apprentice is not unknown to me, this particular one carried " ..
+                "an arcane shard of unsurpassed size and quality.\n\nYou must gather powerful allies and " ..
+                "delve into the temple. Destroy Morphaz and recover the arcane shard from his ageless " ..
+                "stomach.",
+            rewardChoices = {{20035, 1}, {20037, 1}, {20036, 1}},
+            rewardMoney = 15500,
+        },
         [8254] = {
             description = "It is the way of the divine to help those in need. The how is insignificant -- " ..
                 "only the why matters.\n\nThe Cenarion Circle has such a need. Speak with Ogtinc to lend " ..
@@ -7702,6 +7745,14 @@ ns.Overrides.wowhead = {
                 "blocking the way into Nefarian's inner sanctum. Slay the foul aberration and return his " ..
                 "head to me. Do this and you may begin the next step of your journey.",
         },
+        [8304] = {
+            description = "My dear Natalia has gone missing.\n\nTruth be told, she had been acting " ..
+                "strangely for weeks leading up to her disappearance. I had caught her talking to herself " ..
+                "when no one was around on more than one occasion. She was adamant that everything was ok " ..
+                "and that she must be allowed to continue her research.\n\nShe was last seen heading to " ..
+                "Bronzebeard's camp to the south.\n\nMy soldiers are spread too thin, <name>. I need you " ..
+                "to go to Bronzebeard's camp and question those dwarves.",
+        },
         [8305] = {
             description = "In the southern desert of Silithus, near the sacred barrier, exists a single " ..
                 "crystalline tear. This tear serves as a symbol of the great losses beset upon us during " ..
@@ -7724,6 +7775,13 @@ ns.Overrides.wowhead = {
                 "monkey is getting adequate food, water, and hugs.\n\n-Brann Bronzebeard, Explorer " ..
                 "Extreme\n\nP.S. Watch out for crazy Old God worshipping night elf.",
             rewardItems = {{20723, 1}},
+        },
+        [8310] = {
+            description = "I think I can formulate an elixir that will allow us to more readily decipher " ..
+                "the glyphs and language of the silithid and Qiraji! What do I need? Glad you asked! I " ..
+                "need brains! More specifically, a brain from each silithid type that inhabit the hives. " ..
+                "Bring me brains and Rutgar's work might not be for naught.",
+            rewardMoney = 18000,
         },
         [8318] = {
             description = "Some of the Twilight's Hammer cultists carry around little papers with " ..
@@ -8255,6 +8313,15 @@ ns.Overrides.wowhead = {
                 "ring. Then we shall see these monsters cowed!",
             rewardChoices = {{23398, 1}, {23395, 1}, {23397, 1}, {23396, 1}},
             rewardMoney = 600,
+        },
+        [8886] = {
+            description = "Thank goodness for you, <class>! Those slimy Grimscale murlocs have pirated " ..
+                "away my cargo! It's bad enough that the Wretched have stolen what little magical goods I " ..
+                "had, but the murlocs took the rest! What has this land come to?\n\nCould you retrieve my " ..
+                "cargo? I can't expect that you'd be able to get all of it back, but I'll be grateful for " ..
+                "any of it at this point. It was the Grimscale murlocs in the huts, just to the west and " ..
+                "south of the anchorage on the Golden Strand, I'm sure of it!",
+            rewardMoney = 225,
         },
         [8894] = {
             description = "It's horrible, I tell you! Strange things happening in the spire, the magister " ..
@@ -16286,6 +16353,17 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 1497,
+        },
+        [17102] = {
+            spawns = {
+                [3524] = {
+                    {60.8, 44.4}, {60.8, 44.6}, {61, 38.4}, {61, 48.4}, {61, 48.6}, {61.2, 45.6},
+                    {61.2, 61.6}, {61.4, 47}, {61.4, 50}, {61.4, 59.6}, {61.6, 50}, {61.8, 51.4},
+                    {61.8, 51.6}, {61.8, 57.4}, {62, 41.8}, {62, 43.8}, {62, 64}, {62.2, 39.6}, {62.2, 67},
+                    {62.4, 55.6}, {62.6, 55.6}, {62.8, 68.8}, {63, 64.8}, {63.4, 68.2}, {63.6, 68.2},
+                },
+            },
+            zoneID = 3524,
         },
         [17681] = {
             spawns = {

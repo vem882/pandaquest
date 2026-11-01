@@ -1575,6 +1575,11 @@ ns.Overrides.wowhead = {
                 "his minions.",
             rewardMoney = 1800,
         },
+        [324] = {
+            description = "Having grabbed the single lightforge ingot from the waterlogged chest, it is " ..
+                "clear that murlocs have stolen the rest. Hunt the murloc raiders near the Flying Osprey " ..
+                "wreckage for the lost lightforge iron.",
+        },
         [325] = {
             description = "Here is the weapon against the fiend of which you spoke. You're all ready, " ..
                 "<name>. Best of luck to you, and I look forward to your tale of glory!",
@@ -2514,6 +2519,14 @@ ns.Overrides.wowhead = {
                 "thinning out the raptor population outside of Grom'gol. Once you have made significant " ..
                 "progress, report back to me for reassignment.",
             rewardMoney = 4000,
+        },
+        [572] = {
+            description = "The items you gathered from the feline beasts of the Vale are only the first " ..
+                "requirement for a powerful enchanted item. These jungle trinkets combined with my " ..
+                "shamanistic ritual will provide you with a very useful tool in assisting the Horde and " ..
+                "the Warchief.\n\nBut now you must gather for me some Jungle Stalker Feathers. The " ..
+                "feathers are traditionally worn by the beasts on their armbands. You will find a tribe " ..
+                "of the raptors directly south of Grom'gol, not far from the great arena.",
         },
         [573] = {
             description = "There is but one final reagent needed to complete the enchantment.\n\nIn the " ..
@@ -5803,6 +5816,14 @@ ns.Overrides.wowhead = {
                 "much.",
         },
         [1645] = {rewardItems = {{6916, 1}}},
+        [1646] = {
+            description = "In all things, a paladin must reflect the Light which supplements our " ..
+                "strength. To strive to be divine for one of our kind does not mean we strive for " ..
+                "godhood--we strive to be good in all actions.\n\nAlthough called upon to smite evil in " ..
+                "these harsh times, you must always remember that it's aiding others that will truly set " ..
+                "you apart from the citizens of Azeroth. Compassion, patience, bravery--these things mean " ..
+                "as much to a paladin as strength in battle.\n\nKnow this well, and never forget it.",
+        },
         [1649] = {
             description = "Valor, and all the virtues that go along with it, are like rare minerals: you " ..
                 "must cherish them when you find them because of their value, but you must also take time " ..
@@ -7881,6 +7902,14 @@ ns.Overrides.wowhead = {
                 "Sprocketspring in Gadgetzan. Remember - membership is permanent and prevents joining the " ..
                 "other discipline, so make sure this is what you want before finishing his task.",
         },
+        [3634] = {
+            description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
+                "While I think it is a waste, you should be aware of gnome specialization. They make " ..
+                "items and gadgets that claim to change the world, but rarely often work.\n\n<name>, read " ..
+                "this manual. If you wish to learn how to make metal paper weights, then take that manual " ..
+                "to Tinkmaster Overspark in Ironforge. Remember - membership is permanent and prevents " ..
+                "joining the other discipline, so make sure you are sure before finishing his task!",
+        },
         [3635] = {
             description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
                 "While I think it is a waste, you should be aware of gnome specialization. They make " ..
@@ -9378,6 +9407,15 @@ ns.Overrides.wowhead = {
                 "there, for it was trampled and destroyed years ago, but under the monument is his " ..
                 "wedding ring. Take that ring to Chromie... a strange gnome with very strange " ..
                 "powers.\n\nChromie is staying in the ruined inn at the northwest corner of Andorhal.",
+        },
+        [5155] = {
+            description = "If I am to trust you in this matter, you will first have to prove " ..
+                "yourself.\n\nI must know that you are an enemy of the Shadow Council--the ones " ..
+                "responsible for many evils here and abroad.\n\nTravel deeper into Felwood. To the west " ..
+                "you will see a path leading to Jaedenar. It is there that the Council plots with the " ..
+                "Burning Legion.\n\nEnter the depths of one of the corrupted Barrow Dens they inhabit and " ..
+                "slay their kind. Return to me after you've done this. Then I will know you truly seek to " ..
+                "help us.",
         },
         [5156] = {
             description = "To the north, along the east of the road in what's called Shatter Scar Vale, " ..
@@ -12915,6 +12953,14 @@ ns.Overrides.wowhead = {
                 "disguise calls for a ring of lordship, worn only by the highest members of the cult. I " ..
                 "will craft one for you if you can bring me large brilliant shards and abyssal signets.",
             rewardItems = {{20451, 1}},
+        },
+        [8348] = {
+            description = "Huum tells me you've figured out how to summon the Abyssal Dukes! That's quite " ..
+                "an accomplishment.\n\nYou know what else would be quite the accomplishment? Smashing up " ..
+                "one of those things really good. That'll cause an impression on their underlings, if you " ..
+                "know what I mean. Bring back its signet as proof of the deed.",
+            rewardItems = {{20601, 1}},
+            rewardMoney = 18000,
         },
         [8352] = {
             description = "Huum and I were just talking about you. He tells me you're just about ready to " ..

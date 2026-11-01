@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.322] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 644 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,154 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,145 quests, 41 NPCs, 1 object
+- quest 30000 - The Jade Serpent - updated
+  - description added
+  - reward choices: +9
+- npc 741 - Dreaming Whelp - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 4128 - Hecklefang Stalker - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 5502 - Shylamiir - updated
+  - coordinates: 2 spawn points added in Stormwind City
+- npc 8724 - Auctioneer Wabang - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 9856 - Auctioneer Grimful - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+
 ## [0.2.321] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -223,43 +244,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Sholazar Basin
 - npc 70430 - Rocky Horror - updated
   - NPC level added (92)
-
-## [0.2.311] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 582 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,077 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,067 quests, 38 NPCs, 1 object
-- quest 14080 - Stop The Aggressors - updated
-  - description added
-- quest 24820 - A Change of Heart - updated
-  - reward choices: +4
-- npc 2335 - Magistrate Burnside - updated
-  - coordinates: 4 spawn points added in Hillsbrad Foothills
-- npc 2692 - Highvale Scout - updated
-  - coordinates: 38 spawn points added in The Hinterlands
-- npc 3401 - Shenthul - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 4024 - Bloodfury Slayer - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4495 - Gnome Pit Boss - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 7881 - Stoley - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 16436 - Argent Dawn Priest - updated
-  - coordinates: 9 spawn points added in Undercity
-  - coordinates: 7 spawn points added in Thunder Bluff
-  - coordinates: 4 spawn points added in Orgrimmar
-- npc 23453 - Altar Defender - updated
-  - coordinates: 6 spawn points added in Shadowmoon Valley
-- npc 68043 - Silver Covenant Spellbow - updated
-  - NPC level added (90)
-- npc 69663 - Nurkala - updated
-  - NPC title added (The Hunt Master)
-- npc 246176 - Vicejaw - updated
-  - NPC level added (91)
-  - rank added (elite)
 
 ## [0.2.270] - 2026-10-26
 
