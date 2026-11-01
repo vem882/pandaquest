@@ -1908,6 +1908,14 @@ ns.Overrides.wowhead = {
                 "And it will be dangerous.\n\nSo ready yourself, <class>. You must not fail.\n\nYou may " ..
                 "find Bethor in the Magic Quarter of the Undercity.",
         },
+        [409] = {
+            description = "You say you are not bound by the will of the Lich King, and the enchantment " ..
+                "Bethor placed upon my book corroborates this. But before I believe you I must have proof " ..
+                "that you are enemy to the Scourge.\n\nThere is an old, bloody altar just off the " ..
+                "southern coast of this island. it is used by a powerful Scourge agent, Lillith " ..
+                "Nefara.\n\nTake a Candle of Beckoning from this crate here. Light it on the altar and " ..
+                "Lillith will awake. Destroy Lillith, and I will believe you are the Lich King's foe.",
+        },
         [412] = {
             description = "Upon further analysis of the Gnomeregan situation, it would appear as though " ..
                 "we not only failed to eradicate the troggs but we also happened to turn most of the " ..
@@ -4036,6 +4044,14 @@ ns.Overrides.wowhead = {
                 "the death he so deserves.\n\nTravel to Shadowfang Keep and put an end to Arugal's foul " ..
                 "spells once and for all. Bring to me the vile wizard's head!",
             rewardItems = {{6414, 1}},
+        },
+        [1015] = {
+            description = "Attention, heroes!\n\nThe Cenarion Circle seeks able bodied individuals to " ..
+                "assist them in exploring the vast new frontiers of Kalimdor! A forbidden wasteland of " ..
+                "unimaginable dangers lies far to the west of Tanaris and Gadgetzan, and the Circle needs " ..
+                "willing and honorable proxies to act in their stead.\n\nAll interested individuals " ..
+                "should seek audience with the Cenarion Circle. Speak with the Arch Druid in Darnassus, " ..
+                "Fandral Staghelm, for more information!",
         },
         [1016] = {
             description = "Take this divining scroll --it can determine the creator of these elementals. " ..
@@ -6879,6 +6895,14 @@ ns.Overrides.wowhead = {
                 "the craft should be rewarded.\n\nYou have attained expertise over blacksmithing, <name>. " ..
                 "Reap the rewards!",
             rewardItems = {{8703, 1}},
+        },
+        [2766] = {
+            description = "You have uncovered some sort of strange, egg-shaped device made from metal. " ..
+                "Fiddling with one of its knobs springs the egg to life, as it opens up into some sort of " ..
+                "gnomish robotic contraption! A voice from inside the robotic egg crackles to " ..
+                "life.\n\n\"My name's Oglethorpe Obnoticus, and my homing robot has crashed! I will " ..
+                "reward you for its recovery; please take this beacon to the robot!\"\n\n\"I now have " ..
+                "computed the coordinates of the robot for you; it is in a cave near Feral Scar Vale!\"",
         },
         [2769] = {
             description = "Have you met the Brassbolts brothers? They're over in the Shimmering Flats, in " ..
