@@ -9143,6 +9143,15 @@ ns.Overrides.wowhead = {
                 "appear that the suggestion of where to take the branch has been placed within it.",
             rewardItems = {{15804, 1}},
         },
+        [5002] = {
+            description = "I'm a goblin of my word, <race>. Now listen closely:\n\nThese orcs are used " ..
+                "primarily as beasts of burden and cannon fodder for the black dragonflight!\n\nTheir " ..
+                "true leader is none other than Nefarian, brood of Deathwing. I've also discovered the " ..
+                "location of Nefarian's subordinates in this part of the citadel.\n\nTake this map to " ..
+                "Marshal Maxwell in the Burning Steppes. It has the location of these fiends marked for " ..
+                "easy identification.",
+            rewardMoney = 18000,
+        },
         [5022] = {
             description = "You pick up the package, wiping off a small layer of dust and grime that had " ..
                 "settled on it. It is addressed in a hurried hand to an Emma Felstone of Stormwind; the " ..
@@ -12592,6 +12601,7 @@ ns.Overrides.wowhead = {
         },
         [8144] = {rewardItems = {{19617, 1}}},
         [8145] = {rewardItems = {{19618, 1}}},
+        [8147] = {rewardItems = {{19620, 1}}},
         [8151] = {
             description = "Ogtinc of Azshara has sent out a call for seasoned hunters such as yourself. " ..
                 "He is a furbolg hunter who has left his tribe to aid the Cenarion Circle. His teachings " ..
@@ -15143,6 +15153,17 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [698] = {
+            spawns = {
+                [33] = {
+                    {22.2, 8.6}, {22.4, 8.4}, {22.6, 8.4}, {22.6, 8.6}, {22.8, 10.4}, {22.8, 11.2},
+                    {23.4, 13.2}, {23.8, 12.4}, {24, 13.2}, {25, 10.6}, {25.2, 9}, {25.2, 10.4}, {25.4, 13},
+                    {25.6, 9.2}, {25.6, 9.6}, {25.6, 10.6}, {26, 8.4}, {26.2, 13.2}, {26.6, 13.4},
+                    {27.4, 11.2}, {27.6, 11.2}, {27.6, 11.6},
+                },
+            },
+            zoneID = 33,
+        },
         [1840] = {
             spawns = {[28] = {{53.4, 24.6}, {53.8, 24.4}, {54, 24.6}, {54.6, 23.8}, {55, 23.4}}},
             zoneID = 28,

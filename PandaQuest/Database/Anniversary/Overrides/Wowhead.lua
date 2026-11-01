@@ -1924,6 +1924,16 @@ ns.Overrides.wowhead = {
             description = "Now that the catapults have been burned, find and kill Chieftain Nek'rosh.",
             rewardChoices = {{3209, 1}, {6194, 1}},
         },
+        [476] = {
+            description = "The Gnarlpine tribe has been corrupted!\n\nThe once peaceful furbolgs have " ..
+                "turned against the protectors of the forest. They ambushed me as I left for the " ..
+                "Ban'ethil Barrow Den and proceeded to pillage Starbreeze Village. Ursal the Mauler, " ..
+                "their chieftain, is using the evil powers of the Fel Moss to drive them mad.\n\nI am too " ..
+                "wounded to return to Athridas to bring him this grave news. The task is left to you, " ..
+                "young <class>. We can only hope that the deranged Gnarlpines have not made it to " ..
+                "Ban'ethil yet!",
+            rewardMoney = 125,
+        },
         [482] = {
             description = "Of course! How could I have forgotten?\n\nAmbermill was one of the sites " ..
                 "earmarked by the Kirin Tor, noted because it houses a dormant ley energy node. The " ..
@@ -5311,6 +5321,15 @@ ns.Overrides.wowhead = {
                 "creature for our study?",
             rewardMoney = 400,
         },
+        [3525] = {
+            description = "Near the entrance is an idol that functions as a macabre oven for the " ..
+                "Quilboar; the beasts... they literally consume their abductees from the Barrens. I can " ..
+                "shut down the idol and bind them from using it again, but I need your aid in doing so. " ..
+                "My plan: escort me to the idol. Once we arrive, I'll commence the ritual. I'll barely be " ..
+                "able to communicate with you, let alone defend myself. Protect me while I shut down the " ..
+                "idol. If they take me down, then it's all over for us.\n\nAre you with me?!",
+            rewardItems = {{10710, 1}},
+        },
         [3528] = {
             description = "Now it is time to capture the essence of the avatar of Hakkar.\n\nTake the Egg " ..
                 "of Hakkar to the Sanctum of the Fallen God in the Sunken Temple in Azeroth. Invoke the " ..
@@ -6602,6 +6621,14 @@ ns.Overrides.wowhead = {
                 "the Haldarr clan. Return to me after you've tested yourself against their power.",
             rewardMoney = 7000,
         },
+        [5538] = {
+            description = "The goblin you will need to speak with is Krinkle Goodsteel. He peddles his " ..
+                "skills to the highest bidder in Gadgetzan, within the Tanaris desert. He'll likely be " ..
+                "the only one who can produce the mold we need, and his services won't come cheap. We now " ..
+                "ask for you to dig deep by footing whatever fee he will charge.\n\nI'm an alchemist, not " ..
+                "a banker. If I had gold lying around, I certainly wouldn't be here.\n\nI guess I said " ..
+                "the quiet part out loud again. Oops.\n\nGadgetzan awaits you! Good luck!",
+        },
         [5543] = {
             description = "Woe to those that foolishly wander into the Plaguelands. All manner of " ..
                 "foulness inhabit these woods - from the fanatical Scarlet Crusade, who will kill any " ..
@@ -7324,6 +7351,7 @@ ns.Overrides.wowhead = {
         [7163] = {rewardItems = {{17905, 1}}, rewardXP = 7070},
         [7167] = {rewardItems = {{17909, 1}}, rewardXP = 10600},
         [7170] = {rewardItems = {{17902, 1}}, rewardXP = 8800},
+        [7171] = {rewardItems = {{17903, 1}}, rewardXP = 10600},
         [7321] = {
             description = "Who says that the undead don't know anything about cooking? Take my secret " ..
                 "recipe for Turtle Bisque, for example. I've known folks that would come back from the " ..
@@ -7765,6 +7793,16 @@ ns.Overrides.wowhead = {
                 "crystalline tear. This tear serves as a symbol of the great losses beset upon us during " ..
                 "the War of the Shifting Sands. Locate this tear and gaze into its depths to gain " ..
                 "enlightenment.",
+        },
+        [8306] = {
+            description = "I need you to venture into Hive'Regal and find what became of my dearest " ..
+                "Natalia, <name>. This will be no easy task for you. Before you dive headlong into the " ..
+                "maw of madness, make sure that you go back and speak with those dwarves. They might be " ..
+                "able to give you some tips on dealing with the silithid that inhabit that hive.\n\nAnd " ..
+                "<name>, if she truly is as mad as they say... do what you must.\n\n< Commander Mar'alith " ..
+                "turns away from you.>",
+            rewardItems = {{20724, 1}},
+            rewardMoney = 18000,
         },
         [8307] = {
             description = "Adapting to life in the desert has been difficult to say the least. Not only " ..
@@ -10348,6 +10386,16 @@ ns.Overrides.wowhead = {
                 "globules of tainted debris that if left untouched will spread and further contaminate " ..
                 "the environment.\n\nDestroy these muck spawns and bring back their muck-ridden cores.",
             rewardChoices = {{25560, 1}, {25561, 1}, {25559, 1}},
+        },
+        [9816] = {
+            description = "This marsh be missin' one thing, mon! There be no murlocs here.\n\nDon't " ..
+                "worry, mon, I got a plan to fix the problem. See Gargle 'n' Gurgle over there? I plan to " ..
+                "give the gift o' murlocs to the Lost Ones!\n\nTake this cage with you to Daggerfen " ..
+                "Village an' release 'em in the northeastern cluster of huts. Now you know I can't be " ..
+                "riskin' Gargle 'n' Gurgle with you, but I'll give you a cage full o' colorful young " ..
+                "murlocs. Just set it on the flat rock you be findin' up there and open the door!",
+            rewardChoices = {{25611, 1}, {25612, 1}, {25610, 1}},
+            rewardMoney = 31000,
         },
         [9818] = {
             description = "Something rails the underneath. It beats the ground as if to " ..
