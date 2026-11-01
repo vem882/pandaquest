@@ -4,6 +4,22 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.317
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 619 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,135 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,121 quests, 38 NPCs, 1 object
+- quest 29268 - Some Good Will Come - updated
+  - description added
+  - reward items: +1
+- npc 6109 - Azuregos - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 8479 - Kalaran Windblade - updated
+  - coordinates: 2 spawn points added in Searing Gorge
+- npc 8673 - Auctioneer Thathung - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 45609 - Agatha - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+
 0.2.316
 - database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 615 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,132 quests, 23 NPCs, 5 objects
@@ -247,50 +263,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 2 spawn points added in Badlands
 - npc 71696 - Activated Electromagnet - updated
   - NPC level added (91)
-
-0.2.306
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 540 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,027 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,022 quests, 37 NPCs, 1 object
-- quest 11074 - Tokens of the Descendants - updated
-  - description added
-  - reward items: +1
-- quest 31845 - Practice Makes Perfect: Master Tsang - updated
-  - description added
-- npc 1127 - Elder Crag Boar - updated
-  - coordinates: 40 spawn points added in Dun Morogh
-- npc 2305 - Foreman Bonds - updated
-  - coordinates: 6 spawn points added in Hillsbrad Foothills
-- npc 2711 - Phin Odelic - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
-- npc 4100 - Screeching Harpy - updated
-  - coordinates: 23 spawn points added in Thousand Needles
-- npc 6138 - Arkkoran Oracle - updated
-  - coordinates: 39 spawn points added in Azshara
-- npc 9528 - Arathandris Silversky - updated
-  - coordinates: 1 spawn point added in Felwood
-- npc 10431 - Gregor Greystone - updated
-  - coordinates: 1 spawn point added in Winterspring
-- npc 16458 - Innkeeper Faralia - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 51236 - Aeonaxx - updated
-  - coordinates: 40 spawn points added in Deepholm
-- npc 67999 - Miura Brightweaver - updated
-  - NPC level added (90)
-- npc 68049 - Arcanist Rathaella - updated
-  - NPC level added (90)
-- npc 68050 - Sunreaver Mage - updated
-  - NPC level added (90)
-- npc 70677 - Master Boom Boom - updated
-  - NPC title added (The Dynamite Monkey Monk)
-  - NPC level added (92)
-- npc 70748 - Argh - updated
-  - NPC title added ("The Lady")
-  - NPC level added (92)
-- npc 72758 - 5.4 Tradeskills - Cooking Noodle Cart - Tier 1 - 10p - Vendor - updated
-  - coordinates: 4 spawn points added in Timeless Isle
-  - coordinates: 2 spawn points added in Valley of the Four Winds
-  - coordinates: 1 spawn point added in Dragonblight
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

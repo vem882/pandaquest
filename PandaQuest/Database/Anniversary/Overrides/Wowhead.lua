@@ -2128,6 +2128,14 @@ ns.Overrides.wowhead = {
                 "feathers are traditionally worn by the beasts on their armbands. You will find a tribe " ..
                 "of the raptors directly south of Grom'gol, not far from the great arena.",
         },
+        [585] = {
+            description = "<The head of Nezzliok speaks.>\n\nIt is true. I know where the child of the " ..
+                "Darkspears was taken. You have bested me and bound my spirit, but I will say nothing " ..
+                "without appeasement!\n\nThe Bloodscalps war with the Skullsplitters. To gain my favor, " ..
+                "steal from the Skullsplitters 3 of their trophy skulls and place them here with us, so " ..
+                "that my spirit will have slaves in the Nether. One skull must be from their trophy pile " ..
+                "in Balia'mah, another from Ziata'jai, and the last from Zul'Mamwe.",
+        },
         [586] = {
             description = "<The head of Gan'zulah speaks.>\n\nCurse you! And curse your " ..
                 "ancestors!!\n\nOnly blood and revenge can cool my rage, so if that is your wish, then... " ..
@@ -4372,6 +4380,14 @@ ns.Overrides.wowhead = {
                 "Gregorian at the Magic Quarter's tailor shop.",
         },
         [1962] = {rewardItems = {{7510, 1}}},
+        [1963] = {
+            description = "The Warchief is too subtle in his methods. He is cautious to unleash the might " ..
+                "of the Horde. Once we were stronger, mighty conquerors all. That pride we must regain, " ..
+                "and the Shattered Hand will do so.\n\nWe build strength from the shadows and strike at " ..
+                "the exposed, secretly laying our enemies low. A task you must complete for me, to prove " ..
+                "your worth.\n\nThe troll Tazan trades with the pirates near Ratchet. He has information " ..
+                "I must have. Kill him and bring me his satchel.",
+        },
         [2098] = {
             description = "A pirate's life ain't an easy one, landlubber. It ain't all about plunderin' " ..
                 "and booze! Alas, me ship be sunk just off shore thanks to them pesky " ..
@@ -4390,6 +4406,13 @@ ns.Overrides.wowhead = {
                 "<name>.\n\nIn a cave to the northeast, near Bashal'Aran, resides the Den Mother. Slay " ..
                 "her.",
             rewardChoices = {{7738, 1}, {7739, 1}},
+        },
+        [2159] = {
+            description = "Greetings, young <class>. Can you offer me aid? I have a package of herbs that " ..
+                "I must deliver to the town of Dolanaar. But I still have business with the druids of " ..
+                "Shadowglen and cannot yet leave.\n\nCan you deliver this package for me? It must be sent " ..
+                "to Innkeeper Keldamyr, at the Dolanaar inn. It lies along the road, to the south.",
+            rewardChoices = {{2070, 5}, {159, 5}},
         },
         [2199] = {
             description = "I am a jeweler of great renown here in Ironforge! Well, former renown " ..
@@ -7858,6 +7881,10 @@ ns.Overrides.wowhead = {
                 "some of the gear we reserve for our closest allies in exchange for those badges.",
             rewardChoices = {{21184, 1}, {21185, 1}, {21186, 1}, {21189, 1}},
         },
+        [8575] = {
+            description = "You cannot understand a single word on this ledger. You don't even know what " ..
+                "language it is written in!",
+        },
         [8584] = {
             description = "If there is one thing that you should know about me, it is this: NEVER ask me " ..
                 "about my business! I work with things you simply cannot understand. Like for example: Do " ..
@@ -8384,6 +8411,14 @@ ns.Overrides.wowhead = {
                 "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
                 "piece of armor for you.",
             rewardItems = {{22426, 1}},
+        },
+        [9052] = {
+            description = "I would ask you to help me create a toxin of sorts, to pacify a great creature " ..
+                "living here in the crater. It is not deadly, and only the keen eyes of a <class> can " ..
+                "hope to collect the ingredients.\n\nYou can find the bloodcap mushrooms growing within " ..
+                "the bloodpetal sprouts all across the crater. Gorishi stings are from the insects inside " ..
+                "and around the Slithering Scar, located in the southern part of the crater.",
+            rewardItems = {{13446, 2}},
         },
         [9053] = {
             description = "It is as I feared -- the toxin is simply too weak for such a powerful " ..
@@ -10052,6 +10087,15 @@ ns.Overrides.wowhead = {
                 "bring me unidentified plant parts. They can be picked right from the ground if you're an " ..
                 "herbalist, and the indigenous creatures of the swamp may also carry plant parts on them.",
             rewardItems = {{24402, 1}},
+        },
+        [9803] = {
+            description = "The time has come for us to embrace the Feralfen and teach them that the Light " ..
+                "has not forsaken them. Take the potion I've prepared and carry it with you to the " ..
+                "Boha'mu Ruins.\n\nOnce you arrive at the ruins, drink the potion to assume the form of " ..
+                "one of their bird spirits. Speak with Elder Kuruti and let him know the draenei are " ..
+                "ready to welcome his people as our long lost brothers.",
+            rewardChoices = {{25613, 1}, {25614, 1}, {25615, 1}, {31660, 1}},
+            rewardMoney = 27000,
         },
         [9805] = {
             description = "The wretched Lost Ones, heretofore banished to the swamps of Zangarmarsh, are " ..

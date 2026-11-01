@@ -2606,6 +2606,15 @@ ns.Overrides.wowhead = {
                 "are. He'll understand - you don't have to get rough!",
             rewardMoney = 4000,
         },
+        [608] = {
+            description = "Blast the nerve of Firallon! He couldn't sail a skiff through Crystal Lake let " ..
+                "alone lead an entire fleet against us.\n\nThe Bloodsail Buccaneers will pay for their " ..
+                "carelessness. Now that we know their plan of attack, we can counter before they know " ..
+                "what hit them.\n\nBut why send the entire fleet to do the work of one brave adventuring " ..
+                "party? <name>, take some of your most skilled comrades out to Firallon's landing spot " ..
+                "and assassinate the Bloodsail leadership. Their fleet will sink soon after....",
+            rewardItems = {{4138, 1}},
+        },
         [609] = {
             description = "My list is shortening, but there are still people who owe me.\n\nNext, we have " ..
                 "Maury \"Club Foot\" Wilkins, Jon-Jon the Crow, and Chucky \"Ten Thumbs.\"\n\nThese " ..
@@ -4259,6 +4268,15 @@ ns.Overrides.wowhead = {
                 "Mountains. Once there, journey to the southwest past Cragpool Lake and then north, up " ..
                 "the steep slope until you reach Stonetalon Peak.\n\nThere awaits Keeper Albagorm. Heed " ..
                 "his bidding, <race>.\n\nThe journey will be perilous.",
+        },
+        [1060] = {
+            description = "You've done so well for me, <name>. You're a regular lucky rabbit's foot and " ..
+                "there's something I want you to see.\n\nThe harpies are not from around the Barrens. " ..
+                "They come from a place called Stonetalon, far to the northwest of here. Though it is " ..
+                "probably a dangerous place for you, I need this letter delivered to an old friend of " ..
+                "mine who lives there, a witch doctor by the name of Jin'Zil.\n\nHe'll be happy to know " ..
+                "that Serena Bloodfeather is dead, and I think you'll find Stonetalon an interesting " ..
+                "place.",
         },
         [1063] = {
             description = "To truly tend the spirits of Stonetalon we must consult the tauren " ..
@@ -10823,6 +10841,13 @@ ns.Overrides.wowhead = {
                 "Village. She needs a parcel taken to Darkshore, and is looking for someone to help " ..
                 "her.\n\nIf you're interested, then to reach Nessa you must take the portal in Darnassus " ..
                 "to Rut'theran Village. You will find the portal west of the Temple Gardens.",
+        },
+        [6361] = {
+            description = "I have a bundle of hides from the animals of the Barrens, and must get them to " ..
+                "Thunder Bluff. A colleague there, Ahanu, will use the hides to create leather " ..
+                "goods.\n\nWill you take the hides to him for me?\n\nThe quickest way to Thunder Bluff is " ..
+                "on the back of a wind rider. Bring the bundle of hides to Devrak, our wind rider master " ..
+                "in the Crossroads, and speak to him about transport to Thunder Bluff.",
         },
         [6362] = {
             description = "For a small fee, I will give you a wind rider to Thunder Bluff. There's no " ..
