@@ -2293,6 +2293,13 @@ ns.Overrides.wowhead = {
                 "and got dad's two bottles, come back here!\n\nGilveradin's camp is near some high elf " ..
                 "lodge in the Hinterlands, and those high elves are not good. Trust me.",
         },
+        [651] = {
+            description = "Four Stones of Binding are scattered throughout Arathi. These stones keep me " ..
+                "pinned beneath the earth.\n\nTo unlock them you must unlock the strongest: the Stone of " ..
+                "Inner Binding. And to do that, you must gather keys from the other three.\n\nThese " ..
+                "stones are watched by guardians, but if you are clever, or lucky, you may find ways to " ..
+                "banish them.",
+        },
         [652] = {
             description = "Opening the Stones of Binding loosened much of my confinement, but a lock " ..
                 "still holds me chained. It is the Keystone you see among this circle of stones. And the " ..
@@ -9172,6 +9179,18 @@ ns.Overrides.wowhead = {
             description = "Now that you've gathered all that we need to replenish our healing crystals, I " ..
                 "need you to deliver the vials to Zalduun, our priest. You'll find him tending to our " ..
                 "wounded inside the central chamber of the ship.",
+        },
+        [9415] = {
+            description = "Are you Marshal Bluewall 's new recruits? Of course you are.\n\nWhat are you " ..
+                "waiting for? Good soldiers are dying in the desert. Aren't you excited to join " ..
+                "them?\n\nNow, get going and don't dry out on the way.",
+        },
+        [9416] = {
+            description = "You must be one of General Kirika 's new recruits. It's about time you showed " ..
+                "up. Bodies wear down quick in the desert.\n\nThe dwarves have been getting " ..
+                "reinforcements daily, and we can't afford to lose ground in our struggle for resources " ..
+                "in Silithus.\n\nGet your instructions from the General. It's not my job to train you, " ..
+                "just find you.",
         },
         [9426] = {
             description = "Much has changed since the days when we called this land Draenor. Parts of the " ..

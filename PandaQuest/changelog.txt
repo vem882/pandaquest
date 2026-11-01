@@ -4,6 +4,22 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.323
+- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 649 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,157 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,148 quests, 41 NPCs, 1 object
+- npc 743 - Wyrmkin Dreamwalker - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 4104 - Screeching Windcaller - updated
+  - coordinates: 13 spawn points added in Thousand Needles
+- npc 6669 - The Threshwackonator 4100 - updated
+  - coordinates: 7 spawn points added in Darkshore
+- npc 16531 - Faint Necrotic Crystal - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 35 spawn points added in Stormwind City
+- npc 23206 - Akkarai Hatchling - updated
+  - coordinates: 31 spawn points added in Terokkar Forest
+
 0.2.322
 - database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 644 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,154 quests, 23 NPCs, 5 objects
@@ -177,40 +193,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 70616 - Mingus Diggs - updated
   - NPC level added (93)
-
-0.2.312
-- database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 592 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,090 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,078 quests, 38 NPCs, 1 object
-- quest 25246 - A Change of Heart - updated
-  - reward choices: +4
-- quest 30918 - Hui's Vengeance - updated
-  - description removed
-- npc 755 - Lost One Mudlurker - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 2181 - Stormscale Myrmidon - updated
-  - coordinates: 40 spawn points added in Darkshore
-- npc 2276 - Magistrate Henry Maleb - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
-- npc 4074 - XT:9 - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 5414 - Apothecary Faustin - updated
-  - coordinates: 4 spawn points added in Duskwood
-- npc 11864 - Tammra Windfield - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 16395 - Argent Dawn Paladin - updated
-  - coordinates: 9 spawn points added in Ironforge
-  - coordinates: 4 spawn points added in Darnassus
-  - coordinates: 2 spawn points added in Stormwind City
-  - coordinates: 1 spawn point added in Eastern Plaguelands
-- npc 16434 - Argent Dawn Champion - updated
-  - coordinates: 6 spawn points added in Ironforge
-  - coordinates: 5 spawn points added in Darnassus
-  - coordinates: 3 spawn points added in Stormwind City
-- npc 28604 - Adventurous Dwarf - updated
-  - coordinates: 40 spawn points added in Sholazar Basin
-- npc 70430 - Rocky Horror - updated
-  - NPC level added (92)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
