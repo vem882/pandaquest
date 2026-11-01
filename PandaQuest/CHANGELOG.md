@@ -4,6 +4,28 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.314] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 609 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,122 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,102 quests, 38 NPCs, 1 object
+- npc 765 - Swampwalker Elder - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 10304 - Aurora Skycaller - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 14382 - Lorekeeper Mykos - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14902 - Jin'rokh the Breaker - updated
+  - coordinates: 2 spawn points added in Northern Stranglethorn
+- npc 68009 - Shadowmancer Selenora - updated
+  - NPC title added (The Miserable)
+- npc 68651 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+- npc 70736 - Splat - updated
+  - NPC level added (93)
+
 ## [0.2.313] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -352,35 +374,6 @@ Data from the PandaQuest portal.
 - npc 70429 - Flesh'rok the Diseased - updated
   - NPC title added (Primordial Saurok Horror)
   - NPC level added (92)
-
-## [0.2.303] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,885 quests, 498 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,003 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,999 quests, 35 NPCs, 1 object
-- quest 14107 - The Fate Of The Fallen - updated
-  - description added
-- quest 27223 - Retribution - updated
-  - description removed
-  - reward money removed (2g 73s)
-- npc 213 - Starving Dire Wolf - updated
-  - coordinates: 40 spawn points added in Duskwood
-- npc 769 - Deathstrike Tarantula - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 1950 - Rane Yorick - updated
-  - coordinates: 3 spawn points added in Silverpine Forest
-- npc 2183 - Stormscale Warrior - updated
-  - coordinates: 22 spawn points added in Darkshore
-- npc 6137 - Arkkoran Pincer - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 68259 - Concentrated Sha - updated
-  - NPC level added (90)
-- npc 69334 - Adherent Hanjun - updated
-  - NPC title added (Tushui Quartermaster)
-- npc 73691 - Chromie - updated
-  - NPC title added (The Timewalkers)
 
 ## [0.2.270] - 2026-10-26
 

@@ -2312,6 +2312,15 @@ ns.Overrides.wowhead = {
             description = "Here, take this amulet to Gor'mul, and see if the raptors' strength can awaken " ..
                 "the flame of the warrior that once burned through his veins.",
         },
+        [676] = {
+            description = "Weaklings... all of them. You, <class>, what are you looking at? Think you're " ..
+                "something special, huh? Why not prove it?\n\nThe Hammerfall outpost in Arathi's under " ..
+                "attack. Unless we send them help soon, their demise is imminent.\n\nBut before you go " ..
+                "rushing off, you may want to test your skills first. Northeast of Stromgarde in Arathi " ..
+                "is an ogre mound inhabited by the Boulderfist tribe. When you can handle the ogres and " ..
+                "enforcers there, then report to Drum Fel in Hammerfall.",
+            rewardMoney = 3000,
+        },
         [677] = {
             description = "The Witherbark trolls and Boulderfist ogres of Arathi are working together to " ..
                 "rid us from this land, but we shall not meet our fates at their, or anyone else's, hand. " ..
@@ -7422,6 +7431,7 @@ ns.Overrides.wowhead = {
         },
         [8188] = {rewardItems = {{19786, 1}}},
         [8190] = {rewardItems = {{19788, 1}}},
+        [8221] = {rewardItems = {{19972, 1}}, rewardMoney = 250},
         [8229] = {rewardItems = {{19978, 1}}},
         [8231] = {
             description = "The wavethrasher is an amphibious beast living only here in Azshara. They are " ..
@@ -8290,6 +8300,13 @@ ns.Overrides.wowhead = {
                 "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
                 "piece of armor for you.",
             rewardItems = {{22428, 1}},
+        },
+        [9048] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22426, 1}},
         },
         [9053] = {
             description = "It is as I feared -- the toxin is simply too weak for such a powerful " ..
@@ -10319,6 +10336,14 @@ ns.Overrides.wowhead = {
                 "Sunspring Post, northwest of here, and resolve the Murkblood problem.",
             rewardChoices = {{25577, 1}, {25578, 1}, {25579, 1}},
         },
+        [9879] = {
+            description = "I would have been killed had you not come along, stranger. They have already " ..
+                "murdered so many Kurenai in their search for a lost relic.\n\nWhat they seek is the " ..
+                "totem of Kar'dash. Why they think that we would know anything about this totem, I cannot " ..
+                "understand. Is a totem not an orcish implement by nature?\n\nThis information must be " ..
+                "taken back to Arechron. Perhaps he knows why Murkblood are kidnapping Kurenai and " ..
+                "torturing them for information regarding an orcish device.\n\nLet's go before more come.",
+        },
         [9882] = {
             description = "Nexus Prince Haramad has ordered us to not begin work inside of Oshu'gun as it " ..
                 "might anger a certain powerful naaru. Sort of puts a damper on our operation.\n\nI think " ..
@@ -11895,6 +11920,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{24104, 1}, {24103, 1}},
             rewardMoney = 175,
         },
+        [10325] = {
+            description = "As you probably know, <name>, the Aldor are keepers of the Light and servants " ..
+                "of the naaru.\n\nDiametrically opposed to us are the agents of the Burning Legion - " ..
+                "demons bent on the destruction of worlds and the corruption of the innocent.\n\nIf you " ..
+                "wish to prove yourself to the Aldor, bring me the insignias of low-ranking Legion and " ..
+                "their Shadow Council followers. We know of a Shadow Council hideout in the Bone Wastes " ..
+                "and there are many Legion outposts in Nagrand and the Blade's Edge Mountains.",
+        },
         [10328] = {
             description = "Something about these manaforges has been bothering me, <name>. Naaru " ..
                 "technology is incredibly advanced; it should've taken Kael'thas years to even begin to " ..
@@ -12290,6 +12323,14 @@ ns.Overrides.wowhead = {
                 "hunted Dimensius for a thousand years!",
             rewardChoices = {{30297, 1}, {30300, 1}, {30299, 1}, {30298, 1}},
             rewardMoney = 132000,
+        },
+        [10440] = {
+            description = "The test was a resounding success! We can certainly use this device to start " ..
+                "repairing the domes.\n\nCarry word of the test results to the Stormspire and let Ghabar " ..
+                "know that I've also found a pattern in the damage to the shield generators. Key pieces " ..
+                "of generator units have gone missing from a number of sites. This is no accident, " ..
+                "<name>, no technological failure. We're being stolen from.",
+            rewardChoices = {{30293, 1}, {30290, 1}, {30291, 1}, {30520, 1}},
         },
         [10443] = {
             description = "The Cenarion Circle has sent an expedition to Outland and, as I understand it, " ..
@@ -12985,6 +13026,15 @@ ns.Overrides.wowhead = {
                 "yet. For that, I'll need the manual that Doctor Maleficus keeps locked in a chest near " ..
                 "the bottom of the ramp. He probably won't give up the key without a fight, so you'll " ..
                 "need to capture it. Bring the fel reaver manual back to me and I'll do the rest.",
+            rewardMoney = 41000,
+        },
+        [10613] = {
+            description = "< Nakansi leafs through the manual.>\n\nAll the information is here, but be " ..
+                "warned. These things weren't built to be controlled remotely.\n\nWe can modify one for " ..
+                "you to use for a short time, but you'll have to work fast, or there's no telling what " ..
+                "might happen! I wouldn't be surprised if your little stunt with the fel reaver catches " ..
+                "the attention of the Legion scum, either. Try to keep yourself safe, but remember, the " ..
+                "mission and the safety of Shadowmoon Village come first!",
             rewardMoney = 41000,
         },
         [10618] = {
@@ -14586,6 +14636,12 @@ ns.Overrides.wowhead = {
                 "must return to Sha'tari Base Camp for us. Scout Navrin will send a rescue party out to " ..
                 "find us.",
         },
+        [10927] = {
+            description = "Commander Skyshadow wants this tunnel cleared out so we can expedite trade " ..
+                "with the Harborage. I must not leave my post here so I am leaving the task in your " ..
+                "hands. Clear the tunnel and report to Commander Skyshadow at once!",
+            rewardMoney = 33000,
+        },
         [10928] = {
             description = "Tor'chunk Twoclaws wants this tunnel cleared out so we can expedite trade with " ..
                 "Swamp Rat. I must not leave my post here so I am leaving the task in your hands. Clear " ..
@@ -15347,6 +15403,14 @@ ns.Overrides.wowhead = {
                 "knows, we'd all like to be out there helping.\n\nThe main road will lead you to the inn, " ..
                 "but take care. Your journey will take you beyond the protection of my soldiers.",
         },
+        [11124] = {
+            description = "If you follow the road south from the village, and then west toward the " ..
+                "Barrens, you'll come across the ruins of the Shady Rest Inn.\n\nTheramore has sent an " ..
+                "investigator to discover how the inn met its fate. Normally, I'd advise you to steer " ..
+                "clear, but we have orders from Orgrimmar to 'assist' in the investigation.\n\nAccept any " ..
+                "help the Theramore investigator offers, even feed him a tidbit or two of information if " ..
+                "you'd like, but save your real findings for me.",
+        },
         [11129] = {
             description = "Help, <name>! My prized puppy, Kyle, has run away! I just know he's running " ..
                 "around Bloodhoof Village, lost and hungry.\n\nWill you find him and feed him? Once he " ..
@@ -15472,6 +15536,16 @@ ns.Overrides.wowhead = {
                 "to Onyxia.\n\nBrogg and the Stonemaul will have their lands back!",
             rewardChoices = {{33231, 1}, {33237, 1}, {33256, 1}},
             rewardMoney = 11000,
+        },
+        [11163] = {
+            description = "<Donna looks around and then whispers to you.>\n\n<name>, what I'm about to " ..
+                "tell you must remain confidential, understood?\n\nI've been sent by the Shattrath " ..
+                "Peacekeepers to infiltrate Budd's gang here. Truth be told, since you first arrived " ..
+                "you've been a key person of interest in my investigation.\n\nBut your deeds have since " ..
+                "cleared you of any suspicion. In fact, for your slaying of the crazed warlord, Zul'Jin, " ..
+                "I'm compelled to reward you for your efforts.",
+            rewardItems = {{29434, 10}},
+            rewardMoney = 132000,
         },
         [11165] = {
             description = "Lissen mon, there be sumthin' else needs doin fer ol' Prigmon.\n\nZungam, my " ..
