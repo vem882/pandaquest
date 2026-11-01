@@ -2109,6 +2109,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{5398, 1}, {5399, 1}, {11190, 1}},
             rewardItems = {{961, 3}},
         },
+        [461] = {
+            description = "I know of a hidden niche within the keep that holds an item dear to Thule, and " ..
+                "his old colleagues. It also holds something you might find useful. Take me there!\n\nThe " ..
+                "alcove is in the southwestern tower of the keep, behind a dusty shelf.\n\nTake my body, " ..
+                "but leave my boots. They never fit me anyway...",
+            rewardMoney = 500,
+        },
         [463] = {
             description = "You've heard of the Greenwarden? You're not looking for him, are you? Well I " ..
                 "say you're crazy if you are, but who am I to keep a fool from <his/her> death?\n\nIf you " ..

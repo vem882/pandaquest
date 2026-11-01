@@ -4,6 +4,22 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.318] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 623 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,136 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,124 quests, 38 NPCs, 1 object
+- npc 745 - Scalebane Captain - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 2054 - Sickly Refugee - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 68463 - Burning Pandaren Spirit - updated
+  - NPC title added (Grand Master Pet Tamer)
+- npc 185333 - Avelina Lilly - updated
+  - data rewritten, nothing a player sees changed
+
 ## [0.2.317] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -262,40 +278,6 @@ Data from the PandaQuest portal.
 - npc 72723 - Wrathion - updated
   - NPC title added (The Black Prince)
   - NPC level added (90)
-
-## [0.2.307] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 549 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,035 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,028 quests, 37 NPCs, 1 object
-- quest 12687 - Into the Realm of Shadows - updated
-  - description added
-  - reward items: +1
-- quest 13364 - Tirion's Gambit - updated
-  - description added
-  - reward choices: +4
-- npc 565 - Rabid Dire Wolf - updated
-  - coordinates in Duskwood: 13 spawn points added, 7 refined, 13 removed
-- npc 766 - Tangled Horror - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 2986 - [Deprecated for 4.x]Dorn Plainstalker - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 3229 - "Squealer" Thornmantle - updated
-  - coordinates: 3 spawn points added in Mulgore
-- npc 3693 - Terenthis - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 3989 - Venture Co. Logger - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 11870 - Archibald - updated
-  - coordinates: 7 spawn points added in Undercity
-- npc 14467 - Kroshius - updated
-  - coordinates: 7 spawn points added in Felwood
-- npc 17097 - Advisor Sarophas - updated
-  - coordinates: 2 spawn points added in Badlands
-- npc 71696 - Activated Electromagnet - updated
-  - NPC level added (91)
 
 ## [0.2.270] - 2026-10-26
 
