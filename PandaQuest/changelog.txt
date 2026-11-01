@@ -4,6 +4,15 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.315
+- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 610 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,128 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,109 quests, 38 NPCs, 1 object
+- quest 13810 - Taking Battle To The Enemy - updated
+  - description added
+- npc 7669 - Servant of Grol - updated
+  - coordinates: 15 spawn points added in Blasted Lands
+
 0.2.314
 - database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 609 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,122 quests, 23 NPCs, 5 objects
@@ -295,52 +304,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 198875 - Thassarian - updated
   - rank added (elite)
-
-0.2.304
-- database - Wowhead data as the PandaQuest portal read it: 7,885 quests, 514 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,013 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,006 quests, 36 NPCs, 1 object
-- quest 14136 - Rescue at Sea - updated
-  - reward money removed (5g 80s)
-- quest 27667 - Darkmoon Earthquake Deck - updated
-  - description added
-  - reward items: +1
-- npc 122 - Defias Highwayman - updated
-  - coordinates: 40 spawn points added in Westfall
-- npc 762 - Lost One Riftseeker - updated
-  - coordinates: 13 spawn points added in Swamp of Sorrows
-- npc 1951 - Quinn Yorick - updated
-  - coordinates: 1 spawn point added in Silverpine Forest
-- npc 1973 - Ravenclaw Guardian - updated
-  - coordinates: 12 spawn points added in Silverpine Forest
-- npc 2448 - Clerk Horrace Whitesteed - updated
-  - coordinates: 5 spawn points added in Hillsbrad Foothills
-- npc 2449 - Citizen Wilkes - updated
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 2691 - Highvale Outrunner - updated
-  - coordinates: 24 spawn points added in The Hinterlands
-- npc 2693 - Highvale Marksman - updated
-  - coordinates: 23 spawn points added in The Hinterlands
-- npc 2696 - Foggy MacKreel - updated
-  - coordinates: 2 spawn points added in Arathi Highlands
-- npc 6015 - Torta - updated
-  - coordinates: 4 spawn points added in Tanaris
-- npc 6300 - Elisa Steelhand - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 7671 - Servant of Sevine - updated
-  - coordinates: 12 spawn points added in Blasted Lands
-- npc 16359 - Argent Messenger - updated
-  - coordinates: 8 spawn points added in Undercity
-  - coordinates: 6 spawn points added in Thunder Bluff
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 68275 - Hilda Hornswaggle - updated
-  - NPC title added (Explorer's League)
-  - NPC level added (90)
-- npc 68384 - Aenea - updated
-  - NPC title added (Blood Knight)
-- npc 70429 - Flesh'rok the Diseased - updated
-  - NPC title added (Primordial Saurok Horror)
-  - NPC level added (92)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

@@ -27109,7 +27109,14 @@ ns.Overrides.wowhead = {
                 "to summon our operative there. Do whatever he might require of you.\n\nDismissed!",
             rewardMoney = 700,
         },
-        [13810] = {rewardChoices = {{46114, 1}, {45724, 1}}},
+        [13810] = {
+            description = "The coliseum is perched in the most dangerous part of the world, <name>. The " ..
+                "territory we've taken from the Scourge has been paid for in blood and misery, yet the " ..
+                "enemy continues to strike back with a seemingly limitless army. To make matters worse, " ..
+                "this undead army is supported and assisted by mortal sympathizers, the Cult of the " ..
+                "Damned.\n\nGo forth into Icecrown and slay any cultists you encounter.",
+            rewardChoices = {{46114, 1}, {45724, 1}},
+        },
         [13815] = {
             description = "As you've been told by now, we are to escort a diplomat from within the " ..
                 "besieged lumber camp to safety.\n\nAs it stands, that's simply impossible. The elves " ..
@@ -63515,6 +63522,16 @@ ns.Overrides.wowhead = {
                     {58, 48.4}, {58, 49.2}, {58, 49.8}, {60, 49.8}, {60, 50.6}, {60.2, 49.4}, {61.2, 52.2},
                     {62.2, 51.4}, {62.2, 51.6}, {62.6, 51.4}, {63, 55.4}, {63, 55.6}, {63.2, 57.2},
                     {63.4, 57.6}, {63.6, 55.4}, {63.8, 55.8},
+                },
+            },
+            zoneID = 4,
+        },
+        [7669] = {
+            spawns = {
+                [4] = {
+                    {41.2, 14}, {41.2, 14.6}, {41.4, 13}, {41.6, 13}, {41.6, 14.2}, {41.8, 14.6}, {43.2, 11},
+                    {43.4, 11.8}, {43.6, 10}, {43.6, 11}, {43.6, 11.8}, {48.4, 43}, {49, 43.4}, {49.4, 43.6},
+                    {49.8, 43.8},
                 },
             },
             zoneID = 4,

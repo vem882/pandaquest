@@ -3144,6 +3144,13 @@ ns.Overrides.wowhead = {
                 "prairie wolf alpha. Find the alphas to the north, then return to me when your hunt is " ..
                 "finished.\n\nAlphas often wander around the base of our mighty city, Thunder Bluff.",
         },
+        [760] = {
+            description = "Your cleansing of the Winterhoof and Thunderhorn wells is spoken among the " ..
+                "spirits, young <name>. The Wildmane Totem is made, and your last task lies ahead.\n\nThe " ..
+                "Wildmane Water Well lies north of Thunder Bluff. Perform the ritual! Heal the land of " ..
+                "the goblins' poisons! Let clean water flow once again!",
+            rewardChoices = {{3443, 1}, {4961, 1}},
+        },
         [762] = {
             description = "Ambassador Infernus was sent to Angor Fortress by Ragnaros himself to mind the " ..
                 "Shadowforge seeking lost artifacts in Uldaman.\n\nIt has already meant tremendous " ..
@@ -3520,6 +3527,16 @@ ns.Overrides.wowhead = {
                 "from other regions.",
             rewardItems = {{5341, 1}},
             rewardMoney = 800,
+        },
+        [867] = {
+            description = "The blasted harpies have been ravaging our caravan supplies for too long. It's " ..
+                "time we slit a few of their throats and diminished their numbers.\n\nI've been snooping " ..
+                "around their nests and figured out who leads who. The most devastating attack will " ..
+                "destroy a good section of their lower chain of command and then we can work our way to " ..
+                "the top.\n\nI'll start you off slow, take out Witchwing Harpies and Witchwing " ..
+                "Roguefeathers in the Northwest and bring me 8 Witchwing talons. That should be a good " ..
+                "start...",
+            rewardMoney = 700,
         },
         [868] = {
             description = "Hey, <name>. I been sent to the Crossroads to watch over the land and take " ..
@@ -5979,6 +5996,7 @@ ns.Overrides.wowhead = {
                 "you on the back for sure!\n\nThank you again, <name>. I hope we meet again. You're " ..
                 "surely an ally I'm proud to call friend.",
         },
+        [1789] = {rewardItems = {{6866, 1}}},
         [1790] = {rewardItems = {{6866, 1}}},
         [1792] = {rewardChoices = {{6975, 1}, {6977, 1}, {6976, 1}}},
         [1793] = {rewardItems = {{6776, 1}}},
@@ -6717,6 +6735,12 @@ ns.Overrides.wowhead = {
                 "continue on for the Omosh!\n\nBring to Orokk four green iron helms, four green iron " ..
                 "bracers, and two green iron leggings - for this you learn and your enemies suffer!",
             rewardItems = {{7981, 1}},
+        },
+        [2755] = {
+            description = "Orokk is not crying, <name>. Soot is in eye.\n\n<Orokk wipes a tear " ..
+                "away.>\n\nThere is one last Omosh family secret Orokk will teach you. Orokk will die " ..
+                "happy, thanks to <name>.\n\nLearn Omosh dance of joy and then you learn fist of iron!",
+            rewardItems = {{7982, 1}},
         },
         [2756] = {
             description = "In the time of legends, Aturk would crush the skulls of his enemies and grind " ..
@@ -10776,6 +10800,13 @@ ns.Overrides.wowhead = {
                 "her.\n\nIf you're interested, then to reach Nessa you must take the portal in Darnassus " ..
                 "to Rut'theran Village. You will find the portal west of the Temple Gardens.",
         },
+        [6362] = {
+            description = "For a small fee, I will give you a wind rider to Thunder Bluff. There's no " ..
+                "faster way to the city!\n\nIf that is acceptable, speak to me again when you are ready " ..
+                "to go.\n\nIf you're taking those hides to Ahanu, then I think he's at Hewa's Armory, at " ..
+                "the base of the wind rider tower in Thunder Bluff. And that's right where you'll land!",
+            rewardMoney = 175,
+        },
         [6364] = {
             description = "In order to fly to a town, you must have already been there and spoken with " ..
                 "the wind rider master of that town. You have been to the Crossroads and spoken to their " ..
@@ -12198,6 +12229,7 @@ ns.Overrides.wowhead = {
         },
         [8041] = {rewardItems = {{19574, 1}}},
         [8046] = {rewardItems = {{19585, 1}}},
+        [8047] = {rewardItems = {{19586, 1}}},
         [8051] = {rewardItems = {{19593, 1}}},
         [8052] = {rewardItems = {{19594, 1}}},
         [8057] = {
