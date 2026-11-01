@@ -4,6 +4,39 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.313
+- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 602 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,109 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,092 quests, 38 NPCs, 1 object
+- quest 30918 - Hui's Vengeance - updated
+  - description added
+- quest 31821 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- npc 2324 - Blackwood Windtalker - updated
+  - coordinates: 15 spawn points added in Darkshore
+- npc 2451 - Farmer Kalaba - updated
+  - coordinates: 12 spawn points added in Hillsbrad Foothills
+- npc 3649 - Thundris Windweaver - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 7047 - Black Broodling - updated
+  - coordinates: 40 spawn points added in Burning Steppes
+- npc 16384 - Argent Dawn Initiate - updated
+  - coordinates: 8 spawn points added in Thunder Bluff
+  - coordinates: 6 spawn points added in Orgrimmar
+  - coordinates: 3 spawn points added in Undercity
+- npc 68004 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+- npc 68048 - Gul'tar the Subjugator - updated
+  - NPC level added (90)
+- npc 68274 - Kaelis Sunsoar - updated
+  - NPC title added (Reliquary)
+- npc 68326 - 7th Legion Scout - updated
+  - NPC level added (90)
+- npc 70616 - Mingus Diggs - updated
+  - NPC level added (93)
+
 0.2.312
 - database - Wowhead data as the PandaQuest portal read it: 7,888 quests, 592 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,090 quests, 23 NPCs, 5 objects
@@ -315,43 +348,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC title added (Tushui Quartermaster)
 - npc 73691 - Chromie - updated
   - NPC title added (The Timewalkers)
-
-0.2.302
-- database - Wowhead data as the PandaQuest portal read it: 7,886 quests, 490 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 1,990 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 1,985 quests, 35 NPCs, 1 object
-- quest 12619 - The Emblazoned Runeblade - updated
-  - description added
-  - reward items: +1
-- quest 12622 - The Leaders at Jin'Alai - updated
-  - description added
-  - reward items: +1
-  - reward choices: +4
-- quest 13059 - Revenge for the Vargul - updated
-  - description added
-  - reward choices: +5
-- quest 29155 - A Shiny Reward - updated
-  - description removed
-  - reward money removed (9g 40s)
-  - reward items: -4
-- npc 1053 - Dark Iron Tunneler - updated
-  - coordinates: 29 spawn points added in Wetlands
-- npc 4086 - Veenix - updated
-  - coordinates: 1 spawn point added in Stonetalon Mountains
-- npc 4101 - Screeching Roguefeather - updated
-  - coordinates: 26 spawn points added in Thousand Needles
-- npc 4454 - [Deprecated for 4.x]Fizzle Brassbolts - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 7868 - Sarah Tanner - updated
-  - coordinates: 4 spawn points added in Searing Gorge
-- npc 14182 - Bounty Hunter Kolark - updated
-  - coordinates: 40 spawn points added in Orgrimmar
-- npc 32363 - Thrall - updated
-  - coordinates: 4 spawn points added in Orgrimmar
-- npc 67812 - Scout Rokia - updated
-  - data rewritten, nothing a player sees changed
-- npc 71939 - Chi-Ro the Skytamer - updated
-  - NPC title added (Flightmaster)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
