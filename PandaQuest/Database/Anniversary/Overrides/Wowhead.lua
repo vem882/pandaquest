@@ -3173,6 +3173,14 @@ ns.Overrides.wowhead = {
                 "Elune's Tear and pray it will end my child's sickness!",
             rewardMoney = 1400,
         },
+        [1034] = {
+            description = "Elune's Tear washed clear some of my daughter's sickness. Her nightmares are " ..
+                "lessened and I thank the goddess for her blessing. But... fever still rages within " ..
+                "her.\n\nOrendil told me of a frosted dust found among the Ruins of Stardust. Perhaps it " ..
+                "will abate Relara's fever. Gather some of the dust, then please return to me.\n\nThe " ..
+                "Ruins of Stardust lie to the south, <name>. May Elune speed your journey.",
+            rewardMoney = 1500,
+        },
         [1035] = {
             description = "Relara's fever has passed, but she is still very weak. I do not believe time " ..
                 "alone will give her back the strength she has lost. I believe it will take the power of " ..
@@ -5513,6 +5521,15 @@ ns.Overrides.wowhead = {
                 "speak to me again.",
             rewardChoices = {{3274, 1}, {11851, 1}, {11852, 1}},
         },
+        [3902] = {
+            description = "You there! If you're looking for something to make yourself useful, then " ..
+                "listen up!\n\nWe need fresh out-of-the-ground recruits to head into Deathknell and " ..
+                "search for any sort of useful equipment. Most likely, they'll be in stacks of boxes. We " ..
+                "expect more recruits to be rising soon, and unless we want them to stumble about naked " ..
+                "we had better get to scavenging!\n\nWell get to work, you miserable bag of bones! I'm " ..
+                "not going to reward those without some hustle.",
+            rewardChoices = {{11848, 1}, {11849, 1}, {11850, 1}},
+        },
         [3903] = {
             description = "You've shown yourself a dependable <class>, <name>. Dependable, and not afraid " ..
                 "to get your hands dirty, eh?\n\nI have a friend, Milly Osworth, who's in some trouble. " ..
@@ -7016,6 +7033,13 @@ ns.Overrides.wowhead = {
                 "with. You find a crowbar that looks like it will do the trick.\n\nYou set your feet and " ..
                 "pray that you'll be able to get out of the mill before the termites get to you.",
             rewardMoney = 8500,
+        },
+        [6391] = {
+            description = "For just a few coins, one of my gryphons will take you to Ironforge. From " ..
+                "there, deliver Brock's list to Golnir Bouldertoe. You'll find him in the Deep Mountain " ..
+                "Mining Guild. That's in the Great Forge District of Ironforge, which is right where my " ..
+                "gryphon will drop you off!\n\nSpeak to me again when you're ready for the journey.",
+            rewardMoney = 175,
         },
         [6421] = {
             description = "Something is amiss here in Stonetalon. Can you feel the tension in the air, " ..
