@@ -4,6 +4,24 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.321] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 639 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,148 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,137 quests, 40 NPCs, 1 object
+- npc 742 - Green Wyrmkin - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 2167 - Blackwood Pathfinder - updated
+  - coordinates: 13 spawn points added in Darkshore
+- npc 11276 - Azshara Sentinel - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 11827 - Kimberly Grant - updated
+  - coordinates: 10 spawn points added in Stormwind City
+- npc 12899 - Axtroz - updated
+  - coordinates: 40 spawn points added in Wetlands
+
 ## [0.2.320] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -242,29 +260,6 @@ Data from the PandaQuest portal.
 - npc 246176 - Vicejaw - updated
   - NPC level added (91)
   - rank added (elite)
-
-## [0.2.310] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 571 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,063 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,052 quests, 38 NPCs, 1 object
-- quest 13387 - Securing the Perimeter - updated
-  - description added
-  - reward choices: +4
-- npc 311 - Sven Yorgen - updated
-  - coordinates: 1 spawn point added in Duskwood
-- npc 1719 - Warden Thelwater - updated
-  - coordinates: 3 spawn points added in Stormwind City
-- npc 2366 - Barkeep Kelly - updated
-  - coordinates: 3 spawn points added in Hillsbrad Foothills
-- npc 4392 - Corrosive Swamp Ooze - updated
-  - coordinates: 40 spawn points added in Dustwallow Marsh
-- npc 16032 - Falrin Treeshaper - updated
-  - NPC title added (House of Shen'dralar)
-- npc 17111 - Captured Jaguar - updated
-  - coordinates: 4 spawn points added in Swamp of Sorrows
 
 ## [0.2.270] - 2026-10-26
 
