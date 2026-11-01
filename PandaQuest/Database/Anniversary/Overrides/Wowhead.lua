@@ -2671,6 +2671,15 @@ ns.Overrides.wowhead = {
                 "heap of bracers and the Horde will reward you well.",
             rewardChoices = {{5346, 1}, {5344, 1}, {5345, 1}},
         },
+        [862] = {
+            description = "A <class> like you must get pretty hungry out here in The Barrens. Me, I'm " ..
+                "starving all day long.\n\nTell you what, I'll fix you up a nice stew. Just need a few " ..
+                "dig rats.\n\nSeems those filthy dwarves at Bael Modan are overrun with everyone's " ..
+                "favorite feast. Now head on down south to Bael Modan and bring me back some dig " ..
+                "rats.\n\nYou can't call yourself a seasoned adventurer until you've spent some time " ..
+                "killing rats! Haw!",
+            rewardItems = {{5487, 1}, {5478, 5}, {10919, 1}},
+        },
         [866] = {
             description = "The herbs of the Barrens are not quite like herbs in other lands. Their " ..
                 "properties are mostly the same, but the oasis water here alters the plants; they are " ..
@@ -3087,6 +3096,14 @@ ns.Overrides.wowhead = {
                 "his head. Be wary though, the Horde may be watching for you.",
             rewardItems = {{5816, 1}},
         },
+        [1019] = {
+            description = "Attention, heroes!\n\nThe Cenarion Circle seeks able bodied individuals to " ..
+                "assist them in exploring the vast new frontiers of Kalimdor! A forbidden wasteland of " ..
+                "unimaginable dangers lies far to the west of Tanaris and Gadgetzan, and the Circle needs " ..
+                "willing and honorable proxies to act in their stead.\n\nAll interested individuals " ..
+                "should seek audience with the Cenarion Circle. Speak with the Arch Druid in Darnassus, " ..
+                "Fandral Staghelm, for more information!",
+        },
         [1021] = {
             description = "Listen, I don't know who you are, but I need your help. My sisters went to " ..
                 "take back the Branch of Cenarius from the satyr. They said they'd be back soon, but it's " ..
@@ -3196,6 +3213,14 @@ ns.Overrides.wowhead = {
                 "your trophy, and bask in the glory...",
             rewardChoices = {{5815, 1}, {17046, 1}},
             rewardItems = {{1116, 1}},
+        },
+        [1052] = {
+            description = "We of the Scarlet Crusade lay claim to strongholds from Hearthglen to Tirisfal " ..
+                "Glades. We are quite proud of our bastions of cleansing throughout Lordaeron.\n\nYou " ..
+                "have proven yourself against the undead in Desolace. But the true threat of the plague " ..
+                "lies in Lordaeron.\n\nTravel to the town of Southshore, in the Eastern Kingdoms. Seek " ..
+                "out a crusader named Raleigh the Devout. Give him this letter of commendation bearing my " ..
+                "seal and he will escort you to a place of honor in our Scarlet Monastery.",
         },
         [1054] = {
             description = "Directly to the north of Astranaar are the Thistlefur furbolg. My scouts " ..
@@ -4178,6 +4203,11 @@ ns.Overrides.wowhead = {
                 "<name>?\n\nIf so, then speak with Bink. She spends her time in the Hall of Mysteries in " ..
                 "the Mystic Ward of Ironforge.",
         },
+        [1883] = {
+            description = "Un'thuwa, tribal mage of Sen'jin Village, detects a disturbance in the magic " ..
+                "currents of Durotar and asks for aid. Speak with Un'thuwa and do what you can to help " ..
+                "him.\n\nDo this, and in time further secrets will be revealed to you.",
+        },
         [1884] = {
             description = "The warlock Zalazane of the Echo Isles has disrupted the normal flow of magic " ..
                 "in Durotar. He does this through tainted fetishes, ju-ju heaps, which he has placed " ..
@@ -4487,6 +4517,14 @@ ns.Overrides.wowhead = {
             description = "I have just received word that Denalan at Lake Al'Ameth has discovered what " ..
                 "may be the cause of the tumors that plague the timberlings. Please speak with him, and " ..
                 "tell him I sent you.\n\nMake haste, <name>; he needs our help.",
+        },
+        [2501] = {
+            description = "You have been most helpful to me, <name>. I would like to reward you with the " ..
+                "very recipe for the brew I gave you earlier, but I must ask of you a favor that is quite " ..
+                "dangerous.\n\nThis lockbox contains three empty thaumaturgy vessels; they are imbued " ..
+                "with an attunement aura that will drain the blood of a scorched guardian dragon. Using " ..
+                "one on the beast will anger it greatly, so be careful. Once you have all three filled, " ..
+                "bring them to me.\n\nDo this, and the recipe will be yours.",
         },
         [2518] = {
             description = "Lady Sathrah was once beloved of Elune. Graceful and pure, the spider spun her " ..
@@ -13006,6 +13044,15 @@ ns.Overrides.wowhead = {
                 "reaver power core you could use as the basis for a kind of fel bomb. Search the other " ..
                 "wreckage near the fel reaver for a section of armor plating. You should be able to make " ..
                 "a bomb powerful enough to take out those infernals and give the hold a nice shake!",
+            rewardMoney = 41000,
+        },
+        [10598] = {
+            description = "The device we've assembled won't win any beauty contests, but it should be " ..
+                "capable of destroying the infernals amassed at Legion Hold. Judging from what the fel " ..
+                "reaver power core's energy did to the Fetid Pool, it holds a respectable amount of " ..
+                "explosive power.\n\nIf you set the device off in the middle of the green glyph at the " ..
+                "hold, it should be in range to hit all of the infernals.",
+            rewardChoices = {{30986, 1}, {30947, 1}, {30946, 1}, {30929, 1}},
             rewardMoney = 41000,
         },
         [10599] = {

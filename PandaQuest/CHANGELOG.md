@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.316] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 615 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,132 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,115 quests, 38 NPCs, 1 object
+- npc 3238 - Stormhide - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3660 - Athrikus Narassin - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 10219 - Gwennyth Bly'Leggonde - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 71622 - Acon Deathwielder - updated
+  - NPC title added (Glorious Conquest Quartermaster)
+  - NPC level added (91)
+  - coordinates: 1 spawn point added in Kun-Lai Summit
+- npc 246386 - Bai-Jin the Butcher - updated
+  - NPC level added (91)
+  - rank added (elite)
+
 ## [0.2.315] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -303,40 +324,6 @@ Data from the PandaQuest portal.
   - coordinates: 4 spawn points added in Timeless Isle
   - coordinates: 2 spawn points added in Valley of the Four Winds
   - coordinates: 1 spawn point added in Dragonblight
-
-## [0.2.305] - 2026-10-31
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,884 quests, 525 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,019 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,014 quests, 36 NPCs, 1 object
-- quest 26583 - Wrath of the Fungalmancer - updated
-  - description removed
-  - reward money removed (8g 60s)
-  - reward choices: -3
-- npc 2967 - Galak Centaur - updated
-  - coordinates: 40 spawn points added in Mulgore
-- npc 7564 - Marin Noggenfogger - updated
-  - coordinates: 2 spawn points added in Tanaris
-- npc 7668 - Servant of Razelikh - updated
-  - coordinates: 35 spawn points added in Blasted Lands
-- npc 12801 - Arcane Chimaerok - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 15381 - Anachronos the Ancient - updated
-  - coordinates: 11 spawn points added in Silithus
-- npc 17235 - Witch Doctor Mai'jin - updated
-  - coordinates: 4 spawn points added in The Hinterlands
-- npc 36472 - Buzzer - updated
-  - NPC title added (Secret Laboratory Archives)
-- npc 50830 - Aer the Skymirror - updated
-  - coordinates: 5 spawn points added in Krasarang Wilds
-- npc 68242 - King Varian Wrynn - updated
-  - NPC title added (King of Stormwind)
-- npc 68685 - Admiral Taylor - updated
-  - NPC level added (90)
-- npc 198875 - Thassarian - updated
-  - rank added (elite)
 
 ## [0.2.270] - 2026-10-26
 

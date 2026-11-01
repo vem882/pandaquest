@@ -6893,6 +6893,15 @@ ns.Overrides.wowhead = {
                 "to Zul'Farrak then you're not going to want to go alone.\n\nYou will find Tabetha 's " ..
                 "cottage west of Theramore, and just north of the Stonemaul Ruin.",
         },
+        [2866] = {
+            description = "To our south are the Ruins of Solarsal; this is an area that far pre-dates " ..
+                "modern times. We explored the ruins initially and found nothing of note; as such, we " ..
+                "left it in peace.\n\nVery recently, the Hatecrest naga have occupied these ruins in " ..
+                "alarming numbers. At first, we considered it as the precursor for an attack. Though that " ..
+                "threat is still possible, we believe there might be something else going on.\n\nGo " ..
+                "there, explore the ruins, and look for anything that stands out to you. Good luck, " ..
+                "<name>.",
+        },
         [2869] = {
             description = "The best course of action at this point is to assume that, regardless of what " ..
                 "the naga are up to, they will eventually move to secure the island for their own. We " ..
@@ -6987,6 +6996,13 @@ ns.Overrides.wowhead = {
                 "help?",
             rewardItems = {{9605, 1}, {9604, 1}},
             rewardMoney = 2500,
+        },
+        [2935] = {
+            description = "The venom from the broodguards wasn't as potent as the venom you brought " ..
+                "originally. It must have come from a different spider.\n\nI want a fresh sample of that " ..
+                "venom. To find out where it came from, you must consult with a troll who knows the " ..
+                "Witherbark well-- Master Gadrin in Sen'jin Village. Travel to Durotar and speak with " ..
+                "Gadrin. With luck, he'll know where the Witherbarks get their venom.",
         },
         [2936] = {
             description = "The Witherbarks worship a spider god, and from her they collect their most " ..
@@ -7565,6 +7581,14 @@ ns.Overrides.wowhead = {
                 "Troyas and I, he has studied many ancient areas of the world. He was last known to have " ..
                 "left his home in Ratchet to study the troll ruins in Tanaris.\n\nGood luck finding him; " ..
                 "he hasn't been heard from in some time.",
+        },
+        [3446] = {
+            description = "Inside the temple, I found a circular room with six balconies, each one with a " ..
+                "serpent statue on the edge. Curious, I pushed one of them to see what would happen, and " ..
+                "it was a trap! I nearly fell to my death from the explosion. Laying there on the ledge, " ..
+                "I looked down and noticed that there was another statue at the base of the room; an " ..
+                "altar of sorts... Hakkar, I think it was called.\n\nI think that this altar is the " ..
+                "secret -- you must bring this token to the altar in the Sunken Temple.",
         },
         [3450] = {
             description = "I want the rubbings delivered to my tower, but there's no need to have you go " ..
@@ -12876,6 +12900,15 @@ ns.Overrides.wowhead = {
                 "made, they'd just be pointed at us! Now is the time to help the Alliance in Arathi " ..
                 "Basin, <name>.",
             rewardMoney = 9000,
+        },
+        [8400] = {
+            description = "The Silverwing Sentinels are at war with the Warsong Outriders due to the " ..
+                "destruction the Orcs are causing to the forest. There are, however, more reasons to " ..
+                "defend this particular forest than plain love for nature.\n\nThe forest forms a " ..
+                "strategic barrier that makes Ashenvale defendable against a large-scale attack. Without " ..
+                "it, Astranaar would last a day or two before being annexed to the Barrens.\n\nDo your " ..
+                "part in fighting the Warsong Outriders, <name>! For the Alliance!",
+            rewardMoney = 4500,
         },
         [8410] = {
             description = "Bath'rah the Windwatcher has sent out a summons for a shaman of your wisdom. " ..
