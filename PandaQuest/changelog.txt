@@ -4,6 +4,24 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.319
+- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 629 NPCs, 2 objects
+- database - flight times: 3 measured, 1,629 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,139 quests, 23 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,129 quests, 39 NPCs, 1 object
+- npc 744 - Green Scalebane - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 2406 - Mountain Lion - updated
+  - coordinates: 6 spawn points added in Hillsbrad Foothills
+- npc 45028 - Aggra - updated
+  - coordinates: 40 spawn points added in The Maelstrom
+- npc 68047 - Lieutenant Corwin - updated
+  - NPC level added (90)
+- npc 68707 - Stormwind Footman - updated
+  - NPC level added (90)
+- npc 70440 - Monara - updated
+  - NPC title added (The Last Queen)
+
 0.2.318
 - database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 623 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,136 quests, 23 NPCs, 5 objects
@@ -216,35 +234,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (9,999)
 - npc 70160 - Taran Zhu - updated
   - NPC title added (Lord of the Shado-Pan)
-
-0.2.308
-- database - Wowhead data as the PandaQuest portal read it: 7,887 quests, 559 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,041 quests, 22 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,037 quests, 37 NPCs, 1 object
-- quest 12721 - Rampage - updated
-  - description added
-  - reward choices: +4
-- npc 2230 - Umpi - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 3749 - Foulweald Ursa - updated
-  - coordinates: 24 spawn points added in Ashenvale
-- npc 4022 - Bloodfury Harpy - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 6136 - Arkkoran Muckdweller - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6297 - Kurdram Stonehammer - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 14531 - Artorius the Amiable - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 17113 - Captured Crocolisk - updated
-  - coordinates: 5 spawn points added in Swamp of Sorrows
-- npc 68647 - Sunreaver Duelist - updated
-  - NPC level added (90)
-- npc 70321 - Tenwu of the Red Smoke - updated
-  - NPC level added (90)
-- npc 72723 - Wrathion - updated
-  - NPC title added (The Black Prince)
-  - NPC level added (90)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

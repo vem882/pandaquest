@@ -11063,6 +11063,13 @@ ns.Overrides.wowhead = {
                 "Makaba Flathoof, will be desperate to know that I am safe.",
             rewardMoney = 1000,
         },
+        [6541] = {
+            description = "Have you ever been to Ashenvale, to the north? The horde has recently set up " ..
+                "an outpost on the Zoram Strand there, and we can always use some new recruits to help " ..
+                "defend our new fronts.\n\nIf you think you are up to it, see Kadrak in the northern " ..
+                "Barrens, at the watch tower. He is heading up the Ashenvale campaign and can give you " ..
+                "further orders.",
+        },
         [6543] = {
             description = "I recently deployed a few scouts into Ashenvale and I need a runner to take " ..
                 "them their orders, and bring me back a report of what they have observed.\n\nYour first " ..
@@ -13728,6 +13735,7 @@ ns.Overrides.wowhead = {
         [8751] = {rewardItems = {{21200, 1}}},
         [8753] = {rewardItems = {{21202, 1}}},
         [8756] = {rewardItems = {{21205, 1}}},
+        [8761] = {rewardItems = {{21210, 1}}},
         [8765] = {rewardChoices = {{21200, 1}, {21205, 1}}},
         [8766] = {rewardChoices = {{21200, 1}, {21210, 1}}},
         [8771] = {
@@ -14684,6 +14692,14 @@ ns.Overrides.wowhead = {
                 "Huge Thorium Battleaxes.\n\nAll filled orders should be delivered to Packmaster " ..
                 "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
                 "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9183] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order BS-80:\n\n3 " ..
+                "Radiant Circlets.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9186] = {
