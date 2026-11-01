@@ -47668,6 +47668,12 @@ ns.Overrides.wowhead = {
                 "pause from the violence to help care for a panther cub?",
             rewardItems = {{68833, 1}},
         },
+        [29268] = {
+            description = "So much violence, so much death. Brothers have died, a mother has died, and " ..
+                "now a panther cub will die if there is no one to take care of it.\n\nWill you take a " ..
+                "break from the violence and help care for a panther cub?",
+            rewardItems = {{68833, 1}},
+        },
         [29269] = {
             description = "I was charged with her protection, yet it was she who sacrificed herself for " ..
                 "my sake.\n\nI cannot bear to lose her, <name>. I must make a solemn request of " ..
@@ -63231,6 +63237,20 @@ ns.Overrides.wowhead = {
         [5908] = {spawns = {[17] = {{43.2, 47.8}}}, zoneID = 17},
         [6015] = {spawns = {[440] = {{66.4, 25.4}, {66.4, 25.6}, {66.6, 25.4}, {66.6, 25.6}}}, zoneID = 440},
         [6018] = {spawns = {[1637] = {{35.4, 87.4}, {35.4, 87.6}, {35.6, 87.4}, {35.6, 87.6}}}, zoneID = 1637},
+        [6109] = {
+            spawns = {
+                [16] = {
+                    {48, 75.4}, {49, 75.8}, {49.2, 82.8}, {49.8, 82.8}, {50.4, 79.8}, {51, 75.4},
+                    {51.2, 75.6}, {51.2, 83.2}, {52, 76.8}, {52.2, 81.4}, {52.2, 87.6}, {52.4, 84.8},
+                    {52.6, 77.6}, {52.8, 84}, {53, 85.2}, {53.2, 87.8}, {53.4, 90.2}, {53.8, 88},
+                    {54.2, 70.2}, {54.4, 76.8}, {54.4, 82}, {54.4, 86.4}, {54.6, 90.6}, {54.8, 83.2},
+                    {55.2, 85.8}, {55.4, 76}, {55.4, 88.4}, {55.6, 88}, {55.8, 75.8}, {55.8, 86.4},
+                    {56.2, 77.4}, {56.6, 74.2}, {56.6, 85}, {57, 78}, {57, 85.6}, {57.2, 87.6}, {57.6, 78},
+                    {57.8, 77}, {58.2, 84.2}, {58.2, 90},
+                },
+            },
+            zoneID = 16,
+        },
         [6116] = {
             spawns = {
                 [16] = {
@@ -63661,6 +63681,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 51,
         },
+        [8479] = {spawns = {[51] = {{39, 38.4}, {39, 39}}}, zoneID = 51},
         [8509] = {spawns = {[51] = {{39, 38.4}, {39, 39}}}, zoneID = 51},
         [8518] = {
             spawns = {
@@ -63671,6 +63692,7 @@ ns.Overrides.wowhead = {
         [8579] = {spawns = {[440] = {{67, 22.4}}}, zoneID = 440},
         [8587] = {spawns = {[16] = {{22.4, 51.4}, {22.6, 51.4}}}, zoneID = 16},
         [8588] = {spawns = {[618] = {{67.8, 27.4}}}, zoneID = 618},
+        [8673] = {spawns = {[1637] = {{55.4, 62.8}, {55.6, 62.8}}}, zoneID = 1637},
         [8957] = {
             spawns = {
                 [361] = {
@@ -64450,6 +64472,7 @@ ns.Overrides.wowhead = {
             zoneID = 5785,
         },
         [44490] = {spawns = {[5145] = {{69.6, 34.4}, {69.6, 34.6}}}, zoneID = 5145},
+        [45609] = {spawns = {[130] = {{51.6, 66.2}}}, zoneID = 130},
         [48533] = {
             spawns = {
                 [5042] = {
