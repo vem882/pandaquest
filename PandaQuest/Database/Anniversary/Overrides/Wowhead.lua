@@ -2110,6 +2110,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3742, 1}, {3743, 1}, {5250, 1}},
             rewardItems = {{3732, 1}},
         },
+        [569] = {
+            description = "When we first arrived in this jungle we did not intend to wage war on the " ..
+                "local tribes. Our mission to supply Stonard is of the highest priority. But " ..
+                "complications have arisen. A local band of ogres has occupied the Mizjah Ruins to the " ..
+                "southeast of Grom'gol. Despite warnings, they continue to ambush our supply " ..
+                "caravans.\n\nI am putting you in charge of dealing with these uncooperative " ..
+                "ogres.\n\nTravel to the ruins and attempt to drive them from the area. At the very least " ..
+                "it will send a firm message.",
+            rewardItems = {{4115, 1}},
+        },
         [572] = {
             description = "The items you gathered from the feline beasts of the Vale are only the first " ..
                 "requirement for a powerful enchanted item. These jungle trinkets combined with my " ..
@@ -2283,6 +2293,7 @@ ns.Overrides.wowhead = {
                 "Keystone.\n\n<name>, you have done so much to aid me. Just a little more...and my " ..
                 "gratitude will shake the very foundations of the earth!",
         },
+        [660] = {description = "All right, <name>. I'm ready if you are.\n\nShall we?"},
         [663] = {
             description = "Lolo sees a tiny <race>! Always on the lookout, Lolo is!\n\nWelcome to " ..
                 "Faldir's Cove. Captain O'Breen said we'd only be here for a few hours. Just long enough " ..
@@ -5306,6 +5317,16 @@ ns.Overrides.wowhead = {
                 "document pledging life-long secrecy and speak with me again. Think about it carefully, " ..
                 "<name>.",
         },
+        [3639] = {
+            description = "As your mentor, I want samples of your work. You're a skilled engineer; there " ..
+                "is no question of this, <name>. What I hope to do though is analyze them for ways to " ..
+                "emphasize goblin-oriented techniques in your future efforts. I need the following: " ..
+                "twenty big iron bombs, twenty sticks of solid dynamite, and five explosive sheep - and " ..
+                "keep the safeties armed!\n\nSubmit these items to me and I will issue you your own " ..
+                "Goblin Engineer Membership Card; it is required for access to all goblin engineering " ..
+                "trainers!",
+            rewardItems = {{10791, 1}},
+        },
         [3641] = {
             description = "As your mentor, I want some samples of your work. You're a skilled engineer; " ..
                 "there is no question of this, <name>. What I hope to do though is to analyze your work " ..
@@ -5704,6 +5725,7 @@ ns.Overrides.wowhead = {
                 "being controlled by Thaurissan! The things she may do or say are a result of " ..
                 "Thaurissan's evil spell!",
         },
+        [4385] = {rewardItems = {{11566, 6}}},
         [4386] = {rewardItems = {{11567, 6}}},
         [4402] = {
             description = "It sure gets hot out here in the Valley of Trials.\n\n< Galgar wipes his " ..
@@ -5895,6 +5917,14 @@ ns.Overrides.wowhead = {
                 "of Stormwind. I am sure he'll be very pleased to see what you have for him.",
             rewardChoices = {{15861, 1}, {15860, 1}},
             rewardMoney = 27000,
+        },
+        [4766] = {
+            description = "An agent of mine, Mayara Brightwing, was sent to the Burning Steppes to scout " ..
+                "the ruined city of Thaurissan. That destroyed city of the Dark Iron dwarves may hide " ..
+                "objects of great value... objects that would fit nicely into our family " ..
+                "museum.\n\nMayara says she found something and will need aid in retrieving it, but it is " ..
+                "not in Thaurissan. Instead, a foray into Blackrock Spire will be required.\n\nI do not " ..
+                "know the details, but if interested then speak with Mayara in the Burning Steppes.",
         },
         [4769] = {
             description = "Vivian Lagrave sent me word from Kargath, in the Badlands. Through her " ..
@@ -8187,6 +8217,15 @@ ns.Overrides.wowhead = {
             description = "It's been great working with you, <name>. Here is the finished product.\n\nI " ..
                 "hope it helps you in your current endeavors. And hey, if you don't mind, help spread the " ..
                 "word. I wouldn't mind having more customers!",
+        },
+        [8989] = {
+            description = "My friend, Mor Grayhoof, was the first to fall victim to possession of a piece " ..
+                "of Lord Valthalak's amulet, and the corrupting spirit fragment that it contains. After " ..
+                "stealing Valthalak's spellbook and amulet, we fled for our lives from the upper portion " ..
+                "of Blackrock Spire. Along the way, Mor fell into the lower portion of the " ..
+                "spire.\n\nLater, we discovered that he survived the fall, only to be captured and " ..
+                "tortured by War Master Voone. A few spectral assassins snuck in and slew him right in " ..
+                "front of Voone.",
         },
         [8990] = {
             description = "It became known to us in later days, as we were doing what we could ourselves " ..
@@ -13026,6 +13065,15 @@ ns.Overrides.wowhead = {
                 "yet. For that, I'll need the manual that Doctor Maleficus keeps locked in a chest near " ..
                 "the bottom of the ramp. He probably won't give up the key without a fight, so you'll " ..
                 "need to capture it. Bring the fel reaver manual back to me and I'll do the rest.",
+            rewardMoney = 41000,
+        },
+        [10612] = {
+            description = "< Plexi leafs through the manual.>\n\nWell, this has everything we need, but " ..
+                "there's just one problem. Fel Reavers aren't really built to respond to remote " ..
+                "control.\n\nWe can modify one for you to use for a short time, but you'll have to work " ..
+                "fast, or there's no telling what might happen! I wouldn't be surprised if your little " ..
+                "stunt with the fel reaver catches the attention of the Legion's lackeys, either. Keep an " ..
+                "eye out, and whatever you do, don't forget to destroy as much as you can!",
             rewardMoney = 41000,
         },
         [10613] = {
