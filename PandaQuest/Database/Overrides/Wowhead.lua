@@ -53386,6 +53386,11 @@ ns.Overrides.wowhead = {
                 "stronger than their combined power!\n\nGood luck, Challenger!",
             rewardMoney = 114000,
         },
+        [30918] = {
+            description = "I am ashamed to ask, but for Greenstone's sake... might we now trouble you to " ..
+                "face Vengeful Hui on our behalf...? See if you've already completed this by " ..
+                "typing:\n\n/run print(C_QuestLog.IsQuestFlaggedCompleted(30918))",
+        },
         [30921] = {
             description = "<class>. You may be of assistance.\n\nThe Shado-Pan wishes to know why the " ..
                 "mantid are attacking so violently. We have our suspicions, but we cannot be sure. " ..
@@ -56702,6 +56707,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{74853, 5}, {74662, 5}, {74661, 5}},
             rewardItems = {{86468, 1}},
             rewardMoney = 342000,
+        },
+        [31821] = {
+            description = "Good, good. It's important to keep your pets healthy and ready for " ..
+                "battle.\n\nMy next task for you is to fight a few battles and raise a pet to level 3. " ..
+                "Once you do that, come back and see me and we can talk about catching your own pets!",
+            rewardMoney = 106000,
         },
         [31822] = {
             description = "Good, good. It's important to keep your pets healthy and ready for " ..
@@ -62406,6 +62417,16 @@ ns.Overrides.wowhead = {
             },
             zoneID = 267,
         },
+        [2324] = {
+            spawns = {
+                [148] = {
+                    {38.4, 53.6}, {39, 53.6}, {39.2, 52.4}, {39.2, 53}, {39.4, 54.6}, {39.4, 56.4},
+                    {39.4, 56.6}, {39.6, 56.6}, {39.8, 54.6}, {40, 52.4}, {40, 52.6}, {40, 55.6},
+                    {40.2, 53.6}, {40.6, 52.8}, {40.6, 54.2},
+                },
+            },
+            zoneID = 148,
+        },
         [2335] = {spawns = {[267] = {{29.4, 42}, {29.4, 42.6}, {29.6, 41.8}, {30, 42.8}}}, zoneID = 267},
         [2360] = {
             spawns = {
@@ -62458,6 +62479,15 @@ ns.Overrides.wowhead = {
                     {32.8, 40}, {33, 36.6}, {33, 42.8}, {33.6, 36.4}, {33.6, 43.2}, {34, 36.6}, {34.2, 38},
                     {35.2, 38.4}, {35.2, 38.6}, {35.2, 41.8}, {35.8, 42.4}, {36, 39.6}, {36.2, 39.2},
                     {36.6, 38.2}, {36.6, 39.6}, {36.8, 38.6},
+                },
+            },
+            zoneID = 267,
+        },
+        [2451] = {
+            spawns = {
+                [267] = {
+                    {34.4, 45.8}, {35.4, 45.4}, {35.4, 46}, {35.4, 46.6}, {35.6, 46.6}, {35.8, 46.2},
+                    {36.4, 45.2}, {36.4, 47.6}, {36.6, 45.4}, {36.6, 47.4}, {36.6, 47.6}, {37, 46.4},
                 },
             },
             zoneID = 267,
@@ -62643,6 +62673,7 @@ ns.Overrides.wowhead = {
         [3616] = {spawns = {[148] = {{43.4, 76.2}, {43.6, 76.4}}}, zoneID = 148},
         [3639] = {spawns = {[148] = {{40.2, 59.4}, {40.2, 59.8}}}, zoneID = 148},
         [3644] = {spawns = {[148] = {{35.6, 43.4}, {35.8, 43.6}}}, zoneID = 148},
+        [3649] = {spawns = {[148] = {{37.4, 40.2}}}, zoneID = 148},
         [3650] = {spawns = {[148] = {{44.2, 36.2}}}, zoneID = 148},
         [3661] = {spawns = {[148] = {{55, 24.8}}}, zoneID = 148},
         [3663] = {spawns = {[331] = {{26.2, 38.4}, {26.2, 38.6}}}, zoneID = 331},
@@ -63275,6 +63306,20 @@ ns.Overrides.wowhead = {
         [6786] = {spawns = {[14] = {{52, 68.2}}}, zoneID = 14},
         [6868] = {spawns = {[3] = {{2.4, 46}, {2.6, 46}}}, zoneID = 3},
         [6886] = {spawns = {[1] = {{25.2, 44.4}, {25.2, 44.6}}}, zoneID = 1},
+        [7047] = {
+            spawns = {
+                [46] = {
+                    {79, 29.8}, {79.6, 27.2}, {79.8, 27.6}, {81.4, 27.6}, {81.4, 60.6}, {81.6, 27.2},
+                    {81.8, 27.8}, {82.4, 62.6}, {82.6, 62.4}, {83.6, 60.4}, {84.2, 55}, {84.4, 58.4},
+                    {84.4, 62.6}, {84.6, 62.6}, {85, 58.6}, {85.2, 61.4}, {85.4, 57.4}, {85.6, 57.8},
+                    {86.2, 61.4}, {86.4, 32.6}, {86.6, 32.6}, {86.6, 58.4}, {86.8, 58.8}, {87.4, 30.6},
+                    {88, 29.4}, {88.4, 30}, {88.4, 44.6}, {88.6, 29.4}, {88.6, 44.8}, {88.8, 32.4},
+                    {88.8, 49.6}, {89, 51.4}, {89.2, 59.6}, {89.4, 52.6}, {89.6, 52.8}, {89.6, 59.6},
+                    {89.8, 42.6}, {90, 34.2}, {90, 54.4}, {90.4, 43.6},
+                },
+            },
+            zoneID = 46,
+        },
         [7107] = {
             spawns = {
                 [361] = {
@@ -64061,6 +64106,17 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1497,
         },
+        [16384] = {
+            spawns = {
+                [1497] = {{64.8, 46.6}, {65, 45.2}, {65, 46.2}},
+                [1637] = {{51.4, 73.6}, {51.6, 73.4}, {52, 74.6}, {52.2, 74}, {52.6, 74}, {52.6, 74.6}},
+                [1638] = {
+                    {42, 57.2}, {42.2, 59.6}, {42.4, 58.4}, {42.4, 58.8}, {42.6, 58.2}, {42.6, 58.6},
+                    {42.8, 57.4}, {42.8, 59.6},
+                },
+            },
+            zoneID = 1638,
+        },
         [16395] = {
             spawns = {
                 [139] = {{75, 54}},
@@ -64447,9 +64503,11 @@ ns.Overrides.wowhead = {
         [67993] = {maxLevel = 9999, minLevel = 9999},
         [67997] = {maxLevel = 90, minLevel = 90},
         [67999] = {maxLevel = 90, minLevel = 90},
+        [68004] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
         [68041] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
         [68043] = {maxLevel = 90, minLevel = 90},
+        [68048] = {maxLevel = 90, minLevel = 90},
         [68049] = {maxLevel = 90, minLevel = 90},
         [68050] = {maxLevel = 90, minLevel = 90},
         [68108] = {subName = "Leader of the Kirin Tor"},
@@ -64460,8 +64518,10 @@ ns.Overrides.wowhead = {
         [68223] = {subName = "Warchief"},
         [68242] = {subName = "King of Stormwind"},
         [68259] = {maxLevel = 90, minLevel = 90},
+        [68274] = {subName = "Reliquary"},
         [68275] = {maxLevel = 90, minLevel = 90, subName = "Explorer's League"},
         [68287] = {subName = "High Chieftain"},
+        [68326] = {maxLevel = 90, minLevel = 90},
         [68337] = {maxLevel = 90, minLevel = 90, subName = "Blademaster"},
         [68342] = {maxLevel = 90, minLevel = 90},
         [68357] = {subName = "Korune Warlord"},
@@ -64525,6 +64585,7 @@ ns.Overrides.wowhead = {
         [70438] = {subName = "The Black Prince"},
         [70476] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [70544] = {subName = "Herald of Rastakhan"},
+        [70616] = {maxLevel = 93, minLevel = 93},
         [70666] = {maxLevel = 92, minLevel = 92},
         [70677] = {maxLevel = 92, minLevel = 92, subName = "The Dynamite Monkey Monk"},
         [70678] = {maxLevel = 92, minLevel = 92},
