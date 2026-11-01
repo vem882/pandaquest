@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.324] - 2026-11-01
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 650 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,159 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,154 quests, 41 NPCs, 1 object
+- npc 2407 - Hulking Mountain Lion - updated
+  - coordinates: 27 spawn points added in Hillsbrad Foothills
+  - coordinates: 2 spawn points added in Western Plaguelands
+
 ## [0.2.323] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -189,42 +200,6 @@ Data from the PandaQuest portal.
 - npc 68651 - Lady Jaina Proudmoore - updated
   - NPC title added (Leader of the Kirin Tor)
 - npc 70736 - Splat - updated
-  - NPC level added (93)
-
-## [0.2.313] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 602 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,109 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,092 quests, 38 NPCs, 1 object
-- quest 30918 - Hui's Vengeance - updated
-  - description added
-- quest 31821 - Level Up! - updated
-  - description added
-  - reward money added (10g 60s)
-- npc 2324 - Blackwood Windtalker - updated
-  - coordinates: 15 spawn points added in Darkshore
-- npc 2451 - Farmer Kalaba - updated
-  - coordinates: 12 spawn points added in Hillsbrad Foothills
-- npc 3649 - Thundris Windweaver - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 7047 - Black Broodling - updated
-  - coordinates: 40 spawn points added in Burning Steppes
-- npc 16384 - Argent Dawn Initiate - updated
-  - coordinates: 8 spawn points added in Thunder Bluff
-  - coordinates: 6 spawn points added in Orgrimmar
-  - coordinates: 3 spawn points added in Undercity
-- npc 68004 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
-  - NPC level added (90)
-- npc 68048 - Gul'tar the Subjugator - updated
-  - NPC level added (90)
-- npc 68274 - Kaelis Sunsoar - updated
-  - NPC title added (Reliquary)
-- npc 68326 - 7th Legion Scout - updated
-  - NPC level added (90)
-- npc 70616 - Mingus Diggs - updated
   - NPC level added (93)
 
 ## [0.2.270] - 2026-10-26
