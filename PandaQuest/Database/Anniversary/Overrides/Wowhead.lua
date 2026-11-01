@@ -4396,6 +4396,14 @@ ns.Overrides.wowhead = {
                 "your worth.\n\nThe troll Tazan trades with the pirates near Ratchet. He has information " ..
                 "I must have. Kill him and bring me his satchel.",
         },
+        [2038] = {
+            description = "As if crashing into the Loch wasn't bad enough, troggs from the nearby island " ..
+                "attacked me and stole my tools and special Blastenheimer Blastencapper explosives. With " ..
+                "no gyrocopter and no explosives, the movement has no chance!\n\nGet my tools back and " ..
+                "find my Blastencapper explosives, <name>. For Gnomeregan!",
+            rewardItems = {{12522, 1}},
+            rewardMoney = 700,
+        },
         [2098] = {
             description = "A pirate's life ain't an easy one, landlubber. It ain't all about plunderin' " ..
                 "and booze! Alas, me ship be sunk just off shore thanks to them pesky " ..
@@ -5803,6 +5811,7 @@ ns.Overrides.wowhead = {
                 "being controlled by Thaurissan! The things she may do or say are a result of " ..
                 "Thaurissan's evil spell!",
         },
+        [4381] = {rewardItems = {{11562, 6}}},
         [4385] = {rewardItems = {{11566, 6}}},
         [4386] = {rewardItems = {{11567, 6}}},
         [4402] = {
@@ -7178,6 +7187,12 @@ ns.Overrides.wowhead = {
                 "will appear in anger.\n\nWe will need help, so be sure to bring some strong allies.",
             rewardItems = {{17692, 1}},
         },
+        [6721] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
+                "you on the path to earning a pet of your own.",
+            rewardXP = 85,
+        },
         [6761] = {
             description = "I have relegated my second, Mathrengyl Bearwalker, to deal with Moonglade's " ..
                 "call for aid. Speak to him on this matter - NOT me.\n\nLet me give you some... " ..
@@ -7207,6 +7222,14 @@ ns.Overrides.wowhead = {
                 "foes, the servants of air and earth and fire. Each defeat you heap upon them will weaken " ..
                 "their foothold here, and further prove your adherence to our cause.\n\nThe campaign will " ..
                 "be long, but if you persevere then your glory and honor will be great.",
+        },
+        [6824] = {
+            description = "<name>, your service is of great value to us, so we are reluctant to send you " ..
+                "on this last mission for we do not want to lose such a useful agent.\n\nBut its success " ..
+                "would further our war efforts tremendously and... it was deemed worth risking you.\n\nWe " ..
+                "want these captains in the Molten Core destroyed: Lucifron, Sulfuron, Gehennas and " ..
+                "Shazzrah. Kill them and bring me their hands!\n\nThis task will take every resource you " ..
+                "possess, <name>, but if can do it then the Firelords will be dealt a terrible blow.",
         },
         [6922] = {
             description = "The defeated water elemental has left behind a strange water globe. You " ..
@@ -7336,6 +7359,15 @@ ns.Overrides.wowhead = {
                 "attempts to escape imprisonment.\n\nIt will focus on nothing but you, <name>. Because of " ..
                 "this, I must recommend that you take companions capable of keeping you alive!",
             rewardItems = {{18602, 1}},
+            rewardXP = 9550,
+        },
+        [7623] = {
+            description = "Mor'zul says that you want to open a portal to Xoroth. To do that, you'll need " ..
+                "Xorothian stardust. That's not easy to find on Azeroth!\n\nThere is one being who might " ..
+                "have some: Lord Banehollow in Jaedenar, the seat of the Shadow Council! Speak with him " ..
+                "and he might part with the stardust.\n\nBut if you're going to Jaedenar, then you'll " ..
+                "need to cloak yourself in the Shadow Council's own flavor of evil. That will require " ..
+                "some of my shadowy potions, and that will cost you...",
             rewardXP = 9550,
         },
         [7625] = {
@@ -9635,6 +9667,15 @@ ns.Overrides.wowhead = {
             description = "Your sleight of hand was most impressive. There's no question that I can trust " ..
                 "you to take these reports to Zelanis.",
             rewardItems = {{7298, 1}},
+        },
+        [9619] = {
+            description = "The voidstone reveals a vision of a multi-story building haunted by ghostly " ..
+                "figures. As the scene sharpens and blurs, other buildings come into view, leading you to " ..
+                "believe it is Goldenmist Village.\n\nRooftops and tree canopies suddenly flash by, " ..
+                "revealing the way to Goldenmist by following the Elrendar River to the west.\n\nOnce " ..
+                "there, use the voidstone near the rune of summoning atop the center building and defeat " ..
+                "the summoned voidwalker. Only then can you return to your teacher.",
+            rewardXP = 840,
         },
         [9620] = {
             description = "As we've gotten ourselves established here at Blood Watch, I've been sending " ..
@@ -15053,6 +15094,14 @@ ns.Overrides.wowhead = {
                 "to his orders. Xi'ri 's army is ready to push Illidan's forces back and create a " ..
                 "distraction for Akama. The naaru awaits your request to begin the attack.>",
             rewardItems = {{32649, 1}},
+        },
+        [10987] = {
+            description = "The wild sparrowhawks of Nagrand have the keenest sight of all the predatory " ..
+                "birds here. But, because of their size, they've been pushed out of most areas by the " ..
+                "larger windrocs.\n\nMost of the sparrowhawks nest here, on the Twilight Ridge. If you " ..
+                "can catch one, I'll train it to spot the pieces of your buried tablet.\n\nIt's going to " ..
+                "be difficult, though. The sparrowhawks are very skittish and will flee at your approach. " ..
+                "I'd suggest cornering one or prowling to get close enough to cast your net.",
         },
         [10989] = {
             description = "Mog'dorg the Wizened waits for you at top of da tower. He tells me to look for " ..
