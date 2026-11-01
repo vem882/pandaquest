@@ -61830,6 +61830,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 8,
         },
+        [765] = {
+            spawns = {
+                [8] = {
+                    {5.4, 31.2}, {6.4, 31.6}, {7.4, 32.4}, {7.4, 34.6}, {7.8, 35.6}, {8.4, 30.8}, {8.6, 33.8},
+                    {9, 28.4}, {9.2, 29.4}, {9.4, 37}, {9.8, 31.6}, {10, 28.4}, {10.2, 27.4}, {10.4, 36.4},
+                    {10.6, 29.4}, {10.6, 34}, {10.8, 27.8}, {11.2, 30.4}, {11.4, 39.8}, {11.6, 31.2},
+                    {11.8, 36.4}, {12, 38.6}, {12.4, 32.8}, {12.6, 30.2}, {12.6, 39.8}, {13, 39},
+                    {13.4, 33.4}, {13.4, 37.4}, {13.6, 37.4}, {13.8, 38.4}, {14.2, 32.4}, {14.6, 31},
+                    {14.6, 34.4}, {14.6, 40}, {15.4, 35.6}, {15.6, 35.6}, {15.6, 39.6}, {16.2, 32},
+                    {16.6, 39}, {16.8, 36.2},
+                },
+            },
+            zoneID = 8,
+        },
         [766] = {
             spawns = {
                 [8] = {
@@ -63728,6 +63742,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 618,
         },
+        [10304] = {spawns = {[139] = {{48.8, 17.4}, {48.8, 17.6}}}, zoneID = 139},
         [10306] = {spawns = {[361] = {{34.6, 52.6}}}, zoneID = 361},
         [10427] = {
             spawns = {
@@ -63903,6 +63918,7 @@ ns.Overrides.wowhead = {
             zoneID = 1637,
         },
         [14355] = {subName = "House of Shen'dralar"},
+        [14382] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
         [14467] = {
             spawns = {
@@ -63978,6 +63994,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1497,
         },
+        [14902] = {spawns = {[33] = {{15.2, 14.4}, {15.2, 14.6}}}, zoneID = 33},
         [14903] = {spawns = {[33] = {{15.2, 16}}}, zoneID = 33},
         [14904] = {spawns = {[33] = {{15.2, 16}}}, zoneID = 33},
         [14905] = {spawns = {[33] = {{14, 13.6}}}, zoneID = 33},
@@ -64504,6 +64521,7 @@ ns.Overrides.wowhead = {
         [67997] = {maxLevel = 90, minLevel = 90},
         [67999] = {maxLevel = 90, minLevel = 90},
         [68004] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
+        [68009] = {subName = "The Miserable"},
         [68041] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
         [68043] = {maxLevel = 90, minLevel = 90},
@@ -64537,6 +64555,7 @@ ns.Overrides.wowhead = {
         [68504] = {maxLevel = 90, minLevel = 90},
         [68560] = {subName = "Calf of Darkhide"},
         [68647] = {maxLevel = 90, minLevel = 90},
+        [68651] = {subName = "Leader of the Kirin Tor"},
         [68653] = {maxLevel = 90, minLevel = 90},
         [68685] = {maxLevel = 90, minLevel = 90},
         [68690] = {subName = "King of Stormwind"},
@@ -64589,6 +64608,7 @@ ns.Overrides.wowhead = {
         [70666] = {maxLevel = 92, minLevel = 92},
         [70677] = {maxLevel = 92, minLevel = 92, subName = "The Dynamite Monkey Monk"},
         [70678] = {maxLevel = 92, minLevel = 92},
+        [70736] = {maxLevel = 93, minLevel = 93},
         [70748] = {maxLevel = 92, minLevel = 92, subName = "\"The Lady\""},
         [70751] = {maxLevel = 90, minLevel = 90},
         [70752] = {maxLevel = 90, minLevel = 90},
