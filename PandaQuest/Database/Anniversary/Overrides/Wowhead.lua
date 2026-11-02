@@ -6701,6 +6701,15 @@ ns.Overrides.wowhead = {
                 "my family? I miss them so much, especially my little sister Pamela.\n\nPlease, find her " ..
                 "for me!",
         },
+        [5621] = {
+            description = "I need your help, <name>. I am needed here to train the other students, but " ..
+                "you, you can help one of our injured Sentinels just south of Dolanaar. She was hurt " ..
+                "patrolling the town and could use our aid. Her name is Shaya.\n\nWhen you find her, heal " ..
+                "her wounds, and then fortify her body with your spells. This will at least protect her " ..
+                "from harm longer if she finds trouble. Return to me here after you've done your duty to " ..
+                "Elune.",
+            rewardItems = {{16604, 1}},
+        },
         [5622] = {
             description = "<name>, you must travel to Dolanaar when your business here in Shadowglen is " ..
                 "done. There, you will find Laurna Morninglight. She will instruct you further in the " ..
@@ -7987,6 +7996,7 @@ ns.Overrides.wowhead = {
                 "these to me and I will do the rest.",
             rewardItems = {{20422, 1}},
         },
+        [8342] = {rewardItems = {{20451, 1}}},
         [8345] = {
             description = "Day after day I stand here, watching, waiting. I've been accused of dwelling " ..
                 "too much on our past, while my eyes look to the horizon. But it is my firm belief that " ..
@@ -8385,6 +8395,14 @@ ns.Overrides.wowhead = {
                 "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
                 "and idols and I'll create a powerful ring for you, <class>.",
             rewardItems = {{21414, 1}},
+        },
+        [8701] = {
+            description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
+                "abilities. The corrupted gems that adorn them could, in theory, be swapped out with more " ..
+                "pure materials to create uncorrupted versions of the rings.\n\nThe gems that adorn " ..
+                "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
+                "and idols and I'll create a powerful ring for you, <class>.",
+            rewardItems = {{21405, 1}},
         },
         [8703] = {
             description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
