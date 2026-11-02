@@ -1199,6 +1199,15 @@ ns.Overrides.wowhead = {
                 "<name>, and bring me a shard from his phylactery as proof!",
             rewardItems = {{17759, 1}},
         },
+        [212] = {
+            description = "One of my most famous dishes is Chilled Basilisk in Lime Vinaigrette. But the " ..
+                "problem is... the meat is impossible to keep fresh, and I must serve the dish tonight " ..
+                "for a noble's birthday!\n\nSo if you can bring me a Chilled Basilisk Haunch from a " ..
+                "freshly-killed Cold Eye Basilisk, quickly, then I will owe you a king's feast!\n\nCold " ..
+                "Eye Basilisks are known to roam along the beach dunes of northwestern Stranglethorn, so " ..
+                "you have much traveling to do. And be swift!",
+            rewardMoney = 15000,
+        },
         [216] = {
             description = "The Thistlefur furbolgs are threatening our expansion! Thistlefur Village to " ..
                 "our east blocks the way between us here and the Splintertree Post. It's a path that " ..
@@ -2942,6 +2951,13 @@ ns.Overrides.wowhead = {
                 "need some gems the Boulderfist shaman have taken a liking to. They took 'em from the " ..
                 "tower, but they're not gonna stay in their possession for long.\n\nGet one of them gems " ..
                 "an' bring 'em to Kryten--he knows the spell to enchant 'em so they'll work as a key.",
+        },
+        [697] = {
+            description = "Take this letter back to Stormwind and let Malin know that Kryten an' I'll be " ..
+                "home soon. He'll reward you well for helping us here, <name>, of that I've no " ..
+                "doubt.\n\nTravel safely.",
+            rewardChoices = {{4975, 1}, {15104, 1}},
+            rewardMoney = 9000,
         },
         [698] = {
             description = "I'm working on getting some supplies together for our outpost near the beach " ..
@@ -8726,6 +8742,15 @@ ns.Overrides.wowhead = {
                 "contain chlorophyll in their skin, and mixed with the tar, it's super sticky!",
             rewardMoney = 16500,
         },
+        [4506] = {
+            description = "This corrupted water can be used to our advantage, <name>. With just a small " ..
+                "amount of the water, my kitten doubled in size, and seems to be stronger... somehow. " ..
+                "These cats may prove useful...\n\nHere, <name>. Take this cat carrier, and release the " ..
+                "kitten inside next to the moon well in the Ruins of Constellas. Heh, heh... I'm sure " ..
+                "you'll be pleased with the results!\n\nReturn the cat to me, and I'm sure I can make it " ..
+                "worth your time.",
+            rewardMoney = 6000,
+        },
         [4507] = {
             description = "Here's the lure. Inside the hive network should be a crystal of some sort. We " ..
                 "think the silithid use the crystal as some sort of hive-wide attunement device. As for " ..
@@ -9400,6 +9425,14 @@ ns.Overrides.wowhead = {
                 "druids that are committed to their work in Felwood, healing the land from the " ..
                 "corruption.\n\nKelek has much experience with the furbolgs in Felwood, and may be able " ..
                 "to tell you more about the log.\n\nThank you, again, <name>.",
+        },
+        [5143] = {
+            description = "To learn tribal leatherworking demands an understanding of how primal nature " ..
+                "truly is; I know that you have already mastered the art of making wild leather armor, " ..
+                "and I am willing to complete your training.\n\nKnow this, <class>: by choosing this path " ..
+                "you agree never to learn dragonscale or elemental leatherworking; there is only room for " ..
+                "practice of one of the three arts. Furthermore, bring to me the finest samples of your " ..
+                "wild leather armor. From there, we will begin your mastery.",
         },
         [5144] = {
             description = "Elemental leatherworking is what I know, and if you're willing to open your " ..
@@ -11361,6 +11394,15 @@ ns.Overrides.wowhead = {
                 "out. I've taught ye all I know, flipflop!\n\nDon't ye get it? Ah, fine. I got an ol' " ..
                 "friend over on Kalimdor who can help ye out. 'Is name be Nat Pagle, a fine lad. Find him " ..
                 "on the islands south o' Theramore. Git goin'!",
+        },
+        [6610] = {
+            description = "Ever heard of a clamlette? Of course you haven't! It's my latest and greatest " ..
+                "culinary masterpiece. Oh, <name>, just thinking about a clamlette makes my mouth " ..
+                "water.\n\nUnfortunately, I'm all out of supplies to make any! How about I make you a " ..
+                "deal? You gather the supplies I need to make a clamlette and I'll teach you the finer " ..
+                "points of exotic cuisine and I'll even throw in a couple of clamlettes to boot! " ..
+                "Deal??\n\nHere's what I need:",
+            rewardItems = {{16971, 20}},
         },
         [6611] = {
             description = "How you expect Zamja teach you anything? You got all of Zamja 's cooking mojo " ..

@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.325] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 653 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,164 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,157 quests, 42 NPCs, 1 object
+- npc 15070 - Vinchaxa - updated
+  - coordinates: 2 spawn points added in Northern Stranglethorn
+- npc 68728 - Sunreaver Dragonhawk - updated
+  - NPC level added (90)
+- npc 69359 - Beeble Sockwrench - updated
+  - NPC title added (Jurassic Expedition)
+
 ## [0.2.324] - 2026-11-01
 
 Data from the PandaQuest portal.
@@ -179,28 +193,6 @@ Data from the PandaQuest portal.
   - description added
 - npc 7669 - Servant of Grol - updated
   - coordinates: 15 spawn points added in Blasted Lands
-
-## [0.2.314] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 609 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,122 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,102 quests, 38 NPCs, 1 object
-- npc 765 - Swampwalker Elder - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 10304 - Aurora Skycaller - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 14382 - Lorekeeper Mykos - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14902 - Jin'rokh the Breaker - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 68009 - Shadowmancer Selenora - updated
-  - NPC title added (The Miserable)
-- npc 68651 - Lady Jaina Proudmoore - updated
-  - NPC title added (Leader of the Kirin Tor)
-- npc 70736 - Splat - updated
-  - NPC level added (93)
 
 ## [0.2.270] - 2026-10-26
 
