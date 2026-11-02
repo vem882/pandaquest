@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.336] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,899 quests, 695 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,206 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,199 quests, 43 NPCs, 1 object
+- npc 2990 - Bael'dun Appraiser - updated
+  - coordinates: 13 spawn points added in Mulgore
+- npc 3236 - Barrens Kodo - updated
+  - coordinates: 40 spawn points added in The Barrens
+
 ## [0.2.335] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -225,20 +237,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Ashenvale
 - npc 52790 - Aggra - updated
   - coordinates: 1 spawn point added in Mount Hyjal
-
-## [0.2.325] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 653 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,164 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,157 quests, 42 NPCs, 1 object
-- npc 15070 - Vinchaxa - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 68728 - Sunreaver Dragonhawk - updated
-  - NPC level added (90)
-- npc 69359 - Beeble Sockwrench - updated
-  - NPC title added (Jurassic Expedition)
 
 ## [0.2.270] - 2026-10-26
 

@@ -1466,6 +1466,16 @@ ns.Overrides.wowhead = {
                 "survivor of those poor vessels...\n\n...Oh, my head hammers and pounds! I'll need a " ..
                 "fresh drink if I'm to get a handle on this hangover and continue my tale.",
         },
+        [289] = {
+            description = "<Bolstered, Fitzsimmons continues his tale...>\n\nI am the sole survivor of " ..
+                "the ill-fated Third Fleet of Kul Tiras, wrecked off the coast to the north. But although " ..
+                "I'm the only member of the fleet still breathing, I'm not the only one still walking " ..
+                "about! For on one of our ships was hidden a great, and terrible treasure, and the eerie " ..
+                "power of it keeps the souls of my brothers trapped within the ships' rotting " ..
+                "hulls.\n\nBut if you can free some of my brothers, then perhaps you can break their " ..
+                "curse.",
+            rewardMoney = 1900,
+        },
         [291] = {
             description = "Excellent! Take my report to Senator Barin Redstone. He's a sour type, so " ..
                 "don't let his less-than-sunny disposition get to you. He's in Ironforge, in the chamber " ..
@@ -2909,6 +2919,16 @@ ns.Overrides.wowhead = {
                 "Pah! Why he feels some mercy towards me I would not understand. Mercy was denied me when " ..
                 "I was not allowed to die with my Warchief in battle. A cruel blow fate has dealt me...",
         },
+        [680] = {
+            description = "You serve my husband well, <class>, but he does not know why Hammerfall is " ..
+                "under attack.\n\nOr'Kalar, Mug'thol's pawn in Stromgarde, has an intense hatred for my " ..
+                "husband, and wishes nothing more than my husband's death for defeating him years " ..
+                "ago.\n\nMy auguries tell me that Or'Kalar has laid a trap for my husband, so I have " ..
+                "hidden signs of the ogre's presence from him.\n\nMy husband will rush off foolishly if " ..
+                "he learns of the ogre's whereabouts and I would ask for your help in slaying the " ..
+                "creature.",
+            rewardChoices = {{4976, 1}, {4977, 1}},
+        },
         [683] = {
             description = "<name>, I have but a small request to ask of you.\n\nTake this note I have " ..
                 "prepared to our great monarch of Ironforge, King Magni Bronzebeard. 'Tis a small task to " ..
@@ -3823,6 +3843,13 @@ ns.Overrides.wowhead = {
                 "a sense of dread...\n\nYou shake your head, sure that your mind is playing tricks on " ..
                 "you.\n\nIt's possible that other satyrs carry clues as to what you have found. Bring " ..
                 "your findings to the druid, Eridan Bluewind, that lives in southern Felwood.",
+        },
+        [940] = {
+            description = "The forest whispers of your feats of valor, <name>. As I felt the harpies " ..
+                "forced from their nests, a greater calm spread across the forest, its creatures once " ..
+                "again feeling safe. I have feared sending another messenger to the Arch Druid, but I " ..
+                "know that you will see my message safely to him.\n\nDeliver this to him and know that " ..
+                "the forest will see you safely along its paths to the forest of stone.",
         },
         [941] = {
             description = "I have removed that foul moss from the heart, but it remains tainted...\n\nTry " ..
@@ -12612,6 +12639,14 @@ ns.Overrides.wowhead = {
                 "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
                 "you will have to wait until they are here next.",
             rewardItems = {{19288, 1}},
+        },
+        [7927] = {
+            description = "Now that you have gathered all of the Portal cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{19290, 1}},
         },
         [7928] = {
             description = "Now that you have gathered all of the Warlord cards together into a deck, a " ..
