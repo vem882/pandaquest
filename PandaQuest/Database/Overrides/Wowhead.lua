@@ -57043,6 +57043,11 @@ ns.Overrides.wowhead = {
                 "trainer, Mish Burnhep, in Stormwind, and prepare for the adventure of a lifetime!",
             rewardMoney = 114000,
         },
+        [31918] = {
+            description = "If you beat me, then you must be ready for da big time! Go talk to Varzok in " ..
+                "Orgrimmar.",
+            rewardMoney = 114000,
+        },
         [31921] = {
             description = "You've bested the master tamers of Kalimdor and the Eastern Kingdoms, but your " ..
                 "next challenge will be far more trying.\n\nThere are four tamers in Outland that you " ..

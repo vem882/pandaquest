@@ -4353,6 +4353,15 @@ ns.Overrides.wowhead = {
                 "the steep slope until you reach Stonetalon Peak.\n\nThere awaits Keeper Albagorm. Heed " ..
                 "his bidding, <race>.\n\nThe journey will be perilous.",
         },
+        [1057] = {
+            description = "As a protector of the forest spirits you can undoubtedly guess why I am " ..
+                "alarmed.\n\nYou have traveled through these mountains to reach this peak. Surely you " ..
+                "have seen the travesty which has befallen the land. Greed has led to the destruction of " ..
+                "these sacred hills.\n\nThe Charred Vale to the south was set afire by the greedy " ..
+                "mechanized army of industrialists. Worse yet, the Bloodfuries that have encroached on " ..
+                "the land refuse us passage in to begin regrowth.\n\nDrive the wretched harpies out, " ..
+                "<name>!",
+        },
         [1060] = {
             description = "You've done so well for me, <name>. You're a regular lucky rabbit's foot and " ..
                 "there's something I want you to see.\n\nThe harpies are not from around the Barrens. " ..
@@ -7614,6 +7623,13 @@ ns.Overrides.wowhead = {
                 "seems Mardant would have words with you when you have a moment. Read it and bring it to " ..
                 "him afterwards.",
         },
+        [3121] = {
+            description = "Neeru Fireblade in Orgrimmar has what I need to get started here! He has mixed " ..
+                "up a concoction that I need for my... well, you'll see.\n\nOff with you now -- to " ..
+                "Orgrimmar. Here, take this with you. It's a shrunken head that I promised Neeru in " ..
+                "exchange for the herbs. It's the head of some poor dwarf I ventured across in the " ..
+                "forest. I'm sure Neeru will be pleased.\n\nYou'll find Neeru in the Cleft of Shadow.",
+        },
         [3122] = {
             description = "Here are the herbs, <name>. Take them to Witch Doctor Uzer'i.\n\nPlease let " ..
                 "him know that I am satisfied with the shrunken head.",
@@ -8110,6 +8126,14 @@ ns.Overrides.wowhead = {
                 "Goblin Engineer Membership Card; it is required for access to all goblin engineering " ..
                 "trainers!",
             rewardItems = {{10791, 1}},
+        },
+        [3642] = {
+            description = "Gnome engineering is about engineering theory shaped to serve our needs! Our " ..
+                "schemata allow us to make devices that control the world around us; the manual you read " ..
+                "covered this.\n\nThe manual also covered our ages old oath of secrecy on our schemata. " ..
+                "Once you become a gnome engineer, that's that. There is no access to goblin engineering " ..
+                "at all.\n\nIf you still want to become a gnome engineer, sign this document pledging " ..
+                "life-long secrecy and speak with me again. Think about it carefully, <name>.",
         },
         [3643] = {
             description = "As your mentor, I want some samples of your work. You're a skilled engineer; " ..
@@ -14528,6 +14552,11 @@ ns.Overrides.wowhead = {
                 "hope it helps you in your current endeavors. And hey, if you don't mind, help spread the " ..
                 "word. I wouldn't mind having more customers!",
         },
+        [8978] = {
+            description = "It's been great working with you, <name>. Here is the finished product.\n\nI " ..
+                "hope it helps you in your current endeavors. And hey, if you don't mind, help spread the " ..
+                "word. I wouldn't mind having more customers!",
+        },
         [8985] = {
             description = "<class>, listen closely. Now that we have the location of the last amulet " ..
                 "piece, we still need another component to suffuse the brazier with; something that will " ..
@@ -15048,6 +15077,14 @@ ns.Overrides.wowhead = {
                 "own. Since your dedication to the cause of the Dawn is somewhat lacking, <name>, the " ..
                 "price will be high. You may decline and choose to return when you are revered or exalted " ..
                 "for a discount.",
+        },
+        [9122] = {
+            description = "In the thick of Plaguewood lies the entrance to the dread citadel of " ..
+                "Naxxramas. Previously, all attempts to enter had been stymied by the magical wards " ..
+                "placed upon the rune portal. That is, until now.\n\nWe have devised a way to gain entry " ..
+                "via a permanent arcane cloaking of sorts - an old cantrip of the Kirin Tor with a few " ..
+                "modifications of my own. With that said, the cloaking is costly. Since your dedication " ..
+                "to the cause of the Dawn is admirable, we are willing to incur some of those costs.",
         },
         [9124] = {
             description = "How would you like to earn yourself one of these shiny coins?\n\n<Leopold " ..

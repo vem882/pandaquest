@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.335] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,899 quests, 693 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,202 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,197 quests, 43 NPCs, 1 object
+- quest 31918 - A Tamer's Homecoming - updated
+  - description added
+  - reward money added (11g 40s)
+
 ## [0.2.334] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -228,17 +239,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 69359 - Beeble Sockwrench - updated
   - NPC title added (Jurassic Expedition)
-
-## [0.2.324] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 650 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,159 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,154 quests, 41 NPCs, 1 object
-- npc 2407 - Hulking Mountain Lion - updated
-  - coordinates: 27 spawn points added in Hillsbrad Foothills
-  - coordinates: 2 spawn points added in Western Plaguelands
 
 ## [0.2.270] - 2026-10-26
 
