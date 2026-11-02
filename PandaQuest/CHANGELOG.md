@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.334] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,197 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,195 quests, 43 NPCs, 1 object
+
 ## [0.2.333] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -232,25 +239,6 @@ Data from the PandaQuest portal.
 - npc 2407 - Hulking Mountain Lion - updated
   - coordinates: 27 spawn points added in Hillsbrad Foothills
   - coordinates: 2 spawn points added in Western Plaguelands
-
-## [0.2.323] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 649 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,157 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,148 quests, 41 NPCs, 1 object
-- npc 743 - Wyrmkin Dreamwalker - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 4104 - Screeching Windcaller - updated
-  - coordinates: 13 spawn points added in Thousand Needles
-- npc 6669 - The Threshwackonator 4100 - updated
-  - coordinates: 7 spawn points added in Darkshore
-- npc 16531 - Faint Necrotic Crystal - updated
-  - coordinates: 40 spawn points added in Undercity
-  - coordinates: 35 spawn points added in Stormwind City
-- npc 23206 - Akkarai Hatchling - updated
-  - coordinates: 31 spawn points added in Terokkar Forest
 
 ## [0.2.270] - 2026-10-26
 
