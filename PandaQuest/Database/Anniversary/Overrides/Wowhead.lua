@@ -1992,6 +1992,11 @@ ns.Overrides.wowhead = {
                 "go, I will make my own way, after I have settled my business here.",
             rewardMoney = 3000,
         },
+        [507] = {
+            description = "It is clear that Perenolde must be killed, his foulness removed from the " ..
+                "world. His manor lies a ways to the north of here, on the shores of Lordamere Lake. Do " ..
+                "your duty, <name>, then retrieve the pendant that the Warchief desires, and return here.",
+        },
         [516] = {
             description = "I have received reports that a group of undead are holing up to prepare for an " ..
                 "attack against us. Armed with this information, we can turn the tables and attack them " ..
@@ -6503,6 +6508,15 @@ ns.Overrides.wowhead = {
                 "putrid ichors drip into the empty bottle.\n\nWith the poison in hand, it is time to " ..
                 "return to Shadow Priestess Vandis at the Bulwark to complete the mission.",
             rewardMoney = 9000,
+        },
+        [5246] = {
+            description = "I did not realize... Forgive my callous words, <class>.\n\nThe mistakes of my " ..
+                "ancestors are not what I wish to dwell on, but if your request is truly genuine, then I " ..
+                "will help you.\n\n<Aurora examines the fragments.>\n\nI believe this is the Crystal of " ..
+                "Zin-Malor, an artifact that can contain and control strong arcane forces. It could have " ..
+                "been used for good, but the evil intentions of those that stole it caused it to " ..
+                "shatter.\n\nGo to the Temple of Zin-Malor in Azshara - I can only hope the book is still " ..
+                "there.",
         },
         [5247] = {
             description = "I will be able to help you, if recreating the artifact is truly what you wish " ..
@@ -16175,6 +16189,13 @@ ns.Overrides.wowhead = {
                 "Barrens!",
             rewardItems = {{20558, 3}},
             rewardMoney = 125,
+        },
+        [11339] = {
+            description = "Arathi Basin is on the verge of being lost to Alliance forces. We must send " ..
+                "reinforcements at this very moment or all our efforts will have been in vain.\n\nDo not " ..
+                "delay, <class>, go to Arathi Basin and crush the enemy. Victory to the Horde!",
+            rewardItems = {{20559, 3}},
+            rewardMoney = 900,
         },
         [11354] = {
             description = "Today I have a buyer who is interested in a piece that's held by the mount of " ..

@@ -4,6 +4,16 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.329
+- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 660 NPCs, 2 objects
+- database - flight times: 4 measured, 1,628 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,180 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,176 quests, 43 NPCs, 1 object
+- npc 2989 - Bael'dun Digger - updated
+  - coordinates: 18 spawn points added in Mulgore
+- npc 4276 - Piznik - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+
 0.2.328
 - database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 658 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,178 quests, 24 NPCs, 5 objects
@@ -135,19 +145,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 70440 - Monara - updated
   - NPC title added (The Last Queen)
-
-0.2.318
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 623 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,136 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,124 quests, 38 NPCs, 1 object
-- npc 745 - Scalebane Captain - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 2054 - Sickly Refugee - updated
-  - coordinates: 40 spawn points added in Silverpine Forest
-- npc 68463 - Burning Pandaren Spirit - updated
-  - NPC title added (Grand Master Pet Tamer)
-- npc 185333 - Avelina Lilly - updated
-  - data rewritten, nothing a player sees changed
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

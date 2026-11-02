@@ -3409,6 +3409,10 @@ ns.Overrides.wowhead = {
                 "shall reward you. You can find them on the islands south of here.",
             rewardMoney = 225,
         },
+        [819] = {
+            description = "A small placard on one of the ends of the keg says,\n\n\"Chen Stormstout " ..
+                "-\n\nMay your spirit be raised and always raise your spirits.\"",
+        },
         [823] = {
             description = "We at Sen'jin Village are not without our own troubles, and we thank you for " ..
                 "your aid. But the news you bring regarding the Burning Blade could be trouble for " ..
@@ -9557,6 +9561,14 @@ ns.Overrides.wowhead = {
                 "filled with the corrupt, fetid water that gathered there years ago? Will you help me and " ..
                 "check, <name>? Be careful though, the infernals destroy anything in their path.",
             rewardMoney = 16500,
+        },
+        [5157] = {
+            description = "Deep within Jaedenar lies Shadow Hold--the main fortress of their corruption " ..
+                "and evil.\n\nThe Shadow Council has protective spells surrounding their lair in the form " ..
+                "of braziers. If I am to find out any more information about our enemy through scrying, " ..
+                "then those braziers must be extinguished. By doing so, I should be able to spy on the " ..
+                "Council and find out who leads them.\n\nIf you can, take this canteen and fill it at the " ..
+                "Moon Well in the center of Jaedenar. Return to me afterwards.",
         },
         [5158] = {
             description = "Take the corrupt water to the Barrens, <name>. South of Ratchet, hidden along " ..

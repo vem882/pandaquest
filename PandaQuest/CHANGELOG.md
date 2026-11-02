@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.329] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 660 NPCs, 2 objects
+- database - flight times: 4 measured, 1,628 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,180 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,176 quests, 43 NPCs, 1 object
+- npc 2989 - Bael'dun Digger - updated
+  - coordinates: 18 spawn points added in Mulgore
+- npc 4276 - Piznik - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+
 ## [0.2.328] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -165,22 +178,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 70440 - Monara - updated
   - NPC title added (The Last Queen)
-
-## [0.2.318] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 623 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,136 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,124 quests, 38 NPCs, 1 object
-- npc 745 - Scalebane Captain - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 2054 - Sickly Refugee - updated
-  - coordinates: 40 spawn points added in Silverpine Forest
-- npc 68463 - Burning Pandaren Spirit - updated
-  - NPC title added (Grand Master Pet Tamer)
-- npc 185333 - Avelina Lilly - updated
-  - data rewritten, nothing a player sees changed
 
 ## [0.2.270] - 2026-10-26
 
