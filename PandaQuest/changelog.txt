@@ -4,6 +4,66 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.333
+- database - rebuilt from Questie 12.4.0+v1.0.10 (was 12.3.1+v1.0.9)
+- database - Classic Era rebuilt from Questie 12.4.0+v1.0.10 (was 12.3.1+v1.0.9)
+- database - TBC Anniversary rebuilt from Questie 12.4.0+v1.0.10 (was 12.3.1+v1.0.9)
+- database - WoW Forever rebuilt from Questie 12.4.0+v1.0.10 (was 12.3.1+v1.0.9)
+- database - Wowhead data as the PandaQuest portal read it: 7,898 quests, 693 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,196 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,189 quests, 43 NPCs, 1 object
+- quest 273 - Resupplying the Excavation - updated
+  - objectives added
+  - coordinates in Loch Modan: 1 exploration point added, 1 removed
+- quest 971 - Knowledge in the Deeps - updated
+  - disabled by quest added
+- quest 1657 - Stinking Up Southshore - updated
+  - objectives: -1 kill target
+- quest 4763 - The Blackwood Corrupted - updated
+  - data rewritten, nothing a player sees changed
+- quest 11131 - Stop the Fires! - updated
+  - disabled by quest added
+- quest 11219 - Stop the Fires! - updated
+  - disabled by quest added
+- quest 11360 - Fire Brigade Practice - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 11361 - Fire Training - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 11439 - Fire Brigade Practice - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 11440 - Fire Brigade Practice - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 11449 - Fire Training - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 11450 - Fire Training - updated
+  - next quest in the chain added
+  - disabled by quest added
+- quest 31588 - Learning the Ropes - updated
+  - description added
+  - reward money added (11g 40s)
+- npc 910 - Defias Enchanter - updated
+  - coordinates: 21 spawn points added in Duskwood
+- npc 1194 - Mountain Buzzard - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1983 - Nightlash - updated
+  - coordinates in Silverpine Forest: 1 spawn point refined, 2 removed
+- npc 2089 - Giant Wetlands Crocolisk - updated
+  - coordinates: 6 spawn points added in Wetlands
+- npc 8442 - Shadowsilk Poacher - updated
+  - coordinates: 40 spawn points added in Searing Gorge
+- npc 10880 - Warcaller Gorlach - updated
+  - patrol path corrected
+- npc 14724 - Bubulo Acerbus - updated
+  - coordinates: 4 spawn points added in Ironforge
+- npc 70068 - Ahoo'ru - updated
+  - NPC title added (The Unsullied)
+  - NPC level added (93)
+
 0.2.332
 - database - Wowhead data as the PandaQuest portal read it: 7,897 quests, 688 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,193 quests, 24 NPCs, 5 objects
@@ -158,24 +218,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 35 spawn points added in Stormwind City
 - npc 23206 - Akkarai Hatchling - updated
   - coordinates: 31 spawn points added in Terokkar Forest
-
-0.2.322
-- database - Wowhead data as the PandaQuest portal read it: 7,892 quests, 644 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,154 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,145 quests, 41 NPCs, 1 object
-- quest 30000 - The Jade Serpent - updated
-  - description added
-  - reward choices: +9
-- npc 741 - Dreaming Whelp - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 4128 - Hecklefang Stalker - updated
-  - coordinates: 40 spawn points added in The Barrens
-- npc 5502 - Shylamiir - updated
-  - coordinates: 2 spawn points added in Stormwind City
-- npc 8724 - Auctioneer Wabang - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 9856 - Auctioneer Grimful - updated
-  - coordinates: 2 spawn points added in Orgrimmar
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

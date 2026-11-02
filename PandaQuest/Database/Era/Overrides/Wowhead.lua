@@ -7158,6 +7158,15 @@ ns.Overrides.wowhead = {
                 "there can make further sense of what the gnolls are up to.",
             rewardChoices = {{9661, 1}, {9662, 1}},
         },
+        [2904] = {
+            description = "< Kernobee groans.> Wha.. What happened?\n\nThe last thing I remember is being " ..
+                "captured by a group of dark iron dwarves, beaten to within an inch of my life and then " ..
+                "thrown in here with these filthy troggs.\n\nGet me out of here, <name>!\n\nHere's the " ..
+                "plan: Lead me to the exit; if we make it out alive, you go to Booty Bay and let Scooty " ..
+                "know that I went to Ratchet to warn Tinkerwiz of the dark iron's involvement in the " ..
+                "making of that super rig.\n\nLet's get going!",
+            rewardChoices = {{9535, 1}, {9536, 1}},
+        },
         [2925] = {
             description = "A gnome friend, Klockmort Spannerspan, sent word to me from Ironforge. He " ..
                 "tells me he needs help on a dangerous, but essential, mission into Gnomeregan, the once " ..
@@ -12766,6 +12775,16 @@ ns.Overrides.wowhead = {
         [8111] = {rewardItems = {{19611, 1}}},
         [8112] = {rewardItems = {{19612, 1}}},
         [8113] = {rewardItems = {{19613, 1}}},
+        [8114] = {
+            description = "<name>, you have taken the battle of Arathi Basin to our enemies and earned " ..
+                "great honors in that field of battle. You have shown us your worth as a <class>, and you " ..
+                "have shown our enemies that we will not submit to their villainy!\n\nBecause of your " ..
+                "proven value to us, I have a difficult task for you. I want you to take and hold at " ..
+                "least four of the bases in Arathi Basin. If you can do that, then we will not only " ..
+                "secure critical resources, we will show the Horde our dominance!\n\nGo, <name>, and good " ..
+                "fortune.",
+            rewardMoney = 27000,
+        },
         [8116] = {rewardItems = {{19606, 1}}},
         [8117] = {rewardItems = {{19607, 1}}},
         [8118] = {rewardItems = {{19608, 1}}},
@@ -15107,6 +15126,14 @@ ns.Overrides.wowhead = {
                 "Wicked Leather Belts.\n\nAll filled orders should be delivered to Packmaster " ..
                 "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
                 "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9187] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order LW-8485:\n\n4 " ..
+                "Runic Leather Pants.\n\nAll filled orders should be delivered to Packmaster Stonebruiser " ..
+                "at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if " ..
+                "tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9190] = {
