@@ -6796,6 +6796,12 @@ ns.Overrides.wowhead = {
                 "Darkness is our home.\n\nSeek out Dark Cleric Beryl in Brill when you're ready to learn " ..
                 "more.",
         },
+        [5655] = {
+            description = "I sent here to make sure that you not wander too far from home, <name>. They " ..
+                "send me to make sure you return home because Ur'kyo, greatest of our priests, wish to " ..
+                "speak to you. You go there. You go to the Valley of Spirits in the orc city and you " ..
+                "speak to Ur'kyo. He wait for you now.",
+        },
         [5656] = {
             description = "It always warms my undying heart to see priests from all cultures wander the " ..
                 "world. To know that power exists that is not arcane and well within our grasp. That's " ..
@@ -8465,6 +8471,15 @@ ns.Overrides.wowhead = {
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
             rewardItems = {{22011, 1}},
+        },
+        [8917] = {
+            description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
+                "this world. Yet I'm willing to wager you haven't seen a piece of armor like " ..
+                "this.\n\nPerform a small favor for me and I'll be willing to trade it to you for an " ..
+                "ordinary set of bracers.\n\nI'm in need of a sizeable sample of venom drawn from the " ..
+                "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
+                "coins and I'll perform the exchange.",
+            rewardItems = {{22004, 1}},
         },
         [8919] = {
             description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
@@ -15356,6 +15371,16 @@ ns.Overrides.wowhead = {
                 "a <race> <class> just like you. You go speak with him about smart things.\n\nGo now, but " ..
                 "don't tell no one. It's a secret!",
         },
+        [10990] = {
+            description = "The Book of the Raven tells us the raven's followers captured and bound the " ..
+                "spirits of his rivals within stone shrines. A guardian was set to watch over each, lest " ..
+                "the raven's enemies attempt to free them.\n\nThe first of the shrines is the eagle's, " ..
+                "found in the hills to the south of Lake Jorune and west of Stonebreaker Hold in Terokkar " ..
+                "Forest.\n\nThe tablet says that the eagle fought valiantly, but was overcome by a swarm " ..
+                "of enemies. The armor and endurance of your bear form is well-suited to this fight.",
+            rewardMoney = 44000,
+            rewardXP = 12650,
+        },
         [10992] = {
             description = "<Arthorn's voice addresses you.>\n\nThe last, and strongest, of the spirits " ..
                 "spoken of in the Book of the Raven is that of the hawk. It was imprisoned far from " ..
@@ -16670,6 +16695,7 @@ ns.Overrides.wowhead = {
             spawns = {[3519] = {{45.4, 93.4}, {45.4, 93.6}, {45.6, 92.4}, {45.6, 93.2}, {45.6, 94.6}}},
             zoneID = 3519,
         },
+        [22993] = {spawns = {[3519] = {{46.4, 45}, {46.6, 45}}}, zoneID = 3519},
         [23096] = {spawns = {[3519] = {{44.4, 41.2}, {44.6, 41.2}}}, zoneID = 3519},
         [23098] = {spawns = {[3519] = {{46.4, 38.6}, {46.8, 38.4}, {46.8, 38.6}}}, zoneID = 3519},
         [23099] = {spawns = {[3519] = {{48.4, 39.6}, {48.6, 39.6}}}, zoneID = 3519},

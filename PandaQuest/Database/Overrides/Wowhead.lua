@@ -31443,6 +31443,7 @@ ns.Overrides.wowhead = {
         [24726] = {rewardItems = {{11563, 6}}},
         [24727] = {rewardItems = {{11567, 6}}},
         [24728] = {rewardItems = {{11564, 6}}},
+        [24729] = {rewardItems = {{11565, 6}}},
         [24732] = {
             description = "I'm actually surprised he has not come for you yet, <name>. But all is well, " ..
                 "for I have a final plan that will bring the monster to us.\n\nBeing the dominant male " ..
@@ -62713,6 +62714,7 @@ ns.Overrides.wowhead = {
         [2784] = {spawns = {[1537] = {{39.4, 55.4}, {39.4, 55.8}, {39.6, 55.6}, {40, 55.2}}}, zoneID = 1537},
         [2788] = {spawns = {[45] = {{46.2, 47.4}, {46.2, 47.6}}}, zoneID = 45},
         [2792] = {spawns = {[45] = {{72.6, 34}}}, zoneID = 45},
+        [2806] = {spawns = {[361] = {{34.8, 53.2}}}, zoneID = 361},
         [2817] = {spawns = {[3] = {{42.4, 52.4}, {42.4, 52.8}, {42.6, 53}}}, zoneID = 3},
         [2888] = {spawns = {[3] = {{61.8, 54.2}, {61.8, 54.8}}}, zoneID = 3},
         [2893] = {
@@ -64767,6 +64769,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 6507,
         },
+        [50791] = {spawns = {[5842] = {{59.2, 85.4}, {59.2, 85.6}, {59.2, 86.8}}}, zoneID = 5842},
         [50830] = {
             spawns = {[6134] = {{50.8, 89.8}, {51.4, 89.4}, {51.6, 89.6}, {52.2, 88.8}, {52.6, 88.8}}},
             zoneID = 6134,
