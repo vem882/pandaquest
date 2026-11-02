@@ -5470,6 +5470,14 @@ ns.Overrides.wowhead = {
                 "teleport himself and his servants to safety.\n\nHe wants us to find the chest and its " ..
                 "contents, and return it to him in Stormwind.",
         },
+        [1456] = {
+            description = "Intriguing.\n\nWell, we might not be without hope quite yet.\n\nAlong that " ..
+                "same coast, but to the north near Ranazjar Isle, there're night elf ruins at the bottom " ..
+                "of the ocean. A tribe of naga, the Slitherblade, make that their home. I think that'd be " ..
+                "our best bet.\n\nIf a scouting party went that far south, then they must've been pretty " ..
+                "powerful. If you're gonna find Karnitol's belongings, I'd start with the more powerful " ..
+                "naga: the tidehunters or sea witches.",
+        },
         [1457] = {
             description = "Take Karnitol's things back to Roetten in Ironforge and he'll pay you for a " ..
                 "job well done.\n\nHaha, if you're not careful, he's gonna be so pleased with ya that " ..
@@ -5934,6 +5942,12 @@ ns.Overrides.wowhead = {
                 "real foes.\n\nVejrek is the toughest troll you'll find in these parts, and he's who you " ..
                 "have to beat. He has a hut in the foothills just south of Frostmane Hold\n\nBring me " ..
                 "Vejrek's head and I'll know you have mettle.",
+        },
+        [1679] = {
+            description = "Hello, warrior! You show a lot of promise, but you still need to learn some " ..
+                "tricks and Muren Stormpike is just the dwarf to teach you.\n\nYou can find Muren at the " ..
+                "Hall of Arms in the Military Ward of Ironforge. Talk to him when you're ready to learn " ..
+                "what it is to be a warrior.",
         },
         [1680] = {
             description = "Now that you've learned some moves, it's time to get you a decent weapon. " ..
@@ -7070,6 +7084,13 @@ ns.Overrides.wowhead = {
                 "to Zul'Farrak then you're not going to want to go alone.\n\nYou will find Tabetha 's " ..
                 "cottage west of Theramore, and just north of the Stonemaul Ruin.",
         },
+        [2864] = {
+            description = "My cousin Tran'rek is in a tight spot. He promised me a load of scarab shells " ..
+                "weeks ago and he hasn't delivered. He's my cousin, so I'd hate to have to send someone " ..
+                "to Gadgetzan to break something on him.\n\nCan you speak to Tran'rek for me? Let him " ..
+                "know he needs to get that delivery together before I do something rash?\n\nGadgetzan is " ..
+                "in northern Tanaris, in Kalimdor.",
+        },
         [2866] = {
             description = "To our south are the Ruins of Solarsal; this is an area that far pre-dates " ..
                 "modern times. We explored the ruins initially and found nothing of note; as such, we " ..
@@ -7715,6 +7736,15 @@ ns.Overrides.wowhead = {
                 "of Dorius is not one that I will soon recover from. I must see his final wish through - " ..
                 "the perpetrators of this cold blooded murder must be brought to justice.\n\nReturn to " ..
                 "the Searing Gorge and fulfill his last request: Free his men.",
+        },
+        [3373] = {
+            description = "As you touch the gem, a deep voice resonates in your mind.\n\n\"Mortal, heed " ..
+                "this plea. I am Eranikus of the Green Dragonflight, keeper of this accursed temple. My " ..
+                "charge to ensure that the trolls never again bring forth their abomination of a god has " ..
+                "for now ended in failure. As I imbue this gem with part of my essence, I sense my grip " ..
+                "on the Dream twisting into chaos. Please - place this gem into the essence font in my " ..
+                "lair, and let our magic there purge the taint from my psyche so that I may rest.\"",
+            rewardItems = {{10455, 1}},
         },
         [3376] = {
             description = "<name> - I have heard of you, newcomer. Perhaps it is you that will help us, " ..
@@ -13805,6 +13835,15 @@ ns.Overrides.wowhead = {
                 "armor no mortal has ever worn... armor fit for one who has slain a god!",
             rewardItems = {{21364, 1}},
         },
+        [8639] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21360, 1}},
+        },
         [8659] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -14199,6 +14238,16 @@ ns.Overrides.wowhead = {
                 "them to Windcaller Proudhorn in Cenarion Hold.",
             rewardItems = {{20800, 1}, {21386, 1}},
         },
+        [8829] = {
+            description = "The Twilight's Hammer operates through innumerable layers of secrecy and " ..
+                "deceit. While their actions are carried out in our world, they are planned in a place we " ..
+                "have not yet been able to reach.\n\nWe've come to believe that the stones the Twilight's " ..
+                "Hammer uses to summon their superiors allow for two-way transportation. To attempt to " ..
+                "use them in this manner, we must replicate - to every last detail - a twilight " ..
+                "emissary's robe.\n\nGather the necessary materials and bring them to Aurel Goldleaf, " ..
+                "<name>.",
+            rewardItems = {{21515, 1}},
+        },
         [8846] = {rewardItems = {{21509, 1}}},
         [8847] = {rewardItems = {{21510, 1}}},
         [8848] = {rewardItems = {{21511, 1}}},
@@ -14253,6 +14302,15 @@ ns.Overrides.wowhead = {
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
             rewardItems = {{22004, 1}},
+        },
+        [8911] = {
+            description = "Well met, <class>. I've something that might interest you.\n\nI have in my " ..
+                "possession a set of armor much like the one worn by those of your profession, but of " ..
+                "much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange " ..
+                "for a small favor.\n\nThe blood of the frostsabers and bears that inhabit Winterspring " ..
+                "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
+                "the bracers and a small amount of gold. You shall find the effort worth your while.",
+            rewardItems = {{22071, 1}},
         },
         [8915] = {
             description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
@@ -14900,6 +14958,14 @@ ns.Overrides.wowhead = {
                 "I've already explained this...",
             rewardItems = {{22510, 1}},
         },
+        [9111] = {
+            description = "<Father Montoy makes some strange gestures in the air in front of " ..
+                "you.>\n\nBlessed <boy/girl>, have you found the vestments of the fallen? The poor souls " ..
+                "whose last breaths were taken on the field of battle - stripped of everything including " ..
+                "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
+                "of purification and you shall know faith.",
+            rewardItems = {{22512, 1}},
+        },
         [9112] = {
             description = "<Father Montoy makes some strange gestures in the air in front of " ..
                 "you.>\n\nBlessed <boy/girl>, have you found the vestments of the fallen? The poor souls " ..
@@ -15047,6 +15113,14 @@ ns.Overrides.wowhead = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order TR-635:\n\n8 " ..
                 "Runecloth Boots.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9194] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order TR-7229:\n\n8 " ..
+                "Runecloth Robes.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
