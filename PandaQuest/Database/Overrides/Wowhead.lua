@@ -64575,6 +64575,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 3525,
         },
+        [17808] = {spawns = {[3606] = {{29.7, 51.6}}}, zoneID = 3606},
         [17870] = {
             spawns = {
                 [3523] = {
@@ -64983,6 +64984,7 @@ ns.Overrides.wowhead = {
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [69966] = {maxLevel = 91, minLevel = 91, subName = "Glorious Conquest Quartermaster"},
         [70022] = {subName = "The Bone Collector"},
+        [70030] = {subName = "Jurassic Expedition"},
         [70100] = {maxLevel = 90, minLevel = 90},
         [70160] = {subName = "Lord of the Shado-Pan"},
         [70166] = {subName = "Master Demonologist"},
