@@ -7900,6 +7900,7 @@ ns.Overrides.wowhead = {
         },
         [8261] = {rewardItems = {{20236, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
+        [8264] = {rewardItems = {{20230, 1}}},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
         [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}, rewardXP = 705},
         [8275] = {
@@ -10347,6 +10348,14 @@ ns.Overrides.wowhead = {
                 "will try to do something about providing the bog lords with a new source of nourishment.",
             rewardChoices = {{25525, 1}, {25534, 1}, {25530, 1}, {31661, 1}},
             rewardMoney = 62000,
+        },
+        [9715] = {
+            description = "We must replenish our supply of sanguine hibiscus, which we use for a number " ..
+                "of purposes. They used to grow thick as shrubs, but the lowering of the marsh's water " ..
+                "levels means that they can only be found now in the Underbog at Coilfang Reservoir, " ..
+                "under Serpent Lake.\n\nIt is said that the shamblers, bog giants, and underbats there " ..
+                "consider them a delicacy. So, if you are to help us, you must retrieve the flowers from " ..
+                "them.",
         },
         [9718] = {
             description = "We must determine how widespread the naga's activity truly is and react " ..
