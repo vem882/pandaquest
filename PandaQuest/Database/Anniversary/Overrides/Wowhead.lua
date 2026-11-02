@@ -10001,6 +10001,15 @@ ns.Overrides.wowhead = {
                 "that the withered giants spread the pieces all over that dried-out lake bed.",
             rewardItems = {{23888, 1}},
         },
+        [9636] = {
+            description = "Have you seen the swamp gas? Isn't it just shiny?\n\nIt takes a Zapthrottle " ..
+                "Mote Extractor to suck 'em dry though. I could give you the plans to make one, but I " ..
+                "really need some spare parts to fix stuff 'round here.\n\nLast time I checked, there " ..
+                "were plenty of parts laying around near the steam pump at the Dead Mire to the " ..
+                "northeast. I think the withered giants broke the pump out there.\n\nShall we help each " ..
+                "other out?",
+            rewardItems = {{23888, 1}},
+        },
         [9637] = {
             description = "I left the Kirin Tor in pursuit of knowledge forbidden by those of my order; " ..
                 "it is beyond ironic that I am now asked to assist them with that very same " ..
@@ -11798,6 +11807,14 @@ ns.Overrides.wowhead = {
                 "there, speak with Marshal Isildor and give him Duron's report. He'll be happy to see " ..
                 "another recruit from the homelands, and I'm sure the information in that report is " ..
                 "important stuff!",
+        },
+        [10142] = {
+            description = "Doom Lord Kazzak commands the Burning Legion in Outland. While we can't get to " ..
+                "Kazzak - yet - we can and must get to his lieutenants that command Legion troops from " ..
+                "the ground.\n\nThey have stationed dreadlords at the Path of Anguish, east of here. They " ..
+                "are the ones responsible for these infernal storms that rain down upon our heads. To " ..
+                "take them and their minions out would be a great set back to the Burning Legion.",
+            rewardChoices = {{29908, 1}, {29909, 1}, {29910, 1}, {29911, 1}, {29913, 1}},
         },
         [10168] = {
             description = "For several centuries, the spirits of Auchindoun coalesced into my darkened " ..

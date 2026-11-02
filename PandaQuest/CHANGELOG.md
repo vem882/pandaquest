@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.330] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 666 NPCs, 2 objects
+- database - flight times: 5 measured, 1,627 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,183 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,178 quests, 43 NPCs, 1 object
+- npc 232 - Farmer Ray - updated
+  - coordinates: 8 spawn points added in Hillsbrad Foothills
+- npc 1110 - Skeletal Raider - updated
+  - coordinates: 39 spawn points added in Duskwood
+- npc 1166 - Stonesplinter Seer - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 2333 - Henchman Valik - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 4077 - Gaxim Rustfizzle - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 8737 - Linken - updated
+  - coordinates: 1 spawn point added in Un'Goro Crater
+
 ## [0.2.329] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -157,27 +178,6 @@ Data from the PandaQuest portal.
   - rank added (elite)
 - npc 68587 - Sorin Magehand - updated
   - NPC level added (90)
-
-## [0.2.319] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 629 NPCs, 2 objects
-- database - flight times: 3 measured, 1,629 estimated
-- database - Classic Era: data from the PandaQuest portal: 2,139 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,129 quests, 39 NPCs, 1 object
-- npc 744 - Green Scalebane - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 2406 - Mountain Lion - updated
-  - coordinates: 6 spawn points added in Hillsbrad Foothills
-- npc 45028 - Aggra - updated
-  - coordinates: 40 spawn points added in The Maelstrom
-- npc 68047 - Lieutenant Corwin - updated
-  - NPC level added (90)
-- npc 68707 - Stormwind Footman - updated
-  - NPC level added (90)
-- npc 70440 - Monara - updated
-  - NPC title added (The Last Queen)
 
 ## [0.2.270] - 2026-10-26
 
