@@ -1925,6 +1925,12 @@ ns.Overrides.wowhead = {
                 "Nefara.\n\nTake a Candle of Beckoning from this crate here. Light it on the altar and " ..
                 "Lillith will awake. Destroy Lillith, and I will believe you are the Lich King's foe.",
         },
+        [411] = {
+            description = "Take this Nether Gem to my old comrade Bethor. It will let us communicate... " ..
+                "and I have much to tell him.",
+            rewardItems = {{5940, 1}},
+            rewardMoney = 500,
+        },
         [412] = {
             description = "Upon further analysis of the Gnomeregan situation, it would appear as though " ..
                 "we not only failed to eradicate the troggs but we also happened to turn most of the " ..

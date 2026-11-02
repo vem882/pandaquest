@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.331] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 668 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,184 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,182 quests, 43 NPCs, 1 object
+- npc 17808 - Anetheron - updated
+  - coordinates: 1 spawn point added in Hyjal Summit
+- npc 70030 - Agrant Sharpshot - updated
+  - NPC title added (Jurassic Expedition)
+
 ## [0.2.330] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -160,24 +172,6 @@ Data from the PandaQuest portal.
   - coordinates: 10 spawn points added in Stormwind City
 - npc 12899 - Axtroz - updated
   - coordinates: 40 spawn points added in Wetlands
-
-## [0.2.320] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 634 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,146 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,136 quests, 39 NPCs, 1 object
-- npc 746 - Elder Dragonkin - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 10645 - [Deprecated for 4.x]Thalia Amberhide - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 11117 - Awenasa - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 67682 - Brann Bronzebeard - updated
-  - rank added (elite)
-- npc 68587 - Sorin Magehand - updated
-  - NPC level added (90)
 
 ## [0.2.270] - 2026-10-26
 

@@ -4881,6 +4881,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9649, 1}, {9650, 1}, {10686, 1}},
             rewardMoney = 25000,
         },
+        [2941] = {
+            description = "I have studied many subjects in my time, and my latest fascination is with the " ..
+                "snapjaw that occupy the beach in the Hinterlands. There's one in particular I'd like to " ..
+                "see, a giant snapjaw named Gammerita. I'd like to go myself, but my research keeps me " ..
+                "here. I think a picture of her would be the next best thing.\n\nTake this letter to " ..
+                "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
+                "picture. She called it a \"snapshot,\" I think...",
+        },
         [2948] = {
             description = "Listen <name>, that ring is yours, sure... but I can make you a better one! " ..
                 "That design, like I said, is really simple. I am a lot more skilled now, and for the " ..
@@ -6115,6 +6123,7 @@ ns.Overrides.wowhead = {
                 "blood. From the lesser infernals in Mannoroc Coven, bring me a lesser infernal " ..
                 "stone.\n\nWe will use both in the construction of your robe.",
         },
+        [4802] = {rewardItems = {{12451, 3}}},
         [4808] = {
             description = "I have another favor to ask of you.\n\nMy initial study of the essence you " ..
                 "collected shows that it might be possible to freeze dragon whelp eggs and preserve them! " ..
@@ -8352,6 +8361,14 @@ ns.Overrides.wowhead = {
                 "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
                 "be disappointed.",
             rewardItems = {{21409, 1}},
+        },
+        [8695] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21397, 1}},
         },
         [8696] = {
             description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
@@ -13613,6 +13630,16 @@ ns.Overrides.wowhead = {
                 "village.\n\nTake the goggles and destroy any and all spirits that you see wandering " ..
                 "about Shadowmoon Village. Hopefully, destroying these spirits will force any that remain " ..
                 "to move elsewhere.",
+            rewardMoney = 41000,
+        },
+        [10626] = {
+            description = "With a larger supply of this material, we might be able to forge a weapon for " ..
+                "you to use.\n\nThe two pit lords at Legion Hold, Makazradon and Morgroron, have already " ..
+                "been equipped with these anti-demon weapons. We have no way of knowing how many more the " ..
+                "Legion intends to produce, but if we can capture these prototypes, there should be " ..
+                "enough for our project.\n\n<Ordinn grins.>\n\nThere's a certain amount of satisfaction " ..
+                "in using the Legion's own 'secret weapons' against them, don't you think?",
+            rewardChoices = {{30926, 1}, {30938, 1}, {30950, 1}, {30966, 1}},
             rewardMoney = 41000,
         },
         [10627] = {
