@@ -8565,6 +8565,14 @@ ns.Overrides.wowhead = {
                 "Depths!\n\nHe guards the entrance at the Blackrock Quarry.",
             rewardMoney = 15500,
         },
+        [4264] = {
+            description = "The note has stains covering its surface. The text is barely legible, but you " ..
+                "make out the following:\n\n...sweet irony...\n\n...the fall of the broken " ..
+                "Alliance...\n\n...if it were not for General Angerforge's diligence, we may have never " ..
+                "discovered the pattern to the encryption...\n\n...Argelmach is almost done with the " ..
+                "decryption of Windsor's notes.\n\nOur lord will rise from the depths and crush any that " ..
+                "remain...\n\n-Emperor Dagran Thaurissan.",
+        },
         [4265] = {
             description = "The pod splits opens some when you touch it, revealing a night elven male who " ..
                 "is surprisingly still alive. He seems to be in good health, though deeply stunned. As " ..
@@ -10830,6 +10838,14 @@ ns.Overrides.wowhead = {
                 "Bearwalker in Darnassus, <name>. He, no doubt, has a very important spell to teach you " ..
                 "now that the student understands the lesson given unto <him/her>.\n\nFarewell, young " ..
                 "druid. We shall speak again.",
+        },
+        [6126] = {
+            description = "You're now ready to learn about poison and the power we as druids have over " ..
+                "it, <name>. Cenarius has blessed us with the ability to purge even the most foul of " ..
+                "poisons with but a mere incantation. This gift is not to be taken lightly... and to " ..
+                "ensure you learn this lesson, you'll work to address the effects of poisonings as a " ..
+                "layman would.\n\nTravel to Moonglade and speak with Dendrite Starblaze; he awaits your " ..
+                "arrival to begin your lesson.",
         },
         [6127] = {
             description = "Dreadmist Peak to the northwest of the Crossroads is most likely a primary " ..
@@ -14170,6 +14186,12 @@ ns.Overrides.wowhead = {
                 "used in the crafting of powerful weapons for our forces. Obtain these and bring them " ..
                 "directly to Vargus so that Cenarion Hold's troops may continue to be well equipped.",
             rewardItems = {{20800, 1}, {21266, 1}},
+        },
+        [8810] = {
+            description = "Our supply of bandages in the battlefield is running dangerously low after the " ..
+                "recent casualties we have incurred. Obtain a batch of first-aid supplies and deliver " ..
+                "them to Windcaller Proudhorn in Cenarion Hold.",
+            rewardItems = {{20800, 1}, {21386, 1}},
         },
         [8846] = {rewardItems = {{21509, 1}}},
         [8847] = {rewardItems = {{21510, 1}}},
