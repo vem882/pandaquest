@@ -5255,6 +5255,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{6828, 1}},
             rewardMoney = 8500,
         },
+        [1394] = {
+            description = "You have done well, <name>. You have passed my test, and the tests before " ..
+                "mine. Return to Dorn in Thousand Needles. He will sense the change within you, and see " ..
+                "that your mind, body and spirit are strong enough that you should be rewarded for your " ..
+                "efforts.\n\nStay true to the balance you've shown throughout these trials, <name>. Dorn " ..
+                "will test you again in the future if you do.",
+            rewardChoices = {{6804, 1}, {6806, 1}},
+        },
         [1396] = {
             description = "My caravan was destined for the eastern coast, but we did not reach our goal. " ..
                 "Lost Ones attacked us, killing guards and dashing supplies.\n\nI alone survived their " ..

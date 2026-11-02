@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.328] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 658 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,178 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,173 quests, 43 NPCs, 1 object
+- quest 24729 - Crystal Yield - updated
+  - reward items: +1
+- npc 2806 - Bale - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 50791 - Ahone - updated
+  - coordinates: 3 spawn points added in Townlong Steppes
+
 ## [0.2.327] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -167,25 +181,6 @@ Data from the PandaQuest portal.
   - NPC title added (Grand Master Pet Tamer)
 - npc 185333 - Avelina Lilly - updated
   - data rewritten, nothing a player sees changed
-
-## [0.2.317] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,891 quests, 619 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,135 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,121 quests, 38 NPCs, 1 object
-- quest 29268 - Some Good Will Come - updated
-  - description added
-  - reward items: +1
-- npc 6109 - Azuregos - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 8479 - Kalaran Windblade - updated
-  - coordinates: 2 spawn points added in Searing Gorge
-- npc 8673 - Auctioneer Thathung - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 45609 - Agatha - updated
-  - coordinates: 1 spawn point added in Silverpine Forest
 
 ## [0.2.270] - 2026-10-26
 
