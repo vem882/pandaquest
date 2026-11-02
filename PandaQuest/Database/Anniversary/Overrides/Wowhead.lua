@@ -1215,6 +1215,11 @@ ns.Overrides.wowhead = {
                 "accomplishment.\n\nTracking her down will be no easy task.",
             rewardItems = {{4107, 1}},
         },
+        [192] = {
+            description = "Now the hard part. A true panther hunter can show skill by dropping Shadowmaw " ..
+                "Panthers, the deadliest in Stranglethorn. Prove to us that you can slay 10 of these " ..
+                "beasts.\n\nIf you think they are hard to track, wait until you attempt to slay one....",
+        },
         [208] = {
             description = "<name>, you are a hunter worthy of our company. From the battlefields of " ..
                 "Lordaeron to the deepest jungle, I have rarely witnessed such prowess with weaponry as " ..
@@ -4695,6 +4700,7 @@ ns.Overrides.wowhead = {
                 "experiments from my cage; the tortured screams rang through the halls of the cave. That " ..
                 "was the last I saw or heard of Kirith.",
         },
+        [2741] = {rewardItems = {{8647, 1}}},
         [2749] = {rewardItems = {{9539, 1}}},
         [2751] = {
             description = "Twenty generations of Omosh have held this hammer, <name>. A hundred thousand " ..
@@ -5330,6 +5336,12 @@ ns.Overrides.wowhead = {
                 "their ways can help the Forsaken find a path back to being human.\n\nBring her the " ..
                 "Tablet of Beth'Amara. The tablet may be the link she needs in finding a way to help the " ..
                 "Forsaken... or so she claims.",
+        },
+        [3522] = {
+            description = "The antidote is ready, <name>. Please see that Iverron drinks it.\n\nThere is " ..
+                "something that you should know -- the antidote -- it will only remain viable for 5 " ..
+                "minutes. You must get it to him in time.\n\nSpeed be with you, <name>.",
+            rewardChoices = {{10655, 1}, {10656, 1}},
         },
         [3524] = {
             description = "Majestic sea creatures are known to launch themselves at the Darkshore " ..
@@ -7528,6 +7540,16 @@ ns.Overrides.wowhead = {
                 "Ultra-Shrinker refinement - give them the what-for I say! When doing this though, be " ..
                 "sure to save me the water elemental cores!",
             rewardItems = {{19039, 1}},
+            rewardMoney = 7000,
+        },
+        [7724] = {
+            description = "Wouldn't ye know it, every time ol' Hansel wants to take a moment to relax and " ..
+                "reflect upon his life, the powers that be give him another job.\n\nMe gots to think, " ..
+                "come on! Ye know what I be saying? Come. On.\n\nSo, these here greater lava spiders are " ..
+                "causin' a ruckus o' some sort. Oilfist says they shoot fire out their... erm, yea well, " ..
+                "anyway, such things upset the children.\n\nI guess we gots to kill 'em. Rather, ye gots " ..
+                "to kill 'em.",
+            rewardItems = {{19125, 1}},
             rewardMoney = 7000,
         },
         [7725] = {

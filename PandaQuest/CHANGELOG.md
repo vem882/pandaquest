@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.327] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,177 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,170 quests, 42 NPCs, 1 object
+
 ## [0.2.326] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -179,27 +186,6 @@ Data from the PandaQuest portal.
   - coordinates: 2 spawn points added in Orgrimmar
 - npc 45609 - Agatha - updated
   - coordinates: 1 spawn point added in Silverpine Forest
-
-## [0.2.316] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 615 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,132 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,115 quests, 38 NPCs, 1 object
-- npc 3238 - Stormhide - updated
-  - coordinates: 40 spawn points added in The Barrens
-- npc 3660 - Athrikus Narassin - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 10219 - Gwennyth Bly'Leggonde - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 71622 - Acon Deathwielder - updated
-  - NPC title added (Glorious Conquest Quartermaster)
-  - NPC level added (91)
-  - coordinates: 1 spawn point added in Kun-Lai Summit
-- npc 246386 - Bai-Jin the Butcher - updated
-  - NPC level added (91)
-  - rank added (elite)
 
 ## [0.2.270] - 2026-10-26
 

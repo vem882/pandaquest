@@ -7036,6 +7036,15 @@ ns.Overrides.wowhead = {
                 "we will proceed.",
             rewardItems = {{8406, 1}},
         },
+        [2860] = {
+            description = "<name>, you have learned all I am able to teach you. There is, however, one " ..
+                "remaining pattern for Wild Leather armor. I will not require you to toil needlessly for " ..
+                "this; you've earned it outright, and then some. This pattern, however, is one that I " ..
+                "cannot freely share with you.\n\nMy teacher, the one who brought me into the craft, is " ..
+                "the one who must reward you. Take this note to Una; she teaches leatherworking in " ..
+                "Thunder Bluff. Show her the letter, and let her acknowledge you as an equal, as I do.",
+            rewardItems = {{8408, 1}},
+        },
         [2861] = {
             description = "Rumor is that Tabetha, a mage colleague who lives deep in Dustwallow Marsh, " ..
                 "has a bone to pick with a certain sand troll in Zul'Farrak. If you speak with Tabetha " ..
@@ -9518,6 +9527,11 @@ ns.Overrides.wowhead = {
                 "wedding ring. Take that ring to Chromie... a strange gnome with very strange " ..
                 "powers.\n\nChromie is staying in the ruined inn at the northwest corner of Andorhal.",
         },
+        [5154] = {
+            description = "To save Joseph Redpath, we must first discover his past. We can learn this in " ..
+                "the Annals of Darrowshire, a book held in the city hall of Andorhal.\n\nBring me that " ..
+                "book. We can then learn Joseph's fate, and with luck... change it!",
+        },
         [5155] = {
             description = "If I am to trust you in this matter, you will first have to prove " ..
                 "yourself.\n\nI must know that you are an enemy of the Shadow Council--the ones " ..
@@ -11550,6 +11564,14 @@ ns.Overrides.wowhead = {
                 "gingerly. There are tensions between Darnassus and Moonglade... ones that may grow over " ..
                 "the course of time.",
         },
+        [6804] = {
+            description = "A force of elemental scouts was sent to the eastern plaguelands of Lordaeron, " ..
+                "and the disease of that place twisted and infected them. The Waterlords cannot allow " ..
+                "this affront to our purity!\n\nTake this vial. In it is a quantity of one aspect of " ..
+                "Neptulon. If used on the plagued elementals it will fight the poison within their bodies " ..
+                "and cure them! But their inner conflict will drive them into a surging " ..
+                "madness.\n\nDefeat the discordant surges and bring me their bracers of binding.",
+        },
         [6821] = {
             description = "You have shown me that you can defeat our enemies and perform missions to " ..
                 "further the cause of the Waterlords. But until now you have only faced lesser foes... if " ..
@@ -12879,6 +12901,14 @@ ns.Overrides.wowhead = {
                 "the fight to these wretched creatures and all able-bodied adventurers are hereby called " ..
                 "to join us!\n\nDon't wait until it's too late! Aid us in the defense of Azeroth! Report " ..
                 "to Windcaller Proudhorn at Cenarion Hold for specific instructions!",
+        },
+        [8276] = {
+            description = "Attention, champions of the Horde! There's a threat we've left unchallenged " ..
+                "for too long. Tremors in the earth near silithid hives all around Azeroth have alerted " ..
+                "us to large movements in their numbers as they prepare for expansion.\n\nCenarion Circle " ..
+                "forces are gathering in Silithus to take the fight to the silithid before it's too late! " ..
+                "No more shall they defile our lands!\n\nAll able-bodied combatants are to report to " ..
+                "Windcaller Proudhorn at Cenarion Hold! The silithid shall be vanquished!",
         },
         [8277] = {
             description = "Beetix Ficklespragg at your service! My cousin Noggle makes a living gathering " ..
