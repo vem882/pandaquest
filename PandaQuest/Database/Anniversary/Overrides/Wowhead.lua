@@ -3820,6 +3820,12 @@ ns.Overrides.wowhead = {
                 "will test you again in the future if you do.",
             rewardChoices = {{6804, 1}, {6806, 1}},
         },
+        [1396] = {
+            description = "My caravan was destined for the eastern coast, but we did not reach our goal. " ..
+                "Lost Ones attacked us, killing guards and dashing supplies.\n\nI alone survived their " ..
+                "assault. I have sworn to protect what supplies remain, but wild creatures skulk near. " ..
+                "Please, help me defend my camp from the beasts!",
+        },
         [1418] = {
             description = "The Badlands is harsh and lies close to the Alliance-held land of Loch Modan, " ..
                 "so communication between Stonard and the Badlands outpost of Kargath is often " ..
@@ -4086,6 +4092,13 @@ ns.Overrides.wowhead = {
                 "bestow a great gift upon you. But know this, for now I give you this freely, but later, " ..
                 "when time permits, this will be a much greater challenge to all paladins who choose to " ..
                 "undertake my quest.\n\nSpeak to me again and I shall grant you a great boon.",
+        },
+        [1666] = {
+            description = "You've learned a few moves, but you could still use a decent weapon. I bet if " ..
+                "you spoke with Marshal Haggard he could help you.\n\nMarshal Haggard lives in a manor in " ..
+                "Elwynn Forest, at the Eastvale Lumber Camp. He's retired now but he collected a lot of " ..
+                "gear during his career.\n\nLet him know I sent you, and with luck he'll have a spare " ..
+                "weapon to offer.",
         },
         [1683] = {
             description = "Before I can teach you, you must show me your resolve.\n\nThe satyr Vorlus " ..
@@ -8533,6 +8546,14 @@ ns.Overrides.wowhead = {
                 "the mistakes of our past.\n\nAs to your reward, I believe I have a few things that you " ..
                 "have definitely earned and will truly enjoy.",
             rewardItems = {{22097, 1}, {22102, 1}},
+        },
+        [9015] = {
+            description = "Heed me well, <name>. For the banner to work in the desired way, you will need " ..
+                "to step into the Ring of the Law in Blackrock Depths. Allow yourself to be sentenced by " ..
+                "High Justice Grimstone and place the banner firmly on the ground in a sign of " ..
+                "defiance.\n\nYour victim will not be able to restrain himself and shall enter the fray " ..
+                "filled with a desire to fight you. Once you obtain that which you seek, go back to " ..
+                "Anthion.",
         },
         [9018] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
@@ -16445,6 +16466,15 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3525,
+        },
+        [17870] = {
+            spawns = {
+                [3523] = {
+                    {32, 64.4}, {32.2, 64.8}, {32.6, 64.4}, {32.8, 64.6}, {32.8, 66.4}, {32.8, 67.8},
+                    {33.6, 64.8}, {33.8, 63.8}, {34, 63.4},
+                },
+            },
+            zoneID = 3523,
         },
         [18338] = {
             spawns = {

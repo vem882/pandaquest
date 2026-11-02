@@ -64250,6 +64250,7 @@ ns.Overrides.wowhead = {
         [14904] = {spawns = {[33] = {{15.2, 16}}}, zoneID = 33},
         [14905] = {spawns = {[33] = {{14, 13.6}}}, zoneID = 33},
         [14921] = {spawns = {[33] = {{15, 16}}}, zoneID = 33},
+        [15070] = {spawns = {[33] = {{14.4, 15.8}, {14.6, 15.8}}}, zoneID = 33},
         [15165] = {spawns = {[440] = {{66.4, 22.2}, {66.6, 22.2}}}, zoneID = 440},
         [15288] = {
             spawns = {
@@ -64868,6 +64869,7 @@ ns.Overrides.wowhead = {
         [68715] = {subName = "The Sunreavers"},
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
+        [68728] = {maxLevel = 90, minLevel = 90},
         [68753] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68908] = {subName = "SI:7"},
@@ -64884,6 +64886,7 @@ ns.Overrides.wowhead = {
         [69355] = {subName = "The Sunreavers"},
         [69356] = {subName = "The Sunreavers"},
         [69357] = {subName = "The Sunreavers"},
+        [69359] = {subName = "Jurassic Expedition"},
         [69360] = {subName = "Jurassic Expedition"},
         [69371] = {subName = "Plague Consultant"},
         [69663] = {subName = "The Hunt Master"},
