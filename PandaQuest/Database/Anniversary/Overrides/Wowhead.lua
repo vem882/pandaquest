@@ -1838,6 +1838,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{3448, 20}},
             rewardMoney = 500,
         },
+        [454] = {
+            description = "We'd been hauling the barrels of powder back and forth in trips before this... " ..
+                "business. Now we have to split up the work, Miran 's taking the barrels and I'm watching " ..
+                "over the other ones.\n\nI don't feel safe letting Miran haul the rest of the shipment by " ..
+                "himself. When he's ready to go, maybe you could escort him on his next trip?",
+        },
         [456] = {
             description = "Greetings, <name>. I am Conservator Ilthalaine. My purpose in Shadowglen is to " ..
                 "ensure that the balance of nature is maintained.\n\nThe spring rains were particularly " ..
@@ -8043,6 +8049,16 @@ ns.Overrides.wowhead = {
                 "available for you. The things she will teach do have a cost, so bring some coin with " ..
                 "you.\n\nJulia - as with all the trainers on Sunstrider Isle - is inside the Sunspire on " ..
                 "the lower level.",
+        },
+        [8330] = {
+            description = "With all the chaos happening here at the Sunspire, I haven't had a chance to " ..
+                "collect my belongings I've left outside at various places on the isle. I must maintain " ..
+                "my vigil over the Sunwell here, so I'll ask you to collect them in my stead.\n\nI need " ..
+                "my scrying orb, my scroll of Scourge magic, and my journal. Use this satchel for some " ..
+                "extra space, as my things are rather bulky. Return them to me and I'll give you a little " ..
+                "something - you know, for the effort; you can keep the satchel as well!",
+            rewardChoices = {{20996, 1}, {20995, 1}},
+            rewardMoney = 75,
         },
         [8332] = {
             description = "We think it is possible to use a wind stone to ambush a duke of the Abyssal " ..
