@@ -1659,6 +1659,14 @@ ns.Overrides.wowhead = {
                 "on most of the shady, or underhanded dealings of the city.\n\nIf anyone knows, it'd be " ..
                 "him.",
         },
+        [394] = {
+            description = "Find Shaw in Old Town. Let him know that the Lescovar threat has been dealt " ..
+                "with and about your involvement in the Lord's plots against the city. I'm sure he'll be " ..
+                "proud to have another hero among Stormwind's citizens.\n\nHe'll more than likely send " ..
+                "you off to meet with the Prince or some other noble. Don't let it get to your head, " ..
+                "<name>. The nobles can think they rule the city all they want, but some things remain " ..
+                "out of their hands.",
+        },
         [396] = {
             description = "I have prepared a report for the King. I believe you should be the one to " ..
                 "deliver it to him, along with an account of your findings. Do not worry, there is no " ..
@@ -3988,6 +3996,15 @@ ns.Overrides.wowhead = {
                 "show you the runes necessary to summoning a voidwalker.",
             rewardXP = 840,
         },
+        [1503] = {
+            description = "I will give you a weapon, <name>, but first you must aid me. The Razormanes to " ..
+                "the northwest came into my camp a few nights past. They would not meet me in combat, but " ..
+                "they know my eyes are bad--a few distracted me with snorts while others stole from me! " ..
+                "The cowards!\n\nThey took an iron chest, and within it were some forged steel bars. If " ..
+                "you can recover them then I will give you the weapon you seek.\n\nSearch for the iron " ..
+                "box within the quilboar camps, and return with the forged steel bars.",
+            rewardChoices = {{7326, 1}, {7328, 1}, {7327, 1}, {7329, 1}},
+        },
         [1505] = {
             description = "The Horde honors its warriors because their strength is unquestioned. But the " ..
                 "truly great warriors are great students as well.\n\nSeek out Uzzek. He is a veteran of " ..
@@ -4003,6 +4020,14 @@ ns.Overrides.wowhead = {
                 "received no word from him...\n\nPerhaps you could go to the Crossroads and see if they " ..
                 "have any news? He worked with Gazrog, who should still be stationed there.",
             rewardXP = 390,
+        },
+        [1517] = {
+            description = "A sapta is a drink created to bind our spirits to the elements. Fused with " ..
+                "magic, the potion will allow the strong willed to see the elements as no one else can. " ..
+                "Your spirit will be connected to the element the sapta was created for, and only a " ..
+                "select few shaman know the recipe.\n\nThe sapta is always drunk in a holy place, and " ..
+                "never anywhere else--remember that.\n\nSeek out Spirit Rock southwest of here--it is " ..
+                "found at the end of the Hidden Path. Drink your sapta there, and... well, you shall see.",
         },
         [1519] = {
             description = "The time has come, young <class>. Your body ages and grows strong, and your " ..
@@ -4888,6 +4913,14 @@ ns.Overrides.wowhead = {
                 "here. I think a picture of her would be the next best thing.\n\nTake this letter to " ..
                 "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
                 "picture. She called it a \"snapshot,\" I think...",
+        },
+        [2947] = {
+            description = "Opening the box produced by the Sparklematic 5200 reveals what you had " ..
+                "suspected - a shiny ring! Wearing the ring, you feel magic power surge through you " ..
+                "body.\n\nInside the band is a small but nonetheless discernable imprint of the seal of " ..
+                "Ironforge. Next to that, three small initials are engraved: \"TdK\". This may signify " ..
+                "either the initials of the previous owner, or perhaps the initials of the ring's " ..
+                "crafter. Keep the ring... or return it to this person. Decisions, decisions...",
         },
         [2948] = {
             description = "Listen <name>, that ring is yours, sure... but I can make you a better one! " ..
@@ -8674,6 +8707,13 @@ ns.Overrides.wowhead = {
                 "the initiation rites inside his chamber in the Scarlet Bastion.\n\nIn any case, we... " ..
                 "meaning you, are still going to need to retrieve that piece of the amulet.",
         },
+        [8998] = {
+            description = "I suppose that this is goodbye then, my friend. But, I'll always be here if " ..
+                "you want to come back and talk with me from time to time. Probably while you're " ..
+                "loitering around waiting for your buddies to join you for a raid on Blackrock " ..
+                "Spire.\n\nGo, before I start to cry. Go back to Mokvar in Orgrimmar and tell him what's " ..
+                "happened.",
+        },
         [9004] = {
             description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
                 "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
@@ -9136,6 +9176,14 @@ ns.Overrides.wowhead = {
             rewardMoney = 1400,
         },
         [9177] = {
+            description = "This is quite extraordinary! It appears to be a gift to Lady Sylvanas " ..
+                "Windrunner from her sister, Alleria!\n\nYou must take it to her in the Undercity at " ..
+                "once! The lady holds court in the Royal Quarter.\n\nTo get there, use the orb of " ..
+                "translocation in the Inner Sanctum of Sunfury Spire in Silvermoon City to cross over to " ..
+                "the Undercity. Once there, take the elevator ride down into the city proper. Use your " ..
+                "maps if you need help finding the Royal Quarter.",
+        },
+        [9180] = {
             description = "This is quite extraordinary! It appears to be a gift to Lady Sylvanas " ..
                 "Windrunner from her sister, Alleria!\n\nYou must take it to her in the Undercity at " ..
                 "once! The lady holds court in the Royal Quarter.\n\nTo get there, use the orb of " ..

@@ -1381,6 +1381,13 @@ ns.Overrides.wowhead = {
                 "form.\n\nSpeak with the locals of Moonglade to learn where the parts may lie, and bring " ..
                 "both here to join them together. Once formed, take the pendant to Dendrite Starblaze.",
         },
+        [273] = {
+            description = "It's not too late though, you're welcome to go look for Huldar. He can't have " ..
+                "made it very far, strong as they are, Miran and Saean can only move so fast laden down " ..
+                "with those barrels.\n\nThey're taking the normal route to the site, leaving south out of " ..
+                "town and following the curve of the Loch.\n\nShouldn't have a problem finding them " ..
+                "unless they've already gotten there.",
+        },
         [274] = {
             description = "This ain't no ordinary blast powder. Look at the tiny silver crystals. And the " ..
                 "distinct smell! Why it's clear as daylight that this is Seaforium Powder. Seaforium is " ..
