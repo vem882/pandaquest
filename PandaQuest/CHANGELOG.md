@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.326] - 2026-11-02
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,894 quests, 656 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,173 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,166 quests, 42 NPCs, 1 object
+- quest 24553 - The Purification of Quel'Delar - updated
+  - description added
+- quest 31593 - Got one! - updated
+  - description added
+  - reward money added (11g 40s)
+- npc 8608 - Angered Infernal - updated
+  - coordinates: 2 spawn points added in Azshara
+- npc 11680 - Horde Scout - updated
+  - coordinates: 40 spawn points added in Ashenvale
+- npc 52790 - Aggra - updated
+  - coordinates: 1 spawn point added in Mount Hyjal
+
 ## [0.2.325] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -181,18 +200,6 @@ Data from the PandaQuest portal.
 - npc 246386 - Bai-Jin the Butcher - updated
   - NPC level added (91)
   - rank added (elite)
-
-## [0.2.315] - 2026-11-01
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,890 quests, 610 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,128 quests, 23 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,109 quests, 38 NPCs, 1 object
-- quest 13810 - Taking Battle To The Enemy - updated
-  - description added
-- npc 7669 - Servant of Grol - updated
-  - coordinates: 15 spawn points added in Blasted Lands
 
 ## [0.2.270] - 2026-10-26
 

@@ -30825,6 +30825,14 @@ ns.Overrides.wowhead = {
                 "large trees.",
             rewardMoney = 3500,
         },
+        [24553] = {
+            description = "I admit, I was skeptical that you had actually re-forged Quel'Delar and I did " ..
+                "not expect Thalorien's spirit to reveal itself to you. You cannot understand what it " ..
+                "means to me and to the rest of my people that Quel'Delar has been recovered.\n\nAs " ..
+                "promised, I will admit you to the Sunwell and you will find the leaders of Silvermoon " ..
+                "within. Carry the sword to the chamber of the Sunwell and immerse it. The blade will " ..
+                "bond to you. When that happens, carry it to Caladis Brightspear at Quel'Delar's Rest.",
+        },
         [24556] = {
             description = "Getting you inside the Silver Enclave will be tougher than it appears. Only " ..
                 "those who possess Silver Covenant tabards are permitted entry to sanctuary. If we can " ..
@@ -56077,6 +56085,14 @@ ns.Overrides.wowhead = {
                 "pets.",
             rewardMoney = 106000,
         },
+        [31593] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
         [31598] = {
             description = "<As the ringworm tumbles apart, a massive chunk of organic kyparite falls from " ..
                 "its core. Someone at Klaxxi'vess will want to see this.>",
@@ -63860,6 +63876,7 @@ ns.Overrides.wowhead = {
         [8579] = {spawns = {[440] = {{67, 22.4}}}, zoneID = 440},
         [8587] = {spawns = {[16] = {{22.4, 51.4}, {22.6, 51.4}}}, zoneID = 16},
         [8588] = {spawns = {[618] = {{67.8, 27.4}}}, zoneID = 618},
+        [8608] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [8673] = {spawns = {[1637] = {{55.4, 62.8}, {55.6, 62.8}}}, zoneID = 1637},
         [8724] = {spawns = {[1637] = {{55.4, 64.8}, {55.6, 64.6}}}, zoneID = 1637},
         [8957] = {
@@ -64045,6 +64062,20 @@ ns.Overrides.wowhead = {
         [11610] = {spawns = {[28] = {{52, 28}}}, zoneID = 28},
         [11613] = {spawns = {[28] = {{57.4, 35.4}, {57.4, 35.8}, {57.8, 36}}}, zoneID = 28},
         [11629] = {spawns = {[618] = {{61.2, 38.8}}}, zoneID = 618},
+        [11680] = {
+            spawns = {
+                [331] = {
+                    {69.4, 82.4}, {69.4, 82.6}, {69.4, 84.8}, {69.6, 82.6}, {69.6, 84.6}, {70.6, 83.6},
+                    {70.8, 83.4}, {71.4, 79.6}, {71.6, 79.6}, {72.4, 78.4}, {72.6, 78.4}, {73.4, 79.8},
+                    {73.6, 79.4}, {73.6, 79.6}, {84.2, 58.8}, {84.6, 59.4}, {85, 60.6}, {85.2, 62.2},
+                    {86, 56.2}, {86.2, 60.6}, {86.4, 53.6}, {86.4, 55}, {86.4, 60.4}, {86.6, 53.6},
+                    {86.6, 62}, {86.8, 59.4}, {87, 52.4}, {87, 64.4}, {87.4, 53.2}, {87.4, 58.4},
+                    {87.6, 58.6}, {87.6, 62.6}, {88, 57.6}, {88, 61.4}, {89.2, 54.4}, {89.2, 62.2},
+                    {89.4, 51}, {89.4, 52.4}, {89.6, 49.2}, {89.6, 62.4},
+                },
+            },
+            zoneID = 331,
+        },
         [11758] = {spawns = {[440] = {{52.8, 27.4}}}, zoneID = 440},
         [11827] = {
             spawns = {
@@ -64754,6 +64785,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 5042,
         },
+        [52790] = {spawns = {[616] = {{60.2, 30.2}}}, zoneID = 616},
         [52832] = {spawns = {[3537] = {{32.6, 27.2}}}, zoneID = 3537},
         [53422] = {
             spawns = {
