@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.3.1+v1.0.9 (TBC Anniversary database + corrections from QuestieDB 1.0.9). DO NOT EDIT.
--- Built: 2026-10-26T18:11:19Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.4.0+v1.0.10 (TBC Anniversary database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
+-- Built: 2026-11-02T14:08:39Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "anniversary"
 ns.Data.meta = {
-  ["built"] = "2026-10-26T18:11:19Z",
+  ["built"] = "2026-11-02T14:08:39Z",
   ["contentPhase"] = 4,
   ["counts"] = {["items"]=25023,["npcs"]=18509,["objects"]=9150,["questXP"]=5304,["quests"]=6657},
   ["expansion"] = "TBC",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.3.1+v1.0.9",
+  ["source"] = "Questie 12.4.0+v1.0.10",
 }
 ns.Data.questTagCorrections = {
   [19] = {1,"Elite"},
@@ -2553,10 +2553,6 @@ ns.Data.hiddenQuests = {
   [7063] = true,
   [7221] = true,
   [7222] = true,
-  [7281] = true,
-  [7282] = true,
-  [7301] = true,
-  [7302] = true,
   [7364] = true,
   [7365] = true,
   [7367] = true,

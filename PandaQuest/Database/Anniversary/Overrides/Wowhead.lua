@@ -5350,6 +5350,12 @@ ns.Overrides.wowhead = {
                 "Tablet of Beth'Amara. The tablet may be the link she needs in finding a way to help the " ..
                 "Forsaken... or so she claims.",
         },
+        [3519] = {
+            description = "Ughhh... I was bitten very badly by a spider named Githyiss the Vile while " ..
+                "exploring the spider cave very close to here. I am sure I have been seriously poisoned; " ..
+                "you must help me.\n\nPlease tell Dirania Silvershine. She will be able to help " ..
+                "me.\n\nHurry... I'm so dizzy...",
+        },
         [3522] = {
             description = "The antidote is ready, <name>. Please see that Iverron drinks it.\n\nThere is " ..
                 "something that you should know -- the antidote -- it will only remain viable for 5 " ..
@@ -6930,6 +6936,15 @@ ns.Overrides.wowhead = {
                 "druid!",
             rewardXP = 840,
         },
+        [6004] = {
+            description = "I was sent as a scout to do some damage and gauge the strength of Hearthglen's " ..
+                "defenses. Some people in the Alliance feel the little town has more than historical " ..
+                "importance. It's not my job to question what that importance is, but regardless, I'm in " ..
+                "no shape to continue until I rest up.\n\nIf you're willing, I'd pay handsomely for some " ..
+                "help. Start south of here at their camp near the small bulwark they've set up. If you " ..
+                "prove strong enough, maybe I could get your help with my main goal.",
+            rewardMoney = 6500,
+        },
         [6026] = {
             description = "These here Argent Dawn people commissioned ol' Smokey to do a little " ..
                 "demolition work for 'em. Smokey's mammy ain't raised no dummy. When gold coin is slapped " ..
@@ -7055,6 +7070,15 @@ ns.Overrides.wowhead = {
                 "Circle there... and let me say thanks to you directly for the help you've given!",
             rewardItems = {{15866, 1}},
             rewardXP = 740,
+        },
+        [6125] = {
+            description = "You've learned what it means to cure poison without the benefit of spiritual " ..
+                "aid. Remember what others must endure in fighting poisonous afflictions as you soon " ..
+                "embrace your newfound power over poison.\n\nYou should now return to Mathrengyl " ..
+                "Bearwalker in Darnassus, <name>. He, no doubt, has a very important spell to teach you " ..
+                "now that the student understands the lesson given unto <him/her>.\n\nFarewell, young " ..
+                "druid. We shall speak again.",
+            rewardXP = 980,
         },
         [6126] = {
             description = "You're now ready to learn about poison and the power we as druids have over " ..
@@ -10726,6 +10750,14 @@ ns.Overrides.wowhead = {
                 "observations. Unfortunately her death was confirmed shortly before Karazhan was shut " ..
                 "down. Koren, Karazhan 's blacksmith, was under our pay. Though not a member of the " ..
                 "Violet Eye, he should be able to help us find Keanna's log. Look for him inside.",
+        },
+        [9841] = {
+            description = "It's impossible to work with all this infernal buzzing! Do you hear it?\n\nI " ..
+                "can't get it out of my head! I know exactly what's making the noise, too. It's those " ..
+                "damnable marshlight bleeders! The noise always comes from the south and west of the " ..
+                "village.\n\nThey're too big to swat, crush underfoot, or wave away. The only way to stop " ..
+                "that unholy droning is to kill them. I don't care how you do it, <name>, just quiet them!",
+            rewardMoney = 31000,
         },
         [9842] = {
             description = "The damp atmosphere of the marsh has taken a toll on my metal tools. It's made " ..
