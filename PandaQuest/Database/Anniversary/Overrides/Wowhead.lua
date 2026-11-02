@@ -2501,6 +2501,13 @@ ns.Overrides.wowhead = {
                 "been able to get any food.\n\nWe're in a bit of a pickle here, suppose you could help us " ..
                 "out?",
         },
+        [723] = {
+            description = "<Hammertoe holds his wounds and takes a moment to regain his composure before " ..
+                "speaking again.>\n\nFind Ryedol, <name>. Bring 'im me amulet. <cough cough> He'll... " ..
+                "<cough> figure out what to do. He knows I was seeking the origins of our people, and " ..
+                "he... <cough>... knows it was also my mission to stop the Shadowforge clan. They must " ..
+                "not be allowed to find the scrolls... <cough>",
+        },
         [724] = {
             description = "Okay, okay... who would know what to do?\n\nHistorian Karnik! That's " ..
                 "it!\n\nHe's in Ironforge. He'll be able to help. He and Hammertoe were workin' together " ..
@@ -6650,6 +6657,15 @@ ns.Overrides.wowhead = {
                 "been transformed into rapacious, man eating beasts. I ask that you destroy those that " ..
                 "would strike from the skies: The Plaguebats.",
         },
+        [5601] = {
+            description = "I fled Lordaeron during the great war, and was lucky to escape before the " ..
+                "Scourge swept through my homeland and turned it into a plagued nightmare! I was lucky, " ..
+                "but my family was not. I fear they were all killed during the battle of " ..
+                "Darrowshire.\n\nDarrowshire is a village in the Eastern Kingdoms, nestled in the " ..
+                "southern hills of what is now the Eastern Plaguelands. Will you go there and search for " ..
+                "my family? I miss them so much, especially my little sister Pamela.\n\nPlease, find her " ..
+                "for me!",
+        },
         [5622] = {
             description = "<name>, you must travel to Dolanaar when your business here in Shadowglen is " ..
                 "done. There, you will find Laurna Morninglight. She will instruct you further in the " ..
@@ -7311,6 +7327,14 @@ ns.Overrides.wowhead = {
                 "Shazzrah. Kill them and bring me their hands!\n\nThis task will take every resource you " ..
                 "possess, <name>, but if can do it then the Firelords will be dealt a terrible blow.",
         },
+        [6844] = {
+            description = "There's plenty to do here still, but I think taking this back to the Circle " ..
+                "for analysis is key. Trust me - the work will still be here once this is all said and " ..
+                "done. If it's a journal inside this sticky chitin, then the Circle would finally have a " ..
+                "window into the past!\n\nTake this to the Circle's archivist in Nighthaven. His name is " ..
+                "Umber, and the man's brilliant. Touched, sure, but brilliant nonetheless! Umber 's " ..
+                "salvaged tomes in far worse shape than this. If it can be saved, he can do it.",
+        },
         [6922] = {
             description = "The defeated water elemental has left behind a strange water globe. You " ..
                 "surmise that the object somehow fed the beast energy. Inside the globe, a putrid-looking " ..
@@ -7785,6 +7809,14 @@ ns.Overrides.wowhead = {
                 "as a hermit. Perhaps you can enlist his help in deciphering the tablet.\n\nTake the " ..
                 "restored tablet with you and seek out Ortell.",
         },
+        [8286] = {
+            description = "The embrace of death had all but overcome my being when he intervened. He " ..
+                "breathed only once upon my maimed body and then waited patiently for the sands of time " ..
+                "to cleanse my wounds.\n\n\"Forever you will remain if you must,\" he said, and with " ..
+                "those words I was bound as a Watcher.\n\nLook now to the desert. The second war is upon " ..
+                "us. You must seek out the resting place of the Bronze. Venture to the Caverns of Time " ..
+                "and see if the master has returned. I must be sure before I am able to proceed.",
+        },
         [8288] = {
             description = "There is no time to waste! A hero must be found! The task I give will require " ..
                 "an army to complete but only one may rise from the throng of would be champions to take " ..
@@ -7912,6 +7944,11 @@ ns.Overrides.wowhead = {
                 "Kalimdor through the Maelstrom.\n\nSeek out his shrine to the west and do not return to " ..
                 "me until you have read the plaque upon it in his honor.",
             rewardMoney = 150,
+        },
+        [8349] = {
+            description = "Now that you have a medallion and can summon an Abyssal Duke, speak with Bor " ..
+                "Wildmane. He will set you on a task against the Abyssal Council.\n\nGood luck, <name>. " ..
+                "And if you ever need more medallions, return to me.",
         },
         [8365] = {
             description = "You're the help the Cartel sent? I suppose you'll do. Listen carefully " ..
@@ -8631,6 +8668,13 @@ ns.Overrides.wowhead = {
                 "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
                 "piece of armor for you.",
             rewardItems = {{22428, 1}},
+        },
+        [9047] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22430, 1}},
         },
         [9048] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
@@ -9374,6 +9418,13 @@ ns.Overrides.wowhead = {
                 "and the ferocity of the springpaw. Mistbats are found just across the Elrendar River to " ..
                 "the south, preying on hapless travelers who wander into the Ghostlands.\n\nUse this " ..
                 "final taming rod to befriend a mistbat and return to me when you have finished.",
+            rewardXP = 840,
+        },
+        [9486] = {
+            description = "The elder springpaw is an efficient and swift hunter. In attempting to " ..
+                "befriend one, it sees you as prey. Do not be dissuaded.\n\nUse the taming rod to bring " ..
+                "the great cat to your side and hunt beside it. They are found throughout Eversong Woods, " ..
+                "some very close to the lodge. When you have learned enough, return to me.",
             rewardXP = 840,
         },
         [9488] = {
@@ -13323,6 +13374,15 @@ ns.Overrides.wowhead = {
                 "need to 'kill' it while it's contained in the magneto sphere.",
             rewardMoney = 37000,
         },
+        [10585] = {
+            description = "In order for the Shadow Council to construct infernals as quickly as they're " ..
+                "being used, they must have an area dedicated to summoning the corrupted elementals that " ..
+                "serve as the souls of the creatures.\n\nThe summoning chamber is likely to be found " ..
+                "below ground, near a pool of fouled water or lava. Locate the summoning chamber within " ..
+                "the Deathforge and find a way to end their summoning ritual. The mo'arg involved in " ..
+                "making the infernals may carry a tool that will help disrupt the summoner's magics.",
+            rewardMoney = 41000,
+        },
         [10587] = {
             description = "Our scouts have reported a massive influx of Sunfury blood elf recruits " ..
                 "heading to the Ruins of Karabor. Normally this would represent a purely military threat, " ..
@@ -15846,6 +15906,15 @@ ns.Overrides.wowhead = {
                 "more shinies than ya can ever carry.\n\nVisit my ol' friend, Budd, near Zul'Aman and " ..
                 "show him this here. Ya be tellin' him ol' Griftah sent ya and he'll let ya in on his new " ..
                 "project.",
+        },
+        [11133] = {
+            description = "I've altered the leaflets you captured from the deserters' mercenary friends " ..
+                "at the docks. Now, anyone who reads them will get an entirely different view of the " ..
+                "deserters and their aims.\n\nIf we distribute these to enough of the guards, the " ..
+                "deserters will be too embarrassed to ever reestablish their presence within our " ..
+                "walls.\n\n<Calia hands you a stack of the altered leaflets.>\n\nWhy don't you get " ..
+                "started while I plan our next move?",
+            rewardMoney = 3500,
         },
         [11134] = {
             description = "Now that we've eliminated the deserters from Theramore, it's time to complete " ..

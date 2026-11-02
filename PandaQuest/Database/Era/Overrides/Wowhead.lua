@@ -2841,6 +2841,14 @@ ns.Overrides.wowhead = {
                 "you? We think the courier might be carrying notes to Tarren Mill. If we could get our " ..
                 "hands on those documents, it might shed some light on what's happening in Hillsbrad.",
         },
+        [663] = {
+            description = "Lolo sees a tiny <race>! Always on the lookout, Lolo is!\n\nWelcome to " ..
+                "Faldir's Cove. Captain O'Breen said we'd only be here for a few hours. Just long enough " ..
+                "to gather the treasure and get back to Booty Bay.\n\nBut Lolo thinks we're going to be " ..
+                "here a lot longer than that. We lost the other two ships from our formation. Poor Spirit " ..
+                "of Silverpine and Maiden's Folly. On the bottom of the sea they rest now!\n\nLolo " ..
+                "suggests you talk to Captain O'Breen if you plan on sticking around here.",
+        },
         [668] = {
             description = "Let's not leave Captain O'Breen waiting. He'll want to see these gems first " ..
                 "hand. After all, that's why we're here!\n\nAnd after a few weeks of consorting with " ..
@@ -4497,6 +4505,13 @@ ns.Overrides.wowhead = {
                 "Gerenzo--bloody gnome--wants me dead on sight... maybe you could steal the plans for me? " ..
                 "You should be able to find them on one of their operators.",
         },
+        [1094] = {
+            description = "This envelope has all the information I was able to snatch as they booted me " ..
+                "out the door... Venture Company internal documents, some manuals, technical things... " ..
+                "Oh, and of course the Super Reaper 6000 blueprints.\n\nSputtervalve has taken up " ..
+                "residence at Ratchet in the Barrens. Shouldn't have much trouble finding him, he's a " ..
+                "little green fellow.",
+        },
         [1097] = {
             description = "There's a dwarven weaponsmith in Stormwind, Grimand Elmore, who sent word that " ..
                 "he needs help with a delivery. I believe he wants a package sent to his homeland in the " ..
@@ -4861,6 +4876,14 @@ ns.Overrides.wowhead = {
                 "burnt spot on the track.\n\nWould be a shame, too, if that happened. Who knows if our " ..
                 "nineteenth driver would be any good?",
             rewardChoices = {{6726, 1}, {6727, 1}},
+        },
+        [1190] = {
+            description = "The Brassbolts brothers have discovered a new building material, that's the " ..
+                "only explanation that makes sense. Their cars have been operating faster than before, " ..
+                "but their designs, and all the other data we've gathered from their runs is " ..
+                "identical.\n\nWhat we do know, is that Rizzle Brassbolts has been focused on the plans " ..
+                "for this new discovery almost constantly.\n\nZamek can create a diversion for you, so " ..
+                "that you can steal those plans from them.",
         },
         [1194] = {
             description = "Rizzle's schematics describe the process of the refinement of indurium ore. " ..
@@ -6529,6 +6552,14 @@ ns.Overrides.wowhead = {
                 "the gems, I should have enough time to learn what I need to.\n\nIt's a simple deal, and " ..
                 "no one else will be the wiser. Whatcha wanna do?",
         },
+        [2339] = {
+            description = "Here is the journal, translated for you to read on your own. The crux of it " ..
+                "says dwarves hid the ruby, the troggs hid the topaz, and a trogg named Grimlok has the " ..
+                "sapphire.\n\nLook - you're going to need a power source to make the necklace work again. " ..
+                "Dran Droffers doesn't know this. To find one, here's what I'd do: go as deep as you can " ..
+                "in Uldaman and kill whatever construct there is the strongest. No doubt whatever that is " ..
+                "would have it.\n\nWhen you have everything collected, come back here!",
+        },
         [2342] = {
             description = "Sweeping the bat pens with this broom is not befitting a Garrett! I've earned " ..
                 "a little coin from this accursed job, and I'm willing to spend it on you to better my " ..
@@ -6927,6 +6958,15 @@ ns.Overrides.wowhead = {
                 "even then, the Brassbolts brothers are always looking for new ways to make their car go " ..
                 "faster, and Wizzle told me he needs a very rare component for his next experiment.\n\nHe " ..
                 "probably needs help getting that part. Speak to him and find out.",
+        },
+        [2770] = {
+            description = "Deep in Zul'Farrak, the sand troll city in Tanaris, there is a sacred pool. " ..
+                "From that pool the trolls summon a huge beast! Gahz'rilla! He's so fierce that even his " ..
+                "scales crackle with energy. It's that energy I want to harness for my car!\n\nBring me " ..
+                "the electrified scale of Gahz'rilla!\n\nBut the summoning of Gahz'rilla is a well-kept " ..
+                "secret of the trolls. To face him, you must first wrest the secret from them.",
+            rewardItems = {{11122, 1}},
+            rewardMoney = 7500,
         },
         [2771] = {
             description = "It seems as if master had this planned from the start. I was not taught to " ..
@@ -7509,6 +7549,10 @@ ns.Overrides.wowhead = {
             description = "This sigil was given to me by a messenger from our druid trainer, Mardant. It " ..
                 "seems Mardant would have words with you when you have a moment. Read it and bring it to " ..
                 "him afterwards.",
+        },
+        [3122] = {
+            description = "Here are the herbs, <name>. Take them to Witch Doctor Uzer'i.\n\nPlease let " ..
+                "him know that I am satisfied with the shrunken head.",
         },
         [3124] = {
             description = "Since you have proven that you are both trustworthy and gifted with the " ..
@@ -12456,6 +12500,15 @@ ns.Overrides.wowhead = {
         [8047] = {rewardItems = {{19586, 1}}},
         [8051] = {rewardItems = {{19593, 1}}},
         [8052] = {rewardItems = {{19594, 1}}},
+        [8056] = {
+            description = "The augurs of our tribe are revered for their gifts of the divine sight, ya " ..
+                "mon. They ain't a witch doctor; they spend their time castin' bones or readin' the " ..
+                "leaves for insight - not hexin' people. As a shaman, you already know somethin' about " ..
+                "the power of augury; we Zandalar prize the insight they give to the tribe.\n\nBring me " ..
+                "an offerin' of the Paragons of Power from inside Zul'Gurub and prove your worth to us. " ..
+                "Do this for us, and I'll give ya some bracers that our augurs prize above all others!",
+            rewardItems = {{19830, 1}},
+        },
         [8057] = {
             description = "A haruspex is a key member of our tribe; you'll be wise to listen to their " ..
                 "portents. By communion with animals and givin' them up to the spirits when needed, they " ..
@@ -13895,6 +13948,11 @@ ns.Overrides.wowhead = {
                 "contingency.\n\nNow you must venture to the Moonglade and speak with Remulos. He will " ..
                 "have further instruction as to the summoning of Eranikus.\n\nWe all wish you great luck.",
         },
+        [8735] = {
+            description = "You must travel to the four dream portals of Azeroth. From each you must draw " ..
+                "a fragment of the Nightmare's corruption. The dragonkin that inhabit these areas will " ..
+                "hold such fragments. Return to me when you have gathered these fragments.",
+        },
         [8736] = {
             description = "We must use restraint against Eranikus. We are to redeem him not destroy " ..
                 "him.\n\nTyrande is already en route to assist us in this task. We must weather the " ..
@@ -14144,6 +14202,15 @@ ns.Overrides.wowhead = {
                 "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
                 "coins and I'll perform the exchange.",
             rewardItems = {{21996, 1}},
+        },
+        [8921] = {
+            description = "Ah, you're in need of my latest project... the extra-dimensional ghost " ..
+                "revealer! Unfortunately I've run out of funds and manpower.\n\nYou're willing to help? " ..
+                "Excellent! Our first task is to build a device to harvest the very fabric of death! " ..
+                "Building an ectoplasmic distiller won't be an easy task, <name>.\n\nI'll need you to " ..
+                "bring me an arcanite converter, some greater eternal essences and stonescale oil. I'll " ..
+                "also need some volcanic ash from the lava pools in the Burning Steppes to build a filter.",
+            rewardItems = {{22320, 1}},
         },
         [8922] = {
             description = "I must find a way to speak with Anthion Harmon... or more specifically, his " ..
