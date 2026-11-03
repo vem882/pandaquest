@@ -56631,7 +56631,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31790] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56691,7 +56691,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31800] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56703,7 +56703,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31802] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -61813,6 +61813,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 40,
         },
+        [502] = {spawns = {[40] = {{49.4, 19.2}, {49.4, 19.6}, {49.6, 19.4}, {49.6, 19.6}}}, zoneID = 40},
         [504] = {
             spawns = {
                 [40] = {
@@ -65297,6 +65298,7 @@ ns.Overrides.wowhead = {
         [70100] = {maxLevel = 90, minLevel = 90},
         [70160] = {subName = "Lord of the Shado-Pan"},
         [70166] = {subName = "Master Demonologist"},
+        [70220] = {maxLevel = 90, minLevel = 90},
         [70238] = {maxLevel = 92, minLevel = 92},
         [70249] = {maxLevel = 92, minLevel = 92},
         [70270] = {subName = "Master Demonologist"},

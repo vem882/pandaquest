@@ -4,6 +4,24 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.343] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,907 quests, 704 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,235 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,231 quests, 43 NPCs, 1 object
+- quest 31789 - Pristine Petrified Bone Whip - updated
+  - reward items: counts corrected
+- quest 31799 - Pristine Empty Keg - updated
+  - reward items: counts corrected
+- quest 31801 - Pristine Gold-Inlaid Figurine - updated
+  - reward items: counts corrected
+- npc 502 - Benny Blaanco - updated
+  - coordinates: 4 spawn points added in Westfall
+- npc 70220 - Kirin Tor Captive - updated
+  - NPC level added (90)
+
 ## [0.2.342] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -196,61 +214,6 @@ Data from the PandaQuest portal.
 - npc 70068 - Ahoo'ru - updated
   - NPC title added (The Unsullied)
   - NPC level added (93)
-
-## [0.2.332] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,897 quests, 688 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,193 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,185 quests, 43 NPCs, 1 object
-- quest 31833 - Continue Your Training: Master Woo - updated
-  - description added
-  - reward choices: +3
-- quest 31835 - Continue Your Training: Master Kistane - updated
-  - description added
-  - reward choices: +2
-- npc 121 - Defias Pathstalker - updated
-  - coordinates: 40 spawn points added in Westfall
-- npc 750 - Marsh Inkspewer - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 752 - Marsh Oracle - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 1123 - Frostmane Headhunter - updated
-  - coordinates: 24 spawn points added in Dun Morogh
-- npc 1178 - Mo'grosh Ogre - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 1207 - Brawler - updated
-  - coordinates: 6 spawn points added in Loch Modan
-- npc 1443 - Fel'zerul - updated
-  - coordinates: 1 spawn point added in Swamp of Sorrows
-- npc 1749 - Lady Katrana Prestor - updated
-  - coordinates: 1 spawn point added in Stormwind City
-- npc 2265 - Hillsbrad Apprentice Blacksmith - updated
-  - coordinates: 14 spawn points added in Hillsbrad Foothills
-- npc 2359 - Elemental Slave - updated
-  - coordinates: 3 spawn points added in Silverpine Forest
-- npc 2387 - Hillsbrad Councilman - updated
-  - coordinates: 18 spawn points added in Hillsbrad Foothills
-- npc 2945 - Murdaloc - updated
-  - coordinates: 24 spawn points added in Badlands
-- npc 3657 - [Deprecated for 4.x]Sentinel Elissa Starbreeze - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 4452 - [Deprecated for 4.x]Kravel Koalbeard - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 4453 - [Deprecated for 4.x]Wizzle Brassbolts - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 4630 - [Deprecated for 4.x]Pozzik - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 12144 - Lunaclaw Spirit - updated
-  - coordinates: 2 spawn points added in The Barrens
-  - coordinates: 2 spawn points added in Darkshore
-- npc 14461 - Baron Charr - updated
-  - coordinates: 40 spawn points added in Un'Goro Crater
-- npc 68370 - Lor'themar Theron - updated
-  - NPC title added (Regent Lord of Quel'Thalas)
-- npc 68939 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
 
 ## [0.2.270] - 2026-10-26
 

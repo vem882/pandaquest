@@ -1265,6 +1265,11 @@ ns.Overrides.wowhead = {
             description = "Digging through the mound, you find a small, dirt-stained book.\n\nThe book " ..
                 "has no title, but...it has information Sven would like to know.",
         },
+        [234] = {
+            description = "If I remember correctly, Grelin's camp is down the road to the southeast. No " ..
+                "doubt he'll be eager to get his mail.",
+            rewardMoney = 7,
+        },
         [235] = {
             description = "Attention, young adventurers! The wilds of Ashenvale await you!\n\nThe Horde " ..
                 "has established a strong presence in the lands north of the Barrens. Our two outposts - " ..
@@ -7061,6 +7066,15 @@ ns.Overrides.wowhead = {
                 "the Barrens and Ashenvale begin work on our newest agenda. Return to me soon.",
             rewardChoices = {{15443, 1}, {15445, 1}, {15424, 1}, {15444, 1}},
         },
+        [5762] = {
+            description = "I have a package for a new customer of mine, a dwarf named Hemet Nesingwary " ..
+                "Jr.. The package took weeks to arrive, and Hemet's long gone by now. He said he was " ..
+                "going to Stranglethorn to take his father's place and hunt the beasts there, but he left " ..
+                "me some money to send his delivery when I could.\n\nJunior's a rich dwarf and it's a " ..
+                "good idea to keep up relations with the rich ones, yeah? So... you want to deliver the " ..
+                "package for me?\n\nI heard he has a camp in Stranglethorn, north of Grom'gol.",
+            rewardMoney = 3000,
+        },
         [5803] = {
             description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
                 "that he was the former leader of Scholomance before claiming the city as his own. To " ..
@@ -7495,6 +7509,16 @@ ns.Overrides.wowhead = {
                 "traveling through Windshear Crag or by heading north through Barrens. Zoram Strand is " ..
                 "far to the west of the forest. Be careful, <name>. There are forces there that will not " ..
                 "take to your presence kindly.",
+        },
+        [6565] = {
+            description = "This Twilight's Hammer follower cannot be allowed to complete his plan. The " ..
+                "Twilight's Hammer do not understand the spirits of nature. They believe in the Old " ..
+                "Gods--creatures of chaos and destruction that were long ago defeated. This Lorgus cannot " ..
+                "be allowed to succeed. You must stop him, <name>. I cannot do it myself--I am too " ..
+                "weak.\n\nGo into Blackfathom Deeps, find him, and kill him. Return to me here at " ..
+                "Zoram'gar when it's done.",
+            rewardChoices = {{17694, 1}, {17695, 1}},
+            rewardMoney = 4000,
         },
         [6566] = {
             description = "It is good to see you again, <name>. The wind carries with it news from the " ..
