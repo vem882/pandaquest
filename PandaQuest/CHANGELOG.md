@@ -4,6 +4,23 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.342] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,907 quests, 702 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,232 quests, 25 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,228 quests, 43 NPCs, 1 object
+- quest 29199 - Calling for Reinforcements - updated
+  - description added
+- quest 31805 - Pristine Monument Ledger - updated
+  - description added
+  - reward items: +2
+- npc 1189 - Black Bear Patriarch - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 4044 - Blackened Basilisk - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+
 ## [0.2.341] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -234,18 +251,6 @@ Data from the PandaQuest portal.
   - NPC title added (Regent Lord of Quel'Thalas)
 - npc 68939 - Anduin Wrynn - updated
   - NPC title added (Prince of Stormwind)
-
-## [0.2.331] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 668 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,184 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,182 quests, 43 NPCs, 1 object
-- npc 17808 - Anetheron - updated
-  - coordinates: 1 spawn point added in Hyjal Summit
-- npc 70030 - Agrant Sharpshot - updated
-  - NPC title added (Jurassic Expedition)
 
 ## [0.2.270] - 2026-10-26
 

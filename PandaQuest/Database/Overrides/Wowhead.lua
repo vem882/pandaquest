@@ -47524,6 +47524,12 @@ ns.Overrides.wowhead = {
                 "backdraft!",
             rewardMoney = 94000,
         },
+        [29199] = {
+            description = "We suffered heavy losses during the backdraft after our invasion attempt. Our " ..
+                "second attempt cannot fail.\n\nWe need reinforcements before we attempt another " ..
+                "invasion. Please, <name>, work with Matoclaw to obtain enough resources to afford " ..
+                "reinforcements. Then, we take our second and final stab at the Firelands.",
+        },
         [29200] = {
             description = "Before we depart, <name>, I have another matter to which you should " ..
                 "attend.\n\nA Druid of the Flame has been spotted in the ruins to the northwest. I " ..
@@ -56717,6 +56723,12 @@ ns.Overrides.wowhead = {
                 "archaeologists can study it.",
             rewardItems = {{87399, 3}, {79868, 1}},
         },
+        [31805] = {
+            description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
+                "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
+                "archaeologists can study it.",
+            rewardItems = {{87399, 3}, {79869, 1}},
+        },
         [31808] = {
             description = "Kovok has progressed at an astonishing rate. Perhaps the years in hibernation " ..
                 "effected his growth process...\n\nWhatever the reason, this could not have come at a " ..
@@ -62460,6 +62472,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 38,
         },
+        [1189] = {
+            spawns = {
+                [38] = {
+                    {38, 63}, {38.4, 63.6}, {38.6, 63.4}, {58.4, 25.6}, {58.8, 29}, {58.8, 33.6}, {59, 24.8},
+                    {59, 33}, {59.8, 33.2}, {60.4, 31.4}, {60.6, 31.4}, {61.4, 29.6}, {61.6, 29.4},
+                    {62.2, 31.4}, {62.2, 33.8}, {62.6, 31.2}, {64, 29.4}, {66.2, 39.2}, {66.8, 39.2},
+                    {68, 42.2}, {68.6, 43.6}, {69, 40.6}, {70.2, 39}, {71, 39}, {71, 42.8}, {71.4, 37.2},
+                    {71.6, 39.6}, {71.8, 36.8}, {72.2, 38.4}, {72.2, 44.4}, {72.6, 38.4}, {72.6, 44.6},
+                    {73.4, 39.2}, {73.8, 41.8}, {74.2, 45.4}, {74.4, 46.8}, {74.8, 41.6}, {75, 43.6},
+                    {76.2, 41}, {76.2, 44},
+                },
+            },
+            zoneID = 38,
+        },
         [1192] = {
             spawns = {
                 [38] = {
@@ -63244,6 +63270,20 @@ ns.Overrides.wowhead = {
                     {32.8, 66.6}, {33, 60.4}, {33, 64.4}, {33.6, 59.8}, {33.6, 65.4}, {34.2, 63},
                     {34.4, 61.2}, {34.4, 64.2}, {34.6, 60.4}, {35, 61.6}, {35.2, 63.4}, {35.4, 64.2},
                     {35.6, 61}, {35.6, 63.4}, {35.6, 64.4},
+                },
+            },
+            zoneID = 406,
+        },
+        [4044] = {
+            spawns = {
+                [406] = {
+                    {31.4, 62}, {32, 62.2}, {32, 62.6}, {33, 61.4}, {33.2, 62}, {33.4, 62.6}, {33.6, 62},
+                    {33.6, 62.6}, {34.4, 59}, {34.6, 58.8}, {34.6, 59.6}, {34.8, 57.4}, {35.2, 53.4},
+                    {35.2, 53.6}, {35.6, 47.4}, {35.8, 54}, {36, 47.8}, {36.2, 51.8}, {36.4, 49.6},
+                    {36.4, 51.4}, {36.6, 51.6}, {37, 46.6}, {37, 48.6}, {37, 52.6}, {37.2, 45.4},
+                    {37.2, 46.2}, {37.6, 48.2}, {37.6, 49.2}, {37.6, 50}, {43.4, 41.4}, {43.4, 41.6},
+                    {43.6, 41.2}, {43.8, 39.4}, {44, 39.6}, {44.4, 43.2}, {44.6, 39.4}, {44.6, 39.6},
+                    {44.6, 43.4}, {45.4, 44.6}, {45.6, 44},
                 },
             },
             zoneID = 406,
