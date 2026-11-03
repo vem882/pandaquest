@@ -1816,6 +1816,12 @@ ns.Overrides.wowhead = {
                 "pockmarked from the plague but relatively fresh.\n\nOn the hand is a ring. Removing the " ..
                 "ring and inspecting it reveals an engraving:\n\n\"For Deliah\"",
         },
+        [440] = {
+            description = "If you want to find the husband or beloved who gave Deliah her ring... then " ..
+                "speak with Magistrate Sevren in Brill. He should have records of recent deaths and, with " ..
+                "luck, can discover who Deliah is.\n\nBut I wouldn't hope. Whoever gave her the ring is " ..
+                "probably dead. Or if he's undead he probably no longer cares about Deliah.",
+        },
         [441] = {
             description = "Deliah had a husband, Raleigh, who now dwells in the Undercity. If the Deliah " ..
                 "who lived in Brill is the one who owned this ring, then Raleigh will know.\n\nRaleigh is " ..
@@ -3977,6 +3983,14 @@ ns.Overrides.wowhead = {
                 "tell ya all about it.\n\nGonna need some Roc gizzards from Tanaris... and let's see... " ..
                 "some Groddoc and Ironfur livers from Feralas...\n\nA nice stiff Kalimdor Kocktail... " ..
                 "that'll get me talking!",
+        },
+        [1456] = {
+            description = "Intriguing.\n\nWell, we might not be without hope quite yet.\n\nAlong that " ..
+                "same coast, but to the north near Ranazjar Isle, there're night elf ruins at the bottom " ..
+                "of the ocean. A tribe of naga, the Slitherblade, make that their home. I think that'd be " ..
+                "our best bet.\n\nIf a scouting party went that far south, then they must've been pretty " ..
+                "powerful. If you're gonna find Karnitol's belongings, I'd start with the more powerful " ..
+                "naga: the tidehunters or sea witches.",
         },
         [1458] = {
             description = "One of my tasks out here involves picking up some reagents for Leftwitch, a " ..
@@ -7046,6 +7060,22 @@ ns.Overrides.wowhead = {
                 "minimize the damage here in Ragefire Chasm. In the meantime, I will have my agents in " ..
                 "the Barrens and Ashenvale begin work on our newest agenda. Return to me soon.",
             rewardChoices = {{15443, 1}, {15445, 1}, {15424, 1}, {15444, 1}},
+        },
+        [5803] = {
+            description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
+                "that he was the former leader of Scholomance before claiming the city as his own. To " ..
+                "finish the key, we will need his signet - called a scarab - mounted as the head of the " ..
+                "key.\n\nMake your way into the heart of Andorhal, and break his hold on the city now " ..
+                "that he is drawn into the open. Once destroyed, seize his scarab from his fallen " ..
+                "phylactery!\n\nThe Key to Scholomance awaits, <name>!",
+        },
+        [5848] = {
+            description = "The painting... It hung on the wall of my workshop - inside the Order's " ..
+                "barracks - for years.\n\nAfter Tirion's trial was over, I knew that I could no longer " ..
+                "keep the painting visible. I hid it in a place that they would never think to " ..
+                "look.\n\nTravel to Stratholme and make your way deep inside what is now the Scarlet " ..
+                "Bastion, search for a painting of our twin moons. Chip away at the paint until you " ..
+                "uncover my master work, ' Of Love and Family.'\n\nMay the Light guide your actions.",
         },
         [5883] = {rewardItems = {{11516, 2}}},
         [5884] = {rewardItems = {{11516, 2}}},

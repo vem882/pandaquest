@@ -881,6 +881,12 @@ ns.Overrides.wowhead = {
             description = "Here is your bouquet. I chose Daffodils for you. They're my favorite!",
             rewardItems = {{1326, 10}},
         },
+        [132] = {
+            description = "What I am about to tell you could cost me my life. The Defias gang is up to " ..
+                "something big. Last I heard they were working in conjunction with various gnolls, " ..
+                "kobolds and even goblins.\n\nTake this note to Stoutmantle. It explains as much as I " ..
+                "know on the subject.",
+        },
         [133] = {
             description = "I live so far from the protection of town, it's a wonder the ghouls and the " ..
                 "walking dead haven't eaten me! In fact, just yesterday a pack of Bone Chewers was " ..
@@ -3756,6 +3762,7 @@ ns.Overrides.wowhead = {
                 "Blow this horn when you reach his lair. Blow the horn, and he will come.",
         },
         [883] = {description = "The Hoof of Lakota'mani is a symbol of the strength of the great kodo."},
+        [885] = {description = "The feather of Washte Pawne is painful to the touch."},
         [890] = {
             description = "I've been waiting forever for my last shipment of goods from Booty Bay! I'm " ..
                 "pretty sure that it must have been stolen by the Freebooters, but just to make sure, " ..
@@ -3814,6 +3821,28 @@ ns.Overrides.wowhead = {
                 "the feathers they wear. Place the feathers on the scytheclaw nests southwest of the " ..
                 "Stagnant Oasis. Show their brethren you do not fear them!",
             rewardMoney = 900,
+        },
+        [906] = {
+            description = "Take Lok's head to Thork in the Crossroads, <race>. <snort> He should know " ..
+                "what has happened to my tribe without any words--ha, not that he would believe " ..
+                "Mangletooth helped in <snort> such things. But I am sure he'll reward you for carrying " ..
+                "out such a great deed. <snort>\n\nI will continue to bless you with Agamaggan's power " ..
+                "for as long as I remain in this cage, <race>. Until then, farewell.",
+            rewardChoices = {{5316, 1}, {5317, 1}},
+        },
+        [907] = {
+            description = "Now, <name>, you must face the great thunder lizards. So large are the beasts, " ..
+                "the ground rumbles as they stomp across the plains. Take care as you fight them, for one " ..
+                "false step and you may find yourself beneath their feet.\n\nYou will find the thunder " ..
+                "lizards in the southern Barrens. They are known as Stormsnouts, Stormhides and " ..
+                "Thunderheads. Return to me after you have bested them.",
+        },
+        [913] = {
+            description = "The thunderhawk, <name>, is a fierce beast. It is time for you to face them. " ..
+                "You must find where it roams, and bring me its wings as proof of your successful " ..
+                "hunt.\n\nDo this, and your time with me will near its end.",
+            rewardChoices = {{5302, 1}, {5306, 1}},
+            rewardItems = {{5299, 1}},
         },
         [918] = {
             description = "The timberlings of Teldrassil are elementals of nature. In some ways they " ..
@@ -4821,6 +4850,14 @@ ns.Overrides.wowhead = {
                 "Satyrnaar, satyr-held areas in northeast Ashenvale.\n\nBe careful out there, <name>, the " ..
                 "satyrs' blood-soaked temples can be unsettling even for a seasoned <class> such as " ..
                 "yourself.",
+        },
+        [1145] = {
+            description = "Many travelers who've come through the Crossroads helped me gather eggs from " ..
+                "the Field of Giants, and many of them have tales of how deadly the creatures are. I've " ..
+                "heard enough to consider them insects a much larger threat than my masters first " ..
+                "thought.\n\nI need a courier to travel to Orgrimmar to meet Belgrom Rockmaul. It be no " ..
+                "simple matter, and someone who would take the task seriously should go.\n\nBelgrom " ..
+                "usually be found outside the warriors' guild house.",
         },
         [1147] = {
             description = "Hmm. Seems Belgrom thinks those monsters are a threat. He wants them pushed " ..
@@ -15719,6 +15756,10 @@ ns.Overrides.wowhead = {
         [6240] = {spawns = {[17] = {{68.6, 48.6}}}, zoneID = 17},
         [8338] = {spawns = {[51] = {{74, 18.6}, {74.2, 18.4}}}, zoneID = 51},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
+        [9605] = {
+            spawns = {[46] = {{42.4, 41.4}, {42.4, 41.6}, {42.4, 43}, {42.6, 41.4}, {42.6, 42}, {42.6, 42.6}}},
+            zoneID = 46,
+        },
         [11701] = {spawns = {[490] = {{71.2, 73.8}, {71.4, 73.4}, {71.6, 73.4}, {71.6, 73.6}}}, zoneID = 490},
         [14435] = {
             spawns = {
