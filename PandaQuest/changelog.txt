@@ -4,6 +4,28 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.340
+- database - Wowhead data as the PandaQuest portal read it: 7,904 quests, 700 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,218 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,220 quests, 43 NPCs, 1 object
+- quest 7907 - Darkmoon Beast Deck - updated
+  - description added
+  - reward items: +1
+- quest 31551 - Got one! - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31787 - Pristine Mogu Runestone - updated
+  - reward items: counts corrected
+- quest 31793 - Pristine Branding Iron - updated
+  - reward items: counts corrected
+- quest 31794 - Pristine Mogu Coin - updated
+  - reward items: counts corrected
+- quest 32105 - Pristine Monument Ledger - updated
+  - description added
+  - reward items: +1
+- npc 1129 - Black Bear - updated
+  - coordinates: 2 spawn points added in Dun Morogh
+
 0.2.339
 - database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 699 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,214 quests, 24 NPCs, 5 objects
@@ -192,16 +214,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 2 spawn points added in Stonetalon Mountains
 - npc 8737 - Linken - updated
   - coordinates: 1 spawn point added in Un'Goro Crater
-
-0.2.329
-- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 660 NPCs, 2 objects
-- database - flight times: 4 measured, 1,628 estimated
-- database - Classic Era: data from the PandaQuest portal: 2,180 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,176 quests, 43 NPCs, 1 object
-- npc 2989 - Bael'dun Digger - updated
-  - coordinates: 18 spawn points added in Mulgore
-- npc 4276 - Piznik - updated
-  - coordinates: 1 spawn point added in Stonetalon Mountains
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

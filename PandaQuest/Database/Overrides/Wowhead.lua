@@ -2194,6 +2194,13 @@ ns.Overrides.wowhead = {
         [7866] = {rewardItems = {{19154, 1}}},
         [7867] = {rewardItems = {{19155, 1}}},
         [7868] = {rewardItems = {{19153, 1}}},
+        [7907] = {
+            description = "Now that you have gathered all of the Beast cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{19288, 1}},
+        },
         [7927] = {
             description = "Now that you have gathered all of the Portal cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -55876,6 +55883,14 @@ ns.Overrides.wowhead = {
                 "and I will continue your training. Good luck!",
             rewardMoney = 9000,
         },
+        [31551] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 114000,
+        },
         [31552] = {
             description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
                 "into the forest and pick a fight with a battle pet. Come back to me after you have won " ..
@@ -56593,7 +56608,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31788] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56629,13 +56644,13 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31794] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31795] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -57542,6 +57557,12 @@ ns.Overrides.wowhead = {
             rewardMoney = 102000,
         },
         [32097] = {rewardItems = {{90818, 1}}},
+        [32105] = {
+            description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
+                "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
+                "archaeologists can study it.",
+            rewardItems = {{87399, 3}},
+        },
         [32106] = {rewardItems = {{90892, 1}}},
         [32107] = {
             description = "You've caught a unique fish... with wings. Perhaps it deserves the expert " ..
@@ -62358,6 +62379,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1,
         },
+        [1129] = {spawns = {[1] = {{65.4, 12.8}, {65.6, 12.8}}}, zoneID = 1},
         [1157] = {
             spawns = {
                 [11] = {
