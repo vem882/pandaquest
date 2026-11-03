@@ -4,6 +4,35 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.346] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,906 quests, 722 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,269 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,264 quests, 43 NPCs, 1 object
+- quest 30961 - Savior of the Inkgill - updated
+  - description removed
+- quest 31621 - Stormstout Brewery Challenge Mode - Bronze Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31641 - Mogu'shan Palace Challenge Mode - Silver Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- npc 1040 - Fen Creeper - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1052 - Dark Iron Saboteur - updated
+  - coordinates: 28 spawn points added in Wetlands
+  - coordinates: 3 spawn points added in Arathi Highlands
+- npc 1126 - Large Crag Boar - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 2266 - Hillsbrad Farmer - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2304 - Captain Ironhill - updated
+  - coordinates: 9 spawn points added in Hillsbrad Foothills
+- npc 4029 - Blackened Ancient - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+
 ## [0.2.345] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -186,17 +215,6 @@ Data from the PandaQuest portal.
   - coordinates: 13 spawn points added in Mulgore
 - npc 3236 - Barrens Kodo - updated
   - coordinates: 40 spawn points added in The Barrens
-
-## [0.2.335] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,899 quests, 693 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,202 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,197 quests, 43 NPCs, 1 object
-- quest 31918 - A Tamer's Homecoming - updated
-  - description added
-  - reward money added (11g 40s)
 
 ## [0.2.270] - 2026-10-26
 
