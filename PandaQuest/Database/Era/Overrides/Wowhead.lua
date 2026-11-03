@@ -3976,6 +3976,15 @@ ns.Overrides.wowhead = {
                 "the Ancient of Lore. He has been awaiting word from me, even as I waited for news from " ..
                 "the Oracle Glade.",
         },
+        [953] = {
+            description = "To the east you will find the ruins of Ameth'Aran. It is now inhabited by the " ..
+                "restless spirits of the Highborne that once dwelt within its walls, but once it was a " ..
+                "place where the servants of Azshara freely practiced their powerful magics.\n\nI was " ..
+                "sent to explore the ruins and came across two large tablets, scrawled with the stories " ..
+                "of Ameth'Aran and its fall. While I read the runes, I was accosted by the spirits, and " ..
+                "fled.\n\nPlease, if you can, venture to the ruins and decipher the tablets in my place.",
+            rewardMoney = 500,
+        },
         [956] = {
             description = "If the grells have come into close contact with the seal that binds my eternal " ..
                 "prison, I suspect I know the cause. No doubt the seal has come into the possession of " ..
@@ -9958,6 +9967,12 @@ ns.Overrides.wowhead = {
                 "have a way to subvert them to our advantage. My second, Shadow Priestess Vandis, will be " ..
                 "your point on this assignment; she'll continue the briefing from here.",
         },
+        [5230] = {
+            description = "You fill the bottle with enough of the cauldron's poisonous concoction for a " ..
+                "suitable sample to be studied.\n\nWith the poison in hand, it is time to return to " ..
+                "Shadow Priestess Vandis at the Bulwark to complete the mission.",
+            rewardMoney = 8000,
+        },
         [5231] = {
             description = "One of the plague cauldrons is located in the field of a former farmhouse now " ..
                 "referred to as Dalson's Tears. No tears will be shed this day, <class>; we must strike " ..
@@ -11311,6 +11326,13 @@ ns.Overrides.wowhead = {
                 "back to him. Dungar Longdrink is our gryphon master, over in the trade " ..
                 "district.\n\nSpeak with Dungar, then get this crate to Lewis as fast as you can. We " ..
                 "don't want our fighting men and women in Westfall to go without fresh equipment!",
+        },
+        [6281] = {
+            description = "For a small fee, you can take a gryphon to Stormwind, so you can deliver " ..
+                "Lewis' note to Osric. You won't get there faster any other way.\n\nIf that sounds " ..
+                "acceptable, then just speak to me again when you're ready for the ride. I'll charge you " ..
+                "a little, but trust me; it'll be worth it!",
+            rewardMoney = 175,
         },
         [6284] = {
             description = "Warning: Proceed into Sishir Canyon west of here at your own " ..
@@ -15755,6 +15777,7 @@ ns.Overrides.wowhead = {
         },
         [6240] = {spawns = {[17] = {{68.6, 48.6}}}, zoneID = 17},
         [8338] = {spawns = {[51] = {{74, 18.6}, {74.2, 18.4}}}, zoneID = 51},
+        [8581] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
         [9605] = {
             spawns = {[46] = {{42.4, 41.4}, {42.4, 41.6}, {42.4, 43}, {42.6, 41.4}, {42.6, 42}, {42.6, 42.6}}},
