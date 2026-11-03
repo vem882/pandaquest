@@ -4815,6 +4815,14 @@ ns.Overrides.wowhead = {
                 "Reap the rewards!",
             rewardItems = {{8703, 1}},
         },
+        [2769] = {
+            description = "Have you met the Brassbolts brothers? They're over in the Shimmering Flats, in " ..
+                "Kalimdor, racing their rocket car against the goblins. They usually win which is no " ..
+                "surprise--the goblin car blows up so much it barely ever crosses the finish line!\n\nBut " ..
+                "even then, the Brassbolts brothers are always looking for new ways to make their car go " ..
+                "faster, and Wizzle told me he needs a very rare component for his next experiment.\n\nHe " ..
+                "probably needs help getting that part. Speak to him and find out.",
+        },
         [2772] = {
             description = "At last year's All-Valley Blacksmithing Championship, all those who watched " ..
                 "saw my leg get swept from under me by a cowardly dog from the Venture Co. Foundry. What " ..
@@ -5987,6 +5995,15 @@ ns.Overrides.wowhead = {
         [4481] = {rewardItems = {{11642, 1}}},
         [4482] = {rewardItems = {{11643, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
+        [4488] = {
+            description = "Ah, <name>, you've seen fit to grace us with your presence. How " ..
+                "wonderful!\n\nI hope you do not expect us to wait on you hand and foot also. You may be " ..
+                "growing quickly in power, but you still are a pup when it comes to true knowledge and " ..
+                "understanding. If you're not careful, corruption will overwhelm you and your weak " ..
+                "will.\n\nBut I should get to the point: Strahad wishes to speak to you. He is still " ..
+                "residing in his tower overlooking Ratchet in the Barrens. I suggest not taking too long.",
+            rewardXP = 435,
+        },
         [4492] = {
             description = "You've got to help me, <name>! My friend, Ringo left earlier to explore the " ..
                 "volcano to the south of here, and he has been gone way too long. I am really worried " ..
@@ -6983,6 +7000,14 @@ ns.Overrides.wowhead = {
                 "of nature. Listen to his instructions, and you will soon complete your first lessons " ..
                 "into your role as a protector of balance.\n\nGo now, young one. We shall meet again.",
             rewardXP = 85,
+        },
+        [5941] = {
+            description = "You have gathered many relics of the battle of Darrowshire. Each time you " ..
+                "returned with more, my heart yearned for my village... yearned to protect it from its " ..
+                "fate.\n\nI know that cannot be, but Chromie, that strange gnome in Andorhal, tells me it " ..
+                "is possible. She says you can save Darrowshire!\n\nShe asked me to gather together the " ..
+                "relics, and to have you bring them to her. She said that she awaits you in the ruined " ..
+                "inn of Andorhal.",
         },
         [5944] = {
             description = "For so long, I have been a puppet of the Grand Crusader. What reason was there " ..
@@ -10402,6 +10427,15 @@ ns.Overrides.wowhead = {
                 "consider them a delicacy. So, if you are to help us, you must retrieve the flowers from " ..
                 "them.",
         },
+        [9717] = {
+            description = "While we are a peaceful people, we are at war with the spore giants, whether " ..
+                "we like it or not. And there is a saying amongst us that all is fair in mushrooms and " ..
+                "war!\n\nOne of the leaders of the spore giants, Hungerfen, has been tending a very " ..
+                "special plant, known as the Underspore, to perfection for millennia. It would break his " ..
+                "spirit if something were to happen to that plant.\n\nTravel to the Underbog in Coilfang " ..
+                "Reservoir and steal a frond off of it for us. Trust me, he'll notice.",
+            rewardItems = {{28111, 1}},
+        },
         [9718] = {
             description = "We must determine how widespread the naga's activity truly is and react " ..
                 "accordingly.\n\nExploring each body of water in Zangarmarsh could be a lengthy " ..
@@ -10540,6 +10574,15 @@ ns.Overrides.wowhead = {
             description = "Before you leave Cenarion Refuge, make sure you speak with Warden Hamoot. He's " ..
                 "in charge of the expedition's security.\n\nHe would never forgive me if I didn't send a " ..
                 "seasoned adventurer like you his way.",
+        },
+        [9782] = {
+            description = "I have lived among the anchorites of Telredor for some time, <name>, and in " ..
+                "that time I've come to know the marsh quite well. Recently, I've started to notice a " ..
+                "disturbing change in the land to the northeast.\n\nVirtually all life there has begun to " ..
+                "wither and die, seemingly without explanation. I have a few ideas as to what might be " ..
+                "happening, but they are little more than speculation. If you were to bring me a sample " ..
+                "of the soil in that area, I may be able to get to the bottom of this mystery.",
+            rewardMoney = 27000,
         },
         [9783] = {
             description = "The soil sample you brought me is nearly devoid of moisture, <name>. If the " ..

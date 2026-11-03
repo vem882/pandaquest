@@ -5979,6 +5979,14 @@ ns.Overrides.wowhead = {
                 "that he has nothing to fear.\n\nOh, how I miss my husband. I can't wait till he returns.",
             rewardItems = {{9607, 1}},
         },
+        [1653] = {
+            description = "Actually, I have no doubt that Jordan himself would like to thank you, and " ..
+                "seeing as I need a messenger to send word that his wife is safe, I think you'd be a " ..
+                "perfect choice.\n\nJordan was to be a paladin of the Light before his dedication to his " ..
+                "father's craft took him on another path--he's intimately familiar with our way of life " ..
+                "and is considered among our most faithful.\n\nHe should still be in Ironforge--he likes " ..
+                "to work outside the gates during the day, something about the cool mountain air.",
+        },
         [1665] = {description = "Ok, here's my mug. Wait! Let me finish what's in it first... there we go."},
         [1666] = {
             description = "You've learned a few moves, but you could still use a decent weapon. I bet if " ..
@@ -10345,6 +10353,13 @@ ns.Overrides.wowhead = {
                 "order here looking for you not too long ago. She said it was very urgent you returned to " ..
                 "the Temple of the Moon in Darnassus and speak to Priestess Alathea --it had something to " ..
                 "do with your training. I wouldn't dally too long if you can help it.",
+        },
+        [5629] = {
+            description = "Hello again, <name>. I know you've been busy aiding our people, but you must " ..
+                "take some time for yourself also. Priestess Alathea sent someone here looking for you. " ..
+                "It seems that you've caught the attention of our elders and they feel you are prepared " ..
+                "for greater things. Head to the Temple of the Moon in Darnassus and look for Alathea " ..
+                "there. She will be waiting. Good luck, and may Elune be with you.",
         },
         [5631] = {
             description = "A priestess recently visited our halls seeking you out, young <race>. She said " ..
