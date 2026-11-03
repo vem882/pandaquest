@@ -2770,6 +2770,14 @@ ns.Overrides.wowhead = {
                 "so you might need to kill a few to draw one out.",
             rewardItems = {{4109, 1}},
         },
+        [630] = {
+            description = "<name>, I put my faith in you and anyone you can muster to help free me. The " ..
+                "great Skymane King Mukla is my captor. He commands the beasts of this island, and they " ..
+                "keep me here against my will with the aid of this chain. If you can slay him and find " ..
+                "the key to this shackle, I shall be indebted to you greatly.\n\nI often hear him to the " ..
+                "southeast side of the island, but please be careful: he is not to be trifled with.",
+            rewardItems = {{4118, 1}},
+        },
         [631] = {
             description = "A tremendous explosion roared through the hills. 'Twas horrible, I tell " ..
                 "you!\n\nGood soldiers died defending the Thandol Span. Longbraid says we'll take revenge " ..
@@ -3471,6 +3479,15 @@ ns.Overrides.wowhead = {
         [819] = {
             description = "A small placard on one of the ends of the keg says,\n\n\"Chen Stormstout " ..
                 "-\n\nMay your spirit be raised and always raise your spirits.\"",
+        },
+        [821] = {
+            description = "Would you like a taste of Chen's namesake? Ahh, the stormstout is a mighty " ..
+                "brew. Chen taught the recipe to my mentor, and my mentor passed it on to me. I'll need " ..
+                "you to get me a few things, but I can tell you this: the kick is worth it.\n\nBring me 5 " ..
+                "savannah lion tusks from any savannah lion, 5 plainstrider kidneys from any " ..
+                "plainstrider, and 1 thunder lizard horn from any species of thunder lizard. That should " ..
+                "do the trick nicely.\n\nYou can find these ingredients throughout the Barrens.",
+            rewardItems = {{4952, 5}},
         },
         [823] = {
             description = "We at Sen'jin Village are not without our own troubles, and we thank you for " ..
@@ -12722,6 +12739,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{19289, 1}},
         },
         [8041] = {rewardItems = {{19574, 1}}},
+        [8042] = {rewardItems = {{19575, 1}}},
         [8046] = {rewardItems = {{19585, 1}}},
         [8047] = {rewardItems = {{19586, 1}}},
         [8051] = {rewardItems = {{19593, 1}}},
@@ -15503,6 +15521,7 @@ ns.Overrides.wowhead = {
         [9318] = {rewardItems = {{23123, 1}}},
         [9321] = {rewardItems = {{13446, 1}}},
         [9333] = {rewardChoices = {{23084, 1}, {23081, 1}, {23082, 1}, {23078, 1}}},
+        [9334] = {rewardItems = {{23123, 1}}},
         [9335] = {rewardItems = {{23122, 1}}},
         [9336] = {rewardItems = {{13446, 1}}},
         [9364] = {

@@ -1395,6 +1395,12 @@ ns.Overrides.wowhead = {
                 "of Paleth to the dwarven priest Glorin Steelbrow, in Menethil Harbor. Ask him how to " ..
                 "remove the Eye's curse.",
         },
+        [295] = {
+            description = "Now it's time to really make those dreaded Raptors regret their blood-thirst. " ..
+                "Just down below there are scores of Mottled Scytheclaws and Mottled Razormaws. Make " ..
+                "those rotten creatures pay by slaying 10 of each!",
+            rewardMoney = 2200,
+        },
         [296] = {
             description = "While you were down there I happened to notice that one of those beasts stood " ..
                 "out from the rest. He was bigger and more menacing. I bet he's the one who led the " ..
@@ -2594,6 +2600,14 @@ ns.Overrides.wowhead = {
                 "clothing. Hunt the nearby plainstriders and prove yourself by resupplying the village.",
             rewardChoices = {{4954, 1}, {4910, 1}},
         },
+        [750] = {
+            description = "A tauren skilled in the ways of the hunt knows that his prey is not for mere " ..
+                "trophy. The beasts of the plains provide us with a means of survival. You will make " ..
+                "quite an impression on the elders if you can bring back some highly valued Mountain " ..
+                "Cougar Pelts. You can find the beasts lurking in the hills to the south.\n\nOur children " ..
+                "need clothing and our tents need mending.",
+            rewardChoices = {{4908, 1}, {4913, 1}},
+        },
         [752] = {
             description = "All members of the tribe share in the harmony of life. We live together and " ..
                 "work together.\n\nOur commitment to one another carries with it a high degree of " ..
@@ -2718,6 +2732,15 @@ ns.Overrides.wowhead = {
             description = "Hmm, you look pretty strong.\n\nListen, my good friend Kargal needs some new " ..
                 "recruits for Barrens duty. I know you want to do what's right for the Horde. Well, this " ..
                 "is your chance.\n\nTake this recruitment letter to Kargal and see if he'll sign it.",
+        },
+        [843] = {
+            description = "In solitude I wander these roads.\n\nThe dwarves of Bael Modan show no respect " ..
+                "for my land. Horrendous blasts drive holes deep into the ground as noisy machines rip " ..
+                "apart the hills. Lands which once served as home and provider to my tribe are now " ..
+                "riddled with destructive dwarves.\n\nAttempts at reaching a diplomatic resolution have " ..
+                "failed. Now is the time for decisive action.\n\nDrive the dwarves from the Bael Modan " ..
+                "excavation by force and bring to me the journal of their leader, Prospector Khazgorm.",
+            rewardMoney = 1500,
         },
         [844] = {
             description = "Your first prey will be easy.\n\nThe plainstriders to the east have been " ..
@@ -6723,6 +6746,14 @@ ns.Overrides.wowhead = {
         [5402] = {rewardItems = {{12844, 1}}},
         [5405] = {rewardItems = {{12846, 1}}},
         [5408] = {rewardItems = {{12844, 1}}},
+        [5461] = {
+            description = "The undead fear life just as the living fear death. It is not unusual for a " ..
+                "sentient undead being to completely destroy all remnants of his or her previous life " ..
+                "after having turned.\n\nUnfortunately, in order to create an artifact capable of " ..
+                "reverting Ras Frostwhisper to a mortal, we must have a keepsake from his years among the " ..
+                "living.\n\nYou must venture to the ruined city of Stromgarde, Frostwhisper's home, and " ..
+                "search for such an item. May luck be with you, <name>.",
+        },
         [5462] = {
             description = "Upon tainted soil, the keepsake must be attuned.\n\nIt is rumored that " ..
                 "Stratholme is where Frostwhisper succumbed to the Lich King. Upon those bloodied grounds " ..
@@ -9640,6 +9671,14 @@ ns.Overrides.wowhead = {
                 "found injured and unconscious by the Crystalbrook only yesterday. If you bring me vines, " ..
                 "we may be able to save her.\n\nYou will find root trappers both south and east of Azure " ..
                 "Watch.",
+        },
+        [9464] = {
+            description = "Once again you are to be tested, and this time the chaotic element of fire " ..
+                "must be understood if you're to create a totem to harness its energies.\n\nTo the " ..
+                "northeast on the coast is a sacred place of fire known as Emberglade. Amidst its burned " ..
+                "trees stands Temper, a fire elemental of great power, and the one that you must speak " ..
+                "with.\n\nGo to him now and may the elemental spirits of Azeroth go with you.",
+            rewardXP = 840,
         },
         [9467] = {
             description = "The owlbeasts of Moonwing Den on Silvermyst Isle, far to the southwest, have " ..
