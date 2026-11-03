@@ -4,6 +4,30 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.347] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,904 quests, 723 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,287 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,288 quests, 43 NPCs, 1 object
+- quest 24713 - Frostmourne - updated
+  - description removed
+  - reward money removed (1g 90s)
+- quest 31647 - Siege of Niuzao Temple Challenge Mode - Gold Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31786 - Pristine Manacles of Rebellion - updated
+  - description added
+  - reward items: +2
+- quest 31788 - Pristine Terracotta Arm - updated
+  - description removed
+  - reward items: -2
+- quest 31798 - Pristine Walking Cane - updated
+  - reward items: counts corrected
+- npc 71131 - High Overseer Bloodmane - updated
+  - NPC title added (Horde Logistics Officer)
+
 ## [0.2.346] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -203,18 +227,6 @@ Data from the PandaQuest portal.
   - reward items: +1
 - quest 30092 - Our Man in Gilneas - updated
   - description added
-
-## [0.2.336] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,899 quests, 695 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,206 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,199 quests, 43 NPCs, 1 object
-- npc 2990 - Bael'dun Appraiser - updated
-  - coordinates: 13 spawn points added in Mulgore
-- npc 3236 - Barrens Kodo - updated
-  - coordinates: 40 spawn points added in The Barrens
 
 ## [0.2.270] - 2026-10-26
 

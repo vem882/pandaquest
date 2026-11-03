@@ -31406,13 +31406,6 @@ ns.Overrides.wowhead = {
                 "will meet you in the Halls of Reflection.",
             rewardMoney = 19000,
         },
-        [24713] = {
-            description = "Keep moving, the sword is close.\n\nI need a moment to send one of my dark " ..
-                "rangers back to the airship. With all of our fodder gone, I will not be caught " ..
-                "unprepared - we will need any help they can send.\n\nGo. I will meet you in the Halls of " ..
-                "Reflection.",
-            rewardMoney = 19000,
-        },
         [24715] = {
             description = "<Suddenly, the robotic gorilla's eyes light up, and it begins to " ..
                 "speak.>\n\n\"...operational capacity... less than 5%... accidentally... punctured oil " ..
@@ -56186,7 +56179,6 @@ ns.Overrides.wowhead = {
         [31644] = {rewardMoney = 114000, rewardXP = 177000},
         [31645] = {rewardMoney = 114000, rewardXP = 177000},
         [31646] = {rewardMoney = 114000, rewardXP = 177000},
-        [31647] = {rewardMoney = 114000, rewardXP = 177000},
         [31648] = {rewardMoney = 114000, rewardXP = 177000},
         [31649] = {rewardMoney = 114000, rewardXP = 177000},
         [31650] = {rewardMoney = 114000, rewardXP = 177000},
@@ -56609,17 +56601,17 @@ ns.Overrides.wowhead = {
                 "Once you do that, come back and see me and we can talk about catching your own pets!",
             rewardMoney = 106000,
         },
-        [31787] = {
+        [31786] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
             rewardItems = {{87399, 3}, {79869, 1}},
         },
-        [31788] = {
+        [31787] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31789] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56679,7 +56671,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31799] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -65465,6 +65457,7 @@ ns.Overrides.wowhead = {
         [71027] = {subName = "SI:7"},
         [71085] = {maxLevel = 93, minLevel = 93, subName = "Terror of the High Seas"},
         [71108] = {subName = "The Black Prince"},
+        [71131] = {subName = "Horde Logistics Officer"},
         [71139] = {subName = "The Black Prince"},
         [71424] = {subName = "The Black Prince"},
         [71622] = {
