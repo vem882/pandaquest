@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.337] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 695 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,209 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,205 quests, 43 NPCs, 1 object
+- quest 7171 - Legendary Heroes - updated
+  - reward items: +1
+- quest 30092 - Our Man in Gilneas - updated
+  - description added
+
 ## [0.2.336] - 2026-11-02
 
 Data from the PandaQuest portal.
@@ -218,25 +230,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,177 quests, 24 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,170 quests, 42 NPCs, 1 object
-
-## [0.2.326] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,894 quests, 656 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,173 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,166 quests, 42 NPCs, 1 object
-- quest 24553 - The Purification of Quel'Delar - updated
-  - description added
-- quest 31593 - Got one! - updated
-  - description added
-  - reward money added (11g 40s)
-- npc 8608 - Angered Infernal - updated
-  - coordinates: 2 spawn points added in Azshara
-- npc 11680 - Horde Scout - updated
-  - coordinates: 40 spawn points added in Ashenvale
-- npc 52790 - Aggra - updated
-  - coordinates: 1 spawn point added in Mount Hyjal
 
 ## [0.2.270] - 2026-10-26
 

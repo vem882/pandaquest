@@ -1226,6 +1226,14 @@ ns.Overrides.wowhead = {
                 "dead, we just might stand a chance at pushing these beasts back into the ground.",
             rewardChoices = {{1436, 1}, {6187, 1}, {1832, 1}},
         },
+        [219] = {
+            description = "At last, friends of the Alliance!\n\nHelp... please...\n\nThe last thing I " ..
+                "remember these foul Orcs overpowered our regiment. Most the men were killed. I took a " ..
+                "strong blow to the head and everything went black. Now I am held captive in this cave. " ..
+                "Help me, I am hurt badly.\n\nI'll need help getting back to town... please... you're my " ..
+                "last hope...",
+            rewardChoices = {{3555, 1}, {1275, 1}, {3431, 1}},
+        },
         [222] = {
             description = "Your previous accomplishments have convinced me that you are ready to take on " ..
                 "the toughest worgen infesting the woods.\n\nOf the worgen that have made their new home " ..
@@ -2033,6 +2041,15 @@ ns.Overrides.wowhead = {
                 "Marzon out here in the garden. After you catch wind of talk about the Defias, make your " ..
                 "move. You need to kill them both before the guards return! When you're done, speak to " ..
                 "Trias.",
+        },
+        [436] = {
+            description = "Prospector Ironband is heading an excavation of ancient ruins east of the " ..
+                "lake. His progress has been slow lately, especially considering all the supplies we've " ..
+                "sent him.\n\nIronband's a stout, honest dwarf who values results, which has me worried " ..
+                "that forces are at work against him.\n\nGo to Ironband's Excavation and speak with " ..
+                "Magmar Fellhew. He manages the details of the site and will know why there's a " ..
+                "slowdown.\n\nTo get to the excavation site, go around the southern tip of the lake, then " ..
+                "head east.",
         },
         [437] = {
             description = "Our initial scouting reports of Silverpine show the rot hides have a base at " ..
@@ -13145,6 +13162,14 @@ ns.Overrides.wowhead = {
                 "his sect. Word has it he hid in the mountains south of Southwind Village, where he lives " ..
                 "as a hermit. Perhaps you can enlist his help in deciphering the tablet.\n\nTake the " ..
                 "restored tablet with you and seek out Ortell.",
+        },
+        [8286] = {
+            description = "The embrace of death had all but overcome my being when he intervened. He " ..
+                "breathed only once upon my maimed body and then waited patiently for the sands of time " ..
+                "to cleanse my wounds.\n\n\"Forever you will remain if you must,\" he said, and with " ..
+                "those words I was bound as a Watcher.\n\nLook now to the desert. The second war is upon " ..
+                "us. You must seek out the resting place of the Bronze. Venture to the Caverns of Time " ..
+                "and see if the master has returned. I must be sure before I am able to proceed.",
         },
         [8288] = {
             description = "There is no time to waste! A hero must be found! The task I give will require " ..

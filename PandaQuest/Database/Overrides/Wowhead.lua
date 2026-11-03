@@ -2086,6 +2086,7 @@ ns.Overrides.wowhead = {
         [7168] = {rewardItems = {{17900, 1}}},
         [7169] = {rewardItems = {{17901, 1}}},
         [7170] = {rewardItems = {{17902, 1}}},
+        [7171] = {rewardItems = {{17903, 1}}},
         [7172] = {rewardItems = {{17904, 1}}},
         [7223] = {
             description = "Battles rage constantly in Alterac Valley, and the supplies we get from " ..
@@ -50396,6 +50397,14 @@ ns.Overrides.wowhead = {
                 "manifestations of despair. Elementals made of water from the sky and salt from the " ..
                 "earth; the tears of Pandaria.",
             rewardMoney = 98000,
+        },
+        [30092] = {
+            description = "If you wish to join my cause and slaughter the black dragons in hiding, prove " ..
+                "yourself by taking down Hiram Creed. He's amassing an army in Gilneas.\n\nWe haven't " ..
+                "been able to slip past his defenders, but we've got a man on the scene keeping an eye on " ..
+                "him. Zazzo Twinklefingers, a very crafty arcane mage, is waiting for us to contact him " ..
+                "just outside of the ruins of the Gilnean capital.\n\nFind him and he'll direct you to " ..
+                "the target.",
         },
         [30093] = {
             description = "The city has been in chaos for days now. Hiram Creed, disguised as a Gilnean, " ..
