@@ -1923,6 +1923,13 @@ ns.Overrides.wowhead = {
                 "ways of such things.\n\nAnd as far as Trias goes, well, speak to no one of him... " ..
                 "ever... if you can help it.",
         },
+        [396] = {
+            description = "I have prepared a report for the King. I believe you should be the one to " ..
+                "deliver it to him, along with an account of your findings. Do not worry, there is no " ..
+                "doubt that he will commend you for doing your duty to the people of Stormwind.\n\nYour " ..
+                "audience is scheduled soon, so you'd best hurry, it's a bit of a ways to Stormwind Keep.",
+            rewardItems = {{2933, 1}},
+        },
         [397] = {
             description = "I hear Lord Wishock enjoyed his beverage.\n\nYou have served us well, <name>. " ..
                 "The Warlocks of Stormwind will be able to practice our ways without disturbance, thanks " ..
@@ -3730,6 +3737,14 @@ ns.Overrides.wowhead = {
                 "them will be a decisive strike against their matriarchy.\n\nMake sure they die " ..
                 "painfully, <name>. We want those harpy wenches to know the idiocy of picking fights with " ..
                 "the Horde.",
+            rewardMoney = 800,
+        },
+        [880] = {
+            description = "Your findings are incredible, <name>. These oases hold properties that must " ..
+                "come from an outside source. Or perhaps an inside one.\n\nI want to know how these " ..
+                "fissures are affecting the beasts who drink from the oases' water.\n\nHunt oasis " ..
+                "snapjaws at the Lushwater and Stagnant Oases. Bring me their shells so I may examine " ..
+                "them.",
             rewardMoney = 800,
         },
         [881] = {
@@ -6652,6 +6667,14 @@ ns.Overrides.wowhead = {
                 "items for me, you'll get some coin out of the deal. Watcha wanna do?",
             rewardMoney = 4500,
         },
+        [2279] = {
+            description = "Touching the Discs of Norgannon once again makes your hand tingle. This time, " ..
+                "however, a strange grinding noise is heard from inside the discs.\n\nYour backpack " ..
+                "suddenly becomes heavier than it was before. Inside, you discover a miniature version of " ..
+                "the discs!\n\nNo doubt, an item of this sort would be invaluable for someone interested " ..
+                "in the ancient history of Azeroth. The Explorers' League in Ironforge is such a group, " ..
+                "known throughout the Alliance; perhaps they can make good use of it.",
+        },
         [2280] = {
             description = "Touching the Discs of Norgannon once again makes your hand tingle. This time, " ..
                 "however, a strange grinding noise is heard from inside the discs.\n\nYour backpack " ..
@@ -7125,6 +7148,15 @@ ns.Overrides.wowhead = {
                 "guaranteed.\n\nI'll teach this to you, but you'll be working for me for a while. The " ..
                 "first cost is simply ten pieces of thick leather. After this, we'll talk specifics.",
         },
+        [2849] = {
+            description = "Wild Leather vests are the staple of any Wild Leather armor set. The frame of " ..
+                "the vest blends with the wildvine to produce a product that offers maximum protection of " ..
+                "the torso while allowing for the potent magic to work its way through the " ..
+                "garment.\n\nFor this pattern, I will require two Turtle Scale breastplates, two sets of " ..
+                "Turtle Scale gloves, and a wildvine. It's a tall order, but one you should have little " ..
+                "difficulty in filling for me.",
+            rewardItems = {{8404, 1}},
+        },
         [2851] = {
             description = "You've learned quite a bit now, <name>; still, there is more for you to learn. " ..
                 "Next are Wild Leather boots, the cornerstone of any set.\n\nThese boots are crafted to " ..
@@ -7367,6 +7399,14 @@ ns.Overrides.wowhead = {
                 "of the Valley of the Watchers in the Tanaris desert. He would like to speak with you as " ..
                 "soon as possible!",
         },
+        [2965] = {
+            description = "Ah, <name>, it is fortuitous that you have come to me again. Your revelations " ..
+                "at the Uldaman dig site have certainly given us sages much discuss. I was doing just " ..
+                "that with one of the druids, Nara Wildmane, when it dawned on me that her past " ..
+                "adventuring experiences may have some great importance as to the next step we need to " ..
+                "take.\n\nI would like for you to speak with her concerning her travels to the Valley of " ..
+                "the Watchers in the Tanaris desert. She waits for you on the Elder Rise.",
+        },
         [2966] = {
             description = "Sage Truthseeker and I would like you to take the miniature discs you found to " ..
                 "the sealed gates of Uldum. We... we aren't sure what will happen when you do " ..
@@ -7428,6 +7468,13 @@ ns.Overrides.wowhead = {
                 "understanding, if you're prepared to pay for it.\n\nSeek out Kranal Fiss in the Barrens. " ..
                 "He lives in a small dwelling north of the Crossroads, but be mindful, if you've reached " ..
                 "the night elf lands, you've gone too far.",
+        },
+        [2985] = {
+            description = "You look ready for your next test, <name>. You've been patient in your " ..
+                "studies, but the time has come for you to learn more. The time has come for you to learn " ..
+                "about the purity of water.\n\nSeek out Islen Waterseer in the Barrens. She is along the " ..
+                "eastern coast, south of the Southfury River and Ratchet. You will find her there at her " ..
+                "fishing hut. Good luck to you, <name>.",
         },
         [2987] = {
             description = "I just arrived here in Feralas, and I've heard that the Gordunni Ogres that " ..
@@ -10546,6 +10593,14 @@ ns.Overrides.wowhead = {
                 "feel you're ready to be tested much like those who serve the Light. You should head out " ..
                 "whenever you can. Alathea's message said that she'd be waitin' for you in the Temple of " ..
                 "the Moon. Good luck.",
+        },
+        [5677] = {
+            description = "As much as I'd like to show you our own special teachings of the Light, it is " ..
+                "not our place. Your place is back in Stormwind with your own kind, <name>... for now. " ..
+                "Believe me, I mean no offense. When you return to High Priestess Laurena in the " ..
+                "Cathedral of Light you'll understand what I'm talking about--the time has come for your " ..
+                "race to prepare you for the future; to separate yourself from others that follow a " ..
+                "similar path.",
         },
         [5678] = {
             description = "It is time for you to return to Stormwind, young one. Your superiors there " ..
@@ -13743,6 +13798,7 @@ ns.Overrides.wowhead = {
                 "back my chest! Do that, and you'll have earned a captain's gratitude.",
             rewardItems = {{11469, 1}},
         },
+        [8552] = {description = "This fine sash has the letters \"HS\" embroidered along its hem."},
         [8556] = {
             description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
                 "abilities. The corrupted gems that adorn them could, in theory, be swapped out with more " ..
