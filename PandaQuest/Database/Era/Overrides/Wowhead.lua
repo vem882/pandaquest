@@ -2545,6 +2545,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{3737, 1}, {3729, 3}},
             rewardMoney = 3000,
         },
+        [562] = {
+            description = "My former mentor in the Stormwind city guard sent a message to me that " ..
+                "Alliance High Command is becoming concerned with the threat posed by the naga. From what " ..
+                "he's heard, there's good chances for promotion--or at least reassignment--for anyone who " ..
+                "proves valuable in this regard.\n\nThere's just one small problem... I can't handle the " ..
+                "naga, <name>. Oh sure, I could break up a drunken barroom brawl, or haul off a " ..
+                "belligerent beggar, but the naga are too much for me. You've got to help me, <name>!",
+            rewardItems = {{3755, 1}},
+        },
         [563] = {
             description = "It shouldn't be a problem getting my report seen. The new captain of the " ..
                 "guard, Major Samuelson, was my mentor while I was stationed in Stormwind. It should give " ..
@@ -8251,6 +8260,14 @@ ns.Overrides.wowhead = {
                 "start with. Will you help? You'll find them to the southeast.",
             rewardMoney = 8500,
         },
+        [3784] = {
+            description = "Excuse me <class>, but I'd like just a moment of your time if possible.\n\nThe " ..
+                "Cenarion Circle in Thunder Bluff is most interested in seasoned adventurers such as " ..
+                "yourself to lend them aid in a vital research project. While I do not know the " ..
+                "specifics, I can inform you that none other than Hamuul Runetotem is spearheading this " ..
+                "research.\n\nPlease - if you are interested, speak with him directly on the Elder Rise " ..
+                "within Thunder Bluff proper.",
+        },
         [3785] = {
             description = "Here's your Evergreen Pouch that you'll need to use the Tharlendis seeds with. " ..
                 "You also need to have Un'Goro soil samples on hand to use as fertilizer for the seeds. " ..
@@ -9425,6 +9442,14 @@ ns.Overrides.wowhead = {
                 "me.\"\n\nPerhaps if the second half of the charm was found and reassembled, this would " ..
                 "constitute what the spirit of Janice Felstone is seeking.",
             rewardItems = {{13473, 1}},
+        },
+        [5052] = {
+            description = "Along with the thorns, the blood affected <snort> other aspects of the earth: " ..
+                "blood red stones mixed in with other minerals. The Bristleback dig up these shards and " ..
+                "carry them as totems <snort> for strength in battle and as totems for their magics. " ..
+                "<snort>\n\nI know the secrets of that magic.\n\nBring Mangletooth one of these blood " ..
+                "shards to show you understand. Bring Mangletooth many of the shards, and he will bless " ..
+                "you with quilboar magic--the magic of Agamaggan! <snort>",
         },
         [5054] = {
             description = "In the snowy mountains of Winterspring, to the northwest, a skilled hunter " ..

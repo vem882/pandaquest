@@ -56695,7 +56695,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31808] = {
             description = "Kovok has progressed at an astonishing rate. Perhaps the years in hibernation " ..
@@ -64476,6 +64476,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 490,
         },
+        [14464] = {
+            spawns = {
+                [16] = {
+                    {67.4, 26.8}, {71, 17.4}, {72, 16}, {72.4, 19.4}, {72.6, 19.4}, {72.6, 20}, {73, 18.4},
+                    {73.2, 21.2}, {74.2, 17.6}, {74.2, 21.2}, {74.6, 21.2}, {74.8, 22}, {75.2, 16.4},
+                    {75.6, 21.8}, {76.2, 23.4}, {76.4, 16.8}, {76.4, 24}, {76.8, 24.6}, {77, 16.6},
+                    {77.4, 16.4}, {77.6, 16.4}, {77.8, 25}, {78.4, 17.8}, {78.4, 24}, {78.8, 26}, {79, 17.8},
+                    {79.2, 17.2}, {79.2, 18.6}, {79.6, 24.2}, {79.8, 17}, {80.8, 23.4}, {81.2, 18.6},
+                    {81.2, 20.6}, {81.4, 22.4}, {81.8, 18.4}, {81.8, 21.8}, {82, 21.2}, {82.4, 30},
+                    {82.6, 17}, {82.6, 21},
+                },
+            },
+            zoneID = 16,
+        },
         [14467] = {
             spawns = {
                 [361] = {
@@ -64759,6 +64773,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 3483,
         },
+        [17093] = {spawns = {[400] = {{46, 50.4}, {46, 50.6}}}, zoneID = 400},
         [17097] = {spawns = {[3] = {{5.8, 48}, {6, 47.4}}}, zoneID = 3},
         [17111] = {spawns = {[8] = {{65.2, 22.6}, {65.4, 22.2}, {65.6, 22.2}, {65.6, 23.2}}}, zoneID = 8},
         [17113] = {

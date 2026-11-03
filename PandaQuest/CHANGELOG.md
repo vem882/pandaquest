@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.339] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 699 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,214 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,215 quests, 43 NPCs, 1 object
+- quest 31804 - Pristine Standard of Niuzao - updated
+  - reward items: counts corrected
+- npc 14464 - Avalanchion - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 17093 - [Deprecated for 4.x]Magistrix Elosai - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+
 ## [0.2.338] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -221,20 +235,6 @@ Data from the PandaQuest portal.
   - coordinates: 18 spawn points added in Mulgore
 - npc 4276 - Piznik - updated
   - coordinates: 1 spawn point added in Stonetalon Mountains
-
-## [0.2.328] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 658 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,178 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,173 quests, 43 NPCs, 1 object
-- quest 24729 - Crystal Yield - updated
-  - reward items: +1
-- npc 2806 - Bale - updated
-  - coordinates: 1 spawn point added in Felwood
-- npc 50791 - Ahone - updated
-  - coordinates: 3 spawn points added in Townlong Steppes
 
 ## [0.2.270] - 2026-10-26
 

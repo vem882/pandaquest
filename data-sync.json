@@ -1,26 +1,7 @@
 {
   "about": "Where the PandaQuest portal's data sync left off. Written by the sync; not part of the addon.",
-  "last_change_id": 8794,
+  "last_change_id": 8848,
   "pending_change_ids": [
-    7162,
-    7163,
-    7164,
-    7165,
-    7166,
-    7167,
-    7168,
-    7169,
-    7170,
-    7171,
-    7172,
-    7173,
-    7174,
-    7175,
-    7176,
-    7177,
-    7178,
-    7179,
-    7180,
     7181,
     7182,
     7183,
@@ -331,9 +312,10 @@
     8787,
     8788,
     8790,
-    8791
+    8791,
+    8848
   ],
   "questie": "12.4.0+v1.0.10",
-  "site_snapshot": "20261103T020419Z",
-  "version": "0.2.338"
+  "site_snapshot": "20261103T040304Z",
+  "version": "0.2.339"
 }
