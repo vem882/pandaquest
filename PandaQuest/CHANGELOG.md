@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.338] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 697 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,211 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,210 quests, 43 NPCs, 1 object
+- npc 14910 - Exzhal - updated
+  - coordinates: 2 spawn points added in Northern Stranglethorn
+- npc 68554 - Royal Finder - updated
+  - NPC title added (The Entourage)
+
 ## [0.2.337] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -223,13 +235,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Felwood
 - npc 50791 - Ahone - updated
   - coordinates: 3 spawn points added in Townlong Steppes
-
-## [0.2.327] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,177 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,170 quests, 42 NPCs, 1 object
 
 ## [0.2.270] - 2026-10-26
 
