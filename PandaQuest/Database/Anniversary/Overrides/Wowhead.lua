@@ -2296,6 +2296,11 @@ ns.Overrides.wowhead = {
                 "the complete sigil.",
             rewardMoney = 5000,
         },
+        [641] = {
+            description = "The reconstruction worked flawlessly. The sigil can now be used to unlock the " ..
+                "seal on Trollbane's tomb. Return it to Zengu, no doubt he has additional tasks for you " ..
+                "to complete.",
+        },
         [642] = {
             description = "My name is Myzrael. I am a princess of the earth, and my captors, the giants, " ..
                 "have trapped me deep beneath the Arathi Highlands. These crystal shards are the only way " ..
@@ -2625,6 +2630,14 @@ ns.Overrides.wowhead = {
                 "enterprise, we tauren cannot allow them to conduct their operations in our lands. Go to " ..
                 "their mine northeast of the ravaged caravan and send them a message.",
             rewardMoney = 250,
+        },
+        [768] = {
+            description = "Greetings, young one. You have a gleam in your eye; I can tell you are eager " ..
+                "to venture back to the plains for the hunt. May you bring honor to your clan!\n\nI work " ..
+                "with the skins of beasts, fashioning them into clothes and armor for the people of " ..
+                "Thunder Bluff.\n\nIf you hunt beasts and bring me their skins, then I will fashion " ..
+                "something for you.",
+            rewardChoices = {{5936, 1}, {4962, 1}},
         },
         [769] = {
             description = "The kodo beasts of Mulgore are strong and sturdy -- traits much respected " ..
@@ -4580,6 +4593,14 @@ ns.Overrides.wowhead = {
                 "drift.\n\nWe needs ye to speak with Onin MacHammar over by Gnomeregan and bring back a " ..
                 "report. The crafty dwarf has hidden hisself amongst the lepers. Be careful.",
         },
+        [2279] = {
+            description = "Touching the Discs of Norgannon once again makes your hand tingle. This time, " ..
+                "however, a strange grinding noise is heard from inside the discs.\n\nYour backpack " ..
+                "suddenly becomes heavier than it was before. Inside, you discover a miniature version of " ..
+                "the discs!\n\nNo doubt, an item of this sort would be invaluable for someone interested " ..
+                "in the ancient history of Azeroth. The Explorers' League in Ironforge is such a group, " ..
+                "known throughout the Alliance; perhaps they can make good use of it.",
+        },
         [2280] = {
             description = "Touching the Discs of Norgannon once again makes your hand tingle. This time, " ..
                 "however, a strange grinding noise is heard from inside the discs.\n\nYour backpack " ..
@@ -4982,6 +5003,14 @@ ns.Overrides.wowhead = {
                 "doubt, he also wants to thank you personally for once again aiding the League.",
             rewardChoices = {{34418, 1}, {34419, 1}},
             rewardMoney = 22000,
+        },
+        [2965] = {
+            description = "Ah, <name>, it is fortuitous that you have come to me again. Your revelations " ..
+                "at the Uldaman dig site have certainly given us sages much discuss. I was doing just " ..
+                "that with one of the druids, Nara Wildmane, when it dawned on me that her past " ..
+                "adventuring experiences may have some great importance as to the next step we need to " ..
+                "take.\n\nI would like for you to speak with her concerning her travels to the Valley of " ..
+                "the Watchers in the Tanaris desert. She waits for you on the Elder Rise.",
         },
         [2976] = {
             description = "What?!\n\nAh, so I did mention a bounty, didn't I? Well, that'll teach me to " ..
@@ -16437,6 +16466,16 @@ ns.Overrides.wowhead = {
                 "Defias have a powerful patron in Stormwind and that they're involved in the " ..
                 "disappearance of King Varian!\n\nI can use my magic to expedite your trip to Stormwind. " ..
                 "Just speak to me when you're prepared to go, <name>.",
+        },
+        [11223] = {
+            description = "Do not let Lady Prestor's protestations distract you, <name>. That she is " ..
+                "blind to this problem does not surprise me, but that is a separate matter.\n\nAs I was " ..
+                "saying, you and Lady Jaina have my thanks for bringing your findings to me in such " ..
+                "haste. Let her know that no good citizen of Stormwind will rest until our king walks " ..
+                "among us again.\n\nGo to the Mage Quarter at the western end of the city and speak with " ..
+                "Archmage Malin at the foot of the tower there. He will speed your return to Theramore.",
+            rewardChoices = {{33269, 1}, {33252, 1}, {33250, 1}},
+            rewardMoney = 8000,
         },
         [11337] = {
             description = "The fight against the Horde knows no boundaries, <name>. Even in Outland, " ..
