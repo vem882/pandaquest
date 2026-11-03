@@ -2558,6 +2558,11 @@ ns.Overrides.wowhead = {
             rewardItems = {{3737, 1}, {3729, 3}},
             rewardMoney = 3000,
         },
+        [561] = {
+            description = "Please inform Lieutenant Orinelle that I would like him to refocus his efforts " ..
+                "on the naga infesting the Eastern Strand. When he has results, tell him to report to me " ..
+                "in person.",
+        },
         [562] = {
             description = "My former mentor in the Stormwind city guard sent a message to me that " ..
                 "Alliance High Command is becoming concerned with the threat posed by the naga. From what " ..
@@ -4091,6 +4096,14 @@ ns.Overrides.wowhead = {
                 "you find Grimclaw.\n\nIf what he has told me is true, you will find his master in a cave " ..
                 "south of here. Grimclaw will be alongside the road waiting for you. Signal to him by " ..
                 "waving when you see him, and he'll point the way towards his master.",
+        },
+        [994] = {
+            description = "All right, <name>, force it is. Let's get out of here as soon as you're ready. " ..
+                "We'll fight our way down to the road--Grimclaw should still be there. Once there, we can " ..
+                "part ways.\n\nTerenthis will want to hear your version of the story immediately, so head " ..
+                "to Auberdine after we make it out of here.",
+            rewardItems = {{5609, 1}},
+            rewardMoney = 1400,
         },
         [995] = {
             description = "All right then... if you're sure, we'll sneak out of here. Let us leave when " ..
@@ -9370,6 +9383,13 @@ ns.Overrides.wowhead = {
                 "sky turns dark, you'll have found what I believe to be the source of the hot " ..
                 "springs.\n\nHave a look. I'm sure you'll have many questions when you return.",
             rewardItems = {{15789, 1}},
+        },
+        [4861] = {
+            description = "Hey there, <lad/lass>! I was chased from my camp in southern Winterspring by " ..
+                "some bloodthirsty wildkin! Well, I suppose I got too close to something the wildkin were " ..
+                "guarding.\n\nI barely managed to get away safely; I fear a buddy of mine wasn't as " ..
+                "lucky. Would you mind braving the wildkin and heading to the camp? I really need my " ..
+                "supplies, and I'd also like to get back the amulet I unearthed yesterday at the dig site.",
         },
         [4862] = {
             description = "Believe it or not, there are people out there willing to pay for the most vile " ..
@@ -15934,22 +15954,21 @@ ns.Overrides.wowhead = {
         [16531] = {
             spawns = {
                 [1497] = {
-                    {45.2, 79}, {45.4, 76.2}, {45.4, 78}, {45.4, 80.2}, {45.6, 75.2}, {45.6, 75.8},
-                    {45.6, 82}, {45.8, 80.6}, {46, 82.8}, {46.4, 72.6}, {46.6, 72.4}, {46.6, 84.6},
-                    {46.8, 41}, {47, 44.6}, {47.6, 85.8}, {47.8, 70.4}, {48, 59.2}, {48.2, 45.8}, {49, 68.6},
-                    {49.2, 30}, {49.6, 88.4}, {49.8, 43.6}, {50, 88.6}, {50.2, 67.4}, {51, 88.8}, {51.6, 47},
-                    {51.8, 62.2}, {51.8, 64.4}, {52, 64.6}, {52, 89.2}, {52.6, 25.8}, {52.8, 63.4},
-                    {53.2, 64}, {53.2, 64.6}, {54, 23.2}, {54, 90.8}, {54.2, 93.4}, {54.4, 65.4},
-                    {54.8, 91.2}, {54.8, 93.8},
+                    {45.2, 79}, {45.4, 78}, {45.6, 75.2}, {45.6, 82}, {46, 82.8}, {46.6, 72.4}, {46.8, 41},
+                    {47.6, 85.8}, {48, 59.2}, {49, 68.6}, {49.6, 88.4}, {50, 88.6}, {51, 88.8}, {51.8, 62.2},
+                    {52, 64.6}, {52.6, 25.8}, {53.2, 64}, {54, 23.2}, {54.2, 93.4}, {54.8, 91.2}, {55, 68.8},
+                    {56.2, 67.2}, {56.4, 94.2}, {57, 92}, {57.2, 92.8}, {57.6, 68.2}, {59.2, 63.2},
+                    {60.8, 49.8}, {62, 46.6}, {62.2, 45.2}, {62.4, 42.4}, {62.6, 46.8}, {63.2, 40},
+                    {63.6, 47.2}, {63.8, 39.4}, {64, 43.8}, {64.2, 42}, {64.2, 49}, {64.6, 41.2}, {65, 33.2},
                 },
                 [1519] = {
-                    {33.8, 65.4}, {38.6, 43.4}, {39.6, 28.2}, {39.6, 39.4}, {40.4, 30}, {40.6, 28.8},
-                    {41.4, 49.8}, {41.8, 40}, {42.6, 31.8}, {42.8, 38}, {42.8, 41.2}, {42.8, 59.6},
-                    {43.4, 34.8}, {43.6, 40.6}, {44, 39.2}, {44.2, 39.8}, {44.6, 63.8}, {44.8, 37.2},
-                    {45, 38.6}, {45.4, 38.2}, {45.8, 50}, {46, 36.2}, {46.2, 37.4}, {46.2, 38.8},
-                    {46.4, 41.2}, {46.4, 59.8}, {46.6, 41.6}, {47, 65}, {47.4, 40.8}, {47.4, 57.6},
-                    {47.6, 41.6}, {47.6, 43}, {47.6, 64.6}, {47.8, 39.4}, {48.2, 49}, {48.2, 61.4},
-                    {48.2, 63.6}, {48.4, 45}, {48.8, 47.6}, {49, 45.6},
+                    {33.8, 65.4}, {39.6, 28.2}, {40.4, 30}, {41.4, 49.8}, {42.6, 31.8}, {42.8, 41.2},
+                    {43.4, 34.8}, {44, 39.2}, {44.6, 63.8}, {45, 38.6}, {45.8, 50}, {46.2, 37.4},
+                    {46.4, 41.2}, {46.6, 41.6}, {47.4, 40.8}, {47.6, 41.6}, {47.6, 64.6}, {48.2, 49},
+                    {48.2, 63.6}, {48.8, 47.6}, {49.2, 50.4}, {49.4, 51}, {49.6, 66}, {50.6, 51.2},
+                    {51.8, 53}, {52.4, 56.2}, {52.6, 61}, {53, 57.8}, {53.2, 63}, {53.6, 54.8}, {54.2, 65.2},
+                    {54.4, 63.4}, {54.4, 66.6}, {54.8, 63.6}, {55, 63}, {55.2, 62.2}, {55.6, 62.6},
+                    {55.8, 61.6}, {55.8, 69.6}, {56, 71.2},
                 },
             },
             zoneID = 1497,
