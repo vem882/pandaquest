@@ -1317,6 +1317,15 @@ ns.Overrides.wowhead = {
                 "expand your search to the inn. If the person whom you seek spent time in town, then " ..
                 "chances are someone saw him there.",
         },
+        [272] = {
+            description = "For the second trial, you'll need the two halves that make the Pendant of the " ..
+                "Sea Lion. One half draws power from the agility of the sea lion aspect, gliding through " ..
+                "water; the other draws power from the incredible endurance of the sea lion aspect. " ..
+                "Druids draw on both these traits equally to embody the aspect of their aquatic " ..
+                "form.\n\nSpeak with the locals of Moonglade to learn where the parts may lie, and bring " ..
+                "both here to join them together. Once formed, take the pendant to Dendrite Starblaze.",
+            rewardXP = 880,
+        },
         [274] = {
             description = "This ain't no ordinary blast powder. Look at the tiny silver crystals. And the " ..
                 "distinct smell! Why it's clear as daylight that this is Seaforium Powder. Seaforium is " ..
@@ -4060,6 +4069,16 @@ ns.Overrides.wowhead = {
                 "her there at her fishing hut. Good luck to you, <name>.",
             rewardXP = 780,
         },
+        [1531] = {
+            description = "You be makin' headway now, mon. Your be ready to prove yerself worthy of the " ..
+                "air totem, but first, ya must fin' Prate Cloudseer in Thousand Needles. She be willin' " ..
+                "ta tell ya how to get yer air totem if ya treat her wit enough respect.\n\nHead south " ..
+                "through the Barrens, and after ya reach Thousand Needles, head east. You'll find her " ..
+                "hiddin' in a hole wit' her boyfriend--haha, don' tell her I be dissin' her none--she not " ..
+                "take it too kindly.",
+            rewardItems = {{5178, 1}},
+            rewardXP = 2450,
+        },
         [1532] = {
             description = "The winds of Kalimdor rush to meet you and you shall be counted among some of " ..
                 "our most powerful <brothers/sisters>. I am proud to see you have come this far and have " ..
@@ -6111,6 +6130,16 @@ ns.Overrides.wowhead = {
                 "them first, or they might hatch before you can collect them!\n\nWhen you have enough " ..
                 "eggs, bring them to me!",
             rewardMoney = 27000,
+        },
+        [4740] = {
+            description = "Attention!\n\nA reward is being offered for the death of the murloc \" " ..
+                "Murkdeep \". This foul beast is known to be responsible for the death of at least one " ..
+                "Sentinel, and is suspected of causing the sinking of at least two cargo vessels in the " ..
+                "waters off Darkshore!\n\nMurkdeep was last spotted at a hutted murloc camp south of " ..
+                "Auberdine, and is thought to be protecting the huts there. Reward claims for this bounty " ..
+                "should be claimed with Sentinel Glynda Nal'Shea in Auberdine.\n\nThe Auberdine Village " ..
+                "Council",
+            rewardChoices = {{5315, 1}, {15403, 1}, {15404, 1}},
         },
         [4761] = {
             description = "Your scouting of the furbolg camp is information that Thundris Windweaver " ..
@@ -8438,6 +8467,14 @@ ns.Overrides.wowhead = {
                 "be disappointed.",
             rewardItems = {{21412, 1}},
         },
+        [8691] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21415, 1}},
+        },
         [8692] = {
             description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
                 "make you a protective item that'll be of assistance in the fight against our enemy, " ..
@@ -9601,6 +9638,14 @@ ns.Overrides.wowhead = {
                 "the great cat to your side and hunt beside it. They are found throughout Eversong Woods, " ..
                 "some very close to the lodge. When you have learned enough, return to me.",
             rewardXP = 840,
+        },
+        [9487] = {
+            description = "Arcane reavers are magical creations of brute strength. They are heavily " ..
+                "armored and deliver stunning blows. You, however, can bypass their defenses and avoid " ..
+                "their attacks. Your spellcraft is not without many advantages, <name>.\n\nTravel to " ..
+                "Dawnstar Spire and blast apart the arcane reavers. From their remains, collect the " ..
+                "crystallized fragments of magical energy and return to me. Dawnstar Spire is found to " ..
+                "the east, across the lake.",
         },
         [9488] = {
             description = "The arcane fragments you collected will do nicely.\n\nNicely for what, you " ..
@@ -12506,6 +12551,16 @@ ns.Overrides.wowhead = {
                 "Destroyer to the south.\n\nMy compatriot, Drijya, has gone down there to scout and see " ..
                 "if he can do something about the Burning Legion's warp-gate.\n\nPlease find and assist " ..
                 "him in any way that you can.",
+        },
+        [10312] = {
+            description = "Silencing the spirits has not bled them of their aggression as we had hoped it " ..
+                "would. The malevolent spirits you subdued have reemerged in the streets of the " ..
+                "town.\n\nWe must uncover what is causing this to happen. The destruction of Kirin'Var " ..
+                "was just the beginning, or else the spirits would have been quieted by now.\n\nThe town " ..
+                "hall in the southern section of Kirin'Var maintained a logbook of all the residents. " ..
+                "Last I heard, it was in the keeping of Battle-Mage Dathric. Perhaps his spirit still has " ..
+                "it.",
+            rewardMoney = 41000,
         },
         [10315] = {
             description = "The blood elves are fools! I'm glad that our trade relations with them have " ..
