@@ -3945,6 +3945,14 @@ ns.Overrides.wowhead = {
                 "have been made between them and the Burning Blade, and Thrall would have them slain. " ..
                 "Seek them out to the northeast of here, and return to me when you've driven them back.",
         },
+        [1439] = {
+            description = "We were brought here after the orcs slaughtered all our guards and servants. " ..
+                "Oh, the terrible things they did to them! I thought surely they would kill us right " ..
+                "there and then, but it became obvious they had other plans.\n\nTyranis attempted to " ..
+                "speak to them. I think he wanted to impress them with his knowledge of the arcane... I'm " ..
+                "not sure why.\n\nPlease, I can't leave here until I know what's happened to my brother. " ..
+                "Find him, then come back for me when his fate is known.",
+        },
         [1440] = {
             description = "So, the time is now then? I appreciate your efforts, and if the situation does " ..
                 "not lend itself, then allow me to thank you now for everything you've done for me and my " ..
@@ -4020,6 +4028,14 @@ ns.Overrides.wowhead = {
                 "servant.\n\nWhen you are ready, head directly south, and return to me when the threat " ..
                 "has been ended.",
             rewardChoices = {{6746, 1}, {6747, 1}},
+        },
+        [1489] = {
+            description = "The shells you brought me have a taint, one I have never before seen. I am " ..
+                "certain the water of the Oases is the cause, and I can sense the confusion they cause " ..
+                "this land. It is as if the land dreams and cannot awake.\n\nThe Wailing Caverns must be " ..
+                "the source of the taint. But before you go there, speak with Hamuul Runetotem, the elder " ..
+                "druid. I sent word to him of the happenings in the Barrens. He is wise, and can offer " ..
+                "you counsel.\n\nYou will find him in Thunder Bluff, on the Elder Rise.",
         },
         [1490] = {
             description = "I entered the land of dreams, and dreamed of a cult of druids who dwell in the " ..
@@ -7756,6 +7772,14 @@ ns.Overrides.wowhead = {
                 "sure to save me the water elemental cores!",
             rewardItems = {{19039, 1}},
             rewardMoney = 7000,
+        },
+        [7722] = {
+            description = "When that bastard, Maltorius, left our clan, he left with something more " ..
+                "valuable than a pristine arcane crystal: Our recipe for fiery flux! I'd bet anything " ..
+                "that the recipe was part of the deal in his new promotion amongst the Dark Irons.\n\nI " ..
+                "want you to get our secret plans back, <name>. I'm sure they're somewhere near " ..
+                "Maltorius, deep inside the Slag Pit.",
+            rewardMoney = 7500,
         },
         [7724] = {
             description = "Wouldn't ye know it, every time ol' Hansel wants to take a moment to relax and " ..
@@ -16300,6 +16324,16 @@ ns.Overrides.wowhead = {
                 "more shinies than ya can ever carry.\n\nVisit my ol' friend, Budd, near Zul'Aman and " ..
                 "show him this here. Ya be tellin' him ol' Griftah sent ya and he'll let ya in on his new " ..
                 "project.",
+        },
+        [11132] = {
+            description = "My inscrutable theories confirm rumors of vast treasure in Zul'Aman. There'll " ..
+                "be mounts and mansions for everyone! First things first, though. You must earn your " ..
+                "share, after all....\n\nOur initial efforts here haven't gone as well as I hoped. In " ..
+                "fact, my map, and the recruits I lent it to, have gone missing. They were after a " ..
+                "troll-beast named Nalorakk.\n\nForget the crew, I need that map! Succeed, and you'll go " ..
+                "down in history as the one who helped Budd Nedreck unlock the secrets of Zul'Aman!",
+            rewardItems = {{34067, 1}},
+            rewardMoney = 88000,
         },
         [11133] = {
             description = "I've altered the leaflets you captured from the deserters' mercenary friends " ..

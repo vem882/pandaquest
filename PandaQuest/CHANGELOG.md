@@ -4,6 +4,26 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.341] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,905 quests, 700 NPCs, 2 objects
+- database - flight times: 7 measured, 1,625 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,226 quests, 24 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,224 quests, 43 NPCs, 1 object
+- quest 31337 - A Token of Appreciation - updated
+  - description added
+  - reward items: +1
+- quest 31792 - Pristine Iron Amulet - updated
+  - reward items: counts corrected
+- quest 31795 - Pristine Pandaren Tea Set - updated
+  - reward items: counts corrected
+- quest 31797 - Pristine Twin Stein Set - updated
+  - reward items: counts corrected
+- quest 31803 - Pristine Pearl of Yu'lon - updated
+  - reward items: counts corrected
+
 ## [0.2.340] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -226,27 +246,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Hyjal Summit
 - npc 70030 - Agrant Sharpshot - updated
   - NPC title added (Jurassic Expedition)
-
-## [0.2.330] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,895 quests, 666 NPCs, 2 objects
-- database - flight times: 5 measured, 1,627 estimated
-- database - Classic Era: data from the PandaQuest portal: 2,183 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,178 quests, 43 NPCs, 1 object
-- npc 232 - Farmer Ray - updated
-  - coordinates: 8 spawn points added in Hillsbrad Foothills
-- npc 1110 - Skeletal Raider - updated
-  - coordinates: 39 spawn points added in Duskwood
-- npc 1166 - Stonesplinter Seer - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 2333 - Henchman Valik - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
-- npc 4077 - Gaxim Rustfizzle - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 8737 - Linken - updated
-  - coordinates: 1 spawn point added in Un'Goro Crater
 
 ## [0.2.270] - 2026-10-26
 

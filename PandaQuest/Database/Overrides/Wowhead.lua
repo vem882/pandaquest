@@ -55249,6 +55249,11 @@ ns.Overrides.wowhead = {
             rewardItems = {{86057, 5}},
             rewardMoney = 11400,
         },
+        [31337] = {
+            description = "Thanks for checking to make sure I'm doing well! I've been able to help out " ..
+                "the Ironpaws today, and they said I could give this to you.",
+            rewardItems = {{90735, 1}},
+        },
         [31342] = {
             description = "You have proven yourself in battle.\n\nStill, if you would aid us further, I " ..
                 "must ask something else of you.\n\nThe Sha of Violence awaits beyond within the Sealed " ..
@@ -56638,7 +56643,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31793] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56656,7 +56661,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31796] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56668,7 +56673,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31798] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56704,7 +56709,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31804] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
