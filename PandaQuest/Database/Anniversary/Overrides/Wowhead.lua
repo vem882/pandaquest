@@ -1201,6 +1201,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{2047, 1}, {2048, 1}, {2195, 1}, {5761, 1}},
             rewardItems = {{961, 3}},
         },
+        [184] = {
+            description = "This is the deed to an expanse of farmlands within Westfall. It is signed by a " ..
+                "Theodore Furlbrow and cosigned by his wife, Verna. And on the back of the deed are " ..
+                "hastily scrawled words:\n\n\"We leaned on Furlbrow and got his deed. Thought it might be " ..
+                "handy if you wanted to forge one of these for your own place.\n\nThe Furlbrows won't " ..
+                "give us trouble. Last I saw them they were on their way out of Westfall, stuck with a " ..
+                "broken wagon.\"\n\nYou think the Furlbrows might want their deed back...",
+            rewardItems = {{5057, 5}, {4656, 5}},
+        },
         [187] = {
             description = "Now I'm going to up the stakes on you and truly test your skill. Prove to me " ..
                 "you can kill 10 Elder Stranglethorn Tigers. If you can do that, you will be ready for " ..
@@ -1711,6 +1720,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{5941, 1}, {3444, 1}},
             rewardMoney = 350,
         },
+        [399] = {
+            description = "It seems an eternity since I was a boy working the farm in Westfall. They say " ..
+                "you can never go back, and it's true. Doubly true in my case, my family's home has been " ..
+                "burned down and taken over by thieves.\n\nI have spoken with my father about the fate of " ..
+                "some of my possessions, including my first compass. He was unable to save them. However, " ..
+                "he also says that they should be hidden away on the farm.\n\nYou'll find the Alexston " ..
+                "Farmstead west of Sentinel Hill. Perhaps you could go and retrieve it for me?",
+            rewardMoney = 700,
+        },
         [401] = {
             description = "I'm almost finished translating that note. If you come back in a few moments I " ..
                 "should be done.",
@@ -1964,6 +1982,11 @@ ns.Overrides.wowhead = {
                 "left the town I was hit by a stray axe in the back. All went black.\n\nI awoke here in " ..
                 "Menethil but I fear for my fellow soldiers. Hope still burns within me. Perhaps " ..
                 "Longbraid is still alive! See if you can find him near Dun Modr, <race>!",
+        },
+        [473] = {
+            description = "<name>. The Dragonmaw orc clan is showing its strength in more than just " ..
+                "Algaz. Captain Stoutfist has asked to speak with those willing to offer aid against " ..
+                "these orcs. He is inside the keep, in the war room.",
         },
         [474] = {
             description = "Now that the catapults have been burned, find and kill Chieftain Nek'rosh.",
@@ -3899,6 +3922,10 @@ ns.Overrides.wowhead = {
                 "the Kolkar to the northeast and kill them. Take their charms. Bring me the charms and I " ..
                 "will throw them in the fire and laugh!",
         },
+        [1392] = {
+            description = "Noboru has plagued the Draenei of the Harborage for months, and his cudgel is " ..
+                "a symbol of the brutality they have suffered at the hands of the lost ones.",
+        },
         [1394] = {
             description = "You have done well, <name>. You have passed my test, and the tests before " ..
                 "mine. Return to Dorn in Thousand Needles. He will sense the change within you, and see " ..
@@ -4132,6 +4159,17 @@ ns.Overrides.wowhead = {
                 "the night elf lands, you've gone too far.",
             rewardXP = 420,
         },
+        [1525] = {
+            description = "But you did not come here for a history lesson, did you? You came for the " ..
+                "Eternal Flame and fire totem.\n\nThe first step is to create a sapta and bind you to the " ..
+                "flame.\n\nI can create the fire sapta for you if you bring me two items. The first is " ..
+                "fire tar, a simple item usually carried by Razormane spellcasters in eastern " ..
+                "Barrens.\n\nThe second item will be more dangerous: a reagent pouch from one of the " ..
+                "cultists of the Burning Blade. You can find them in a cave above the ravines northeast " ..
+                "of Razor Hill.",
+            rewardItems = {{6636, 1}},
+            rewardXP = 840,
+        },
         [1529] = {
             description = "Long has it been since you were last tested, <name>. You have shown patience " ..
                 "thus far in your studies, but the time has come for you to learn more. The time has come " ..
@@ -4251,6 +4289,14 @@ ns.Overrides.wowhead = {
             description = "Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. " ..
                 "He waits at the Lakeshire Inn, in Redridge, and pledges a grand reward to anyone able to " ..
                 "pass his trial.",
+        },
+        [1699] = {
+            description = "I call my challenge the Rethban Gauntlet. To pass the trial, all you must do " ..
+                "is enter the Rethban Caverns, to the first fork, then return here. Easy! Except there " ..
+                "are a few wrinkles...\n\nYou have to return within an hour.\n\nThere are whole heaps of " ..
+                "Redridge Gnolls in the way.\n\nBefore you start, you have to take a swig of my family's " ..
+                "signature drink: Barleybrew Scalder!\n\nSo what do you say? The Rethban Caverns are in " ..
+                "the foothills north of Lakeshire. Are you ready to run the Rethban Gauntlet?",
         },
         [1700] = {
             description = "I made a copy of my notes on the techniques I learned while making your armor, " ..
@@ -5375,6 +5421,15 @@ ns.Overrides.wowhead = {
                 "northwest; in the hills above the cave... Twilight's Hammer guard a relic. Retrieve it " ..
                 "and place it on the altar of Suntara.\n\n<The dying archaeologist collapses.>",
         },
+        [3376] = {
+            description = "<name> - I have heard of you, newcomer. Perhaps it is you that will help us, " ..
+                "where others have failed.\n\nWe tauren have carved a home out of this land, but not " ..
+                "without a cost. The Bristleback quilboars of Brambleblade Ravine, led by Chief Sharptusk " ..
+                "Thornmantle, have made our lives difficult with their continued war against us. I charge " ..
+                "you to bring me the chief's head!\n\nHe will be found in the ravine to the east in their " ..
+                "makeshift village.",
+            rewardChoices = {{10635, 1}, {10636, 1}},
+        },
         [3378] = {
             description = "Will you assist me, mortal? Will you find the prayer to Elune?\n\nAs I stated, " ..
                 "the prayer was etched onto a golden tablet. One of these idol worshipping scoundrels " ..
@@ -6067,6 +6122,7 @@ ns.Overrides.wowhead = {
                 "Thaurissan's evil spell!",
         },
         [4381] = {rewardItems = {{11562, 6}}},
+        [4382] = {rewardItems = {{11563, 6}}},
         [4385] = {rewardItems = {{11566, 6}}},
         [4386] = {rewardItems = {{11567, 6}}},
         [4402] = {
@@ -6603,6 +6659,14 @@ ns.Overrides.wowhead = {
                 "was on a hill... she said it was on a hill.\n\nPlease, <name>. You're my new friend! " ..
                 "Will you talk to my Auntie for me?",
         },
+        [5153] = {
+            description = "I wish Joseph could again be with his daughter, but it cannot be so. His soul " ..
+                "was twisted by the Scourge, and he became a monster. Oh, he is doomed!\n\nBut perhaps we " ..
+                "can change his fate.\n\nSearch the graves outside for Joseph's monument. His body's not " ..
+                "there, for it was trampled and destroyed years ago, but under the monument is his " ..
+                "wedding ring. Take that ring to Chromie... a strange gnome with very strange " ..
+                "powers.\n\nChromie is staying in the ruined inn at the northwest corner of Andorhal.",
+        },
         [5157] = {
             description = "Deep within Jaedenar lies Shadow Hold--the main fortress of their corruption " ..
                 "and evil.\n\nThe Shadow Council has protective spells surrounding their lair in the form " ..
@@ -6674,6 +6738,12 @@ ns.Overrides.wowhead = {
                 "suitable sample to be studied.\n\nWith the poison in hand, it is time to return to " ..
                 "Shadow Priestess Vandis at the Bulwark to complete the mission.",
             rewardMoney = 8000,
+        },
+        [5232] = {
+            description = "You carefully fill the bottle with enough of the cauldron's ichors for what " ..
+                "you consider to be suitably sized sample.\n\nWith the poison in hand, it is time to " ..
+                "return to Shadow Priestess Vandis at the Bulwark to complete the mission.",
+            rewardMoney = 8500,
         },
         [5233] = {
             description = "Two cauldrons have been successfully opened; while you'll be able to access " ..
@@ -7166,6 +7236,15 @@ ns.Overrides.wowhead = {
                 "I'm going to head over to Plaguewood and mark the buildings we need destroyed. You " ..
                 "gather the components for the bombs. Meet back here when you've got everything. Deal?",
             rewardMoney = 17500,
+        },
+        [6029] = {
+            description = "I'm looking for a responsible individual to aid me in a small but nonetheless " ..
+                "important matter. I'm here as a representative of the Argent Dawn's interests to the " ..
+                "local governance of Everlook. I need to get a progress report to Argent Officer Garush " ..
+                "at the Bulwark; it's a ways from here, located along the western fringe of the Western " ..
+                "Plaguelands, east of Tirisfal Glades.\n\nIf I may be so bold - this would be a perfect " ..
+                "means to introduce yourself to my superior and perhaps earn some work from him!",
+            rewardMoney = 4000,
         },
         [6032] = {
             description = "Although the people of Timbermaw delight in the feel of runecloth, it is not " ..
@@ -8718,6 +8797,7 @@ ns.Overrides.wowhead = {
                 "your allies are our only hope.",
             rewardChoices = {{21531, 1}, {21532, 1}},
         },
+        [8745] = {rewardChoices = {{21523, 1}, {21522, 1}, {21521, 1}, {21520, 1}}},
         [8765] = {rewardChoices = {{21200, 1}, {21205, 1}}},
         [8772] = {
             description = "Reinforcements have been called on to join the assault on Hive'Zora. You have " ..
@@ -8731,6 +8811,13 @@ ns.Overrides.wowhead = {
                 "Hive'Regal where your primary target will consist of Hive'Regal burrowers.\n\nReport " ..
                 "back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
+        },
+        [8779] = {
+            description = "Geologist Larksbane 's studies have proven to be of tremendous value to our " ..
+                "operations in Silithus. She has recently requested scrying materials to be used in her " ..
+                "research.\n\nPlease gather these materials and deliver them to her directly so that she " ..
+                "may continue her research.",
+            rewardItems = {{20800, 1}, {20805, 1}},
         },
         [8782] = {
             description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
@@ -10237,6 +10324,15 @@ ns.Overrides.wowhead = {
                 "Western Plaguelands.\n\nHe is not known for his patience. It would not be wise to keep " ..
                 "him waiting.",
         },
+        [9606] = {
+            description = "If I remember correctly, Blood Watch's hippogryph master is Laando. If you've " ..
+                "spoken to him before, then you can take one of my hippogryphs to him.\n\nThat's a good " ..
+                "lesson to know: hippogryphs are always trained to fly to their capital city, but they'll " ..
+                "only take you to a remote hippogryph master after you've already been there.\n\nSince " ..
+                "you arrived on one of Laando's hippogryphs, you can also use that route to return to " ..
+                "Blood Watch with the caregiver's supplies.",
+            rewardMoney = 700,
+        },
         [9607] = {
             description = "<class>, put together a force to investigate the Blood Furnace inside Hellfire " ..
                 "Citadel at once! And that means today, princess!\n\nThe magic we have at our disposal " ..
@@ -11676,6 +11772,15 @@ ns.Overrides.wowhead = {
                 "of parts to Tooki at Stonebreaker Hold to the southeast. He may have some idea of what " ..
                 "these are.",
             rewardMoney = 16000,
+        },
+        [9996] = {
+            description = "We know that the blood elves of Firewing Point are working for Kael'thas and " ..
+                "Illidan. And from what you've told me, clearly they are using the Broken of Tuurem as " ..
+                "smuggling go-betweens for the creation of some horrible weapon.\n\nWhatever they're up " ..
+                "to out there, the most efficient thing that we can do right now is to thin out their " ..
+                "numbers.\n\nThe Firewing blood elves need to be taken out! Head up to Firewing Point to " ..
+                "the north and see to it.",
+            rewardMoney = 31000,
         },
         [9997] = {
             description = "We know that the blood elves of Firewing Point are working for Kael'thas and " ..

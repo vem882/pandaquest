@@ -40346,6 +40346,7 @@ ns.Overrides.wowhead = {
                 "to be stronger than they first appear.",
             rewardMoney = 24000,
         },
+        [27114] = {rewardItems = {{18269, 5}, {18284, 5}}},
         [27120] = {rewardItems = {{18258, 1}}},
         [27126] = {
             description = "Peak Grindstone 's team broke down somewhere out there to the west.\n\nThink " ..
@@ -56673,7 +56674,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31797] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -56697,7 +56698,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79868, 1}},
+            rewardItems = {{87399, 3}, {79868, 1}},
         },
         [31801] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -57437,6 +57438,10 @@ ns.Overrides.wowhead = {
         },
         [31987] = {rewardItems = {{90041, 1}}, rewardMoney = 94000},
         [31988] = {rewardMoney = 114000},
+        [31989] = {
+            description = "The time has come for you to return to the Peak of Serenity to complete your " ..
+                "training. Use Zen Pilgrimage to return there and speak with Master Hight when you arrive.",
+        },
         [31991] = {
             description = "I knew you would return to face me once more. Let us see who is truly wiser in " ..
                 "the ways of battle.",
@@ -62252,6 +62257,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 11,
         },
+        [1020] = {
+            spawns = {
+                [11] = {
+                    {19.8, 49.4}, {20, 49.6}, {20.4, 52.8}, {20.8, 48.4}, {20.8, 50.8}, {21.2, 54},
+                    {21.6, 47.2}, {22.4, 53.6}, {22.6, 53.2}, {22.8, 50.4}, {23.2, 54.6}, {23.4, 46.4},
+                    {23.4, 54.2}, {23.6, 49}, {24, 46.2}, {24.2, 52.4}, {24.4, 51.4}, {25, 47.4}, {25.2, 48},
+                    {25.6, 48.8}, {26, 45.6}, {26, 48.4}, {26.2, 47.4}, {26.6, 46.6}, {27.2, 43.6},
+                    {27.8, 44.6}, {28.2, 42.4}, {28.8, 43.8}, {29.2, 45.2}, {29.4, 42.4}, {29.6, 42.4},
+                    {29.6, 42.8}, {29.6, 46.4}, {30.2, 46.6}, {31.8, 41.4}, {36.4, 42.8}, {37, 43.4},
+                    {37, 44.6}, {37.2, 48.2}, {38, 50},
+                },
+            },
+            zoneID = 11,
+        },
         [1021] = {
             spawns = {
                 [11] = {
@@ -62963,6 +62982,19 @@ ns.Overrides.wowhead = {
                     {32.2, 47.6}, {32.4, 43}, {32.4, 43.6}, {32.6, 43.4}, {32.6, 43.6},
                 },
             },
+            zoneID = 47,
+        },
+        [2694] = {
+            spawns = {
+                [47] = {
+                    {28, 44.2}, {28.4, 45.4}, {28.4, 45.6}, {28.4, 46.6}, {28.6, 44.4}, {28.6, 45.4},
+                    {28.6, 46.6}, {28.8, 46.2}, {29.4, 43.4}, {29.8, 43.4}, {30, 48.6}, {30.2, 43.6},
+                    {30.4, 48.4}, {30.6, 43.6}, {30.8, 43.4}, {30.8, 47.4}, {31, 48}, {31.4, 48.8},
+                    {31.6, 47.2}, {31.6, 49}, {31.8, 46.4}, {32.4, 50.4}, {32.4, 50.6}, {32.6, 50.4},
+                    {32.6, 50.6}, {33.4, 53.2}, {33.4, 53.8}, {33.6, 53.4}, {33.6, 54},
+                },
+            },
+            subName = "PH MODEL WIP",
             zoneID = 47,
         },
         [2696] = {spawns = {[45] = {{43.2, 92.4}, {43.2, 92.6}}}, zoneID = 45},
@@ -64146,6 +64178,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 440,
         },
+        [7866] = {spawns = {[16] = {{37.4, 65.4}, {37.4, 65.6}, {37.6, 65.4}}}, zoneID = 16},
         [7867] = {spawns = {[3] = {{62.4, 57.4}, {62.4, 57.6}, {62.6, 57.4}, {62.6, 57.6}}}, zoneID = 3},
         [7868] = {spawns = {[51] = {{63.2, 75.4}, {63.4, 76}, {63.6, 75.4}, {63.6, 75.8}}}, zoneID = 51},
         [7870] = {spawns = {[357] = {{89.4, 46.4}, {89.4, 46.6}}}, zoneID = 357},
@@ -64398,7 +64431,9 @@ ns.Overrides.wowhead = {
             zoneID = 331,
         },
         [11276] = {spawns = {[16] = {{11.8, 78.2}}}, zoneID = 16},
+        [11286] = {spawns = {[28] = {{70.4, 74}, {70.6, 74}}}, zoneID = 28},
         [11610] = {spawns = {[28] = {{52, 28}}}, zoneID = 28},
+        [11611] = {spawns = {[28] = {{54, 24.6}, {54.4, 24}, {55, 23.4}, {55, 23.6}}}, zoneID = 28},
         [11613] = {spawns = {[28] = {{57.4, 35.4}, {57.4, 35.8}, {57.8, 36}}}, zoneID = 28},
         [11629] = {spawns = {[618] = {{61.2, 38.8}}}, zoneID = 618},
         [11680] = {
@@ -64496,6 +64531,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 17,
+        },
+        [12298] = {
+            spawns = {
+                [148] = {
+                    {34.4, 87.6}, {35, 89.6}, {37, 90.8}, {38.6, 59}, {38.8, 35.8}, {38.8, 54.4},
+                    {38.8, 70.6}, {39.2, 90}, {40.2, 70.2}, {40.6, 82.2}, {40.8, 60.2}, {41.2, 48.4},
+                    {41.4, 38.4}, {41.4, 46}, {41.6, 52.8}, {41.8, 69.4}, {42.2, 81.2}, {42.4, 39.6},
+                    {42.6, 39.6}, {43, 67.2}, {43, 88.4}, {43.4, 83.8}, {43.8, 41.4}, {43.8, 48}, {44, 52.6},
+                    {44.4, 28}, {45, 44.6}, {45.6, 31.6}, {45.8, 41.6}, {46.2, 48.4}, {46.4, 24.6},
+                    {46.6, 51}, {47, 42.2}, {47.2, 41.4}, {47.4, 44}, {47.6, 44}, {48.2, 39}, {49.4, 28.8},
+                    {50.8, 33.6}, {51.2, 30},
+                },
+            },
+            zoneID = 148,
         },
         [12718] = {spawns = {[331] = {{70, 71}}}, zoneID = 331},
         [12738] = {spawns = {[1] = {{25, 75.8}}}, zoneID = 1},
@@ -65142,6 +65191,10 @@ ns.Overrides.wowhead = {
             zoneID = 6507,
         },
         [50791] = {spawns = {[5842] = {{59.2, 85.4}, {59.2, 85.6}, {59.2, 86.8}}}, zoneID = 5842},
+        [50808] = {
+            spawns = {[5785] = {{56.4, 71}, {56.8, 71.4}, {57.2, 71.6}, {57.6, 70.8}, {57.6, 71.8}}},
+            zoneID = 5785,
+        },
         [50830] = {
             spawns = {[6134] = {{50.8, 89.8}, {51.4, 89.4}, {51.6, 89.6}, {52.2, 88.8}, {52.6, 88.8}}},
             zoneID = 6134,
@@ -65280,6 +65333,7 @@ ns.Overrides.wowhead = {
         [68717] = {subName = "Legacy Justice Quartermaster"},
         [68728] = {maxLevel = 90, minLevel = 90},
         [68753] = {maxLevel = 90, minLevel = 90},
+        [68755] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68908] = {subName = "SI:7"},
         [68939] = {subName = "Prince of Stormwind"},
@@ -65305,6 +65359,7 @@ ns.Overrides.wowhead = {
         [69677] = {subName = "Kirin Tor"},
         [69754] = {subName = "Kirin Tor"},
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [69843] = {maxLevel = 92, minLevel = 92, subName = "The Emperor's Shield"},
         [69966] = {maxLevel = 91, minLevel = 91, subName = "Glorious Conquest Quartermaster"},
         [70022] = {subName = "The Bone Collector"},
         [70030] = {subName = "Jurassic Expedition"},
@@ -65350,6 +65405,7 @@ ns.Overrides.wowhead = {
         },
         [71638] = {maxLevel = 91, minLevel = 91},
         [71696] = {maxLevel = 91, minLevel = 91},
+        [71742] = {maxLevel = 9999, minLevel = 9999},
         [71865] = {subName = "Warchief"},
         [71939] = {subName = "Flightmaster"},
         [71952] = {subName = "The Red Crane"},
@@ -65389,6 +65445,7 @@ ns.Overrides.wowhead = {
         },
         [198875] = {rank = 1},
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
+        [246031] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246176] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246242] = {maxLevel = 90, minLevel = 90, rank = 1},
         [246383] = {maxLevel = 91, minLevel = 91, rank = 1},
