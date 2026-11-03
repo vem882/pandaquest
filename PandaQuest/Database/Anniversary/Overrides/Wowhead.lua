@@ -8846,6 +8846,13 @@ ns.Overrides.wowhead = {
                 "both see this through I shall make the rest of the pieces available to you.",
             rewardItems = {{22062, 1}, {22066, 1}},
         },
+        [8941] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22006, 1}, {22002, 1}},
+        },
         [8944] = {
             description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
                 "that you'll help me through this predicament, it would be wise of me to reward you " ..
@@ -9644,6 +9651,14 @@ ns.Overrides.wowhead = {
                 "and set up an ambush.\n\nOur scouts have informed me that an assassin known as Krun " ..
                 "Spinebreaker waits along the road north of the Citadel. Go there and slay this assassin. " ..
                 "Show the fel orcs we're not to be trifled with!",
+        },
+        [9404] = {
+            description = "You may have noticed the walking trees near Elrendar Falls. As the keepers of " ..
+                "nature, they are infused with a primal magic we can reform to our own purposes using the " ..
+                "pure water you have already brought to me.\n\nUnfortunately, the green keepers are " ..
+                "gnarled and twisted creatures, so you may need to kill a few before you find a useable " ..
+                "branch.",
+            rewardChoices = {{9513, 1}, {7508, 1}},
         },
         [9407] = {
             description = "For years the Dark Portal loomed silent... forgotten. But it is silent no " ..
@@ -12749,6 +12764,15 @@ ns.Overrides.wowhead = {
                 "hall in the southern section of Kirin'Var maintained a logbook of all the residents. " ..
                 "Last I heard, it was in the keeping of Battle-Mage Dathric. Perhaps his spirit still has " ..
                 "it.",
+            rewardMoney = 41000,
+        },
+        [10314] = {
+            description = "The strange magical device resembles nothing you've ever seen before. It's " ..
+                "certainly not of blood elf manufacture.\n\nAs you sense spirits moving closer to the " ..
+                "building, the orb glows with a greater intensity, which fades as the spirits leave. " ..
+                "There's no question that it plays a role in the corruption of the ghosts.\n\nHow it " ..
+                "works remains a mystery. Perhaps Custodian Dieworth will have some insight if you can " ..
+                "provide the remains of some of the spirits along with your observations.",
             rewardMoney = 41000,
         },
         [10315] = {
