@@ -12674,6 +12674,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{31717, 1}, {31718, 1}, {31719, 1}, {31720, 1}},
             rewardMoney = 54000,
         },
+        [10939] = {
+            description = "Now that you have gathered all of the Storms cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{31857, 1}},
+        },
         [10940] = {
             description = "Now that you have gathered all of the Furies cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -56180,7 +56187,6 @@ ns.Overrides.wowhead = {
         [31645] = {rewardMoney = 114000, rewardXP = 177000},
         [31646] = {rewardMoney = 114000, rewardXP = 177000},
         [31648] = {rewardMoney = 114000, rewardXP = 177000},
-        [31649] = {rewardMoney = 114000, rewardXP = 177000},
         [31650] = {rewardMoney = 114000, rewardXP = 177000},
         [31651] = {rewardMoney = 114000, rewardXP = 177000},
         [31656] = {
@@ -56608,6 +56614,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31787] = {
+            description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
+                "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
+                "archaeologists can study it.",
+            rewardItems = {{87399, 3}, {79869, 1}},
+        },
+        [31788] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
@@ -61792,6 +61804,34 @@ ns.Overrides.wowhead = {
             },
             zoneID = 44,
         },
+        [435] = {
+            spawns = {
+                [44] = {
+                    {25.8, 13.2}, {26.4, 8.2}, {26.4, 15.4}, {26.6, 15.4}, {27, 9.4}, {27.2, 15.8},
+                    {27.4, 12}, {27.6, 17.6}, {28.2, 11.8}, {28.4, 13.6}, {28.4, 15.6}, {28.6, 8.4},
+                    {28.6, 14.4}, {28.6, 17.2}, {29.4, 8.6}, {29.4, 11}, {29.8, 10.6}, {30.2, 14.4},
+                    {30.4, 9.8}, {30.4, 15.4}, {30.6, 15.6}, {31, 7.6}, {31, 9.6}, {31.2, 10.6}, {31.4, 6.2},
+                    {31.4, 12.6}, {31.6, 5.4}, {31.6, 13.2}, {31.6, 14.6}, {32, 6.6}, {33.6, 7}, {34.4, 7.6},
+                    {34.6, 7.2}, {35.2, 8.6}, {35.4, 9.6}, {35.6, 9}, {36.2, 11.2}, {36.4, 11.8}, {36.6, 9.6},
+                    {36.6, 12.2},
+                },
+            },
+            zoneID = 44,
+        },
+        [441] = {
+            spawns = {
+                [44] = {
+                    {17.4, 71.6}, {18.2, 72.6}, {18.6, 73.4}, {23.2, 63}, {23.4, 62.4}, {23.6, 62.4},
+                    {23.8, 34.4}, {25.4, 80}, {26.2, 76.2}, {26.6, 76.8}, {26.8, 76.4}, {27.6, 75.8},
+                    {28, 75.4}, {28.8, 64.6}, {29.4, 73.4}, {30.2, 75.4}, {31.2, 72.4}, {31.4, 70},
+                    {31.4, 75.8}, {31.6, 76.6}, {31.8, 74.8}, {32.2, 71}, {32.4, 62.6}, {32.6, 71.4},
+                    {33, 62.4}, {33.2, 63}, {33.4, 67.6}, {33.6, 62.4}, {33.6, 70.6}, {33.8, 75.6},
+                    {34.2, 68.2}, {34.4, 68.6}, {34.4, 74}, {34.6, 74.8}, {34.8, 66.6}, {35, 71.2},
+                    {35.4, 72.6}, {35.8, 73}, {36.2, 64.8}, {36.4, 70},
+                },
+            },
+            zoneID = 44,
+        },
         [467] = {
             spawns = {
                 [40] = {
@@ -63256,6 +63296,7 @@ ns.Overrides.wowhead = {
         [3660] = {spawns = {[148] = {{56, 26.2}}}, zoneID = 148},
         [3661] = {spawns = {[148] = {{55, 24.8}}}, zoneID = 148},
         [3663] = {spawns = {[331] = {{26.2, 38.4}, {26.2, 38.6}}}, zoneID = 331},
+        [3666] = {spawns = {[148] = {{37, 44}}}, zoneID = 148},
         [3667] = {
             spawns = {
                 [148] = {
@@ -63965,6 +64006,20 @@ ns.Overrides.wowhead = {
         [6786] = {spawns = {[14] = {{52, 68.2}}}, zoneID = 14},
         [6868] = {spawns = {[3] = {{2.4, 46}, {2.6, 46}}}, zoneID = 3},
         [6886] = {spawns = {[1] = {{25.2, 44.4}, {25.2, 44.6}}}, zoneID = 1},
+        [7044] = {
+            spawns = {
+                [46] = {
+                    {73.6, 30.4}, {74, 47.2}, {76.2, 27}, {77.4, 57.4}, {78, 31.8}, {78.2, 27.2},
+                    {78.4, 65.4}, {79, 28.6}, {79.2, 59.6}, {79.8, 26.2}, {79.8, 64.6}, {80, 60},
+                    {80.2, 30.4}, {80.4, 57.8}, {80.6, 25.6}, {81, 29.6}, {81, 62.2}, {81.2, 58.8},
+                    {81.4, 28.6}, {81.6, 55.8}, {81.8, 63.6}, {82.2, 26.2}, {82.4, 26.8}, {82.4, 30.6},
+                    {82.4, 62.2}, {82.8, 30.6}, {83, 27.4}, {83, 62.6}, {83.2, 59.4}, {83.4, 54.8},
+                    {83.6, 60.6}, {83.8, 60.2}, {84, 62}, {84.2, 55.2}, {84.4, 28.4}, {84.4, 31.8},
+                    {84.4, 59.4}, {84.4, 68.4}, {84.6, 60}, {84.6, 67},
+                },
+            },
+            zoneID = 46,
+        },
         [7047] = {
             spawns = {
                 [46] = {
@@ -64259,6 +64314,15 @@ ns.Overrides.wowhead = {
         [7884] = {spawns = {[47] = {{14.8, 44.4}, {14.8, 44.6}}}, zoneID = 47},
         [7900] = {spawns = {[357] = {{31.8, 45.4}, {31.8, 45.6}}}, zoneID = 357},
         [7937] = {spawns = {[1537] = {{69, 49}, {69.8, 49.2}}}, zoneID = 1537},
+        [7995] = {
+            spawns = {
+                [47] = {
+                    {58.2, 79.6}, {58.4, 77.4}, {58.4, 78.2}, {58.4, 79.4}, {58.6, 79.2}, {59, 76.4},
+                    {59.4, 77.4}, {59.4, 78}, {59.6, 77.4}, {59.6, 78}, {59.6, 78.6},
+                },
+            },
+            zoneID = 47,
+        },
         [8021] = {spawns = {[357] = {{75.6, 44.2}}}, zoneID = 357},
         [8125] = {spawns = {[440] = {{52.6, 28}}}, zoneID = 440},
         [8284] = {
@@ -64342,6 +64406,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 361,
         },
+        [8997] = {spawns = {[148] = {{38.4, 43}}}, zoneID = 148},
         [9077] = {spawns = {[3] = {{3, 47.6}, {5.8, 47.4}, {5.8, 47.6}}}, zoneID = 3},
         [9078] = {spawns = {[3] = {{3, 47.4}, {3, 47.6}}}, zoneID = 3},
         [9079] = {spawns = {[3] = {{3, 47.4}, {3, 47.8}}}, zoneID = 3},
@@ -65330,6 +65395,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 5840,
         },
+        [67387] = {rank = 0, subName = "Chief Architect of Gnomish Engineering"},
         [67436] = {rank = 1},
         [67438] = {spawns = {[6134] = {{12.2, 62.6}, {12.4, 62.4}, {12.6, 62.6}, {13.8, 41.2}}}},
         [67439] = {rank = 1},
@@ -65395,6 +65461,7 @@ ns.Overrides.wowhead = {
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
         [68728] = {maxLevel = 90, minLevel = 90},
+        [68752] = {maxLevel = 90, minLevel = 90},
         [68753] = {maxLevel = 90, minLevel = 90},
         [68755] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
@@ -65511,6 +65578,7 @@ ns.Overrides.wowhead = {
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246031] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246176] = {maxLevel = 91, minLevel = 91, rank = 1},
+        [246178] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246242] = {maxLevel = 90, minLevel = 90, rank = 1},
         [246383] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246384] = {maxLevel = 91, minLevel = 91, rank = 1},

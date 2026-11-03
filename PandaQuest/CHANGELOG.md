@@ -4,6 +4,42 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.348] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,905 quests, 732 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,308 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,316 quests, 43 NPCs, 1 object
+- quest 10939 - Darkmoon Storms Deck - updated
+  - description added
+  - reward items: +1
+- quest 31649 - Scholomance Challenge Mode - Gold Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31788 - Pristine Terracotta Arm - updated
+  - description added
+  - reward items: +2
+- npc 435 - Blackrock Champion - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 441 - Black Dragon Whelp - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 3666 - Wizbang Cranktoggle - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 7044 - Black Drake - updated
+  - coordinates: 40 spawn points added in Burning Steppes
+- npc 7995 - Vile Priestess Hexx - updated
+  - coordinates: 11 spawn points added in The Hinterlands
+- npc 8997 - Gershala Nightwhisper - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 67387 - Tinkmaster Overspark - updated
+  - NPC title added (Chief Architect of Gnomish En...)
+- npc 68752 - Inkmaster Aelon - updated
+  - NPC level added (90)
+- npc 246178 - Cracklefang - updated
+  - NPC level added (91)
+  - rank added (elite)
+
 ## [0.2.347] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -215,18 +251,6 @@ Data from the PandaQuest portal.
   - coordinates: 2 spawn points added in Northern Stranglethorn
 - npc 68554 - Royal Finder - updated
   - NPC title added (The Entourage)
-
-## [0.2.337] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 695 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,209 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,205 quests, 43 NPCs, 1 object
-- quest 7171 - Legendary Heroes - updated
-  - reward items: +1
-- quest 30092 - Our Man in Gilneas - updated
-  - description added
 
 ## [0.2.270] - 2026-10-26
 
