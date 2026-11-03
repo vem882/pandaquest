@@ -4,6 +4,47 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.345] - 2026-11-03
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,909 quests, 716 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,253 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,249 quests, 43 NPCs, 1 object
+- quest 27114 - The Gordok Taste Test - updated
+  - reward items: +2
+- quest 31796 - Pristine Game Board - updated
+  - reward items: counts corrected
+- quest 31800 - Pristine Carved Bronze Mirror - updated
+  - reward items: counts corrected
+- quest 31989 - The Peak of Serenity - Complete Your Training - updated
+  - description added
+- npc 1020 - Mottled Raptor - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 2694 - Highvale Ranger - updated
+  - NPC title added (PH MODEL WIP)
+  - coordinates: 29 spawn points added in The Hinterlands
+- npc 7866 - Peter Galen - updated
+  - coordinates: 3 spawn points added in Azshara
+- npc 11286 - Magistrate Marduke - updated
+  - coordinates: 2 spawn points added in Western Plaguelands
+- npc 11611 - Cavalier Durgen - updated
+  - coordinates: 4 spawn points added in Western Plaguelands
+- npc 12298 - Sickly Deer - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 50808 - Aiuran - updated
+  - coordinates: 5 spawn points added in The Jade Forest
+- npc 68755 - Sintharia Cinderweave - updated
+  - NPC level added (90)
+- npc 69843 - Zao'cho - updated
+  - NPC title added (The Emperor's Shield)
+  - NPC level added (92)
+- npc 71742 - Akolik - updated
+  - NPC level added (9,999)
+- npc 246031 - Gochao the Ironfist - updated
+  - NPC level added (91)
+  - rank added (elite)
+
 ## [0.2.344] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -156,13 +197,6 @@ Data from the PandaQuest portal.
 - quest 31918 - A Tamer's Homecoming - updated
   - description added
   - reward money added (11g 40s)
-
-## [0.2.334] - 2026-11-02
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,197 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,195 quests, 43 NPCs, 1 object
 
 ## [0.2.270] - 2026-10-26
 
