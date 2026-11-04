@@ -4,6 +4,40 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.350] - 2026-11-04
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.5.0+v1.0.10 (was 12.4.0+v1.0.10)
+- database - Classic Era rebuilt from Questie 12.5.0+v1.0.10 (was 12.4.0+v1.0.10)
+- database - TBC Anniversary rebuilt from Questie 12.5.0+v1.0.10 (was 12.4.0+v1.0.10)
+- database - WoW Forever rebuilt from Questie 12.5.0+v1.0.10 (was 12.4.0+v1.0.10)
+- database - Wowhead data as the PandaQuest portal read it: 7,907 quests, 744 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,375 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,375 quests, 43 NPCs, 1 object
+- quest 30910 - Greenstone Village - updated
+  - description added
+- quest 31631 - Gate of the Setting Sun Challenge Mode - Bronze Addition (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31839 - Continue Your Training: Master Hsu - updated
+  - description added
+  - reward choices: +3
+- npc 3707 - Ken'jai - updated
+  - coordinates: 1 spawn point added in Durotar
+- npc 4451 - Auld Stonespire - updated
+  - coordinates: 4 spawn points added in Thunder Bluff
+- npc 6446 - Therzok - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 9529 - Maybess Riverbreeze - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 45610 - Daschla - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 68170 - Meng-do, Strength of Mountains - updated
+  - NPC title added (Champion of Ogudei)
+- npc 71954 - Niuzao - updated
+  - NPC title added (The Black Ox)
+
 ## [0.2.349] - 2026-11-04
 
 Data from the PandaQuest portal.
@@ -261,20 +295,6 @@ Data from the PandaQuest portal.
   - reward items: +1
 - npc 1129 - Black Bear - updated
   - coordinates: 2 spawn points added in Dun Morogh
-
-## [0.2.339] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 699 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,214 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,215 quests, 43 NPCs, 1 object
-- quest 31804 - Pristine Standard of Niuzao - updated
-  - reward items: counts corrected
-- npc 14464 - Avalanchion - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 17093 - [Deprecated for 4.x]Magistrix Elosai - updated
-  - coordinates: 2 spawn points added in Thousand Needles
 
 ## [0.2.270] - 2026-10-26
 
