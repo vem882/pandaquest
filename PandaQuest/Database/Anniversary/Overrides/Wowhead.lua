@@ -6953,6 +6953,14 @@ ns.Overrides.wowhead = {
                 "crystals we found\n\nSo why don't you help me put my curiosity to rest? Supposedly, " ..
                 "there is one in the eastern area of the crater. Do you think you can find it?",
         },
+        [4290] = {
+            description = "Once, a long time ago, a brother of mine took some meat from one of " ..
+                "Lar'korwi's kills. He didn't know it at the time, but Lar'korwi saw him from the forest. " ..
+                "Lar'korwi followed my brother for days, destroying everything he touched. My brother, " ..
+                "scared, finally decided to run from the Crater and leave Lar'korwi behind.\n\nLar'korwi " ..
+                "killed him not far from this spot.\n\nIf you want to provoke Lar'korwi, find a fresh " ..
+                "kill of his and take some of the meat from it.\n\nReturn to me afterwards.",
+        },
         [4297] = {
             description = "Sprite darters are omnivores--that means they eat both meat and vegetation. If " ..
                 "your egg here's gonna hatch, we best be prepared. Some good eats for these little guys " ..
@@ -8367,6 +8375,12 @@ ns.Overrides.wowhead = {
                 "you on the path to earning a pet of your own.",
             rewardXP = 85,
         },
+        [6073] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
+                "you on the path to earning a pet of your own.",
+            rewardXP = 85,
+        },
         [6082] = {
             description = "The final creature you need to tame is one you should strive to emulate; the " ..
                 "armored scorpid. It strikes quickly and confidently; to control a force such as this is " ..
@@ -8812,6 +8826,13 @@ ns.Overrides.wowhead = {
                 "and still you crave more!\n\nZamja can't help. Fat <race> needs to go to Gadgetzan. You " ..
                 "find a little goblin named Dirge there - he help you, fatty.\n\nWhen you become big cook " ..
                 "on the block, you come back and teach Zamja, ok? Now go!",
+        },
+        [6623] = {
+            description = "Doctor <name>, I presume. It is a pleasure to see you again.\n\nI have some " ..
+                "wonderful news for you! Doctor Gregory Victor, chief physician of Horde Trauma has made " ..
+                "a personal request for you to join him at Hammerfall. This could be the opportunity of a " ..
+                "lifetime! I would give anything to be given a chance to study under the great Doctor " ..
+                "Gregory Victor! Do not squander this opportunity!",
         },
         [6624] = {
             description = "Good day, doctor. You will be tested on your ability to triage patients " ..
