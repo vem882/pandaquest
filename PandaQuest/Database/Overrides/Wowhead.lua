@@ -26273,6 +26273,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{52599, 1}, {52654, 1}},
             rewardMoney = 400,
         },
+        [13567] = {
+            description = "In these woods reside three great spirits, that of the Stag, that of the " ..
+                "Thistle Bear, and that of the Moonstalker. These spirits make powerful allies, but you " ..
+                "can only align yourself with one of them.\n\nIf you wish to align yourself with the " ..
+                "Great Stag Spirit, take this incense to the woods just north of Bashal'Aran. Meditate " ..
+                "before the great spirit while burning the incense on the ground between you, and face " ..
+                "his trial to earn his blessing. Should you succeed, return to me.",
+        },
         [13568] = {
             description = "In these woods reside three great spirits, that of the Stag, that of the " ..
                 "Thistle Bear, and that of the Moonstalker. These spirits make powerful allies, but you " ..
@@ -28032,7 +28040,14 @@ ns.Overrides.wowhead = {
                 "me?\n\nLet's see if we can attract the attention of their strongest warrior, Kurak.",
             rewardMoney = 600,
         },
-        [13997] = {rewardMoney = 296000},
+        [13997] = {
+            description = "Dan is the most awesome programmer in the world... the World of " ..
+                "Warcraft!\n\nIsn't it weird that you used to not be able to talk with me at all while I " ..
+                "was fighting? No longer, my friend, now that Dan has made significant improvements to " ..
+                "one of my creature flags!\n\nCelebrate with me by snuffing out the lives of these awful " ..
+                "creatures that perpetually have me in combat.",
+            rewardMoney = 296000,
+        },
         [13998] = {
             description = "I've cultured these unusual spores you dug up with a most magnificent cocktail " ..
                 "of... reagents... that I'm fond of. I'm eager to see how my manipulated spores react to " ..
@@ -55738,7 +55753,6 @@ ns.Overrides.wowhead = {
             },
             rewardMoney = 456000,
         },
-        [31498] = {rewardMoney = 114000, rewardXP = 177000},
         [31500] = {rewardMoney = 114000, rewardXP = 177000},
         [31501] = {rewardMoney = 114000, rewardXP = 177000},
         [31502] = {
@@ -56208,7 +56222,6 @@ ns.Overrides.wowhead = {
         [31624] = {rewardMoney = 114000, rewardXP = 177000},
         [31625] = {rewardMoney = 114000, rewardXP = 177000},
         [31626] = {rewardMoney = 114000, rewardXP = 177000},
-        [31627] = {rewardMoney = 114000, rewardXP = 177000},
         [31628] = {rewardMoney = 114000, rewardXP = 177000},
         [31630] = {rewardMoney = 114000, rewardXP = 177000},
         [31632] = {rewardMoney = 114000, rewardXP = 177000},
@@ -61894,6 +61907,20 @@ ns.Overrides.wowhead = {
             },
             zoneID = 40,
         },
+        [485] = {
+            spawns = {
+                [44] = {
+                    {27, 47}, {35, 43.8}, {35.8, 42.6}, {36.6, 41.4}, {37.2, 43.2}, {37.4, 40.4}, {38, 43.4},
+                    {38.4, 39}, {38.6, 40}, {38.8, 42.6}, {40.2, 37.4}, {40.2, 41.6}, {40.6, 40.2},
+                    {41, 38.8}, {41.4, 36.4}, {41.6, 15.4}, {41.6, 41.6}, {41.8, 37.6}, {42.2, 17.2},
+                    {42.6, 13.4}, {42.8, 36.4}, {43.2, 18.2}, {43.4, 39.4}, {44.4, 19.4}, {44.4, 34.8},
+                    {44.6, 19.8}, {45.2, 39.6}, {45.6, 38.8}, {47, 17.6}, {58, 42.4}, {58.6, 44.6},
+                    {59.4, 42.4}, {59.6, 42.4}, {59.6, 44.6}, {60.4, 65.8}, {60.8, 65.4}, {61.2, 43.2},
+                    {61.6, 43.2}, {62.2, 45.6}, {62.4, 41.6},
+                },
+            },
+            zoneID = 44,
+        },
         [502] = {spawns = {[40] = {{49.4, 19.2}, {49.4, 19.6}, {49.6, 19.4}, {49.6, 19.6}}}, zoneID = 40},
         [504] = {
             spawns = {
@@ -64778,6 +64805,7 @@ ns.Overrides.wowhead = {
         },
         [14355] = {subName = "House of Shen'dralar"},
         [14358] = {subName = "House of Shen'dralar"},
+        [14368] = {subName = "House of Shen'dralar"},
         [14382] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
         [14461] = {
@@ -65471,6 +65499,7 @@ ns.Overrides.wowhead = {
         [67997] = {maxLevel = 90, minLevel = 90},
         [67999] = {maxLevel = 90, minLevel = 90},
         [68004] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
+        [68006] = {maxLevel = 90, minLevel = 90},
         [68009] = {subName = "The Miserable"},
         [68041] = {maxLevel = 90, minLevel = 90},
         [68042] = {maxLevel = 90, minLevel = 90},
@@ -65550,6 +65579,7 @@ ns.Overrides.wowhead = {
         [69668] = {subName = "Kirin Tor"},
         [69670] = {subName = "The Silver Covenant"},
         [69677] = {subName = "Kirin Tor"},
+        [69751] = {subName = "Kirin Tor"},
         [69754] = {subName = "Kirin Tor"},
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [69843] = {maxLevel = 92, minLevel = 92, subName = "The Emperor's Shield"},
