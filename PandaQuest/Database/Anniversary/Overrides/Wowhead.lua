@@ -2691,6 +2691,14 @@ ns.Overrides.wowhead = {
                 "sprang forth from the ground and overran the site. Remtravel never seemed to notice. I " ..
                 "ran back to Auberdine for help.\n\nPlease travel south and see if the prospector is okay!",
         },
+        [731] = {
+            description = "So then, Hollee... oh that's right, you are not Hollee. Where's " ..
+                "Hollee?\n\nBah, that's beside the point. We must find that stone brush... I mean the " ..
+                "mysterious fossil! We must find that fossil. The Explorers' League in Darnassus will " ..
+                "want some indication as to what I've been doing.\n\nLet me know when you are ready and " ..
+                "we will hunt down that brush.... I mean fossil! We shall find something in writing to " ..
+                "satisfy the League.\n\nSo are you ready yet?",
+        },
         [732] = {
             description = "I heard from Sigrun that you have been a great help to him. Perhaps I might " ..
                 "enlist your help. I was sent here by my master, Krasus of the Kirin Tor, to put an end " ..
@@ -8107,6 +8115,14 @@ ns.Overrides.wowhead = {
                 "good idea to keep up relations with the rich ones, yeah? So... you want to deliver the " ..
                 "package for me?\n\nI heard he has a camp in Stranglethorn, north of Grom'gol.",
             rewardMoney = 3000,
+        },
+        [5802] = {
+            description = "You need two bars of thorium and a powerfully hot heat source to forge the key " ..
+                "stem. You're on your own for the thorium, but I can help with the heat.\n\nTo our west " ..
+                "in Un'Goro Crater is Fire Plume Ridge - a simmering volcano. The lava lake up top is hot " ..
+                "enough to fuse thorium and bone together. Your gold has bought you a mold that simply " ..
+                "requires you to dip it in the lake up top; the lava will take care of the " ..
+                "rest.\n\nThat's it on my end. To finish your key, you'll need to talk to Dithers again.",
         },
         [5803] = {
             description = "Araj the Summoner lords over Andorhal from the ruined city's heart. We know " ..
@@ -14673,6 +14689,13 @@ ns.Overrides.wowhead = {
                 "the Vindicators' Sanctum, a room surrounded by a vibrant glow of light.",
             rewardXP = 90,
         },
+        [10372] = {
+            description = "Eralan, an associate of mine in Tranquillien, has made an inquiry about " ..
+                "securing some help for an urgent job.\n\nNow, I don't know what she has in mind because " ..
+                "I don't ask questions, but you've proven yourself more than capable. I want you to " ..
+                "travel to Tranquillien in the Ghostlands and have a word with Eralan.\n\nShe may be a " ..
+                "bit gruff, but she's trustworthy.",
+        },
         [10380] = {
             description = "We've been so blind, <name>, that the alliance of two of our most dangerous " ..
                 "enemies went completely unnoticed.\n\nI wouldn't be surprised if the Scryers had " ..
@@ -18490,6 +18513,15 @@ ns.Overrides.wowhead = {
                 "soup so good for the soul? It's not chicken--I cook it at the Ancestral Grounds in " ..
                 "Nagrand to soak up all that spiritual stuff there.",
             rewardChoices = {{33844, 1}, {33857, 1}},
+        },
+        [11384] = {
+            description = "Not long ago, I was approached by a kaldorei druidess with a touching request. " ..
+                "And plenty of gold, of course!\n\nIt would appear that the forces of Darnassus wish to " ..
+                "restore an ancient of the arcane known as Warp Splinter. The giant tree has been " ..
+                "confused or corrupted, I'm not certain, but you'll find it inside of the Botanica at " ..
+                "Tempest Keep.\n\nShe said that all they would need to regrow him was a small clipping.",
+            rewardItems = {{29434, 2}},
+            rewardMoney = 132000,
         },
         [11385] = {
             description = "It has been whispered to Mah'duun that the channelers of the military unit " ..

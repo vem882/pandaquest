@@ -7371,6 +7371,15 @@ ns.Overrides.wowhead = {
                 "Blackbeard. He'll put you on the road to salvation.",
             rewardMoney = 175,
         },
+        [2239] = {
+            description = "The Quarry? Yap, I see those monstrous armored steam tanks come by this post " ..
+                "near every day.\n\nMy contacts to the east tell me that the tank starts off at " ..
+                "Ironforge, makes a pickup at the Gol'Bolar Quarry, stops over at Kharanos to refuel and " ..
+                "then for some blasted reason, it takes the long way around past Gnomeregan, before " ..
+                "reaching Ironforge to drop off the shipment.\n\nIt's all in the report, <race>. Take it " ..
+                "back to Hulfdan so he can plan the next step.",
+            rewardItems = {{7298, 1}},
+        },
         [2241] = {
             description = "They say I'm 'lovestruck,' whatever that means.\n\nSure, I spend my every " ..
                 "waking moment thinking about Syurna. Sure, my home is full of paintings and drawings of " ..
