@@ -4,6 +4,42 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.349] - 2026-11-04
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,906 quests, 737 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,343 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,347 quests, 43 NPCs, 1 object
+- quest 24594 - The Purification of Quel'Delar - updated
+  - description added
+- quest 31549 - On The Mend - updated
+  - description added
+  - reward money added (4g 10s)
+- quest 31620 - Stormstout Brewery Challenge Mode - Consolation (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31790 - Pristine Thunder King Insignia - updated
+  - reward items: counts corrected
+- quest 31791 - Pristine Edicts of the Thunder King - updated
+  - description removed
+  - reward items: -2
+- quest 31920 - Grand Master Antari - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- npc 3702 - Alanndarian Nightsong - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 14358 - Shen'dralar Ancient - updated
+  - NPC title added (House of Shen'dralar)
+- npc 68472 - Sarannha Skyglaive - updated
+  - NPC level added (90)
+- npc 178420 - Magister Astalor Bloodsworn - updated
+  - data rewritten, nothing a player sees changed
+- npc 246479 - Spirit of Lao-Fe - updated
+  - NPC title added (The Slavebinder)
+  - NPC level added (91)
+
 ## [0.2.348] - 2026-11-03
 
 Data from the PandaQuest portal.
@@ -239,18 +275,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Azshara
 - npc 17093 - [Deprecated for 4.x]Magistrix Elosai - updated
   - coordinates: 2 spawn points added in Thousand Needles
-
-## [0.2.338] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,901 quests, 697 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,211 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,210 quests, 43 NPCs, 1 object
-- npc 14910 - Exzhal - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 68554 - Royal Finder - updated
-  - NPC title added (The Entourage)
 
 ## [0.2.270] - 2026-10-26
 
