@@ -2208,6 +2208,15 @@ ns.Overrides.wowhead = {
                 "more treasures.\n\nWe would have you acquire the tiara for us.",
             rewardMoney = 15000,
         },
+        [547] = {
+            description = "High Executor Darthalia sent me to keep watch of Dun Garok from a distance. I " ..
+                "had set up camp just out of sight. But when morning came and I had to boil water, I left " ..
+                "to gather firewood.\n\nWhen I returned to camp, I discovered my gear was " ..
+                "missing.\n\nApparently some dwarven scouts from Dun Garok had passed by and made off " ..
+                "with it. I need my sword! If you can get it back for me I would be so grateful. So many " ..
+                "dwarves there...it will be quite difficult to find the dirty little thief who stole it.",
+            rewardChoices = {{3750, 1}, {3751, 1}},
+        },
         [554] = {
             description = "Prospector Stormpike is a master of decryption and deciphering. If you take " ..
                 "the parchment you found to him, then with luck he can make sense of it. Stormpike is " ..
@@ -3384,6 +3393,14 @@ ns.Overrides.wowhead = {
                 "bridge.\"\n\nWizbang mumbles something incoherent before you hear a loud gulping " ..
                 "sound.\n\n\"Thish one needs Moonstalker Fangs... 6 of 'em.\"",
             rewardMoney = 600,
+        },
+        [1004] = {
+            description = "Attention, heroes!\n\nThe Cenarion Circle seeks able bodied individuals to " ..
+                "assist them in exploring the vast new frontiers of Kalimdor! A forbidden wasteland of " ..
+                "unimaginable dangers lies far to the west of Tanaris and Gadgetzan, and the Circle needs " ..
+                "willing and honorable proxies to act in their stead.\n\nAll interested individuals " ..
+                "should seek audience with the Cenarion Circle. Speak with the Arch Druid Hamuul " ..
+                "Runetotem on the Elder's Rise of Thunder Bluff for more information!",
         },
         [1007] = {
             description = "I would charge you with a task, <name>.\n\nI was on my small vessel, skimming " ..
@@ -8453,6 +8470,14 @@ ns.Overrides.wowhead = {
                 "clams are littered throughout the area. If you bring me back 10 pieces of soft-shelled " ..
                 "clam meat, I will give you something in return.",
             rewardChoices = {{15585, 1}, {15587, 1}, {15588, 1}},
+        },
+        [6146] = {
+            description = "I have made some adjustments to this command. Should our little ruse work, " ..
+                "they will expose the Scarlet Oracle and we shall strike!\n\nNow pay attention, <class>. " ..
+                "You are to deliver this command to the Crusader Lord, Valdelmar.\n\nHow? You are going " ..
+                "to hand it to him, imbecile.\n\nTake the command and this rotten apple to Tyr's Hand. " ..
+                "When you cross into the city, eat the apple. You will transform into something more... " ..
+                "palatable to the humans. Take the command and hand it to the Crusader Lord, Valdelmar.",
         },
         [6162] = {
             description = "My husband traveled Felwood for the honor of our clan, doing battle against " ..
@@ -18722,6 +18747,7 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [6240] = {spawns = {[17] = {{68.4, 48.6}, {68.6, 48.4}, {68.6, 48.6}}}, zoneID = 17},
+        [8581] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [8608] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
         [14697] = {

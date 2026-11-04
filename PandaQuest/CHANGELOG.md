@@ -4,6 +4,24 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.355] - 2026-11-04
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 758 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,461 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,487 quests, 44 NPCs, 1 object
+- quest 24725 - Crystal Charge - updated
+  - reward items: +1
+- quest 28755 - Annals of the Silver Hand - updated
+  - description added
+- quest 31377 - Attack At The Temple of the Jade Serpent - updated
+  - description added
+- quest 31380 - Trial At The Temple of the White Tiger - updated
+  - description added
+- npc 7029 - Blackrock Battlemaster - updated
+  - coordinates: 18 spawn points added in Burning Steppes
+
 ## [0.2.354] - 2026-11-04
 
 Data from the PandaQuest portal.
@@ -298,18 +316,6 @@ Data from the PandaQuest portal.
 - npc 246031 - Gochao the Ironfist - updated
   - NPC level added (91)
   - rank added (elite)
-
-## [0.2.344] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,907 quests, 705 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,238 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,234 quests, 43 NPCs, 1 object
-- quest 31802 - Pristine Apothecary Tins - updated
-  - reward items: counts corrected
-- npc 1030 - Black Slime - updated
-  - coordinates: 40 spawn points added in Wetlands
 
 ## [0.2.270] - 2026-10-26
 

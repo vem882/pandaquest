@@ -31499,6 +31499,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 7500,
         },
         [24724] = {rewardItems = {{11562, 6}}},
+        [24725] = {rewardItems = {{11566, 6}}},
         [24726] = {rewardItems = {{11563, 6}}},
         [24727] = {rewardItems = {{11567, 6}}},
         [24728] = {rewardItems = {{11564, 6}}},
@@ -46644,6 +46645,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{66915, 1}, {66917, 1}, {66921, 1}},
             rewardMoney = 344000,
         },
+        [28755] = {
+            description = "Do you know who the Knights of the Silver Hand were? They were the original " ..
+                "paladins of the Light, and from their ranks came knights who would later join the Argent " ..
+                "Dawn or the Scarlet Crusade. Though many have gone astray, they still possess valuable " ..
+                "relics of the Silver Hand.\n\nDeep in Stratholme, under the watchful eye of Instructor " ..
+                "Galford, volumes of the Annals of the Silver Hand survive. Any volumes you could recover " ..
+                "would be a fitting addition to the rededicated Light's Hope Chapel.",
+        },
         [28756] = {
             description = "In life, my brothers and I fought against all the forces of the Scourge, but " ..
                 "none were so reviled as the necromancers. It was not enough for them raise our dead " ..
@@ -55425,6 +55434,11 @@ ns.Overrides.wowhead = {
                 "beseech us for aid.\n\nThey hold the sha in check, but just barely.\n\nYou may be able " ..
                 "to turn the tide, <class>.",
         },
+        [31377] = {
+            description = "Darkness enshrouds the Temple of the Jade Serpent, and Yu'Lon's priests " ..
+                "beseech us for aid.\n\nThey hold the sha in check, but just barely.\n\nYou may be able " ..
+                "to turn the tide, <class>.",
+        },
         [31378] = {
             description = "The Temple of the Red Crane still reels from the aftermath of the sha's " ..
                 "presence, and has only recently gathered to rebuild and retrain its warriors.\n\nIf you " ..
@@ -55434,6 +55448,12 @@ ns.Overrides.wowhead = {
             description = "The Temple of the Red Crane still reels from the aftermath of the sha's " ..
                 "presence, and has only recently gathered to rebuild and retrain its warriors.\n\nIf you " ..
                 "wish to help at the temple, speak to Thelonius at the Cradle of Chi-Ji.",
+        },
+        [31380] = {
+            description = "Xuen, the great Celestial of the North, seeks the greatest champions in the " ..
+                "land.\n\nToday, he holds trials of battle at his temple in Kun-Lai Summit.\n\nIf you " ..
+                "wish to test yourself against skilled fighters from all across Pandaria, then go to him " ..
+                "and enter the challenger's ring!",
         },
         [31381] = {
             description = "Xuen, the great Celestial of the North, seeks the greatest champions in the " ..
@@ -64125,6 +64145,16 @@ ns.Overrides.wowhead = {
         [6786] = {spawns = {[14] = {{52, 68.2}}}, zoneID = 14},
         [6868] = {spawns = {[3] = {{2.4, 46}, {2.6, 46}}}, zoneID = 3},
         [6886] = {spawns = {[1] = {{25.2, 44.4}, {25.2, 44.6}}}, zoneID = 1},
+        [7029] = {
+            spawns = {
+                [46] = {
+                    {39.2, 33.4}, {39.2, 34.4}, {39.2, 34.8}, {39.4, 35.6}, {39.8, 32.4}, {40, 34.8},
+                    {40.4, 33.4}, {40.4, 33.6}, {40.4, 35.8}, {40.6, 35.6}, {40.8, 32.8}, {41.2, 33.8},
+                    {41.4, 35}, {41.8, 35.4}, {42.2, 35.6}, {42.6, 35.4}, {42.6, 35.8}, {42.6, 36.6},
+                },
+            },
+            zoneID = 46,
+        },
         [7044] = {
             spawns = {
                 [46] = {
