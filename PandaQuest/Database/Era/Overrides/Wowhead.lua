@@ -3128,6 +3128,14 @@ ns.Overrides.wowhead = {
                 "tower, but they're not gonna stay in their possession for long.\n\nGet one of them gems " ..
                 "an' bring 'em to Kryten--he knows the spell to enchant 'em so they'll work as a key.",
         },
+        [696] = {
+            description = "Here's what your lookin' for: Trelane's phylactery, Trelane's orb, an' " ..
+                "Trelane's ember agate.\n\nAll three should be in chests within the tower an' you " ..
+                "shouldn't have a problem opening the chests on your own; you just have to be careful of " ..
+                "the ogres.\n\nThe tower's defenses won't take care of 'em on their own; you'll need to " ..
+                "have your weapons at the ready. Those ogres find out you're there and stealing from 'em, " ..
+                "an' they'll be sure to put the hurt on you.\n\nBe careful, an' good luck.",
+        },
         [697] = {
             description = "Take this letter back to Stormwind and let Malin know that Kryten an' I'll be " ..
                 "home soon. He'll reward you well for helping us here, <name>, of that I've no " ..
@@ -10534,6 +10542,14 @@ ns.Overrides.wowhead = {
                 "to the east is Felwood; if that crystal is tied to that place as I suspect it is, then " ..
                 "it could prove to be very dangerous.",
         },
+        [4813] = {
+            description = "The moonwell water has revealed that embedded inside the crystal are a few " ..
+                "small fragments of bone, as well as half of a jawbone. The jawbone appears to be from a " ..
+                "humanoid, but it is unclear without breaking open the crystal - a feat that even the " ..
+                "strongest of magic would find near impossible.\n\nWith the task at hand complete, all " ..
+                "that remains is to report back to Sentinel Glynda Nal'Shea in Auberdine.",
+            rewardChoices = {{15335, 1}, {15396, 1}, {15397, 1}},
+        },
         [4842] = {
             description = "To tell you the truth, although there are no volcanoes here in Winterspring, I " ..
                 "believe that there are far more threatening reasons for these hot springs...\n\nWell, I " ..
@@ -15670,6 +15686,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{21438, 10}, {21512, 1}},
         },
         [8608] = {rewardItems = {{21438, 7}, {21512, 1}}},
+        [8609] = {
+            description = "It appears inevitable that the Horde and Alliance are on a collision course " ..
+                "for war at Ahn'Qiraj. Surprisingly, it is not a war with each other, but rather with the " ..
+                "silithid, and whatever force controls them. Also surprisingly, both sides are doing " ..
+                "their part to gather the resources necessary to wage a successful war.\n\nI am " ..
+                "collecting runecloth bandages to distribute to the soldiers, but I won't be successful " ..
+                "without assistance, hopefully yours. Is this something that you can aid me with, <class>?",
+            rewardItems = {{21438, 10}, {21513, 1}},
+        },
         [8610] = {rewardItems = {{21438, 10}, {21513, 1}}},
         [8611] = {
             description = "I'm not standing here just to get a nice tan, <class>. There are war " ..
