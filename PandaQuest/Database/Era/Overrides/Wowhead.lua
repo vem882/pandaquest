@@ -1144,6 +1144,12 @@ ns.Overrides.wowhead = {
                 "accomplishment.\n\nTracking her down will be no easy task.",
             rewardItems = {{4107, 1}},
         },
+        [191] = {
+            description = "Now you're ready to turn it up a notch. If you want to prove yourself worthy " ..
+                "of socializing with the likes of these big game hunters, you'll need to prove that you " ..
+                "can kill 10 panthers.\n\nThose big boys are tougher. They're not as easy as the young " ..
+                "ones you were killing earlier.",
+        },
         [197] = {
             description = "Because you proved yourself to be such a go-getter in the jungle, let me tell " ..
                 "you about a ferocious raptor that even I have failed to kill. Ajeck here calls this wily " ..
@@ -1633,6 +1639,15 @@ ns.Overrides.wowhead = {
                 "cellar, you grab a barrel of Thunder Ale as proof of the deed...",
             rewardMoney = 175,
         },
+        [312] = {
+            description = "I had a month's worth of dried meats salted and locked away for the cold " ..
+                "season. Kept it locked so the bears wouldn't get it! But while I was off hunting deer, " ..
+                "that beast, Old Icebeard, made off with the meat locker. He won't be able to smash " ..
+                "through that Thorium though. But I'll starve if I can't get my meats back.\n\nYou seem a " ..
+                "bit more stealthy than me. Perhaps you can retrieve my stash? I'll never make it in and " ..
+                "out of that cave fast enough with this bum leg of mine.",
+            rewardChoices = {{6177, 1}, {10550, 1}},
+        },
         [315] = {
             description = "I'm on a quest, a quest to make the perfect stout. I know I can do it -- " ..
                 "brewing's in my blood. I just need to find the right recipe...\n\nThe Frostmane trolls " ..
@@ -2096,6 +2111,15 @@ ns.Overrides.wowhead = {
                 "yonder, waiting for my guard to drop.",
             rewardChoices = {{3453, 1}, {3583, 1}},
             rewardMoney = 350,
+        },
+        [427] = {
+            description = "The documents Executor Arren provided are just the break we needed in our " ..
+                "battle with the wretched Scarlet Crusade. We now know their exact locations throughout " ..
+                "Tirisfal Glades.\n\nBut the Deathguard has larger concerns. The Lich King's army grows " ..
+                "in number each night. We need someone with \"initiative\" like yourself to drive the " ..
+                "Scarlet Crusade to the grave.\n\nProve to me you are capable of serving The Dark Lady by " ..
+                "travelling west to the tower past the Solliden Farmstead and slay 10 Scarlet Warriors.",
+            rewardMoney = 225,
         },
         [428] = {
             description = "A couple weeks ago two of our Deathstalkers, Rane and Quinn Yorick, were sent " ..
@@ -8897,6 +8921,14 @@ ns.Overrides.wowhead = {
                 "I looked down and noticed that there was another statue at the base of the room; an " ..
                 "altar of sorts... Hakkar, I think it was called.\n\nI think that this altar is the " ..
                 "secret -- you must bring this token to the altar in the Sunken Temple.",
+        },
+        [3448] = {
+            description = "I've recently been handed the responsibility of investigating Azshara--a once " ..
+                "beautiful area the elves called home. This would be back when they practiced magic. It's " ..
+                "now a more dangerous place than it is beautiful, but that doesn't stop us from turning " ..
+                "over every stone for answers to our past.\n\nA companion of mine named Tymor offered to " ..
+                "help me investigate the area since he takes a particular interest in such things.\n\nHe " ..
+                "owns a small place to the right of the Hall of Mysteries here in the city.",
         },
         [3450] = {
             description = "I want the rubbings delivered to my tower, but there's no need to have you go " ..
