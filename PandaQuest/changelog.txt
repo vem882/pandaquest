@@ -4,6 +4,30 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.352
+- database - Wowhead data as the PandaQuest portal read it: 7,909 quests, 753 NPCs, 2 objects
+- database - flight times: 8 measured, 1,625 estimated
+- database - Classic Era: data from the PandaQuest portal: 2,431 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,455 quests, 43 NPCs, 1 object
+- quest 13567 - Spirit of the Stag - updated
+  - description added
+- quest 13997 - If You're Reading This While I'm In Combat... - updated
+  - description added
+- quest 31498 - Jade Serpent Challenge Mode - Consolation (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- quest 31627 - Mogu'shan Palace Challenge Mode - Consolation (Nth) - updated
+  - reward money removed (11g 40s)
+  - XP removed (177,000)
+- npc 485 - Blackrock Outrunner - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 14368 - Lorekeeper Lydros - updated
+  - NPC title added (House of Shen'dralar)
+- npc 68006 - Sha-Touched Footman - updated
+  - NPC level added (90)
+- npc 69751 - Agent Reginald - updated
+  - NPC title added (Kirin Tor)
+
 0.2.351
 - database - Wowhead data as the PandaQuest portal read it: 7,910 quests, 749 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,399 quests, 26 NPCs, 5 objects
@@ -255,23 +279,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 40 spawn points added in Loch Modan
 - npc 4044 - Blackened Basilisk - updated
   - coordinates: 40 spawn points added in Stonetalon Mountains
-
-0.2.341
-- database - Wowhead data as the PandaQuest portal read it: 7,905 quests, 700 NPCs, 2 objects
-- database - flight times: 7 measured, 1,625 estimated
-- database - Classic Era: data from the PandaQuest portal: 2,226 quests, 24 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,224 quests, 43 NPCs, 1 object
-- quest 31337 - A Token of Appreciation - updated
-  - description added
-  - reward items: +1
-- quest 31792 - Pristine Iron Amulet - updated
-  - reward items: counts corrected
-- quest 31795 - Pristine Pandaren Tea Set - updated
-  - reward items: counts corrected
-- quest 31797 - Pristine Twin Stein Set - updated
-  - reward items: counts corrected
-- quest 31803 - Pristine Pearl of Yu'lon - updated
-  - reward items: counts corrected
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
