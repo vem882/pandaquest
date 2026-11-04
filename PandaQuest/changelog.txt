@@ -4,6 +4,14 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.358
+- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 764 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,471 quests, 26 NPCs, 5 objects
+- npc 4464 - Blackrock Gladiator - updated
+  - coordinates: 24 spawn points added in Redridge Mountains
+- npc 4475 - Blighted Zombie - updated
+  - coordinates: 29 spawn points added in Western Plaguelands
+
 0.2.357
 - database - rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
 - database - Classic Era rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
@@ -220,27 +228,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - npc 246178 - Cracklefang - updated
   - NPC level added (91)
   - rank added (elite)
-
-0.2.347
-- database - Wowhead data as the PandaQuest portal read it: 7,904 quests, 723 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,287 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,288 quests, 43 NPCs, 1 object
-- quest 24713 - Frostmourne - updated
-  - description removed
-  - reward money removed (1g 90s)
-- quest 31647 - Siege of Niuzao Temple Challenge Mode - Gold Addition (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- quest 31786 - Pristine Manacles of Rebellion - updated
-  - description added
-  - reward items: +2
-- quest 31788 - Pristine Terracotta Arm - updated
-  - description removed
-  - reward items: -2
-- quest 31798 - Pristine Walking Cane - updated
-  - reward items: counts corrected
-- npc 71131 - High Overseer Bloodmane - updated
-  - NPC title added (Horde Logistics Officer)
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
