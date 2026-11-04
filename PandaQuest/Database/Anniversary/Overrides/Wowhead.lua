@@ -1264,6 +1264,15 @@ ns.Overrides.wowhead = {
                 "last hope...",
             rewardChoices = {{3555, 1}, {1275, 1}, {3431, 1}},
         },
+        [226] = {
+            description = "Sven and I have dangerous days ahead of us, what with the Necromancer to the " ..
+                "east and all. And out here alone as we are, we have to hunt for our own food. It seems " ..
+                "every time I'm heading back to camp with some meat on me, starving or rabid dire wolves " ..
+                "come out of the forest wanting a bite. It goes without saying, living out here is " ..
+                "dangerous work!\n\nBut if you can rid us of some of those wolves, we'd have an easier " ..
+                "time of it. They mostly prowl north and east of here, near the river.",
+            rewardItems = {{1127, 5}},
+        },
         [227] = {
             description = "<He searches through the shelves and comes up with a leatherbound book.>\n\nIf " ..
                 "you would like to know more, you might ask Althea, she's been the one to handle the... " ..
@@ -2216,6 +2225,10 @@ ns.Overrides.wowhead = {
                 "with it. I need my sword! If you can get it back for me I would be so grateful. So many " ..
                 "dwarves there...it will be quite difficult to find the dirty little thief who stole it.",
             rewardChoices = {{3750, 1}, {3751, 1}},
+        },
+        [551] = {
+            description = "This parchment is enchanted with a spell, rendering it indecipherable. But one " ..
+                "word at the top of the paper can be read:\n\nNagaz",
         },
         [554] = {
             description = "Prospector Stormpike is a master of decryption and deciphering. If you take " ..
@@ -4834,6 +4847,7 @@ ns.Overrides.wowhead = {
                 "shells below their nests, and return to me when you have a sufficient amount.",
         },
         [1711] = {rewardItems = {{6973, 1}}},
+        [1714] = {rewardItems = {{6851, 1}}},
         [1716] = {
             description = "A sayaad is a devourer of souls, dominator of wills, and tempter of hearts. It " ..
                 "knows nothing but evil.\n\nSalacious tales refer to the demon by its common name: " ..
@@ -6407,6 +6421,11 @@ ns.Overrides.wowhead = {
                 "craft your weapon, <name>.",
             rewardChoices = {{10697, 1}, {10698, 1}, {10696, 1}},
         },
+        [3626] = {
+            description = "The hour of redemption is near, <name>. You must return to the Blasted Lands " ..
+                "with your new-found weaponry and speak with the Fallen Hero of the Horde to receive your " ..
+                "final objective.",
+        },
         [3630] = {
             description = "Engineering at the expert level breaks into two disciplines: gnome and goblin. " ..
                 "Gnome engineering represents by far the superior of the two! It's about the construction " ..
@@ -6445,6 +6464,15 @@ ns.Overrides.wowhead = {
                 "this manual. If you wish to learn how to make metal paper weights, then take that manual " ..
                 "to Tinkmaster Overspark in Ironforge. Remember - membership is permanent and prevents " ..
                 "joining the other discipline, so make sure you are sure before finishing his task!",
+        },
+        [3636] = {
+            description = "The Scourge is a persistent threat to the Alliance, a fact I am sure you know " ..
+                "quite well. Recently, we have come across some very peculiar findings, <name>.\n\nIn the " ..
+                "Barrens lies a horrid tangle of briars called Razorfen Downs. While once it was the home " ..
+                "of simple quilboar, now it has become apparent that a pact was made with the Scourge, " ..
+                "creating creatures far worse... They are now ruled by the lich, Amnennar the " ..
+                "Coldbringer.\n\nAlign yourself with the Light, <name>; put an end to this evil union.",
+            rewardItems = {{10823, 1}, {10824, 1}},
         },
         [3638] = {
             description = "Goblin engineering is about practical uses for high profit and higher " ..
@@ -8914,6 +8942,15 @@ ns.Overrides.wowhead = {
                 "the plant, but do know that Vyletongue will still control it. He may use it against " ..
                 "you...",
             rewardChoices = {{17768, 1}, {17778, 1}, {17770, 1}},
+        },
+        [7046] = {
+            description = "My scepter was once a source of hope for me. Its power allowed me the freedom " ..
+                "to travel quickly through these caverns. I had hoped to bring peace to the spirit of my " ..
+                "uncle... It is a task that I now pass to you.\n\nFor the two parts to once again become " ..
+                "one, I will need your assistance in performing the ritual. Please follow me, and listen " ..
+                "to my instructions while I channel the energy required to reunite the rod with the " ..
+                "diamond.\n\nTogether, we shall create the Scepter of Celebras once again!",
+            rewardItems = {{17191, 1}},
         },
         [7065] = {
             description = "In the depths of Maraudon lives a creature of chaos and evil, <name>. Princess " ..
@@ -11862,6 +11899,15 @@ ns.Overrides.wowhead = {
                 "it entirely and then report back to Nazgrel, advisor to Thrall, with what you witness.",
             rewardChoices = {{25714, 1}, {25713, 1}, {25712, 1}},
             rewardMoney = 58000,
+        },
+        [9610] = {
+            description = "I am interested in studying Azeroth's past and I'm wondering if you'd be " ..
+                "willing to help?\n\nThere is a nearby place of historical significance within the swamp " ..
+                "that I would like for you to venture to. The Pool of Tears lies to the southeast. It is " ..
+                "said that upon its shores and within its depths are buried artifacts of the Atal'ai " ..
+                "troll civilization.\n\nBut beware, it is guarded by Somnus, an ancient green dragon, and " ..
+                "his dragonkin, as well as carnivorous fish in the pool itself!",
+            rewardMoney = 12000,
         },
         [9612] = {
             description = "You saved my life, <name>! Thank you so much! That beast would have torn me to " ..

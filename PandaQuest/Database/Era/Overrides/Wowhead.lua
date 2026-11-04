@@ -1541,6 +1541,14 @@ ns.Overrides.wowhead = {
                 "curse.",
             rewardMoney = 1900,
         },
+        [290] = {
+            description = "To break the curse and free all of my brethren, the...thing...stowed on my " ..
+                "ship must be retrieved and cleansed! I don't know what it was, but I do know that it was " ..
+                "stored securely in the ship's strongbox, which Captain Halyndor lorded over.\n\nMy old " ..
+                "captain is still in my dreams. I know he walks my doomed ship, the Intrepid. Get the key " ..
+                "from him, and use it to open the Intrepid's strongbox.\n\nThen, after you have the " ..
+                "cursed thing, bring it to the priest Glorin Steelbrow in town.",
+        },
         [291] = {
             description = "Excellent! Take my report to Senator Barin Redstone. He's a sour type, so " ..
                 "don't let his less-than-sunny disposition get to you. He's in Ironforge, in the chamber " ..
@@ -3416,6 +3424,15 @@ ns.Overrides.wowhead = {
                 "the goblins' poisons! Let clean water flow once again!",
             rewardChoices = {{3443, 1}, {4961, 1}},
         },
+        [761] = {
+            description = "The swoop is a cunning bird, and difficult to find and hunt. A collection of " ..
+                "Swoop Quills is a badge of cleverness and determination for a hunter.\n\nIf you are " ..
+                "willing to take up this task, then enter the plains and hunt the swoop.\n\nBring me " ..
+                "their quills, and bring honor to your clan.\n\nThe swoops may be found anywhere in " ..
+                "Mulgore, but your eyes must be sharp to spot them, and your hooves must be quick to " ..
+                "catch them.",
+            rewardMoney = 250,
+        },
         [762] = {
             description = "Ambassador Infernus was sent to Angor Fortress by Ragnaros himself to mind the " ..
                 "Shadowforge seeking lost artifacts in Uldaman.\n\nIt has already meant tremendous " ..
@@ -4146,6 +4163,14 @@ ns.Overrides.wowhead = {
             description = "The heart of Blackmoss the Fetid is covered with a dark, oily moss. In fact, " ..
                 "the only way to tell this is a heart is from its slow, rhythmic beat... A beat that " ..
                 "continues even now.\n\nPerhaps Denalan will want to see this heart.",
+        },
+        [928] = {
+            description = "While there is more I could speak to you of the moonwells and of Teldrassil, I " ..
+                "must send you along. Corithras Moonrage will be expecting you. I have poured the phial " ..
+                "of water you brought to me into this vessel to bring to him.\n\nSeek out Corithras. You " ..
+                "will find him at the moonwell in Dolanaar. Follow the road south from Aldrassil out of " ..
+                "Shadowglen, and continue to follow the cobblestones as the road turns west.\n\nMind you " ..
+                "stay on the road though, <name>. There are dangerous beasts in the forests of late.",
         },
         [930] = {
             description = "Hanging from beneath its fronds of this glowing plant is a large, round " ..
@@ -8824,6 +8849,7 @@ ns.Overrides.wowhead = {
                 "the Cauldron!",
             rewardItems = {{10462, 1}, {10479, 1}},
         },
+        [3441] = {description = "Hear my tale, adventurer."},
         [3442] = {
             description = "You have made the right decision, <name>.\n\nWe must strike where we will do " ..
                 "the most damage: the four sentry towers.\n\nWith the four towers in flames, we can " ..
@@ -12084,6 +12110,14 @@ ns.Overrides.wowhead = {
         [5888] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5889] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5890] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
+        [5892] = {
+            description = "Before the fighting started, we stored supplies for Dun Baldar in the Irondeep " ..
+                "mine. The troggs that surfaced there weren't much of a problem when we had spare troops " ..
+                "to guard the mine, but now that we're fighting with the Horde we can't maintain control " ..
+                "of Irondeep.\n\nWe need the supplies in Irondeep, <name>. Enter the mine and bring me a " ..
+                "load of them.",
+            rewardMoney = 4000,
+        },
         [5893] = {
             description = "The Coldtooth mine to the north was once an ideal place to store extra " ..
                 "supplies, but now that the fighting with the Stormpikes grows fierce, we do not always " ..
