@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.5.0+v1.0.10 (Classic Era database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-04T00:10:43Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.5.1+v1.0.10 (Classic Era database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
+-- Built: 2026-11-04T14:10:23Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "era"
 ns.Data.meta = {
-  ["built"] = "2026-11-04T00:10:43Z",
+  ["built"] = "2026-11-04T14:10:23Z",
   ["contentPhase"] = 0,
   ["counts"] = {["items"]=14899,["npcs"]=10122,["objects"]=6666,["questXP"]=3494,["quests"]=4257},
   ["expansion"] = "Classic",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.5.0+v1.0.10",
+  ["source"] = "Questie 12.5.1+v1.0.10",
 }
 ns.Data.questTagCorrections = {
   [17] = {81,"Dungeon"},
