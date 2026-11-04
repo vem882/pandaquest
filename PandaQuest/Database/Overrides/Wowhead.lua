@@ -31028,6 +31028,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{58255, 1}},
             rewardMoney = 700,
         },
+        [24594] = {
+            description = "The Sunwell and the end of Quel'Delar's exile await, <name>.\n\nYou will find " ..
+                "Lor'themar Theron, the regent of Quel'Thalas, and Grand Magister Rommath standing " ..
+                "within. Be wary of them and do not allow them to entrap you in their political " ..
+                "scheming.\n\nInstead, remain focused on your task here. Speak to a Warden of the Sunwell " ..
+                "to enter the Sunwell Plateau. Immerse the reformed Quel'Delar in the Sunwell to complete " ..
+                "the restoration. Show the blade to Myralion Sunblaze at Quel'Delar's Rest once it is " ..
+                "restored.",
+        },
         [24596] = {
             description = "The Sunwell and the end of Quel'Delar's exile await, <name>.\n\nYou will find " ..
                 "Lor'themar Theron, the regent of Quel'Thalas, and Grand Magister Rommath standing " ..
@@ -55890,6 +55899,12 @@ ns.Overrides.wowhead = {
                 "and I will continue your training. Good luck!",
             rewardMoney = 9000,
         },
+        [31549] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Shelby Stoneflint, our local stable master, to heal and revive your " ..
+                "pets.",
+            rewardMoney = 41000,
+        },
         [31551] = {
             description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
                 "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
@@ -56162,7 +56177,6 @@ ns.Overrides.wowhead = {
         [31617] = {rewardMoney = 114000, rewardXP = 236000},
         [31618] = {rewardMoney = 114000, rewardXP = 236000},
         [31619] = {rewardMoney = 114000, rewardXP = 236000},
-        [31620] = {rewardMoney = 114000, rewardXP = 177000},
         [31622] = {rewardMoney = 114000, rewardXP = 177000},
         [31623] = {rewardMoney = 114000, rewardXP = 177000},
         [31624] = {rewardMoney = 114000, rewardXP = 177000},
@@ -56635,13 +56649,7 @@ ns.Overrides.wowhead = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
-        },
-        [31791] = {
-            description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
-                "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
-                "archaeologists can study it.",
-            rewardItems = {{87399, 1}, {79869, 1}},
+            rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31792] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
@@ -57085,6 +57093,14 @@ ns.Overrides.wowhead = {
         [31918] = {
             description = "If you beat me, then you must be ready for da big time! Go talk to Varzok in " ..
                 "Orgrimmar.",
+            rewardMoney = 114000,
+        },
+        [31920] = {
+            description = "I've seen the likes of you before. A young, naive tamer that thinks that they " ..
+                "deserve victory handed to them on a silver platter.\n\nWell no more! I will be your " ..
+                "reckoning, <class>. I, Bloodknight Antari of Shadowmoon Valley, await the chance to show " ..
+                "you how it feels to be obliterated in battle.",
+            rewardItems = {{89125, 1}},
             rewardMoney = 114000,
         },
         [31921] = {
@@ -63317,6 +63333,7 @@ ns.Overrides.wowhead = {
             zoneID = 148,
         },
         [3693] = {spawns = {[148] = {{39.2, 43.4}}}, zoneID = 148},
+        [3702] = {spawns = {[148] = {{37.6, 40.6}}}, zoneID = 148},
         [3746] = {
             spawns = {
                 [331] = {
@@ -64720,6 +64737,7 @@ ns.Overrides.wowhead = {
             zoneID = 1637,
         },
         [14355] = {subName = "House of Shen'dralar"},
+        [14358] = {subName = "House of Shen'dralar"},
         [14382] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
         [14461] = {
@@ -65445,6 +65463,7 @@ ns.Overrides.wowhead = {
         [68463] = {subName = "Grand Master Pet Tamer"},
         [68464] = {subName = "Grand Master Pet Tamer"},
         [68465] = {subName = "Grand Master Pet Tamer"},
+        [68472] = {maxLevel = 90, minLevel = 90},
         [68492] = {subName = "Tallstrider Handler"},
         [68504] = {maxLevel = 90, minLevel = 90},
         [68554] = {subName = "The Entourage"},
@@ -65558,6 +65577,7 @@ ns.Overrides.wowhead = {
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
         [73691] = {subName = "The Timewalkers"},
+        [178420] = {rank = 0},
         [185333] = {rank = 0},
         [185335] = {
             rank = 0,
@@ -65583,6 +65603,7 @@ ns.Overrides.wowhead = {
         [246383] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246384] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246386] = {maxLevel = 91, minLevel = 91, rank = 1},
+        [246479] = {maxLevel = 91, minLevel = 91, rank = 0, subName = "The Slavebinder"},
     },
     objects = {
         [214341] = {spawns = {[6138] = {{38.7, 31.9}, {41.8, 32.5}, {41.9, 36.6}, {42, 34.4}}}, zoneID = 6138},
