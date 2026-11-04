@@ -5431,6 +5431,13 @@ ns.Overrides.wowhead = {
                 "your efforts.",
             rewardItems = {{8424, 1}},
         },
+        [2608] = {
+            description = "Oh my, you look like death. Correction - I've seen death, you look worse than " ..
+                "death. You, <sir/miss>, would be what death coughed up at his last physical.\n\nHah! You " ..
+                "hear that Noarm? Write that one down!\n\n*Cough* Hrm yes, in order for me to help you, " ..
+                "I'll need to draw some blood. Don't worry, it only hurts the first few... fifty times or " ..
+                "so... /lay down when you're ready for the treatment, <name>.",
+        },
         [2621] = {
             description = "Regret. It is all I have now. One bad decision resulting in several horrible " ..
                 "outcomes. If only I had waited for those orders. Maybe they would have detailed the " ..
@@ -11653,6 +11660,14 @@ ns.Overrides.wowhead = {
                 "traitor will show up. Let the meeting finish then return to me with the identity of the " ..
                 "scoundrel.",
             rewardMoney = 900,
+        },
+        [9533] = {
+            description = "My people have undertaken an important endeavor in the eastern part of " ..
+                "Ashenvale, with support and cooperation from the kaldorei.\n\nUnder the supervision of " ..
+                "Architect Nemos and Vindicator Vedaar, they are revitalizing an old night elf outpost. " ..
+                "The task of building won't be easy, <name>, for the challenges and enemies they face are " ..
+                "many. I know Architect Nemos and his compatriots at Forest Song would appreciate any " ..
+                "help they can get, and he has asked me to send any interested <men/women> his way.",
         },
         [9534] = {
             description = "The remains of the demonic Burning Legion have been making raids against our " ..

@@ -7957,6 +7957,14 @@ ns.Overrides.wowhead = {
                 "how to make a mithril coif and ornate mithril shoulders and I shall show you how to " ..
                 "create an ornate mithril helm.",
         },
+        [2773] = {
+            description = "Around these parts I am known as the Mithril Kid. I supply ornate mithril to " ..
+                "adventurers from around the world.\n\n<Trenton whispers.>\n\nLittle do they know that I " ..
+                "do not know the technique to fashion ornate mithril gloves. Shhhh! This will be our " ..
+                "little secret.\n\nTeach me the technique to create ornate mithril gloves, <name>, and in " ..
+                "exchange, I will show you the resultant of the culmination of my training under Galvan: " ..
+                "the ornate mithril breastplate.",
+        },
         [2781] = {
             description = "WANTED: Caliph Scorpidsting!\n\nThe Gadgetzan Water Company of Gadgetzan, " ..
                 "Tanaris will pay a high bounty for the head of Caliph Scorpidsting, leader of the " ..
