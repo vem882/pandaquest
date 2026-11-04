@@ -25935,6 +25935,20 @@ ns.Overrides.wowhead = {
                 "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardItems = {{42988, 1}},
         },
+        [13325] = {
+            description = "Now that you have gathered all of the Chaos cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{42989, 1}},
+        },
+        [13326] = {
+            description = "Now that you have gathered all of the Nobles cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardChoices = {{42987, 1}, {44254, 1}, {44253, 1}, {44255, 1}},
+        },
         [13343] = {
             description = "There you are! Or, were we just talking?\n\n< Chromie muses over the temporal " ..
                 "possibilities.>\n\nAnyway, the Infinites are after you! Well, not you per-se. Rather, " ..
@@ -42567,6 +42581,13 @@ ns.Overrides.wowhead = {
                 "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardItems = {{62047, 1}},
         },
+        [27666] = {
+            description = "Now that you have gathered all of the Wave cards together into a deck, a ninth " ..
+                "card mysteriously appears with the same backing as the first eight. On this card is " ..
+                "inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have heard " ..
+                "that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{62050, 1}},
+        },
         [27667] = {
             description = "Now that you have gathered all of the Stone cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
@@ -56189,7 +56210,6 @@ ns.Overrides.wowhead = {
         [31626] = {rewardMoney = 114000, rewardXP = 177000},
         [31627] = {rewardMoney = 114000, rewardXP = 177000},
         [31628] = {rewardMoney = 114000, rewardXP = 177000},
-        [31629] = {rewardMoney = 114000, rewardXP = 177000},
         [31630] = {rewardMoney = 114000, rewardXP = 177000},
         [31632] = {rewardMoney = 114000, rewardXP = 177000},
         [31633] = {rewardMoney = 114000, rewardXP = 177000},
@@ -56650,6 +56670,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{87399, 3}, {79869, 1}},
         },
         [31790] = {
+            description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
+                "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
+                "archaeologists can study it.",
+            rewardItems = {{87399, 3}, {79869, 1}},
+        },
+        [31791] = {
             description = "This artifact has been restored to a remarkably excellent condition. Perhaps " ..
                 "you will put it on display at the Seat of Knowledge, so that lorewalkers and " ..
                 "archaeologists can study it.",
@@ -63896,6 +63922,7 @@ ns.Overrides.wowhead = {
             zoneID = 1637,
         },
         [5888] = {spawns = {[215] = {{44.8, 76.2}}}, zoneID = 215},
+        [5891] = {spawns = {[14] = {{44, 76}}, [215] = {{53.8, 80.4}, {53.8, 80.6}}}, zoneID = 215},
         [5905] = {spawns = {[400] = {{53.4, 42.6}, {53.6, 42.4}, {53.6, 42.8}}}, zoneID = 400},
         [5908] = {spawns = {[17] = {{43.2, 47.8}}}, zoneID = 17},
         [6015] = {spawns = {[440] = {{66.4, 25.4}, {66.4, 25.6}, {66.6, 25.4}, {66.6, 25.6}}}, zoneID = 440},
@@ -65491,6 +65518,7 @@ ns.Overrides.wowhead = {
         [68690] = {subName = "King of Stormwind"},
         [68695] = {maxLevel = 90, minLevel = 90},
         [68707] = {maxLevel = 90, minLevel = 90},
+        [68711] = {subName = "Innkeeper"},
         [68715] = {subName = "The Sunreavers"},
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
@@ -65511,6 +65539,7 @@ ns.Overrides.wowhead = {
         [69309] = {maxLevel = 90, minLevel = 90},
         [69334] = {subName = "Tushui Quartermaster"},
         [69339] = {maxLevel = 92, minLevel = 92},
+        [69347] = {maxLevel = 92, minLevel = 92},
         [69355] = {subName = "The Sunreavers"},
         [69356] = {subName = "The Sunreavers"},
         [69357] = {subName = "The Sunreavers"},
@@ -65592,6 +65621,7 @@ ns.Overrides.wowhead = {
         [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
+        [73666] = {maxLevel = 93, minLevel = 93},
         [73691] = {subName = "The Timewalkers"},
         [178420] = {rank = 0},
         [185333] = {rank = 0},
@@ -65612,6 +65642,7 @@ ns.Overrides.wowhead = {
         },
         [198875] = {rank = 1},
         [245153] = {maxLevel = 91, minLevel = 91, rank = 1},
+        [245926] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246031] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246176] = {maxLevel = 91, minLevel = 91, rank = 1},
         [246178] = {maxLevel = 91, minLevel = 91, rank = 1},
