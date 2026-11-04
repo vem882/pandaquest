@@ -1415,6 +1415,13 @@ ns.Overrides.wowhead = {
                 "task, wage an assault on the Troggs. Bring me back 8 Trogg Stone Teeth as proof.",
             rewardMoney = 500,
         },
+        [268] = {
+            description = "The book you found was only half finished. I had to leave it at Sven's farm " ..
+                "when I fled there...\n\nHere. Take my completed journal to Sven. It describes more fully " ..
+                "what happened at his farm.\n\nAlthough this journal has been my only company these past " ..
+                "weeks, if giving it up keeps me from having to face Sven and his wrath, then I do it " ..
+                "willingly!",
+        },
         [270] = {
             description = "Years ago, the Third Fleet of Kul'Tiras sunk along the coasts of The Wetlands, " ..
                 "an expanse of marsh north of the Dwarven kingdom of Ironforge. Aboard one ship was a " ..
@@ -5809,6 +5816,11 @@ ns.Overrides.wowhead = {
                 "read from all the burned stuff.\n\nI need acid to make it clear. Venom from the Darkfang " ..
                 "spiders in the marsh would do good. Get me some of their sacs and I can clean this up.",
         },
+        [1323] = {
+            description = "Oh, I think I might have dropped too much acid onto the shield. Let me just " ..
+                "rub a little...\n\nHm, kind of hard to read, but it looks like the name Mosarn. Never " ..
+                "heard of him. Maybe Krog knows. Krog knows many people.",
+        },
         [1339] = {
             description = "I hear Mountaineer Stormpike is looking for a runner. Someone to do a little " ..
                 "traveling for him. How about it? Are you the <race> for the job?\n\nIf so, then you'll " ..
@@ -9708,6 +9720,11 @@ ns.Overrides.wowhead = {
                 "fight over them; maybe they ran across the backpacks Quint mentioned. I hadn't risked a " ..
                 "head-on fight in past searches, but with Quint's vision on this I say rip into them.",
         },
+        [4133] = {
+            description = "Shadowmaster Vivian Lagrave is in need of your services. She is in the " ..
+                "Badlands, in the orcish outpost of Kargath, pursuing rumors of a certain brew made by " ..
+                "the Dark Iron dwarves of Blackrock Depths.\n\nSpeak with Vivian. She awaits you.",
+        },
         [4134] = {
             description = "It is rumored that the Dark Iron Hurley Blackbreath has stolen a recipe for " ..
                 "ale. This ale, Thunderbrew Lager, is said to infuse its imbiber with great strength and " ..
@@ -12353,6 +12370,13 @@ ns.Overrides.wowhead = {
                 "if ya like it!\n\nWhen you return, I'll give ya the skills you will need to tame an " ..
                 "animal of your choosing; this creature will face the challenges you face, and gain " ..
                 "experience alongside you. I will also show you how to call it and dismiss it as ya like.",
+        },
+        [6086] = {
+            description = "<name>, ya now have the power to tame a pet, but you must also gain the skills " ..
+                "ta train it.\n\nTravel to Ironforge and find the Hall of Arms. There you must speak to " ..
+                "one of our most revered animal trainers, Belia Thundergranite. She'll give ya the power " ..
+                "to train your new pet, so get goin', <lad/lass>!\n\nBelia is a friendly sort; you should " ..
+                "have no problems gaining her approval. Good luck, <name>.",
         },
         [6087] = {
             description = "You have a fiery spirit, hunter, readily awaiting your next challenge.\n\nYour " ..
@@ -15448,6 +15472,14 @@ ns.Overrides.wowhead = {
                 "appears to be a portal world in the Outland that is currently being overrun by the " ..
                 "Burning Legion. You're going to have to track him down and get my goggles back, <name>!",
         },
+        [8578] = {
+            description = "<You hear a sigh of relief escape the crate.>\n\nYou just want his scrying " ..
+                "goggles? Great! That will be no problem... Just give me a minute to... Hey! Where the... " ..
+                "Dagnabbit!\n\nWell, there's some bad news and some worse news. The bad news is that I " ..
+                "lost the goggles. The worse news is that I lost them when I was nosing around in the " ..
+                "Molten Core last month. Yep, the Molten Core... I guess that concludes our business! Bye!",
+            rewardItems = {{18253, 3}},
+        },
         [8580] = {
             description = "Hey, <class>. Ya you, mon! There be a whole mess of firebloom the Horde " ..
                 "thinkin' they need for this Ahn'Qiraj war effort. Maybe they put it in nice things that " ..
@@ -16786,6 +16818,14 @@ ns.Overrides.wowhead = {
                 "materials to put everything together and you'll have your Bonescythe. Oh, and you'll " ..
                 "need to pay me for my troubles... I'll supply the bones.",
             rewardItems = {{22480, 1}},
+        },
+        [9085] = {
+            description = "After you bring down the defenses of the Scourge summoning circles that have " ..
+                "appeared in the zones under attack, you will be able to confront the acolytes who " ..
+                "protect them.\n\nIn truth, these are not men. They are shadows, some of the Lich King's " ..
+                "most frightening creatures. They can be revealed using the necrotic runes they carry, " ..
+                "and then destroyed with magic or strength of arms.",
+            rewardChoices = {{23123, 5}, {23122, 5}},
         },
         [9086] = {
             description = "Many heroes fell in the last war and many continue to perish at the hands of " ..
