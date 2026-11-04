@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.4.0+v1.0.10 (TBC Anniversary database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-02T14:08:39Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.5.0+v1.0.10 (TBC Anniversary database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
+-- Built: 2026-11-04T00:10:43Z. Schema version 1.
 -- Zone tables merged like Questie's ZoneDB.Initialize() (base table + MoP override table).
 -- ns.Data.dungeons[areaId] = { name, alternativeAreaIds|nil, parentAreaId, { {areaId, x, y}, ... } entrances (Alliance),
 --   [5] = Horde entrances when they differ (Alterac Valley, Warsong Gulch) }.
