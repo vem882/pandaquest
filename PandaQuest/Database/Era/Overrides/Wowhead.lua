@@ -7080,6 +7080,13 @@ ns.Overrides.wowhead = {
         [1843] = {rewardItems = {{7129, 1}}},
         [1845] = {rewardItems = {{7130, 1}}},
         [1847] = {rewardItems = {{7132, 1}}},
+        [1859] = {
+            description = "Lower your voice, <name>. Yeah, I know your name. Was told to keep an eye out " ..
+                "for an orc by your description.\n\nFrom what we've heard about you, you can handle " ..
+                "yourself in combat, and aren't opposed to a little sneakery from time to time.\n\nAm I " ..
+                "right?\n\nAnyways, you should go see Therzok in Orgrimmar. He's got an offer for you to " ..
+                "hear.",
+        },
         [1880] = {
             description = "We mages do more than just waggle our fingers and make pretty sparks! We " ..
                 "control magic, the base fabric of our world! And that takes great care, and resolve. And " ..
@@ -16622,6 +16629,14 @@ ns.Overrides.wowhead = {
                 "the mistakes of our past.\n\nAs to your reward, I believe I have a few things that you " ..
                 "have definitely earned and will truly enjoy.",
             rewardItems = {{21999, 1}, {21997, 1}},
+        },
+        [9015] = {
+            description = "Heed me well, <name>. For the banner to work in the desired way, you will need " ..
+                "to step into the Ring of the Law in Blackrock Depths. Allow yourself to be sentenced by " ..
+                "High Justice Grimstone and place the banner firmly on the ground in a sign of " ..
+                "defiance.\n\nYour victim will not be able to restrain himself and shall enter the fray " ..
+                "filled with a desire to fight you. Once you obtain that which you seek, go back to " ..
+                "Anthion.",
         },
         [9018] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..

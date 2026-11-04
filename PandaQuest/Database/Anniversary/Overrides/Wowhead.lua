@@ -7529,6 +7529,11 @@ ns.Overrides.wowhead = {
                 "walks the distance between their village and Felwood. Find and defeat them, and steal " ..
                 "their shipment.",
         },
+        [5089] = {
+            description = "From the corpse of the defeated serpent you uncover what appears to be a note " ..
+                "of some importance: A letter from his superior, General Drakkisath, concerning " ..
+                "protocol.\n\nYour instinct tells you that you should take it to Marshal Maxwell.",
+        },
         [5092] = {
             description = "With Andorhal's western and northern roads into the city well fortified, I'm " ..
                 "looking to strike at it from the less defended eastern road. The Scourge relies on the " ..

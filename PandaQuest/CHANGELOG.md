@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.357] - 2026-11-04
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
+- database - Classic Era rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
+- database - TBC Anniversary rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
+- database - WoW Forever rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
+- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 762 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,468 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,495 quests, 44 NPCs, 1 object
+- npc 1393 - Berserk Trogg - updated
+  - coordinates: 40 spawn points added in Loch Modan
+
 ## [0.2.356] - 2026-11-04
 
 Data from the PandaQuest portal.
@@ -260,35 +274,6 @@ Data from the PandaQuest portal.
   - reward items: counts corrected
 - npc 71131 - High Overseer Bloodmane - updated
   - NPC title added (Horde Logistics Officer)
-
-## [0.2.346] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,906 quests, 722 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,269 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,264 quests, 43 NPCs, 1 object
-- quest 30961 - Savior of the Inkgill - updated
-  - description removed
-- quest 31621 - Stormstout Brewery Challenge Mode - Bronze Addition (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- quest 31641 - Mogu'shan Palace Challenge Mode - Silver Addition (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- npc 1040 - Fen Creeper - updated
-  - coordinates: 40 spawn points added in Wetlands
-- npc 1052 - Dark Iron Saboteur - updated
-  - coordinates: 28 spawn points added in Wetlands
-  - coordinates: 3 spawn points added in Arathi Highlands
-- npc 1126 - Large Crag Boar - updated
-  - coordinates: 40 spawn points added in Dun Morogh
-- npc 2266 - Hillsbrad Farmer - updated
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 2304 - Captain Ironhill - updated
-  - coordinates: 9 spawn points added in Hillsbrad Foothills
-- npc 4029 - Blackened Ancient - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
 
 ## [0.2.270] - 2026-10-26
 
