@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.354] - 2026-11-04
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,912 quests, 757 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,455 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,484 quests, 43 NPCs, 1 object
+- npc 2481 - Bliztik - updated
+  - coordinates: 2 spawn points added in Duskwood
+
 ## [0.2.353] - 2026-11-04
 
 Data from the PandaQuest portal.
@@ -300,24 +310,6 @@ Data from the PandaQuest portal.
   - reward items: counts corrected
 - npc 1030 - Black Slime - updated
   - coordinates: 40 spawn points added in Wetlands
-
-## [0.2.343] - 2026-11-03
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,907 quests, 704 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,235 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,231 quests, 43 NPCs, 1 object
-- quest 31789 - Pristine Petrified Bone Whip - updated
-  - reward items: counts corrected
-- quest 31799 - Pristine Empty Keg - updated
-  - reward items: counts corrected
-- quest 31801 - Pristine Gold-Inlaid Figurine - updated
-  - reward items: counts corrected
-- npc 502 - Benny Blaanco - updated
-  - coordinates: 4 spawn points added in Westfall
-- npc 70220 - Kirin Tor Captive - updated
-  - NPC level added (90)
 
 ## [0.2.270] - 2026-10-26
 
