@@ -25949,6 +25949,13 @@ ns.Overrides.wowhead = {
                 "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardChoices = {{42987, 1}, {44254, 1}, {44253, 1}, {44255, 1}},
         },
+        [13327] = {
+            description = "Now that you have gathered all of the Undeath cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{42990, 1}},
+        },
         [13343] = {
             description = "There you are! Or, were we just talking?\n\n< Chromie muses over the temporal " ..
                 "possibilities.>\n\nAnyway, the Infinites are after you! Well, not you per-se. Rather, " ..
@@ -30609,7 +30616,13 @@ ns.Overrides.wowhead = {
                 "and set them free, hero. We will need their aid when we confront Scourgelord Tyrannus.",
             rewardMoney = 296000,
         },
-        [24500] = {rewardMoney = 296000},
+        [24500] = {
+            description = "It's hard to believe that there is much hope of defeating Arthas upon the " ..
+                "steps of his own throne. And who will take up the crown of Lich King if it comes to " ..
+                "that?\n\nMany questions remain. but you need to find Jaina and escape the Lich King " ..
+                "while there's still time.",
+            rewardMoney = 296000,
+        },
         [24501] = {
             description = "The spiders keep coming in alarming numbers, <name>. You're going to have to " ..
                 "go into their lair and kill the broodmother.\n\nWe've spotted the giant spider known as " ..
@@ -48294,6 +48307,15 @@ ns.Overrides.wowhead = {
                 "look for a Warchief's Command to Hyjal on any Horde call board. See if you've already " ..
                 "completed this by typing:\n\n/run print(C_QuestLog.IsQuestFlaggedCompleted(29390))",
         },
+        [29391] = {
+            description = "The Guardians of Hyjal, led by Arch Druid Malfurion Stormrage, seek brave " ..
+                "heroes to assist in defending Mount Hyjal from elemental invaders. These invaders must " ..
+                "be repelled before forces can mobilize for a direct assault on the Firelands.\n\nWilling " ..
+                "and able-bodied heroes should report immediately to Mount Hyjal and assist the ancient " ..
+                "defenders: Goldrinn, Tortolla, Aviana, and Aessina.\n\nNew travelers to Mount Hyjal may " ..
+                "look for a Hero's Call to Hyjal on any Alliance board. See if you've already completed " ..
+                "this by typing:\n\n/run print(C_QuestLog.IsQuestFlaggedCompleted(29391))",
+        },
         [29408] = {
             description = "Every wisdom has a time and place, and times are changing for those of us " ..
                 "living here on Shen-zin Su. For this lesson, I would ask two things of you.\n\nFor the " ..
@@ -57000,6 +57022,10 @@ ns.Overrides.wowhead = {
                 "Yes, let's.",
             rewardMoney = 114000,
         },
+        [31855] = {
+            description = "The time has come for you to return to the Peak of Serenity to continue your " ..
+                "training. Use Zen Pilgrimage to return there and speak with Master Hight when you arrive.",
+        },
         [31856] = {
             description = "The time has come for you to venture to the Peak of Serenity to begin training " ..
                 "in the ways of the Monk. Use Zen Pilgrimage to go there and speak with Master Hight when " ..
@@ -61978,6 +62004,15 @@ ns.Overrides.wowhead = {
             },
             zoneID = 10,
         },
+        [659] = {
+            spawns = {
+                [361] = {
+                    {40.2, 46.2}, {40.4, 45.4}, {41, 44.4}, {41.2, 45.6}, {41.4, 45}, {41.6, 44.8},
+                    {41.8, 44.4}, {42, 43.4},
+                },
+            },
+            zoneID = 361,
+        },
         [698] = {
             spawns = {
                 [33] = {
@@ -65508,6 +65543,7 @@ ns.Overrides.wowhead = {
         [68048] = {maxLevel = 90, minLevel = 90},
         [68049] = {maxLevel = 90, minLevel = 90},
         [68050] = {maxLevel = 90, minLevel = 90},
+        [68086] = {subName = "Kirin Tor"},
         [68108] = {subName = "Leader of the Kirin Tor"},
         [68128] = {maxLevel = 90, minLevel = 90, subName = "The Metal Brewmaster"},
         [68130] = {maxLevel = 9999, minLevel = 9999},
@@ -65648,6 +65684,7 @@ ns.Overrides.wowhead = {
             zoneID = 6757,
         },
         [73145] = {subName = "Glorious Conquest Quartermaster"},
+        [73305] = {subName = "Timeless Artifacts"},
         [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
