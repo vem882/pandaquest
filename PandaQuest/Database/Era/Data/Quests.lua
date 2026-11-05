@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.0+v1.0.10 (Classic Era database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-05T00:07:55Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.1+v1.0.11 (Classic Era database + corrections from QuestieDB 1.0.11). DO NOT EDIT.
+-- Built: 2026-11-05T18:10:31Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -1025,14 +1025,14 @@ ns.Data.quests = [=[return {
 [1076] = {"Devils in Westfall",{{4078}},{{4078}},17,21,77,nil,{"Bring Dust Devil Debris to Collin Mauren in Stormwind."},nil,{nil,nil,{{5669}}},nil,nil,{1075},nil,nil,nil,406,nil,nil,nil,nil,1077,8,nil,nil,{{54,100},{72,100}}},
 [1077] = {"Special Delivery for Gaxim",{{4078}},{{4077}},17,21,77,nil,{"Bring the Scroll of Messaging to Gaxim Rustfizzle in Stonetalon."},nil,nil,5731,nil,{1076},nil,nil,nil,406,nil,nil,nil,nil,nil,nil,nil,nil,{{54,50}}},
 [1078] = {"Retrieval for Mauren",{{4078}},{{4078}},17,26,77,nil,{"Bring 8 Crystalized Scales to Collin Mauren in Stormwind."},nil,{nil,nil,{{5675}}},nil,nil,nil,nil,nil,nil,406,nil,nil,nil,nil,nil,8,nil,nil,{{54,100},{72,100}}},
-[1079] = {"Covert Ops - Alpha",{{4077}},{{4077}},17,22,77,nil,{"Retrieve the Venture Co.'s Engineering Plans from the lumber mill in Windshear Crag."},nil,{nil,nil,{{5718}}},5738,{1077,1074},{},nil,{1080},nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,nil,nil,nil,{{54,150}}},
-[1080] = {"Covert Ops - Beta",{{4077}},{{4077}},17,22,77,nil,{"Retrieve the Venture Co. Letters from Windshear Mine at the east end of Windshear Crag."},nil,{nil,nil,{{5717}}},5738,{1077,1074},{},nil,{1079},nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,nil,nil,nil,{{54,150}}},
+[1079] = {"Covert Ops - Alpha",{{4077}},{{4077}},17,22,77,nil,{"Retrieve the Venture Co.'s Engineering Plans from the lumber mill in Windshear Crag."},nil,{nil,nil,{{5718}}},5738,{1077,1074},{},nil,{1080},nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,nil,nil,nil,{{54,150}},nil,nil,{{nil,4,"Place the NG-5 Explosives (Blue)",0,{{"object",19591}}}}},
+[1080] = {"Covert Ops - Beta",{{4077}},{{4077}},17,22,77,nil,{"Retrieve the Venture Co. Letters from Windshear Mine at the east end of Windshear Crag."},nil,{nil,nil,{{5717}}},5738,{1077,1074},{},nil,{1079},nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,nil,nil,nil,{{54,150}},nil,nil,{{nil,4,"Place the NG-5 Explosives (Red)",0,{{"object",19600}}}}},
 [1081] = {"Reception from Tyrande",{{4079}},{{7999}},17,28,77,nil,{"Find Tyrande Whisperwind in Darnassus."},nil,nil,nil,nil,{1082},nil,nil,nil,406,nil,nil,nil,nil,nil,8,nil,nil,{{469,200}}},
 [1082] = {"Update for Sentinel Thenysil",{{4080}},{{4079}},17,22,77,nil,{"Return to Sentinel Thenysil in Ashenvale."},nil,nil,nil,{1083,1084},nil,nil,nil,nil,406,nil,nil,nil,nil,1081,8,nil,nil,{{69,50}}},
 [1083] = {"Enraged Spirits",{{4080}},{{4080}},20,26,77,nil,{"Bring 8 Smoldering Embers from any of the fire elementals in the Charred Vale to Kaela Shadowspear in Stonetalon."},nil,{nil,nil,{{5659}}},nil,nil,{1091},nil,{1084},nil,406,nil,nil,nil,nil,nil,8,nil,nil,{{69,100}}},
 [1084] = {"Wounded Ancients",{{4080}},{{4080}},22,28,77,nil,{"Bring a piece of Corroded Shrapnel to Kaela Shadowspear in Stonetalon."},nil,{nil,nil,{{5664}}},nil,nil,{1091},nil,{1083},nil,406,nil,nil,nil,nil,nil,8,nil,nil,{{69,100}}},
 [1085] = {"On Guard in Stonetalon",{{4080}},{{4077}},17,21,77,nil,{"Speak to Gaxim."},nil,nil,nil,nil,nil,nil,nil,nil,331,nil,nil,nil,nil,1071,8,nil,nil,{{54,25}},nil,{1070}},
-[1086] = {"The Flying Machine Airport",{{3419}},{{3419}},13,23,178,nil,{"Bring the Toxic Fogger to the Venture Co. sky port, then return to Apothecary Zamah."},{"Place the Toxic Fogger",{[406]={{66.44,45.46}}}},nil,5638,nil,{1067},nil,nil,nil,1638,nil,nil,nil,nil,nil,2,2,nil,{{68,150}}},
+[1086] = {"The Flying Machine Airport",{{3419}},{{3419}},13,23,178,nil,{"Bring the Toxic Fogger to the Venture Co. sky port, then return to Apothecary Zamah."},nil,{nil,{{19594}}},5638,nil,{1067},nil,nil,nil,1638,nil,nil,nil,nil,nil,2,2,nil,{{68,150}}},
 [1087] = {"Cenarius' Legacy",{{4198}},{{4198}},20,25,178,nil,{"Kill 4 Sons of Cenarius, 4 Daughters of Cenarius and 4 Cenarion Botanists for Braelyn Firehand near Sun Rock Retreat."},nil,{{{4057},{4053},{4051}}},nil,nil,nil,nil,nil,nil,406,nil,nil,nil,nil,1088,8,nil,nil,{}},
 [1088] = {"Ordanus",{{4198}},{{4198}},20,29,178,nil,{"Bring Ordanus' head to Braelyn Firehand near Sun Rock Retreat."},nil,{nil,nil,{{5686}}},nil,nil,{1087},nil,nil,nil,406,nil,nil,nil,nil,1089,8,nil,nil,{}},
 [1089] = {"The Den",{{4198}},{nil,{19599}},20,29,178,nil,{"Travel to the Den on Stonetalon Peak. Using the Gatekeeper's Key, obtain the druids' hidden items. Use these items to open the Talon Den Hoard."},nil,{nil,nil,{{5689},{5690},{5691}}},nil,nil,{1088},nil,nil,nil,406,nil,nil,nil,{5687},nil,8,nil,nil,{}},

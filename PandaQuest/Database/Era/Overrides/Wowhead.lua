@@ -4472,6 +4472,13 @@ ns.Overrides.wowhead = {
                 "up or broken horns, please!",
             rewardMoney = 9000,
         },
+        [979] = {
+            description = "Yes, yes, these feathers seem to hold the same magical enchantment that I " ..
+                "noticed previously... While I am not certain what we might find, I urge you to continue " ..
+                "searching for answers, <name>.\n\nA colleague of mine recently traveled into " ..
+                "Winterspring to observe the wildkin there, in their own habitat. Why don't you catch up " ..
+                "with her and see what she has found?",
+        },
         [980] = {
             description = "Now, I've heard about other hot springs in a place called Winterspring, far to " ..
                 "the north of here. The strange thing is, there are no volcanoes anywhere near them. " ..
@@ -17704,6 +17711,7 @@ ns.Overrides.wowhead = {
             spawns = {[28] = {{53.4, 24.6}, {53.8, 24.4}, {54, 24.6}, {54.6, 23.8}, {55, 23.4}}},
             zoneID = 28,
         },
+        [3879] = {spawns = {[331] = {{25.6, 30.6}, {25.8, 29.4}, {25.8, 30}}}},
         [4411] = {
             spawns = {
                 [15] = {
