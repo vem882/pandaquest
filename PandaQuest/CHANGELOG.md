@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.376] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,497 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,527 quests, 46 NPCs, 2 objects
+
 ## [0.2.375] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -152,22 +159,6 @@ Data from the PandaQuest portal.
   - coordinates: 27 spawn points added in Darkshore
 - npc 2170 - Blackwood Ursa - updated
   - coordinates: 19 spawn points added in Darkshore
-
-## [0.2.359] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 768 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,475 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,498 quests, 44 NPCs, 1 object
-- npc 436 - Blackrock Shadowcaster - updated
-  - coordinates: 40 spawn points added in Redridge Mountains
-- npc 2168 - Blackwood Warrior - updated
-  - coordinates: 19 spawn points added in Darkshore
-- npc 9605 - Blackrock Raider - updated
-  - coordinates: 6 spawn points added in Burning Steppes
-- npc 23881 - Apothecary Cylla - updated
-  - coordinates: 1 spawn point added in Dustwallow Marsh
 
 ## [0.2.270] - 2026-10-26
 
