@@ -267,6 +267,49 @@ function M.InvalidateSkills()
     wipe(skillCache)
 end
 
+-- A resource icon belongs to what the node yields, not to a generic profession dot.
+function M.GetNodeIcon(node)
+    if type(node) ~= "table" then return nil end
+    local id = node.objectId or node.id
+    local resource = ns.GatheringResources and ns.GatheringResources[id]
+    if resource and resource.icon and resource.kind == node.kind and (not node.name or node.name == resource.name) then
+        return resource.icon
+    end
+    local fallback = { mine = "Interface\\Icons\\Trade_Mining", herb = "Interface\\Icons\\Trade_Herbalism",
+        fish = "Interface\\Icons\\Trade_Fishing", chest = "Interface\\Icons\\INV_Misc_TreasureChest01",
+        rare = "Interface\\Icons\\Ability_Hunter_SniperShot" }
+    return fallback[node.kind]
+end
+
+-- The skill comes from the current character, refreshed on SKILL_LINES_CHANGED.
+-- Skill-up bands are Classic estimates, never percentages or claims about market value.
+function M.GatheringAdvice(node)
+    if type(node) ~= "table" then return nil end
+    local profession = KIND_PROFESSION[node.kind]
+    if not profession then return nil end
+    local rank, _, maxRank = M.GetSkillRank(profession)
+    if rank == nil then return { text = "Profession not learned", color = {1, .2, .2} } end
+    local resource = ns.GatheringResources and ns.GatheringResources[node.objectId or node.id]
+    local need = node.skill
+    if resource and resource.kind == node.kind and (not node.name or resource.name == node.name) then
+        if type(need) ~= "number" or need <= 0 then need = resource.skill end
+    end
+    local out = { rank = rank, required = need, color = {1, 1, 1}, text = "Skill-up chance unknown" }
+    if type(need) ~= "number" or need <= 0 then return out end
+    if rank < need then out.text = "Requires more skill"; out.color = {1, .2, .2}; return out end
+    if type(maxRank) == "number" and maxRank > 0 and rank >= maxRank then
+        out.text = "Skill cap reached"; out.color = {.55, .55, .55}; return out
+    end
+    local game = ns.Game and ns.Game.id
+    if game ~= "forever" and game ~= "era" and game ~= "anniversary" then return out end
+    local delta = rank - need
+    if delta < 25 then out.text = "Good for skill-ups (estimate)"; out.color = {1, .5, .1}
+    elseif delta < 50 then out.text = "Possible skill-up (estimate)"; out.color = {1, 1, .1}
+    elseif delta < 100 then out.text = "Low skill-up chance (estimate)"; out.color = {.2, 1, .2}
+    else out.text = "No skill-up expected"; out.color = {.55, .55, .55} end
+    return out
+end
+
 --- Professions.IsGatherable(node) -> bool, reason
 --   true, "noSkill"     nothing is required (a chest, a rare, or a node with no recorded skill)
 --   true, "skill"       the character's rank reaches node.skill
@@ -349,6 +392,11 @@ end
 local function dictionaryFor(id, unit)
     local defs = definitions()
     local def = defs and type(id) == "number" and defs[id] or nil
+    if not def and not unit then
+        local resource = ns.GatheringResources and ns.GatheringResources[id]
+        local name = ns.DB and ns.DB.GetObjectName and ns.DB.GetObjectName(id)
+        if resource and name == resource.name then def = resource end
+    end
     if type(def) ~= "table" or not KIND_SETTING[def.kind] then return nil end
     if (def.unit and true or false) ~= (unit and true or false) then return nil end
     return def

@@ -499,6 +499,16 @@ function M.BuildLines(node, lines)
             node.gatherable == false and COLOR_DIM or COLOR_VALUE, "skill")
     end
 
+    local professions = ns.Professions
+    local advice = professions and professions.GatheringAdvice and professions.GatheringAdvice(node)
+    if advice then
+        if advice.rank then
+            local value = tostring(advice.rank)
+            if advice.required then value = value .. " / " .. tostring(advice.required) end
+            addDouble(lines, tr("Your skill / required:"), value, advice.color, "gatheringRank")
+        end
+        addDouble(lines, tr("Gathering:"), tr(advice.text), advice.color, "gatheringAdvice")
+    end
     if kind and id then addRespawn(lines, kind, id, spawnKeyFor(node)) end
 
     -- A gathering node is drawn only where somebody took one (Nodes/Professions.lua), so these two

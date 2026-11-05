@@ -1061,3 +1061,15 @@ if not L then return end
 for key, value in pairs(T) do
     L[key] = value
 end
+
+-- Gathering skill advice
+L["Your skill / required:"] = "Oma taito / vaatimus:"
+L["Gathering:"] = "Keräily:"
+L["Profession not learned"] = "Ammattia ei ole opittu"
+L["Skill-up chance unknown"] = "Taitopisteen mahdollisuutta ei tunneta"
+L["Requires more skill"] = "Vaatii lisää taitoa"
+L["Skill cap reached"] = "Taitoraja saavutettu"
+L["Good for skill-ups (estimate)"] = "Hyvä taitopisteisiin (arvio)"
+L["Possible skill-up (estimate)"] = "Mahdollinen taitopiste (arvio)"
+L["Low skill-up chance (estimate)"] = "Pieni taitopisteen mahdollisuus (arvio)"
+L["No skill-up expected"] = "Ei odotettavaa taitopistettä"
