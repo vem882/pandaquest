@@ -5526,6 +5526,13 @@ ns.Overrides.wowhead = {
                 "happy, thanks to <name>.\n\nLearn Omosh dance of joy and then you learn fist of iron!",
             rewardItems = {{7982, 1}},
         },
+        [2757] = {
+            description = "Listen, kid, you're not gonna learn anything hanging around here.\n\nI know a " ..
+                "guy who knows a guy. He hangs around the smithy in Booty Bay. If you show him this " ..
+                "insignia, he'll tell you all about mithril.\n\nSo whadd'ya say? Leave this kid stuff to " ..
+                "the babies in diapers, <name> -- it's time to move on.\n\nIf you're interested, his " ..
+                "name's McGavan. Show him this trinket and he'll recognize your commitment.",
+        },
         [2759] = {
             description = "Although Galvan left Booty Bay many years ago, members of the order still " ..
                 "remain in town, hoping to one day find another worthy of Galvan's tutelage.\n\nTake this " ..
@@ -8225,6 +8232,10 @@ ns.Overrides.wowhead = {
                 "minimize the damage here in Ragefire Chasm. In the meantime, I will have my agents in " ..
                 "the Barrens and Ashenvale begin work on our newest agenda. Return to me soon.",
             rewardChoices = {{15443, 1}, {15445, 1}, {15424, 1}, {15444, 1}},
+        },
+        [5742] = {
+            description = "You have worked hard, friend. Rest your weary bones and allow me to properly " ..
+                "introduce myself.",
         },
         [5762] = {
             description = "I have a package for a new customer of mine, a dwarf named Hemet Nesingwary " ..
@@ -15774,6 +15785,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{31074, 1}},
             rewardMoney = 132000,
             rewardXP = 19000,
+        },
+        [10592] = {
+            description = "The scourgestones are weak when separated from the skeletal grasp that once " ..
+                "held them. Simply holding them in my hands has caused them to fracture and " ..
+                "break.\n\n<Mehlar crushes the scourgestones into a pile of rubble.>\n\nTake these " ..
+                "fragments to the Banshee Queen, Lady Sylvanas Windrunner, at her throne in Undercity. " ..
+                "With her lies the knowledge to turn these remains into a weapon against the Scourge.",
         },
         [10596] = {
             description = "The fortress of Legion Hold is your target. You'll have no reinforcements, so " ..
