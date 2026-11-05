@@ -1,21 +1,5 @@
--- Sync/Consent.lua: the question PandaQuest asks about itself, and only when it is asked for
---
--- Synchronisation is optional. Nothing in PandaQuest needs it: the quest database, the arrow, the
--- map and every other feature work with it off, and it is off by default. This file therefore does
--- NOT put a dialog on screen at login. A player who wants to take part turns it on under
--- /pq > Synchronisation, or types `/pq consent` to get the question below.
---
--- Four rules, and they are the whole module:
---
---   * **Off is the answer if nobody answers.** Closing the dialog, pressing Escape, or never
---     opening it leaves `enabled` false. Nothing is recorded in the meantime, because Telemetry's
---     `active` switch mirrors the setting and not the question.
---   * **Asked once per request, remembered either way.** `global.telemetry.asked` is set by both
---     buttons and by the dismissal, so "no" is remembered exactly as firmly as "yes".
---   * **The dialog says what is collected, in the words a player would use.** Coordinates and
---     times, per character. Not "usage data".
---   * **It changes nothing else.** Turning it on is `Telemetry.SetEnabled(true)`, the same call
---     the options panel makes, so there is one code path that starts the recorder.
+-- Ask once on the first login, with telemetry off until an explicit acceptance.
+-- Declining or dismissing is remembered; /pq consent can reopen the choice later.
 local _, ns = ...
 
 local M = ns.PQ:GetModule("Consent")   -- an AceAddon module (Core/Const.lua)
@@ -91,6 +75,7 @@ function M.Ask()
     local settings = telemetrySettings()
     if not settings then return false end
 
+    if StaticPopup_Visible and StaticPopup_Visible(POPUP) then return true end
     local dialog = StaticPopupDialogs and StaticPopupDialogs[POPUP]
     if StaticPopup_Show and dialog then
         dialog.button1 = L["Share my quest data"]
@@ -119,9 +104,20 @@ end
 
 function M.OnInitialize() end
 
---- Nothing is asked at login: synchronisation is optional, and a dialog nobody requested is a
--- nag. `/pq consent` and the options panel are the two ways in.
-function M.OnEnable() end
+--- Ask on first use only. A recorded answer is never replaced by a login or profile change.
+function M.OnEnable()
+    if not M.NeedsAsking() then return end
+    -- AceDB is ready here; wait until the first login frames have settled.
+    M:ScheduleTimer(function()
+        local settings = telemetrySettings()
+        if not M.NeedsAsking() then return end
+        if settings and settings.enabled == true then
+            markAsked() -- preserve an existing opt-in without asking again
+        else
+            M.Ask()
+        end
+    end, 1)
+end
 
 --- A profile change cannot un-ask the question: `asked` is global, not per profile.
 function M.OnProfileChanged() end
