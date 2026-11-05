@@ -8945,6 +8945,15 @@ ns.Overrides.wowhead = {
                 "altar of sorts... Hakkar, I think it was called.\n\nI think that this altar is the " ..
                 "secret -- you must bring this token to the altar in the Sunken Temple.",
         },
+        [3447] = {
+            description = "My memories are cloudy, but I will tell you what I can. The circle of statues " ..
+                "in the Sunken Temple, while dangerous, I believe that they hold the secret to unlock an " ..
+                "even greater treasure.\n\nFrom the main altar, I was able to activate a series of " ..
+                "lights. I think that if you can uncover what these lights mean, you might be able to " ..
+                "unlock whatever secrets are hiding in this room.\n\nI warn you though, <name>. Great " ..
+                "evil lies in the temple. It's likely that anything valuable will be fervently guarded...",
+            rewardItems = {{10773, 1}},
+        },
         [3448] = {
             description = "I've recently been handed the responsibility of investigating Azshara--a once " ..
                 "beautiful area the elves called home. This would be back when they practiced magic. It's " ..

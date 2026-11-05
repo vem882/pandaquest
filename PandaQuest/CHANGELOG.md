@@ -4,6 +4,21 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.362] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.6.0+v1.0.10 (was 12.5.1+v1.0.10)
+- database - Classic Era rebuilt from Questie 12.6.0+v1.0.10 (was 12.5.1+v1.0.10)
+- database - TBC Anniversary rebuilt from Questie 12.6.0+v1.0.10 (was 12.5.1+v1.0.10)
+- database - WoW Forever rebuilt from Questie 12.6.0+v1.0.10 (was 12.5.1+v1.0.10)
+- database - Wowhead data as the PandaQuest portal read it: 7,917 quests, 773 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,479 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,500 quests, 45 NPCs, 1 object
+- quest 8592 - Tiara of the Oracle - updated
+  - description added
+  - reward items: +1
+
 ## [0.2.361] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -161,41 +176,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 69751 - Agent Reginald - updated
   - NPC title added (Kirin Tor)
-
-## [0.2.351] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,910 quests, 749 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,399 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,411 quests, 43 NPCs, 1 object
-- quest 13325 - Darkmoon Chaos Deck - updated
-  - description added
-  - reward items: +1
-- quest 13326 - Darkmoon Nobles Deck - updated
-  - description added
-  - reward choices: +4
-- quest 27666 - Darkmoon Tsunami Deck - updated
-  - description added
-  - reward items: +1
-- quest 31629 - Scarlet Monastery Challenge Mode - Consolation (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- quest 31791 - Pristine Edicts of the Thunder King - updated
-  - description added
-  - reward items: +2
-- npc 5891 - Minor Manifestation of Earth - updated
-  - coordinates: 2 spawn points added in Mulgore
-  - coordinates: 1 spawn point added in Durotar
-- npc 68711 - Uda the Beast - updated
-  - NPC title added (Innkeeper)
-- npc 69347 - Incomplete Drakkari Colossus - updated
-  - NPC level added (92)
-- npc 73666 - Archiereus of Flame - updated
-  - NPC level added (93)
-- npc 245926 - Bloodtip - updated
-  - NPC level added (91)
-  - rank added (elite)
 
 ## [0.2.270] - 2026-10-26
 

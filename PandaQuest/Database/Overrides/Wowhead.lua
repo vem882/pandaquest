@@ -2763,6 +2763,15 @@ ns.Overrides.wowhead = {
                 "you.\n\nMatron Arena - as with all the trainers on Sunstrider Isle - is inside the " ..
                 "Sunspire on the lower level.",
         },
+        [8592] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21348, 1}},
+        },
         [8603] = {
             description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
                 "The terrible fate that awaits Azeroth could come in days or years; time has no meaning " ..
