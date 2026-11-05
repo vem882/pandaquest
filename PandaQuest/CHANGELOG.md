@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.382] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 781 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,499 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,531 quests, 46 NPCs, 2 objects
+- npc 69194 - Alliance Cannoneer - updated
+  - NPC level added (90)
+
 ## [0.2.381] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -164,19 +174,6 @@ Data from the PandaQuest portal.
 - quest 8592 - Tiara of the Oracle - updated
   - description added
   - reward items: +1
-
-## [0.2.361] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 773 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,478 quests, 26 NPCs, 5 objects
-- npc 2171 - Blackwood Shaman - updated
-  - coordinates: 14 spawn points added in Darkshore
-- npc 8581 - Blood Elf Defender - updated
-  - coordinates: 2 spawn points added in Azshara
-- npc 13084 - Bixi Wobblebonk - updated
-  - coordinates: 4 spawn points added in Ironforge
 
 ## [0.2.270] - 2026-10-26
 

@@ -16691,6 +16691,15 @@ ns.Overrides.wowhead = {
                 "luck; you shall need every bit of it!",
             rewardItems = {{22087, 1}, {22092, 1}, {22093, 1}},
         },
+        [8956] = {
+            description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
+                "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
+                "Valthalak's spell is to put the medallion back together. Return to Deliana and tell her " ..
+                "that Bodley is her only hope for finding the remaining pieces. Speak to her about any " ..
+                "rewards you've arranged for.\n\nI, for once, shall rest in peace. I wish you the best of " ..
+                "luck; you shall need every bit of it!",
+            rewardItems = {{22003, 1}, {22007, 1}, {22008, 1}},
+        },
         [8962] = {
             description = "<class>, listen closely. Now that we have the brazier, and the means to light " ..
                 "it, we still need another component to suffuse it with; something that will provide a " ..

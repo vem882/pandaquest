@@ -1573,6 +1573,15 @@ ns.Overrides.wowhead = {
                 "in the Wetlands.",
             rewardMoney = 2500,
         },
+        [338] = {
+            description = "Master Nesingwary will be so upset if he finds out!\n\nHe trusted me to " ..
+                "proofread the manuscript of his novel, The Green Hills of Stranglethorn. Everything was " ..
+                "going well, but a large gust of wind blew through the camp and scattered the pages " ..
+                "everywhere!\n\nI was able to gather most of the pages but many are still strewn about " ..
+                "the jungle. Collect the pages to complete each of the four chapters.\n\nI will help you " ..
+                "organize them. Return the chapters to me once you have all four.",
+            rewardItems = {{17688, 1}, {8173, 2}, {3928, 3}},
+        },
         [341] = {
             description = "Chapter III was my favorite. It tells of Sir Erlgadin and Lady Rouack's first " ..
                 "kill with a dwarven rifle. And the end of Chapter III, why, such a cliffhanger!\n\nLooks " ..
