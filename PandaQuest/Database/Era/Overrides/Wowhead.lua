@@ -5337,6 +5337,12 @@ ns.Overrides.wowhead = {
                 "sea, then take a ship from here to the lovely port of Theramore. Speak there with my " ..
                 "partner, the elf, Fiora Longears.\n\nShe'll start you on your Kalimdor adventure!",
         },
+        [1133] = {
+            description = "If you're fresh off the boat from Menethil, then the first thing you should do " ..
+                "is... go to Astranaar. I'm sure an eager member of the Alliance such as you can do some " ..
+                "real good there. Speak with Shindrell Swiftfire and offer your services.\n\nBut don't " ..
+                "bother mentioning who sent you. Shindrell does not know me...",
+        },
         [1134] = {
             description = "We are not in open war with the Horde, but our peace is fragile. We often find " ..
                 "their agents moving against us, but they do so covertly.\n\nOne such advance was " ..
@@ -7403,6 +7409,15 @@ ns.Overrides.wowhead = {
                 "you can kill a few and bring back some of their succulent meat, I may be persuaded to " ..
                 "show you the ways of strider stew.",
             rewardItems = {{5486, 1}, {5477, 5}},
+        },
+        [2199] = {
+            description = "I am a jeweler of great renown here in Ironforge! Well, former renown " ..
+                "anyway... I have fallen onto hard times due to the chicanery of a competitor! A bad " ..
+                "reputation in this business spells financial disaster. As a result, I find myself " ..
+                "without a copper to my good-though-currently-sullied name.\n\nI want you to get me five " ..
+                "silver bars to finish an order I received - the first in what seems like an " ..
+                "eternity.\n\nYou get me those five silver bars, and I'll answer your questions on the " ..
+                "necklace.",
         },
         [2201] = {
             description = "The paladin's journal has provided perhaps the only clues that Uldaman will " ..
