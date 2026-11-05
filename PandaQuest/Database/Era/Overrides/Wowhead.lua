@@ -5175,6 +5175,16 @@ ns.Overrides.wowhead = {
                 "with the dwarves.\n\nYou can find Grimand Elmore at the weapon shop in the Dwarven " ..
                 "District of Stormwind, in the northeast section of town.",
         },
+        [1098] = {
+            description = "In preparation for an assault on Shadowfang, two deathstalkers were sent to " ..
+                "the keep to gather intelligence. It has been many days and they have not returned, but " ..
+                "we must receive their report if we're to have any hope of a successful attack!\n\nSo " ..
+                "here is your task, <name>. Go to Shadowfang Keep to the south and find the Deathstalkers " ..
+                "Adamant and Vincent. Find them, and if they require aid then give it.\n\nThis mission is " ..
+                "as dangerous as is it critical, <name>. Do not fail.",
+            rewardItems = {{3324, 1}},
+            rewardMoney = 1800,
+        },
         [1101] = {
             description = "Poor Heralath! And this dwarf... Lonebrow. What a brave soul he was.\n\nWe " ..
                 "must not let their valiance go for naught. This crone... Charlga Razorflank... must be " ..

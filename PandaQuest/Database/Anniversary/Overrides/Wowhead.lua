@@ -3245,6 +3245,15 @@ ns.Overrides.wowhead = {
                 "<name>. You will find them lurking deep within the Wailing Caverns.",
             rewardChoices = {{6505, 1}, {6504, 1}},
         },
+        [917] = {
+            description = "Now that I have the spiders' venom, I'd like some live specimens to study. " ..
+                "Unfortunately, capturing a living, giant spider is more than I can ask of you, young " ..
+                "<class>. And a giant spider is more than I could handle myself!\n\nBut if you can find " ..
+                "an unhatched egg, then delivering specimens will be much easier, and I can then arrange " ..
+                "for the unhatched spiders to be contained.\n\nThere must be a nest deep in the " ..
+                "Shadowthread Cave. Please, search for an egg in the nest and return it to me.",
+            rewardChoices = {{5395, 1}, {4907, 1}, {11189, 1}},
+        },
         [923] = {
             description = "There is a malevolence growing in the timberlings. We are trying to find the " ..
                 "source, but until we do...in order to keep Teldrassil safe we must cut down the " ..
@@ -3372,6 +3381,16 @@ ns.Overrides.wowhead = {
                 "protection, I have no doubt that we can see these goods safely to Auberdine.",
             rewardChoices = {{5323, 1}, {6721, 1}},
             rewardMoney = 5000,
+        },
+        [978] = {
+            description = "Wildkin feathers from the Hinterlands appear to contain traces of magical " ..
+                "qualities. These powers... they don't seem to be wielded by the creatures, it's more " ..
+                "like they are simply inherent to the species -- part of their very essence.\n\nDuring my " ..
+                "studies, I heard that a large population of wildkin inhabit the snowy lands of " ..
+                "Winterspring. Could these creatures have the same powers? Please help me find an answer, " ..
+                "<name>. Go to Winterspring and gather feathers that have dropped to the ground, then " ..
+                "return to me.",
+            rewardMoney = 8500,
         },
         [979] = {
             description = "Yes, yes, these feathers seem to hold the same magical enchantment that I " ..
@@ -4968,6 +4987,14 @@ ns.Overrides.wowhead = {
                 "struggles.\n\nTo start, you must have crafted Robes of Arcana. A tailor can make this " ..
                 "for you, or perhaps you can purchase one from someone else--I'd be most impressed if you " ..
                 "could make it yourself--but regardless, bring me the robes, and we shall go from there.",
+        },
+        [1799] = {
+            description = "Good, then we shall begin.\n\nThe first thing you must do is speak to my " ..
+                "acolytes inside. Choose one of their paths to follow--they will explain more.\n\nSecond, " ..
+                "you must travel to Desolace and find an Infernal Orb from one of the warlocks of " ..
+                "Mannoroc Coven. It is that orb that you will cleanse with the help of a mage named " ..
+                "Tabetha deep in southern Dustwallow Marsh. She will aid you because of our history " ..
+                "together.\n\nAgain, do not come back until you have done both things I've asked.",
         },
         [1805] = {
             description = "This is one of the most interesting texts I have perused in the last few " ..
@@ -7449,6 +7476,13 @@ ns.Overrides.wowhead = {
                 "Orgrimmar.\n\nOnce you have spoken with Eitrigg, confer with the Warchief to find out " ..
                 "what he wishes to do about this problem.",
         },
+        [4964] = {
+            description = "I will get started immediately on crafting your orb and infusing your new " ..
+                "demon into it. When done, you will have the choice of having it in the form of a staff " ..
+                "or orb. I always felt it was important to cater to a warlock's chosen weapon... I see no " ..
+                "reason not to continue that practice.",
+            rewardChoices = {{15108, 1}, {15106, 1}},
+        },
         [4965] = {
             description = "Well, well, well... a pleasure to see you're growing in power, <name>. I'd " ..
                 "wager you'd be about ready to speak to Menara Voidrender in the Barrens. If you haven't " ..
@@ -7733,6 +7767,11 @@ ns.Overrides.wowhead = {
                 "there, for it was trampled and destroyed years ago, but under the monument is his " ..
                 "wedding ring. Take that ring to Chromie... a strange gnome with very strange " ..
                 "powers.\n\nChromie is staying in the ruined inn at the northwest corner of Andorhal.",
+        },
+        [5154] = {
+            description = "To save Joseph Redpath, we must first discover his past. We can learn this in " ..
+                "the Annals of Darrowshire, a book held in the city hall of Andorhal.\n\nBring me that " ..
+                "book. We can then learn Joseph's fate, and with luck... change it!",
         },
         [5156] = {
             description = "To the north, along the east of the road in what's called Shatter Scar Vale, " ..
@@ -8460,6 +8499,12 @@ ns.Overrides.wowhead = {
                 "best way to learn is for you to try out several creatures as companions and see what ya " ..
                 "like. So, find a large crag boar, then use the taming rod to tame it.",
             rewardXP = 840,
+        },
+        [6065] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Yaw Sharpmane in Bloodhoof " ..
+                "Village. He can put you on the path to earning a pet of your own.",
+            rewardXP = 85,
         },
         [6066] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
