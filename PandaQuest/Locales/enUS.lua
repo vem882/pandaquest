@@ -81,9 +81,9 @@ L["Database ready: %d quests, %d NPCs, %d objects, %d items (%d ms)."] = true
 L["PandaQuest database not found. Reinstall the addon: the Database/Data files are missing."] = true
 L["This PandaQuest database is for %s, but this game is %s. Quest data is off; install PandaQuest for this game."] = true
 L["Saved data from %s was set aside, not deleted (%s); this game starts its own."] = true
-L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] = true
+L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] = true -- luacheck: ignore 631 (localized text)
 L["WoW Forever beta data"] = true
-L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] = true
+L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] = true -- luacheck: ignore 631 (localized text)
 L["quests can still change before the game's launch on 4 November 2026."] = true
 
 -- Nav (arrow, router, TomTom)
@@ -733,7 +733,7 @@ L["Mark quest givers with a quest for you (!)"] = true
 L["Quest givers and turn-ins are friendly NPCs: their marks need friendly nameplates (Shift-V)."] = true
 
 -- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
-L["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] = true
+L["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] = true -- luacheck: ignore 631 (localized text)
 
 -- Where an item comes from (Map/Tooltips.lua) and quest chains (Quest/Catalog.lua, UI/QuestBrowser.lua)
 L["Show where items come from"] = true

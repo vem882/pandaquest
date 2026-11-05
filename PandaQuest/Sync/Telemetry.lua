@@ -12,6 +12,7 @@
 --   * Cheap: one table per recorded event and nothing else. The caller builds that table and hands
 --     ownership to Record(); the breadcrumb is an AceTimer that fires once per interval.
 local _, ns = ...
+local NameUtil = _G.NameUtil
 
 local M = ns.PQ:GetModule("Telemetry")   -- an AceAddon module (Core/Const.lua)
 ns.Telemetry = M

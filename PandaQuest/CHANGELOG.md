@@ -4,6 +4,11 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.377] - 2026-11-05
+
+- Bind the optional character-name helper explicitly for supported clients.
+- Remove a duplicate Finnish translation and mark intact translation keys for Lua lint.
+
 ## [0.2.376] - 2026-11-05
 
 Data from the PandaQuest portal.

@@ -88,11 +88,11 @@ local T = {
         "Tämä PandaQuestin tietokanta on pelille %s, mutta tämä peli on %s. Tehtävätiedot ovat pois päältä; asenna PandaQuest tälle pelille.",
     ["Saved data from %s was set aside, not deleted (%s); this game starts its own."] =
         "Pelin %s tallennetut tiedot siirrettiin sivuun, niitä ei poistettu (%s); tämä peli aloittaa omansa.",
-    ["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] =
-        "PandaQuestin tehtävätietokanta pelille %s tulee pelin julkaisun myötä (%s). Siihen asti nuolella, karttamerkeillä ja tehtävälistalla ei ole tietoja; kaikki muu toimii.",
+    ["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."] = -- luacheck: ignore 631 (localized text)
+        "PandaQuestin tehtävätietokanta pelille %s tulee pelin julkaisun myötä (%s). Siihen asti nuolella, karttamerkeillä ja tehtävälistalla ei ole tietoja; kaikki muu toimii.", -- luacheck: ignore 631 (localized text)
     ["WoW Forever beta data"] = "WoW Foreverin beetatiedot",
-    ["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] =
-        "Community.lua-tiedoston yhteisöopas on tehty pelille %s eikä pelille %s, joten sitä ei ladattu. Synkronoi PandaQuest-sovelluksella tämän pelin oma opas.",
+    ["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."] = -- luacheck: ignore 631 (localized text)
+        "Community.lua-tiedoston yhteisöopas on tehty pelille %s eikä pelille %s, joten sitä ei ladattu. Synkronoi PandaQuest-sovelluksella tämän pelin oma opas.", -- luacheck: ignore 631 (localized text)
     ["quests can still change before the game's launch on 4 November 2026."] =
         "tehtävät voivat vielä muuttua ennen pelin julkaisua 4. marraskuuta 2026.",
 
@@ -225,7 +225,6 @@ local T = {
     ["Portal page: %s"] =
         "Portaalin sivu: %s",
     ["Starts: %s"] = "Aloittaa: %s",
-    ["Turn in: %s"] = "Palauta: %s",
     ["Ends: %s"] = "Päättyy: %s",
 
     -- Map/NodeTooltip
@@ -1033,11 +1032,11 @@ local T = {
         "Tehtävänantajat ja palautuspaikat ovat ystävällisiä NPC:itä: niiden merkit tarvitsevat ystävälliset nimikilvet (Shift-V).",
 
     -- A TOC the game read before an update (Core/Init.lua, CheckLoadedFiles)
-    ["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] =
-        "PandaQuest päivittyi pelin ollessa käynnissä, ja peli käyttää yhä vanhaa tiedostoluetteloa: %s ei latautunut. Sulje World of Warcraft kokonaan ja käynnistä se uudelleen; /reload ei riitä.",
+    ["PandaQuest was updated while the game was running, and the game still uses the old file list: %s did not load. Quit World of Warcraft completely and start it again; /reload is not enough."] = -- luacheck: ignore 631 (localized text)
+        "PandaQuest päivittyi pelin ollessa käynnissä, ja peli käyttää yhä vanhaa tiedostoluetteloa: %s ei latautunut. Sulje World of Warcraft kokonaan ja käynnistä se uudelleen; /reload ei riitä.", -- luacheck: ignore 631 (localized text)
     -- Where an item comes from (Map/Tooltips.lua) and quest chains (Quest/Catalog.lua, UI/QuestBrowser.lua)
     ["Show where items come from"] = "Näytä, mistä esineet saa",
-    ["On item tooltips: the creatures that drop it, where it is found and who sells it."] = "Esineiden vihjeissä: mitkä olennot sitä pudottavat, mistä sen löytää ja kuka sitä myy.",
+    ["On item tooltips: the creatures that drop it, where it is found and who sells it."] = "Esineiden vihjeissä: mitkä olennot sitä pudottavat, mistä sen löytää ja kuka sitä myy.", -- luacheck: ignore 631 (localized text)
     ["Drops from: %s"] = "Pudottaa: %s",
     ["Found in: %s"] = "Löytyy: %s",
     ["Comes out of: %s"] = "Saa avaamalla: %s",
