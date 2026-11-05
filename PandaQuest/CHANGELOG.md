@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.372] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 779 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,493 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,513 quests, 46 NPCs, 1 object
+- npc 4720 - [Deprecated for 4.x]Rizzle Brassbolts - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 50335 - Alitus - updated
+  - coordinates: 4 spawn points added in Hillsbrad Foothills
+
 ## [0.2.371] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -173,24 +185,6 @@ Data from the PandaQuest portal.
   - coordinates: 3 spawn points added in Darkshore
 - npc 12957 - Blimo Gadgetspring - updated
   - coordinates: 1 spawn point added in Azshara
-
-## [0.2.355] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 758 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,461 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,487 quests, 44 NPCs, 1 object
-- quest 24725 - Crystal Charge - updated
-  - reward items: +1
-- quest 28755 - Annals of the Silver Hand - updated
-  - description added
-- quest 31377 - Attack At The Temple of the Jade Serpent - updated
-  - description added
-- quest 31380 - Trial At The Temple of the White Tiger - updated
-  - description added
-- npc 7029 - Blackrock Battlemaster - updated
-  - coordinates: 18 spawn points added in Burning Steppes
 
 ## [0.2.270] - 2026-10-26
 

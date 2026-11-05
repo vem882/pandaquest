@@ -8007,6 +8007,13 @@ ns.Overrides.wowhead = {
                 "here. On the other hand, quite the opposite is also possible. A Witherbark troll in " ..
                 "distress would probably do anything to find his way out of trouble...",
         },
+        [2783] = {
+            description = "We fight the wrong enemy, <name>.\n\nThe true power in these lands continues " ..
+                "to grow in strength and number while we squabble over scorched earth with orcs.\n\nDo we " ..
+                "continue to fight a war in these lands against the Horde, only to be routed one day by " ..
+                "the armies of the Burning Legion? It is futile.\n\nPut your differences aside, <name>, " ..
+                "speak with the fallen hero of the Horde. He knows the truth behind the Blasted Lands.",
+        },
         [2801] = {description = "Before we may continue, you must hear my story."},
         [2844] = {
             description = "I am no good, <name>. I was 'spose to be watchin' over my little friend, Shay, " ..
