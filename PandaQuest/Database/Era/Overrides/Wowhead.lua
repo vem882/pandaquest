@@ -2665,6 +2665,10 @@ ns.Overrides.wowhead = {
             rewardItems = {{3737, 1}, {3729, 3}},
             rewardMoney = 3000,
         },
+        [560] = {
+            description = "You know, <name>, I'd really rather not take these heads... Since you've " ..
+                "already got a handle on them, would you mind delivering them to Redpath for me?",
+        },
         [561] = {
             description = "Please inform Lieutenant Orinelle that I would like him to refocus his efforts " ..
                 "on the naga infesting the Eastern Strand. When he has results, tell him to report to me " ..
@@ -10184,6 +10188,14 @@ ns.Overrides.wowhead = {
         [4481] = {rewardItems = {{11642, 1}}},
         [4483] = {rewardItems = {{11644, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
+        [4489] = {
+            description = "You, <race>! Come here!\n\nYou're the one they call <name>, yes?\n\nI thought " ..
+                "as much. I will keep this short: you're growing in power, and it has been acknowledged. " ..
+                "And now, the time has come that you are rewarded for your efforts.\n\nGo to the Barrens. " ..
+                "There, above Ratchet, you'll find Strahad Farsan --perhaps you remember him? He would " ..
+                "have words with you. I wouldn't take long.",
+            rewardXP = 315,
+        },
         [4491] = {
             description = "Ugh... It's so hot...\n\nI was exploring this area, when all of a sudden, the " ..
                 "heat just became unbearable. I must be suffering from heat exhaustion.\n\nPlease, help " ..
@@ -11190,6 +11202,16 @@ ns.Overrides.wowhead = {
                 "next destination.\n\nWhen you are ready, the journey will begin. To the Plaguelands you " ..
                 "will go and to Jeziba you will speak.\n\nHe is a mortal as wise as the ancients and as " ..
                 "patient as the immovable earth. Find him in Andorhal.",
+        },
+        [5163] = {
+            description = "It's all ready, <name>!\n\nNow, I sent some mail to my friends already, " ..
+                "telling them that I have a surprise for them. This is where you come in!\n\nI'm going to " ..
+                "give you my mechanical yeti, and you need to surprise them by paying each of my friends " ..
+                "a visit, turning the yeti on and sending it towards them.\n\nOnce you have shown Legacki " ..
+                "in Everlook, Sprinkle in Gadgetzan, and Quixxil in Marshal's Refuge, come back and tell " ..
+                "me what happened!\n\nPlease bring my yeti back to me then, too.",
+            rewardItems = {{15778, 1}},
+            rewardMoney = 9000,
         },
         [5164] = {
             description = "A finer instrument of justice, Haleh could not have chosen. Read from the " ..
@@ -14716,6 +14738,8 @@ ns.Overrides.wowhead = {
             rewardChoices = {{19948, 1}, {19950, 1}, {19949, 1}},
         },
         [8184] = {rewardItems = {{19782, 1}}},
+        [8186] = {rewardItems = {{19784, 1}}},
+        [8187] = {rewardItems = {{19785, 1}}},
         [8191] = {rewardItems = {{19789, 1}}},
         [8192] = {rewardItems = {{19790, 1}}},
         [8193] = {rewardChoices = {{19970, 1}, {19979, 1}}, rewardMoney = 18000},
@@ -15021,6 +15045,14 @@ ns.Overrides.wowhead = {
                 "to herbs and spices you've never heard of. Calandrath might have enough knowledge of the " ..
                 "plants that grow in the desert to make sense of it.",
             rewardMoney = 8500,
+        },
+        [8314] = {
+            description = "We're on the verge of a breakthrough, <name>! The rubbings you recovered have " ..
+                "allowed us to recreate the glyphs on this crystalline prism. They are apparently a means " ..
+                "for the Qiraji and other unknown entities to communicate various messages to the " ..
+                "silithid.\n\nUnfortunately, that is all we could get out of the glyphs. We need to find " ..
+                "a way to unlock the messages hidden within the crystals.\n\nTake the glyphed crystal " ..
+                "prism to Geologist Larksbane at Cenarion Hold. She might be able to help.",
         },
         [8316] = {rewardItems = {{20699, 1}, {20710, 1}}},
         [8318] = {
@@ -15874,6 +15906,13 @@ ns.Overrides.wowhead = {
                 "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21367, 1}},
+        },
+        [8660] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "dominance and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21338, 1}},
         },
         [8664] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..

@@ -7064,6 +7064,15 @@ ns.Overrides.wowhead = {
                 "mighty <class>.",
             rewardChoices = {{11870, 1}, {11871, 1}, {11872, 1}},
         },
+        [4512] = {
+            description = "But the thing I've studied most is ooze. I know it sounds odd, but they're all " ..
+                "over!\n\nI helped a lady in Menethil find her bag not too long ago--it was eaten by " ..
+                "oozes. I've seen members of the Royal Apothecary Society from Undercity collecting " ..
+                "samples of the stuff. I want to know why! Where does it come from?\n\nI've heard of more " ..
+                "in Felwood. What I need are samples of the oozes there so I can further my research. " ..
+                "I'll give you containers, you use them to collect a sample from the deceased creatures.",
+            rewardMoney = 7500,
+        },
         [4561] = {rewardItems = {{15102, 1}}},
         [4581] = {
             description = "The druid Kayneth Stillwind sent word to me. He would like a report of the " ..
@@ -9544,6 +9553,12 @@ ns.Overrides.wowhead = {
                 "blocking the way into Nefarian's inner sanctum. Slay the foul aberration and return his " ..
                 "head to me. Do this and you may begin the next step of your journey.",
         },
+        [8302] = {
+            description = "Choose your deputies wisely, mortal. Each time you return with your task " ..
+                "complete, a new deputy you will be allowed to choose.\n\nWith that said, I require more " ..
+                "of the carapace fragments. Waste no time!",
+            rewardItems = {{20403, 1}},
+        },
         [8304] = {
             description = "My dear Natalia has gone missing.\n\nTruth be told, she had been acting " ..
                 "strangely for weeks leading up to her disappearance. I had caught her talking to herself " ..
@@ -10217,6 +10232,14 @@ ns.Overrides.wowhead = {
                 "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
                 "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
             rewardItems = {{21395, 1}},
+        },
+        [8730] = {
+            description = "Champion, is it you? A thousand years it has been since I was entrusted the " ..
+                "shard and it is at my darkest hour that one should rise to relieve me of it... But what " ..
+                "would tragedy be without cruelty?\n\n<Vaelastrasz coughs weakly.>\n\nNe... Nefarius now " ..
+                "holds the scepter shard.\n\nTime is of the essence. Nefarius plans to destroy the shard. " ..
+                "You must hurry!",
+            rewardChoices = {{21530, 1}, {21529, 1}},
         },
         [8732] = {rewardItems = {{20810, 1}}},
         [8736] = {
@@ -18863,6 +18886,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3483,
+        },
+        [15759] = {
+            spawns = {
+                [1377] = {
+                    {17.4, 26.8}, {19.2, 27}, {19.4, 29.4}, {19.4, 34.6}, {20, 29.2}, {20.2, 30},
+                    {20.4, 26.8}, {20.4, 30.6}, {20.6, 25}, {20.8, 26.6}, {21, 24}, {21, 25.8}, {21.2, 29.4},
+                    {21.2, 31}, {21.4, 30}, {21.4, 33.2}, {21.6, 24.4}, {21.6, 30.2}, {21.8, 30.8},
+                    {22, 29.2}, {22.2, 27.4}, {22.2, 28.2}, {22.4, 32.6}, {22.4, 34.8}, {22.8, 30.2},
+                    {22.8, 30.6}, {22.8, 32.6}, {22.8, 34.2}, {23, 29}, {23.2, 26.8}, {23.6, 27.6},
+                    {23.6, 30.8}, {23.8, 34.2}, {23.8, 34.6}, {24, 26.8}, {24, 33.4}, {24.6, 28.8},
+                    {24.6, 31.6}, {25, 28}, {25.4, 30.6},
+                },
+            },
+            zoneID = 1377,
         },
         [16141] = {
             spawns = {
