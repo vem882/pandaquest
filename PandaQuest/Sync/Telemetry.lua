@@ -176,7 +176,20 @@ end
 
 --- "Name-Realm" with the realm spaces removed, matching the hub's /characters/{name}-{realm} route.
 local function characterKey()
-    local name = (UnitName and UnitName("player")) or "Unknown"
+    local name, surname
+    if UnitName then name, surname = UnitName("player") end
+    name = name or "Unknown"
+    -- Forever's second return is the surname, not a cross-realm server name.
+    -- Use the client's formatter, which also supplies its canonical separator.
+    if ns.Game and ns.Game.id == "forever" then
+        if NameUtil and NameUtil.FormatUnitNameForDisplay then
+            name = NameUtil.FormatUnitNameForDisplay("player") or name
+        elseif surname and surname ~= "" then
+            local separator = Constants and Constants.CharacterNameSeparatorConsts
+                and Constants.CharacterNameSeparatorConsts.CHARACTERNAME_SURNAME_SEPARATOR or " "
+            if not name:find(separator, 1, true) then name = name .. separator .. surname end
+        end
+    end
     local realm
     if GetNormalizedRealmName then realm = GetNormalizedRealmName() end
     if not realm or realm == "" then
