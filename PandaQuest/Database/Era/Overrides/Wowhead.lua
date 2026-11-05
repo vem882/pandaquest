@@ -942,6 +942,14 @@ ns.Overrides.wowhead = {
                 "the forest's edge.\n\nTake this letter of response to your Master in Lakeshire.",
             rewardMoney = 250,
         },
+        [147] = {
+            description = "If the \"Collector\" is taking gold from our mines then he's stealing from the " ..
+                "kingdom! Bring the Collector to justice, and bring me the ring mentioned in the pickup " ..
+                "schedule you gave me. It may tell us whom the Collector is working for...\n\nThat Pickup " ..
+                "Schedule says the Collector is hiding out at the Brackwell Pumpkin Patch. You should " ..
+                "search for him there.",
+            rewardChoices = {{1360, 1}, {1183, 1}},
+        },
         [148] = {
             description = "Oh, what is a poor old man to do? I need some supplies from Darkshire, but the " ..
                 "village is so far away and I am so old and feeble...I would never make the trip.\n\nCan " ..
@@ -10086,6 +10094,14 @@ ns.Overrides.wowhead = {
                 "copy its text and bring it to me. Let's discover its secrets together!",
             rewardMoney = 7500,
         },
+        [4297] = {
+            description = "Sprite darters are omnivores--that means they eat both meat and vegetation. If " ..
+                "your egg here's gonna hatch, we best be prepared. Some good eats for these little guys " ..
+                "are flanks of meat, raw and juicy, believe it or not. I was never able to find out why, " ..
+                "but it has somethin' to do with Elune's plan for the elves... maybe they were to be " ..
+                "protectors or somethin', I don't know.\n\nI'll take care of the egg for now, why don't " ..
+                "you get me some good Silvermane stalker flanks for 'em to eat when he's hatched.",
+        },
         [4300] = {
             description = "Hmm, maybe there be somethin' you can do for the Hand now that me think 'bout " ..
                 "it. Yes, Jes'rimon could use your help for sure.\n\nIn Un'Goro Crater there be raptors " ..
@@ -11320,6 +11336,14 @@ ns.Overrides.wowhead = {
                 "assume he went down in flames but if there's a chance that even one box of his famous " ..
                 "tobacco is still intact...\n\nWhat do you say, <name>? Find a box for ol' Smokey?",
             rewardItems = {{13171, 1}},
+        },
+        [5219] = {
+            description = "One of the plague cauldrons is located in the field of a former farmhouse now " ..
+                "referred to as Dalson's Tears. Well, we shall shed no tears this day as we thwart the " ..
+                "Scourge and have them choke on their own fumes!\n\nGo to Dalson's Tears, almost due " ..
+                "north of Andorhal, and eliminate the cauldron lord there. It should have a key like the " ..
+                "last one did, allowing you into the cauldron. Use this bottle to obtain a sample from " ..
+                "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
         },
         [5228] = {
             description = "Within the lands of former Lordaeron are eight cauldrons - four in the west, " ..
