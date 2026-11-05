@@ -2102,6 +2102,15 @@ ns.Overrides.wowhead = {
                 "computed the coordinates of the robot for you; it crashed at the head of the river near " ..
                 "Skulk Rock!\"",
         },
+        [487] = {
+            description = "The road to Darnassus must be kept safe. Travelers heading from Dolanaar to " ..
+                "Darnassus have been reporting ruthless attacks by corrupted furbolgs from the Gnarlpine " ..
+                "tribe.\n\nImportant news and commerce travels to and from Darnassus by way of this road " ..
+                "daily. We cannot afford to have a rogue band of heathens terrorizing people.\n\nTake up " ..
+                "arms in the name of the sacred forest, <class>. Their den lies somewhere below this " ..
+                "vantage point. Slay 6 of these Gnarlpine ambushers and report back to me.",
+            rewardMoney = 225,
+        },
         [488] = {
             description = "Eager for work, I see. Lucky for you a day never goes by that I don't wish I " ..
                 "had a fledgling <class> to perform my bidding.\n\nYou see, <name>, I can make you very " ..
@@ -7012,6 +7021,15 @@ ns.Overrides.wowhead = {
                 "killed him not far from this spot.\n\nIf you want to provoke Lar'korwi, find a fresh " ..
                 "kill of his and take some of the meat from it.\n\nReturn to me afterwards.",
         },
+        [4296] = {
+            description = "I came to the Burning Steppes, following the legends of the Seven. They were " ..
+                "dwarves of great knowledge and power, and if you have knowledge and power, then wealth " ..
+                "is sure to follow.\n\nThat's what I want. Wealth!\n\nIf we can learn more of the Seven, " ..
+                "then maybe we can get rich together. The ruins of Thaurissan is rumored to keep the " ..
+                "Tablet of the Seven, which holds knowledge of the ancient dwarves. Find this tablet, " ..
+                "copy its text and bring it to me. Let's discover its secrets together!",
+            rewardMoney = 7500,
+        },
         [4297] = {
             description = "Sprite darters are omnivores--that means they eat both meat and vegetation. If " ..
                 "your egg here's gonna hatch, we best be prepared. Some good eats for these little guys " ..
@@ -7677,6 +7695,14 @@ ns.Overrides.wowhead = {
                 "Pinnacle. Show the proof of your deed to Cliffwatcher Longhorn in Freewind Post in order " ..
                 "to claim the reward.",
             rewardChoices = {{15471, 1}, {15470, 1}},
+        },
+        [5148] = {
+            description = "To learn tribal leatherworking demands an understanding of how primal nature " ..
+                "truly is; I know that you have already mastered the art of making wild leather armor, " ..
+                "and I am willing to complete your training.\n\nKnow this, <class>: by choosing this path " ..
+                "you agree never to learn dragonscale or elemental leatherworking; there is only room for " ..
+                "practice of one of the three arts. Furthermore, bring to me the finest samples of your " ..
+                "wild leather armor. From there, we will begin your mastery.",
         },
         [5150] = {rewardItems = {{15699, 1}}},
         [5151] = {
@@ -12435,6 +12461,12 @@ ns.Overrides.wowhead = {
                 "Cenarion Refuge.",
             rewardChoices = {{27734, 1}, {27735, 1}, {27733, 1}, {27730, 1}},
             rewardMoney = 29000,
+        },
+        [9732] = {
+            description = "Return to Ysiel and let her know that help will be extended to her as soon as " ..
+                "it is possible.\n\nAffairs in Moonglade and Silithus have kept our members occupied, but " ..
+                "we will do our best to send the necessary resources to the Cenarion Refuge.",
+            rewardChoices = {{25524, 1}, {25523, 1}, {25522, 1}},
         },
         [9734] = {
             description = "Return to Ysiel and let her know that help will be extended to her as soon as " ..
