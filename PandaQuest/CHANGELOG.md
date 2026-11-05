@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.371] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,492 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,510 quests, 46 NPCs, 1 object
+
 ## [0.2.364] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -184,16 +191,6 @@ Data from the PandaQuest portal.
   - description added
 - npc 7029 - Blackrock Battlemaster - updated
   - coordinates: 18 spawn points added in Burning Steppes
-
-## [0.2.354] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,912 quests, 757 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,455 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,484 quests, 43 NPCs, 1 object
-- npc 2481 - Bliztik - updated
-  - coordinates: 2 spawn points added in Duskwood
 
 ## [0.2.270] - 2026-10-26
 

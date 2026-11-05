@@ -4,6 +4,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.371
+- database - Classic Era: data from the PandaQuest portal: 2,492 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,510 quests, 46 NPCs, 1 object
+
 0.2.370
 - sync - Ask about optional telemetry once on first login and remember either answer
 
@@ -164,13 +168,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - description added
 - npc 7029 - Blackrock Battlemaster - updated
   - coordinates: 18 spawn points added in Burning Steppes
-
-0.2.354
-- database - Wowhead data as the PandaQuest portal read it: 7,912 quests, 757 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,455 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,484 quests, 43 NPCs, 1 object
-- npc 2481 - Bliztik - updated
-  - coordinates: 2 spawn points added in Duskwood
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

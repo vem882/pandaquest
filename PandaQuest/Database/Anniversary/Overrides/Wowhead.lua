@@ -3305,6 +3305,14 @@ ns.Overrides.wowhead = {
                 "divine how the Twilight's Hammer intends to exploit the magic of the elves.",
             rewardChoices = {{5757, 1}, {5615, 1}},
         },
+        [952] = {
+            description = "If you had enough time to run messages for the Oracle Tree, then I'm sure that " ..
+                "I can press you into service to deliver a message to the Grove of the Ancients in " ..
+                "Darkshore, due south of Auberdine.\n\nYou will most likely have to secure transport on a " ..
+                "hippogryph, but I have faith enough in you that you can manage that. Take this to Onu, " ..
+                "the Ancient of Lore. He has been awaiting word from me, even as I waited for news from " ..
+                "the Oracle Glade.",
+        },
         [954] = {
             description = "The ruins of Bashal'Aran to the east are overrun with demonic minions. The " ..
                 "sprites and satyrs that have taken up residence in the area feed upon the magical " ..
@@ -8000,6 +8008,14 @@ ns.Overrides.wowhead = {
                 "bolster their numbers by adding more undead to their ranks.\n\nEven the wildlife have " ..
                 "been transformed into rapacious, man eating beasts. I ask that you destroy those that " ..
                 "would strike from the skies: The Plaguebats.",
+        },
+        [5544] = {
+            description = "My food supplies are running low, <race>. I am ashamed to admit that I might " ..
+                "not have enough food to share with you.\n\nCould you assist an old man with a simple " ..
+                "task? Around here, the only manner of beast unaffected by the ravages of the Plague are " ..
+                "the Carrion worms. While rather bland in taste, the meat of the worms can easily be " ..
+                "preserved to last for months. I will need several hundred pounds to restock for the " ..
+                "coming winter!",
         },
         [5601] = {
             description = "I fled Lordaeron during the great war, and was lucky to escape before the " ..
