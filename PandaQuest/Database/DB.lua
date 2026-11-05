@@ -426,7 +426,7 @@ function DB.Load()
     if foreignCommunityGame and not saidForeignCommunity then
         saidForeignCommunity = true
         local Game = ns.Game
-        Log.Print(L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."],
+        Log.Print(L["The community guide in Community.lua was written for %s, not for %s, so it was not loaded. Run the PandaQuest app's sync for this game to get its own guide."], -- luacheck: ignore 631 (localized text)
             Game and Game.Name(foreignCommunityGame) or tostring(foreignCommunityGame),
             Game and Game.Name(Game.id) or "?")
     end
@@ -439,7 +439,7 @@ function DB.Load()
         if not saidPending then
             saidPending = true
             local Game = ns.Game
-            Log.Print(L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."],
+            Log.Print(L["PandaQuest's quest database for %s comes with the game's launch (%s). Until then the arrow, the map pins and the quest list have no data; everything else works."], -- luacheck: ignore 631 (localized text)
                 Game and Game.Name(Data.game or Game.id) or tostring(Data.game), tostring(Data.pending))
         end
         ready = false
