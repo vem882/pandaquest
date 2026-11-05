@@ -331,7 +331,9 @@ end
 function M.ApplyNode(pin, spec, minimap)
     if not pin or not pin.texture or not pin.texture.SetTexture then return nil end
     local texture, outline, count = pin.texture, pin.outline, pin.count
-    local dot = M.UsesDot(spec)
+    local professionIcon = spec and spec.layer == "profession" and ns.Professions
+        and ns.Professions.GetNodeIcon and ns.Professions.GetNodeIcon(spec)
+    local dot = not professionIcon and M.UsesDot(spec)
     local cluster = dot and spec.count ~= nil and spec.count > 1
     local size = dot and M.GetNodeSize(minimap, cluster) or M.GetSize(minimap)
 
@@ -343,6 +345,23 @@ function M.ApplyNode(pin, spec, minimap)
     if pin.SetSize then pin:SetSize(frameSize, frameSize) end
     if texture.SetSize then texture:SetSize(frameSize, frameSize) end
 
+    if texture.SetDesaturated then texture:SetDesaturated(false) end
+    if outline and outline.SetVertexColor then outline:SetVertexColor(1, 1, 1, 1) end
+    if professionIcon then
+        texture:SetTexture(professionIcon)
+        if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
+        local advice = ns.Professions.GatheringAdvice and ns.Professions.GatheringAdvice(spec)
+        if outline then
+            outline:SetTexture("Interface\\Buttons\\UI-Quickslot2")
+            if outline.SetSize then outline:SetSize(frameSize * 1.35, frameSize * 1.35) end
+            if advice and outline.SetVertexColor then
+                outline:SetVertexColor(advice.color[1], advice.color[2], advice.color[3], 1)
+            end
+            outline:Show()
+        end
+        if count then count:Hide() end
+        return "icon", frameSize
+    end
     if dot then
         texture:SetTexture(M.Get("node"))
         if texture.SetVertexColor then

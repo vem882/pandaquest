@@ -79,6 +79,7 @@ Map\NodeTooltip.lua
 Map\Pins.lua
 Map\Tooltips.lua
 Nodes\Respawn.lua
+Nodes\Resources.lua
 Nodes\Professions.lua
 Flight\Routes.lua
 Flight\Eta.lua

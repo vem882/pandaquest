@@ -751,3 +751,15 @@ L["%s, the last one"] = true
 L["%s (this quest)"] = true
 L["Not part of a chain."] = true
 L["Click: the next step. Right-click: the step before."] = true
+
+-- Gathering skill advice
+L["Your skill / required:"] = true
+L["Gathering:"] = true
+L["Profession not learned"] = true
+L["Skill-up chance unknown"] = true
+L["Requires more skill"] = true
+L["Skill cap reached"] = true
+L["Good for skill-ups (estimate)"] = true
+L["Possible skill-up (estimate)"] = true
+L["Low skill-up chance (estimate)"] = true
+L["No skill-up expected"] = true
