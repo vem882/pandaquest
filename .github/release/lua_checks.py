@@ -582,5 +582,29 @@ class AceDBKeepsTheTag(unittest.TestCase):
         self.assertEqual(saved(rt, db.profileKeys), '{\n\t["Testpanda - Mirage Raceway"] = "Default",\n}')
 
 
+
+@needs_lua
+class TelemetryFullNames(unittest.TestCase):
+    def test_forever_keeps_both_names_and_other_games_keep_their_realm_separate(self):
+        source = (ADDON_DIR / "Sync/Telemetry.lua").read_text()
+        start = source.index("local function characterKey()")
+        stop = source.index("local function clientBuild()", start)
+        function = source[start:stop] + " return characterKey()"
+        for game, surname, formatter, expected in (
+            ("forever", "Noutaja", False, "Tohtori Noutaja"),
+            ("forever", "Noutaja", True, "Tohtori Noutaja"),
+            ("forever", None, False, "Tohtori"),
+            ("mop", "OtherRealm", False, "Tohtori"),
+        ):
+            with self.subTest(game=game, surname=surname, formatter=formatter):
+                rt = runtime()
+                rt.globals().ns = rt.table_from({"Game": rt.table_from({"id": game})})
+                rt.globals().UnitName = lambda unit: ("Tohtori", surname)
+                rt.execute('GetNormalizedRealmName = function() return "Realm" end')
+                if formatter:
+                    rt.execute('NameUtil = { FormatUnitNameForDisplay = function() return "Tohtori Noutaja" end }')
+                self.assertEqual(rt.execute(function), (expected + "-Realm", expected, "Realm"))
+
+
 if __name__ == "__main__":
     unittest.main()
