@@ -4,6 +4,60 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.363] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 774 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,486 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,503 quests, 46 NPCs, 1 object
+- quest 8561 - Conqueror's Crown - updated
+  - description added
+  - reward items: +1
+- quest 8562 - Conqueror's Breastplate - updated
+  - description added
+  - reward items: +1
+- quest 8594 - Mantle of the Oracle - updated
+  - description added
+  - reward items: +1
+- quest 8596 - Footwraps of the Oracle - updated
+  - description added
+  - reward items: +1
+- quest 8602 - Stormcaller's Pauldrons - updated
+  - description added
+  - reward items: +1
+- quest 8622 - Stormcaller's Hauberk - updated
+  - description added
+  - reward items: +1
+- quest 8624 - Stormcaller's Leggings - updated
+  - description added
+  - reward items: +1
+- quest 8626 - Striker's Footguards - updated
+  - description added
+  - reward items: +1
+- quest 8627 - Avenger's Breastplate - updated
+  - description added
+  - reward items: +1
+- quest 8630 - Avenger's Pauldrons - updated
+  - description added
+  - reward items: +1
+- quest 8641 - Deathdealer's Spaulders - updated
+  - description added
+  - reward items: +1
+- quest 8657 - Striker's Diadem - updated
+  - description added
+  - reward items: +1
+- quest 8661 - Doomcaller's Robes - updated
+  - description added
+  - reward items: +1
+- quest 8664 - Doomcaller's Mantle - updated
+  - description added
+  - reward items: +1
+- quest 29208 - An Old Friend - updated
+  - reward items: +1
+- npc 50354 - Allestria - updated
+  - coordinates: 11 spawn points added in Kun-Lai Summit
+
 ## [0.2.362] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -149,33 +203,6 @@ Data from the PandaQuest portal.
   - NPC title added (Kirin Tor)
 - npc 73305 - Mistweaver Ai - updated
   - NPC title added (Timeless Artifacts)
-
-## [0.2.352] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,909 quests, 753 NPCs, 2 objects
-- database - flight times: 8 measured, 1,625 estimated
-- database - Classic Era: data from the PandaQuest portal: 2,431 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,455 quests, 43 NPCs, 1 object
-- quest 13567 - Spirit of the Stag - updated
-  - description added
-- quest 13997 - If You're Reading This While I'm In Combat... - updated
-  - description added
-- quest 31498 - Jade Serpent Challenge Mode - Consolation (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- quest 31627 - Mogu'shan Palace Challenge Mode - Consolation (Nth) - updated
-  - reward money removed (11g 40s)
-  - XP removed (177,000)
-- npc 485 - Blackrock Outrunner - updated
-  - coordinates: 40 spawn points added in Redridge Mountains
-- npc 14368 - Lorekeeper Lydros - updated
-  - NPC title added (House of Shen'dralar)
-- npc 68006 - Sha-Touched Footman - updated
-  - NPC level added (90)
-- npc 69751 - Agent Reginald - updated
-  - NPC title added (Kirin Tor)
 
 ## [0.2.270] - 2026-10-26
 
