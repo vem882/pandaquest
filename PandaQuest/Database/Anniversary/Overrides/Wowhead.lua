@@ -9536,6 +9536,7 @@ ns.Overrides.wowhead = {
                 "his demise will reverse the damage done to the spirit realm!",
             rewardItems = {{20134, 1}},
         },
+        [8260] = {rewardItems = {{20233, 1}}},
         [8261] = {rewardItems = {{20236, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
         [8264] = {rewardItems = {{20230, 1}}},
@@ -10436,6 +10437,15 @@ ns.Overrides.wowhead = {
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
             rewardItems = {{22011, 1}},
+        },
+        [8909] = {
+            description = "Well met, <class>. I've something that might interest you.\n\nI have in my " ..
+                "possession a set of armor much like the one worn by those of your profession, but of " ..
+                "much higher quality. I'd be willing to trade the bracers for ordinary ones in exchange " ..
+                "for a small favor.\n\nThe blood of the frostsabers and bears that inhabit Winterspring " ..
+                "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
+                "the bracers and a small amount of gold. You shall find the effort worth your while.",
+            rewardItems = {{22079, 1}},
         },
         [8917] = {
             description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..

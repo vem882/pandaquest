@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.373] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,496 quests, 26 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,515 quests, 46 NPCs, 1 object
+
 ## [0.2.372] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -171,20 +178,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,495 quests, 44 NPCs, 1 object
 - npc 1393 - Berserk Trogg - updated
   - coordinates: 40 spawn points added in Loch Modan
-
-## [0.2.356] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 761 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,466 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,494 quests, 44 NPCs, 1 object
-- npc 4065 - Blackrock Sentry - updated
-  - coordinates: 40 spawn points added in Redridge Mountains
-- npc 11713 - Blackwood Tracker - updated
-  - coordinates: 3 spawn points added in Darkshore
-- npc 12957 - Blimo Gadgetspring - updated
-  - coordinates: 1 spawn point added in Azshara
 
 ## [0.2.270] - 2026-10-26
 

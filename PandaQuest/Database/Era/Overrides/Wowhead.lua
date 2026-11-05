@@ -4193,6 +4193,14 @@ ns.Overrides.wowhead = {
                 "in the highest room atop Aldrassil.\n\nWe may live long lives, but it's best you not " ..
                 "keep him waiting too long.",
         },
+        [922] = {
+            description = "<name>, can you take one of the seeds you brought me to my friend, Rellian " ..
+                "Greenspyre? He is a druid in Darnassus, and when last we spoke he revealed his interest " ..
+                "in my work with the Timberlings. He had some ideas himself, and he will appreciate a " ..
+                "specimen seed to work with.\n\nThank you, <name>. You have been a great help to me. I " ..
+                "hope that, some day, you will see the fruit of my labors.\n\nYou will usually find " ..
+                "Rellian walking the pathways of the Cenarian Enclave in Darnassus.",
+        },
         [924] = {
             description = "The Demon Seed is a powerful tool for the Burning Legion. It rests in a cave " ..
                 "on Dreadmist Peak, above a demonic altar of fire.\n\nI have prepared power stones that " ..
@@ -4528,6 +4536,14 @@ ns.Overrides.wowhead = {
                 "head there on my own since I'll probably be moving faster than you.",
             rewardItems = {{6659, 1}},
             rewardMoney = 600,
+        },
+        [997] = {
+            description = "Are you heading to the south? To Lake Al'Ameth? If so, then I have a task I " ..
+                "might ask of you...\n\nMy colleague Denalan has a camp along the eastern end of the " ..
+                "lake, where he is studying and experimenting on the plant life of Teldrassil. He " ..
+                "requested a package of rare earths from Darnassus and it was late, only recently " ..
+                "arriving here in Dolanaar.\n\nCan you take the package to him?",
+            rewardMoney = 50,
         },
         [1000] = {
             description = "Attention, heroes!\n\nThe Cenarion Circle seeks able bodied individuals to " ..
@@ -15851,6 +15867,7 @@ ns.Overrides.wowhead = {
                 "steaks and bring them back to me here. You got all that?",
             rewardItems = {{21438, 10}, {21510, 1}},
         },
+        [8612] = {rewardItems = {{21438, 1}, {21510, 1}}},
         [8613] = {
             description = "It be a nice day for fishin', don't'cha think mon? Good thing, cuz I be " ..
                 "needin' a lot of fish it lookin' like. The Horde, they askin' me to be in charge of " ..
