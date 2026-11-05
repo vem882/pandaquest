@@ -1052,6 +1052,18 @@ local T = {
     ["Click: the next step. Right-click: the step before."] = "Napsautus: seuraava vaihe. Oikea napsautus: edellinen vaihe.",
 }
 
+-- Gathering skill advice
+T["Your skill / required:"] = "Oma taito / vaatimus:"
+T["Gathering:"] = "Keräily:"
+T["Profession not learned"] = "Ammattia ei ole opittu"
+T["Skill-up chance unknown"] = "Taitopisteen mahdollisuutta ei tunneta"
+T["Requires more skill"] = "Vaatii lisää taitoa"
+T["Skill cap reached"] = "Taitoraja saavutettu"
+T["Good for skill-ups (estimate)"] = "Hyvä taitopisteisiin (arvio)"
+T["Possible skill-up (estimate)"] = "Mahdollinen taitopiste (arvio)"
+T["Low skill-up chance (estimate)"] = "Pieni taitopisteen mahdollisuus (arvio)"
+T["No skill-up expected"] = "Ei odotettavaa taitopistettä"
+
 ns.LOCALE_TABLES = ns.LOCALE_TABLES or {}
 ns.LOCALE_TABLES.fiFI = T
 
@@ -1061,14 +1073,3 @@ for key, value in pairs(T) do
     L[key] = value
 end
 
--- Gathering skill advice
-L["Your skill / required:"] = "Oma taito / vaatimus:"
-L["Gathering:"] = "Keräily:"
-L["Profession not learned"] = "Ammattia ei ole opittu"
-L["Skill-up chance unknown"] = "Taitopisteen mahdollisuutta ei tunneta"
-L["Requires more skill"] = "Vaatii lisää taitoa"
-L["Skill cap reached"] = "Taitoraja saavutettu"
-L["Good for skill-ups (estimate)"] = "Hyvä taitopisteisiin (arvio)"
-L["Possible skill-up (estimate)"] = "Mahdollinen taitopiste (arvio)"
-L["Low skill-up chance (estimate)"] = "Pieni taitopisteen mahdollisuus (arvio)"
-L["No skill-up expected"] = "Ei odotettavaa taitopistettä"

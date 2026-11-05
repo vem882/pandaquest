@@ -4,6 +4,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.379
+- localization - Apply gathering skill advice when Finnish is selected in addon settings.
+
+0.2.377
+- compatibility - Bind the optional character name helper explicitly for Lua checks.
+- localization - Remove a duplicate Finnish translation and preserve long translation keys in lint.
+
 0.2.376
 - database - Classic Era: data from the PandaQuest portal: 2,497 quests, 26 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,527 quests, 46 NPCs, 2 objects
