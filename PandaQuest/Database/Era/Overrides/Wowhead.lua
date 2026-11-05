@@ -8490,6 +8490,14 @@ ns.Overrides.wowhead = {
                 "teach you about more powerful summonings--I feel you are ready. Go to him now. He is in " ..
                 "Ratchet... above the port town next to his tower.",
         },
+        [2997] = {
+            description = "Hello, <name>. I know you're busy helping out the people of Dun Morogh, but " ..
+                "when you have the time, you should make your way up to Ironforge to speak to one of our " ..
+                "most respected ilk: Tiza Battleforge. She's the one the younger paladins go to when it's " ..
+                "time they learn more about the Light and what's expected of ya.\n\nYou can find her " ..
+                "upstairs in the Hall of Mysteries. If you've never been there, it's in the Mystic Ward. " ..
+                "Good luck to ya, <name>.",
+        },
         [3000] = {
             description = "Hello, <name>. I know you're busy helping out the people of Azeroth, but when " ..
                 "you have the time, you should return to Ironforge and speak to one of the most respected " ..
@@ -12111,6 +12119,16 @@ ns.Overrides.wowhead = {
                 "books--she would like to \"borrow\" these books from them. You will get them for her.",
             rewardChoices = {{15449, 1}, {15450, 1}, {15451, 1}},
         },
+        [5726] = {
+            description = "One thing I will not tolerate are traitors in our midst, <name>. But I would " ..
+                "be a fool to play my hand so early--it would not sufficiently cut the corruption out of " ..
+                "our lands and only cause the infection to grow worse.\n\nBut you, a young adventurer, " ..
+                "could go places my agents could not... could learn the truth... could find the true head " ..
+                "of the beast.\n\nIf you are brave enough, then enter Skull Rock to the east of " ..
+                "Orgrimmar, find a lieutenant's insignia off one of the Burning Blade there, and return " ..
+                "to me.",
+            rewardMoney = 250,
+        },
         [5727] = {
             description = "Now let us see if this insignia you found is worth the effort.\n\nThere is a " ..
                 "warlock within the city who believes he has my trust. He does not know that I realize " ..
@@ -15144,6 +15162,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 9000,
         },
         [8362] = {rewardItems = {{20603, 1}}},
+        [8363] = {rewardItems = {{20601, 1}}},
         [8364] = {rewardItems = {{20602, 1}}},
         [8365] = {
             description = "You're the help the Cartel sent? I suppose you'll do. Listen carefully " ..
