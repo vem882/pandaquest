@@ -1476,6 +1476,16 @@ ns.Overrides.wowhead = {
                 "time to finish the drive.\n\nNow make haste!",
             rewardMoney = 2500,
         },
+        [304] = {
+            description = "Many of my soldiers died in the battle of Dun Modr. My own brother perished " ..
+                "when the West Bridge over the Thandol Span was destroyed. Aye, the Dark Iron dwarves are " ..
+                "a devilish breed. From what Roggo was able to gather, the leader of the thugs in the " ..
+                "Wetlands is a warlock named Balgaras the Foul. He is quite a coward, sending his " ..
+                "soldiers to do his bidding but hides in his camp on Direforge Hill, to the " ..
+                "southeast.\n\nIf you can find the spineless scum, slay him and bring me his ear. I will " ..
+                "reward you, <class>.",
+            rewardChoices = {{2916, 1}, {2917, 1}},
+        },
         [305] = {
             description = "Oh my, you must be the scout Longbraid said he would send! You cannot imagine " ..
                 "how worried I have been.\n\nMy wife, Merrin, has been sending me letters each week for " ..
@@ -1694,6 +1704,16 @@ ns.Overrides.wowhead = {
                 "me, <name>, so that I can continue to serve the cause.",
             rewardChoices = {{3833, 1}, {5939, 1}},
             rewardMoney = 225,
+        },
+        [378] = {
+            description = "You have proven your loyalty to King Magni, <class>. And your hatred for the " ..
+                "Dark Iron scum is as great as my own.\n\nThere is a task I wish to complete myself but I " ..
+                "am bound by honor to stay with Longbraid. But Roggo has gathered intelligence that " ..
+                "proves Kam Deepfury was a conspirator in the attack on the Thandol Span. It was by " ..
+                "Deepfury's planning that Longbraid lost his kin.\n\nDeepfury is being held for political " ..
+                "reasons in the Stormwind Stockade. I want him dead, <name>. For Longbraid! Bring me his " ..
+                "head!",
+            rewardChoices = {{3562, 1}, {1264, 1}},
         },
         [385] = {
             description = "Many a hunter is attracted to Loch Modan to hunt our famous crocs. There are " ..
@@ -5887,6 +5907,15 @@ ns.Overrides.wowhead = {
                 "Ward.",
             rewardXP = 225,
         },
+        [3001] = {
+            description = "I have taught you skills in the past, but the time has come for another to " ..
+                "teach you. He is in Ratchet, and his name is Strahad. He is human, but do not let that " ..
+                "fool you into thinking he is weak, nor is he your enemy... at least for now. He is " ..
+                "powerful and should be respected. He can teach you about greater summonings, summonings " ..
+                "I feel you are prepared for. Go to him now.\n\nYou can find him in Ratchet... above the " ..
+                "port town next to the tower there.",
+            rewardXP = 610,
+        },
         [3022] = {
             description = "<name>, I can see you yearn to be dedicated to my worthwhile cause. Yes, of " ..
                 "course, you can do something for me!\n\nTake this crate of eggs to Erelas Ambersky. He " ..
@@ -9081,6 +9110,11 @@ ns.Overrides.wowhead = {
         },
         [7499] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18466, 1}}},
         [7506] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18470, 1}}},
+        [7507] = {
+            description = "You have uncovered something of great importance. This book is unlike any that " ..
+                "you have seen.\n\nIt would appear as if someone or something has managed to shatter the " ..
+                "seal of Athenaeum. The text within is garbled and barely legible.",
+        },
         [7508] = {description = "If you wish to take on this task, present Lydros with the dull blade."},
         [7541] = {rewardChoices = {{18585, 1}, {18586, 1}}, rewardMoney = 15000},
         [7562] = {
@@ -13821,6 +13855,14 @@ ns.Overrides.wowhead = {
                 "and ultimately see the spirits. You will need to be under its influence if you are to " ..
                 "speak with Mother Kashur.\n\nYou will find her a great ways to the southwest, at the " ..
                 "Ancestral Grounds.",
+        },
+        [10085] = {
+            description = "I need for you to journey to the villages of the ancestors, <name>. Seek each " ..
+                "one out and see if the ancestors remain.\n\nVisit Sunspring Post to the north, visit the " ..
+                "Laughing Skull Ruins far to the north against the mountains, visit Garadar to the " ..
+                "northeast, and finally, visit the Bleeding Hollow Ruins on the borders of Nagrand and " ..
+                "the Terokkar Forest, to the east.\n\nReturn to me once you have observed the ancestors " ..
+                "in their homes.",
         },
         [10086] = {
             description = "Would you believe it? These orcs hired me to help them shore up damaged " ..
