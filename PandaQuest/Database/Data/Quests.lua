@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.0+v1.0.10 (MoP database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-05T00:07:55Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.1+v1.0.11 (MoP database + corrections from QuestieDB 1.0.11). DO NOT EDIT.
+-- Built: 2026-11-05T18:10:31Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -947,8 +947,8 @@ ns.Data.quests = [=[return {
 [1076] = {"Devils in Westfall",nil,{{4078}},17,21,18875469,nil,{"Bring Dust Devil Debris to Collin Mauren in Stormwind."},nil,{nil,nil,{{5669}}},nil,nil,{1075},nil,nil,nil,406,nil,nil,nil,nil,1077,16392,nil,nil,{{54,5},{72,5}}},
 [1077] = {"Special Delivery for Gaxim",nil,{{4077}},17,21,18875469,nil,{"Bring the Scroll of Messaging to Gaxim Rustfizzle in Stonetalon."},nil,nil,5731,nil,{1076},nil,nil,nil,406,nil,nil,nil,nil,nil,16384,nil,nil,{{54,3}}},
 [1078] = {"Retrieval for Mauren",nil,{{4078}},17,26,18875469,nil,{"Bring 8 Crystalized Scales to Collin Mauren in Stormwind."},nil,{nil,nil,{{5675}}},nil,nil,nil,nil,nil,nil,406,nil,nil,nil,nil,nil,16392,nil,nil,{{54,5},{72,5}}},
-[1079] = {"Covert Ops - Alpha",nil,{{4077}},17,22,18875469,nil,{"Retrieve the Venture Co.'s Engineering Plans from the lumber mill in Windshear Crag."},nil,{nil,nil,{{5718}}},5738,{1077,1074},{},nil,nil,nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,16384,nil,nil,{{54,6}}},
-[1080] = {"Covert Ops - Beta",nil,{{4077}},17,22,18875469,nil,{"Retrieve the Venture Co. Letters from Windshear Mine at the east end of Windshear Crag."},nil,{nil,nil,{{5717}}},5738,{1077,1074},{},nil,nil,nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,16384,nil,nil,{{54,6}}},
+[1079] = {"Covert Ops - Alpha",nil,{{4077}},17,22,18875469,nil,{"Retrieve the Venture Co.'s Engineering Plans from the lumber mill in Windshear Crag."},nil,{nil,nil,{{5718}}},5738,{1077,1074},{},nil,nil,nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,16384,nil,nil,{{54,6}},nil,nil,{{nil,4,"Place the NG-5 Explosives (Blue)",0,{{"object",19591}}}}},
+[1080] = {"Covert Ops - Beta",nil,{{4077}},17,22,18875469,nil,{"Retrieve the Venture Co. Letters from Windshear Mine at the east end of Windshear Crag."},nil,{nil,nil,{{5717}}},5738,{1077,1074},{},nil,nil,nil,406,nil,nil,nil,{5692,5693,5694,5695,5737},nil,16384,nil,nil,{{54,6}},nil,nil,{{nil,4,"Place the NG-5 Explosives (Red)",0,{{"object",19600}}}}},
 [1081] = {"Reception from Tyrande",nil,{{7999}},17,28,18875469,nil,{"Find Tyrande Whisperwind in Darnassus."},nil,nil,nil,nil,{1082},nil,nil,nil,406,nil,nil,nil,nil,nil,16392,nil,nil,{{469,500}}},
 [1082] = {"Update for Sentinel Thenysil",nil,{{4079}},17,22,18875469,nil,{"Return to Sentinel Thenysil in Ashenvale."},nil,nil,nil,{1083,1084},nil,nil,nil,nil,406,nil,nil,nil,nil,1081,16392,nil,nil,{{69,3}}},
 [1083] = {"Enraged Spirits",nil,{{4080}},20,26,18875469,nil,{"Bring 8 Smoldering Embers from any of the fire elementals in the Charred Vale to Kaela Shadowspear in Stonetalon."},nil,{nil,nil,{{5659}}},nil,nil,{1091},nil,nil,nil,406,nil,nil,nil,nil,nil,16392,nil,nil,{{69,5}}},

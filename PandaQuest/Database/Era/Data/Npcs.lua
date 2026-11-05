@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.0+v1.0.10 (Classic Era database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-05T00:07:55Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.1+v1.0.11 (Classic Era database + corrections from QuestieDB 1.0.11). DO NOT EDIT.
+-- Built: 2026-11-05T18:10:31Z. Schema version 1.
 -- Format: ns.Data.npcs is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- npcKeys schema (15 fields; waypoints = {[areaId] = { {{x,y},...} polylines }}). Load with loadstring(ns.Data.npcs)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -3235,7 +3235,7 @@ ns.Data.npcs = [=[return {
 [3876] = {"Traumatized Spirit",1452,1452,20,20,1,nil,nil,0,nil,nil,24,nil,nil,0},
 [3877] = {"Wailing Guardsman",1563,1686,21,22,1,{[209]={{-1,-1}}},nil,209,nil,nil,24,nil,nil,0},
 [3878] = {"Magthrull's Doomguard",484,484,20,20,0,nil,nil,0,nil,nil,90,nil,nil,0},
-[3879] = {"Dark Strand Assassin",531,531,21,21,0,{[331]={{25.76,30.17}}},nil,331,nil,nil,14,nil,nil,0},
+[3879] = {"Dark Strand Assassin",531,531,21,21,0,nil,nil,331,nil,nil,14,nil,nil,0},
 [3880] = {"Sentinel Melyria Frostshadow",712,712,25,25,0,{[331]={{22.23,52.98}}},nil,331,{1022,1037},{1022},80,"A",nil,2},
 [3881] = {"Grimtak",300,300,14,14,0,{[14]={{51.13,42.63}}},nil,14,nil,nil,29,"H","Butcher",7},
 [3882] = {"Zlagk",176,176,9,9,0,{[14]={{42.64,67.19}}},nil,14,nil,nil,29,"H","Butcher",6},
@@ -3394,7 +3394,7 @@ ns.Data.npcs = [=[return {
 [4044] = {"Blackened Basilisk",617,664,23,24,0,{[406]={{35.55,47.67},{45.81,44.24},{45.07,43.46},{37.03,46.43},{37.44,51.27},{33.48,62.04},{34.96,59.01},{44.14,39.36},{36.12,49.24}}},nil,406,nil,nil,49,nil,nil,0},
 [4046] = {"Magatha Grimtotem",4369,4369,62,62,0,{[1638]={{69.85,30.91}}},nil,1638,{1064,3562,5088},{1063,3518,5062},104,"H","Elder Crone",2},
 [4047] = {"Zor Lonetree",4369,4369,62,62,0,{[1637]={{38.93,38.4}}},nil,1637,{1061,7541},{1262,7541},29,"H","Elder Far Seer",2},
-[4048] = {"Falfindel Waywarder",895,895,28,28,0,{[357]={{89.64,46.57}}},{[357]={{{89.63,46.56},{89.39,46.36},{89.35,45.79},{89.39,46.35},{89.64,46.56}}}},357,{1101},{1059,1100,1101,4281},80,"A",nil,2},
+[4048] = {"Falfindel Waywarder",895,895,28,28,0,{[357]={{89.64,46.57}}},{},357,{1101},{1059,1100,1101,4281},80,"A",nil,2},
 [4049] = {"Seereth Stonebreak",787,787,26,26,0,{[17]={{35.26,27.88}}},nil,17,{1062,1063,1068},{1061,1062,1068},29,"H",nil,2},
 [4050] = {"Cenarion Caretaker",1830,1953,25,26,1,{[406]={{29.78,15.6},{29,15.5},{29.39,15.84},{29.19,15.99},{29.42,15.69},{28.84,17.59},{29.68,16.9},{29.79,15.24}}},nil,406,nil,nil,124,"A",nil,2},
 [4051] = {"Cenarion Botanist",543,582,23,24,0,{[406]={{34.68,12.43},{35.96,14.57},{36.36,11.85},{36.97,14.98}}},nil,406,nil,nil,124,"A",nil,0},

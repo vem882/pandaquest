@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.0+v1.0.10 (MoP database + corrections from QuestieDB 1.0.10). DO NOT EDIT.
--- Built: 2026-11-05T00:07:55Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.1+v1.0.11 (MoP database + corrections from QuestieDB 1.0.11). DO NOT EDIT.
+-- Built: 2026-11-05T18:10:31Z. Schema version 1.
 -- Format: ns.Data.npcs is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- npcKeys schema (15 fields; waypoints = {[areaId] = { {{x,y},...} polylines }}). Load with loadstring(ns.Data.npcs)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -3247,7 +3247,7 @@ ns.Data.npcs = [=[return {
 [3875] = {"Haunted Servitor",1936,1936,19,20,1,{[209]={{-1,-1}}},nil,209,nil,nil,24,nil,nil,0},
 [3877] = {"Wailing Guardsman",1796,1796,19,19,1,{[209]={{-1,-1}}},nil,209,nil,nil,24,nil,nil,0},
 [3878] = {"Magthrull's Doomguard",25,27,1,1,0,nil,nil,0,nil,nil,35,"AH",nil,0},
-[3879] = {"Dark Strand Assassin",531,531,21,21,0,{[331]={{25.76,30.17}}},nil,331,nil,nil,14,nil,nil,0},
+[3879] = {"Dark Strand Assassin",531,531,21,21,0,nil,nil,331,nil,nil,14,nil,nil,0},
 [3880] = {"Sentinel Melyria Frostshadow",699,699,25,25,0,{[331]={{59,58.75}}},nil,331,{13928,26456},{1022,13935},80,"A",nil,2},
 [3881] = {"Grimtak",300,300,14,14,0,{[14]={{50.73,42.83}}},nil,14,{6365},{6386},29,"H","Butcher",643},
 [3882] = {"Zlagk",0,0,9,9,0,{[6451]={{42.63,62.24}}},nil,6451,nil,nil,29,"H","Butcher",640},
@@ -3407,7 +3407,7 @@ ns.Data.npcs = [=[return {
 [4045] = {"JEFF CHOW TEST",1,1,1,1,0,nil,nil,0,nil,nil,35,"AH","No Clothes NPC",0},
 [4046] = {"Magatha Grimtotem",4370,4370,62,62,0,nil,nil,0,nil,{1063,3518,5062},104,"H","Elder Crone",2},
 [4047] = {"Zor Lonetree",4370,4370,62,62,0,{[1637]={{48.64,72.99}}},nil,1637,nil,{1262,7541},29,"H","Elder Far Seer",0},
-[4048] = {"[Deprecated for 4.x]Falfindel Waywarder",896,896,28,28,0,nil,{[357]={{{89.56,46.57},{89.39,46.36},{89.35,45.79},{89.39,46.35},{89.64,46.56}}}},0,nil,{1059,1100,1101,4281},80,"A",nil,0},
+[4048] = {"[Deprecated for 4.x]Falfindel Waywarder",896,896,28,28,0,nil,{},0,nil,{1059,1100,1101,4281},80,"A",nil,0},
 [4049] = {"Seereth Stonebreak",787,787,26,26,0,{[4709]={{39.39,20.09}}},nil,4709,nil,{1061,1062,1068},29,"H",nil,0},
 [4050] = {"Cenarion Caretaker",732,732,28,29,0,{[406]={{35.75,25.04},{35.36,25.67},{35.13,25.28},{35.82,25.23},{35.12,25.52},{35.5,26.06},{35.47,25.34},{34.88,26.65}}},nil,406,nil,nil,124,"A",nil,0},
 [4051] = {"Cenarion Botanist",582,582,23,24,0,{[406]={{42.23,21.8},{39.74,22.48},{40.39,23.33},{41,20.89},{41.07,24.33}}},nil,406,nil,nil,124,"A",nil,0},
@@ -11155,7 +11155,7 @@ ns.Data.npcs = [=[return {
 [17307] = {"Nazan",33381,33381,62,63,1,{[3562]={{34.64,86.17},{-1,-1}}},nil,3562,nil,nil,40,nil,nil,0},
 [17308] = {"Omor the Unscarred",59836,59836,62,63,1,{[3562]={{38.98,20.01},{-1,-1}}},nil,3562,nil,nil,90,nil,nil,0},
 [17309] = {"Hellfire Watcher",10146,10146,59,61,1,{[3562]={{-1,-1}}},nil,3562,nil,nil,16,nil,"Watchkeeper's Subordinate",0},
-[17310] = {"Gnarl",4572,4572,40,40,1,{[331]={{83.76,63.1}}},{},331,{13766,13792,13869,26446},{9517,9526,13766,13796,13869,26446,26454},1076,"A","Ancient of War",3},
+[17310] = {"Gnarl",4572,4572,40,40,1,{[331]={{85.38,45.28}}},{},331,{13766,13792,13869,26446},{9517,9526,13766,13796,13869,26446,26454},1076,"A","Ancient of War",3},
 [17311] = {"Cowlen",356,356,16,16,0,{[3524]={{16.6,94.4}}},{},3524,{9527},{9527,9528,10428},80,"A",nil,3},
 [17312] = {"Magwin",186,186,10,10,0,{[3524]={{13.62,73.22}}},nil,3524,{9528},nil,80,"A",nil,2},
 [17313] = {"Slim's Unkillable Test Dummy",1,1,1,1,0,nil,nil,0,nil,nil,35,"AH",nil,0},

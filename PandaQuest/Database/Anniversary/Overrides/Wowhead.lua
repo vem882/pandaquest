@@ -3285,6 +3285,13 @@ ns.Overrides.wowhead = {
                 "research.\n\nPlease - if you are interested, speak with him directly on the Elder Rise " ..
                 "within Thunder Bluff proper.",
         },
+        [938] = {
+            description = "The sabercat's fur is a distinctive gray color, blending into the surrounding " ..
+                "forest. As she lays there, you observe that she is badly wounded, with deep lacerations " ..
+                "across her back and stomach.\n\nShe raises her head and gazes at you, bright " ..
+                "intelligence shining in blue eyes. She seems to wish to follow you.",
+            rewardChoices = {{5590, 1}, {5593, 1}, {5618, 1}},
+        },
         [940] = {
             description = "The forest whispers of your feats of valor, <name>. As I felt the harpies " ..
                 "forced from their nests, a greater calm spread across the forest, its creatures once " ..
@@ -5441,6 +5448,12 @@ ns.Overrides.wowhead = {
                 "Orgrimmar.",
             rewardItems = {{18160, 1}},
             rewardXP = 1550,
+        },
+        [2479] = {
+            description = "Take a sample of the mixture to Serge Hinott in Tarren Mill.\n\nIf anyone can " ..
+                "cure you, it's Serge. Live long enough and Serge will show you the ways of poison " ..
+                "creation and use.",
+            rewardXP = 780,
         },
         [2498] = {
             description = "I have just received word that Denalan at Lake Al'Ameth has discovered what " ..
@@ -13349,6 +13362,16 @@ ns.Overrides.wowhead = {
                 "menace for 'uncle' Mo'mor and ran off to the ogre mounds in the Halaani Basin, north of " ..
                 "here.\n\nDo you think you could track him down? I would be eternally grateful.",
             rewardChoices = {{25631, 1}, {25632, 1}, {25633, 1}},
+        },
+        [9925] = {
+            description = "Gezhe chose to base our operations as close to Oshu'gun as possible, without " ..
+                "any regard for the safety of our crew. Why? Because he projected a ten percent increase " ..
+                "in productivity by setting up shop here instead of in the mountains to the " ..
+                "south.\n\nNever mind the crazed voidspawn wandering all of ten feet away from us. That " ..
+                "would be the security officer's problem, not Gezhe's.\n\nKill some voidspawn for me and " ..
+                "I'll pay you a tenth of our security budget. Don't get excited, it's not much of a " ..
+                "budget.",
+            rewardMoney = 35000,
         },
         [9927] = {
             description = "<Lantresor hands you a pack full of banners.>\n\nThese are Warmaul ogre " ..
