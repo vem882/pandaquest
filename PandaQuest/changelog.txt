@@ -4,6 +4,9 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.375
+- database - TBC Anniversary: data from the PandaQuest portal: 2,521 quests, 46 NPCs, 2 objects
+
 0.2.374
 - database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 780 NPCs, 2 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,519 quests, 46 NPCs, 1 object
@@ -142,14 +145,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 6 spawn points added in Burning Steppes
 - npc 23881 - Apothecary Cylla - updated
   - coordinates: 1 spawn point added in Dustwallow Marsh
-
-0.2.358
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 764 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,471 quests, 26 NPCs, 5 objects
-- npc 4464 - Blackrock Gladiator - updated
-  - coordinates: 24 spawn points added in Redridge Mountains
-- npc 4475 - Blighted Zombie - updated
-  - coordinates: 29 spawn points added in Western Plaguelands
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'

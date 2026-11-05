@@ -2172,6 +2172,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{2459, 3}, {929, 5}},
             rewardMoney = 2500,
         },
+        [514] = {
+            description = "I have a colleague in Ironforge who may be able to help decrypt this letter. " ..
+                "Go to the Library in the Hall of Explorers in Ironforge and speak with Prospector " ..
+                "Stormpike. Tell him I sent you and show him the letter. If there's anyone north of " ..
+                "Blackrock Spire who can read this, it is he.",
+        },
         [516] = {
             description = "I have received reports that a group of undead are holing up to prepare for an " ..
                 "attack against us. Armed with this information, we can turn the tables and attack them " ..
@@ -15409,6 +15415,12 @@ ns.Overrides.wowhead = {
                 "you shall need every bit of it!",
             rewardItems = {{22087, 1}, {22092, 1}, {22093, 1}},
         },
+        [10498] = {
+            description = "That's an amazing story, <name>! You have my thanks, and the heartfelt " ..
+                "gratitude of all who were involved. Now maybe I'll be able to sleep at night with both " ..
+                "eyes shut.\n\nAs to your reward, I believe I have a few things that you'll really enjoy.",
+            rewardItems = {{22097, 1}, {22102, 1}},
+        },
         [10503] = {
             description = "There is a threat to Thunderlord Stronghold worse than the Alliance at " ..
                 "Sylvanaar.\n\nI speak of the ogres of these mountains. Just to the west, down in the " ..
@@ -19292,6 +19304,7 @@ ns.Overrides.wowhead = {
         },
     },
     objects = {
+        [1739] = {spawns = {[36] = {{58.2, 67.9}, {58.5, 68}}}, zoneID = 36},
         [3714] = {spawns = {[17] = {{48.6, 84.8}, {49.4, 83.7}, {49.6, 83.6}}}, zoneID = 17},
     },
     items = {},
