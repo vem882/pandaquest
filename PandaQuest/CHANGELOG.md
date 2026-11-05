@@ -4,6 +4,15 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.374] - 2026-11-05
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 780 NPCs, 2 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,519 quests, 46 NPCs, 1 object
+- npc 619 - Defias Conjurer - updated
+  - coordinates: 8 spawn points added in Westfall
+
 ## [0.2.373] - 2026-11-05
 
 Data from the PandaQuest portal.
@@ -164,20 +173,6 @@ Data from the PandaQuest portal.
   - coordinates: 24 spawn points added in Redridge Mountains
 - npc 4475 - Blighted Zombie - updated
   - coordinates: 29 spawn points added in Western Plaguelands
-
-## [0.2.357] - 2026-11-04
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
-- database - Classic Era rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
-- database - TBC Anniversary rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
-- database - WoW Forever rebuilt from Questie 12.5.1+v1.0.10 (was 12.5.0+v1.0.10)
-- database - Wowhead data as the PandaQuest portal read it: 7,916 quests, 762 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,468 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,495 quests, 44 NPCs, 1 object
-- npc 1393 - Berserk Trogg - updated
-  - coordinates: 40 spawn points added in Loch Modan
 
 ## [0.2.270] - 2026-10-26
 
