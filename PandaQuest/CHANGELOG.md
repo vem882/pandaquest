@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [Unreleased]
+
+- Updated the player documentation for live Forever data, its profession recipe reader,
+  multi-game Sync and the current limits of Retail/PTR support.
+- Added a ready-to-paste CurseForge project summary and description.
+
 ## [0.2.392] - 2026-11-06
 
 Data from the PandaQuest portal.

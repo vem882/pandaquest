@@ -8,7 +8,7 @@ minimap, waypoints over quest NPCs' nameplates, gathering nodes with respawn tim
 and a browser for every quest in the game. It works on its own; sharing data with the PandaQuest
 site is optional and off by default.
 
-The site is **<https://pd.zroot.it>**: quest guides, NPCs, maps, flights and more, built from
+The website is **PandaBase — <https://pd.zroot.it>**: quest guides, NPCs, maps, flights and more, built from
 Questie's data and from what players share.
 
 This file covers the addon in short and then the repository. The full player guide (every
@@ -46,7 +46,8 @@ Restart the game, or `/reload` if it was running.
 - **Quest-mob icons** on the nameplates of mobs your active quests need, plus a tooltip line.
 - **Tooltips** on NPCs, items and pins: quests, level, respawn time, drop rate, and where an item
   comes from (the creatures that drop it, chests, containers, vendors).
-- **Gathering nodes** (ore, herbs, fishing, chests, rares) with respawn countdowns.
+- **Gathering nodes** (ore, herbs, fishing, chests, rares) with respawn countdowns, native WoW
+  resource icons and gathering advice based on your current profession skill.
 - **Flight times:** the flight master's tooltip shows the expected time before you fly, and a bar
   shows the time left during the flight. Your own measured flights come first, then the players'
   measured times from the site, then an estimate, marked as estimated.
@@ -66,16 +67,23 @@ The addon is built on Ace3 (modules, timers, saved variables, options).
 | Mists of Pandaria Classic | 50504 | `PandaQuest.toc`, `PandaQuest_Mists.toc` | `Database/Data/` |
 | Classic Era | 11509 | `PandaQuest_Vanilla.toc` | `Database/Era/` |
 | TBC Anniversary | 20506 | `PandaQuest_TBC.toc` | `Database/Anniversary/` |
-| WoW Forever | 16001 | `PandaQuest_Forever.toc`, `PandaQuest_Camelot.toc` | `Database/Forever/` (beta data until launch) |
+| WoW Forever | 16001 | `PandaQuest_Forever.toc`, `PandaQuest_Camelot.toc` | `Database/Forever/` |
 
-One download: each game's TOC loads the shared code and only its own game's database. WoW Forever's
-database is Questie's beta data until the game launches on 4 November 2026 (as on the portal); the
-quest window's header and `/pq status` say "WoW Forever beta data" until 2026-11-04 23:00 UTC. `Core/Game.lua` detects the game and switches off what a game does not have (archaeology and the
-dig-site bar are MoP's; the WatchFrame tracker distances use MoP's tracker; in Forever the recipe
-scanner and combat-log kill counts are off for now); `Core/Compat.lua` bridges Forever's
-Mainline-family API. The other games' databases are built by the portal's
-`tools/build_db.py --flavour Vanilla|TBC|Forever` from the same Questie bundle as MoP's. Retail is not
-supported.
+One download: each game's TOC loads the shared code and only its own game's database.
+WoW Forever uses the live dataset, including the material gathered during its beta. Its
+characters use their full two-part names; realms are not shown for Forever.
+`Core/Game.lua` enables features per client: archaeology is specific to MoP, and Forever uses
+its modern profession API for the local recipe reader. Combat-log kill counts remain unavailable
+on clients that restrict the necessary events. `Core/Compat.lua` bridges client API differences.
+
+The Sync app automatically discovers game installations and synchronizes supported games together,
+with separate upload histories. It uploads character snapshots as well as recorded sessions and
+refreshes the community guide in an already-installed addon. It does not install or update the
+addon. Retail and PTR/beta folders can be detected, but full addon and hub support for those
+clients is still in progress; do not treat detection as a claim of full support.
+
+A ready-to-paste CurseForge summary and description are in
+[`docs/curseforge-description.md`](docs/curseforge-description.md).
 
 ## Privacy and data sharing
 
