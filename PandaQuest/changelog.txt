@@ -7,6 +7,7 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
 - professions - Ignore linked and guild books; keep both parts of Forever character names.
+- professions - Keep a stopped scan stopped until its window is opened again.
 
 0.2.385
 - database - rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)

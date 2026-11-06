@@ -938,7 +938,7 @@ end
 -- Modern profession windows (Forever and Retail). Read known spells without changing filters.
 local classicStart, classicCanScan, classicEnable, classicDisable = M.Start, M.CanScan, M.OnEnable, M.OnDisable
 local classicIsScanning, classicIsWindowOpen, classicStop = M.IsScanning, M.IsWindowOpen, M.Stop
-local modernOpen, modernBusy, modernGeneration = false, false, 0
+local modernOpen, modernBusy, modernGeneration, modernArmed = false, false, 0, false
 local function modernClient()
     return ns.Game and (ns.Game.id == "forever" or ns.Game.id == "retail")
 end
@@ -1032,21 +1032,21 @@ end
 function M.OnEnable()
     if not modernClient() then return classicEnable() end
     M:RegisterEvent("TRADE_SKILL_SHOW", function()
-        modernOpen = true
+        modernOpen, modernArmed = true, true
         modernGeneration = modernGeneration + 1
         if setting("scanOnOpen") then M.Start() end
     end)
     M:RegisterEvent("TRADE_SKILL_LIST_UPDATE", function()
-        if modernOpen and not modernBusy and setting("scanOnOpen") then M.Start() end
+        if modernOpen and modernArmed and not modernBusy and setting("scanOnOpen") then M.Start() end
     end)
     M:RegisterEvent("TRADE_SKILL_CLOSE", function()
-        modernOpen = false
+        modernOpen, modernArmed = false, false
         modernGeneration = modernGeneration + 1
     end)
 end
 
 function M.OnDisable()
-    modernOpen = false
+    modernOpen, modernArmed = false, false
     modernGeneration = modernGeneration + 1
     classicDisable()
 end
@@ -1062,6 +1062,7 @@ end
 function M.Stop(reason)
     if not modernClient() then return classicStop(reason) end
     if not modernBusy then return false end
+    modernArmed = false
     modernGeneration = modernGeneration + 1
     lastResult = { ok = false, reason = reason or "stopped", at = unixNow() }
     return true
