@@ -4,6 +4,9 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.392
+- database - TBC Anniversary: data from the PandaQuest portal: 2,546 quests, 47 NPCs, 2 objects
+
 0.2.391
 - database - Wowhead data as the PandaQuest portal read it: 7,934 quests, 790 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,507 quests, 27 NPCs, 5 objects
@@ -100,12 +103,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 
 0.2.375
 - database - TBC Anniversary: data from the PandaQuest portal: 2,521 quests, 46 NPCs, 2 objects
-
-0.2.374
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 780 NPCs, 2 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,519 quests, 46 NPCs, 1 object
-- npc 619 - Defias Conjurer - updated
-  - coordinates: 8 spawn points added in Westfall
 
 0.2.370
 - sync - Ask about optional telemetry once on first login and remember either answer
