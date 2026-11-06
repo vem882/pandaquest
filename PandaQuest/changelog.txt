@@ -1,3 +1,8 @@
+Documentation update
+- Live Forever data and the modern profession recipe reader are described correctly.
+- Explained automatic multi-game Sync and the remaining Retail/PTR support limits.
+- Added a ready-to-paste CurseForge project summary and description.
+
 PandaQuest changelog. Newest version first, one short line per change.
 Data changes read "<kind> <id> - <name> - added|updated|fixed|removed" (kinds: quest, npc, object, item).
 Everything else reads "<area> - <what changed>".
