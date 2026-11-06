@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.397] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 797 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,515 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,553 quests, 47 NPCs, 2 objects
+- npc 68490 - Alliance Phalanx - updated
+  - NPC level added (90)
+
 ## [0.2.396] - 2026-11-06
 
 Data from the PandaQuest portal.
@@ -143,27 +153,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,531 quests, 46 NPCs, 2 objects
 - npc 69194 - Alliance Cannoneer - updated
   - NPC level added (90)
-
-## [0.2.381] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.6.1+v1.0.11 (was 12.6.0+v1.0.10)
-- database - Classic Era rebuilt from Questie 12.6.1+v1.0.11 (was 12.6.0+v1.0.10)
-- database - TBC Anniversary rebuilt from Questie 12.6.1+v1.0.11 (was 12.6.0+v1.0.10)
-- database - WoW Forever rebuilt from Questie 12.6.1+v1.0.11 (was 12.6.0+v1.0.10)
-- database - Classic Era: data from the PandaQuest portal: 2,498 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,530 quests, 46 NPCs, 2 objects
-- quest 1079 - Covert Ops - Alpha - updated
-  - data rewritten, nothing a player sees changed
-- quest 1080 - Covert Ops - Beta - updated
-  - data rewritten, nothing a player sees changed
-- npc 3879 - Dark Strand Assassin - updated
-  - coordinates: 1 spawn point removed in Ashenvale
-- npc 4048 - [Deprecated for 4.x]Falfindel Waywarder - updated
-  - patrol path removed
-- npc 17310 - Gnarl - updated
-  - coordinates in Ashenvale: 1 spawn point added, 1 removed
 
 ## [0.2.379] - 2026-11-05
 

@@ -6417,6 +6417,14 @@ ns.Overrides.wowhead = {
                 "to make the rubbings with, but it will be up to you to find them. Be careful though, the " ..
                 "Explorer's League isn't the only one interested in Eldarath.",
         },
+        [3450] = {
+            description = "I want the rubbings delivered to my tower, but there's no need to have you go " ..
+                "all the way there. I'll just have them air-lifted out of Azshara.\n\nXiggs Fuselighter " ..
+                "owes me a favor or two and will be in the area soon--he's signed on to patrol the coast. " ..
+                "Speak to him before you leave. He can give you a flare gun to signal him with. When you " ..
+                "have the rubbings, just head to wherever he tells you and then give them to him so he " ..
+                "can get them to my tower safely. He should be in the hangar in the Military Ward.",
+        },
         [3454] = {
             description = "The torch must now be bound to its owner. Pick up the torch, <name>.",
             rewardItems = {{10515, 1}},

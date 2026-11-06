@@ -65994,6 +65994,7 @@ ns.Overrides.wowhead = {
         [68465] = {subName = "Grand Master Pet Tamer"},
         [68472] = {maxLevel = 90, minLevel = 90},
         [68486] = {maxLevel = 90, minLevel = 90},
+        [68490] = {maxLevel = 90, minLevel = 90},
         [68492] = {subName = "Tallstrider Handler"},
         [68504] = {maxLevel = 90, minLevel = 90},
         [68554] = {subName = "The Entourage"},

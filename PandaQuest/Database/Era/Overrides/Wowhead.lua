@@ -2767,6 +2767,14 @@ ns.Overrides.wowhead = {
                 "Zul'Kunda, along the coast to the north.",
             rewardChoices = {{4133, 1}, {4132, 1}},
         },
+        [583] = {
+            description = "Welcome to Stranglethorn!\n\nPerhaps you're not aware of this, but that dwarf " ..
+                "over there is the one and only Hemet Nesingwary, renowned war hero of the Alliance and " ..
+                "master big game hunter. He's not one for welcoming strangers into his camp, but you look " ..
+                "like you've seen quite a bit of action in your day, <class>.\n\nBeing a veteran of many " ..
+                "battles himself, Master Nesingwary has a soft spot for fellow heroes.\n\nGo and speak " ..
+                "with him. Perhaps he can give you some hunting pointers.",
+        },
         [585] = {
             description = "<The head of Nezzliok speaks.>\n\nIt is true. I know where the child of the " ..
                 "Darkspears was taken. You have bested me and bound my spirit, but I will say nothing " ..
@@ -12406,6 +12414,14 @@ ns.Overrides.wowhead = {
                 "spell that lets you transport yourself there. Cast it whenever you seek Moonglade's " ..
                 "knowledge or solace.\n\nAs for your first lesson, travel to Moonglade and speak with " ..
                 "Dendrite Starblaze in Nighthaven about the path you're now on. Good luck, young druid.",
+        },
+        [5923] = {
+            description = "Excuse me, friend...\n\nIt has come to my attention that Mathrengyl Bearwalker " ..
+                "has put out word that he wishes to speak with you. It seems that your training as a " ..
+                "druid is about to take on a new life, and he will be training you personally. Mathrengyl " ..
+                "is the direct assistant to the Arch Druid himself, and is one of the most sage and " ..
+                "august druids you'll find in Teldrassil.\n\nHe is located in the Cenarion Enclave of " ..
+                "Darnassus, on the second floor of Fandral Staghelm's tree.",
         },
         [5924] = {
             description = "Excuse me, friend...\n\nIt has come to my attention that Mathrengyl Bearwalker " ..
