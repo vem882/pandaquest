@@ -6831,6 +6831,14 @@ ns.Overrides.wowhead = {
                 "your bravery, must be tested. You must learn to never lose faith and realize that with " ..
                 "the power of the Light, you can overcome things that most others cannot.",
         },
+        [1650] = {
+            description = "Good! Your lack of hesitation is a sure sign that you are prepared and eager " ..
+                "to test yourself. So be it.\n\nAt the very ends of Westfall's Longshore, a small house " ..
+                "overlooks the ocean. There, a couple lives, the Stilwells. Jordan is an incredible " ..
+                "smith, and he's gone to Ironforge to meet with the dwarves for a while. But this has " ..
+                "left Daphne, his wife, alone and unprotected.\n\nReports suggest that the Defias have " ..
+                "all but taken over the area, Daphne may need some protection from the villains. Go there.",
+        },
         [1652] = {
             description = "Please, return to Duthorian and let him know that I'm safe for now. I have you " ..
                 "and the Church to thank for that.\n\nHe'll send word to Ironforge to let my Jordan know " ..
@@ -9542,6 +9550,14 @@ ns.Overrides.wowhead = {
                 "like to confer with you about morrowgrain... and he very much would like for you to keep " ..
                 "our discussion from the ears of the Arch Druid.\n\nIf you're interested, speak with him; " ..
                 "no doubt, all will be revealed once you do.",
+        },
+        [3788] = {
+            description = "Excuse me, friend...\n\nA colleague of mine would like to speak with you about " ..
+                "the research you are doing in conjunction with the Cenarion Circle. He is a druid by the " ..
+                "name of Quintis Jonespyre, and he resides here in Feathermoon Stronghold. He would like " ..
+                "to confer with you about morrowgrain... and he very much would like for you to keep our " ..
+                "discussion from the ears of the Arch Druid.\n\nIf you're interested, speak with him; no " ..
+                "doubt, all will be revealed once you do.",
         },
         [3792] = {rewardItems = {{11022, 10}}},
         [3803] = {rewardItems = {{11887, 1}}},
