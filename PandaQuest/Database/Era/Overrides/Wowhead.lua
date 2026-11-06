@@ -3101,6 +3101,15 @@ ns.Overrides.wowhead = {
                 "creature.",
             rewardChoices = {{4976, 1}, {4977, 1}},
         },
+        [682] = {
+            description = "The Syndicate in Stromgarde do battle with our contingent of militia there. In " ..
+                "order to urge the rabble to fight our more disciplined troops, the Syndicate leaders " ..
+                "have placed a bounty on our soldiers, awarding gold for each Stromgarde Badge gathered " ..
+                "off killed militiamen.\n\nWe want those badges retrieved - we cannot allow the " ..
+                "cutthroats to take trophies from our brave fallen!\n\nEnter the Syndicate-controlled " ..
+                "area of Stromgarde and hunt them for our badges.",
+            rewardItems = {{4741, 1}},
+        },
         [683] = {
             description = "<name>, I have but a small request to ask of you.\n\nTake this note I have " ..
                 "prepared to our great monarch of Ironforge, King Magni Bronzebeard. 'Tis a small task to " ..

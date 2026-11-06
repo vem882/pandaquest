@@ -4,6 +4,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.384
+- database - Classic Era: data from the PandaQuest portal: 2,503 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,536 quests, 47 NPCs, 2 objects
+
 0.2.383
 - database - Classic Era: data from the PandaQuest portal: 2,502 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,536 quests, 46 NPCs, 2 objects
@@ -90,57 +94,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 5 spawn points added in Western Plaguelands
 - npc 52799 - Alexstrasza - updated
   - coordinates: 1 spawn point added in Mount Hyjal
-
-0.2.363
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 774 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,486 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,503 quests, 46 NPCs, 1 object
-- quest 8561 - Conqueror's Crown - updated
-  - description added
-  - reward items: +1
-- quest 8562 - Conqueror's Breastplate - updated
-  - description added
-  - reward items: +1
-- quest 8594 - Mantle of the Oracle - updated
-  - description added
-  - reward items: +1
-- quest 8596 - Footwraps of the Oracle - updated
-  - description added
-  - reward items: +1
-- quest 8602 - Stormcaller's Pauldrons - updated
-  - description added
-  - reward items: +1
-- quest 8622 - Stormcaller's Hauberk - updated
-  - description added
-  - reward items: +1
-- quest 8624 - Stormcaller's Leggings - updated
-  - description added
-  - reward items: +1
-- quest 8626 - Striker's Footguards - updated
-  - description added
-  - reward items: +1
-- quest 8627 - Avenger's Breastplate - updated
-  - description added
-  - reward items: +1
-- quest 8630 - Avenger's Pauldrons - updated
-  - description added
-  - reward items: +1
-- quest 8641 - Deathdealer's Spaulders - updated
-  - description added
-  - reward items: +1
-- quest 8657 - Striker's Diadem - updated
-  - description added
-  - reward items: +1
-- quest 8661 - Doomcaller's Robes - updated
-  - description added
-  - reward items: +1
-- quest 8664 - Doomcaller's Mantle - updated
-  - description added
-  - reward items: +1
-- quest 29208 - An Old Friend - updated
-  - reward items: +1
-- npc 50354 - Allestria - updated
-  - coordinates: 11 spawn points added in Kun-Lai Summit
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
