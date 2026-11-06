@@ -9504,6 +9504,14 @@ ns.Overrides.wowhead = {
                 "multitude of concerns he has!",
             rewardItems = {{11887, 1}},
         },
+        [3787] = {
+            description = "Excuse me, friend...\n\nA colleague of mine would like to speak with you about " ..
+                "the research you are doing in conjunction with the Cenarion Circle. He is a druid by the " ..
+                "name of Quintis Jonespyre, and he resides in Feathermoon Stronghold, Feralas. He would " ..
+                "like to confer with you about morrowgrain... and he very much would like for you to keep " ..
+                "our discussion from the ears of the Arch Druid.\n\nIf you're interested, speak with him; " ..
+                "no doubt, all will be revealed once you do.",
+        },
         [3792] = {rewardItems = {{11022, 10}}},
         [3803] = {rewardItems = {{11887, 1}}},
         [3804] = {rewardItems = {{11887, 1}}},

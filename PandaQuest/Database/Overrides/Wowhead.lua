@@ -57044,6 +57044,12 @@ ns.Overrides.wowhead = {
                 "Once you do that, come back and see me and we can talk about catching your own pets!",
             rewardMoney = 110000,
         },
+        [31826] = {
+            description = "Good, good. It's important to keep your pets healthy and ready for " ..
+                "battle.\n\nMy next task for you is to fight a few battles and raise a pet to level 3. " ..
+                "Once you do that, come back and see me and we can talk about catching your own pets!",
+            rewardMoney = 106000,
+        },
         [31827] = {
             description = "Good, good. It's important to keep your pets healthy and ready for " ..
                 "battle.\n\nMy next task for you is to fight a few battles and raise a pet to level 3. " ..
@@ -65678,6 +65684,7 @@ ns.Overrides.wowhead = {
             zoneID = 210,
         },
         [32363] = {spawns = {[1637] = {{32, 37.8}, {32.4, 37.4}, {32.6, 37.4}, {32.6, 37.6}}}, zoneID = 1637},
+        [32388] = {spawns = {[85] = {{50, 68.4}, {50.2, 68.6}}}, zoneID = 85},
         [36472] = {subName = "Secret Laboratory Archives"},
         [36689] = {spawns = {[16] = {{71.8, 16.4}, {71.8, 16.6}}}, zoneID = 16},
         [39273] = {
@@ -65887,6 +65894,8 @@ ns.Overrides.wowhead = {
         [67812] = {rank = 0},
         [67847] = {maxLevel = 90, minLevel = 90},
         [67866] = {maxLevel = 90, minLevel = 90},
+        [67901] = {rank = 0},
+        [67902] = {rank = 0},
         [67905] = {rank = 0},
         [67948] = {maxLevel = 15, minLevel = 15},
         [67951] = {rank = 0},
@@ -66017,6 +66026,7 @@ ns.Overrides.wowhead = {
         [71108] = {subName = "The Black Prince"},
         [71131] = {subName = "Horde Logistics Officer"},
         [71139] = {subName = "The Black Prince"},
+        [71312] = {maxLevel = 90, minLevel = 90},
         [71424] = {subName = "The Black Prince"},
         [71622] = {
             maxLevel = 91,

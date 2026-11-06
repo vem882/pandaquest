@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.391] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,934 quests, 790 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,507 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,544 quests, 47 NPCs, 2 objects
+- quest 31826 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- npc 32388 - Alliance Flying Machine - updated
+  - coordinates: 2 spawn points added in Tirisfal Glades
+- npc 67901 - Alliance Footman - updated
+  - data rewritten, nothing a player sees changed
+- npc 67902 - Alliance Priest - updated
+  - data rewritten, nothing a player sees changed
+- npc 71312 - Alliance Deckhand - updated
+  - NPC level added (90)
+
 ## [0.2.390] - 2026-11-06
 
 Data from the PandaQuest portal.
@@ -124,13 +143,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,519 quests, 46 NPCs, 1 object
 - npc 619 - Defias Conjurer - updated
   - coordinates: 8 spawn points added in Westfall
-
-## [0.2.373] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,496 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,515 quests, 46 NPCs, 1 object
 
 ## [0.2.270] - 2026-10-26
 
