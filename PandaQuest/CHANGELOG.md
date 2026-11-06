@@ -4,6 +4,34 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.395] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 794 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,512 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,550 quests, 47 NPCs, 2 objects
+- quest 31553 - On The Mend - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31555 - Got one! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31583 - On The Mend - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31591 - Learning the Ropes - updated
+  - description added
+  - reward money added (10g 60s)
+- npc 1093 - Chief Engineer Hinderweir VII - updated
+  - coordinates: 1 spawn point added in Loch Modan
+- npc 32512 - Alliance Infra-green Bomber - updated
+  - coordinates: 40 spawn points added in Icecrown
+- npc 68486 - Alliance Druid - updated
+  - NPC level added (90)
+- npc 72317 - Alliance Cannoneer - updated
+  - NPC level added (90)
+
 ## [Unreleased]
 
 - Updated the player documentation for live Forever data, its profession recipe reader,
@@ -140,12 +168,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,497 quests, 26 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,527 quests, 46 NPCs, 2 objects
-
-## [0.2.375] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - TBC Anniversary: data from the PandaQuest portal: 2,521 quests, 46 NPCs, 2 objects
 
 ## [0.2.270] - 2026-10-26
 
