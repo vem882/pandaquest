@@ -1817,6 +1817,15 @@ ns.Overrides.wowhead = {
                 "Deathguards will reward you.",
             rewardMoney = 100,
         },
+        [408] = {
+            description = "The Agamand Mills area has become a foothold for the Scourge. Their strongest " ..
+                "point is the Agamand Family Crypt where their local military leader, a skeleton named " ..
+                "Captain Dargol, has headquartered. With Necromancy he has raised the ancestors of the " ..
+                "Agamands and plans to use them against us.\n\nThis cannot pass, and you must stop it. " ..
+                "Travel to the Agamand Family Crypt and defeat the raised Agamand ancestors.\n\nAnd, " ..
+                "bring me the skull of Captain Dargol.",
+            rewardChoices = {{3446, 1}, {3440, 1}},
+        },
         [414] = {
             description = "I've been drinking more of that Shimmer Stout my brother made - it's great " ..
                 "stuff! I want a fellow Mountaineer to try it. His name's Kadrell, and he's usually " ..
@@ -8805,6 +8814,13 @@ ns.Overrides.wowhead = {
                 "the Blightcaller.\n\nI wish you luck, <name>. Truly, you will need it for this battle.",
             rewardChoices = {{16996, 1}, {16997, 1}, {16998, 1}},
         },
+        [6281] = {
+            description = "For a small fee, you can take a gryphon to Stormwind, so you can deliver " ..
+                "Lewis' note to Osric. You won't get there faster any other way.\n\nIf that sounds " ..
+                "acceptable, then just speak to me again when you're ready for the ride. I'll charge you " ..
+                "a little, but trust me; it'll be worth it!",
+            rewardMoney = 175,
+        },
         [6321] = {
             description = "Executor Hadrec asked me to take stock of our equipment at the Sepulcher. With " ..
                 "the Scourge, and worse, lurking in the woods, he doesn't want the Deathguards to lack " ..
@@ -8833,6 +8849,14 @@ ns.Overrides.wowhead = {
                 "colleague of mine in Darkshore. His name is Laird, he is a fish vendor in the village of " ..
                 "Auberdine.\n\nBring my collection to our hippogryph master, Vesprystus, and speak to him " ..
                 "about traveling to Auberdine.",
+        },
+        [6342] = {
+            description = "From Rut'theran, there are two methods of travel to Auberdine: by ferry and by " ..
+                "hippogryph. Both are quick and reliable, but if you have not yet flown to Auberdine by " ..
+                "hippogryph, then I suggest you do.\n\nIt is sound advice to speak with the hippogryph " ..
+                "master in every town that has one. Once you speak to the master, you can then fly there " ..
+                "from other towns.\n\nHere is Nessa's collection. Speak with me again when you are ready " ..
+                "to fly to Auberdine and deliver Nessa's collection to Laird.",
         },
         [6344] = {
             description = "A friend of mine, Nessa Shadowsong, is a fishing merchant in Rut'theran " ..
@@ -9534,6 +9558,11 @@ ns.Overrides.wowhead = {
                 "Jintha'alor. The Vile Priestess Hexx is said to be preparing him for a sacrifice to the " ..
                 "faceless blood God, Hakkar.\n\nYou must save him, <name>! Our village could not stand a " ..
                 "loss this great.",
+        },
+        [7846] = {
+            description = "The key to my bindings is held by Hitah'ya the Keeper. She is in the nearby " ..
+                "cave. Be careful, <class>, for she is guarded well.\n\nKill her and bring the key back " ..
+                "to loosen my shackles. Only then will I be free to return home.",
         },
         [7863] = {rewardItems = {{19150, 1}}},
         [7864] = {rewardItems = {{19151, 1}}},

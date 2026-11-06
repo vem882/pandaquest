@@ -56131,6 +56131,19 @@ ns.Overrides.wowhead = {
                 "and I will continue your training. Good luck!",
             rewardMoney = 106000,
         },
+        [31553] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Seriadne, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
+        [31555] = {
+            description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
+                "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
+                "battle pet to fight, engage it in battle, and throw your trap once it's low on health. " ..
+                "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
+                "least one pet at level 3 to use your trap!",
+            rewardMoney = 106000,
+        },
         [31556] = {
             description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
                 "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
@@ -56298,6 +56311,11 @@ ns.Overrides.wowhead = {
                 "and I will continue your training. Good luck!",
             rewardMoney = 106000,
         },
+        [31583] = {
+            description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
+                "another day! Visit Jaelysia, our local stable master, to heal and revive your pets.",
+            rewardMoney = 114000,
+        },
         [31584] = {
             description = "Great work so far, <name>! You are going to be a pro at this pet stuff before " ..
                 "you know it. Now it's time to catch a pet of your own!\n\nHead back out and find a " ..
@@ -56343,6 +56361,12 @@ ns.Overrides.wowhead = {
                 "Bring your catch back for me to see once you are finished.\n\nRemember, you need at " ..
                 "least one pet at level 3 to use your trap!",
             rewardMoney = 114000,
+        },
+        [31591] = {
+            description = "Now that you are a pet trainer, it's time to test your skills!\n\nHead out " ..
+                "into the wild and pick a fight with a battle pet. Come back to me after you have won and " ..
+                "I will continue your training. Good luck!",
+            rewardMoney = 106000,
         },
         [31592] = {
             description = "Now that you have won a battle, we need to heal up your pets so they can fight " ..
@@ -62762,6 +62786,7 @@ ns.Overrides.wowhead = {
             zoneID = 8,
         },
         [1091] = {spawns = {[38] = {{23.4, 76.2}, {23.6, 76.2}}}, zoneID = 38},
+        [1093] = {spawns = {[38] = {{46, 13.6}}}, zoneID = 38},
         [1110] = {
             spawns = {
                 [10] = {
@@ -65685,6 +65710,20 @@ ns.Overrides.wowhead = {
         },
         [32363] = {spawns = {[1637] = {{32, 37.8}, {32.4, 37.4}, {32.6, 37.4}, {32.6, 37.6}}}, zoneID = 1637},
         [32388] = {spawns = {[85] = {{50, 68.4}, {50.2, 68.6}}}, zoneID = 85},
+        [32512] = {
+            spawns = {
+                [210] = {
+                    {53.6, 44.2}, {54.2, 42.4}, {54.6, 42.2}, {55.6, 41.8}, {56.6, 43.6}, {56.8, 43.2},
+                    {57.4, 39.6}, {57.8, 38.2}, {58.2, 36.2}, {58.6, 36.2}, {58.8, 43.4}, {59.2, 40},
+                    {59.4, 40.8}, {59.6, 41.8}, {59.8, 43.6}, {60.8, 45.2}, {61.6, 44.8}, {62.4, 42.4},
+                    {62.6, 41.2}, {62.8, 47}, {63.2, 45.4}, {63.4, 43.8}, {63.6, 44.8}, {63.8, 44},
+                    {64, 47.6}, {64.2, 53}, {64.4, 45.6}, {64.4, 50.4}, {64.6, 40.6}, {64.6, 54.8},
+                    {65.2, 46.6}, {65.4, 56.2}, {65.6, 53.2}, {65.8, 47.6}, {66, 49}, {66.4, 51},
+                    {66.6, 47.2}, {67, 56.6}, {67.2, 56.4}, {67.8, 53.6},
+                },
+            },
+            zoneID = 210,
+        },
         [36472] = {subName = "Secret Laboratory Archives"},
         [36689] = {spawns = {[16] = {{71.8, 16.4}, {71.8, 16.6}}}, zoneID = 16},
         [39273] = {
@@ -65940,6 +65979,7 @@ ns.Overrides.wowhead = {
         [68464] = {subName = "Grand Master Pet Tamer"},
         [68465] = {subName = "Grand Master Pet Tamer"},
         [68472] = {maxLevel = 90, minLevel = 90},
+        [68486] = {maxLevel = 90, minLevel = 90},
         [68492] = {subName = "Tallstrider Handler"},
         [68504] = {maxLevel = 90, minLevel = 90},
         [68554] = {subName = "The Entourage"},
@@ -66044,6 +66084,7 @@ ns.Overrides.wowhead = {
         [71953] = {subName = "The White Tiger"},
         [71954] = {subName = "The Black Ox"},
         [71955] = {subName = "The Jade Serpent"},
+        [72317] = {maxLevel = 90, minLevel = 90},
         [72426] = {maxLevel = 90, minLevel = 90},
         [72695] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [72723] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},

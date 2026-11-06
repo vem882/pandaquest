@@ -7571,6 +7571,13 @@ ns.Overrides.wowhead = {
                 "items for me, you'll get some coin out of the deal. Watcha wanna do?",
             rewardMoney = 4500,
         },
+        [2260] = {
+            description = "Word of your deeds has spread far and wide, <name>. So far, in fact, that " ..
+                "Stormwind Intelligence has asked for you by name.\n\nThe journey is taxing and not " ..
+                "without peril, but an opportunity to train under SI:7 should not be taken lightly.\n\nA " ..
+                "new world awaits you, <name>. Make your way to Old Town in Stormwind and speak with " ..
+                "Renzik \"The Shiv\" at SI:7 headquarters.",
+        },
         [2278] = {
             description = "The centerpieces of this treasure chamber are four huge platinum discs, each " ..
                 "adorned with numerous sigils of an unknown origin. Touching them makes your hand tingle. " ..
@@ -7767,6 +7774,14 @@ ns.Overrides.wowhead = {
                 "draenethyst, return it to me and I shall reward you with riches beyond your wildest " ..
                 "dreams.",
             rewardItems = {{10752, 1}},
+        },
+        [2541] = {
+            description = "The Gnarlpine shaman that inhabit this place have discovered a way of " ..
+                "separating a sleeping druid's spirit from the physical body. The furbolg have animated " ..
+                "my physical form and are using it to attack anyone that attempts to explore the " ..
+                "Ban'ethil Barrow Den. I am now trapped in the Emerald Dream, powerless to stop " ..
+                "this.\n\nYou must help me. The Gnarlpine shaman carry a strange charm which is used to " ..
+                "perform this ritual, and I'd like to examine it. Please, <name>, bring one to me.",
         },
         [2583] = {
             description = "Within these blasted lands exists two species of boar: the ash-mane boar and " ..
@@ -9156,6 +9171,14 @@ ns.Overrides.wowhead = {
                 "my bramble over their fallen bodies. This will coax their spirit to reveal itself. Touch " ..
                 "the spirit and collect its essence.\n\nReturn to me with my bramble and with the " ..
                 "collected essence, and I will tell you more of the old god of which I spoke.",
+        },
+        [3521] = {
+            description = "We may be able to help Iverron, as I know of an antidote that should help with " ..
+                "the poison. It requires some ingredients, though, before I can make it.\n\nI'll need " ..
+                "Hyacinth mushrooms. You can find these growing under trees, or you may collect them from " ..
+                "the grell south of here; they seem to have taken a liking to them. I'll also need " ..
+                "Moonpetal lilies, which only grow around watery pools.\n\nThe last ingredient may prove " ..
+                "the most difficult. From the very spiders that poisoned Iverron, collect Webwood ichor.",
         },
         [3524] = {
             description = "Majestic sea creatures are known to launch themselves at the Darkshore " ..
@@ -12815,6 +12838,15 @@ ns.Overrides.wowhead = {
                 "clam meat, I will give you something in return.",
             rewardChoices = {{15585, 1}, {15587, 1}, {15588, 1}},
         },
+        [6143] = {
+            description = "Maybe you heard or maybe you haven't... my crew and I was out fishing near " ..
+                "Ranazjar Isle, north of the wrecked ship off the coast up north. We used to fish there " ..
+                "all the time; now all I do is think of a way to seek revenge for my fallen " ..
+                "comrades.\n\nThe naga attacked us one morning, killing everyone except me.\n\nMe " ..
+                "conscience can't handle the guilt, <class>; I need you to go and fry them naga for me. " ..
+                "I'll make the effort worth your while; you think you can help me with that?",
+            rewardMoney = 4000,
+        },
         [6144] = {
             description = "The order has come down, <class>. Varimathras himself has requested that I " ..
                 "send my most 'capable' agents back to the Undercity for a highly sensitive tactical " ..
@@ -12999,6 +13031,14 @@ ns.Overrides.wowhead = {
                 "colleague of mine in Darkshore. His name is Laird, he is a fish vendor in the village of " ..
                 "Auberdine.\n\nBring my collection to our hippogryph master, Vesprystus, and speak to him " ..
                 "about traveling to Auberdine.",
+        },
+        [6342] = {
+            description = "From Rut'theran, there are two methods of travel to Auberdine: by ferry and by " ..
+                "hippogryph. Both are quick and reliable, but if you have not yet flown to Auberdine by " ..
+                "hippogryph, then I suggest you do.\n\nIt is sound advice to speak with the hippogryph " ..
+                "master in every town that has one. Once you speak to the master, you can then fly there " ..
+                "from other towns.\n\nHere is Nessa's collection. Speak with me again when you are ready " ..
+                "to fly to Auberdine and deliver Nessa's collection to Laird.",
         },
         [6344] = {
             description = "A friend of mine, Nessa Shadowsong, is a fishing merchant in Rut'theran " ..
