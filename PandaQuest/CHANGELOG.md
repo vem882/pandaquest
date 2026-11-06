@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.396] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 796 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,513 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,552 quests, 47 NPCs, 2 objects
+- npc 550 - Defias Messenger - updated
+  - coordinates: 32 spawn points added in Westfall
+- npc 2706 - Tor'gan - updated
+  - coordinates: 3 spawn points added in Arathi Highlands
+
 ## [0.2.395] - 2026-11-06
 
 Data from the PandaQuest portal.
@@ -161,13 +173,6 @@ Data from the PandaQuest portal.
 
 - Bind the optional character-name helper explicitly for supported clients.
 - Remove a duplicate Finnish translation and mark intact translation keys for Lua lint.
-
-## [0.2.376] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,497 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,527 quests, 46 NPCs, 2 objects
 
 ## [0.2.270] - 2026-10-26
 

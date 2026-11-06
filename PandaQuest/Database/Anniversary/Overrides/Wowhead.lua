@@ -1308,6 +1308,16 @@ ns.Overrides.wowhead = {
                 "Thunderheart in Splintertree Post, directly north of the Barrens, seeks adventurers " ..
                 "willing to take part in a great hunt of Ashenvale!",
         },
+        [237] = {
+            description = "Mountaineer Cobbleflint had nothing but good things to say about you, <race>. " ..
+                "For that reason I am going to entrust upon you a mission of utmost importance. We need " ..
+                "to keep pressure on the invading Trogg forces until our Dwarven brethren return from the " ..
+                "Alliance front.\n\nSet forth into the southern hills and kill 10 Stonesplinter " ..
+                "Skullthumpers and 10 Stonesplinter Seers. Your attacks will buy us some time. Report " ..
+                "back when your mission is complete.",
+            rewardItems = {{858, 3}},
+            rewardMoney = 700,
+        },
         [238] = {
             description = "The kit is ready, <name>. No doubt that Apothecary Zinge will want this as " ..
                 "soon as possible. Take it to her without delay, and let her know that I will add the " ..
@@ -11215,6 +11225,14 @@ ns.Overrides.wowhead = {
                 "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
                 "of purification and you shall know faith.",
             rewardItems = {{22518, 1}},
+        },
+        [9126] = {
+            description = "Don Julio's Bonescythe armor pattern requires bone fragments - a lot of bone " ..
+                "fragments. While those crazy enough to venture into Naxxramas provide me with enough of " ..
+                "the core materials to make the armor, I'm always looking for more Scourge bone " ..
+                "fragments.\n\nSo what do you think? Interested in getting your hands dirty and " ..
+                "destroying some Scourge at the same time? It's a win-win situation.",
+            rewardItems = {{22524, 1}},
         },
         [9129] = {rewardItems = {{22523, 1}}, rewardMoney = 900},
         [9132] = {rewardItems = {{22523, 1}}, rewardMoney = 900},
