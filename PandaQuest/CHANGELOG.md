@@ -4,6 +4,15 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.389] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 784 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,506 quests, 27 NPCs, 5 objects
+- npc 570 - Brain Eater - updated
+  - coordinates: 35 spawn points added in Duskwood
+
 ## [0.2.386] - 2026-11-06
 
 - Read your learned Forever recipes through the modern profession API without changing window filters.
@@ -120,13 +129,6 @@ Data from the PandaQuest portal.
   - coordinates: 3 spawn points added in Thousand Needles
 - npc 50335 - Alitus - updated
   - coordinates: 4 spawn points added in Hillsbrad Foothills
-
-## [0.2.371] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,492 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,510 quests, 46 NPCs, 1 object
 
 ## [0.2.270] - 2026-10-26
 

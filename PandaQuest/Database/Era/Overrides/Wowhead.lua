@@ -7825,6 +7825,13 @@ ns.Overrides.wowhead = {
                 "This certainly is a strange turn of events, <name>.\n\nA cure? Hrm... Go down to the " ..
                 "cellar and speak with Doc Mixilpixil - he may be able to help.",
         },
+        [2608] = {
+            description = "Oh my, you look like death. Correction - I've seen death, you look worse than " ..
+                "death. You, <sir/miss>, would be what death coughed up at his last physical.\n\nHah! You " ..
+                "hear that Noarm? Write that one down!\n\n*Cough* Hrm yes, in order for me to help you, " ..
+                "I'll need to draw some blood. Don't worry, it only hurts the first few... fifty times or " ..
+                "so... /lay down when you're ready for the treatment, <name>.",
+        },
         [2621] = {
             description = "Regret. It is all I have now. One bad decision resulting in several horrible " ..
                 "outcomes. If only I had waited for those orders. Maybe they would have detailed the " ..
@@ -11188,6 +11195,14 @@ ns.Overrides.wowhead = {
                 "wild leather armor. From there, we will begin your mastery.",
         },
         [5144] = {
+            description = "Elemental leatherworking is what I know, and if you're willing to open your " ..
+                "mind to the greater powers of substance, I will share with you all there is to " ..
+                "learn.\n\nKnow this, <class>: by choosing this path you agree never to learn dragonscale " ..
+                "or tribal leatherworking; there is only room for practice of one of the three arts. " ..
+                "Furthermore, I'll need adequate proof that you are in tune with the elements of nature; " ..
+                "to that end, bring me the purest essences of fire, water, earth, and wind.",
+        },
+        [5146] = {
             description = "Elemental leatherworking is what I know, and if you're willing to open your " ..
                 "mind to the greater powers of substance, I will share with you all there is to " ..
                 "learn.\n\nKnow this, <class>: by choosing this path you agree never to learn dragonscale " ..
@@ -15274,6 +15289,15 @@ ns.Overrides.wowhead = {
                 "Lost Rigger Cove, which is not too far to the south. Thanks <name>, I'll owe you one!",
             rewardChoices = {{20640, 1}, {20641, 1}},
             rewardMoney = 6500,
+        },
+        [8367] = {
+            description = "Serving the Horde in one of the great battles against the Alliance is a source " ..
+                "of great honor! The few however, that have served the Horde in ALL of our active " ..
+                "battlefronts are our truly great fighters. We shall vanquish our opponents, not by " ..
+                "fighting isolated skirmishes, but by waging a well-coordinated war.\n\nGo forth and " ..
+                "crush the Alliance in Arathi Basin, Alterac Valley and Warsong Gulch! For Honor! For the " ..
+                "Horde!",
+            rewardMoney = 27000,
         },
         [8368] = {
             description = "The battle in Warsong Gulch against the Silverwing Sentinels is of great " ..
