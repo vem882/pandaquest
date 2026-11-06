@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [Unreleased]
+
+- Fixed repeated navigation errors when the client protects movement speed values.
+- Current, run, flight and swim speeds are checked before comparison or smoothing.
+  Restricted or invalid readings use safe ETA defaults and are not used for travel samples.
+- Player facing and mount/flight state wrappers also reject protected readings.
+
 ## [0.2.397] - 2026-11-06
 
 Data from the PandaQuest portal.

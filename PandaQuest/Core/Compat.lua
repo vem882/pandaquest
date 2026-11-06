@@ -96,36 +96,54 @@ function Compat.GetMinimapShape()
     return "ROUND"
 end
 
+-- API numbers must be public before any comparison or arithmetic. type() alone does not
+-- reject Mainline secret numbers. Never coerce or try to unwrap a restricted value.
+local function plainNumber(value, fallback)
+    value = Compat.Plain(value)
+    if type(value) ~= "number" then return fallback end
+    if value ~= value or value == math.huge or value == -math.huge then return fallback end
+    return value
+end
+
+local function publicFlag(api)
+    if type(api) ~= "function" then return false end
+    local ok, value = pcall(api)
+    if not ok then return false end
+    value = Compat.Plain(value)
+    return value and true or false
+end
+
 -- Player facing in radians; nil when unavailable (e.g. while the camera is unavailable).
 function Compat.GetPlayerFacing()
     if _G.GetPlayerFacing then
         local ok, facing = pcall(_G.GetPlayerFacing)
-        if ok and type(facing) == "number" then return facing end
+        if ok then return plainNumber(facing, nil) end
     end
     return nil
 end
 
 -- UnitSpeed() -> currentSpeed, runSpeed, flightSpeed, swimSpeed (yards/s); zeros when unavailable.
 function Compat.UnitSpeed(unit)
-    if _G.GetUnitSpeed then
-        local current, run, flight, swim = _G.GetUnitSpeed(unit or "player")
-        return current or 0, run or ns.Const.RUN_SPEED, flight or 0, swim or 0
+    if type(_G.GetUnitSpeed) == "function" then
+        local ok, current, run, flight, swim = pcall(_G.GetUnitSpeed, unit or "player")
+        if ok then
+            current = plainNumber(current, 0)
+            run = plainNumber(run, ns.Const.RUN_SPEED)
+            flight = plainNumber(flight, 0)
+            swim = plainNumber(swim, 0)
+            return current >= 0 and current or 0, run >= 0 and run or ns.Const.RUN_SPEED,
+                   flight >= 0 and flight or 0, swim >= 0 and swim or 0
+        end
     end
     return 0, ns.Const.RUN_SPEED, 0, 0
 end
 
 function Compat.IsMounted()
-    if _G.IsMounted then
-        return _G.IsMounted() and true or false
-    end
-    return false
+    return publicFlag(_G.IsMounted)
 end
 
 function Compat.IsFlying()
-    if _G.IsFlying then
-        return _G.IsFlying() and true or false
-    end
-    return false
+    return publicFlag(_G.IsFlying)
 end
 
 function Compat.InCombatLockdown()
@@ -180,7 +198,8 @@ function Compat.IsSecret(value)
     local test = _G.issecretvalue
     if type(test) ~= "function" then return false end
     local ok, secret = pcall(test, value)
-    return ok and secret and true or false
+    if not ok then return true end -- an unreadable protection status must fail closed
+    return secret and true or false
 end
 
 --- Compat.Plain(value) -> value, or nil when it is a secret value nothing may be done with.

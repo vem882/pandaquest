@@ -1,3 +1,8 @@
+Movement and navigation safety
+- Fixed repeated GetSpeed errors when movement speed is a protected client value.
+- Restricted speed, facing and mount/flight readings no longer reach navigation calculations.
+- ETA uses a safe default when movement data is unavailable.
+
 Documentation update
 - Live Forever data and the modern profession recipe reader are described correctly.
 - Explained automatic multi-game Sync and the remaining Retail/PTR support limits.
