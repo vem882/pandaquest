@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.400] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 800 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,516 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,555 quests, 47 NPCs, 2 objects
+- npc 39040 - Alliance Field Defender - updated
+  - coordinates: 2 spawn points added in Southern Barrens
+- npc 67996 - Archmage Modera - updated
+  - NPC level added (90)
+- npc 69197 - Alliance Officer - updated
+  - NPC level added (91)
+
 ## [Unreleased]
 
 - Fixed repeated navigation errors when the client protects movement speed values.
@@ -150,16 +164,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,502 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,536 quests, 46 NPCs, 2 objects
-
-## [0.2.382] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 781 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,499 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,531 quests, 46 NPCs, 2 objects
-- npc 69194 - Alliance Cannoneer - updated
-  - NPC level added (90)
 
 ## [0.2.379] - 2026-11-05
 
