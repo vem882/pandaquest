@@ -1224,6 +1224,12 @@ ns.Overrides.wowhead = {
                 "accomplishment.\n\nTracking her down will be no easy task.",
             rewardItems = {{4107, 1}},
         },
+        [191] = {
+            description = "Now you're ready to turn it up a notch. If you want to prove yourself worthy " ..
+                "of socializing with the likes of these big game hunters, you'll need to prove that you " ..
+                "can kill 10 panthers.\n\nThose big boys are tougher. They're not as easy as the young " ..
+                "ones you were killing earlier.",
+        },
         [192] = {
             description = "Now the hard part. A true panther hunter can show skill by dropping Shadowmaw " ..
                 "Panthers, the deadliest in Stranglethorn. Prove to us that you can slay 10 of these " ..
@@ -1353,6 +1359,13 @@ ns.Overrides.wowhead = {
             description = "Here is your book, and good luck with your inquiries.\n\nYou might want to " ..
                 "expand your search to the inn. If the person whom you seek spent time in town, then " ..
                 "chances are someone saw him there.",
+        },
+        [269] = {
+            description = "Go to the city of Stormwind and speak with Bishop Farthing in the Cathedral of " ..
+                "Light. Give him Jitters' journal and tell him you mean to face Morbent Fel.\n\nAlthough " ..
+                "Stormwind has forsaken Darkshire, Farthing is a kind soul and very wise. He may help you " ..
+                "on your quest to save us.\n\nYour mission is perilous, but hurry, <name>. With each " ..
+                "passing hour, the shadows of Duskwood grow ever darker.",
         },
         [270] = {
             description = "Years ago, the Third Fleet of Kul'Tiras sunk along the coasts of The Wetlands, " ..
@@ -5299,6 +5312,15 @@ ns.Overrides.wowhead = {
                 "Shadowglen and cannot yet leave.\n\nCan you deliver this package for me? It must be sent " ..
                 "to Innkeeper Keldamyr, at the Dolanaar inn. It lies along the road, to the south.",
             rewardChoices = {{2070, 5}, {159, 5}},
+        },
+        [2178] = {
+            description = "Do you smell that delicious aroma? It's my secret recipe, <name>--fresh " ..
+                "strider stew. Delicious!\n\nPerhaps you would be interested in learning the " ..
+                "recipe?\n\nBefore I teach you the recipe, you will need to prove that you can handle the " ..
+                "beasts.\n\nNow, I don't expect you to go out and tame one and ride it back to me, but if " ..
+                "you can kill a few and bring back some of their succulent meat, I may be persuaded to " ..
+                "show you the ways of strider stew.",
+            rewardItems = {{5486, 1}, {5477, 5}},
         },
         [2198] = {
             description = "You have found a tarnished necklace, though the tarnish belies intricate and " ..
@@ -12556,6 +12578,13 @@ ns.Overrides.wowhead = {
                 "southwest of here, near the sun gate. Kill them and report back to Aesom when you're " ..
                 "done.",
         },
+        [9751] = {
+            description = "Last night, Edward Hanes, captain of the ship 'Lost Hope', appeared before me " ..
+                "in my tent. The same Edward Hanes that died of scurvy 20 years ago.\n\nThis apparition " ..
+                "told me a tale that made my heart tremble. A tale that I need you to hear and a mission " ..
+                "that I need you to accomplish. Will you do it? Will you seek out Edward on Wyrmscar " ..
+                "Island, northeast of Blood Watch?",
+        },
         [9756] = {
             description = "Our attempts at interrogation have failed miserably, <name>. Torture is - of " ..
                 "course - out of the question. What we need is a draenei on the inside.\n\nI can cast a " ..
@@ -18413,6 +18442,14 @@ ns.Overrides.wowhead = {
                 "inhabitants. You will be responsible for making at least one attack per day on their " ..
                 "fortifications.",
             rewardMoney = 44000,
+        },
+        [11089] = {
+            description = "Reth'hedron now lords over the Twilight Ridge of Nagrand. An eredar of such " ..
+                "power being loosed upon this world does not bode well for the Illidari. Alas, we do not " ..
+                "have the resources required to slay Reth'hedron. Not with the war the bastards have " ..
+                "brought to the Black Temple. No... I have a better plan.\n\nYou will subdue Reth'hedron, " ..
+                "banishing him back through the Twilight Portal. For this a soul cannon must be " ..
+                "fashioned.\n\nReturn to me with the materials on this list.",
         },
         [11094] = {
             description = "Commander <name>, stand at attention! You are to take a battalion of " ..

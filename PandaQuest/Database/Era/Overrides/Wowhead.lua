@@ -2749,6 +2749,7 @@ ns.Overrides.wowhead = {
                 "Bay.\n\nHelp an old sea dog out by gettin' me eye back?",
             rewardItems = {{4114, 1}},
         },
+        [579] = {rewardChoices = {{2154, 1}, {3899, 1}}},
         [581] = {
             description = "A doom, there is. A doom on my chief's youngest son, Yenniku. As is a custom " ..
                 "with our people, he was given to the Gurubashi Trolls of Zul'Gurub, but after my tribe, " ..
@@ -4486,6 +4487,16 @@ ns.Overrides.wowhead = {
                 "Winterspring and speak to a friend of mine. Her name is Donova Snowden, and she is " ..
                 "currently staying by the hot springs there.\n\nThanks again for helping me with my " ..
                 "thermometer! See you later!",
+        },
+        [982] = {
+            description = "Off the coast of Darkshore to our north are two wrecked ships - the Silver " ..
+                "Dawning and the Mist Veil. Some time ago, both ships ran afoul of the blasted murlocs as " ..
+                "they sailed across the vast sea into Auberdine. They now lie at the bottom of the ocean " ..
+                "as trophies for those fiends.\n\nBoth captains didn't make it out that night, and their " ..
+                "logs and other effects are still below in lockboxes. I'd like for you to recover them " ..
+                "for us; it would mean a lot to the crew members still around these parts.",
+            rewardChoices = {{15401, 1}, {15402, 1}},
+            rewardMoney = 1800,
         },
         [983] = {
             description = "Hey! Help me with my latest invention, the buzzbox. You can talk to people far " ..
@@ -7013,6 +7024,14 @@ ns.Overrides.wowhead = {
                 "unaided.\n\nPerhaps Krom Stoutarm can help you with this. An itinerant warlock these " ..
                 "days, he spends his days hoarding ancient texts and skulking about the library in " ..
                 "Ironforge.",
+        },
+        [1779] = {
+            description = "I want you to take this, <name>. It is called the Symbol of Life.\n\nYou've " ..
+                "proven charitable and patient, and now I want you to prove just how adept you've become " ..
+                "in both combat, and power.\n\nMy husband Muiredon returned recently from an encounter " ..
+                "with some Dark Iron dwarves, and he barely escaped with his life--he's over there having " ..
+                "his wounds healed by one of our priests.\n\nTake the Symbol and speak to him. If you can " ..
+                "help him, then we will speak again soon. May the Light shine upon you.",
         },
         [1781] = {
             description = "Take this, <name>. It is called the Symbol of Life.\n\nYou've proven " ..
