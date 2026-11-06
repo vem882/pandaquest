@@ -934,3 +934,135 @@ function M.OnDisable()
     if ctx then M.Stop("stopped") end
     windowOpen, armed, attempts = false, false, 0
 end
+
+-- Modern profession windows (Forever and Retail). Read known spells without changing filters.
+local classicStart, classicCanScan, classicEnable, classicDisable = M.Start, M.CanScan, M.OnEnable, M.OnDisable
+local classicIsScanning, classicIsWindowOpen, classicStop = M.IsScanning, M.IsWindowOpen, M.Stop
+local modernOpen, modernBusy, modernGeneration = false, false, 0
+local function modernClient()
+    return ns.Game and (ns.Game.id == "forever" or ns.Game.id == "retail")
+end
+local function modernTradeAPI()
+    -- This namespace has additional functions on modern clients absent from the Classic API list.
+    return rawget(_G, "C_TradeSkillUI")
+end
+local function ownModernBook()
+    local api = modernTradeAPI()
+    if not api then return false end
+    for _, key in ipairs({ "IsTradeSkillLinked", "IsTradeSkillGuild", "IsNPCCrafting" }) do
+        if type(api[key]) == "function" and api[key]() then return false end
+    end
+    return not (IsTradeSkillLinked and IsTradeSkillLinked())
+end
+function M.CanScan()
+    if not modernClient() then return classicCanScan() end
+    if not ns.IsModuleWanted("RecipeScanner") then return false, "off" end
+    if modernBusy then return false, "running" end
+    if not modernOpen then return false, "closed" end
+    local api = modernTradeAPI()
+    if not (api and api.GetBaseProfessionInfo and api.GetRecipeInfo and api.GetRecipeSchematic
+        and (api.GetProfessionSpells or api.GetAllRecipeIDs)) then return false, "unsupported" end
+    if not ownModernBook() then return false, "linked" end
+    return true
+end
+function M.Start()
+    if not modernClient() then return classicStart() end
+    local allowed, reason = M.CanScan()
+    if not allowed then return false, reason end
+    local api = modernTradeAPI()
+    local profession = api.GetBaseProfessionInfo()
+    if not profession or not profession.professionID or not profession.professionName then return false, "pending" end
+    local ids = api.GetProfessionSpells and api.GetProfessionSpells(profession.professionID)
+    if not ids and api.GetAllRecipeIDs then ids = api.GetAllRecipeIDs() end
+    if type(ids) ~= "table" or #ids == 0 then return false, "pending" end
+    modernBusy = true
+    local generation = modernGeneration
+    local started = unixNow()
+    Thread.Run(function()
+        local rows, skipped, incomplete = {}, 0, 0
+        local difficulty = { [0] = "optimal", [1] = "medium", [2] = "easy", [3] = "trivial" }
+        for index, id in ipairs(ids) do
+            if not modernOpen or generation ~= modernGeneration or not ownModernBook() then return end
+            local info = api.GetRecipeInfo(id)
+            if info and info.learned and not info.disabled then
+                local schematic = api.GetRecipeSchematic(id, false)
+                if not schematic or not schematic.reagentSlotSchematics then
+                    incomplete = incomplete + 1
+                else
+                    local reagents, representable = {}, true
+                    for _, slot in ipairs(schematic.reagentSlotSchematics) do
+                        if slot.required and (slot.quantityRequired or 0) > 0 then
+                            -- The legacy upload grammar cannot express a choice of reagent qualities.
+                            if not slot.reagents or #slot.reagents ~= 1 or not slot.reagents[1].itemID then
+                                representable = false
+                            else
+                                reagents[#reagents + 1] = { slot.reagents[1].itemID, slot.quantityRequired }
+                            end
+                        end
+                    end
+                    if representable and #reagents <= Store.LIMITS.maxReagents then
+                        rows[#rows + 1] = Store.EncodeRecipe({ spellID = id, itemID = schematic.outputItemID,
+                            minMade = schematic.quantityMin, maxMade = schematic.quantityMax,
+                            difficulty = difficulty[info.relativeDifficulty] or "", reagents = reagents })
+                    else skipped = skipped + 1 end
+                end
+            elseif not info then incomplete = incomplete + 1 end
+            if #rows >= Store.LIMITS.maxRecipes then break end
+            if index % ROWS_PER_YIELD == 0 then Thread.Yield() end
+        end
+        local current = api.GetBaseProfessionInfo()
+        if not modernOpen or generation ~= modernGeneration or not ownModernBook()
+            or not current or current.professionID ~= profession.professionID then return end
+        if #rows == 0 then return end
+        local name, realm, faction = Store.CurrentCharacter()
+        local previous = Store.GetProfession(name, realm, profession.professionID, profession.professionName)
+        if incomplete > 0 and previous and (previous.recipes or 0) > #rows then return end
+        local version, build = GetBuildInfo()
+        local entry = Store.SetProfession({ id = Store.ScanId(realm, profession.professionID, profession.professionName, started),
+            character = name, realm = realm, faction = faction, profession = profession.professionName,
+            skillLine = profession.professionID, rank = profession.skillLevel, maxRank = profession.maxSkillLevel,
+            scannedAt = started, addonVersion = Const.VERSION, clientBuild = version .. "." .. build,
+            recipes = #rows, r = rows, skipped = skipped, incomplete = incomplete,
+            truncated = #rows >= Store.LIMITS.maxRecipes })
+        lastResult = { ok = entry ~= nil, reason = entry and "done" or "invalid", entry = entry, at = unixNow() }
+    end, { name = "ModernRecipeScan", ticksPerYield = ROWS_PER_YIELD, pauseInCombat = false,
+        onDone = function() modernBusy = false end })
+    return true
+end
+function M.OnEnable()
+    if not modernClient() then return classicEnable() end
+    M:RegisterEvent("TRADE_SKILL_SHOW", function()
+        modernOpen = true
+        modernGeneration = modernGeneration + 1
+        if setting("scanOnOpen") then M.Start() end
+    end)
+    M:RegisterEvent("TRADE_SKILL_LIST_UPDATE", function()
+        if modernOpen and not modernBusy and setting("scanOnOpen") then M.Start() end
+    end)
+    M:RegisterEvent("TRADE_SKILL_CLOSE", function()
+        modernOpen = false
+        modernGeneration = modernGeneration + 1
+    end)
+end
+
+function M.OnDisable()
+    modernOpen = false
+    modernGeneration = modernGeneration + 1
+    classicDisable()
+end
+
+function M.IsScanning()
+    if modernClient() then return modernBusy end
+    return classicIsScanning()
+end
+function M.IsWindowOpen()
+    if modernClient() then return modernOpen end
+    return classicIsWindowOpen()
+end
+function M.Stop(reason)
+    if not modernClient() then return classicStop(reason) end
+    if not modernBusy then return false end
+    modernGeneration = modernGeneration + 1
+    lastResult = { ok = false, reason = reason or "stopped", at = unixNow() }
+    return true
+end

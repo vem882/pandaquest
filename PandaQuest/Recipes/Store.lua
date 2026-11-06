@@ -24,6 +24,7 @@
 -- would take for measurements. One entry per character, replaced the same way and for the same
 -- reason.
 local _, ns = ...
+local NameUtil = _G.NameUtil
 
 local M = ns.PQ:GetModule("RecipeStore")   -- an AceAddon module (Core/Const.lua)
 ns.RecipeStore = M
@@ -111,7 +112,14 @@ end
 -- character key spells it (no spaces, no dashes), so a profession entry and a character on the hub
 -- can be talked about in the same words.
 function M.CurrentCharacter()
-    local name = (UnitName and UnitName("player")) or "Unknown"
+    local name, surname
+    if UnitName then name, surname = UnitName("player") end
+    name = name or "Unknown"
+    if ns.Game and ns.Game.id == "forever" then
+        local displayed = NameUtil and NameUtil.FormatUnitNameForDisplay and NameUtil.FormatUnitNameForDisplay("player")
+        if type(displayed) == "string" and displayed ~= "" then name = displayed
+        elseif type(surname) == "string" and surname ~= "" then name = name .. " " .. surname end
+    end
     local realm = GetNormalizedRealmName and GetNormalizedRealmName()
     if not realm or realm == "" then
         realm = ((GetRealmName and GetRealmName()) or "Unknown"):gsub("[%s%-]", "")

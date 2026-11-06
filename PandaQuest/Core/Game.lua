@@ -97,7 +97,7 @@ end
 Game.FEATURES = {
     archaeology = { mop = true },
     watchFrame = { mop = true },
-    tradeSkills = { mop = true, era = true, anniversary = true },
+    tradeSkills = { mop = true, era = true, anniversary = true, forever = true, retail = true },
     combatLog = { mop = true, era = true, anniversary = true },
     petBattles = { mop = true },
     pandaria = { mop = true },

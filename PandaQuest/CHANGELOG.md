@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.386] - 2026-11-06
+
+- Read your learned Forever recipes through the modern profession API without changing window filters.
+- Ignore linked and guild recipe books; cancel unfinished scans when the window closes or the module is disabled.
+- Preserve both parts of Forever character names in local recipe records.
+
 ## [0.2.385] - 2026-11-06
 
 Data from the PandaQuest portal.
