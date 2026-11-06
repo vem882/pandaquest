@@ -1323,6 +1323,10 @@ ns.Overrides.wowhead = {
                 "why I need you, <name>. I spotted some Dark Iron Sappers milling about the eastern ramp " ..
                 "of the Dam. Investigate the area and bring back a clue.",
         },
+        [251] = {
+            description = "Take the note you gave me to Sirra Von'Indi. He's very learned in languages " ..
+                "and ancient arts - if anyone here can translate this message, it's he.",
+        },
         [253] = {
             description = "The Embalmer is a name told in one of our children's stories. He was a kindly " ..
                 "alchemist, driven mad by the death of his wife, Eliza. To restore her, he used dark " ..
@@ -5459,6 +5463,15 @@ ns.Overrides.wowhead = {
                 "shade.",
         },
         [2399] = {rewardItems = {{5205, 5}}},
+        [2438] = {
+            description = "I was once given an emerald dreamcatcher from Gaerolas Talvethen, the warden " ..
+                "of the druids in the Ban'ethil Barrow Den. This powerful amulet is able to siphon energy " ..
+                "from the Emerald Dream, bestowing luck upon those who carry it.\n\nSadly, I have not " ..
+                "been able to retrieve it from my dresser in Starbreeze Village... Although Starbreeze " ..
+                "was once a tranquil place, it has now succumbed to the corruption of the furbolg that " ..
+                "reside there.\n\nPerhaps you would be willing to recover my dreamcatcher, <class>?",
+            rewardMoney = 100,
+        },
         [2440] = {
             description = "I shall focus my energies on these discs; they will reveal their true workings " ..
                 "to me in due time.\n\nAs for you <name>, I will now reward you for your diligence in " ..
@@ -9204,6 +9217,15 @@ ns.Overrides.wowhead = {
         [7224] = {
             description = "When you fight the enemy, gather the scraps of their armor and bring them to " ..
                 "me. I'll use those scraps to make armor for our own troops!",
+            rewardXP = 7070,
+        },
+        [7261] = {
+            description = "We are fighting a brutal battle in the valleys of Alterac. The cannibalistic " ..
+                "Winterax trolls attack us from one side and the savage Frostwolf Clan from the other. " ..
+                "Both must be exterminated in the name of King Magni Bronzebeard! The taking, culling, " ..
+                "and turning of that land is a sovereign and territorial imperative to the kingdom of " ..
+                "Ironforge.\n\nAlas, soldiers do not grow on trees! Report to Lieutenant Haggerdin " ..
+                "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
             rewardXP = 7070,
         },
         [7321] = {

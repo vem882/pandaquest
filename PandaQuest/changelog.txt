@@ -4,6 +4,18 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.385
+- database - rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
+- database - Classic Era rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
+- database - TBC Anniversary rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
+- database - WoW Forever rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
+- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 783 NPCs, 2 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,539 quests, 47 NPCs, 2 objects
+- npc 31406 - Alliance Infra-green Bomber - updated
+  - coordinates: 40 spawn points added in Icecrown
+- npc 68821 - Alliance Rootshaper - updated
+  - NPC level added (90)
+
 0.2.384
 - database - Classic Era: data from the PandaQuest portal: 2,503 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,536 quests, 47 NPCs, 2 objects
@@ -83,17 +95,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 
 0.2.366
 - sync - Keep both parts of Forever character names separate from the realm
-
-0.2.364
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 777 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,489 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,508 quests, 46 NPCs, 1 object
-- npc 8399 - Nyrill - updated
-  - coordinates: 1 spawn point added in Azshara
-- npc 50345 - Alit - updated
-  - coordinates: 5 spawn points added in Western Plaguelands
-- npc 52799 - Alexstrasza - updated
-  - coordinates: 1 spawn point added in Mount Hyjal
 
 0.2.270
 - database - WoW Forever ships its quest database: Questie's beta data, built like the other games'
