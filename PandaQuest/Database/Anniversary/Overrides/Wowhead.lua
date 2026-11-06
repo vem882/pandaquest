@@ -1979,6 +1979,11 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3450, 1}, {2818, 1}, {3449, 1}},
             rewardMoney = 700,
         },
+        [453] = {
+            description = "Good luck, <name>. I hope you find the chap, and I hope you find him " ..
+                "alive.\n\nIf he's left the safety of Darkshire then he could be prey to the beasts of " ..
+                "the wilds.",
+        },
         [454] = {
             description = "We'd been hauling the barrels of powder back and forth in trips before this... " ..
                 "business. Now we have to split up the work, Miran 's taking the barrels and I'm watching " ..
@@ -4749,6 +4754,15 @@ ns.Overrides.wowhead = {
                 "only a select few of our kind know the secrets of its creation.\n\nThe sapta is always " ..
                 "imbibed in a holy place, and never anywhere else.\n\nSeek out the shaman shrine to the " ..
                 "east of here and drink of the sapta.",
+        },
+        [1521] = {
+            description = "Take this rough quartz from me and bring it to Seer Ravenfeather as proof of " ..
+                "our meeting. She will craft a totem for you, and this pebble will be the heart of it. As " ..
+                "small as it may seem, you will come to find that size does not matter, and that even the " ..
+                "smallest of things can outlast mountains.\n\nBe patient, <name>. Remain strong. And seek " ..
+                "wisdom. This is what earth asks of you. In the end, you shall become one with the " ..
+                "earth--respect it as it shall respect you.",
+            rewardItems = {{5175, 1}},
         },
         [1522] = {
             description = "Fire be witcha, mon. I see you be strong in da ways of earth already, an' me " ..
@@ -11538,6 +11552,15 @@ ns.Overrides.wowhead = {
                 "reinforcements daily, and we can't afford to lose ground in our struggle for resources " ..
                 "in Silithus.\n\nGet your instructions from the General. It's not my job to train you, " ..
                 "just find you.",
+        },
+        [9417] = {
+            description = "The arakkoa are smart creatures... smart as any gnome you ever met. They have " ..
+                "this way with magic and a violent temper, however.\n\nLately they've taken to attacking " ..
+                "Honor Hold patrols, which is why we were sent here. See, Mirren and I are world-famous " ..
+                "marksmen, we are! But fowl and game are what we specialize in... not these... " ..
+                "lightning-invoking birdmen.\n\nSo what do you say you give us a hand in this one " ..
+                "assignment? You'll find the Den of Haal'esh to the southwest.",
+            rewardMoney = 58000,
         },
         [9426] = {
             description = "Much has changed since the days when we called this land Draenor. Parts of the " ..

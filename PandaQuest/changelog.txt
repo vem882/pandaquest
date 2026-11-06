@@ -4,6 +4,17 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.390
+- database - Wowhead data as the PandaQuest portal read it: 7,933 quests, 786 NPCs, 2 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,542 quests, 47 NPCs, 2 objects
+- quest 31550 - Got one! - updated
+  - description added
+  - reward money added (10g 60s)
+- npc 569 - Green Recluse - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 32344 - Alliance Rescue Craft - updated
+  - coordinates: 40 spawn points added in Icecrown
+
 0.2.389
 - database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 784 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,506 quests, 27 NPCs, 5 objects
@@ -83,15 +94,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 0.2.373
 - database - Classic Era: data from the PandaQuest portal: 2,496 quests, 26 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,515 quests, 46 NPCs, 1 object
-
-0.2.372
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 779 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,493 quests, 26 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,513 quests, 46 NPCs, 1 object
-- npc 4720 - [Deprecated for 4.x]Rizzle Brassbolts - updated
-  - coordinates: 3 spawn points added in Thousand Needles
-- npc 50335 - Alitus - updated
-  - coordinates: 4 spawn points added in Hillsbrad Foothills
 
 0.2.370
 - sync - Ask about optional telemetry once on first login and remember either answer
