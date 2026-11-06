@@ -10181,6 +10181,13 @@ ns.Overrides.wowhead = {
                 "the gear we reserve for our closest allies in exchange for those badges.",
             rewardChoices = {{21181, 1}, {21182, 1}, {21183, 1}},
         },
+        [8573] = {
+            description = "The badges you collect from performing combat, logistics and tactical " ..
+                "assignments for Cenarion Hold are more than just for show, <name>.\n\nYou'd be wise to " ..
+                "hold on to them. As you prove your loyalty to our organization I can offer you some of " ..
+                "the gear we reserve for our closest allies in exchange for those badges.",
+            rewardChoices = {{21188, 1}, {21190, 1}, {21180, 1}},
+        },
         [8574] = {
             description = "The badges you collect from performing combat, logistics and tactical " ..
                 "assignments for Windcaller Proudhorn are more than just for show, <name>.\n\nYou'd be " ..
@@ -17719,6 +17726,13 @@ ns.Overrides.wowhead = {
                 "Terokkarantula, the brood-mother of these gruesome creatures. If we are to be safe, she " ..
                 "must die.",
             rewardChoices = {{31821, 1}, {31820, 1}, {31819, 1}, {31823, 1}},
+        },
+        [10922] = {
+            description = "Oy! You look like you can take care of yerself, <race>. Me and the crew here " ..
+                "are looking for a bodyguard to watch over us while we hit a dig site to the north. The " ..
+                "pay is pretty good and all you gotta do is make sure no nasty creatures kill me or any " ..
+                "of my employees.\n\nIf you successfully make it back without any casualties, Dwarfowitz " ..
+                "over there will pay ya.",
         },
         [10923] = {
             description = "Now you must use the Dread Relic in a foul necromantic ritual if you wish to " ..
