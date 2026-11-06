@@ -17584,6 +17584,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{22707, 1}},
             rewardXP = 6600,
         },
+        [9233] = {
+            description = "Wilhelm,\n\nIf you are reading this, I have perished - finally. I want you to " ..
+                "know that my dying thoughts revolved around you and your ineptitude when it comes to " ..
+                "tradeskills. Unfortunately, the bearer of this handbook is in even worse shape than you " ..
+                "in regards to crafting.\n\nAbout the book: These are the rest of my recipes. Make the " ..
+                "bearer of this book whatever they request. I'm sure you will charge a hefty fee for your " ..
+                "services because you are, after all, a bastard.\n\nIn Disdain,\n\nOmarion",
+        },
         [9234] = {
             description = "Thanks to you and Omarion, may he rest in peace, I am now able to create " ..
                 "Icebane gauntlets. All you need to do is bring me the materials and pay a small crafting " ..
