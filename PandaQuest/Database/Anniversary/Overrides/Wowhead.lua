@@ -3798,6 +3798,14 @@ ns.Overrides.wowhead = {
                 "ready.\n\nBut I need a spell from a friend in Stormwind-- Collin Mauren is his name. You " ..
                 "can find him in the mage quarter there. He's human, so he shouldn't be hard to miss.",
         },
+        [1076] = {
+            description = "Ah, I think I have it. A messaging spell... I believe that's the effect he's " ..
+                "looking for.\n\nI'll have to create a scroll with the spell impressed upon it. To do " ..
+                "that I'll need debris from a dust devil.\n\nWhile I gather the rest of the components, " ..
+                "why don't you head to Westfall and find one of the foul creatures? They are dangerous, " ..
+                "but I'm sure it's nothing you can't handle if you're willing to subject yourself to one " ..
+                "of Gaxim's experiments.\n\nI'll be here when you return.",
+        },
         [1078] = {
             description = "Travelers keep asking me about the Stonetalon Mountains. It seems to be a " ..
                 "popular place for adventure--it doesn't matter if you're seeking wyvern, elementals, or " ..
@@ -5611,6 +5619,14 @@ ns.Overrides.wowhead = {
                 "was the last I saw or heard of Kirith.",
         },
         [2741] = {rewardItems = {{8647, 1}}},
+        [2745] = {
+            description = "Hmm, an interesting tale, and not one to be taken lightly. Yeah, I can help " ..
+                "you, but what you need to do is divvy out a form of justice that's not... legal, if " ..
+                "you're to see this through to the end.\n\nLescovar and Marzon need to be dealt with, and " ..
+                "swiftly. Do you think you're capable of such a thing?\n\nYou decide. If so, then make " ..
+                "haste to the castle and find an old friend of mine, a gnome named Tyrion. He's been " ..
+                "watching Lescovar now for a couple weeks. He should be able to help you end this.",
+        },
         [2749] = {rewardItems = {{9539, 1}}},
         [2751] = {
             description = "Twenty generations of Omosh have held this hammer, <name>. A hundred thousand " ..

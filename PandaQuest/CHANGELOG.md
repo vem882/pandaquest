@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.392] - 2026-11-06
+
+Data from the PandaQuest portal.
+
+- database - TBC Anniversary: data from the PandaQuest portal: 2,546 quests, 47 NPCs, 2 objects
+
 ## [0.2.391] - 2026-11-06
 
 Data from the PandaQuest portal.
@@ -134,15 +140,6 @@ Data from the PandaQuest portal.
 Data from the PandaQuest portal.
 
 - database - TBC Anniversary: data from the PandaQuest portal: 2,521 quests, 46 NPCs, 2 objects
-
-## [0.2.374] - 2026-11-05
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 780 NPCs, 2 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,519 quests, 46 NPCs, 1 object
-- npc 619 - Defias Conjurer - updated
-  - coordinates: 8 spawn points added in Westfall
 
 ## [0.2.270] - 2026-10-26
 
