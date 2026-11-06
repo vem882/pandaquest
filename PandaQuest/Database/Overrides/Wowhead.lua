@@ -65740,6 +65740,7 @@ ns.Overrides.wowhead = {
         },
         [36472] = {subName = "Secret Laboratory Archives"},
         [36689] = {spawns = {[16] = {{71.8, 16.4}, {71.8, 16.6}}}, zoneID = 16},
+        [39040] = {spawns = {[4709] = {{46.4, 47.2}, {49.4, 53.8}}}, zoneID = 4709},
         [39273] = {
             spawns = {
                 [1] = {
@@ -65953,6 +65954,7 @@ ns.Overrides.wowhead = {
         [67948] = {maxLevel = 15, minLevel = 15},
         [67951] = {rank = 0},
         [67993] = {maxLevel = 9999, minLevel = 9999},
+        [67996] = {maxLevel = 90, minLevel = 90},
         [67997] = {maxLevel = 90, minLevel = 90},
         [67999] = {maxLevel = 90, minLevel = 90},
         [68004] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
@@ -66026,6 +66028,7 @@ ns.Overrides.wowhead = {
         [69062] = {subName = "Trade Supplies"},
         [69136] = {maxLevel = 91, minLevel = 91, subName = "Harbinger of the Loa"},
         [69194] = {maxLevel = 90, minLevel = 90},
+        [69197] = {maxLevel = 91, minLevel = 91},
         [69293] = {maxLevel = 90, minLevel = 90},
         [69309] = {maxLevel = 90, minLevel = 90},
         [69334] = {subName = "Tushui Quartermaster"},

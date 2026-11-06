@@ -2611,6 +2611,15 @@ ns.Overrides.wowhead = {
                 "bloodstone, used to assist in demonic summoning. The one I found was depleted, however. " ..
                 "I'll need another to examine, but I dare not return to the manor. Can you bring me some?",
         },
+        [673] = {
+            description = "There is no doubt in my mind that a powerful warlock resides within the walls " ..
+                "of Stromgarde. From time to time, using an arcane magical relic, this warlock has " ..
+                "summoned forth terrible demons in large numbers. We must remove the source of his " ..
+                "energy.\n\nFind the warlock and kill him. Bring me whatever magical object you find on " ..
+                "his person, and I will take steps to destroy it and see that its power is not used to " ..
+                "taint this land any longer.",
+            rewardChoices = {{4543, 1}, {4545, 1}},
+        },
         [674] = {
             description = "Here, take this amulet to Gor'mul, and see if the raptors' strength can awaken " ..
                 "the flame of the warrior that once burned through his veins.",
@@ -10531,6 +10540,11 @@ ns.Overrides.wowhead = {
             rewardChoices = {{21530, 1}, {21529, 1}},
         },
         [8732] = {rewardItems = {{20810, 1}}},
+        [8735] = {
+            description = "You must travel to the four dream portals of Azeroth. From each you must draw " ..
+                "a fragment of the Nightmare's corruption. The dragonkin that inhabit these areas will " ..
+                "hold such fragments. Return to me when you have gathered these fragments.",
+        },
         [8736] = {
             description = "We must use restraint against Eranikus. We are to redeem him not destroy " ..
                 "him.\n\nTyrande is already en route to assist us in this task. We must weather the " ..

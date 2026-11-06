@@ -13121,6 +13121,14 @@ ns.Overrides.wowhead = {
                 "letter to Zargh.\n\nSpeak with me when you are ready to go.",
             rewardMoney = 350,
         },
+        [6387] = {
+            description = "I see a lot of young dwarves at my door, eager to learn the trade of mining. " ..
+                "And if there's one thing a miner needs more than anything, it's a pick!\n\nI have a list " ..
+                "of mining students who scored high in their lessons and earned an honorary pick. Take my " ..
+                "list to Golnir Bouldertoe in Ironforge. He'll get the picks ready.\n\nThe fastest way to " ..
+                "Ironforge is on a gryphon, so bring the list to our gryphon master, Thorgrum Borrelson, " ..
+                "and speak with him about transport to Ironforge.",
+        },
         [6388] = {
             description = "Here are the honorary picks for Brock's students. If you've already been to " ..
                 "Thelsamar, then you should fly a gryphon back there!\n\nTake the picks to our gryphon " ..
