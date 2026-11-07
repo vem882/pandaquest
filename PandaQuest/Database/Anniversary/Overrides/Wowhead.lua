@@ -1346,6 +1346,16 @@ ns.Overrides.wowhead = {
                 "bring it to me while it still beats. Do this and his power will be broken.",
             rewardItems = {{3560, 1}, {6223, 1}},
         },
+        [256] = {
+            description = "By order of the Magistrate of Thelsamar:\n\nChok'sul, the ogre presumed to be " ..
+                "the leader and coordinator of attacks against the town of Thelsamar, Stonewrought Dam, " ..
+                "and the excavation site, is wanted dead through any means necessary.\n\nMonetary " ..
+                "compensation will be provided when proof is brought to the Magistrate of Chok'sul's " ..
+                "death.\n\nChok'sul was last seen at the ogre encampment in the northeastern part of Loch " ..
+                "Modan.",
+            rewardChoices = {{6189, 1}, {6191, 1}},
+            rewardItems = {{1449, 1}},
+        },
         [258] = {
             description = "<name>ath, is it? I can tell you're bursting with pride over completing the " ..
                 "first test, hm? As I told you before, it's no large feat.\n\nYou should try your hand at " ..
@@ -3448,6 +3458,14 @@ ns.Overrides.wowhead = {
                 "with him, but it seems that his time has come.",
             rewardChoices = {{5622, 1}, {5613, 1}},
         },
+        [974] = {
+            description = "The hot springs here are a source of mystery to me. Where does the heat come " ..
+                "from?\n\nLooking at how close the pools are to Fire Plume Ridge, I really wonder if the " ..
+                "volcano might have something to do with it. I created a thermometer to take readings of " ..
+                "the temperatures at the volcano, and I'd like to find the hottest part. It gives the " ..
+                "measurements in degrees Kraklenheit!\n\nHere, take it, and take readings of the " ..
+                "temperatures at the ridge whenever you see a hot spot!",
+        },
         [976] = {
             description = "Delgren has asked me to deliver messages and supplies to Sentinel Starbreeze " ..
                 "in Auberdine, but I am loathe to leave on my own. Dangerous foes operate in the forest, " ..
@@ -3883,6 +3901,15 @@ ns.Overrides.wowhead = {
                 "and rage.\n\nThe land has no chance to see Elune's smile while these creatures roam " ..
                 "free.\n\nBring me their smoldering embers to show you've reduced their numbers.",
             rewardMoney = 2000,
+        },
+        [1084] = {
+            description = "It seems obvious to me that the protectors of the Vale--the treants--had " ..
+                "something to do with the Venture Co. being driven back. Unfortunately, even those once " ..
+                "great guardians have now become corrupt.\n\nGaxim thinks their corruption is somehow " ..
+                "linked to the weapons the goblins used during their retreat.\n\nI told him I'd collect a " ..
+                "sample from a wounded treant and allow him to study it in order to figure out if that's " ..
+                "true.\n\nBring me some of the shrapnel so the gnome can tell me more...",
+            rewardMoney = 2500,
         },
         [1085] = {
             description = "The situation here in Stonetalon is obviously grave for a night elf and gnome " ..
@@ -6415,6 +6442,23 @@ ns.Overrides.wowhead = {
                 "you some grand reward.",
             rewardItems = {{10463, 1}},
             rewardMoney = 7500,
+        },
+        [3441] = {description = "Hear my tale, adventurer."},
+        [3442] = {
+            description = "You have made the right decision, <name>.\n\nWe must strike where we will do " ..
+                "the most damage: the four sentry towers.\n\nWith the four towers in flames, we can " ..
+                "initiate an offensive before they have time to react.\n\nYou will need the proper tool " ..
+                "to set the towers ablaze. To make the tool requires some materials.\n\nBring me four " ..
+                "hearts of flame and four golem oil and I shall craft the torch of flawless flame.\n\nThe " ..
+                "golems and elementals in these lands should be your first target.",
+            rewardMoney = 14000,
+        },
+        [3443] = {
+            description = "To hold the flawless flame, we will need a shaft and a casing. You must first " ..
+                "find a suitable shaft.\n\nThe Dark Iron taskmasters and slavers of the cauldron use " ..
+                "weapons of enchanted thorium, an extremely sturdy alloy. If you bring me eight thorium " ..
+                "plated daggers, I can break the alloy down and reforge a shaft.",
+            rewardMoney = 14000,
         },
         [3444] = {
             description = "I once entered the foreboding chambers of the Sunken Temple. The evil in that " ..
@@ -9089,6 +9133,14 @@ ns.Overrides.wowhead = {
             description = "It is good to see you again, <name>. The wind carries with it news from the " ..
                 "Eastern Kingdom.\n\nSit, listen.",
         },
+        [6568] = {
+            description = "Illusion and disguise. That is how you will fool the Black Dragonflight, and " ..
+                "gain what you seek.\n\nThough I could teach you something of the skills of deception, " ..
+                "you need the help of a master.\n\nI know of one who could do this. In the Western " ..
+                "Plaguelands, you will find Myranda the Hag, once a master illusionist of Lordaeron. She " ..
+                "has helped us in the past, and if she believes the cause worthy, she may help " ..
+                "you.\n\nTake this message to her.",
+        },
         [6571] = {
             description = "We are in short supply of a few items at the Warsong lumber camp!\n\nPixel at " ..
                 "Splintertree Post has our shipment of saw blades. It'll take a trip to Booty Bay to pick " ..
@@ -9704,6 +9756,7 @@ ns.Overrides.wowhead = {
         [8188] = {rewardItems = {{19786, 1}}},
         [8190] = {rewardItems = {{19788, 1}}},
         [8221] = {rewardItems = {{19972, 1}}, rewardMoney = 250},
+        [8228] = {rewardItems = {{19978, 1}}},
         [8229] = {rewardItems = {{19978, 1}}},
         [8231] = {
             description = "The wavethrasher is an amphibious beast living only here in Azshara. They are " ..
@@ -10966,6 +11019,13 @@ ns.Overrides.wowhead = {
                 "piece of armor for you.",
             rewardItems = {{22428, 1}},
         },
+        [9046] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22429, 1}},
+        },
         [9047] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
                 "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
@@ -11269,6 +11329,15 @@ ns.Overrides.wowhead = {
                 "of purification and you shall know faith.",
             rewardItems = {{22518, 1}},
         },
+        [9120] = {
+            description = "The phylactery is all that remains of the master of Naxxramas. Your better " ..
+                "judgment dictates that you destroy the phylactery, preventing the lich from ever " ..
+                "reforming. Thankfully, you seldom listen to that internal voice of reason.\n\nSomeone at " ..
+                "Light's Hope will pay you hugely for this artifact. Who cares if Kel'Thuzad regenerates " ..
+                "to full power?",
+            rewardChoices = {{23206, 1}, {23207, 1}},
+        },
+        [9125] = {rewardItems = {{22524, 1}}, rewardMoney = 900},
         [9126] = {
             description = "Don Julio's Bonescythe armor pattern requires bone fragments - a lot of bone " ..
                 "fragments. While those crazy enough to venture into Naxxramas provide me with enough of " ..
@@ -19274,6 +19343,15 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [6240] = {spawns = {[17] = {{68.4, 48.6}, {68.6, 48.4}, {68.6, 48.6}}}, zoneID = 17},
+        [8504] = {
+            spawns = {
+                [51] = {
+                    {34.2, 54}, {36.4, 60}, {36.6, 60}, {41, 35.6}, {41.2, 35.4}, {41.6, 35.6}, {42, 35.4},
+                    {43.4, 62}, {49.4, 55.8}, {49.6, 55.8}, {50.4, 55.4}, {50.6, 55.4},
+                },
+            },
+            zoneID = 51,
+        },
         [8581] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [8608] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
