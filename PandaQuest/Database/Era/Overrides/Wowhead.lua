@@ -8459,6 +8459,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9649, 1}, {9650, 1}, {10686, 1}},
             rewardMoney = 25000,
         },
+        [2939] = {
+            description = "While the ruins of Feralas can be quite dangerous, they have much to tell of " ..
+                "what has happened here.\n\nSearching through the rubble to the south a few days ago, I " ..
+                "discovered what appears to be a normal stave. However, I just can't shake the feeling " ..
+                "that there is something more to it. Angelas and I have been poring over our books here, " ..
+                "but we can't find a thing about it.\n\nI have a colleague in Darnassus that may be able " ..
+                "to tell us what this is, <name>. Why don't you go talk to her and see if she can help us?",
+        },
         [2940] = {
             description = "This book looks as if no one has opened it for quite a long time. Its covers " ..
                 "are quite worn, and its pages yellowed, but after examining it, you notice that it might " ..
@@ -9522,8 +9530,10 @@ ns.Overrides.wowhead = {
                 "Membership Card; it is required for access to all gnome engineering trainers!",
             rewardItems = {{10790, 1}},
         },
+        [3644] = {rewardItems = {{10791, 1}}},
         [3645] = {rewardItems = {{10790, 1}}},
         [3646] = {rewardItems = {{10791, 1}}},
+        [3647] = {rewardItems = {{10790, 1}}},
         [3701] = {
             description = "Venture to the smoldering ruins of Thaurissan in the Burning Steppes and " ..
                 "gather as much information as possible.\n\nIt is said that mysterious relics litter the " ..

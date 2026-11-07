@@ -11412,6 +11412,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9137] = {rewardChoices = {{22523, 1}, {22524, 1}}, rewardMoney = 900},
+        [9138] = {
+            description = "We're surrounded here, <class>. The outlying villages have all been overrun by " ..
+                "the Scourge!\n\nYou must head northeast to Suncrown Village immediately and deal with " ..
+                "the nerubian Scourge menace. You can't miss them - they're spider-like " ..
+                "creatures.\n\nThere's no time to waste.... Quel'Thalas must be reclaimed!",
+            rewardMoney = 350,
+        },
         [9142] = {rewardItems = {{22568, 1}}},
         [9145] = {
             description = "<class>, I can't just sit here waiting for an audience with the high executor " ..
@@ -14753,6 +14760,12 @@ ns.Overrides.wowhead = {
                 "some sort of concentrated energy.\n\nCapture some of these energy sources and bring them " ..
                 "to me. Don't hesitate to stymie the elves if an opportunity presents itself.",
             rewardMoney = 41000,
+        },
+        [10245] = {
+            description = "You try to transcribe the shapes as you see them flash across your eyes. The " ..
+                "results are less than exact, but should serve as adequate evidence to prove or disprove " ..
+                "the Aldor's suspicions.",
+            rewardMoney = 39000,
         },
         [10248] = {
             description = "Doctor Vomisa, Ph.T. at your service. Here, take this controller. I want you " ..
@@ -19167,6 +19180,14 @@ ns.Overrides.wowhead = {
                 "Auchindoun and retrieve it for me?",
             rewardItems = {{29434, 2}},
             rewardMoney = 132000,
+        },
+        [11376] = {
+            description = "Mah'duun has heard it said that none are as cruel as the six-armed demonesses " ..
+                "inside the Shadow Labyrinth.\n\nGo to Auchindoun, seek them out, kill them all.\n\nIf " ..
+                "you cannot accomplish so simple a task, we do not have anything further to say to one " ..
+                "another.",
+            rewardItems = {{29460, 1}},
+            rewardMoney = 88000,
         },
         [11377] = {
             description = "I'm providing the catering for some unusual party guests tonight. One of these " ..
