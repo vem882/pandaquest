@@ -12130,6 +12130,14 @@ ns.Overrides.wowhead = {
                 "of Spirits in Orgrimmar and speak to Ur'kyo. What he teaches you might be very important " ..
                 "for the future.",
         },
+        [5644] = {
+            description = "Ah, a wonderful day for you, <name>. I can see by the lessons you've learned " ..
+                "that the time has come to send you back to Aelthalyste. There are things only she can " ..
+                "teach you, and even then, only if you prove worthy.\n\nI will not spoil the surprise for " ..
+                "you, but I remember when I was a young priest learning about true power... divine power. " ..
+                "Yes, those were the days.\n\nGo back to Aelthalyste in the Undercity, <name>. She will " ..
+                "be awaiting you in the War Quarter.",
+        },
         [5645] = {
             description = "<name>, your High Priest Rohan would have an audience with you in Ironforge. " ..
                 "Make haste, my strong friend, your next test quickly approaches. Although I wish I could " ..

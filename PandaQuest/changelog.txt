@@ -14,6 +14,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.402
+- database - Classic Era: data from the PandaQuest portal: 2,519 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,558 quests, 47 NPCs, 2 objects
+
 0.2.401
 - database - Classic Era: data from the PandaQuest portal: 2,518 quests, 27 NPCs, 5 objects
 
@@ -121,10 +125,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 40 spawn points added in Icecrown
 - npc 68821 - Alliance Rootshaper - updated
   - NPC level added (90)
-
-0.2.384
-- database - Classic Era: data from the PandaQuest portal: 2,503 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,536 quests, 47 NPCs, 2 objects
 
 0.2.379
 - localization - Apply gathering skill advice when Finnish is selected in addon settings.
