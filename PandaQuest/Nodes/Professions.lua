@@ -276,7 +276,7 @@ function M.GetNodeIcon(node)
         return resource.icon
     end
     local fallback = { mine = "Interface\\Icons\\Trade_Mining", herb = "Interface\\Icons\\Trade_Herbalism",
-        fish = "Interface\\Icons\\Trade_Fishing", chest = "Interface\\Icons\\INV_Misc_TreasureChest01",
+        fish = "Interface\\Icons\\Trade_Fishing", chest = "Interface\\Icons\\INV_Misc_OrnateBox",
         rare = "Interface\\Icons\\Ability_Hunter_SniperShot" }
     return fallback[node.kind]
 end
