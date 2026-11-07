@@ -4,6 +4,33 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.404] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 809 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,526 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,571 quests, 48 NPCs, 2 objects
+- npc 67386 - Sky Admiral Rogers - updated
+  - NPC level added (90)
+- npc 67402 - Zazzix "Toasty" Sparkrocket - updated
+  - NPC level added (90)
+- npc 67630 - Mishka - updated
+  - NPC level added (87)
+- npc 67631 - Marshal Troteman - updated
+  - NPC level added (90)
+- npc 67969 - Alliance Supply Drop - updated
+  - data rewritten, nothing a player sees changed
+- npc 68126 - Reliquary Blood Knight - updated
+  - NPC title added (Reliquary)
+  - NPC level added (90)
+- npc 68312 - Hilda Hornswaggle - updated
+  - NPC title added (Explorer's League)
+- npc 68392 - King Varian Wrynn - updated
+  - NPC title added (King of Stormwind)
+- npc 69196 - Alliance Swashbuckler - updated
+  - NPC level added (90)
+
 ## [0.2.403] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -139,15 +166,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Duskwood
 - npc 32344 - Alliance Rescue Craft - updated
   - coordinates: 40 spawn points added in Icecrown
-
-## [0.2.389] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 784 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,506 quests, 27 NPCs, 5 objects
-- npc 570 - Brain Eater - updated
-  - coordinates: 35 spawn points added in Duskwood
 
 ## [0.2.386] - 2026-11-06
 

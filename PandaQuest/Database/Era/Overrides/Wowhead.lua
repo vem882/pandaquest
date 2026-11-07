@@ -5096,6 +5096,14 @@ ns.Overrides.wowhead = {
                 "ready.\n\nBut I need a spell from a friend in Stormwind-- Collin Mauren is his name. You " ..
                 "can find him in the mage quarter there. He's human, so he shouldn't be hard to miss.",
         },
+        [1076] = {
+            description = "Ah, I think I have it. A messaging spell... I believe that's the effect he's " ..
+                "looking for.\n\nI'll have to create a scroll with the spell impressed upon it. To do " ..
+                "that I'll need debris from a dust devil.\n\nWhile I gather the rest of the components, " ..
+                "why don't you head to Westfall and find one of the foul creatures? They are dangerous, " ..
+                "but I'm sure it's nothing you can't handle if you're willing to subject yourself to one " ..
+                "of Gaxim's experiments.\n\nI'll be here when you return.",
+        },
         [1079] = {
             description = "This is it, <name>. Pay close attention. The devices are done, and ready to be " ..
                 "used.\n\nTake these pages--they'll explain more about the detonators and explosives, and " ..
@@ -9053,6 +9061,13 @@ ns.Overrides.wowhead = {
                 "to set the towers ablaze. To make the tool requires some materials.\n\nBring me four " ..
                 "hearts of flame and four golem oil and I shall craft the torch of flawless flame.\n\nThe " ..
                 "golems and elementals in these lands should be your first target.",
+            rewardMoney = 14000,
+        },
+        [3443] = {
+            description = "To hold the flawless flame, we will need a shaft and a casing. You must first " ..
+                "find a suitable shaft.\n\nThe Dark Iron taskmasters and slavers of the cauldron use " ..
+                "weapons of enchanted thorium, an extremely sturdy alloy. If you bring me eight thorium " ..
+                "plated daggers, I can break the alloy down and reforge a shaft.",
             rewardMoney = 14000,
         },
         [3444] = {
@@ -14492,6 +14507,14 @@ ns.Overrides.wowhead = {
                 "it will become mighty gauntlet you wear forever! Yar, I show you!",
             rewardChoices = {{18366, 1}, {18367, 1}, {18368, 1}, {18369, 1}},
         },
+        [7722] = {
+            description = "When that bastard, Maltorius, left our clan, he left with something more " ..
+                "valuable than a pristine arcane crystal: Our recipe for fiery flux! I'd bet anything " ..
+                "that the recipe was part of the deal in his new promotion amongst the Dark Irons.\n\nI " ..
+                "want you to get our secret plans back, <name>. I'm sure they're somewhere near " ..
+                "Maltorius, deep inside the Slag Pit.",
+            rewardMoney = 7500,
+        },
         [7724] = {
             description = "Wouldn't ye know it, every time ol' Hansel wants to take a moment to relax and " ..
                 "reflect upon his life, the powers that be give him another job.\n\nMe gots to think, " ..
@@ -14970,6 +14993,14 @@ ns.Overrides.wowhead = {
                 "the blacksmith and the stables. Pull down the enemies' banners, declaring those " ..
                 "territories for the Horde.\n\nGo, <name>. Report back to me when this task is complete.",
             rewardMoney = 7500,
+        },
+        [8182] = {
+            description = "<name>, our worst fears have come. Legend speaks of the Soulflayer ruling the " ..
+                "ancient troll world through evil and terror, and his power was absolute. If he cannot be " ..
+                "stopped now, then his new reign may spread across all of Azeroth!\n\nThere is a " ..
+                "contingent of Zandalarian trolls who may help us stem this tide of darkness. They have " ..
+                "camped on Yojamba Isle, off the coast of Stranglethorn, west of the ruins of Zul'Kunda. " ..
+                "Speak with their leader, Molthor, and pray he knows how to defeat Hakkar.",
         },
         [8183] = {
             description = "The Heart of Hakkar burns from within. Although the Soulflayer is defeated, " ..
@@ -15598,6 +15629,13 @@ ns.Overrides.wowhead = {
                 "Durotar; I believe you call this city Orgrimmar. In times past, he had tried to make " ..
                 "contact with us on behalf of his Horde. It is now only fitting to acknowledge you as the " ..
                 "key in your Horde's efforts in brokering peace.",
+        },
+        [8494] = {
+            description = "Well hello there, <Mr./Ms.> Fancypants, aren't you a sight for sore eyes. In " ..
+                "case you hadn't heard while you were out there \"adventuring\", the Alliance has been " ..
+                "gearing up for a war in Ahn'Qiraj and is in need of iron bars... a whole mess of 'em. " ..
+                "Bring them to me in stacks of twenty. We can count on you, right, <class>?",
+            rewardItems = {{21436, 10}, {21511, 1}},
         },
         [8495] = {
             description = "Back so soon? Stop making me re-evaluate my low opinion of you <class>, you're " ..
