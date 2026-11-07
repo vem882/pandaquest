@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.409] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,542 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,590 quests, 48 NPCs, 2 objects
+
 ## [0.2.408] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -120,18 +127,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,553 quests, 47 NPCs, 2 objects
 - npc 68490 - Alliance Phalanx - updated
   - NPC level added (90)
-
-## [0.2.396] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 796 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,513 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,552 quests, 47 NPCs, 2 objects
-- npc 550 - Defias Messenger - updated
-  - coordinates: 32 spawn points added in Westfall
-- npc 2706 - Tor'gan - updated
-  - coordinates: 3 spawn points added in Arathi Highlands
 
 ## [0.2.386] - 2026-11-06
 

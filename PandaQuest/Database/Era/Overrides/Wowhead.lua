@@ -1381,6 +1381,15 @@ ns.Overrides.wowhead = {
                 "so quickly, for I fear a doom already lumbers toward our town...",
             rewardItems = {{3248, 1}},
         },
+        [258] = {
+            description = "<name>ath, is it? I can tell you're bursting with pride over completing the " ..
+                "first test, hm? As I told you before, it's no large feat.\n\nYou should try your hand at " ..
+                "boar hunting. Trust me, this is no Coldridge Valley boar hunt, so you'd best have a care " ..
+                "with them. I'll give you just twelve minutes this time.\n\nDon't feel bad if you fail. " ..
+                "I'd give you the shirt off my back if you succeeded!\n\nHave I ever related to you the " ..
+                "story of how I received my famous scar? No? It was two years ago...",
+            rewardItems = {{859, 1}, {3572, 1}},
+        },
         [261] = {
             description = "I will be frank. We are at war with the Scourge. It is an evil that corrupts " ..
                 "our people and infects our land. It must be stopped before it overwhelms us and drags " ..
@@ -8223,6 +8232,15 @@ ns.Overrides.wowhead = {
                 "need an order of two Nightscape pants and two Nightscape boots filled. I also will " ..
                 "require two wildvines... not just one. When you have all this, let me know.",
             rewardItems = {{8406, 1}},
+        },
+        [2853] = {
+            description = "Well <name>, you are the definition of diligence. There is one pattern left " ..
+                "for Wild Leather armor; you've mastered the others. I won't require you to toil " ..
+                "needlessly for the pattern. You've earned it outright, and then some... but I cannot " ..
+                "give it to you myself. My teacher, the one who brought me into the craft, is the one who " ..
+                "must reward you.\n\nTake this letter to Telonis; he teaches leatherworking in Darnassus. " ..
+                "Show him the letter, and let him acknowledge you as an equal, as I do.",
+            rewardItems = {{8408, 1}},
         },
         [2856] = {
             description = "Wild Leather vests are the staple of any Wild Leather armor set. The frame of " ..
@@ -15123,6 +15141,16 @@ ns.Overrides.wowhead = {
             description = "Lord Jorach Ravenholdt has requested your presence. The matter is secret, and " ..
                 "I cannot say any more.\n\nRavenholdt Manor is located in the Hillsbrad Foothills -- look " ..
                 "for a path in the mountains northwest of Durnhold Keep.",
+        },
+        [8236] = {
+            description = "It will take some time to decipher the fragments and remove the enchantment. " ..
+                "When I am complete, I'll deliver the bag to Lord Ravenholdt personally.\n\nThere is " ..
+                "still the matter of the key, said to be held by a green drake known as Morphaz. The " ..
+                "drake has made its home deep in the Temple of Atal'Hakkar, the entrance to which lies in " ..
+                "the Swamp of Sorrows.\n\nGather your friends and venture to his lair. Lord Ravenholdt " ..
+                "will await your return with the key.",
+            rewardChoices = {{19984, 1}, {20255, 1}, {19982, 1}},
+            rewardMoney = 7500,
         },
         [8239] = {rewardItems = {{19858, 1}}, rewardXP = 660},
         [8240] = {
