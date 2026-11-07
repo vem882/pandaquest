@@ -4332,6 +4332,11 @@ ns.Overrides.wowhead = {
                 "find me in the Lady Proudmoore's tower if you have any problems.",
         },
         [1267] = {rewardItems = {{6757, 1}}, rewardMoney = 13000},
+        [1268] = {
+            description = "Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest " ..
+                "Inn. There are at least a few visible impressions, with more rows of prints almost " ..
+                "imperceptible in the soft mud of the marsh.",
+        },
         [1269] = {
             description = "A glint of light on the ground catches your eye from underneath the rubble. " ..
                 "Brushing debris and ash caked onto the object reveals the insignia of a gold anchor on " ..
@@ -7987,6 +7992,12 @@ ns.Overrides.wowhead = {
                 "Andorhal, and engage the cauldron lord there. We think it has a key that will unlock " ..
                 "access to the cauldron. When unlocked, use this bottle to obtain a sample of the poisons " ..
                 "inside the cauldron; we'll need it for study in developing a counter agent.",
+        },
+        [5217] = {
+            description = "You fill the bottle with enough of the cauldron's poisonous concoction for a " ..
+                "suitable sample to be studied.\n\nWith the poison in hand, it is time to return to High " ..
+                "Priestess MacDonnell at Chillwind Camp to complete the mission.",
+            rewardMoney = 8000,
         },
         [5230] = {
             description = "You fill the bottle with enough of the cauldron's poisonous concoction for a " ..
@@ -15619,6 +15630,14 @@ ns.Overrides.wowhead = {
                 "and mountain bases that surround the fields.\n\nDestroy their tortured forms and capture " ..
                 "their souls with the totem of spirits. Return to me when this is done.",
             rewardChoices = {{30953, 1}, {30930, 1}, {30942, 1}, {30964, 1}},
+        },
+        [10484] = {
+            description = "<name>, we cannot allow the Bleeding Hollow orcs to possess their cursed " ..
+                "talismans! You must acquire them for us so they may be disposed of, and so the soldiers " ..
+                "who owned them may be honored for their sacrifices.\n\nGo to Zeth'Gor, the cursed abode " ..
+                "of the Bleeding Hollow, and perform your grim task... return to me when you have " ..
+                "collected the talismans.",
+            rewardMoney = 9000,
         },
         [10486] = {
             description = "The Thunderlord were once a proud orc clan before they were transformed into " ..
