@@ -8499,6 +8499,11 @@ ns.Overrides.wowhead = {
                 "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
                 "picture. She called it a \"snapshot,\" I think...",
         },
+        [2942] = {
+            description = "The moment the artifact is removed from the Monolith, you feel the energy in " ..
+                "the Stave of Equinex begin to fade.",
+            rewardChoices = {{9654, 1}, {9655, 1}},
+        },
         [2943] = {
             description = "Here it is, <name>. Please, take care of my book.\n\nNow, hurry along. I'm " ..
                 "sure Troyas is eager for your return.",
