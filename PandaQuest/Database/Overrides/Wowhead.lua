@@ -63443,6 +63443,7 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [2430] = {spawns = {[267] = {{51.8, 58.6}}}, zoneID = 267},
+        [2432] = {spawns = {[267] = {{49.4, 52.2}, {49.4, 52.6}}}, zoneID = 267},
         [2438] = {spawns = {[267] = {{49.4, 55.4}, {49.4, 55.6}, {49.6, 55.4}, {49.6, 55.8}}}, zoneID = 267},
         [2448] = {
             spawns = {[267] = {{29.4, 42.4}, {29.4, 42.8}, {29.6, 42.4}, {30, 42.8}, {30.6, 42.2}}},
@@ -66140,6 +66141,7 @@ ns.Overrides.wowhead = {
         [71953] = {subName = "The White Tiger"},
         [71954] = {subName = "The Black Ox"},
         [71955] = {subName = "The Jade Serpent"},
+        [72006] = {maxLevel = 14, minLevel = 14, subName = "Oriana's Companion"},
         [72317] = {maxLevel = 90, minLevel = 90},
         [72426] = {maxLevel = 90, minLevel = 90},
         [72549] = {maxLevel = 89, minLevel = 89},

@@ -9491,6 +9491,15 @@ ns.Overrides.wowhead = {
                 "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
             rewardXP = 7070,
         },
+        [7302] = {
+            description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
+                "over enemy territory. You must find out what became of them so that we can attempt a " ..
+                "rescue!\n\nGuse was last seen flying over the Icewing Bunker. Jeztor's War Rider was " ..
+                "spotted near the Stormpike lumber mill. Mulverick... that reckless fool was seen " ..
+                "crashing near the Dun'Baldar North Bunker.\n\nThat's all the information I have. Move " ..
+                "out! Search through the areas thoroughly.",
+            rewardXP = 7070,
+        },
         [7321] = {
             description = "Who says that the undead don't know anything about cooking? Take my secret " ..
                 "recipe for Turtle Bisque, for example. I've known folks that would come back from the " ..
@@ -11519,6 +11528,15 @@ ns.Overrides.wowhead = {
                 "hordes that surround these circles will destroy their defenses.",
             rewardChoices = {{23123, 2}, {23122, 2}},
         },
+        [9159] = {
+            description = "You've proven your worth as an ally, <name>. I need you to continue your task " ..
+                "and track down more plagued wildlife. This time seek out some of the more dangerous " ..
+                "beasts. Hunt the spindleweb lurkers west of the Dead Scar and the vampiric mistbats just " ..
+                "south of here. Return to me when you're done.",
+            rewardChoices = {{28141, 1}, {28142, 1}, {28143, 1}},
+            rewardItems = {{23415, 1}},
+            rewardMoney = 700,
+        },
         [9162] = {
             description = "As you skim through the pages in the journal you're overcome by an unnerving " ..
                 "sense of being watched.\n\nThe contents are unsettling. Dar'Khan's soul was one filled " ..
@@ -12954,6 +12972,13 @@ ns.Overrides.wowhead = {
                 "subterfuge, we may be able to get the information we need out of the captured " ..
                 "agent.\n\nUnder this guise, I want you to get whatever information you can out of the " ..
                 "prisoner.\n\nAnd <name>, do not leave Blood Watch while disguised as the spell will fail.",
+        },
+        [9757] = {
+            description = "Huntress Kella Nightbow seeks the audience of all eligible hunters. She is the " ..
+                "one to teach you the skill of taming wild beasts, a lesson you should learn above all " ..
+                "else at this point in your training.\n\nKella can be found near Valaar's Berth, the " ..
+                "docks west of the Exodar.",
+            rewardXP = 85,
         },
         [9763] = {
             description = "There are benefits to hiding very, very quietly at the entrance of your " ..

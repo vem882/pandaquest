@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.418] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 816 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,550 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,597 quests, 48 NPCs, 2 objects
+- npc 2432 - Darla Harris - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 72006 - Allie - updated
+  - NPC title added (Oriana's Companion)
+  - NPC level added (14)
+
 ## [Unreleased]
 
 - Replace objective dots with native WoW icons, group nearby spawns and remove gathering frames and overlapping map numbers.
@@ -131,12 +144,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,519 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,558 quests, 47 NPCs, 2 objects
-
-## [0.2.401] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,518 quests, 27 NPCs, 5 objects
 
 ## [0.2.386] - 2026-11-06
 
