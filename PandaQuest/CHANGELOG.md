@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [Unreleased]
+
+- Replace objective dots with native WoW icons, group nearby spawns and remove gathering frames and overlapping map numbers.
+
+- Preview the NPC associated with the selected quest in the world map.
+
 ## [0.2.415] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -16,9 +22,9 @@ Data from the PandaQuest portal.
 - quest 13899 - The Darkscale Warlord - updated
   - description added
 
-## [Unreleased]
+## [0.2.412]
 
-- Use native WoW quest and item icons, with compact gathering borders that retain skill-up colours.
+- Use native WoW quest and item icons.
 
 ## [0.2.410] - 2026-11-07
 

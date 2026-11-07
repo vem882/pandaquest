@@ -25,7 +25,7 @@ local HBD_REF = "PandaQuest"
 -- every frame -- the player cannot move far enough in 250 ms for it to show, and the work is
 -- proportional to the number of pins.
 local MINIMAP_TICK = 0.25
-local DEFAULT_MINIMAP_MAX_NODES = 50
+local DEFAULT_MINIMAP_MAX_NODES = 20
 local DEFAULT_MINIMAP_FADE = 0.6    -- pins inside this fraction of the minimap radius stay opaque
 local EDGE_MIN_ALPHA = 0.30         -- how faint a pin gets right on the edge
 local EDGE_MIN_SCALE = 0.65         -- and how much it shrinks (pfQuest's fade_range does both)
@@ -154,25 +154,19 @@ local function acquirePin()
     pinCount = pinCount + 1
     pin = CreateFrame("Button", "PandaQuestPin" .. pinCount, UIParent)
     pin:SetSize(16, 16)
-    -- The three layers of a dot, back to front: the highlight glow, the dark ring
-    -- that makes the dot readable on snow, sand and grass alike, and the dot (or glyph) itself.
-    -- The ring is a texture of its own rather than part of node.tga because the dot is tinted per
-    -- quest (or per gathering kind, Icons.KIND_COLORS) and a baked-in rim would be tinted with it.
     pin.glow = pin:CreateTexture(nil, "BACKGROUND")
     pin.glow:SetPoint("CENTER", pin, "CENTER", 0, 0)
     pin.glow:SetTexture(ns.Icons and ns.Icons.Get("glow") or nil)
     pin.glow:Hide()
-    pin.outline = pin:CreateTexture(nil, "BORDER")
-    pin.outline:SetPoint("CENTER", pin, "CENTER", 0, 0)
-    pin.outline:Hide()
-    pin.rim = pin:CreateTexture(nil, "ARTWORK")
-    pin.rim:SetPoint("CENTER", pin, "CENTER", 0, 0)
-    pin.rim:Hide()
     pin.texture = pin:CreateTexture(nil, "OVERLAY")
     pin.texture:SetPoint("CENTER", pin, "CENTER", 0, 0)
-    pin.count = pin:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmallOutline")
-    pin.count:SetPoint("CENTER", pin, "CENTER", 0, 0)
-    pin.count:Hide()
+    if pin.CreateMaskTexture and pin.texture.AddMaskTexture and pin.texture.RemoveMaskTexture then
+        pin.mask = pin:CreateMaskTexture()
+        pin.mask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE",
+            "CLAMPTOBLACKADDITIVE")
+        pin.mask:SetAllPoints(pin.texture)
+    end
+    pin.maskApplied = false
     if pin.RegisterForClicks then pin:RegisterForClicks("LeftButtonUp", "RightButtonUp") end
     pin:SetScript("OnEnter", onEnter)
     pin:SetScript("OnLeave", onLeave)
@@ -294,8 +288,6 @@ local function releasePin(pin)
     pin.miniRank = nil
     pin.baseSize = nil
     if pin.glow then pin.glow:Hide() end
-    if pin.outline then pin.outline:Hide() end
-    if pin.count then pin.count:Hide() end
     if pin.SetAlpha then pin:SetAlpha(1) end
     if pin.EnableMouse then pin:EnableMouse(true) end
     pin:Hide()
@@ -370,7 +362,13 @@ end
 local function addSpawn(byKey, target, layer, uiMapID, x, y, cluster)
     if type(uiMapID) ~= "number" or type(x) ~= "number" or type(y) ~= "number" then return end
     if x < 0 or x > 100 or y < 0 or y > 100 then return end
-    local key = coordKey(uiMapID, x, y, cluster)
+    local key
+    if cluster and layer == "objective" then
+        -- Group nearby spawns separately from quest givers and turn-ins.
+        key = format("objective:%d:%d:%d", uiMapID, floor(x / 3 + 0.5), floor(y / 3 + 0.5))
+    else
+        key = coordKey(uiMapID, x, y, cluster)
+    end
     local spec = byKey[key]
     if not spec then
         if #specs >= MAX_PINS then return end

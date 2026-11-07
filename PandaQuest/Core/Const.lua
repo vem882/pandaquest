@@ -53,14 +53,12 @@ ns.DEFAULTS = {
                   fontSize = 12 },
         nav = { mode = "auto", includeAvailable = true, includeTurnIn = true, availableRadius = 800, maxAvailable = 5,
                 focusQuestID = nil, tomtomMode = "off", arriveRadius = 15 },
-        -- nodeScale, minimapMaxNodes and minimapFade are about the objective dots:
-        -- have their own size (they are dots, not glyphs), the minimap carries at most
-        -- minimapMaxNodes of them (nearest first), and a pin fades and shrinks once it is past
-        -- minimapFade of the way from the minimap's centre to its edge (0 = no fade).
+        -- Objective icons have their own scale. The minimap keeps the closest pins
+        -- and fades them towards the edge (0 disables the fade).
         map = { showAvailable = true, showObjectives = true, showTurnIn = true, showOnMinimap = true, iconScale = 1.0,
                 minimapIconScale = 1.0, lowLevelQuests = false, showRepeatable = true, showDungeon = false, showRaid = false,
                 showPvP = false, showPetBattle = true, clusterSpawns = true, fadeMinimapEdge = true,
-                nodeScale = 1.0, minimapMaxNodes = 50, minimapFade = 0.6 },
+                nodeScale = 1.0, minimapMaxNodes = 20, minimapFade = 0.6 },
         -- Profession nodes. `onlyMyProfessions` is the filter that keeps the map
         -- honest for a character with no gathering profession at all - it draws nothing rather
         -- than a zone full of veins nobody here can touch - while `showUngatherable` is the
