@@ -2972,6 +2972,15 @@ ns.Overrides.wowhead = {
                 "boars you'll find to the north of here.",
             rewardChoices = {{4915, 1}, {4914, 1}},
         },
+        [789] = {
+            description = "Powerful warrior and awkward novice alike have fallen to the venomous sting of " ..
+                "the scorpid. You will find large numbers of scorpids northwest of here. Bring me ten of " ..
+                "their tails as proof of your prowess in battle.\n\nThe antidote for their sting is " ..
+                "actually made from venom extracted from their stingers. We keep large quantities of " ..
+                "antidote for scorpid venom on hand to heal young bloods just like you...\n\nBut I'm sure " ..
+                "you won't be needing any of that, will you?",
+            rewardChoices = {{4919, 1}, {4920, 1}},
+        },
         [790] = {
             description = "<class>! I thought I would die out here with none to know of it. While I was " ..
                 "hunting the scorpids of the Valley, I came across a particularly vicious-looking one. " ..
@@ -5061,6 +5070,14 @@ ns.Overrides.wowhead = {
                 "control it.",
             rewardItems = {{22243, 1}},
             rewardXP = 1150,
+        },
+        [1779] = {
+            description = "I want you to take this, <name>. It is called the Symbol of Life.\n\nYou've " ..
+                "proven charitable and patient, and now I want you to prove just how adept you've become " ..
+                "in both combat, and power.\n\nMy husband Muiredon returned recently from an encounter " ..
+                "with some Dark Iron dwarves, and he barely escaped with his life--he's over there having " ..
+                "his wounds healed by one of our priests.\n\nTake the Symbol and speak to him. If you can " ..
+                "help him, then we will speak again soon. May the Light shine upon you.",
         },
         [1785] = {
             description = "I c'n see me wife's o'er there beamin' wit pride already. Ya better get yer " ..
@@ -7738,6 +7755,14 @@ ns.Overrides.wowhead = {
                 "Worse yet, she was using Horde funds to finance her operations.\n\nI want her brought " ..
                 "back here alive.\n\nShe was last seen entering Blackrock Spire. Find her and bring her " ..
                 "back.\n\nAnd <name>, do not let her sweet talk you.",
+        },
+        [4985] = {
+            description = "To the east of where we are, near where the Eastern Plaguelands begin, once " ..
+                "proud and majestic grizzlies roamed the countryside. The plague released by the Scourge " ..
+                "has sundered these beasts too. They wander the countryside, agonized by the stiffening " ..
+                "of their muscles and the rotting of their fur and flesh.\n\nI ask of you to end their " ..
+                "misery as well. The only cure for their suffering is a swift death, one that must be " ..
+                "ministered by your hand.",
         },
         [5022] = {
             description = "You pick up the package, wiping off a small layer of dust and grime that had " ..
@@ -14263,6 +14288,12 @@ ns.Overrides.wowhead = {
             rewardXP = 15,
         },
         [10071] = {
+            description = "And now, I need for you to do something.\n\nWell Watcher Solanian is in need " ..
+                "of your services. You would do well to ingratiate yourself with him.\n\nHe awaits you on " ..
+                "the exterior platform that the ramp in this chamber leads up to.",
+            rewardXP = 15,
+        },
+        [10072] = {
             description = "And now, I need for you to do something.\n\nWell Watcher Solanian is in need " ..
                 "of your services. You would do well to ingratiate yourself with him.\n\nHe awaits you on " ..
                 "the exterior platform that the ramp in this chamber leads up to.",

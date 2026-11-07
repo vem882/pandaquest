@@ -3386,6 +3386,15 @@ ns.Overrides.wowhead = {
                 "truths...\n\n...And the truth can burn.",
             rewardItems = {{4984, 1}},
         },
+        [738] = {
+            description = "Prospector Agmond was in charge of our excavation sites in the Badlands, to " ..
+                "the southwest. I say \"was\" because...well, I haven't heard from him in weeks. I need " ..
+                "you to find Agmond so I can get his report.\n\nLast I heard Agmond was at the " ..
+                "southernmost dig site in the Badlands --a tiny operation past the Angor Fortress. I'd " ..
+                "start your search for him there.",
+            rewardItems = {{4982, 1}, {1529, 1}, {2776, 2}},
+            rewardMoney = 400,
+        },
         [743] = {
             description = "Thank you for taking the time to speak to me, <name>. I am Ruul, warrior and " ..
                 "teacher.\n\nYou have obviously reached an age when you must prepare for your trials if " ..

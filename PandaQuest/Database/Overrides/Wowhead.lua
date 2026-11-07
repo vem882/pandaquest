@@ -66114,6 +66114,7 @@ ns.Overrides.wowhead = {
         [71955] = {subName = "The Jade Serpent"},
         [72317] = {maxLevel = 90, minLevel = 90},
         [72426] = {maxLevel = 90, minLevel = 90},
+        [72549] = {maxLevel = 89, minLevel = 89},
         [72695] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [72723] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [72758] = {
