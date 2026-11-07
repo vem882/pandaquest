@@ -4,6 +4,15 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.408] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 813 NPCs, 2 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,585 quests, 48 NPCs, 2 objects
+- npc 32389 - Alliance Siege Vehicle - updated
+  - coordinates: 6 spawn points added in Tirisfal Glades
+
 ## [0.2.407] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -123,40 +132,6 @@ Data from the PandaQuest portal.
   - coordinates: 32 spawn points added in Westfall
 - npc 2706 - Tor'gan - updated
   - coordinates: 3 spawn points added in Arathi Highlands
-
-## [0.2.395] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 794 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,512 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,550 quests, 47 NPCs, 2 objects
-- quest 31553 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31555 - Got one! - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 31583 - On The Mend - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31591 - Learning the Ropes - updated
-  - description added
-  - reward money added (10g 60s)
-- npc 1093 - Chief Engineer Hinderweir VII - updated
-  - coordinates: 1 spawn point added in Loch Modan
-- npc 32512 - Alliance Infra-green Bomber - updated
-  - coordinates: 40 spawn points added in Icecrown
-- npc 68486 - Alliance Druid - updated
-  - NPC level added (90)
-- npc 72317 - Alliance Cannoneer - updated
-  - NPC level added (90)
-
-## [Unreleased]
-
-- Updated the player documentation for live Forever data, its profession recipe reader,
-  multi-game Sync and the current limits of Retail/PTR support.
-- Added a ready-to-paste CurseForge project summary and description.
 
 ## [0.2.386] - 2026-11-06
 
