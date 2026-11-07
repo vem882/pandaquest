@@ -1,3 +1,6 @@
+Map and minimap icons
+- Use native WoW quest and item icons, with compact gathering borders that retain skill-up colours.
+
 Movement and navigation safety
 - Fixed repeated GetSpeed errors when movement speed is a protected client value.
 - Restricted speed, facing and mount/flight readings no longer reach navigation calculations.
