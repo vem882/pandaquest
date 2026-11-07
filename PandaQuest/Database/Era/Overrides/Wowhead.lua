@@ -8597,6 +8597,15 @@ ns.Overrides.wowhead = {
                 "of the Valley of the Watchers in the Tanaris desert. He would like to speak with you as " ..
                 "soon as possible!",
         },
+        [2964] = {
+            description = "Well <name>... we seem to be at a temporary dead end here. We know what we " ..
+                "need - the Plates of Uldum - but we have no idea where they might be. We'll need to do " ..
+                "quite a bit of research on this to come up with a solid plan of attack. I have a couple " ..
+                "ideas where to start looking; I have high hopes that soon, we'll be asking you to head " ..
+                "out and recover them.\n\nThe High Explorer needs to be informed on this, <name>; no " ..
+                "doubt, he also wants to thank you personally for once again aiding the League.",
+            rewardMoney = 22000,
+        },
         [2965] = {
             description = "Ah, <name>, it is fortuitous that you have come to me again. Your revelations " ..
                 "at the Uldaman dig site have certainly given us sages much discuss. I was doing just " ..
@@ -17783,6 +17792,14 @@ ns.Overrides.wowhead = {
                 "Runecloth Robes.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9195] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order EN-11:\n\n20 " ..
+                "Goblin Sapper Charges.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9198] = {

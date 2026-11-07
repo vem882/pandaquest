@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.419] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 818 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,552 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,598 quests, 48 NPCs, 2 objects
+- npc 11866 - Ilyenia Moonfire - updated
+  - coordinates: 5 spawn points added in Darnassus
+- npc 73563 - Alliance Vanguard - updated
+  - NPC level added (89)
+
 ## [0.2.418] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -137,13 +149,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,521 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,560 quests, 47 NPCs, 2 objects
-
-## [0.2.402] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,519 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,558 quests, 47 NPCs, 2 objects
 
 ## [0.2.386] - 2026-11-06
 

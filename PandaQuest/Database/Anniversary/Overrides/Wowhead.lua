@@ -9491,6 +9491,14 @@ ns.Overrides.wowhead = {
                 "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
             rewardXP = 7070,
         },
+        [7301] = {
+            description = "We got them held prisoner, <race>. I'm talking about their Wing Commanders. It " ..
+                "was a furious battle in the skies but they finally fell! Unfortunately, our best pilots " ..
+                "were shot down in a counterattack against Frostwolf Keep. You gotta find out what " ..
+                "happened to them.\n\nSearch Tower Point West and Frostwolf Keep. These were their last " ..
+                "known locations. Search these areas thoroughly.",
+            rewardXP = 7070,
+        },
         [7302] = {
             description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
                 "over enemy territory. You must find out what became of them so that we can attempt a " ..
