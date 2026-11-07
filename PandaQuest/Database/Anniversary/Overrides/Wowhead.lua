@@ -2918,6 +2918,17 @@ ns.Overrides.wowhead = {
                 "the goblins' poisons! Let clean water flow once again!",
             rewardChoices = {{3443, 1}, {4961, 1}},
         },
+        [762] = {
+            description = "Ambassador Infernus was sent to Angor Fortress by Ragnaros himself to mind the " ..
+                "Shadowforge seeking lost artifacts in Uldaman.\n\nIt has already meant tremendous " ..
+                "casualties for our people, but it has obviously grown worse. I hesitate to guess how " ..
+                "many artifacts they would be able to find and use against Ironforge.\n\nOur goal is " ..
+                "simple, <class>. Return to the Badlands and destroy Ambassador Infernus. Once the threat " ..
+                "is eliminated, return to Advisor Belgrum with proof of your victory.\n\nIt is in your " ..
+                "hands now.",
+            rewardItems = {{4987, 1}},
+            rewardMoney = 12500,
+        },
         [764] = {
             description = "This explains the buildup of Venture Co. employees and equipment we've seen in " ..
                 "Mulgore. Those goblins... their company is expanding too quickly for their own good. " ..
@@ -5580,6 +5591,16 @@ ns.Overrides.wowhead = {
                 "reside there.\n\nPerhaps you would be willing to recover my dreamcatcher, <class>?",
             rewardMoney = 100,
         },
+        [2439] = {
+            description = "This object is an incredible find. The ancient Titans, or the Creators as " ..
+                "these discs refer to them as, are the link to our enchanted creation, if the lore stored " ..
+                "in here is correct! We'll need to invest as much research time into this as " ..
+                "possible.\n\nAs for you, heroic <class>, take this voucher to Dinita Stonemantle at the " ..
+                "vault. It grants you what I think is a fitting for such a tremendous find!\n\nReturn to " ..
+                "me directly when you are ready; there is much more to do for the Explorers' League!",
+            rewardChoices = {{3928, 5}, {6149, 5}},
+            rewardItems = {{9587, 1}},
+        },
         [2440] = {
             description = "I shall focus my energies on these discs; they will reveal their true workings " ..
                 "to me in due time.\n\nAs for you <name>, I will now reward you for your diligence in " ..
@@ -6969,6 +6990,14 @@ ns.Overrides.wowhead = {
                 "to get your hands dirty, eh?\n\nI have a friend, Milly Osworth, who's in some trouble. " ..
                 "She's over with her wagon on the other side of the abbey, near the stable. I'm sure she " ..
                 "could use a pair of hands like yours.",
+        },
+        [3904] = {
+            description = "A gang of brigands, the Defias, moved into the Northshire Vineyards while I " ..
+                "was harvesting! I reported it to the Northshire guards and they assured me they'd take " ..
+                "care of things, but... I'm afraid for my crop of grapes! If the Defias don't steal them " ..
+                "then I fear our guards will trample them when they chase away the thugs.\n\nPlease, you " ..
+                "must help me! I gathered most of my grapes into buckets, but I left them in the " ..
+                "vineyards to the southeast.\n\nBring me those buckets! Save my harvest!",
         },
         [3908] = {
             description = "You see, I have no idea how I ended up here. No one really knows -- it's a " ..
@@ -9743,6 +9772,15 @@ ns.Overrides.wowhead = {
         [8046] = {rewardItems = {{19585, 1}}},
         [8047] = {rewardItems = {{19586, 1}}},
         [8049] = {rewardItems = {{19591, 1}}},
+        [8059] = {
+            description = "Warlocks tread dangerous ground in dealing with demons, but our demoniacs take " ..
+                "this one step further. Through an ancient and arcane ritual, they allow a demon to enter " ..
+                "their being. Rather than let it possess them though, they enslave the demon from the " ..
+                "inside, absorbing the power of the beast for their own command. It is a feat few are " ..
+                "ever able to master.\n\nFor you to learn of the power of the demoniac, I must have " ..
+                "Paragons of Power from Zul'Gurub. Go there and retrieve that which we seek.",
+            rewardItems = {{19848, 1}},
+        },
         [8070] = {
             description = "Shortly after the fall of the Gurubashi, we Zandalar almost succumbed to a " ..
                 "final defeat from evil within our own tribe. It was then that the confessors amongst us " ..
@@ -10033,6 +10071,15 @@ ns.Overrides.wowhead = {
                 "their different groups communicate secretly. The more texts we take out of circulation, " ..
                 "the less they can communicate!",
             rewardMoney = 18000,
+        },
+        [8320] = {
+            description = "The Twilight's Hammer, an insane cult bent on destruction, set up camps in " ..
+                "Silithus and perform rituals day and night. We do not yet know their plans, but we do " ..
+                "think they are somehow linked to the pulsing red crystals spread across the " ..
+                "desert.\n\nAlthough their mystery may one day be solved, we must first deal with their " ..
+                "immediate threat. Go to their camps to the west and seek out Twilight geolords. They are " ..
+                "the heads of these serpents; that is where we must strike!",
+            rewardMoney = 9000,
         },
         [8321] = {
             description = "We have discovered another base of operations for the Twilight's Hammer. It is " ..
