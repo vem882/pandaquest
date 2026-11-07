@@ -37,16 +37,27 @@ local FILES = {
 }
 M.FILES = FILES
 
--- Fallbacks for names whose texture may not have been generated yet.
-local ALIAS = {
-    available_gray       = "available",
-    available_repeatable = "available",
-    complete_repeatable  = "complete",
-    pickup               = "available",
-    itemuse              = "object",
-    event                = "object",
-    explore              = "custom",
+-- Client textures are shared by the supported Classic branches. Quest glyphs
+-- already have a transparent silhouette, so only square item art is cropped.
+local QUEST_TEXTURES = {
+    available = "AvailableQuestIcon",
+    available_gray = "AvailableQuestIcon",
+    available_repeatable = "DailyQuestIcon",
+    pickup = "AvailableQuestIcon",
+    complete = "ActiveQuestIcon",
+    complete_repeatable = "DailyActiveQuestIcon",
 }
+local ITEM_TEXTURES = {
+    slay = "Ability_DualWield",
+    loot = "INV_Misc_Bag_10",
+    object = "INV_Misc_Key_03",
+    talk = "INV_Misc_Book_09",
+    event = "INV_Misc_Spyglass_03",
+    itemuse = "INV_Misc_Bag_10",
+    explore = "INV_Misc_Map_01",
+    custom = "INV_Misc_Map_01",
+}
+local SOLID = "Interface\\Buttons\\WHITE8X8"
 
 -- Resolved paths are cached: Pins asks for them once per pin and per redraw.
 local pathCache = {}
@@ -56,8 +67,11 @@ function M.Get(name)
     if type(name) ~= "string" then name = "custom" end
     local cached = pathCache[name]
     if cached then return cached end
-    local file = FILES[name] or FILES[ALIAS[name] or ""] or FILES.custom
-    local path = TEXTURE_ROOT .. file
+    local quest, item = QUEST_TEXTURES[name], ITEM_TEXTURES[name]
+    local path = quest and ("Interface\\GossipFrame\\" .. quest)
+        or item and ("Interface\\Icons\\" .. item)
+        or FILES[name] and (TEXTURE_ROOT .. FILES[name])
+        or M.Get("custom")
     pathCache[name] = path
     return path
 end
@@ -319,6 +333,21 @@ function M.UsesDot(spec)
     return spec ~= nil and DOT_LAYERS[spec.layer] == true
 end
 
+local function cropIcon(texture, square)
+    if texture.SetTexCoord then
+        local inset = square and 0.08 or 0
+        texture:SetTexCoord(inset, 1 - inset, inset, 1 - inset)
+    end
+end
+
+local function drawTarget(texture, target)
+    local path, name = M.GetForTarget(target)
+    texture:SetTexture(path)
+    cropIcon(texture, ITEM_TEXTURES[name] ~= nil)
+    if texture.SetDesaturated then texture:SetDesaturated(name == "available_gray") end
+    return name
+end
+
 --- Icons.ApplyNode(pin, spec, minimap) -> "dot"|"icon", size
 --
 -- Draws one pin: a dot tinted with the quest colour (plus its dark ring and, for a cluster, the
@@ -345,17 +374,27 @@ function M.ApplyNode(pin, spec, minimap)
     if pin.SetSize then pin:SetSize(frameSize, frameSize) end
     if texture.SetSize then texture:SetSize(frameSize, frameSize) end
 
+    cropIcon(texture, false)
+    if pin.rim then pin.rim:Hide() end
     if texture.SetDesaturated then texture:SetDesaturated(false) end
     if outline and outline.SetVertexColor then outline:SetVertexColor(1, 1, 1, 1) end
     if professionIcon then
         texture:SetTexture(professionIcon)
+        cropIcon(texture, true)
         if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
         local advice = ns.Professions.GatheringAdvice and ns.Professions.GatheringAdvice(spec)
         if outline then
-            outline:SetTexture("Interface\\Buttons\\UI-Quickslot2")
-            if outline.SetSize then outline:SetSize(frameSize * 1.35, frameSize * 1.35) end
-            if advice and outline.SetVertexColor then
-                outline:SetVertexColor(advice.color[1], advice.color[2], advice.color[3], 1)
+            outline:SetTexture(SOLID)
+            local edge = (minimap and 1 or 1.5) * factor
+            outline:SetSize(frameSize + 4 * edge, frameSize + 4 * edge)
+            outline:SetVertexColor(0.06, 0.04, 0.02, 0.95)
+            if pin.rim then
+                local color = advice and advice.color
+                pin.rim:SetTexture(SOLID)
+                pin.rim:SetSize(frameSize + 2 * edge, frameSize + 2 * edge)
+                if color then pin.rim:SetVertexColor(color[1], color[2], color[3], 1)
+                else pin.rim:SetVertexColor(0.77, 0.58, 0.31, 1) end
+                pin.rim:Show()
             end
             outline:Show()
         end
@@ -398,8 +437,7 @@ function M.ApplyNode(pin, spec, minimap)
         return "dot", frameSize
     end
 
-    local path = M.GetForTarget(spec and spec.targets and spec.targets[1])
-    texture:SetTexture(path)
+    drawTarget(texture, spec and spec.targets and spec.targets[1])
     if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
     if outline then outline:Hide() end
     if count then count:Hide() end
@@ -410,8 +448,7 @@ end
 -- Returns the icon name that was used, or nil when there was nothing to draw on.
 function M.Apply(texture, target, minimap, frame)
     if not texture or not texture.SetTexture then return nil end
-    local path, name = M.GetForTarget(target)
-    texture:SetTexture(path)
+    local name = drawTarget(texture, target)
     local size = M.GetSize(minimap)
     if frame and frame.SetSize then frame:SetSize(size, size) end
     if texture.SetSize then texture:SetSize(size, size) end

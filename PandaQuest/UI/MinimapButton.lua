@@ -34,7 +34,7 @@ local type, tonumber, tostring, format, max = type, tonumber, tostring, string.f
 local pcall = pcall
 
 local LDB_NAME = "PandaQuest"
-local ICON = "Interface\\AddOns\\PandaQuest\\Textures\\icon.tga"
+local ICON = "Interface\\Icons\\INV_Misc_Map_01"
 --- While a flight runs the icon is Blizzard's own taxi node art -- the green "you are here" pin
 -- the flight map draws (TaxiButtonTypes.CURRENT, Blizzard_UIPanels_Game/Shared/TaxiFrame.lua) --
 -- so a broker bar shows at a glance that the text is about a flight and not about a quest.
