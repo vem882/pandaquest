@@ -65111,6 +65111,10 @@ ns.Overrides.wowhead = {
         [11862] = {spawns = {[406] = {{47.2, 64.2}}}, zoneID = 406},
         [11863] = {spawns = {[405] = {{38.8, 27.2}}}, zoneID = 405},
         [11864] = {spawns = {[406] = {{47.4, 58.4}, {47.4, 58.6}}}, zoneID = 406},
+        [11866] = {
+            spawns = {[1657] = {{57.2, 45.4}, {57.4, 46.4}, {57.4, 46.6}, {57.6, 46.4}, {57.6, 46.6}}},
+            zoneID = 1657,
+        },
         [11870] = {
             spawns = {
                 [1497] = {
@@ -66160,6 +66164,7 @@ ns.Overrides.wowhead = {
         [73306] = {subName = "Lost Treasures of Shaohao"},
         [73348] = {subName = "The Timewalkers"},
         [73353] = {subName = "The Timewalkers"},
+        [73563] = {maxLevel = 89, minLevel = 89},
         [73666] = {maxLevel = 93, minLevel = 93},
         [73691] = {subName = "The Timewalkers"},
         [178420] = {rank = 0},
