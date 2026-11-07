@@ -13830,6 +13830,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25774, 1}, {25773, 1}, {25772, 1}},
             rewardMoney = 111000,
         },
+        [9939] = {
+            description = "Wanted: Dead or Alive\n\nZorbo the Advisor, wanted for numerous planned " ..
+                "attacks on Garadar. Along with his reavers and shaman, Zorbo has slain countless orcs. " ..
+                "Consider Zorbo as armed, dangerous, and merciless.\n\nZorbo makes his home in the " ..
+                "Laughing Skull Ruins in the northern mountains of Nagrand.\n\nReward for Zorbo the " ..
+                "Advisor 's death or capture to be dispensed by Warden Bullrok at Garadar.",
+            rewardMoney = 70000,
+        },
         [9940] = {
             description = "Wanted: Dead or Alive\n\nZorbo the Advisor, wanted for numerous planned " ..
                 "attacks on Telaar. Along with his reavers and shaman, Zorbo has slain countless Broken. " ..

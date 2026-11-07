@@ -17,6 +17,15 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.415
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 814 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,545 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,594 quests, 48 NPCs, 2 objects
+- quest 13895 - The Slumbering Ancients - updated
+  - description added
+- quest 13899 - The Darkscale Warlord - updated
+  - description added
+
 0.2.410
 - database - rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
 - database - Classic Era rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
@@ -98,17 +107,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 
 0.2.401
 - database - Classic Era: data from the PandaQuest portal: 2,518 quests, 27 NPCs, 5 objects
-
-0.2.400
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 800 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,516 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,555 quests, 47 NPCs, 2 objects
-- npc 39040 - Alliance Field Defender - updated
-  - coordinates: 2 spawn points added in Southern Barrens
-- npc 67996 - Archmage Modera - updated
-  - NPC level added (90)
-- npc 69197 - Alliance Officer - updated
-  - NPC level added (91)
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

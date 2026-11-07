@@ -977,6 +977,13 @@ ns.Overrides.wowhead = {
                 "rewarded.",
             rewardMoney = 1100,
         },
+        [153] = {
+            description = "The Defias Front is constantly shifting. I've been following their movements " ..
+                "for quite some time now. On a side note, I've ascertained that many members of the gang " ..
+                "can be tracked by the Red Leather Bandanas they wear.\n\nBring me 15 of these Bandanas " ..
+                "and I'll see to it you are rewarded.",
+            rewardChoices = {{3511, 1}, {5944, 1}, {12295, 1}},
+        },
         [154] = {
             description = "NO!!!!!\n\nTake it, take this comb away from me!\n\nI'm a monster, and no one " ..
                 "will ever think me lovely again!",
@@ -6607,6 +6614,15 @@ ns.Overrides.wowhead = {
                 "recover the Tablet of Verga, which was stolen by warlocks of the Burning Blade and is " ..
                 "now kept at their lair in Skull Rock to the east of the city. With the tablet, I will " ..
                 "show you the runes necessary to summoning a voidwalker.",
+        },
+        [1503] = {
+            description = "I will give you a weapon, <name>, but first you must aid me. The Razormanes to " ..
+                "the northwest came into my camp a few nights past. They would not meet me in combat, but " ..
+                "they know my eyes are bad--a few distracted me with snorts while others stole from me! " ..
+                "The cowards!\n\nThey took an iron chest, and within it were some forged steel bars. If " ..
+                "you can recover them then I will give you the weapon you seek.\n\nSearch for the iron " ..
+                "box within the quilboar camps, and return with the forged steel bars.",
+            rewardChoices = {{7326, 1}, {7328, 1}, {7327, 1}, {7329, 1}},
         },
         [1504] = {
             description = "Now, observe the Tablet of Verga, for it contains the glyphs you will need for " ..

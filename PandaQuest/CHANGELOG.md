@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.415] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 814 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,545 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,594 quests, 48 NPCs, 2 objects
+- quest 13895 - The Slumbering Ancients - updated
+  - description added
+- quest 13899 - The Darkscale Warlord - updated
+  - description added
+
 ## [Unreleased]
 
 - Use native WoW quest and item icons, with compact gathering borders that retain skill-up colours.
@@ -119,27 +131,6 @@ Data from the PandaQuest portal.
 Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,518 quests, 27 NPCs, 5 objects
-
-## [0.2.400] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 800 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,516 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,555 quests, 47 NPCs, 2 objects
-- npc 39040 - Alliance Field Defender - updated
-  - coordinates: 2 spawn points added in Southern Barrens
-- npc 67996 - Archmage Modera - updated
-  - NPC level added (90)
-- npc 69197 - Alliance Officer - updated
-  - NPC level added (91)
-
-## [Unreleased]
-
-- Fixed repeated navigation errors when the client protects movement speed values.
-- Current, run, flight and swim speeds are checked before comparison or smoothing.
-  Restricted or invalid readings use safe ETA defaults and are not used for travel samples.
-- Player facing and mount/flight state wrappers also reject protected readings.
 
 ## [0.2.386] - 2026-11-06
 
