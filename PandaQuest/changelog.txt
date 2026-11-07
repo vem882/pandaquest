@@ -22,6 +22,16 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.418
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 816 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,550 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,597 quests, 48 NPCs, 2 objects
+- npc 2432 - Darla Harris - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 72006 - Allie - updated
+  - NPC title added (Oriana's Companion)
+  - NPC level added (14)
+
 0.2.415
 - database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 814 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,545 quests, 27 NPCs, 5 objects
@@ -109,9 +119,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 0.2.402
 - database - Classic Era: data from the PandaQuest portal: 2,519 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,558 quests, 47 NPCs, 2 objects
-
-0.2.401
-- database - Classic Era: data from the PandaQuest portal: 2,518 quests, 27 NPCs, 5 objects
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

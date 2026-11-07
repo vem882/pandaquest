@@ -2582,6 +2582,15 @@ ns.Overrides.wowhead = {
                 "Stormpike. Tell him I sent you and show him the letter. If there's anyone north of " ..
                 "Blackrock Spire who can read this, it is he.",
         },
+        [515] = {
+            description = "A mudsnout composite? Absolutely brilliant! Why didn't I think of that?\n\nLet " ..
+                "me contribute my colloid of decay to this devilish brew.\n\nIn order to activate the " ..
+                "contaminating agents in this mudsnout mixture, Lydon is going to need a strong troll's " ..
+                "blood potion, as well as some daggerspine scales and torn fin eyes from the southern " ..
+                "coast of Hillsbrad. He'll know what to do once you've gathered him all the reagents. And " ..
+                "my, how anxious I am to hear how his experiment goes!",
+            rewardChoices = {{3749, 1}, {3747, 1}},
+        },
         [516] = {
             description = "I have received reports that a group of undead are holing up to prepare for an " ..
                 "attack against us. Armed with this information, we can turn the tables and attack them " ..
@@ -2763,6 +2772,16 @@ ns.Overrides.wowhead = {
                 "demise to High Executor Darthalia to claim the reward.",
             rewardItems = {{2231, 1}},
         },
+        [567] = {
+            description = "Dangerous!\n\nThe following humans of Hillsbrad have been deemed dangerous and " ..
+                "are marked for bounty by High Executor Darthalia:\n\nClerk Horrace Whitesteed. Wanted " ..
+                "for the murder of Deathguard Toma.\n\nCitizen Wilkes. Wanted for the murder of " ..
+                "Apothecary Eli.\n\nMiner Hackett. Wanted for the murder of Deathstalker Fry.\n\nFarmer " ..
+                "Kalaba. Wanted for the ambush of supplies from the Undercity.\n\nAll of these enemies " ..
+                "are hiding and will be hard to find. A reward will be granted upon notice of their death.",
+            rewardChoices = {{3742, 1}, {3743, 1}, {5250, 1}},
+            rewardItems = {{3732, 1}},
+        },
         [568] = {
             description = "Throm'ka, <class>!\n\nYour arrival at Grom'gol is timely, indeed. As commander " ..
                 "of the Warchief's base camp here in the jungle I am bound by honor to ensure the safety " ..
@@ -2904,6 +2923,14 @@ ns.Overrides.wowhead = {
                 "But I don't care what their fate is - I want what's mine!\n\nThey're at the Ruins of " ..
                 "Aboraz and the Ruins of Jubuwal, northeast of here. Find them, and collect.",
             rewardMoney = 6500,
+        },
+        [610] = {
+            description = "My FATHER sent you? I'd have thought that old codger would have given up on me " ..
+                "by now.\n\nIt wasn't really his fault I ran off, he just shouldn't have expected I'd be " ..
+                "willing to live a boring life, reading over musty books and associating with " ..
+                "grey-haired, stiff-backed, stuffy mages!\n\nIf you need my dagger, you'll have to get it " ..
+                "back from \"Pretty Boy\" Duncan, one of the Bloodsail Buccaneers. Put something 'tween " ..
+                "his shoulders and I'm sure he'll give it up.",
         },
         [611] = {
             description = "So you're looking for an altar of some sort? Well, I'm no expert on troll " ..
@@ -7306,6 +7333,15 @@ ns.Overrides.wowhead = {
                 "place is crawling with leper gnomes!\n\nPlease, <name>, retrieve my gizmonitor!",
             rewardChoices = {{7507, 1}, {9514, 1}},
         },
+        [1882] = {
+            description = "The Plaguelands to the east are an aberration. Devised by the Lich King, they " ..
+                "spread their magic into the soil, corrupting and killing all that live. Although there " ..
+                "is a certain charm to the destructive forces of the plague, we, the mages of the " ..
+                "Forsaken, believe it is unruly and must be curtailed.\n\nBut first, we must measure how " ..
+                "far it has spread into Tirisfal. Go to the Balnir Farmstead in eastern Tirisfal. In the " ..
+                "garden are flowers--snapdragons. Gather these and return.",
+            rewardChoices = {{7507, 1}, {9514, 1}},
+        },
         [1883] = {
             description = "Un'thuwa, tribal mage of Sen'jin Village, detects a disturbance in the magic " ..
                 "currents of Durotar and asks for aid. Speak with Un'thuwa and do what you can to help " ..
@@ -11131,6 +11167,14 @@ ns.Overrides.wowhead = {
                 "jibber-jabber. Still, she doesn't hurt anything or anyone, so folks pretty much leave " ..
                 "her be.\n\nAll things considered, I would say that Ol' Emma is in fact Emma Felstone. " ..
                 "You might try asking if her last name is indeed Felstone.",
+        },
+        [5049] = {
+            description = "From the evidence I am able to muster, the person you seek - and the intended " ..
+                "recipient of the parcel - is Jeremiah Payson, the Undercity cockroach vendor.\n\nI've " ..
+                "always been of the opinion that it takes a special gift to sell... cockroaches. No doubt " ..
+                "you are on quite the epic sojourn now, mighty <class>. I will leave you to your " ..
+                "world-shaping endeavors. Allow me, however, to be a part of your magnum opus and reveal " ..
+                "that he is located near the bank, suitably groveling under one of the walkways.",
         },
         [5051] = {
             description = "The ramblings of the poor ghost continue:\n\n\"I'm so cold, John. Bring me " ..
