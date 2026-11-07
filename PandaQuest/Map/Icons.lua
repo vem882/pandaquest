@@ -7,7 +7,7 @@ local M = ns.PQ:GetModule("Icons")   -- an AceAddon module (Core/Const.lua)
 ns.Icons = M
 
 local type, pairs, tostring = type, pairs, tostring
-local byte, len, sqrt, floor = string.byte, string.len, math.sqrt, math.floor
+local byte, len, sqrt = string.byte, string.len, math.sqrt
 
 local TEXTURE_ROOT = "Interface\\AddOns\\PandaQuest\\Textures\\"
 
@@ -57,7 +57,6 @@ local ITEM_TEXTURES = {
     explore = "INV_Misc_Map_01",
     custom = "INV_Misc_Map_01",
 }
-local SOLID = "Interface\\Buttons\\WHITE8X8"
 
 -- Resolved paths are cached: Pins asks for them once per pin and per redraw.
 local pathCache = {}
@@ -134,16 +133,9 @@ local MIN_SIZE, MAX_SIZE = 4, 64
 
 -- Objective dots are smaller again than the `!`/`?` icons they replaced: those are
 -- glyphs that have to stay legible, a dot only has to be visible.
-local BASE_NODE_SIZE = 11
-local BASE_NODE_MINIMAP_SIZE = 7
+local BASE_NODE_SIZE = 13
+local BASE_NODE_MINIMAP_SIZE = 9
 local CLUSTER_FACTOR = 1.35        -- pfQuest draws a cluster at 18 px where a node is 14
-
--- node.tga fills 75 % of its texture, node_outline.tga's ring reaches 88.75 % of its own. Drawing
--- the ring at `0.85 * size + 2.5` puts roughly 1.1 screen pixels of dark rim outside the dot at
--- every size we use, instead of a rim that vanishes on the minimap and bloats on the world map.
-local function outlineSizeFor(size)
-    return size * 0.85 + 2.5
-end
 
 local function mapProfile()
     local PQ = ns.PQ
@@ -323,16 +315,6 @@ end
 -- Pin appearance
 ---------------------------------------------------------------------------
 
--- Layers that are drawn as a coloured dot rather than as an icon. Quest givers and turn-ins keep
--- their `!` and `?`: those are already right. Gathering nodes are dots too, the
--- same size and with the same ring as the objective dots the owner had already accepted.
-local DOT_LAYERS = { objective = true, profession = true }
-
---- Icons.UsesDot(spec) -> bool
-function M.UsesDot(spec)
-    return spec ~= nil and DOT_LAYERS[spec.layer] == true
-end
-
 local function cropIcon(texture, square)
     if texture.SetTexCoord then
         local inset = square and 0.08 or 0
@@ -348,99 +330,36 @@ local function drawTarget(texture, target)
     return name
 end
 
---- Icons.ApplyNode(pin, spec, minimap) -> "dot"|"icon", size
---
--- Draws one pin: a dot tinted with the quest colour (plus its dark ring and, for a cluster, the
--- spawn count) or the glyph the target asks for. `pin` is the frame Map/Pins.lua pooled; it is
--- expected to carry `texture`, and optionally `outline` and `count`.
---
--- The size is a SCREEN size divided by ns.MapCompat.GetPinScaleFactor(pin): the pin
--- is a child of the world map canvas, so a map addon that scales the canvas would otherwise scale
--- the pin with it.
+--- Draw a single symbol for a pin, including a group of nearby spawns.
 function M.ApplyNode(pin, spec, minimap)
-    if not pin or not pin.texture or not pin.texture.SetTexture then return nil end
-    local texture, outline, count = pin.texture, pin.outline, pin.count
-    local professionIcon = spec and spec.layer == "profession" and ns.Professions
-        and ns.Professions.GetNodeIcon and ns.Professions.GetNodeIcon(spec)
-    local dot = not professionIcon and M.UsesDot(spec)
-    local cluster = dot and spec.count ~= nil and spec.count > 1
-    local size = dot and M.GetNodeSize(minimap, cluster) or M.GetSize(minimap)
-
-    local factor = 1
-    local Compat = ns.MapCompat
-    if Compat and Compat.GetPinScaleFactor then factor = Compat.GetPinScaleFactor(pin) end
+    if not pin or not pin.texture then return nil end
+    local texture = pin.texture
+    local target = spec and spec.targets and spec.targets[1]
+    local gathering = spec and spec.layer == "profession"
+    local objective = spec and spec.layer == "objective"
+    local size = objective and M.GetNodeSize(minimap, false) or M.GetSize(minimap)
+    local compat = ns.MapCompat
+    local factor = compat and compat.GetPinScaleFactor and compat.GetPinScaleFactor(pin) or 1
     local frameSize = size * factor
-
-    if pin.SetSize then pin:SetSize(frameSize, frameSize) end
-    if texture.SetSize then texture:SetSize(frameSize, frameSize) end
-
-    cropIcon(texture, false)
-    if pin.rim then pin.rim:Hide() end
-    if texture.SetDesaturated then texture:SetDesaturated(false) end
-    if outline and outline.SetVertexColor then outline:SetVertexColor(1, 1, 1, 1) end
-    if professionIcon then
-        texture:SetTexture(professionIcon)
+    local resource = gathering and ns.Professions and ns.Professions.GetNodeIcon(spec)
+    local square
+    if resource then
+        texture:SetTexture(resource)
+        texture:SetDesaturated(false)
         cropIcon(texture, true)
-        if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
-        local advice = ns.Professions.GatheringAdvice and ns.Professions.GatheringAdvice(spec)
-        if outline then
-            outline:SetTexture(SOLID)
-            local edge = (minimap and 1 or 1.5) * factor
-            outline:SetSize(frameSize + 4 * edge, frameSize + 4 * edge)
-            outline:SetVertexColor(0.06, 0.04, 0.02, 0.95)
-            if pin.rim then
-                local color = advice and advice.color
-                pin.rim:SetTexture(SOLID)
-                pin.rim:SetSize(frameSize + 2 * edge, frameSize + 2 * edge)
-                if color then pin.rim:SetVertexColor(color[1], color[2], color[3], 1)
-                else pin.rim:SetVertexColor(0.77, 0.58, 0.31, 1) end
-                pin.rim:Show()
-            end
-            outline:Show()
-        end
-        if count then count:Hide() end
-        return "icon", frameSize
+        square = true
+    else
+        local name = drawTarget(texture, target)
+        square = ITEM_TEXTURES[name] ~= nil
     end
-    if dot then
-        texture:SetTexture(M.Get("node"))
-        if texture.SetVertexColor then
-            local r, g, b = M.ColorForSpec(spec)
-            texture:SetVertexColor(r, g, b, 1)
-        end
-        if outline then
-            outline:SetTexture(M.Get("node_outline"))
-            if outline.SetSize then
-                local os = outlineSizeFor(size) * factor
-                outline:SetSize(os, os)
-            end
-            outline:Show()
-        end
-        -- The count goes on the world map only. A cluster is drawn larger on the minimap too, so
-        -- "there are several here" still reads there, but a digit under 6 pt on a 9 px dot is not
-        -- information -- it is the smear the smaller minimap dots exist to get rid of.
-        if count then
-            if cluster and not minimap then
-                count:SetText(tostring(spec.count))
-                if count.SetFont and count.GetFont then
-                    local path, _, flags = count:GetFont()
-                    if path then
-                        local points = floor(frameSize * 0.72)
-                        if points < 6 then points = 6 end
-                        count:SetFont(path, points, flags or "OUTLINE")
-                    end
-                end
-                count:Show()
-            else
-                count:Hide()
-            end
-        end
-        return "dot", frameSize
+    if pin.mask and square ~= pin.maskApplied then
+        if square then texture:AddMaskTexture(pin.mask)
+        else texture:RemoveMaskTexture(pin.mask) end
+        pin.maskApplied = square
     end
-
-    drawTarget(texture, spec and spec.targets and spec.targets[1])
-    if texture.SetVertexColor then texture:SetVertexColor(1, 1, 1, 1) end
-    if outline then outline:Hide() end
-    if count then count:Hide() end
+    texture:SetVertexColor(1, 1, 1, 1)
+    pin:SetSize(frameSize, frameSize)
+    texture:SetSize(frameSize, frameSize)
     return "icon", frameSize
 end
 

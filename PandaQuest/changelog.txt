@@ -1,3 +1,8 @@
+- Preview the NPC associated with the selected quest in the world map.
+Clearer map markers
+- Use native quest objective icons and group nearby spawns.
+- Remove gathering frames and overlapping numbers from the maps.
+
 Map and minimap icons
 - Use native WoW quest and item icons, with compact gathering borders that retain skill-up colours.
 
