@@ -5959,6 +5959,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9649, 1}, {9650, 1}, {10686, 1}},
             rewardMoney = 25000,
         },
+        [2939] = {
+            description = "While the ruins of Feralas can be quite dangerous, they have much to tell of " ..
+                "what has happened here.\n\nSearching through the rubble to the south a few days ago, I " ..
+                "discovered what appears to be a normal stave. However, I just can't shake the feeling " ..
+                "that there is something more to it. Angelas and I have been poring over our books here, " ..
+                "but we can't find a thing about it.\n\nI have a colleague in Darnassus that may be able " ..
+                "to tell us what this is, <name>. Why don't you go talk to her and see if she can help us?",
+        },
         [2941] = {
             description = "I have studied many subjects in my time, and my latest fascination is with the " ..
                 "snapjaw that occupy the beach in the Hinterlands. There's one in particular I'd like to " ..
