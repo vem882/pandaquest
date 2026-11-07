@@ -27710,12 +27710,25 @@ ns.Overrides.wowhead = {
                 "Take this figurine, it'll help you avoid being detected while you gather intelligence.",
             rewardMoney = 1100,
         },
+        [13895] = {
+            description = "We may not have twenty stone giants to take on our enemy, but we giants of " ..
+                "ancient lumber are as strong as any rock.\n\nLook around you, <race>. My kindred " ..
+                "sleep... yet they will heed the keeper's horn when the time of need is upon them.\n\nYou " ..
+                "will find Aros, the keeper of the grove, beyond the bridge northeast of here.\n\nTell " ..
+                "him the urgency of our situation.",
+        },
         [13898] = {
             description = "We cannot let the naga get away with this, <name>. Slaying the keeper of the " ..
                 "grove amounts to a declaration of war.\n\nYou'll find their den inside a cave on the " ..
                 "island of Naj'vel, far to the southwest.\n\nI want you to send them a clear message.",
             rewardChoices = {{52640, 1}, {52644, 1}, {52673, 1}},
             rewardMoney = 1200,
+        },
+        [13899] = {
+            description = "If the naga want to throw in their lot with the Twilight's Hammer, then may " ..
+                "Elune have mercy on them.\n\nGo into their lair in the island of Nazj'vel and find their " ..
+                "leader, the naga warlord known only as Wrathspine.\n\nPerhaps the horn of the ancients " ..
+                "can still be saved.",
         },
         [13900] = {
             description = "The warlord said the horn of the ancients was being offered to Azshara above " ..
