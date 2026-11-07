@@ -2585,6 +2585,15 @@ ns.Overrides.wowhead = {
                 "Keystone.\n\n<name>, you have done so much to aid me. Just a little more...and my " ..
                 "gratitude will shake the very foundations of the earth!",
         },
+        [659] = {
+            description = "Hail, and well met, <name>. I lead a group of adventurers investigating odd " ..
+                "happenings in this area.\n\nMy cousin in Hillsbrad recently put down his dog Stanley " ..
+                "because the animal mystically grew to an immense size and savagely attacked anyone who " ..
+                "came near him.\n\nI believe the undead are involved, and we're looking for signs to " ..
+                "prove as much.\n\nTwo of my companions, Quae and Kinelory, headed to the Go'Shek Farm in " ..
+                "the Arathi Highlands, and haven't checked in for days. Find them for me? I grow " ..
+                "concerned.",
+        },
         [660] = {description = "All right, <name>. I'm ready if you are.\n\nShall we?"},
         [663] = {
             description = "Lolo sees a tiny <race>! Always on the lookout, Lolo is!\n\nWelcome to " ..
@@ -7498,6 +7507,7 @@ ns.Overrides.wowhead = {
         },
         [4801] = {rewardItems = {{12450, 3}}},
         [4802] = {rewardItems = {{12451, 3}}},
+        [4805] = {rewardItems = {{12459, 3}}},
         [4808] = {
             description = "I have another favor to ask of you.\n\nMy initial study of the essence you " ..
                 "collected shows that it might be possible to freeze dragon whelp eggs and preserve them! " ..

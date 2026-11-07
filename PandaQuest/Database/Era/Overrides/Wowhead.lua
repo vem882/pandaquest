@@ -7151,6 +7151,14 @@ ns.Overrides.wowhead = {
                 "immediately.\n\nDeathguard Dillinger 's post is on the west end of Brill, near the " ..
                 "graveyard.",
         },
+        [1819] = {
+            description = "When the Scourge swept through Tirisfal Glades, we captured one to study. He " ..
+                "had a free mind, and called himself Ulag the Cleaver. But, although his will was free, " ..
+                "he was still enthralled by the Lich King.\n\nWe hoped to find a way to break the king's " ..
+                "control over Ulag, but we failed. Now, finally, it is time to free him.\n\nFree him, and " ..
+                "kill him.\n\nActivate the skull stone trigger near the mausoleum to the north. This will " ..
+                "lift the magical seal that binds him.\n\nThen... be ready, <name>.",
+        },
         [1820] = {
             description = "You have proven your value to the Dark Lady, now perhaps you can prove " ..
                 "yourself to one of her subjects.\n\nColeman Farthing awaits a warrior who is willing to " ..
@@ -11149,6 +11157,16 @@ ns.Overrides.wowhead = {
                 "this -- cut off contact between the Winterfall and the Deadwood. A group of runners " ..
                 "walks the distance between their village and Felwood. Find and defeat them, and steal " ..
                 "their shipment.",
+        },
+        [5088] = {
+            description = "Take this refined and purified Incendia powder to Thousand Needles and toss it " ..
+                "on the sacred fire of life. It is located in the Darkcloud Pinnacle on an isolated " ..
+                "needle where they bury their dead.\n\nThe enchantment that I have weaved into the " ..
+                "Incendia powder will summon Arikara to you, <name>.\n\nI fear she may be stalking Cairne " ..
+                "Bloodhoof; too much Tauren lore has changed, and I fear this has angered Arikara. Move " ..
+                "quickly before all is lost, <class>!",
+            rewardChoices = {{15464, 1}, {15465, 1}, {15466, 1}},
+            rewardMoney = 2500,
         },
         [5089] = {
             description = "From the corpse of the defeated serpent you uncover what appears to be a note " ..

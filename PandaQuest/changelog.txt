@@ -14,6 +14,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.403
+- database - Classic Era: data from the PandaQuest portal: 2,521 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,560 quests, 47 NPCs, 2 objects
+
 0.2.402
 - database - Classic Era: data from the PandaQuest portal: 2,519 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,558 quests, 47 NPCs, 2 objects
@@ -113,18 +117,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - professions - Read learned Forever recipes without changing window filters.
 - professions - Ignore linked and guild books; keep both parts of Forever character names.
 - professions - Keep a stopped scan stopped until its window is opened again.
-
-0.2.385
-- database - rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - Classic Era rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - TBC Anniversary rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - WoW Forever rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 783 NPCs, 2 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,539 quests, 47 NPCs, 2 objects
-- npc 31406 - Alliance Infra-green Bomber - updated
-  - coordinates: 40 spawn points added in Icecrown
-- npc 68821 - Alliance Rootshaper - updated
-  - NPC level added (90)
 
 0.2.379
 - localization - Apply gathering skill advice when Finnish is selected in addon settings.

@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.403] - 2026-11-07
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,521 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,560 quests, 47 NPCs, 2 objects
+
 ## [0.2.402] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -148,21 +155,6 @@ Data from the PandaQuest portal.
 - Ignore linked and guild recipe books; cancel unfinished scans when the window closes or the module is disabled.
 - Preserve both parts of Forever character names in local recipe records.
 - Keep a manually stopped scan stopped until the profession window is reopened.
-
-## [0.2.385] - 2026-11-06
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - Classic Era rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - TBC Anniversary rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - WoW Forever rebuilt from Questie 12.6.2+v1.0.11 (was 12.6.1+v1.0.11)
-- database - Wowhead data as the PandaQuest portal read it: 7,932 quests, 783 NPCs, 2 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,539 quests, 47 NPCs, 2 objects
-- npc 31406 - Alliance Infra-green Bomber - updated
-  - coordinates: 40 spawn points added in Icecrown
-- npc 68821 - Alliance Rootshaper - updated
-  - NPC level added (90)
 
 ## [0.2.379] - 2026-11-05
 
