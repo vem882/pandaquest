@@ -1970,6 +1970,24 @@ ns.Overrides.wowhead = {
             rewardItems = {{2888, 5}, {2889, 1}},
             rewardMoney = 175,
         },
+        [385] = {
+            description = "Many a hunter is attracted to Loch Modan to hunt our famous crocs. There are " ..
+                "always merchants who seek out crocolisk skins for clothing items or armor, and there are " ..
+                "also some who enjoy the taste of their meat.\n\nWe do some trade in this, but not a huge " ..
+                "amount, as the crocolisks are ferocious and have entrenched themselves on the islands in " ..
+                "the Loch. But don't let me dissuade you, it's quite an experience, wrestling with the " ..
+                "jaws of the beasts.\n\nWhy, this one time...",
+            rewardItems = {{3678, 1}, {2240, 1}},
+        },
+        [386] = {
+            description = "Targorr the Dread served under Gath'Ilzogg as supreme Executioner. His methods " ..
+                "were ruthless, even by filthy orc standards. Men who fought bravely to defend the " ..
+                "Kingdom were tortured on his whim. Now he is being held in the Stormwind Stockade, " ..
+                "sentenced to die. Yet something is amiss. One of the bureaucratic nobles put a hold on " ..
+                "his execution. I am sure foul play is in the works.\n\nPut an end to Targorr the Dread, " ..
+                "<name>. Travel to The Stockade and behead him before trickery is upon us.",
+            rewardChoices = {{3400, 1}, {1317, 1}},
+        },
         [387] = {
             description = "The uprising must be quelled! I need your assistance. If word gets out that " ..
                 "the prison is overrun I will lose my job! This is a case of foul play if I've ever seen " ..
@@ -2257,6 +2275,15 @@ ns.Overrides.wowhead = {
                 "business. Now we have to split up the work, Miran 's taking the barrels and I'm watching " ..
                 "over the other ones.\n\nI don't feel safe letting Miran haul the rest of the shipment by " ..
                 "himself. When he's ready to go, maybe you could escort him on his next trip?",
+        },
+        [455] = {
+            description = "Orcs of the Dragonmaw clan have a haven in the Wetlands. And now they have " ..
+                "expanded into Dun Algaz! We can't let them keep their foothold here or Loch Modan will " ..
+                "be cut off from Menethil Harbor, our port and stronghold in the Wetlands.\n\nBreak " ..
+                "through Dun Algaz to the Wetlands beyond, and kill some orcs for good measure! Report to " ..
+                "Valstag Ironjaw in Menethil Harbor.\n\nMenethil is through Dun Algaz, then north along " ..
+                "the road, then west at the fork.\n\nWe're counting on you, <name>. Do not fail.",
+            rewardMoney = 1000,
         },
         [456] = {
             description = "Greetings, <name>. I am Conservator Ilthalaine. My purpose in Shadowglen is to " ..
@@ -2552,6 +2579,12 @@ ns.Overrides.wowhead = {
             description = "Targ, Muckrake, and Glommus are Mug'Thol's lieutenants. They are loyal to him, " ..
                 "though who can say what drives an ogre to loyalty.\n\nBring me their heads, <name>, and " ..
                 "then all that will remain is to remove Mug'Thol's head, crown and all.",
+        },
+        [520] = {
+            description = "With Mug'Thol's lieutenants dead, all that remains is to kill Mug'Thol and " ..
+                "retrieve the Crown of Will. I have no doubt he'll be reluctant to part with it. Most " ..
+                "likely expecting you, too, given the... departure... of his fellows.\n\nFind Mug'Thol, " ..
+                "and deliver his head and the Crown to me. The Crushridge resistance will be at an end.",
         },
         [521] = {
             description = "All that remains is to deliver the Crown of Will to Sharlindra in the " ..
@@ -8431,6 +8464,10 @@ ns.Overrides.wowhead = {
                 "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
                 "picture. She called it a \"snapshot,\" I think...",
         },
+        [2943] = {
+            description = "Here it is, <name>. Please, take care of my book.\n\nNow, hurry along. I'm " ..
+                "sure Troyas is eager for your return.",
+        },
         [2947] = {
             description = "Opening the box produced by the Sparklematic 5200 reveals what you had " ..
                 "suspected - a shiny ring! Wearing the ring, you feel magic power surge through you " ..
@@ -10347,6 +10384,13 @@ ns.Overrides.wowhead = {
                 "suffering...\n\nMay Elune guide my hands and heart.\n\nSpeak with me again in a moment.",
             rewardItems = {{11445, 1}},
         },
+        [4449] = {
+            description = "Hey! Hey, you! Get over here!\n\nYa gotta help me out. I was runnin' from them " ..
+                "Dark Iron dwarves, and I hid in here to get out of sight. Damn bastard geologists and " ..
+                "their magic ways! They musta seen me hide, cause next thing I knew, they locked the door " ..
+                "and stuck me in here.\n\nTeach them geologists a lesson! Oh... an' can ya get me some " ..
+                "pieces of silk cloth for... for... nothin'.",
+        },
         [4450] = {
             description = "Oh, you know what? That reminds me.\n\nYou wanna finish up a little job I took " ..
                 "up while I was in Tanaris? It's easy...\n\nKrinkle Goodsteel in Gadgetzan was lookin' " ..
@@ -11993,6 +12037,15 @@ ns.Overrides.wowhead = {
                 "then hit the Ruins of Eldarath and find me some rune that them Blood elves were lookin' " ..
                 "for. The naga apparently have it in their possession.",
             rewardMoney = 16000,
+        },
+        [5541] = {
+            description = "Hegnar Rumbleshot sells guns off the road to Anvilmar. Riflemen and mortar " ..
+                "teams spend a lot of time practicing out near his shop, and he's always needing fresh " ..
+                "ammunition.\n\nBut... the last crate of ammo I sent him got lost along the way. My " ..
+                "courier said he was camped near the Grizzled Den when wendigo chased him away... and the " ..
+                "fool left Rumbleshot's ammo behind!\n\n<name>, can you get that ammo and take it to " ..
+                "Rumbleshot? He's been waiting on it and I'm sure he's running low.",
+            rewardMoney = 125,
         },
         [5542] = {
             description = "If you are going to remain here, I ask only that you earn your keep. We have " ..
@@ -14525,6 +14578,16 @@ ns.Overrides.wowhead = {
             rewardItems = {{19125, 1}},
             rewardMoney = 7000,
         },
+        [7727] = {
+            description = "Bunions, <lad/lass>. Me bunions got bunions. How am I supposed to do any sort " ..
+                "of killin' with me feet in such disarray? That's why ye're gonna help.\n\nScrange and " ..
+                "Burninate tasked me to kill these things so they can send some expeditionary teams down " ..
+                "into the Slag Pit lava pools to do some explorin'. Supposedly some incendosaurs or some " ..
+                "such nonsense down there causin' all kinds o' problems. Now move along an' don't come " ..
+                "back 'til the incendosaur population be extinct.",
+            rewardItems = {{19141, 1}},
+            rewardMoney = 7000,
+        },
         [7730] = {
             description = "From what scouting we have managed to muster, we believe that the foe south of " ..
                 "the gnolls is an insect-like race. Frankly, it is irrelevant whether or not if they're " ..
@@ -16146,6 +16209,15 @@ ns.Overrides.wowhead = {
                 "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21391, 1}},
+        },
+        [8631] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21346, 1}},
         },
         [8633] = {
             description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..

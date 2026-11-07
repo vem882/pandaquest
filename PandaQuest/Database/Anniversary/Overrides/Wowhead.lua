@@ -5950,6 +5950,10 @@ ns.Overrides.wowhead = {
                 "Curgle Cranklehop in Tanaris. She has created an invention for me that can capture a " ..
                 "picture. She called it a \"snapshot,\" I think...",
         },
+        [2943] = {
+            description = "Here it is, <name>. Please, take care of my book.\n\nNow, hurry along. I'm " ..
+                "sure Troyas is eager for your return.",
+        },
         [2946] = {
             description = "We want you to take the miniature discs you found to the sealed gates of " ..
                 "Uldum. We... we aren't sure what will happen when you do this.\n\nThis sounds risky, " ..
@@ -7285,6 +7289,13 @@ ns.Overrides.wowhead = {
                 "find cactus apples growing near the cactus plants around here.",
             rewardItems = {{11584, 10}},
             rewardMoney = 50,
+        },
+        [4449] = {
+            description = "Hey! Hey, you! Get over here!\n\nYa gotta help me out. I was runnin' from them " ..
+                "Dark Iron dwarves, and I hid in here to get out of sight. Damn bastard geologists and " ..
+                "their magic ways! They musta seen me hide, cause next thing I knew, they locked the door " ..
+                "and stuck me in here.\n\nTeach them geologists a lesson! Oh... an' can ya get me some " ..
+                "pieces of silk cloth for... for... nothin'.",
         },
         [4481] = {rewardItems = {{11642, 1}}},
         [4482] = {rewardItems = {{11643, 1}}},
@@ -9075,6 +9086,15 @@ ns.Overrides.wowhead = {
                 "east of the Alliance outpost of Silverwing. Find and slay the outrunners, then return to " ..
                 "me.",
         },
+        [6504] = {
+            description = "I just picked up this shredder from Ratchet and I was on my way back to the " ..
+                "Warsong Lumber Camp, where I am supposed to be on duty. I was given a manual on how to " ..
+                "operate the shredder, but on the trip back, a huge gust of wind blew it from my hands. " ..
+                "The pages went everywhere, and all I was left with was the cover.\n\nThe pages could be " ..
+                "just about anywhere by now, I suppose... but I don't know how to use the shredder " ..
+                "without them! Will you find them for me?",
+            rewardChoices = {{16740, 1}, {16741, 1}},
+        },
         [6522] = {
             description = "My Lady,\n\nYou know very well what it is we are offering. The opportunity for " ..
                 "you to take the Barrens and the lands beyond is a great one. We simply want your aid in " ..
@@ -9689,6 +9709,7 @@ ns.Overrides.wowhead = {
         [8041] = {rewardItems = {{19574, 1}}},
         [8046] = {rewardItems = {{19585, 1}}},
         [8047] = {rewardItems = {{19586, 1}}},
+        [8049] = {rewardItems = {{19591, 1}}},
         [8070] = {
             description = "Shortly after the fall of the Gurubashi, we Zandalar almost succumbed to a " ..
                 "final defeat from evil within our own tribe. It was then that the confessors amongst us " ..
@@ -12918,6 +12939,13 @@ ns.Overrides.wowhead = {
                 "southwest. I've heard reports that a tribe of Lost Ones has settled in the area and may " ..
                 "even be using the ruins. Visit the Boha'mu Ruins and tell me of what you find there.",
             rewardMoney = 27000,
+        },
+        [9789] = {
+            description = "You want to earn a place in this safari? You'll have to prove yourself.\n\nI " ..
+                "don't care what you've hunted before, you haven't hunted until you hunt what we hunt " ..
+                "here. Start with the clefthoof if you're <man/tough> enough.\n\nI know that I've seen " ..
+                "them in the immediate area around the safari and also close by to the south.",
+            rewardMoney = 35000,
         },
         [9791] = {
             description = "During the orcs' war against my people, gatherers rarely left Telredor for " ..
@@ -19251,6 +19279,15 @@ ns.Overrides.wowhead = {
                 "disturbing reports of a renewed Scourge presence to the southeast of our border with the " ..
                 "Eastern Plaguelands. A company of Scourge siege engineers and their equipment appear to " ..
                 "be staging for an attack on the Ghostlands. They must not be permitted to succeed.",
+            rewardXP = 11900,
+        },
+        [64143] = {
+            description = "A Blood Knight master possesses incredible skill at wielding and weaving the " ..
+                "Light in a way that other so-called 'paladins' can never comprehend. It doesn't stop " ..
+                "them from despising us for unleashing the Light's true potential.\n\nWe must send them a " ..
+                "message and show them that we are not to be trifled with. What I have in mind will be " ..
+                "neither brief nor easy, but if you are committed, the first step will be to infiltrate " ..
+                "the library wing of the Tyr's Hand Abbey and procure a vial of Tyr's Hand holy water.",
             rewardXP = 11900,
         },
         [64319] = {
