@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.2+v1.0.11 (Forever database + corrections from QuestieDB 1.0.11). DO NOT EDIT.
--- Built: 2026-11-06T02:10:03Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.3+v1.0.12 (Forever database + corrections from QuestieDB 1.0.12). DO NOT EDIT.
+-- Built: 2026-11-07T14:09:45Z. Schema version 1.
 -- Zone tables merged like Questie's ZoneDB.Initialize() (base table + MoP override table).
 -- ns.Data.dungeons[areaId] = { name, alternativeAreaIds|nil, parentAreaId, { {areaId, x, y}, ... } entrances (Alliance),
 --   [5] = Horde entrances when they differ (Alterac Valley, Warsong Gulch) }.
@@ -3707,7 +3707,7 @@ ns.Data.dungeons = {
   [16074] = {"Karazhan Crypts",nil,41,{{41,39.99,74.16}}},
   [16236] = {"Scarlet Enclave",nil,139,{{139,60.14,75.32}}},
   [16544] = {"City of Dalaran",nil,36,{{36,8.46,59.21}}},
-  [16611] = {"Ruins of Lordaeron",nil,1497,{{1497,72.48,11.33}}},
+  [16611] = {"Ruins of Lordaeron",nil,1497,{{1497,72.41,11.37}}},
   [16732] = {"Excavation Site: Wetlands",nil,11,{{11,47.79,56.16}}},
   [16919] = {"The Hall of Thanes",nil,1537,{{1537,27.63,47.83}}},
 }

@@ -2215,6 +2215,13 @@ ns.Overrides.wowhead = {
                 "that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardItems = {{19287, 1}},
         },
+        [7929] = {
+            description = "Now that you have gathered all of the Elemental cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{19289, 1}},
+        },
         [8105] = {
             description = "<name>, the battle for Arathi Basin is a battle for resources and territory. " ..
                 "Key points in the area must be held and operated in order to supply our forces with much " ..
@@ -64721,6 +64728,7 @@ ns.Overrides.wowhead = {
         [7724] = {spawns = {[440] = {{50.2, 27.4}}}, zoneID = 440},
         [7736] = {spawns = {[357] = {{31, 43.4}}}, zoneID = 357},
         [7763] = {spawns = {[440] = {{52.2, 26.8}}}, zoneID = 440},
+        [7764] = {spawns = {[357] = {{31.8, 45.4}, {31.8, 45.6}}}, zoneID = 357},
         [7765] = {spawns = {[357] = {{42.4, 22}}}, zoneID = 357},
         [7766] = {spawns = {[1519] = {{69.2, 14.6}, {73.2, 35.4}, {73.2, 35.6}}}, zoneID = 1519},
         [7771] = {spawns = {[440] = {{52.6, 45.8}}}, zoneID = 440},

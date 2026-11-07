@@ -2410,6 +2410,16 @@ ns.Overrides.wowhead = {
                 "feathers are traditionally worn by the beasts on their armbands. You will find a tribe " ..
                 "of the raptors directly south of Grom'gol, not far from the great arena.",
         },
+        [575] = {
+            description = "\"The finest leathercrafter of the South Seas and the worlds old and new.\" " ..
+                "That's what they call me. Me! Drizzlik! The finest lea... Ahem. Well.\n\nMy leather " ..
+                "goods are known far and wide as the most exquisite, a connoisseur's choice!\n\nI've just " ..
+                "received an order from Director Riddlevox of the Tinkers' Union for a dozen of his " ..
+                "favorite Excelsior-line boots. Our best sellers, actually.\n\nTo start on the basic " ..
+                "shape, I'll need crocolisk skins from the crocs along the river in northern " ..
+                "Stranglethorn.",
+            rewardMoney = 2200,
+        },
         [585] = {
             description = "<The head of Nezzliok speaks.>\n\nIt is true. I know where the child of the " ..
                 "Darkspears was taken. You have bested me and bound my spirit, but I will say nothing " ..
@@ -2525,6 +2535,15 @@ ns.Overrides.wowhead = {
                 "Highlands at Refuge Pointe.\n\nTravel there and seek out Captain Nials. Ask the good " ..
                 "Captain if the Alliance can spare some soldiers to help us reclaim Dun Modr and the " ..
                 "Thandol Span.",
+        },
+        [639] = {
+            description = "In ancient times, trolls fought against the Arathorian Empire and our most " ..
+                "capable adversary, Lord Ignaeus of Strom, named Trollbane. He rode into battle wielding " ..
+                "Trol'kalar--troll slayer, in their ancient tongue.\n\nBut now the sons of Trollbane are " ..
+                "weakened, their stronghold brought to ruin.\n\nThe sword is protected by several sigils " ..
+                "that were divided among the survivors of Stromgarde, and we must retrieve them.\n\nThe " ..
+                "first was taken by the Syndicate, one of their men in Stromgarde should have it.",
+            rewardMoney = 4000,
         },
         [640] = {
             description = "Thoras Trollbane's tomb is protected by three sigils--the first of which you " ..
@@ -7361,6 +7380,14 @@ ns.Overrides.wowhead = {
                 "understanding. If you're not careful, corruption will overwhelm you and your weak " ..
                 "will.\n\nBut I should get to the point: Strahad wishes to speak to you. He is still " ..
                 "residing in his tower overlooking Ratchet in the Barrens. I suggest not taking too long.",
+            rewardXP = 435,
+        },
+        [4489] = {
+            description = "You, <race>! Come here!\n\nYou're the one they call <name>, yes?\n\nI thought " ..
+                "as much. I will keep this short: you're growing in power, and it has been acknowledged. " ..
+                "And now, the time has come that you are rewarded for your efforts.\n\nGo to the Barrens. " ..
+                "There, above Ratchet, you'll find Strahad Farsan --perhaps you remember him? He would " ..
+                "have words with you. I wouldn't take long.",
             rewardXP = 435,
         },
         [4492] = {
