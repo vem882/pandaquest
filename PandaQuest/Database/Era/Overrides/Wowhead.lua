@@ -5024,6 +5024,14 @@ ns.Overrides.wowhead = {
                 "Bay. Might be that this Velinde traveled with him.\n\nMove along, now. I haven't all day " ..
                 "for you.",
         },
+        [1041] = {
+            description = "Turns out I was wrong about you, and that isn't something that happens " ..
+                "everyday.\n\nIt just so happens that I remember this Velinde you're looking for. Isn't " ..
+                "every day that a night elf priestess that wants to travel with a dirty old--but great " ..
+                "for your shipping needs!--caravan like my own.\n\nWe split up on the way north, she was " ..
+                "headed for Darkshire. The clerk there keeps all sorts of records. Might know something " ..
+                "useful.\n\nBe careful in the jungle, it is a deadly place even at the best of times.",
+        },
         [1042] = {
             description = "No, I don't have any records of a Velinde Starsong staying in Darkshire... " ..
                 "though, if you don't mind me saying, I can hardly imagine a night elf priestess taking a " ..
@@ -9701,6 +9709,13 @@ ns.Overrides.wowhead = {
             rewardMoney = 16500,
         },
         [3702] = {description = "Would you like to hear a brief history of the Dark Iron dwarves?"},
+        [3741] = {
+            description = "My friend Hilary lost her necklace, and we can't find it. We've been fishing " ..
+                "all day right here, and we looked around here already. The only thing I can think of is " ..
+                "that it fell into the lake. Our parents don't want us to swim in the lake... my mom says " ..
+                "there's some mean things underwater, but you look like you aren't scared of mean " ..
+                "things.\n\nCould you find it for her, please?",
+        },
         [3761] = {
             description = "The soil of Un'Goro Crater is reportedly enriched with potent magical " ..
                 "qualities. The Cenarion Circle wants to study this soil in large quantities; go into the " ..
@@ -14239,6 +14254,14 @@ ns.Overrides.wowhead = {
                 "Ironforge.\n\nAlas, soldiers do not grow on trees! Report to Lieutenant Haggerdin " ..
                 "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
         },
+        [7302] = {
+            description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
+                "over enemy territory. You must find out what became of them so that we can attempt a " ..
+                "rescue!\n\nGuse was last seen flying over the Icewing Bunker. Jeztor's War Rider was " ..
+                "spotted near the Stormpike lumber mill. Mulverick... that reckless fool was seen " ..
+                "crashing near the Dun'Baldar North Bunker.\n\nThat's all the information I have. Move " ..
+                "out! Search through the areas thoroughly.",
+        },
         [7321] = {
             description = "Who says that the undead don't know anything about cooking? Take my secret " ..
                 "recipe for Turtle Bisque, for example. I've known folks that would come back from the " ..
@@ -18165,6 +18188,15 @@ ns.Overrides.wowhead = {
                 "bind it to your will.",
             rewardItems = {{22243, 1}},
             rewardXP = 1550,
+        },
+        [65601] = {
+            description = "A sayaad male is known as an incubus. A creature of profound evil and singular " ..
+                "mind.\n\nThe demon must be lured into our world with an item of enticement - an object " ..
+                "that represents great love and devotion.\n\nIf you trust a blind man to lead you, " ..
+                "<name>, then listen. East from the Cleft of Shadow, along the main drag of Orgrimmar, " ..
+                "lives Magar. He longs for the return of his mate, Krilge.\n\nSeek him out. He'll ask you " ..
+                "to search for something precious. That is the key which you must bring to Gan'rul.",
+            rewardXP = 390,
         },
         [65603] = {
             description = "The time has come. Take the figurine and descend into the crypts below. A " ..
