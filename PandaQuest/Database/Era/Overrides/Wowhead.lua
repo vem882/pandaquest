@@ -904,6 +904,13 @@ ns.Overrides.wowhead = {
                 "retrieve this crate for me for I miss it sorely.",
             rewardMoney = 1400,
         },
+        [135] = {
+            description = "I wonder what Wiley meant when he mentioned the Stonemasons. Perhaps that was " ..
+                "a slip of tongue. Could the Defias gang be related to the Stonemasons? Only one man " ..
+                "would know for sure: Mathias Shaw, head of SI:7. Show him Wiley's Note and see if he has " ..
+                "anything to add to this growing mystery. If you have trouble finding Shaw, check the " ..
+                "Barracks in Old Town.",
+        },
         [139] = {
             description = "Searching through the barrel you discover another piece of parchment. This one " ..
                 "reads: Now from this here barrel, face ye North. Straight as the crow flies, keep ye " ..
@@ -4210,6 +4217,15 @@ ns.Overrides.wowhead = {
                 "goodies.\n\nNothing else I can do for him. Oh... though you could tell him that I've got " ..
                 "some things from Undermine for him, when he has the time to come pick them up.",
         },
+        [894] = {
+            description = "The Venture Company set up a small research facility far to the north of here, " ..
+                "southwest of the Sludge Fen. I don't know very much about what they're doing, but did " ..
+                "manage to discover that they're experimenting with something called a " ..
+                "\"samophlange\".\n\nNow what the heck is a samophlange? Well, whatever it is, I want to " ..
+                "examine it, so I need someone to go get it.\n\nI obtained a copy of their control system " ..
+                "operating manual, you should be able to figure out how to disengage the samophlange from " ..
+                "it.",
+        },
         [896] = {
             description = "Being Wharfmaster of a busy port like Ratchet, I keep my finger on the pulse " ..
                 "of information. I know all about the exchange of goods and money between here and Booty " ..
@@ -5784,6 +5800,13 @@ ns.Overrides.wowhead = {
                 "follow up on it more, I'd suggest you go hit up the Baron himself. If there's anyone who " ..
                 "knows Revilgaz's business, it's Revilgaz.\n\nYou'll find him at the tavern across the " ..
                 "harbor, top floor.",
+        },
+        [1186] = {
+            description = "I'm going to be busy with working on integrating this new fuel regulator to " ..
+                "our racer designs, but if you'd like to help out the team some more, talk to Razzeric. " ..
+                "He's our pilot--well, our eighteenth pilot, to be exact--and he likes to add his own " ..
+                "little modifications to the racers.\n\nHe's a little off his rocker, though, so try not " ..
+                "to act too surprised.",
         },
         [1187] = {
             description = "Pozzik's a great mechanic, I know that, but he's afraid to just load on the " ..

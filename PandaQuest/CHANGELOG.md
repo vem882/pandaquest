@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.423] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 820 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,562 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,606 quests, 48 NPCs, 2 objects
+- npc 76357 - Alterac Brew-Hound - updated
+  - NPC level added (81-83)
+
 ## [0.2.422] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -123,16 +133,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,584 quests, 48 NPCs, 2 objects
 - npc 68483 - Alliance Sentinel - updated
   - NPC level added (90)
-
-## [0.2.406] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 811 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,536 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,581 quests, 48 NPCs, 2 objects
-- npc 72549 - Alliance Vanguard - updated
-  - NPC level added (89)
 
 ## [0.2.386] - 2026-11-06
 

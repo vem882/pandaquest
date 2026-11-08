@@ -66168,6 +66168,7 @@ ns.Overrides.wowhead = {
         [73563] = {maxLevel = 89, minLevel = 89},
         [73666] = {maxLevel = 93, minLevel = 93},
         [73691] = {subName = "The Timewalkers"},
+        [76357] = {maxLevel = 83, minLevel = 81},
         [178420] = {rank = 0},
         [185333] = {rank = 0},
         [185335] = {

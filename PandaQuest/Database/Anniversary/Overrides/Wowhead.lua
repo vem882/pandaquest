@@ -13676,6 +13676,15 @@ ns.Overrides.wowhead = {
                 "about it too much and just bring them to me.",
             rewardMoney = 37000,
         },
+        [9894] = {
+            description = "In your travels, you might have encountered some of the expedition's watchers. " ..
+                "They do the majority of the field work: documenting the unique inhabitants of the marsh, " ..
+                "collecting samples, and making contact with sentient species.\n\nThe safety of the " ..
+                "watchers is paramount, <class>. We've had to recall the watchers we sent to explore " ..
+                "Funggor Cavern to the south, because of marshbeast attacks. Warden Hamoot believes that " ..
+                "killing their leader, Lord Klaq, will bring a swift end to the attacks.",
+            rewardMoney = 27000,
+        },
         [9895] = {
             description = "Have you observed your surroundings closely, <name>? This is an ailing " ..
                 "landscape, struggling to keep itself in balance and losing the fight.\n\nIf you know " ..
