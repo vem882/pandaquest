@@ -4159,6 +4159,15 @@ ns.Overrides.wowhead = {
                 "the Horde.",
             rewardMoney = 800,
         },
+        [876] = {
+            description = "You did so well with the lieutenants and underlings that I'd like you to do " ..
+                "one last thing for me.\n\nSerena Bloodfeather is the sister of a harpy named " ..
+                "Bloodfeather who was slain by Rexxar quite a while ago. Apparently, these attacks on the " ..
+                "Horde caravans are revenge for her sister's death.\n\nI need you to slit her throat and " ..
+                "bring me back her head. I want to place it on the next caravan we send out... Give those " ..
+                "harpies something to think about.",
+            rewardChoices = {{5321, 1}, {5279, 1}, {5318, 1}},
+        },
         [880] = {
             description = "Your findings are incredible, <name>. These oases hold properties that must " ..
                 "come from an outside source. Or perhaps an inside one.\n\nI want to know how these " ..

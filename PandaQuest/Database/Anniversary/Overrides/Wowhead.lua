@@ -3858,6 +3858,15 @@ ns.Overrides.wowhead = {
             description = "The rod, now complete, lies in your hands. Shael'dryn will want to hear of " ..
                 "your success.",
         },
+        [1057] = {
+            description = "As a protector of the forest spirits you can undoubtedly guess why I am " ..
+                "alarmed.\n\nYou have traveled through these mountains to reach this peak. Surely you " ..
+                "have seen the travesty which has befallen the land. Greed has led to the destruction of " ..
+                "these sacred hills.\n\nThe Charred Vale to the south was set afire by the greedy " ..
+                "mechanized army of industrialists. Worse yet, the Bloodfuries that have encroached on " ..
+                "the land refuse us passage in to begin regrowth.\n\nDrive the wretched harpies out, " ..
+                "<name>!",
+        },
         [1059] = {
             description = "The Bloodfuries have been subdued. But they will regroup soon enough if action " ..
                 "is not taken.\n\nFar south of the Barrens lies a land known as Thousand Needles. If you " ..
@@ -8943,6 +8952,15 @@ ns.Overrides.wowhead = {
                 "arrival to begin your lesson.",
             rewardXP = 100,
         },
+        [6127] = {
+            description = "Dreadmist Peak to the northwest of the Crossroads is most likely a primary " ..
+                "candidate as to the source of the spread of the poison. Its airy peaks have pools of " ..
+                "water that influence the weather patterns. I suspect the water is now tainted by the " ..
+                "demon-worshipping Burning Blade.\n\nUse this sampler to draw water from the pool at the " ..
+                "very top of the peak. Once filled, deliver it to Tonga Runetotem at the Crossroads. He " ..
+                "is the one that requested our aid, and you will work with him to address this malady.",
+            rewardXP = 740,
+        },
         [6128] = {
             description = "The water will serve as the base of the curative salve I shall make for the " ..
                 "gazelles. For curative properties, I need some earthroot. Herbalists know how to find " ..
@@ -10385,6 +10403,14 @@ ns.Overrides.wowhead = {
                 "would make my men look bad.\n\nBring me back any remaining stolen crystals you find; " ..
                 "they might still be inside their original crates.",
             rewardMoney = 100,
+        },
+        [8465] = {
+            description = "The threat of corruption comes not only from the Deadwood furbolgs to the " ..
+                "south, but also from the east and the Winterfall furbolgs of Winterspring. If you wish " ..
+                "to further aid us, speak with Salfa on the other side of the Hold, by the Winterspring " ..
+                "entrance. Follow the path to the left to reach it.\n\nBe warned - if my kind inside " ..
+                "considers you hostile or hated, they will attack. Travel as quick as you can, avoiding " ..
+                "conflict. To kill a Timbermaw - even in self defense - will only alienate you further.",
         },
         [8472] = {
             description = "The arcane patrollers crafted by our forefathers to protect the city have " ..
@@ -12932,6 +12958,11 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25525, 1}, {25534, 1}, {25530, 1}, {31661, 1}},
             rewardMoney = 62000,
         },
+        [9710] = {
+            description = "I've got everything prepared, <name>. Very soon you will have a weapon " ..
+                "befitting your new status.",
+            rewardItems = {{25464, 1}},
+        },
         [9715] = {
             description = "We must replenish our supply of sanguine hibiscus, which we use for a number " ..
                 "of purposes. They used to grow thick as shrubs, but the lowering of the marsh's water " ..
@@ -13989,6 +14020,16 @@ ns.Overrides.wowhead = {
                 "reward! As soon as I'm free, seek him out.",
             rewardChoices = {{25777, 1}, {25776, 1}, {25775, 1}},
             rewardMoney = 74000,
+        },
+        [9956] = {
+            description = "I was part of a caravan taking supplies to the Orebor Harborage in " ..
+                "Zangarmarsh. As we were nearing the border of the marsh, we were jumped by a vicious " ..
+                "squad of Warmaul ogres. They killed the others and took me prisoner, along with all of " ..
+                "our supplies.\n\nThankfully, they neglected to place a backing on my cage. When they " ..
+                "fell asleep, I made my escape.\n\nIt's too late for my comrades but we could really use " ..
+                "the supplies they stole. Warmaul Hill is in the northwestern mountains of Nagrand.",
+            rewardChoices = {{25778, 1}, {25779, 1}, {25780, 1}},
+            rewardMoney = 37000,
         },
         [9957] = {
             description = "We haven't heard from the druids at the Cenarion Thicket of Terokkar Forest in " ..
