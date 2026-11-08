@@ -22,6 +22,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.423
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 820 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,562 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,606 quests, 48 NPCs, 2 objects
+- npc 76357 - Alterac Brew-Hound - updated
+  - NPC level added (81-83)
+
 0.2.422
 - database - Classic Era: data from the PandaQuest portal: 2,559 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,605 quests, 48 NPCs, 2 objects
@@ -101,13 +108,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - database - TBC Anniversary: data from the PandaQuest portal: 2,584 quests, 48 NPCs, 2 objects
 - npc 68483 - Alliance Sentinel - updated
   - NPC level added (90)
-
-0.2.406
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 811 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,536 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,581 quests, 48 NPCs, 2 objects
-- npc 72549 - Alliance Vanguard - updated
-  - NPC level added (89)
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
