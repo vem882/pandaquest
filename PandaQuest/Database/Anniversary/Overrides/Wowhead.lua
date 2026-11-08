@@ -1173,6 +1173,12 @@ ns.Overrides.wowhead = {
                 "carrying a looking glass. Perhaps you can track Mary down and see if she might lend us a " ..
                 "reflective surface for this project? I believe she once resided in southern Duskwood...",
         },
+        [177] = {
+            description = "The looking glass was one of my finest treasures until...the incident. After " ..
+                "that happened, I discarded it behind the barn. There was an Insane Ghoul who used to " ..
+                "roam back there. Perhaps he picked it up. Rumor has it the devilish beast resides in the " ..
+                "Tranquil Gardens Cemetery.",
+        },
         [178] = {
             description = "<You hear a disembodied voice...>\n\nDo not be alarmed. I am Theocritus, High " ..
                 "Mage of Tower Azora in Elwynn Forest. The pendant you are holding is a method of " ..
@@ -11684,6 +11690,14 @@ ns.Overrides.wowhead = {
                 "would like to redeem for items of great power?\n\nThose exalted amongst the Dawn receive " ..
                 "our greatest discounts! I encourage you to make a purchase.",
             rewardChoices = {{22657, 1}, {22667, 1}, {22668, 1}, {22659, 1}, {22678, 1}, {22656, 1}},
+        },
+        [9229] = {
+            description = "Ramaladni was a warrior of the Brotherhood - a pupil of Highlord Mograine " ..
+                "before the Dawn even existed! When news of Mograine's death reached him, hatred and " ..
+                "anger took over.\n\nUnderstand this, <name>, when rage and retribution take the reins, a " ..
+                "man ceases to be a man. The man personifies the emotions that control him instead. And " ..
+                "so it would be that Ramaladni, the spirit of retribution, would enter Naxxramas to exact " ..
+                "vengeance... and never return.\n\nEnter Naxxramas and find what became of Ramaladni.",
         },
         [9230] = {
             description = "Fixing this band may prove to be quite challenging, <name>. You see, it was " ..
