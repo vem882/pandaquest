@@ -9065,6 +9065,14 @@ ns.Overrides.wowhead = {
                 "a little, but trust me; it'll be worth it!",
             rewardMoney = 175,
         },
+        [6284] = {
+            description = "Warning: Proceed into Sishir Canyon west of here at your own " ..
+                "risk.\n\nBesseleth and her eight-legged children of the forest have claimed this canyon " ..
+                "as their webbed lair.\n\nMaggran Earthbinder in Sun Rock Retreat has placed a bounty on " ..
+                "Besseleth. Slay her and bring proof of your killing to Maggran; there you will receive " ..
+                "your reward for disposing this eight-legged menace.",
+            rewardChoices = {{16891, 1}, {16894, 1}},
+        },
         [6321] = {
             description = "Executor Hadrec asked me to take stock of our equipment at the Sepulcher. With " ..
                 "the Scourge, and worse, lurking in the woods, he doesn't want the Deathguards to lack " ..

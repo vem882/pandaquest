@@ -17127,6 +17127,13 @@ ns.Overrides.wowhead = {
                 "superior.",
             rewardItems = {{22070, 1}, {22077, 1}},
         },
+        [8938] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22010, 1}, {22015, 1}},
+        },
         [8939] = {
             description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
                 "that you'll help me through this predicament, it would be wise of me to reward you " ..
