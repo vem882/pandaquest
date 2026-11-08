@@ -11192,6 +11192,13 @@ ns.Overrides.wowhead = {
                 "Dark Iron dwarves. Getting him to fight you is going to present a bit of a challenge, " ..
                 "though.\n\nGather the following materials for me. You're going to need them.",
         },
+        [8950] = {
+            description = "I can place the enchantment you require on the banner quite easily, <name>. " ..
+                "Unfortunately I don't have the materials I need as it is very rarely that someone asks " ..
+                "for this sort of charm.\n\nI will require the essence of one of the Eldreth ghosts that " ..
+                "haunt these halls, a handful of Scholomance dark runes and some large brilliant shards. " ..
+                "Bring me these reagents and I shall perform this task for you.",
+        },
         [8956] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
                 "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
