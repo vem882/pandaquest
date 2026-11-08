@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.430] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 826 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,579 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,633 quests, 48 NPCs, 2 objects
+- npc 5635 - Falstad Wildhammer - updated
+  - coordinates: 1 spawn point added in The Hinterlands
+- npc 69752 - Agent Grisel - updated
+  - NPC title added (Kirin Tor)
+
 ## [0.2.429] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -92,18 +104,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,600 quests, 48 NPCs, 2 objects
 - npc 31638 - Alliance Siege Vehicle - updated
   - coordinates: 2 spawn points added in Tirisfal Glades
-
-## [0.2.419] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 818 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,552 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,598 quests, 48 NPCs, 2 objects
-- npc 11866 - Ilyenia Moonfire - updated
-  - coordinates: 5 spawn points added in Darnassus
-- npc 73563 - Alliance Vanguard - updated
-  - NPC level added (89)
 
 ## [0.2.412]
 

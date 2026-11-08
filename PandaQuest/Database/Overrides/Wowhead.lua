@@ -64337,6 +64337,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 440,
         },
+        [5635] = {spawns = {[47] = {{11.8, 46.8}}}, zoneID = 47},
         [5644] = {
             spawns = {
                 [405] = {
@@ -66106,6 +66107,7 @@ ns.Overrides.wowhead = {
         [69670] = {subName = "The Silver Covenant"},
         [69677] = {subName = "Kirin Tor"},
         [69751] = {subName = "Kirin Tor"},
+        [69752] = {subName = "Kirin Tor"},
         [69754] = {subName = "Kirin Tor"},
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [69843] = {maxLevel = 92, minLevel = 92, subName = "The Emperor's Shield"},
