@@ -3890,6 +3890,15 @@ ns.Overrides.wowhead = {
                 "word back from her. I'm even more concerned because the Alliance sent a gnome mage along " ..
                 "with her... a sign of trouble for sure.\n\nWould you find her and report back to me?",
         },
+        [1071] = {
+            description = "You see, <name>, I'm a member of the Enlightened Assembly of Arcanology, " ..
+                "Alchemy and Engineering Sciences, and it's my goal... nay, my DUTY! to show the night " ..
+                "elves that a blend of magic, mixtures, and mechanisms can help save their " ..
+                "forests.\n\nBut it's a hard fought war, and the goblins reproduce like rabbits it seems. " ..
+                "I haven't even had time to build my newest inventions!\n\nI need some time to plan and " ..
+                "organize. But to do that, I need your help keeping the goblins at bay in Windshear Crag " ..
+                "to the east...",
+        },
         [1075] = {
             description = "Okay, now for the remote detonation part of my plan... oh, I haven't explained " ..
                 "that yet, have I?\n\nOkay, so the short of it is this: with a little magic, I can make " ..
@@ -9987,6 +9996,7 @@ ns.Overrides.wowhead = {
         [8264] = {rewardItems = {{20230, 1}}},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
         [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}, rewardXP = 705},
+        [8273] = {rewardChoices = {{20643, 1}, {20642, 1}}, rewardMoney = 7000},
         [8275] = {
             description = "Attention, heroes of the Alliance! The silithid menace has been left unchecked " ..
                 "for too long. Unfettered by any real opposition, they've been preparing all this time " ..
