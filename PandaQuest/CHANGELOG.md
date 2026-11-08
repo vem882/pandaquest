@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.424] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,566 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,608 quests, 48 NPCs, 2 objects
+
 ## [0.2.423] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -123,16 +130,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,585 quests, 48 NPCs, 2 objects
 - npc 32389 - Alliance Siege Vehicle - updated
   - coordinates: 6 spawn points added in Tirisfal Glades
-
-## [0.2.407] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,938 quests, 812 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,539 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,584 quests, 48 NPCs, 2 objects
-- npc 68483 - Alliance Sentinel - updated
-  - NPC level added (90)
 
 ## [0.2.386] - 2026-11-06
 

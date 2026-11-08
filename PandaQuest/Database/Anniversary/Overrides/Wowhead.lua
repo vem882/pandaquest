@@ -5902,6 +5902,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{9527, 1}, {9531, 1}},
             rewardMoney = 6500,
         },
+        [2849] = {
+            description = "Wild Leather vests are the staple of any Wild Leather armor set. The frame of " ..
+                "the vest blends with the wildvine to produce a product that offers maximum protection of " ..
+                "the torso while allowing for the potent magic to work its way through the " ..
+                "garment.\n\nFor this pattern, I will require two Turtle Scale breastplates, two sets of " ..
+                "Turtle Scale gloves, and a wildvine. It's a tall order, but one you should have little " ..
+                "difficulty in filling for me.",
+            rewardItems = {{8404, 1}},
+        },
         [2852] = {
             description = "With the basics down, you are ready to master more complex fare, <name>. Wild " ..
                 "Leather leggings are some of the sturdiest and powerful leather gear around. The waist, " ..
@@ -12285,6 +12294,13 @@ ns.Overrides.wowhead = {
                 "don't know what I'm going to do now, but I must try and get back to my home - or what's " ..
                 "left of it... Will you help me get through the forest?",
             rewardItems = {{24113, 1}},
+        },
+        [9529] = {
+            description = "While I'm certain your imp has proven a useful and sometimes entertaining " ..
+                "servant, it is time you mastered a more powerful demon: the voidwalker.\n\nTravel down " ..
+                "the Dead Scar until it is crossed by the Elrendar River. Just south of the river, locate " ..
+                "one of the blue glowing stones and take it. Your path will be revealed there.",
+            rewardXP = 840,
         },
         [9530] = {
             description = "I've wondered about this for some time now, but this proves it to be " ..
