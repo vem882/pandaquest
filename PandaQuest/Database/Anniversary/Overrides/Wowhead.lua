@@ -1362,6 +1362,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{6189, 1}, {6191, 1}},
             rewardItems = {{1449, 1}},
         },
+        [257] = {
+            description = "Think you can match wits with Daryl the Bold, huh? I should think not! Of " ..
+                "course, you're more than welcome to try. Here's a challenge that should prove to be " ..
+                "above your abilities, so don't feel too bad if you can't face up to it.\n\nA flock of " ..
+                "buzzards has nested here in Loch Modan. Why don't you try to take down some of the " ..
+                "beasts? Tell you what, if you meet my challenge in fifteen minutes, I'll give you my bow " ..
+                "or gun.\n\n<He looks you over dismissively.>\n\nIt seems you haven't much to lose, " ..
+                "anyways.",
+            rewardChoices = {{2903, 1}, {2904, 1}},
+        },
         [258] = {
             description = "<name>ath, is it? I can tell you're bursting with pride over completing the " ..
                 "first test, hm? As I told you before, it's no large feat.\n\nYou should try your hand at " ..
@@ -9632,6 +9642,12 @@ ns.Overrides.wowhead = {
                 "stardust. You may obtain it from him... if you can pay the price.",
             rewardXP = 9550,
         },
+        [7639] = {
+            description = "With my blessings, take the censer. I myself have used it in several " ..
+                "exorcisms, and it should serve you well for the arduous tasks that lie ahead.\n\nReturn " ..
+                "now to Lord Grayson Shadowbreaker in Stormwind, <name>. Your quest continues with him.",
+            rewardXP = 955,
+        },
         [7643] = {
             description = "Your barding needs a special form of blessing, one from an appropriate spirit. " ..
                 "In Dire Maul is such a spirit, the Ancient Equine Spirit. It is currently held by a " ..
@@ -14120,6 +14136,15 @@ ns.Overrides.wowhead = {
                 "devise a plan of attack. If you can keep their engineers and tinkerers busy, it would " ..
                 "greatly slow down their progress, buying me the time I need.\n\nStay as far away as " ..
                 "possible from the overseers, <name>. They are extremely dangerous beings.",
+        },
+        [10001] = {
+            description = "All forge camps have a master planner. The master planner dictates what types " ..
+                "of structures are present at a forge camp and how each structure is situated. Moreover, " ..
+                "this information is kept on a set of blueprints that the planner carries around on their " ..
+                "person.\n\nWe need the master planner's blueprints. Armed with such exacting " ..
+                "information, we could persuade an acquaintance of mine to lend some assistance.\n\nFind " ..
+                "the mo'arg master planner and take his blueprints. He will be stationed behind the " ..
+                "forges.",
         },
         [10002] = {
             description = "Over the past couple of days, I've observed a blood elf woman traveling to and " ..

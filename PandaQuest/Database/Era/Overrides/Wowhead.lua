@@ -1165,6 +1165,13 @@ ns.Overrides.wowhead = {
                 "can kill 10 panthers.\n\nThose big boys are tougher. They're not as easy as the young " ..
                 "ones you were killing earlier.",
         },
+        [193] = {
+            description = "You've almost proven yourself to be a master hunter of panthers. A panther by " ..
+                "the name of Bhag'thera has been prowling the jungle. So far he's eluded our party. See " ..
+                "if you can use your skills to kill the great Bhag'thera.\n\nBring me the Fang of " ..
+                "Bhag'thera and you'll have earned my respect!",
+            rewardItems = {{4108, 1}},
+        },
         [197] = {
             description = "Because you proved yourself to be such a go-getter in the jungle, let me tell " ..
                 "you about a ferocious raptor that even I have failed to kill. Ajeck here calls this wily " ..
@@ -1387,6 +1394,16 @@ ns.Overrides.wowhead = {
                 "something...unspeakable.\n\nYou better bring the translated note back to Ello.\n\nAnd do " ..
                 "so quickly, for I fear a doom already lumbers toward our town...",
             rewardItems = {{3248, 1}},
+        },
+        [257] = {
+            description = "Think you can match wits with Daryl the Bold, huh? I should think not! Of " ..
+                "course, you're more than welcome to try. Here's a challenge that should prove to be " ..
+                "above your abilities, so don't feel too bad if you can't face up to it.\n\nA flock of " ..
+                "buzzards has nested here in Loch Modan. Why don't you try to take down some of the " ..
+                "beasts? Tell you what, if you meet my challenge in fifteen minutes, I'll give you my bow " ..
+                "or gun.\n\n<He looks you over dismissively.>\n\nIt seems you haven't much to lose, " ..
+                "anyways.",
+            rewardChoices = {{2903, 1}, {2904, 1}},
         },
         [258] = {
             description = "<name>ath, is it? I can tell you're bursting with pride over completing the " ..
@@ -17075,6 +17092,14 @@ ns.Overrides.wowhead = {
                 "according to your performance.\n\nFor now I will exchange your belt and gauntlets. If we " ..
                 "both see this through I shall make the rest of the pieces available to you.",
             rewardItems = {{21994, 1}, {21998, 1}},
+        },
+        [8945] = {
+            description = "I'll provide you the information you ask for, <name>. But more pressing " ..
+                "matters are at hand.\n\nMy beloved wife has been taken prisoner by Rivendare's undead " ..
+                "scum.\n\nI strongly objected to her joining the Argent Dawn's foolish crusade, yet " ..
+                "that's not of importance anymore. You must finish what I attempted to do, you must " ..
+                "rescue Ysida from the clutches of the Baron!",
+            rewardItems = {{22137, 1}},
         },
         [8947] = {
             description = "We didn't realize the importance of Valthalak's medallion, so it was divided " ..
