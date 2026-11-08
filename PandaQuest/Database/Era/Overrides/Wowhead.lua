@@ -1922,6 +1922,16 @@ ns.Overrides.wowhead = {
                 "Brill.",
             rewardMoney = 175,
         },
+        [367] = {
+            description = "Lady Sylvanas has called upon the Royal Apothecary Society. The Dark Lady " ..
+                "believes our knowledge coupled with the newfound magic will provide the key to Arthas's " ..
+                "demise. She has challenged us to concoct a new plague, a plague deadlier than any " ..
+                "ailment on Azeroth. This new disease will bring Arthas's Scourge Army to ruin.\n\nMy " ..
+                "studies show that the blood of beasts might prove to be the key. Bring to me 5 vials of " ..
+                "darkhound blood so I can test my theory.",
+            rewardItems = {{3382, 3}},
+            rewardMoney = 125,
+        },
         [369] = {
             description = "While you were out gathering, I uncovered some old text in one of my tomes " ..
                 "that indicates that an ancient plague wiped out thousands of innocent victims. Later it " ..
@@ -10336,6 +10346,17 @@ ns.Overrides.wowhead = {
                 "can get the necessary Atal'ai haze that the zapper needs in the temple of Atal'Hakkar. " ..
                 "The deep lurkers, murk worms, or oozes are the ones you'll need to get it from.",
         },
+        [4161] = {
+            description = "Long ago, the night elves were called the kaldorei, a name that means " ..
+                "\"children of the stars.\" Learning of the past is an important step in your path as a " ..
+                "<class>, <name>, so listen well to what I have to tell you.\n\nThe kaldorei have always " ..
+                "taken much pride in their harmonious relationship with nature. This means that we only " ..
+                "take from nature what is necessary, and that we return in kind. This balance has " ..
+                "afforded us much, <name>.\n\nGo out and collect seven small spider legs -- no more than " ..
+                "that, and return to me.",
+            rewardItems = {{5482, 1}, {5472, 3}},
+            rewardMoney = 85,
+        },
         [4181] = {
             description = "Expert engineering yields two distinct disciplines: gnome and goblin. I only " ..
                 "bother to mention goblin engineering because I'm a fair trainer. They like to make " ..
@@ -15662,6 +15683,15 @@ ns.Overrides.wowhead = {
                 "silithid.\n\nUnfortunately, that is all we could get out of the glyphs. We need to find " ..
                 "a way to unlock the messages hidden within the crystals.\n\nTake the glyphed crystal " ..
                 "prism to Geologist Larksbane at Cenarion Hold. She might be able to help.",
+        },
+        [8315] = {
+            description = "The glyphs illustrate an emissary of the Qiraji meeting with three silithid at " ..
+                "the bones of a large dragon. Above the glyphs is what I can only assume to be a code of " ..
+                "some sort. This code might very well be the key to summoning the emissary.\n\nI will " ..
+                "create a copy of the glyph code that you must use in the sand at the Bones of " ..
+                "Grakkarond. If I am right, the Overlords will come thinking that new data is ready for " ..
+                "transmission. Strike them down and confront the emissary. He holds the key to the " ..
+                "crystals...",
         },
         [8316] = {rewardItems = {{20699, 1}, {20710, 1}}},
         [8318] = {

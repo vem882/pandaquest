@@ -1714,6 +1714,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3275, 1}, {11847, 1}},
             rewardMoney = 17,
         },
+        [367] = {
+            description = "Lady Sylvanas has called upon the Royal Apothecary Society. The Dark Lady " ..
+                "believes our knowledge coupled with the newfound magic will provide the key to Arthas's " ..
+                "demise. She has challenged us to concoct a new plague, a plague deadlier than any " ..
+                "ailment on Azeroth. This new disease will bring Arthas's Scourge Army to ruin.\n\nMy " ..
+                "studies show that the blood of beasts might prove to be the key. Bring to me 5 vials of " ..
+                "darkhound blood so I can test my theory.",
+            rewardItems = {{3382, 3}},
+            rewardMoney = 125,
+        },
         [368] = {
             description = "While you were collecting samples for me, my experiments led me to realize " ..
                 "that more reagents will be required for this new disease to spread properly. Poisoning " ..
@@ -3191,6 +3201,15 @@ ns.Overrides.wowhead = {
                 "rats.\n\nYou can't call yourself a seasoned adventurer until you've spent some time " ..
                 "killing rats! Haw!",
             rewardItems = {{5487, 1}, {5478, 5}, {10919, 1}},
+        },
+        [865] = {
+            description = "The raptors of the Barrens are smarter than raptors in other lands. And I " ..
+                "think all that smarts is hiding in their horns! If so, then I could grind their horns " ..
+                "into powder and use it to make \"smart drinks.\" I could sell them for a " ..
+                "fortune!!!\n\nAnd you can help me. Find me intact raptor horns from sunscale " ..
+                "scytheclaws. They roam in the southern Barrens, and in the northern Barrens near the " ..
+                "border of Ashenvale Forest.",
+            rewardItems = {{5342, 5}, {5343, 1}},
         },
         [866] = {
             description = "The herbs of the Barrens are not quite like herbs in other lands. Their " ..
@@ -5270,6 +5289,14 @@ ns.Overrides.wowhead = {
                 "armor, and bids you speak with him immediately.\n\nThun'grim is camped east of the " ..
                 "Crossroads in the Barrens.",
         },
+        [1838] = {
+            description = "I have heard tales of your strength and valor, and wish to make for you a suit " ..
+                "of armor, a companion to aid you as tales of your great deeds grow.\n\nBut the " ..
+                "fashioning of this armor will be a quest unto itself, <name>. I will need your help, and " ..
+                "the help of other smiths of the Horde.\n\nHere, take this scroll. I spent many nights, " ..
+                "struggling with near-blind eyes, writing that which I need for the armor. Bring me the " ..
+                "items on this scroll and I will create for you the first piece of the suit.",
+        },
         [1839] = {
             description = "The troll smith Ula'elek will craft for you the brutal gauntlets. He dwells in " ..
                 "Durotar, in Sen'jin Village with his Darkspear brethren, and he awaits your coming.",
@@ -6120,6 +6147,14 @@ ns.Overrides.wowhead = {
                 "lattice to the ring that will give it a little more pizzazz!\n\nTrust me!",
             rewardItems = {{9538, 1}},
         },
+        [2949] = {
+            description = "Opening the box produced by the Sparklematic 5200 reveals a shiny ring! " ..
+                "Donning the ring, you feel magic power surge through your body.\n\nInside the band is a " ..
+                "small but nonetheless discernable imprint of the seal of Orgrimmar. Engraved letters are " ..
+                "next to it, but only the first three stand out even after cleaning: \"NOG...\"\n\nThis " ..
+                "may signify either the initials of the previous owner, or perhaps the initials of the " ..
+                "ring's crafter. Keep the ring... or find \"NOG\" - decisions, decisions...",
+        },
         [2950] = {
             description = "No, no, no - I'm not all of the sudden saying that the ring is mine. I " ..
                 "normally don't do this, but your information about the Dark Irons was very useful. I'll " ..
@@ -6791,6 +6826,15 @@ ns.Overrides.wowhead = {
                 "both of us.\n\nHe'll give us more than a fair price for the Tablet of Jin'yael. I'm not " ..
                 "sure why, but you should have seen how excited he was to hear about its whereabouts.",
             rewardMoney = 4000,
+        },
+        [3542] = {
+            description = "Andron Gant is my next contact. He usually holds himself up in the " ..
+                "Undercity... right near the Apothecarium.\n\nHe was a little more loose-lipped when it " ..
+                "came to speaking about what he wanted the Tablet for. Apparently some of the mages of " ..
+                "Undercity are looking to study some of the arcane spells the highborne used. They think " ..
+                "this tablet will help them. Markri was adept at summoning creatures; especially " ..
+                "elementals.\n\nTake the Tablet of Markri and return to me for your part of the reward.",
+            rewardMoney = 6000,
         },
         [3561] = {
             description = "This final tablet goes to someone very dangerous, <name>. Heed me when I tell " ..
@@ -7834,6 +7878,14 @@ ns.Overrides.wowhead = {
                 "person should be denied the right of vengeance.\n\nYou will find him in " ..
                 "Orgrimmar.\n\nOnce you have spoken with Eitrigg, confer with the Warchief to find out " ..
                 "what he wishes to do about this problem.",
+        },
+        [4963] = {
+            description = "So, you have chosen to capture the soul of an infernal, good.\n\nTake this " ..
+                "emerald--with it, you will be able to capture the creature's soul. It works very similar " ..
+                "to spells you already know: when the creature is close to dying, use the gem and it " ..
+                "should do the rest of the work for you.\n\nI would suggest going to Desolace and trying " ..
+                "your hand at any of the infernals there. Those should do nicely.\n\nAfter you're " ..
+                "successful, take both the captured spirit and your emerald to Menara.",
         },
         [4964] = {
             description = "I will get started immediately on crafting your orb and infusing your new " ..
@@ -9847,6 +9899,15 @@ ns.Overrides.wowhead = {
                 "that you see.\n\nReturn to Taskmaster Scrange when your clothes are bloody " ..
                 "enough.\n\nYou'll know when they're bloody enough so don't ask.",
             rewardMoney = 21000,
+        },
+        [7732] = {
+            description = "You've done doubly well in addressing the threat that the Zukk'ash insects " ..
+                "pose to Camp Mojache. The threat these things pose is far from over, and I'd like to ask " ..
+                "you for one last task on behalf of the Horde.\n\nThis is a document that details all the " ..
+                "information we have learned about these Zukk'ash insects. I want you to deliver it to " ..
+                "Zilzibin Drumlore in the Drag of Orgrimmar. He's an expert on alien creatures like " ..
+                "these; I hope he can do something with the lore we've obtained.",
+            rewardChoices = {{19038, 1}, {19037, 1}},
         },
         [7815] = {
             description = "Don't let their big eyes fool you, mon! Those saltwater snapjaws be a menace. " ..
