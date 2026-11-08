@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.3+v1.0.12 (Classic Era database + corrections from QuestieDB 1.0.12). DO NOT EDIT.
--- Built: 2026-11-07T14:09:45Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.4+v1.0.12 (Classic Era database + corrections from QuestieDB 1.0.12). DO NOT EDIT.
+-- Built: 2026-11-08T00:10:51Z. Schema version 1.
 -- Format: ns.Data.npcs is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- npcKeys schema (15 fields; waypoints = {[areaId] = { {{x,y},...} polylines }}). Load with loadstring(ns.Data.npcs)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.

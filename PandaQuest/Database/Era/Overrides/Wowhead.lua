@@ -7404,6 +7404,14 @@ ns.Overrides.wowhead = {
                 "Mine of Loch Modan, left in crates by the dwarven miners' league.\n\nGather the linen " ..
                 "and the gems and bring them to Wynne Larson at the Larson Clothiers in the Mage District.",
         },
+        [1938] = {
+            description = "Long ago, three mages studied in this tower until one fell to the dark arts. " ..
+                "He was urged to turn away from that evil magic, but he could not resist. And so he was " ..
+                "banished.\n\nThe fallen mage's new domain is the tower of Ilgalar in Redridge, and he " ..
+                "took with him a powerful book-- Ur's Treatise on Shadow Magic.\n\nWe, the mages of " ..
+                "Stormwind, would have that book returned. Enter the tower of Ilgalar, find the tome in " ..
+                "his library, and bring it to me.",
+        },
         [1939] = {
             description = "High Sorcerer Andromath wishes to speak with you, <name>. He is at the top of " ..
                 "the wizard's sanctum, in the mage's district of Stormwind.\n\nIt would be wise to speak " ..
