@@ -7096,6 +7096,15 @@ ns.Overrides.wowhead = {
                 "than you may believe. To further progress, you must soon find a teacher.\n\nThe warrior " ..
                 "Elanaria dwells in Darnassus, at the Warrior's Terrace. She can instruct you.",
         },
+        [1685] = {
+            description = "Isn't that how it always works? Was looking for you all day and couldn't find " ..
+                "you, now when I'm not expecting it, you come and walk right up to me.\n\nI've wasted " ..
+                "enough time trying to find you, so I won't delay you any longer. Master Gakin's summoned " ..
+                "you for additional training. Seems to me you should seek him out as soon as " ..
+                "possible.\n\nYou'll find him in the basement of the Slaughtered Lamb tavern. By the way, " ..
+                "you might want to keep that particular location quiet. Don't want word spreading about " ..
+                "it.",
+        },
         [1686] = {
             description = "You have learned much, <name>. Now we will craft you a weapon. A warrior's " ..
                 "weapon.\n\nTo do this, you must travel to Darkshore.\n\nLong ago a ship crashed upon the " ..
