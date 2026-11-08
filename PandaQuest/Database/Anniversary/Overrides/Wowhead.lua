@@ -8277,6 +8277,13 @@ ns.Overrides.wowhead = {
                 "return to Shadow Priestess Vandis at the Bulwark to complete the mission.",
             rewardMoney = 9000,
         },
+        [5241] = {
+            description = "Sometimes, when it's nighttime, I can hear my Uncle Carlin crying. It sounds " ..
+                "like he's far away, to the east.\n\nI hope he's not crying for me! <name>, will you find " ..
+                "my uncle and tell him I'm alright?\n\nIf you find him say I'm waiting for him, and I " ..
+                "want to hear the story he used to tell... the one about the rabbits and the berry jam! " ..
+                "That story's so funny!",
+        },
         [5246] = {
             description = "I did not realize... Forgive my callous words, <class>.\n\nThe mistakes of my " ..
                 "ancestors are not what I wish to dwell on, but if your request is truly genuine, then I " ..
