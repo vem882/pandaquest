@@ -2866,6 +2866,16 @@ ns.Overrides.wowhead = {
                 "large sailing ships to the southwest.\n\nI beg of you, my would-be savior, please help " ..
                 "me.",
         },
+        [595] = {
+            description = "You sure seem eager to work, matey. Not sure why some land-loving <race> " ..
+                "<class> is offering help to the Blackwater Raiders, but I'm not going to turn you " ..
+                "away.\n\nOur ship just docked here in Booty Bay and word has it that our rivals--those " ..
+                "damned, dirty Bloodsail Buccaneers--have been spotted all over southern " ..
+                "Stranglethorn.\n\nAll the boys are too busy hitting the grog and looking for ladies! " ..
+                "What I need is a scout.\n\nCheck the cove just north of Booty Bay along the Savage Coast " ..
+                "and see what you find.",
+            rewardMoney = 4000,
+        },
         [598] = {
             description = "Now that you have gathered Bloodscalp trophies, I have another task for you. " ..
                 "The Skullsplitter tribe of trolls live to the southeast, and for years we have warred " ..
@@ -8568,6 +8578,14 @@ ns.Overrides.wowhead = {
                 "either the initials of the previous owner, or perhaps the initials of the ring's " ..
                 "crafter. Keep the ring... or return it to this person. Decisions, decisions...",
         },
+        [2949] = {
+            description = "Opening the box produced by the Sparklematic 5200 reveals a shiny ring! " ..
+                "Donning the ring, you feel magic power surge through your body.\n\nInside the band is a " ..
+                "small but nonetheless discernable imprint of the seal of Orgrimmar. Engraved letters are " ..
+                "next to it, but only the first three stand out even after cleaning: \"NOG...\"\n\nThis " ..
+                "may signify either the initials of the previous owner, or perhaps the initials of the " ..
+                "ring's crafter. Keep the ring... or find \"NOG\" - decisions, decisions...",
+        },
         [2950] = {
             description = "No, no, no - I'm not all of the sudden saying that the ring is mine. I " ..
                 "normally don't do this, but your information about the Dark Irons was very useful. I'll " ..
@@ -9190,6 +9208,13 @@ ns.Overrides.wowhead = {
                 "Kovic and his minion Clunk. Bring back his trader's satchel when the job is done.\n\nTo " ..
                 "the Cauldron!",
             rewardItems = {{10462, 1}, {10479, 1}},
+        },
+        [3402] = {
+            description = "I want you to personally deliver the news of Kovic's defeat to Vizzklick in " ..
+                "Gadgetzan. He will be so happy to hear that Kovic is dead that I'm certain he'll give " ..
+                "you some grand reward.",
+            rewardItems = {{10463, 1}},
+            rewardMoney = 7500,
         },
         [3441] = {description = "Hear my tale, adventurer."},
         [3442] = {

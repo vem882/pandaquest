@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.420] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 819 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,555 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,600 quests, 48 NPCs, 2 objects
+- npc 31638 - Alliance Siege Vehicle - updated
+  - coordinates: 2 spawn points added in Tirisfal Glades
+
 ## [0.2.419] - 2026-11-07
 
 Data from the PandaQuest portal.
@@ -142,13 +152,6 @@ Data from the PandaQuest portal.
   - NPC title added (King of Stormwind)
 - npc 69196 - Alliance Swashbuckler - updated
   - NPC level added (90)
-
-## [0.2.403] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,521 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,560 quests, 47 NPCs, 2 objects
 
 ## [0.2.386] - 2026-11-06
 
