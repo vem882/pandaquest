@@ -3894,6 +3894,16 @@ ns.Overrides.wowhead = {
                 "be him.",
             rewardChoices = {{16659, 1}, {16660, 1}, {16661, 1}},
         },
+        [825] = {
+            description = "One of my most observant scouts brings back word that the wreckage of " ..
+                "Proudmoore's fleet still remains off the coast of Durotar, just east of Tiragarde " ..
+                "Keep.\n\nIt is no secret that the humans, in alliance with those foul little creatures " ..
+                "known as gnomes, have an advanced knowledge of mechanics. We must have a complete " ..
+                "understanding of all our potential enemies. And our people will benefit from this new " ..
+                "knowledge as well.\n\nSwim through the wreckage, <name>, and retrieve for me the tools " ..
+                "of the Alliance.",
+            rewardChoices = {{4936, 1}, {4928, 1}, {4935, 1}},
+        },
         [826] = {
             description = "The witchdoctor Zalazane dwells on the Echo Isles to the east. They are the " ..
                 "isles we once called home.\n\nFrom there he sends his trolls to the mainland, to hex our " ..
@@ -4156,6 +4166,13 @@ ns.Overrides.wowhead = {
                 "sure the attacks cease, though, I say we add insult to their injury. Kill Kreenig along " ..
                 "with more of their tribe, and return to me when you have his tusk.",
             rewardChoices = {{5275, 1}, {5328, 1}},
+        },
+        [874] = {
+            description = "You have hunted the beasts of the Barrens. Your spirit is strong. But a hunter " ..
+                "must always be prepared. A true hunter can stalk prey down any path. Mountains and " ..
+                "swamps will not sway <him/her>.\n\nNot even the sea.\n\nFind my sister, Mahren. She " ..
+                "hunts the great water beasts along the coast. She will be your teacher in their " ..
+                "ways.\n\nBut be wary in your search for her, for the Barrens ' coast is held by humans.",
         },
         [875] = {
             description = "Hahaha, <name>. Back for more? Good, I like to hear that.\n\nThis time I want " ..
@@ -11805,6 +11822,14 @@ ns.Overrides.wowhead = {
                 "Andorhal, and eliminate the cauldron lord there. It should have a key like the last one " ..
                 "did, allowing you inside the cauldron's innards. Use this bottle to obtain a sample from " ..
                 "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
+        },
+        [5233] = {
+            description = "Two cauldrons have been successfully opened; while you'll be able to access " ..
+                "them indefinitely, we still want to open up the other two that remain. This will provide " ..
+                "all of us with more options to introduce the counter agent!\n\nThis time, you'll be " ..
+                "hitting the Writhing Haunt's cauldron. It is almost due east of Andorhal, relatively " ..
+                "close to the ruined city walls; again, eliminate the cauldron lord present there for its " ..
+                "key. Use this bottle to obtain the sample from the cauldron.\n\nGood hunting, <name>!",
         },
         [5234] = {
             description = "You delicately top off the empty bottle; a sample of the foul substance that " ..

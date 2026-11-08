@@ -4,6 +4,22 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.428] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 824 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,575 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,625 quests, 48 NPCs, 2 objects
+- npc 480 - Rusty Harvest Golem - updated
+  - coordinates: 40 spawn points added in Westfall
+- npc 3407 - Sian'dur - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 3683 - Kiknikle - updated
+  - coordinates: 1 spawn point added in The Barrens
+- npc 5911 - Grunt Logmar - updated
+  - coordinates: 1 spawn point added in The Barrens
+
 ## [0.2.427] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -100,18 +116,6 @@ Data from the PandaQuest portal.
 - Replace objective dots with native WoW icons, group nearby spawns and remove gathering frames and overlapping map numbers.
 
 - Preview the NPC associated with the selected quest in the world map.
-
-## [0.2.415] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 814 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,545 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,594 quests, 48 NPCs, 2 objects
-- quest 13895 - The Slumbering Ancients - updated
-  - description added
-- quest 13899 - The Darkscale Warlord - updated
-  - description added
 
 ## [0.2.412]
 
