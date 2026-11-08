@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.431] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 827 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,580 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,634 quests, 48 NPCs, 2 objects
+- npc 481 - Defias Footpad - updated
+  - coordinates: 11 spawn points added in Westfall
+
 ## [0.2.430] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -94,16 +104,6 @@ Data from the PandaQuest portal.
 - database - WoW Forever rebuilt from Questie 12.6.4+v1.0.12 (was 12.6.3+v1.0.12)
 - database - Classic Era: data from the PandaQuest portal: 2,556 quests, 27 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,602 quests, 48 NPCs, 2 objects
-
-## [0.2.420] - 2026-11-08
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 819 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,555 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,600 quests, 48 NPCs, 2 objects
-- npc 31638 - Alliance Siege Vehicle - updated
-  - coordinates: 2 spawn points added in Tirisfal Glades
 
 ## [0.2.412]
 

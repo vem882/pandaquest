@@ -14334,6 +14334,14 @@ ns.Overrides.wowhead = {
                 "Ironforge.\n\nAlas, soldiers do not grow on trees! Report to Lieutenant Haggerdin " ..
                 "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
         },
+        [7281] = {
+            description = "Tragic... My brother faces me on the field of battle: A commander for the " ..
+                "Stormpike.\n\nOf the four Stormpike Commanders, he is undoubtedly the most dangerous. " ..
+                "Perhaps if he is slain, the Banshee Queen could turn him as she did me - show him the " ..
+                "error of his ways...\n\nDeep within enemy territory you will find my brother. Slay him " ..
+                "and return to me. I trust that you are capable of completing this mission, " ..
+                "soldier.\n\nAnd soldier, do not go alone.",
+        },
         [7302] = {
             description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
                 "over enemy territory. You must find out what became of them so that we can attempt a " ..
@@ -18436,6 +18444,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 139,
+        },
+        [15288] = {
+            spawns = {
+                [1377] = {
+                    {42.4, 59.4}, {45, 56.6}, {45.4, 54.4}, {45.4, 54.6}, {45.6, 51.8}, {45.8, 53.4},
+                    {46.4, 54.2}, {46.4, 54.6}, {46.4, 58}, {46.6, 54.4}, {46.8, 47}, {47, 58}, {47.2, 53.4},
+                    {47.2, 56.6}, {47.4, 40}, {47.4, 51.8}, {47.6, 50.4}, {47.6, 52.4}, {47.6, 55.4},
+                    {47.6, 55.6}, {48, 56.6}, {48.2, 51.2}, {48.6, 56.4}, {48.6, 57.4}, {48.8, 54.8},
+                    {48.8, 58.8}, {49, 54.4}, {49.2, 51.4}, {49.4, 52.4}, {49.4, 52.8}, {50, 53.2}, {50, 54},
+                    {50, 58}, {50.4, 57.4}, {50.6, 58}, {50.8, 53}, {51, 56.6}, {51, 60.4}, {52, 58.8},
+                    {52.4, 59.6},
+                },
+            },
+            zoneID = 1377,
         },
         [15381] = {
             spawns = {[1377] = {{28.6, 89.2}, {29, 90}, {29, 92.4}, {29, 92.6}, {30, 90.4}, {30, 90.6}}},
