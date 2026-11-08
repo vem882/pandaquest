@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.427] - 2026-11-08
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,572 quests, 27 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,618 quests, 48 NPCs, 2 objects
+
 ## [0.2.426] - 2026-11-08
 
 Data from the PandaQuest portal.
@@ -109,25 +116,6 @@ Data from the PandaQuest portal.
 ## [0.2.412]
 
 - Use native WoW quest and item icons.
-
-## [0.2.410] - 2026-11-07
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
-- database - Classic Era rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
-- database - TBC Anniversary rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
-- database - WoW Forever rebuilt from Questie 12.6.3+v1.0.12 (was 12.6.2+v1.0.11)
-- database - Wowhead data as the PandaQuest portal read it: 7,939 quests, 814 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,543 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,593 quests, 48 NPCs, 2 objects
-- quest 7929 - Darkmoon Elementals Deck - updated
-  - description added
-  - reward items: +1
-- npc 7764 - Troyas Moonbreeze - updated
-  - coordinates: 2 spawn points added in Feralas
-- item 2320 - Coarse Thread - updated
-  - data rewritten, nothing a player sees changed
 
 ## [0.2.386] - 2026-11-06
 

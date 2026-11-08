@@ -6425,6 +6425,15 @@ ns.Overrides.wowhead = {
                 "savage owlbeasts are your targets, <name>. Kill 10, and use the muisek vessel to shrink " ..
                 "and capture them before their spirits can escape.",
         },
+        [3124] = {
+            description = "Since you have proven that you are both trustworthy and gifted with the " ..
+                "ability to use the muisek vessel, I now wish you to capture another " ..
+                "creature.\n\nHippogryphs have been loyal companions to the night elves for many years; " ..
+                "their spirits are loyal and steadfast.\n\nYour task is to kill 10 frayfeather " ..
+                "hippogryphs, and quickly, shrink and capture them with the vessel, so that their muisek " ..
+                "may be preserved. You will find the hippogryphs in the High Wilderness, to the south of " ..
+                "here.",
+        },
         [3125] = {
             description = "<name>, next I must have you capture a creature that in appearance, may look " ..
                 "quite fragile, yet its powerful spirit is what we are truly after. The faerie dragons " ..
@@ -8377,6 +8386,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{18182, 1}},
         },
         [5519] = {rewardItems = {{18258, 1}}},
+        [5524] = {
+            description = "<Brother/Sister> <name> - your deeds on behalf of the Argent Dawn are far too " ..
+                "numerous to be recounted easily. As a fitting tribute, I'll part with one of our special " ..
+                "Chromatic Mantles of the Dawn - a version that protects the wearer from all forms of " ..
+                "resistible magic simultaneously. Chromatic Mantles of the Dawn are reserved for only the " ..
+                "mightiest of the Dawn's heroes!\n\nBring to me twenty-five valor tokens as a sign of " ..
+                "tribute, and I'll give you the finest of all our mantles.",
+            rewardItems = {{18182, 1}},
+        },
         [5531] = {
             description = "The eggs you brought were to be used in Scourge experiments to create a " ..
                 "plagued dragonflight. These frozen black dragon eggs would have been invaluable in their " ..
@@ -12010,6 +12028,13 @@ ns.Overrides.wowhead = {
                 "then turn north at the fork in the road.\n\nWhen you arrive, speak with Advisor " ..
                 "Sunsworn. Travel carefully; Ashenvale can be a very dangerous place!",
         },
+        [9429] = {
+            description = "I am told that there is a thorn in the side of the kingdom of Stormwind. It is " ..
+                "known as Duskwood, and it is a place that is filled with evil and the vile stench of " ..
+                "undeath.\n\nAs we're trying to help as much as we can, I would like for you to travel " ..
+                "southeast to the main human settlement there, named Darkshire. Anchorite Delan will be " ..
+                "awaiting your arrival.",
+        },
         [9434] = {
             description = "<Wizlo retrieves the water sample from the robot and places it in a crate with " ..
                 "the boulderkin earth and several other items.>\n\nThere you go, that's everything on " ..
@@ -14675,6 +14700,14 @@ ns.Overrides.wowhead = {
                 "responsibility to safeguard the ruins as best we can. Find Andarl at the Allerian " ..
                 "Stronghold in Terokkar Forest. He is something of a student of magical relics. More than " ..
                 "anyone else, he's likely to know what's going on there.",
+        },
+        [10105] = {
+            description = "Now that Swamprat Post is complete, our control of the roads in and out of the " ..
+                "marsh is much less tenuous. Our presence in Terokkar Forest is much less secure. Even " ..
+                "so, at Stonebreaker Hold, Rakoria awaits word of our progress.\n\nShe's sharp and " ..
+                "capable, <name>, but be careful around her. She's got a lot of a goods she's eager to " ..
+                "move along the roads, but don't assume she's got our best interests at heart. Rakoria " ..
+                "goes where she believes there's profit to be found.",
         },
         [10107] = {
             description = "Kilrath sends news of the Boulderfist leader: He is an orc! An ancient orc " ..

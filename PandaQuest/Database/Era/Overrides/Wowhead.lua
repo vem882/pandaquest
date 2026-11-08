@@ -3472,6 +3472,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{4982, 1}, {1529, 1}, {2776, 2}},
             rewardMoney = 400,
         },
+        [742] = {
+            description = "Attention, young adventurers! The wilds of Ashenvale await you!\n\nThe Horde " ..
+                "has established a strong presence in the lands north of the Barrens. Our two outposts - " ..
+                "Splintertree Post and the Zoram Strand Outpost - strive to bring glory to the Horde! " ..
+                "Those who would prove themselves should seek out guidance there. Of note: Senani " ..
+                "Thunderheart in Splintertree Post, directly north of the Barrens, seeks adventurers " ..
+                "willing to take part in a great hunt of Ashenvale!",
+        },
         [743] = {
             description = "Thank you for taking the time to speak to me, <name>. I am Ruul, warrior and " ..
                 "teacher.\n\nYou have obviously reached an age when you must prepare for your trials if " ..
@@ -7167,6 +7175,14 @@ ns.Overrides.wowhead = {
                 "Cyclonian's power.\n\n<name>, are you ready to face the wind lord?",
         },
         [1714] = {rewardItems = {{6851, 1}}},
+        [1715] = {
+            description = "Hmph. Times past, all warlocks in Khaz Modan were trained under the auspices " ..
+                "of the masters of Gnomeregan, but now that we've all been forced to relocate into this " ..
+                "rat's hole in Ironforge, and Magni's decided to keep a careful watch on us, we're forced " ..
+                "to send our novices to Stormwind for training.\n\nLuckily, Gakin's no slouch, so you'll " ..
+                "still learn what you need to know, but it burns my blood!\n\nAnyways, you'll find Gakin " ..
+                "in the basement of the Slaughtered Lamb in Stormwind.",
+        },
         [1716] = {
             description = "A sayaad is a devourer of souls, dominator of wills, and tempter of hearts. It " ..
                 "knows nothing but evil.\n\nSalacious tales refer to the demon by its common name: " ..
@@ -15859,6 +15875,15 @@ ns.Overrides.wowhead = {
                 "this happen, <name>! Come back to me with proof of serving the Horde in a worthy manner!",
             rewardMoney = 7000,
         },
+        [8439] = {
+            description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
+                "false pretenses to enter into battle used or expected by either side at this " ..
+                "point.\n\nThe battle for the Arathi Basin is one of resources, plain and simple. Either " ..
+                "the Alliance gets the resources and uses them against us or we get them and use them to " ..
+                "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
+                "<name>!",
+            rewardMoney = 9000,
+        },
         [8460] = {
             description = "The Timbermaw are the only furbolg tribe to escape the corruption. However, " ..
                 "many other races kill furbolg blindly now, without bothering to see if they are friend " ..
@@ -17672,6 +17697,15 @@ ns.Overrides.wowhead = {
                 "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
                 "knowledge with you as long as you are able to provide me with the necessary materials.",
             rewardItems = {{22497, 1}},
+        },
+        [9099] = {
+            description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
+                "those items, I found the tomes most enlightening. While the majority of the books were " ..
+                "filled with - to put it bluntly - tripe, there were some gems. One of those tomes " ..
+                "documented the creation of a set of armor fit for an archmage: Frostfire.\n\n<Angela " ..
+                "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
+                "knowledge with you as long as you are able to provide me with the necessary materials.",
+            rewardItems = {{22500, 1}},
         },
         [9101] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
