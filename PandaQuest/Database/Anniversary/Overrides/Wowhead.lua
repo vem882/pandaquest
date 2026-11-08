@@ -2287,6 +2287,14 @@ ns.Overrides.wowhead = {
                 "waste to them in the name of our Dark Lady.\n\nDismissed!",
             rewardMoney = 1800,
         },
+        [536] = {
+            description = "Transferred from the Stormwind city guard to Southshore, a town that should be " ..
+                "abandoned by the looks of it... Smell of the harbor day and night.\n\nNot to mention ol' " ..
+                "Redpath... Wants me to take care of the murlocs. Ha!\n\nI can barely rouse myself to go " ..
+                "out to some of the pockets of the overgrown fish down the Western Strand. If you would " ..
+                "go in my place and take care of them, I'd appreciate it.",
+            rewardMoney = 2100,
+        },
         [538] = {
             description = "<name>. If you don't mind a long journey then I have a task for you, to again " ..
                 "help Stormwind fill its library.\n\nThe old kingdom of Alterac fell after the great war, " ..
@@ -2803,6 +2811,13 @@ ns.Overrides.wowhead = {
                 "scrying the greater rock elementals showed a group of them southwest of here, near some " ..
                 "ogres if I recall.\n\nBring me 5 of their bracers just so I have extras. Servo's " ..
                 "notorious for misplacing my reagents and research.",
+        },
+        [714] = {
+            description = "<name>, you've done your job well beyond all standards.\n\n<Lotwil's obviously " ..
+                "distracted by his work.>\n\nIf we ever meet in Kharanos, feel free to come apply for " ..
+                "work.\n\nWhoops! Quick, grab the... yes, that. Thanks.\n\nNow I just need one more " ..
+                "thing. It's a small part, but rather crucial, I'm afraid: a gyrochronatom.\n\nIf you " ..
+                "could just go grab one and bring it to me, I should be ready to complete this.",
         },
         [716] = {
             description = "I know how cheap Lotwil can be, <name>, so let me make you something for all " ..
@@ -4329,6 +4344,16 @@ ns.Overrides.wowhead = {
                 "River, south of the main road, where you can fill the phial.",
             rewardMoney = 3500,
         },
+        [1199] = {
+            description = "Empowered by the ancient rites of the chaotic Old Gods the members of the " ..
+                "Twilight's Hammer strive to bring about the return of their dark patrons and spread " ..
+                "death and terror across the world.\n\nWe believe that the Twilight's Hammer has allied " ..
+                "with the naga and are amassing in Blackfathom Deeps on the coast of " ..
+                "Ashenvale.\n\nWhatever evil plan brews in the depths of the old temple must be " ..
+                "thwarted.\n\nWage war on the Hammer and bring back proof of your deeds. Your efforts " ..
+                "will be rewarded handsomely.",
+            rewardItems = {{6998, 1}, {7000, 1}},
+        },
         [1203] = {
             description = "I have cutting to do. I can't tell you what I'm going to cut, but... I need " ..
                 "myself a blade. A certain blade...\n\nSome people call it a sword. I call it a swing " ..
@@ -5016,6 +5041,14 @@ ns.Overrides.wowhead = {
                 "equipment is always low. If you were to help them out, I'm sure their resident " ..
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
+        },
+        [1643] = {
+            description = "Your task then, <name>, is to find someone here in Stormwind that is in need " ..
+                "of aid. Someone who is pure of heart and motive. Perhaps someone helping others. Perhaps " ..
+                "someone in need of a guide. Regardless, the person must have noble intent and be relying " ..
+                "on your kindness.\n\nDo this, and return to me when you are finished. Then, we shall " ..
+                "discuss more of your path and what it means to be a paladin of the Light.",
+            rewardXP = 455,
         },
         [1645] = {rewardItems = {{6916, 1}}},
         [1650] = {
@@ -8205,6 +8238,12 @@ ns.Overrides.wowhead = {
                 "Priestess MacDonnell at Chillwind Camp to complete the mission.",
             rewardMoney = 8000,
         },
+        [5220] = {
+            description = "You carefully fill the bottle with enough of the cauldron's ichors for what " ..
+                "you consider to be suitably sized sample.\n\nWith the poison in hand, it is time to " ..
+                "return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+            rewardMoney = 8500,
+        },
         [5230] = {
             description = "You fill the bottle with enough of the cauldron's poisonous concoction for a " ..
                 "suitable sample to be studied.\n\nWith the poison in hand, it is time to return to " ..
@@ -10193,6 +10232,14 @@ ns.Overrides.wowhead = {
                 "Bring me brains and Rutgar's work might not be for naught.",
             rewardMoney = 18000,
         },
+        [8314] = {
+            description = "We're on the verge of a breakthrough, <name>! The rubbings you recovered have " ..
+                "allowed us to recreate the glyphs on this crystalline prism. They are apparently a means " ..
+                "for the Qiraji and other unknown entities to communicate various messages to the " ..
+                "silithid.\n\nUnfortunately, that is all we could get out of the glyphs. We need to find " ..
+                "a way to unlock the messages hidden within the crystals.\n\nTake the glyphed crystal " ..
+                "prism to Geologist Larksbane at Cenarion Hold. She might be able to help.",
+        },
         [8318] = {
             description = "Some of the Twilight's Hammer cultists carry around little papers with " ..
                 "gibberish written on them. I want you to bring me a stack of them, <class>.\n\nI can't " ..
@@ -10863,6 +10910,10 @@ ns.Overrides.wowhead = {
                 "dragon's blows and save Nighthaven from certain destruction.\n\nBe on guard! You and " ..
                 "your allies are our only hope.",
             rewardChoices = {{21531, 1}, {21532, 1}},
+        },
+        [8741] = {
+            description = "The keeper awaits your return, <name>. Take the green scepter shard to " ..
+                "Anachronos at the Caverns of Time.",
         },
         [8745] = {rewardChoices = {{21523, 1}, {21522, 1}, {21521, 1}, {21520, 1}}},
         [8751] = {rewardItems = {{21200, 1}}},
