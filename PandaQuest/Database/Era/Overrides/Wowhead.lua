@@ -13063,6 +13063,14 @@ ns.Overrides.wowhead = {
                 "you've killed a fair number of those winged demons. Don't disappoint me.",
             rewardMoney = 9000,
         },
+        [6062] = {
+            description = "It is an admirable skill to command one's authority over nature. As a hunter, " ..
+                "you must strive to learn to use the force and power inherent to any creature of your " ..
+                "choosing.\n\nGaining control of an animal is not an easy feat; it is a task that you " ..
+                "must undertake with much determination.\n\nFor your first assignment, take this taming " ..
+                "rod and use it to tame a dire mottled boar. You can find them quite close to Razor Hill. " ..
+                "Practice your skills in battle with the boar at your side, then return to me.",
+        },
         [6063] = {
             description = "As a hunter, it is important to remember the responsibility you hold in your " ..
                 "hands. Nature is not a power that can be bent to obey our desires; it is one that is to " ..
@@ -17387,6 +17395,14 @@ ns.Overrides.wowhead = {
                 "banished dead of Purgation Isle, off the south coast of the Hillsbrad Foothills. Go " ..
                 "there and retrieve some Soul Ashes of the Banished from their remains.",
         },
+        [8967] = {
+            description = "It became known to us in later days, as we were doing what we could ourselves " ..
+                "to survive, that Isalien, a night elf priestess of our company, had gone to the night " ..
+                "elvic ancestral city, now known as Dire Maul. From what we gathered, she went there both " ..
+                "for personal reasons and also to unlock the secrets of the piece of the amulet that she " ..
+                "had in her possession.\n\nShe didn't quite make it, though. Word got back to us that she " ..
+                "was ambushed at the Shrine of Eldretharr by Alzzin the Wildshaper and his forces.",
+        },
         [8969] = {
             description = "Now we have what we need, so it's time to discuss who it is that you'll be " ..
                 "summoning.\n\nKormok was ok for an ogre, right up until he turned to necromancy. After " ..
@@ -17457,6 +17473,14 @@ ns.Overrides.wowhead = {
                 "more than a few to extract the right amount out of them. Then, to complete the imbuing " ..
                 "process, you'll need to bring me a Flask of Supreme Power.\n\nGood luck, <name>!",
         },
+        [8996] = {
+            description = "I will ignore your impertinence this time, <class>, because you have done a " ..
+                "noble thing today; returning the rest of my stolen spirit to me. Despite your obviously " ..
+                "weak nature, <race>, you have shown courage where those that stole from me did not, and " ..
+                "probably never could!\n\nReturn to them, before I change my mind and slay you where you " ..
+                "stand. Go back and tell them that they are safe... for now.",
+            rewardItems = {{22057, 1}, {22344, 1}},
+        },
         [8997] = {
             description = "I suppose that this is goodbye then, my friend. But, I'll always be here if " ..
                 "you want to come back and talk with me from time to time. Probably while you're " ..
@@ -17514,6 +17538,13 @@ ns.Overrides.wowhead = {
                 "the mistakes of our past.\n\nAs to your reward, I believe I have a few things that you " ..
                 "have definitely earned and will truly enjoy.",
             rewardItems = {{22080, 1}, {22083, 1}},
+        },
+        [9012] = {
+            description = "A truly amazing story, <name>! You have my thanks, and the heartfelt gratitude " ..
+                "of all who were involved, I can assure you. Through your efforts we are delivered from " ..
+                "the mistakes of our past.\n\nAs to your reward, I believe I have a few things that you " ..
+                "have definitely earned and will truly enjoy.",
+            rewardItems = {{22074, 1}, {22075, 1}},
         },
         [9013] = {
             description = "A truly amazing story, <name>! You have my thanks, and the heartfelt gratitude " ..

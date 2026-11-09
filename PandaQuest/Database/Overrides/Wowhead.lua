@@ -65256,6 +65256,12 @@ ns.Overrides.wowhead = {
         [14355] = {subName = "House of Shen'dralar"},
         [14358] = {subName = "House of Shen'dralar"},
         [14368] = {subName = "House of Shen'dralar"},
+        [14374] = {
+            spawns = {
+                [357] = {{31, 44.2}, {31.2, 43.4}, {31.4, 44.6}, {31.6, 43.4}, {31.6, 44.6}, {31.8, 44.4}},
+            },
+            zoneID = 357,
+        },
         [14382] = {subName = "House of Shen'dralar"},
         [14383] = {subName = "House of Shen'dralar"},
         [14461] = {
@@ -66148,12 +66154,14 @@ ns.Overrides.wowhead = {
         [70677] = {maxLevel = 92, minLevel = 92, subName = "The Dynamite Monkey Monk"},
         [70678] = {maxLevel = 92, minLevel = 92},
         [70736] = {maxLevel = 93, minLevel = 93},
+        [70740] = {maxLevel = 93, minLevel = 93, subName = "Last Year's Model"},
         [70748] = {maxLevel = 92, minLevel = 92, subName = "\"The Lady\""},
         [70751] = {maxLevel = 90, minLevel = 90},
         [70752] = {maxLevel = 90, minLevel = 90},
         [70794] = {maxLevel = 92, minLevel = 92},
         [70921] = {subName = "The Black Prince"},
         [71027] = {subName = "SI:7"},
+        [71081] = {maxLevel = 93, minLevel = 93},
         [71085] = {maxLevel = 93, minLevel = 93, subName = "Terror of the High Seas"},
         [71108] = {subName = "The Black Prince"},
         [71131] = {subName = "Horde Logistics Officer"},

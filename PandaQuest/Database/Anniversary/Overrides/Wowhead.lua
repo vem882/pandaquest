@@ -3059,6 +3059,12 @@ ns.Overrides.wowhead = {
                 "tracking and hunting by bringing me the Horn of Arra'chea.",
             rewardItems = {{4909, 1}},
         },
+        [781] = {
+            description = "After carefully evaluating the map, you realize that what you discovered are " ..
+                "the plans made by the Bristleback warchief for an extended siege on Camp " ..
+                "Narache.\n\nSurely Chief Hawkwind could use this information!",
+            rewardItems = {{4911, 1}},
+        },
         [783] = {
             description = "I hope you strapped your belt on tight, young <class>, because there is work " ..
                 "to do here in Northshire.\n\nAnd I don't mean farming.\n\nThe Stormwind guards are hard " ..
@@ -6003,6 +6009,15 @@ ns.Overrides.wowhead = {
                 "goods for a stack of ten. If that sounds fair to you, then we're in business.",
             rewardChoices = {{9630, 1}, {9631, 1}},
         },
+        [2822] = {
+            description = "I take pride in my leather work, and I feel it shows; quality should never be " ..
+                "compromised. Anyone who says that quality doesn't matter would also have you believe " ..
+                "that the earth does not keep secrets!\n\nIn my latest pursuit of high-quality materials, " ..
+                "I have discovered thick yeti hides. Yetis are native to Feralas, often found west of " ..
+                "here in Feral Scar Vale. I'll give you a choice of one of my leather goods for a stack " ..
+                "of ten. If that is agreeable to you, then we are set!",
+            rewardChoices = {{9633, 1}, {9632, 1}},
+        },
         [2844] = {
             description = "I am no good, <name>. I was 'spose to be watchin' over my little friend, Shay, " ..
                 "and somehow, she got away from me. I'm not all that sure what happened, really, but last " ..
@@ -8054,6 +8069,14 @@ ns.Overrides.wowhead = {
                 "sister's spirit remains tethered to the farm and cannot rest, please... could you return " ..
                 "this to her? It is half of a good luck charm she had, with her husband having the other " ..
                 "half.\n\nMaybe her knowing I have these things will now put her soul to rest.",
+        },
+        [5052] = {
+            description = "Along with the thorns, the blood affected <snort> other aspects of the earth: " ..
+                "blood red stones mixed in with other minerals. The Bristleback dig up these shards and " ..
+                "carry them as totems <snort> for strength in battle and as totems for their magics. " ..
+                "<snort>\n\nI know the secrets of that magic.\n\nBring Mangletooth one of these blood " ..
+                "shards to show you understand. Bring Mangletooth many of the shards, and he will bless " ..
+                "you with quilboar magic--the magic of Agamaggan! <snort>",
         },
         [5056] = {
             description = "In northern Winterspring, great cats assemble around a large landmark called " ..
