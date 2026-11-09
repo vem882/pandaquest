@@ -2202,6 +2202,16 @@ ns.Overrides.wowhead = {
                 "activate the area's ley energies, we can stall them by taking the pendants away from the " ..
                 "wizards.\n\nRelay this information to Allister, he will decide a course of action.",
         },
+        [483] = {
+            description = "Gnarlpine invaders were seen ravaging the Ban'ethil Barrow Den to the " ..
+                "west.\n\nThe slumbering druids will be trapped in the Emerald Dream for eternity, " ..
+                "unaware of their fate, unless we help. The delicate hibernation ritual cannot be broken " ..
+                "without the Relics of Wakening.\n\nJourney to the Den and retrieve the Raven Claw " ..
+                "Talisman, Black Feather Quill, Sapphire of Sky, and Rune of Nesting. The druids store " ..
+                "them in sacred chests. Return them to me and I will prepare the awakening ritual.",
+            rewardChoices = {{9599, 1}, {9603, 1}},
+            rewardMoney = 300,
+        },
         [485] = {
             description = "You have uncovered some sort of strange, egg-shaped device made from metal. " ..
                 "Fiddling with one of its knobs springs the egg to life, as it opens up into some sort of " ..
@@ -3243,6 +3253,11 @@ ns.Overrides.wowhead = {
                 "with Margoz. He is wise and his council is valued.\n\nHe is camped to the northeast, " ..
                 "between the coast and Drygulch Ravine.\n\nFollow his advice, but whatever Margoz says, " ..
                 "<name>, I still want you to crush those cultists!",
+        },
+        [830] = {
+            description = "You open the aged and weathered envelope and discover an official looking " ..
+                "document. You recognize the seal of Admiral Proudmoore.\n\nThis looks important. Perhaps " ..
+                "Gar'Thok, the commander of Razor Hill, would be interested in having this information.",
         },
         [831] = {
             description = "Humans cannot be trusted. We fought alongside them with a weary heart, knowing " ..
@@ -14617,6 +14632,14 @@ ns.Overrides.wowhead = {
                 "Advisor 's death or capture to be dispensed by Warden Moi'bff Jill at Telaar.",
             rewardMoney = 70000,
         },
+        [9944] = {
+            description = "Greatmother says that we must press on and serve our people. She says that we " ..
+                "must serve as an example for Garrosh - to show that life goes on.\n\nI have so many " ..
+                "matters to attend to here, especially with Greatmother having taken ill. Would you honor " ..
+                "the Mag'har by helping one of their matrons?\n\nSeveral days ago we sent a funeral " ..
+                "procession to the Ancestral Grounds and they have yet to return. Will you go search for " ..
+                "them? They took the western road out of Garadar. Follow it around and avoid Halaa.",
+        },
         [9945] = {
             description = "We were en route to the Ancestral Grounds when we were ambushed by Warmaul. " ..
                 "They came from all sides, killing several of the procession guards and many of the " ..
@@ -15194,6 +15217,16 @@ ns.Overrides.wowhead = {
         },
         [10075] = {rewardItems = {{26044, 1}}, rewardMoney = 29000},
         [10077] = {rewardItems = {{26044, 1}}, rewardMoney = 29000},
+        [10078] = {
+            description = "Now that we've gotten our salvage operation off the ground, it's time to begin " ..
+                "the second phase of the plan.\n\nAcross the Path of Glory, the Horde still has their old " ..
+                "blade throwers trained on us. Don't let their age fool you, <name>, they're still very " ..
+                "dangerous. Much as we're working to reclaim what we can, we can't assume the Horde is " ..
+                "going to dismantle their weaponry.\n\nTake this torch and burn the remaining siege " ..
+                "equipment. I'll take no chances with Honor Hold's safety.",
+            rewardChoices = {{29928, 1}, {29930, 1}, {29934, 1}, {29941, 1}},
+            rewardMoney = 20000,
+        },
         [10079] = {
             description = "The mine's been overrun by a plague of gan'arg misfits!\n\nNot only did they " ..
                 "run all my workers out of the tunnels, but they're pounding away in there night and day! " ..

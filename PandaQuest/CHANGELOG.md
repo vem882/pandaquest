@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.443] - 2026-11-09
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 849 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,623 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,704 quests, 48 NPCs, 2 objects
+- npc 69168 - Amani'shi Flame Caster - updated
+  - NPC level added (91)
+
 ## [0.2.442] - 2026-11-09
 
 Data from the PandaQuest portal.
@@ -125,13 +135,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,639 quests, 48 NPCs, 2 objects
 - npc 4080 - Kaela Shadowspear - updated
   - coordinates: 1 spawn point added in Stonetalon Mountains
-
-## [0.2.432] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,582 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,635 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 

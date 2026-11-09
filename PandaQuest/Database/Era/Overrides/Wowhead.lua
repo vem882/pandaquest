@@ -1288,6 +1288,12 @@ ns.Overrides.wowhead = {
                 "dead, we just might stand a chance at pushing these beasts back into the ground.",
             rewardChoices = {{1436, 1}, {6187, 1}, {1832, 1}},
         },
+        [218] = {
+            description = "My journal! They took it away to the cave. The one that had it... It was a big " ..
+                "brute with some odd markings on his skin and face. I didn't get a much better look than " ..
+                "that.\n\nYou've had some luck with the trolls, maybe you could go get it back for me?",
+            rewardChoices = {{6176, 1}, {5581, 1}},
+        },
         [219] = {
             description = "At last, friends of the Alliance!\n\nHelp... please...\n\nThe last thing I " ..
                 "remember these foul Orcs overpowered our regiment. Most the men were killed. I took a " ..
@@ -18644,6 +18650,7 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [417] = {spawns = {[440] = {{44, 43.4}, {45, 43}}, [1377] = {{32, 49}, {45.2, 80}}}, zoneID = 440},
         [698] = {
             spawns = {
                 [33] = {
