@@ -7381,6 +7381,14 @@ ns.Overrides.wowhead = {
                 "what you want to do?",
             rewardMoney = 16000,
         },
+        [4264] = {
+            description = "The note has stains covering its surface. The text is barely legible, but you " ..
+                "make out the following:\n\n...sweet irony...\n\n...the fall of the broken " ..
+                "Alliance...\n\n...if it were not for General Angerforge's diligence, we may have never " ..
+                "discovered the pattern to the encryption...\n\n...Argelmach is almost done with the " ..
+                "decryption of Windsor's notes.\n\nOur lord will rise from the depths and crush any that " ..
+                "remain...\n\n-Emperor Dagran Thaurissan.",
+        },
         [4265] = {
             description = "The pod splits opens some when you touch it, revealing a night elven male who " ..
                 "is surprisingly still alive. He seems to be in good health, though deeply stunned. As " ..
