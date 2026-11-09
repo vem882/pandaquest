@@ -6173,6 +6173,14 @@ ns.Overrides.wowhead = {
                 "Proudmoore. Enlisted with the marines of Kul Tiras at the age of sixteen. Distinguished " ..
                 "service, promotions...\n\nListed as missing.",
         },
+        [1286] = {
+            description = "It has been a struggle maintaining a presence in the marsh, but through " ..
+                "strength of our resolve, we have been able to maintain several defensive watchtowers " ..
+                "throughout the area.\n\nThe latest information and scouting reports I have received " ..
+                "indicate that a group of deserters has squatted in our abandoned tower at Lost Point, " ..
+                "southeast of the inn.\n\nThe deserters' leader is a man named Jacken. See if you can get " ..
+                "some information out of him.\n\nBe warned, <name>. He may be a tough nut to crack.",
+        },
         [1287] = {
             description = "Reethe? That coward?\n\nWe threw him out of camp because he insisted on " ..
                 "raiding the supplies of the ogres up at Brackenwall Village. We're not so many in number " ..
