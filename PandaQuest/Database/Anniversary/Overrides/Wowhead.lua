@@ -1509,6 +1509,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3493, 1}, {3566, 1}, {5246, 1}},
             rewardItems = {{3682, 1}},
         },
+        [297] = {
+            description = "Recently, just before the Troggs surfaced within the site, we had uncovered a " ..
+                "large number of strange, carved idols. But we didn't have the chance to study them, for " ..
+                "soon after their discovery the Troggs chased us away from the ruins! And those idols " ..
+                "have a strange effect on the Troggs. It makes them go berserk!\n\nBring me 8 idols - I " ..
+                "want to study them, and I want them out of Trogg hands! You can find the idols on the " ..
+                "Troggs infesting the site.",
+            rewardChoices = {{5241, 1}, {6186, 1}, {3154, 1}},
+        },
         [299] = {
             description = "Just before the invasion I uncovered a large tablet called the Goaz Stone. The " ..
                 "translated text breaks off in 4 places. The text speaks of a \"divine plan\" and a " ..
@@ -4940,6 +4949,15 @@ ns.Overrides.wowhead = {
                 "you can recover them then I will give you the weapon you seek.\n\nSearch for the iron " ..
                 "box within the quilboar camps, and return with the forged steel bars.",
             rewardChoices = {{7326, 1}, {7328, 1}, {7327, 1}, {7329, 1}},
+        },
+        [1504] = {
+            description = "Now, observe the Tablet of Verga, for it contains the glyphs you will need for " ..
+                "the summoning. Take them to the circle in Neeru Fireblade's tent on the other side of " ..
+                "the cavern. There you will be able to call for the voidwalker.\n\nYou must defeat it " ..
+                "using whatever physical and magical means you have at your disposal. When this is " ..
+                "completed, return to me with the glyphs of summoning and I will demonstrate how you may " ..
+                "bind the creature to your will.",
+            rewardXP = 630,
         },
         [1505] = {
             description = "The Horde honors its warriors because their strength is unquestioned. But the " ..
@@ -12118,6 +12136,14 @@ ns.Overrides.wowhead = {
                 "Village.\n\nYou'd best let Lieutenant Dawnrunner at the Farstrider Retreat know about " ..
                 "this.",
             rewardMoney = 400,
+        },
+        [9366] = {
+            description = "Northeast of here lie the Pools of Aggonar. Once a sacred site to the draenei, " ..
+                "their waters were corrupted after the blood from the demon Aggonar was spilled into " ..
+                "them.\n\nThat blood, though old and diluted, still possesses tremendous power. " ..
+                "Terrorfiends now walk the area, empowered by the pure demonic energies of the original " ..
+                "blood. Slay them and retrieve as much felblood as you can. I'll make it worth your while.",
+            rewardMoney = 27000,
         },
         [9371] = {
             description = "<name>, Botanist Taerix is in need of your assistance. You'll find her with " ..

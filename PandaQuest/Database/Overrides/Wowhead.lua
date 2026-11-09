@@ -66098,6 +66098,7 @@ ns.Overrides.wowhead = {
         [69009] = {maxLevel = 90, minLevel = 90},
         [69062] = {subName = "Trade Supplies"},
         [69136] = {maxLevel = 91, minLevel = 91, subName = "Harbinger of the Loa"},
+        [69176] = {maxLevel = 92, minLevel = 92},
         [69194] = {maxLevel = 90, minLevel = 90},
         [69196] = {maxLevel = 90, minLevel = 90},
         [69197] = {maxLevel = 91, minLevel = 91},
