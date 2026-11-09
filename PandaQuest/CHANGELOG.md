@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.440] - 2026-11-09
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 845 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,599 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,673 quests, 48 NPCs, 2 objects
+- npc 10079 - Brave Moonhorn - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 10941 - [Deprecated for 4.x]Wizlo Bearingshiner - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 70749 - Ro-Shambo - updated
+  - NPC level added (93)
+
 ## [0.2.439] - 2026-11-09
 
 Data from the PandaQuest portal.
@@ -118,13 +132,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in The Hinterlands
 - npc 69752 - Agent Grisel - updated
   - NPC title added (Kirin Tor)
-
-## [0.2.429] - 2026-11-08
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,576 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,626 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 

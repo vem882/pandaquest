@@ -3153,6 +3153,10 @@ ns.Overrides.wowhead = {
                 "banks.",
             rewardItems = {{4944, 1}},
         },
+        [819] = {
+            description = "A small placard on one of the ends of the keg says,\n\n\"Chen Stormstout " ..
+                "-\n\nMay your spirit be raised and always raise your spirits.\"",
+        },
         [824] = {
             description = "The Earthen Ring is a shamanistic group dedicated to studying and preserving " ..
                 "the elements. They have forgotten more about crazy old gods, ancient legends and lore " ..
@@ -4328,6 +4332,15 @@ ns.Overrides.wowhead = {
                 "Feel up to wielding a blade or staff and doing your part to aid us?",
             rewardMoney = 3500,
         },
+        [1148] = {
+            description = "You inspect the carapace carefully. As you turn it over in your hands you " ..
+                "realize that the chitinous plating is interlaced in such a way that makes it incredibly " ..
+                "strong. It's unlike anything you've ever seen. You inspect the rest of the corpse " ..
+                "further and realize that these creatures are very powerful and highly " ..
+                "evolved.\n\nLooking down at the carapace again, you think that Korran would enjoy " ..
+                "studying more of these creatures. It could help him figure out what these creatures are, " ..
+                "and where they come from.",
+        },
         [1150] = {
             description = "I'm pleased to see your courage remains steadfast in light of what you've " ..
                 "already done. Since your faith is intact, the time has come to test your body.\n\nFirst " ..
@@ -4883,6 +4896,10 @@ ns.Overrides.wowhead = {
         [1463] = {
             objectivesText = {"Speak to Canaga Earthcaller for another Earth Sapta."},
             rewardItems = {{6635, 1}},
+        },
+        [1464] = {
+            objectivesText = {"Speak to Telf Joolam for another Fire Sapta."},
+            rewardItems = {{6636, 1}},
         },
         [1472] = {
             description = "A sayaad is a devourer of souls, dominator of wills, tempter of hearts. A " ..
@@ -5665,6 +5682,14 @@ ns.Overrides.wowhead = {
                 "silver bars to finish an order I received - the first in what seems like an " ..
                 "eternity.\n\nYou get me those five silver bars, and I'll answer your questions on the " ..
                 "necklace.",
+        },
+        [2201] = {
+            description = "The paladin's journal has provided perhaps the only clues that Uldaman will " ..
+                "yield as to the location of the necklace's gems. If the paladin's scribing remains " ..
+                "accurate, then the Shadowforge dwarves and the troggs that vie for control of the dig " ..
+                "site will need to be dealt with.\n\nArmed with this knowledge, the search for the gems " ..
+                "begins in earnest. When all the gems have been acquired, Talvash in Ironforge should be " ..
+                "notified via the Phial of Scrying as per his instructions.",
         },
         [2202] = {
             description = "I've heard about a newly discovered plant called the magenta fungus caps. They " ..
@@ -8894,6 +8919,16 @@ ns.Overrides.wowhead = {
                 "to High Priestess Laurena when you arrive.",
             rewardXP = 390,
         },
+        [5726] = {
+            description = "One thing I will not tolerate are traitors in our midst, <name>. But I would " ..
+                "be a fool to play my hand so early--it would not sufficiently cut the corruption out of " ..
+                "our lands and only cause the infection to grow worse.\n\nBut you, a young adventurer, " ..
+                "could go places my agents could not... could learn the truth... could find the true head " ..
+                "of the beast.\n\nIf you are brave enough, then enter Skull Rock to the east of " ..
+                "Orgrimmar, find a lieutenant's insignia off one of the Burning Blade there, and return " ..
+                "to me.",
+            rewardMoney = 250,
+        },
         [5729] = {
             description = "I think our next step should be to have you placed close to Neeru. If he is as " ..
                 "agitated as reports suggest, then we may accomplish two things. One, you may be able to " ..
@@ -9789,6 +9824,15 @@ ns.Overrides.wowhead = {
                 "diamond.\n\nTogether, we shall create the Scepter of Celebras once again!",
             rewardItems = {{17191, 1}},
         },
+        [7064] = {
+            description = "Deep in Maraudon lives an evil creature of chaos-- Princess Theradras is an " ..
+                "elemental force of earth related to the Old Gods. Ages ago, she and Zaetar, first son of " ..
+                "Cenarius, began a relationship. The offspring of their time together became known to the " ..
+                "people of Kalimdor as centaur. Ever-thankful creatures, the centaur killed Zaetar, and " ..
+                "now hold Zaetar's remains. My quest here is to find those powerful enough to slay " ..
+                "Theradras so we may recover Zaetar's remains before returning to Stonetalon.",
+            rewardChoices = {{17705, 1}, {17743, 1}, {17753, 1}},
+        },
         [7065] = {
             description = "In the depths of Maraudon lives a creature of chaos and evil, <name>. Princess " ..
                 "Theradras is an elemental force of earth related somehow to the Old Gods. Ages ago, she " ..
@@ -9997,6 +10041,7 @@ ns.Overrides.wowhead = {
             rewardXP = 9550,
         },
         [7650] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{12726, 1}}},
+        [7653] = {rewardItems = {{12688, 1}}},
         [7658] = {rewardItems = {{12715, 1}}},
         [7659] = {rewardItems = {{12687, 1}}},
         [7669] = {rewardItems = {{18746, 1}}},
@@ -10187,6 +10232,7 @@ ns.Overrides.wowhead = {
         [8046] = {rewardItems = {{19585, 1}}},
         [8047] = {rewardItems = {{19586, 1}}},
         [8049] = {rewardItems = {{19591, 1}}},
+        [8052] = {rewardItems = {{19594, 1}}},
         [8059] = {
             description = "Warlocks tread dangerous ground in dealing with demons, but our demoniacs take " ..
                 "this one step further. Through an ancient and arcane ritual, they allow a demon to enter " ..
@@ -11173,6 +11219,7 @@ ns.Overrides.wowhead = {
         },
         [8745] = {rewardChoices = {{21523, 1}, {21522, 1}, {21521, 1}, {21520, 1}}},
         [8751] = {rewardItems = {{21200, 1}}},
+        [8754] = {rewardItems = {{21203, 1}}},
         [8755] = {rewardItems = {{21204, 1}}},
         [8756] = {rewardItems = {{21205, 1}}},
         [8757] = {rewardItems = {{21206, 1}}},
@@ -11205,6 +11252,11 @@ ns.Overrides.wowhead = {
                 "Hive'Regal where your primary target will consist of Hive'Regal burrowers.\n\nReport " ..
                 "back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
+        },
+        [8778] = {
+            description = "The Ironforge Brigade has put in an unusual request for highly... volatile... " ..
+                "components. Gather them and bring them to Mr. Nozzlespring from the Ironforge Brigade.",
+            rewardItems = {{20800, 1}, {20805, 1}},
         },
         [8779] = {
             description = "Geologist Larksbane 's studies have proven to be of tremendous value to our " ..

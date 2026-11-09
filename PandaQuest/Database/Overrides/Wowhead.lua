@@ -65027,6 +65027,7 @@ ns.Overrides.wowhead = {
             zoneID = 361,
         },
         [9996] = {spawns = {[361] = {{34.2, 52.4}, {34.2, 52.6}}}, zoneID = 361},
+        [10079] = {spawns = {[400] = {{32.2, 22}, {32.2, 23.8}, {32.4, 22.6}}}, zoneID = 400},
         [10216] = {spawns = {[148] = {{36, 44.8}}}, zoneID = 148},
         [10219] = {spawns = {[148] = {{36.6, 45.4}, {36.6, 45.6}}}, zoneID = 148},
         [10267] = {spawns = {[46] = {{65.2, 23.8}}}, zoneID = 46},
@@ -65084,6 +65085,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 47,
         },
+        [10941] = {spawns = {[400] = {{21.4, 32.4}, {21.4, 32.6}, {21.6, 32.4}}}, zoneID = 400},
         [10976] = {spawns = {[28] = {{39.4, 66.8}}}, zoneID = 28},
         [11016] = {
             spawns = {
@@ -66187,6 +66189,7 @@ ns.Overrides.wowhead = {
         [70736] = {maxLevel = 93, minLevel = 93},
         [70740] = {maxLevel = 93, minLevel = 93, subName = "Last Year's Model"},
         [70748] = {maxLevel = 92, minLevel = 92, subName = "\"The Lady\""},
+        [70749] = {maxLevel = 93, minLevel = 93},
         [70751] = {maxLevel = 90, minLevel = 90},
         [70752] = {maxLevel = 90, minLevel = 90},
         [70794] = {maxLevel = 92, minLevel = 92},
