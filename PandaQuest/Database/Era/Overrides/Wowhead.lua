@@ -7194,6 +7194,13 @@ ns.Overrides.wowhead = {
                 "signature drink: Barleybrew Scalder!\n\nSo what do you say? The Rethban Caverns are in " ..
                 "the foothills north of Lakeshire. Are you ready to run the Rethban Gauntlet?",
         },
+        [1701] = {
+            description = "So I gave you a nice shield, but we don't have to stop there. I know the " ..
+                "secrets to make extremely hard mail armor. It's not easy and it takes very rare " ..
+                "materials, but if you're willing to do the legwork then I'll make a piece for " ..
+                "you.\n\nWhat do you say, <name>? If you're up for the challenge, then I'll give you a " ..
+                "list of what to get and where to get them.",
+        },
         [1702] = {
             description = "You really showed what you were made of when you ran the Rethban Gauntlet, " ..
                 "<name>. And I'm true to my word. I'll get you the reward I promised...\n\nExcept it's in " ..
