@@ -22,6 +22,15 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.441
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 847 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,615 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,694 quests, 48 NPCs, 2 objects
+- npc 4706 - [Deprecated for 4.x]Razzeric - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 11486 - Prince Tortheldrin - updated
+  - NPC title added (Ruler of the Shen'dralar)
+
 0.2.440
 - database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 845 NPCs, 2 objects
 - database - Classic Era: data from the PandaQuest portal: 2,599 quests, 28 NPCs, 5 objects
@@ -108,15 +117,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - database - TBC Anniversary: data from the PandaQuest portal: 2,634 quests, 48 NPCs, 2 objects
 - npc 481 - Defias Footpad - updated
   - coordinates: 11 spawn points added in Westfall
-
-0.2.430
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 826 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,579 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,633 quests, 48 NPCs, 2 objects
-- npc 5635 - Falstad Wildhammer - updated
-  - coordinates: 1 spawn point added in The Hinterlands
-- npc 69752 - Agent Grisel - updated
-  - NPC title added (Kirin Tor)
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

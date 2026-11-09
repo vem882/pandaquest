@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.441] - 2026-11-09
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 847 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,615 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,694 quests, 48 NPCs, 2 objects
+- npc 4706 - [Deprecated for 4.x]Razzeric - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 11486 - Prince Tortheldrin - updated
+  - NPC title added (Ruler of the Shen'dralar)
+
 ## [0.2.440] - 2026-11-09
 
 Data from the PandaQuest portal.
@@ -120,18 +132,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,634 quests, 48 NPCs, 2 objects
 - npc 481 - Defias Footpad - updated
   - coordinates: 11 spawn points added in Westfall
-
-## [0.2.430] - 2026-11-08
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 826 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,579 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,633 quests, 48 NPCs, 2 objects
-- npc 5635 - Falstad Wildhammer - updated
-  - coordinates: 1 spawn point added in The Hinterlands
-- npc 69752 - Agent Grisel - updated
-  - NPC title added (Kirin Tor)
 
 ## [0.2.412]
 
