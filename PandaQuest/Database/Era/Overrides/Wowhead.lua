@@ -4246,6 +4246,14 @@ ns.Overrides.wowhead = {
         },
         [883] = {description = "The Hoof of Lakota'mani is a symbol of the strength of the great kodo."},
         [885] = {description = "The feather of Washte Pawne is painful to the touch."},
+        [886] = {
+            description = "The druids of Thunder Bluff sense a strange power leaking into the Barrens, " ..
+                "east of Mulgore.\n\nTonga Runetotem was sent to discover the source of this power, but " ..
+                "we fear he will need aid.\n\nTravel to the Barrens and speak with Tonga. He will be at " ..
+                "the Crossroads. To reach there, take the road east out of Bloodhoof village. Enter the " ..
+                "Barrens, then turn north when the road forks. Continue north and you will find the " ..
+                "Crossroads.\n\nAnd do not leave the road, <name>, for the Barrens is a harsh land.",
+        },
         [888] = {
             description = "While I'd like to recover all my goods, I'm sure that's not possible. Still, " ..
                 "there's a few things that I absolutely must have!\n\nAs you see, my observatory is ready " ..
@@ -6168,6 +6176,16 @@ ns.Overrides.wowhead = {
             description = "Oh, I think I might have dropped too much acid onto the shield. Let me just " ..
                 "rub a little...\n\nHm, kind of hard to read, but it looks like the name Mosarn. Never " ..
                 "heard of him. Maybe Krog knows. Krog knows many people.",
+        },
+        [1338] = {
+            description = "There is a dwarven armorsmith whose work I admire greatly. His name is Furen " ..
+                "Longbeard, and his skill is unmatched. I need a new shield, and I must have one of " ..
+                "his!\n\nThe problem is... Furen is far to the south, in the dwarven district within " ..
+                "Stormwind. In human lands! I can't imagine why he would live there, so far from " ..
+                "Ironforge. The humans must pay him a king's ransom to keep him there!\n\nSo, if you want " ..
+                "to travel and don't mind making some money, then will you send Furen my request for a " ..
+                "shield?",
+            rewardMoney = 600,
         },
         [1339] = {
             description = "I hear Mountaineer Stormpike is looking for a runner. Someone to do a little " ..

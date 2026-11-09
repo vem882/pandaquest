@@ -4588,6 +4588,16 @@ ns.Overrides.wowhead = {
                 "just stand here while you insult me?! Something tells me you've had this coming for a " ..
                 "long time.",
         },
+        [1338] = {
+            description = "There is a dwarven armorsmith whose work I admire greatly. His name is Furen " ..
+                "Longbeard, and his skill is unmatched. I need a new shield, and I must have one of " ..
+                "his!\n\nThe problem is... Furen is far to the south, in the dwarven district within " ..
+                "Stormwind. In human lands! I can't imagine why he would live there, so far from " ..
+                "Ironforge. The humans must pay him a king's ransom to keep him there!\n\nSo, if you want " ..
+                "to travel and don't mind making some money, then will you send Furen my request for a " ..
+                "shield?",
+            rewardMoney = 600,
+        },
         [1339] = {
             description = "I hear Mountaineer Stormpike is looking for a runner. Someone to do a little " ..
                 "traveling for him. How about it? Are you the <race> for the job?\n\nIf so, then you'll " ..
@@ -10907,6 +10917,14 @@ ns.Overrides.wowhead = {
                 "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
                 "be disappointed.",
             rewardItems = {{21412, 1}},
+        },
+        [8690] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21400, 1}},
         },
         [8691] = {
             description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
