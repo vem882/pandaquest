@@ -3669,6 +3669,13 @@ ns.Overrides.wowhead = {
                 "caravan. Bring me his clipboard, we shall see if we find out anything useful.",
             rewardChoices = {{4974, 1}, {4964, 1}},
         },
+        [769] = {
+            description = "The kodo beasts of Mulgore are strong and sturdy -- traits much respected " ..
+                "among us. If you are skilled in leatherworking and wish the knowledge to make a Kodo " ..
+                "Hide Bag, then bring me supplies for my trade.\n\nDo this, and I will share my knowledge " ..
+                "with you.",
+            rewardItems = {{5083, 1}},
+        },
         [770] = {
             description = "The ragged hide of Ghost Howl still bears a terrible wound, gained from the " ..
                 "wolf's battles against the Burning Legion.\n\nPerhaps someone in Bloodhoof Village " ..
@@ -7002,6 +7009,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{6735, 1}},
         },
         [1641] = {rewardItems = {{6775, 1}}},
+        [1642] = {
+            description = "In all things, a paladin must reflect the Light which supplements our " ..
+                "strength. To strive to be divine for one of our kind does not mean we strive for " ..
+                "godhood--we strive to be good in all actions.\n\nAlthough called upon to smite evil in " ..
+                "these harsh times, you must always remember that it's aiding others that will truly set " ..
+                "you apart from the citizens of Azeroth. Compassion, patience, bravery--these things mean " ..
+                "as much to a paladin as strength in battle.\n\nKnow this well, and never forget it.",
+        },
         [1643] = {
             description = "Your task then, <name>, is to find someone here in Stormwind that is in need " ..
                 "of aid. Someone who is pure of heart and motive. Perhaps someone helping others. Perhaps " ..
