@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.438] - 2026-11-09
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 837 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,596 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,654 quests, 48 NPCs, 2 objects
+- npc 1426 - Riverpaw Miner - updated
+  - coordinates: 15 spawn points added in Westfall
+- npc 3583 - Barithras Moonshade - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 68005 - The Jade Warlord - updated
+  - NPC level added (90)
+- npc 68751 - Magister Brasael - updated
+  - NPC title added (Legacy Justice Quartermaster)
+  - NPC level added (90)
+- npc 72536 - Trial Master Rotun - updated
+  - NPC title added (Proving Grounds Instructor)
+
 ## [0.2.437] - 2026-11-09
 
 Data from the PandaQuest portal.
@@ -104,13 +123,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in The Barrens
 - npc 5911 - Grunt Logmar - updated
   - coordinates: 1 spawn point added in The Barrens
-
-## [0.2.427] - 2026-11-08
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,572 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,618 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 

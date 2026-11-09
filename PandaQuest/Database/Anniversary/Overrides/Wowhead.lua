@@ -5534,6 +5534,14 @@ ns.Overrides.wowhead = {
                 "ready. Prepare your strongest spells and keep your potions handy, and go get a friend if " ..
                 "you have one. Because this isn't going to be pretty.",
         },
+        [1956] = {
+            description = "Now that the demon has been removed, we must gain a power source. " ..
+                "Unfortunately, the best power sources are usually the oldest and the hardest to get. " ..
+                "It's neat how fate likes to take a bite out of you sometimes, isn't it?\n\nSo you're " ..
+                "going to need to go to Uldaman and defeat the obsidian sentinel there. He's big, he's " ..
+                "tough, and his power source packs a punch!\n\nI wish you the best of luck, <name>. And " ..
+                "if you don't get lucky then, well... it was nice knowing you.",
+        },
         [1959] = {
             description = "The mages of the Undercity have noted a magical disturbance within the city, " ..
                 "and have sent word for mages of the Horde to investigate.\n\nAnastasia Hartwell can tell " ..
@@ -6584,6 +6592,16 @@ ns.Overrides.wowhead = {
                 "fragments from any of these creatures I mentioned.",
             rewardMoney = 5500,
         },
+        [3161] = {
+            description = "<name>, I'm a scientist, but also a treasure hunter at heart!\n\nLong ago, " ..
+                "when trolls used to occupy this land, they created large amounts of ornaments modeled " ..
+                "after Gahz'rilla, a hydra they worshipped as a deity. These ornaments are carved out of " ..
+                "an element that I call \"Gahz'ridian,\" after the hydra god.\n\nI did find some myself, " ..
+                "but I'd like to have some more to study -- maybe you can find some?\n\nI even invented a " ..
+                "detector that makes finding the Gahz'ridian a snap! Just put it on, and the search " ..
+                "begins!",
+            rewardChoices = {{10827, 1}, {10826, 1}},
+        },
         [3182] = {
             description = "You expect me to believe a story like that? The real horn would have had my " ..
                 "broken axe head still lodged into its surface.\n\nListen, take that obvious fake to " ..
@@ -7446,6 +7464,15 @@ ns.Overrides.wowhead = {
                 "what you want to do?",
             rewardMoney = 16000,
         },
+        [4263] = {
+            description = "Are you sure Pyron said 'Incendius' when he died?\n\n<Jalinda swallows " ..
+                "hard.>\n\nLord Incendius is purported to be a minion of Ragnaros! Oh dear, oh dear... " ..
+                "whatever will we do?\n\nDo you think you can handle another mission? I don't have " ..
+                "anybody else to send, <name>!\n\nWe will never get a team in if Incendius continues to " ..
+                "raise Pyron from the ashes.\n\nYou'll have to find and destroy Lord Incendius!",
+            rewardChoices = {{12113, 1}, {12114, 1}, {12112, 1}, {12115, 1}},
+            rewardMoney = 8500,
+        },
         [4264] = {
             description = "The note has stains covering its surface. The text is barely legible, but you " ..
                 "make out the following:\n\n...sweet irony...\n\n...the fall of the broken " ..
@@ -8211,6 +8238,15 @@ ns.Overrides.wowhead = {
                 "dying heart. His soul he bartered, his soul I shall have. Return the pike and return the " ..
                 "breastplate that the thief stole and I shall teach you what it is that he was to learn.",
             rewardItems = {{12696, 1}, {9224, 5}, {12849, 1}},
+        },
+        [5128] = {
+            description = "The Winterfall are no longer a threat to me, but if you still want to find out " ..
+                "what was driving the furbolg to create and consume this strange firewater, I think you " ..
+                "should seek out Kelek Skykeeper.\n\nHe is part of a group known as the Emerald Circle, " ..
+                "druids that are committed to their work in Felwood, healing the land from the " ..
+                "corruption.\n\nKelek has much experience with the furbolgs in Felwood, and may be able " ..
+                "to tell you more about the log.\n\nThank you, again, <name>.",
+            rewardChoices = {{34423, 1}, {34424, 1}},
         },
         [5143] = {
             description = "To learn tribal leatherworking demands an understanding of how primal nature " ..

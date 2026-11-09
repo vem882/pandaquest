@@ -4220,6 +4220,14 @@ ns.Overrides.wowhead = {
                 "harpies something to think about.",
             rewardChoices = {{5321, 1}, {5279, 1}, {5318, 1}},
         },
+        [878] = {
+            description = "You must strike my enemies. <snort> You must help Mangletooth and the " ..
+                "Razormane by weakening the Bristlebacks. Both tribes are very spiritual--tied to the " ..
+                "earth and its power. <snort> It gives us strength in all things... especially war.\n\nIf " ..
+                "you want to find out who really causes Thork <snort> and the Horde such anguish, then " ..
+                "help Mangletooth! You attack the spiritual leaders of the Bristlebacks to the north; " ..
+                "weaken them so the Razormanes can defeat them and rule the Barrens.",
+        },
         [880] = {
             description = "Your findings are incredible, <name>. These oases hold properties that must " ..
                 "come from an outside source. Or perhaps an inside one.\n\nI want to know how these " ..
@@ -9450,6 +9458,15 @@ ns.Overrides.wowhead = {
                 "can get them to my tower safely. He should be in the hangar in the Military Ward.",
             rewardXP = 510,
         },
+        [3451] = {
+            description = "Ah, so Tymor sent you, huh? Yeah, I owe him a favor or two. What's that? Why, " ..
+                "that little devil. Yeah, I can help him out with that. So you'll need a flare gun and a " ..
+                "location... easy enough.\n\nThere's a small island off the southern peninsula of Azshara " ..
+                "that we've made a landing pad on. You take this flare gun, and use it there. I'll see " ..
+                "your signal and come by to pick up this... whatever it is he wants.",
+            rewardItems = {{10444, 1}},
+            rewardXP = 510,
+        },
         [3452] = {
             description = "We need one final piece to form the torch.\n\nIn the mountains to the " ..
                 "northwest you will find a large encampment of Twilight's Hammer. It is rumored that they " ..
@@ -13783,6 +13800,16 @@ ns.Overrides.wowhead = {
         [6545] = {rewardItems = {{16763, 1}}},
         [6546] = {rewardItems = {{16765, 1}}},
         [6547] = {rewardItems = {{16764, 1}}},
+        [6561] = {
+            description = "Strength has left me. Your help is needed!\n\nLong ago this site was a great " ..
+                "temple of Elune. But misfortune led to ruin when the corruption of an Old God seeped up " ..
+                "from beneath the earth and tainted the sacred Moon Well.\n\nAku'Mai, servant of the Old " ..
+                "God, rose from the waters.\n\nThe Twilight's Hammer cultists have allied with the naga " ..
+                "to occupy these grounds. The cultists, led by Kelris, sacrifice innocents to Aku'Mai for " ..
+                "power.\n\nSlay Kelris and bring his head to Bashana in Thunder Bluff, <name>, please.",
+            rewardChoices = {{7001, 1}, {7002, 1}},
+            rewardMoney = 6500,
+        },
         [6563] = {
             description = "Within the beginning tunnels of Blackfathom Deeps, large sapphire clusters can " ..
                 "be found along the cave walls. Recently it was noted that the naga were harvesting the " ..
@@ -17387,6 +17414,14 @@ ns.Overrides.wowhead = {
                 "some of which have fallen to the silithid. I need you to retrieve some Druidical Remains " ..
                 "from the silithid that inhabit the environs of Hive'Regal in southeastern Silithus.",
         },
+        [8963] = {
+            description = "<class>, listen closely. Now that we have the brazier, and the means to light " ..
+                "it, we still need another component to suffuse it with; something that will provide a " ..
+                "focus strong enough to entice the spirit of my deceased, former comrade.\n\nIsalien, our " ..
+                "priestess, grew up in Winterspring at Starbreeze Village. I need you to gather a " ..
+                "Starbreeze Village Relic from the Frostmaul giants of Frostwhisper Gorge in southern " ..
+                "Winterspring, who are known for raiding to the north from time to time.",
+        },
         [8965] = {
             description = "<class>, listen closely. Now that we have the brazier, and the means to light " ..
                 "it, we still need another component to suffuse it with; something that will provide a " ..
@@ -17402,6 +17437,14 @@ ns.Overrides.wowhead = {
                 "for personal reasons and also to unlock the secrets of the piece of the amulet that she " ..
                 "had in her possession.\n\nShe didn't quite make it, though. Word got back to us that she " ..
                 "was ambushed at the Shrine of Eldretharr by Alzzin the Wildshaper and his forces.",
+        },
+        [8968] = {
+            description = "The siblings, Jarien and Sothos, decided to join the Scarlet Crusade upon the " ..
+                "disbanding of our mercenary company. They took the Left Piece of Lord Valthalak's Amulet " ..
+                "with them. Good riddance, I say, but we need that piece back.\n\nFrom what we could " ..
+                "gather, they were actually slain by Grand Crusader Dathrohan himself for failing the " ..
+                "initiation rites inside his chamber in the Scarlet Bastion.\n\nIn any case, we... " ..
+                "meaning you, are still going to need to retrieve that piece of the amulet.",
         },
         [8969] = {
             description = "Now we have what we need, so it's time to discuss who it is that you'll be " ..
