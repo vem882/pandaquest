@@ -63051,6 +63051,16 @@ ns.Overrides.wowhead = {
             },
             zoneID = 38,
         },
+        [1426] = {
+            spawns = {
+                [40] = {
+                    {28.8, 49}, {28.8, 49.6}, {29.2, 51}, {29.4, 46.2}, {29.6, 50.6}, {29.8, 49.8},
+                    {30, 47.4}, {30.2, 45.4}, {30.2, 47.6}, {30.4, 45.8}, {30.4, 49.2}, {30.6, 45.8},
+                    {30.6, 48}, {30.6, 48.6}, {31, 45.2},
+                },
+            },
+            zoneID = 40,
+        },
         [1443] = {spawns = {[8] = {{48, 55}}}, zoneID = 8},
         [1506] = {
             spawns = {
@@ -63742,6 +63752,7 @@ ns.Overrides.wowhead = {
         [3421] = {spawns = {[17] = {{49, 86.2}}}, zoneID = 17},
         [3430] = {spawns = {[17] = {{44.4, 59.2}, {44.6, 59.2}}}, zoneID = 17},
         [3516] = {spawns = {[1657] = {{34.4, 8.4}, {34.4, 8.6}, {34.6, 8.4}, {34.8, 8.8}}}, zoneID = 1657},
+        [3583] = {spawns = {[148] = {{37.2, 43.6}}}, zoneID = 148},
         [3584] = {
             spawns = {
                 [148] = {{38.4, 87.2}, {38.6, 87.2}, {39.4, 85.4}, {39.4, 85.6}, {39.8, 86.4}, {40.4, 87}},
@@ -66031,6 +66042,7 @@ ns.Overrides.wowhead = {
         [67997] = {maxLevel = 90, minLevel = 90},
         [67999] = {maxLevel = 90, minLevel = 90},
         [68004] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
+        [68005] = {maxLevel = 90, minLevel = 90},
         [68006] = {maxLevel = 90, minLevel = 90},
         [68009] = {subName = "The Miserable"},
         [68041] = {maxLevel = 90, minLevel = 90},
@@ -66091,6 +66103,7 @@ ns.Overrides.wowhead = {
         [68716] = {subName = "Wintergrasp Battle-Mage"},
         [68717] = {subName = "Legacy Justice Quartermaster"},
         [68728] = {maxLevel = 90, minLevel = 90},
+        [68751] = {maxLevel = 90, minLevel = 90, subName = "Legacy Justice Quartermaster"},
         [68752] = {maxLevel = 90, minLevel = 90},
         [68753] = {maxLevel = 90, minLevel = 90},
         [68755] = {maxLevel = 90, minLevel = 90},
@@ -66187,6 +66200,7 @@ ns.Overrides.wowhead = {
         [72006] = {maxLevel = 14, minLevel = 14, subName = "Oriana's Companion"},
         [72317] = {maxLevel = 90, minLevel = 90},
         [72426] = {maxLevel = 90, minLevel = 90},
+        [72536] = {subName = "Proving Grounds Instructor"},
         [72549] = {maxLevel = 89, minLevel = 89},
         [72695] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
         [72723] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
