@@ -996,6 +996,13 @@ ns.Overrides.wowhead = {
                 "will ever think me lovely again!",
             rewardMoney = 175,
         },
+        [155] = {
+            description = "So Stoutmantle sends a scrawny <race> like you to protect me? Guess you'll " ..
+                "have to do. Better bring some friends too.\n\nYou know the deal, right? You watch my " ..
+                "back and I'll take you to the Defias hideout. But you better be close by my side. The " ..
+                "Defias gang wants my head now. If they see me with you, they'll try to kill me.\n\nLet " ..
+                "me know when you and any friends you can round up are ready to go.",
+        },
         [156] = {
             description = "If you bring me some rot blossoms then I can brew you up a batch of zombie " ..
                 "juice.\n\nrot blossoms grow in strange places. In particular, I hear you can find them " ..
@@ -2917,6 +2924,12 @@ ns.Overrides.wowhead = {
                 "conflict with the Skullsplitters.\n\nSo, hunt them. Gather their Split Bone Necklaces " ..
                 "and return to me. Aid us in our war, and you will earn the friendship of the Darkspears.",
             rewardChoices = {{4137, 1}, {4136, 1}},
+        },
+        [599] = {
+            description = "Shiver me timbers! So the Bloodsail Buccaneers are planning some sort of " ..
+                "attack on Booty Bay? Why, the nerve of those scoundrels. Booty Bay will always be run by " ..
+                "the Blackwater Raiders!\n\nThis is bigger than I thought. Report what you have learned " ..
+                "to Fleet Master Seahorn at once! The ol' sea dog is around town somewhere....",
         },
         [600] = {
             description = "The Venture Company has a string of operations through Stranglethorn which " ..
