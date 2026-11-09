@@ -16145,6 +16145,13 @@ ns.Overrides.wowhead = {
                 "would be just perfect.",
             rewardItems = {{21436, 1}, {21509, 1}},
         },
+        [8513] = {
+            description = "Yes <sir/ma'am>, I have been charged with collecting and tracking all of the " ..
+                "medium leather gathered for the war effort. If you have the wherewithal to gather medium " ..
+                "leather, from whatever source, then please bring them to me here. I sure would " ..
+                "appreciate a hand with this if you can spare the time.",
+            rewardItems = {{21436, 10}, {21510, 1}},
+        },
         [8514] = {
             description = "Yes <sir/ma'am>, looks like we've collected $2063w pieces of medium leather to " ..
                 "date. I know it's a lot to ask, but if you're still willing, I could use your help in " ..
