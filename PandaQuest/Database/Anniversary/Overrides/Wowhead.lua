@@ -2222,6 +2222,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{5457, 5}},
             rewardMoney = 100,
         },
+        [491] = {
+            description = "Thule once told me that, long ago, he and two colleagues created a magic wand, " ..
+                "woven together from the apprentice wands each mage possessed. This wand was a symbol of " ..
+                "their friendship, and although Thule came to despise it he could not part with it, nor " ..
+                "could he let the others have it. So he stole the wand, and hid it in Fenris " ..
+                "Keep.\n\nHere. Take the wand to Bethor Iceshard, one of Thule's friends from years past. " ..
+                "I'm sure he will want it.",
+            rewardChoices = {{3457, 1}, {3458, 1}, {3581, 1}},
+        },
         [493] = {
             description = "The Royal Apothecary Society is under extreme pressure from the Dark Lady to " ..
                 "develop a New Plague. We are working diligently and have made much progress. It is our " ..
@@ -3105,6 +3114,16 @@ ns.Overrides.wowhead = {
                 "mouth to cause havoc.\n\nAs your first task against the Burning Blade, I bid you, defeat " ..
                 "these familiars. Slay many and, if you survive, return to me.",
             rewardChoices = {{4924, 1}, {4925, 1}, {4923, 1}, {5778, 1}},
+        },
+        [794] = {
+            description = "Through my divinations, I see that an item of power hides deep within the " ..
+                "Burning Blade Coven, guarded by beasts and black magic.\n\nIt is called the Burning " ..
+                "Blade Medallion, and your next task is to find it and remove it from the coven.\n\nBut " ..
+                "be wary, for the medallion may be possessed by an agent of the Burning Blade, and if so " ..
+                "then the agent's power would be greater than the familiars you have already " ..
+                "encountered.\n\nGo, <name>. You will find the coven in a cave, to the north and west.",
+            rewardChoices = {{4921, 1}, {4922, 1}, {6713, 1}},
+            rewardItems = {{118, 1}},
         },
         [809] = {
             description = "Since the last great war when the Burning Legion was defeated, I have searched " ..
@@ -5542,6 +5561,14 @@ ns.Overrides.wowhead = {
                 "tough, and his power source packs a punch!\n\nI wish you the best of luck, <name>. And " ..
                 "if you don't get lucky then, well... it was nice knowing you.",
         },
+        [1957] = {
+            description = "We are almost finished, but this last step is the most perilous, <name>.\n\nI " ..
+                "have the empty summoner's orb and am ready to empower it. We will do this by harnessing " ..
+                "the energy of a mana rift. I'll cast a spell that will temporarily open a rift, from " ..
+                "which creatures, mana surges, will pour out. You must defeat the mana surges and their " ..
+                "power will be released, which I will then collect.\n\nKill enough mana surges before the " ..
+                "rift closes and I will place all their collected energy in your orb.",
+        },
         [1959] = {
             description = "The mages of the Undercity have noted a magical disturbance within the city, " ..
                 "and have sent word for mages of the Horde to investigate.\n\nAnastasia Hartwell can tell " ..
@@ -6947,6 +6974,15 @@ ns.Overrides.wowhead = {
                 "I'm sure Jediga is awaiting oh so patiently for your return.",
             rewardMoney = 6000,
         },
+        [3568] = {
+            description = "See that tauren behind me--the one who looks like she's going to be ill at any " ..
+                "moment? She was in Azshara recently. She claims she was wounded by some naga while " ..
+                "making her way through the Ruins of Eldarath.\n\nAfter fighting off a few of them, she " ..
+                "took a break on the beach and drank from one of the tide pools. Now she's feeling " ..
+                "nauseous... among other things.\n\nI'd like to find out what she drank. Take this box, " ..
+                "in it are some empty vials I labeled. Fill each at different pools and come back.",
+            rewardMoney = 4000,
+        },
         [3570] = {rewardMoney = 7500},
         [3601] = {
             description = "Kim'jael indeed!! Do you know what Kim'jael means to the Blood elves, <name>? " ..
@@ -7557,6 +7593,12 @@ ns.Overrides.wowhead = {
                 "but it has somethin' to do with Elune's plan for the elves... maybe they were to be " ..
                 "protectors or somethin', I don't know.\n\nI'll take care of the egg for now, why don't " ..
                 "you get me some good Silvermane stalker flanks for 'em to eat when he's hatched.",
+        },
+        [4321] = {
+            description = "The information you have given me about the pylons is very " ..
+                "interesting...\n\nGive me a moment to do some calculations, <name>. Speak to me again in " ..
+                "a moment and I should be able to give you the answer we have been looking for.",
+            rewardItems = {{11482, 1}},
         },
         [4322] = {
             description = "We need to get out of here, <name>. Help me get my gear back from the supply " ..
@@ -10038,6 +10080,15 @@ ns.Overrides.wowhead = {
                 "these; I hope he can do something with the lore we've obtained.",
             rewardChoices = {{19038, 1}, {19037, 1}},
         },
+        [7761] = {
+            description = "Imbecile,\n\nI hold very little faith in your ability to prevent outsiders " ..
+                "from accessing the master's lair. In the very likely event of your death, this orb has " ..
+                "its own failsafe built in to prevent outsiders from teleporting directly into " ..
+                "Blackwing.\n\nOnly those with the Mark of Drakkisath branded upon their hand may make " ..
+                "use of this orb. Thankfully, Drakkisath is not nearly as incompetent as you, " ..
+                "Quartermaster. He guards the brand himself!\n\n-Warchief Rend Blackhand\n\nP.S. Destroy " ..
+                "this letter, idiot.",
+        },
         [7815] = {
             description = "Don't let their big eyes fool you, mon! Those saltwater snapjaws be a menace. " ..
                 "I can't fish for five minutes without getting a broken line from one of those oversized " ..
@@ -11193,6 +11244,16 @@ ns.Overrides.wowhead = {
                 "them to Windcaller Proudhorn in Cenarion Hold.",
             rewardItems = {{20800, 1}, {21386, 1}},
         },
+        [8829] = {
+            description = "The Twilight's Hammer operates through innumerable layers of secrecy and " ..
+                "deceit. While their actions are carried out in our world, they are planned in a place we " ..
+                "have not yet been able to reach.\n\nWe've come to believe that the stones the Twilight's " ..
+                "Hammer uses to summon their superiors allow for two-way transportation. To attempt to " ..
+                "use them in this manner, we must replicate - to every last detail - a twilight " ..
+                "emissary's robe.\n\nGather the necessary materials and bring them to Aurel Goldleaf, " ..
+                "<name>.",
+            rewardItems = {{21515, 1}},
+        },
         [8884] = {
             description = "Greetings, <class>. Take a look toward the shore; what do you see? That's " ..
                 "right, our beach... our Tranquil Shore, has been infested with the malignancy known as " ..
@@ -12008,6 +12069,14 @@ ns.Overrides.wowhead = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order FS-5:\n\n40 " ..
                 "Stonescale Eel.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9205] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order FS-12:\n\n30 " ..
+                "Plated Armorfish.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
@@ -19363,6 +19432,11 @@ ns.Overrides.wowhead = {
             rewardMoney = 88000,
         },
         [11104] = {rewardChoices = {{29301, 1}, {29297, 1}, {29305, 1}}},
+        [11107] = {
+            description = "I am unworthy to even carry a message directed at you, sir. Please forgive me " ..
+                "for this indulgence. Overlord Mor'ghor has requested your presence in his chambers at " ..
+                "once!",
+        },
         [11108] = {description = "Come, highlord <name>. Illidan himself awaits us!", rewardMoney = 132000},
         [11111] = {rewardItems = {{32857, 1}}},
         [11113] = {rewardItems = {{32862, 1}}},
