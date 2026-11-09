@@ -1703,6 +1703,14 @@ ns.Overrides.wowhead = {
                 "out of that cave fast enough with this bum leg of mine.",
             rewardChoices = {{6177, 1}, {10550, 1}},
         },
+        [313] = {
+            description = "Driving a Siege Engine isn't for everyone. It takes an iron grip and nerves of " ..
+                "steel...lucky I have both! How about you? How's your mettle? Want to prove it to " ..
+                "me?\n\nWell...I'm looking to make my engine, Trollplow, a little more cozy. How about " ..
+                "you get me a heap of Wendigo Manes from the Grizzled Den, west of Kharanos. Those manes " ..
+                "would make a great rug for Trollplow's inside deck!",
+            rewardMoney = 175,
+        },
         [315] = {
             description = "I'm on a quest, a quest to make the perfect stout. I know I can do it -- " ..
                 "brewing's in my blood. I just need to find the right recipe...\n\nThe Frostmane trolls " ..
@@ -2916,6 +2924,12 @@ ns.Overrides.wowhead = {
                 "What I need is a scout.\n\nCheck the cove just north of Booty Bay along the Savage Coast " ..
                 "and see what you find.",
             rewardMoney = 4000,
+        },
+        [597] = {
+            description = "The map shows Booty Bay with a red \"X\" drawn precisely at the spot at which " ..
+                "you are standing.\n\nThe scribbled text reads:\n\n\"You men are to secure a camp at this " ..
+                "location and keep quiet. Wait for the signal from the southern command post before " ..
+                "attacking. If anyone approaches you, kill them.\"",
         },
         [598] = {
             description = "Now that you have gathered Bloodscalp trophies, I have another task for you. " ..
@@ -4143,6 +4157,15 @@ ns.Overrides.wowhead = {
                 "rats.\n\nYou can't call yourself a seasoned adventurer until you've spent some time " ..
                 "killing rats! Haw!",
             rewardItems = {{5487, 1}, {5478, 5}, {10919, 1}},
+        },
+        [865] = {
+            description = "The raptors of the Barrens are smarter than raptors in other lands. And I " ..
+                "think all that smarts is hiding in their horns! If so, then I could grind their horns " ..
+                "into powder and use it to make \"smart drinks.\" I could sell them for a " ..
+                "fortune!!!\n\nAnd you can help me. Find me intact raptor horns from sunscale " ..
+                "scytheclaws. They roam in the southern Barrens, and in the northern Barrens near the " ..
+                "border of Ashenvale Forest.",
+            rewardItems = {{5342, 5}, {5343, 1}},
         },
         [866] = {
             description = "The herbs of the Barrens are not quite like herbs in other lands. Their " ..
@@ -5899,6 +5922,21 @@ ns.Overrides.wowhead = {
                 "knows Revilgaz's business, it's Revilgaz.\n\nYou'll find him at the tavern across the " ..
                 "harbor, top floor.",
         },
+        [1182] = {
+            description = "See, the Venture Company shredders out in Lake Nazferiti (in northern " ..
+                "Stranglethorn) have been equipped with a new model fuel regulator. I was thinking that " ..
+                "Pozzik would be able to take advantage of it, if he could get some details. " ..
+                "Unfortunately, Cozzle, the foreman out there, appears to be a little more clever than I " ..
+                "gave him credit for.\n\nYou seem like you might have more luck finding the blueprints " ..
+                "though. I know he keeps them in his house, but they're almost certainly under lock and " ..
+                "key.",
+            rewardMoney = 4000,
+        },
+        [1183] = {
+            description = "You should be all set to go. Give Pozzik my regards and tell him that if he " ..
+                "ever needs anything, not to hesitate to ask. I'll be waiting for the news that he breaks " ..
+                "the track record soon!",
+        },
         [1186] = {
             description = "I'm going to be busy with working on integrating this new fuel regulator to " ..
                 "our racer designs, but if you'd like to help out the team some more, talk to Razzeric. " ..
@@ -6227,6 +6265,14 @@ ns.Overrides.wowhead = {
                 "beat!\n\nIt's quite incredible, and we must study it further. I kept a few samples of " ..
                 "the hearts acquired. Take them to my colleague, Apothecary Zinge. You will find her in " ..
                 "our headquarters in the Undercity.",
+        },
+        [1362] = {
+            description = "The Kolkar centaur live in Desolace, and their forces have spread into the " ..
+                "Barrens. This is a known fact and we have Horde agents dealing with them here.\n\nBut as " ..
+                "long as the centaur are strong in Desolace, they will always pose a threat. It is time " ..
+                "we rid ourselves of that threat.\n\nSpeak with Felgur Twocuts at Ghost Walker Post in " ..
+                "Desolace. He was sent to gather intelligence on the centaur. He will know how to best " ..
+                "deal with the Kolkar of Desolace.",
         },
         [1364] = {
             description = "Master Mazen's directions were quite clear: Deliver a very important essay to " ..
@@ -7315,6 +7361,14 @@ ns.Overrides.wowhead = {
                 "Macleod. If he finds you worthy, then Klannoc will lead you further down the warrior's " ..
                 "path.\n\nTo reach Fray Island, search for the sand bar shallows along the Merchant Coast.",
         },
+        [1719] = {
+            description = "If you want to learn from me, then you must first pass The Affray. It is a " ..
+                "challenge we on Fray Island like to offer rising warriors who think they're tough, and " ..
+                "if you can pass this test then I'll know you are.\n\nTo begin, walk into the middle of " ..
+                "that crowd yonder and step on the grate. That'll tell Twiggy Flathead you're ready, and " ..
+                "he'll send challengers against you.\n\nBeat all the challengers and he'll call out Big " ..
+                "Will. Kill Big Will, and return to me in the time we allow.",
+        },
         [1738] = {
             description = "In preparation for your coming, I used my sight to look over the world and " ..
                 "through the mists of time. I have found what it is you seek.\n\nIn the War of the " ..
@@ -7479,6 +7533,14 @@ ns.Overrides.wowhead = {
                 "Ragetotem 's trial? If so, then find Ruga in Camp Taurajo in the Barrens.\n\nHe awaits " ..
                 "those warriors who answer his call.",
         },
+        [1824] = {
+            description = "To pass this trial, you must travel south to the Field of Giants. There you " ..
+                "will find a host of crawling, insect creatures. They are new to the Barrens and I do not " ..
+                "like what they herald.\n\nBring me their still-twitching antennae, and waste no time, " ..
+                "<name>, for harvested antennae will not twitch for long. Bring me the antennae in the " ..
+                "time allowed, and you will pass the trial.",
+            rewardItems = {{7120, 1}},
+        },
         [1825] = {
             description = "Thun'grim Firegaze, an orc blacksmith of renown, has heard of your continued " ..
                 "deeds of valor in service of the Horde. He would like to fashion for you a suit of " ..
@@ -7515,6 +7577,7 @@ ns.Overrides.wowhead = {
         [1843] = {rewardItems = {{7129, 1}}},
         [1845] = {rewardItems = {{7130, 1}}},
         [1847] = {rewardItems = {{7132, 1}}},
+        [1848] = {rewardItems = {{7133, 1}}},
         [1859] = {
             description = "Lower your voice, <name>. Yeah, I know your name. Was told to keep an eye out " ..
                 "for an orc by your description.\n\nFrom what we've heard about you, you can handle " ..
@@ -7626,6 +7689,7 @@ ns.Overrides.wowhead = {
                 "Raynewood Retreat.\n\nWhen you have their hair, bring it to Kil'hala, a troll tailor at " ..
                 "the Crossroads in the Barrens. He will be expecting you, and will fashion your robes.",
         },
+        [1946] = {rewardChoices = {{7512, 1}, {9515, 1}}},
         [1947] = {
             description = "Now it is time for you to earn your mage's wand. To begin this quest, speak " ..
                 "with the human hermit Tabetha in Dustwallow Marsh. You will find her shack deep in the " ..
@@ -8980,6 +9044,14 @@ ns.Overrides.wowhead = {
                 "upstairs in the Hall of Mysteries. If you've never been there, it's in the Mystic Ward. " ..
                 "Good luck to ya, <name>.",
         },
+        [2998] = {
+            description = "Greetings, <brother/sister>. Duthorian Rall, one of our most influential " ..
+                "paladins, was speaking about you recently. I overheard him talking about how it was time " ..
+                "you be put to the test some... along with some very complimentary things about how well " ..
+                "you've performed thus far.\n\nIf I were you, I'd head to Stormwind and speak to him when " ..
+                "you have time. I'm sure he's in the Cathedral of Light--that's where he spends most of " ..
+                "his time.",
+        },
         [3000] = {
             description = "Hello, <name>. I know you're busy helping out the people of Azeroth, but when " ..
                 "you have the time, you should return to Ironforge and speak to one of the most respected " ..
@@ -9351,6 +9423,14 @@ ns.Overrides.wowhead = {
                 "cauldron. Their minds are twisted, working night and day to complete something called " ..
                 "Obsidion.\n\nHelp them, brother. It is the final wish of a dead man.\n\n-Dorius",
             rewardMoney = 14000,
+        },
+        [3369] = {
+            description = "This shard holds great secrets; it is the pure essence of the Emerald Dream. " ..
+                "However, what I see in this shard is not a dream; one would call this sort of a vision a " ..
+                "nightmare.\n\nI do not wish to alarm you, <name>, but I think it is best if you deliver " ..
+                "this shard into the hands of a wise druid as soon as you can.\n\nHamuul Runetotem on " ..
+                "Elder Rise is who you need to find. Head to Thunder Bluff. I cannot say more.",
+            rewardChoices = {{10657, 1}, {10658, 1}},
         },
         [3370] = {
             description = "This shard holds great secrets; it is the pure essence of the Emerald Dream. " ..
@@ -11624,6 +11704,16 @@ ns.Overrides.wowhead = {
                 "by the tent. With some luck, they'll ignore us and focus on the Scourge for vengeance.",
             rewardMoney = 8000,
         },
+        [5097] = {
+            description = "Through the use of a magical device known as a beacon torch, we can mark " ..
+                "targets of our choosing for future actions by our troops. To that end, we think the " ..
+                "Scourge are using Andorhal's watchtowers as a means to control their troop " ..
+                "movements.\n\nYour mission: breach Andorhal's defenses to plant beacons at all four " ..
+                "watchtowers. You'll need to be in the doorway of each tower to plant the beacon; it will " ..
+                "then proceed to mark the tower. There are only five charges on the beacon torch, so use " ..
+                "them wisely!",
+            rewardMoney = 8500,
+        },
         [5098] = {
             description = "Through the use of a magical device known as a beacon torch, we can mark " ..
                 "targets of our choosing for future actions by our troops. To that end, we think the " ..
@@ -11918,6 +12008,12 @@ ns.Overrides.wowhead = {
                 "north of Andorhal, and eliminate the cauldron lord there. It should have a key like the " ..
                 "last one did, allowing you into the cauldron. Use this bottle to obtain a sample from " ..
                 "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
+        },
+        [5226] = {
+            description = "You carefully close the spigot in the control panel, watching the cauldron's " ..
+                "putrid ichors drip into the empty bottle.\n\nWith the poison in hand, it is time to " ..
+                "return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+            rewardMoney = 9000,
         },
         [5228] = {
             description = "Within the lands of former Lordaeron are eight cauldrons - four in the west, " ..
@@ -15145,6 +15241,8 @@ ns.Overrides.wowhead = {
         [7864] = {rewardItems = {{19151, 1}}},
         [7865] = {rewardItems = {{19152, 1}}},
         [7866] = {rewardItems = {{19154, 1}}},
+        [7867] = {rewardItems = {{19155, 1}}},
+        [7868] = {rewardItems = {{19153, 1}}},
         [7907] = {
             description = "Now that you have gathered all of the Beast cards together into a deck, a " ..
                 "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
