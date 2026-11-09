@@ -1483,6 +1483,13 @@ ns.Overrides.wowhead = {
                 "weeks, if giving it up keeps me from having to face Sven and his wrath, then I do it " ..
                 "willingly!",
         },
+        [269] = {
+            description = "Go to the city of Stormwind and speak with Bishop Farthing in the Cathedral of " ..
+                "Light. Give him Jitters' journal and tell him you mean to face Morbent Fel.\n\nAlthough " ..
+                "Stormwind has forsaken Darkshire, Farthing is a kind soul and very wise. He may help you " ..
+                "on your quest to save us.\n\nYour mission is perilous, but hurry, <name>. With each " ..
+                "passing hour, the shadows of Duskwood grow ever darker.",
+        },
         [270] = {
             description = "Years ago, the Third Fleet of Kul'Tiras sunk along the coasts of The Wetlands, " ..
                 "an expanse of marsh north of the Dwarven kingdom of Ironforge. Aboard one ship was a " ..
@@ -2142,6 +2149,13 @@ ns.Overrides.wowhead = {
                 "machine is almost complete but we are in dire need of some Restabilization Cogs and " ..
                 "Gyromechanic Gears. Retrieve some from the leper gnomes out front of Gnomeregan for us.",
             rewardChoices = {{3152, 1}, {3153, 1}},
+        },
+        [413] = {
+            description = "I'd like my brother Wellart to try my new Shimmer Stout. He's a Mountaineer " ..
+                "stationed in the southern guard tower, one of two towers on the border to Loch " ..
+                "Modan.\n\nHe may not be a brewer like the rest of us Barleybrews, but he loves his " ..
+                "drinks and I know he'll like this one.\n\nCan you bring him this Barrel of Shimmer Stout " ..
+                "for me?",
         },
         [414] = {
             description = "I've been drinking more of that Shimmer Stout my brother made - it's great " ..
@@ -7353,6 +7367,11 @@ ns.Overrides.wowhead = {
                 "speak with Takar the Seer. You will find him in the Barrens of Kalimdor near Camp " ..
                 "Taurajo.",
         },
+        [1717] = {
+            description = "<name>! Didn't expect to see you around these parts, but I was instructed to " ..
+                "keep an eye out for you.\n\nIt's past time you got some more training, so you should " ..
+                "stop in to see Gakin the next time you're in Stormwind. He'll be waiting for you.",
+        },
         [1718] = {
             description = "Your renown as a warrior grows, <name>. Now it is time to pit yourself against " ..
                 "your peers and see where you stand.\n\nThere is an island off the coast of the Barrens, " ..
@@ -9744,6 +9763,7 @@ ns.Overrides.wowhead = {
                 "I have need of your services again, <name>.",
             rewardMoney = 6000,
         },
+        [3564] = {description = "Here... take... <hic> this to Jediga. Good luck to ya!", rewardMoney = 7500},
         [3565] = {
             description = "What is it? Oh yes, your payment. Of course.\n\nTake this and be off with you. " ..
                 "I'm sure Jediga is awaiting oh so patiently for your return.",
@@ -11446,6 +11466,15 @@ ns.Overrides.wowhead = {
                 "got way too much work to do. Get going, they need these reports as soon as possible!",
             rewardChoices = {{15858, 1}, {15859, 1}},
             rewardMoney = 18000,
+        },
+        [4986] = {
+            description = "The lifeless hand of the tauren druid clutches a surprisingly healthy looking " ..
+                "oaken branch. Examining the branch reveals glyphs of a druidic nature carved into the " ..
+                "bark.\n\nAs you grasp the branch, you notice it is warm to the touch, more than it " ..
+                "should be. The image of the Teldrassil tree enters your mind - Darnassus specifically - " ..
+                "and the words \"Cenarion Circle\" are on the tip of your tongue. It would appear that " ..
+                "the suggestion of where to take the branch has been placed within it.",
+            rewardItems = {{15804, 1}},
         },
         [4987] = {
             description = "The lifeless hand of the tauren druid clutches a surprisingly healthy looking " ..
@@ -14168,6 +14197,14 @@ ns.Overrides.wowhead = {
                 "They'll follow ye to the ends of the world!\n\nJust capture five of the little buggers " ..
                 "and bring em back here. We needs em alive.\n\nArrrrr...",
         },
+        [6681] = {
+            description = "<name>,\n\nRavenholdt has taken an interest in you, young thief. We have been " ..
+                "watching. Your style is a bit awkward but nothing we couldn't fix.\n\nShould you be " ..
+                "prepared to embark on a career as a disciple of Master Ravenholdt and member of the " ..
+                "Assassin's League, you have only to bring the Seal of Ravenholdt (attached to this " ..
+                "letter) to Ravenholdt Manor.\n\nYour first task is to find the manor, hidden away in the " ..
+                "hills of Hillsbrad and demonstrate your cunning.\n\nRegards,\n\nFahrad",
+        },
         [6721] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
                 "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
@@ -15134,6 +15171,10 @@ ns.Overrides.wowhead = {
             description = "The old feeling returns. The welcome pangs of victory reverberate throughout " ..
                 "your being. Before you lies the monolithic, battle scarred head of Nefarian. Return it " ..
                 "to your Warchief, champion.",
+        },
+        [7784] = {
+            description = "Seek out High Overlord Saurfang in the Valley of Strength.",
+            rewardChoices = {{19383, 1}, {19366, 1}, {19384, 1}},
         },
         [7785] = {
             description = "Examine the vessel of his rebirth, mortal. It is from this that the Windseeker " ..

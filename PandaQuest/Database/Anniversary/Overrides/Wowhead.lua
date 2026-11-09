@@ -1828,6 +1828,14 @@ ns.Overrides.wowhead = {
                 "<name>. The nobles can think they rule the city all they want, but some things remain " ..
                 "out of their hands.",
         },
+        [395] = {
+            description = "Ah, I almost forgot. Alexston came while you were away, he wished to speak " ..
+                "with you. No doubt he wishes to report the goings-on of the Defias Brotherhood to the " ..
+                "nobles.\n\nA bit of advice, <name>: if anyone should ask, I would provide all details " ..
+                "but that it was your hand that slew Lescovar. Trust me. I am... acquainted... with the " ..
+                "ways of such things.\n\nAnd as far as Trias goes, well, speak to no one of him... " ..
+                "ever... if you can help it.",
+        },
         [396] = {
             description = "I have prepared a report for the King. I believe you should be the one to " ..
                 "deliver it to him, along with an account of your findings. Do not worry, there is no " ..
@@ -3272,6 +3280,14 @@ ns.Overrides.wowhead = {
                 "our lands. Their camps can be found to the west of here. Look for the brambles and you " ..
                 "will find them. Today we drive them from Durotar, tomorrow, perhaps from all of Kalimdor.",
             rewardMoney = 250,
+        },
+        [838] = {
+            description = "On the island of Caer Darrow lies Scholomance - a school that serves as a " ..
+                "stronghold for the Scourge. Our enemy dwells within, safely allowed to pursue research " ..
+                "that strengthens their power. A door bars the way, and try as we might no entry is to be " ..
+                "had without a proper key.\n\nApothecary Dithers is well versed on Scholomance, and has " ..
+                "an idea how to obtain a key. You have proved your value to me as someone who can get " ..
+                "things done; I now entrust this task to you. Speak with him on this matter.",
         },
         [840] = {
             description = "Hmm, you look pretty strong.\n\nListen, my good friend Kargal needs some new " ..
@@ -5073,6 +5089,14 @@ ns.Overrides.wowhead = {
                 "than they! Brave their assaults and bring me a stack of their singed scales as " ..
                 "proof.\n\nDo this, and then I will teach you.",
             rewardXP = 630,
+        },
+        [1499] = {
+            description = "Zureetha has been sending novices like yourself to help cull the numbers of " ..
+                "the creatures in the cave near where you fought the vile familiars.\n\nI think it would " ..
+                "be good for you to gain experience by assisting her. Be sure to tell her that you " ..
+                "assisted with the imp problem, she'll probably have a reward for you.",
+            rewardChoices = {{4925, 1}, {5778, 1}},
+            rewardXP = 10,
         },
         [1501] = {
             description = "So few warlocks remain... We risk much, but the risks are warranted. You must " ..
@@ -9245,6 +9269,14 @@ ns.Overrides.wowhead = {
                 "currently at, far in the eastern part of the Eastern Plaguelands.",
             rewardMoney = 4000,
         },
+        [6031] = {
+            description = "In Timbermaw, we are content. We do not like strangers. This is good for us, " ..
+                "but it is bad for trade.\n\nNot long ago, a rare night elf friend came to Timbermaw and " ..
+                "she wore a runecloth cloak. runecloth is rare among us, but the cloak was so fine my " ..
+                "people want me to make more runecloth clothing.\n\nWill you bring me runecloth? If you " ..
+                "bring me enough, then I will give you something in trade.",
+            rewardChoices = {{15822, 1}, {15823, 1}},
+        },
         [6032] = {
             description = "Although the people of Timbermaw delight in the feel of runecloth, it is not " ..
                 "sacred to us. But mooncloth is sacred.\n\nBring me a small supply of this holy cloth, " ..
@@ -10587,6 +10619,16 @@ ns.Overrides.wowhead = {
                 "kill quite a few dredge crushers to keep them at bay, but we cannot leave the safety of " ..
                 "our supply lines to chance.",
             rewardMoney = 17000,
+        },
+        [8282] = {
+            description = "Where am I? Where's my bag? *gasp* I must've lost it while fleeing from " ..
+                "Deathclasp, the giant scorpid. In my rush to escape I walked right into a nest of " ..
+                "stonelash flayers.\n\nThe satchel I was carrying had all sorts of rare reagents in it. " ..
+                "Without them, me and Beetix won't be able to make the potions that Cenarion Hold needs. " ..
+                "I'm too weak to get up yet, but I can make it worth your while if you bring back my " ..
+                "reagents.\n\nI ran into Deathclasp in the southern mountain range, behind Bronzebeard's " ..
+                "camp.",
+            rewardChoices = {{13452, 2}, {13447, 2}},
         },
         [8285] = {
             description = "There are rumors of a Twilight's Hammer member called Ortell having deserted " ..
@@ -12375,6 +12417,15 @@ ns.Overrides.wowhead = {
                 "the befouled staff upon the holy ground and prepare for an entity of immense power to " ..
                 "break from within... Defeat the demonic being that controls the staff and return to me.",
             rewardItems = {{22631, 1}},
+        },
+        [9260] = {
+            description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
+                "you will step up to defend Stormwind from these accursed invaders?\n\nThere are strange " ..
+                "runic circles outside, glowing with the same energy that surrounds the undead and the " ..
+                "Necropolis above. They have significance, I'm certain, and I want you to find out what. " ..
+                "Thin the numbers of those aberrations while you're at it; bring me proof of their death " ..
+                "along with your results, and I will reward you. Go!",
+            rewardMoney = 100,
         },
         [9262] = {
             description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
