@@ -8850,6 +8850,13 @@ ns.Overrides.wowhead = {
         [5884] = {rewardItems = {{11516, 2}}},
         [5885] = {rewardItems = {{11516, 2}}},
         [5888] = {rewardItems = {{11516, 2}}, rewardXP = 6100},
+        [5902] = {
+            description = "Now that we have plenty of termites, take this steel reinforced barrel to the " ..
+                "Northridge Lumber Mill south of Hearthglen--you'll find it to the west of the road that " ..
+                "leads you up to the town.\n\nOnce there, place the barrel in the center of the lumber " ..
+                "mill; someplace high, like on a crate or something.\n\nAfter you open it, the rest " ..
+                "should take care of itself. Just come back here and I'll reward you for helping me.",
+        },
         [5927] = {
             description = "Excuse me, friend...\n\nIt has come to my attention that Turak Runetotem has " ..
                 "put out word that he wishes to speak with you. It seems that your training as a druid is " ..
@@ -9779,6 +9786,11 @@ ns.Overrides.wowhead = {
                 "to me so that its power may be released safely back into the wilds...",
             rewardItems = {{18491, 1}},
             rewardMoney = 17000,
+        },
+        [7491] = {
+            description = "Overlord Runthak awaits your arrival in the Valley of Strength.\n\n< Thrall " ..
+                "salutes you.>\n\nDo not keep your public waiting, hero.",
+            rewardChoices = {{18406, 1}, {18403, 1}, {18404, 1}},
         },
         [7492] = {
             description = "Talo Thornhoof, a Tauren elder in Feralas, sends a request for aid. He offered " ..
@@ -12665,6 +12677,17 @@ ns.Overrides.wowhead = {
                 "really wish to speak with for such wisdom is nearby. At the northern edge of the " ..
                 "precipice, Susurrus awaits you. It is from him that you will gain understanding.",
             rewardXP = 610,
+        },
+        [9554] = {
+            description = "While my brothers and sisters of the other elements have demanded that you " ..
+                "perform various tasks, I will not ask anything further of you. I think that you have " ..
+                "done enough to 'atone' for the accident of your ship falling to this place from my " ..
+                "skies. I can see that you have all the wisdom within you already to use the element of " ..
+                "air wisely.\n\nTake this portion of my being back to Farseer Nobundo so that he might " ..
+                "help you fashion your totem. And when you're ready, I will fly you back down to the " ..
+                "Exodar.",
+            rewardItems = {{5178, 1}},
+            rewardXP = 3050,
         },
         [9555] = {
             description = "I am thankful that you have chosen the difficult path of the shaman. Few " ..
