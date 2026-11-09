@@ -3881,6 +3881,16 @@ ns.Overrides.wowhead = {
                 "shall reward you. You can find them on the islands south of here.",
             rewardMoney = 225,
         },
+        [818] = {
+            description = "Although my eyes fail me, I still can see clearly enough. More often I must " ..
+                "rely on my alchemical skills to aid me in magics that once came easily. But I refuse to " ..
+                "take on an apprentice--no troll or orc worthy enough has ever come forward.\n\nAre you " ..
+                "worthy? Yes, of course you are... of course you think you are.\n\nI need a few things. " ..
+                "Will you get them for me?\n\nI need intact makrura eyes, and vials of crawler mucus. You " ..
+                "can find them on any makrura or crawler in Durotar. We shall speak again soon.",
+            rewardItems = {{4941, 10}},
+            rewardMoney = 175,
+        },
         [819] = {
             description = "A small placard on one of the ends of the keg says,\n\n\"Chen Stormstout " ..
                 "-\n\nMay your spirit be raised and always raise your spirits.\"",

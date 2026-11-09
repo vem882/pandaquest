@@ -1966,6 +1966,12 @@ ns.Overrides.wowhead = {
             rewardItems = {{3454, 1}},
             rewardMoney = 600,
         },
+        [438] = {
+            description = "<name>, we've discovered a new hive for the Scourge: the Decrepit Ferry. The " ..
+                "ferry lies east of the Sepulcher, and is heavily patrolled by rot hides and other " ..
+                "undead.\n\nThere must be a reason for the Scourge's occupation of the area. Go to the " ..
+                "Decrepit Ferry and find out why the Scourge are there.",
+        },
         [439] = {
             description = "Among the corpses a hand protrudes, unwrapped. It is the hand of a woman, " ..
                 "pockmarked from the plague but relatively fresh.\n\nOn the hand is a ring. Removing the " ..
@@ -2345,6 +2351,15 @@ ns.Overrides.wowhead = {
                 "Grel'borg the Miser, found the tiara and now wanders the Ruins of Alterac searching for " ..
                 "more treasures.\n\nWe would have you acquire the tiara for us.",
             rewardMoney = 15000,
+        },
+        [544] = {
+            description = "I came to Tarren Mill to research, but now must resolve a crisis. You see, " ..
+                "four Forsaken fled the Undercity a few months ago. They turned their backs on their " ..
+                "brethren, but what's worse...they stole from the Dark Lady.\n\nThese thieves broke into " ..
+                "a secure vault and stole four artifacts, items our apothecaries required in certain " ..
+                "studies. Sylvanas would have these artifacts returned.\n\nThe thieves fled the Undercity " ..
+                "to Dalaran, and those wizards quarantined them in the Lordamere Internment Camp.",
+            rewardMoney = 7000,
         },
         [547] = {
             description = "High Executor Darthalia sent me to keep watch of Dun Garok from a distance. I " ..
@@ -2782,6 +2797,13 @@ ns.Overrides.wowhead = {
                 "need some gems the Boulderfist shaman have taken a liking to. They took 'em from the " ..
                 "tower, but they're not gonna stay in their possession for long.\n\nGet one of them gems " ..
                 "an' bring 'em to Kryten--he knows the spell to enchant 'em so they'll work as a key.",
+        },
+        [695] = {
+            description = "Here you are, <name>. The gem only needs to be pressed against one of the " ..
+                "pedestals near the base of the tower to activate its defenses. Use it when you're ready " ..
+                "to enter the tower and find Trelane's remaining items.\n\nGood luck to you. I'll be " ..
+                "awaiting your return here at the camp. Oh, and speak to Skuerto before you leave. He'll " ..
+                "give you the rest of the details you'll need.",
         },
         [698] = {
             description = "I'm working on getting some supplies together for our outpost near the beach " ..
@@ -16672,6 +16694,14 @@ ns.Overrides.wowhead = {
                 "break.\n\n<Mehlar crushes the scourgestones into a pile of rubble.>\n\nTake these " ..
                 "fragments to the Banshee Queen, Lady Sylvanas Windrunner, at her throne in Undercity. " ..
                 "With her lies the knowledge to turn these remains into a weapon against the Scourge.",
+        },
+        [10593] = {
+            description = "If you wish to turn these stones into a weapon to fight the Scourge, you must " ..
+                "acquire something equally vile to fortify them.\n\nAn ancient evil lies hidden at the " ..
+                "bottom of the Temple of Atal'Hakkar in the Swamp of Sorrows. Release the creature there " ..
+                "and destroy him, taking only a small part of his body back to Mehlar Dawnblade. My " ..
+                "guards will deliver the scourgestone fragments to Mehlar.",
+            rewardItems = {{30696, 1}},
         },
         [10596] = {
             description = "The fortress of Legion Hold is your target. You'll have no reinforcements, so " ..

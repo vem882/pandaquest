@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.433] - 2026-11-09
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 828 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,583 quests, 28 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,639 quests, 48 NPCs, 2 objects
+- npc 4080 - Kaela Shadowspear - updated
+  - coordinates: 1 spawn point added in Stonetalon Mountains
+
 ## [0.2.432] - 2026-11-09
 
 Data from the PandaQuest portal.
@@ -93,13 +103,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,606 quests, 48 NPCs, 2 objects
 - npc 76357 - Alterac Brew-Hound - updated
   - NPC level added (81-83)
-
-## [0.2.422] - 2026-11-08
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,559 quests, 27 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,605 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 
