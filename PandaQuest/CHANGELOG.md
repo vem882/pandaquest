@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.449] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 851 NPCs, 5 objects
+- database - Classic Era: data from the PandaQuest portal: 2,641 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,738 quests, 48 NPCs, 2 objects
+- quest 29086 - Competition Schmompetition - updated
+  - description added
+- object 142708 - Venom Bottle - updated
+  - coordinates: 1 spawn point added in The Hinterlands
+- object 207189 - Vrykul Archaeology Find - updated
+  - coordinates: 40 spawn points added in Howling Fjord
+  - coordinates: 39 spawn points added in Icecrown
+  - coordinates: 31 spawn points added in The Storm Peaks
+  - coordinates: 10 spawn points added in Grizzly Hills
+- object 213765 - Tablet of Ren Yun - updated
+  - coordinates: 1 spawn point added in Kun-Lai Summit
+
 ## [0.2.448] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -107,25 +126,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Tanaris
 - npc 13278 - Duke Hydraxis - updated
   - coordinates: 2 spawn points added in Azshara
-
-## [0.2.438] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 837 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,596 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,654 quests, 48 NPCs, 2 objects
-- npc 1426 - Riverpaw Miner - updated
-  - coordinates: 15 spawn points added in Westfall
-- npc 3583 - Barithras Moonshade - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 68005 - The Jade Warlord - updated
-  - NPC level added (90)
-- npc 68751 - Magister Brasael - updated
-  - NPC title added (Legacy Justice Quartermaster)
-  - NPC level added (90)
-- npc 72536 - Trial Master Rotun - updated
-  - NPC title added (Proving Grounds Instructor)
 
 ## [0.2.412]
 

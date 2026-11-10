@@ -2094,6 +2094,16 @@ ns.Overrides.wowhead = {
                 "this land.\n\nSeek out Tarindrella and see what business she tends to in our grove. One " ..
                 "of the Sentinels reported seeing her to the southwest of Aldrassil.",
         },
+        [459] = {
+            description = "Something evil is brewing in the forests of Teldrassil. Look long the hills to " ..
+                "where the peaceful furbolgs used to dwell. They have deserted their homes and are " ..
+                "amassing under the name of the Gnarlpine tribe.\n\nOnly the corruption of wicked Fel " ..
+                "Moss could cause such a transformation. The grells and grellkin have infested the area " ..
+                "and are threatening the residents of Shadowglen.\n\nEngage these grells and grellkin, " ..
+                "<name>, and see if they are indeed caught under the enchantment of the wicked Fel Moss.",
+            rewardChoices = {{5398, 1}, {5399, 1}, {11190, 1}},
+            rewardItems = {{961, 3}},
+        },
         [460] = {
             description = "You don't look like a rot hide. Good. I had lost hope...\n\nMy name is Alaric, " ..
                 "and I was once Thule's head servant and bodyguard. He used his magic to \"protect\" me " ..
@@ -2307,6 +2317,13 @@ ns.Overrides.wowhead = {
                 "and Southshore. Collect for me 6 Mudsnout Blossoms from the field for my next elixir.",
             rewardItems = {{2459, 3}, {929, 5}},
             rewardMoney = 2500,
+        },
+        [513] = {
+            description = "Just when I thought another day was going to pass devoid of any joy, you " ..
+                "brought me those marvelous Mudsnout Blossoms.\n\nFirst I will mix them down into a fine " ..
+                "composite. We'll then need Master Apothecary Faranell in the Undercity to apply his " ..
+                "colloid of decay to it and then we'll be ready for some good fun indeed!\n\nHere, take " ..
+                "this Mudsnout Composite and run it off to Master Faranell at once, <name>.",
         },
         [514] = {
             description = "I have a colleague in Ironforge who may be able to help decrypt this letter. " ..
@@ -3368,6 +3385,15 @@ ns.Overrides.wowhead = {
                 "territories, slay their warriors and collect centaur bracers. Return when you have a " ..
                 "heap of bracers and the Horde will reward you well.",
             rewardChoices = {{5346, 1}, {5344, 1}, {5345, 1}},
+        },
+        [858] = {
+            description = "I don't suppose Sputtervalve sent you? I'm in a bind here. I hopped in without " ..
+                "realizing that I need a key to unlock the shredder's movement column. One of the other " ..
+                "shredder operators asked me if everything was okay, and I panicked! Instead of telling " ..
+                "him that I was missing my key, I told him there was some sort of mechanical " ..
+                "problem.\n\nWe need to get out of here on the double! Go up to the control room at the " ..
+                "top of the derrick, the supervisor should have a key for this shredder.\n\nHelp me out " ..
+                "here!",
         },
         [862] = {
             description = "A <class> like you must get pretty hungry out here in The Barrens. Me, I'm " ..
@@ -4637,6 +4663,14 @@ ns.Overrides.wowhead = {
                 "looking into any Defias activity for me and he'll help you out with any information he " ..
                 "can.",
         },
+        [1244] = {
+            description = "Defias activity? Well, there's always some activity; even if they keep to " ..
+                "themselves we consider them a threat.\n\nBut now that I think about it, there was a " ..
+                "recent sighting that seemed odd. It must have been a couple weeks ago, but some of their " ..
+                "agents had gathered around Addle's Stead. From the report, I'd guessed something big " ..
+                "went down.\n\nWhy don't you check there first and bring me back anything you " ..
+                "find?\n\nThe farmstead is south of the road from Westfall just as you enter Duskwood.",
+        },
         [1245] = {
             description = "Whoa, this looks way too complex to be something to just lead you astray. I " ..
                 "shouldn't even be looking at this stuff. Take it to Trias--he'll be able to make sense " ..
@@ -5254,6 +5288,15 @@ ns.Overrides.wowhead = {
                 "She is along the eastern coast, south of the Southfury River and Ratchet. You will find " ..
                 "her there at her fishing hut. Good luck to you, <name>.",
             rewardXP = 780,
+        },
+        [1530] = {
+            description = "If there is one lesson you must learn of water, it is this: water means " ..
+                "rebirth.\n\nIts power flows, erodes, and makes clean all manner of things. You will find " ..
+                "its ability to heal and replenish incomparable, but only when it is pure.\n\nWhen you " ..
+                "understand that water, when polluted, can devastate all that it touches, you will " ..
+                "appreciate how vital a resource it is.\n\nIf you wish the water sapta, find Brine deep " ..
+                "in Southern Barrens. Her home is continually molested by the quilboar there.",
+            rewardXP = 390,
         },
         [1531] = {
             description = "You be makin' headway now, mon. Your be ready to prove yerself worthy of the " ..
@@ -6836,6 +6879,14 @@ ns.Overrides.wowhead = {
                 "the horde may benefit from this strength of spirit as well.\n\nHere is the muisek, " ..
                 "<name>. Kill 8 sprite darters or sprite dragons, and capture their muisek. They may be " ..
                 "found to the west of here.",
+        },
+        [3127] = {
+            description = "The last task I will require of you is to travel to the northwest and find the " ..
+                "final enemy.\n\nThe mountain giants left the mountains to aid the night elves when the " ..
+                "burning legion appeared in the world. You will know them by their massive size and the " ..
+                "way the ground begins to shake as you travel along their rocky terrain.\n\nI am eager to " ..
+                "harness power of that size. Kill 7 mountain giants, then use the muisek vessel to " ..
+                "capture their powerful muisek.",
         },
         [3128] = {
             description = "I will need certain materials to complete my endeavor... You may do this " ..
@@ -10526,8 +10577,18 @@ ns.Overrides.wowhead = {
                 "difficult... but your success will assure you of acquiring a robe for yourself.",
             rewardItems = {{20033, 1}},
         },
+        [8078] = {
+            description = "The ultimate vengeance waits within Zul'Gurub. Hakkar must not rise again. " ..
+                "Hakkar destroyed the Gurubashi Empire from within. No sacrifice was enough. The trolls " ..
+                "are a shadow of former glories. I know this is because of Hakkar.\n\nBecome the " ..
+                "vindicator you were meant to be. Wreak havoc on the minions of evil. Zul'Gurub must " ..
+                "taste Zandalar vengeance. Bring me proof in the Paragons of Power. You will receive the " ..
+                "vindicator's belt. You will receive real power.\n\nGo.",
+            rewardItems = {{19823, 1}},
+        },
         [8104] = {rewardItems = {{19601, 1}}},
         [8108] = {rewardItems = {{19604, 1}}},
+        [8110] = {rewardItems = {{19610, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
         [8144] = {rewardItems = {{19617, 1}}},
         [8146] = {rewardItems = {{19619, 1}}},
@@ -12879,6 +12940,13 @@ ns.Overrides.wowhead = {
                 "spindleweb spider, preferably after killing them.",
             rewardItems = {{7509, 1}},
         },
+        [9489] = {
+            description = "<name>, it is good you are here. The Scourge attack our city with such endless " ..
+                "hate that I fear the morale of our guard is breaking.\n\nHurry to the Dead Scar just " ..
+                "south of the city where Jaela and her rangers stand ready. Fill them with the power of " ..
+                "the Light through your blessings.",
+            rewardItems = {{23924, 1}},
+        },
         [9491] = {
             description = "A rich, and I mean filthy rich, merchant came through here yesterday talking " ..
                 "about some ring of \"immense archeological importance\" locked in one of the countless " ..
@@ -13850,6 +13918,14 @@ ns.Overrides.wowhead = {
                 "get from the hydra in the larger lakes.",
             rewardMoney = 27000,
         },
+        [9775] = {
+            description = "Shadow Hunter Denjai will no doubt expect to receive a report about my " ..
+                "progress in establishing our outpost. I've prepared a short summary of what we've " ..
+                "accomplished here already, but with the loss of Scout Jyoba, I can't spare a runner to " ..
+                "take the report to Denjai's base of Zabra'jin to the west.\n\nIf you're headed that way, " ..
+                "would you mind bringing this to him? Shadow Hunter Denjai can be a little intimidating " ..
+                "at first, but once you get used to him, he's not so bad.",
+        },
         [9776] = {
             description = "As you know, many of Telredor's inhabitants are refugees from the war that " ..
                 "decimated the draenei. It is my goal to maintain Telredor as a safe haven for all of our " ..
@@ -14284,6 +14360,13 @@ ns.Overrides.wowhead = {
                 "manifested.",
             rewardChoices = {{25620, 1}, {25621, 1}, {31770, 1}},
             rewardMoney = 31000,
+        },
+        [9849] = {
+            description = "< Gordawg breaks off a piece of ebon rock from his back.>\n\nYou are granted a " ..
+                "piece of the fury of the earth. Take the boulder of Gordawg and hurl it at the poison " ..
+                "rock. Shatter their shells to discover the truth. Destroy the minions of the usurper and " ..
+                "return to Gordawg with the name.\n\nYou find the shattered elements at the edge of the " ..
+                "world. Southwest.",
         },
         [9853] = {
             description = "Gurok must be summoned. You summon Gurok and you destroy.\n\nYou must go to " ..
@@ -15786,6 +15869,16 @@ ns.Overrides.wowhead = {
                 "there that they don't seem to care about.\n\nI want you to get in there and get me a lot " ..
                 "of those smaller fel reaver parts!",
             rewardMoney = 41000,
+        },
+        [10236] = {
+            description = "I can't believe I left Booty Bay to come to Outland. My cousin Screed Luckheed " ..
+                "promised me I would make a fortune, but instead he flew off in his zeppelin and left me " ..
+                "here to try to scrape a living out of this mine.\n\nHow am I suppose to make a living " ..
+                "here with helboars and demons and fel orcs attacking all the time? My shredder here was " ..
+                "broken yesterday and the parts I need to fix it were stolen by fel orcs. They took the " ..
+                "parts into the fissure to the southwest and may have dropped them there.",
+            rewardItems = {{23424, 5}},
+            rewardMoney = 20000,
         },
         [10237] = {
             description = "<name>, you have to get word back to Area 52 immediately! Hurry!\n\nTell the " ..
@@ -18397,6 +18490,13 @@ ns.Overrides.wowhead = {
                 "fashioned a trap from dragon fire, and if you're clever enough, you can use it to kill " ..
                 "even a gronn.\n\nJust hurry, take the trap to Rexxar. My thirst for revenge must be " ..
                 "quenched.",
+        },
+        [10788] = {
+            description = "One of your masters, Talionia, in Silvermoon City has sent a summons for you, " ..
+                "<name>. I'm certain it is time you learned to summon and control a more powerful demon, " ..
+                "so I suggest you see her at once. I understand Talionia is found in The Sanctum, a cozy " ..
+                "little den of evil found along Murder Row.",
+            rewardXP = 85,
         },
         [10790] = {
             description = "You are a long way from home, <race>. Perhaps it is time you returned to learn " ..

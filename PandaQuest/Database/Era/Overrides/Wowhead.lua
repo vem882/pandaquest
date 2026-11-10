@@ -1950,6 +1950,14 @@ ns.Overrides.wowhead = {
                 "them down - we can't let them wander our lands unchallenged.",
             rewardMoney = 150,
         },
+        [362] = {
+            description = "Devlin Agamand was the younger of two sons in the Agamand family, and in life " ..
+                "the two could not be more different. Thurman was tall and gentle while his younger " ..
+                "brother was weak and sharp tongued.\n\nWhen Agamand Mills fell to the Plague, I was not " ..
+                "surprised to hear that Devlin was quick to succumb. His mad chattering can still be " ..
+                "heard near the road leading to the Agamand Mills.\n\nI'm collecting the remains of the " ..
+                "Agamands, and I want poor Devlin. Find him, destroy him, and bring me his bones.",
+        },
         [363] = {
             description = "About time you woke up. We were ready to toss you into the fire with the " ..
                 "others, but it looks like you made it.\n\nI am Mordo, the caretaker of the crypt of " ..
@@ -2136,6 +2144,15 @@ ns.Overrides.wowhead = {
                 "to you. For your efforts, I have prepared a special gift for you. Speak with my servant, " ..
                 "Zggi, and claim your reward.",
             rewardItems = {{3556, 1}},
+        },
+        [400] = {
+            description = "Beldin Steelgrill owns the local mechanic shop, and he's the best siege engine " ..
+                "tech there is! But he's not forgiving to his tools. I swear he almost breaks more " ..
+                "arclight spanners than we can supply him with!\n\nWe just filled his last order for " ..
+                "tools. If you deliver it to him I'm sure he'll make it worth the effort.\n\nHis shop, " ..
+                "Steelgrill's Depot, is just northeast of Kharanos. And it's a local haunt for veteran " ..
+                "siege engine pilots, so keep your ears open for opportunities while you're there.",
+            rewardMoney = 25,
         },
         [401] = {
             description = "I'm almost finished translating that note. If you come back in a few moments I " ..
@@ -2660,6 +2677,7 @@ ns.Overrides.wowhead = {
                 "order to undertake what is described in the document as an \"important mission against " ..
                 "Southshore.\"",
         },
+        [511] = {description = "One of the letters on this table is encrypted and inscrutable."},
         [512] = {
             description = "I fear the leadership behind the Syndicate is bent on Southshore's ruin. We " ..
                 "must strike hard at these leaders before their plans are realized.\n\nEnter the ruins of " ..
@@ -7695,6 +7713,14 @@ ns.Overrides.wowhead = {
                 "destroy the ju-ju heaps, <name>, before the flow of magic is forever altered.",
             rewardChoices = {{7508, 1}, {9513, 1}},
         },
+        [1886] = {
+            description = "If you wish to join the Deathstalkers, Lord Varimathras' elite guard, you will " ..
+                "have to prove your worth.\n\nI will not lie to you, <name>, this task could mean your " ..
+                "death.\n\nI have some things that need attending to. I require the personal effects of " ..
+                "Astor Hadren, a messenger who travels between Silverpine and the Undercity. I will leave " ..
+                "the method of procurement to your discretion.\n\nIt will be better for you if you know " ..
+                "less of the nature of this business. Succeed and I shall tell you more.",
+        },
         [1898] = {
             description = "The letter of introduction should be enough to convince Andron that you are " ..
                 "the messenger he's been waiting for. I've met Andron before, he doesn't quite have the " ..
@@ -11671,6 +11697,7 @@ ns.Overrides.wowhead = {
             objectivesText = {"Bring Storm Shadowhoof 's Marker to Melor Stonehoof in Thunder Bluff."},
             rewardItems = {{15704, 1}},
         },
+        [5060] = {rewardItems = {{13474, 1}, {13475, 1}}, rewardMoney = 25000},
         [5061] = {
             description = "You have completed the necessary lessons all young druids are taught before " ..
                 "they can adopt an aquatic aspect. Go now back to your trainer, Mathrengyl Bearwalker, in " ..
@@ -12014,6 +12041,13 @@ ns.Overrides.wowhead = {
             description = "A finer instrument of justice, Haleh could not have chosen. Read from the " ..
                 "catalogue of the wayward and be enlightened.\n\nShould you persist... should you do what " ..
                 "is asked of you... should you survive... a hero you will make.",
+        },
+        [5165] = {
+            description = "Now, you must return to Jaedenar. The braziers are more than likely spread " ..
+                "throughout Shadow Hold. Douse each of their flames and the protections the Council has " ..
+                "set up will fall for at least a short period of time. I will be waiting for that to " ..
+                "happen. When it does, I will look deep within the Hold and try to find out who the head " ..
+                "of this beast is. Then, and only then, will we see about attacking them directly.",
         },
         [5166] = {
             description = "The forging of a powerful breastplate to protect against the unrelenting " ..
