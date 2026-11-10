@@ -79,6 +79,7 @@ Map\NodeTooltip.lua
 Map\Pins.lua
 Map\Tooltips.lua
 Map\QuestPreview.lua
+Map\CorpseGuide.lua
 Nodes\Respawn.lua
 Nodes\Resources.lua
 Nodes\Professions.lua
