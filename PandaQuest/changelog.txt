@@ -1,3 +1,5 @@
+Ignore the empty community guide placeholder when checking game compatibility.
+
 - Show a world map guide from your ghost to your corpse.
 
 - Keep map pins out of the Leatrix Plus minimap button menu.

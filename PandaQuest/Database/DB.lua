@@ -72,12 +72,25 @@ local OVERRIDE_SETS = { "wowhead", "community", "portal" }
 -- community data came from until the hub wrote `game` into the file (2026-10-26); in another game it is
 -- set aside (ns.Overrides.foreignCommunity, kept, never applied) and DB.Load says so once in chat, so
 -- MoP's guides, respawns and nodes never land on another world (docs/13 section 9.3).
+-- The packaged placeholder has no game, content or upload acknowledgement.
+local function isCommunityPlaceholder(community)
+    if type(community.quests) ~= "table" or next(community.quests)
+        or type(community.npcs) ~= "table" or next(community.npcs) then
+        return false
+    end
+    for key in pairs(community) do
+        if key ~= "quests" and key ~= "npcs" then return false end
+    end
+    return true
+end
+
 local foreignCommunityGame                  -- the game a set-aside Community.lua was written for
 local saidForeignCommunity = false
 do
     local Overrides, Game = ns.Overrides, ns.Game
     local community = type(Overrides) == "table" and Overrides.community or nil
-    if type(community) == "table" and Game and Game.id and Game.id ~= Game.UNKNOWN then
+    if type(community) == "table" and not isCommunityPlaceholder(community)
+        and Game and Game.id and Game.id ~= Game.UNKNOWN then
         local written = type(community.game) == "string" and community.game or Game.MOP
         if written ~= Game.id then
             Overrides.foreignCommunity = community
