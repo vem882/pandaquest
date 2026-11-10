@@ -1270,6 +1270,15 @@ ns.Overrides.wowhead = {
                 "you have much traveling to do. And be swift!",
             rewardMoney = 15000,
         },
+        [213] = {
+            description = "He's done it this time! Bad enough that Gelriz's muscling out the moguls who " ..
+                "were appointed by the trade princes, now he tries to cut in on the most notorious " ..
+                "pirate!\n\nRevilgaz won't have it, and he's told me to take care of the problem in my " ..
+                "own way.\n\nMy way? Theft. The Venture Co. geologists near Lake Nazferiti are deeply " ..
+                "interested in those strange blue crystals they have been finding in the mines. Bring me " ..
+                "samples of the stone from their geologists, I don't care what you have to do to get them.",
+            rewardItems = {{4121, 1}},
+        },
         [216] = {
             description = "The Thistlefur furbolgs are threatening our expansion! Thistlefur Village to " ..
                 "our east blocks the way between us here and the Splintertree Post. It's a path that " ..
@@ -2974,6 +2983,14 @@ ns.Overrides.wowhead = {
                 "they don't have the run of the jungle.\n\nAnd... um... bring me those crystals as proof!",
             rewardChoices = {{5253, 1}, {4128, 1}},
         },
+        [603] = {
+            description = "The mage that is in possession of the Stone is amplifying its power through " ..
+                "some focal point... an altar of some sort. You should be able to disrupt it by " ..
+                "overpowering it.\n\nAs it happens, I know just the thing: an ancient dagger, another " ..
+                "troll relic. There's just one... little problem.\n\nYou see, I found the dagger while " ..
+                "researching in Stranglethorn, but I gave it to my willful daughter, Catelyn, who ran off " ..
+                "to Booty Bay to become a pirate.",
+        },
         [605] = {
             description = "The Singing Crystals are unique to Stranglethorn, and are very valuable to " ..
                 "certain parties. I can move those crystals, but the cursed Venture Company makes it hard " ..
@@ -4317,6 +4334,15 @@ ns.Overrides.wowhead = {
                 "the Crossroads. To reach there, take the road east out of Bloodhoof village. Enter the " ..
                 "Barrens, then turn north when the road forks. Continue north and you will find the " ..
                 "Crossroads.\n\nAnd do not leave the road, <name>, for the Barrens is a harsh land.",
+        },
+        [887] = {
+            description = "I sure wish Vice Admiral Grezzlik did a better job of keeping the seas safe " ..
+                "for our trading vessels. With all the gold the trade princes have poured into the Trade " ..
+                "Fleets, it ticks me off to see so many pirates running willy-nilly, raiding my ships and " ..
+                "stealing my goods!\n\nI heard that the Southsea Freebooters have set up a camp just " ..
+                "south of here. They've been a real thorn in my side and if Grezzlik won't take care of " ..
+                "them, well, maybe you can help me get rid of them.",
+            rewardMoney = 500,
         },
         [888] = {
             description = "While I'd like to recover all my goods, I'm sure that's not possible. Still, " ..
@@ -6927,6 +6953,13 @@ ns.Overrides.wowhead = {
                 "requesting a healing draught from the trolls at the Malaka'jin at the base of the " ..
                 "Stonetalon Mountains. We sent someone to get it, but they haven't returned yet.",
         },
+        [1511] = {
+            description = "I figured there might be another coming to get the draught, so I prepared it " ..
+                "anyways.\n\nHere you go, <name>. Mind you, you should only give half of it to him! That " ..
+                "will give him enough strength to move without bleeding himself dry. Wait a night, then " ..
+                "give him the other half.\n\nAnyways, you'll want to bring this to Logmar at Camp " ..
+                "Taurajo. From what the first one told me, he should have an idea where this Dogran is.",
+        },
         [1513] = {
             description = "Take this to the summoning circle in Neeru's tent, <name>. Summon forth a foul " ..
                 "succubus, then show it your mastery. I believe in the strength of your magic. As always, " ..
@@ -9381,6 +9414,14 @@ ns.Overrides.wowhead = {
             description = "While you were out helping our deathstalkers, Apothecary Renferrel sent you a " ..
                 "summons. He did not give me details, but he wanted to speak with you about the wolf " ..
                 "hearts you had given him.",
+        },
+        [3281] = {
+            description = "You may have killed the raptors, but the silver they stole must be recovered! " ..
+                "I have reports that the raptors have a large grouping of nests south of Ratchet, known " ..
+                "as the Raptor Grounds. It is likely that they brought our stolen silver there.\n\nGo to " ..
+                "this raptor haven and search for the stolen silver. When you find it, return it to me.",
+            rewardChoices = {{11853, 1}, {2694, 1}},
+            rewardMoney = 1000,
         },
         [3301] = {
             description = "My clanmate, Mura Runetotem, traveled to Silverpine so that she might aid our " ..

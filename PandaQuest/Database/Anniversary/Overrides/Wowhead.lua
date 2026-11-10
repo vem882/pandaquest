@@ -5936,6 +5936,12 @@ ns.Overrides.wowhead = {
             description = "Renzik was looking for you, fish.\n\nI wouldn't keep Mathias's second in " ..
                 "command waiting if I were you.",
         },
+        [2318] = {
+            description = "At an impasse of sorts, you know that you will need the book translated into a " ..
+                "language you can understand. There certainly are a number of people in the world who " ..
+                "could do it; the closest location that might have someone who could, however, is the " ..
+                "Kargath outpost in the Badlands. Perhaps that is a good place to start.",
+        },
         [2360] = {
             description = "Not a moment too soon, <name>. SI:7 reconnaissance is reporting unusually " ..
                 "heavy Defias activity in Westfall.\n\nIt would seem that the Defias have taken over an " ..
@@ -9972,6 +9978,12 @@ ns.Overrides.wowhead = {
                 "Earthen Ring. He is located at the Horde's Zoram'gar Outpost in Ashenvale.",
             rewardChoices = {{16886, 1}, {16887, 1}},
         },
+        [6981] = {
+            description = "The shard is a brilliant green, and although solid, what looks like smoke " ..
+                "swirls just below the surface. You can't help staring into the depths of the crystal; at " ..
+                "the same time, you know there is something very disturbing about it.\n\nMaybe you should " ..
+                "see if anyone in Ratchet can tell you more about this strange shard.",
+        },
         [6985] = {
             description = "The Stormpike dwarves are using the Irondeep mine as a storage depot. I want " ..
                 "you to raid that mine and bring me its supplies. This will curtail the Stormpikes' " ..
@@ -13665,6 +13677,16 @@ ns.Overrides.wowhead = {
                 "people. We cannot allow this to continue, <class>!\n\nWe suggest that you teach them a " ..
                 "lesson as proof of our friendship.",
             rewardChoices = {{27749, 1}, {27751, 1}, {27750, 1}, {27752, 1}},
+        },
+        [9728] = {
+            description = "While the druids from the expedition have made themselves busy studying plants " ..
+                "and researching the lakes, I've made it my business to deal with the hostiles in the " ..
+                "area.\n\nEver since we set foot in Zangarmarsh, the naga have launched lethal attacks " ..
+                "against us without warning. We've done our best to keep them at bay, but our resources " ..
+                "are limited.\n\nI want you to go to the various naga strongholds in Zangarmarsh and show " ..
+                "them that we're not to be crossed. Bring me their claws as proof of your victories.",
+            rewardItems = {{28100, 5}},
+            rewardMoney = 31000,
         },
         [9729] = {
             description = "Little naga make Fhwoor angry! Sporelings good friend to Fhwoor, so Fhwoor get " ..
