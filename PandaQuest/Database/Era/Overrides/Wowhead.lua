@@ -1647,6 +1647,13 @@ ns.Overrides.wowhead = {
                 "of Paleth to the dwarven priest Glorin Steelbrow, in Menethil Harbor. Ask him how to " ..
                 "remove the Eye's curse.",
         },
+        [293] = {
+            description = "I can't lift the curse from the Eye of Paleth. The Eyes were crafted by Human " ..
+                "Priests, so you'll have to go to Stormwind to find someone who can help you. Speak with " ..
+                "Archbishop Benedictus. He is head of the Cathedral of Light in Stormwind. He can " ..
+                "help.\n\nI hope, for your sake.",
+            rewardItems = {{2943, 1}},
+        },
         [295] = {
             description = "Now it's time to really make those dreaded Raptors regret their blood-thirst. " ..
                 "Just down below there are scores of Mottled Scytheclaws and Mottled Razormaws. Make " ..
@@ -13415,6 +13422,14 @@ ns.Overrides.wowhead = {
                 "bestow you with the skills you will need to tame an animal of your choosing to be your " ..
                 "companion; this creature will face the challenges you face, and gain experience " ..
                 "alongside you. I will also show you how to call it and dismiss it as you wish.",
+        },
+        [6103] = {
+            description = "You now have the power to tame a pet, but you must also gain the skills to " ..
+                "train it.\n\nTravel to Darnassus. There you must speak to one of our most revered " ..
+                "hunters, Jocaste. She will give you the ability to train your new pet, so make " ..
+                "haste.\n\nWhile Jocaste may seem stern, she is always pleased to see another hunter " ..
+                "rising through the ranks. Treat her with respect and she will return in kind. Good luck, " ..
+                "<name>.",
         },
         [6121] = {
             description = "You're now ready to learn about poison and the power we as druids have over " ..

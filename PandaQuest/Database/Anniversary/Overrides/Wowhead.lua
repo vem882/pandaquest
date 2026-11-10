@@ -1805,6 +1805,14 @@ ns.Overrides.wowhead = {
                 "jaws of the beasts.\n\nWhy, this one time...",
             rewardItems = {{3678, 1}, {2240, 1}},
         },
+        [389] = {
+            description = "VanCleef and I were members of the Stonemasons Guild. Our main project was to " ..
+                "rebuild Stormwind after the War.\n\nWhen we had finished our duties, we were cheated. " ..
+                "The nobles refused to pay us for our work. Some of the more senior of the Stonemasons " ..
+                "were offered governmental jobs, but VanCleef refused it out of loyalty to all the " ..
+                "Stonemasons. He led a riot and left the city, swearing revenge.\n\nHis lieutenant, Bazil " ..
+                "Thredd, might know more about VanCleef's plans. He's being held prisoner in the Stockade.",
+        },
         [392] = {
             description = "During the first years of Thredd's imprisonment, he never had any visitors. I " ..
                 "figured that he was no longer of use to the Brotherhood, so they abandoned " ..
@@ -3531,6 +3539,10 @@ ns.Overrides.wowhead = {
                 "your fist. I know a few buyers who'd be interested in getting their hands on something " ..
                 "like that, and I'd be willing to go half and half on its sale.",
             rewardItems = {{5335, 1}},
+        },
+        [897] = {
+            description = "This strange, insect-like creature looks outside of the natural order, as " ..
+                "though it does not belong in the Barrens.",
         },
         [898] = {
             description = "Finally! Someone to rescue me!\n\nI can't believe you got past the guards. " ..
@@ -10632,6 +10644,7 @@ ns.Overrides.wowhead = {
         [8260] = {rewardItems = {{20233, 1}}},
         [8261] = {rewardItems = {{20236, 1}}},
         [8262] = {rewardItems = {{20231, 1}}, rewardXP = 1250},
+        [8263] = {rewardItems = {{20229, 1}}},
         [8264] = {rewardItems = {{20230, 1}}},
         [8265] = {rewardItems = {{20228, 1}}, rewardXP = 1250},
         [8271] = {rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}, {20648, 1}}, rewardXP = 705},
@@ -14989,6 +15002,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25972, 1}, {25971, 1}, {25973, 1}},
             rewardMoney = 31000,
         },
+        [10008] = {
+            description = "If word reaches Thrallmar that they've failed to contain the fel orcs, we're " ..
+                "going to be receiving a lot of company down here. Frankly, I'm not sure I want all that " ..
+                "attention, so we're going to keep this little problem under wraps, got it?\n\nIf we can " ..
+                "inflict enough casualties on the fel orcs, chances are their presence will never come to " ..
+                "the attention of anyone outside Stonebreaker. So, let's end it now.\n\nWade in there, " ..
+                "swing your weapon, wave your hands, or whatever it is you do - just kill fel orcs.",
+            rewardChoices = {{25973, 1}, {25972, 1}, {25971, 1}},
+            rewardMoney = 31000,
+        },
         [10009] = {
             description = "< Sal'salabim laughs.>\n\nThis Sal'salabim design.\n\n< Sal'salabim points to " ..
                 "the architecture and formations on the blueprints.>\n\nLook at towers. Demon hunter no " ..
@@ -15439,6 +15462,16 @@ ns.Overrides.wowhead = {
             rewardItems = {{27808, 1}},
             rewardMoney = 35000,
         },
+        [10112] = {
+            description = "Hmmm? A box you say? Or was it several? Do you know what material the box was " ..
+                "constructed from?\n\nAnd what was the name of this merchant? Empoor? Are you certain " ..
+                "that he's one of the Broken? I don't do much business with their kind.\n\nPerhaps my " ..
+                "memory would be jogged if you were to do me a favor?\n\nThe Skithian arakkoa - primitive " ..
+                "casters that they are - recently stole a huge shipment of my more exotic goods. I want " ..
+                "it all back!\n\nYou can find Veil Skith just to the south of Shattrath City.",
+            rewardChoices = {{25927, 1}, {25926, 1}, {25928, 1}, {31724, 1}},
+            rewardMoney = 31000,
+        },
         [10116] = {
             description = "Wanted: Chieftain Mummaki - leader of the foul and degenerate Lost One tribe " ..
                 "of the Daggerfen, for his brutal attacks against the Orebor Harborage.\n\nThe chieftain " ..
@@ -15664,6 +15697,15 @@ ns.Overrides.wowhead = {
                 "siphon energy from one of the larger crystals.\n\nReturn to me so that I may study the " ..
                 "effects of the aura. Do not worry; any side effects should be temporary.",
             rewardMoney = 39000,
+        },
+        [10209] = {
+            description = "The next thing we must do is reclaim my familiar, Glacius, from the blood elf " ..
+                "summoner who holds it captive. Summoner Kanthin was one of the most senior magisters in " ..
+                "the force Kael'thas sent to decimate Kirin'Var. It's only natural that he would claim my " ..
+                "familiar as a kind of trophy.\n\nI'm certain that Kanthin, fool that he is, has tried to " ..
+                "compel Glacius to serve him. My scrying has revealed that Kanthin is now stationed at " ..
+                "'Manaforge Duro,' if that terminology has any meaning for you.",
+            rewardMoney = 41000,
         },
         [10210] = {
             description = "Welcome to Shattrath City, <class>. This might be the one place in all of " ..
@@ -20146,6 +20188,16 @@ ns.Overrides.wowhead = {
                 "Archmage Malin at the foot of the tower there. He will speed your return to Theramore.",
             rewardChoices = {{33269, 1}, {33252, 1}, {33250, 1}},
             rewardMoney = 8000,
+        },
+        [11336] = {
+            description = "The reality of fighting on multiple fronts, <lad/lass>, is that we cannot " ..
+                "spread our forces too thin or we risk losing it all!\n\nCritical troop deployments are " ..
+                "necessary on a day by day basis. Today it is the battle for Alterac Valley that's in " ..
+                "most need of brave combatants.\n\nGo now, <name>, and aid the Stormpike Expedition. We " ..
+                "cannot allow the Frostwolf Clan to get away with the violence they've inflicted on our " ..
+                "brethren!",
+            rewardItems = {{20560, 3}},
+            rewardMoney = 2000,
         },
         [11337] = {
             description = "The fight against the Horde knows no boundaries, <name>. Even in Outland, " ..

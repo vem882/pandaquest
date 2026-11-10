@@ -66133,6 +66133,7 @@ ns.Overrides.wowhead = {
         [68755] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68821] = {maxLevel = 90, minLevel = 90},
+        [68871] = {maxLevel = 90, minLevel = 90},
         [68908] = {subName = "SI:7"},
         [68939] = {subName = "Prince of Stormwind"},
         [68960] = {maxLevel = 90, minLevel = 90},

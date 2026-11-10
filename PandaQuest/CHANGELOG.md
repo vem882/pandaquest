@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.448] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 851 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,635 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,725 quests, 48 NPCs, 2 objects
+- npc 68871 - Amber Kearnen - updated
+  - NPC level added (90)
+
 ## [0.2.447] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -116,21 +126,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 72536 - Trial Master Rotun - updated
   - NPC title added (Proving Grounds Instructor)
-
-## [0.2.437] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 832 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,591 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,650 quests, 48 NPCs, 2 objects
-- npc 14374 - Scholar Runethorn - updated
-  - coordinates: 6 spawn points added in Feralas
-- npc 70740 - Blingtron 3000 - updated
-  - NPC title added (Last Year's Model)
-  - NPC level added (93)
-- npc 71081 - Mecha-Bruce - updated
-  - NPC level added (93)
 
 ## [0.2.412]
 
