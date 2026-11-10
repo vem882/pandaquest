@@ -1,3 +1,5 @@
+- Keep map pins out of the Leatrix Plus minimap button menu.
+
 - Preview the NPC associated with the selected quest in the world map.
 Clearer map markers
 - Use native quest objective icons and group nearby spawns.

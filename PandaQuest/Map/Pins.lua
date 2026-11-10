@@ -152,7 +152,8 @@ local function acquirePin()
     if pin then return pin end
     if not CreateFrame then return nil end
     pinCount = pinCount + 1
-    pin = CreateFrame("Button", "PandaQuestPin" .. pinCount, UIParent)
+    -- Named minimap buttons can be collected by Leatrix Plus as addon launchers.
+    pin = CreateFrame("Button", nil, UIParent)
     pin:SetSize(16, 16)
     pin.glow = pin:CreateTexture(nil, "BACKGROUND")
     pin.glow:SetPoint("CENTER", pin, "CENTER", 0, 0)
