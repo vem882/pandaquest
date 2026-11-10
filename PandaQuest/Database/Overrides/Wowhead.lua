@@ -49475,10 +49475,6 @@ ns.Overrides.wowhead = {
                 "doing so.",
             rewardChoices = {{39676, 1}, {39678, 1}, {39679, 1}, {39680, 1}},
         },
-        [29806] = {
-            description = "[ph] Find and challenge the Roaming Brawler to a fight. See if you've already " ..
-                "completed this by typing:\n\n/run print(C_QuestLog.IsQuestFlaggedCompleted(29806))",
-        },
         [29811] = {
             description = "Krik'thir, guardian of the gates to Azjol-Nerub, was not a traitor.\n\nHe fell " ..
                 "in the War of the Spider defending our home from the Scourge.\n\nAs per his station, he " ..
