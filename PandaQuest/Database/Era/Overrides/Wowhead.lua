@@ -9058,6 +9058,13 @@ ns.Overrides.wowhead = {
                 "eastern coast, south of the Southfury River and Ratchet. You will find her there at her " ..
                 "fishing hut. Good luck to you, <name>.",
         },
+        [2986] = {
+            description = "Long has it been since you were last tested, <name>. You have shown patience " ..
+                "thus far in your studies, but the time has come for you to learn more. The time has come " ..
+                "for you to learn about the purity of water.\n\nSeek out Islen Waterseer in the Barrens. " ..
+                "She is along the eastern coast, south of the Southfury River and Ratchet. You will find " ..
+                "her there at her fishing hut. Good luck to you, <name>.",
+        },
         [2987] = {
             description = "I just arrived here in Feralas, and I've heard that the Gordunni Ogres that " ..
                 "inhabit the wilds here have some interesting minerals. Who knows what they are up to, " ..

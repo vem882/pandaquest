@@ -5023,6 +5023,16 @@ ns.Overrides.wowhead = {
             objectivesText = {"Speak to Telf Joolam for another Fire Sapta."},
             rewardItems = {{6636, 1}},
         },
+        [1470] = {
+            description = "Greetings, child. I can see that you are still young in the ways of the " ..
+                "warlock, power still eluding your grasp. I can sense your eagerness to learn.\n\nAnd you " ..
+                "will learn.\n\nThere is no strength in ignorance. Knowledge is our greatest power. " ..
+                "Through its application, we can control the chaotic magics and beings of the void, " ..
+                "bending them to our will.\n\nI will show you how to bind a servant to your will, but " ..
+                "first you must bring me three skulls of the rattlecage skeletons near the abandoned " ..
+                "smithy.",
+            rewardXP = 80,
+        },
         [1472] = {
             description = "A sayaad is a devourer of souls, dominator of wills, tempter of hearts. A " ..
                 "creature of profound evil and singular mind.\n\nFolk tales told by righteous and wicked " ..
@@ -7326,6 +7336,14 @@ ns.Overrides.wowhead = {
                 "samples on their being. Take them all outside to Ghede; just look for the piles of dirt " ..
                 "and the tauren barking orders. He means well, just don't get him riled up though!",
             rewardMoney = 14500,
+        },
+        [3762] = {
+            description = "Excuse me <class>, but I'd like just a moment of your time if possible.\n\nThe " ..
+                "Cenarion Circle in Thunder Bluff is most interested in seasoned adventurers such as " ..
+                "yourself to lend them aid in a vital research project. While I do not know the " ..
+                "specifics, I can inform you that none other than Hamuul Runetotem is spearheading this " ..
+                "research.\n\nPlease - if you are interested, speak with him directly on the Elder Rise " ..
+                "within Thunder Bluff proper.",
         },
         [3765] = {
             description = "Stormwind -- such a bustling hub of activity.\n\nI have traveled from afar to " ..
@@ -9709,6 +9727,14 @@ ns.Overrides.wowhead = {
                 "gryphon will drop you off!\n\nSpeak to me again when you're ready for the journey.",
             rewardMoney = 175,
         },
+        [6393] = {
+            description = "The Tribunal of the Tides has sent me to wage war on the fire elementals here " ..
+                "in Stonetalon Mountain. Neptulon the Tidehunter, Lord of all water elementals, has taken " ..
+                "a personal interest in seeing our fiery cousins extinguished.\n\n<name>, you can help me " ..
+                "gain favor with the Tribunal by destroying the fire elementals in Charred Vale. When " ..
+                "destroyed, the fire elementals leave Incendrites. Return these to me and be rewarded.",
+            rewardMoney = 1800,
+        },
         [6401] = {
             description = "Tell Tammra Windfield, Kaya's aunt who's at Sun Rock Retreat, about the good " ..
                 "news! Kaya is alive! We had thought she was lost after the brutal attack on our village. " ..
@@ -11588,6 +11614,15 @@ ns.Overrides.wowhead = {
                 "for a small favor.\n\nThe blood of the frostsabers and bears that inhabit Winterspring " ..
                 "has properties I'm in need of at the moment. Bring me a sizeable sample of it along with " ..
                 "the bracers and a small amount of gold. You shall find the effort worth your while.",
+            rewardItems = {{22079, 1}},
+        },
+        [8916] = {
+            description = "Hail, <class>! I can tell by your demeanor that you've seen and done much in " ..
+                "this world. Yet I'm willing to wager you haven't seen a piece of armor like " ..
+                "this.\n\nPerform a small favor for me and I'll be willing to trade it to you for an " ..
+                "ordinary set of bracers.\n\nI'm in need of a sizeable sample of venom drawn from the " ..
+                "spiders and scorpions that inhabit Silithus. Bring this to me along with a few gold " ..
+                "coins and I'll perform the exchange.",
             rewardItems = {{22079, 1}},
         },
         [8917] = {
@@ -14822,6 +14857,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{22829, 5}, {22832, 5}},
             rewardMoney = 31000,
         },
+        [9990] = {
+            description = "You know, come to think of it, I do recall selling several boxes of strange " ..
+                "and exotic engineering parts to Empoor about a month ago. I'm not sure what they'd be " ..
+                "used for, but I know that they were delivered to Tuurem.\n\nPerhaps one or more of those " ..
+                "boxes is still there?",
+            rewardMoney = 31000,
+        },
         [9991] = {
             description = "To be my eyes will require some diligence on your part. Nethrandamus will take " ..
                 "you through the Legion camps, but you must catalog everything that you see. Even the " ..
@@ -15802,6 +15844,17 @@ ns.Overrides.wowhead = {
                 "they refuse to pay for.\n\nPlease head east out of Area 52 and cross the bridge to the " ..
                 "next island over. You'll find my associate, Gahruj, at the Midrealm Post, just inside of " ..
                 "Eco-Dome Midrealm.",
+        },
+        [10267] = {
+            description = "Our business relations with the blood elves appear to be at an end. A few " ..
+                "weeks ago a large shipment of surveying equipment was delivered to them at Manaforge " ..
+                "Duro. They have refused to pay for it.\n\n<name>, I would ask that you pay the blood " ..
+                "elves of Manaforge Duro to the east a visit. They appear to be having some trouble with " ..
+                "an infestation of mana creatures there, so take advantage of their preoccupation.\n\nI " ..
+                "care not what happens to them, but I would very much like to see the return of our " ..
+                "property.",
+            rewardChoices = {{30273, 1}, {30272, 1}, {30271, 1}},
+            rewardMoney = 41000,
         },
         [10268] = {
             description = "Nexus-Prince Haramad has conveyed to me that he is interested in the immediate " ..
@@ -18533,6 +18586,15 @@ ns.Overrides.wowhead = {
                 "attunement to the altar, unlocking powers that few can fathom.\n\nTake this crystal to " ..
                 "eastern Shadowmoon Valley, and find Netherwing Pass leading south from the Netherwing " ..
                 "Fields. Near the world's edge, you will find the Altar of Shadows. Use the crystal there.",
+        },
+        [10835] = {
+            description = "<name>, I have prepared a preliminary report of my findings regarding the " ..
+                "Bleeding Hollow orcs. My colleague in Thrallmar, Apothecary Antonivich, will be happy to " ..
+                "receive them. He too studies the phenomenon of fel orcs... in hopes of preventing such a " ..
+                "tragedy from again befalling our orcish allies.\n\nTake him this report, and I will " ..
+                "continue my study of the blood you brought me. If fortune is with us, we will isolate " ..
+                "the cause of the fel orc affliction.",
+            rewardMoney = 5200,
         },
         [10836] = {
             description = "I require time so that I may devise a plan to save my children and mate. You " ..

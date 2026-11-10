@@ -22,6 +22,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.447
+- database - Classic Era: data from the PandaQuest portal: 2,633 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,718 quests, 48 NPCs, 2 objects
+
 0.2.446
 - database - Classic Era: data from the PandaQuest portal: 2,632 quests, 29 NPCs, 5 objects
 
@@ -112,10 +116,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (93)
 - npc 71081 - Mecha-Bruce - updated
   - NPC level added (93)
-
-0.2.436
-- database - Classic Era: data from the PandaQuest portal: 2,587 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,647 quests, 48 NPCs, 2 objects
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
