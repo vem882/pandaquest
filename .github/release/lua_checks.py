@@ -279,12 +279,14 @@ class TheDatabaseCheck(unittest.TestCase):
         self.assertEqual(ns.Game.DataGame(), "mop")
         self.assertTrue(ns.Game.DataMatches())
 
-    def _db(self, client_facts, data_game, community_game=False):
+    def _db(self, client_facts, data_game, community_game=False, *, packaged_guide=False):
         """Database/DB.lua over a two-quest database, with what it needs of the rest of the addon.
         ``community_game``: a Community.lua is installed, tagged with that game (None: untagged)."""
         rt = runtime()
         ns = load_game(rt, *client_facts)
-        if community_game is not False:
+        if packaged_guide:
+            run_file(rt, ns, "Database/Overrides/Community.lua")
+        elif community_game is not False:
             rt.eval("""
                 function(ns, game)
                     ns.Overrides = { community = { game = game, quests = {} } }
@@ -323,6 +325,12 @@ class TheDatabaseCheck(unittest.TestCase):
         self.assertIsNone(ns.DB.BetaNote(1793833200))
         _rt, ns = self._db(MOP_CLIENT, "mop")
         self.assertIsNone(ns.DB.BetaNote(0))
+
+    def test_packaged_placeholder_does_not_warn_in_forever(self) -> None:
+        _rt, ns = self._db(FOREVER_CLIENT, "forever", packaged_guide=True)
+        self.assertTrue(ns.DB.Load())
+        self.assertIsNone(ns.Overrides.foreignCommunity)
+        self.assertFalse(any("community guide" in line for line in chat(ns)))
 
     def test_a_community_guide_for_another_game_is_set_aside_with_one_line(self) -> None:
         for client_facts, data_game, written, kept in ((ERA_CLIENT, "era", "mop", False), (ERA_CLIENT, "era", None, False),
