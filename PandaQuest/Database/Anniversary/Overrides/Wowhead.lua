@@ -5400,6 +5400,15 @@ ns.Overrides.wowhead = {
                 "all but taken over the area, Daphne may need some protection from the villains. Go there.",
             rewardXP = 1550,
         },
+        [1651] = {
+            description = "Now, they'll be coming again soon, I'd wager, so get yourself ready.\n\nI've " ..
+                "got myself a gun in the house. I'll grab it and be ready to help you out, but for the " ..
+                "most part, you're on your own.\n\nI've no idea how many they'll send, but I'm sure it'll " ..
+                "be more than the few they sent earlier.\n\nAsk the Light for whatever blessings you can " ..
+                "because... did you hear that? I think they're coming.\n\nWe make our stand near the " ..
+                "house!",
+            rewardXP = 780,
+        },
         [1652] = {
             description = "Please, return to Duthorian and let him know that I'm safe for now. I have you " ..
                 "and the Church to thank for that.\n\nHe'll send word to Ironforge to let my Jordan know " ..

@@ -3449,6 +3449,14 @@ ns.Overrides.wowhead = {
                 "you mind helping them out?\n\nThe young sawtooths aren't as tasty as the older ones, so " ..
                 "stay clear of those; give them a year or two to get to full size.",
         },
+        [699] = {
+            description = "With the threat of murlocs along the coast, we're stationed out here to " ..
+                "protect--or warn if the force is too large--of any coming threats to Stonard. It doesn't " ..
+                "give us much time for relaxation, and we could use some more help if you're able.\n\nThe " ..
+                "sawtooth snappers' claws make for fine weapons when properly prepared. Bring me some of " ..
+                "their claws and I'll see you're rewarded with one of our weapons in thanks for the fresh " ..
+                "meat and the good company.",
+        },
         [700] = {
             description = "Ah, such fine stone comes from Lordaeron. Such a shame the land is in such " ..
                 "shambles.\n\nBut the Memorial came out quite well! I should think the King will be most " ..
@@ -3549,6 +3557,15 @@ ns.Overrides.wowhead = {
                 "of course.\n\nI'll just need patterned bronze bracers crafted by a blacksmith so I can " ..
                 "complete the bracers I'm making for you.",
             rewardItems = {{4979, 1}},
+        },
+        [718] = {
+            description = "In our hurry to leave the Uldaman excavation site, we were forced to abandon " ..
+                "many wagons and crates of supplies along the way. The local ogres from Camp Kosh have " ..
+                "been on our abandoned equipment like vultures on a rotting corpse. Don't smell much " ..
+                "better, either. Than the corpses, I mean.\n\nAnyways, they took the cart that was " ..
+                "carrying all our weapons and such... so--well, this is a bit embarrassing--we haven't " ..
+                "been able to get any food.\n\nWe're in a bit of a pickle here, suppose you could help us " ..
+                "out?",
         },
         [720] = {
             description = "<There is text roughly scribbled in chalk on the map.>\n\n\"Ryedol, They're " ..
@@ -4742,6 +4759,13 @@ ns.Overrides.wowhead = {
                 "the hiding place for a new evil in Darkshore.\n\nPlease, <name>, gather the mushrooms " ..
                 "for me. And while doing so, scout the cave to confirm the Ancients' fears.",
             rewardItems = {{5610, 1}, {4605, 10}},
+            rewardMoney = 900,
+        },
+        [949] = {
+            description = "The Twilight's Hammer's purpose at the Master's Glaive is not known. But it " ..
+                "must be dark.\n\nSearch through their camp at the Glaive... Search for some thing that " ..
+                "may teach us their intentions.\n\nFor we must learn their intentions before a plan is " ..
+                "made.",
             rewardMoney = 900,
         },
         [952] = {
@@ -19059,6 +19083,16 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 1377,
+        },
+        [15917] = {
+            spawns = {
+                [493] = {
+                    {43, 51.6}, {43.2, 51.4}, {44.8, 48}, {44.8, 54.2}, {45.4, 57}, {46.8, 59.6}, {47, 59.4},
+                    {48.2, 60.4}, {49, 61.6}, {49.2, 60.8}, {51, 47.2}, {52.2, 63.2}, {52.8, 63.2},
+                    {59.8, 39.4}, {59.8, 39.8}, {60.6, 47.8}, {61.4, 50}, {61.6, 50.4}, {61.8, 45},
+                },
+            },
+            zoneID = 493,
         },
         [16141] = {
             spawns = {
