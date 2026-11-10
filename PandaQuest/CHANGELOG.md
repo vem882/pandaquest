@@ -4,6 +4,14 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.459] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 871 NPCs, 6 objects
+- quest 29806 - The Wanderer - updated
+  - description removed
+
 ## [Unreleased]
 
 - Show a world map guide from your ghost to your corpse.
@@ -155,16 +163,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,704 quests, 48 NPCs, 2 objects
 - npc 69168 - Amani'shi Flame Caster - updated
   - NPC level added (91)
-
-## [0.2.442] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 848 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,622 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,700 quests, 48 NPCs, 2 objects
-- npc 4483 - [Deprecated for 4.x]Moktar Krin - updated
-  - coordinates: 2 spawn points added in Thousand Needles
 
 ## [0.2.412]
 
