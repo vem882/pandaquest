@@ -4,6 +4,10 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [Unreleased]
+
+- Keep map pins out of the Leatrix Plus minimap button menu.
+
 ## [0.2.452] - 2026-11-10
 
 Data from the PandaQuest portal.
