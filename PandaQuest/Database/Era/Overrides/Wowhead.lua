@@ -2587,6 +2587,14 @@ ns.Overrides.wowhead = {
                 "hurry! Off you go to Tarren Mill, and with urgency I might add!",
             rewardMoney = 600,
         },
+        [495] = {
+            description = "Mug'Thol and his ogre warband was sent to Alterac to retrieve the Crown of " ..
+                "Will for Lady Sylvanas. Unfortunately, instead of returning it, the idiot decided to try " ..
+                "it on... I suppose ogres can't resist anything bright and shiny.\n\nHis bumbling actions " ..
+                "have become something of a problem, however. The Crown of Will enabled him to resist the " ..
+                "possession placed upon him to serve Lady Sylvanas.\n\nThe Dark Lady wants an example " ..
+                "made, travel to Tarren Mill in Hillsbrad and report to Melisara, my lieutenant.",
+        },
         [498] = {
             description = "Me and some other warriors were sent by the Warchief to retrieve an object " ..
                 "from Durnholde and to investigate this so-called Syndicate.\n\nWe went to Durnholde to " ..

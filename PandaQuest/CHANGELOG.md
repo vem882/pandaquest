@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.446] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 2,632 quests, 29 NPCs, 5 objects
+
 ## [0.2.445] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -125,16 +131,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,587 quests, 28 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,647 quests, 48 NPCs, 2 objects
-
-## [0.2.435] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 829 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,586 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,644 quests, 48 NPCs, 2 objects
-- npc 69176 - Amani'shi Beast Shaman - updated
-  - NPC level added (92)
 
 ## [0.2.412]
 
