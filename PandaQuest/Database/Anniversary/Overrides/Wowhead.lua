@@ -9006,6 +9006,14 @@ ns.Overrides.wowhead = {
                 "tribute, and I'll give you the finest of all our mantles.",
             rewardItems = {{18182, 1}},
         },
+        [5529] = {
+            description = "The Argent Dawn recently learned that the Scourge are creating their own " ..
+                "plagued dragonflight! We must stop them -- if the Scourge gain a force of dragons " ..
+                "they'll sweep across Azeroth unchecked!\n\nTheir necromancers are breeding plagued " ..
+                "dragons at the Scholomance, in the middle of Darrowmere Lake.\n\nGo to the Scholomance " ..
+                "and kill as many hatchlings as you can... before they get any bigger!",
+            rewardMoney = 9000,
+        },
         [5531] = {
             description = "The eggs you brought were to be used in Scourge experiments to create a " ..
                 "plagued dragonflight. These frozen black dragon eggs would have been invaluable in their " ..
@@ -9247,6 +9255,15 @@ ns.Overrides.wowhead = {
                 "me.\n\nYou will know of what I speak after you return to your Cathedral of Light. Speak " ..
                 "to High Priestess Laurena when you arrive.",
             rewardXP = 390,
+        },
+        [5725] = {
+            description = "Many denizens of the Legion bestow gifts on their followers as you may well " ..
+                "know. Some of these gifts the Dark Lady feels would be better off in her hands than in " ..
+                "the hands of those with... lesser vision.\n\nA sect of the Shadow Council hidden in " ..
+                "caverns below Orgrimmar known as the Searing Blade are a prime example. The Lady tells " ..
+                "me that members of the Searing Blade have come into the possession of two powerful spell " ..
+                "books--she would like to \"borrow\" these books from them. You will get them for her.",
+            rewardChoices = {{15449, 1}, {15450, 1}, {15451, 1}},
         },
         [5726] = {
             description = "One thing I will not tolerate are traitors in our midst, <name>. But I would " ..
@@ -10668,6 +10685,15 @@ ns.Overrides.wowhead = {
         [8110] = {rewardItems = {{19610, 1}}},
         [8113] = {rewardItems = {{19613, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
+        [8121] = {
+            description = "<name>, as the battles over Arathi Basin rage, news of your actions have " ..
+                "reached many ears. You are highly regarded among us, which gives me confidence that you " ..
+                "will accomplish the mission I now have for you.\n\nIt is time to send a message to the " ..
+                "League of Arathor. We must show them that their holdings in Arathi Basin are tenuous and " ..
+                "quickly lost. We will show them this by holding, all at once, four strategic points in " ..
+                "Arathi Basin.\n\nSucceed in this, <name>, and earn great respect among the Defilers.",
+            rewardMoney = 27000,
+        },
         [8144] = {rewardItems = {{19617, 1}}},
         [8146] = {rewardItems = {{19619, 1}}},
         [8147] = {rewardItems = {{19620, 1}}},
@@ -12051,6 +12077,13 @@ ns.Overrides.wowhead = {
                 "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22420, 1}},
+        },
+        [9043] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22425, 1}},
         },
         [9044] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
@@ -15983,6 +16016,15 @@ ns.Overrides.wowhead = {
                 "the teleporter in the chamber right before Shaffar's chambers when the way has been " ..
                 "cleared. Don't worry, I'll make it worth your while...",
         },
+        [10222] = {
+            description = "After Prince Kael'thas's forces destroyed the village and imprisoned the " ..
+                "archmage in the Violet Tower, they withdrew to Sunfury Hold to the northeast. The very " ..
+                "men who destroyed our village and slew our fellows toast their 'amazing victory' while " ..
+                "we are helpless to avenge the fallen.\n\nWe must not allow these crimes to go " ..
+                "unanswered! Be the instrument of our vengeance, <name>. Go to Sunfury Hold and claim the " ..
+                "lives of those responsible for this crime.",
+            rewardMoney = 41000,
+        },
         [10223] = {
             description = "I'll never forget the blood elf who led the attack. He wore a tabard with a " ..
                 "device I've never seen before, over top of crimson armor.\n\nHe was ferocious and " ..
@@ -17637,6 +17679,15 @@ ns.Overrides.wowhead = {
                 "recover any information or items he might have collected.",
             rewardMoney = 41000,
         },
+        [10602] = {
+            description = "In order to churn out infernals as quickly as the Deathforge seems to, they " ..
+                "must have an area dedicated to summoning the elementals that form the core of the " ..
+                "infernals.\n\nThe summoning chamber is likely to be found below ground, near a pool of " ..
+                "fouled water or lava. Locate the summoning chamber within the Deathforge and find a way " ..
+                "to end their summoning ritual. The mo'arg involved in making the infernals may carry a " ..
+                "tool that will help disrupt the summoner's magics.",
+            rewardMoney = 41000,
+        },
         [10603] = {
             description = "We've made a lot of progress against the Shadow Council here at the " ..
                 "Deathforge, but now it's time to finish the job.\n\nI found a key among the items in " ..
@@ -17696,6 +17747,13 @@ ns.Overrides.wowhead = {
                 "the attention of the Legion scum, either. Try to keep yourself safe, but remember, the " ..
                 "mission and the safety of Shadowmoon Village come first!",
             rewardMoney = 41000,
+        },
+        [10614] = {
+            description = "I have chased rumors of the Mok'Nathal across Outland with nothing to show for " ..
+                "it. Finally, we may have found their home.\n\nBut now that the moment is here, I am " ..
+                "filled with unease. Unease that has kept me awake deep into the nights during my search. " ..
+                "Will they accept me?\n\nI... know their leader's name: Leoroxx. Seek him out. You must " ..
+                "be my eyes in this.",
         },
         [10618] = {
             description = "Hunting silkwing larva is a difficult challenge for our young warriors, but " ..
