@@ -4,6 +4,46 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.452] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 871 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,658 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,772 quests, 49 NPCs, 2 objects
+- npc 1860 - Voidwalker - updated
+  - coordinates: 5 spawn points added in Ashenvale
+- npc 2367 - Donald Rabonne - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 4182 - Dalmond - updated
+  - coordinates: 3 spawn points added in Darkshore
+- npc 4652 - Gelkis Mauler - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 6143 - Servant of Arkkoroc - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 8155 - Kargath Grunt - updated
+  - coordinates: 5 spawn points added in Badlands
+- npc 17879 - Chrono Lord Deja - updated
+  - coordinates: 1 spawn point added in The Black Morass
+- npc 21811 - Wyrmcult Broodling - updated
+  - coordinates: 40 spawn points added in Blade's Edge Mountains
+- npc 30113 - Whisker - updated
+  - coordinates: 3 spawn points added in Zul'Drak
+- npc 32247 - Zippy Copper Racer - updated
+  - coordinates: 16 spawn points added in Dalaran -
+  - coordinates: 7 spawn points added in Orgrimmar
+  - coordinates: 6 spawn points added in Ironforge
+  - coordinates: 4 spawn points added in Stormwind City
+  - coordinates: also changed in 1 more zone
+- npc 68857 - Kor'kron Marine - updated
+  - NPC level added (90)
+- npc 69185 - Risen Drakkari Champion - updated
+  - NPC level added (91)
+- npc 71504 - Siegecrafter Blackfuse - updated
+  - NPC title added (Blackfuse Company)
+- npc 73606 - Lady Sylvanas Windrunner - updated
+  - NPC title added (Banshee Queen)
+
 ## [0.2.451] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -119,18 +159,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,700 quests, 48 NPCs, 2 objects
 - npc 4483 - [Deprecated for 4.x]Moktar Krin - updated
   - coordinates: 2 spawn points added in Thousand Needles
-
-## [0.2.441] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 847 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,615 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,694 quests, 48 NPCs, 2 objects
-- npc 4706 - [Deprecated for 4.x]Razzeric - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 11486 - Prince Tortheldrin - updated
-  - NPC title added (Ruler of the Shen'dralar)
 
 ## [0.2.412]
 

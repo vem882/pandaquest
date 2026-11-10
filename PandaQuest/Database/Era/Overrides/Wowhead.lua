@@ -16189,6 +16189,12 @@ ns.Overrides.wowhead = {
                 "crystals...",
         },
         [8316] = {rewardItems = {{20699, 1}, {20710, 1}}},
+        [8317] = {
+            description = "That recipe sure will come in handy. I'd better get to work so I can have some " ..
+                "smoked desert dumplings ready for today. I could use a hand in making some, I'll make it " ..
+                "worth your while.",
+            rewardMoney = 17000,
+        },
         [8318] = {
             description = "Some of the Twilight's Hammer cultists carry around little papers with " ..
                 "gibberish written on them. I want you to bring me a stack of them, <class>.\n\nI can't " ..
