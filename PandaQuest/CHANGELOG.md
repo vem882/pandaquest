@@ -4,6 +4,127 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.463] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,943 quests, 946 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,671 quests, 32 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,774 quests, 49 NPCs, 2 objects
+- quest 25249 - A Change of Heart - updated
+  - reward choices: +4
+- quest 29094 - The Short Way Home - updated
+  - description added
+  - reward choices: +2
+- npc 1266 - Tundra MacGrann - updated
+  - coordinates: 2 spawn points added in Dun Morogh
+- npc 1695 - [Deprecated for 4.x]Rendow - updated
+  - coordinates: 1 spawn point added in Feralas
+- npc 2756 - UNUSED Grund Drokda - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 3053 - [Deprecated for 4.x]Synge - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 3414 - General Twinbraid (Deprecated in 4.x) - updated
+  - coordinates: 3 spawn points added in The Barrens
+- npc 4094 - [Deprecated for 4.x]Galak Scout - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4095 - [Deprecated for 4.x]Galak Mauler - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4096 - [Deprecated for 4.x]Galak Windchaser - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4133 - [Deprecated for 4.x]Silithid Hive Drone - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4143 - [Deprecated for 4.x]Sparkleshell Snapper - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4144 - [Deprecated for 4.x]Sparkleshell Borer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4158 - [Deprecated for 4.x]Salt Flats Vulture - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4317 - [Deprecated for 4.x]Nyse - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4319 - [Deprecated for 4.x]Thyssiana - updated
+  - coordinates: 2 spawn points added in Feralas
+- npc 4419 - [Deprecated for 4.x]Race Master Kronkrider - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4507 - [Deprecated for 4.x]Daisy - updated
+  - coordinates: 4 spawn points added in Thousand Needles
+- npc 4545 - [Deprecated for 4.x]Nag'zehn - updated
+  - coordinates: 4 spawn points added in Thousand Needles
+- npc 4620 - [Deprecated for 4.x]Fobeed - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4707 - [Deprecated for 4.x]Zuzubee - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4876 - [Deprecated for 4.x]Jawn Highmesa - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 4878 - [Deprecated for 4.x]Montarr - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 5792 - [Deprecated for 4.x]Drag Master Miglen - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 6495 - [Deprecated for 4.x]Riznek - updated
+  - coordinates: 6 spawn points added in Thousand Needles
+- npc 6496 - [Deprecated for 4.x]Brivelthwerp - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 6730 - [Deprecated for 4.x]Jinky Twizzlefixxit - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 9551 - [Deprecated for 4.x]Starn - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 10759 - [Deprecated for 4.x]Grimtotem Stomper - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 10760 - [Deprecated for 4.x]Grimtotem Geomancer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 10896 - [Deprecated for 4.x]Arnak Grimtotem - updated
+  - coordinates: 5 spawn points added in Thousand Needles
+- npc 11116 - [Deprecated for 4.x]Innkeeper Abeqwa - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 45608 - Lord Walden - updated
+  - coordinates: 2 spawn points added in Silverpine Forest
+- npc 51025 - Dilennaa - updated
+  - coordinates: 4 spawn points added in Felwood
+- npc 51026 - Gnath - updated
+  - coordinates: 4 spawn points added in Silverpine Forest
+- npc 51027 - Spirocula - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 51029 - Parasitus - updated
+  - coordinates: 3 spawn points added in Western Plaguelands
+- npc 51031 - Tracker - updated
+  - coordinates: 6 spawn points added in Western Plaguelands
+- npc 51037 - Lost Gilnean Wardog - updated
+  - coordinates: 4 spawn points added in Silverpine Forest
+- npc 51040 - Snuffles - updated
+  - coordinates: 7 spawn points added in Arathi Highlands
+- npc 51042 - Bleakheart - updated
+  - coordinates: 5 spawn points added in Eastern Plaguelands
+- npc 51046 - Fidonis - updated
+  - coordinates: 3 spawn points added in Felwood
+- npc 51048 - Rexxus - updated
+  - coordinates: 8 spawn points added in Searing Gorge
+- npc 51053 - Quirix - updated
+  - coordinates: 3 spawn points added in Eastern Plaguelands
+- npc 51057 - Weevil - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 51058 - Aphis - updated
+  - coordinates: 4 spawn points added in Western Plaguelands
+- npc 51059 - Kah'tir - updated
+  - coordinates: 34 spawn points added in Valley of the Four Winds
+- npc 51061 - Roth-Salam - updated
+  - coordinates: 3 spawn points added in Dustwallow Marsh
+- npc 51062 - Khep-Re - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 51063 - Phalanax - updated
+  - coordinates: 2 spawn points added in Arathi Highlands
+- npc 51067 - Glint - updated
+  - coordinates: 4 spawn points added in Arathi Highlands
+- npc 51069 - Scintillex - updated
+  - coordinates: 3 spawn points added in Dustwallow Marsh
+- npc 51077 - Bushtail - updated
+  - coordinates: 7 spawn points added in Elwynn Forest
+- npc 51078 - Kitt - updated
+  - coordinates: 18 spawn points added in The Jade Forest
+- npc 68284 - Sha-Touched Grunt - updated
+  - NPC level added (90)
+- npc 73212 - Lor'themar Theron - updated
+  - NPC title added (Regent Lord of Quel'Thalas)
+
 ## [0.2.460] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -201,13 +322,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,711 quests, 48 NPCs, 2 objects
 - npc 9561 - Jalinda Sprig - updated
   - coordinates: 1 spawn point added in Burning Steppes
-
-## [0.2.444] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,628 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,707 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 
