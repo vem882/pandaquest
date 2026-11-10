@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.4+v1.0.12 (Classic Era database + corrections from QuestieDB 1.0.12). DO NOT EDIT.
--- Built: 2026-11-08T00:10:51Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.5+v1.0.13 (Classic Era database + corrections from QuestieDB 1.0.13). DO NOT EDIT.
+-- Built: 2026-11-10T12:10:19Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -393,7 +393,7 @@ ns.Data.quests = [=[return {
 [407] = {"Fields of Grief",{{1518}},{{1931}},4,7,178,nil,{"Take the Laced Pumpkin to the Captured Scarlet Zealot who is being held in the cellar of the Gallow's End Tavern."},nil,nil,3035,nil,{365},nil,nil,nil,85,nil,nil,nil,nil,nil,nil,nil,nil,{{68,25}}},
 [408] = {"The Family Crypt",{{1499}},{{1499}},7,13,178,nil,{"Kill 8 Wailing Ancestors and 8 Rotting Ancestors.","","Kill Captain Dargol, and bring his skull to Magistrate Sevren in Brill."},nil,{{{1534},{1530}},nil,{{3082}}},nil,nil,{355},nil,nil,nil,85,nil,nil,nil,nil,nil,8,nil,nil,{{68,100}}},
 [409] = {"Proving Allegiance",{{1497}},{{1497}},5,12,178,nil,{"Obtain a Candle of Beckoning.","","Summon Lillith Nefara and kill her.","","Return to Gunther on his island."},nil,{{{1946}}},nil,nil,{366},{410,431},nil,nil,85,nil,nil,nil,{3080},411,nil,nil,nil,{{68,75}}},
-[410] = {"The Dormant Shade",{nil,{1557}},{nil,{1557}},5,10,178,nil,nil,nil,{nil,nil,{{3080}}},nil,nil,{366},nil,nil,{411},85,nil,nil,nil,nil,nil,8,1,409,{}},
+[410] = {"The Dormant Shade",{nil,{1557}},{nil,{1557}},5,10,178,nil,nil,nil,{nil,nil,{{3080}}},nil,nil,{366},nil,nil,nil,85,nil,nil,nil,nil,nil,8,1,409,{}},
 [411] = {"The Prodigal Lich Returns",{{1497}},{{1498}},5,12,178,nil,{"Bring the Nether Gem to Bethor Iceshard in the Undercity."},nil,nil,3081,nil,{409},nil,nil,nil,85,nil,nil,nil,nil,nil,nil,nil,nil,{{68,100}}},
 [412] = {"Operation Recombobulation",{{1269}},{{1269}},7,10,77,nil,{"Bring Razzle Sprysprocket in Kharanos 8 Restabilization Cogs and 8 Gyromechanic Gears."},nil,{nil,nil,{{3083},{3084}}},nil,nil,nil,nil,nil,nil,1,nil,nil,nil,nil,nil,8,nil,nil,{{54,100},{47,100}}},
 [413] = {"Shimmer Stout",{{1374}},{{1959}},8,10,77,nil,{"Take the Barrel of Shimmer Stout to Mountaineer Barleybrew."},nil,nil,3085,nil,{315},nil,nil,nil,1,nil,nil,nil,nil,414,nil,nil,nil,{{47,50},{54,50}},nil,{415}},
@@ -414,7 +414,7 @@ ns.Data.quests = [=[return {
 [428] = {"Lost Deathstalkers",{{1952}},{{1950}},10,12,178,nil,{"Find the Deathstalkers Quinn and Rane Yorick."},nil,nil,nil,nil,nil,nil,nil,nil,130,nil,nil,nil,nil,429,8,nil,nil,{{68,25}},429},
 [429] = {"Wild Hearts",{{1950}},{{1937}},10,11,178,nil,{"Gather 6 discolored worg hearts and bring them to Apothecary Renferrel at the Sepulcher."},nil,{nil,nil,{{3164}}},nil,nil,{},nil,nil,nil,130,nil,nil,nil,nil,430,8,nil,nil,{{68,50}},nil,{428}},
 [430] = {"Return to Quinn",{{1937}},{{1951}},10,11,178,nil,{"Bring Quinn's potion to Quinn Yorick at the Ivar Patch, north of the Sepulcher."},nil,nil,3165,nil,{429},nil,nil,nil,130,nil,nil,nil,nil,425,nil,nil,nil,{{68,75}}},
-[431] = {"Candles of Beckoning",{nil,{1586}},{nil,{1586}},5,10,178,nil,nil,nil,nil,nil,nil,{366},nil,nil,{411},85,nil,nil,nil,nil,nil,8,1,409,{}},
+[431] = {"Candles of Beckoning",{nil,{1586}},{nil,{1586}},5,10,178,nil,nil,nil,nil,nil,nil,{366},nil,nil,nil,85,nil,nil,nil,nil,nil,8,1,409,{}},
 [432] = {"Those Blasted Troggs!",{{1254}},{{1254}},5,9,77,nil,{"Kill 6 Rockjaw Skullthumpers for Foreman Stonebrow at the Gol'Bolar quarry."},nil,{{{1115}}},nil,nil,nil,nil,nil,nil,1,nil,nil,nil,nil,nil,8,nil,nil,{{47,75},{54,75}}},
 [433] = {"The Public Servant",{{1977}},{{1977}},6,11,77,nil,{"Kill 10 Rockjaw Bonesnappers for Senator Mehr Stonehallow at the Gol'Bolar quarry."},nil,{{{1117}}},nil,nil,nil,nil,nil,nil,1,nil,nil,nil,nil,nil,8,nil,nil,{{47,75},{54,75}}},
 [434] = {"The Attack!",{{7766}},{{482}},16,31,77,nil,{"Remain in the garden until Lord Gregor Lescovar and Marzon the Silent Blade have had their conversation. Afterwards, kill them both before returning to Elling Trias in Stormwind."},{"Overhear Lescovar and Marzon's Conversation",{[1519]={{68.66,14.44}}}},{{{1754},{1755}}},nil,nil,{2746},nil,nil,nil,1519,nil,nil,nil,nil,394,2,2,nil,{{72,75}}},
