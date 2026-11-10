@@ -5503,6 +5503,14 @@ ns.Overrides.wowhead = {
                 "organize. But to do that, I need your help keeping the goblins at bay in Windshear Crag " ..
                 "to the east...",
         },
+        [1072] = {
+            description = "The device I'm thinking about is my most advanced version to date. But we'll " ..
+                "need a special potion if it's to work. I'm thinking we might as well get the good stuff " ..
+                "since this mission could be your last.\n\nAnd for that, we're going to need some potent " ..
+                "explosives: Nitromirglyceronium.\n\nThe only person who can make NG-5 is an old friend " ..
+                "of mine: Lomac Gearstrip. Look for him in Tinker Town.\n\nYou talk him into making us " ..
+                "some NG-5, I'll get to work on placement for my devices.",
+        },
         [1073] = {
             description = "Hahaha... you need Nitromirglyceronium to stop goblins from destroying a " ..
                 "forest?!\n\nI don't care if you know Gaxim or not... I'll give you the stuff just to see " ..
@@ -6301,6 +6309,11 @@ ns.Overrides.wowhead = {
                 "our conversation a little too intently if you catch my meaning? If I were you, I'd do " ..
                 "what you can to subdue him before he makes a break for the door.",
         },
+        [1251] = {
+            description = "An iron shield, blackened by the fire that raged through the inn, is affixed " ..
+                "to the crumbling chimney, one of the few remaining parts of the structure that once made " ..
+                "up the Shady Rest Inn.\n\nThe shield can be removed from the brick of the chimney.",
+        },
         [1252] = {
             description = "A glint of light on the ground catches your eye from underneath the rubble. " ..
                 "Brushing away debris and ash caked onto the object reveals the insignia of a gold anchor " ..
@@ -7033,6 +7046,13 @@ ns.Overrides.wowhead = {
                 "now kept at their lair in Skull Rock to the east of the city. With the tablet, I will " ..
                 "show you the runes necessary to summoning a voidwalker.",
         },
+        [1502] = {
+            description = "It is vital that a warrior's weapon is one of quality. And if there is an orc " ..
+                "who can craft quality weapons, then that orc is Thun'grim Firegaze. He is a hermit who " ..
+                "dwells atop the hills east of the Crossroads.\n\nIf you seek a weapon, warrior, then you " ..
+                "should seek Thun'grim. To find him, first travel to the Crossroads to the west, then " ..
+                "strike east into the hills. His camp is high on a hilltop.",
+        },
         [1503] = {
             description = "I will give you a weapon, <name>, but first you must aid me. The Razormanes to " ..
                 "the northwest came into my camp a few nights past. They would not meet me in combat, but " ..
@@ -7077,6 +7097,14 @@ ns.Overrides.wowhead = {
                 "female of the sayaad race, and need an object to use for enticement.\n\nHmm... If you " ..
                 "trust a blind man to lead you, <name>, then listen. In the bluffs of Orgrimmar, west of " ..
                 "the wind rider tower, lives Zankaja. She waits for the return of her mate.\n\nGo to her.",
+        },
+        [1509] = {
+            description = "My mate, Dogran, was recently sent to the Crossroads for duty. It was a " ..
+                "promotion, and he was very proud.\n\nI was sad, of course, but I didn't let him know " ..
+                "that. And worried, too. The Barrens is a more dangerous place than Orgrimmar, and I " ..
+                "feared the worst.\n\nNow it's been a week after he should have returned, and I have " ..
+                "received no word from him...\n\nPerhaps you could go to the Crossroads and see if they " ..
+                "have any news? He worked with Gazrog, who should still be stationed there.",
         },
         [1510] = {
             description = "He was stationed at Camp Taurajo, where we've been trying to weed out the " ..
@@ -7214,6 +7242,14 @@ ns.Overrides.wowhead = {
                 "for you to learn about the purity of water.\n\nSeek out Islen Waterseer in the Barrens. " ..
                 "She is along the eastern coast, south of the Southfury River and Ratchet. You will find " ..
                 "her there at her fishing hut. Good luck to you, <name>.",
+        },
+        [1530] = {
+            description = "If there is one lesson you must learn of water, it is this: water means " ..
+                "rebirth.\n\nIts power flows, erodes, and makes clean all manner of things. You will find " ..
+                "its ability to heal and replenish incomparable, but only when it is pure.\n\nWhen you " ..
+                "understand that water, when polluted, can devastate all that it touches, you will " ..
+                "appreciate how vital a resource it is.\n\nIf you wish the water sapta, find Brine deep " ..
+                "in Southern Barrens. Her home is continually molested by the quilboar there.",
         },
         [1532] = {
             description = "The winds of Kalimdor rush to meet you and you shall be counted among some of " ..
@@ -8944,6 +8980,15 @@ ns.Overrides.wowhead = {
                 "know that I went to Ratchet to warn Tinkerwiz of the dark iron's involvement in the " ..
                 "making of that super rig.\n\nLet's get going!",
             rewardChoices = {{9535, 1}, {9536, 1}},
+        },
+        [2924] = {
+            description = "A nigh-universal mechanical component--the essential artificial --was of great " ..
+                "use to the tinkers and smiths of Gnomeregan. But during the frantic exodus from our " ..
+                "city, no one remembered to take any of these devices with them! And I need a large " ..
+                "supply of them for work I will soon undertake.\n\nPlease, go into Gnomeregan and get me " ..
+                "some essential artificials. You'll find them in the deeper areas of our city, held in " ..
+                "containers called artificial extrapolators.\n\nThank you, <name>, and please hurry!",
+            rewardMoney = 5500,
         },
         [2925] = {
             description = "A gnome friend, Klockmort Spannerspan, sent word to me from Ironforge. He " ..
@@ -13028,6 +13073,12 @@ ns.Overrides.wowhead = {
                 "the ground. Your mistress, the one you be callin' Aelthalyste be needin' you back there. " ..
                 "Like my tribe, there things you must learn only from her. Don't be stayin' here too " ..
                 "long. You should be headin' to the War Quarter as fast as a zeppelin can carry you.",
+        },
+        [5662] = {
+            description = "My respect to you and your kind, <name>. I normally teach only those of my own " ..
+                "tribe. Your lessons come from Aelthalyste in the city once called Lordaeron.\n\nYou " ..
+                "should return to her if you're to learn those abilities that set you apart from other " ..
+                "faiths.\n\nGo to the War Quarter in the Undercity and find your mistress there.",
         },
         [5663] = {
             description = "Aelthalyste sent word out to all her priests. We're to direct the younger of " ..
@@ -17117,6 +17168,13 @@ ns.Overrides.wowhead = {
                 "headpiece of unmatched power.",
             rewardItems = {{21360, 1}},
         },
+        [8655] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "dominance and other minor components and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21388, 1}},
+        },
         [8659] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -17940,6 +17998,14 @@ ns.Overrides.wowhead = {
                 "Go there and retrieve some Soul Ashes of the Banished from their remains.",
             rewardChoices = {{22192, 3}, {22193, 3}},
         },
+        [8990] = {
+            description = "It became known to us in later days, as we were doing what we could ourselves " ..
+                "to survive, that Isalien, a night elf priestess of our company, had gone to the night " ..
+                "elvic ancestral city, now known as Dire Maul. From what we gathered, she went there both " ..
+                "for personal reasons and also to unlock the secrets of the piece of the amulet that she " ..
+                "had in her possession.\n\nShe didn't quite make it, though. Word got back to us that she " ..
+                "was ambushed at the Shrine of Eldretharr by Alzzin the Wildshaper and his forces.",
+        },
         [8991] = {
             description = "The siblings, Jarien and Sothos, decided to join the Scarlet Crusade upon the " ..
                 "disbanding of our mercenary company. They took the Right Piece of Lord Valthalak's " ..
@@ -18195,6 +18261,13 @@ ns.Overrides.wowhead = {
                 "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
                 "piece of armor for you.",
             rewardItems = {{22431, 1}},
+        },
+        [9051] = {
+            description = "The toxin you helped me create is for a special purpose. The great devilsaurs " ..
+                "of the crater make it dangerous to hunt and difficult for me to survive. Even if I " ..
+                "possessed the necessary strength, killing a devilsaur simply allows another to move into " ..
+                "its territory.\n\nTake this poisoned barb and stab it deep into a living devilsaur. The " ..
+                "toxin should pacify the creature, though I do not know how quickly...",
         },
         [9052] = {
             description = "I would ask you to help me create a toxin of sorts, to pacify a great creature " ..
@@ -18952,6 +19025,10 @@ ns.Overrides.wowhead = {
             },
             zoneID = 33,
         },
+        [1098] = {
+            spawns = {[10] = {{61.4, 61.4}, {61.4, 61.8}, {61.6, 61.6}, {65, 60.4}, {72.4, 58.6}}},
+            zoneID = 10,
+        },
         [1840] = {
             spawns = {[28] = {{53.4, 24.6}, {53.8, 24.4}, {54, 24.6}, {54.6, 23.8}, {55, 23.4}}},
             zoneID = 28,
@@ -19019,6 +19096,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1377,
         },
+        [14485] = {spawns = {[139] = {{21.4, 17.6}, {21.6, 17.6}, {21.8, 17.4}}}, zoneID = 139},
         [14697] = {
             spawns = {
                 [139] = {

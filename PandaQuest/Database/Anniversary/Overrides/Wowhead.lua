@@ -9720,6 +9720,17 @@ ns.Overrides.wowhead = {
                 "the creature is to the south... near the Ashenvale border.",
             rewardMoney = 7500,
         },
+        [6163] = {
+            description = "I was overwhelmed. On this very stead, I stood... held my ground in defense of " ..
+                "Lordaeron. The farm and all on it were waylaid by a gigantic wave of Scourge.\n\nThe " ..
+                "wretch. The filth. It hovered above me, entrails hanging from its gaping chest " ..
+                "cavity.\n\nI woke as Scourge. For so long I was helpless. My mind had coalesced with the " ..
+                "Lich King's.\n\nShe came for me... somewhere, somehow, I knew she would. Free.\n\nAnd " ..
+                "now, I must have my vengeance - my vengeance on that which took from me my life. Destroy " ..
+                "it.",
+            rewardChoices = {{18022, 1}, {17001, 1}},
+            rewardMoney = 18000,
+        },
         [6181] = {
             description = "Although we don't get much aid from Stormwind directly, I do have a contact in " ..
                 "the city who helps supply us with armor. His name is Osric Strang. His shop, Limited " ..
