@@ -102,6 +102,7 @@ Recipes\Store.lua
 Recipes\Scanner.lua
 Recipes\Archaeology.lua
 Sync\Telemetry.lua
+Sync\Trace.lua
 Sync\Character.lua
 Sync\Consent.lua
 Sync\Community.lua

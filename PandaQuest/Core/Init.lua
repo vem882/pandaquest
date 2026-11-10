@@ -240,6 +240,7 @@ ns.COMMAND_LINES = {
     "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
     "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
     "/pq sync - telemetry and community data status",
+    "/pq trace - copy recorded quest and gathering observations",
     "/pq scan professions - read the open profession window",
     "/pq scan archaeology - read your archaeology window",
     "/pq digsite - show the dig site bar so you can move it",
@@ -447,6 +448,8 @@ end
 commands.status = function()
     for _, line in ipairs(ns.StatusLines()) do Log.Print("%s", line) end
 end
+
+commands.trace = function() ns.Trace.Show() end
 
 commands.sync = function()
     -- Telemetry owns the wording; the fallback keeps /pq sync useful if the
