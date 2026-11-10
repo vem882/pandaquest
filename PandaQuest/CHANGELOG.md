@@ -4,6 +4,33 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.451] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
+- database - Classic Era rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
+- database - TBC Anniversary rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
+- database - WoW Forever rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
+- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 857 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,765 quests, 49 NPCs, 2 objects
+- quest 410 - The Dormant Shade - updated
+  - exclusive quests: -1
+- quest 431 - Candles of Beckoning - updated
+  - exclusive quests: -1
+- npc 329 - Earth Elemental - updated
+  - coordinates: 40 spawn points added in Silithus
+- npc 2013 - Gnarlpine Avenger - updated
+  - coordinates: 22 spawn points added in Teldrassil
+- npc 4036 - Rogue Flame Spirit - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 6239 - Cyclonian - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 17532 - Vision of Purity - updated
+  - coordinates: 1 spawn point added in Azuremyst Isle
+- npc 53258 - Lord Rhyolith - updated
+  - coordinates: 1 spawn point added in Mount Hyjal
+
 ## [0.2.450] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -104,20 +131,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Thousand Needles
 - npc 11486 - Prince Tortheldrin - updated
   - NPC title added (Ruler of the Shen'dralar)
-
-## [0.2.440] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 845 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,599 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,673 quests, 48 NPCs, 2 objects
-- npc 10079 - Brave Moonhorn - updated
-  - coordinates: 3 spawn points added in Thousand Needles
-- npc 10941 - [Deprecated for 4.x]Wizlo Bearingshiner - updated
-  - coordinates: 3 spawn points added in Thousand Needles
-- npc 70749 - Ro-Shambo - updated
-  - NPC level added (93)
 
 ## [0.2.412]
 

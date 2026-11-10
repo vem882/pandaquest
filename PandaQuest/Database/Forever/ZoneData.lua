@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.4+v1.0.12 (Forever database + corrections from QuestieDB 1.0.12). DO NOT EDIT.
--- Built: 2026-11-08T00:10:51Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.6.5+v1.0.13 (Forever database + corrections from QuestieDB 1.0.13). DO NOT EDIT.
+-- Built: 2026-11-10T12:10:19Z. Schema version 1.
 -- Zone tables merged like Questie's ZoneDB.Initialize() (base table + MoP override table).
 -- ns.Data.dungeons[areaId] = { name, alternativeAreaIds|nil, parentAreaId, { {areaId, x, y}, ... } entrances (Alliance),
 --   [5] = Horde entrances when they differ (Alterac Valley, Warsong Gulch) }.
@@ -236,6 +236,7 @@ ns.Data.areaIdToUiMapId = {
   [288] = 1424,
   [289] = 1424,
   [290] = 1424,
+  [293] = 1424,
   [294] = 1424,
   [295] = 1424,
   [297] = 1434,
@@ -1424,6 +1425,7 @@ ns.Data.subZoneToParentZone = {
   [288] = 267,
   [289] = 267,
   [290] = 267,
+  [293] = 267,
   [294] = 267,
   [295] = 267,
   [297] = 33,
@@ -4667,6 +4669,7 @@ ns.Data.zoneNames = {
   [288] = "Azurelode Mine",
   [289] = "Nethander Stead",
   [290] = "Dun Garok",
+  [293] = "Thoradin's Wall",
   [294] = "Eastern Strand",
   [295] = "Western Strand",
   [297] = "Jaguero Isle",
