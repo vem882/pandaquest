@@ -6,6 +6,8 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 
 ## [Unreleased]
 
+- Show a world map guide from your ghost to your corpse.
+
 - Keep map pins out of the Leatrix Plus minimap button menu.
 
 ## [0.2.452] - 2026-11-10

@@ -1,3 +1,5 @@
+- Show a world map guide from your ghost to your corpse.
+
 - Keep map pins out of the Leatrix Plus minimap button menu.
 
 - Preview the NPC associated with the selected quest in the world map.
