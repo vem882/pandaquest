@@ -6729,6 +6729,11 @@ ns.Overrides.wowhead = {
                 "Take some time to read it when you have a chance. I'm thinkin' it came from the warrior " ..
                 "trainer Thran. Take a gander at it and go find him inside Anvilmar when you've a chance.",
         },
+        [3107] = {
+            description = "While you were helping me out, this rune was given to me to pass on to you. " ..
+                "Take some time to read it when you have a chance. I'm thinkin' it came from the paladin " ..
+                "trainer Bromos. Take a gander at it and go find him inside Anvilmar when you've a chance.",
+        },
         [3108] = {
             description = "While you were helping me out, this rune was given to me to pass on to you. " ..
                 "Take some time to read it when you have a chance. I'm thinkin' it came from the hunter " ..
@@ -10486,6 +10491,7 @@ ns.Overrides.wowhead = {
         [8104] = {rewardItems = {{19601, 1}}},
         [8108] = {rewardItems = {{19604, 1}}},
         [8116] = {rewardItems = {{19606, 1}}},
+        [8144] = {rewardItems = {{19617, 1}}},
         [8146] = {rewardItems = {{19619, 1}}},
         [8147] = {rewardItems = {{19620, 1}}},
         [8151] = {
@@ -15441,6 +15447,12 @@ ns.Overrides.wowhead = {
                 "take them and their minions out would be a great set back to the Burning Legion.",
             rewardChoices = {{29908, 1}, {29909, 1}, {29910, 1}, {29911, 1}, {29913, 1}},
         },
+        [10166] = {
+            description = "This pendant brings back memories of a different time. A better " ..
+                "time.\n\nUnfortunately, memories are the last thing I need right now.\n\nI want you to " ..
+                "bury this by the runestone in the Scorched Grove. It was there that I first met the " ..
+                "treant elder. Put my old friend's memory to rest.",
+        },
         [10168] = {
             description = "For several centuries, the spirits of Auchindoun coalesced into my darkened " ..
                 "essence. Many of the catastrophes that befell this crypt were a direct result of my " ..
@@ -19691,6 +19703,12 @@ ns.Overrides.wowhead = {
                 "the dragon was to be used as a diversion to draw attention away from their escape. " ..
                 "Looking at all of the corpses littering the mine, it would be safe to assume that their " ..
                 "plans failed.\n\nReturn the escape plans to the Mistress of the Mines.",
+        },
+        [11084] = {
+            description = "Well, well, well... still alive I see. That's good, because Mor'ghor has " ..
+                "requested your presence in his tower at once. Get a move on!",
+            rewardItems = {{32695, 1}},
+            rewardMoney = 44000,
         },
         [11085] = {
             description = "Hail, <name>. I thank you for coming to my aid.\n\nThe arakkoa's monstrous " ..
