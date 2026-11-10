@@ -4,6 +4,61 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.460] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 892 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,661 quests, 30 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,773 quests, 49 NPCs, 2 objects
+- npc 4546 - [Deprecated for 4.x]Bor'zehn - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 5882 - Pephredo - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 6576 - [Deprecated for 4.x]Brienna Starglow - updated
+  - coordinates: 1 spawn point added in Feralas
+- npc 15861 - Ironforge Infantryman - updated
+  - coordinates: 14 spawn points added in Silithus
+- npc 25078 - Captain Krick Wrenchnozzle - updated
+  - coordinates: 12 spawn points added in The Barrens
+  - coordinates: 11 spawn points added in Northern Stranglethorn
+  - coordinates: 8 spawn points added in The Cape of Stranglethorn
+- npc 29860 - Vile - updated
+  - coordinates: 4 spawn points added in Icecrown
+- npc 31564 - Warsong Battleguard - updated
+  - coordinates: 12 spawn points added in Orgrimmar
+  - coordinates: 5 spawn points added in Durotar
+- npc 35370 - Josiah Avery - updated
+  - coordinates: 7 spawn points added in Gilneas City
+- npc 37881 - Wretched Ghoul - updated
+  - coordinates: 3 spawn points added in Dragonblight
+- npc 50664 - Myzerian - updated
+  - coordinates: 1 spawn point added in Uldum
+- npc 50750 - Cracklefang - updated
+  - coordinates: 3 spawn points added in The Jade Forest
+- npc 50891 - Boros - updated
+  - coordinates: 5 spawn points added in Arathi Highlands
+- npc 51022 - Chordix - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 51028 - The Deep Tunneler - updated
+  - coordinates: 2 spawn points added in Winterspring
+- npc 51044 - Plague - updated
+  - coordinates: 1 spawn point added in Tirisfal Glades
+- npc 51052 - Gib the Banana-Hoarder - updated
+  - coordinates: 8 spawn points added in Swamp of Sorrows
+- npc 51099 - Arcane Reforger - updated
+  - coordinates: 1 spawn point added in Orgrimmar
+- npc 63975 - Krik'thik Warrior - updated
+  - coordinates: 16 spawn points added in Vale of Eternal Blossoms
+- npc 68863 - Chief Sapper Glint - updated
+  - NPC level added (90)
+- npc 71169 - Chi-Ji - updated
+  - NPC title added (The Red Crane)
+  - NPC level added (90)
+- npc 71321 - Vision of Deathwing - updated
+  - NPC title added (Aspect of Death)
+  - NPC level added (92)
+
 ## [0.2.459] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -153,16 +208,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,628 quests, 29 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,707 quests, 48 NPCs, 2 objects
-
-## [0.2.443] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 849 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,623 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,704 quests, 48 NPCs, 2 objects
-- npc 69168 - Amani'shi Flame Caster - updated
-  - NPC level added (91)
 
 ## [0.2.412]
 
