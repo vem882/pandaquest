@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.445] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 850 NPCs, 2 objects
+- database - Classic Era: data from the PandaQuest portal: 2,631 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,711 quests, 48 NPCs, 2 objects
+- npc 9561 - Jalinda Sprig - updated
+  - coordinates: 1 spawn point added in Burning Steppes
+
 ## [0.2.444] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -125,13 +135,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,644 quests, 48 NPCs, 2 objects
 - npc 69176 - Amani'shi Beast Shaman - updated
   - NPC level added (92)
-
-## [0.2.434] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,585 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,641 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 

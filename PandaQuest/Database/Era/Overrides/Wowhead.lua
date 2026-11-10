@@ -3433,6 +3433,12 @@ ns.Overrides.wowhead = {
                 "a heart from the whelps in Lethlor Ravine, I'll show you my skill!",
             rewardItems = {{5421, 1}},
         },
+        [707] = {
+            description = "<name>. I received reports from Prospector Ironband at his excavation site in " ..
+                "Loch Modan--he needs some legwork done concerning another of our excavations.\n\nI don't " ..
+                "have more details than that, but if you want to stretch your legs then go speak with " ..
+                "Ironband.",
+        },
         [709] = {
             description = "Oh my! Oh my! There is a doom approaching. Mark me! A doom!\n\nNo, I cannot " ..
                 "speak of it...cannot utter their names or they may hear me! But if we learn, yes, if we " ..
@@ -9212,6 +9218,11 @@ ns.Overrides.wowhead = {
                 "sent by the hunter trainer Lanka. If this note is from Lanka, I wouldn't take long in " ..
                 "reading it's contents.",
         },
+        [3093] = {
+            description = "Just a moment ago a messenger was looking for you, <name>. I believe she was " ..
+                "sent by the shaman trainer Meela. If this note is from Meela, I wouldn't take long in " ..
+                "reading it's contents.",
+        },
         [3094] = {
             description = "Just a moment ago a messenger was looking for you, <name>. I believe she was " ..
                 "sent by the druid trainer Gart. If this note is from Gart, I wouldn't take long in " ..
@@ -13334,6 +13345,14 @@ ns.Overrides.wowhead = {
                 "land; you will find the next creature in the waters off the coast. Across from Sen'jin " ..
                 "Village, near the Echo Isles. look for a spirited crab called the surf crawler. Use the " ..
                 "taming rod to tame it, then practice your skills.",
+        },
+        [6084] = {
+            description = "Those crag boars are quite burly; maybe you'd like something with a little " ..
+                "more finesse? Alright then, I've got jus' the thing. South and east of here, you'll find " ..
+                "large white cats called snow leopards. Just like an elegantly-carved rifle, behind their " ..
+                "beautiful exterior lies a powerful fighter, capable of doing extreme damage. You'll find " ..
+                "them to be much more agile an' swift than the boar you tamed.\n\nTake this taming rod " ..
+                "and see how you like the snow leopard.",
         },
         [6085] = {
             description = "Perhaps you'd like a creature that possesses little more than brute strength. " ..
