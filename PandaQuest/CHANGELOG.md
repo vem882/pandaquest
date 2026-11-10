@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.450] - 2026-11-10
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 851 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,657 quests, 29 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,751 quests, 48 NPCs, 2 objects
+- object 223095 - Moss-Covered Chest - updated
+  - coordinates: 1 spawn point added in Timeless Isle
+
 ## [0.2.449] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -108,24 +118,6 @@ Data from the PandaQuest portal.
   - coordinates: 3 spawn points added in Thousand Needles
 - npc 70749 - Ro-Shambo - updated
   - NPC level added (93)
-
-## [0.2.439] - 2026-11-09
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 842 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,598 quests, 28 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,663 quests, 48 NPCs, 2 objects
-- npc 740 - Adolescent Whelp - updated
-  - coordinates: 40 spawn points added in Swamp of Sorrows
-- npc 1200 - Morbent Fel - updated
-  - coordinates: 4 spawn points added in Duskwood
-- npc 4629 - [Deprecated for 4.x]Trackmaster Zherin - updated
-  - coordinates: 2 spawn points added in Thousand Needles
-- npc 9706 - Yorba Screwspigot - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 13278 - Duke Hydraxis - updated
-  - coordinates: 2 spawn points added in Azshara
 
 ## [0.2.412]
 
