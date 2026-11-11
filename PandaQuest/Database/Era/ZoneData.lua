@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.5+v1.0.13 (Classic Era database + corrections from QuestieDB 1.0.13). DO NOT EDIT.
--- Built: 2026-11-10T12:10:19Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.7.0+v1.0.14 (Classic Era database + corrections from QuestieDB 1.0.14). DO NOT EDIT.
+-- Built: 2026-11-11T20:08:04Z. Schema version 1.
 -- Zone tables merged like Questie's ZoneDB.Initialize() (base table + MoP override table).
 -- ns.Data.dungeons[areaId] = { name, alternativeAreaIds|nil, parentAreaId, { {areaId, x, y}, ... } entrances (Alliance),
 --   [5] = Horde entrances when they differ (Alterac Valley, Warsong Gulch) }.
@@ -3174,6 +3174,7 @@ ns.Data.zoneIds = {
   ["ARATHI_HIGHLANDS"] = 45,
   ["ARENA_OF_ANNIHILATION"] = 6219,
   ["ASHENVALE"] = 331,
+  ["ASHENVALE_INSTANCE"] = 16169,
   ["ASHWOODS_FALL"] = 17808,
   ["AUBERDINE"] = 442,
   ["AUCHENAI_CRYPTS"] = 3790,
@@ -3262,6 +3263,7 @@ ns.Data.zoneIds = {
   ["DARKSPEAR_ISLANDS_SHIPWRECK_COVE"] = 16609,
   ["DARNASSUS"] = 1657,
   ["DEADWIND_PASS"] = 41,
+  ["DEADWIND_PASS_SOD"] = 16114,
   ["DEATHKNELL"] = 6454,
   ["DEEPHOLM"] = 5042,
   ["DEEPRUN_TRAM"] = 2257,
@@ -3467,6 +3469,7 @@ ns.Data.zoneIds = {
   ["NAXXRAMAS_SOD"] = 16394,
   ["NETHERSTORM"] = 3523,
   ["NEW_AVALON"] = 4343,
+  ["NEW_AVALON_SOD"] = 16335,
   ["NEW_TINKERTOWN"] = 6457,
   ["NEW_TINKERTOWN_OLD"] = 133,
   ["NIGHTCLAW_CAVERN"] = 16720,
@@ -6305,10 +6308,13 @@ ns.Data.zoneNames = {
   [15828] = "The Burning of Andorhal",
   [15938] = "Starfall Barrow Den",
   [16074] = "Karazhan Crypts",
+  [16114] = "Deadwind Pass Sod",
   [16144] = "Elwynn Forest Blue Whelpling Inn Prototype",
+  [16169] = "Ashenvale Instance",
   [16234] = "Legashi Stronghold",
   [16236] = "Scarlet Enclave",
   [16295] = "The Scarab Dais",
+  [16335] = "New Avalon Sod",
   [16369] = "Scarlet Enclave Prison",
   [16370] = "Scarlet Enclave Tyrs Hand",
   [16371] = "Scarlet Enclave New Avalon",
