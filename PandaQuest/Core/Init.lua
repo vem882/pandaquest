@@ -240,7 +240,7 @@ ns.COMMAND_LINES = {
     "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
     "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
     "/pq sync - telemetry and community data status",
-    "/pq price <item ID> - show Auctionator and TradeSkillMaster prices",
+    "/pq price <item name, ID, or link> - show Auctionator and TradeSkillMaster prices",
     "/pq recommend - compare XP and gold for nearby quest targets",
     "/pq trace - copy recorded quest and gathering observations",
     "/pq scan professions - read the open profession window",
@@ -454,11 +454,38 @@ end
 commands.trace = function() ns.Trace.Show() end
 
 commands.price = function(arg)
-    local itemID = tonumber(arg:match("^%d+$"))
-    if not itemID or itemID < 1 or itemID > 2147483647 then
-        Log.Print("Usage: /pq price <item ID>")
+    if arg == "" then
+        Log.Print("Usage: /pq price <item name, ID, or link>")
         return
     end
+    local itemID = tonumber(arg:match("^%d+$") or arg:match("|Hitem:(%d+)[:|]"))
+    local db = ns.DB
+    if not itemID then
+        local query = arg:lower()
+        for id in db.IterateItemIDs() do
+            local name = db.GetItemName(id)
+            if name and name:lower() == query then
+                if itemID then
+                    Log.Print("Several items are named %s. Shift-click the item into chat to use its link.", arg)
+                    return
+                end
+                itemID = id
+            end
+        end
+        if not itemID then
+            local lookup = C_Item and C_Item.GetItemInfoInstant or GetItemInfoInstant
+            itemID = lookup and lookup(arg)
+        end
+        if not itemID then
+            Log.Print("Item not found: %s. Shift-click the item into chat to use its link.", arg)
+            return
+        end
+    end
+    if not itemID or itemID < 1 or itemID > 2147483647 then
+        Log.Print("Usage: /pq price <item name, ID, or link>")
+        return
+    end
+    Log.Print("%s (item ID: %d)", db.GetItemName(itemID) or "Item", itemID)
     local api = Auctionator and Auctionator.API and Auctionator.API.v1
     local function quote(label, lookup, ...)
         if type(lookup) ~= "function" then return false end
