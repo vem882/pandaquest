@@ -1033,6 +1033,13 @@ class TheReleaseNotes(unittest.TestCase):
     data releases the portal's sync makes are not required in it.
     """
 
+    def test_package_uses_newest_changelog_section(self) -> None:
+        entries = build.entries(build.identity())
+        changelog = entries["PandaQuest/changelog.txt"].decode("utf-8")
+        latest = next(line for line in changelog.splitlines() if re.fullmatch(r"\d+(?:\.\d+)+", line))
+        notes = entries["PandaQuest/UI/ReleaseNotes.lua"].decode("utf-8")
+        self.assertEqual(re.findall(r'version = "([^"]+)"', notes)[0], latest)
+
     def test_every_release_note_is_a_line_of_its_changelog_section(self) -> None:
         notes = (ADDON_DIR / "UI" / "ReleaseNotes.lua").read_text(encoding="utf-8")
         changelog = (ADDON_DIR / "changelog.txt").read_text(encoding="utf-8")

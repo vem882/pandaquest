@@ -906,7 +906,7 @@ local T = {
         "pois",
     ["Modules running: %d of %d"] =
         "Käynnissä olevia moduuleja: %d / %d",
-    ["What changed in the recent versions. The whole list is changelog.txt in the addon's folder."] =
+    ["Highlights from recent versions. See changelog.txt in the addon's folder for the full list."] =
         "Mitä viimeisimmissä versioissa muuttui. Koko luettelo on lisäosan kansion tiedostossa changelog.txt.",
     ["Map & Minimap"] =
         "Kartta ja minikartta",
@@ -926,8 +926,8 @@ local T = {
         "Synkronointi",
     ["Database"] =
         "Tietokanta",
-    ["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic."] =
-        "PandaQuest on tehtäväapuri ja navigaattori Mists of Pandaria Classiciin.",
+    ["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic, Classic Era, TBC Anniversary, and WoW Forever."] =
+        "PandaQuest on tehtäväapuri ja navigaattori Mists of Pandaria Classiciin, Classic Eraan, TBC Anniversaryyn ja WoW Foreveriin.",
     ["An arrow to your next objective, quest pins on the map and minimap, gathering nodes with respawn timers."] =
         "Nuoli seuraavaan tavoitteeseen, tehtävämerkit kartalla ja minikartalla, keräyspaikat uudelleensyntymisajastimineen.",
     ["Flight times, archaeology and profession tools, and a page for every quest."] =
@@ -946,8 +946,8 @@ local T = {
         "Tekijät ja lisenssit",
     ["PandaQuest is free software under the GNU General Public License v3."] =
         "PandaQuest on vapaa ohjelma GNU General Public License v3 -lisenssillä.",
-    ["The quest database is built from Questie's Mists of Pandaria data (GPLv3)."] =
-        "Tehtävätietokanta on koottu Questien Mists of Pandaria -tiedoista (GPLv3).",
+    ["The quest databases use data from Questie (GPLv3)."] =
+        "Tehtävätietokannat käyttävät Questien tietoja (GPLv3).",
     ["Embedded libraries keep their own licences: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons."] =
         "Mukana olevilla kirjastoilla on omat lisenssinsä: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons.",
     ["Inspired by Questie, pfQuest and TomTom; no code of theirs is copied."] =

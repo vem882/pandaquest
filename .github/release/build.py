@@ -509,6 +509,24 @@ def _entry(name: str) -> zipfile.ZipInfo:
     return info
 
 
+def release_notes(changelog: str) -> str:
+    """Render a bounded preview of the newest versioned changelog sections for the game UI."""
+    sections: list[tuple[str, list[str]]] = []
+    for line in changelog.splitlines():
+        if re.fullmatch(r"\d+(?:\.\d+)+", line):
+            if len(sections) == 12:
+                break
+            sections.append((line, []))
+        elif sections and line.startswith("- ") and len(sections[-1][1]) < 8:
+            sections[-1][1].append(line[2:])
+    rows = ["local _, ns = ...", "ns.ReleaseNotes = {"]
+    for version, lines in sections:
+        if lines:
+            quoted = ", ".join(_lua_string(line) for line in lines)
+            rows.append(f"    {{ version = {_lua_string(version)}, lines = {{ {quoted} }} }},")
+    return "\n".join([*rows, "}", ""])
+
+
 def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, bytes]:
     """Every zip entry, by its path inside the archive.  Every key starts with ``PandaQuest/``.
 
@@ -553,6 +571,9 @@ def entries(ident: dict[str, object], root: Path | None = None) -> dict[str, byt
     for name, text in tocs.items():
         found[f"{ADDON}/{name}"] = stamp_toc(text, ident).encode("utf-8")
     found[build_name] = build_lua(ident).encode("utf-8")
+    notes_name = f"{ADDON}/UI/ReleaseNotes.lua"
+    changelog = found[f"{ADDON}/changelog.txt"].decode("utf-8")
+    found[notes_name] = release_notes(changelog).encode("utf-8")
     return found
 
 

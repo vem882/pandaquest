@@ -465,10 +465,10 @@ local showCommands = false              -- About & Help: the Commands section, f
 local function releaseNotes()
     local args = {
         intro = { type = "description", order = 0,
-            name = L["What changed in the recent versions. The whole list is changelog.txt in the addon's folder."] },
+            name = L["Highlights from recent versions. See changelog.txt in the addon's folder for the full list."] },
     }
     for index, release in ipairs(ns.ReleaseNotes or {}) do
-        args["v" .. index] = { type = "header", order = index * 10, name = release.version .. "  -  " .. (release.date or "") }
+        args["v" .. index] = { type = "header", order = index * 10, name = release.date and (release.version .. "  -  " .. release.date) or release.version }
         args["t" .. index] = { type = "description", order = index * 10 + 1,
             name = "- " .. table.concat(release.lines or {}, "\n- ") }
     end
@@ -980,7 +980,7 @@ local function buildTable()
             about = {
                 type = "group", order = 16, name = L["About & Help"], args = {
                     what = { type = "description", order = 1, fontSize = "medium",
-                        name = L["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic."] .. " "
+                        name = L["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic, Classic Era, TBC Anniversary, and WoW Forever."] .. " "
                             .. L["An arrow to your next objective, quest pins on the map and minimap, gathering nodes with respawn timers."]
                             .. " " .. L["Flight times, archaeology and profession tools, and a page for every quest."] },
                     how = { type = "description", order = 2,
@@ -997,7 +997,7 @@ local function buildTable()
                     creditsHeader = header(20, L["Credits and licences"]),
                     credits = { type = "description", order = 21,
                         name = L["PandaQuest is free software under the GNU General Public License v3."] .. " "
-                            .. L["The quest database is built from Questie's Mists of Pandaria data (GPLv3)."] .. " "
+                            .. L["The quest databases use data from Questie (GPLv3)."] .. " "
                             .. L["Embedded libraries keep their own licences: Ace3, LibStub, CallbackHandler, LibDataBroker, LibDBIcon, HereBeDragons."]
                             .. " " .. L["Inspired by Questie, pfQuest and TomTom; no code of theirs is copied."] },
                     commandsHeader = header(30, L["Commands"]),

@@ -1,3 +1,5 @@
+- Show recent changelog highlights in the game and list supported games in About & Help.
+
 Add /pq trace to copy recorded quest and gathering observations for manual review.
 
 Ignore the empty community guide placeholder when checking game compatibility.
