@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.470] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,949 quests, 979 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,709 quests, 35 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,834 quests, 51 NPCs, 2 objects
+- quest 13903 - Gorishi Grub - updated
+  - description added
+  - reward items: +1
+- npc 36601 - Amberwind's Construct - updated
+  - coordinates: 6 spawn points added in Azshara
+
 ## [0.2.469] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -355,33 +368,6 @@ Data from the PandaQuest portal.
   - NPC title added (Blackfuse Company)
 - npc 73606 - Lady Sylvanas Windrunner - updated
   - NPC title added (Banshee Queen)
-
-## [0.2.451] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
-- database - Classic Era rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
-- database - TBC Anniversary rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
-- database - WoW Forever rebuilt from Questie 12.6.5+v1.0.13 (was 12.6.4+v1.0.12)
-- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 857 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,765 quests, 49 NPCs, 2 objects
-- quest 410 - The Dormant Shade - updated
-  - exclusive quests: -1
-- quest 431 - Candles of Beckoning - updated
-  - exclusive quests: -1
-- npc 329 - Earth Elemental - updated
-  - coordinates: 40 spawn points added in Silithus
-- npc 2013 - Gnarlpine Avenger - updated
-  - coordinates: 22 spawn points added in Teldrassil
-- npc 4036 - Rogue Flame Spirit - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 6239 - Cyclonian - updated
-  - coordinates: 3 spawn points added in Hillsbrad Foothills
-- npc 17532 - Vision of Purity - updated
-  - coordinates: 1 spawn point added in Azuremyst Isle
-- npc 53258 - Lord Rhyolith - updated
-  - coordinates: 1 spawn point added in Mount Hyjal
 
 ## [0.2.412]
 

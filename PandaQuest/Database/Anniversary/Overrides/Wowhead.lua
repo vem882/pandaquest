@@ -4274,6 +4274,12 @@ ns.Overrides.wowhead = {
                 "how much destruction you cause. Plan Alpha's success depends on you bringing back the " ..
                 "Venture Co.'s engineering plans from inside the lumber mill south of Cragpool Lake.",
         },
+        [1080] = {
+            description = "Plan Beta's just like Plan Alpha, <name>.\n\nWe cause a distraction and then " ..
+                "steal their precious letters.\n\nThe key is to get their letters... remember " ..
+                "that.\n\nThe pages I gave you already will tell you where to plant the explosives. Just " ..
+                "get back here alive and with those letters....",
+        },
         [1081] = {
             description = "<name>, I am sure Tyrande Whisperwind herself would like to thank you for " ..
                 "taking part in this mission.\n\nIt may not appear so on the surface, but what you've " ..
@@ -9316,6 +9322,13 @@ ns.Overrides.wowhead = {
                 "city. He will be waiting.",
             rewardXP = 390,
         },
+        [5646] = {
+            description = "Aelthalyste show our people great respect by sending them back to me for more " ..
+                "training, and now I do the same for her tribe.\n\nYou return to the Undercity, <name>. " ..
+                "There, in the War Quarter, she be ready to teach you more 'bout your people and their " ..
+                "ways. Go there, and do not wait long.",
+            rewardXP = 390,
+        },
         [5647] = {
             description = "Your race is so very strong, <name>. We are proud to call you allies. And as " ..
                 "each day's sun sets, you and your kin grow closer to not only finding your true origins, " ..
@@ -9728,6 +9741,15 @@ ns.Overrides.wowhead = {
                 "choosing to be your companion; this creature will face the challenges you face, and gain " ..
                 "experience alongside you. I will also show you how to call it and dismiss it as you wish.",
             rewardXP = 840,
+        },
+        [6103] = {
+            description = "You now have the power to tame a pet, but you must also gain the skills to " ..
+                "train it.\n\nTravel to Darnassus. There you must speak to one of our most revered " ..
+                "hunters, Jocaste. She will give you the ability to train your new pet, so make " ..
+                "haste.\n\nWhile Jocaste may seem stern, she is always pleased to see another hunter " ..
+                "rising through the ranks. Treat her with respect and she will return in kind. Good luck, " ..
+                "<name>.",
+            rewardXP = 420,
         },
         [6121] = {
             description = "You're now ready to learn about poison and the power we as druids have over " ..
@@ -11926,6 +11948,11 @@ ns.Overrides.wowhead = {
                 "element and I shall infuse weapons of great power.",
             rewardChoices = {{21273, 1}, {21275, 1}, {21268, 1}},
         },
+        [8800] = {
+            description = "As you complete the tasks you're assigned in the war you'll want to talk to " ..
+                "Vargus, the blacksmith. Show him any badges you've earned along the way. He'll provide " ..
+                "you with gear to match your level of commitment to our cause.",
+        },
         [8807] = {
             description = "Geologist Larksbane 's studies have proven to be of tremendous value to our " ..
                 "operations in Silithus. She has recently requested scrying materials to be used in her " ..
@@ -12751,6 +12778,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{28154, 1}, {28157, 1}, {28161, 1}},
             rewardMoney = 800,
         },
+        [9173] = {
+            description = "<class>, I want you to reclaim Windrunner Spire!\n\nIt's an honor, really. " ..
+                "Windrunner Spire is the original home of Lady Sylvanas Windrunner, queen of the Forsaken " ..
+                "and former ranger-general of the elves. But now it's been overrun by the mindless " ..
+                "Scourge.\n\nTo get there take the road south until it branches. Take the right fork and " ..
+                "after crossing the Dead Scar continue southwest. You can't miss it.",
+            rewardMoney = 700,
+        },
         [9175] = {
             description = "The necklace shimmers, a remarkable piece of jewelry that doesn't seem to " ..
                 "succumb to the gloom that permeates the Ghostlands. Given the inscription, and where you " ..
@@ -12758,6 +12793,16 @@ ns.Overrides.wowhead = {
                 "it would be best to first take it to High Executor Mavren at Tranquillien? He seems to " ..
                 "be the highest ranking Forsaken in the area and is sure to know what to do with it.",
             rewardMoney = 1400,
+        },
+        [9176] = {
+            description = "According to this journal, Dar'Khan promised the Scourge two powerful elven " ..
+                "artifacts: the stone of light and the stone of flame. These were imbued with the magical " ..
+                "energies of the Sunwell and attuned to have warding powers against the Scourge.\n\nThe " ..
+                "crystals were to be transported to where the Howling Ziggurat and the Bleeding Ziggurat " ..
+                "now stand, in the middle of the Dead Scar. If they're still held there, we need to " ..
+                "recover them. Their power will be greatly useful in our struggle against the enemy.",
+            rewardChoices = {{22783, 1}, {22784, 1}},
+            rewardMoney = 900,
         },
         [9177] = {
             description = "This is quite extraordinary! It appears to be a gift to Lady Sylvanas " ..
@@ -13224,6 +13269,15 @@ ns.Overrides.wowhead = {
                 "live out the rest of their lives in such a horrible condition.\n\nYou'll find these " ..
                 "cursed Lost Ones at the Fallow Sanctuary, east down the path.",
             rewardMoney = 4500,
+        },
+        [9450] = {
+            description = "The balance of the elements has been disrupted by the violent intrusion of the " ..
+                "draenei to the Vale. Your crash has caused the spirits of earth to be enraged and turn " ..
+                "upon the other elements who have come to quell them. You will learn that an " ..
+                "understanding of the elements can only come when all are in harmony.\n\nThus, it falls " ..
+                "to you to seek a balance. Behind me in the grove you will find the restless spirits of " ..
+                "earth warring upon the other three elements. Help restore the balance.",
+            rewardXP = 355,
         },
         [9451] = {
             description = "I will now give you a piece of my physical being that you may create your " ..
@@ -14680,6 +14734,14 @@ ns.Overrides.wowhead = {
                 "to tell you more about the basidium.",
             rewardMoney = 27000,
         },
+        [9828] = {
+            description = "A close inspection of the basidium reveals a number of indentations that might " ..
+                "have once held something. The alien mass of fungus presents something of a puzzle. It's " ..
+                "far from healthy, but you have little clue as to what function it might normally " ..
+                "perform.\n\nPerhaps someone more familiar with the denizens of Zangarmarsh would be able " ..
+                "to tell you more about the basidium.",
+            rewardMoney = 27000,
+        },
         [9829] = {
             description = "Alturus's report is unsettling. We thought it was bad when Karazhan sealed " ..
                 "itself off to the outside world. We had agents inside; we never heard from any of them " ..
@@ -15570,6 +15632,13 @@ ns.Overrides.wowhead = {
                 "probably be at the bar, drinking away his sorrows.\n\nBy the way, you may need to " ..
                 "convince him to lend his assistance. Try to approach him with patience and " ..
                 "understanding. If that does not work, use your fists.",
+        },
+        [10005] = {
+            description = "<name>, after you're done celebrating here, I think that you should go back to " ..
+                "the Cenarion Thicket and speak with Earthbinder Tavgren.\n\nI'm certain that he'll want " ..
+                "to know what really happened out there.",
+            rewardChoices = {{25931, 1}, {25930, 1}, {25932, 1}, {25929, 1}},
+            rewardMoney = 87000,
         },
         [10006] = {
             description = "<name>, I think that after you're done celebrating here, you should go back to " ..
@@ -18619,6 +18688,15 @@ ns.Overrides.wowhead = {
                 "name is Altruis. He hates all demons with a passion and will help us if you can convince " ..
                 "him that you share his goals.\n\nGo to western Nagrand and find him. He might be willing " ..
                 "to shed some light on these new demon hunter training grounds.",
+        },
+        [10690] = {
+            description = "WANTED!\n\nRema, the den mother and primary defender of the Jagged Ridge south " ..
+                "of Thunderlord Stronghold.\n\nFind her by heading east out of town and across the bridge " ..
+                "that traverses the Bloodmaul Ravine. She keeps herself secluded in the tunnel at the " ..
+                "southern edge of the ridge.\n\nReturn with news of her demise to Commander Skyshadow of " ..
+                "Sylvanaar.",
+            rewardChoices = {{31423, 1}, {31422, 1}, {31424, 1}},
+            rewardMoney = 35000,
         },
         [10691] = {
             description = "This book... I could use it to increase my power tenfold... No! It would end " ..

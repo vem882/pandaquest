@@ -27761,6 +27761,15 @@ ns.Overrides.wowhead = {
                 "take the battle to our foes. I will come to aid them as soon as we stabilize the area.",
             rewardMoney = 100,
         },
+        [13903] = {
+            description = "The venomhide hatchling looks at you expectantly, then begins to scrawl a " ..
+                "pictogram into the dirt.\n\nThe hatchling's drawings seem to resemble various types of " ..
+                "large insects, perhaps the gorishi silithids. The hatchling finishes his picture, then " ..
+                "gestures at it with one short arm, snaps its jaws, and licks its lips.\n\nIt must want " ..
+                "you to go to the Slithering Scar, in the center of the southern part of Un'Goro Crater, " ..
+                "and gather silithid meat. When you have the meat, feed it to your hungry hatchling.",
+            rewardItems = {{47196, 1}},
+        },
         [13905] = {
             description = "The hatchling looks at you for a moment, almost as if wondering whether you'll " ..
                 "understand. It scrawls a picture of a pair of feathers in the dirt, then points with one " ..
@@ -66322,6 +66331,10 @@ ns.Overrides.wowhead = {
             zoneID = 4755,
         },
         [36472] = {subName = "Secret Laboratory Archives"},
+        [36601] = {
+            spawns = {[16] = {{48.8, 26}, {49, 28.2}, {49.2, 30}, {49.4, 28.6}, {49.6, 28.4}, {49.6, 28.6}}},
+            zoneID = 16,
+        },
         [36689] = {spawns = {[16] = {{71.8, 16.4}, {71.8, 16.6}}}, zoneID = 16},
         [37881] = {spawns = {[65] = {{75, 20.8}, {75.8, 20.4}, {75.8, 20.8}}}, zoneID = 65},
         [39040] = {spawns = {[4709] = {{46.4, 47.2}, {49.4, 53.8}}}, zoneID = 4709},

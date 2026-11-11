@@ -2017,6 +2017,15 @@ ns.Overrides.wowhead = {
                 "Brill.",
             rewardMoney = 175,
         },
+        [366] = {
+            description = "Long ago Gunther and I, along with the now Scourge Necromancer Thule " ..
+                "Ravenclaw, were friends and students within the Kirin Tor - a society of mages in " ..
+                "Dalaran.\n\nGunther and I both fell to the Plague, but I thought he either remained " ..
+                "dead, or was raised into the ranks of the Lich King. It is good to know he is " ..
+                "free.\n\nWe must have him. I have placed a spell on his book that, when he sees it, will " ..
+                "show him that I too am free of the Lich King. After knowing this, it is my hope that he " ..
+                "will join us.",
+        },
         [367] = {
             description = "Lady Sylvanas has called upon the Royal Apothecary Society. The Dark Lady " ..
                 "believes our knowledge coupled with the newfound magic will provide the key to Arthas's " ..
@@ -3242,6 +3251,13 @@ ns.Overrides.wowhead = {
                 "a parchment next to his clenched fist.\n\nReport the grim news to Rhag Garmason and show " ..
                 "him what you found.",
         },
+        [634] = {
+            description = "I ask of you one more small favor, <class>. We await the reserves of " ..
+                "Ironforge. However, Roggo has knowledge of an Alliance camp to the north in Arathi " ..
+                "Highlands at Refuge Pointe.\n\nTravel there and seek out Captain Nials. Ask the good " ..
+                "Captain if the Alliance can spare some soldiers to help us reclaim Dun Modr and the " ..
+                "Thandol Span.",
+        },
         [638] = {
             description = "With Thoras Trollbane dead and Stromgarde in ruins, Vol'jin has instructed " ..
                 "that we make every effort to spirit the legendary sword Trol'kalar from the humans' " ..
@@ -3701,6 +3717,15 @@ ns.Overrides.wowhead = {
                 "want some indication as to what I've been doing.\n\nLet me know when you are ready and " ..
                 "we will hunt down that brush.... I mean fossil! We shall find something in writing to " ..
                 "satisfy the League.\n\nSo are you ready yet?",
+        },
+        [733] = {
+            description = "It's going to be tough going here if I can't manage to scrounge up some " ..
+                "materials to construct some defenses and other necessities. I've noticed that the ogres " ..
+                "in the area seem to be well equipped with scrap metal. Maybe the stories of siege " ..
+                "engines in the Badlands weren't so far off after all...\n\nAnyways, the Prospector's " ..
+                "been getting worried about the state of our little camp, so I'd like to get working soon " ..
+                "if I can.\n\nThe main ogre camp is at Dustbelch Grotto, a good trek to the west of here.",
+            rewardChoices = {{4652, 1}, {4653, 1}},
         },
         [735] = {
             description = "Yagyin's Digest, eh? Are you starting a new chapter of us, somewhere? Never " ..
@@ -12970,6 +12995,14 @@ ns.Overrides.wowhead = {
                 "for. The naga apparently have it in their possession.",
             rewardMoney = 16000,
         },
+        [5538] = {
+            description = "The goblin you will need to speak with is Krinkle Goodsteel. He peddles his " ..
+                "skills to the highest bidder in Gadgetzan, within the Tanaris desert. He'll likely be " ..
+                "the only one who can produce the mold we need, and his services won't come cheap. We now " ..
+                "ask for you to dig deep by footing whatever fee he will charge.\n\nI'm an alchemist, not " ..
+                "a banker. If I had gold lying around, I certainly wouldn't be here.\n\nI guess I said " ..
+                "the quiet part out loud again. Oops.\n\nGadgetzan awaits you! Good luck!",
+        },
         [5541] = {
             description = "Hegnar Rumbleshot sells guns off the road to Anvilmar. Riflemen and mortar " ..
                 "teams spend a lot of time practicing out near his shop, and he's always needing fresh " ..
@@ -16341,6 +16374,14 @@ ns.Overrides.wowhead = {
                 "us. You must seek out the resting place of the Bronze. Venture to the Caverns of Time " ..
                 "and see if the master has returned. I must be sure before I am able to proceed.",
         },
+        [8287] = {
+            description = "Ok, here we are... a pretty valuable chunk of information, I must say! I've " ..
+                "seen the Cenarion Circle forces arrive at Silithus. They plan to drive the Twilight's " ..
+                "Hammer out, don't they? This will help.\n\nTake this parchment to their leader, " ..
+                "Commander Mar'alith. Soon the Twilight's Hammer will be vanquished and I will be outside " ..
+                "their grasp for good!",
+            rewardMoney = 18000,
+        },
         [8288] = {
             description = "There is no time to waste! A hero must be found! The task I give will require " ..
                 "an army to complete but only one may rise from the throng of would be champions to take " ..
@@ -17248,6 +17289,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{21438, 10}, {21512, 1}},
         },
         [8614] = {rewardItems = {{21438, 7}, {21512, 1}}},
+        [8615] = {
+            description = "The Ahn'Qiraj war effort is an immense undertaking, <class>. All of the " ..
+                "materials being gathered here, whether it is metal for weapons, or food to eat, are all " ..
+                "as important as the other. For, if you haven't eaten in days you will not have the " ..
+                "strength to lift your axe when it matters.\n\nThus, we gather what food we can. I am " ..
+                "collecting baked salmon, a dish that was chosen both for its sustenance and its ability " ..
+                "to keep well. Can you aid me with this task, <class>?",
+            rewardItems = {{21438, 10}, {21513, 1}},
+        },
         [8616] = {rewardItems = {{21438, 10}, {21513, 1}}},
         [8620] = {
             description = "I should have known. My arch-enemy, Doctor Weavil, up to his old tricks! And " ..
@@ -18474,6 +18524,14 @@ ns.Overrides.wowhead = {
                 "to bring friends.\n\nReturn to me when this is done.",
             rewardChoices = {{22274, 1}, {22272, 1}, {22458, 1}},
         },
+        [9058] = {
+            description = "I have discovered a use for the carapace of the crypt fiend. I am able to " ..
+                "fashion an extremely light and very deadly set of armor by combining the fragments with " ..
+                "some of the desecrated magical armors lost in Naxxramas.\n\nBring me the items I require " ..
+                "and I shall fashion for you a suit of armor the likes of which has never before been " ..
+                "seen in our world!",
+            rewardItems = {{22440, 1}},
+        },
         [9060] = {
             description = "I have discovered a use for the carapace of the crypt fiend. I am able to " ..
                 "fashion an extremely light and very deadly set of armor by combining the fragments with " ..
@@ -18520,6 +18578,14 @@ ns.Overrides.wowhead = {
                 "materials and Earthshatter shall be yours to don.\n\nSearch Naxxramas.",
             rewardItems = {{22468, 1}},
         },
+        [9074] = {
+            description = "Would you honor me by returning the armor of those that fell in the defense of " ..
+                "these lands?\n\nThe armor has been desecrated and is undoubtedly being used for evil; " ..
+                "however, with wartorn armor scraps, the desecrated armor can be renewed and worn for " ..
+                "battle once more.\n\nBring me the remnants of the fallen along with purification " ..
+                "materials and Earthshatter shall be yours to don.\n\nSearch Naxxramas.",
+            rewardItems = {{22470, 1}},
+        },
         [9075] = {
             description = "Would you honor me by returning the armor of those that fell in the defense of " ..
                 "these lands?\n\nThe armor has been desecrated and is undoubtedly being used for evil; " ..
@@ -18527,6 +18593,14 @@ ns.Overrides.wowhead = {
                 "battle once more.\n\nBring me the remnants of the fallen along with purification " ..
                 "materials and Earthshatter shall be yours to don.\n\nSearch Naxxramas.",
             rewardItems = {{22471, 1}},
+        },
+        [9077] = {
+            description = "If you want Bonescythe made, you're going to have to supply the " ..
+                "materials.\n\nEnter Naxxramas, the big floating city of death in the sky up there, and " ..
+                "find desecrated armor and wartorn armor scraps. Bring those back along with the " ..
+                "materials to put everything together and you'll have your Bonescythe. Oh, and you'll " ..
+                "need to pay me for my troubles... I'll supply the bones.",
+            rewardItems = {{22476, 1}},
         },
         [9079] = {
             description = "If you want Bonescythe made, you're going to have to supply the " ..
