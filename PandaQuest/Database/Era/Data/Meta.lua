@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.5+v1.0.13 (Classic Era database + corrections from QuestieDB 1.0.13). DO NOT EDIT.
--- Built: 2026-11-10T12:10:19Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.7.0+v1.0.14 (Classic Era database + corrections from QuestieDB 1.0.14). DO NOT EDIT.
+-- Built: 2026-11-11T20:08:04Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "era"
 ns.Data.meta = {
-  ["built"] = "2026-11-10T12:10:19Z",
+  ["built"] = "2026-11-11T20:08:04Z",
   ["contentPhase"] = 0,
   ["counts"] = {["items"]=14899,["npcs"]=10122,["objects"]=6666,["questXP"]=3494,["quests"]=4257},
   ["expansion"] = "Classic",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.6.5+v1.0.13",
+  ["source"] = "Questie 12.7.0+v1.0.14",
 }
 ns.Data.questTagCorrections = {
   [17] = {81,"Dungeon"},
@@ -2678,6 +2678,11 @@ ns.Data.hiddenQuests = {
   [5506] = true,
   [5653] = true,
   [5659] = true,
+  [5669] = true,
+  [5670] = true,
+  [5671] = true,
+  [5686] = true,
+  [5687] = true,
   [5691] = true,
   [5692] = true,
   [5693] = true,
@@ -4838,6 +4843,7 @@ ns.Data.hiddenQuests = {
   [33252] = true,
   [33354] = true,
   [60860] = true,
+  [60870] = true,
   [63448] = true,
   [63450] = true,
   [63767] = true,
@@ -4934,6 +4940,24 @@ ns.Data.hiddenQuests = {
   [80421] = true,
   [80422] = true,
   [80423] = true,
+  [81730] = true,
+  [81731] = true,
+  [81732] = true,
+  [81733] = true,
+  [81734] = true,
+  [81735] = true,
+  [81736] = true,
+  [81737] = true,
+  [81738] = true,
+  [81739] = true,
+  [81740] = true,
+  [81741] = true,
+  [81742] = true,
+  [81743] = true,
+  [81744] = true,
+  [81745] = true,
+  [81746] = true,
+  [81747] = true,
   [82271] = true,
   [82272] = true,
   [82273] = true,
@@ -4981,6 +5005,7 @@ ns.Data.hiddenQuests = {
   [93928] = true,
   [96253] = true,
   [96254] = true,
+  [99267] = true,
 }
 ns.Data.hideOnMapQuests = {
   [996] = true,

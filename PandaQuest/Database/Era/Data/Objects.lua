@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.6.5+v1.0.13 (Classic Era database + corrections from QuestieDB 1.0.13). DO NOT EDIT.
--- Built: 2026-11-10T12:10:19Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.7.0+v1.0.14 (Classic Era database + corrections from QuestieDB 1.0.14). DO NOT EDIT.
+-- Built: 2026-11-11T20:08:04Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
