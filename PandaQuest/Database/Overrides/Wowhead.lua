@@ -2805,6 +2805,15 @@ ns.Overrides.wowhead = {
                 "headpiece of unmatched power.",
             rewardItems = {{21348, 1}},
         },
+        [8593] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21352, 1}},
+        },
         [8594] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -12836,6 +12845,13 @@ ns.Overrides.wowhead = {
                 "that's in charge of that force. Kill Drillmaster Zurok!",
             rewardChoices = {{31717, 1}, {31718, 1}, {31719, 1}, {31720, 1}},
             rewardMoney = 54000,
+        },
+        [10938] = {
+            description = "Now that you have gathered all of the Blessings cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardItems = {{31856, 1}},
         },
         [10939] = {
             description = "Now that you have gathered all of the Storms cards together into a deck, a " ..
@@ -27855,6 +27871,15 @@ ns.Overrides.wowhead = {
                 "mean silithid eggs. The Noxious Lair, in western Tanaris and near the border with " ..
                 "Un'Goro Crater, would probably be a great place to find the eggs your little hatchling " ..
                 "wants.",
+            rewardItems = {{47196, 1}},
+        },
+        [13917] = {
+            description = "The venomhide hatchling looks at you expectantly, then begins to scrawl a " ..
+                "pictogram into the dirt.\n\nThe hatchling's drawings seem to resemble various types of " ..
+                "large insects, perhaps the gorishi silithids. The hatchling finishes his picture, then " ..
+                "gestures at it with one short arm, snaps its jaws, and licks its lips.\n\nIt must want " ..
+                "you to go to the Slithering Scar, in the center of the southern part of Un'Goro Crater, " ..
+                "and gather silithid meat. When you have the meat, feed it to your hungry hatchling.",
             rewardItems = {{47196, 1}},
         },
         [13918] = {
@@ -66181,6 +66206,17 @@ ns.Overrides.wowhead = {
             },
             zoneID = 11,
         },
+        [25021] = {
+            spawns = {
+                [357] = {
+                    {21.4, 45.6}, {21.8, 57}, {22.4, 41.4}, {23, 40.6}, {31, 39.4}, {31, 39.6}, {33.2, 39.6},
+                    {33.4, 58.8}, {34, 58.4}, {35, 57.6}, {36.6, 39.6}, {37.8, 55}, {39.4, 39.8},
+                    {40.2, 52.2}, {40.4, 40}, {41.2, 40.4}, {41.2, 51.2}, {41.6, 50.8}, {42.8, 49},
+                    {43.2, 42.8},
+                },
+            },
+            zoneID = 357,
+        },
         [25078] = {
             spawns = {
                 [17] = {
@@ -66490,6 +66526,7 @@ ns.Overrides.wowhead = {
         [50664] = {spawns = {[5034] = {{39.2, 21.4}}}, zoneID = 5034},
         [50750] = {spawns = {[5785] = {{33.4, 50.8}, {33.6, 50.8}, {33.6, 51.6}}}, zoneID = 5785},
         [50777] = {spawns = {[361] = {{51, 33.8}}}, zoneID = 361},
+        [50789] = {spawns = {[5841] = {{63.8, 13.8}}}, zoneID = 5841},
         [50791] = {spawns = {[5842] = {{59.2, 85.4}, {59.2, 85.6}, {59.2, 86.8}}}, zoneID = 5842},
         [50808] = {
             spawns = {[5785] = {{56.4, 71}, {56.8, 71.4}, {57.2, 71.6}, {57.6, 70.8}, {57.6, 71.8}}},
@@ -66609,6 +66646,7 @@ ns.Overrides.wowhead = {
         [52790] = {spawns = {[616] = {{60.2, 30.2}}}, zoneID = 616},
         [52799] = {spawns = {[616] = {{60.2, 30}}}, zoneID = 616},
         [52832] = {spawns = {[3537] = {{32.6, 27.2}}}, zoneID = 3537},
+        [53057] = {spawns = {[616] = {{41.4, 56.2}, {41.6, 56.8}, {41.8, 56}}}, zoneID = 616},
         [53258] = {spawns = {[616] = {{27, 60.8}}}, zoneID = 616},
         [53422] = {
             spawns = {
@@ -66697,6 +66735,7 @@ ns.Overrides.wowhead = {
         [67812] = {rank = 0},
         [67847] = {maxLevel = 90, minLevel = 90},
         [67866] = {maxLevel = 90, minLevel = 90},
+        [67881] = {rank = 0, subName = "Collector of Commissions"},
         [67901] = {rank = 0},
         [67902] = {rank = 0},
         [67905] = {rank = 0},
@@ -66858,6 +66897,7 @@ ns.Overrides.wowhead = {
         [71169] = {maxLevel = 90, minLevel = 90, subName = "The Red Crane"},
         [71312] = {maxLevel = 90, minLevel = 90},
         [71321] = {maxLevel = 92, minLevel = 92, subName = "Aspect of Death"},
+        [71351] = {subName = "The Black Prince"},
         [71424] = {subName = "The Black Prince"},
         [71504] = {subName = "Blackfuse Company"},
         [71622] = {
