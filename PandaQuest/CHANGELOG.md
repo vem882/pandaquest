@@ -4,6 +4,19 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.471] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,950 quests, 980 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,712 quests, 35 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,841 quests, 51 NPCs, 2 objects
+- quest 8629 - Avenger's Legguards - updated
+  - description added
+  - reward items: +1
+- npc 1649 - UNUSED Jordan Croft - updated
+  - coordinates: 3 spawn points added in Stormwind City
+
 ## [0.2.470] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -328,46 +341,6 @@ Data from the PandaQuest portal.
 - Show a world map guide from your ghost to your corpse.
 
 - Keep map pins out of the Leatrix Plus minimap button menu.
-
-## [0.2.452] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 871 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,658 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,772 quests, 49 NPCs, 2 objects
-- npc 1860 - Voidwalker - updated
-  - coordinates: 5 spawn points added in Ashenvale
-- npc 2367 - Donald Rabonne - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 4182 - Dalmond - updated
-  - coordinates: 3 spawn points added in Darkshore
-- npc 4652 - Gelkis Mauler - updated
-  - coordinates: 40 spawn points added in Desolace
-- npc 6143 - Servant of Arkkoroc - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 8155 - Kargath Grunt - updated
-  - coordinates: 5 spawn points added in Badlands
-- npc 17879 - Chrono Lord Deja - updated
-  - coordinates: 1 spawn point added in The Black Morass
-- npc 21811 - Wyrmcult Broodling - updated
-  - coordinates: 40 spawn points added in Blade's Edge Mountains
-- npc 30113 - Whisker - updated
-  - coordinates: 3 spawn points added in Zul'Drak
-- npc 32247 - Zippy Copper Racer - updated
-  - coordinates: 16 spawn points added in Dalaran -
-  - coordinates: 7 spawn points added in Orgrimmar
-  - coordinates: 6 spawn points added in Ironforge
-  - coordinates: 4 spawn points added in Stormwind City
-  - coordinates: also changed in 1 more zone
-- npc 68857 - Kor'kron Marine - updated
-  - NPC level added (90)
-- npc 69185 - Risen Drakkari Champion - updated
-  - NPC level added (91)
-- npc 71504 - Siegecrafter Blackfuse - updated
-  - NPC title added (Blackfuse Company)
-- npc 73606 - Lady Sylvanas Windrunner - updated
-  - NPC title added (Banshee Queen)
 
 ## [0.2.412]
 
