@@ -56,7 +56,7 @@ local function showCandidate()
         model:SetShown(ok and result ~= false)
         name = ns.DB.GetNpcName(id)
     elseif kind == "item" then
-        local getIcon = C_Item and C_Item.GetItemIconByID or GetItemIcon
+        local getIcon = C_Item and C_Item.GetItemIconByID or _G.GetItemIcon
         icon:SetTexture((getIcon and getIcon(id)) or "Interface\\Icons\\INV_Misc_QuestionMark")
         icon:Show()
         name = ns.DB.GetItemName(id)

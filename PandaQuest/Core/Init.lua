@@ -473,7 +473,7 @@ commands.price = function(arg)
             end
         end
         if not itemID then
-            local lookup = C_Item and C_Item.GetItemInfoInstant or GetItemInfoInstant
+            local lookup = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
             itemID = lookup and lookup(arg)
         end
         if not itemID then
@@ -486,17 +486,18 @@ commands.price = function(arg)
         return
     end
     Log.Print("%s (item ID: %d)", db.GetItemName(itemID) or "Item", itemID)
+    local Auctionator = _G.Auctionator
     local api = Auctionator and Auctionator.API and Auctionator.API.v1
     local function quote(label, lookup, ...)
         if type(lookup) ~= "function" then return false end
         local ok, copper = pcall(lookup, ...)
         if not ok or (issecretvalue and issecretvalue(copper)) then return false end
         if type(copper) ~= "number" or not (copper > 0 and copper < math.huge) then return false end
-        Log.Print("%s: %s", label, GetCoinTextureString(math.floor(copper)))
+        Log.Print("%s: %s", label, _G.GetCoinTextureString(math.floor(copper)))
         return true
     end
     local scan = quote("Auctionator scan", api and api.GetAuctionPriceByItemID, "PandaQuest", itemID)
-    local tsm = TSM_API and TSM_API.GetCustomPriceValue
+    local tsm = _G.TSM_API and _G.TSM_API.GetCustomPriceValue
     local recent = quote("TradeSkillMaster recent", tsm, "DBRecent", "i:" .. itemID)
     local market = quote("TradeSkillMaster market value", tsm, "DBMarket", "i:" .. itemID)
     if not scan and not recent and not market then
