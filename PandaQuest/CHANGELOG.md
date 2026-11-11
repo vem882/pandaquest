@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.472] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,951 quests, 981 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,717 quests, 35 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,847 quests, 51 NPCs, 2 objects
+- quest 24839 - A Change of Heart - updated
+  - reward choices: +4
+- npc 52609 - Anachronos - updated
+  - coordinates: 1 spawn point added in Tanaris
+
 ## [0.2.471] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -327,20 +339,6 @@ Data from the PandaQuest portal.
 - npc 71321 - Vision of Deathwing - updated
   - NPC title added (Aspect of Death)
   - NPC level added (92)
-
-## [0.2.459] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 871 NPCs, 6 objects
-- quest 29806 - The Wanderer - updated
-  - description removed
-
-## [Unreleased]
-
-- Show a world map guide from your ghost to your corpse.
-
-- Keep map pins out of the Leatrix Plus minimap button menu.
 
 ## [0.2.412]
 

@@ -3093,6 +3093,15 @@ ns.Overrides.wowhead = {
                 "Perhaps you could check on her for me while I attend to tribal matters here?",
             rewardMoney = 17,
         },
+        [753] = {
+            description = "I have traveled many paths through life and these old legs lack the vigor they " ..
+                "once had. I can still perform my duties to the tribe. Sometimes it just takes an old " ..
+                "woman a little longer to do the task.\n\nBut you look like an eager <class>. Let's put " ..
+                "some of that youthful vitality to the test. Take a water pitcher from the well and bring " ..
+                "it to my son, the Chief, in Camp Narache.\n\nRemember that even the most humble task can " ..
+                "gain the recognition of elders.",
+            rewardMoney = 40,
+        },
         [754] = {
             description = "I have crafted the totem to cleanse the Winterhoof Water Well. Now, you must " ..
                 "take it to the well and perform a cleansing ritual. You will find it to the southeast, " ..
@@ -3756,6 +3765,14 @@ ns.Overrides.wowhead = {
                 "swallowed the relic but if you can retrieve it, I can unleash the power of these " ..
                 "artifacts.\n\nBring me both the Stone of Relu, and the original fossil he holds.",
             rewardChoices = {{5627, 1}, {5626, 1}},
+        },
+        [944] = {
+            description = "It is strange that the naga are here, in Darkshore. But stranger still...are " ..
+                "the Twilight's Hammer. That cult worships the old, old lords of the earth. Lords " ..
+                "defeated long ago.\n\nThe Master's Glaive, to the south, is a place where such an old " ..
+                "lord fell.\n\nGo there and look for more Twilight's Hammer cultists.\n\nTake this phial " ..
+                "of scrying. Use it to create a scrying bowl after searching the Master's Glaive. Then " ..
+                "speak to me through the bowl.",
         },
         [947] = {
             description = "I am devising a potion that requires rare mushrooms, mushrooms that grow only " ..
@@ -5203,6 +5220,14 @@ ns.Overrides.wowhead = {
                 "quarry.",
             rewardXP = 1550,
         },
+        [1482] = {
+            description = "An oracle crystal would do nicely. They are crafted by the naga for their " ..
+                "oracles to use.\n\nNorthwest of here, along the coast, is a vast coral reef that the " ..
+                "naga have taken as their home when this close to the shore. You can find their oracles " ..
+                "there. The Slitherblade are deadly and will not react kindly to your intrusions, so be " ..
+                "careful and make haste.\n\nWhen you return, we shall see about finding this demon lord " ..
+                "Azrethoc.",
+        },
         [1487] = {
             description = "Naralex had a noble goal.\n\nOur great leader aspired to enter the Emerald " ..
                 "Dream and help regrow these harsh lands back into the lush forest it once was. But " ..
@@ -5957,6 +5982,14 @@ ns.Overrides.wowhead = {
                 "the exposed, secretly laying our enemies low. A task you must complete for me, to prove " ..
                 "your worth.\n\nThe troll Tazan trades with the pirates near Ratchet. He has information " ..
                 "I must have. Kill him and bring me his satchel.",
+        },
+        [1978] = {
+            description = "The Syndicate? I would never have suspected. It seems the lords of Alterac " ..
+                "have fallen far in the years since their betrayal.\n\nLord Varimathras will be pleased " ..
+                "to learn of this, and as you were so instrumental in this discovery, it would be fitting " ..
+                "if you were the one to deliver it to him.\n\nAh, and how could I forget?\n\nWelcome to " ..
+                "the Deathstalkers.",
+            rewardItems = {{7298, 1}},
         },
         [2038] = {
             description = "As if crashing into the Loch wasn't bad enough, troggs from the nearby island " ..
@@ -13917,6 +13950,13 @@ ns.Overrides.wowhead = {
                 "Western Plaguelands.\n\nHe is not known for his patience. It would not be wise to keep " ..
                 "him waiting.",
         },
+        [9605] = {
+            description = "Here's the box, <name>. That should be enough for Topher to get the inn up and " ..
+                "running. Let him know that he can keep sending in orders as the need arises. Blood Watch " ..
+                "urgently needs a place to care for the wounded and put up any travelers they " ..
+                "receive.\n\nWhen you're ready to return to Blood Watch, seek out Stephanos near the " ..
+                "gates of the Exodar.",
+        },
         [9606] = {
             description = "If I remember correctly, Blood Watch's hippogryph master is Laando. If you've " ..
                 "spoken to him before, then you can take one of my hippogryphs to him.\n\nThat's a good " ..
@@ -19554,6 +19594,14 @@ ns.Overrides.wowhead = {
                 "creature will activate the altar and will begin to purge the tomb of corrupt spirits, " ..
                 "freeing them to ascend. Protect the tomb guardian until the ritual is complete.",
             rewardChoices = {{31617, 1}, {31615, 1}},
+        },
+        [10843] = {
+            description = "Since time forgotten we have fought with the Bladespire ogres.\n\nWe have " ..
+                "managed to push them back so that now they only hold a tenuous grip at Bladespire " ..
+                "Outpost. It's back the way that you came, on the southwestern edge of the Razor " ..
+                "Ridge.\n\nProve your worth to me by killing their leader, Gnosh Brognat.\n\nLet us see " ..
+                "what stuff you are made of when fighting the ogres.",
+            rewardMoney = 39000,
         },
         [10848] = {
             description = "Veil Rhaze was a particularly wicked colony of Skettis.\n\nDespite the " ..

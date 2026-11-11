@@ -5020,6 +5020,12 @@ ns.Overrides.wowhead = {
                 "currently staying by the hot springs there.\n\nThanks again for helping me with my " ..
                 "thermometer! See you later!",
         },
+        [981] = {
+            description = "For all the work that you have done, you deserve to be well rewarded. Return " ..
+                "to Delgren and tell him that Athrikus Narassin lies stilled by your hand, and the Cult " ..
+                "of the Dark Strand is beaten and scattered.",
+            rewardChoices = {{10043, 1}, {5614, 1}},
+        },
         [982] = {
             description = "Off the coast of Darkshore to our north are two wrecked ships - the Silver " ..
                 "Dawning and the Mist Veil. Some time ago, both ships ran afoul of the blasted murlocs as " ..
@@ -5827,6 +5833,15 @@ ns.Overrides.wowhead = {
                 "might work for Fizzle's car.\n\nBut let's make sure. Get me samples of indurium and I'll " ..
                 "test its properties.\n\nTrue indurium ore lies deep in Uldaman, but the Stonevault " ..
                 "troggs of the Badlands sometimes have flakes of it on them. Bring me those flakes.",
+        },
+        [1110] = {
+            description = "Heh heh, with all the races they're running here, it's no surprise that a few " ..
+                "mishaps happen along the way. If you look around the Shimmering Flats then you'll see " ..
+                "evidence of past crashes -- scraps of rocket car parts are littered everywhere!\n\nAnd " ..
+                "those parts are worth money to the gnomes and goblins. They're always looking for more " ..
+                "contraptions to slap onto their cars.\n\nSo go out and get me parts. Bring me a heap and " ..
+                "I'll pay you well.",
+            rewardMoney = 3000,
         },
         [1111] = {
             description = "I make it my job to get people what they need, and the gnomes over there need " ..
@@ -7401,6 +7416,15 @@ ns.Overrides.wowhead = {
                 "belts and bring them to Thorvald, he would be obliged. He might even share his knowledge " ..
                 "with you.\n\nThorvald is in Loch Modan's southern guard tower.",
             rewardItems = {{3609, 1}},
+        },
+        [1579] = {
+            description = "I came to Auberdine because of the quiet. I want to invent my inventions where " ..
+                "it's quiet, because after a night of drinking I don't like all the noise of " ..
+                "Ironforge!\n\nSo I took a ship to Auberdine and had a little too much to drink on the " ..
+                "way. I dropped my box of gaffer jacks overboard! I need my gaffer jacks!\n\nI don't know " ..
+                "exactly where I dropped them, but if you fish for them in the ocean you might get " ..
+                "lucky...",
+            rewardMoney = 250,
         },
         [1580] = {
             description = "We know you're lucky, but... just how lucky are you, <name>?\n\nOne night I " ..
@@ -12806,6 +12830,7 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3858, 3}, {4304, 5}, {4338, 5}},
         },
         [5401] = {rewardItems = {{12846, 1}}},
+        [5404] = {rewardItems = {{12844, 1}}},
         [5406] = {rewardItems = {{12844, 1}}},
         [5421] = {rewardItems = {{13546, 1}}},
         [5441] = {
@@ -17023,6 +17048,13 @@ ns.Overrides.wowhead = {
                 "But I cannot do that without your help.\n\nSo I need you to go out and make tin bars and " ..
                 "bring them back to me here. I think I'm going to need more than I can count.",
             rewardItems = {{21438, 10}, {21510, 1}},
+        },
+        [8543] = {
+            description = "Very good, I see that you are serious about the war. I'm a little edgy waiting " ..
+                "for it to start though, which means I'm going to get angry if you don't start bringing " ..
+                "in the goods faster. Maybe I can just practice on you instead.\n\nHar! Maybe not, 'cuz " ..
+                "then who would bring me back the tin bars?",
+            rewardItems = {{21438, 3}, {21510, 1}},
         },
         [8545] = {
             description = "<class>, the war it is comin' and the only thing we can do is prepare for it. " ..
