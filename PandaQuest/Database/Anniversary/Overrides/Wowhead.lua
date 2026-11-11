@@ -2406,6 +2406,12 @@ ns.Overrides.wowhead = {
                 "waste to them in the name of our Dark Lady.\n\nDismissed!",
             rewardMoney = 1800,
         },
+        [535] = {
+            description = "Urrgh... Injured and dying and confronted with the enemy.\n\nNo doubt you'll " ..
+                "kill me anyway, but if you bring me some Southshore stout --your kind does drink, don't " ..
+                "they?--I'll tell you what you want to know.",
+            rewardItems = {{3601, 1}},
+        },
         [536] = {
             description = "Transferred from the Stormwind city guard to Southshore, a town that should be " ..
                 "abandoned by the looks of it... Smell of the harbor day and night.\n\nNot to mention ol' " ..
@@ -5134,6 +5140,14 @@ ns.Overrides.wowhead = {
                 "tell ya all about it.\n\nGonna need some Roc gizzards from Tanaris... and let's see... " ..
                 "some Groddoc and Ironfur livers from Feralas...\n\nA nice stiff Kalimdor Kocktail... " ..
                 "that'll get me talking!",
+        },
+        [1453] = {
+            description = "There's work to be done in Desolace, <name>. It's an atrocious place, befouled " ..
+                "by centaur and other nasties. But if you're looking for a good week's honest work, then " ..
+                "head there, meet with Kreldig Ungor, and tell him I sentcha.\n\nYou can find him holed " ..
+                "up at Nijel's Point--it's a little cozy camp hidden in the mountains of northern " ..
+                "Desolace. Just head east if you enter from the Stonetalon Mountains. It's easy to miss, " ..
+                "so be on the lookout.",
         },
         [1455] = {
             description = "You take a few moments to figure out what pried the chest open, and you notice " ..
@@ -7899,6 +7913,15 @@ ns.Overrides.wowhead = {
                 "me.\n\nTake the knife up to Quint in his little tree-house here, and tell him for me " ..
                 "that his Kalimdor Hold 'Em debt will be paid if he works his mojo on that knife.",
         },
+        [4130] = {
+            description = "I'm a little wobbly still, sorry. Anyway, I received some useful " ..
+                "visions.\n\nRaschal takes two large leather backpacks from his boat and goes inland; he " ..
+                "returns to the boat, however. I see gnoll scalps... he ran into some gnolls - Woodpaw I " ..
+                "think they're called. He's very worried - almost terrified - about something. So much " ..
+                "so, that he is not paying attention to water elementals forming behind him. The " ..
+                "images... stop there.\n\nI need to rest, sorry <name>. Tell Gin what I've seen. He needs " ..
+                "to know.",
+        },
         [4131] = {
             description = "Our \"friends\" the Woodpaw might have gotten Raschal in the end, but " ..
                 "something tells me that's not what occurred. Still, they're the best place to start " ..
@@ -8720,6 +8743,15 @@ ns.Overrides.wowhead = {
                 "kin before her will summon Shy-Rotam, in anger.\n\nBe ready for her fury, and defeat her.",
             rewardChoices = {{15783, 1}, {15782, 1}},
         },
+        [5062] = {
+            description = "Arikara is a deadly creature that must be dealt with swiftly. In order to hunt " ..
+                "her down you will need to light the sacred fire of life - this will summon " ..
+                "Arikara.\n\nGo now and harvest the rare Incendia agave plant. Once you have harvested " ..
+                "enough agave, seek council with Magatha Grimtotem on Elder Rise in Thunder Bluff. She is " ..
+                "a powerful shaman that can enchant the agave plant to create a powder that will light " ..
+                "the fire.\n\nTravel northeast to the Boiling Pool and gather Incendia agave.",
+            rewardMoney = 2200,
+        },
         [5063] = {
             description = "A finer cap you may never see. From the pristine hide of the beast, our expert " ..
                 "crafters will create the most phenomenal hat a prestidigitator could ever hope to " ..
@@ -9014,6 +9046,14 @@ ns.Overrides.wowhead = {
                 "run more tests! The most potent source of the plague is from the tainted flesh of the " ..
                 "most recently infected. Travel to Stratholme and bring me samples, <name>.",
             rewardMoney = 18000,
+        },
+        [5215] = {
+            description = "Within the lands of former Lordaeron are eight cauldrons - four here in the " ..
+                "west, and four more ensconced in the east. These cauldrons spew poisons into the air, " ..
+                "propagating the plague throughout the land for the Scourge.\n\nThe necromantic might of " ..
+                "Kel'Thuzad is too strong to outright shut down these cauldrons, but we think we might " ..
+                "have a way to subvert them to our advantage. My second, High Priestess MacDonnell, will " ..
+                "be your point on this assignment; she'll continue the briefing from here.",
         },
         [5216] = {
             description = "Of the four cauldrons here in the west, the one located at Felstone Field may " ..
@@ -11918,6 +11958,14 @@ ns.Overrides.wowhead = {
                 "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
                 "and idols and I'll create a powerful ring for you, <class>.",
             rewardItems = {{21402, 1}},
+        },
+        [8708] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21407, 1}},
         },
         [8710] = {
             description = "The Qiraji and their servants wield items made with the rarest and finest " ..

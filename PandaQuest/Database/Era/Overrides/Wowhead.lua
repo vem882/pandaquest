@@ -2175,6 +2175,13 @@ ns.Overrides.wowhead = {
                 "all his papers checked out.\n\nHis documents claimed his name was Maelik; here's his " ..
                 "description. I don't think he'll be coming to visit Thredd anymore.",
         },
+        [393] = {
+            description = "I really haven't a clue, <name>. There is someone else who might be able to " ..
+                "help you, and it so happens that he owes me a favor for--well, let's not get into that. " ..
+                "Master Mathias Shaw of SI:7 can be found in the barracks in Old Town. Shaw has his thumb " ..
+                "on most of the shady, or underhanded dealings of the city.\n\nIf anyone knows, it'd be " ..
+                "him.",
+        },
         [395] = {
             description = "Ah, I almost forgot. Alexston came while you were away, he wished to speak " ..
                 "with you. No doubt he wishes to report the goings-on of the Defias Brotherhood to the " ..
@@ -3935,6 +3942,16 @@ ns.Overrides.wowhead = {
                 "is Supervisor Fizsprocket, you will find him at the Venture Co. mine east of the ravaged " ..
                 "caravan. Bring me his clipboard, we shall see if we find out anything useful.",
             rewardChoices = {{4974, 1}, {4964, 1}},
+        },
+        [766] = {
+            description = "My grandfather told me stories about his battles with a strider named " ..
+                "Mazzranache. He told me of its demonic red eyes, razor-sharp talons and venomous " ..
+                "bite.\n\nAs fortune would have it, while traveling across the plains, I encountered it, " ..
+                "and it took a nasty bite from my shoulder. He was as terrible as my grandfather " ..
+                "described. I will need some hard-to-find animal parts to clean the infection from his " ..
+                "bite: a wolf heart, cougar femur, plainstrider scale and swoop gizzard.\n\nHurry, time " ..
+                "is of the essence.",
+            rewardChoices = {{4972, 1}, {4973, 1}},
         },
         [769] = {
             description = "The kodo beasts of Mulgore are strong and sturdy -- traits much respected " ..
@@ -8401,6 +8418,11 @@ ns.Overrides.wowhead = {
                 "in the ancient history of Azeroth. The sages of Thunder Bluff are such historians, known " ..
                 "throughout the Horde; perhaps they can make good use of it.",
         },
+        [2299] = {
+            description = "Where have you been, <name>? Hulfdan's been looking all over the place for " ..
+                "you. We thought the king may have put you in irons.\n\nGet to Ironforge as soon as " ..
+                "possible and speak with Hulfdan!",
+        },
         [2300] = {
             description = "Renzik was looking for you, fish.\n\nI wouldn't keep Mathias's second in " ..
                 "command waiting if I were you.",
@@ -11730,6 +11752,11 @@ ns.Overrides.wowhead = {
                 "supply of those to complete Tinkee's order.\n\nBring me the uncracked chillwind horns, " ..
                 "and I'll prepare a package for Tinkee.",
         },
+        [4810] = {
+            description = "Ok, everything is prepared and packed and ready for transport! Good luck in " ..
+                "your journey, and make sure you tell Tinkee that she owes me!",
+            rewardChoices = {{15862, 1}, {15863, 1}},
+        },
         [4811] = {
             description = "Hostile moonkin roam in ever increasing numbers to our east. They once were " ..
                 "thought to be gentle, almost mystical creatures. While some continue to hold reverence " ..
@@ -12525,6 +12552,13 @@ ns.Overrides.wowhead = {
                 "north of Andorhal, and eliminate the cauldron lord there. It should have a key like the " ..
                 "last one did, allowing you into the cauldron. Use this bottle to obtain a sample from " ..
                 "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
+        },
+        [5223] = {
+            description = "You delicately top off the empty bottle; a sample of the foul substance that " ..
+                "churns under the platform of the cauldron now oozes back and forth inside the fragile " ..
+                "glass container.\n\nWith the poison in hand, it is time to return to High Priestess " ..
+                "MacDonnell at Chillwind Camp to complete the mission.",
+            rewardMoney = 8500,
         },
         [5226] = {
             description = "You carefully close the spigot in the control panel, watching the cauldron's " ..
@@ -18981,6 +19015,14 @@ ns.Overrides.wowhead = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order TR-635:\n\n8 " ..
                 "Runecloth Boots.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9191] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order TR-9999:\n\n8 " ..
+                "Runecloth Bags.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
