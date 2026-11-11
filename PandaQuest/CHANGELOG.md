@@ -4,6 +4,23 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.465] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,945 quests, 974 NPCs, 6 objects
+- npc 416 - Imp - updated
+  - coordinates: 5 spawn points added in Silithus
+  - coordinates: 1 spawn point added in Tanaris
+- npc 1842 - Highlord Taelan Fordring - updated
+  - coordinates: 25 spawn points added in Western Plaguelands
+- npc 14757 - Elder Torntusk - updated
+  - coordinates: 3 spawn points added in The Hinterlands
+- npc 69051 - Amber Fog - updated
+  - NPC level added (93)
+- npc 73586 - Amber Kearnen - updated
+  - NPC title added (SI:7)
+
 ## [0.2.464] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -364,12 +381,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,633 quests, 29 NPCs, 5 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 2,718 quests, 48 NPCs, 2 objects
-
-## [0.2.446] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,632 quests, 29 NPCs, 5 objects
 
 ## [0.2.412]
 
