@@ -1579,6 +1579,14 @@ ns.Overrides.wowhead = {
                 "while you speak with Onaeya at Maestra's Post to inform her of this incident.",
             rewardMoney = 1400,
         },
+        [5892] = {
+            description = "Before the fighting started, we stored supplies for Dun Baldar in the Irondeep " ..
+                "mine. The troggs that surfaced there weren't much of a problem when we had spare troops " ..
+                "to guard the mine, but now that we're fighting with the Horde we can't maintain control " ..
+                "of Irondeep.\n\nWe need the supplies in Irondeep, <name>. Enter the mine and bring me a " ..
+                "load of them.",
+            rewardMoney = 57000,
+        },
         [5893] = {
             description = "The Coldtooth mine to the north was once an ideal place to store extra " ..
                 "supplies, but now that the fighting with the Stormpikes grows fierce, we do not always " ..
@@ -3074,6 +3082,15 @@ ns.Overrides.wowhead = {
                 "his existence to an end.\n\nDo this and bring me a piece of his husk. I shall grant you " ..
                 "armor no mortal has ever worn... armor fit for one who has slain a god!",
             rewardItems = {{21357, 1}},
+        },
+        [8667] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21353, 1}},
         },
         [8668] = {
             description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
