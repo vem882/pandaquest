@@ -1196,6 +1196,14 @@ ns.Overrides.wowhead = {
                 "as proof of his death.",
             rewardMoney = 4000,
         },
+        [181] = {
+            description = "Now there is just one more item needed to complete this device. Cog's " ..
+                "blueprint calls for a lens of some sort. The only lens I know of that would be large " ..
+                "enough will be very difficult to acquire.\n\nThere is an ogre by the name of Zzarc'Vul " ..
+                "who resides in the mound in southern Duskwood. If you can, bring to me his monocle and I " ..
+                "will use that as our lens!",
+            rewardChoices = {{7106, 1}, {7107, 1}},
+        },
         [182] = {
             description = "My brother Senir and I were sent to different parts of Dun Morogh to " ..
                 "investigate the threat posed by the trolls. The Senate has its hands full with the " ..
@@ -8102,6 +8110,15 @@ ns.Overrides.wowhead = {
         [4481] = {rewardItems = {{11642, 1}}},
         [4482] = {rewardItems = {{11643, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
+        [4486] = {
+            description = "Well, well, well, look at the mighty paladin in all <his/her> " ..
+                "regality.\n\nSorry, <name>, I meant no offense... I just get a little jealous sometimes " ..
+                "when I see some of the feats you've accomplished. Tiza tells me it's my weakness, and I " ..
+                "swore to her I'd work on it. It's just hard sometimes, you know?\n\nBut the reason I " ..
+                "wanted to talk to you was because Duthorian Rall in Stormwind sent word for you to meet " ..
+                "him in the Cathedral of Light when you're ready. Sounded important. Sounded like " ..
+                "something's going on.",
+        },
         [4488] = {
             description = "Ah, <name>, you've seen fit to grace us with your presence. How " ..
                 "wonderful!\n\nI hope you do not expect us to wait on you hand and foot also. You may be " ..
@@ -13248,6 +13265,14 @@ ns.Overrides.wowhead = {
                 "trees stands Temper, a fire elemental of great power, and the one that you must speak " ..
                 "with.\n\nGo to him now and may the elemental spirits of Azeroth go with you.",
             rewardXP = 840,
+        },
+        [9466] = {
+            description = "By order of the Ranger Captain, a reward is hereby offered for the slaying of " ..
+                "the vicious rockflayer matriarch known as Blacktalon the Savage.\n\nBlacktalon was last " ..
+                "sighted inside a cave in the Great Fissure. Individuals seeking the reward are to " ..
+                "present the creature's claws as proof of the deed.",
+            rewardChoices = {{25483, 1}, {25482, 1}, {25481, 1}},
+            rewardMoney = 58000,
         },
         [9467] = {
             description = "The owlbeasts of Moonwing Den on Silvermyst Isle, far to the southwest, have " ..
@@ -21105,6 +21130,11 @@ ns.Overrides.wowhead = {
                 "favor. We must ensure that our side succeeds instead.",
             rewardMoney = 37000,
             rewardXP = 10050,
+        },
+        [11531] = {
+            description = "This strange engine part doesn't look like it fits in a steam pump, much less " ..
+                "anything else you've seen. Perhaps K. Lee Smallfry might know something about it.",
+            rewardMoney = 22000,
         },
         [11665] = {
             description = "Hello <lad/lass>. I'm glad you've stopped by to talk to this old man--there's " ..
