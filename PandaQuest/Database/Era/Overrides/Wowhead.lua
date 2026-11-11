@@ -2254,6 +2254,14 @@ ns.Overrides.wowhead = {
                 "say.\n\nThere could be some free booze in it for you...",
             rewardItems = {{3087, 1}},
         },
+        [416] = {
+            description = "We have a real infestation problem to the west. Tunnel rat kobolds have moved " ..
+                "into the foothills, setting up dens and fouling our land with their filth!\n\nWe want " ..
+                "them eliminated. Hunt them, bring me their ears and earn their bounty.\n\nYou can find " ..
+                "tunnel rat kobolds and their dens west of Thelsamar, littered along the mountainside.",
+            rewardChoices = {{3158, 1}, {860, 1}},
+            rewardMoney = 400,
+        },
         [417] = {
             description = "Hildelve wrote in his journal that he was attacked by Mangeclaw, a \"huge Ice " ..
                 "Claw Bear.\" He drove off the beast, but not before it mauled him savagely.\n\nJudging " ..
@@ -9827,6 +9835,12 @@ ns.Overrides.wowhead = {
                 "the perpetrators of this cold blooded murder must be brought to justice.\n\nReturn to " ..
                 "the Searing Gorge and fulfill his last request: Free his men.",
         },
+        [3372] = {
+            description = "Release them, <race>. Even after their bodies give out, the power of the " ..
+                "Suntara forces them to complete their tasks.\n\nThe altar of Suntara is the key. Go " ..
+                "northwest; in the hills above the cave... Twilight's Hammer guard a relic. Retrieve it " ..
+                "and place it on the altar of Suntara.\n\n<The dying archaeologist collapses.>",
+        },
         [3373] = {
             description = "As you touch the gem, a deep voice resonates in your mind.\n\n\"Mortal, heed " ..
                 "this plea. I am Eranikus of the Green Dragonflight, keeper of this accursed temple. My " ..
@@ -11438,6 +11452,16 @@ ns.Overrides.wowhead = {
                 "on it; perhaps Gwennyth Bly'Leggonde in Auberdine can make sense of it.",
             rewardMoney = 350,
         },
+        [4726] = {
+            description = "I have been studying the dragonkin of the Burning Steppes for weeks, and I " ..
+                "think I've finally had a breakthrough! I created a device--I call it the Draco " ..
+                "Incarcinatrix 900. It can capture the essence of dragon whelp broodlings!\n\nOr, at " ..
+                "least I think it can.\n\nHere, take the device and zap a broodling in the Burning " ..
+                "Steppes with it. While it's under the device's effects, defeat the broodling and its " ..
+                "essence should be released.\n\nIf it is, then splendid! Bring me back samples so I can " ..
+                "study them!",
+            rewardMoney = 7500,
+        },
         [4728] = {
             description = "The corpse of what appears to be some sort of giant sea mammal lies partially " ..
                 "gutted on the beach. A wheelbarrow and various tools lie abandoned by this enormous " ..
@@ -12150,6 +12174,15 @@ ns.Overrides.wowhead = {
             description = "The only thing that remains of this human are some charred bones. He seems to " ..
                 "have died within arms reach of what he was after - unfired plate gauntlets.\n\nPerhaps " ..
                 "you should grab the gauntlets and get out of the fire?",
+        },
+        [5121] = {
+            description = "While we still know very little about why the furbolg have been ingesting this " ..
+                "strange substance, I do think it's best that we put a stop to it before it gets out of " ..
+                "hand.\n\nThe Winterfall furbolg are not a normally aggressive tribe, and this change in " ..
+                "their behavior leads me to think that they must be under orders from their chief. We " ..
+                "most likely can't undo the damage that has already been done, but I think that if their " ..
+                "leader is slain, they will not get any worse.\n\nHead east to Winterfall Village.",
+            rewardChoices = {{15784, 1}, {15786, 1}, {15787, 1}},
         },
         [5124] = {
             description = "By Thaurissan's beard!\n\nWhere did you find them?\n\nMore importantly, are " ..
@@ -14973,6 +15006,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{19107, 1}, {19106, 1}, {19108, 1}},
             rewardItems = {{18149, 1}},
         },
+        [7201] = {
+            description = "There is work to be had for those venturing into the depths, <name>.\n\nThe " ..
+                "Dark Irons have mastered creation of extremely powerful golems.\n\nInitial reports from " ..
+                "our spies indicate that the dwarves use a unique power source to give their creations " ..
+                "incomparable killing power.\n\nJust imagine what we could do with our abominations if we " ..
+                "could get our hands on this essence of the elements! Turn that city upside down if you " ..
+                "must, but do not return until you have found the essence! Payment will be worth the risk.",
+            rewardItems = {{12038, 1}},
+            rewardMoney = 24500,
+        },
         [7202] = {
             description = "The indigenous Winterax trolls of the region are ruthless savages that would " ..
                 "love nothing more than to have our bones added to their foul stew.\n\nWe must show them " ..
@@ -15945,6 +15988,7 @@ ns.Overrides.wowhead = {
                 "breastplate.\n\nGo. Be our vengeance, <name>.",
             rewardItems = {{19822, 1}},
         },
+        [8101] = {rewardItems = {{19598, 1}}},
         [8102] = {rewardItems = {{19599, 1}}},
         [8103] = {rewardItems = {{19600, 1}}},
         [8104] = {rewardItems = {{19601, 1}}},
@@ -17550,6 +17594,10 @@ ns.Overrides.wowhead = {
                 "several days now. Find him and obtain a written report. We need to be able to act on " ..
                 "that information as soon as possible, <name>.",
             rewardItems = {{20801, 1}, {21133, 1}},
+        },
+        [8741] = {
+            description = "The keeper awaits your return, <name>. Take the green scepter shard to " ..
+                "Anachronos at the Caverns of Time.",
         },
         [8743] = {rewardItems = {{21176, 1}}},
         [8747] = {rewardItems = {{21196, 1}}},

@@ -30,6 +30,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.469
+- database - Wowhead data as the PandaQuest portal read it: 7,948 quests, 978 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,700 quests, 35 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,824 quests, 51 NPCs, 2 objects
+- npc 1912 - Ambermill Protector - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+
 0.2.468
 - database - Wowhead data as the PandaQuest portal read it: 7,948 quests, 977 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 2,693 quests, 35 NPCs, 5 objects
@@ -362,13 +369,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 1 spawn point added in Azuremyst Isle
 - npc 53258 - Lord Rhyolith - updated
   - coordinates: 1 spawn point added in Mount Hyjal
-
-0.2.450
-- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 851 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,657 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,751 quests, 48 NPCs, 2 objects
-- object 223095 - Moss-Covered Chest - updated
-  - coordinates: 1 spawn point added in Timeless Isle
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
