@@ -11046,6 +11046,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{12065, 1}},
             rewardMoney = 17500,
         },
+        [4324] = {
+            description = "Although my little brother Ribbly has been worthless his whole life, I think, " ..
+                "finally, he has some value! But... we might need your help to capitalize on Ribbly's " ..
+                "newfound worth.\n\nMy sister Yuka has been looking for him for weeks, and tracked him to " ..
+                "the Burning Steppes. She sent word to me, asking for some hired hands.\n\nSo, what do " ..
+                "you say? Want to help? If so, then speak with my sister. You'll find her holed up in " ..
+                "Flame Crest, a cave northwest of Dreadmaul Rock.",
+        },
         [4341] = {
             description = "You have been to the smoldering ruins of Thaurissan? Did you happen to run " ..
                 "into a pitiful lout named Kharan Mighthammer? The dwarf that was supposedly watching " ..
@@ -13282,6 +13290,7 @@ ns.Overrides.wowhead = {
         [5882] = {rewardItems = {{11516, 2}}},
         [5883] = {rewardItems = {{11516, 2}}},
         [5884] = {rewardItems = {{11516, 2}}},
+        [5885] = {rewardItems = {{11516, 2}}},
         [5887] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5888] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
         [5889] = {rewardItems = {{11516, 2}}, rewardXP = 4200},
@@ -13580,6 +13589,12 @@ ns.Overrides.wowhead = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
                 "beast and train it as your companion.\n\nYou must see Grif Wildheart in Kharanos. He can " ..
                 "put you on the path to earning a pet of your own.",
+        },
+        [6081] = {
+            description = "You now have the power to tame a pet, but you must also gain the skills to " ..
+                "train it.\n\nTravel to Orgrimmar. There you must speak to one of our most revered " ..
+                "hunters, Ormak Grimshot. He will give you the ability to train your new pet. You will " ..
+                "find him near the Hall of the Brave.\n\nGood luck, <name>.",
         },
         [6083] = {
             description = "The advantage a pet affords you against your rivals is duly noted, <name>. " ..
@@ -16638,6 +16653,14 @@ ns.Overrides.wowhead = {
                 "stingers.\n\nReport back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
         },
+        [8503] = {
+            description = "So, <class>, did I already tell you about all of the fabulous uses " ..
+                "stranglekelp has? I did? Oh well... in any case we need a lot of it, and when I say a " ..
+                "lot, I mean A LOT! Do you think that you could help us out? I know that it means going " ..
+                "without all of those wonderful things that you can make with it, but it's for a good " ..
+                "cause!",
+            rewardItems = {{21436, 10}, {21510, 1}},
+        },
         [8504] = {
             description = "Well hello again there... what was it? Ah yes, <name>! Come to see if I still " ..
                 "need more stranglekelp have you? Well, it's your lucky day, because the answer to that " ..
@@ -19083,6 +19106,10 @@ ns.Overrides.wowhead = {
             spawns = {[46] = {{42.4, 41.4}, {42.4, 41.6}, {42.4, 43}, {42.6, 41.4}, {42.6, 42}, {42.6, 42.6}}},
             zoneID = 46,
         },
+        [11497] = {
+            spawns = {[357] = {{62.2, 30.6}, {62.4, 28.6}, {62.4, 30}, {62.6, 30}, {62.6, 30.8}}},
+            zoneID = 357,
+        },
         [11701] = {spawns = {[490] = {{71.2, 73.8}, {71.4, 73.4}, {71.6, 73.4}, {71.6, 73.6}}}, zoneID = 490},
         [14435] = {
             spawns = {
@@ -19171,6 +19198,16 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 493,
+        },
+        [15991] = {
+            spawns = {
+                [1519] = {
+                    {62.4, 5.8}, {62.6, 5.8}, {63.2, 5}, {63.2, 7}, {63.4, 7.6}, {63.6, 5.4}, {63.6, 5.6},
+                    {63.6, 7.2}, {64, 4.2}, {64, 7.6}, {64, 8.6}, {64.6, 6}, {64.6, 8}, {64.8, 5.2},
+                    {65.4, 7},
+                },
+            },
+            zoneID = 1519,
         },
         [16141] = {
             spawns = {

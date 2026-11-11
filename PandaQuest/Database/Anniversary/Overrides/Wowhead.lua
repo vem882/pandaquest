@@ -1556,6 +1556,14 @@ ns.Overrides.wowhead = {
                 "he would send a scout to check up on things if we did not hear from the team soon. I " ..
                 "assume that scout is you, <name>. Find Merrin at the excavation site to the east!",
         },
+        [310] = {
+            description = "I have to admit, those Thunderbrews make some good drinks. But they need to " ..
+                "learn that theirs isn't the only decent brew! Maybe you can help me teach them that " ..
+                "lesson...\n\nHere, take this barrel of Barleybrew Scalder. Sneak into the basement of " ..
+                "the Thunderbrew Distillery in Kharanos and switch it with one of their barrels of " ..
+                "Thunder Ale. Then we'll see how their patrons like my brew over theirs!\n\nAnd if the " ..
+                "barrels are guarded, then you might have to distract the guard...",
+        },
         [311] = {
             description = "Having inserted a barrel of Marleth's Scalder in the Kharanos Distillery's " ..
                 "cellar, you grab a barrel of Thunder Ale as proof of the deed...",
@@ -3388,6 +3396,16 @@ ns.Overrides.wowhead = {
                 "will earn our gratitude.",
             rewardMoney = 700,
         },
+        [853] = {
+            description = "I have rendered the spores you gave me into an emulsion. I must now send it to " ..
+                "my associate, Apothecary Zamah. If you were to carry this to her, she can offer you " ..
+                "something from our stores of alchemical goods.\n\nShe is in the Pools of Vision, a cave " ..
+                "beneath the shamans of Thunder Bluff. The path to this cave is well hidden, but you may " ..
+                "find it on the Spirit Rise bluff.\n\nDo hurry. This emulsion will maintain its potency " ..
+                "for only a short time, and must be resealed and processed before then.",
+            rewardChoices = {{2458, 4}, {2457, 4}, {2456, 3}, {2459, 2}},
+            rewardItems = {{5340, 1}},
+        },
         [854] = {
             description = "I have foreseen your arrival, young <class>. Though perhaps you are not so " ..
                 "young anymore.\n\nI think that it is time for you to move deeper into this land. I can " ..
@@ -3777,6 +3795,14 @@ ns.Overrides.wowhead = {
                 "the temperatures at the volcano, and I'd like to find the hottest part. It gives the " ..
                 "measurements in degrees Kraklenheit!\n\nHere, take it, and take readings of the " ..
                 "temperatures at the ridge whenever you see a hot spot!",
+        },
+        [975] = {
+            description = "Now, before I give ya dis charm, I better explain how ta use it.\n\nIf you " ..
+                "carry da charm with ya, you'll find dat certain items will drop from creatures ya fight. " ..
+                "If you don't have da charm with you, you won't find them. Understand?\n\nYou'll know " ..
+                "these special items by the name -- they be called E'ko. If you find any of these items, " ..
+                "just bring dem to ol' Mau'ari, and she help ya out.\n\nWait here while I fix your charm.",
+            rewardItems = {{12384, 1}},
         },
         [976] = {
             description = "Delgren has asked me to deliver messages and supplies to Sentinel Starbreeze " ..
@@ -7606,6 +7632,14 @@ ns.Overrides.wowhead = {
                 "must help me! I gathered most of my grapes into buckets, but I left them in the " ..
                 "vineyards to the southeast.\n\nBring me those buckets! Save my harvest!",
         },
+        [3906] = {
+            description = "The elders have felt a disturbance amongst the elements. The Dark Iron dwarves " ..
+                "have summoned a foul spirit into our world that threatens to plague our lands with an " ..
+                "eternal draught. This disharmony of flame must be investigated.\n\nTravel to Blackrock " ..
+                "Mountain, through the Chasm of Flame, into the quarry. It is there that you shall find " ..
+                "this lord of fire: Overmaster Pyron.\n\nEnd the disruption and return to me.",
+            rewardMoney = 15500,
+        },
         [3908] = {
             description = "You see, I have no idea how I ended up here. No one really knows -- it's a " ..
                 "secret to everybody! I just can't seem to remember anything...\n\nThese items you " ..
@@ -7752,6 +7786,16 @@ ns.Overrides.wowhead = {
                 "personally, as though it was a serious threat to all of Feralas. The note is signed, " ..
                 "\"Raschal of Feathermoon\".\n\nIt would seem that you have located where Raschal " ..
                 "ultimately went.",
+        },
+        [4136] = {
+            description = "My brother Ribbly has always been a drain to his family, taking our money and " ..
+                "wasting it on one scheme after another.\n\nWell, his last scheme must have been his " ..
+                "worst, because Baron Revilgaz of Booty Bay just put a price on poor Ribbly's head. I " ..
+                "can't tell you how happy this makes the Screwspigots! Our little Ribbly's finally worth " ..
+                "something!\n\nBut now he's hiding out, deep in Blackrock Depths. Please, find him and " ..
+                "bring him to me!\n\nOr, if he won't come, then that's ok... just bring me his head.",
+            rewardChoices = {{11865, 1}, {11963, 1}, {12049, 1}},
+            rewardMoney = 6000,
         },
         [4142] = {
             description = "I'm not quite sure what to make of this, <name>. The plants... they seem to " ..
@@ -10417,6 +10461,15 @@ ns.Overrides.wowhead = {
                 "exorcisms, and it should serve you well for the arduous tasks that lie ahead.\n\nReturn " ..
                 "now to Lord Grayson Shadowbreaker in Stormwind, <name>. Your quest continues with him.",
             rewardXP = 955,
+        },
+        [7640] = {
+            description = "I have added a pinch of dirt from the tainted ground of Terrordale in the " ..
+                "Eastern Plaguelands to the censer. You will now use this censer to find areas there that " ..
+                "show signs of spiritual turmoil and disturbance. Look for green auras that permeate the " ..
+                "ground as the physical world buckles under the torment of the spirit realm and use the " ..
+                "censer to drive out the evil spirits.\n\nWhen you have passed sufficient judgment on the " ..
+                "spirits there, you will be ready to proceed.",
+            rewardXP = 9550,
         },
         [7643] = {
             description = "Your barding needs a special form of blessing, one from an appropriate spirit. " ..
@@ -14822,6 +14875,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25924, 1}, {25923, 1}, {25922, 1}, {25925, 1}},
             rewardMoney = 31000,
         },
+        [9905] = {
+            description = "Last time Maktu was out hunting hydras for hides at Serpent Lake, he was " ..
+                "attacked by the biggest hydra he's ever seen. Maktu reached for his spear, but it was " ..
+                "too late. He had just enough time to escape becoming hydra food.\n\nWho knows? Maybe " ..
+                "next time, Maktu not be so lucky. Maktu wants to be there so there won't be a next time. " ..
+                "Will you help Maktu get his revenge on Mragesh?",
+            rewardChoices = {{28103, 5}, {28102, 5}},
+            rewardMoney = 31000,
+        },
         [9907] = {
             description = "Directly west of here you will find the Halaani Basin. Within the basin are " ..
                 "the twin clefts of Nagrand: Northwind and Southwind. Boulderfist shock troops use the " ..
@@ -16861,6 +16923,14 @@ ns.Overrides.wowhead = {
                 "If Tyralius is still alive, they're keeping him in one of their prisons. You'll have to " ..
                 "locate the prison and open it with a key, probably found on the warden.",
             rewardMoney = 132000,
+        },
+        [10423] = {
+            description = "Master Engineer Ghabar will want to know about the results of the diagnostics. " ..
+                "If anything, they caution us to keep a close eye on the workings of our dome generators. " ..
+                "As the fields become more and more unstable, their effects will become harder to " ..
+                "control. It could spell disaster for our expedition and anything else housed within the " ..
+                "domes.\n\nYou'll find Ghabar at the Stormspire. Just follow the road north from this " ..
+                "eco-dome and across the bridge. It'll lead you to the elevator at the base of the spire.",
         },
         [10424] = {
             description = "If Mehrdad's results are correct -- and I have no reason to believe they're " ..
@@ -21133,6 +21203,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3520,
+        },
+        [21079] = {
+            spawns = {
+                [3523] = {
+                    {41.4, 31.6}, {42.2, 33.2}, {42.6, 14.2}, {43, 19.2}, {43.4, 23.6}, {44.2, 20.6},
+                    {44.4, 24.2}, {44.8, 17.8}, {44.8, 18.6}, {45.2, 19.8}, {45.2, 22.6}, {45.6, 22.8},
+                    {46.2, 19}, {46.4, 19.8}, {46.8, 14.2}, {46.8, 19.4}, {47.2, 18.2}, {47.4, 12.8},
+                    {47.4, 20.8}, {47.4, 23.6}, {47.6, 20.6}, {47.8, 19.6}, {47.8, 23.2}, {48, 15.6},
+                    {48.2, 18}, {48.4, 23.6}, {48.6, 14.6}, {48.6, 21}, {48.8, 21.6}, {49, 18.8}, {49, 26.8},
+                    {49.2, 22.6}, {49.6, 17.4}, {49.6, 17.6}, {49.6, 20.8}, {50, 16}, {50.6, 15.8},
+                    {50.6, 17.6}, {51, 17}, {51.8, 17.6},
+                },
+            },
+            zoneID = 3523,
         },
         [21328] = {
             spawns = {
