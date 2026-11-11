@@ -4201,6 +4201,12 @@ ns.Overrides.wowhead = {
                 "the Undercity. Then go north to Tirisfal Glades, southwest to Silverpine, and south to " ..
                 "Hillsbrad.\n\nSeek Lydon and bring him this note. It details our needs to him.",
         },
+        [1067] = {
+            description = "Here is the toxin. If you use it against the Venture Company it should produce " ..
+                "favorable, perhaps even contagious, results. I must say, it is quite exciting to see my " ..
+                "work applied in the field!\n\nBut before using it, take it to Apothecary Zamah. She must " ..
+                "create a delivery method for the toxin to maximize its effect.",
+        },
         [1069] = {
             description = "Spider egg omelettes are a new fad in Booty Bay! The problem is... Booty Bay's " ..
                 "got no eggs.\n\nI smell an opportunity!\n\nIn Windshear Crag and Sishir Canyon, in the " ..
@@ -6243,6 +6249,11 @@ ns.Overrides.wowhead = {
                 "your efforts.",
             rewardItems = {{8424, 1}},
         },
+        [2607] = {
+            description = "It appears as if you've brought back more information than even I expected. " ..
+                "This certainly is a strange turn of events, <name>.\n\nA cure? Hrm... Go down to the " ..
+                "cellar and speak with Doc Mixilpixil - he may be able to help.",
+        },
         [2608] = {
             description = "Oh my, you look like death. Correction - I've seen death, you look worse than " ..
                 "death. You, <sir/miss>, would be what death coughed up at his last physical.\n\nHah! You " ..
@@ -6858,6 +6869,11 @@ ns.Overrides.wowhead = {
                 "sent by the shaman trainer Meela. If this note is from Meela, I wouldn't take long in " ..
                 "reading it's contents.",
         },
+        [3094] = {
+            description = "Just a moment ago a messenger was looking for you, <name>. I believe she was " ..
+                "sent by the druid trainer Gart. If this note is from Gart, I wouldn't take long in " ..
+                "reading its contents.",
+        },
         [3095] = {
             description = "Ah, while you were off dealing with the mindless Scourge, this scroll arrived " ..
                 "for you. I would think it's some matter of importance as it seems it bears the seal of " ..
@@ -7034,6 +7050,14 @@ ns.Overrides.wowhead = {
                 "deed. Bring that proof back to me and I'll give you the key to the Searing Gorge.\n\nGet " ..
                 "going!",
             rewardMoney = 12000,
+        },
+        [3201] = {
+            description = "I can't believe Pebblebitty doubted the authenticity of the horn. Between you " ..
+                "and me, I think she's just jealous. I know she really wanted to kill that beast herself, " ..
+                "what with the 'incident' and all.\n\nSo you need a proof of deed? After the contribution " ..
+                "you just made to the museum, it won't be a problem.\n\n< Curator Thorius begins to fill " ..
+                "out a large document.>\n\nThere we go! You can take that back to Pebblebitty.",
+            rewardItems = {{5396, 1}},
         },
         [3221] = {
             description = "While you were out helping our deathstalkers, Apothecary Renferrel sent you a " ..
@@ -11388,6 +11412,15 @@ ns.Overrides.wowhead = {
                 "contact with us on behalf of his Alliance. It is now only fitting to acknowledge you as " ..
                 "the key in your Alliance's efforts in brokering peace.",
         },
+        [8487] = {
+            description = "This was a fully functional arcane sanctum before Arthas and his army of " ..
+                "Scourge decided to plow through it on their way to Silvermoon.\n\nNow it's as useful to " ..
+                "us as any part of the Dead Scar. The soil is tainted, undead are drawn to it and the " ..
+                "energy in the ley lines is completely disrupted.\n\nWhat I want to know, <name>, is " ..
+                "whether this taint is reversible or not. I want you to collect soil samples from this " ..
+                "area so I can study them. Perhaps with time we can set things back to normal.",
+            rewardMoney = 300,
+        },
         [8488] = {
             description = "Something's wrong, <name>. I sense the presence of Scourge. Be ready to fight " ..
                 "them!",
@@ -13031,6 +13064,15 @@ ns.Overrides.wowhead = {
         [9371] = {
             description = "<name>, Botanist Taerix is in need of your assistance. You'll find her with " ..
                 "her apprentices to the west, outside the ship.",
+        },
+        [9383] = {
+            description = "The blood elves epitomize the irresponsible use of magic, <class>. They do not " ..
+                "control magical energy. Rather, they are slaves to it and will suffer nothing to stand " ..
+                "between them and their addiction. They consume the energies of Outland's voidwalkers to " ..
+                "power their demonic magics.\n\nI've prepared a crystal charged with a spell that will " ..
+                "allow us to neutralize a voidwalker and sever its link to this world when destroyed. " ..
+                "I've mostly seen the voidwalkers in the Warp Fields to the southeast of Hellfire Citadel.",
+            rewardMoney = 29000,
         },
         [9392] = {
             description = "As you advance within your class, you will want to take advantage of the " ..
@@ -14777,6 +14819,14 @@ ns.Overrides.wowhead = {
                 "skulls.\n\nIf you live, bring Gordawg back Gurok earthen head. Gordawg crushes " ..
                 "head.\n\n< Gordawg bites down hard, shaking the earth beneath your feet.>",
             rewardChoices = {{25563, 1}, {25564, 1}, {25562, 1}},
+        },
+        [9854] = {
+            description = "Do you live for the hunt as I do, <class>? Do you seek the quietude that comes " ..
+                "as you stalk your prey? Would you know what it is to honor the last heartbeats of your " ..
+                "fallen quarry? I will help you to achieve this.\n\nNagrand is a lush land, full of life " ..
+                "in the midst of this broken world. Bring down a handful of the windrocs and then we will " ..
+                "speak more.\n\nYou can find them in many places nearby in all directions around our camp.",
+            rewardMoney = 33000,
         },
         [9855] = {
             description = "You must always push yourself if you are to one day stalk the mightiest of " ..
@@ -18019,6 +18069,17 @@ ns.Overrides.wowhead = {
                 "capture it. Bring the fel reaver manual back to me and I'll do the rest!",
             rewardMoney = 41000,
         },
+        [10609] = {
+            description = "I'm researching the applications of drake essences to my work as a physician. " ..
+                "I think they could be a panacea for a host of maladies!\n\nI need someone to go south to " ..
+                "the Singing Ridge and get me some.\n\nWilling to take my temporal phase modulator and " ..
+                "use it on the nether whelps that hatch from the nether drake eggs? Retrieve the essences " ..
+                "from whatever they turn into.\n\nWhich, I might add, I'm not certain of what that will " ..
+                "be as we're using some pretty dicey, time and space modifying tech here.",
+            rewardChoices = {{31438, 1}, {31439, 1}, {31440, 1}, {31441, 1}},
+            rewardItems = {{31437, 5}},
+            rewardMoney = 37000,
+        },
         [10611] = {
             description = "The best way to destroy the rest of the Legion's supplies is to use their own " ..
                 "weapons against them. I've been working on a rig that will let you take control of one " ..
@@ -19581,6 +19642,11 @@ ns.Overrides.wowhead = {
             rewardItems = {{31746, 1}},
             rewardMoney = 132000,
         },
+        [10889] = {
+            description = "Your actions, while brave, will surely rouse a vindictive response from " ..
+                "Terokk.\n\nHurry to Shattrath. Send word to Rilak!",
+            rewardMoney = 26000,
+        },
         [10896] = {
             description = "The trees of this land are ravaged by the power that was unleashed from " ..
                 "Auchindoun. The foul magic that was unleashed blasted the land into the wastes you see " ..
@@ -20543,6 +20609,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 88000,
         },
         [11104] = {rewardChoices = {{29301, 1}, {29297, 1}, {29305, 1}}},
+        [11106] = {rewardChoices = {{29301, 1}, {29305, 1}, {29309, 1}}},
         [11107] = {
             description = "I am unworthy to even carry a message directed at you, sir. Please forgive me " ..
                 "for this indulgence. Overlord Mor'ghor has requested your presence in his chambers at " ..

@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.468] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,948 quests, 977 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,693 quests, 35 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,820 quests, 51 NPCs, 2 objects
+- quest 29388 - Guardians of Hyjal: Firelands Invasion! - updated
+  - description added
+
 ## [0.2.467] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -372,25 +382,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,751 quests, 48 NPCs, 2 objects
 - object 223095 - Moss-Covered Chest - updated
   - coordinates: 1 spawn point added in Timeless Isle
-
-## [0.2.449] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,942 quests, 851 NPCs, 5 objects
-- database - Classic Era: data from the PandaQuest portal: 2,641 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,738 quests, 48 NPCs, 2 objects
-- quest 29086 - Competition Schmompetition - updated
-  - description added
-- object 142708 - Venom Bottle - updated
-  - coordinates: 1 spawn point added in The Hinterlands
-- object 207189 - Vrykul Archaeology Find - updated
-  - coordinates: 40 spawn points added in Howling Fjord
-  - coordinates: 39 spawn points added in Icecrown
-  - coordinates: 31 spawn points added in The Storm Peaks
-  - coordinates: 10 spawn points added in Grizzly Hills
-- object 213765 - Tablet of Ren Yun - updated
-  - coordinates: 1 spawn point added in Kun-Lai Summit
 
 ## [0.2.412]
 
