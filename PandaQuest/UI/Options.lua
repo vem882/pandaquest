@@ -460,6 +460,9 @@ local function modulesText()
     return table.concat(lines, "\n")
 end
 
+local aboutGames = "PandaQuest is a quest helper and navigator for Mists of Pandaria Classic, "
+    .. "Classic Era, TBC Anniversary, and WoW Forever."
+
 local showCommands = false              -- About & Help: the Commands section, folded until asked for
 
 local function releaseNotes()
@@ -980,7 +983,7 @@ local function buildTable()
             about = {
                 type = "group", order = 16, name = L["About & Help"], args = {
                     what = { type = "description", order = 1, fontSize = "medium",
-                        name = L["PandaQuest is a quest helper and navigator for Mists of Pandaria Classic, Classic Era, TBC Anniversary, and WoW Forever."] .. " "
+                        name = L[aboutGames] .. " "
                             .. L["An arrow to your next objective, quest pins on the map and minimap, gathering nodes with respawn timers."]
                             .. " " .. L["Flight times, archaeology and profession tools, and a page for every quest."] },
                     how = { type = "description", order = 2,
