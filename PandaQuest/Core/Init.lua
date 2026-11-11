@@ -240,6 +240,8 @@ ns.COMMAND_LINES = {
     "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
     "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
     "/pq sync - telemetry and community data status",
+    "/pq price <item ID> - show Auctionator and TradeSkillMaster prices",
+    "/pq recommend - compare XP and gold for nearby quest targets",
     "/pq trace - copy recorded quest and gathering observations",
     "/pq scan professions - read the open profession window",
     "/pq scan archaeology - read your archaeology window",
@@ -450,6 +452,61 @@ commands.status = function()
 end
 
 commands.trace = function() ns.Trace.Show() end
+
+commands.price = function(arg)
+    local itemID = tonumber(arg:match("^%d+$"))
+    if not itemID or itemID < 1 or itemID > 2147483647 then
+        Log.Print("Usage: /pq price <item ID>")
+        return
+    end
+    local api = Auctionator and Auctionator.API and Auctionator.API.v1
+    local function quote(label, lookup, ...)
+        if type(lookup) ~= "function" then return false end
+        local ok, copper = pcall(lookup, ...)
+        if not ok or (issecretvalue and issecretvalue(copper)) then return false end
+        if type(copper) ~= "number" or not (copper > 0 and copper < math.huge) then return false end
+        Log.Print("%s: %s", label, GetCoinTextureString(math.floor(copper)))
+        return true
+    end
+    local scan = quote("Auctionator scan", api and api.GetAuctionPriceByItemID, "PandaQuest", itemID)
+    local tsm = TSM_API and TSM_API.GetCustomPriceValue
+    local recent = quote("TradeSkillMaster recent", tsm, "DBRecent", "i:" .. itemID)
+    local market = quote("TradeSkillMaster market value", tsm, "DBMarket", "i:" .. itemID)
+    if not scan and not recent and not market then
+        Log.Print("No Auctionator or TradeSkillMaster price available for item %d.", itemID)
+    end
+end
+
+commands.recommend = function()
+    local router, db, community = ns.Router, ns.DB, ns.Community
+    local bestXP, bestGold, bestRate
+    for _, target in ipairs(router.GetSorted() or {}) do
+        local id = target.questID
+        local eta = id and router.GetETA(target)
+        local reward = eta and db.GetQuestRewards(id)
+        if reward then
+            local name = db.GetQuestField(id, "name") or tostring(id)
+            if reward.xp and (not bestXP or reward.xp > bestXP.value) then
+                bestXP = { name = name, value = reward.xp }
+            end
+            if reward.money and (not bestGold or reward.money > bestGold.value) then
+                bestGold = { name = name, value = reward.money }
+            end
+            local stats = community and community.GetQuestStats(id)
+            local seconds = stats and tonumber(stats.medianSeconds)
+            if reward.xp and seconds and seconds > 0 then
+                local rate = 60 * reward.xp / (seconds + eta)
+                if not bestRate or rate > bestRate.value then
+                    bestRate = { name = name, value = rate }
+                end
+            end
+        end
+    end
+    if bestRate then Log.Print("Estimated base XP/min: %s (%.0f)", bestRate.name, bestRate.value) end
+    if bestXP then Log.Print("Highest base XP: %s (%d XP)", bestXP.name, bestXP.value) end
+    if bestGold then Log.Print("Highest coin reward: %s (%.2f gold)", bestGold.name, bestGold.value / 10000) end
+    if not bestXP and not bestGold then Log.Print("No XP or coin rewards known for nearby quest targets.") end
+end
 
 commands.sync = function()
     -- Telemetry owns the wording; the fallback keeps /pq sync useful if the

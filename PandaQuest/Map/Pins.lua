@@ -284,6 +284,7 @@ local function releasePin(pin)
     if not pin then return end
     if pin.lit then unlight(pin) end
     pin.spec = nil
+    pin.nearbyCollection = nil
     pin.data = nil
     pin.context = nil
     pin.miniRank = nil
@@ -319,7 +320,7 @@ local function applyHighlight(pin)
     if currentKey and spec and spec.keys then
         on = spec.keys[currentKey] and true or false
     end
-    if on then
+    if on or pin.nearbyCollection then
         local size = (pin:GetWidth() or 16) * 1.8
         pin.glow:SetSize(size, size)
         pin.glow:Show()
@@ -692,7 +693,33 @@ function M.UpdateMinimapNodes()
     return ranked, capped
 end
 
+local function updateCollectionHighlights()
+    local pos, hbdLib = playerPos(), hbd()
+    for _, rec in pairs(placed) do
+        local spec = rec.spec
+        local nearby
+        for _, target in ipairs(spec.targets) do
+            if target.kind == "OBJECTIVE" and
+                (target.entityType == "item" or target.entityType == "object") then
+                local distance = distanceFrom(pos, spec, hbdLib)
+                nearby = distance and distance <= 35 or nil
+                break
+            end
+        end
+        local world, mini = rec.world, rec.mini
+        if world and world.nearbyCollection ~= nearby then
+            world.nearbyCollection = nearby
+            applyHighlight(world)
+        end
+        if mini and mini.nearbyCollection ~= nearby then
+            mini.nearbyCollection = nearby
+            applyHighlight(mini)
+        end
+    end
+end
+
 local function onMinimapTick()
+    updateCollectionHighlights()
     M.CheckRespawnExpiry()
     M.UpdateMinimapNodes()
 end
@@ -907,10 +934,8 @@ function M.Redraw(immediate)
         local d = ensureDriver()
         if d then d:Show() else M.ProcessQueue(pending * 2 + 1) end
     end
-    local mini = select(2, M.GetPinCount())
-    -- The tick also polls the respawn countdown, so it has to run while one is
-    -- outstanding even when the minimap layer itself is off.
-    if (wantMinimap and (mini > 0 or pending > 0)) or nextRespawnAt then
+    -- World-map collection markers and respawn countdowns also use this tick.
+    if count > 0 or nextRespawnAt then
         startMinimapTick()
     else
         stopMinimapTick()
