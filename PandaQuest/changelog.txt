@@ -1,3 +1,7 @@
+- Preview quest items, objects and NPCs beside the map quest details.
+- Highlight nearby known quest collection points.
+- Add /pq recommend for quest XP and coin, and /pq price for local auction estimates.
+
 - Show recent changelog highlights in the game and list supported games in About & Help.
 
 Add /pq trace to copy recorded quest and gathering observations for manual review.
