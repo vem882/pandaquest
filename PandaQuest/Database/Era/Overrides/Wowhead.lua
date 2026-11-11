@@ -1989,6 +1989,10 @@ ns.Overrides.wowhead = {
                 "them down - we can't let them wander our lands unchallenged.",
             rewardMoney = 150,
         },
+        [361] = {
+            description = "This is a letter written by Thurman, the eldest son of Gregor Agamand. It is " ..
+                "addressed to an Yvette Farthing, though it does not appear to have reached her...",
+        },
         [362] = {
             description = "Devlin Agamand was the younger of two sons in the Agamand family, and in life " ..
                 "the two could not be more different. Thurman was tall and gentle while his younger " ..
@@ -7896,6 +7900,12 @@ ns.Overrides.wowhead = {
                 "right?\n\nAnyways, you should go see Therzok in Orgrimmar. He's got an offer for you to " ..
                 "hear.",
         },
+        [1860] = {
+            description = "We mages have a task that needs doing. One that is vital to the safety of " ..
+                "Stormwind and Elwynn forest.\n\nJennea Cannon has the details. She studies in the " ..
+                "wizard's sanctum, in the mage district of Stormwind. You should make your way to her " ..
+                "with haste.",
+        },
         [1880] = {
             description = "We mages do more than just waggle our fingers and make pretty sparks! We " ..
                 "control magic, the base fabric of our world! And that takes great care, and resolve. And " ..
@@ -12026,6 +12036,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{13958, 1}, {13959, 1}, {13961, 1}, {13962, 1}, {13963, 1}},
             rewardMoney = 18000,
         },
+        [5083] = {
+            description = "This vial that you picked up from the Winterfall furbolg is empty, but you can " ..
+                "detect a few drops of a strange green liquid inside; it almost glows.\n\nIs it something " ..
+                "important?\n\nDonova Snowden would probably be able to tell you more, since she has been " ..
+                "camped by the hot springs in Winterspring for some time now.",
+        },
         [5084] = {
             description = "This greenish liquid... it reminds me a bit of the sludge I saw when traveling " ..
                 "through Felwood. And I have seen some Winterfall Runners passing into Timbermaw... " ..
@@ -15929,6 +15945,7 @@ ns.Overrides.wowhead = {
                 "breastplate.\n\nGo. Be our vengeance, <name>.",
             rewardItems = {{19822, 1}},
         },
+        [8102] = {rewardItems = {{19599, 1}}},
         [8103] = {rewardItems = {{19600, 1}}},
         [8104] = {rewardItems = {{19601, 1}}},
         [8106] = {rewardItems = {{19602, 1}}},
@@ -17611,6 +17628,12 @@ ns.Overrides.wowhead = {
                 "may continue her research.",
             rewardItems = {{20800, 1}, {20805, 1}},
         },
+        [8780] = {
+            description = "The Ironforge Brigade's supply of armor kits in the battlefield is running " ..
+                "dangerously low. Obtain a batch and deliver them to Janela Stouthammer at the Ironforge " ..
+                "Brigade's outpost outside Hive'Zora.",
+            rewardItems = {{20800, 1}, {20805, 1}},
+        },
         [8782] = {
             description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
                 "batch of uniform materials and bring them to Windcaller Proudhorn.",
@@ -18946,6 +18969,15 @@ ns.Overrides.wowhead = {
                 "break from within... Defeat the demonic being that controls the staff and return to me.",
             rewardItems = {{22631, 1}},
         },
+        [9261] = {
+            description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
+                "you will step up to defend Ironforge from these accursed invaders?\n\nThere are strange " ..
+                "runic circles outside, glowing with the same energy that surrounds the undead and the " ..
+                "Necropolis above. They have significance, I'm certain, and I want you to find out what. " ..
+                "Thin the numbers of those aberrations while you're at it; bring me proof of their death " ..
+                "along with your results, and I will reward you. Go!",
+            rewardMoney = 250,
+        },
         [9262] = {
             description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
                 "you will step up to defend Darnassus from these accursed invaders?\n\nThere are strange " ..
@@ -19131,6 +19163,17 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [329] = {
+            spawns = {
+                [1377] = {
+                    {18.2, 83.8}, {18.8, 83}, {18.8, 84.4}, {18.8, 84.8}, {19.2, 81.8}, {19.6, 84.8},
+                    {25.8, 33}, {26.2, 32.2}, {26.6, 33.6}, {26.8, 33.2}, {34.8, 47.6}, {35.4, 46.2},
+                    {38.4, 43}, {38.4, 44}, {38.4, 45}, {38.6, 43.6}, {38.6, 44.6}, {39.2, 40}, {39.2, 45.6},
+                    {39.4, 43.4}, {39.6, 45.6}, {39.8, 42.4}, {39.8, 44},
+                },
+            },
+            zoneID = 1377,
+        },
         [417] = {spawns = {[440] = {{44, 43.4}, {45, 43}}, [1377] = {{32, 49}, {45.2, 80}}}, zoneID = 440},
         [698] = {
             spawns = {

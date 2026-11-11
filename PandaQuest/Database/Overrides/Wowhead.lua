@@ -48478,6 +48478,12 @@ ns.Overrides.wowhead = {
                 "heroes of the Alliance should report to the Sanctuary of Malorne in Mount Hyjal " ..
                 "immediately.",
         },
+        [29388] = {
+            description = "The Guardians of Hyjal, led by Arch Druid Malfurion Stormrage, seek brave " ..
+                "heroes to assist with a full-scale assault on the Firelands.\n\nWilling and able-bodied " ..
+                "champions of the Horde should report to the Sanctuary of Malorne in Mount Hyjal " ..
+                "immediately.",
+        },
         [29389] = {
             description = "Your work has given us the advantage we need to mobilize against the denizens " ..
                 "of the Firelands. We are gathering our invasion force just south of our position.\n\nWe " ..
