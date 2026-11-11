@@ -1356,6 +1356,12 @@ ns.Overrides.wowhead = {
                 "wish you good luck.",
             rewardMoney = 3500,
         },
+        [229] = {
+            description = "I should have told you this earlier...\n\nHow do I put this...\n\nMorgan may " ..
+                "have believed that his family was all dead, but, in fact, his daughter Sarah Ladimore is " ..
+                "now a Watcher. She's always been troubled by the... circumstances... surrounding her " ..
+                "father's death. Perhaps you could go to bring the news to her.",
+        },
         [231] = {
             description = "Here, take this and lay it on his grave. Maybe... somehow, he'll know that I'm " ..
                 "okay, and that none of us hold him responsible for what happened.\n\n<There are tears in " ..
@@ -1432,6 +1438,15 @@ ns.Overrides.wowhead = {
                 "something...unspeakable.\n\nYou better bring the translated note back to Ello.\n\nAnd do " ..
                 "so quickly, for I fear a doom already lumbers toward our town...",
             rewardItems = {{3248, 1}},
+        },
+        [253] = {
+            description = "The Embalmer is a name told in one of our children's stories. He was a kindly " ..
+                "alchemist, driven mad by the death of his wife, Eliza. To restore her, he used dark " ..
+                "magic to place his own heart within the bosom of his dead spouse.\n\nThis revived " ..
+                "Eliza...but it cursed her with a hunger for human flesh, forcing the Embalmer to keep " ..
+                "her buried.\n\nHis heart is his power. Find his wife's grave, retrieve his heart, and " ..
+                "bring it to me while it still beats. Do this and his power will be broken.",
+            rewardItems = {{3560, 1}, {6223, 1}},
         },
         [257] = {
             description = "Think you can match wits with Daryl the Bold, huh? I should think not! Of " ..
@@ -1831,6 +1846,13 @@ ns.Overrides.wowhead = {
                 "Musquash Root, found only at the very base of the falls far beneath the Stonewrought Dam " ..
                 "in the Wetlands.",
             rewardMoney = 2500,
+        },
+        [337] = {
+            description = "Although the cover of this book is marred by scratches and caked with mud, the " ..
+                "words \"The History of Stormwind\" can still be read along its spine. Upon opening the " ..
+                "book, the seal of the Stormwind Library is clearly stamped on the book's first " ..
+                "page.\n\nIt looks like someone checked out this book, and never returned it...",
+            rewardMoney = 1400,
         },
         [338] = {
             description = "Master Nesingwary will be so upset if he finds out!\n\nHe trusted me to " ..
@@ -2811,6 +2833,15 @@ ns.Overrides.wowhead = {
                 "Grel'borg the Miser, found the tiara and now wanders the Ruins of Alterac searching for " ..
                 "more treasures.\n\nWe would have you acquire the tiara for us.",
             rewardMoney = 15000,
+        },
+        [544] = {
+            description = "I came to Tarren Mill to research, but now must resolve a crisis. You see, " ..
+                "four Forsaken fled the Undercity a few months ago. They turned their backs on their " ..
+                "brethren, but what's worse...they stole from the Dark Lady.\n\nThese thieves broke into " ..
+                "a secure vault and stole four artifacts, items our apothecaries required in certain " ..
+                "studies. Sylvanas would have these artifacts returned.\n\nThe thieves fled the Undercity " ..
+                "to Dalaran, and those wizards quarantined them in the Lordamere Internment Camp.",
+            rewardMoney = 7000,
         },
         [546] = {
             description = "I hear you were enlisted by Darthalia to wage war on the humans of Hillsbrad. " ..
@@ -7506,6 +7537,16 @@ ns.Overrides.wowhead = {
                 "nothing to me now. You will find her at the Brackwell Pumpkin Patch. Retrieve what is " ..
                 "mine.",
         },
+        [1690] = {
+            description = "You there! It's time for you to be a big helper to the Gadgetzan Water " ..
+                "Company.\n\nThe Wastewander nomads out in the Tanaris desert have seized almost all the " ..
+                "water wells! Without access to them, our water supply will dry up in no time. If you " ..
+                "want to get in our good graces, then you'll help us bring justice to those " ..
+                "nomads!\n\nHead east of here and bring down ten Wastewander Bandits and Thieves, then " ..
+                "report back to me on the double. Justice waits for no man... goblin... bah, just get on " ..
+                "it!",
+            rewardMoney = 6000,
+        },
         [1692] = {
             description = "I have placed the elunite you gathered into a case. Take it to the blacksmith " ..
                 "Mathiel, and he will craft for you an elunite weapon.\n\nMathiel is to the south, on the " ..
@@ -8424,6 +8465,15 @@ ns.Overrides.wowhead = {
                 "my home.",
             rewardChoices = {{5458, 1}, {5589, 1}},
             rewardMoney = 600,
+        },
+        [2500] = {
+            description = "<class>, I would make use of your services. I am an alchemist of some note, " ..
+                "and I seek your aid in acquiring some reagents found out in the Badlands.\n\nI need the " ..
+                "following items to replenish my stocks: five buzzard gizzards, ten crag coyote fangs, " ..
+                "and five rock elemental shards. Obviously, you can get them off of the beasties " ..
+                "themselves; if you're not the fighting type, then find friends who are.\n\nAcquire these " ..
+                "items for me, you'll get some coin out of the deal.\n\nWell, what say ye?",
+            rewardMoney = 4500,
         },
         [2518] = {
             description = "Lady Sathrah was once beloved of Elune. Graceful and pure, the spider spun her " ..
@@ -9665,6 +9715,10 @@ ns.Overrides.wowhead = {
             description = "While you were out helping our deathstalkers, Apothecary Renferrel sent you a " ..
                 "summons. He did not give me details, but he wanted to speak with you about the wolf " ..
                 "hearts you had given him.",
+        },
+        [3261] = {
+            description = "Your time with me is over, <name>. To learn more, you must go to Camp Taurajo " ..
+                "to the south and speak with Jorn Skyseer. He will continue your guidance.",
         },
         [3281] = {
             description = "You may have killed the raptors, but the silver they stole must be recovered! " ..
@@ -15514,6 +15568,13 @@ ns.Overrides.wowhead = {
                 "Zilzibin Drumlore in the Drag of Orgrimmar. He's an expert on alien creatures like " ..
                 "these; I hope he can do something with the lore we've obtained.",
             rewardChoices = {{19038, 1}, {19037, 1}},
+        },
+        [7738] = {
+            description = "You have found what may very well be a perfect yeti hide. You easily note that " ..
+                "it is exceptionally thick and sturdy - more so than even the ones you've seen from the " ..
+                "yeti in Rage Scar.\n\nConsidering that Jangdor Swiftstrider at Camp Mojache is in the " ..
+                "market for yeti hides, this particular one may be of considerable interest to him.",
+            rewardMoney = 700,
         },
         [7761] = {
             description = "Imbecile,\n\nI hold very little faith in your ability to prevent outsiders " ..
