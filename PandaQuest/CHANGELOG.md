@@ -4,6 +4,64 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.464] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,945 quests, 969 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,675 quests, 34 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,782 quests, 50 NPCs, 2 objects
+- quest 29032 - Get Them While They're Young - updated
+  - description added
+- quest 30961 - Savior of the Inkgill - updated
+  - description added
+- npc 4097 - [Deprecated for 4.x]Galak Stormer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4099 - [Deprecated for 4.x]Galak Marauder - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4142 - [Deprecated for 4.x]Sparkleshell Tortoise - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 7404 - [Deprecated for 4.x]Galak Flame Guard - updated
+  - coordinates: 5 spawn points added in Thousand Needles
+- npc 9081 - Galamav the Marksman - updated
+  - coordinates: 2 spawn points added in Badlands
+- npc 10377 - [Deprecated for 4.x]Elu - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 10581 - [Deprecated for 4.x]Young Arikara - updated
+  - coordinates: 4 spawn points added in Thousand Needles
+- npc 10617 - [Deprecated for 4.x]Galak Messenger - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 10761 - [Deprecated for 4.x]Grimtotem Reaver - updated
+  - coordinates: 10 spawn points added in Thousand Needles
+- npc 14736 - Primal Torntusk - updated
+  - coordinates: 1 spawn point added in The Hinterlands
+- npc 50261 - Legionnaire Nazgrim - updated
+  - coordinates: 1 spawn point added in Abyssal Depths
+- npc 50777 - Crystaleye - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 51021 - Vorticus - updated
+  - coordinates: 4 spawn points added in Badlands
+- npc 51045 - Arcanus - updated
+  - coordinates: 2 spawn points added in Winterspring
+- npc 51076 - Lopex - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 53912 - Malfurion Stormrage - updated
+  - coordinates: 2 spawn points added in Molten Front
+- npc 63989 - Saari - updated
+  - coordinates: 9 spawn points added in Vale of Eternal Blossoms
+- npc 68347 - Spirit-Kissed Sprite - updated
+  - NPC level added (90)
+- npc 68881 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 72493 - Trak'gen - updated
+  - NPC title added (General Goods)
+- npc 73570 - Senior Historian Evelyna - updated
+  - NPC title added (The Timewalkers)
+- npc 73927 - High Tinker Mekkatorque - updated
+  - NPC title added (King of Gnomes)
+- npc 73951 - Commander Tik - updated
+  - NPC title added (Expert of the Sri'thik)
+
 ## [0.2.463] - 2026-11-10
 
 Data from the PandaQuest portal.
@@ -312,16 +370,6 @@ Data from the PandaQuest portal.
 Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 2,632 quests, 29 NPCs, 5 objects
-
-## [0.2.445] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 850 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,631 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,711 quests, 48 NPCs, 2 objects
-- npc 9561 - Jalinda Sprig - updated
-  - coordinates: 1 spawn point added in Burning Steppes
 
 ## [0.2.412]
 
