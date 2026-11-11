@@ -2893,6 +2893,15 @@ ns.Overrides.wowhead = {
                 "headpiece of unmatched power.",
             rewardItems = {{21387, 1}},
         },
+        [8629] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21390, 1}},
+        },
         [8630] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -63174,6 +63183,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 85,
         },
+        [1649] = {spawns = {[1519] = {{65.4, 31.2}, {65.6, 31.2}, {65.6, 31.6}}}, zoneID = 1519},
         [1667] = {
             spawns = {
                 [85] = {{36, 68.4}, {36.4, 68.6}, {36.4, 69.6}, {36.6, 68.2}, {36.6, 68.6}, {36.6, 69.6}},

@@ -3343,6 +3343,13 @@ ns.Overrides.wowhead = {
                 "these orders to Vol'jin in Orgrimmar immediately! He can be found in Thrall's chamber.",
             rewardMoney = 175,
         },
+        [832] = {
+            description = "<Words emanate from the pendant and into your " ..
+                "mind.>\n\nGazz'uz?\n\nGazz'uz...report!\n\nThere is word of your discovery in Skull " ..
+                "Rock. You must prepare for an attack!\n\nGazz'uz, I order you to speak! Speak or I will " ..
+                "make sure Neeru Fireblade knows of your presence, and he will descend on you with swift " ..
+                "brutality.\n\nDo not test your skills against Neeru...\n\n...Gazz'uz, are you there...?",
+        },
         [833] = {
             description = "Only the most valiant tauren are laid to rest at Red Rocks, our sacred burial " ..
                 "ground. It is an honor bestowed upon the great warriors who helped found and defend " ..
@@ -4588,6 +4595,14 @@ ns.Overrides.wowhead = {
                 "to the depths of their lair and destroy their foodstuffs. By then you should have " ..
                 "provoked their fury, and if you are able to survive long enough, Grenka Bloodscreech " ..
                 "herself will come for you--kill her and bring me her claw to complete your test.",
+        },
+        [1151] = {
+            description = "During the time of the Old Gods, elementals inhabited much of this world. They " ..
+                "worshipped the Old Gods, and the Gods, through their power, kept the elementals bound to " ..
+                "this world. When the Old Gods were banished, the elementals faded from our world and now " ..
+                "only return at the bidding of powerful mages.\n\nThere are exceptions though. Some " ..
+                "elementals were powerful enough to remain here on their own. One such elemental is " ..
+                "Rok'Alim.\n\nTo test your strength, find Rok'Alim in Thousand Needles and slay him.",
         },
         [1152] = {
             description = "Your time with me is just about finished. I am knowledgeable, but the Test of " ..
@@ -6726,6 +6741,14 @@ ns.Overrides.wowhead = {
                 "presence in Feralas.\n\nA warrior I know of named Rok Orhan resides at Camp Mojache in " ..
                 "Feralas; go to her. She will tell you more of the situation when you arrive.",
         },
+        [2986] = {
+            description = "Long has it been since you were last tested, <name>. You have shown patience " ..
+                "thus far in your studies, but the time has come for you to learn more. The time has come " ..
+                "for you to learn about the purity of water.\n\nSeek out Islen Waterseer in the Barrens. " ..
+                "She is along the eastern coast, south of the Southfury River and Ratchet. You will find " ..
+                "her there at her fishing hut. Good luck to you, <name>.",
+            rewardXP = 780,
+        },
         [2988] = {
             description = "The son of our mightiest gryphon is gone! Swiftwing's heir, Sharpbeak, was " ..
                 "lost while hunting with his parents a few days ago, and we believe it was the trolls who " ..
@@ -8708,6 +8731,15 @@ ns.Overrides.wowhead = {
                 "springs to the north of here.\n\nI'd like to continue my studies, so won't you help me?",
             rewardMoney = 8500,
         },
+        [5084] = {
+            description = "This greenish liquid... it reminds me a bit of the sludge I saw when traveling " ..
+                "through Felwood. And I have seen some Winterfall Runners passing into Timbermaw... " ..
+                "Perhaps these things have something to do with the flask you found, <name>.\n\nThere is " ..
+                "a large group of furbolg just past Timbermaw Hold, in Felwood. Called the Deadwood " ..
+                "tribe, they have been corrupted and driven mad by the fel. Why don't you look around " ..
+                "there and see if you can find any evidence of dealings between the Winterfall and the " ..
+                "Deadwood?",
+        },
         [5085] = {
             description = "The greenish substance inside the cauldron appears to be similar to what you " ..
                 "found in the flask. This strange gooey stuff could be as corrupted as the furbolg that " ..
@@ -8908,6 +8940,13 @@ ns.Overrides.wowhead = {
                 "exist.\n\nLastly, perhaps the most difficult of all components: the blood of " ..
                 "heroes.\n\nThe Sculptor must ultimately forge this creation.",
             rewardItems = {{12895, 1}},
+        },
+        [5167] = {
+            description = "The carapace of a mature chromatic drake is needed to form the foundation of " ..
+                "the leggings. Brilliant chromatic scales are then layered upon the wire frame and " ..
+                "enchanted in the blood of heroes. Finally, the supple skin of shadow must be applied to " ..
+                "the inner greaves.",
+            rewardChoices = {{12903, 1}, {12945, 1}},
         },
         [5181] = {
             description = "The Annals of Darrowshire tells of the villains of that battle. It tells how " ..
@@ -11703,6 +11742,13 @@ ns.Overrides.wowhead = {
                 "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
                 "headpiece of unmatched power.",
             rewardItems = {{21360, 1}},
+        },
+        [8641] = {
+            description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
+                "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
+                "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
+                "than even the wings of Nefarian himself!",
+            rewardItems = {{21361, 1}},
         },
         [8657] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
@@ -17668,6 +17714,15 @@ ns.Overrides.wowhead = {
                 "it a try.\n\nDo me a favor? Head south through the Living Grove and then down the ramp " ..
                 "to the east into Bloodmaul Outpost and procure me some? I hear they have big barrels of " ..
                 "it laying around and that their brewmasters carry it around to all the other ogres.",
+            rewardMoney = 35000,
+        },
+        [10512] = {
+            description = "I'll not take another sip of that ill-smelling muck! But it does give me an " ..
+                "idea.\n\n<Borgrim gets a twinkle in his eye.>\n\nSo here's the plan. We know that the " ..
+                "Bloodmaul practically live off of this swill. But I wonder what their enemies, the " ..
+                "Bladespire ogres, think of it?\n\n<name>, I want you to take the rest of this rubbish " ..
+                "and see if you can get the Bladespire ogres tanked. You can find them by heading north " ..
+                "from Bloodmaul Outpost through the ravine.",
             rewardMoney = 35000,
         },
         [10513] = {

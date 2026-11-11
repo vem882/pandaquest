@@ -7378,6 +7378,14 @@ ns.Overrides.wowhead = {
                 "creatures to take lives.\n\nWe shall start with a simple task: down below my hut there " ..
                 "is a pond of the precious liquid. Fill this skin with it and return to me.",
         },
+        [1536] = {
+            description = "Long ago I followed some companions into the Hillsbrad Foothills. We defended " ..
+                "ourselves from some tenacious humans who make their home there and we found ourselves in " ..
+                "a small town the Forsaken had taken over: Tarren Mill.\n\nIt was there I found a most " ..
+                "peculiar thing: in the center of town was a small well of fresh spring water. I'm not " ..
+                "sure the plagued citizens of the town even realize its value--it's a small holy vestige " ..
+                "in an unhallowed sea.\n\nBring me a sample of that water in this waterskin.",
+        },
         [1559] = {rewardItems = {{6672, 1}}},
         [1560] = {
             description = "I am so lost!\n\nMy wife, Torta, sent me out to fetch dinner and I must have " ..
@@ -17651,6 +17659,7 @@ ns.Overrides.wowhead = {
         },
         [8743] = {rewardItems = {{21176, 1}}},
         [8747] = {rewardItems = {{21196, 1}}},
+        [8749] = {rewardItems = {{21198, 1}}},
         [8750] = {rewardItems = {{21199, 1}}},
         [8751] = {rewardItems = {{21200, 1}}},
         [8753] = {rewardItems = {{21202, 1}}},
@@ -18693,6 +18702,15 @@ ns.Overrides.wowhead = {
                 "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
                 "knowledge with you as long as you are able to provide me with the necessary materials.",
             rewardItems = {{22500, 1}},
+        },
+        [9100] = {
+            description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
+                "those items, I found the tomes most enlightening. While the majority of the books were " ..
+                "filled with - to put it bluntly - tripe, there were some gems. One of those tomes " ..
+                "documented the creation of a set of armor fit for an archmage: Frostfire.\n\n<Angela " ..
+                "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
+                "knowledge with you as long as you are able to provide me with the necessary materials.",
+            rewardItems = {{22501, 1}},
         },
         [9101] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
