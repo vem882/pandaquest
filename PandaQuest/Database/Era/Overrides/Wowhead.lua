@@ -1727,6 +1727,14 @@ ns.Overrides.wowhead = {
                 "hard work lies in ruin.\n\nHere, take this note back to my sweet Tarrel. It will explain " ..
                 "the situation to him.",
         },
+        [310] = {
+            description = "I have to admit, those Thunderbrews make some good drinks. But they need to " ..
+                "learn that theirs isn't the only decent brew! Maybe you can help me teach them that " ..
+                "lesson...\n\nHere, take this barrel of Barleybrew Scalder. Sneak into the basement of " ..
+                "the Thunderbrew Distillery in Kharanos and switch it with one of their barrels of " ..
+                "Thunder Ale. Then we'll see how their patrons like my brew over theirs!\n\nAnd if the " ..
+                "barrels are guarded, then you might have to distract the guard...",
+        },
         [311] = {
             description = "Having inserted a barrel of Marleth's Scalder in the Kharanos Distillery's " ..
                 "cellar, you grab a barrel of Thunder Ale as proof of the deed...",
@@ -2860,6 +2868,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{3737, 1}, {3729, 3}},
             rewardMoney = 3000,
         },
+        [556] = {
+            description = "A notable talent of the wizards of Dalaran is their familiarity with " ..
+                "elementals: powerful creatures from other dimensions. The wizards use magical tokens as " ..
+                "a means to control these elementals. Magus Voidglare would like some of these tokens to " ..
+                "study.\n\nEnter the territories of the Dalaran wizards, west of Hillsbrad, and gather " ..
+                "the tokens.\n\nYou might find the tokens on any citizen of Dalaran, but I suggest " ..
+                "hunting at the internment camp. It's safer than Dalaran itself.",
+            rewardMoney = 3000,
+        },
         [560] = {
             description = "You know, <name>, I'd really rather not take these heads... Since you've " ..
                 "already got a handle on them, would you mind delivering them to Redpath for me?",
@@ -2883,6 +2900,16 @@ ns.Overrides.wowhead = {
                 "guard, Major Samuelson, was my mentor while I was stationed in Stormwind. It should give " ..
                 "him more than enough excuse to have me transferred back to the city. I'll need you to " ..
                 "carry my report to him, though... wouldn't want ol' Redpath to catch on.",
+        },
+        [564] = {
+            description = "Ain't nothin' that irks me more than losin' these here beautiful horses. And " ..
+                "believe me, we've lost quite a few between them pesky undead creeps, the dang Syndicate " ..
+                "gang and all the other good-for-nothin' scoundrels pokin' about these parts.\n\nBut I " ..
+                "swear on my ol' grand-daddy's grave there ain't no bigger menace to our horses here than " ..
+                "them Mountain Lions up in Alterac. Always comin' down from the hills and makin' my life " ..
+                "difficult!\n\nYou fancy yourself a hero? Go and do somethin' about it then!",
+            rewardChoices = {{3753, 1}, {3754, 1}},
+            rewardItems = {{3736, 1}, {3728, 5}},
         },
         [565] = {
             description = "I, the great Bartolo, shall make for you the world famous, Alliance renowned, " ..
@@ -7227,6 +7254,13 @@ ns.Overrides.wowhead = {
                 "take to slay him. Once he is defeated, place his glowing embers within the brazier and " ..
                 "light the torch.",
             rewardItems = {{6654, 1}},
+        },
+        [1527] = {
+            description = "Torch firmly in hand, you turn away from the brazier and look out over " ..
+                "Durotar. You feel an excitement tugging at your spirit as the wind picks up and forces " ..
+                "the flame to dance violently.\n\nYou start off down the path back to the Barrens in " ..
+                "search of Kranal Fiss.",
+            rewardItems = {{5176, 1}},
         },
         [1528] = {
             description = "Water be in ya future, mon. I see you be strong in da ways of fire already, " ..
