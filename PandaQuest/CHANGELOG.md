@@ -4,6 +4,23 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.467] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,947 quests, 977 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,687 quests, 34 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,810 quests, 51 NPCs, 2 objects
+- quest 8668 - Genesis Trousers - updated
+  - description added
+  - reward items: +1
+- quest 24841 - A Change of Heart - updated
+  - reward choices: +4
+- npc 2540 - Ambermill Serpent - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 2705 - Brewmeister Bilger - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+
 ## [0.2.466] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -374,16 +391,6 @@ Data from the PandaQuest portal.
   - coordinates: 10 spawn points added in Grizzly Hills
 - object 213765 - Tablet of Ren Yun - updated
   - coordinates: 1 spawn point added in Kun-Lai Summit
-
-## [0.2.448] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,941 quests, 851 NPCs, 2 objects
-- database - Classic Era: data from the PandaQuest portal: 2,635 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,725 quests, 48 NPCs, 2 objects
-- npc 68871 - Amber Kearnen - updated
-  - NPC level added (90)
 
 ## [0.2.412]
 

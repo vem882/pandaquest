@@ -3066,6 +3066,15 @@ ns.Overrides.wowhead = {
                 "armor no mortal has ever worn... armor fit for one who has slain a god!",
             rewardItems = {{21357, 1}},
         },
+        [8668] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21356, 1}},
+        },
         [8669] = {
             description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
                 "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
@@ -31959,6 +31968,7 @@ ns.Overrides.wowhead = {
         [24833] = {rewardItems = {{50402, 1}}, rewardMoney = 74000},
         [24837] = {rewardChoices = {{50384, 1}, {50387, 1}, {50388, 1}, {52570, 1}}},
         [24838] = {rewardChoices = {{50386, 1}, {50384, 1}, {50388, 1}, {52570, 1}}},
+        [24841] = {rewardChoices = {{50397, 1}, {50401, 1}, {50403, 1}, {52571, 1}}},
         [24842] = {rewardChoices = {{50399, 1}, {50397, 1}, {50403, 1}, {52571, 1}}},
         [24843] = {rewardChoices = {{50399, 1}, {50401, 1}, {50397, 1}, {52571, 1}}},
         [24844] = {rewardChoices = {{50400, 1}, {50402, 1}, {50404, 1}, {52572, 1}}},
@@ -63598,6 +63608,20 @@ ns.Overrides.wowhead = {
             zoneID = 267,
         },
         [2481] = {spawns = {[10] = {{18, 54.4}, {18, 54.6}}}, zoneID = 10},
+        [2540] = {
+            spawns = {
+                [130] = {
+                    {53.4, 59.4}, {53.8, 59.8}, {54.4, 68}, {54.6, 60.2}, {54.8, 54.4}, {55, 60.8},
+                    {55.2, 57}, {55.2, 64.2}, {55.6, 56.2}, {55.6, 61.2}, {55.8, 67.6}, {56.2, 59},
+                    {56.2, 62.2}, {56.4, 63}, {56.6, 54.4}, {56.8, 67.2}, {57.4, 61.2}, {57.4, 64.4},
+                    {57.4, 65.6}, {57.6, 61.2}, {57.8, 66.6}, {58, 62.6}, {58.4, 64.4}, {58.6, 62.6},
+                    {58.8, 66}, {59, 65}, {59.6, 61.2}, {60.2, 65}, {60.4, 63}, {60.6, 64.2}, {60.8, 65},
+                    {61.2, 63}, {61.6, 66.8}, {61.8, 64.2}, {62, 61.6}, {62.2, 61}, {62.8, 59.8}, {63, 63.6},
+                    {63.2, 63.4}, {63.6, 64},
+                },
+            },
+            zoneID = 130,
+        },
         [2550] = {spawns = {[33] = {{33, 88.2}, {33.6, 88.2}}}, zoneID = 33},
         [2691] = {
             spawns = {
@@ -63650,6 +63674,7 @@ ns.Overrides.wowhead = {
         },
         [2696] = {spawns = {[45] = {{43.2, 92.4}, {43.2, 92.6}}}, zoneID = 45},
         [2703] = {spawns = {[45] = {{73.8, 33.8}}}, zoneID = 45},
+        [2705] = {spawns = {[267] = {{52, 58.4}, {52, 58.6}}}, zoneID = 267},
         [2706] = {spawns = {[45] = {{74.4, 36.2}, {74.6, 36.4}, {74.6, 36.6}}}, zoneID = 45},
         [2711] = {spawns = {[267] = {{50.2, 58.8}}}, zoneID = 267},
         [2756] = {spawns = {[1637] = {{69.8, 40}, {70.2, 39}}}, zoneID = 1637},
