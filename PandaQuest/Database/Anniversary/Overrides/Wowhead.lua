@@ -1804,6 +1804,15 @@ ns.Overrides.wowhead = {
                 "head!",
             rewardChoices = {{3562, 1}, {1264, 1}},
         },
+        [380] = {
+            description = "One of our greatest struggles is obtaining the natural resources we need to " ..
+                "survive. Gold was scarce even in the height of the Alliance's power.\n\nThere is a gold " ..
+                "mine to the northwest that has been overrun with spiders. We need gold from the mine, " ..
+                "but we can't very well get it while the spiders are crawling around in there. I've not " ..
+                "much manpower to commit to the task, so we'll just have to do it little by " ..
+                "little.\n\nGet up there and see what you can do for us, <name>.",
+            rewardChoices = {{3270, 1}, {3273, 1}, {3272, 1}},
+        },
         [383] = {
             description = "These will need to be taken to my superior, Executor Zygand, in Brill. With " ..
                 "this information, we'll be able to deal a decisive blow to the Scarlet Crusade. Your " ..
@@ -8019,6 +8028,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{11584, 10}},
             rewardMoney = 50,
         },
+        [4421] = {
+            description = "Not many seek adventure here... Felwood 's corruption is widespread and " ..
+                "indiscriminate.\n\nAs part of the Emerald Circle, I seek to heal this land, but there " ..
+                "are some that wish it to fester.\n\nThe ones I speak of are the Jadefire satyrs that " ..
+                "dwell to the northwest of here, at the Ruins of Constellas. Led by a particularly cruel " ..
+                "satyr named Xavathras, they continue to spread the disease to any creatures they " ..
+                "encounter.\n\nWe must defend this land that was once ours. Defeat Xavathras and destroy " ..
+                "his minions.",
+        },
         [4449] = {
             description = "Hey! Hey, you! Get over here!\n\nYa gotta help me out. I was runnin' from them " ..
                 "Dark Iron dwarves, and I hid in here to get out of sight. Damn bastard geologists and " ..
@@ -10852,6 +10870,14 @@ ns.Overrides.wowhead = {
                 "aid to their plight. He resides atop the cliffs to the northeast of the Ruins of " ..
                 "Eldarath in Azshara.",
         },
+        [8255] = {
+            description = "The mosshoof coursers of Azshara are magnificent animals who once lived in " ..
+                "Felwood. They naturally resist disease and poison, and were unaffected by the corruption " ..
+                "there. In their ancestral wisdom, they simply chose to leave that sickened place.\n\nIt " ..
+                "saddens my heart, but I must ask you to hunt these mighty beasts for me. Gather four " ..
+                "courser glands as the first ingredient for a restorative salve -- a salve we will use to " ..
+                "heal Felwood.",
+        },
         [8256] = {
             description = "For this restorative salve, you must use a simple formula: one part poison, " ..
                 "two parts cure. You have acquired one cure, now you must gather the poison.\n\nPowerful " ..
@@ -12932,6 +12958,14 @@ ns.Overrides.wowhead = {
                 "you.\n\nAvokor - as with all the trainers on Sunstrider Isle - is inside the Sunspire on " ..
                 "the lower level.",
         },
+        [9393] = {
+            description = "As you advance within your class, you will want to take advantage of the " ..
+                "training that your class trainer can provide you. For young hunters here on Sunstrider " ..
+                "Isle, your trainer is Ranger Sallina. Speak with Sallina and see what training she has " ..
+                "available for you. The things she will teach do have a cost, so bring some coin with " ..
+                "you.\n\nSallina - as with all the trainers on Sunstrider Isle - is inside the Sunspire " ..
+                "on the lower level.",
+        },
         [9400] = {
             description = "<name>, we recently uncovered a plot to assassinate our envoy to Falcon Watch. " ..
                 "Hellfire Citadel learned of our plans to send an expedition there earlier this morning " ..
@@ -14612,6 +14646,13 @@ ns.Overrides.wowhead = {
                 "return to Gordawg with the name.\n\nYou find the shattered elements at the edge of the " ..
                 "world. Southwest.",
         },
+        [9850] = {
+            description = "You've proved to me that you can find and take down a regular clefthoof, but " ..
+                "far more dangerous are the clefthoof bulls.\n\nBag yourself thirty of those. Then you " ..
+                "can talk to me of your hunting prowess.\n\nLook for them all along the middle region of " ..
+                "Nagrand to the west and south.",
+            rewardMoney = 37000,
+        },
         [9853] = {
             description = "Gurok must be summoned. You summon Gurok and you destroy.\n\nYou must go to " ..
                 "Warmaul Hill to the northwest and find where ogre worships Gurok. You put ogre skull " ..
@@ -15772,6 +15813,14 @@ ns.Overrides.wowhead = {
                 "culture - until the shadows overtook us. When the clans became a horde, the spirits of " ..
                 "Oshu'gun fell silent. The ancestors turned their backs on us.\n\nYet something now draws " ..
                 "them from their rest. Venture to Oshu'gun and discover what could trouble the spirits so.",
+        },
+        [10102] = {
+            description = "As my energies bled away over the centuries, a void slowly grew in my place - " ..
+                "devouring the souls of those nearby. Helplessly, I watched as generations of orc souls " ..
+                "were drawn into the vortex. Recently, my enemies harnessed the vortex and used it to " ..
+                "draw countless void minions into their Burning Legion.\n\nNow, the key to ending this " ..
+                "cycle and freeing the orc spirits lies with another naaru - A'dal. I have sensed his " ..
+                "essence within the ancient city of Shattrath in the Terokkar Forest.",
         },
         [10104] = {
             description = "The rumors from Tuurem are unsettling. Some say the town's ruins are overrun " ..
@@ -17247,6 +17296,14 @@ ns.Overrides.wowhead = {
                 "hunting parties.\n\nBe aware though that some of the wolves may not like this, and will " ..
                 "turn on you.",
             rewardChoices = {{31481, 1}, {31482, 1}, {31483, 1}, {31484, 1}},
+            rewardMoney = 35000,
+        },
+        [10489] = {
+            description = "WANTED!\n\nStronglimb Deeproot, ancient of war and chief defender of the " ..
+                "Living Grove south of Sylvanaar.\n\nFind him by heading west across the bridge that " ..
+                "traverses the Bloodmaul Ravine.\n\nReturn his hewn trunk to Tor'chunk Twoclaws inside " ..
+                "the Thunderlord Stronghold inn.",
+            rewardChoices = {{31486, 1}, {31487, 1}, {31488, 1}, {31485, 1}},
             rewardMoney = 35000,
         },
         [10492] = {
@@ -19180,6 +19237,15 @@ ns.Overrides.wowhead = {
                 "numbers. They must have a full regiment of wrathbringers by now and we just can't allow " ..
                 "that.",
         },
+        [10857] = {
+            description = "As fun as killing demons might be, it does us little good when the Legion can " ..
+                "keep using its teleporters to replace anything we kill.\n\nUnfortunately, I don't have " ..
+                "any high-powered explosives handy... but the mo'arg that maintain the teleporters " ..
+                "do.\n\nTake this rod... I've tuned its powers to interfere with mo'arg brain " ..
+                "frequencies. Return to Forge Base: Gehenna and use it on any mo'arg you see. You won't " ..
+                "have long, but you'll be able to use their demolition charges on the nearby teleporters.",
+            rewardChoices = {{31701, 1}, {31700, 1}, {31703, 1}, {31699, 1}},
+        },
         [10858] = {
             description = "It shames me to ask for your assistance once more, <name>, but you are my " ..
                 "flight's only hope. Without my mate, the netherwing brood may die out " ..
@@ -20035,6 +20101,14 @@ ns.Overrides.wowhead = {
                 "specifications, zero-gravity this and low pressure that. I don't pretend to understand " ..
                 "it, but the price is right, so he'll get his superfood. Bring this crate to him up at " ..
                 "Area 52. After crossing into Netherstorm, keep following the road until you see the town.",
+        },
+        [11037] = {
+            description = "I've had a most unusual vision, <name>, and I don't know quite what to make of " ..
+                "it. I've seen an arrow, an immense arrow, riding into the sky on a trail of fire. Such a " ..
+                "feat is trivial for a skilled mage, but somehow I know the arrow I saw is not the " ..
+                "product of magic.\n\nIt will be unlike anything the people of Azeroth have ever " ..
+                "achieved. You must seek out the people working on this, <name>. Lend them your help, for " ..
+                "without it, their efforts may yet fail.",
         },
         [11038] = {
             description = "Not long ago, High Priestess Ishanah sent a small group of anchorites to " ..
@@ -21268,6 +21342,7 @@ ns.Overrides.wowhead = {
             spawns = {[3520] = {{51.4, 72.4}, {51.4, 72.6}, {51.6, 72.4}, {51.6, 72.8}, {52, 73.6}}},
             zoneID = 3520,
         },
+        [22404] = {spawns = {[3483] = {{69, 65.6}, {69.6, 65}}}, zoneID = 3483},
         [22459] = {
             spawns = {
                 [3519] = {

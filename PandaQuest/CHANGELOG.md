@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.466] - 2026-11-11
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,945 quests, 975 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,679 quests, 34 NPCs, 5 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 2,791 quests, 51 NPCs, 2 objects
+- npc 11216 - Eva Sarkhoff - updated
+  - coordinates: 1 spawn point added in Western Plaguelands
+
 ## [0.2.465] - 2026-11-11
 
 Data from the PandaQuest portal.
@@ -374,13 +384,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 2,725 quests, 48 NPCs, 2 objects
 - npc 68871 - Amber Kearnen - updated
   - NPC level added (90)
-
-## [0.2.447] - 2026-11-10
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 2,633 quests, 29 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,718 quests, 48 NPCs, 2 objects
 
 ## [0.2.412]
 
