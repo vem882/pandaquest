@@ -640,7 +640,7 @@ local function onCombatLogEvent()
     -- already resolved the payload function and already applied the "player or pet killed it"
     -- attribution, so passing the id along costs one call and asks the client for nothing extra.
     local Respawn = ns.Respawn
-    if Respawn and Respawn.NoteKill then Respawn.NoteKill(npcID) end
+    if Respawn and Respawn.NoteKill then Respawn.NoteKill(npcID, destGUID) end
 
     -- Only NPCs a quest in the log actually cares about.
     local questID = questNpcs[npcID]
