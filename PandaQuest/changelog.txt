@@ -1,3 +1,5 @@
+- Use recently synced community flight times for known routes.
+
 - Ignore NPCs already seen alive before a nearby kill when measuring respawns.
 
 - Add settings controls for price lookup, quest recommendations, and trace export.
