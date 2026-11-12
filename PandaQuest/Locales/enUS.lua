@@ -779,4 +779,5 @@ L["Change the size of quest objective icons."] = true
 L["Community objective observation"] = true
 
 L["Share completed Auctionator scans"] = true
+L["Auctionator prices queued until logout or reload: %d"] = true
 L["Share item prices by realm and faction through Sync after logout or reload."] = true

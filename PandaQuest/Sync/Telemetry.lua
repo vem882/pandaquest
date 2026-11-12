@@ -237,7 +237,7 @@ end
 
 --- Writes/refreshes the character row. Only the fields the contract lists: name, realm, region,
 -- class, race, faction, level, lastSeen and the guild fields of updateGuild() (no spec).
-local function updateCharacter(key, name, realm)
+local function updateCharacter(key, name, realm, pricesOnly)
     local characters = M.GetStore().characters
     local row = characters[key]
     if type(row) ~= "table" then
@@ -247,18 +247,20 @@ local function updateCharacter(key, name, realm)
     row.name = name
     row.realm = realm
     row.region = (GetCurrentRegionName and GetCurrentRegionName()) or nil
-    if UnitClass then
-        local _, classFile = UnitClass("player")
-        row.class = classFile
-    end
-    if UnitRace then
-        local _, raceFile = UnitRace("player")
-        row.race = raceFile
-    end
     row.faction = (ns.Player and ns.Player.GetFaction and ns.Player.GetFaction())
         or (UnitFactionGroup and UnitFactionGroup("player")) or nil
-    row.level = playerLevel()
-    updateGuild(row)
+    if not pricesOnly then
+        if UnitClass then
+            local _, classFile = UnitClass("player")
+            row.class = classFile
+        end
+        if UnitRace then
+            local _, raceFile = UnitRace("player")
+            row.race = raceFile
+        end
+        row.level = playerLevel()
+        updateGuild(row)
+    end
     row.lastSeen = unixNow()
     return row
 end
@@ -327,26 +329,33 @@ function M.StartSession()
     return session
 end
 
--- Keep the newest full scan outside the rolling quest event buffer until logout.
+-- Keep the newest full scan separate from quest recording and its rolling event buffer.
 local pendingAuctionScan
 local MAX_SCAN_PRICES = 10000
-local MAX_UPLOAD_EVENTS = 20000
+
+local function saveAuctionScan()
+    local scan = pendingAuctionScan
+    pendingAuctionScan = nil
+    if not scan or not settings().shareAuctionScans then return end
+    local key, name, realm = characterKey()
+    updateCharacter(key, name, realm, not M.IsRecording())
+    local sessions = ensureStore().sessions
+    sessions[#sessions + 1] = {
+        id = key .. "-" .. scan.at .. "-auction",
+        character = key,
+        start = scan.at,
+        ["end"] = unixNow(),
+        clientBuild = clientBuild(),
+        addonVersion = Const.VERSION,
+        events = scan.events,
+    }
+    trimSessions()
+end
 
 --- EndSession(): stamps `end` and detaches. Called on PLAYER_LOGOUT and when telemetry is disabled.
 function M.EndSession()
     if not session then return end
     session["end"] = unixNow()
-    if pendingAuctionScan and active and settings().shareAuctionScans then
-        local budget = math.max(0, MAX_UPLOAD_EVENTS - #session.events)
-        local count = math.min(budget, #pendingAuctionScan)
-        for index = 1, count do
-            session.events[#session.events + 1] = pendingAuctionScan[index]
-        end
-        if count < #pendingAuctionScan then
-            Log.Print("Saved %d of %d Auctionator prices due to the session upload limit.", count, #pendingAuctionScan)
-        end
-    end
-    pendingAuctionScan = nil
     if session.character and store and store.characters and store.characters[session.character] then
         local row = store.characters[session.character]
         -- The uploaded row is the final state: refresh the guild while the API still answers.
@@ -943,6 +952,10 @@ function M.GetStatusLines()
     lines[#lines + 1] = format(L["Sessions stored: %d, waiting for upload: %d"],
         #store.sessions, M.GetPendingSessionCount())
 
+    if pendingAuctionScan then
+        lines[#lines + 1] = format(L["Auctionator prices queued until logout or reload: %d"], #pendingAuctionScan.events)
+    end
+
     local ack = formatStamp(tonumber(store.ackUploadedThrough))
     lines[#lines + 1] = format(L["Last upload confirmed: %s"], ack or L["never"])
 
@@ -984,7 +997,8 @@ local function hookAuctionator()
     auctionatorHooked = true
     _G.hooksecurefunc(database, "ProcessScan", function(_, items)
         scanPrices = nil
-        if not active or not settings().shareAuctionScans or type(items) ~= "table" then return end
+        if not ns.IsModuleWanted("Telemetry") or not settings().shareAuctionScans
+            or type(items) ~= "table" then return end
         local prices = {}
         for key, listings in pairs(items) do
             local id = tonumber(key)
@@ -1005,19 +1019,18 @@ local function hookAuctionator()
     bus:Register({ ReceiveEvent = function()
         local prices = scanPrices
         scanPrices = nil
-        if not prices or not active or not settings().shareAuctionScans then return end
-        local current = session or M.StartSession()
-        if not current then return end
+        if not prices or not ns.IsModuleWanted("Telemetry") or not settings().shareAuctionScans then return end
         local ids = {}
         for id in pairs(prices) do ids[#ids + 1] = id end
         table.sort(ids)
         local count = math.min(MAX_SCAN_PRICES, #ids)
-        local at = math.max(0, floor((clock() - sessionClock) * 10 + 0.5) / 10)
-        pendingAuctionScan = {}
+        if count == 0 then return end
+        local events = {}
         for index = 1, count do
             local id = ids[index]
-            pendingAuctionScan[index] = { e = "AP", t = at, item = id, money = prices[id], kind = "auctionator" }
+            events[index] = { e = "AP", t = 0, item = id, money = prices[id], kind = "auctionator" }
         end
+        pendingAuctionScan = { at = unixNow(), events = events }
         Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
     end }, { fullScan.ScanComplete })
 end
@@ -1027,6 +1040,7 @@ function M.OnEnable()
     M:RegisterEvent("ADDON_LOADED", function(_, name)
         if name == "Auctionator" then hookAuctionator() end
     end)
+    M:RegisterEvent("AUCTION_HOUSE_SHOW", hookAuctionator)
     M:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
     M:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
     M:RegisterEvent("QUEST_REMOVED", onQuestRemoved)
@@ -1035,7 +1049,10 @@ function M.OnEnable()
     M:RegisterEvent("CHAT_MSG_LOOT", onChatMsgLoot)
     M:RegisterEvent("PLAYER_GUILD_UPDATE", onGuildChanged)
     M:RegisterEvent("GUILD_ROSTER_UPDATE", onGuildChanged)
-    M:RegisterEvent("PLAYER_LOGOUT", function() M.EndSession() end)
+    M:RegisterEvent("PLAYER_LOGOUT", function()
+        M.EndSession()
+        saveAuctionScan()
+    end)
 
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)
     M:RegisterMessage("PQ_PLAYER_ZONE_CHANGED", onZoneChanged)
@@ -1043,6 +1060,10 @@ function M.OnEnable()
     M:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
     M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if type(path) == "string" and path:sub(1, 16) == "global.telemetry" then
+            if not settings().shareAuctionScans then
+                scanPrices = nil
+                pendingAuctionScan = nil
+            end
             M.ApplySettings()
         end
     end)
@@ -1066,6 +1087,8 @@ end
 --- Switched off in Options > Modules: the session is closed and the recorder stopped, then AceEvent
 -- and AceTimer drop every event, message and timer that is left.
 function M.OnDisable()
+    scanPrices = nil
+    pendingAuctionScan = nil
     M.ApplySettings(true)
 end
 
