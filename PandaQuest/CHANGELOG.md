@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.486] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,958 quests, 991 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,104 quests, 36 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 3,802 quests, 56 NPCs, 6 objects
+- quest 8665 - Genesis Boots - updated
+  - description added
+  - reward items: +1
+
 ## [0.2.485] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -136,16 +147,6 @@ Data from the PandaQuest portal.
   - reward items: +1
 - npc 36601 - Amberwind's Construct - updated
   - coordinates: 6 spawn points added in Azshara
-
-## [0.2.469] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,948 quests, 978 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,700 quests, 35 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,824 quests, 51 NPCs, 2 objects
-- npc 1912 - Ambermill Protector - updated
-  - coordinates: 40 spawn points added in Silverpine Forest
 
 ## [0.2.412]
 
