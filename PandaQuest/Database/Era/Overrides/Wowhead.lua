@@ -3185,6 +3185,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{5398, 1}, {5399, 1}, {11190, 1}},
             rewardItems = {{961, 3}},
         },
+        [460] = {
+            description = "You don't look like a rot hide. Good. I had lost hope...\n\nMy name is Alaric, " ..
+                "and I was once Thule's head servant and bodyguard. He used his magic to \"protect\" me " ..
+                "from the Plague of Undeath, but instead his spell gave me an unlife from which I cannot " ..
+                "escape. And after creating the cursed rot hide gnolls, Thule beheaded me... and gave my " ..
+                "head to the gnolls as a plaything!\n\nPlease, take me to my body. I believe the gnolls " ..
+                "buried it here in Fenris Keep, near the stable, in an unmarked grave.",
+        },
         [461] = {
             description = "I know of a hidden niche within the keep that holds an item dear to Thule, and " ..
                 "his old colleagues. It also holds something you might find useful. Take me there!\n\nThe " ..
@@ -4030,6 +4038,15 @@ ns.Overrides.wowhead = {
             rewardMoney = 3000,
         },
         [579] = {rewardChoices = {{2154, 1}, {3899, 1}}},
+        [580] = {
+            description = "We was splicin' the mainbrace somethin' fierce off of the Overlook Cliffs, ol' " ..
+                "Hinterlands just in the distance. Thought the seas was goin' to swallow us whole.\n\nOl' " ..
+                "Slim knows all about liquid courage! Cap'n had a crate of Pupellyverbos Port we " ..
+                "commandeered from a privateer en route to Stormwind.\n\nSo when that storm off of " ..
+                "Hinterlands hit, I busted into the grog. Big wave hit and tossed them bottles overboard. " ..
+                "Cap'n is goin' to give me a taste o' the cat if ye don't help me get 'em back though!",
+            rewardItems = {{17048, 5}},
+        },
         [581] = {
             description = "A doom, there is. A doom on my chief's youngest son, Yenniku. As is a custom " ..
                 "with our people, he was given to the Gurubashi Trolls of Zul'Gurub, but after my tribe, " ..
@@ -4079,6 +4096,14 @@ ns.Overrides.wowhead = {
                 "fiercest among them, and if you survive...then break yourself against their chief, " ..
                 "Ana'thek the Cruel. Hah! Bring me his shattered armor if you can!\n\nMay he tear off " ..
                 "your limbs and leave you to rot and be eaten by carrion.",
+        },
+        [587] = {
+            description = "Ah, the sea life. I ain't gonna say it's the good life, but it's my " ..
+                "life.\n\nWhen I get into port I like to find me a good bottle of grog and some high " ..
+                "quality snuff. Nasty habits but what's a pirate without his vices, right?\n\nSo you can " ..
+                "imagine how heartbroken I was to find out the herbalist here in town has gone and sold " ..
+                "out of the stuff. Says his shipment got hijacked by those damned Bloodsail Raiders.\n\nI " ..
+                "bet a fearless <class> like you could convince 'em to share the goods, eh?",
         },
         [588] = {
             description = "<Nezzliok speaks.>\n\nYou have appeased myself and my chief, so I will tell " ..
@@ -6459,6 +6484,14 @@ ns.Overrides.wowhead = {
                 "of Ameth'Aran and its fall. While I read the runes, I was accosted by the spirits, and " ..
                 "fled.\n\nPlease, if you can, venture to the ruins and decipher the tablets in my place.",
             rewardMoney = 500,
+        },
+        [954] = {
+            description = "The ruins of Bashal'Aran to the east are overrun with demonic minions. The " ..
+                "sprites and satyrs that have taken up residence in the area feed upon the magical " ..
+                "energies of the area, their powers growing from continued exposure.\n\nEven with that, I " ..
+                "have noticed that there is one shrine they will not approach. On the western side of the " ..
+                "ruins, atop a small bluff, a strange blue aura permeates... There must be an explanation " ..
+                "to the demons' reluctance.\n\nI would like you to investigate it.",
         },
         [955] = {
             description = "If I were to relate the story of my life, I have no doubt it would surpass the " ..
@@ -13645,6 +13678,14 @@ ns.Overrides.wowhead = {
                 "trainers!",
             rewardItems = {{10791, 1}},
         },
+        [3640] = {
+            description = "Gnome engineering is about engineering theory shaped to serve our needs! Our " ..
+                "schemata allow us to make devices that control the world around us; the manual you read " ..
+                "covered this.\n\nThe manual also covered our ages old oath of secrecy on our schemata. " ..
+                "Once you become a gnome engineer, that's that. There is no access to goblin engineering " ..
+                "at all.\n\nIf you still want to become a gnome engineer, sign this document pledging " ..
+                "life-long secrecy and speak with me again. Think about it carefully, <name>.",
+        },
         [3642] = {
             description = "Gnome engineering is about engineering theory shaped to serve our needs! Our " ..
                 "schemata allow us to make devices that control the world around us; the manual you read " ..
@@ -15850,6 +15891,14 @@ ns.Overrides.wowhead = {
                 "got way too much work to do. Get going, they need these reports as soon as possible!",
             rewardChoices = {{15858, 1}, {15859, 1}},
             rewardMoney = 18000,
+        },
+        [4984] = {
+            description = "While there was little I could do alone to thwart the Scourge, I nevertheless " ..
+                "came to these lands to try and heal the damage done to nature. Animals suffer from the " ..
+                "plague that continues to choke these lands, unable to find mercy and peace. I ask for " ..
+                "you to continue what I could not finish here.\n\nThere is no salvation for the suffering " ..
+                "animals but a sweet and merciful release. Seek out diseased wolves nearby and put them " ..
+                "down. Please <name>, end their misery - doing so will surely soothe mine.",
         },
         [4985] = {
             description = "To the east of where we are, near where the Eastern Plaguelands begin, once " ..
@@ -20930,6 +20979,15 @@ ns.Overrides.wowhead = {
                 "such antlers will bestow the same confidence in you.\n\nHunt the mosshoof courser, find " ..
                 "the perfect antlers and bring them to me.",
         },
+        [8166] = {
+            description = "<name>, the battle for Arathi Basin is a battle for resources and territory. " ..
+                "Key points in the area must be held and operated in order to supply our forces with much " ..
+                "needed raw materials and supplies. I charge you to assault the points farthest from our " ..
+                "Arathi Basin base.\n\nAssault the farm, the mine, the lumber mill and the blacksmith " ..
+                "when they are controlled by the enemy. Find the enemy's banner and rip it from its flag " ..
+                "post!\n\nWhen you have done this to all four points, return to me.",
+            rewardMoney = 13000,
+        },
         [8167] = {
             description = "<name>, the battle for Arathi Basin is a battle for resources and territory. " ..
                 "Key points in the area must be held and operated in order to supply our forces with much " ..
@@ -22940,6 +22998,14 @@ ns.Overrides.wowhead = {
                 "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
             rewardItems = {{21416, 1}},
         },
+        [8711] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21395, 1}},
+        },
         [8712] = {
             description = "The Qiraji and their servants wield items made with the rarest and finest " ..
                 "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
@@ -24808,6 +24874,7 @@ ns.Overrides.wowhead = {
                 "destroying some Scourge at the same time? It's a win-win situation.",
             rewardItems = {{22524, 1}},
         },
+        [9127] = {rewardItems = {{22524, 1}}, rewardMoney = 900},
         [9128] = {
             description = "Greetings, adventurer! Are you interested in some work? I pay those under my " ..
                 "employ with insignias. These insignias can be used at the Quartermaster to purchase " ..

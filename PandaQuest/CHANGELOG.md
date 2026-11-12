@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.514] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 1,001 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,571 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,841 quests, 63 NPCs, 7 objects
+- npc 67976 - Tinkmaster Overspark - updated
+  - NPC level added (90)
+- npc 68565 - Nitun - updated
+  - NPC title added (The Midnight Plunderer)
+
 ## [0.2.507] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -957,20 +969,6 @@ Data from the PandaQuest portal.
   - coordinates: 30 spawn points added in Desolace
 - npc 6117 - Highborne Lichling - updated
   - coordinates: 26 spawn points added in Azshara
-
-## [0.2.482] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,957 quests, 989 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,945 quests, 36 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 3,101 quests, 54 NPCs, 3 objects
-- quest 25247 - A Change of Heart - updated
-  - reward choices: +4
-- npc 390 - Porcine Entourage - updated
-  - coordinates: 8 spawn points added in Elwynn Forest
-- npc 6199 - Blood Elf Reclaimer - updated
-  - coordinates: 28 spawn points added in Azshara
 
 ## [0.2.412]
 
