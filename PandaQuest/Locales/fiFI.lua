@@ -1056,6 +1056,7 @@ local T = {
     ["Copy a trace export"] = "Kopioi havaintojen vienti",
     ["Objective icon size"] = "Tavoitekuvakkeen koko",
     ["Change the size of quest objective icons."] = "Muuta tehtävätavoitteiden kuvakkeiden kokoa.",
+    ["Community objective observation"] = "Yhteisön tavoitehavainto",
 }
 
 -- Gathering skill advice

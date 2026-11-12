@@ -414,6 +414,37 @@ local function buildSpecs()
             end
         end
     end
+    -- Community points describe the quest objective, not a particular NPC spawn.
+    local community = ns.Community
+    if community and community.GetHotspots and M.IsLayerVisible("objective") then
+        local seen = {}
+        for _, target in ipairs(list) do
+            local questID, objective = target.questID, target.objectiveIndex
+            if target.kind == "OBJECTIVE" and questID and objective and not isHidden(questID) then
+                local key = format("community:%d:%d", questID, objective)
+                if not seen[key] then
+                    seen[key] = true
+                    for index, spot in ipairs(community.GetHotspots(questID, objective) or {}) do
+                        if type(spot) == "table" and type(spot.m) == "number"
+                            and type(spot.x) == "number" and type(spot.y) == "number"
+                            and spot.m > 0 and spot.x >= 0 and spot.x <= 1 and spot.y >= 0 and spot.y <= 1 then
+                            local x, y = spot.x * 100, spot.y * 100
+                            local existing = byKey[cluster and
+                                format("objective:%d:%d:%d", spot.m, floor(x / 3 + 0.5), floor(y / 3 + 0.5))
+                                or coordKey(spot.m, x, y, false)]
+                            if not existing then
+                                local observed = { key = key .. ":" .. index, kind = "OBJECTIVE",
+                                    questID = questID, objectiveIndex = objective, questTitle = target.questTitle,
+                                    questLevel = target.questLevel, text = target.text, icon = target.icon,
+                                    uiMapID = spot.m, x = x, y = y, communityObservation = true }
+                                addSpawn(byKey, observed, "objective", spot.m, x, y, cluster)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
     -- The profession layer contributes specs of its own (mines, herbs, fishing pools,
     -- chests, rares). It is added last so the quest pins have already claimed their slots, and it
     -- does its own filtering - Pins only places what it is handed.
@@ -1095,6 +1126,9 @@ function M.BuildTooltipLines(spec, lines)
         if target.text then
             lines[#lines + 1] = "  " .. target.text
         end
+        if target.communityObservation then
+            lines[#lines + 1] = L["Community objective observation"]
+        end
     end
     local Router = ns.Router
     local distance = Router and Router.GetDistanceTo and Router.GetDistanceTo(targets[1]) or nil
@@ -1125,7 +1159,8 @@ function onEnter(self)
     -- rates) is Map/NodeTooltip's job. It takes a spec directly. When it has nothing to say --
     -- a custom waypoint, say -- the plain line list below is still the right answer.
     local NodeTooltip = ns.NodeTooltip
-    if NodeTooltip and NodeTooltip.Fill and NodeTooltip.Fill(GameTooltip, spec) then
+    if not (spec.targets[1] and spec.targets[1].communityObservation)
+        and NodeTooltip and NodeTooltip.Fill and NodeTooltip.Fill(GameTooltip, spec) then
         for i = 1, #HINTS do
             GameTooltip:AddLine(L[HINTS[i]], 1, 1, 1, true)
         end
