@@ -120,6 +120,9 @@ local pendingLoot = {}          -- object ids seen in the loot window, cleared o
 -- player's own target (see seenUnit). Declared here so Reset can drop it with everything else.
 local engaged = {}
 local engagedCount = 0
+local firstSeen, sightingOrder = {}, {}
+local sightingIndex = 1
+local MAX_SIGHTINGS = 512
 
 local function now()
     return (GetTime and GetTime()) or 0
@@ -432,13 +435,15 @@ end
 
 --- Respawn.NoteDeath(kind, id, uiMapID, x, y)
 -- "This died / was gathered here, now." Starts the countdown and opens an interval.
-function M.NoteDeath(kind, id, uiMapID, x, y)
+function M.NoteDeath(kind, id, uiMapID, x, y, guid)
     if not (validKind(kind) and validId(id)) then return nil end
     if not ns.IsModuleWanted("Respawn") then return nil end     -- switched off: nothing is timed
     if type(x) ~= "number" or type(y) ~= "number" then return nil end
     local list = listFor(kind, id, true)
     if not list then return nil end
     local spawn = findSpawn(list, uiMapID, x, y) or addSpawn(list, uiMapID, x, y)
+    if guid and spawn.deadGuid == guid then return spawn.key end
+    spawn.deadGuid = guid
     spawn.diedAt = now()
     announce(kind, id, spawn.key, "died")
     return spawn.key
@@ -449,7 +454,7 @@ end
 -- returns the observation in seconds when one was made, and nil otherwise -- one value, because
 -- the contract says one and a caller writing `local dt = NoteSeen(...)` must not silently pick up
 -- a second.
-function M.NoteSeen(kind, id, uiMapID, x, y)
+function M.NoteSeen(kind, id, uiMapID, x, y, guid)
     if not (validKind(kind) and validId(id)) then return nil end
     if type(x) ~= "number" or type(y) ~= "number" then return nil end
     local list = tracked[kind][id]
@@ -457,12 +462,15 @@ function M.NoteSeen(kind, id, uiMapID, x, y)
     local spawn = findSpawn(list, uiMapID, x, y)
     if not spawn or not spawn.diedAt then return nil end
 
+    if guid and guid ~= spawn.deadGuid and (firstSeen[guid] or math.huge) <= spawn.diedAt then return nil end
+
     local interval = now() - spawn.diedAt
     if interval < MIN_INTERVAL then
         -- Too soon to be a respawn. The death record is kept: this is the corpse, not the next one.
         return nil
     end
     spawn.diedAt = nil
+    spawn.deadGuid = nil
     if interval > MAX_INTERVAL then
         -- Not attributable. The interval is discarded but the spawn stops counting down, so the
         -- pin goes back to normal instead of staying faded forever.
@@ -505,6 +513,9 @@ function M.Reset()
     wipe(tracked.object)
     wipe(pendingLoot)
     wipe(engaged)
+    wipe(firstSeen)
+    wipe(sightingOrder)
+    sightingIndex = 1
     trackedIds.npc, trackedIds.object = 0, 0
     engagedCount = 0
 end
@@ -535,11 +546,11 @@ end
 -- CombatLogGetCurrentEventInfo of Retail does not exist on 5.5.4) and already applies exactly the
 -- filter this wants, so with telemetry on the kill arrives here for free -- and with telemetry off
 -- nothing registers the event at all and `seenUnit` below is what notices the kill instead.
-function M.NoteKill(npcID)
+function M.NoteKill(npcID, guid)
     if type(npcID) ~= "number" or npcID <= 0 then return nil end
     local uiMapID, x, y = playerPosition()
     if not uiMapID then return nil end
-    return M.NoteDeath("npc", npcID, uiMapID, x, y)
+    return M.NoteDeath("npc", npcID, uiMapID, x, y, guid)
 end
 
 -- The creatures the player has actually engaged: guid -> the last time it was seen alive as the
@@ -608,10 +619,17 @@ local function seenUnit(unit, slot)
         if not takeEngaged(guid) then return end
         local uiMapID, x, y = playerPosition()
         if not uiMapID then return end
-        M.NoteDeath("npc", npcID, uiMapID, x, y)
+        M.NoteDeath("npc", npcID, uiMapID, x, y, guid)
         return
     end
 
+    if not firstSeen[guid] then
+        local expired = sightingOrder[sightingIndex]
+        if expired then firstSeen[expired] = nil end
+        firstSeen[guid] = now()
+        sightingOrder[sightingIndex] = guid
+        sightingIndex = sightingIndex % MAX_SIGHTINGS + 1
+    end
     if slot == "target" then rememberEngaged(guid) end
 
     -- Only ids this session actually watched die: everything else is a lookup that would allocate
@@ -619,7 +637,7 @@ local function seenUnit(unit, slot)
     if not tracked.npc[npcID] then return end
     local uiMapID, x, y = playerPosition()
     if not uiMapID then return end
-    M.NoteSeen("npc", npcID, uiMapID, x, y)
+    M.NoteSeen("npc", npcID, uiMapID, x, y, guid)
 end
 
 local function onNameplateAdded(_, unit) seenUnit(unit, "nameplate") end
