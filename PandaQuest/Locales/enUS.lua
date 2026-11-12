@@ -775,3 +775,5 @@ L["Copy a trace export"] = true
 L["Objective icon size"] = true
 
 L["Change the size of quest objective icons."] = true
+
+L["Community objective observation"] = true
