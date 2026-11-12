@@ -4,6 +4,224 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.487] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,029 quests, 994 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,142 quests, 37 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 3,980 quests, 58 NPCs, 6 objects
+- quest 13695 - A Valiant Of Undercity - updated
+  - description added
+  - reward money added (74s)
+- quest 13696 - A Valiant Of Silvermoon - updated
+  - description added
+  - reward money added (74s)
+- quest 13697 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13699 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13703 - Valiant Of Ironforge - updated
+  - description added
+- quest 13705 - Valiant Of The Exodar - updated
+  - description added
+- quest 13710 - Valiant Of Undercity - updated
+  - description added
+- quest 13711 - Valiant Of Silvermoon - updated
+  - description added
+- quest 13713 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13714 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13715 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13717 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13718 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13719 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13720 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13721 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13722 - The Valiant's Charge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13723 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13724 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13725 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13726 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 13728 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 26022 - First Blood - updated
+  - description added
+  - reward money added (22s)
+- quest 26023 - The Forsaken Trollbane - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 26030 - Sigil of Strom - updated
+  - description added
+  - reward money added (22s)
+- quest 26031 - Sigil of Thoradin - updated
+  - description added
+  - reward money added (22s)
+- quest 26032 - Sigil of Arathor - updated
+  - description added
+  - reward money added (22s)
+- quest 26033 - Trol'kalar - updated
+  - description added
+- quest 26039 - The Princess Trapped - updated
+  - description added
+  - reward money added (25s)
+- quest 26041 - Stones of Binding - updated
+  - description added
+  - reward money added (50s)
+- quest 26042 - Breaking the Keystone - updated
+  - description added
+- quest 26050 - Goggle Boggle - updated
+  - description added
+  - reward money added (25s)
+- quest 26052 - Speak to Shakes - updated
+  - description added
+- quest 26053 - Clearing the Highlands - updated
+  - description added
+  - reward money added (22s)
+- quest 26083 - Hello Lolo - updated
+  - description added
+  - reward money added (11s)
+- quest 26084 - Hammerfall - updated
+  - description added
+  - reward money added (11s)
+- quest 26107 - Raising Spirits - updated
+  - description added
+  - reward money added (25s)
+- quest 26223 - Stalking the Stalkers - updated
+  - description added
+  - reward money added (30s)
+- quest 26224 - Hunt the Savages - updated
+  - description added
+  - reward money added (65s)
+- quest 26225 - Pupellyverbos Port - updated
+  - description added
+  - reward money added (30s)
+- quest 26240 - Stomp To My Beat - updated
+  - description added
+  - reward money added (30s)
+- quest 26267 - Skulk Rock Clean-Up - updated
+  - description added
+  - reward money added (30s)
+- quest 26268 - Skulk Rock Supplies - updated
+  - description added
+  - reward money added (30s)
+- quest 26306 - Start Taking Back - updated
+  - description added
+  - reward money added (35s)
+- quest 26307 - Death to the Vilebranch - updated
+  - description added
+  - reward money added (35s)
+- quest 26310 - All That Skitters - updated
+  - description added
+  - reward money added (35s)
+- quest 26363 - Summit of Fate - updated
+  - description added
+  - reward money added (35s)
+- quest 26366 - Heads Up - updated
+  - description added
+  - reward money added (35s)
+- quest 26367 - Ongo'longo's Revenge - updated
+  - description added
+  - reward money added (35s)
+- quest 26368 - Venomous Secrets - updated
+  - description added
+  - reward money added (35s)
+- quest 26381 - The Eye of Shadra - updated
+  - description added
+  - reward money added (35s)
+- quest 26384 - Darkcleric Marnal - updated
+  - description added
+  - reward money added (17s)
+- quest 26387 - Starvation Diet - updated
+  - description added
+  - reward money added (35s)
+- quest 26406 - The Fang of Shadra - updated
+  - description added
+  - reward money added (35s)
+- quest 26429 - Crush the Witherbark - updated
+  - description added
+  - reward money added (25s)
+- quest 26430 - Revantusk Village - updated
+  - description added
+  - reward money added (22s)
+- quest 26432 - The Fall of Jintha'Alor - updated
+  - description added
+  - reward money added (17s)
+- quest 26891 - Amongst the Ruins - updated
+  - description added
+  - reward money added (80s)
+- quest 26899 - The Enemy of My Enemy - updated
+  - description added
+  - reward money added (93s)
+- quest 26906 - Agamaggan - updated
+  - description added
+- quest 26907 - Take Them Down! - updated
+  - description added
+  - reward money added (1g 47s)
+- quest 26908 - Feeling Thorny - updated
+  - description added
+  - reward money added (3s 50c)
+- quest 26909 - The Stone Shards - updated
+  - description added
+- quest 26911 - Myzrael's Tale - updated
+  - description added
+  - reward money added (11s)
+- quest 26920 - The Battle for Andorhal - updated
+  - description added
+  - reward money added (9s)
+- quest 26921 - Scourge First... Alliance Later - updated
+  - description added
+  - reward money added (35s)
+- quest 26922 - The Endless Flow - updated
+  - description added
+  - reward money added (35s)
+- quest 26925 - Araj the Summoner - updated
+  - description added
+  - reward money added (75s)
+- quest 26926 - Victory, For Now - updated
+  - description added
+  - reward money added (3s 50c)
+- quest 26930 - After the Crusade - updated
+  - description added
+  - reward money added (30s)
+- quest 26933 - Foes Before Hoes - updated
+  - description added
+  - reward money added (40s)
+- npc 67940 - Admiral Taylor - updated
+  - NPC level added (90)
+- npc 68787 - Ancient Defender - updated
+  - NPC level added (90)
+- npc 71165 - Wrathion - updated
+  - NPC title added (The Black Prince)
+
 ## [0.2.486] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -134,19 +352,6 @@ Data from the PandaQuest portal.
   - reward items: +1
 - npc 1649 - UNUSED Jordan Croft - updated
   - coordinates: 3 spawn points added in Stormwind City
-
-## [0.2.470] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,949 quests, 979 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,709 quests, 35 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,834 quests, 51 NPCs, 2 objects
-- quest 13903 - Gorishi Grub - updated
-  - description added
-  - reward items: +1
-- npc 36601 - Amberwind's Construct - updated
-  - coordinates: 6 spawn points added in Azshara
 
 ## [0.2.412]
 
