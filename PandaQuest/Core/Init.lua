@@ -454,8 +454,12 @@ end
 commands.trace = function() ns.Trace.Show() end
 
 commands.price = function(arg)
+    local shareItem = arg:match("^(.-)%s+%-%-share$")
+    local share = shareItem ~= nil
+    arg = shareItem or arg
+    local shared = false
     if arg == "" then
-        Log.Print("Usage: /pq price <item name, ID, or link>")
+        Log.Print("Usage: /pq price <item name, ID, or link> [--share]")
         return
     end
     local itemID = tonumber(arg:match("^%d+$") or arg:match("|Hitem:(%d+)[:|]"))
@@ -482,24 +486,36 @@ commands.price = function(arg)
         end
     end
     if not itemID or itemID < 1 or itemID > 2147483647 then
-        Log.Print("Usage: /pq price <item name, ID, or link>")
+        Log.Print("Usage: /pq price <item name, ID, or link> [--share]")
         return
     end
     Log.Print("%s (item ID: %d)", db.GetItemName(itemID) or "Item", itemID)
     local Auctionator = _G.Auctionator
     local api = Auctionator and Auctionator.API and Auctionator.API.v1
-    local function quote(label, lookup, ...)
+    local function quote(label, source, lookup, ...)
         if type(lookup) ~= "function" then return false end
         local ok, copper = pcall(lookup, ...)
         if not ok or (issecretvalue and issecretvalue(copper)) then return false end
         if type(copper) ~= "number" or not (copper > 0 and copper < math.huge) then return false end
-        Log.Print("%s: %s", label, _G.GetCoinTextureString(math.floor(copper)))
+        copper = math.floor(copper)
+        Log.Print("%s: %s", label, _G.GetCoinTextureString(copper))
+        if share and copper >= 1 and copper <= 1000000000000 and itemID <= 10000000 then
+            local telemetry = ns.Telemetry
+            if telemetry and telemetry.Record and telemetry.Record("AP", { item = itemID, money = copper, kind = source }) then
+                shared = true
+            end
+        end
         return true
     end
-    local scan = quote("Auctionator scan", api and api.GetAuctionPriceByItemID, "PandaQuest", itemID)
+    local scan = quote("Auctionator scan", "auctionator", api and api.GetAuctionPriceByItemID, "PandaQuest", itemID)
     local tsm = _G.TSM_API and _G.TSM_API.GetCustomPriceValue
-    local recent = quote("TradeSkillMaster recent", tsm, "DBRecent", "i:" .. itemID)
-    local market = quote("TradeSkillMaster market value", tsm, "DBMarket", "i:" .. itemID)
+    local recent = quote("TradeSkillMaster recent", "tsm_recent", tsm, "DBRecent", "i:" .. itemID)
+    local market = quote("TradeSkillMaster market value", "tsm_market", tsm, "DBMarket", "i:" .. itemID)
+    if shared then
+        Log.Print("Price queued for public sharing by realm. Log out or reload, then run Sync.")
+    elseif share and (scan or recent or market) then
+        Log.Print("Price could not be queued. Check that PandaQuest data sharing is enabled.")
+    end
     if not scan and not recent and not market then
         Log.Print("No Auctionator or TradeSkillMaster price available for item %d.", itemID)
     end
