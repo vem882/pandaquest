@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.506] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 999 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,552 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,731 quests, 61 NPCs, 7 objects
+- npc 335 - Singe - updated
+  - coordinates: 5 spawn points added in Redridge Mountains
+
 ## [0.2.501] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -964,33 +974,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 3,032 quests, 54 NPCs, 3 objects
 - npc 11548 - Loh'atu - updated
   - coordinates: 1 spawn point added in Azshara
-
-## [0.2.476] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,956 quests, 986 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,770 quests, 36 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,912 quests, 52 NPCs, 2 objects
-- quest 8593 - Trousers of the Oracle - updated
-  - description added
-  - reward items: +1
-- quest 10938 - Darkmoon Blessings Deck - updated
-  - description added
-  - reward items: +1
-- quest 13917 - Gorishi Grub - updated
-  - description added
-  - reward items: +1
-- npc 25021 - Mariner Moonblade - updated
-  - coordinates: 20 spawn points added in Feralas
-- npc 50789 - The Oracle - updated
-  - coordinates: 1 spawn point added in Kun-Lai Summit
-- npc 53057 - Lylagar Breath - updated
-  - coordinates: 3 spawn points added in Mount Hyjal
-- npc 67881 - Proveditor Grantley - updated
-  - NPC title added (Collector of Commissions)
-- npc 71351 - Wrathion - updated
-  - NPC title added (The Black Prince)
 
 ## [0.2.412]
 
