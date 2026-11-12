@@ -796,3 +796,7 @@ L["The auction house is busy. Try again in a moment."] = true
 L["The auction request failed. Try scanning again."] = true
 L["The auction request timed out. Try scanning again."] = true
 L["Waiting for auction results…"] = true
+L["%d%% · %d prices queued for Sync"] = true
+L["Batch %d · %d prices queued · Total unknown"] = true
+L["Stop scan"] = true
+L["About %d%% · %d prices queued for Sync"] = true
