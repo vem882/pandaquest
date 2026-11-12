@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.7.0+v1.0.14 (MoP database + corrections from QuestieDB 1.0.14). DO NOT EDIT.
--- Built: 2026-11-11T20:08:04Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.8.0+v1.0.16 (MoP database + corrections from QuestieDB 1.0.16). DO NOT EDIT.
+-- Built: 2026-11-12T18:09:07Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "mop"
 ns.Data.meta = {
-  ["built"] = "2026-11-11T20:08:04Z",
+  ["built"] = "2026-11-12T18:09:07Z",
   ["contentPhase"] = 5,
   ["counts"] = {["items"]=80049,["npcs"]=60224,["objects"]=20326,["questXP"]=17930,["quests"]=17693},
   ["expansion"] = "MoP",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.7.0+v1.0.14",
+  ["source"] = "Questie 12.8.0+v1.0.16",
 }
 ns.Data.questTagCorrections = {
   [19] = {1,"Elite"},
@@ -9064,6 +9064,9 @@ ns.Data.hiddenQuests = {
   [70865] = true,
   [70869] = true,
   [70870] = true,
+  [78132] = true,
+  [78133] = true,
+  [78134] = true,
   [78136] = true,
   [78137] = true,
   [78138] = true,
@@ -9088,6 +9091,8 @@ ns.Data.hiddenQuests = {
   [78304] = true,
   [78611] = true,
   [78924] = true,
+  [79090] = true,
+  [79098] = true,
   [79100] = true,
   [79482] = true,
   [79483] = true,
@@ -9246,9 +9251,11 @@ ns.Data.hideOnMapQuests = {
   [91899] = true,
   [91900] = true,
   [91901] = true,
+  [91902] = true,
   [91904] = true,
   [91905] = true,
   [91906] = true,
+  [91907] = true,
   [96339] = true,
   [96383] = true,
   [97065] = true,

@@ -4,6 +4,17 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.507] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
+- database - Classic Era rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
+- database - TBC Anniversary rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
+- database - WoW Forever rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
+- database - Classic Era: data from the PandaQuest portal: 3,562 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,793 quests, 62 NPCs, 7 objects
+
 ## [0.2.506] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -960,20 +971,6 @@ Data from the PandaQuest portal.
   - coordinates: 8 spawn points added in Elwynn Forest
 - npc 6199 - Blood Elf Reclaimer - updated
   - coordinates: 28 spawn points added in Azshara
-
-## [0.2.481] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.7.0+v1.0.14 (was 12.6.5+v1.0.13)
-- database - Classic Era rebuilt from Questie 12.7.0+v1.0.14 (was 12.6.5+v1.0.13)
-- database - TBC Anniversary rebuilt from Questie 12.7.0+v1.0.14 (was 12.6.5+v1.0.13)
-- database - WoW Forever rebuilt from Questie 12.7.0+v1.0.14 (was 12.6.5+v1.0.13)
-- database - Wowhead data as the PandaQuest portal read it: 7,956 quests, 987 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,872 quests, 36 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 3,032 quests, 54 NPCs, 3 objects
-- npc 11548 - Loh'atu - updated
-  - coordinates: 1 spawn point added in Azshara
 
 ## [0.2.412]
 
