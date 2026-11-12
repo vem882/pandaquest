@@ -327,10 +327,26 @@ function M.StartSession()
     return session
 end
 
+-- Keep the newest full scan outside the rolling quest event buffer until logout.
+local pendingAuctionScan
+local MAX_SCAN_PRICES = 10000
+local MAX_UPLOAD_EVENTS = 20000
+
 --- EndSession(): stamps `end` and detaches. Called on PLAYER_LOGOUT and when telemetry is disabled.
 function M.EndSession()
     if not session then return end
     session["end"] = unixNow()
+    if pendingAuctionScan and active and settings().shareAuctionScans then
+        local budget = math.max(0, MAX_UPLOAD_EVENTS - #session.events)
+        local count = math.min(budget, #pendingAuctionScan)
+        for index = 1, count do
+            session.events[#session.events + 1] = pendingAuctionScan[index]
+        end
+        if count < #pendingAuctionScan then
+            Log.Print("Saved %d of %d Auctionator prices due to the session upload limit.", count, #pendingAuctionScan)
+        end
+    end
+    pendingAuctionScan = nil
     if session.character and store and store.characters and store.characters[session.character] then
         local row = store.characters[session.character]
         -- The uploaded row is the final state: refresh the guild while the API still answers.
@@ -956,7 +972,61 @@ function M.OnInitialize()
     ensureStore()
 end
 
+local auctionatorHooked
+local scanPrices
+local function hookAuctionator()
+    local addon = _G.Auctionator
+    local database = addon and addon.Database
+    local bus = addon and addon.EventBus
+    local fullScan = addon and addon.FullScan and addon.FullScan.Events
+    if auctionatorHooked or not (database and database.ProcessScan and bus and bus.Register
+        and fullScan and fullScan.ScanComplete and _G.hooksecurefunc) then return end
+    auctionatorHooked = true
+    _G.hooksecurefunc(database, "ProcessScan", function(_, items)
+        scanPrices = nil
+        if not active or not settings().shareAuctionScans or type(items) ~= "table" then return end
+        local prices = {}
+        for key, listings in pairs(items) do
+            local id = tonumber(key)
+            if id and id >= 1 and id <= 10000000 and id % 1 == 0 and type(listings) == "table" then
+                local cheapest
+                for _, listing in ipairs(listings) do
+                    local copper = type(listing) == "table" and listing.price
+                    if type(copper) == "number" and not (_G.issecretvalue and _G.issecretvalue(copper))
+                        and copper >= 1 and copper <= 1000000000000 and (not cheapest or copper < cheapest) then
+                        cheapest = copper
+                    end
+                end
+                if cheapest then prices[id] = floor(cheapest) end
+            end
+        end
+        scanPrices = prices
+    end)
+    bus:Register({ ReceiveEvent = function()
+        local prices = scanPrices
+        scanPrices = nil
+        if not prices or not active or not settings().shareAuctionScans then return end
+        local current = session or M.StartSession()
+        if not current then return end
+        local ids = {}
+        for id in pairs(prices) do ids[#ids + 1] = id end
+        table.sort(ids)
+        local count = math.min(MAX_SCAN_PRICES, #ids)
+        local at = math.max(0, floor((clock() - sessionClock) * 10 + 0.5) / 10)
+        pendingAuctionScan = {}
+        for index = 1, count do
+            local id = ids[index]
+            pendingAuctionScan[index] = { e = "AP", t = at, item = id, money = prices[id], kind = "auctionator" }
+        end
+        Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
+    end }, { fullScan.ScanComplete })
+end
+
 function M.OnEnable()
+    hookAuctionator()
+    M:RegisterEvent("ADDON_LOADED", function(_, name)
+        if name == "Auctionator" then hookAuctionator() end
+    end)
     M:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
     M:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
     M:RegisterEvent("QUEST_REMOVED", onQuestRemoved)
