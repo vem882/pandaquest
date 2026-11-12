@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.501] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 3,519 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,495 quests, 60 NPCs, 7 objects
+
 ## [0.2.492] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -984,20 +991,6 @@ Data from the PandaQuest portal.
   - NPC title added (Collector of Commissions)
 - npc 71351 - Wrathion - updated
   - NPC title added (The Black Prince)
-
-## [0.2.473] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,953 quests, 981 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,723 quests, 35 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,853 quests, 51 NPCs, 2 objects
-- quest 5892 - Irondeep Supplies - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 8667 - Genesis Helm - updated
-  - description added
-  - reward items: +1
 
 ## [0.2.412]
 
