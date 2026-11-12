@@ -38,6 +38,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.485
+- database - Classic Era: data from the PandaQuest portal: 3,060 quests, 36 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 3,602 quests, 56 NPCs, 3 objects
+
 0.2.484
 - database - Classic Era: data from the PandaQuest portal: 3,038 quests, 36 NPCs, 6 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 3,362 quests, 55 NPCs, 3 objects
@@ -143,13 +147,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - database - TBC Anniversary: data from the PandaQuest portal: 2,824 quests, 51 NPCs, 2 objects
 - npc 1912 - Ambermill Protector - updated
   - coordinates: 40 spawn points added in Silverpine Forest
-
-0.2.468
-- database - Wowhead data as the PandaQuest portal read it: 7,948 quests, 977 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,693 quests, 35 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,820 quests, 51 NPCs, 2 objects
-- quest 29388 - Guardians of Hyjal: Firelands Invasion! - updated
-  - description added
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
