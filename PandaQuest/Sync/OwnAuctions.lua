@@ -41,6 +41,9 @@ local function record()
         store = { version = 1, game = gameId, characters = {} }
         _G.PandaQuestOwnAuctions = store
     end
+    if type(store) == "table" and store.game == gameId and store.version == nil then
+        store.version, store.characters = 1, {}
+    end
     if type(store) ~= "table" or store.version ~= 1 or store.game ~= gameId
         or type(store.characters) ~= "table" then return end
     store.enabled = true
