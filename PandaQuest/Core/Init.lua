@@ -498,7 +498,7 @@ commands.price = function(arg)
         if not ok or (issecretvalue and issecretvalue(copper)) then return false end
         if type(copper) ~= "number" or not (copper > 0 and copper < math.huge) then return false end
         copper = math.floor(copper)
-        Log.Print("%s: %s", label, _G.GetCoinTextureString(copper))
+        Log.Print("%s: %s", label, ns.Util.FormatMoneyCoins(copper))
         if share and copper >= 1 and copper <= 1000000000000 and itemID <= 10000000 then
             local telemetry = ns.Telemetry
             if telemetry and telemetry.Record and telemetry.Record("AP", { item = itemID, money = copper, kind = source }) then
