@@ -2918,6 +2918,17 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3453, 1}, {3583, 1}},
             rewardMoney = 350,
         },
+        [426] = {
+            description = "The Scourge are trying to form a base at the Agamand Mills. If they do, then " ..
+                "they can stage further attacks within Tirisfal.\n\nThe orders have been given. The " ..
+                "Scourge in the Mills must be destroyed.\n\nGo to the Mills. Collect Notched Ribs from " ..
+                "Rattlecage and Cracked Skull Soldiers, and Blackened Skulls from Darkeye " ..
+                "Bonecasters.\n\nTo get to the Mills, follow the road west. After crossing the bridge, " ..
+                "take the next fork north then keep going north. When you see windmills, the battle will " ..
+                "begin.",
+            rewardChoices = {{3447, 1}, {3834, 1}},
+            rewardMoney = 450,
+        },
         [427] = {
             description = "The documents Executor Arren provided are just the break we needed in our " ..
                 "battle with the wretched Scarlet Crusade. We now know their exact locations throughout " ..
@@ -8253,6 +8264,15 @@ ns.Overrides.wowhead = {
                 "shut.\n\nYa can find Trias at his cheese shop, Trias' Cheese, in the Trade District. " ..
                 "Good luck.",
         },
+        [1243] = {
+            description = "Jorgen, you ol' sonuva.... So, that's how it's going to be, huh?\n\nAll right, " ..
+                "I can deal with that. I hope he finds the Twisting Nether that much sooner!\n\nHere's " ..
+                "what's gonna happen, <name>. I'll start using my contacts here, but you're doing most of " ..
+                "the footwork so I save some coin.\n\nHead to Darkshire in Duskwood and find Watcher " ..
+                "Backus --he usually patrols the north road right outside of town. Just tell him you're " ..
+                "looking into any Defias activity for me and he'll help you out with any information he " ..
+                "can.",
+        },
         [1245] = {
             description = "Whoa, this looks way too complex to be something to just lead you astray. I " ..
                 "shouldn't even be looking at this stuff. Take it to Trias--he'll be able to make sense " ..
@@ -9185,6 +9205,13 @@ ns.Overrides.wowhead = {
                 "a sign of her.\n\nDeliver their hearts to Carendin. But first, let me show you your " ..
                 "quarry.",
         },
+        [1477] = {
+            description = "Our mages are conducting research at Nethergarde Keep in the Blasted Lands, " ..
+                "research vital to our understanding of the Dark Portals. They require nearly constant " ..
+                "supplies, but our supply line to Nethergarde is tenuous.\n\nYou must help ensure the " ..
+                "supplies make it to Nethergard. Report to Watchmaster Sorigal in Darkshire, and do as he " ..
+                "asks. This task will take you into hostile lands, <name>. Prepare yourself.",
+        },
         [1478] = {
             description = "Ah, <name>! I just received word from Carendin Halgar that he would like to " ..
                 "see you for further training.\n\nYou should be proud of yourself, <name>. It's not every " ..
@@ -9648,6 +9675,11 @@ ns.Overrides.wowhead = {
                 "equipment is always low. If you were to help them out, I'm sure their resident " ..
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
+        },
+        [1639] = {
+            description = "Yeah, I can teach you. But first I wanna see what moves you have " ..
+                "already.\n\nSee that drunk over there at the end of the bar? Bartleby? I want you to get " ..
+                "his mug.\n\nHah, and if you know Bartleby then you know he won't just give it to you.",
         },
         [1640] = {
             description = "You want what?? You're crazy!\n\nThe only way you'll get this mug is if you " ..
@@ -11209,6 +11241,15 @@ ns.Overrides.wowhead = {
                 "Ban'ethil Barrow Den. I am now trapped in the Emerald Dream, powerless to stop " ..
                 "this.\n\nYou must help me. The Gnarlpine shaman carry a strange charm which is used to " ..
                 "perform this ritual, and I'd like to examine it. Please, <name>, bring one to me.",
+        },
+        [2561] = {
+            description = "After examining this charm, <name>, I see now what must be done. Please take " ..
+                "it, and do as I ask.\n\nYou are to explore the deepest areas of the Ban'ethil Barrow " ..
+                "Den. There, you will find my soulless body... Although I regret what I am about to tell " ..
+                "you, I see no other way to free myself from the control of the Gnarlpine.\n\nIn order " ..
+                "for me to escape them, you must kill my physical form. Once that is done, use the voodoo " ..
+                "charm on my fallen body. After you have completed this task, please return to me.",
+            rewardChoices = {{9598, 1}, {18957, 1}},
         },
         [2581] = {
             description = "It is a well known fact that hyenas possess tremendous strength in their " ..
@@ -14882,6 +14923,15 @@ ns.Overrides.wowhead = {
         [4482] = {rewardItems = {{11643, 1}}},
         [4483] = {rewardItems = {{11644, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
+        [4486] = {
+            description = "Well, well, well, look at the mighty paladin in all <his/her> " ..
+                "regality.\n\nSorry, <name>, I meant no offense... I just get a little jealous sometimes " ..
+                "when I see some of the feats you've accomplished. Tiza tells me it's my weakness, and I " ..
+                "swore to her I'd work on it. It's just hard sometimes, you know?\n\nBut the reason I " ..
+                "wanted to talk to you was because Duthorian Rall in Stormwind sent word for you to meet " ..
+                "him in the Cathedral of Light when you're ready. Sounded important. Sounded like " ..
+                "something's going on.",
+        },
         [4489] = {
             description = "You, <race>! Come here!\n\nYou're the one they call <name>, yes?\n\nI thought " ..
                 "as much. I will keep this short: you're growing in power, and it has been acknowledged. " ..
@@ -16527,6 +16577,14 @@ ns.Overrides.wowhead = {
                 "last one did, allowing you into the cauldron. Use this bottle to obtain a sample from " ..
                 "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
         },
+        [5222] = {
+            description = "Two cauldrons have been successfully opened; while you will be able to access " ..
+                "them indefinitely, we still want to open up the other two that remain. This will provide " ..
+                "all of us with more options to introduce the counter agent!\n\nThis time, you'll be " ..
+                "hitting the Writhing Haunt's cauldron. It is almost due east of Andorhal, relatively " ..
+                "close to the ruined city walls; again, eliminate the cauldron lord present there for its " ..
+                "key. Use this bottle to obtain the sample from the cauldron.\n\nGood hunting, <name>!",
+        },
         [5223] = {
             description = "You delicately top off the empty bottle; a sample of the foul substance that " ..
                 "churns under the platform of the cauldron now oozes back and forth inside the fragile " ..
@@ -17735,6 +17793,13 @@ ns.Overrides.wowhead = {
                 "leads you up to the town.\n\nOnce there, place the barrel in the center of the lumber " ..
                 "mill; someplace high, like on a crate or something.\n\nAfter you open it, the rest " ..
                 "should take care of itself. Just come back here and I'll reward you for helping me.",
+        },
+        [5904] = {
+            description = "Now that we have the termites, take this steel reinforced barrel to the " ..
+                "Northridge Lumber Mill south of Hearthglen--you'll find it to the west of the road that " ..
+                "leads you up to the town.\n\nOnce there, place the barrel in the center of the lumber " ..
+                "mill; find someplace suitable, like on a crate and then open it. The termites should do " ..
+                "their work from there and make the mill useless to the Crusade.",
         },
         [5921] = {
             description = "All druids are welcome in the sacred lands of Moonglade, regardless of the " ..
@@ -20343,6 +20408,10 @@ ns.Overrides.wowhead = {
                 "Thunderfury.",
             rewardItems = {{19019, 1}},
         },
+        [7810] = {
+            description = "There must be more to being a master of the arena than this! Perhaps the " ..
+                "Pirate who runs the event at Gurubashi will know!",
+        },
         [7815] = {
             description = "Don't let their big eyes fool you, mon! Those saltwater snapjaws be a menace. " ..
                 "I can't fish for five minutes without getting a broken line from one of those oversized " ..
@@ -22838,6 +22907,14 @@ ns.Overrides.wowhead = {
                 "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
                 "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
             rewardItems = {{21398, 1}},
+        },
+        [8707] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21413, 1}},
         },
         [8708] = {
             description = "The Qiraji and their servants wield items made with the rarest and finest " ..

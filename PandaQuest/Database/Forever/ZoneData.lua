@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.7.0+v1.0.14 (Forever database + corrections from QuestieDB 1.0.14). DO NOT EDIT.
--- Built: 2026-11-11T20:08:04Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.8.0+v1.0.16 (Forever database + corrections from QuestieDB 1.0.16). DO NOT EDIT.
+-- Built: 2026-11-12T18:09:07Z. Schema version 1.
 -- Zone tables merged like Questie's ZoneDB.Initialize() (base table + MoP override table).
 -- ns.Data.dungeons[areaId] = { name, alternativeAreaIds|nil, parentAreaId, { {areaId, x, y}, ... } entrances (Alliance),
 --   [5] = Horde entrances when they differ (Alterac Valley, Warsong Gulch) }.
@@ -3492,6 +3492,7 @@ ns.Data.subZoneToParentZone = {
   [14474] = 14141,
   [14483] = 14288,
   [15540] = 15475,
+  [16169] = 331,
   [16369] = 16236,
   [16370] = 16236,
   [16371] = 16236,
@@ -6983,7 +6984,7 @@ ns.Data.zoneNames = {
   [16074] = "Karazhan Crypts",
   [16114] = "Deadwind Pass Sod",
   [16144] = "Elwynn Forest Blue Whelpling Inn Prototype",
-  [16169] = "Ashenvale Instance",
+  [16169] = "Ashenvale",
   [16234] = "Legashi Stronghold",
   [16236] = "Scarlet Enclave",
   [16295] = "The Scarab Dais",
