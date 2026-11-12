@@ -331,17 +331,17 @@ end
 
 -- Keep the newest full scan separate from quest recording and its rolling event buffer.
 local pendingAuctionScan
+local nativeAuctionScan
 local MAX_SCAN_PRICES = 10000
+M.MAX_NATIVE_AUCTION_PRICES = 50000
 
-local function saveAuctionScan()
-    local scan = pendingAuctionScan
-    pendingAuctionScan = nil
-    if not scan or not settings().shareAuctionScans then return end
+local function saveAuctionScan(scan, suffix)
+    if not scan then return end
     local key, name, realm = characterKey()
     updateCharacter(key, name, realm, not M.IsRecording())
     local sessions = ensureStore().sessions
     sessions[#sessions + 1] = {
-        id = key .. "-" .. scan.at .. "-auction",
+        id = key .. "-" .. scan.at .. suffix,
         character = key,
         start = scan.at,
         ["end"] = unixNow(),
@@ -350,6 +350,30 @@ local function saveAuctionScan()
         events = scan.events,
     }
     trimSessions()
+end
+
+-- The PQ auction tab asks for explicit consent on each requested page.
+function M.QueueNativeAuctionPrices(prices)
+    if not ns.IsModuleWanted("Telemetry") then return 0 end
+    local scan = nativeAuctionScan or { at = unixNow(), events = {}, byItem = {} }
+    local added = 0
+    for id, copper in pairs(prices) do
+        local event = scan.byItem[id]
+        if event then
+            event.money = math.min(event.money, copper)
+        elseif #scan.events < M.MAX_NATIVE_AUCTION_PRICES then
+            event = { e = "AP", t = 0, item = id, money = copper, kind = "native_scan" }
+            scan.events[#scan.events + 1] = event
+            scan.byItem[id] = event
+            added = added + 1
+        end
+    end
+    if #scan.events > 0 then nativeAuctionScan = scan end
+    return added
+end
+
+function M.NativeAuctionPriceCount()
+    return nativeAuctionScan and #nativeAuctionScan.events or 0
 end
 
 --- EndSession(): stamps `end` and detaches. Called on PLAYER_LOGOUT and when telemetry is disabled.
@@ -956,6 +980,9 @@ function M.GetStatusLines()
         lines[#lines + 1] = format(L["Auctionator prices queued until logout or reload: %d"], #pendingAuctionScan.events)
     end
 
+    if nativeAuctionScan then
+        lines[#lines + 1] = format(L["PQ auction prices queued until logout or reload: %d"], #nativeAuctionScan.events)
+    end
     local ack = formatStamp(tonumber(store.ackUploadedThrough))
     lines[#lines + 1] = format(L["Last upload confirmed: %s"], ack or L["never"])
 
@@ -1062,7 +1089,18 @@ function M.OnEnable()
     M:RegisterEvent("GUILD_ROSTER_UPDATE", onGuildChanged)
     M:RegisterEvent("PLAYER_LOGOUT", function()
         M.EndSession()
-        saveAuctionScan()
+        if settings().shareAuctionScans then saveAuctionScan(pendingAuctionScan, "-auction") end
+        if nativeAuctionScan then
+            local all = nativeAuctionScan.events
+            for first = 1, #all, MAX_SCAN_PRICES do
+                local events = {}
+                for i = first, math.min(#all, first + MAX_SCAN_PRICES - 1) do
+                    events[#events + 1] = all[i]
+                end
+                saveAuctionScan({ at = nativeAuctionScan.at, events = events }, "-pq-auction-" .. first)
+            end
+        end
+        pendingAuctionScan, nativeAuctionScan = nil, nil
     end)
 
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)
@@ -1100,6 +1138,7 @@ end
 function M.OnDisable()
     scanPrices = nil
     pendingAuctionScan = nil
+    nativeAuctionScan = nil
     M.ApplySettings(true)
 end
 

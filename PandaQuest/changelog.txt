@@ -1,3 +1,5 @@
+- Add a PQ auction tab for sharing prices in batches using WoW’s own auction house.
+
 - Share completed Auctionator Full Scans that run in summary mode.
 
 - Share completed Auctionator scans through Sync even when quest recording is off.

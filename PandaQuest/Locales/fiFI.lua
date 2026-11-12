@@ -1059,6 +1059,17 @@ local T = {
     ["Community objective observation"] = "Yhteisön tavoitehavainto",
     ["Auctionator prices queued until logout or reload: %d"] =
         "Auctionator-hintoja odottaa uloskirjautumista tai käyttöliittymän uudelleenlatausta: %d",
+    ["Scan and share"] = "Hae ja jaa hinnat",
+    ["Find next"] = "Etsi seuraavat",
+    ["Scan again"] = "Hae uudelleen",
+    ["PandaQuest auction prices"] = "PandaQuestin huutokauppahinnat",
+    ["Waiting for auction results…"] = "Odotetaan huutokaupan tuloksia…",
+    ["%d new prices in this batch. %d queued for Sync after logout or reload."] =
+        "%d uutta hintaa tässä erässä. %d hintaa odottaa Synciä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
+    ["Find listed buyout prices and share them by realm and faction through Sync."] =
+        "Hae myynnissä olevien esineiden osta heti -hinnat ja jaa ne palvelimen ja ryhmittymän mukaan Syncillä.",
+    ["PQ auction prices queued until logout or reload: %d"] =
+        "PQ-huutokauppahintoja odottaa uloskirjautumista tai uudelleenlatausta: %d",
     ["Share completed Auctionator scans"] = "Jaa valmistuneet Auctionator-skannaukset",
     ["Share item prices by realm and faction through Sync after logout or reload."] =
         "Jaa esinehinnat palvelimen ja ryhmittymän mukaan Syncillä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
