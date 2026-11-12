@@ -1,3 +1,5 @@
+- Fix /pq price on clients without the global coin formatter.
+
 - Optionally queue Auctionator full-scan prices automatically for Sync.
 
 - Add an optional --share flag to /pq price to send price estimates through Sync.
