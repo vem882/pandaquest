@@ -1,3 +1,5 @@
+- Share available auction quantities after a completed PQ scan.
+
 - Scan auction pages automatically and show progress on the PQ tab.
 
 - Add a PQ auction tab for sharing prices in batches using the WoW auction house.

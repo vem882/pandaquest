@@ -3,7 +3,7 @@ local L = ns.L
 local driver = CreateFrame("Frame")
 local tab, panel, scanButton, status, scroll, resultContent, results
 local modern, page, pending, sending
-local seen = {}
+local seen, quantities = {}, {}
 local run, processed, total, progress, previousTotal
 local scan
 
@@ -11,16 +11,19 @@ local function readableNumber(value)
     return not (_G.issecretvalue and _G.issecretvalue(value)) and type(value) == "number"
 end
 
-local function addPrice(prices, id, price)
+local function addPrice(prices, id, price, quantity)
     if not readableNumber(id) or not readableNumber(price) or id < 1 or id > 10000000
         or id % 1 ~= 0 or price < 1 or price > 1000000000000 then return end
+    if readableNumber(quantity) and quantity > 0 then
+        quantities[id] = math.min(1000000, (quantities[id] or 0) + math.floor(quantity))
+    end
     price = math.floor(price)
     if not prices[id] or price < prices[id] then prices[id] = price end
 end
 
 local function reset()
     page, pending = 0, nil
-    seen = {}
+    seen, quantities = {}, {}
     run, processed, total = nil, 0, nil
     if progress then progress:SetValue(0) end
     if scanButton then
@@ -42,7 +45,7 @@ local function finish(prices, last)
             ids[#ids + 1] = id
         end
     end
-    ns.Telemetry.QueueNativeAuctionPrices(updates)
+    ns.Telemetry.QueueNativeAuctionPrices(updates, last and quantities or nil)
     table.sort(ids)
     local lines = {}
     for i = 1, #ids do
@@ -82,7 +85,7 @@ local function readModern(rows)
     processed = processed + #(rows or {})
     total = previousTotal
     for _, row in ipairs(rows or {}) do
-        addPrice(prices, row.itemKey and row.itemKey.itemID, row.minPrice)
+        addPrice(prices, row.itemKey and row.itemKey.itemID, row.minPrice, row.totalQuantity)
     end
     finish(prices, C_AuctionHouse.HasFullBrowseResults())
 end
@@ -93,7 +96,7 @@ local function readLegacy()
     for i = 1, count do
         local _, _, quantity, _, _, _, _, _, _, buyout, _, _, _, _, _, _, id = GetAuctionItemInfo("list", i)
         if readableNumber(quantity) and readableNumber(buyout) and quantity > 0 then
-            addPrice(prices, id, math.ceil(buyout / quantity))
+            addPrice(prices, id, math.ceil(buyout / quantity), quantity)
         end
     end
     page = page + 1
