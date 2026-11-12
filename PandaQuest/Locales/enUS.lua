@@ -763,3 +763,15 @@ L["Good for skill-ups (estimate)"] = true
 L["Possible skill-up (estimate)"] = true
 L["Low skill-up chance (estimate)"] = true
 L["No skill-up expected"] = true
+
+L["Recommend a quest"] = true
+
+L["Item price lookup"] = true
+
+L["Enter an item name, ID, or chat link."] = true
+
+L["Copy a trace export"] = true
+
+L["Objective icon size"] = true
+
+L["Change the size of quest objective icons."] = true

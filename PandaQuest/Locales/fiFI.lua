@@ -1050,6 +1050,12 @@ local T = {
     ["%s (this quest)"] = "%s (tämä tehtävä)",
     ["Not part of a chain."] = "Ei kuulu ketjuun.",
     ["Click: the next step. Right-click: the step before."] = "Napsautus: seuraava vaihe. Oikea napsautus: edellinen vaihe.",
+    ["Recommend a quest"] = "Suosittele tehtävää",
+    ["Item price lookup"] = "Esineen hintahaku",
+    ["Enter an item name, ID, or chat link."] = "Anna esineen nimi, tunniste tai chat-linkki.",
+    ["Copy a trace export"] = "Kopioi havaintojen vienti",
+    ["Objective icon size"] = "Tavoitekuvakkeen koko",
+    ["Change the size of quest objective icons."] = "Muuta tehtävätavoitteiden kuvakkeiden kokoa.",
 }
 
 -- Gathering skill advice
