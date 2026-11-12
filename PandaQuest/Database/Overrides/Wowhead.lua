@@ -48335,6 +48335,29 @@ ns.Overrides.wowhead = {
                 "must follow the road south through Silverpine Forest and take the east fork leading into " ..
                 "Hillsbrad Foothills.\n\nOnward, <brother/sister>! Destiny calls!",
         },
+        [28572] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Dark " ..
+                "Ranger Alina at Galen's Fall. The Dark Lady's forces need your help to expand the " ..
+                "dominions of the Horde and drive back the Alliance interlopers.\n\nTo reach the Arathi " ..
+                "Highlands, travel east from Hillsbrad Foothills and follow the road past Thoradin's " ..
+                "Wall.\n\nDestiny calls!",
+        },
+        [28574] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Elder " ..
+                "Torntusk at Revantusk Village.\n\nNow that the Wildhammer dwarves have officially thrown " ..
+                "in their lot with the Alliance, they have made themselves our enemies. They must be " ..
+                "defeated!\n\nTo reach Revanktusk Village, cross into the Hinterlands from the mountain " ..
+                "pass in eastern Hillsbrad Foothills and make your way to the eastern coast.\n\nDestiny " ..
+                "calls!",
+        },
+        [28575] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Koltira " ..
+                "Deathweaver at Andorhal.\n\nThe Alliance forces are advancing into the ruined city of " ..
+                "Andorhal, seeking to claim it for themselves. We must counter their them before they can " ..
+                "gain a foothold there!\n\nCross the Bulwark at the eastern end of Tirisfal Glades and " ..
+                "follow the roads southest to Andorhal and meet up with our forces there.\n\nDestiny " ..
+                "calls!",
+        },
         [28576] = {
             description = "By order of his royal highness, King Varian Wrynn, all able-bodied citizens of " ..
                 "the Alliance are to report to Thassarian at Andorhal.\n\nOn the heels of our early " ..
@@ -48342,6 +48365,13 @@ ns.Overrides.wowhead = {
                 "needed to beat back the Scourge and Horde and reclaim lost Andorhal.\n\nTo reach " ..
                 "Andorhal, travel north through the Hillsbrad Foothills and follow the road beyond " ..
                 "Chillwind Camp.\n\nFor the glory and honor of the Alliance!",
+        },
+        [28577] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Fiona on " ..
+                "the east bank of the Thondroril River.\n\nThe Argent Crusade has reinforced its presence " ..
+                "in the Plaguelands and it needs your help to consolidate its victories.\n\nCross the " ..
+                "Thondroril River at the eastern border of the Western Plaguelands and look for Fiona on " ..
+                "the far bank.\n\nDestiny calls!",
         },
         [28584] = {
             description = "Look here, chief, if it weren't for this bumbly idiot across from me, the " ..
@@ -48500,6 +48530,13 @@ ns.Overrides.wowhead = {
                 "wasn't she? She's my only customer!",
             rewardMoney = 4000,
         },
+        [28619] = {
+            description = "All able bodied members of the Horde are hereby ordered to report to Dark " ..
+                "Ranger Alina at Galen's Fall. The Dark Lady's forces need your help to expand the " ..
+                "dominions of the Horde and drive back the Alliance interlopers.\n\nTo reach the Arathi " ..
+                "Highlands, travel east from Hillsbrad Foothills and follow the road past Thoradin's " ..
+                "Wall.\n\nDestiny calls!",
+        },
         [28620] = {
             description = "Our outpost in the southeast is having some problems. I don't have any details " ..
                 "other than... well, let me just read from the latest letter:\n\n\"The orcs have grown " ..
@@ -48605,6 +48642,14 @@ ns.Overrides.wowhead = {
                 "the forest and kill every owlbeast that you see. NONE SHOULD SURVIVE!",
             rewardMoney = 3500,
         },
+        [28635] = {
+            description = "The battle over Dun Garok was the bloodiest of all the Hillsbrad battles. The " ..
+                "dwarves, outnumbered ten-to-one, fought until the bitter end. Every last one of 'em died " ..
+                "in defense of that piece of land.\n\nNow I hear claims that the place is haunted. Nobody " ..
+                "wants to go near it! Unfortunately I have orders to prepare Dun Garok for " ..
+                "habitation.\n\nCould you do me a favor and go to Dun Garok and search for evidence of a " ..
+                "haunting? It's far to the southeast.",
+        },
         [28636] = {
             description = "The spirits of my soldiers haunt this fort now, <lad/lass>. Their souls are " ..
                 "now bound to this place. Even in death they continue to fight for it. 'Tis sad.\n\nPut " ..
@@ -48660,6 +48705,15 @@ ns.Overrides.wowhead = {
         [28644] = {
             description = "According to the guide, Teracula is your next challenge. It roams the path " ..
                 "just outside of Zephyrus' lair.",
+        },
+        [28645] = {
+            description = "According to the guide, Bloodvenom is your next challenge. The fearsome " ..
+                "elemental can be found on the lower level of Durnholde Keep, near the western prisons.",
+        },
+        [28646] = {
+            description = "According to the guide, Infernus is your next challenge. This being, made of " ..
+                "molten lava and raging fire, can be found on the lower level of Durnholde Keep, near the " ..
+                "eastern prisons.",
         },
         [28647] = {
             description = "Imprisoned in the old Durnholde Keep arena is a being comprised of pure " ..
@@ -49034,6 +49088,16 @@ ns.Overrides.wowhead = {
             rewardItems = {{66067, 1}},
             rewardMoney = 456000,
         },
+        [28750] = {
+            description = "We just received a windrider from the plaguelands, bearing news. It doesn't " ..
+                "sound good.\n\nThe city of Andorhal is in the middle of a three-way war between the " ..
+                "Forsaken, the Alliance, and the Scourge. It sounds like Sylvanas has made her move, and " ..
+                "to make matters interesting, she's put Koltira Deathweaver, the death knight, in " ..
+                "command.\n\nThey specifically asked for a Horde <class> to participate in some " ..
+                "specialized missions. If you accept the charge, speak to me again and I will prepare a " ..
+                "portal.",
+            rewardMoney = 900,
+        },
         [28753] = {
             description = "Blast it all!\n\nSomeone's gone and corrupted the entire system! There be no " ..
                 "way fer me ta access the main repository from this console.\n\nWe're gunna hafta do this " ..
@@ -49285,6 +49349,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{2186, 1}},
             rewardMoney = 50,
         },
+        [28798] = {rewardMoney = 114000},
         [28799] = {rewardMoney = 74000},
         [28800] = {rewardMoney = 94000},
         [28801] = {rewardMoney = 114000},
