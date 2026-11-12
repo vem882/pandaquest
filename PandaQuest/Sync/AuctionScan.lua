@@ -2,8 +2,10 @@ local _, ns = ...
 local L = ns.L
 local driver = CreateFrame("Frame")
 local tab, panel, scanButton, status, scroll, resultContent, results
-local modern, page, pending, sending, complete
+local modern, page, pending, sending
 local seen = {}
+local run, processed, total, progress, previousTotal
+local scan
 
 local function readableNumber(value)
     return not (_G.issecretvalue and _G.issecretvalue(value)) and type(value) == "number"
@@ -17,8 +19,10 @@ local function addPrice(prices, id, price)
 end
 
 local function reset()
-    page, pending, complete = 0, nil, false
+    page, pending = 0, nil
     seen = {}
+    run, processed, total = nil, 0, nil
+    if progress then progress:SetValue(0) end
     if scanButton then
         scanButton:SetText(L["Scan and share"])
         scanButton:Enable()
@@ -29,7 +33,7 @@ local function reset()
 end
 
 local function finish(prices, last)
-    pending, complete = nil, last
+    pending = nil
     local updates, ids = {}, {}
     for id, price in pairs(prices) do
         if not seen[id] or price < seen[id] then
@@ -38,28 +42,45 @@ local function finish(prices, last)
             ids[#ids + 1] = id
         end
     end
-    local added = ns.Telemetry.QueueNativeAuctionPrices(updates)
+    ns.Telemetry.QueueNativeAuctionPrices(updates)
     table.sort(ids)
     local lines = {}
     for i = 1, #ids do
         local id = ids[i]
         local name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id))
-            or (GetItemInfo and GetItemInfo(id)) or ("#" .. id)
+            or (ns.DB and ns.DB.GetItemName(id)) or (GetItemInfo and GetItemInfo(id)) or ("#" .. id)
         local money = GetCoinTextureString and GetCoinTextureString(updates[id])
-            or tostring(updates[id]) .. "c"
+            or string.format("%dg %02ds %02dc", math.floor(updates[id] / 10000),
+                math.floor(updates[id] / 100) % 100, updates[id] % 100)
         lines[i] = name .. "   " .. money
     end
     results:SetText(table.concat(lines, "\n"))
     resultContent:SetHeight(math.max(1, results:GetStringHeight()))
     scroll:SetVerticalScroll(0)
-    status:SetText(string.format(L["%d new prices in this batch. %d queued for Sync after logout or reload."],
-        added, ns.Telemetry.NativeAuctionPriceCount()))
-    scanButton:SetText(complete and L["Scan again"] or L["Find next"])
-    scanButton:Enable()
+    local queued = ns.Telemetry.NativeAuctionPriceCount()
+    local percent = last and 100 or total and total > 0 and math.min(99, math.floor(processed / total * 100))
+    progress:SetValue(percent or 0)
+    if percent and modern and not last then
+        status:SetText(string.format(L["About %d%% · %d prices queued for Sync"], percent, queued))
+    elseif percent then
+        status:SetText(string.format(L["%d%% · %d prices queued for Sync"], percent, queued))
+    else
+        status:SetText(string.format(L["Batch %d · %d prices queued · Total unknown"], page, queued))
+    end
+    if last then
+        if modern and processed > 0 then previousTotal = processed end
+        run = nil
+        scanButton:SetText(L["Scan again"])
+    else
+        local current = run
+        C_Timer.After(0.5, function() if run == current and current then scan() end end)
+    end
 end
 
 local function readModern(rows)
     local prices = {}
+    processed = processed + #(rows or {})
+    total = previousTotal
     for _, row in ipairs(rows or {}) do
         addPrice(prices, row.itemKey and row.itemKey.itemID, row.minPrice)
     end
@@ -67,7 +88,7 @@ local function readModern(rows)
 end
 
 local function readLegacy()
-    local count, total = GetNumAuctionItems("list")
+    local count, reportedTotal = GetNumAuctionItems("list")
     local prices = {}
     for i = 1, count do
         local _, _, quantity, _, _, _, _, _, _, buyout, _, _, _, _, _, _, id = GetAuctionItemInfo("list", i)
@@ -76,30 +97,34 @@ local function readLegacy()
         end
     end
     page = page + 1
+    processed = processed + count
+    if readableNumber(reportedTotal) then total = reportedTotal end
     finish(prices, count < (_G.NUM_AUCTION_ITEMS_PER_PAGE or 50)
         or (total and page * (_G.NUM_AUCTION_ITEMS_PER_PAGE or 50) >= total))
 end
 
-local function scan()
-    if pending then return end
+scan = function()
+    if pending or not run then return end
     if not ns.IsModuleWanted("Telemetry") then
+        run = nil
+        scanButton:SetText(L["Scan again"])
         status:SetText(L["Enable the Telemetry module to share prices through Sync."])
         return
     end
     if ns.Telemetry.NativeAuctionPriceCount() >= ns.Telemetry.MAX_NATIVE_AUCTION_PRICES then
+        run = nil
+        scanButton:SetText(L["Scan again"])
         status:SetText(L["Reload or log out to save this scan before continuing."])
         return
     end
-    if complete then reset() end
     local ready = modern and C_AuctionHouse.IsThrottledMessageSystemReady or CanSendAuctionQuery
     if ready and not ready() then
-        status:SetText(L["The auction house is busy. Try again in a moment."])
+        local current = run
+        C_Timer.After(1, function() if run == current then scan() end end)
         return
     end
     local request = {}
     pending, sending = request, true
-    scanButton:Disable()
-    status:SetText(L["Waiting for auction results…"])
     local ok
     if modern then
         if page == 0 then
@@ -125,7 +150,7 @@ local function scan()
 end
 
 local function otherSearch()
-    if not sending and panel and panel:IsShown() and (pending or page > 0) then
+    if not sending and run and panel and panel:IsShown() then
         reset()
         status:SetText(L["Another auction search started. Scan again to begin a new list."])
     end
@@ -156,7 +181,20 @@ local function createTab(parent)
     scanButton = CreateFrame("Button", "PandaQuestAuctionScanButton", panel, "UIPanelButtonTemplate")
     scanButton:SetSize(170, 26)
     scanButton:SetPoint("TOPLEFT", status, "BOTTOMLEFT", 0, -15)
-    scanButton:SetScript("OnClick", scan)
+    scanButton:SetScript("OnClick", function()
+        if run then reset(); return end
+        reset()
+        run = {}
+        scanButton:SetText(L["Stop scan"])
+        status:SetText(L["Waiting for auction results…"])
+        scan()
+    end)
+    progress = CreateFrame("StatusBar", nil, panel)
+    progress:SetPoint("LEFT", scanButton, "RIGHT", 16, 0)
+    progress:SetSize(160, 12)
+    progress:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+    progress:SetStatusBarColor(0.86, 0.66, 0.23)
+    progress:SetMinMaxValues(0, 100)
     scroll = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
     scroll:SetPoint("TOPLEFT", scanButton, "BOTTOMLEFT", 0, -16)
     scroll:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -38, 20)
