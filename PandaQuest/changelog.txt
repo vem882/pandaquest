@@ -1,3 +1,5 @@
+- Share completed Auctionator scans through Sync even when quest recording is off.
+
 - Fix /pq price on clients without the global coin formatter.
 
 - Optionally queue Auctionator full-scan prices automatically for Sync.
