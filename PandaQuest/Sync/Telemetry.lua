@@ -327,10 +327,26 @@ function M.StartSession()
     return session
 end
 
+-- Keep the newest full scan outside the rolling quest event buffer until logout.
+local pendingAuctionScan
+local MAX_SCAN_PRICES = 10000
+local MAX_UPLOAD_EVENTS = 20000
+
 --- EndSession(): stamps `end` and detaches. Called on PLAYER_LOGOUT and when telemetry is disabled.
 function M.EndSession()
     if not session then return end
     session["end"] = unixNow()
+    if pendingAuctionScan and active and settings().shareAuctionScans then
+        local budget = math.max(0, MAX_UPLOAD_EVENTS - #session.events)
+        local count = math.min(budget, #pendingAuctionScan)
+        for index = 1, count do
+            session.events[#session.events + 1] = pendingAuctionScan[index]
+        end
+        if count < #pendingAuctionScan then
+            Log.Print("Saved %d of %d Auctionator prices due to the session upload limit.", count, #pendingAuctionScan)
+        end
+    end
+    pendingAuctionScan = nil
     if session.character and store and store.characters and store.characters[session.character] then
         local row = store.characters[session.character]
         -- The uploaded row is the final state: refresh the guild while the API still answers.
@@ -992,14 +1008,15 @@ local function hookAuctionator()
         if not prices or not active or not settings().shareAuctionScans then return end
         local current = session or M.StartSession()
         if not current then return end
-        local budget = math.min(1000, numberSetting("maxEventsPerSession") - #current.events)
         local ids = {}
         for id in pairs(prices) do ids[#ids + 1] = id end
         table.sort(ids)
-        local count = math.max(0, math.min(budget, #ids))
+        local count = math.min(MAX_SCAN_PRICES, #ids)
+        local at = math.max(0, floor((clock() - sessionClock) * 10 + 0.5) / 10)
+        pendingAuctionScan = {}
         for index = 1, count do
             local id = ids[index]
-            Record("AP", { item = id, money = prices[id], kind = "auctionator" })
+            pendingAuctionScan[index] = { e = "AP", t = at, item = id, money = prices[id], kind = "auctionator" }
         end
         Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
     end }, { fullScan.ScanComplete })
