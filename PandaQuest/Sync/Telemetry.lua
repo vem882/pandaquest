@@ -991,9 +991,20 @@ local function hookAuctionator()
     local addon = _G.Auctionator
     local database = addon and addon.Database
     local bus = addon and addon.EventBus
-    local fullScan = addon and addon.FullScan and addon.FullScan.Events
     if auctionatorHooked or not (database and database.ProcessScan and bus and bus.Register
-        and fullScan and fullScan.ScanComplete and _G.hooksecurefunc) then return end
+        and _G.hooksecurefunc) then return end
+    local completed = {}
+    local fullScan = addon.FullScan and addon.FullScan.Events
+    if fullScan and fullScan.ScanComplete then
+        completed[#completed + 1] = fullScan.ScanComplete
+    end
+    -- Auctionator's Full Scan button can run the summary scanner on the modern auction house.
+    -- PricesProcessed also fires for ordinary searches, so only listen for ScanComplete.
+    local summaryScan = addon.IncrementalScan and addon.IncrementalScan.Events
+    if summaryScan and summaryScan.ScanComplete then
+        completed[#completed + 1] = summaryScan.ScanComplete
+    end
+    if #completed == 0 then return end
     auctionatorHooked = true
     _G.hooksecurefunc(database, "ProcessScan", function(_, items)
         scanPrices = nil
@@ -1032,7 +1043,7 @@ local function hookAuctionator()
         end
         pendingAuctionScan = { at = unixNow(), events = events }
         Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
-    end }, { fullScan.ScanComplete })
+    end }, completed)
 end
 
 function M.OnEnable()
