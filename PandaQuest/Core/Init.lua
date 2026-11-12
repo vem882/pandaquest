@@ -505,33 +505,53 @@ commands.price = function(arg)
     end
 end
 
+local function liveQuestXP(id)
+    local questLog, lookup = _G.C_QuestLog, _G.GetQuestLogRewardXP
+    if not (questLog and questLog.IsOnQuest and lookup) then return nil end
+    local active = questLog.IsOnQuest(id)
+    if _G.issecretvalue and _G.issecretvalue(active) then return nil end
+    if not active then return nil end
+    local ok, xp = pcall(lookup, id)
+    if ok and not (_G.issecretvalue and _G.issecretvalue(xp)) and type(xp) == "number" and xp >= 0 then
+        return xp
+    end
+end
+
 commands.recommend = function()
     local router, db, community = ns.Router, ns.DB, ns.Community
     local bestXP, bestGold, bestRate
     for _, target in ipairs(router.GetSorted() or {}) do
         local id = target.questID
         local eta = id and router.GetETA(target)
-        local reward = eta and db.GetQuestRewards(id)
-        if reward then
+        if eta then
+            local reward = db.GetQuestRewards(id) or {}
+            local liveXP = liveQuestXP(id)
+            local xp = liveXP or reward.xp
             local name = db.GetQuestField(id, "name") or tostring(id)
-            if reward.xp and (not bestXP or reward.xp > bestXP.value) then
-                bestXP = { name = name, value = reward.xp }
+            if xp and xp > 0 and (not bestXP or xp > bestXP.value) then
+                bestXP = { name = name, value = xp, base = liveXP == nil }
             end
             if reward.money and (not bestGold or reward.money > bestGold.value) then
                 bestGold = { name = name, value = reward.money }
             end
             local stats = community and community.GetQuestStats(id)
             local seconds = stats and tonumber(stats.medianSeconds)
-            if reward.xp and seconds and seconds > 0 then
-                local rate = 60 * reward.xp / (seconds + eta)
+            if xp and xp > 0 and seconds and seconds > 0 then
+                local rate = 60 * xp / (seconds + eta)
                 if not bestRate or rate > bestRate.value then
-                    bestRate = { name = name, value = rate }
+                    bestRate = { name = name, value = rate, base = liveXP == nil }
                 end
             end
         end
     end
-    if bestRate then Log.Print("Estimated base XP/min: %s (%.0f)", bestRate.name, bestRate.value) end
-    if bestXP then Log.Print("Highest base XP: %s (%d XP)", bestXP.name, bestXP.value) end
+    if bestRate then
+        Log.Print(bestRate.base and "Estimated base XP/min: %s (%.0f)" or "Estimated XP/min: %s (%.0f)",
+            bestRate.name, bestRate.value)
+    end
+    if bestXP then
+        Log.Print(bestXP.base and "Highest base XP: %s (%d XP)" or "Highest XP: %s (%d XP)",
+            bestXP.name, bestXP.value)
+    end
     if bestGold then Log.Print("Highest coin reward: %s (%.2f gold)", bestGold.name, bestGold.value / 10000) end
     if not bestXP and not bestGold then Log.Print("No XP or coin rewards known for nearby quest targets.") end
 end

@@ -1,3 +1,5 @@
+- Use the character's quest-log XP when ranking nearby active quests where supported.
+
 - Use recently synced community flight times for known routes.
 
 - Ignore NPCs already seen alive before a nearby kill when measuring respawns.
