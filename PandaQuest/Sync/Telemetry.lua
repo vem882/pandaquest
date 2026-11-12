@@ -956,7 +956,60 @@ function M.OnInitialize()
     ensureStore()
 end
 
+local auctionatorHooked
+local scanPrices
+local function hookAuctionator()
+    local addon = _G.Auctionator
+    local database = addon and addon.Database
+    local bus = addon and addon.EventBus
+    local fullScan = addon and addon.FullScan and addon.FullScan.Events
+    if auctionatorHooked or not (database and database.ProcessScan and bus and bus.Register
+        and fullScan and fullScan.ScanComplete and _G.hooksecurefunc) then return end
+    auctionatorHooked = true
+    _G.hooksecurefunc(database, "ProcessScan", function(_, items)
+        scanPrices = nil
+        if not active or not settings().shareAuctionScans or type(items) ~= "table" then return end
+        local prices = {}
+        for key, listings in pairs(items) do
+            local id = tonumber(key)
+            if id and id >= 1 and id <= 10000000 and id % 1 == 0 and type(listings) == "table" then
+                local cheapest
+                for _, listing in ipairs(listings) do
+                    local copper = type(listing) == "table" and listing.price
+                    if type(copper) == "number" and not (_G.issecretvalue and _G.issecretvalue(copper))
+                        and copper >= 1 and copper <= 1000000000000 and (not cheapest or copper < cheapest) then
+                        cheapest = copper
+                    end
+                end
+                if cheapest then prices[id] = floor(cheapest) end
+            end
+        end
+        scanPrices = prices
+    end)
+    bus:Register({ ReceiveEvent = function()
+        local prices = scanPrices
+        scanPrices = nil
+        if not prices or not active or not settings().shareAuctionScans then return end
+        local current = session or M.StartSession()
+        if not current then return end
+        local budget = math.min(1000, numberSetting("maxEventsPerSession") - #current.events)
+        local ids = {}
+        for id in pairs(prices) do ids[#ids + 1] = id end
+        table.sort(ids)
+        local count = math.max(0, math.min(budget, #ids))
+        for index = 1, count do
+            local id = ids[index]
+            Record("AP", { item = id, money = prices[id], kind = "auctionator" })
+        end
+        Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
+    end }, { fullScan.ScanComplete })
+end
+
 function M.OnEnable()
+    hookAuctionator()
+    M:RegisterEvent("ADDON_LOADED", function(_, name)
+        if name == "Auctionator" then hookAuctionator() end
+    end)
     M:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
     M:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
     M:RegisterEvent("QUEST_REMOVED", onQuestRemoved)

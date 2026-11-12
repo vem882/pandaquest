@@ -1,3 +1,5 @@
+- Optionally queue Auctionator full-scan prices automatically for Sync.
+
 - Add an optional --share flag to /pq price to send price estimates through Sync.
 
 - Show additional community objective observations on the map and minimap.

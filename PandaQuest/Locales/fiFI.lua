@@ -1057,6 +1057,9 @@ local T = {
     ["Objective icon size"] = "Tavoitekuvakkeen koko",
     ["Change the size of quest objective icons."] = "Muuta tehtävätavoitteiden kuvakkeiden kokoa.",
     ["Community objective observation"] = "Yhteisön tavoitehavainto",
+    ["Share completed Auctionator scans"] = "Jaa valmistuneet Auctionator-skannaukset",
+    ["Share item prices by realm and faction through Sync after logout or reload."] =
+        "Jaa esinehinnat palvelimen ja ryhmittymän mukaan Syncillä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
 }
 
 -- Gathering skill advice
