@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.483] - 2026-11-12
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 7,957 quests, 991 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 2,990 quests, 36 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 3,159 quests, 55 NPCs, 3 objects
+- npc 4633 - Kolkar Scout - updated
+  - coordinates: 30 spawn points added in Desolace
+- npc 6117 - Highborne Lichling - updated
+  - coordinates: 26 spawn points added in Azshara
+
 ## [0.2.482] - 2026-11-12
 
 Data from the PandaQuest portal.
@@ -147,16 +159,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Silverpine Forest
 - npc 2705 - Brewmeister Bilger - updated
   - coordinates: 2 spawn points added in Hillsbrad Foothills
-
-## [0.2.466] - 2026-11-11
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,945 quests, 975 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,679 quests, 34 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,791 quests, 51 NPCs, 2 objects
-- npc 11216 - Eva Sarkhoff - updated
-  - coordinates: 1 spawn point added in Western Plaguelands
 
 ## [0.2.412]
 
