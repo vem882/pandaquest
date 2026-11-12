@@ -6,7 +6,7 @@
 -- duration now comes from the best source there is, in this order:
 --
 --   1. "own"        the median of this account's own flights of the route, from MIN_SAMPLES of them;
---   2. "measured"   the median ALL players measured, from the portal (Database/Overrides/Flights.lua):
+--   2. "measured"   the median ALL players measured, from Sync or the bundled Flights.lua:
 --                   the chain the taxi flies when the portal has it, else the sum of its legs when
 --                   every leg was measured;
 --   3. "estimated"  the sum of the legs from the same file, where a leg nobody measured is its path
@@ -47,6 +47,18 @@ local function exported()
 end
 M.Exported = exported
 
+local function communityTime(key)
+    local community = ns.Overrides and ns.Overrides.community
+    local game = ns.Game and ns.Game.id
+    if type(community) ~= "table" or not game or community.game ~= game then return nil end
+    local times = community.flightTimes
+    local value = type(times) == "table" and times[key]
+    if type(value) ~= "table" then return nil end
+    local seconds, samples = tonumber(value[1]), tonumber(value[2])
+    if seconds and seconds > 0 and samples and samples >= 2 then return seconds, samples end
+    return nil
+end
+
 local function speed()
     local flights = exported()
     local value = flights and tonumber(flights.speed)
@@ -66,9 +78,13 @@ end
 --- Leg(src, dst) -> seconds, measured, samples | nil. One direct flight from Flights.lua, as stored
 -- (no speed factor applied).
 function M.Leg(src, dst)
+    src, dst = tonumber(src), tonumber(dst)
+    if not (src and dst) then return nil end
+    local seconds, samples = communityTime(src .. "-" .. dst)
+    if seconds then return seconds, true, samples end
     local flights = exported()
-    local row = flights and flights.legs[tonumber(src)]
-    local value = type(row) == "table" and row[tonumber(dst)] or nil
+    local row = flights and flights.legs[src]
+    local value = type(row) == "table" and row[dst] or nil
     if type(value) == "number" and value > 0 then return value, false, 0 end
     if type(value) == "table" and tonumber(value[1]) and value[1] > 0 then
         return value[1], true, tonumber(value[2]) or 0
@@ -78,9 +94,13 @@ end
 
 --- Chain(hops) -> seconds, samples | nil: the measured median of a whole multi-hop flight.
 function M.Chain(hops)
+    if type(hops) ~= "table" or #hops < 2 then return nil end
+    local key = concat(hops, "-")
+    local seconds, samples = communityTime(key)
+    if seconds then return seconds, samples end
     local flights = exported()
-    if not (flights and type(flights.chains) == "table" and type(hops) == "table" and #hops > 2) then return nil end
-    local value = flights.chains[concat(hops, "-")]
+    if not (flights and type(flights.chains) == "table" and #hops > 2) then return nil end
+    local value = flights.chains[key]
     if type(value) == "table" and tonumber(value[1]) and value[1] > 0 then return value[1], tonumber(value[2]) or 0 end
     return nil
 end
@@ -89,7 +109,6 @@ end
 -- `hops` is the chain of node ids src..dst when the flight master's map could be read; without it
 -- the flight is taken as the direct leg src -> dst.
 function M.FromExport(src, dst, hops)
-    if not exported() then return nil end
     if type(hops) ~= "table" or #hops < 2 then hops = { src, dst } end
     local chainSeconds, chainSamples = M.Chain(hops)
     if chainSeconds then return chainSeconds, "measured", chainSamples end
