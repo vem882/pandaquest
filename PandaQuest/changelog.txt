@@ -48,6 +48,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.501
+- database - Classic Era: data from the PandaQuest portal: 3,519 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,495 quests, 60 NPCs, 7 objects
+
 0.2.492
 - database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 998 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,288 quests, 37 NPCs, 6 objects
@@ -998,17 +1002,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC title added (Collector of Commissions)
 - npc 71351 - Wrathion - updated
   - NPC title added (The Black Prince)
-
-0.2.473
-- database - Wowhead data as the PandaQuest portal read it: 7,953 quests, 981 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 2,723 quests, 35 NPCs, 5 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 2,853 quests, 51 NPCs, 2 objects
-- quest 5892 - Irondeep Supplies - updated
-  - description added
-  - reward money added (5g 70s)
-- quest 8667 - Genesis Helm - updated
-  - description added
-  - reward items: +1
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
