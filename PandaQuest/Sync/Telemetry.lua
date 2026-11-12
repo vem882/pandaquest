@@ -200,6 +200,8 @@ local function characterKey()
     return name .. "-" .. realm, name, realm
 end
 
+M.GetCharacterIdentity = characterKey
+
 local function clientBuild()
     if not GetBuildInfo then return "unknown" end
     local version, build = GetBuildInfo()
