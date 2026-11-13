@@ -11649,6 +11649,13 @@ ns.Overrides.wowhead = {
                 "your efforts.",
             rewardItems = {{8424, 1}},
         },
+        [2604] = {
+            description = "I see that the inner fire has dwindled. Would you say the spiritual euphoria " ..
+                "lasted an hour?\n\nIf it's more of the gizzard gum you desire, then more of the gizzards " ..
+                "I require. Back to the wastelands, <name>. Do not return until you have recovered ten " ..
+                "gizzards and two jowls.",
+            rewardItems = {{8424, 1}},
+        },
         [2605] = {
             description = "I've got an idea, see. I've heard of some strange creatures called dew " ..
                 "collectors that live to the southwest... and that they are able to store water in " ..
@@ -12506,6 +12513,14 @@ ns.Overrides.wowhead = {
                 "creature from the Hinterlands that you mentioned? Gammerita? Well, good luck finding " ..
                 "her. I'm sure Daryn will be quite pleased with the snapshot you return to her.\n\nIn any " ..
                 "case, here's the Super Snapper. Have fun!",
+        },
+        [2945] = {
+            description = "You have uncovered what appears to be a ring from the corpse of one of the " ..
+                "Dark Iron dwarves. It is difficult to tell what kind of ring it is, however; dirt and " ..
+                "hardened residue cake the item completely, making wearing it impossible. You think you " ..
+                "can make out the slight luster of precious metal and maybe even the glint of a gem under " ..
+                "the residue.\n\nIf you are going to make use of this ring, you are going to need to find " ..
+                "something to get the hardened residue off of it.",
         },
         [2946] = {
             description = "We want you to take the miniature discs you found to the sealed gates of " ..
@@ -13441,6 +13456,14 @@ ns.Overrides.wowhead = {
                 "unlock whatever secrets are hiding in this room.\n\nI warn you though, <name>. Great " ..
                 "evil lies in the temple. It's likely that anything valuable will be fervently guarded...",
             rewardItems = {{10773, 1}},
+        },
+        [3448] = {
+            description = "I've recently been handed the responsibility of investigating Azshara--a once " ..
+                "beautiful area the elves called home. This would be back when they practiced magic. It's " ..
+                "now a more dangerous place than it is beautiful, but that doesn't stop us from turning " ..
+                "over every stone for answers to our past.\n\nA companion of mine named Tymor offered to " ..
+                "help me investigate the area since he takes a particular interest in such things.\n\nHe " ..
+                "owns a small place to the right of the Hall of Mysteries here in the city.",
         },
         [3449] = {
             description = "Magic was once as revered as Elune herself to some elves. Some of their most " ..
@@ -22479,6 +22502,13 @@ ns.Overrides.wowhead = {
                 "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
             rewardItems = {{21392, 1}},
         },
+        [8559] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "command and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21333, 1}},
+        },
         [8560] = {
             description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
                 "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
@@ -22847,6 +22877,13 @@ ns.Overrides.wowhead = {
                 "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21367, 1}},
+        },
+        [8660] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "dominance and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21338, 1}},
         },
         [8661] = {
             description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
@@ -23218,6 +23255,13 @@ ns.Overrides.wowhead = {
                 "increasing threat to our operations. You've been selected to partake on an assault on " ..
                 "Hive'Ashi where your primary target will consist of Hive'Ashi defenders.\n\nReport back " ..
                 "to Commander Mar'alith after your task is completed.",
+            rewardItems = {{20802, 1}},
+        },
+        [8771] = {
+            description = "As the war effort mounts, the silithid presence in the area presents an ever " ..
+                "increasing threat to our operations. You've been selected to partake on an assault on " ..
+                "Hive'Ashi where your primary target will consist of Hive'Ashi sandstalkers.\n\nReport " ..
+                "back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
         },
         [8772] = {
@@ -24231,6 +24275,15 @@ ns.Overrides.wowhead = {
                 "you shall need every bit of it!",
             rewardItems = {{22107, 1}, {22111, 1}, {22112, 1}},
         },
+        [9017] = {
+            description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
+                "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
+                "Valthalak's spell is to put the amulet back together. Return to Mokvar and tell him that " ..
+                "Bodley is his only hope for finding the remaining pieces. Speak to him about any rewards " ..
+                "you've arranged for.\n\nI, for once, shall rest in peace. I wish you the best of luck; " ..
+                "you shall need every bit of it!",
+            rewardItems = {{22061, 1}, {22017, 1}, {22016, 1}},
+        },
         [9018] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
                 "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
@@ -24772,6 +24825,15 @@ ns.Overrides.wowhead = {
                 "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
                 "knowledge with you as long as you are able to provide me with the necessary materials.",
             rewardItems = {{22500, 1}},
+        },
+        [9100] = {
+            description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
+                "those items, I found the tomes most enlightening. While the majority of the books were " ..
+                "filled with - to put it bluntly - tripe, there were some gems. One of those tomes " ..
+                "documented the creation of a set of armor fit for an archmage: Frostfire.\n\n<Angela " ..
+                "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
+                "knowledge with you as long as you are able to provide me with the necessary materials.",
+            rewardItems = {{22501, 1}},
         },
         [9101] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
@@ -25364,6 +25426,14 @@ ns.Overrides.wowhead = {
                 "translocation in the Inner Sanctum of Sunfury Spire in Silvermoon City to cross over to " ..
                 "the Undercity. Once there, take the elevator ride down into the city proper. Use your " ..
                 "maps if you need help finding the Royal Quarter.",
+        },
+        [9181] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order BS-697:\n\n3 " ..
+                "Volcanic Hammers.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
+                "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
+                "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9182] = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
@@ -37133,6 +37203,13 @@ ns.Overrides.wowhead = {
                 "Eclipse Point and Illidari Point will once more be open.\n\nGo now! Use this flare gun " ..
                 "to signal the Skybreakers for the attack!",
         },
+        [11095] = {
+            description = "The Dragonmaw only dare attack us when our guard is down. They would face " ..
+                "certain defeat if they were to attack us while we were prepared.\n\nI want you to let " ..
+                "them come, <name>.\n\n<Thelis nods.>\n\nYes... a trap. Take this flare that their " ..
+                "overlord gave you and deliver it to Commander Hobb. He is standing guard right outside " ..
+                "this building.",
+        },
         [11097] = {
             description = "Take these Scryer medals. Mor'ghor will need proof of \"victory\" once this is " ..
                 "over. He will recognize them as coming from the corpses of fallen Scryer " ..
@@ -37179,6 +37256,7 @@ ns.Overrides.wowhead = {
                 "too!",
             rewardMoney = 44000,
         },
+        [11103] = {rewardChoices = {{29301, 1}, {29297, 1}, {29309, 1}}},
         [11104] = {rewardChoices = {{29301, 1}, {29297, 1}, {29305, 1}}},
         [11105] = {rewardChoices = {{29305, 1}, {29297, 1}, {29309, 1}}},
         [11106] = {rewardChoices = {{29301, 1}, {29305, 1}, {29309, 1}}},
@@ -38337,6 +38415,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 1377,
         },
+        [353] = {subName = "Baby Murloc Redemption Merchant"},
         [1840] = {
             spawns = {
                 [28] = {{53.4, 23.6}, {53.4, 24.6}, {53.8, 24.4}, {54, 24.6}, {54.6, 23.8}, {54.8, 23.4}},

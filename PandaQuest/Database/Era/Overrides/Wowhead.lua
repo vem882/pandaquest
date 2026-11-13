@@ -2194,6 +2194,13 @@ ns.Overrides.wowhead = {
                 "the south of Menethil Harbor. If you find the Lightforge Iron there, bring it to me.",
             rewardItems = {{2702, 1}},
         },
+        [322] = {
+            description = "There is a dwarven weaponsmith in the Dwarven District of Stormwind who can " ..
+                "craft with lightforge iron. His name is Grimand Elmore.\n\nI've packed the iron you " ..
+                "found into a crate. Take it to Grimand and tell him your tale. I'm sure he'll oblige " ..
+                "someone on a quest such as yours, and craft for you a weapon - a weapon to give even " ..
+                "Morbent Fel worry!",
+        },
         [323] = {
             description = "Morbent Fel is a necromancer, and an ally to the dark riders. I would pit you " ..
                 "against the power of Morbent Fel, but I will not send you against that vile fiend " ..
@@ -4244,6 +4251,13 @@ ns.Overrides.wowhead = {
                 "troll relic. There's just one... little problem.\n\nYou see, I found the dagger while " ..
                 "researching in Stranglethorn, but I gave it to my willful daughter, Catelyn, who ran off " ..
                 "to Booty Bay to become a pirate.",
+        },
+        [604] = {
+            description = "Crazz speaks highly of your dedication to the Blackwater Raiders. I am going " ..
+                "to trust you with a mission of extreme importance to the fleet.\n\nInfiltrate the " ..
+                "so-called southern command post the Bloodsail Buccaneers have established on the Wild " ..
+                "Shore. Raid the encampment. Bring me their charts along with their written orders. We " ..
+                "shall see exactly what those scum are up to.",
         },
         [605] = {
             description = "The Singing Crystals are unique to Stranglethorn, and are very valuable to " ..
@@ -6362,6 +6376,14 @@ ns.Overrides.wowhead = {
             description = "<name>, is it? I heard that Tenaron has been asking for you. You'll find him " ..
                 "in the highest room atop Aldrassil.\n\nWe may live long lives, but it's best you not " ..
                 "keep him waiting too long.",
+        },
+        [921] = {
+            description = "It is time for you to set out to seek your destiny, <name>. But before you are " ..
+                "ready to set out into the world beyond our enchanted forests, there is much you must " ..
+                "learn about our recent history.\n\nMuch has changed with our people since the Battle of " ..
+                "Mount Hyjal. Nordrassil lies a pale shadow of what it once was, its power used to defeat " ..
+                "Archimonde and drive back the Burning Legion...\n\nThere is a task you must perform. Go " ..
+                "to the moonwell north of Aldrassil and return me a phial of its water.",
         },
         [922] = {
             description = "<name>, can you take one of the seeds you brought me to my friend, Rellian " ..
@@ -12663,6 +12685,11 @@ ns.Overrides.wowhead = {
                 "took him.\n\nYou must aid us! Search the cages in the two Witherbark troll villages to " ..
                 "see if Sharpbeak is there.",
         },
+        [2989] = {
+            description = "Sharpbeak was not with the Witherbark trolls. Perhaps the Vilebranch trolls " ..
+                "took him. Go to the Altar of Zul on the western edge of Vilebranch territory and search " ..
+                "for the gryphon child.",
+        },
         [2990] = {
             description = "Take this feather to Thadius Grimshade, the diviner. He left Aerie Peak years " ..
                 "ago to pursue darker knowledge, but in his heart he is still a Wildhammer!\n\nAnd " ..
@@ -16549,6 +16576,15 @@ ns.Overrides.wowhead = {
                 "corruption.\n\nKelek has much experience with the furbolgs in Felwood, and may be able " ..
                 "to tell you more about the log.\n\nThank you, again, <name>.",
         },
+        [5141] = {
+            description = "Dragonscale leatherworking isn't easy, but it's extremely rewarding. I'll " ..
+                "teach you how to make this fine mail armor, but only if you agree to certain " ..
+                "conditions.\n\nBy choosing this path, you agree never to learn elemental or tribal " ..
+                "leatherworking; there is only room for one of the three at the apex of the craft. " ..
+                "Furthermore, I'll need some samples of your best work involving scorpid armor. Finally, " ..
+                "I'll need proof of your ability to acquire the staple of the trade: scales of the " ..
+                "dragonkin.",
+        },
         [5142] = {
             description = "So many of us died at the battle of Darrowshire. So many died... and " ..
                 "worse.\n\nWhen the battle began I hid my niece Pamela, and I do not know what happened " ..
@@ -16871,6 +16907,14 @@ ns.Overrides.wowhead = {
                 "glass container.\n\nWith the poison in hand, it is time to return to High Priestess " ..
                 "MacDonnell at Chillwind Camp to complete the mission.",
             rewardMoney = 8500,
+        },
+        [5225] = {
+            description = "The last cauldron that remains is located on a farm now called Gahrron's " ..
+                "Withering. It is guarded by some of the Scourge's tougher minions - specifically, " ..
+                "wraiths and ghosts. They are not to be trifled with, <name>.\n\nGahrron's Withering is " ..
+                "due northeast of our position here, close to where the Eastern Plaguelands begin; again, " ..
+                "eliminate the cauldron lord present there for its key. Here is your empty sample bottle; " ..
+                "bring it to me filled. May the Light protect you in this dangerous mission, <class>.",
         },
         [5226] = {
             description = "You carefully close the spigot in the control panel, watching the cauldron's " ..
@@ -18013,6 +18057,14 @@ ns.Overrides.wowhead = {
                 "ground of Northdale.\n\nYou must travel to Northdale and recover that symbol of lost " ..
                 "honor.",
         },
+        [5846] = {
+            description = "When Taelan was a child, we would oft visit Caer Darrow on family excursions. " ..
+                "On our last visit, an artist by the name of Renfray painted a portrait of us poised " ..
+                "along the beachside. It is my fondest memory of both Taelan and Karandra. For it was at " ..
+                "that moment, with my wife and son in my arms, that I felt a bond of love and family that " ..
+                "I would never know again.\n\nIf this painting still exists, you must find it.\n\nTravel " ..
+                "to the ruined island of Caer Darrow and see if the painting or the artist remain.",
+        },
         [5848] = {
             description = "The painting... It hung on the wall of my workshop - inside the Order's " ..
                 "barracks - for years.\n\nAfter Tirion's trial was over, I knew that I could no longer " ..
@@ -18323,6 +18375,16 @@ ns.Overrides.wowhead = {
                 "you want my treasure, then find me.\n\nKill me. Before it's too late.",
             rewardItems = {{15814, 1}, {15815, 1}},
             rewardMoney = 9000,
+        },
+        [6025] = {
+            description = "What? Really? You want to know more? But you've already done so much for me, " ..
+                "<name>. I couldn't possibly ask you to enter Hearthglen itself on my behalf.\n\nAre you " ..
+                "sure, <name>? Hearthglen is much more dangerous than the Pass--I cannot provide you any " ..
+                "protection or even information about what you might face.\n\nWell, if you really are " ..
+                "willing to help, then enter the town and find a high place to gain a good view of the " ..
+                "town. From there you can gauge their numbers and report them back to me. But be " ..
+                "careful....",
+            rewardMoney = 17500,
         },
         [6026] = {
             description = "These here Argent Dawn people commissioned ol' Smokey to do a little " ..
@@ -22003,6 +22065,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{20369, 1}, {20503, 1}, {20556, 1}},
             rewardMoney = 15500,
         },
+        [8414] = {
+            description = "Greetings, <class>. Crusaders like you are a welcome sight in these desolate " ..
+                "reaches.\n\nYour holy strength is needed to help fight the endless undead here. We need " ..
+                "you to collect a large number of scourgestones and bring them to High Priest Thel'danis. " ..
+                "The high priest can be found guarding Uther's Tomb in Sorrow Hill, not far from " ..
+                "here.\n\nOnly one with an Argent Dawn Commission can hope to find scourgestones, so " ..
+                "speak to Officer Pureheart if you haven't already.",
+        },
         [8415] = {
             description = "Commander Ashlam Valorfist has sent out a call for a paladin of your purity " ..
                 "and valor, <name>. You can find him at Chillwind Point in the southern part of the " ..
@@ -22062,6 +22132,15 @@ ns.Overrides.wowhead = {
                 "pain to me. Their dark rituals and spells cause agony unlike any I felt while " ..
                 "alive.\n\nThrough you I can deliver my own message of pain. Go forth and deliver my " ..
                 "wrath.",
+        },
+        [8425] = {
+            description = "Your honor has brought some peace to me. It is only right that I offer you " ..
+                "something in return.\n\nMy weapons and armor were splendid in life, and yet they are of " ..
+                "no use to me now. They would be better served in your possession.\n\nTravel to the " ..
+                "sunken temple and destroy the troll guardians Gasher, Mijan, Zolo, Hukku, Zul'lor, and " ..
+                "Loro. They carry magic feathers that can reform my physical body long enough to grant " ..
+                "you a reward.",
+            rewardChoices = {{20521, 1}, {20130, 1}, {20517, 1}},
         },
         [8426] = {
             description = "The battle in Warsong Gulch against the Silverwing Sentinels is of great " ..
@@ -22198,6 +22277,14 @@ ns.Overrides.wowhead = {
                 "Durotar; I believe you call this city Orgrimmar. In times past, he had tried to make " ..
                 "contact with us on behalf of his Horde. It is now only fitting to acknowledge you as the " ..
                 "key in your Horde's efforts in brokering peace.",
+        },
+        [8492] = {
+            description = "Hey there, <class>, you look fit enough to contribute to the war effort! We " ..
+                "need all of the help that we can get here to put together the materiel needed for the " ..
+                "Ahn'Qiraj War and it's your lucky day.\n\nI'm collecting copper bars in stacks of " ..
+                "twenty. It's for a worthy cause, what do you say? Do you think you could help out the " ..
+                "Alliance?",
+            rewardItems = {{21436, 10}, {21509, 1}},
         },
         [8493] = {
             description = "Back again <class>? Outstanding! We still need more stacks of copper bars if " ..
