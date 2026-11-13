@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.531] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 3,591 quests, 37 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 4,973 quests, 64 NPCs, 7 objects
+
 ## [0.2.524] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -960,17 +967,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 71165 - Wrathion - updated
   - NPC title added (The Black Prince)
-
-## [0.2.486] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 7,958 quests, 991 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,104 quests, 36 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 3,802 quests, 56 NPCs, 6 objects
-- quest 8665 - Genesis Boots - updated
-  - description added
-  - reward items: +1
 
 ## [0.2.412]
 
