@@ -1060,6 +1060,9 @@ local T = {
     ["Auctionator prices queued until logout or reload: %d"] =
         "Auctionator-hintoja odottaa uloskirjautumista tai käyttöliittymän uudelleenlatausta: %d",
     ["Scan and share"] = "Hae ja jaa hinnat",
+    ["Find missing prices"] = "Etsi puuttuvat hinnat",
+    ["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] =
+        "Puuttuvat hinnat: %d/%d tarkistettu · %d löytyi · %d ilman ostohintaa · %d ohitettu",
     ["Find next"] = "Etsi seuraavat",
     ["Scan again"] = "Hae uudelleen",
     ["PandaQuest auction prices"] = "PandaQuestin huutokauppahinnat",
