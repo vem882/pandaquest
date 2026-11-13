@@ -7164,6 +7164,12 @@ ns.Overrides.wowhead = {
                 "should seek audience with the Cenarion Circle. Speak with the Arch Druid in Darnassus, " ..
                 "Fandral Staghelm, for more information!",
         },
+        [1020] = {
+            description = "<name>, I have created a cure that I believe will help the afflicted child. " ..
+                "Take it to Astranaar and give it to the child's parent, Pelturas Whitemoon.\n\nTo reach " ..
+                "Astranaar, follow the road south, then east.",
+            rewardMoney = 2500,
+        },
         [1021] = {
             description = "Listen, I don't know who you are, but I need your help. My sisters went to " ..
                 "take back the Branch of Cenarius from the satyr. They said they'd be back soon, but it's " ..
@@ -11594,6 +11600,13 @@ ns.Overrides.wowhead = {
                 "pincers, and one basilisk brain.",
             rewardItems = {{8411, 1}},
         },
+        [2586] = {
+            description = "You live! This is good news, indeed. I assume you are back for more of the " ..
+                "scorpok assay?\n\nVery well, <name>, back to the wasteland with you and do not return " ..
+                "until you have collected three scorpok pincers, two vulture gizzards, and one blasted " ..
+                "boar lung.",
+            rewardItems = {{8412, 1}},
+        },
         [2601] = {
             description = "These wastelands are riddled with redstone basilisk, <name>. These basilisk " ..
                 "have adapted and flourished, more so than any of the other wildlife within the " ..
@@ -11601,6 +11614,12 @@ ns.Overrides.wowhead = {
                 "the beasts exhibit a thought process more complex than even some humanoids.\n\nI must " ..
                 "study their brains!\n\nRetrieve ten of their brains for me, <name>. The compound cannot " ..
                 "be complete, however, without two vulture gizzards to form the base of the solution.",
+            rewardItems = {{8423, 1}},
+        },
+        [2602] = {
+            description = "Your focused concentration has dwindled so soon? More research must be " ..
+                "done!\n\nOh yes, the price remains the same, <name>. Venture forth into the blasted " ..
+                "lands and return to me with ten brains from the redstone and two vulture gizzards.",
             rewardItems = {{8423, 1}},
         },
         [2603] = {
@@ -20092,6 +20111,16 @@ ns.Overrides.wowhead = {
                 "and a pristine black diamond and I shall conjure the Arcanum.",
             rewardItems = {{18330, 1}},
         },
+        [7485] = {
+            description = "He wept like an infant at the loss of this libram. Mind you, I myself have " ..
+                "wept over texts - there is no greater loss than that of knowledge and history - but to " ..
+                "cry over this nearly useless jumbling of incantations? Preposterous! It left me to " ..
+                "believe that the Prince was doing him a favor in flaying the flesh from his " ..
+                "bones.\n\nBring the Libram along with a pristine black diamond, large brilliant shards, " ..
+                "and a frayed abomination stitching and I shall recreate the Arcanum.\n\nOh, and check " ..
+                "the north wing.",
+            rewardItems = {{18331, 1}},
+        },
         [7486] = {
             description = "<name>, your services to the Warlords surpassed all we could expect from the " ..
                 "denizens of this world.\n\nWe do not understand your people's notions of gratitude, or " ..
@@ -20284,6 +20313,15 @@ ns.Overrides.wowhead = {
                 "Xoroth, the domain of Hel'nurath my rival? Perhaps you plan to steal from him one of his " ..
                 "precious dreadsteeds?\n\nVery well. My servant Ur'dan has a supply of Xorothian " ..
                 "stardust. You may obtain it from him... if you can pay the price.",
+            rewardXP = 9550,
+        },
+        [7626] = {
+            description = "A Bell of Dethmoora, named after the late warlock Dethmoora Darkeyes, is one " ..
+                "of the three tools needed to create a Circle of Greater Summoning. When properly atuned " ..
+                "with the Wheel and the Candle, these items conduct vast stores of arcane power.\n\nMy " ..
+                "servant Gorzeeki can construct such a bell, but to do so he will need a large supply of " ..
+                "elixirs of shadow power. Procure the elixirs from an alchemist and bring them to " ..
+                "Gorzeeki.",
             rewardXP = 9550,
         },
         [7627] = {
@@ -21822,6 +21860,14 @@ ns.Overrides.wowhead = {
                 "Square, south of here, you should speak with Outrunner Alarion. She's not far from the " ..
                 "bridge.\n\nThe Outrunners take care of shuttling goods between here and the mainland, " ..
                 "and since you've proven to be so resourceful, they could use your assistance.",
+        },
+        [8348] = {
+            description = "Huum tells me you've figured out how to summon the Abyssal Dukes! That's quite " ..
+                "an accomplishment.\n\nYou know what else would be quite the accomplishment? Smashing up " ..
+                "one of those things really good. That'll cause an impression on their underlings, if you " ..
+                "know what I mean. Bring back its signet as proof of the deed.",
+            rewardItems = {{20601, 1}},
+            rewardMoney = 18000,
         },
         [8349] = {
             description = "Now that you have a medallion and can summon an Abyssal Duke, speak with Bor " ..
@@ -23565,6 +23611,13 @@ ns.Overrides.wowhead = {
                 "superior.",
             rewardItems = {{22106, 1}, {22110, 1}},
         },
+        [8927] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22106, 1}, {22110, 1}},
+        },
         [8928] = {
             description = "The core will provide us with enough juice to power our device; now we just " ..
                 "have to build a rod that can channel that energy without melting.\n\nI met an imp in " ..
@@ -23652,6 +23705,13 @@ ns.Overrides.wowhead = {
                 "according to your performance.\n\nFor now I will exchange your belt and gauntlets. If we " ..
                 "both see this through I shall make the rest of the pieces available to you.",
             rewardItems = {{22098, 1}, {22099, 1}},
+        },
+        [8943] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22070, 1}, {22077, 1}},
         },
         [8944] = {
             description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
@@ -24283,6 +24343,13 @@ ns.Overrides.wowhead = {
                 "piece of armor for you.",
             rewardItems = {{22431, 1}},
         },
+        [9051] = {
+            description = "The toxin you helped me create is for a special purpose. The great devilsaurs " ..
+                "of the crater make it dangerous to hunt and difficult for me to survive. Even if I " ..
+                "possessed the necessary strength, killing a devilsaur simply allows another to move into " ..
+                "its territory.\n\nTake this poisoned barb and stab it deep into a living devilsaur. The " ..
+                "toxin should pacify the creature, though I do not know how quickly...",
+        },
         [9052] = {
             description = "I would ask you to help me create a toxin of sorts, to pacify a great creature " ..
                 "living here in the crater. It is not deadly, and only the keen eyes of a <class> can " ..
@@ -24632,6 +24699,15 @@ ns.Overrides.wowhead = {
                 "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
                 "knowledge with you as long as you are able to provide me with the necessary materials.",
             rewardItems = {{22498, 1}},
+        },
+        [9098] = {
+            description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
+                "those items, I found the tomes most enlightening. While the majority of the books were " ..
+                "filled with - to put it bluntly - tripe, there were some gems. One of those tomes " ..
+                "documented the creation of a set of armor fit for an archmage: Frostfire.\n\n<Angela " ..
+                "points to her head.>\n\nIt's all in here and I am willing to share the fruits of that " ..
+                "knowledge with you as long as you are able to provide me with the necessary materials.",
+            rewardItems = {{22499, 1}},
         },
         [9099] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
@@ -25622,6 +25698,11 @@ ns.Overrides.wowhead = {
             description = "Thanks to you and Omarion, may he rest in peace, I am now able to create a " ..
                 "Glacial vest. All you need to do is bring me the materials and pay a small crafting fee.",
             rewardItems = {{22652, 1}},
+        },
+        [9241] = {
+            description = "Thanks to you and Omarion (May he rest in peace), I am now able to create " ..
+                "Polar bracers. All you need to do is bring me the materials and pay a small crafting fee.",
+            rewardItems = {{22663, 1}},
         },
         [9242] = {
             description = "Thanks to you and Omarion (May he rest in peace), I am now able to create " ..
@@ -27306,6 +27387,15 @@ ns.Overrides.wowhead = {
                 "ahead of you.",
             rewardXP = 610,
         },
+        [9548] = {
+            description = "Shh! Keep your voice down and don't call attention to me.\n\nIf the murlocs " ..
+                "detect my presence, the experiment will be ruined! I've already come perilously close to " ..
+                "contaminating my data.\n\nWhile I was foraging yesterday, one of them must've wandered " ..
+                "too close and discovered my camp. I returned just in time to see two of them carrying " ..
+                "off a crate with most of my equipment! It's bound to be in one of their settlements " ..
+                "around here, but I can't risk revealing my presence. Are you willing to help?",
+            rewardMoney = 900,
+        },
         [9549] = {
             description = "My observations and writings about the Blacksilt murlocs are quite " ..
                 "illuminating, <name>, but they are just the beginning. I plan to return to Ironforge " ..
@@ -27878,6 +27968,15 @@ ns.Overrides.wowhead = {
                 "like Arcanagos.\n\nThere is a way, however. And I know just the person to help " ..
                 "us.\n\nTravel to Area 52 in Netherstorm and show the bone fragment to Kalynna Lathred. " ..
                 "She will know just what to do.",
+        },
+        [9632] = {
+            description = "Harbinger Mikolaas has done a commendable job of safeguarding Blood Watch, " ..
+                "<class>, but our enemies are many and our resources few.\n\nOur weakness is well known " ..
+                "to our enemies, but your contact with the forces of the Alliance is something they " ..
+                "haven't accounted for. I have prepared a letter of introduction to the people of " ..
+                "Auberdine, the closest Alliance settlement, proposing cooperation in the fight against " ..
+                "our foes. Take it with you and seek out Huntress Kella Nightbow near the docks west of " ..
+                "the Exodar.",
         },
         [9633] = {
             description = "If you wait out on the dock, you'll see the boat arriving from the port of " ..
