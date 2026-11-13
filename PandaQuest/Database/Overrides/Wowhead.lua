@@ -29248,6 +29248,15 @@ ns.Overrides.wowhead = {
                 "and gather silithid meat. When you have the meat, feed it to your hungry hatchling.",
             rewardItems = {{47196, 1}},
         },
+        [13904] = {
+            description = "The venomhide hatchling 's stomach growls as it gestures to get your " ..
+                "attention. It begins scratching pictures of silithids into the dirt, adding small ovals " ..
+                "underneath them. It looks at you hopefully and gestures at the circles.\n\nThey can only " ..
+                "mean silithid eggs. The Noxious Lair, in western Tanaris and near the border with " ..
+                "Un'Goro Crater, would probably be a great place to find the eggs your little hatchling " ..
+                "wants.",
+            rewardItems = {{47196, 1}},
+        },
         [13905] = {
             description = "The hatchling looks at you for a moment, almost as if wondering whether you'll " ..
                 "understand. It scrawls a picture of a pair of feathers in the dirt, then points with one " ..
@@ -66613,6 +66622,34 @@ ns.Overrides.wowhead = {
                 [400] = {
                     {26, 55.4}, {26.2, 52.6}, {26.2, 56}, {26.4, 52.4}, {26.4, 53.6}, {26.4, 56.6},
                     {26.6, 53.4}, {26.6, 55.8}, {26.8, 55.4}, {27, 52}, {27.2, 51.2}, {27.2, 54}, {27.6, 51},
+                },
+            },
+            zoneID = 400,
+        },
+        [4113] = {
+            spawns = {
+                [400] = {
+                    {9, 19.4}, {9.4, 20.6}, {10.2, 13.8}, {10.4, 22.6}, {11.2, 13.8}, {11.2, 22.8},
+                    {11.4, 15}, {11.8, 21}, {12, 13.4}, {12.2, 14.6}, {12.4, 16.2}, {12.6, 20.2},
+                    {12.8, 14.6}, {13, 14.4}, {13.6, 14.2}, {14.8, 15.4}, {50.2, 47.6}, {51.2, 50.8},
+                    {51.4, 48}, {51.8, 42.4}, {52.2, 48.2}, {52.4, 47.4}, {52.8, 47.8}, {53.4, 45.8},
+                    {53.6, 47.8}, {53.8, 44.6}, {54.6, 44.4}, {54.8, 45.6}, {57.4, 57.2}, {58, 46.4},
+                    {58.8, 57.4}, {59, 54.4}, {59.6, 53.6}, {59.6, 58.6}, {60.2, 46.8}, {61, 47.2},
+                    {61.8, 60.2}, {62.4, 47.4}, {62.4, 55}, {62.8, 45.6},
+                },
+            },
+            zoneID = 400,
+        },
+        [4116] = {
+            spawns = {
+                [400] = {
+                    {8.6, 19.4}, {9.4, 18.2}, {9.6, 20.4}, {10.2, 21.6}, {10.6, 22}, {11, 22.6}, {11.4, 23.6},
+                    {11.8, 21.6}, {12, 20.6}, {12.2, 20.4}, {12.4, 14.6}, {12.4, 16.6}, {12.6, 17.6},
+                    {12.8, 16.4}, {13, 13.4}, {13.8, 15.2}, {62, 45.8}, {62.2, 60.4}, {62.4, 48.6},
+                    {62.8, 48.6}, {63, 60.2}, {63.4, 46}, {63.6, 47.6}, {63.8, 61.2}, {64, 50}, {64.4, 60.4},
+                    {64.6, 61.2}, {65, 50.2}, {65, 51.8}, {65.6, 61.4}, {66, 49.8}, {66.2, 49.4},
+                    {66.6, 49.4}, {66.8, 60.6}, {66.8, 62.6}, {67.2, 58.4}, {67.4, 60.4}, {67.6, 58.4},
+                    {67.6, 64}, {68, 62.2},
                 },
             },
             zoneID = 400,
