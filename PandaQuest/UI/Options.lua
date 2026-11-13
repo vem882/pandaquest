@@ -825,7 +825,7 @@ local function buildTable()
                         L["Share item prices by realm and faction through Sync after logout or reload."],
                         "global.telemetry.shareAuctionScans"),
                     recordOwnAuctions = toggle(1.6, L["Record my auctions privately"],
-                        L["Save your own listings and completed sale invoices on this computer."],
+                        L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."],
                         "global.telemetry.recordOwnAuctions"),
                     breadcrumbs = toggle(2, L["Record movement breadcrumbs"],
                         L["Occasional position samples that improve community routes."], "global.telemetry.breadcrumbs"),

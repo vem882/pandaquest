@@ -802,4 +802,4 @@ L["Stop scan"] = true
 L["About %d%% · %d prices queued for Sync"] = true
 
 L["Record my auctions privately"] = true
-L["Save your own listings and completed sale invoices on this computer."] = true
+L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] = true
