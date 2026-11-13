@@ -9864,6 +9864,14 @@ ns.Overrides.wowhead = {
                 "discuss more of your path and what it means to be a paladin of the Light. I will remain " ..
                 "here in the temple for your return. Other paladins will need my guidance also.",
         },
+        [1648] = {
+            description = "My wife and I run an orphanage in Stormwind, mostly for children who have lost " ..
+                "parents due to the attacks by the Scourge in the last decade. I come to Ironforge every " ..
+                "month or so to see about collecting more supplies from the citizens here, and talk to " ..
+                "the various groups to see if they can do anything to help.\n\nThis trip's been " ..
+                "agonizingly slow, and not very productive.\n\nIf I could just get some more linen for my " ..
+                "wife to make some clothes, I could finally send a shipment home.",
+        },
         [1649] = {
             description = "Valor, and all the virtues that go along with it, are like rare minerals: you " ..
                 "must cherish them when you find them because of their value, but you must also take time " ..
@@ -20752,6 +20760,13 @@ ns.Overrides.wowhead = {
                 "are left to our own devices.\n\nIt is up to you to destroy the filth of the region!",
             rewardMoney = 14000,
         },
+        [7845] = {
+            description = "My mate was taken by Vilebranch savages in a bold midnight raid on our " ..
+                "village. Our spies have told me that he is still alive and being held prisoner atop " ..
+                "Jintha'alor. The Vile Priestess Hexx is said to be preparing him for a sacrifice to the " ..
+                "faceless blood God, Hakkar.\n\nYou must save him, <name>! Our village could not stand a " ..
+                "loss this great.",
+        },
         [7846] = {
             description = "The key to my bindings is held by Hitah'ya the Keeper. She is in the nearby " ..
                 "cave. Be careful, <class>, for she is guarded well.\n\nKill her and bring the key back " ..
@@ -22305,6 +22320,14 @@ ns.Overrides.wowhead = {
                 "bandages and return them to me here?",
             rewardItems = {{21436, 10}, {21513, 1}},
         },
+        [8524] = {
+            description = "Hey there, friend! If I were to say to you, 'Don't you think that soldiers " ..
+                "should have food to eat like anyone else?', you would of course reply, 'yes'. I agree " ..
+                "with you 110%! I'm glad we're in accord. All I need for you to do is to head out there, " ..
+                "fish up a whole bunch of raw rainbow fin albacore, and then cook it all up and bring it " ..
+                "back to me right here. Mmm, mmm, I can taste it already.",
+            rewardItems = {{21436, 10}, {21509, 1}},
+        },
         [8525] = {
             description = "What! You again? Well I'll be a monkey's uncle... except that I'm a gnome. " ..
                 "Slicky Gastronome to be precise! So you're back to help out again eh? Well, I can't say " ..
@@ -23091,6 +23114,14 @@ ns.Overrides.wowhead = {
                 "been selected to target Hive'Zora tunnelers. Report back to Commander Mar'alith after " ..
                 "completing your task.",
             rewardItems = {{20802, 1}},
+        },
+        [8689] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21412, 1}},
         },
         [8690] = {
             description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
