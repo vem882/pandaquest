@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.537] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 3,630 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,101 quests, 66 NPCs, 7 objects
+
 ## [0.2.536] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -110,17 +117,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 68565 - Nitun - updated
   - NPC title added (The Midnight Plunderer)
-
-## [0.2.507] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - Classic Era rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - TBC Anniversary rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - WoW Forever rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - Classic Era: data from the PandaQuest portal: 3,562 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,793 quests, 62 NPCs, 7 objects
 
 ## [0.2.412]
 

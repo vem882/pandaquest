@@ -66,6 +66,10 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.537
+- database - Classic Era: data from the PandaQuest portal: 3,630 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,101 quests, 66 NPCs, 7 objects
+
 0.2.536
 - database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,009 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,623 quests, 38 NPCs, 9 objects
@@ -142,14 +146,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 68565 - Nitun - updated
   - NPC title added (The Midnight Plunderer)
-
-0.2.507
-- database - rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - Classic Era rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - TBC Anniversary rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - WoW Forever rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
-- database - Classic Era: data from the PandaQuest portal: 3,562 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,793 quests, 62 NPCs, 7 objects
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

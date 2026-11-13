@@ -7436,6 +7436,14 @@ ns.Overrides.wowhead = {
             description = "The rod, now complete, lies in your hands. Shael'dryn will want to hear of " ..
                 "your success.",
         },
+        [1056] = {
+            description = "The forest spirits tell me you are brave and willing to travel.\n\nTo the " ..
+                "south, not far from Mystral Lake, there lies a tunnel named The Talondeep Path. Through " ..
+                "this tunnel you will come to an area known as Windshear Crag in the Stonetalon " ..
+                "Mountains. Once there, journey to the southwest past Cragpool Lake and then north, up " ..
+                "the steep slope until you reach Stonetalon Peak.\n\nThere awaits Keeper Albagorm. Heed " ..
+                "his bidding, <race>.\n\nThe journey will be perilous.",
+        },
         [1057] = {
             description = "As a protector of the forest spirits you can undoubtedly guess why I am " ..
                 "alarmed.\n\nYou have traveled through these mountains to reach this peak. Surely you " ..
@@ -9938,6 +9946,15 @@ ns.Overrides.wowhead = {
                 "belts and bring them to Thorvald, he would be obliged. He might even share his knowledge " ..
                 "with you.\n\nThorvald is in Loch Modan's southern guard tower.",
             rewardItems = {{33792, 1}},
+        },
+        [1579] = {
+            description = "I came to Auberdine because of the quiet. I want to invent my inventions where " ..
+                "it's quiet, because after a night of drinking I don't like all the noise of " ..
+                "Ironforge!\n\nSo I took a ship to Auberdine and had a little too much to drink on the " ..
+                "way. I dropped my box of gaffer jacks overboard! I need my gaffer jacks!\n\nI don't know " ..
+                "exactly where I dropped them, but if you fish for them in the ocean you might get " ..
+                "lucky...",
+            rewardMoney = 250,
         },
         [1580] = {
             description = "We know you're lucky, but... just how lucky are you, <name>?\n\nOne night I " ..
@@ -12701,6 +12718,15 @@ ns.Overrides.wowhead = {
                 "ogres. Make it a little safer for my Troyas, and I will be extremely grateful.",
             rewardMoney = 6500,
         },
+        [2983] = {
+            description = "It's been some time since you were tested last, <name>. You've been patient " ..
+                "thus far in your studies, but it's time for you to learn about greater powers... it's " ..
+                "time you learn real power. The element of fire is yours if you're prepared to pay for " ..
+                "it.\n\nSeek out Kranal Fiss in the Barrens. He lives in a small dwelling north of the " ..
+                "Crossroads, but be mindful, if you've reached the blasted night elf lands, you've gone " ..
+                "way too far.",
+            rewardXP = 420,
+        },
         [2984] = {
             description = "Long has it been since you were last tested, <name>. You have shown patience " ..
                 "thus far in your studies, but the time has come for you to learn more. The time has come " ..
@@ -13922,6 +13948,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{10790, 1}},
         },
         [3644] = {rewardItems = {{10791, 1}}},
+        [3645] = {rewardItems = {{10790, 1}}},
         [3646] = {rewardItems = {{10791, 1}}},
         [3647] = {rewardItems = {{10790, 1}}},
         [3661] = {
@@ -13992,6 +14019,14 @@ ns.Overrides.wowhead = {
                 "Auberdine.\n\nThe journey is a long and epic one. It is for this reason that I ask the " ..
                 "help of a seasoned <class> such as yourself.",
             rewardMoney = 1300,
+        },
+        [3781] = {
+            description = "With what we call an Evergreen Pouch, we have cultivated Tharlendris seeds in " ..
+                "the soil from Un'Goro Crater. These seeds blossom into an array of random, potent herbs. " ..
+                "One result is morrowgrain, a mysterious herb we know little about; I intend to unravel " ..
+                "this mystery.\n\nTake this to Mathrengyl downstairs, and he will give you some seeds so " ..
+                "you can get started. If you run out, you will need to purchase more from him.",
+            rewardItems = {{11022, 20}},
         },
         [3782] = {
             description = "With what we call an Evergreen Pouch, we have cultivated Tharlendris seeds in " ..
@@ -19136,6 +19171,11 @@ ns.Overrides.wowhead = {
                 "Follow the path to the west to get to Sun Rock Retreat.",
             rewardMoney = 700,
         },
+        [6402] = {
+            description = "You are to meet with Windsor at the gates of Stormwind.\n\nWhat Windsor is " ..
+                "about to unveil will shake the very foundation of the kingdom!\n\nDo not attempt to " ..
+                "venture there alone, <name>. You must amass an army! Gather your compatriots. To arms!",
+        },
         [6403] = {
             description = "It has been quite the adventure, friend. I owe you a great debt of gratitude. " ..
                 "Perhaps, when all is said and done...\n\nAs you have no doubt ascertained by now, Lady " ..
@@ -22439,6 +22479,15 @@ ns.Overrides.wowhead = {
                 "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
             rewardItems = {{21392, 1}},
         },
+        [8560] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21332, 1}},
+        },
         [8561] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
                 "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
@@ -23231,6 +23280,12 @@ ns.Overrides.wowhead = {
         [8782] = {
             description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
                 "batch of uniform materials and bring them to Windcaller Proudhorn.",
+            rewardItems = {{20800, 1}, {21132, 1}},
+        },
+        [8783] = {
+            description = "Vargus, Cenarion Hold's blacksmith, has requested enchanted materials to be " ..
+                "used in the crafting of powerful weapons for our forces. Obtain these and bring them " ..
+                "directly to Vargus so that Cenarion Hold's troops may continue to be well equipped.",
             rewardItems = {{20800, 1}, {21132, 1}},
         },
         [8784] = {
@@ -24767,6 +24822,14 @@ ns.Overrides.wowhead = {
                 "that you do as I ask. Bring me what I require and we will both benefit - or die; but " ..
                 "I've already explained this...",
             rewardItems = {{22507, 1}},
+        },
+        [9107] = {
+            description = "I make no pretenses, maggot. The darkness Plagueheart items hold could very " ..
+                "well destroy the both of us. That is why the price is so high. If I'm going to die, it's " ..
+                "going to be as a rich man.\n\nAnd I don't give an ounce of gnoll spit how you die, only " ..
+                "that you do as I ask. Bring me what I require and we will both benefit - or die; but " ..
+                "I've already explained this...",
+            rewardItems = {{22508, 1}},
         },
         [9108] = {
             description = "I make no pretenses, maggot. The darkness Plagueheart items hold could very " ..
@@ -27603,6 +27666,14 @@ ns.Overrides.wowhead = {
                 "pendant, but the find is too important to ignore. You should probably show it to someone " ..
                 "at Blood Watch.",
             rewardMoney = 500,
+        },
+        [9578] = {
+            description = "Do you think often of your family, <name>? There were a number of families " ..
+                "aboard the Exodar, but I've heard of very few being reunited.\n\nI, myself, am looking " ..
+                "for traces of my husband Galaen, who was a technician in the Cryo-Core. The wreckage of " ..
+                "it is located to the west, and it's swarming with blood elves!\n\nI must find out what " ..
+                "became of Galaen! Even news of his death is better than never knowing. My husband will " ..
+                "be wearing a pendant identical to my own; they were a gift from my sister.",
         },
         [9579] = {
             description = "You have no means of identifying the corpse as Galaen with the information " ..
@@ -33054,6 +33125,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{31486, 1}, {31487, 1}, {31488, 1}, {31485, 1}},
             rewardMoney = 35000,
         },
+        [10490] = {
+            description = "I'm sensing that it's been a while since last you were tested. This is because " ..
+                "Farseer Nobundo has been asking for you.\n\nYou must have grown greatly in wisdom " ..
+                "because you are being called to learn the mysteries of the element of water.\n\nI trust " ..
+                "that you remember how to take the boat from Auberdine in Darkshore on Kalimdor back to " ..
+                "the Exodar? And that you remember where to find the farseer at the Crystal Hall inside " ..
+                "the Exodar, yes?",
+            rewardXP = 390,
+        },
         [10491] = {
             description = "<name>, once again Farseer Nobundo has been asking for you. It must be time " ..
                 "for you to learn the secrets of air, the last of the elements!\n\nI want you to know " ..
@@ -38378,6 +38458,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 3483,
+        },
+        [15288] = {
+            spawns = {
+                [1377] = {
+                    {44.4, 54.4}, {45, 56.6}, {45.2, 55.4}, {45.4, 52.8}, {45.4, 55.6}, {45.6, 51.8},
+                    {46.2, 57.4}, {46.4, 54.2}, {46.4, 56.4}, {46.4, 58}, {46.6, 54.6}, {46.8, 47},
+                    {47, 59.4}, {47.2, 53.4}, {47.4, 40}, {47.4, 51.8}, {47.4, 56.6}, {47.6, 50.4},
+                    {47.6, 52.4}, {47.6, 54.2}, {47.6, 55.8}, {48, 56.6}, {48.2, 52.6}, {48.6, 56.2},
+                    {48.6, 57.4}, {48.8, 54.8}, {48.8, 58.8}, {49, 54.4}, {49.2, 51.4}, {49.4, 52.4},
+                    {49.4, 52.8}, {50, 53.2}, {50, 54}, {50, 58}, {50.2, 58.6}, {50.6, 55.2}, {50.6, 58},
+                    {51, 55.8}, {51, 56.6}, {52, 58.8},
+                },
+            },
+            zoneID = 1377,
         },
         [15571] = {
             spawns = {
