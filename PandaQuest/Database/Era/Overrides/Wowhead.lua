@@ -4228,6 +4228,15 @@ ns.Overrides.wowhead = {
                 "they don't have the run of the jungle.\n\nAnd... um... bring me those crystals as proof!",
             rewardChoices = {{5253, 1}, {4128, 1}},
         },
+        [601] = {
+            description = "The water elementals were no doubt summoned by Gazban, the goblin wizard " ..
+                "rumored to have discovered the Stone of the Tides. As you may know, the Stone of the " ..
+                "Tides curses its bearer, causing him to fade in and out of existence...\n\nPerhaps we " ..
+                "can find a way to counteract the curse. We can have a mage of Dalaran analyze the " ..
+                "magical residue of one of the water elemental's bracers. I need you to go back to the " ..
+                "island and retrieve a few specimens.",
+            rewardMoney = 4000,
+        },
         [603] = {
             description = "The mage that is in possession of the Stone is amplifying its power through " ..
                 "some focal point... an altar of some sort. You should be able to disrupt it by " ..
@@ -9812,6 +9821,12 @@ ns.Overrides.wowhead = {
                 "equipment is always low. If you were to help them out, I'm sure their resident " ..
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
+        },
+        [1638] = {
+            description = "You've shown yourself to be a competent warrior, <name>. But you're still " ..
+                "young and have a lot to learn.\n\nSpeak with Harry Burlguard --he's usually in the Pig " ..
+                "and Whistle tavern, in the Old Town of Stormwind. Harry is an old veteran and a good " ..
+                "teacher. He can show you a few moves that'll keep you breathing longer.",
         },
         [1639] = {
             description = "Yeah, I can teach you. But first I wanna see what moves you have " ..
@@ -17667,6 +17682,12 @@ ns.Overrides.wowhead = {
                 "with you in your travels. Rohan should still be in the Mystic Ward once you reach the " ..
                 "city. He will be waiting.",
         },
+        [5646] = {
+            description = "Aelthalyste show our people great respect by sending them back to me for more " ..
+                "training, and now I do the same for her tribe.\n\nYou return to the Undercity, <name>. " ..
+                "There, in the War Quarter, she be ready to teach you more 'bout your people and their " ..
+                "ways. Go there, and do not wait long.",
+        },
         [5647] = {
             description = "Your race is so very strong, <name>. We are proud to call you allies. And as " ..
                 "each day's sun sets, you and your kin grow closer to not only finding your true origins, " ..
@@ -18586,6 +18607,15 @@ ns.Overrides.wowhead = {
                 "out.\n\nFinally for potency, I need kodo horns - mere chips and fragments will not " ..
                 "suffice. Kodos you can handle wander the northern part of the Barrens; bring some down " ..
                 "for the greater good of the balance <name>, and fetch the horns for me.",
+        },
+        [6129] = {
+            description = "I was able to make enough salve for ten doses of curing, <name>. While I work " ..
+                "with local authorities to try and make some more salve, I'd like for you to help us get " ..
+                "a head start. All around the northern Barrens are sickly gazelles; use the salve on them " ..
+                "and cure their malaise.\n\nDendrite Starblaze in Moonglade will want to talk to you when " ..
+                "you're done, I'm sure. Please extend our thanks to the Cenarion Circle there... and let " ..
+                "me say thanks to you directly for the help you've given!",
+            rewardItems = {{15866, 1}},
         },
         [6130] = {
             description = "You've learned what it means to cure poison without the benefit of spiritual " ..
@@ -22288,6 +22318,13 @@ ns.Overrides.wowhead = {
                 "linen bandages are the least difficult to create. Are you with us, <class>?",
             rewardItems = {{21436, 10}, {21509, 1}},
         },
+        [8518] = {
+            description = "Ever am I amazed by the selflessness exhibited when so many would instead turn " ..
+                "to selfishness instead. <class>, I am still in need of a number of linen bandages before " ..
+                "my assignment here is fulfilled. Will you aid me once more in the collection of those " ..
+                "bandages?",
+            rewardItems = {{21436, 1}, {21509, 1}},
+        },
         [8519] = {
             description = "As you regain your composure and focus your gaze, you notice that something " ..
                 "stirs within the crystal. Upon closer inspection, you realize that you are looking into " ..
@@ -23154,6 +23191,14 @@ ns.Overrides.wowhead = {
                 "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
                 "be disappointed.",
             rewardItems = {{21406, 1}},
+        },
+        [8694] = {
+            description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
+                "make you a protective item that'll be of assistance in the fight against our enemy, " ..
+                "<class>.\n\nI shall need a Qiraji drape, which I'll resize for you of course. I'll also " ..
+                "need idols and scarabs which I'll use to create a suitable clasp.\n\nI promise you won't " ..
+                "be disappointed.",
+            rewardItems = {{21418, 1}},
         },
         [8695] = {
             description = "I'm glad to hear you're aiding us in our attack on Ahn'Qiraj, <name>. I can " ..
@@ -25350,6 +25395,14 @@ ns.Overrides.wowhead = {
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
+        [9197] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order EN-0:\n\n4 " ..
+                "Gnomish Battle Chickens.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
         [9198] = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order EN-558:\n\n14 " ..
@@ -25709,6 +25762,7 @@ ns.Overrides.wowhead = {
                 "break from within... Defeat the demonic being that controls the staff and return to me.",
             rewardItems = {{22630, 1}},
         },
+        [9272] = {rewardItems = {{22746, 1}}},
         [9292] = {
             description = "On the corpse of the fallen abomination, you discover a cracked crystal, " ..
                 "slowly pulsing with necrotic energy.",

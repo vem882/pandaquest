@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.536] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,009 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,623 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,090 quests, 65 NPCs, 7 objects
+- npc 1974 - Ravenclaw Drudger - updated
+  - coordinates: 17 spawn points added in Silverpine Forest
+- npc 51334 - Andorhal Deathguard - updated
+  - coordinates: 8 spawn points added in Western Plaguelands
+
 ## [0.2.535] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -109,16 +121,6 @@ Data from the PandaQuest portal.
 - database - WoW Forever rebuilt from Questie 12.8.0+v1.0.16 (was 12.7.0+v1.0.14)
 - database - Classic Era: data from the PandaQuest portal: 3,562 quests, 37 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 4,793 quests, 62 NPCs, 7 objects
-
-## [0.2.506] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 999 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,552 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,731 quests, 61 NPCs, 7 objects
-- npc 335 - Singe - updated
-  - coordinates: 5 spawn points added in Redridge Mountains
 
 ## [0.2.412]
 
