@@ -4,6 +4,13 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.542] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - Classic Era: data from the PandaQuest portal: 3,648 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,125 quests, 68 NPCs, 7 objects
+
 ## [0.2.541] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -99,20 +106,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 3,581 quests, 37 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 4,906 quests, 63 NPCs, 7 objects
-
-## [0.2.522] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 1,002 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,578 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,873 quests, 63 NPCs, 7 objects
-- npc 66374 - Anatomical Dummy - updated
-  - coordinates: 30 spawn points added in Valley of the Four Winds
-  - coordinates: 24 spawn points added in Vale of Eternal Blossoms
-  - coordinates: 10 spawn points added in Krasarang Wilds
-  - coordinates: 7 spawn points added in The Jade Forest
-  - coordinates: also changed in 3 more zones
 
 ## [0.2.412]
 
