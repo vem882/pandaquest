@@ -6426,6 +6426,14 @@ ns.Overrides.wowhead = {
                 "Shadowglen, and continue to follow the cobblestones as the road turns west.\n\nMind you " ..
                 "stay on the road though, <name>. There are dangerous beasts in the forests of late.",
         },
+        [929] = {
+            description = "First, let me tell you more of the task you must complete. The druids in " ..
+                "Darnassus use the water of the moonwells of Teldrassil, and their moonwell must be " ..
+                "replenished from time to time. Using these specially crafted phials, you can collect the " ..
+                "water of the moonwells.\n\nTake this vessel to the moonwell outside of Starbreeze " ..
+                "Village to the east, and fill it with some of its waters, then return to me. When you " ..
+                "have completed your task, I shall continue the story where Tenaron left off...",
+        },
         [930] = {
             description = "Hanging from beneath its fronds of this glowing plant is a large, round " ..
                 "fruit.\n\nDenalan would want to study this fruit, you are certain.",
@@ -21967,6 +21975,15 @@ ns.Overrides.wowhead = {
                 "expel the invaders!",
             rewardMoney = 18000,
         },
+        [8370] = {
+            description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
+                "false pretenses to enter into battle used or expected by either side at this " ..
+                "point.\n\nThe battle for the Arathi Basin is one of resources, plain and simple. Either " ..
+                "the Alliance gets the resources and uses them against us or we get them and use them to " ..
+                "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
+                "<name>!",
+            rewardMoney = 2500,
+        },
         [8371] = {
             description = "We're not fighting isolated battles against the Horde anymore, " ..
                 "<lad/lass>.\n\nVictory in one front means denying the Horde resources they'd use against " ..
@@ -22043,6 +22060,34 @@ ns.Overrides.wowhead = {
                 "part in fighting the Warsong Outriders, <name>! For the Alliance!",
             rewardMoney = 4500,
         },
+        [8401] = {
+            description = "The Silverwing Sentinels are at war with the Warsong Outriders due to the " ..
+                "destruction the Orcs are causing to the forest. There are, however, more reasons to " ..
+                "defend this particular forest than the preservationist philosophy the Silverwings " ..
+                "espouse.\n\nThe forest forms a strategic barrier that makes Ashenvale defendable against " ..
+                "a large-scale attack. Without it, Astranaar would last a day or two before being annexed " ..
+                "to the Barrens. Do your part in fighting the Warsong Outriders! For the Alliance!",
+            rewardMoney = 7000,
+        },
+        [8402] = {
+            description = "The Silverwing Sentinels are at war with the Warsong Outriders due to the " ..
+                "destruction the Orcs are causing to the forest. There are, however, more reasons to " ..
+                "defend this particular forest than plain love for nature.\n\nThe forest forms a " ..
+                "strategic barrier that makes Ashenvale defendable against a large-scale attack. Without " ..
+                "it, Astranaar would last a day or two before being annexed to the Barrens.\n\nDo your " ..
+                "part in fighting the Warsong Outriders, <name>! For the Alliance!",
+            rewardMoney = 9000,
+        },
+        [8403] = {
+            description = "The Silverwing Sentinels are at war with the Warsong Outriders due to the " ..
+                "destruction the Orcs are causing to the forest. There are, however, more reasons to " ..
+                "defend this particular forest than plain love for nature.\n\nThe forest forms a " ..
+                "strategic barrier that makes Ashenvale defendable against a large-scale attack. Without " ..
+                "it, Astranaar would last a day or two before being annexed to the Barrens.\n\nDo your " ..
+                "part in fighting the Warsong Outriders, <name>! For the Alliance!",
+            rewardMoney = 9000,
+        },
+        [8405] = {rewardMoney = 4500},
         [8410] = {
             description = "Bath'rah the Windwatcher has sent out a summons for a shaman of your wisdom. " ..
                 "He requests you bring a sample of each of the elements to show you are ready.\n\nTo find " ..
@@ -22176,6 +22221,15 @@ ns.Overrides.wowhead = {
                 "Alliance seeks to deny the Horde one of our largest sources for lumber.\n\nDo not let " ..
                 "this happen, <name>! Come back to me with proof of serving the Horde in a worthy manner!",
             rewardMoney = 9000,
+        },
+        [8436] = {
+            description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
+                "false pretenses to enter into battle used or expected by either side at this " ..
+                "point.\n\nThe battle for the Arathi Basin is one of resources, plain and simple. Either " ..
+                "the Alliance gets the resources and uses them against us or we get them and use them to " ..
+                "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
+                "<name>!",
+            rewardMoney = 4500,
         },
         [8439] = {
             description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
