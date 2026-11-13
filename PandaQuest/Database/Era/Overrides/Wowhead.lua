@@ -17034,6 +17034,7 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3858, 3}, {4304, 5}, {4338, 5}},
         },
         [5401] = {rewardItems = {{12846, 1}}},
+        [5403] = {rewardItems = {{12844, 1}}},
         [5404] = {rewardItems = {{12844, 1}}},
         [5405] = {rewardItems = {{12846, 1}}},
         [5406] = {rewardItems = {{12844, 1}}},
@@ -18239,6 +18240,11 @@ ns.Overrides.wowhead = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
                 "beast and train it as your companion.\n\nYou must see Dazalar in Dolanaar. He can put " ..
                 "you on the path to earning a pet of your own.",
+        },
+        [6074] = {
+            description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
+                "beast and train it as your companion.\n\nYou must see Grif Wildheart in Kharanos. He can " ..
+                "put you on the path to earning a pet of your own.",
         },
         [6075] = {
             description = "Hello, young hunter. You look to me like you are skilled enough to handle a " ..
@@ -22951,6 +22957,14 @@ ns.Overrides.wowhead = {
                 "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
                 "and idols and I'll create a powerful ring for you, <class>.",
             rewardItems = {{21399, 1}},
+        },
+        [8699] = {
+            description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
+                "abilities. The corrupted gems that adorn them could, in theory, be swapped out with more " ..
+                "pure materials to create uncorrupted versions of the rings.\n\nThe gems that adorn " ..
+                "Qiraji idols would work quite well, as their quality is superior.\n\nBring me the ring " ..
+                "and idols and I'll create a powerful ring for you, <class>.",
+            rewardItems = {{21414, 1}},
         },
         [8700] = {
             description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
