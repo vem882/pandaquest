@@ -6563,6 +6563,16 @@ ns.Overrides.wowhead = {
                 "could be destroyed.\n\nBe wary in the ruins, <name>...",
             rewardChoices = {{7229, 1}, {5617, 1}, {5604, 1}},
         },
+        [958] = {
+            description = "<class>. A task I would ask of you.\n\nHave you seen the ruins of Ameth'Aran? " ..
+                "If not, you will find them on the eastern side of the main road, some ways to the south. " ..
+                "Once they were the home of many powerful Highborne, now they are a testament to the " ..
+                "destruction their dabblings produced.\n\nI have been told by the Sentinels that the " ..
+                "spirits of the Highborne persist, and that they wield their ancient magical implements. " ..
+                "Those relics must be appropriated, so that we might destroy them.",
+            rewardItems = {{5612, 1}},
+            rewardMoney = 500,
+        },
         [959] = {
             description = "Oops!\n\nHad a little mishap, as you can see! The morning cargo shipment from " ..
                 "Booty Bay was huge. Huge I say! Never seen so many crates. Well, I was trying to " ..
@@ -6641,6 +6651,15 @@ ns.Overrides.wowhead = {
                 "here at Ordil'Aran. One of their number possesses a soul gem that I believe holds the " ..
                 "secret to the cult's power.\n\nBring it to me, and I will be able to decipher the " ..
                 "secrets held within.",
+        },
+        [971] = {
+            description = "As you might know, I collect lore. Old lore. Powerful lore. Lore that opens " ..
+                "doorways, and lore that can awaken Those Who Sleep.\n\nThere are rumors of an old piece " ..
+                "of lore, the Lorgalis Manuscript, at the bottom of Blackfathom Deeps in Ashenvale. That " ..
+                "place is the old dwelling of long-dead elves. Elves who held great knowledge before " ..
+                "their city fell to ruin.\n\nSearch Blackfathom Deeps for the manuscript. Do this, and I " ..
+                "will not forget it. Not even after... the end days.",
+            rewardItems = {{6743, 1}},
         },
         [972] = {rewardItems = {{6637, 1}}},
         [973] = {
@@ -8014,6 +8033,15 @@ ns.Overrides.wowhead = {
                 "valuable.\n\nGo to the Monastery in the north of Tirisfal Glades. In the library there, " ..
                 "a book called Beginnings of the Undead Threat resides. It was used by the now-corrupt " ..
                 "paladins there to train them to fight my kind.\n\nBring it to me.",
+        },
+        [1164] = {
+            description = "The harlot! The swine! Kenata still lives; her family healthy and prospering " ..
+                "while I suffer. Forsaken indeed!\n\nMy family is gone, taken by the plague. Our estate " ..
+                "also forfeit; looted and burned during the war. And after all that, her and her lousy " ..
+                "children had the audacity to steal the only precious belongings I had left.\n\nI don't " ..
+                "care about the things they stole any more. What I want now are their heads!\n\nKill them " ..
+                "for me! Go to the Dabyrie Farmstead in Arathi, northeast of Refuge Point.",
+            rewardChoices = {{4443, 1}, {2032, 1}},
         },
         [1166] = {
             description = "Bow before Overlord Mok'Morokk!\n\nRexxar make me mighty leader of Stonemaul " ..
@@ -15078,6 +15106,15 @@ ns.Overrides.wowhead = {
                 "before.",
             rewardXP = 315,
         },
+        [4488] = {
+            description = "Ah, <name>, you've seen fit to grace us with your presence. How " ..
+                "wonderful!\n\nI hope you do not expect us to wait on you hand and foot also. You may be " ..
+                "growing quickly in power, but you still are a pup when it comes to true knowledge and " ..
+                "understanding. If you're not careful, corruption will overwhelm you and your weak " ..
+                "will.\n\nBut I should get to the point: Strahad wishes to speak to you. He is still " ..
+                "residing in his tower overlooking Ratchet in the Barrens. I suggest not taking too long.",
+            rewardXP = 315,
+        },
         [4489] = {
             description = "You, <race>! Come here!\n\nYou're the one they call <name>, yes?\n\nI thought " ..
                 "as much. I will keep this short: you're growing in power, and it has been acknowledged. " ..
@@ -16047,6 +16084,14 @@ ns.Overrides.wowhead = {
                 "specifically - and the words \"Cenarion Circle\" are on the tip of your tongue. It would " ..
                 "appear that the suggestion of where to take the branch has been placed within it.",
             rewardItems = {{15804, 1}},
+        },
+        [5001] = {
+            description = "Ordinarily I don't deal with <race>s but it seems that I'm stuck between a " ..
+                "troll and a hard place. You see, my mission here is one of utmost importance to the " ..
+                "Horde. The information I've discovered, however, applies to the well being of the " ..
+                "Alliance as well. Now believe me, I'm no Alliance sympathizer, but the Blackrock threat " ..
+                "is bigger than just a bunch of orcs.\n\nYou help me out by finding my belongings and " ..
+                "I'll help you out with some information that could prove useful to your kind.\n\nDeal?",
         },
         [5002] = {
             description = "I'm a goblin of my word, <race>. Now listen closely:\n\nThese orcs are used " ..
@@ -22119,6 +22164,14 @@ ns.Overrides.wowhead = {
                 "need more stranglekelp have you? Well, it's your lucky day, because the answer to that " ..
                 "very important question is a very affirmative YES! Think you could gather up twenty more?",
             rewardItems = {{21436, 3}, {21510, 1}},
+        },
+        [8505] = {
+            description = "<class>, the purple lotus is a flower with a plentitude of uses. I am here at " ..
+                "the request of the Alliance as an authority on those applications, to preserve the herbs " ..
+                "collected and to ensure that their war effort acquires enough purple lotus to sustain " ..
+                "whatever function they plan for it.\n\nI would like for you to travel out into the world " ..
+                "and return to me with some of these flowers. Is that something that you can do?",
+            rewardItems = {{21436, 10}, {21512, 1}},
         },
         [8506] = {
             description = "Welcome back <class>. Our collection grows, but even now we have a need for " ..
