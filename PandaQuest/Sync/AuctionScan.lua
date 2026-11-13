@@ -1,11 +1,13 @@
 local _, ns = ...
 local L = ns.L
 local driver = CreateFrame("Frame")
-local tab, panel, scanButton, status, scroll, resultContent, results
+local tab, panel, scanButton, missingButton, status, scroll, resultContent, results
 local modern, page, pending, sending
 local seen, quantities = {}, {}
 local run, processed, total, progress, previousTotal
 local scan
+local nextMissing = 1
+local MISSING_BATCH_SIZE = 100
 
 local function readableNumber(value)
     return not (_G.issecretvalue and _G.issecretvalue(value)) and type(value) == "number"
@@ -14,11 +16,15 @@ end
 local function addPrice(prices, id, price, quantity)
     if not readableNumber(id) or not readableNumber(price) or id < 1 or id > 10000000
         or id % 1 ~= 0 or price < 1 or price > 1000000000000 then return end
-    if readableNumber(quantity) and quantity > 0 then
+    if not run.target and readableNumber(quantity) and quantity > 0 then
         quantities[id] = math.min(1000000, (quantities[id] or 0) + math.floor(quantity))
     end
     price = math.floor(price)
     if not prices[id] or price < prices[id] then prices[id] = price end
+end
+
+local function missingList()
+    return ns.AuctionMissing and ns.AuctionMissing[ns.Game.id]
 end
 
 local function reset()
@@ -29,23 +35,21 @@ local function reset()
     if scanButton then
         scanButton:SetText(L["Scan and share"])
         scanButton:Enable()
+        local missing = missingList()
+        missingButton:SetText(L["Find missing prices"])
+        missingButton:SetEnabled(type(missing) == "table" and #missing > 0)
         results:SetText("")
         scroll:SetVerticalScroll(0)
         status:SetText(L["Find listed buyout prices and share them by realm and faction through Sync."])
     end
 end
 
-local function finish(prices, last)
-    pending = nil
-    local updates, ids = {}, {}
-    for id, price in pairs(prices) do
-        if not seen[id] or price < seen[id] then
-            seen[id] = price
-            updates[id] = price
-            ids[#ids + 1] = id
-        end
-    end
-    ns.Telemetry.QueueNativeAuctionPrices(updates, last and quantities or nil)
+local function continueScan(delay)
+    local current = run
+    C_Timer.After(delay, function() if run == current and current then scan() end end)
+end
+
+local function displayPrices(updates, ids)
     table.sort(ids)
     local lines = {}
     for i = 1, #ids do
@@ -60,6 +64,53 @@ local function finish(prices, last)
     results:SetText(table.concat(lines, "\n"))
     resultContent:SetHeight(math.max(1, results:GetStringHeight()))
     scroll:SetVerticalScroll(0)
+end
+
+local function finishTarget(price, skipped)
+    local target = run.target
+    pending, page, total = nil, 0, nil
+    if price then
+        ns.Telemetry.QueueNativeAuctionPrices({ [target.id] = price })
+        run.found = run.found + 1
+        displayPrices({ [target.id] = price }, { target.id })
+    elseif skipped then
+        run.skipped = run.skipped + 1
+    end
+    local index, count = run.index, #run.ids
+    nextMissing = index % count + 1
+    run.checked = run.checked + 1
+    status:SetText(string.format(L["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"],
+        run.checked, run.limit, run.found, run.checked - run.found - run.skipped, run.skipped))
+    progress:SetValue(math.floor(run.checked * 100 / run.limit))
+    if run.checked >= run.limit then
+        run = nil
+        scanButton:Enable()
+        missingButton:SetText(L["Find missing prices"])
+    else
+        run.index, run.target = nextMissing, nil
+        continueScan(0.5)
+    end
+end
+
+local function finish(prices, last)
+    pending = nil
+    if run.target then
+        local target = run.target
+        local price = prices[target.id]
+        if price then target.price = math.min(target.price or price, price) end
+        if last then finishTarget(target.price) else continueScan(0.5) end
+        return
+    end
+    local updates, ids = {}, {}
+    for id, price in pairs(prices) do
+        if not seen[id] or price < seen[id] then
+            seen[id] = price
+            updates[id] = price
+            ids[#ids + 1] = id
+        end
+    end
+    ns.Telemetry.QueueNativeAuctionPrices(updates, last and quantities or nil)
+    displayPrices(updates, ids)
     local queued = ns.Telemetry.NativeAuctionPriceCount()
     local percent = last and 100 or total and total > 0 and math.min(99, math.floor(processed / total * 100))
     progress:SetValue(percent or 0)
@@ -74,9 +125,10 @@ local function finish(prices, last)
         if modern and processed > 0 then previousTotal = processed end
         run = nil
         scanButton:SetText(L["Scan again"])
+        local missing = missingList()
+        missingButton:SetEnabled(type(missing) == "table" and #missing > 0)
     else
-        local current = run
-        C_Timer.After(0.5, function() if run == current and current then scan() end end)
+        continueScan(0.5)
     end
 end
 
@@ -109,37 +161,57 @@ end
 scan = function()
     if pending or not run then return end
     if not ns.IsModuleWanted("Telemetry") then
-        run = nil
-        scanButton:SetText(L["Scan again"])
+        reset()
         status:SetText(L["Enable the Telemetry module to share prices through Sync."])
         return
     end
     if ns.Telemetry.NativeAuctionPriceCount() >= ns.Telemetry.MAX_NATIVE_AUCTION_PRICES then
-        run = nil
-        scanButton:SetText(L["Scan again"])
+        reset()
         status:SetText(L["Reload or log out to save this scan before continuing."])
         return
     end
     local ready = modern and C_AuctionHouse.IsThrottledMessageSystemReady or CanSendAuctionQuery
     if ready and not ready() then
-        local current = run
-        C_Timer.After(1, function() if run == current then scan() end end)
+        continueScan(1)
         return
     end
+    if run.ids then
+        local target = run.target or { id = run.ids[run.index], started = GetTime() }
+        run.target = target
+        if not target.name then
+            target.name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(target.id))
+                or (_G.GetItemInfo and _G.GetItemInfo(target.id))
+                or (GetLocale() == "enUS" and ns.DB and ns.DB.GetItemName(target.id))
+            if _G.issecretvalue and _G.issecretvalue(target.name) then target.name = nil end
+            if type(target.name) ~= "string" or target.name == "" then
+                target.name = nil
+                if GetTime() - target.started >= 3 then finishTarget(nil, true); return end
+                if not target.requested and C_Item and C_Item.RequestLoadItemDataByID then
+                    target.requested = true
+                    C_Item.RequestLoadItemDataByID(target.id)
+                end
+                continueScan(0.25)
+                return
+            end
+        end
+    end
+    local target = run.target
+    local search = target and target.name or ""
     local request = {}
     pending, sending = request, true
     local ok
     if modern then
         if page == 0 then
-            ok = pcall(C_AuctionHouse.SendBrowseQuery, { searchString = "", sorts = {}, filters = {}, itemClassFilters = {} })
+            ok = pcall(C_AuctionHouse.SendBrowseQuery, { searchString = search, sorts = {}, filters = {}, itemClassFilters = {} })
         else
             ok = pcall(C_AuctionHouse.RequestMoreBrowseResults)
         end
     else
-        ok = pcall(QueryAuctionItems, "", nil, nil, page, false, nil, false, false, nil)
+        ok = pcall(QueryAuctionItems, search, nil, nil, page, false, nil, false, target ~= nil, nil)
     end
     sending = false
     if not ok then
+        if target then finishTarget(nil, true); return end
         reset()
         status:SetText(L["The auction request failed. Try scanning again."])
         return
@@ -188,18 +260,35 @@ local function createTab(parent)
         if run then reset(); return end
         reset()
         run = {}
+        missingButton:Disable()
         scanButton:SetText(L["Stop scan"])
         status:SetText(L["Waiting for auction results…"])
         scan()
     end)
+    missingButton = CreateFrame("Button", "PandaQuestAuctionMissingButton", panel, "UIPanelButtonTemplate")
+    missingButton:SetSize(200, 26)
+    missingButton:SetPoint("LEFT", scanButton, "RIGHT", 8, 0)
+    missingButton:SetText(L["Find missing prices"])
+    missingButton:SetScript("OnClick", function()
+        if run then reset(); return end
+        reset()
+        local list = missingList()
+        if type(list) ~= "table" or #list == 0 then return end
+        run = { ids = list, index = nextMissing, found = 0, skipped = 0, checked = 0,
+            limit = math.min(MISSING_BATCH_SIZE, #list) }
+        scanButton:Disable()
+        missingButton:SetText(L["Stop scan"])
+        status:SetText(L["Waiting for auction results…"])
+        scan()
+    end)
     progress = CreateFrame("StatusBar", nil, panel)
-    progress:SetPoint("LEFT", scanButton, "RIGHT", 16, 0)
+    progress:SetPoint("TOPLEFT", scanButton, "BOTTOMLEFT", 0, -8)
     progress:SetSize(160, 12)
     progress:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
     progress:SetStatusBarColor(0.86, 0.66, 0.23)
     progress:SetMinMaxValues(0, 100)
     scroll = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
-    scroll:SetPoint("TOPLEFT", scanButton, "BOTTOMLEFT", 0, -16)
+    scroll:SetPoint("TOPLEFT", progress, "BOTTOMLEFT", 0, -10)
     scroll:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -38, 20)
     resultContent = CreateFrame("Frame", nil, scroll)
     resultContent:SetSize(1, 1)

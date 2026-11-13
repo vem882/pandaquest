@@ -803,3 +803,6 @@ L["About %d%% · %d prices queued for Sync"] = true
 
 L["Record my auctions privately"] = true
 L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] = true
+
+L["Find missing prices"] = true
+L["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] = true
