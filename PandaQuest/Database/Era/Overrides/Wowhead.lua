@@ -1675,6 +1675,15 @@ ns.Overrides.wowhead = {
                 "suitable object on which to place the Glyph. A chest or a jar -- some place where the " ..
                 "glyph will not be noticed -- will suit my purpose.",
         },
+        [249] = {
+            description = "After much observation, I have discovered Morganth's plans.\n\nHe searches for " ..
+                "the Scythe of Elune...and he may have found it! If he has, then the Redridge Mountains, " ..
+                "and the kingdom of Stormwind, will soon feel his dark might.\n\nI am not prepared to pit " ..
+                "myself against Morganth, but I fear he must be dealt with now. So you must enter the " ..
+                "Tower of Ilgalar and face Morganth.\n\nDefeat him, and bring me his Pendant of Shadow. " ..
+                "Do this, and the kingdom will owe you much.",
+            rewardItems = {{5274, 1}},
+        },
         [250] = {
             description = "Thank the stars someone is concerned about the well-being of the Dam. First " ..
                 "the destruction of the Thandol Span and then the pillaging of Dun Modr! I have no doubt " ..
@@ -3656,6 +3665,12 @@ ns.Overrides.wowhead = {
                 "night. Darthalia, always looking out for me, decided the prisoners would be left to my " ..
                 "disposal.\n\nI think it's time we threw those farmers a party. Sounds like a grand ol' " ..
                 "time!\n\nPlace this tainted keg on the rug in their room. Plagued brew for all!",
+        },
+        [525] = {
+            description = "I decrypted the letter, but I don't know what to make of it. You found this " ..
+                "among thieves in the Alterac foothills? Very strange...\n\nYou should take this to the " ..
+                "magistrate of Southshore. Although this letter is cryptic, his is the closest town to " ..
+                "Alterac; if a threat is brewing, then he should know.",
         },
         [526] = {
             description = "You might have found one lightforge ingot in that chest, but that's not enough " ..
