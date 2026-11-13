@@ -6526,6 +6526,13 @@ ns.Overrides.wowhead = {
                 "made.",
             rewardMoney = 900,
         },
+        [950] = {
+            description = "Peering into the Twilight Tome is maddening. Text begins to swim and dance " ..
+                "after only a moment's glance, and once beautiful scrollwork twists into grotesque " ..
+                "shapes.\n\nTearing away one page of insane scribbles is all that is possible before a " ..
+                "swoon overtakes you.",
+            rewardMoney = 700,
+        },
         [951] = {
             description = "The parchment you found at the Master's Glaive is a page from an ancient " ..
                 "text...written by elves! It is heavily cursed and tainted by the corruption of the " ..
@@ -9136,6 +9143,10 @@ ns.Overrides.wowhead = {
                 "manipulation?\n\nI want revenge for my exile. Bring me Jammal'an's head. Maybe then my " ..
                 "people will be free.",
             rewardChoices = {{11123, 1}, {11124, 1}},
+        },
+        [1447] = {
+            description = "Yeah, you're obviously not the smartest <class> to come into Stormwind, but " ..
+                "you're about to be one of the dumbest to never leave.\n\nHave you met me friends?",
         },
         [1448] = {
             description = "There was a time when I was young and full of vigor like you, <class>.\n\nBut " ..
@@ -16963,6 +16974,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{3928, 5}, {6149, 5}},
             rewardMoney = 18000,
         },
+        [5244] = {
+            description = "The story behind Kel'Theril is one of a cursed race, bound to the place where " ..
+                "they attempted an unfortunate ritual...\n\nThe highborne that you will find there once " ..
+                "stole a sacred artifact, believing that they could siphon its power for themselves, " ..
+                "becoming even more powerful. In their efforts, the relic shattered in a huge explosion, " ..
+                "driving the pieces below the ice of the lake...\n\nSpeak with Jaron Stoneshaper if you'd " ..
+                "like to learn more; he has recently visited the area and can tell you more.",
+        },
         [5247] = {
             description = "I will be able to help you, if recreating the artifact is truly what you wish " ..
                 "to do.\n\nTo seal the pieces back together, I will need items with strong magical " ..
@@ -18079,6 +18098,16 @@ ns.Overrides.wowhead = {
                 "leads you up to the town.\n\nOnce there, place the barrel in the center of the lumber " ..
                 "mill; someplace high, like on a crate or something.\n\nAfter you open it, the rest " ..
                 "should take care of itself. Just come back here and I'll reward you for helping me.",
+        },
+        [5903] = {
+            description = "I've tried many times to rout out the Scarlet Crusade through force alone, but " ..
+                "to no avail. So, as an alternative, I've decided to make their lives more " ..
+                "difficult.\n\nIf you are willing to help, I want to infest that lumber mill with the " ..
+                "most terrible species of termites ever found.\n\nIn Plaguewood, near the once-great " ..
+                "Stratholme, there is a breed that survived the plague and the Scourge combined. Find " ..
+                "their mounds and fill this jar with them, so we can prepare them to be unleashed on the " ..
+                "Crusade.",
+            rewardMoney = 8500,
         },
         [5904] = {
             description = "Now that we have the termites, take this steel reinforced barrel to the " ..
@@ -21868,6 +21897,14 @@ ns.Overrides.wowhead = {
                 "this happen, <name>! Come back to me with proof of serving the Horde in a worthy manner!",
             rewardMoney = 1100,
         },
+        [8369] = {
+            description = "Listen up, <name>. No matter what you might have heard about the battle raging " ..
+                "in Alterac Valley, one thing remains true: the Stormpike Expedition invaded Frostwolf " ..
+                "Territory. The day we allow the Alliance to invade Horde lands without a forceful " ..
+                "response is the day I hang up my axe and live the rest of my life in shame. Go forth and " ..
+                "expel the invaders!",
+            rewardMoney = 18000,
+        },
         [8371] = {
             description = "We're not fighting isolated battles against the Horde anymore, " ..
                 "<lad/lass>.\n\nVictory in one front means denying the Horde resources they'd use against " ..
@@ -22161,6 +22198,11 @@ ns.Overrides.wowhead = {
                 "Durotar; I believe you call this city Orgrimmar. In times past, he had tried to make " ..
                 "contact with us on behalf of his Horde. It is now only fitting to acknowledge you as the " ..
                 "key in your Horde's efforts in brokering peace.",
+        },
+        [8493] = {
+            description = "Back again <class>? Outstanding! We still need more stacks of copper bars if " ..
+                "you can procure them for the Ahn'Qiraj war effort. Will you help us out?",
+            rewardItems = {{21436, 1}, {21509, 1}},
         },
         [8494] = {
             description = "Well hello there, <Mr./Ms.> Fancypants, aren't you a sight for sore eyes. In " ..
@@ -25769,6 +25811,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{23123, 1}, {23122, 1}},
         },
         [9295] = {
+            description = "You found this letter on one of the many Scourge minions you've slain. From " ..
+                "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
+                "Light's Hope Chapel would be interested in examining it further...",
+            rewardXP = 3300,
+        },
+        [9299] = {
             description = "You found this letter on one of the many Scourge minions you've slain. From " ..
                 "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
                 "Light's Hope Chapel would be interested in examining it further...",
