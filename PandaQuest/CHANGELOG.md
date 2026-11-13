@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.534] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,005 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,611 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,050 quests, 65 NPCs, 7 objects
+- npc 10303 - Storm Shadowhoof - updated
+  - coordinates: 1 spawn point added in Winterspring
+
 ## [0.2.533] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -104,35 +114,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 3,519 quests, 37 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 4,495 quests, 60 NPCs, 7 objects
-
-## [0.2.492] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 998 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,288 quests, 37 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,389 quests, 59 NPCs, 7 objects
-- quest 28572 - Warchief's Command: Arathi Highlands! - updated
-  - description added
-- quest 28574 - Warchief's Command: The Hinterlands! - updated
-  - description added
-- quest 28575 - Warchief's Command: Western Plaguelands! - updated
-  - description added
-- quest 28577 - Warchief's Command: Eastern Plaguelands! - updated
-  - description added
-- quest 28619 - Warchief's Command: Arathi Highlands! - updated
-  - description added
-- quest 28635 - A Haunting in Hillsbrad - updated
-  - description added
-- quest 28645 - The Durnholde Challenge: Bloodvenom - updated
-  - description added
-- quest 28646 - The Durnholde Challenge: Infernus - updated
-  - description added
-- quest 28750 - The Battle for Andorhal - updated
-  - description added
-  - reward money added (9s)
-- quest 28798 - Waters of Elune - updated
-  - reward money added (11g 40s)
 
 ## [0.2.412]
 

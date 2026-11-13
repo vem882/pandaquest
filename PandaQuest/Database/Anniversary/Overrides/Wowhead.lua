@@ -7242,6 +7242,13 @@ ns.Overrides.wowhead = {
                 "'s dying wish is to see the Branch of Cenarius back in dryad hands.",
             rewardChoices = {{5820, 1}, {11229, 1}},
         },
+        [1032] = {
+            description = "I can't believe that Anilia is gone... We used to play together in the forests " ..
+                "all the time. I almost feel... sad.\n\nI know something that might make me feel better. " ..
+                "Please, slay the satyrs that took Anilia from me! Bring me their horns as proof of your " ..
+                "actions and you will forever have my gratitude.",
+            rewardMoney = 3000,
+        },
         [1033] = {
             description = "I had hoped Orendil's cure would save Relara, but I fear it only slowed the " ..
                 "disease running through my child. We must find more powerful medicine! Thankfully, " ..
@@ -8239,6 +8246,14 @@ ns.Overrides.wowhead = {
             description = "You dare challenge Overlord Mok'Morokk?\n\nHaw!\n\nMe crush tiny " ..
                 "<race>!\n\nYou tell me when ready for good beating.",
             rewardChoices = {{10703, 1}, {10704, 1}},
+        },
+        [1175] = {
+            description = "After the big crash with the goblins' Red Thunder racer and a basilisk, " ..
+                "Kronkrider hired me on to take care of the track. I don't know what all the animals out " ..
+                "on the flats are feeding on to grow so big, but we have to be careful to thin them out " ..
+                "so they won't wander onto the track when a race is going on.\n\nTell you what. If you " ..
+                "want to go out and make a little profit, go out and remove the basilisks from the area.",
+            rewardMoney = 3500,
         },
         [1176] = {
             description = "When it comes to racing, every bit counts! Whether it's a minor tweaking on " ..
@@ -9951,6 +9966,12 @@ ns.Overrides.wowhead = {
                 "equipment is always low. If you were to help them out, I'm sure their resident " ..
                 "blacksmith, Verner Osgood, would teach you a trick or two.",
             rewardItems = {{6735, 1}},
+        },
+        [1639] = {
+            description = "Yeah, I can teach you. But first I wanna see what moves you have " ..
+                "already.\n\nSee that drunk over there at the end of the bar? Bartleby? I want you to get " ..
+                "his mug.\n\nHah, and if you know Bartleby then you know he won't just give it to you.",
+            rewardXP = 85,
         },
         [1640] = {
             description = "You want what?? You're crazy!\n\nThe only way you'll get this mug is if you " ..
@@ -12342,6 +12363,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{9605, 1}, {9604, 1}},
             rewardMoney = 2500,
         },
+        [2931] = {
+            description = "Master Mechanic Castpipe in Ironforge has need of adventurers! He's organizing " ..
+                "bands to reenter Gnomeregan on a data retrieval mission of top security and " ..
+                "importance.\n\nCastpipe might not be a member of the Enlightened Assembly of Arcanology, " ..
+                "Alchemy and Engineering Sciences like I am, but he's still a smart gnome so if he thinks " ..
+                "it's important, then by my calculations there's an eighty-four percent probability that " ..
+                "it really is important!\n\nThose are good odds!",
+        },
         [2933] = {
             description = "These bottles hold a vile, green venom.\n\nConsidering the number of bottles " ..
                 "in this village, the Witherbarks must deem it very important. Perhaps an apothecary in " ..
@@ -14421,6 +14450,7 @@ ns.Overrides.wowhead = {
         [4108] = {rewardItems = {{11516, 2}}},
         [4109] = {rewardItems = {{11516, 2}}},
         [4110] = {rewardItems = {{11516, 2}}},
+        [4111] = {rewardItems = {{11516, 2}}},
         [4112] = {rewardItems = {{11516, 2}}},
         [4120] = {
             description = "Being a hunter, I strive to emulate the strengths I see in my opponents. It is " ..
@@ -14528,6 +14558,17 @@ ns.Overrides.wowhead = {
             description = "Shadowmaster Vivian Lagrave is in need of your services. She is in the " ..
                 "Badlands, in the orcish outpost of Kargath, pursuing rumors of a certain brew made by " ..
                 "the Dark Iron dwarves of Blackrock Depths.\n\nSpeak with Vivian. She awaits you.",
+        },
+        [4134] = {
+            description = "It is rumored that the Dark Iron Hurley Blackbreath has stolen a recipe for " ..
+                "ale. This ale, Thunderbrew Lager, is said to infuse its imbiber with great strength and " ..
+                "courage. We wish to study the drink. Perhaps, we will find other applications for its " ..
+                "virtues... applications more in line with Forsaken objectives.\n\nDelve into Blackrock " ..
+                "Depths, find Hurley, take from him the recipe for Thunderbrew lager and bring it to " ..
+                "me.\n\nAnd to find him, you may have to entice him by threatening his precious ale.",
+            rewardChoices = {{11964, 1}, {12000, 1}},
+            rewardItems = {{3928, 5}, {6149, 5}},
+            rewardMoney = 8500,
         },
         [4135] = {
             description = "Inside the backpacks are two items: the first is a parcel of goods that was " ..
@@ -19162,6 +19203,12 @@ ns.Overrides.wowhead = {
         [6545] = {rewardItems = {{16763, 1}}},
         [6546] = {rewardItems = {{16765, 1}}},
         [6547] = {rewardItems = {{16764, 1}}},
+        [6548] = {
+            description = "The Grimtotem Clan raided my village and killed most everyone. I killed all I " ..
+                "could, but barely escaped with my life.\n\n<name>, all I wish now is that more of them " ..
+                "are dead. You will find them just to the west of here.",
+            rewardMoney = 1000,
+        },
         [6562] = {
             description = "Je'neu Sancrea is in need of aid. He is at the Zoram'gar Outpost in Ashenvale. " ..
                 "The Night elf forest is to the north of the Stonetalon mountains. You can reach it by " ..
@@ -19191,6 +19238,12 @@ ns.Overrides.wowhead = {
         [6566] = {
             description = "It is good to see you again, <name>. The wind carries with it news from the " ..
                 "Eastern Kingdom.\n\nSit, listen.",
+        },
+        [6567] = {
+            description = "Rexxar, one of my most loyal champions, has discovered a way into the lair of " ..
+                "the dragon. However he has left Azeroth to join our expedition into Outland.\n\nHowever, " ..
+                "he left his companion, Rokaro, in Shadowprey Village with this information. You are to " ..
+                "seek him out.",
         },
         [6568] = {
             description = "Illusion and disguise. That is how you will fool the Black Dragonflight, and " ..
@@ -19787,6 +19840,7 @@ ns.Overrides.wowhead = {
             rewardXP = 7070,
         },
         [7163] = {rewardItems = {{17905, 1}}, rewardXP = 7070},
+        [7164] = {rewardItems = {{17906, 1}}, rewardXP = 7070},
         [7165] = {rewardItems = {{17907, 1}}, rewardXP = 8800},
         [7166] = {rewardItems = {{17908, 1}}, rewardXP = 10600},
         [7167] = {rewardItems = {{17909, 1}}, rewardXP = 10600},
@@ -19917,6 +19971,15 @@ ns.Overrides.wowhead = {
                 "be catalogued!\n\nVenture to the Warpwood Quarter and extract a portion of the elemental " ..
                 "essence of the Hydrospawn. Return it to me and I shall teach you a useful cantrip.",
             rewardXP = 14300,
+        },
+        [7481] = {
+            description = "Several years ago, a lone elven master named Telmius Dreamseeker fled the " ..
+                "devastation of his homeland with several ancient elven artifacts in tow.\n\nOur search " ..
+                "for this lost master lead us from the ruins of Quel'Thalas, through the Burning Steppes, " ..
+                "across the great expanses of the sea, to Feralas.\n\nWe suspect that the elf sought " ..
+                "sanctuary in the halls of Eldre'Thalas (what is now known as Dire Maul ).\n\nYou must " ..
+                "find him, adventurer. Whether alive or dead, the knowledge he carried must be recovered!",
+            rewardMoney = 18000,
         },
         [7482] = {
             description = "Several years ago, a lone elven master named Telmius Dreamseeker fled the " ..
@@ -20947,6 +21010,7 @@ ns.Overrides.wowhead = {
         [8109] = {rewardItems = {{19605, 1}}},
         [8110] = {rewardItems = {{19610, 1}}},
         [8111] = {rewardItems = {{19611, 1}}},
+        [8112] = {rewardItems = {{19612, 1}}},
         [8113] = {rewardItems = {{19613, 1}}},
         [8114] = {
             description = "<name>, you have taken the battle of Arathi Basin to our enemies and earned " ..
@@ -22590,6 +22654,13 @@ ns.Overrides.wowhead = {
                 "with other minor components and I shall craft you leggings of great power.",
             rewardItems = {{21368, 1}},
         },
+        [8659] = {
+            description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
+                "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
+                "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
+                "than even the wings of Nefarian himself!",
+            rewardItems = {{21367, 1}},
+        },
         [8661] = {
             description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
                 "The terrible fate that awaits Azeroth could come in days or years; time has no meaning " ..
@@ -23007,6 +23078,12 @@ ns.Overrides.wowhead = {
             description = "You have discovered an ancient Qiraji artifact! Perhaps one of the dragons " ..
                 "near the entrance of the temple would have a use for this relic.",
         },
+        [8785] = {
+            description = "The Orgrimmar Legion has put in a request for several unusual ingredients. " ..
+                "Given their current performance in Silithus, we'd like to comply with their request as " ..
+                "soon as possible. Gather the materials and bring them to the troll called Shai.",
+            rewardItems = {{20800, 1}, {21386, 1}},
+        },
         [8786] = {
             description = "The Orgrimmar Legion has put in a request for additional weapons that we " ..
                 "haven't been able to provide at the moment. Obtain the weapons they've requested and " ..
@@ -23078,6 +23155,12 @@ ns.Overrides.wowhead = {
         [8808] = {
             description = "The latest influx of volunteers has caused a shortage of uniforms. Procure a " ..
                 "batch of uniform materials and bring them to Windcaller Proudhorn.",
+            rewardItems = {{20800, 1}, {21266, 1}},
+        },
+        [8809] = {
+            description = "Vargus, Cenarion Hold's blacksmith, has requested enchanted materials to be " ..
+                "used in the crafting of powerful weapons for our forces. Obtain these and bring them " ..
+                "directly to Vargus so that Cenarion Hold's troops may continue to be well equipped.",
             rewardItems = {{20800, 1}, {21266, 1}},
         },
         [8810] = {
@@ -24334,6 +24417,14 @@ ns.Overrides.wowhead = {
                 "wartorn armor scraps and supply to me the other material components I require and I will " ..
                 "craft Dreamwalker armor.",
             rewardItems = {{22488, 1}},
+        },
+        [9087] = {
+            description = "Many heroes fell in the last war and many continue to perish at the hands of " ..
+                "the Scourge to this day. From the corpses of the fallen, the armor is stripped and taken " ..
+                "back to Naxxramas to be used for unknown purposes.\n\nRecover the desecrated armor and " ..
+                "wartorn armor scraps and supply to me the other material components I require and I will " ..
+                "craft Dreamwalker armor.",
+            rewardItems = {{22489, 1}},
         },
         [9088] = {
             description = "Many heroes fell in the last war and many continue to perish at the hands of " ..
@@ -36043,6 +36134,16 @@ ns.Overrides.wowhead = {
                 "It is on the right side before Gruul's Lair.\n\nBring back Skulloc's soul.",
             rewardMoney = 132000,
         },
+        [11001] = {
+            description = "We must waste no time in dealing with the raven god. You must take the " ..
+                "essence-infused moonstone to a place of great power in order to lure the god from the " ..
+                "relative safety of the Emerald Dream.\n\nDescend into the Sethekk Halls and set the " ..
+                "moonstone in the clutches of the raven's claw. You'll find it in the chamber before the " ..
+                "talon king's hall.\n\nAnzu must be made believe that his followers have gathered to " ..
+                "welcome him back into the world. Once he has manifested, show him no mercy!",
+            rewardItems = {{32387, 1}},
+            rewardXP = 19000,
+        },
         [11002] = {
             description = "The source of Illidan Stormrage's fel orc army has been vanquished. The " ..
                 "manufactory halts production of its grim product - at least for now. All that remains " ..
@@ -37108,6 +37209,15 @@ ns.Overrides.wowhead = {
                 "haven't time for anything else. For your sake and Jarl's, I wish you luck.",
             rewardChoices = {{33229, 1}, {33257, 1}, {33245, 1}},
             rewardMoney = 7500,
+        },
+        [11184] = {
+            description = "Travelers and Steamwheedle personnel working in the field are advised to avoid " ..
+                "the Bloodfen Burrow to the west of town.\n\nThe area is overrun with raptors lead by the " ..
+                "cruel and cunning Goreclaw the Ravenous, who has already killed at least two " ..
+                "Steamwheedle engineers.\n\nDrazzit Dripvalve has authorized a generous reward to be paid " ..
+                "to the individual who rids Mudsprocket of this menace.",
+            rewardChoices = {{33242, 1}, {33263, 1}, {33258, 1}},
+            rewardMoney = 4500,
         },
         [11185] = {
             description = "Recovered from the body of a Forsaken apothecary, this letter contains " ..

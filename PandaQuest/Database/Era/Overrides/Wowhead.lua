@@ -4310,6 +4310,16 @@ ns.Overrides.wowhead = {
             rewardItems = {{4117, 1}},
             rewardMoney = 6000,
         },
+        [621] = {
+            description = "Zanzil the Outcast dwells with his followers in the Jubuwai and Aboraz Ruins, " ..
+                "northeast of Booty Bay. He is exiled from his tribe. Why? Well...\n\nZanzil has methods " ..
+                "of bending the minds of others, and his leaders fear him. He uses a mixture of jungle " ..
+                "plants on his followers to suppress their will and strengthen their bodies.\n\nHis " ..
+                "mixture would be worth much to those who wish to control others.\n\nBring me samples of " ..
+                "his mixture, and I will find a use for them.",
+            rewardItems = {{4131, 1}},
+            rewardMoney = 6500,
+        },
         [622] = {
             description = "While you were gone I fixed the pot you brought me. I even added an extra " ..
                 "steam whistle, and look! There's a new chopper at the bottom that'll cut through leg " ..
@@ -13968,6 +13978,14 @@ ns.Overrides.wowhead = {
                 "discussion from the ears of the Arch Druid.\n\nIf you're interested, speak with him; no " ..
                 "doubt, all will be revealed once you do.",
         },
+        [3789] = {
+            description = "Excuse me <class>, but I'd like just a moment of your time if possible.\n\nThe " ..
+                "Cenarion Circle in Darnassus is looking for seasoned adventurers such as yourself to " ..
+                "lend them aid in a vital research project. While I do not know the specifics, I can " ..
+                "inform you that none other than Arch Druid Fandral Staghelm is spearheading this " ..
+                "research.\n\nPlease - if you are interested, speak with him directly in the Cenarion " ..
+                "Enclave within Darnassus proper.",
+        },
         [3790] = {
             description = "Excuse me <class>, but I'd like just a moment of your time if possible.\n\nThe " ..
                 "Cenarion Circle in Darnassus is looking for seasoned adventurers such as yourself to " ..
@@ -15122,6 +15140,12 @@ ns.Overrides.wowhead = {
                 "There, above Ratchet, you'll find Strahad Farsan --perhaps you remember him? He would " ..
                 "have words with you. I wouldn't take long.",
             rewardXP = 315,
+        },
+        [4490] = {
+            description = "I would give you a reward for your patience and hard work. But know this, the " ..
+                "ability to summon a Felsteed will be much more difficult in the future. You will have to " ..
+                "earn it... and it will not be easy.\n\nFor now, go with the power to summon such a " ..
+                "creature and use it as you see fit.",
         },
         [4491] = {
             description = "Ugh... It's so hot...\n\nI was exploring this area, when all of a sudden, the " ..
@@ -22561,6 +22585,7 @@ ns.Overrides.wowhead = {
                 "bring back lots of the firebloom, right, mon?",
             rewardItems = {{21438, 10}, {21511, 1}},
         },
+        [8581] = {rewardItems = {{21438, 5}, {21511, 1}}},
         [8582] = {
             description = "The purple lotus, <class>, is a reagent in a great many potions, elixirs and " ..
                 "oils, some of which will be of use to us at Ahn'Qiraj. We're going to need to create an " ..
@@ -25381,6 +25406,14 @@ ns.Overrides.wowhead = {
                 "aberration. Do this and the Savage Guard will be yours.",
             rewardItems = {{22635, 1}},
         },
+        [9211] = {
+            description = "Ah, the Ice Guard. It is a thin sheen of protective magic that covers certain " ..
+                "pieces of equipment. Those that do battle with creatures of frost and ice will gain " ..
+                "increased protection from their attacks by using the Ice Guard.\n\nAs with all things " ..
+                "the Wrathcaster creates, there is a price - a price that I will not lower, regardless of " ..
+                "how much you whimper. Interested?",
+            rewardItems = {{22636, 1}},
+        },
         [9221] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
                 "would like to redeem for items of power?\n\nI must warn you; purchases made at a " ..
@@ -25998,6 +26031,20 @@ ns.Overrides.wowhead = {
                 },
             },
             zoneID = 618,
+        },
+        [15751] = {
+            spawns = {
+                [400] = {
+                    {67, 61.8}, {68.2, 63.4}, {68.6, 65}, {69.2, 58.8}, {69.4, 63.2}, {69.8, 61.6},
+                    {70, 57.8}, {70, 78.8}, {70.4, 55.2}, {70.4, 81.4}, {70.6, 62.6}, {70.8, 61.6},
+                    {71, 60.4}, {71.4, 74.4}, {71.4, 79}, {71.6, 59.6}, {71.6, 76.4}, {71.6, 88.8},
+                    {72, 73.8}, {72.2, 79.6}, {72.2, 90.8}, {72.4, 78.8}, {72.4, 87.2}, {72.6, 78.8},
+                    {72.6, 87.6}, {73, 82.2}, {73.2, 65}, {73.4, 66}, {73.4, 91.6}, {73.6, 90}, {73.8, 84.6},
+                    {74, 90.6}, {74.2, 86.8}, {74.4, 88.6}, {74.6, 89.4}, {74.8, 73.4}, {75.2, 84.4},
+                    {76, 86.2}, {76.2, 92.2}, {76.8, 75.8},
+                },
+            },
+            zoneID = 400,
         },
         [15759] = {
             spawns = {
