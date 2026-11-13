@@ -2717,6 +2717,14 @@ ns.Overrides.wowhead = {
                 "on most of the shady, or underhanded dealings of the city.\n\nIf anyone knows, it'd be " ..
                 "him.",
         },
+        [394] = {
+            description = "Find Shaw in Old Town. Let him know that the Lescovar threat has been dealt " ..
+                "with and about your involvement in the Lord's plots against the city. I'm sure he'll be " ..
+                "proud to have another hero among Stormwind's citizens.\n\nHe'll more than likely send " ..
+                "you off to meet with the Prince or some other noble. Don't let it get to your head, " ..
+                "<name>. The nobles can think they rule the city all they want, but some things remain " ..
+                "out of their hands.",
+        },
         [395] = {
             description = "Ah, I almost forgot. Alexston came while you were away, he wished to speak " ..
                 "with you. No doubt he wishes to report the goings-on of the Defias Brotherhood to the " ..
@@ -6499,6 +6507,15 @@ ns.Overrides.wowhead = {
                 "made.",
             rewardMoney = 900,
         },
+        [951] = {
+            description = "The parchment you found at the Master's Glaive is a page from an ancient " ..
+                "text...written by elves! It is heavily cursed and tainted by the corruption of the " ..
+                "Twilight's Hammer, but it seems the cult is using ancient elven magic to bring their old " ..
+                "masters back to our world.\n\nTravel to the ruins of Mathystra to the northeast, and " ..
+                "search for ancient relics among the grass and broken stones. Through their study, we may " ..
+                "divine how the Twilight's Hammer intends to exploit the magic of the elves.",
+            rewardChoices = {{5757, 1}, {5615, 1}},
+        },
         [952] = {
             description = "If you had enough time to run messages for the Oracle Tree, then I'm sure that " ..
                 "I can press you into service to deliver a message to the Grove of the Ancients in " ..
@@ -6666,6 +6683,16 @@ ns.Overrides.wowhead = {
                 "have any problem finding them.\n\nRemember, I only want the best looking ones -- no beat " ..
                 "up or broken horns, please!",
             rewardMoney = 9000,
+        },
+        [978] = {
+            description = "Wildkin feathers from the Hinterlands appear to contain traces of magical " ..
+                "qualities. These powers... they don't seem to be wielded by the creatures, it's more " ..
+                "like they are simply inherent to the species -- part of their very essence.\n\nDuring my " ..
+                "studies, I heard that a large population of wildkin inhabit the snowy lands of " ..
+                "Winterspring. Could these creatures have the same powers? Please help me find an answer, " ..
+                "<name>. Go to Winterspring and gather feathers that have dropped to the ground, then " ..
+                "return to me.",
+            rewardMoney = 8500,
         },
         [979] = {
             description = "Yes, yes, these feathers seem to hold the same magical enchantment that I " ..
@@ -15925,6 +15952,15 @@ ns.Overrides.wowhead = {
                 "please <name>, help me by using this temporal displacer to root out these parasites.",
             rewardChoices = {{15812, 1}, {15813, 1}},
         },
+        [4972] = {
+            description = "I need you to reach into the world beyond this room, <name>. Allow me to " ..
+                "explain.\n\nYou see the difference in this room compared to the rest of Andorhal. My " ..
+                "dragonflight works in many different ways and in many different timelines. To mend " ..
+                "Andorhal's damage, I now act from a different timeline as not to overly contaminate it. " ..
+                "To continue this though I need time trinkets, ones trapped from when the plague hit. " ..
+                "Find them in lockboxes found in the ruined buildings that make up this once proud city.",
+            rewardItems = {{12650, 1}},
+        },
         [4973] = {
             description = "If you are willing to help once more, I can certainly use your assistance. " ..
                 "I'll gladly take more watches you might uncover from the ruins of Andorhal. They " ..
@@ -16712,6 +16748,12 @@ ns.Overrides.wowhead = {
                 "last one did, allowing you into the cauldron. Use this bottle to obtain a sample from " ..
                 "inside the cauldron; each cauldron has its own distinct brew of toxins it uses.",
         },
+        [5220] = {
+            description = "You carefully fill the bottle with enough of the cauldron's ichors for what " ..
+                "you consider to be suitably sized sample.\n\nWith the poison in hand, it is time to " ..
+                "return to High Priestess MacDonnell at Chillwind Camp to complete the mission.",
+            rewardMoney = 8500,
+        },
         [5222] = {
             description = "Two cauldrons have been successfully opened; while you will be able to access " ..
                 "them indefinitely, we still want to open up the other two that remain. This will provide " ..
@@ -17087,6 +17129,7 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3858, 3}, {4304, 5}, {4338, 5}},
         },
         [5401] = {rewardItems = {{12846, 1}}},
+        [5402] = {rewardItems = {{12844, 1}}},
         [5403] = {rewardItems = {{12844, 1}}},
         [5404] = {rewardItems = {{12844, 1}}},
         [5405] = {rewardItems = {{12846, 1}}},
@@ -22374,6 +22417,14 @@ ns.Overrides.wowhead = {
                 "be disappointed.",
             rewardItems = {{21394, 1}},
         },
+        [8558] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21392, 1}},
+        },
         [8559] = {
             description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
                 "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
@@ -24981,6 +25032,14 @@ ns.Overrides.wowhead = {
                 "modifications of my own. With that said, the cloaking is costly. Since your dedication " ..
                 "to the cause of the Dawn is admirable, we are willing to incur some of those costs.",
         },
+        [9123] = {
+            description = "In the thick of Plaguewood lies the entrance to the dread citadel of " ..
+                "Naxxramas. Previously, all attempts to enter had been stymied by the magical wards " ..
+                "placed upon the rune portal. That is, until now.\n\nWe have devised a way to gain entry " ..
+                "via a permanent arcane cloaking of sorts - an old cantrip of the Kirin Tor with a few " ..
+                "modifications of my own. With that said, the cloaking is costly; however, your " ..
+                "dedication to the cause of the Dawn is unwavering! We will waive all cost associations.",
+        },
         [9124] = {
             description = "How would you like to earn yourself one of these shiny coins?\n\n<Leopold " ..
                 "holds up an insignia of the Crusade.>\n\nI've got a little problem that you might be " ..
@@ -25576,6 +25635,7 @@ ns.Overrides.wowhead = {
         [9335] = {rewardItems = {{23122, 1}}},
         [9336] = {rewardItems = {{13446, 1}}},
         [9337] = {rewardItems = {{13444, 1}}},
+        [9341] = {rewardItems = {{22999, 1}}},
         [9343] = {rewardItems = {{22999, 1}}},
         [9362] = {
             description = "There isn't much time, <name>! My scrying spells have revealed a powerful " ..
