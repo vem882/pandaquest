@@ -4,6 +4,14 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.541] - 2026-11-13
+
+Data from the PandaQuest portal.
+
+- database - refreshed auction scan targets without recent prices
+- database - Classic Era: data from the PandaQuest portal: 3,641 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,112 quests, 67 NPCs, 7 objects
+
 ## [0.2.537] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -105,18 +113,6 @@ Data from the PandaQuest portal.
   - coordinates: 10 spawn points added in Krasarang Wilds
   - coordinates: 7 spawn points added in The Jade Forest
   - coordinates: also changed in 3 more zones
-
-## [0.2.514] - 2026-11-12
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,253 quests, 1,001 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,571 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,841 quests, 63 NPCs, 7 objects
-- npc 67976 - Tinkmaster Overspark - updated
-  - NPC level added (90)
-- npc 68565 - Nitun - updated
-  - NPC title added (The Midnight Plunderer)
 
 ## [0.2.412]
 
