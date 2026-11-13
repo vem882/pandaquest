@@ -105,6 +105,7 @@ Recipes\Store.lua
 Recipes\Scanner.lua
 Recipes\Archaeology.lua
 Sync\Telemetry.lua
+Database\Overrides\AuctionMissing.lua
 Sync\AuctionScan.lua
 Sync\OwnAuctions.lua
 Sync\Trace.lua
