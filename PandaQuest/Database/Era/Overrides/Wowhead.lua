@@ -9985,6 +9985,12 @@ ns.Overrides.wowhead = {
                 "signature drink: Barleybrew Scalder!\n\nSo what do you say? The Rethban Caverns are in " ..
                 "the foothills north of Lakeshire. Are you ready to run the Rethban Gauntlet?",
         },
+        [1700] = {
+            description = "I made a copy of my notes on the techniques I learned while making your armor, " ..
+                "and I need them sent to Grimand Elmore. He's here in the Dwarven District, in the weapon " ..
+                "shop.\n\nAnd duck when you give these to him. He's fiercely proud of his skills, and " ..
+                "won't like the idea of learning something from me...",
+        },
         [1701] = {
             description = "So I gave you a nice shield, but we don't have to stop there. I know the " ..
                 "secrets to make extremely hard mail armor. It's not easy and it takes very rare " ..
@@ -10257,6 +10263,14 @@ ns.Overrides.wowhead = {
                 "unaided.\n\nPerhaps Jorah Annison can help you with this. He's employed as a " ..
                 "cartographer in the Undercity these days, but still knows more of ancient texts than any " ..
                 "I know.",
+        },
+        [1802] = {
+            description = "It was lost, but there's some idea as to where it might be found.\n\nThere was " ..
+                "only one copy ever made and it was vandalized at some point, a large portion of it " ..
+                "ripped from the binding. Rumor has it that it somehow passed into the hands of the " ..
+                "centaur of Thousand Needles.\n\nThe rest was lost off the coast west of Southshore, " ..
+                "where it was to be transported to Menethil Harbor by boat. It never arrived.\n\nIn " ..
+                "exchange for this knowledge, all I ask is that if you find it, bring it to me to see.",
         },
         [1803] = {
             description = "Ah! I see that you are a warlock of similar tastes to mine. Indeed, acquiring " ..
@@ -14996,6 +15010,13 @@ ns.Overrides.wowhead = {
         [4482] = {rewardItems = {{11643, 1}}},
         [4483] = {rewardItems = {{11644, 1}}},
         [4484] = {rewardChoices = {{11647, 1}, {11648, 1}, {11649, 1}, {11645, 1}, {11646, 1}}},
+        [4485] = {
+            description = "Hello, <name>. I see your dedication remains strong, as does your faith.\n\nI " ..
+                "think it is time you spoke with Duthorian Rall in Stormwind. There are some more lessons " ..
+                "for you to learn, and I feel you are prepared.\n\nSeek him out in the Cathedral of " ..
+                "Light, and <name>, take these lessons seriously. You've attained your status through " ..
+                "humility and hard work, do not disappoint us by becoming arrogant.\n\nBe well.",
+        },
         [4486] = {
             description = "Well, well, well, look at the mighty paladin in all <his/her> " ..
                 "regality.\n\nSorry, <name>, I meant no offense... I just get a little jealous sometimes " ..
@@ -15839,6 +15860,14 @@ ns.Overrides.wowhead = {
                 "or orb. I always felt it was important to cater to a warlock's chosen weapon... I see no " ..
                 "reason not to continue that practice.",
             rewardChoices = {{15108, 1}, {15106, 1}},
+        },
+        [4965] = {
+            description = "Well, well, well... a pleasure to see you're growing in power, <name>. I'd " ..
+                "wager you'd be about ready to speak to Menara Voidrender in the Barrens. If you haven't " ..
+                "spoken to her before, then let me tell you, I don't think I've ever met another expert " ..
+                "in the creation of items--orbs specifically--that can inprison even a demon to serve our " ..
+                "will so easily.\n\nIf you're interested, she's in Strahad's tower above Ratchet in the " ..
+                "Barrens.",
         },
         [4966] = {
             description = "But, there may be more centaur than I thought, I ask you, <name>, to fight " ..
@@ -16832,6 +16861,15 @@ ns.Overrides.wowhead = {
                 "ago. Even though there is no waaaay to change the past, I am now at peacccce knowing " ..
                 "that you have recovered the crystal of Zin-Malor...\n\nYouuu must return it...\n\nIt " ..
                 "muuuussst be returrrned.",
+        },
+        [5253] = {
+            description = "Quite impressive, <name>.\n\nThe crystal of Zin-Malor can never be returned to " ..
+                "the temple which, as you know, lies in ruin. But I believe that your effort to undo the " ..
+                "evil of the past should not go unrewarded.\n\nSeek out Arch Druid Fandral Staghelm in " ..
+                "Darnassus, and bring the crystal to him, <name>. It should be in the hands of those that " ..
+                "will not abuse its power. From the looks of it, only a handful of the strongest magic " ..
+                "users would be able to control such a power.",
+            rewardChoices = {{15791, 1}, {15792, 1}, {15795, 1}},
         },
         [5261] = {
             description = "Eagan Peltskinner is looking for someone to hunt wolves for him. That's good " ..
@@ -20517,6 +20555,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{19022, 1}},
             rewardMoney = 7500,
         },
+        [7816] = {
+            description = "Yo! There be a turtle out there not like the others. She be the Gammerita, " ..
+                "leader of the saltwater snapjaws - a downright dirty thievin' reptile.\n\nMon, she stole " ..
+                "my best lure. Snapped it right off my line! Since then, the fish just aren't biting the " ..
+                "same.\n\nFind Gammerita and get my lure out of her stomach.",
+            rewardMoney = 14000,
+        },
         [7828] = {
             description = "Many brave trolls have been lost to the harsh wilds of the Hinterlands, " ..
                 "<race>. The Silvermane wolves are one of the biggest threats to our hunters. They lay in " ..
@@ -22673,6 +22718,15 @@ ns.Overrides.wowhead = {
                 "his existence to an end.\n\nDo this and bring me a piece of his husk. I shall grant you " ..
                 "armor no mortal has ever worn... armor fit for one who has slain a god!",
             rewardItems = {{21389, 1}},
+        },
+        [8628] = {
+            description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
+                "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
+                "Arygos.\n\nIn my visions I see their monstrous faces adorned by powerful crowns. But I " ..
+                "will have my revenge... I will transmute these symbols of Qiraji power to ones better " ..
+                "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
+                "headpiece of unmatched power.",
+            rewardItems = {{21387, 1}},
         },
         [8629] = {
             description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
@@ -25031,6 +25085,14 @@ ns.Overrides.wowhead = {
                 "Radiant Circlets.\n\nAll filled orders should be delivered to Packmaster Stonebruiser at " ..
                 "Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if tampered " ..
                 "with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9184] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order LW-971:\n\n10 " ..
+                "Wicked Leather Headbands.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9185] = {
