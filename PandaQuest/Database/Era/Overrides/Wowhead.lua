@@ -2667,6 +2667,15 @@ ns.Overrides.wowhead = {
                 "That ought to get things under control.",
             rewardMoney = 4000,
         },
+        [388] = {
+            description = "Bitterness flows through my veins like a cold river. My grandson, Mac, was " ..
+                "such a good boy. A mere 14 years old. When the army was sent off to the front, Mac took " ..
+                "up arms to defend the city. He was a guard in The Stockade, where the Defias gang is " ..
+                "locked up. Mac reprimanded some of the prisoners for tearing their wool blankets to make " ..
+                "scarves, a symbol of their gang. For that Mac was stabbed in the back.\n\nI want " ..
+                "revenge. Bring me 10 of their precious Wool Bandanas. They are the color of blood.",
+            rewardMoney = 4000,
+        },
         [389] = {
             description = "VanCleef and I were members of the Stonemasons Guild. Our main project was to " ..
                 "rebuild Stormwind after the War.\n\nWhen we had finished our duties, we were cheated. " ..
@@ -4277,6 +4286,13 @@ ns.Overrides.wowhead = {
                 "have business to do. The naga were last seen along the beach to the north of here.",
             rewardItems = {{4117, 1}},
             rewardMoney = 6000,
+        },
+        [622] = {
+            description = "While you were gone I fixed the pot you brought me. I even added an extra " ..
+                "steam whistle, and look! There's a new chopper at the bottom that'll cut through leg " ..
+                "bones!\n\nYes yes, Krazek 's Crock Pot is a 100% cook pleaser! I'm sure its owner will " ..
+                "be satisfied.",
+            rewardItems = {{4124, 1}},
         },
         [623] = {
             description = "<name>, since I have you here, I got a message from Groy while you were gone. " ..
@@ -9693,6 +9709,14 @@ ns.Overrides.wowhead = {
                 "teach you an advanced leatherworking technique.",
             rewardItems = {{6710, 1}},
         },
+        [1598] = {
+            description = "You there! <name>, right?\n\nI hope you're sure about becoming a warlock, " ..
+                "because if you can't hold your own, you're likely to get pulled under.\n\nI'm to teach " ..
+                "you, but I need to make sure you're strong enough first.\n\nThere was a novice studying " ..
+                "at the Abbey who ran off to join the Defias Brotherhood. Why do I care? Well, he stole " ..
+                "some important books.\n\nOne of those happens to be a book I've wanted for myself, the " ..
+                "Powers of the Void. Steal it for me, they have it hidden at their tent in the Vineyards.",
+        },
         [1599] = {
             description = "You must be the new warlock everyone's been whispering about. Must be " ..
                 "someone's taken a liking to you if they've asked me to take time away from my research " ..
@@ -10183,6 +10207,14 @@ ns.Overrides.wowhead = {
         },
         [1789] = {rewardItems = {{6866, 1}}},
         [1790] = {rewardItems = {{6866, 1}}},
+        [1791] = {
+            description = "Now that you've learned your berserker's stance, you'll want a nice weapon to " ..
+                "use it with.\n\nTalk to Bath'rah the Windwatcher, a troll hermit who lives between the " ..
+                "Alterac Mountains and the Western Plaguelands. He is a skilled weapon maker and a " ..
+                "powerful shaman.\n\nTo find Bath'rah, go to the river that flows along Tarren Mill's " ..
+                "eastern flank. Follow it north--Bath'rah is camped near ruins that rest along the " ..
+                "river's eastern bank.",
+        },
         [1792] = {rewardChoices = {{6975, 1}, {6977, 1}, {6976, 1}}},
         [1793] = {rewardItems = {{6776, 1}}},
         [1794] = {rewardItems = {{6776, 1}}},
@@ -14972,6 +15004,16 @@ ns.Overrides.wowhead = {
                 "wanted to talk to you was because Duthorian Rall in Stormwind sent word for you to meet " ..
                 "him in the Cathedral of Light when you're ready. Sounded important. Sounded like " ..
                 "something's going on.",
+        },
+        [4487] = {
+            description = "Ah, good, you're here. I sent a <succubus/infernal> after you to get your " ..
+                "attention, but it seems you were able to get here before it found you. No " ..
+                "matter.\n\nThere has been some talk lately of your growing power--that is good for you, " ..
+                "possibly bad for others. But those are irrelevant points. The point is, I feel you've " ..
+                "proven yourself and therefore are deserving of... hehe... a blessing of sorts.\n\nAbove " ..
+                "Ratchet in the Barrens you'll find a man named Strahad. I believe you've crossed paths " ..
+                "before.",
+            rewardXP = 315,
         },
         [4489] = {
             description = "You, <race>! Come here!\n\nYou're the one they call <name>, yes?\n\nI thought " ..
@@ -24945,6 +24987,14 @@ ns.Overrides.wowhead = {
                 "tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
+        [9179] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order BS-428:\n\n3 " ..
+                "Imperial Plate Chests.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
         [9181] = {
             description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
                 "their choice upon completion of the contracted work order.\n\nWork Order BS-697:\n\n3 " ..
@@ -25435,6 +25485,7 @@ ns.Overrides.wowhead = {
         [9335] = {rewardItems = {{23122, 1}}},
         [9336] = {rewardItems = {{13446, 1}}},
         [9337] = {rewardItems = {{13444, 1}}},
+        [9343] = {rewardItems = {{22999, 1}}},
         [9362] = {
             description = "There isn't much time, <name>! My scrying spells have revealed a powerful " ..
                 "source of magic. I cannot leave the tower, and would ask you to kill the vile creature " ..
