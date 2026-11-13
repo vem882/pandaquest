@@ -1,3 +1,5 @@
+- Add optional local recording of owned auctions and settled sale receipts.
+
 - Share available auction quantities after a completed PQ scan.
 
 - Scan auction pages automatically and show progress on the PQ tab.

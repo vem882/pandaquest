@@ -51,8 +51,8 @@ local function finish(prices, last)
     for i = 1, #ids do
         local id = ids[i]
         local name = (C_Item and C_Item.GetItemNameByID and C_Item.GetItemNameByID(id))
-            or (ns.DB and ns.DB.GetItemName(id)) or (GetItemInfo and GetItemInfo(id)) or ("#" .. id)
-        local money = GetCoinTextureString and GetCoinTextureString(updates[id])
+            or (ns.DB and ns.DB.GetItemName(id)) or (_G.GetItemInfo and _G.GetItemInfo(id)) or ("#" .. id)
+        local money = _G.GetCoinTextureString and _G.GetCoinTextureString(updates[id])
             or string.format("%dg %02ds %02dc", math.floor(updates[id] / 10000),
                 math.floor(updates[id] / 100) % 100, updates[id] % 100)
         lines[i] = name .. "   " .. money

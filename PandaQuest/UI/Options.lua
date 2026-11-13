@@ -117,6 +117,9 @@ local APPLIERS = {
     ["global.telemetry"] = function()
         if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
     end,
+    ["global.telemetry.recordOwnAuctions"] = function()
+        if ns.OwnAuctions then ns.OwnAuctions.ApplySettings() end
+    end,
     -- The bar re-reads its own size and lock; the tooltip line reads its switch on every hover, so
     -- nothing has to be told about that one.
     ["flight"] = function()
@@ -821,6 +824,9 @@ local function buildTable()
                     shareAuctionScans = toggle(1.5, L["Share completed Auctionator scans"],
                         L["Share item prices by realm and faction through Sync after logout or reload."],
                         "global.telemetry.shareAuctionScans"),
+                    recordOwnAuctions = toggle(1.6, L["Record my auctions privately"],
+                        L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."],
+                        "global.telemetry.recordOwnAuctions"),
                     breadcrumbs = toggle(2, L["Record movement breadcrumbs"],
                         L["Occasional position samples that improve community routes."], "global.telemetry.breadcrumbs"),
                     breadcrumbInterval = range(3, L["Breadcrumb interval (seconds)"], nil,

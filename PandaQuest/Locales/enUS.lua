@@ -800,3 +800,6 @@ L["%d%% · %d prices queued for Sync"] = true
 L["Batch %d · %d prices queued · Total unknown"] = true
 L["Stop scan"] = true
 L["About %d%% · %d prices queued for Sync"] = true
+
+L["Record my auctions privately"] = true
+L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] = true
