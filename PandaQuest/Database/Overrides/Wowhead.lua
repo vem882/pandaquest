@@ -44969,6 +44969,13 @@ ns.Overrides.wowhead = {
                 "heard that the entrance to this faire appears near Mulgore and Goldshire every month.",
             rewardItems = {{62047, 1}},
         },
+        [27665] = {
+            description = "Now that you have gathered all of the Wind cards together into a deck, a ninth " ..
+                "card mysteriously appears with the same backing as the first eight. On this card is " ..
+                "inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have heard " ..
+                "that the entrance to this faire appears near Mulgore and Goldshire every month.",
+            rewardChoices = {{62051, 1}, {62049, 1}},
+        },
         [27666] = {
             description = "Now that you have gathered all of the Wave cards together into a deck, a ninth " ..
                 "card mysteriously appears with the same backing as the first eight. On this card is " ..

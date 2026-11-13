@@ -6785,6 +6785,13 @@ ns.Overrides.wowhead = {
                 "<name>. We'll need skeletal fragments for the key's forging. Skeletons inside Andorhal " ..
                 "should yield what we need, but the ones outside the walls might work too.",
         },
+        [965] = {
+            description = "Hail, young <race>. I am Elissa Starbreeze, and it is my charge to protect " ..
+                "Auberdine from harm.\n\nTo this end, I sent Balthule Shadowstrike to observe the strange " ..
+                "happenings around the Tower of Althalaxx to the northeast.\n\nIt is past time that he " ..
+                "should have returned. I worry that he has encountered some unforeseen danger in the " ..
+                "forest. I would be most appreciative if you would find him and see that he is doing well.",
+        },
         [966] = {
             description = "A group of warlocks has taken up residence around and inside the tower. I " ..
                 "would have returned to Auberdine to report to Elissa earlier, but I was afraid that I " ..
@@ -9309,6 +9316,14 @@ ns.Overrides.wowhead = {
                 "up at Nijel's Point--it's a little cozy camp hidden in the mountains of northern " ..
                 "Desolace. Just head east if you enter from the Stonetalon Mountains. It's easy to miss, " ..
                 "so be on the lookout.",
+        },
+        [1454] = {
+            description = "My first order of business is for the mage Karnitol--a noble of some sort in " ..
+                "Stormwind. Seems his ship was attacked by sea giants while off the coast in the " ..
+                "northwest of Desolace. He and his servants tried to bring one of his more valuable " ..
+                "chests ashore, but when the sea giants attacked in droves, he chose to abandon it and " ..
+                "teleport himself and his servants to safety.\n\nHe wants us to find the chest and its " ..
+                "contents, and return it to him in Stormwind.",
         },
         [1455] = {
             description = "You take a few moments to figure out what pried the chest open, and you notice " ..
@@ -14355,6 +14370,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{12109, 1}, {12110, 1}, {12108, 1}, {12111, 1}},
             rewardMoney = 26500,
         },
+        [4081] = {
+            description = "By order of Warlord Goretooth, commander of the Kargath Expeditionary " ..
+                "Force:\n\nAny and all of General Angerforge's forces within Blackrock Depths must be " ..
+                "annihilated.\n\nAngerforge's men are ruthless killers, responsible for the mass murder " ..
+                "of the 109th division of the Kargath Expeditionary Force. Heroes are warned to exercise " ..
+                "extreme caution when confronting these brutes.\n\nAny person who destroys the first line " ..
+                "of General Angerforge's forces in Blackrock Depths shall receive a tribute.",
+            rewardMoney = 15500,
+        },
         [4082] = {
             description = "By order of Warlord Goretooth, commander of the Kargath Expeditionary " ..
                 "Force:\n\nHead of the K.E.F. reconnaissance division, Grandmaster Lexlort, has returned " ..
@@ -14446,6 +14470,17 @@ ns.Overrides.wowhead = {
                 "across southern Feralas to avoid the Horde camp.\n\nI couldn't find his boat, but maybe " ..
                 "you can. Maybe it is hidden, or maybe it was sunk. Regardless, it might hold a clue as " ..
                 "to where he is. If you uncover something, please let me know.",
+        },
+        [4126] = {
+            description = "The Dark Iron dwarves, led by the villain Hurley Blackbreath, stole one of the " ..
+                "Thunderbrew's best recipes, Thunderbrew Lager. The villains! They don't deserve such a " ..
+                "fine brew!\n\n<name>, I have a tough task for you. Go to the Blackrock Depths in the " ..
+                "Burning Steppes, destroy any kegs of Thunderbrew Lager you find, and bring back our " ..
+                "recipe for Thunderbrew Lager!\n\nPlease, get that recipe back, even if you have to turn " ..
+                "Blackrock Depths upside down to do it!",
+            rewardChoices = {{11964, 1}, {12000, 1}},
+            rewardItems = {{12003, 10}},
+            rewardMoney = 16500,
         },
         [4127] = {
             description = "Running your hand along the mud, your fingers graze the handle of a knife. It " ..
@@ -14908,6 +14943,15 @@ ns.Overrides.wowhead = {
                 "has cast on Moira is broken: Kill him.\n\nAnd <name>, do not harm her! Remember, she is " ..
                 "being controlled by Thaurissan! The things she may do or say are a result of " ..
                 "Thaurissan's evil spell!",
+        },
+        [4363] = {
+            description = "Thaurissan was a great and honorable dwarf. You ruined my life and the life of " ..
+                "my unborn child!\n\n<You think that Princess Bronzebeard may still be suffering from the " ..
+                "residual effect of the Emperor's spell.>\n\nReturn to Ironforge and tell my father that " ..
+                "the heir to the Kingdom of Ironforge will be a Dark Iron dwarf.\n\nWhether he approves " ..
+                "or not, it shall be.",
+            rewardChoices = {{12548, 1}, {12543, 1}},
+            rewardMoney = 26500,
         },
         [4381] = {rewardItems = {{11562, 6}}},
         [4382] = {rewardItems = {{11563, 6}}},
@@ -16655,6 +16699,14 @@ ns.Overrides.wowhead = {
                 "have a way to subvert them to our advantage. My second, Shadow Priestess Vandis, will be " ..
                 "your point on this assignment; she'll continue the briefing from here.",
         },
+        [5229] = {
+            description = "Of the four cauldrons in the Western Plaguelands, the one at Felstone Field " ..
+                "may be the easiest one to gain access to. The Scourge have greener troops positioned " ..
+                "here, though they should not be underestimated.\n\nGo to Felstone Field, due east of " ..
+                "here and northwest of Andorhal, and engage the cauldron lord there. On it is a key that " ..
+                "will unlock access to the cauldron. When unlocked, use this bottle to get a sample of " ..
+                "the cauldron's toxins; we'll need it for study in developing a counter agent.",
+        },
         [5230] = {
             description = "You fill the bottle with enough of the cauldron's poisonous concoction for a " ..
                 "suitable sample to be studied.\n\nWith the poison in hand, it is time to return to " ..
@@ -17804,6 +17856,14 @@ ns.Overrides.wowhead = {
                 "the Order and renounced all that he had known. His honor left upon the blood soaked " ..
                 "ground of Northdale.\n\nYou must travel to Northdale and recover that symbol of lost " ..
                 "honor.",
+        },
+        [5846] = {
+            description = "When Taelan was a child, we would oft visit Caer Darrow on family excursions. " ..
+                "On our last visit, an artist by the name of Renfray painted a portrait of us poised " ..
+                "along the beachside. It is my fondest memory of both Taelan and Karandra. For it was at " ..
+                "that moment, with my wife and son in my arms, that I felt a bond of love and family that " ..
+                "I would never know again.\n\nIf this painting still exists, you must find it.\n\nTravel " ..
+                "to the ruined island of Caer Darrow and see if the painting or the artist remain.",
         },
         [5848] = {
             description = "The painting... It hung on the wall of my workshop - inside the Order's " ..
@@ -20116,6 +20176,16 @@ ns.Overrides.wowhead = {
                 "say this leaf came from something ancient and powerful.\n\nMaybe you should find the " ..
                 "original owner of this leaf?",
         },
+        [7636] = {
+            description = "Agents of the Burning Legion are still active in our world, <class>. These " ..
+                "agents corrupt all that they touch. Nature wilts and weeps in their presence.\n\nYou " ..
+                "must track down these demonic corrupters and destroy them, <name>. Be warned, you must " ..
+                "engage them by yourself or they will flee. As long as you are alone, they will try and " ..
+                "destroy you. You must strike at them, turning their arrogance into misery.\n\nI grant " ..
+                "you a piece of my bark, the inscriptions shall lead you to your targets. Retrieve their " ..
+                "heads.",
+            rewardItems = {{18707, 1}},
+        },
         [7637] = {
             description = "In order to prepare yourself for this task, you must first show due sacrifice " ..
                 "and judgment... with an emphasis on sacrifice.\n\nYou must acquire High Priest Rohan 's " ..
@@ -20750,6 +20820,15 @@ ns.Overrides.wowhead = {
                 "with the true power of a haruspex is yours.",
             rewardItems = {{19838, 1}},
         },
+        [8066] = {
+            description = "A predator knows how to stalk their prey, but a successful one knows how to " ..
+                "strike at it once they have closed ranks. You must master both to have any chance of " ..
+                "success in Zul'Gurub... and any chance of being like the Zandalar predators.\n\nBring me " ..
+                "choice parts of the Paragons of Power from within Zul'Gurub. My reward will be the power " ..
+                "that the trinkets yield, while yours will be the Zandalar predator's belt - equipment " ..
+                "well worth the trade.",
+            rewardItems = {{19832, 1}},
+        },
         [8067] = {
             description = "We Zandalar prize what we wear as a symbol of accomplishment. You don't need " ..
                 "to be able to see what one wears to be able to sense what emanates from it - power " ..
@@ -20785,6 +20864,15 @@ ns.Overrides.wowhead = {
                 "forth into Zul'Gurub and witness first hand the depravity of Hakkar and the Gurubashi. " ..
                 "Wrest the Paragons of Power that we seek from them; success will be rewarded!",
             rewardItems = {{19842, 1}},
+        },
+        [8071] = {
+            description = "The confessors of the Zandalar all wear a distinctive mantle, marking them as " ..
+                "the preservers of the tribe. These mantles are woven with powerful mojo that aids them " ..
+                "in judging those who would threaten our tribe. As a priest, you too must spend your time " ..
+                "judging those worthy and not; such a mantle would definitely be a blessing to you.\n\nIn " ..
+                "exchange for fighting Hakkar's minions in Zul'Gurub and bringing me the Paragons of " ..
+                "Power I seek, I will give you a mantle worthy of our finest confessors.",
+            rewardItems = {{19841, 1}},
         },
         [8072] = {
             description = "One of Zandalar's legendary madcaps was Khar'vaxal the Cracked. Legend states " ..
@@ -21005,6 +21093,7 @@ ns.Overrides.wowhead = {
         [8184] = {rewardItems = {{19782, 1}}},
         [8185] = {rewardItems = {{19783, 1}}},
         [8186] = {rewardItems = {{19784, 1}}},
+        [8187] = {rewardItems = {{19785, 1}}},
         [8188] = {rewardItems = {{19786, 1}}},
         [8189] = {rewardItems = {{19787, 1}}},
         [8190] = {rewardItems = {{19788, 1}}},
@@ -22140,6 +22229,14 @@ ns.Overrides.wowhead = {
                 "be disappointed.",
             rewardItems = {{21394, 1}},
         },
+        [8558] = {
+            description = "The Qiraji and their servants wield items made with the rarest and finest " ..
+                "materials: bones from gargantuan ancient creatures, gems from the depths of the earth, " ..
+                "metals pure and strong.\n\nJust the sight of Qiraji artifacts fills me with an urge to " ..
+                "practice my craft with their shattered and smelted pieces. Prove your allegiance to the " ..
+                "Circle, <name>, and I will make you a powerful weapon from the finest Qiraji materials.",
+            rewardItems = {{21392, 1}},
+        },
         [8561] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
                 "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
@@ -22863,6 +22960,13 @@ ns.Overrides.wowhead = {
                 "back to Commander Mar'alith after your task is completed.",
             rewardItems = {{20802, 1}},
         },
+        [8775] = {
+            description = "As the war effort mounts, the silithid presence in the area presents an ever " ..
+                "increasing threat to our operations. You've been selected to partake on an assault on " ..
+                "Hive'Regal where your primary target will consist of the airborne Hive'Regal " ..
+                "spitfires.\n\nReport back to Commander Mar'alith after your task is completed.",
+            rewardItems = {{20802, 1}},
+        },
         [8777] = {
             description = "As the war effort mounts, the silithid presence in the area presents an ever " ..
                 "increasing threat to our operations. You've been selected to partake on an assault on " ..
@@ -22915,6 +23019,15 @@ ns.Overrides.wowhead = {
                 "batch of armor kits and deliver them to Merok Longstride at the location of the " ..
                 "Orgrimmar Legion camp.",
             rewardItems = {{20800, 1}, {21386, 1}},
+        },
+        [8789] = {
+            description = "We have not sat idly by for a millennium, <name>.\n\nWe have watched these " ..
+                "beasts feast on their own when they have exhausted their utility. We have listened as " ..
+                "they have plotted and schemed to destroy our world. And we have learned of their own " ..
+                "internal treachery.\n\nWeaknesses exist and we know how to use those weaknesses to our " ..
+                "advantage.\n\nFind and bring me their ceremonial armaments: Combined with the element " ..
+                "created from the volatility of their own God, they will become a force of reckoning.",
+            rewardChoices = {{21242, 1}, {21272, 1}, {21244, 1}, {21269, 1}},
         },
         [8790] = {
             description = "Arygos theorizes that the element which is born of conflicts between the Old " ..
@@ -23433,6 +23546,15 @@ ns.Overrides.wowhead = {
                 "luck; you shall need every bit of it!",
             rewardItems = {{22087, 1}, {22092, 1}, {22093, 1}},
         },
+        [8955] = {
+            description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
+                "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
+                "Valthalak's spell is to put the medallion back together. Return to Deliana and tell her " ..
+                "that Bodley is her only hope for finding the remaining pieces. Speak to her about any " ..
+                "rewards you've arranged for.\n\nI, for once, shall rest in peace. I wish you the best of " ..
+                "luck; you shall need every bit of it!",
+            rewardItems = {{22084, 1}, {22085, 1}, {22082, 1}},
+        },
         [8956] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
                 "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
@@ -23769,6 +23891,15 @@ ns.Overrides.wowhead = {
                 "defiance.\n\nYour victim will not be able to restrain himself and shall enter the fray " ..
                 "filled with a desire to fight you. Once you obtain that which you seek, go back to " ..
                 "Anthion.",
+        },
+        [9016] = {
+            description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
+                "into three parts, not knowing the curse that would await us.\n\nThe only way to stop " ..
+                "Valthalak's spell is to put the amulet back together. Return to Mokvar and tell him that " ..
+                "Bodley is his only hope for finding the remaining pieces. Speak to him about any rewards " ..
+                "you've arranged for.\n\nI, for once, shall rest in peace. I wish you the best of luck; " ..
+                "you shall need every bit of it!",
+            rewardItems = {{22107, 1}, {22111, 1}, {22112, 1}},
         },
         [9018] = {
             description = "Valthalak's soul was stored in this amulet. In our greed we foolishly split it " ..
@@ -28128,6 +28259,13 @@ ns.Overrides.wowhead = {
                 "become more aggressive... or more desperate. They do not fear us or our weapons.\n\nYou " ..
                 "are much scarier and better armed than us. If you were to fight the boglords for us, " ..
                 "we'd be forever in your debt! Bring me their tendrils so I know how many you've killed.",
+        },
+        [9746] = {
+            description = "Victory is close at hand, <name>. With the discovery of the sun gate, it won't " ..
+                "be long until their supply lines are completely closed off. Now is the time to strike at " ..
+                "their numbers.\n\nTo the west you will find numerous Sunhawk camps. The Sunhawk " ..
+                "pyromancers and defenders occupy the vast majority of the area. Find them, kill them and " ..
+                "return to me.",
         },
         [9747] = {
             description = "The naga are terrible, yes. But even more terrible are the traitor tribes of " ..
@@ -36884,6 +37022,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{29434, 10}},
             rewardMoney = 132000,
         },
+        [11164] = {
+            description = "'Ey mon! You be new around 'ere, eh? Lemme ask a favor of ya.\n\nBudd's been " ..
+                "refinin' his forest troll disguise. Says that he be close now - just be needin' one last " ..
+                "touch. Tusks.\n\nMy skinnin' talents be wasted 'ere. Somethin' about yankin' troll tusks " ..
+                "be makin me queasy.\n\nBring me back 10 troll tusks, eh mon?",
+            rewardMoney = 88000,
+        },
         [11165] = {
             description = "Lissen mon, there be sumthin' else needs doin fer ol' Prigmon.\n\nZungam, my " ..
                 "good-fer-nuthin' cousin, be stuck inside Zul'Aman. He still be alive too - I seen his " ..
@@ -36918,6 +37063,17 @@ ns.Overrides.wowhead = {
                 "If you bring me the venom, I'll replace it before Morlann notices it's gone.",
             rewardChoices = {{33260, 1}, {33273, 1}, {33244, 1}},
             rewardMoney = 4500,
+        },
+        [11174] = {
+            description = "Just look at this area! It's swarming with oozes. If I don't find some way to " ..
+                "keep them under control, they'll corrode the wreckage and the zeppelin's cargo!\n\nI " ..
+                "can't go back empty-handed, <class>! Help me dissolve these oozes before they've " ..
+                "digested everything!\n\nThis device, when powered, will concentrate energy on the " ..
+                "slimes, causing them to explode. The zeppelin's fragmented power core should power the " ..
+                "device. The one near the main crash works all the time, but the others flicker on and " ..
+                "off.",
+            rewardChoices = {{33233, 1}, {33239, 1}, {33255, 1}},
+            rewardMoney = 5000,
         },
         [11177] = {
             description = "There's a fellow the locals know as \"Swamp Eye\" Jarl, who lives alone out in " ..
