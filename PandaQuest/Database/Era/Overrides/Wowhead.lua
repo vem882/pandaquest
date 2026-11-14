@@ -4015,6 +4015,16 @@ ns.Overrides.wowhead = {
                 "progress, report back to me for reassignment.",
             rewardMoney = 4000,
         },
+        [569] = {
+            description = "When we first arrived in this jungle we did not intend to wage war on the " ..
+                "local tribes. Our mission to supply Stonard is of the highest priority. But " ..
+                "complications have arisen. A local band of ogres has occupied the Mizjah Ruins to the " ..
+                "southeast of Grom'gol. Despite warnings, they continue to ambush our supply " ..
+                "caravans.\n\nI am putting you in charge of dealing with these uncooperative " ..
+                "ogres.\n\nTravel to the ruins and attempt to drive them from the area. At the very least " ..
+                "it will send a firm message.",
+            rewardItems = {{4115, 1}},
+        },
         [570] = {
             description = "The power of the jungle's magic must be realized and then harnessed by the " ..
                 "Horde. My rituals have proven successful so far. I can cast very powerful enchantments. " ..
@@ -4084,6 +4094,15 @@ ns.Overrides.wowhead = {
                 "we're going to do!\n\nThe inner layers will never really be seen, so we'll just get some " ..
                 "of the thicker, cheaper skins from the crocs around Lake Nazferiti to fill the boots out.",
             rewardMoney = 3000,
+        },
+        [578] = {
+            description = "If there is indeed a goblin mage and water elementals haunting the island, it " ..
+                "could mean the Stone of the Tides can be mine!\n\nI want you to locate this haunted " ..
+                "island... find out what's going on. Oh, and if you perhaps want to find out more about " ..
+                "the Stone of the Tides, take this scrip to the Stormwind Library, they should be able to " ..
+                "find you a copy of the book I first came across the legend in.\n\nCould it be that " ..
+                "Gazban actually discovered the Stone...?",
+            rewardMoney = 4000,
         },
         [579] = {rewardChoices = {{2154, 1}, {3899, 1}}},
         [580] = {
@@ -4598,6 +4617,15 @@ ns.Overrides.wowhead = {
                 "then bind them to the Shards of Myzrael.\n\nDo that, and she will again be trapped.",
             rewardItems = {{4743, 1}},
         },
+        [657] = {
+            description = "< Quae begins to go through the folder.>\n\nThis IS interesting. Seems " ..
+                "Apothecary Jorell has been working on some deadly experiments here at Go'Shek. Not sure " ..
+                "what that has to do with Hillsbrad, but Phin wouldn't like it if we let it " ..
+                "continue.\n\nWe had a run-in with some orcs while you were gone, and I'm not in good " ..
+                "enough shape to help Kinelory. If you're up for it, she's going to need some protection " ..
+                "when she goes down to the farm to steal whatever research Jorell still hasn't sent to " ..
+                "Tarren Mill.",
+        },
         [658] = {
             description = "So, Phin sent you to check on us? Not surprised--he worries too much.\n\nWe've " ..
                 "been watching the farm for days, and Kin claims she saw a courier come out of that small " ..
@@ -4847,6 +4875,15 @@ ns.Overrides.wowhead = {
                 "scroll!\n\n...too bad it's destroyed. Enraged elementals stole it and tore it up and now " ..
                 "fight over the fragments.\n\nBut if you can gather those fragments, maybe we can fix " ..
                 "it...",
+        },
+        [693] = {
+            description = "Hey, <name>. Sorry to be so short with ye earlier... and no, that ain't a " ..
+                "pun.\n\nI figured out where Trelane's first item ended up: Kor'gresh has it in " ..
+                "Boulderfist Hall. An' by the way he was throwing down blasts of ice at his kin to keep " ..
+                "them in line, he must be close to figurin' out how to use all of its " ..
+                "powers.\n\nBoulderfist Hall's south of here an' then east of Thandol Span. Find the ogre " ..
+                "an' get back that wand.\n\nWhile you're gone, I'll figure out what we're gonna do about " ..
+                "Stromgarde.",
         },
         [694] = {
             description = "All rested?\n\nHere's our next step: there're ogres all around the Tower of " ..
@@ -17371,6 +17408,7 @@ ns.Overrides.wowhead = {
         [5405] = {rewardItems = {{12846, 1}}},
         [5406] = {rewardItems = {{12844, 1}}},
         [5407] = {rewardItems = {{12844, 1}}},
+        [5408] = {rewardItems = {{12844, 1}}},
         [5421] = {rewardItems = {{13546, 1}}},
         [5441] = {
             description = "Cursed peons! They work hard gathering lumber from the trees of the valley, " ..
@@ -22129,6 +22167,16 @@ ns.Overrides.wowhead = {
         [8383] = {rewardXP = 3300},
         [8387] = {rewardXP = 3300},
         [8388] = {rewardMoney = 9000, rewardXP = 6600},
+        [8393] = {
+            description = "Winning a war is about more than just outsmarting and outfighting your " ..
+                "opponent. Victory often comes down to simply producing more than your enemy.\n\nWhat we " ..
+                "have in Arathi Basin is a sizeable supply of resources for whichever side manages to " ..
+                "claim it first.\n\nIf the Alliance comes out victorious, it'll mean more swords and " ..
+                "pikes for our troops. If the Horde were to win, those swords and pikes would still get " ..
+                "made, they'd just be pointed at us! Now is the time to help the Alliance in Arathi " ..
+                "Basin, <name>.",
+            rewardMoney = 4500,
+        },
         [8395] = {
             description = "Winning a war is about more than just outsmarting and outfighting your " ..
                 "opponent. Victory often comes down to simply producing more than your enemy.\n\nWhat we " ..
@@ -22263,6 +22311,13 @@ ns.Overrides.wowhead = {
                 "doesn't even need to be a living pet. I'd need something to start making it with, like " ..
                 "some felcloth. The satyrs here in Felwood sometimes have felcloth, so you'd just have to " ..
                 "kill enough of them until you find some. That doesn't sound so bad, does it?",
+        },
+        [8421] = {
+            description = "Now that I have my felcloth, I can really begin making *my* pet.\n\nIt's going " ..
+                "to need some eyes though. Perhaps you could rip some rotting wood from the irontree folk " ..
+                "for me, so I can carve out some lovely eyes. They're up north in the Irontree " ..
+                "Woods.\n\nI'll also need some bloodvenom essence to give it that new demon smell. The " ..
+                "tainted oozes carry the essence, and they hang out right here near Niby and me.",
         },
         [8422] = {
             description = "My pet is almost done. Now I just need something to stuff it with.\n\nOnly the " ..
@@ -22494,6 +22549,12 @@ ns.Overrides.wowhead = {
                 "used in the creation of many different things for the war, foremost of which is the " ..
                 "construction of a battalion of steam tanks to be airlifted into Silithus as soon as they " ..
                 "are completed. Can you aid us in this endeavor, <class>?",
+            rewardItems = {{21436, 10}, {21513, 1}},
+        },
+        [8500] = {
+            description = "It is so good to see you again <name>. I hope that you've been doing well. " ..
+                "It's true that we are still in need of thorium bars. If you have them to spare I am " ..
+                "collecting them for the Ahn'Qiraj war effort.",
             rewardItems = {{21436, 10}, {21513, 1}},
         },
         [8501] = {
@@ -25795,6 +25856,13 @@ ns.Overrides.wowhead = {
                 "the Wrathcaster creates, there is a price - a price that I will not lower, regardless of " ..
                 "how much you whimper. Interested?",
             rewardItems = {{22636, 1}},
+        },
+        [9213] = {
+            description = "A creation of genius! Much like the Ice Guard, the Shadow Guard employs a thin " ..
+                "sheen of protective magic that covers certain pieces of equipment. And like the Ice " ..
+                "Guard, the Shadow Guard is going to cost you a good amount of money.\n\n<Mataus holds " ..
+                "his hand out and rubs his fingers together.>\n\nInterested?",
+            rewardItems = {{22638, 1}},
         },
         [9221] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..

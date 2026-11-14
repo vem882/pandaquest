@@ -68,6 +68,17 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.547
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,033 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,672 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,152 quests, 68 NPCs, 7 objects
+- quest 24836 - A Change of Heart - updated
+  - reward choices: +4
+- npc 707 - Rockjaw Trogg - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 70407 - Angler Jo Ransom - updated
+  - NPC level added (90)
+
 0.2.546
 - database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,031 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,663 quests, 38 NPCs, 9 objects
@@ -173,14 +184,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - database - TBC Anniversary: data from the PandaQuest portal: 5,050 quests, 65 NPCs, 7 objects
 - npc 10303 - Storm Shadowhoof - updated
   - coordinates: 1 spawn point added in Winterspring
-
-0.2.533
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,004 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,606 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,033 quests, 65 NPCs, 7 objects
-- quest 27665 - Darkmoon Hurricane Deck - updated
-  - description added
-  - reward choices: +2
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
