@@ -15004,6 +15004,15 @@ ns.Overrides.wowhead = {
                 "do not bring Lar'korwi to you, then I know nothing else that will.",
             rewardChoices = {{11876, 1}, {11882, 1}},
         },
+        [4293] = {
+            description = "Felwood is a forest far north of the Barrens, even farther than Ashenvale. " ..
+                "There, slimes are found all around pools of water blessed by the touch of Fel. The " ..
+                "Scourge decimated the area with attacks of Infernals and other demonic magics--the " ..
+                "slimes supposedly crept up through the earth during these attacks.\n\nGather samples of " ..
+                "Felwood slimes and we will use the testing equipment next to me to create a control " ..
+                "group for our tests against other samples you gather.",
+            rewardMoney = 6000,
+        },
         [4294] = {
             description = "Have you heard of the Un'Goro Crater, <name>? It is near the Tanaris desert, " ..
                 "and it is a magnificent place: lush, vibrant, full of creatures and plant life.\n\nIt is " ..
