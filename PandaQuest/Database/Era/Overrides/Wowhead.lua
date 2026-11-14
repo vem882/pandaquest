@@ -6693,6 +6693,14 @@ ns.Overrides.wowhead = {
                 "in Ashenvale Forest. Be swift, I fear the Dark Strand's threat grows with each passing " ..
                 "hour.",
         },
+        [968] = {
+            description = "Although terribly worn and scratched, the title of this book can still be read " ..
+                "upon its cover:\n\nThe Powers Below\n\nInside the book is a listing of unpronounceable " ..
+                "names with foreboding titles, methods of worship, and preferred sacrifices...many of " ..
+                "which include living, humanoid creatures.\n\nOn the inside cover of the book are the " ..
+                "words: \"Bonegrip's Runes and Dooms, The Forlorn Cavern, Ironforge. Proprietor: Gerrig " ..
+                "Bonegrip.\"\n\nIf Bonegrip sells books like this, perhaps he'll buy this one back.",
+        },
         [969] = {
             description = "Ah, I can tell just by lookin' at ya -- you be wantin' to make a lucky charm. " ..
                 "Mau'ari always knows!\n\nTo da south. you'll find a canyon, an' giants made a' solid " ..
@@ -12732,6 +12740,16 @@ ns.Overrides.wowhead = {
             rewardChoices = {{9651, 1}, {9652, 1}},
             rewardMoney = 22500,
         },
+        [2995] = {
+            description = "The Quel'Danil Lodge is a center of communication for the high elves of the " ..
+                "Hinterlands. Their ambassadors are working to establish relationships with other races, " ..
+                "with whom they share their knowledge of the Witherbark trolls that inhabit the area in " ..
+                "the southern Hinterlands. All of the documents regarding the communications are kept at " ..
+                "the lodge.\n\nWe don't need the Highvale building alliances with others, " ..
+                "<name>.\n\nDestroy the Highvale documents. We need to burn their lines of " ..
+                "communication... literally.",
+            rewardMoney = 7000,
+        },
         [2996] = {
             description = "I have taught you skills in the past, but the time has come for another to " ..
                 "teach you. He is in Ratchet, and his name is Strahad. He is human, but do not let that " ..
@@ -17691,6 +17709,13 @@ ns.Overrides.wowhead = {
                 "arrive, speak to Priestess Alathea. I believe it has something to do with your " ..
                 "progressing so well in our ways.\n\nAgain, return to Darnassus when you can.",
         },
+        [5633] = {
+            description = "Greetings, <laddy/lass>. Good to see you here in our great halls. A blessing " ..
+                "be on you and your kind.\n\nWhile you were traveling through our lands, a priestess of " ..
+                "your temple came here seeking you. She said that you were to return to the Temple of the " ..
+                "Moon as soon as possible. I'm sorry I can't tell you more, but it did sound important. " ..
+                "When you get to the temple, speak to a Priestess Alathea.",
+        },
         [5635] = {
             description = "You've caught the attention of our superiors, <name>. They've asked you travel " ..
                 "to the Cathedral of Light in Stormwind as soon as possible. Apparently they feel you've " ..
@@ -20377,6 +20402,14 @@ ns.Overrides.wowhead = {
                 "one of each essence type and I will create the Fel fire, allowing you to reanimate " ..
                 "Kroshius.",
         },
+        [7603] = {
+            description = "Kroshius lays in a heap to the northeast, in the Shatter Scar Vale. Take this " ..
+                "Fel fire and use it on his remains. The fire should reanimate the fallen infernal.\n\nAt " ..
+                "this point, I fully expect him to kill you and any friends that you may have brought " ..
+                "along - and trust me, you will want to bring along some friends.\n\nIf by some miracle " ..
+                "you happen to kill Kroshius, take his infernal core and return it to Niby.",
+            rewardItems = {{18762, 1}},
+        },
         [7604] = {
             description = "The undersigned hereby declares that the Sulfuron ingot they are delivering to " ..
                 "the Thorium Brotherhood (TB Ltd.) is genuine and not a facsimile thereof. The " ..
@@ -22029,6 +22062,7 @@ ns.Overrides.wowhead = {
         [8380] = {rewardItems = {{20701, 1}, {20712, 1}}},
         [8381] = {rewardItems = {{20705, 1}, {20716, 1}}},
         [8382] = {rewardItems = {{20704, 1}, {20714, 1}}},
+        [8383] = {rewardXP = 3300},
         [8387] = {rewardXP = 3300},
         [8388] = {rewardMoney = 9000, rewardXP = 6600},
         [8395] = {

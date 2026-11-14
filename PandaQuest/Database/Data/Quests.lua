@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.8.0+v1.0.16 (MoP database + corrections from QuestieDB 1.0.16). DO NOT EDIT.
--- Built: 2026-11-12T18:09:07Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.9.0+v1.1.1 (MoP database + corrections from QuestieDB 1.1.1). DO NOT EDIT.
+-- Built: 2026-11-14T02:08:29Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
