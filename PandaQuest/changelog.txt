@@ -68,6 +68,9 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.549
+- database - TBC Anniversary: data from the PandaQuest portal: 5,175 quests, 69 NPCs, 7 objects
+
 0.2.548
 - database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,036 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,678 quests, 38 NPCs, 9 objects
@@ -180,15 +183,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 17 spawn points added in Silverpine Forest
 - npc 51334 - Andorhal Deathguard - updated
   - coordinates: 8 spawn points added in Western Plaguelands
-
-0.2.535
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,007 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,615 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,077 quests, 65 NPCs, 7 objects
-- npc 1791 - Slavering Ghoul - updated
-  - coordinates: 30 spawn points added in Western Plaguelands
-- npc 32518 - Thrall - updated
-  - coordinates: 12 spawn points added in Undercity
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
