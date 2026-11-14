@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.545] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.9.0+v1.1.1 (was 12.8.0+v1.0.16)
+- database - Classic Era rebuilt from Questie 12.9.0+v1.1.1 (was 12.8.0+v1.0.16)
+- database - TBC Anniversary rebuilt from Questie 12.9.0+v1.1.1 (was 12.8.0+v1.0.16)
+- database - WoW Forever rebuilt from Questie 12.9.0+v1.1.1 (was 12.8.0+v1.0.16)
+- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,026 NPCs, 6 objects
+- database - refreshed auction scan targets without recent prices
+- database - Classic Era: data from the PandaQuest portal: 3,654 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,133 quests, 68 NPCs, 7 objects
+- npc 2164 - Rabid Thistle Bear - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 6125 - Haldarr Satyr - updated
+  - coordinates: 18 spawn points added in Azshara
+- npc 17112 - Captured Tarantula - updated
+  - coordinates: 4 spawn points added in Swamp of Sorrows
+- npc 60112 - Anduin Wrynn - updated
+  - coordinates: 5 spawn points added in Vale of Eternal Blossoms
+
 ## [0.2.544] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -125,13 +146,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Thousand Needles
 - npc 4116 - Gravelsnout Surveyor - updated
   - coordinates: 40 spawn points added in Thousand Needles
-
-## [0.2.531] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 3,591 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,973 quests, 64 NPCs, 7 objects
 
 ## [0.2.412]
 

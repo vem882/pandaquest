@@ -7288,6 +7288,14 @@ ns.Overrides.wowhead = {
                 "out to the Crimson Veil and speak with him below decks. She's anchored off the Wild " ..
                 "Coast east of here, next to the Riptide and the Damsel's Luck.",
         },
+        [1037] = {
+            description = "Velinde Starsong was my predecessor here in Ashenvale Forest. At first it " ..
+                "seemed she had the situation in Felwood under control, but little by little her efforts " ..
+                "faltered. One day, she simply disappeared.\n\nI was sent here to continue her work. I'm " ..
+                "afraid I know nothing of the priestess, however. Perhaps Thyn'tel Bladeweaver, one of " ..
+                "the commanders of the Sentinels, knows further details of her disappearance that I was " ..
+                "not a party to.\n\nSurely she will understand the import of such information.",
+        },
         [1038] = {
             description = "The Tome of Mel'Thandris showed you this? I suppose there would be little harm " ..
                 "in allowing you to examine her belongings. This key will allow you to open the chest " ..
@@ -16809,11 +16817,28 @@ ns.Overrides.wowhead = {
                 "own private way.",
             rewardItems = {{13562, 1}},
         },
+        [5206] = {
+            description = "Chromie said the relics you gathered are reagents to a powerful spell, and one " ..
+                "more is required: skulls from the scourge who took part in the battle of " ..
+                "Darrowshire.\n\nTake this crystal and hunt scourge champions for their skulls. The " ..
+                "crystal is enchanted; if a champion took part in the battle, then when you pass the " ..
+                "crystal over its skull it will resonate. Bring me those resonating skulls.\n\nGo, " ..
+                "<name>. You'll find scourge champions in the Noxious Glade to the north and the Fungal " ..
+                "Vale to the west.",
+        },
         [5210] = {
             description = "The Annals of Darrowshire, through my magic, has gained pages at its end, and " ..
                 "now it extends its history beyond the battle. One of the extra passages tells of another " ..
                 "Redpath, Carlin, who survived Joseph's betrayal. Carlin's now in the Plaguelands to the " ..
                 "east, at the Light's Hope Chapel.\n\nTake the book and speak with him.",
+        },
+        [5211] = {
+            description = "Many of the defenders fell at the battle of Darrowshire. And many roam again " ..
+                "as the ghastly servants of the Scourge! Find these poor souls and end their " ..
+                "misery!\n\nHunt cannibal ghouls, gibbering ghouls and diseased flayers. Many of these " ..
+                "fiends were once the good folk of Darrowshire and destroying their forms now will set " ..
+                "their souls free.\n\nYou will find them in Plaguewood and Corin's Crossing, and in other " ..
+                "Scourge strongholds of Eastern Plaguelands.",
         },
         [5212] = {
             description = "The Forsaken apothecaries are not the only beings in this world schooled in " ..
@@ -37839,6 +37864,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{33228, 1}, {33247, 1}, {33253, 1}},
             rewardMoney = 7500,
         },
+        [11201] = {
+            description = "With the activities of the Grimtotems in Thousand Needles brought to light, " ..
+                "many tauren now regard them with suspicion. We've seen high-ranking Grimtotems engage in " ..
+                "murder and kidnapping to advance their interests and I fear we may become their next " ..
+                "target.\n\nBlackhoof Village, to the northeast, near Bluefen, is a large new Grimtotem " ..
+                "settlement. Their leaders, the elders, will all have orders from Thunder Bluff. See if " ..
+                "you can capture the orders and piece them together to learn the Grimtotems' plans.",
+            rewardMoney = 4500,
+        },
         [11203] = {
             description = "The arms you captured in Blackhoof Village have not seen any combat beyond " ..
                 "mere training exercises, which means the Grimtotems who destroyed the Shady Rest are " ..
@@ -38106,6 +38140,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{29434, 2}},
             rewardMoney = 132000,
         },
+        [11370] = {
+            description = "While it is known that Warlord Kalithresh of the naga is a great warrior in " ..
+                "his own right, there are fewer who know that he has codified all of his " ..
+                "knowledge.\n\nOne of my customers is aware of it though, and is keenly interested in " ..
+                "obtaining his treatise.\n\nI ask that you travel to the Steamvault in Coilfang Reservoir " ..
+                "and obtain this book for me.",
+            rewardItems = {{29434, 2}},
+            rewardMoney = 132000,
+        },
         [11371] = {
             description = "Mah'duun hears and obeys, and I now ask you to be my instrument.\n\nIt has " ..
                 "been related to me that the myrmidons of the coilfang tribe must be destroyed. Seek them " ..
@@ -38120,6 +38163,16 @@ ns.Overrides.wowhead = {
                 "his followers. If the amulet he wears were to fall into my hands then surely that would " ..
                 "mean that he had been dealt with.\n\nIf the bounty I am offering is of interest to you " ..
                 "then journey to his lair within Auchindoun's Mana-Tombs.",
+            rewardItems = {{29434, 2}},
+            rewardMoney = 132000,
+        },
+        [11374] = {
+            description = "Within Auchindoun's Auchenai Crypts many unsavory experiments are undertaken " ..
+                "in the pursuit of a greater understanding of the necromantic arts. Many are the spirits " ..
+                "that are tortured or destroyed therein.\n\nI have a customer who is interested in the " ..
+                "liberation of one of those spirits. I have been informed that this spirit is contained " ..
+                "within a soul gem held by none other than Exarch Maladaar himself.\n\nSeek him out " ..
+                "within the crypts with all due haste and return to me with the gem.",
             rewardItems = {{29434, 2}},
             rewardMoney = 132000,
         },
