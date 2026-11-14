@@ -4,6 +4,25 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.546] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,031 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,663 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,139 quests, 68 NPCs, 7 objects
+- npc 68224 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (15)
+- npc 68691 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 68944 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 70333 - Angler Johnny Rotten - updated
+  - NPC level added (90)
+- npc 70404 - Angler In Bo Den - updated
+  - NPC level added (90)
+
 ## [0.2.545] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -131,21 +150,6 @@ Data from the PandaQuest portal.
 - quest 27665 - Darkmoon Hurricane Deck - updated
   - description added
   - reward choices: +2
-
-## [0.2.532] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,254 quests, 1,004 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,600 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,014 quests, 65 NPCs, 7 objects
-- quest 13904 - Poached, Scrambled, Or Raw? - updated
-  - description added
-  - reward items: +1
-- npc 4113 - Gravelsnout Digger - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4116 - Gravelsnout Surveyor - updated
-  - coordinates: 40 spawn points added in Thousand Needles
 
 ## [0.2.412]
 

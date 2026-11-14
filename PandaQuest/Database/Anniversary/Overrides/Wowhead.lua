@@ -10221,6 +10221,14 @@ ns.Overrides.wowhead = {
                 "it.",
             rewardXP = 420,
         },
+        [1686] = {
+            description = "You have learned much, <name>. Now we will craft you a weapon. A warrior's " ..
+                "weapon.\n\nTo do this, you must travel to Darkshore.\n\nLong ago a ship crashed upon the " ..
+                "rocks near the Auberdine lighthouse, scattering many crates of elunite ore along the " ..
+                "ocean floor.\n\nFirst, you must defeat the elunite's guardian, the Shade of Elura. Once " ..
+                "the ship's captain, she cursed herself to roam the deeps and protect her shipment for " ..
+                "all time. Defeat her, gain her medallion, and gather the crates of lost Elunite.",
+        },
         [1688] = {
             description = "I had a student named Surena Caledon. She stood where you stand now, eager to " ..
                 "learn of warlock magic, and possessing no small bit of talent. More than that she was " ..
@@ -12514,6 +12522,12 @@ ns.Overrides.wowhead = {
                 "that there is something more to it. Angelas and I have been poring over our books here, " ..
                 "but we can't find a thing about it.\n\nI have a colleague in Darnassus that may be able " ..
                 "to tell us what this is, <name>. Why don't you go talk to her and see if she can help us?",
+        },
+        [2940] = {
+            description = "This book looks as if no one has opened it for quite a long time. Its covers " ..
+                "are quite worn, and its pages yellowed, but after examining it, you notice that it might " ..
+                "be just what Troyas is looking for.\n\nYou pick it up, but realize you should probably " ..
+                "ask before borrowing it.",
         },
         [2941] = {
             description = "I have studied many subjects in my time, and my latest fascination is with the " ..
@@ -16009,6 +16023,15 @@ ns.Overrides.wowhead = {
                 "Thalia! She must be worried sick about me.",
             rewardChoices = {{15469, 1}, {15468, 1}},
         },
+        [4906] = {
+            description = "A second encampment of satyrs threatens the land of Felwood towards the north, " ..
+                "led by the cruel Xavaric. The vile betrayers and tricksters feed upon the corruption of " ..
+                "the native creatures of Felwood.\n\nXavathras and his minions were only part of a larger " ..
+                "plan -- to cultivate a corrupted moonwell, and then provide the spoils to " ..
+                "Xavaric.\n\nNow that Xavathras is out of the way, finish this task, <name>. Head to the " ..
+                "north and defeat Xavaric.",
+            rewardItems = {{11875, 1}},
+        },
         [4907] = {
             description = "Hi, <name>. Remember Tinkee Steamboil? Well, she remembers you! She sent me a " ..
                 "message to keep an eye out for you, because... she needs your help again. I think it has " ..
@@ -17899,6 +17922,13 @@ ns.Overrides.wowhead = {
                 "tribe. Your lessons come from Aelthalyste in the city once called Lordaeron.\n\nYou " ..
                 "should return to her if you're to learn those abilities that set you apart from other " ..
                 "faiths.\n\nGo to the War Quarter in the Undercity and find your mistress there.",
+            rewardXP = 210,
+        },
+        [5663] = {
+            description = "Aelthalyste sent word out to all her priests. We're to direct the younger of " ..
+                "our order to the Undercity for more training. If you truly count yourself among our " ..
+                "faithful, then you should return there also.\n\nYou can find Aelthalyste in the War " ..
+                "Quarter deep in the Undercity.",
             rewardXP = 210,
         },
         [5673] = {
@@ -25891,6 +25921,12 @@ ns.Overrides.wowhead = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
                 "would like to redeem for items of power?\n\nItems offered to those revered amongst the " ..
                 "Dawn are priced quite reasonably. I encourage you to make a purchase!",
+            rewardChoices = {{22681, 1}, {22680, 1}, {22688, 1}, {22679, 1}, {22690, 1}, {22689, 1}},
+        },
+        [9227] = {
+            description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
+                "would like to redeem for items of power?\n\nItems offered to those exalted amongst the " ..
+                "Dawn are discounted. I encourage you to make a purchase!",
             rewardChoices = {{22681, 1}, {22680, 1}, {22688, 1}, {22679, 1}, {22690, 1}, {22689, 1}},
         },
         [9228] = {
@@ -38414,6 +38450,16 @@ ns.Overrides.wowhead = {
                 "did.\n\nAh, but those days are long past. I'm an old man, now: I drink, I fish, but I no " ..
                 "longer duel.",
             rewardItems = {{38276, 1}},
+        },
+        [63866] = {
+            description = "Take this vessel, <name>. Invoking its magic will allow you to take this " ..
+                "creature's power and claim it for yourself. With it, you will be able to restore your " ..
+                "fallen comrade to life.\n\nThere are those who would say what we're doing is wrong, but " ..
+                "much of what has befallen us is also wrong. Would they have us throw away such a " ..
+                "gift?\n\nThey do not complain when our power is used to prevent the further destruction " ..
+                "of Silvermoon. No, they object when they are safe from harm and indulging their magic " ..
+                "addictions.",
+            rewardXP = 455,
         },
         [64139] = {
             description = "Your dedication to our order and advancement through the ranks has not gone " ..
