@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.547] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,033 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,672 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,152 quests, 68 NPCs, 7 objects
+- quest 24836 - A Change of Heart - updated
+  - reward choices: +4
+- npc 707 - Rockjaw Trogg - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 70407 - Angler Jo Ransom - updated
+  - NPC level added (90)
+
 ## [0.2.546] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -139,17 +153,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 5,050 quests, 65 NPCs, 7 objects
 - npc 10303 - Storm Shadowhoof - updated
   - coordinates: 1 spawn point added in Winterspring
-
-## [0.2.533] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,004 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,606 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,033 quests, 65 NPCs, 7 objects
-- quest 27665 - Darkmoon Hurricane Deck - updated
-  - description added
-  - reward choices: +2
 
 ## [0.2.412]
 
