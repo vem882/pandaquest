@@ -68,6 +68,18 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.548
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,036 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,678 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,158 quests, 69 NPCs, 7 objects
+- npc 275 - Whit Wantmal - updated
+  - coordinates: 2 spawn points added in Duskwood
+- npc 68795 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+- npc 68923 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+
 0.2.547
 - database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,033 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,672 quests, 38 NPCs, 9 objects
@@ -177,13 +189,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 30 spawn points added in Western Plaguelands
 - npc 32518 - Thrall - updated
   - coordinates: 12 spawn points added in Undercity
-
-0.2.534
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,005 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,611 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,050 quests, 65 NPCs, 7 objects
-- npc 10303 - Storm Shadowhoof - updated
-  - coordinates: 1 spawn point added in Winterspring
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

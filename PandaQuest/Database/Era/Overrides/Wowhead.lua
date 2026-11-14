@@ -8673,6 +8673,16 @@ ns.Overrides.wowhead = {
                 "Stormwind Keep and speak to him at your earliest convenience, I'm sure he would " ..
                 "appreciate your help. Again, please be discreet. It is a matter of some importance.",
         },
+        [1275] = {
+            description = "Foolish blood elves toil with demonic magic. Have they not witnessed what " ..
+                "happened with the naga and with the satyrs of Kalimdor?\n\nI fear that the blood elves " ..
+                "will meet a similar deformation. Azeroth cannot afford to give birth to another vile " ..
+                "race of monsters.\n\nI wish to study the brain stems of the satyr and naga so that I " ..
+                "might deduce what fate the elves are headed toward. In Blackfathom Deeps, on the coast " ..
+                "of Ashenvale, you will find both satyr and naga.\n\n'Tis a long journey, <name>.",
+            rewardChoices = {{7003, 1}, {7004, 1}},
+            rewardMoney = 3500,
+        },
         [1276] = {
             description = "Ah, I remember now! Mosarn is a well-respected blacksmith in Thunder Bluff. I " ..
                 "knew I had heard his name somewhere, before.\n\nIn thanks, the Earthen Ring awarded me " ..
@@ -13382,6 +13392,16 @@ ns.Overrides.wowhead = {
                 "countless malevolent actions that I have taken against this world and its inhabitants, " ..
                 "but my prayer must be heard. Absolution is the last thing I expect.",
             rewardChoices = {{10745, 1}, {10746, 1}},
+            rewardMoney = 14500,
+        },
+        [3379] = {
+            description = "The spiders of the Searing Gorge are an invaluable source of shadow silk. As " ..
+                "you know, shadow silk is highly sought after by the artisans of our trade.\n\nRecently, " ..
+                "a group of poachers has encroached upon these lands, carelessly slaying spiders en masse " ..
+                "without so much as a thought as to the long term effect of their actions. The first task " ..
+                "I ask of you, then, is a simple one: Find them... and end them.\n\nBegin your search to " ..
+                "the north.\n\nIf you require assistance, speak with Raze.",
+            rewardItems = {{10461, 1}},
             rewardMoney = 14500,
         },
         [3380] = {
@@ -22157,6 +22177,15 @@ ns.Overrides.wowhead = {
                 "Basin, <name>.",
             rewardMoney = 2500,
         },
+        [8375] = {
+            description = "Make no mistake about it, <name>. The Horde is quite right when they say " ..
+                "Alterac Valley is Frostwolf Territory.\n\nYou see, the Stormpike Expedition arrived as " ..
+                "peaceful visitors to the area in search of ore and relics. The Frostwolves reacted with " ..
+                "the most brutal and uncivilized act of aggression the Alliance has experienced.\n\nLet " ..
+                "us never forget the brave dwarves that perished in that cowardly unannounced attack. Go " ..
+                "now, <class>, do your part in the battle for Alterac Valley. For the Alliance!",
+            rewardMoney = 18000,
+        },
         [8376] = {rewardItems = {{20700, 1}, {20711, 1}}},
         [8377] = {rewardItems = {{20702, 1}, {20713, 1}}},
         [8378] = {rewardItems = {{20703, 1}, {20715, 1}}},
@@ -22401,6 +22430,12 @@ ns.Overrides.wowhead = {
                 "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
                 "<name>!",
             rewardMoney = 9000,
+        },
+        [8446] = {
+            description = "Corruption seeps from this object.\n\nThere may be a link between this object " ..
+                "and the dragons coming forth from the Dream. You must find someone that can decipher the " ..
+                "meaning of this item. Perhaps the druids of the Moonglade or Cenarion Hold could assist " ..
+                "you further.",
         },
         [8447] = {
             description = "The waters of Lake Elune'ara should dissolve the nightmares engulfing this " ..
@@ -25899,6 +25934,12 @@ ns.Overrides.wowhead = {
                 "gain a better reputation with the Dawn before moving forward with your plans.",
             rewardChoices = {{22657, 1}, {22667, 1}, {22668, 1}, {22659, 1}, {22678, 1}, {22656, 1}},
         },
+        [9226] = {
+            description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
+                "would like to redeem for items of power?\n\nItems offered to those revered amongst the " ..
+                "Dawn are priced quite reasonably. I encourage you to make a purchase!",
+            rewardChoices = {{22681, 1}, {22680, 1}, {22688, 1}, {22679, 1}, {22690, 1}, {22689, 1}},
+        },
         [9227] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
                 "would like to redeem for items of power?\n\nItems offered to those exalted amongst the " ..
@@ -26169,6 +26210,11 @@ ns.Overrides.wowhead = {
                 "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
                 "Light's Hope Chapel would be interested in examining it further...",
             rewardXP = 3300,
+        },
+        [9310] = {
+            description = "On the corpse of the fallen wight, you find a crystal that is faintly " ..
+                "radiating necrotic energy.",
+            rewardChoices = {{23123, 1}, {23122, 1}},
         },
         [9317] = {rewardItems = {{23122, 1}}},
         [9318] = {rewardItems = {{23123, 1}}},

@@ -10843,6 +10843,14 @@ ns.Overrides.wowhead = {
                 "Mine of Loch Modan, left in crates by the dwarven miners' league.\n\nGather the linen " ..
                 "and the gems and bring them to Wynne Larson at the Larson Clothiers in the Mage District.",
         },
+        [1938] = {
+            description = "Long ago, three mages studied in this tower until one fell to the dark arts. " ..
+                "He was urged to turn away from that evil magic, but he could not resist. And so he was " ..
+                "banished.\n\nThe fallen mage's new domain is the tower of Ilgalar in Redridge, and he " ..
+                "took with him a powerful book-- Ur's Treatise on Shadow Magic.\n\nWe, the mages of " ..
+                "Stormwind, would have that book returned. Enter the tower of Ilgalar, find the tome in " ..
+                "his library, and bring it to me.",
+        },
         [1939] = {
             description = "High Sorcerer Andromath wishes to speak with you, <name>. He is at the top of " ..
                 "the wizard's sanctum, in the mage's district of Stormwind.\n\nIt would be wise to speak " ..
@@ -12849,6 +12857,13 @@ ns.Overrides.wowhead = {
                 "his divining magics to find Sharpbeak.\n\nGood luck, <name>. You will find Thadius in " ..
                 "the Blasted Lands, in the mage tower of Nethergarde Keep.",
         },
+        [2991] = {
+            description = "I'll find out where your gryphon is, but first you have to do something for " ..
+                "me. There's a troll in Zul'Farrak, Nekrum Gutchewer, who possesses a medallion I would " ..
+                "very much like to study. Bring me that Medallion and I'll use my powers to find " ..
+                "Sharpbeak.\n\nZul'Farrak is across the ocean to the west, in the desert of Tanaris.",
+            rewardMoney = 7000,
+        },
         [2992] = {
             description = "Give me room while I perform a ritual of divination. I will find the " ..
                 "connection between the feather you brought me and its owner, and follow that connection " ..
@@ -14098,6 +14113,15 @@ ns.Overrides.wowhead = {
                 "research.\n\nPlease - if you are interested, speak with him directly in the Cenarion " ..
                 "Enclave within Darnassus proper.",
         },
+        [3764] = {
+            description = "The soil of Un'Goro Crater is reportedly enriched with potent magical " ..
+                "qualities. I want to know facts from falsehoods; go into the wilds of Un'Goro and " ..
+                "acquire enough quality samples of soil for our continued study.\n\nYou may think that " ..
+                "collection tasks are beneath you; that sort of attitude does not endear yourself to me " ..
+                "or the Cenarion Circle. Bring the samples to Jenal, who is no doubt wasting time outside " ..
+                "behind this tree; just look for the piles of dirt. He will handle the logistics - not I.",
+            rewardMoney = 14500,
+        },
         [3765] = {
             description = "Stormwind -- such a bustling hub of activity.\n\nI have traveled from afar to " ..
                 "seek help. Often it is heard that brave adventurers roam these city streets.\n\nMy " ..
@@ -14702,6 +14726,12 @@ ns.Overrides.wowhead = {
                 "with the loss.\n\nYou grab the knife, remembering that Ginro Hearthkindle in the " ..
                 "Feathermoon Stronghold instructed you to return to him with any found clues. You get the " ..
                 "feeling, however, that you are not quite alone in the water...",
+        },
+        [4128] = {
+            description = "Ho, <name>. I heard that Ragnar Thunderbrew is steaming mad about someone " ..
+                "stealing his ale. He's looking for stalwart adventurers, and willing to pay " ..
+                "plenty.\n\nTalk to Ragnar if you're interested. He's at the Thunderbrew Distillery in " ..
+                "Kharanos, in Dun Morogh.",
         },
         [4129] = {
             description = "The Stronghold's resident druid, Quintis Jonespyre, has some... unusual " ..
@@ -19508,6 +19538,16 @@ ns.Overrides.wowhead = {
                 "could, but barely escaped with my life.\n\n<name>, all I wish now is that more of them " ..
                 "are dead. You will find them just to the west of here.",
             rewardMoney = 1000,
+        },
+        [6561] = {
+            description = "Strength has left me. Your help is needed!\n\nLong ago this site was a great " ..
+                "temple of Elune. But misfortune led to ruin when the corruption of an Old God seeped up " ..
+                "from beneath the earth and tainted the sacred Moon Well.\n\nAku'Mai, servant of the Old " ..
+                "God, rose from the waters.\n\nThe Twilight's Hammer cultists have allied with the naga " ..
+                "to occupy these grounds. The cultists, led by Kelris, sacrifice innocents to Aku'Mai for " ..
+                "power.\n\nSlay Kelris and bring his head to Bashana in Thunder Bluff, <name>, please.",
+            rewardChoices = {{7001, 1}, {7002, 1}},
+            rewardMoney = 6500,
         },
         [6562] = {
             description = "Je'neu Sancrea is in need of aid. He is at the Zoram'gar Outpost in Ashenvale. " ..
@@ -28626,6 +28666,13 @@ ns.Overrides.wowhead = {
                 "bloodcurse.\n\nIt is regrettable, what I ask of you now... but they must be destroyed " ..
                 "and their cursed shells brought back to me.\n\nTheir souls must be put to rest. Return " ..
                 "to me when you have done as asked and I shall give you one final task.",
+        },
+        [9683] = {
+            description = "To the south you will find Bloodcurse Isle. Atop the island you will find a " ..
+                "shrine dedicated to the beloved queen of the naga, Azshara. Destroy the statue - burn it " ..
+                "in effigy! This will surely draw the ire of Atoph, the Bloodcursed leader.\n\nSlay Atoph " ..
+                "and return to me!",
+            rewardItems = {{24334, 1}},
         },
         [9685] = {
             description = "While you were preparing the vessel, I sent a group of initiates to retrieve " ..
@@ -38823,6 +38870,7 @@ ns.Overrides.wowhead = {
             spawns = {[46] = {{42.4, 41.4}, {42.4, 41.6}, {42.4, 43}, {42.6, 41.4}, {42.6, 42}, {42.6, 42.6}}},
             zoneID = 46,
         },
+        [11701] = {spawns = {[490] = {{71.2, 73.8}, {71.4, 73.4}, {71.6, 73.4}, {71.6, 73.6}}}, zoneID = 490},
         [12144] = {
             spawns = {[17] = {{41.8, 60.4}, {42, 60.8}}, [148] = {{42.8, 45.4}, {43.4, 45.8}}},
             zoneID = 17,
