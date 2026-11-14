@@ -3447,6 +3447,15 @@ ns.Overrides.wowhead = {
                 "smoke.\n\nGive some to Foulhoof. He'll think you have brought him a harmless snack.",
             rewardMoney = 175,
         },
+        [491] = {
+            description = "Thule once told me that, long ago, he and two colleagues created a magic wand, " ..
+                "woven together from the apprentice wands each mage possessed. This wand was a symbol of " ..
+                "their friendship, and although Thule came to despise it he could not part with it, nor " ..
+                "could he let the others have it. So he stole the wand, and hid it in Fenris " ..
+                "Keep.\n\nHere. Take the wand to Bethor Iceshard, one of Thule's friends from years past. " ..
+                "I'm sure he will want it.",
+            rewardChoices = {{3457, 1}, {3458, 1}, {3581, 1}},
+        },
         [492] = {
             description = "According to the Deathguard, another one of those foolish Dwarven Mountaineers " ..
                 "has just been captured. The Deathguard likes to use the cellar of the Gallows End Tavern " ..
@@ -8456,6 +8465,14 @@ ns.Overrides.wowhead = {
                 "looking into any Defias activity for me and he'll help you out with any information he " ..
                 "can.",
         },
+        [1244] = {
+            description = "Defias activity? Well, there's always some activity; even if they keep to " ..
+                "themselves we consider them a threat.\n\nBut now that I think about it, there was a " ..
+                "recent sighting that seemed odd. It must have been a couple weeks ago, but some of their " ..
+                "agents had gathered around Addle's Stead. From the report, I'd guessed something big " ..
+                "went down.\n\nWhy don't you check there first and bring me back anything you " ..
+                "find?\n\nThe farmstead is south of the road from Westfall just as you enter Duskwood.",
+        },
         [1245] = {
             description = "Whoa, this looks way too complex to be something to just lead you astray. I " ..
                 "shouldn't even be looking at this stuff. Take it to Trias--he'll be able to make sense " ..
@@ -10293,6 +10310,11 @@ ns.Overrides.wowhead = {
                 "days, he spends his days hoarding ancient texts and skulking about the library in " ..
                 "Ironforge.",
         },
+        [1778] = {
+            description = "I'm going to see about making plans to return home soon. Hopefully, Stephanie " ..
+                "is doing well back in Stormwind. I can't wait to see her again. Till next we meet, " ..
+                "<class>.",
+        },
         [1779] = {
             description = "I want you to take this, <name>. It is called the Symbol of Life.\n\nYou've " ..
                 "proven charitable and patient, and now I want you to prove just how adept you've become " ..
@@ -10895,6 +10917,13 @@ ns.Overrides.wowhead = {
                 "Stormwind you will find the commander of our underground assault crew, Shoni the " ..
                 "Shilent. Shoni needs assistance with her gyrodrillmatic excavationators.\n\nYou will " ..
                 "probably find her amongst the dwarves in Stormwind.\n\nGood luck, <name>.",
+        },
+        [2078] = {
+            description = "Landlubber, ye needs to find me first mate.\n\nTake this'n key, puts it in his " ..
+                "gulliver an' bring him back here to serve the Cap'n.\n\nThem murlocs an' their chief " ..
+                "ain't gonna be too happy once me first mate gets a hold of em!",
+            rewardItems = {{5996, 5}},
+            rewardMoney = 900,
         },
         [2098] = {
             description = "A pirate's life ain't an easy one, landlubber. It ain't all about plunderin' " ..
@@ -16659,6 +16688,14 @@ ns.Overrides.wowhead = {
                 "to claim the reward.",
             rewardChoices = {{15471, 1}, {15470, 1}},
         },
+        [5148] = {
+            description = "To learn tribal leatherworking demands an understanding of how primal nature " ..
+                "truly is; I know that you have already mastered the art of making wild leather armor, " ..
+                "and I am willing to complete your training.\n\nKnow this, <class>: by choosing this path " ..
+                "you agree never to learn dragonscale or elemental leatherworking; there is only room for " ..
+                "practice of one of the three arts. Furthermore, bring to me the finest samples of your " ..
+                "wild leather armor. From there, we will begin your mastery.",
+        },
         [5149] = {
             description = "My auntie Marlene told me to stay here in our house because my father had to " ..
                 "go and fight. My father's the bravest man in the whole world!\n\nBut I've been here for " ..
@@ -17060,6 +17097,15 @@ ns.Overrides.wowhead = {
                 "becoming even more powerful. In their efforts, the relic shattered in a huge explosion, " ..
                 "driving the pieces below the ice of the lake...\n\nSpeak with Jaron Stoneshaper if you'd " ..
                 "like to learn more; he has recently visited the area and can tell you more.",
+        },
+        [5246] = {
+            description = "I did not realize... Forgive my callous words, <class>.\n\nThe mistakes of my " ..
+                "ancestors are not what I wish to dwell on, but if your request is truly genuine, then I " ..
+                "will help you.\n\n<Aurora examines the fragments.>\n\nI believe this is the Crystal of " ..
+                "Zin-Malor, an artifact that can contain and control strong arcane forces. It could have " ..
+                "been used for good, but the evil intentions of those that stole it caused it to " ..
+                "shatter.\n\nGo to the Temple of Zin-Malor in Azshara - I can only hope the book is still " ..
+                "there.",
         },
         [5247] = {
             description = "I will be able to help you, if recreating the artifact is truly what you wish " ..
@@ -17624,6 +17670,15 @@ ns.Overrides.wowhead = {
             description = "This is a scale shed from a plagued dragon hatchling. But unlike the other " ..
                 "pocked, oozing scales on the infant beast, this rare scale is healthy and " ..
                 "unmarred.\n\nBetina Bigglezink will want a sample of this to study.",
+        },
+        [5601] = {
+            description = "I fled Lordaeron during the great war, and was lucky to escape before the " ..
+                "Scourge swept through my homeland and turned it into a plagued nightmare! I was lucky, " ..
+                "but my family was not. I fear they were all killed during the battle of " ..
+                "Darrowshire.\n\nDarrowshire is a village in the Eastern Kingdoms, nestled in the " ..
+                "southern hills of what is now the Eastern Plaguelands. Will you go there and search for " ..
+                "my family? I miss them so much, especially my little sister Pamela.\n\nPlease, find her " ..
+                "for me!",
         },
         [5621] = {
             description = "I need your help, <name>. I am needed here to train the other students, but " ..
@@ -18445,6 +18500,15 @@ ns.Overrides.wowhead = {
                 "and we will learn much about our scaled foes!",
             rewardChoices = {{16791, 1}, {16793, 1}},
             rewardMoney = 4500,
+        },
+        [6028] = {
+            description = "I am looking for a responsible individual to aid me in a small but nonetheless " ..
+                "important matter. I'm here as a representative of the Argent Dawn's interests to the " ..
+                "local governance of Everlook. I need to get a progress report to Argent Officer " ..
+                "Pureheart at Chillwind Camp; it's a ways from here, located along the southern fringe of " ..
+                "the Western Plaguelands.\n\nIf I may be so bold - this would be a perfect means to " ..
+                "introduce yourself to my superior and perhaps earn some work from her!",
+            rewardMoney = 4000,
         },
         [6029] = {
             description = "I'm looking for a responsible individual to aid me in a small but nonetheless " ..
@@ -23820,6 +23884,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{21504, 1}, {21507, 1}, {21505, 1}, {21506, 1}},
         },
         [8792] = {
+            description = "Hello, I'm glad that you've decided to hear me out. The Horde needs all of the " ..
+                "help that it can get to prepare for the Ahn'Qiraj War, and that means that we need you! " ..
+                "Even now as we speak, official collectors are gathering the necessary material needed " ..
+                "for the upcoming war, but we won't be able to meet our goals without your assistance, " ..
+                "<name>!\n\nYou should go speak with the guy in charge, Warlord Gorchuk. What do you say, " ..
+                "<class>? Will you help out with the vital preparations?",
+        },
+        [8793] = {
             description = "Hello, I'm glad that you've decided to hear me out. The Horde needs all of the " ..
                 "help that it can get to prepare for the Ahn'Qiraj War, and that means that we need you! " ..
                 "Even now as we speak, official collectors are gathering the necessary material needed " ..
