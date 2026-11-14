@@ -17087,6 +17087,14 @@ ns.Overrides.wowhead = {
                 "news, because we're seeing a lot more wolves in Northshire Valley lately.\n\nIf you're " ..
                 "interested then speak with Eagan. He's around the side of the abbey, to the left.",
         },
+        [5262] = {
+            description = "You try and gather your thoughts as the dust settles across the chamber. You " ..
+                "go over the events that just transpired and still cannot comprehend the gravity of the " ..
+                "situation.\n\nThe Grand Crusader of the Scarlet Crusade a demon? And not just any demon " ..
+                "but brother to Varimathras, arch lord of the Undercity?\n\nYou carefully stow the " ..
+                "severed head of the dreadlord into your pack. Surely, none would believe the tale you " ..
+                "would tell without proof.\n\nDuke Nicholas Zverenhoff must be told at once!",
+        },
         [5263] = {
             description = "You display a natural aptitude for destruction and you follow orders. It is " ..
                 "rare to see the two coexist. I am beginning to think that you may make an excellent " ..
@@ -25832,6 +25840,13 @@ ns.Overrides.wowhead = {
                 "friendly reputation with the Dawn come with an extremely hefty surcharge. I would advise " ..
                 "that you gain a better reputation with the Dawn before moving forward with your plans.",
             rewardChoices = {{22657, 1}, {22667, 1}, {22668, 1}, {22659, 1}, {22678, 1}, {22656, 1}},
+        },
+        [9223] = {
+            description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
+                "would like to redeem for items of power?\n\nI must warn you; purchases made at honored " ..
+                "reputation with the Dawn come with a fairly prohibitive surcharge. I would advise that " ..
+                "you gain a better reputation with the Dawn before moving forward with your plans.",
+            rewardChoices = {{22681, 1}, {22680, 1}, {22688, 1}, {22679, 1}, {22690, 1}, {22689, 1}},
         },
         [9224] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
