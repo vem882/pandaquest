@@ -17155,6 +17155,14 @@ ns.Overrides.wowhead = {
                 "driving the pieces below the ice of the lake...\n\nSpeak with Jaron Stoneshaper if you'd " ..
                 "like to learn more; he has recently visited the area and can tell you more.",
         },
+        [5245] = {
+            description = "The highborne spirits are miserable creatures, that's for sure. They are still " ..
+                "searching for pieces of the very thing that has cursed them to Kel'Theril forever -- the " ..
+                "stolen relic.\n\nIf you are that interested, take my pick and go south to the lake, see " ..
+                "if you can gather the pieces of it from within the ice.\n\nNow, I can't tell you a thing " ..
+                "about what you find, but I do know of someone who might... Aurora Skycaller; she dwells " ..
+                "near the Northpass Tower in the northern part of Eastern Plaguelands.",
+        },
         [5246] = {
             description = "I did not realize... Forgive my callous words, <class>.\n\nThe mistakes of my " ..
                 "ancestors are not what I wish to dwell on, but if your request is truly genuine, then I " ..
@@ -19667,6 +19675,13 @@ ns.Overrides.wowhead = {
                 "wildkin went crazy and destroyed just about everything they could find!\n\nI heard a " ..
                 "rumor that one of the survivors of the attack is resting at Starfall Village, west of " ..
                 "here. I'm sure curious about what happened... aren't you?",
+        },
+        [6605] = {
+            description = "I just got back from Felwood, <name>. On my way through, I stopped at " ..
+                "Bloodvenom Post and I met a very odd character... She seemed intent on one thing, and I " ..
+                "suppose I could tell you what that is, but I think she'd like to explain it to you " ..
+                "herself.\n\nIf you're interested, head to Bloodvenom Post in western Felwood and look " ..
+                "for Winna Hazzard.\n\nWho knows, she might need your help...",
         },
         [6607] = {
             description = "Can't say I really enjoy fishin' much. Figure I been at it for a good 20 or 30 " ..

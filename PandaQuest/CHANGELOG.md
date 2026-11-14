@@ -4,6 +4,20 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.550] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,039 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,680 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,183 quests, 69 NPCs, 7 objects
+- npc 47277 - Angered Spirit - updated
+  - coordinates: 40 spawn points added in Tol Barad Peninsula
+- npc 70415 - Angler Lin Snowclaw - updated
+  - NPC level added (90)
+- npc 73061 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+
 ## [0.2.549] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -140,18 +154,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 3,630 quests, 38 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 5,101 quests, 66 NPCs, 7 objects
-
-## [0.2.536] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,009 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,623 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,090 quests, 65 NPCs, 7 objects
-- npc 1974 - Ravenclaw Drudger - updated
-  - coordinates: 17 spawn points added in Silverpine Forest
-- npc 51334 - Andorhal Deathguard - updated
-  - coordinates: 8 spawn points added in Western Plaguelands
 
 ## [0.2.412]
 
