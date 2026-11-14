@@ -4,6 +4,68 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.553] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,101 NPCs, 6 objects
+- npc 1099 - Watcher Gelwin - updated
+  - coordinates: 4 spawn points added in Duskwood
+- npc 2284 - Captured Farmer - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2380 - Nandar Branson - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 3844 - Healing Ward IV - updated
+  - coordinates: 20 spawn points added in The Barrens
+  - coordinates: 20 spawn points added in Ashenvale
+  - coordinates: 11 spawn points added in Wetlands
+- npc 4037 - Burning Ravager - updated
+  - coordinates: 34 spawn points added in Stonetalon Mountains
+- npc 5272 - Grizzled Ironfur Bear - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5806 - Treant Ally - updated
+  - coordinates: 25 spawn points added in Stonetalon Mountains
+  - coordinates: 21 spawn points added in Mount Hyjal
+- npc 8236 - Muck Frenzy - updated
+  - coordinates: 3 spawn points added in The Barrens
+- npc 8675 - Felbeast - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+- npc 9467 - Miblon Snarltooth - updated
+  - coordinates: 2 spawn points added in Feralas
+- npc 10290 - Captured Felwood Ooze - updated
+  - coordinates: 5 spawn points added in Un'Goro Crater
+- npc 10582 - Dog - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 10612 - Guard Wachabe - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 11875 - Mortar Team Target Dummy - updated
+  - coordinates: 1 spawn point added in Dun Morogh
+- npc 17262 - Captive Female Kaliri - updated
+  - coordinates: 1 spawn point added in Hellfire Peninsula
+- npc 19386 - Stormwind Marshal - updated
+  - coordinates: 4 spawn points added in Blasted Lands
+- npc 21130 - Scorned Spirit of Fire - updated
+  - coordinates: 1 spawn point added in Shadowmoon Valley
+- npc 25013 - Sentinel Brightgrass - updated
+  - coordinates: 9 spawn points added in Stormwind City
+  - coordinates: 8 spawn points added in Darkshore
+  - coordinates: 7 spawn points added in Teldrassil
+- npc 25024 - Mariner Softsong - updated
+  - coordinates: 15 spawn points added in Feralas
+- npc 32311 - Koltira Deathweaver - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 32484 - Bone Spider - updated
+  - coordinates: 10 spawn points added in Icecrown
+- npc 32510 - Warsong Battleguard - updated
+  - coordinates: 21 spawn points added in Undercity
+- npc 38930 - Zuni - updated
+  - coordinates: 15 spawn points added in Durotar
+  - coordinates: 12 spawn points added in Echo Isles
+- npc 45679 - Ramkahen Archer - updated
+  - coordinates: 1 spawn point added in Uldum
+- npc 45964 - Lord Raymond George - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+
 ## [0.2.552] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -227,13 +289,6 @@ Data from the PandaQuest portal.
   - coordinates: 2 spawn points added in Searing Gorge
 - npc 32376 - Broll Bearmantle - updated
   - coordinates: 2 spawn points added in Tirisfal Glades
-
-## [0.2.542] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 3,648 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,125 quests, 68 NPCs, 7 objects
 
 ## [0.2.412]
 
