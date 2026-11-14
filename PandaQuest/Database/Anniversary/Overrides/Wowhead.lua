@@ -16489,6 +16489,14 @@ ns.Overrides.wowhead = {
                 "third and fourth tablets of Mosh'aru. They're in the Eastern Plaguelands, held by the " ..
                 "mossflayer trolls. Find them, and bring them to me.",
         },
+        [5066] = {
+            description = "Hear ye, hear ye! All heroes are called upon to heed these words!\n\nA call to " ..
+                "arms has been issued by the Kingdom of Stormwind! All able bodied individuals are " ..
+                "entreated to take up arms against the dark threat of the Scourge in the northern lands " ..
+                "of the Eastern Kingdoms! Rumors fly of new threats rising from the ruins of the " ..
+                "Plaguelands!\n\nHeroes of the realm - seek out Commander Ashlam Valorfist who has set up " ..
+                "his base camp in Chillwind Camp, north of the Alterac Mountains!",
+        },
         [5067] = {
             description = "While the crafting of such an item has never successfully been accomplished, " ..
                 "it is thought to be possible - under the right circumstance.\n\nShould the seeker of " ..
@@ -32023,6 +32031,16 @@ ns.Overrides.wowhead = {
             description = "<name>! I need you to take all of these etherlithium crystals over to Chief " ..
                 "Engineer Trep, my, uh, chief of engineering.\n\nHe should know what to do with them. And " ..
                 "if he doesn't, you see to it that he finds out!",
+        },
+        [10226] = {
+            description = "Darn it, that didn't do it!\n\nOk, I've got another idea! I had Xyrol whip up " ..
+                "an elemental power extractor. I'm not certain exactly what this power will do, but I " ..
+                "know that I can use it.\n\nThe sundered rumblers and warp aberrations on the ledge of " ..
+                "the Crumbling Wastes to the south have just what I need for the engines!\n\nThe " ..
+                "extractor will change the form of their power into something solid that you'll be able " ..
+                "to gather up after you've defeated them.",
+            rewardChoices = {{30264, 1}, {30263, 1}, {30262, 1}, {30516, 1}},
+            rewardMoney = 39000,
         },
         [10227] = {
             description = "I see dead draenei. They're all around us.\n\nBah, nobody believes me because " ..
