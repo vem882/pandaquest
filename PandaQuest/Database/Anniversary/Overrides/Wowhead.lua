@@ -11648,6 +11648,14 @@ ns.Overrides.wowhead = {
                 "two blasted boar lungs and one scorpok pincer to complete.",
             rewardItems = {{8410, 1}},
         },
+        [2582] = {
+            description = "Ah, <name>, welcome back. It seems you enjoyed the effect of the robust, " ..
+                "operational imbue, derived from snickerfang. Be warned, while the immediate effect is a " ..
+                "titanic burst of strength, the long term effects on your spirit and intelligence could " ..
+                "be hazardous.\n\nWith that said, do you require more? If so, bring me another three " ..
+                "snickerfang jowls, two blasted boar lungs, and one scorpok pincer.",
+            rewardItems = {{8410, 1}},
+        },
         [2583] = {
             description = "Within these blasted lands exists two species of boar: the ash-mane boar and " ..
                 "the helboar.\n\nIt would appear that the stamina of these beasts renders them nearly " ..
@@ -11665,6 +11673,16 @@ ns.Overrides.wowhead = {
                 "venture back into the wasteland and find for me three blasted boar lungs, two scorpok " ..
                 "pincers, and one basilisk brain.",
             rewardItems = {{8411, 1}},
+        },
+        [2585] = {
+            description = "Have you ever watched them in battle, <name>? The scorpoks, I mean. Have you " ..
+                "ever seen the grace and agility with which they move? The decisiveness of their " ..
+                "strikes?\n\nIf only we could somehow isolate that agility and encapsulate it, we would " ..
+                "be wealthy beyond our... I mean... it would be a boon for the scientific " ..
+                "community.\n\nAssist me, <name>, and I shall allow you a sampling of the assay.\n\nIn " ..
+                "order to create a stable sample, I will need three scorpok pincers, two vulture " ..
+                "gizzards, and one blasted boar lung.",
+            rewardItems = {{8412, 1}},
         },
         [2586] = {
             description = "You live! This is good news, indeed. I assume you are back for more of the " ..
@@ -14243,6 +14261,7 @@ ns.Overrides.wowhead = {
             rewardItems = {{11000, 1}},
             rewardMoney = 23000,
         },
+        [3803] = {rewardItems = {{11887, 1}}},
         [3804] = {rewardItems = {{11887, 1}}},
         [3821] = {
             description = "Sha'ni was sent to investigate reports of strange ritualistic activity coming " ..
@@ -14355,6 +14374,13 @@ ns.Overrides.wowhead = {
                 "by their hanging larval spawns. Use this vial to take a sample of the hive wall near any " ..
                 "of the hatcheries. Bring it back to me for study, but be careful!",
             rewardMoney = 4000,
+        },
+        [3884] = {
+            description = "You have uncovered a mangled journal. Parts of it remain legible, with a " ..
+                "Williden Marshal claiming ownership over the contents therein. If the journal is " ..
+                "accurate, then Williden may be found somewhere in the northern part of the Crater; " ..
+                "according to the journal, he and his companions sought higher ground from the savage " ..
+                "beasts of the Crater once their base camps were overrun.",
         },
         [3901] = {
             description = "You've shown your potential to the Forsaken under normal circumstances <name> " ..
@@ -22022,6 +22048,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{20996, 1}, {20995, 1}},
             rewardMoney = 75,
         },
+        [8331] = {
+            description = "<name>, although we had hoped the Twilight's Hammer's operations in Silithus " ..
+                "were slowing... we were, regrettably, mistaken. Through continued forays against the " ..
+                "cult, we have learned that an even darker power, the Abyssal Council, controls the " ..
+                "Hammer through the arcane wind stones dotted amongst the cult's camps. Your next action, " ..
+                "<name>, will be against the Abyssal Council.\n\nSpeak with the craftsman Aurel Goldleaf, " ..
+                "in the eastern section of Cenarion Hold. Her skill will be needed for this next gambit.",
+        },
         [8332] = {
             description = "We think it is possible to use a wind stone to ambush a duke of the Abyssal " ..
                 "Council. To do this, however, one must commune through the wind stone, and convince the " ..
@@ -22853,6 +22887,13 @@ ns.Overrides.wowhead = {
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21350, 1}},
         },
+        [8596] = {
+            description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
+                "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
+                "command and other minor components by and I'll create a set of powerful boots for " ..
+                "you.\n\nYou will find them useful in the fight against the enemy.",
+            rewardItems = {{21349, 1}},
+        },
         [8597] = {
             description = "I knew that book would come in handy some day! Thankfully, I had the wit and " ..
                 "foresight to stow it somewhere safe.\n\nDon't worry, it's in a place that nobody could " ..
@@ -22944,6 +22985,13 @@ ns.Overrides.wowhead = {
                 "with other minor components and I shall craft you leggings of great power.",
             rewardItems = {{21375, 1}},
         },
+        [8625] = {
+            description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
+                "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
+                "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
+                "than even the wings of Nefarian himself!",
+            rewardItems = {{21345, 1}},
+        },
         [8626] = {
             description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
                 "such might, they'd give pause even to a dragon.\n\nBring me the qiraji bindings of " ..
@@ -22985,6 +23033,15 @@ ns.Overrides.wowhead = {
                 "than even the wings of Nefarian himself!",
             rewardItems = {{21391, 1}},
         },
+        [8631] = {
+            description = "You seek to prove your worth to my kind, mortal? Very well, perhaps we can be " ..
+                "of mutual assistance.\n\nThe ancient sandworm, Ouro, is a being of legendary power. He " ..
+                "is rumored to have been created by the Old God himself as a mockery of life.\n\nHis skin " ..
+                "is unnatural... thick, nearly impregnable, yet it's flexible and allows him to move with " ..
+                "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
+                "with other minor components and I shall craft you leggings of great power.",
+            rewardItems = {{21346, 1}},
+        },
         [8632] = {
             description = "The Twin Emperors... their incessant whispers are slowly taking a toll on my " ..
                 "sanity. They mock me, knowing I cannot step further into their domain to save my brother " ..
@@ -22993,6 +23050,15 @@ ns.Overrides.wowhead = {
                 "suited to our needs.\n\nBring me the components I require, <name>. I will give you a " ..
                 "headpiece of unmatched power.",
             rewardItems = {{21347, 1}},
+        },
+        [8633] = {
+            description = "The unmentionable Old God slowly awakens from his slumber beneath Ahn'Qiraj. " ..
+                "The terrible fate that awaits Azeroth could come in days or years; time has no meaning " ..
+                "for beings of his power.\n\nWhen the stars are favorable, he will lash out against all " ..
+                "living beings with terrible wrath. You must find him before then and find a way to bring " ..
+                "his existence to an end.\n\nDo this and bring me a piece of his husk. I shall grant you " ..
+                "armor no mortal has ever worn... armor fit for one who has slain a god!",
+            rewardItems = {{21343, 1}},
         },
         [8634] = {
             description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
@@ -23622,6 +23688,17 @@ ns.Overrides.wowhead = {
                 "a desert survival kit and bring them to Calandrath in Cenarion Hold.",
             rewardItems = {{20800, 1}, {21266, 1}},
         },
+        [8805] = {
+            description = "The mounted division of the Cenarion Hold guard is in short supply of ornate " ..
+                "mithril boots. Procure a batch and deliver them immediately to Captain Vish Kozus in " ..
+                "Cenarion Hold.",
+            rewardItems = {{20800, 1}, {21266, 1}},
+        },
+        [8806] = {
+            description = "The Cenarion Hold guard is in short supply of grinding stones. Procure a batch " ..
+                "and deliver them immediately to Captain Vish Kozus in Cenarion Hold.",
+            rewardItems = {{20800, 1}, {21266, 1}},
+        },
         [8807] = {
             description = "Geologist Larksbane 's studies have proven to be of tremendous value to our " ..
                 "operations in Silithus. She has recently requested scrying materials to be used in her " ..
@@ -23922,6 +23999,14 @@ ns.Overrides.wowhead = {
                 "ectoplasm we need. Be sure to place the distiller nearby before you harvest them!",
             rewardMoney = 9000,
         },
+        [8925] = {
+            description = "Next we shall need to find a stable and portable source of energy to keep the " ..
+                "ectoplasm active. I've heard rumors of a mighty elemental called Magma Lord Bokk, whose " ..
+                "heart is a powerful magma core - an endless supply of heat!\n\nIt's said he can be found " ..
+                "in the Burning Steppes, south of Blackrock Mountain. Bring the magma core to me and we " ..
+                "shall have enough juice to power the extra-dimensional ghost revealer!",
+            rewardMoney = 9000,
+        },
         [8926] = {
             description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
                 "in order if I'm to keep you interested in saving my skin. Bring me the belt and set of " ..
@@ -23954,6 +24039,12 @@ ns.Overrides.wowhead = {
                 "test. Word has it that Anthion was slain by the undead legions of Stratholme as he tried " ..
                 "to enter its gates.\n\nTry using the device there and see if, indeed, you can speak with " ..
                 "the dead!",
+        },
+        [8931] = {
+            description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
+                "in order if I'm to keep you interested in saving my skin. Bring me an ordinary belt and " ..
+                "a set of gloves that you wish to upgrade.",
+            rewardItems = {{22010, 1}, {22015, 1}},
         },
         [8932] = {
             description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
@@ -24620,6 +24711,12 @@ ns.Overrides.wowhead = {
                 "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
                 "you a piece of armor worn by heroes.",
             rewardItems = {{22422, 1}},
+        },
+        [9042] = {
+            description = "During your battles with the Scourge in Naxxramas, should you come across " ..
+                "desecrated battlements and wartorn plate scraps, return them to me and I shall craft for " ..
+                "you a piece of armor worn by heroes.",
+            rewardItems = {{22423, 1}},
         },
         [9043] = {
             description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
@@ -25824,6 +25921,15 @@ ns.Overrides.wowhead = {
                 "Major Mana Potions.\n\nAll filled orders should be delivered to Packmaster Stonebruiser " ..
                 "at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and void if " ..
                 "tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9201] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order AL-1420:\n\n15 " ..
+                "Greater Arcane Protection Potions.\n\nAll filled orders should be delivered to " ..
+                "Packmaster Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract " ..
+                "is null and void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent " ..
+                "Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
         [9202] = {
@@ -27579,6 +27685,16 @@ ns.Overrides.wowhead = {
                 "relieve the Warsong loggers of their excess, and reclaim some of the tainted wood from " ..
                 "the satyr stronghold to the west. Bring the wood to Gnarl, who will purify it for our " ..
                 "use.",
+        },
+        [9518] = {
+            description = "The Warsong Lumber Camp is a blight upon an embattled landscape. Every time we " ..
+                "make progress in halting their operations, Overseer Gorthak orders his loggers to " ..
+                "redouble their efforts!\n\nNow, the orcs are cutting more wood than they can possibly " ..
+                "use, leaving it to rot while their blades bite into fresh trees! This is an affront to " ..
+                "all we stand for, <name>, and we will show them that we'll not suffer further " ..
+                "destruction of our lands!\n\nGo, and do not rest until Overseer Gorthak and his minions " ..
+                "are dead!",
+            rewardMoney = 2500,
         },
         [9519] = {
             description = "The area to our west, now called Satyrnaar, was once a prominent shrine built " ..
@@ -38456,6 +38572,13 @@ ns.Overrides.wowhead = {
                 "Pathaleon a visit? He can be found within the Mechanar at Tempest Keep.",
             rewardItems = {{29434, 2}},
             rewardMoney = 132000,
+        },
+        [11387] = {
+            description = "There are mechanical constructs within the Mechanar which Mah'duun has been " ..
+                "told must be dismantled.\n\nGo to Tempest Keep, find the tempest-forge destroyers and " ..
+                "destroy them.\n\nThen you may return to collect the bounty.",
+            rewardItems = {{29460, 1}},
+            rewardMoney = 88000,
         },
         [11388] = {
             description = "Today's client seeks something truly unique.\n\nIt is said that Harbinger " ..

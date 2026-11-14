@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.549] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - TBC Anniversary: data from the PandaQuest portal: 5,175 quests, 69 NPCs, 7 objects
+
 ## [0.2.548] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -146,18 +152,6 @@ Data from the PandaQuest portal.
   - coordinates: 17 spawn points added in Silverpine Forest
 - npc 51334 - Andorhal Deathguard - updated
   - coordinates: 8 spawn points added in Western Plaguelands
-
-## [0.2.535] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,007 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,615 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,077 quests, 65 NPCs, 7 objects
-- npc 1791 - Slavering Ghoul - updated
-  - coordinates: 30 spawn points added in Western Plaguelands
-- npc 32518 - Thrall - updated
-  - coordinates: 12 spawn points added in Undercity
 
 ## [0.2.412]
 
