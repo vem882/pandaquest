@@ -4678,6 +4678,14 @@ ns.Overrides.wowhead = {
                 "beasts dead.",
             rewardItems = {{4509, 1}},
         },
+        [665] = {
+            description = "Now that we are full-fledged Blackwater Raiders it is our job to help Mr. " ..
+                "O'Breen locate the lost elven treasure.\n\nIt is next to impossible to find the gems in " ..
+                "the dark sea without aid. The doctor has constructed some goggles that will help. He " ..
+                "needs the goggles charged with the energy derived from the enchanted stone in the cave " ..
+                "just up the hill.\n\nBut the cave is cursed! When we get close, we get ambushed. Defend " ..
+                "me and I can harness the energy from the stone into the goggles.",
+        },
         [666] = {
             description = "The treasure has been on the sea floor so long that the gems have calcified " ..
                 "into thick stone. But the power harnessed in these goggles will allow you to locate them " ..
@@ -22939,6 +22947,15 @@ ns.Overrides.wowhead = {
                 "cutlass.\n\nFace Negolash and bring me my cutlass!\n\nSpeak with Sprogger. He was my " ..
                 "cook on the Smotts' Revenge, and survived the last attack. He can help you find the " ..
                 "giant.",
+        },
+        [8554] = {
+            description = "Negolash is a hungry giant.\n\nWhen the giants destroyed our ship, Negolash " ..
+                "went straight for my kitchen. He wasn't hungry for crew like the other giants. Negolash " ..
+                "wanted wine...and my Barbecued Buzzard Wings. They're my specialty, and I had to go all " ..
+                "the way to the Badlands for the recipe!\n\nIf you want to lure the giant, then get some " ..
+                "wine and a heap of buzzard wings. Put them in our old lifeboat, southeast of here along " ..
+                "the coast. When Negolash smells all that food, he'll come for sure!",
+            rewardItems = {{4130, 1}},
         },
         [8556] = {
             description = "The rings worn by the Qiraji lieutenants are rumored to grant them formidable " ..
