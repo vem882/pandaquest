@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.543] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,016 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,649 quests, 38 NPCs, 9 objects
+- npc 2357 - Merideth Carlson - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 4632 - Kolkar Centaur - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 5364 - Northspring Slayer - updated
+  - coordinates: 29 spawn points added in Feralas
+- npc 6788 - Den Mother - updated
+  - coordinates: 4 spawn points added in Darkshore
+- npc 7583 - Sprinkle - updated
+  - coordinates: 1 spawn point added in Tanaris
+- npc 8439 - Nilith Lokrav - updated
+  - coordinates: 2 spawn points added in Searing Gorge
+- npc 32376 - Broll Bearmantle - updated
+  - coordinates: 2 spawn points added in Tirisfal Glades
+
 ## [0.2.542] - 2026-11-13
 
 Data from the PandaQuest portal.
@@ -99,13 +120,6 @@ Data from the PandaQuest portal.
 
 - database - Classic Era: data from the PandaQuest portal: 3,589 quests, 37 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 4,941 quests, 63 NPCs, 7 objects
-
-## [0.2.523] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 3,581 quests, 37 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 4,906 quests, 63 NPCs, 7 objects
 
 ## [0.2.412]
 
