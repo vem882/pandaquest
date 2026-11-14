@@ -68,6 +68,73 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.554
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,130 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,684 quests, 38 NPCs, 9 objects
+- npc 1159 - First Mate Snellig - updated
+  - coordinates: 3 spawn points added in Wetlands
+- npc 1211 - Leper Gnome - updated
+  - coordinates: 35 spawn points added in Dun Morogh
+- npc 1955 - Lake Creeper - updated
+  - coordinates: 21 spawn points added in Silverpine Forest
+- npc 2623 - Spirit of Old - updated
+  - coordinates: 9 spawn points added in Hillsbrad Foothills
+  - coordinates: 2 spawn points added in Silverpine Forest
+- npc 3130 - Thunder Lizard - updated
+  - coordinates: 17 spawn points added in Durotar
+- npc 4126 - Crag Stalker - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 5305 - Frayfeather Skystormer - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5622 - Ongeku - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 7769 - Hazzali Parasite - updated
+  - coordinates: 26 spawn points added in Tanaris
+- npc 8395 - Sanath Lim-yo - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 8757 - Shahiar - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 9086 - Grunt Gargal - updated
+  - coordinates: 4 spawn points added in Badlands
+- npc 11900 - Brakkar - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 12138 - Lunaclaw - updated
+  - coordinates: 2 spawn points added in The Barrens
+  - coordinates: 2 spawn points added in Darkshore
+- npc 12352 - Scarlet Trooper - updated
+  - coordinates: 22 spawn points added in Eastern Plaguelands
+- npc 15858 - Stormwind Infantryman - updated
+  - coordinates: 14 spawn points added in Silithus
+- npc 16396 - Stormwind Elite Guard - updated
+  - coordinates: 7 spawn points added in Stormwind City
+- npc 17252 - Felguard - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 19419 - Raging Shardling - updated
+  - coordinates: 40 spawn points added in Hellfire Peninsula
+- npc 19911 - Beka Zipwhistle - updated
+  - coordinates: 5 spawn points added in Stormwind City
+- npc 24796 - Spectral Sailor - updated
+  - coordinates: 2 spawn points added in Howling Fjord
+- npc 31003 - Crusader Lord Dalfors - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 31290 - Highlord Darion Mograine - updated
+  - coordinates: 15 spawn points added in Icecrown
+- npc 31430 - Auctioneer Thathung - updated
+  - coordinates: 5 spawn points added in Orgrimmar
+- npc 31467 - Forsaken Refugee - updated
+  - coordinates: 24 spawn points added in Orgrimmar
+  - coordinates: 7 spawn points added in Durotar
+- npc 44130 - Vilebrood Webspinner - updated
+  - coordinates: 3 spawn points added in Gilneas
+- npc 68017 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 68812 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+- npc 69257 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+
 0.2.553
 - database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,101 NPCs, 6 objects
 - npc 1099 - Watcher Gelwin - updated
@@ -302,24 +369,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 2 spawn points added in Northern Stranglethorn
 - npc 16133 - Mataus the Wrathcaster - updated
   - coordinates: 2 spawn points added in Eastern Plaguelands
-
-0.2.543
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,016 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,649 quests, 38 NPCs, 9 objects
-- npc 2357 - Merideth Carlson - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 4632 - Kolkar Centaur - updated
-  - coordinates: 40 spawn points added in Desolace
-- npc 5364 - Northspring Slayer - updated
-  - coordinates: 29 spawn points added in Feralas
-- npc 6788 - Den Mother - updated
-  - coordinates: 4 spawn points added in Darkshore
-- npc 7583 - Sprinkle - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 8439 - Nilith Lokrav - updated
-  - coordinates: 2 spawn points added in Searing Gorge
-- npc 32376 - Broll Bearmantle - updated
-  - coordinates: 2 spawn points added in Tirisfal Glades
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
