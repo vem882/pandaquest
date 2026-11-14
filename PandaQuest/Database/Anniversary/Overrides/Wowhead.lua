@@ -7192,6 +7192,14 @@ ns.Overrides.wowhead = {
                 "thing left to do is find the gem Teronis was seeking. Raene mentioned it being in the " ..
                 "area. Perhaps the murlocs have it...",
         },
+        [1024] = {
+            description = "You'll have to do the research yourself, but from what notes Teronis has made, " ..
+                "it sounds like your next course of action is to find the other pieces of the rod Dartol " ..
+                "created. I would start by heading to the moonwell east of Iris Lake. When you're ready, " ..
+                "follow the road and turn north when you reach a small sitting area on your left.\n\nA " ..
+                "dryad there named Shael'dryn is better suited to guide you. Seek her out.\n\nKeep the " ..
+                "gem with you-- Shael'dryn will need it if she's to help you recreate the rod.",
+        },
         [1025] = {
             description = "Before you travel to the moonwell I have another task that will aid the people " ..
                 "of Ashenvale if you would like to test your skills.\n\nAlong the road heading east " ..
@@ -37310,6 +37318,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{32866, 1}, {32867, 1}, {32865, 1}, {32868, 1}},
             rewardMoney = 132000,
         },
+        [11042] = {
+            description = "A strange vision haunts me, <name>. I see a continuous cloud of smoke " ..
+                "ascending toward the sky, left in the wake of a giant fire moving ever faster away. It " ..
+                "is not a natural phenomenon, nor a creation of evil; that much I know.\n\nI have no " ..
+                "knowledge of what it looks like, save that it is the product of the labor of many. Yet, " ..
+                "without more hands, it may never come to be.\n\nTravel to Netherstorm, <class>. Locate " ..
+                "those responsible for this creation and offer them your aid.",
+        },
         [11043] = {
             description = "I've heard that the Wildhammer dwarves maintain a gryphon roost at their " ..
                 "fortress down in southern Shadowmoon Valley. If you're going down there, would you speak " ..
@@ -38057,6 +38073,15 @@ ns.Overrides.wowhead = {
                 "this mess, but he be owin' me big money.\n\nDo what ya can to help him out, then leave " ..
                 "the collectin' to me!",
             rewardMoney = 88000,
+        },
+        [11166] = {
+            description = "How did those fools fail? I told them to be careful - even gave them disguises " ..
+                "to help them blend in. Ahh, well. The bright side of their failure is that this " ..
+                "opportunity falls to you.\n\nSucceed, and you'll be well on your way to joining my crew " ..
+                "and sharing in the immeasurable fame that will soon be mine. Not that I need any more, " ..
+                "mind you.\n\nThere are yet a few portions of my map that require further exploration " ..
+                "before our excavation can be initiated....",
+            rewardMoney = 132000,
         },
         [11169] = {
             description = "During the last Grimtotem attack, I was wounded, but not before I managed to " ..
@@ -39041,6 +39066,7 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [6240] = {spawns = {[17] = {{68.4, 48.6}, {68.6, 48.4}, {68.6, 48.6}}}, zoneID = 17},
+        [8338] = {spawns = {[51] = {{74, 18.6}, {74.2, 18.4}}}, zoneID = 51},
         [8504] = {
             spawns = {
                 [51] = {
