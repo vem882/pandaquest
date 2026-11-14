@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.551] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,041 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,682 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,186 quests, 70 NPCs, 7 objects
+- npc 70339 - Angler Scottie - updated
+  - NPC level added (90)
+- npc 70408 - Angler Dry - updated
+  - NPC level added (90)
+
 ## [0.2.550] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -147,13 +159,6 @@ Data from the PandaQuest portal.
 - database - refreshed auction scan targets without recent prices
 - database - Classic Era: data from the PandaQuest portal: 3,641 quests, 38 NPCs, 9 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 5,112 quests, 67 NPCs, 7 objects
-
-## [0.2.537] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Classic Era: data from the PandaQuest portal: 3,630 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,101 quests, 66 NPCs, 7 objects
 
 ## [0.2.412]
 
