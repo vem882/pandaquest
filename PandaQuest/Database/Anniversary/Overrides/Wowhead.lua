@@ -16357,6 +16357,14 @@ ns.Overrides.wowhead = {
                 "fat off their dishonorable acts.\n\nThe people of the Crossroads would be in your debt.",
             rewardMoney = 600,
         },
+        [5047] = {
+            description = "You'll find Malyfous Darkhammer in Everlook, <class>. Tell him that 'Pip is " ..
+                "A-OK' and that the suit works perfectly.\n\nThen hand him this:\n\n<Pip hands you a " ..
+                "glowing piece of flesh.>\n\nI snatched it from the beast's innards during my " ..
+                "'vacation.'\n\nI bet Malyfous could give you a fairly accurate assessment of what he can " ..
+                "do with parts from a monster like this!\n\nOh, I suppose you don't know where Everlook " ..
+                "is, do you? To Winterspring, <fella/lady>!",
+        },
         [5048] = {
             description = "She's a tad ornery, and quite possibly out of her gourd... but the records " ..
                 "indicate that Ol' Emma does fit the framework of who Emma Felstone might be.\n\nPerhaps " ..
@@ -16846,6 +16854,16 @@ ns.Overrides.wowhead = {
                 "next destination.\n\nWhen you are ready, the journey will begin. To the Plaguelands you " ..
                 "will go and to Jeziba you will speak.\n\nHe is a mortal as wise as the ancients and as " ..
                 "patient as the immovable earth. Find him in Andorhal.",
+        },
+        [5163] = {
+            description = "It's all ready, <name>!\n\nNow, I sent some mail to my friends already, " ..
+                "telling them that I have a surprise for them. This is where you come in!\n\nI'm going to " ..
+                "give you my mechanical yeti, and you need to surprise them by paying each of my friends " ..
+                "a visit, turning the yeti on and sending it towards them.\n\nOnce you have shown Legacki " ..
+                "in Everlook, Sprinkle in Gadgetzan, and Quixxil in Marshal's Refuge, come back and tell " ..
+                "me what happened!\n\nPlease bring my yeti back to me then, too.",
+            rewardItems = {{15778, 1}},
+            rewardMoney = 9000,
         },
         [5164] = {
             description = "A finer instrument of justice, Haleh could not have chosen. Read from the " ..
@@ -19590,6 +19608,15 @@ ns.Overrides.wowhead = {
                 "make for a powerful arcane component.\n\nWill you help me, <name>? Blackfathom Deeps can " ..
                 "be found along Zoram Strand to the north of our outpost.",
             rewardMoney = 1400,
+        },
+        [6564] = {
+            description = "Some poor handwriting is scrawled on the crumpled up note:\n\n\"Yes, tell all " ..
+                "the priestesses to bring the crystals to me. The water elemental spirits are strong " ..
+                "within them and they will aid our aquamancers greatly in their own summonings.\n\nBy " ..
+                "controlling the power within the crystals, we will appease Aku'Mai. One day we will have " ..
+                "enough power to bring Aku'Mai back to us and the world will return to its greatest era! " ..
+                "An era of rule by the Old Gods!\"",
+            rewardMoney = 1100,
         },
         [6565] = {
             description = "This Twilight's Hammer follower cannot be allowed to complete his plan. The " ..
@@ -22588,6 +22615,12 @@ ns.Overrides.wowhead = {
             rewardChoices = {{22951, 1}, {22953, 1}, {22952, 1}},
             rewardMoney = 175,
         },
+        [8496] = {
+            description = "Our supply of bandages in the battlefield is running dangerously low after the " ..
+                "recent casualties we have incurred. Obtain a batch of first-aid supplies and deliver " ..
+                "them to Windcaller Proudhorn in Cenarion Hold.",
+            rewardItems = {{20800, 1}, {20805, 1}},
+        },
         [8497] = {
             description = "With the arrival of fresh recruits to Cenarion Hold comes the problem of " ..
                 "keeping them alive in the desert. Dehydration as well as numerous poisonous creatures " ..
@@ -22697,6 +22730,15 @@ ns.Overrides.wowhead = {
                 "hold on to them. As you prove your loyalty to our organization I can offer you some of " ..
                 "the gear we reserve for our closest allies in exchange for those badges.",
             rewardChoices = {{21178, 1}, {21179, 1}, {21187, 1}},
+        },
+        [8551] = {
+            description = "I used to sail a ship from here all the way to Ratchet, in Kalimdor. I was a " ..
+                "successful captain with a sterling reputation.\n\nUntil...\n\nThose cursed sea giants " ..
+                "ruined me! They smashed my ship, killed my crew, and set me on a lifeboat to Booty Bay. " ..
+                "And one of the giants, Gorlash, stole my Captain's Chest. He said he wanted it for a " ..
+                "snuffbox. The nerve!\n\nI hear Gorlash wanders the coast east of here. Find him and get " ..
+                "back my chest! Do that, and you'll have earned a captain's gratitude.",
+            rewardItems = {{11469, 1}},
         },
         [8552] = {description = "This fine sash has the letters \"HS\" embroidered along its hem."},
         [8553] = {
@@ -24087,6 +24129,13 @@ ns.Overrides.wowhead = {
                 "superior.",
             rewardItems = {{21994, 1}, {21998, 1}},
         },
+        [8938] = {
+            description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
+                "that you'll help me through this predicament, it would be wise of me to reward you " ..
+                "according to your performance.\n\nFor now I will exchange your belt and gloves. If we " ..
+                "both see this through I shall make the rest of the pieces available to you.",
+            rewardItems = {{22010, 1}, {22015, 1}},
+        },
         [8939] = {
             description = "You've proven to be a very reliable individual, <name>. As much as I trust " ..
                 "that you'll help me through this predicament, it would be wise of me to reward you " ..
@@ -24767,6 +24816,13 @@ ns.Overrides.wowhead = {
                 "piece of armor for you.",
             rewardItems = {{22431, 1}},
         },
+        [9050] = {
+            description = "You will find the remnants of our fallen heroes on the corpses of the Lords of " ..
+                "Naxxramas. Bring those desecrated keepsakes to me along with wartorn plate scraps and " ..
+                "crafting materials capable of revitalizing the cursed armor and I shall craft a fine " ..
+                "piece of armor for you.",
+            rewardItems = {{22424, 1}},
+        },
         [9051] = {
             description = "The toxin you helped me create is for a special purpose. The great devilsaurs " ..
                 "of the crater make it dangerous to hunt and difficult for me to survive. Even if I " ..
@@ -25264,6 +25320,14 @@ ns.Overrides.wowhead = {
                 "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
                 "of purification and you shall know faith.",
             rewardItems = {{22514, 1}},
+        },
+        [9114] = {
+            description = "<Father Montoy makes some strange gestures in the air in front of " ..
+                "you.>\n\nBlessed <boy/girl>, have you found the vestments of the fallen? The poor souls " ..
+                "whose last breaths were taken on the field of battle - stripped of everything including " ..
+                "their dignity.\n\nBring me the desecrated remnants of the departed along with reagents " ..
+                "of purification and you shall know faith.",
+            rewardItems = {{22515, 1}},
         },
         [9115] = {
             description = "<Father Montoy makes some strange gestures in the air in front of " ..
