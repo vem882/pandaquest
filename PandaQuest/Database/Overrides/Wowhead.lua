@@ -64526,6 +64526,7 @@ ns.Overrides.wowhead = {
             },
             zoneID = 12,
         },
+        [275] = {spawns = {[10] = {{78.8, 44.4}, {78.8, 44.6}}}, zoneID = 10},
         [311] = {spawns = {[10] = {{7.8, 34}}}, zoneID = 10},
         [329] = {
             spawns = {
@@ -69422,12 +69423,14 @@ ns.Overrides.wowhead = {
         [68755] = {maxLevel = 90, minLevel = 90},
         [68768] = {maxLevel = 90, minLevel = 90, subName = "Statistics"},
         [68787] = {maxLevel = 90, minLevel = 90},
+        [68795] = {maxLevel = 90, minLevel = 90, subName = "Prince of Stormwind"},
         [68821] = {maxLevel = 90, minLevel = 90},
         [68857] = {maxLevel = 90, minLevel = 90},
         [68863] = {maxLevel = 90, minLevel = 90},
         [68871] = {maxLevel = 90, minLevel = 90},
         [68881] = {subName = "Prince of Stormwind"},
         [68908] = {subName = "SI:7"},
+        [68923] = {subName = "Prince of Stormwind"},
         [68939] = {subName = "Prince of Stormwind"},
         [68944] = {subName = "Prince of Stormwind"},
         [68960] = {maxLevel = 90, minLevel = 90},

@@ -4,6 +4,21 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.548] - 2026-11-14
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,036 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,678 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,158 quests, 69 NPCs, 7 objects
+- npc 275 - Whit Wantmal - updated
+  - coordinates: 2 spawn points added in Duskwood
+- npc 68795 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+  - NPC level added (90)
+- npc 68923 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+
 ## [0.2.547] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -143,16 +158,6 @@ Data from the PandaQuest portal.
   - coordinates: 30 spawn points added in Western Plaguelands
 - npc 32518 - Thrall - updated
   - coordinates: 12 spawn points added in Undercity
-
-## [0.2.534] - 2026-11-13
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,005 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,611 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,050 quests, 65 NPCs, 7 objects
-- npc 10303 - Storm Shadowhoof - updated
-  - coordinates: 1 spawn point added in Winterspring
 
 ## [0.2.412]
 
