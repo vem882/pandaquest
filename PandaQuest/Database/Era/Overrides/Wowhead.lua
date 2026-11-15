@@ -4272,6 +4272,14 @@ ns.Overrides.wowhead = {
                 "island and retrieve a few specimens.",
             rewardMoney = 4000,
         },
+        [602] = {
+            description = "From what I've heard, the mages of Dalaran are busy with the reconstruction of " ..
+                "their destroyed city, I'm sure you can find one of them who will spare some time to look " ..
+                "at the bracers. If there's anything I know about mages, they can't resist a magical " ..
+                "puzzle.\n\nTake the bag of water elemental bracers and see if they can shed any light on " ..
+                "the Stone's curse. Look for the Archmage Ansirem Runeweaver in particular. I've dealt " ..
+                "with him before, and his knowledge is vast.",
+        },
         [603] = {
             description = "The mage that is in possession of the Stone is amplifying its power through " ..
                 "some focal point... an altar of some sort. You should be able to disrupt it by " ..
@@ -8007,6 +8015,15 @@ ns.Overrides.wowhead = {
                 "told you.\n\nSafe travels, <name>. And it won't surprise me if we meet again -- once " ..
                 "Fizzle learns of indurium he'll probably send you to Uldaman to acquire it!",
             rewardChoices = {{6729, 1}, {6732, 1}},
+        },
+        [1138] = {
+            description = "I love crab. Crabs are the fruit of the sea! You can bake it, barbecue it, " ..
+                "boil it, and broil it. They're pan fried, deep fried, and stir fried. There's crab " ..
+                "salad, crab soup, crab stew, pepper crab, lemon crab, whipper root crab, and Ironforge " ..
+                "surprise crab. That's... that's about it.\n\nI'm here fishing right now, so I can't get " ..
+                "any fine crab chunks. You can pick them out of reef crawlers and encrusted tide " ..
+                "crawlers. You can make a lot with it. You can bake it, barbecue it, boil it...",
+            rewardChoices = {{15405, 1}, {15406, 1}},
         },
         [1139] = {
             description = "We've slowed the Shadowforge clan by cutting them off from Blackrock Spire, " ..

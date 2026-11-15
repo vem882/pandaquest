@@ -22294,6 +22294,16 @@ ns.Overrides.wowhead = {
                 "acquire a lot of pirate hats by whatever means. Do you think you can handle that?",
             rewardMoney = 6500,
         },
+        [8366] = {
+            description = "Argh! They want the impossible from me!\n\nThe Steamwheedle Cartel wants me to " ..
+                "teach the Southsea pirates a lesson. The problem is that I can't be in two places at " ..
+                "once; I need to stay here to keep the peace.\n\nOf late, the pirates have been " ..
+                "disregarding the protection money that the cartel regularly forks over. So I'd like to " ..
+                "temporarily deputize you to go down there and show them what for.\n\nYou'll find them at " ..
+                "Lost Rigger Cove, which is not too far to the south. Thanks <name>, I'll owe you one!",
+            rewardChoices = {{20640, 1}, {20641, 1}},
+            rewardMoney = 6500,
+        },
         [8367] = {
             description = "Serving the Horde in one of the great battles against the Alliance is a source " ..
                 "of great honor! The few however, that have served the Horde in ALL of our active " ..
@@ -36234,6 +36244,17 @@ ns.Overrides.wowhead = {
                 "took them away to the northwest. They probably are all locked up in cages and stuff. If " ..
                 "you find them that would be great. I'm kind of worried about them.",
             rewardItems = {{31666, 1}},
+        },
+        [10853] = {
+            description = "The spirits of the nether drakes in the Singing Ridge are in need of " ..
+                "liberation.\n\nThe nether drakes were not always nether drakes. They used to be black " ..
+                "drakes.\n\nBut then, with the destruction of this world, a wave of nether energy washed " ..
+                "over everything and had the side-effect of changing the drakeling eggs.\n\nNow they are " ..
+                "all twisted versions of their former selves. We must help them to find peace.\n\nDo this " ..
+                "by slaying a drake near to the spirit calling totem, and then take its spirit from it.",
+            rewardChoices = {{31711, 1}, {31713, 1}, {31712, 1}, {31714, 1}},
+            rewardItems = {{31437, 5}},
+            rewardMoney = 37000,
         },
         [10854] = {
             description = "Take this enchanted nethervine crystal and make your way back to Dragonmaw " ..
