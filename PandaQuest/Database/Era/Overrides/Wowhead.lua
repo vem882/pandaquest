@@ -21053,6 +21053,13 @@ ns.Overrides.wowhead = {
             rewardItems = {{19035, 1}},
             rewardMoney = 14000,
         },
+        [7841] = {
+            description = "The Wildhammer be striking up deals with our enemies, forgin' new alliances. " ..
+                "This time, they be workin' with the high elves, mon.\n\n<Otho spits.>\n\nWe be needin' " ..
+                "to send those Wildhammer dwarves a message - a message in the blood of our enemies. " ..
+                "Slaughter every Highvale high elf that you come across, leave their bodies as a " ..
+                "warnin'.\n\nNever mess with trolls!",
+        },
         [7842] = {
             description = "They say the Wildhammer and gryphon are as close to each other as troll and " ..
                 "mate. Disgusting, but we be able to use this to our advantage, mon. We send them another " ..
