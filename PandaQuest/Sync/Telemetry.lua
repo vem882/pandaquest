@@ -355,7 +355,7 @@ local function saveAuctionScan(scan, suffix)
 end
 
 -- The PQ auction tab asks for explicit consent on each requested page.
-function M.QueueNativeAuctionPrices(prices, quantities)
+function M.QueueNativeAuctionPrices(prices, quantities, listings)
     if not ns.IsModuleWanted("Telemetry") then return 0 end
     local scan = nativeAuctionScan or { at = unixNow(), events = {}, byItem = {} }
     local added = 0
@@ -364,6 +364,7 @@ function M.QueueNativeAuctionPrices(prices, quantities)
         if event then
             event.money = math.min(event.money, copper)
             event.count = nil
+            event.askn, event.askmed, event.askmax, event.sellers = nil, nil, nil, nil
         elseif #scan.events < M.MAX_NATIVE_AUCTION_PRICES then
             event = { e = "AP", t = 0, item = id, money = copper, kind = "native_scan" }
             scan.events[#scan.events + 1] = event
@@ -374,6 +375,15 @@ function M.QueueNativeAuctionPrices(prices, quantities)
     for id, quantity in pairs(quantities or {}) do
         local event = scan.byItem[id]
         if event then event.count = quantity end
+    end
+    for id, distribution in pairs(listings or {}) do
+        local event = scan.byItem[id]
+        if event then
+            event.money = distribution.lowest
+            event.askn, event.askmed, event.askmax = distribution.askn, distribution.askmed, distribution.askmax
+            event.sellers = distribution.sellers
+            event.t = math.min(30 * 86400, math.max(0, unixNow() - scan.at))
+        end
     end
     if #scan.events > 0 then nativeAuctionScan = scan end
     return added
