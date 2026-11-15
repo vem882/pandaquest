@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.566] - 2026-11-15
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,136 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,693 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,204 quests, 70 NPCs, 7 objects
+- npc 5237 - Gordunni Ogre Mage - updated
+  - coordinates: 30 spawn points added in Feralas
+- npc 17218 - Huraan - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+
 ## [0.2.565] - 2026-11-15
 
 Data from the PandaQuest portal.
@@ -298,20 +310,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 68923 - Anduin Wrynn - updated
   - NPC title added (Prince of Stormwind)
-
-## [0.2.547] - 2026-11-14
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,033 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,672 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,152 quests, 68 NPCs, 7 objects
-- quest 24836 - A Change of Heart - updated
-  - reward choices: +4
-- npc 707 - Rockjaw Trogg - updated
-  - coordinates: 40 spawn points added in Dun Morogh
-- npc 70407 - Angler Jo Ransom - updated
-  - NPC level added (90)
 
 ## [0.2.412]
 
