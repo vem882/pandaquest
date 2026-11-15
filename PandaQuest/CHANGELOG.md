@@ -4,6 +4,15 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.572] - 2026-11-15
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,142 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,218 quests, 70 NPCs, 7 objects
+- npc 29594 - Angry Turkey - updated
+  - coordinates: 40 spawn points added in Howling Fjord
+
 ## [0.2.571] - 2026-11-15
 
 Data from the PandaQuest portal.
@@ -230,89 +239,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Uldum
 - npc 45964 - Lord Raymond George - updated
   - coordinates: 1 spawn point added in Eastern Plaguelands
-
-## [0.2.552] - 2026-11-14
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,076 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,188 quests, 70 NPCs, 7 objects
-- npc 1204 - Watcher Corwin - updated
-  - coordinates: 17 spawn points added in Duskwood
-- npc 1210 - Chok'sul - updated
-  - coordinates: 7 spawn points added in Loch Modan
-- npc 1865 - Ravenclaw Raider - updated
-  - coordinates: 27 spawn points added in Silverpine Forest
-- npc 2240 - Syndicate Footpad - updated
-  - coordinates: 11 spawn points added in Hillsbrad Foothills
-- npc 2246 - Syndicate Assassin - updated
-  - coordinates: 15 spawn points added in Tirisfal Glades
-- npc 2378 - Kundric Zanden - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 2906 - Dustbelcher Warrior - updated
-  - coordinates: 27 spawn points added in Badlands
-- npc 3309 - Karus - updated
-  - coordinates: 3 spawn points added in Orgrimmar
-- npc 3582 - Aman - updated
-  - coordinates: 1 spawn point added in Wetlands
-- npc 3806 - Forsaken Infiltrator - updated
-  - coordinates: 19 spawn points added in Ashenvale
-- npc 4085 - Nizzik - updated
-  - coordinates: 1 spawn point added in Stonetalon Mountains
-- npc 4189 - Valdaron - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 5505 - Theridran - updated
-  - coordinates: 1 spawn point added in Stormwind City
-- npc 9496 - Gorishi Egg - updated
-  - coordinates: 20 spawn points added in Un'Goro Crater
-- npc 12803 - Lord Lakmaeran - updated
-  - coordinates: 7 spawn points added in Feralas
-- npc 14436 - Mor'zul Bloodbringer - updated
-  - coordinates: 4 spawn points added in Burning Steppes
-- npc 14458 - Watery Invader - updated
-  - coordinates: 40 spawn points added in Winterspring
-- npc 21079 - Cragskaar Shardling - updated
-  - coordinates: 40 spawn points added in Netherstorm
-- npc 23543 - Shade of the Horseman - updated
-  - coordinates: 9 spawn points added in Azuremyst Isle
-  - coordinates: 7 spawn points added in Eversong Woods
-  - coordinates: 6 spawn points added in Dun Morogh
-  - coordinates: 6 spawn points added in Elwynn Forest
-  - coordinates: also changed in 2 more zones
-- npc 24039 - Sundered Ghost - updated
-  - coordinates: 5 spawn points added in Blade's Edge Mountains
-- npc 24833 - Captain "Stash" Torgoley - updated
-  - coordinates: 14 spawn points added in Wetlands
-  - coordinates: 2 spawn points added in Dustwallow Marsh
-- npc 29522 - Frost Wyrm Raptor - updated
-  - coordinates: 11 spawn points added in Orgrimmar
-  - coordinates: 8 spawn points added in Stormwind City
-- npc 31431 - Overlord Runthak - updated
-  - coordinates: 8 spawn points added in Orgrimmar
-- npc 32270 - Legion Dreadwhisperer - updated
-  - coordinates: 40 spawn points added in Undercity
-- npc 37976 - Vegard the Unforgiven - updated
-  - coordinates: 2 spawn points added in Dragonblight
-- npc 39088 - Triumph Messenger - updated
-  - coordinates: 9 spawn points added in Southern Barrens
-- npc 40213 - Ecton Brasstumbler - updated
-  - coordinates: 2 spawn points added in Tanaris
-- npc 40880 - Firelands Denizen - updated
-  - coordinates: 3 spawn points added in Mount Hyjal
-- npc 43445 - Danforth - updated
-  - coordinates: 1 spawn point added in Redridge Mountains
-- npc 45611 - Arthura - updated
-  - coordinates: 1 spawn point added in Silverpine Forest
-- npc 45612 - High Warlord Cromush - updated
-  - coordinates: 1 spawn point added in Silverpine Forest
-- npc 45766 - Arcane Fiend - updated
-  - coordinates: 5 spawn points added in Silverpine Forest
-- npc 46751 - Skitterweb Spiderling - updated
-  - coordinates: 1 spawn point added in Silverpine Forest
-- npc 66975 - Anduin Wrynn - updated
-  - coordinates: 1 spawn point added in Vale of Eternal Blossoms
-- npc 73607 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
 
 ## [0.2.412]
 
