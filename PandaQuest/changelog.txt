@@ -1,3 +1,4 @@
+- Complete the Finnish translations for auction scanning and privacy settings.
 - Track when supported owned auctions are first reported sold by the game.
 - Mark queued prices that were also found by the missing-price scan.
 
