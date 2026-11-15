@@ -4657,6 +4657,7 @@ ns.Overrides.wowhead = {
                 "the Arathi Highlands, and haven't checked in for days. Find them for me? I grow " ..
                 "concerned.",
         },
+        [660] = {description = "All right, <name>. I'm ready if you are.\n\nShall we?"},
         [661] = {
             description = "I've seen Kinelory look way worse after a night in the tavern than she does " ..
                 "now. You obviously did a good job protecting her.\n\nThese items she brought back from " ..

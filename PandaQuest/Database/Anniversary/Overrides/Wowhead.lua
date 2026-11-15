@@ -19219,6 +19219,14 @@ ns.Overrides.wowhead = {
                 "somewhere.\n\n<Flint swallows hard.>\n\nAll SI:7 agents carry this insignia.\n\n<Flint " ..
                 "shows you his SI:7 insignia.>\n\nBring any of those that you may find back to me.",
         },
+        [6186] = {
+            description = "<The blood appears to have completely drained from Flint's face.>\n\nNa... " ..
+                "Nathanos did this? Nathanos is the Blightcaller?\n\nWhy? He was... was so noble - a " ..
+                "ranger lord respected by all. The only human ever allowed to train under the high elves. " ..
+                "Now a ruthless agent of the Forsaken?\n\nI... I am sorry to ask this of you, <name>, but " ..
+                "Highlord Fordragon must be informed of this turn of events at once. Please, return to " ..
+                "Stormwind and deliver the news.",
+        },
         [6187] = {
             description = "Do you know how many ranger lords exist in this world? How many human ranger " ..
                 "lords have ever existed?\n\nNathanos' accomplishments were unprecedented. He was a " ..
@@ -35623,6 +35631,15 @@ ns.Overrides.wowhead = {
                 "to persuade him to help us understand what the dark conclave arakkoa are " ..
                 "planning.\n\nStart your search for him along the road in Magma Fields to the northwest. " ..
                 "It seems a likely place for him to take refuge.",
+        },
+        [10760] = {
+            description = "The Sketh'lon Wreckage, just to the east, is an eerie place. The peons are " ..
+                "convinced that it's cursed.\n\nThere are few trees here, so the peons have no choice but " ..
+                "to venture into the arakkoa ruins to chop wood. The arakkoa spirits prey on the work " ..
+                "groups, draining their life and using it to fuel their foul magics.\n\nWe must find out " ..
+                "what is driving the dark conclave and stop them before their influence expands. Search " ..
+                "the Sketh'lon Wreckage for evidence of their plans.",
+            rewardMoney = 41000,
         },
         [10761] = {
             description = "There's nothing here that would explain why the spirits of these arakkoa have " ..
