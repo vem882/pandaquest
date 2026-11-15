@@ -66536,6 +66536,7 @@ ns.Overrides.wowhead = {
             zoneID = 148,
         },
         [3693] = {spawns = {[148] = {{39.2, 43.4}}}, zoneID = 148},
+        [3701] = {spawns = {[148] = {{38.8, 43.4}}}, zoneID = 148},
         [3702] = {spawns = {[148] = {{37.6, 40.6}}}, zoneID = 148},
         [3707] = {spawns = {[14] = {{42.4, 68.8}}}, zoneID = 14},
         [3746] = {
@@ -70082,6 +70083,7 @@ ns.Overrides.wowhead = {
         [69752] = {subName = "Kirin Tor"},
         [69754] = {subName = "Kirin Tor"},
         [69782] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [69784] = {maxLevel = 90, minLevel = 90},
         [69843] = {maxLevel = 92, minLevel = 92, subName = "The Emperor's Shield"},
         [69966] = {maxLevel = 91, minLevel = 91, subName = "Glorious Conquest Quartermaster"},
         [70022] = {subName = "The Bone Collector"},

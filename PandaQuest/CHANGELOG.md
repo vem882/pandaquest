@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.568] - 2026-11-15
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,139 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,696 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,213 quests, 70 NPCs, 7 objects
+- npc 3701 - Tharnariun Treetender - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 69784 - Animus Golem - updated
+  - NPC level added (90)
+
 ## [0.2.567] - 2026-11-15
 
 Data from the PandaQuest portal.
@@ -307,12 +319,6 @@ Data from the PandaQuest portal.
   - NPC level added (90)
 - npc 73061 - Anduin Wrynn - updated
   - NPC title added (Prince of Stormwind)
-
-## [0.2.549] - 2026-11-14
-
-Data from the PandaQuest portal.
-
-- database - TBC Anniversary: data from the PandaQuest portal: 5,175 quests, 69 NPCs, 7 objects
 
 ## [0.2.412]
 
