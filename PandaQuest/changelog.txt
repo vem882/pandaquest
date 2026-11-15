@@ -1,4 +1,6 @@
 - Track when supported owned auctions are first reported sold by the game.
+- Mark queued prices that were also found by the missing-price scan.
+
 - Resume missing-price scans per market and pause recently searched items.
 - Share price distributions and seller counts from supported auction scans.
 

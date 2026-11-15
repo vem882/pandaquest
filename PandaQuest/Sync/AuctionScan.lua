@@ -128,7 +128,7 @@ local function finishTarget(price, skipped)
     local target = run.target
     pending, page, total = nil, 0, nil
     if price then
-        ns.Telemetry.QueueNativeAuctionPrices({ [target.id] = price })
+        ns.Telemetry.QueueNativeAuctionPrices({ [target.id] = price }, nil, nil, true)
         run.found = run.found + 1
         displayPrices({ [target.id] = price }, { target.id })
     elseif skipped then

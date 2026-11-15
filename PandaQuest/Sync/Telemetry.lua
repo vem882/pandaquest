@@ -355,7 +355,7 @@ local function saveAuctionScan(scan, suffix)
 end
 
 -- The PQ auction tab asks for explicit consent on each requested page.
-function M.QueueNativeAuctionPrices(prices, quantities, listings)
+function M.QueueNativeAuctionPrices(prices, quantities, listings, targeted)
     if not ns.IsModuleWanted("Telemetry") then return 0 end
     local scan = nativeAuctionScan or { at = unixNow(), events = {}, byItem = {} }
     local added = 0
@@ -371,6 +371,8 @@ function M.QueueNativeAuctionPrices(prices, quantities, listings)
             scan.byItem[id] = event
             added = added + 1
         end
+        -- One price event per item can combine targeted and full scans in the same session.
+        if targeted and scan.byItem[id] then scan.byItem[id].targeted = true end
     end
     for id, quantity in pairs(quantities or {}) do
         local event = scan.byItem[id]
