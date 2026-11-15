@@ -6,8 +6,10 @@ local modern, page, pending, sending
 local seen, quantities = {}, {}
 local run, processed, total, progress, previousTotal
 local scan
-local nextMissing = 1
 local MISSING_BATCH_SIZE = 100
+local PRICE_RECHECK = 86400
+local EMPTY_RECHECK = 6 * 3600
+local MARKET_STATE_MAX_AGE = 7 * 86400
 
 local function readableNumber(value)
     return not (_G.issecretvalue and _G.issecretvalue(value)) and type(value) == "number"
@@ -23,8 +25,63 @@ local function addPrice(prices, id, price, quantity)
     if not prices[id] or price < prices[id] then prices[id] = price end
 end
 
+local function marketIdentity()
+    local _, _, realm = ns.Telemetry.GetCharacterIdentity()
+    local region = _G.GetCurrentRegionName and _G.GetCurrentRegionName()
+    local faction = _G.UnitFactionGroup and _G.UnitFactionGroup("player")
+    realm = (realm or ""):lower()
+    region = (region or ""):lower()
+    local mode = realm:match("rppvp$") or realm:match("rp%-pvp$") or realm:match("hardcore$")
+        or realm:match("pvp$") or realm:match("pve$") or realm:match("normal$")
+        or realm:match("roleplay$") or realm:match("rp$")
+    if mode == "normal" then mode = "pve" end
+    if mode == "roleplay" then mode = "rp" end
+    if mode == "rp-pvp" then mode = "rppvp" end
+    return region, mode, realm, faction or ""
+end
+
 local function missingList()
-    return ns.AuctionMissing and ns.AuctionMissing[ns.Game.id]
+    local region, mode = marketIdentity()
+    local markets = ns.AuctionMissingMarkets and ns.AuctionMissingMarkets[ns.Game.id]
+    return (markets and (markets[region .. ":" .. (mode or "")] or markets[region]))
+        or (ns.AuctionMissing and ns.AuctionMissing[ns.Game.id])
+end
+
+local function marketState()
+    local region, _, realm, faction = marketIdentity()
+    local key = table.concat({ ns.Game.id, region, realm, faction }, ":")
+    local state = ns.PQ.db.global.auctionMissingProgress
+    local now = time()
+    for identity, entry in pairs(state) do
+        if type(entry) ~= "table" or type(entry.updated) ~= "number" or entry.updated < now - MARKET_STATE_MAX_AGE then
+            state[identity] = nil
+        end
+    end
+    local current = state[key] or { retry = {} }
+    current.updated = now
+    state[key] = current
+    for id, untilTime in pairs(current.retry) do
+        if type(untilTime) ~= "number" or untilTime <= now then current.retry[id] = nil end
+    end
+    return current
+end
+
+local function missingBatch(list, current)
+    local batch, positions = {}, {}
+    local first = 1
+    for index, id in ipairs(list) do
+        if id == current.nextId then first = index; break end
+    end
+    for offset = 0, #list - 1 do
+        local index = (first + offset - 1) % #list + 1
+        local id = list[index]
+        if not current.retry[id] then
+            batch[#batch + 1] = id
+            positions[id] = list[index % #list + 1]
+            if #batch >= MISSING_BATCH_SIZE then break end
+        end
+    end
+    return batch, positions
 end
 
 local function reset()
@@ -76,8 +133,10 @@ local function finishTarget(price, skipped)
     elseif skipped then
         run.skipped = run.skipped + 1
     end
-    local index, count = run.index, #run.ids
-    nextMissing = index % count + 1
+    run.market.nextId = run.positions[target.id]
+    if not skipped then
+        run.market.retry[target.id] = time() + (price and PRICE_RECHECK or EMPTY_RECHECK)
+    end
     run.checked = run.checked + 1
     status:SetText(string.format(L["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"],
         run.checked, run.limit, run.found, run.checked - run.found - run.skipped, run.skipped))
@@ -87,7 +146,7 @@ local function finishTarget(price, skipped)
         scanButton:Enable()
         missingButton:SetText(L["Find missing prices"])
     else
-        run.index, run.target = nextMissing, nil
+        run.index, run.target = run.index + 1, nil
         continueScan(0.5)
     end
 end
@@ -123,6 +182,13 @@ local function finish(prices, last)
     end
     if last then
         if modern and processed > 0 then previousTotal = processed end
+        local missing = missingList()
+        if missing then
+            local current = marketState()
+            for _, id in ipairs(missing) do
+                if seen[id] then current.retry[id] = time() + PRICE_RECHECK end
+            end
+        end
         run = nil
         scanButton:SetText(L["Scan again"])
         local missing = missingList()
@@ -274,8 +340,14 @@ local function createTab(parent)
         reset()
         local list = missingList()
         if type(list) ~= "table" or #list == 0 then return end
-        run = { ids = list, index = nextMissing, found = 0, skipped = 0, checked = 0,
-            limit = math.min(MISSING_BATCH_SIZE, #list) }
+        local current = marketState()
+        local batch, positions = missingBatch(list, current)
+        if #batch == 0 then
+            status:SetText(L["All missing-price targets were checked recently. Try again later."])
+            return
+        end
+        run = { ids = batch, index = 1, found = 0, skipped = 0, checked = 0,
+            limit = #batch, market = current, positions = positions }
         scanButton:Disable()
         missingButton:SetText(L["Stop scan"])
         status:SetText(L["Waiting for auction results…"])

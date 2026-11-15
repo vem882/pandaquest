@@ -806,3 +806,5 @@ L["Share your own listings and completed sale invoices privately with your Panda
 
 L["Find missing prices"] = true
 L["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] = true
+
+L["All missing-price targets were checked recently. Try again later."] = true

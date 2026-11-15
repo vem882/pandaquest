@@ -1,3 +1,5 @@
+- Resume missing-price scans per market and pause recently searched items.
+
 - Add a PQ auction search for items without a recent PandaBase price.
 
 - Add optional local recording of owned auctions and settled sale receipts.

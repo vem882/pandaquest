@@ -1060,6 +1060,8 @@ local T = {
     ["Auctionator prices queued until logout or reload: %d"] =
         "Auctionator-hintoja odottaa uloskirjautumista tai käyttöliittymän uudelleenlatausta: %d",
     ["Scan and share"] = "Hae ja jaa hinnat",
+    ["All missing-price targets were checked recently. Try again later."] =
+        "Kaikki puuttuvien hintojen kohteet tarkistettiin hiljattain. Yritä myöhemmin uudelleen.",
     ["Find missing prices"] = "Etsi puuttuvat hinnat",
     ["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] =
         "Puuttuvat hinnat: %d/%d tarkistettu · %d löytyi · %d ilman ostohintaa · %d ohitettu",
