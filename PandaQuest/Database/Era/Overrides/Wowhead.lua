@@ -18028,6 +18028,11 @@ ns.Overrides.wowhead = {
                 "Darkness is our home.\n\nSeek out Dark Cleric Beryl in Brill when you're ready to learn " ..
                 "more.",
         },
+        [5654] = {
+            description = "It be time for you to meet with Ur'kyo, <name>. He be in the Valley of Spirits " ..
+                "in the orc city. Go there and speak to him. It is time you learn more of the old ways of " ..
+                "our kind. It time you be brought into the circle and made a true priest of our tribe.",
+        },
         [5655] = {
             description = "I sent here to make sure that you not wander too far from home, <name>. They " ..
                 "send me to make sure you return home because Ur'kyo, greatest of our priests, wish to " ..
@@ -22543,6 +22548,24 @@ ns.Overrides.wowhead = {
                 "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
                 "<name>!",
             rewardMoney = 4500,
+        },
+        [8437] = {
+            description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
+                "false pretenses to enter into battle used or expected by either side at this " ..
+                "point.\n\nThe battle for the Arathi Basin is one of resources, plain and simple. Either " ..
+                "the Alliance gets the resources and uses them against us or we get them and use them to " ..
+                "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
+                "<name>!",
+            rewardMoney = 7000,
+        },
+        [8438] = {
+            description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..
+                "false pretenses to enter into battle used or expected by either side at this " ..
+                "point.\n\nThe battle for the Arathi Basin is one of resources, plain and simple. Either " ..
+                "the Alliance gets the resources and uses them against us or we get them and use them to " ..
+                "keep our war efforts going. Help the Defilers maintain the flow of resources we need, " ..
+                "<name>!",
+            rewardMoney = 9000,
         },
         [8439] = {
             description = "Our conflict with the Alliance has escalated to a true war. No longer are " ..

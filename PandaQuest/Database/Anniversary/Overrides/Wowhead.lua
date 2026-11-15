@@ -37991,6 +37991,15 @@ ns.Overrides.wowhead = {
                 "help the Theramore investigator offers, even feed him a tidbit or two of information if " ..
                 "you'd like, but save your real findings for me.",
         },
+        [11126] = {
+            description = "It's good to meet you, <class>. I've come to Theramore to help eliminate the " ..
+                "problem of the deserters. Not only have some of the men abandoned their posts, but some " ..
+                "have filtered back into the town.\n\nThese deserter agents are spreading lies and " ..
+                "propaganda, hoping to convince others to join their ranks.\n\nThey're at virtually every " ..
+                "guard post throughout the town and the docks. Find them, expose them, and discredit " ..
+                "them. At this point, anything more risks inspiring more sympathy for them.",
+            rewardMoney = 3500,
+        },
         [11128] = {
             description = "The deserter agents were doing far more than just chatting up the guards. " ..
                 "We've found a number of leaflets the deserters somehow managed to smuggle in on a ship " ..
@@ -38803,6 +38812,15 @@ ns.Overrides.wowhead = {
                 "back in time to Old Hillsbrad and procure said head for my trophy-hunting patron?",
             rewardItems = {{29434, 2}},
             rewardMoney = 132000,
+        },
+        [11379] = {
+            description = "I'm trying to invent something with some real zing. But to be honest, I'm more " ..
+                "of an idea goblin these days. I've lost my sense of adventure.\n\nBut you... remind me " ..
+                "of my younger days; ready to take on the world with a sword in one hand and a skillet in " ..
+                "the other.\n\nI want you to take my beloved cooking pot and head out to Blade's Edge. " ..
+                "Throw in some shortribs and crunchy serpent--already cooked for extra flavor--and broil " ..
+                "it over an abyssal's corpse, the only thing hot enough to do the trick.",
+            rewardChoices = {{33844, 1}, {33857, 1}},
         },
         [11380] = {
             description = "Wouldn't you know it, I think my foodstuffs are up to date and someone comes " ..
