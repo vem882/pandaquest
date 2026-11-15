@@ -4709,6 +4709,15 @@ ns.Overrides.wowhead = {
                 "business to tend to up on the safe, dry land....er, yeah.",
             rewardChoices = {{4547, 1}, {4548, 1}},
         },
+        [667] = {
+            description = "This is bad. It seems the Daggerspines are amassing for an attack.\n\nNaga are " ..
+                "known for their ruthlessness in battle. They will keep attacking until I am dead.\n\nI " ..
+                "don't value my own life above that of my crew members, but you must help to defend me. " ..
+                "The crew will not be able to make it back to Booty Bay without my knowledge of the " ..
+                "seas.\n\nThe naga will be coming from the sea. I need you to remain up here with me to " ..
+                "fend off the attack. Man the cannon and drive them back.\n\nAre you ready, <name>?",
+            rewardChoices = {{4550, 1}, {4549, 1}},
+        },
         [668] = {
             description = "Let's not leave Captain O'Breen waiting. He'll want to see these gems first " ..
                 "hand. After all, that's why we're here!\n\nAnd after a few weeks of consorting with " ..
@@ -4808,6 +4817,15 @@ ns.Overrides.wowhead = {
                 "he learns of the ogre's whereabouts and I would ask for your help in slaying the " ..
                 "creature.",
             rewardChoices = {{4976, 1}, {4977, 1}},
+        },
+        [681] = {
+            description = "We are fighting a war for Stromgarde, and we are losing. The ogres, the " ..
+                "Syndicate and we have divided our once great city, and each faction battles the other " ..
+                "into a bloody stalemate.\n\nBut our forces dwindle while our enemy grows.\n\nWe need " ..
+                "help from the town of Southshore, but supplies are difficult to receive while the " ..
+                "Syndicate holds territory between us.\n\nGo to the Syndicate base in Northfold Manor and " ..
+                "slay them. Then, perhaps, pressure on our supply trains will lessen and more will get " ..
+                "through.",
         },
         [682] = {
             description = "The Syndicate in Stromgarde do battle with our contingent of militia there. In " ..
@@ -6898,6 +6916,14 @@ ns.Overrides.wowhead = {
                 "to find any widespread signs. I think it would be logical if the investigation continued " ..
                 "with the furbolgs. Would you find one of their camps, and return to me if you see any " ..
                 "signs of corruption?",
+        },
+        [985] = {
+            description = "You've already proven adept at scouting our enemy, <name>. Do you have what it " ..
+                "takes to fight them as well?\n\nNot all adventurers prefer straightforward combat to the " ..
+                "art of stealth and evasion.\n\nIf you think you're up for the task, then the furbolg " ..
+                "camp south of Auberdine is currently the biggest threat to our people. You'll find some " ..
+                "of the Blackwood tribe there. Kill 8 pathfinders and 5 windtalkers, and return to me " ..
+                "here.",
         },
         [986] = {
             description = "<name>, your skills have already helped me in my endeavor. Could I impose on " ..
@@ -12177,6 +12203,15 @@ ns.Overrides.wowhead = {
                 "crafted. I also will require two wildvines... not just one. When you have these items, " ..
                 "we will proceed.",
             rewardItems = {{8406, 1}},
+        },
+        [2859] = {
+            description = "You are ready to master more complex lessons, <name>. Wild Leather leggings " ..
+                "are some of the sturdiest and powerful leather gear around. The waist, thighs, calves, " ..
+                "and the vitals - all are given tremendous protection. Coupled with the enhancement that " ..
+                "the wildvine provides, adventurers who own it will thank you each time they see " ..
+                "you.\n\nFor you to gain this pattern, I need two Turtle Scale helms, two Turtle Scale " ..
+                "bracers, and two wildvines.",
+            rewardItems = {{8407, 1}},
         },
         [2860] = {
             description = "<name>, you have learned all I am able to teach you. There is, however, one " ..

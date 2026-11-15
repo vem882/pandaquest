@@ -36531,6 +36531,15 @@ ns.Overrides.wowhead = {
                 "you how to make imperial plate armor. All you gotta do is get to the Tanaris desert and " ..
                 "find him. Interested?",
         },
+        [10893] = {
+            description = "With the Blackwing wyrmcultists massing in the tunnel, we're hard pressed to " ..
+                "deal with the situation. Quite frankly, they have the numbers.\n\nAnd while we've been " ..
+                "able to take care of any of their people that get too close, the fact remains that if " ..
+                "they attack in earnest, we're going to be overrun.\n\nThe situation calls for someone to " ..
+                "get through to the other end of the tunnel, and take out their leader, Draaca Longtail. " ..
+                "Up for some fun?",
+            rewardMoney = 37000,
+        },
         [10895] = {
             description = "It's time to strike Zeth'Gor from the air! Our gryphon riders are ready for a " ..
                 "sortie, <name>. But they need someone on the ground to direct their fire. Are you ready " ..

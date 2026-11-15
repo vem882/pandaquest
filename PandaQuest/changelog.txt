@@ -74,6 +74,15 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.566
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,136 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,693 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,204 quests, 70 NPCs, 7 objects
+- npc 5237 - Gordunni Ogre Mage - updated
+  - coordinates: 30 spawn points added in Feralas
+- npc 17218 - Huraan - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+
 0.2.565
 - database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,134 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,689 quests, 38 NPCs, 9 objects
@@ -338,17 +347,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 68923 - Anduin Wrynn - updated
   - NPC title added (Prince of Stormwind)
-
-0.2.547
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,033 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,672 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,152 quests, 68 NPCs, 7 objects
-- quest 24836 - A Change of Heart - updated
-  - reward choices: +4
-- npc 707 - Rockjaw Trogg - updated
-  - coordinates: 40 spawn points added in Dun Morogh
-- npc 70407 - Angler Jo Ransom - updated
-  - NPC level added (90)
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
