@@ -237,7 +237,6 @@ local function finish(prices, last)
         end
         run = nil
         scanButton:SetText(L["Scan again"])
-        local missing = missingList()
         missingButton:SetEnabled(type(missing) == "table" and #missing > 0)
     else
         continueScan(0.5)
