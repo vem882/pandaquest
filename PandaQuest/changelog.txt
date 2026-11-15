@@ -75,6 +75,13 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.570
+- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,140 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,699 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,215 quests, 70 NPCs, 7 objects
+- npc 33947 - Angry Oak Spirit - updated
+  - coordinates: 40 spawn points added in Crystalsong Forest
+
 0.2.568
 - database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,139 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,696 quests, 38 NPCs, 9 objects
@@ -346,17 +353,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - NPC level added (90)
 - npc 70408 - Angler Dry - updated
   - NPC level added (90)
-
-0.2.550
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,039 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,680 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,183 quests, 69 NPCs, 7 objects
-- npc 47277 - Angered Spirit - updated
-  - coordinates: 40 spawn points added in Tol Barad Peninsula
-- npc 70415 - Angler Lin Snowclaw - updated
-  - NPC level added (90)
-- npc 73061 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
