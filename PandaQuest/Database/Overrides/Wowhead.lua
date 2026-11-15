@@ -69935,6 +69935,7 @@ ns.Overrides.wowhead = {
         [68048] = {maxLevel = 90, minLevel = 90},
         [68049] = {maxLevel = 90, minLevel = 90},
         [68050] = {maxLevel = 90, minLevel = 90},
+        [68084] = {subName = "Regent Lord of Quel'Thalas"},
         [68086] = {subName = "Kirin Tor"},
         [68108] = {subName = "Leader of the Kirin Tor"},
         [68126] = {maxLevel = 90, minLevel = 90, subName = "Reliquary"},

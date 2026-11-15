@@ -4467,6 +4467,12 @@ ns.Overrides.wowhead = {
                 "Captain if the Alliance can spare some soldiers to help us reclaim Dun Modr and the " ..
                 "Thandol Span.",
         },
+        [635] = {
+            description = "This shard pulses as you hold it...\n\nYou feel a sense of pleading coming " ..
+                "from the shard, as if someone is trying to communicate, someone who desperately needs " ..
+                "your help.\n\nA vision appears in your mind - of the northern mountains of Arathi, and " ..
+                "of a brilliant crystal jutting from the earth there.\n\nYou feel drawn to that place.",
+        },
         [637] = {
             description = "The waterlogged and war-torn envelope dissolves in your hands, leaving you " ..
                 "with a few pages of a letter in your grasp, written with painstaking care.\n\nThe letter " ..
@@ -6602,6 +6608,12 @@ ns.Overrides.wowhead = {
                 "for me. And while doing so, scout the cave to confirm the Ancients' fears.",
             rewardItems = {{5610, 1}, {4605, 10}},
             rewardMoney = 900,
+        },
+        [948] = {
+            description = "Onu, an Ancient of Lore at the Grove of the Ancients, knows of your journey to " ..
+                "Cliffwater Falls and wishes to speak with you. The grove lies to the south, nestled near " ..
+                "the mountains.\n\nThe Ancients are patient and wise, <name>. But if Onu seeks your " ..
+                "counsel concerning what you saw in the falls, then I fear it is urgent.",
         },
         [949] = {
             description = "The Twilight's Hammer's purpose at the Master's Glaive is not known. But it " ..
@@ -26731,6 +26743,7 @@ ns.Overrides.wowhead = {
             zoneID = 1497,
         },
         [185335] = {
+            rank = 0,
             spawns = {
                 [1497] = {
                     {83.2, 24.6}, {84.4, 25.6}, {85.4, 24.4}, {85.4, 24.6}, {85.6, 24.6}, {86.2, 27.6},
