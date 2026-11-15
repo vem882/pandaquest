@@ -19807,6 +19807,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{17005, 1}, {17006, 1}},
             rewardMoney = 2000,
         },
+        [6622] = {
+            description = "Good day, doctor. You will be tested on your ability to triage patients " ..
+                "accordingly this afternoon. Should you pass your examination, you will join the " ..
+                "prestigious ranks of Horde Trauma.\n\nNow pay attention! The critically injured must be " ..
+                "tended to first. After the criticals come the badly injured. The injured should be " ..
+                "tended to last. You must save 15 patients to pass this exam. You will fail should 6 of " ..
+                "your patients die in triage.\n\nTriage bandages will be supplied.\n\nGood luck, doctor.",
+        },
         [6623] = {
             description = "Doctor <name>, I presume. It is a pleasure to see you again.\n\nI have some " ..
                 "wonderful news for you! Doctor Gregory Victor, chief physician of Horde Trauma has made " ..

@@ -14881,6 +14881,15 @@ ns.Overrides.wowhead = {
                 "collected from the deep lurkers, murk worms, or oozes found there. Good luck, <name>!",
             rewardMoney = 7500,
         },
+        [4145] = {
+            description = "See Muigin over there? It's HIS fault we're lost!\n\nI'm the one that knew the " ..
+                "way, but he insisted he knew a shortcut, and we ended up here!\n\nTo make matters worse, " ..
+                "now he keeps sending his crazy plant pests to annoy me. I'm so angry that I'm not " ..
+                "planning on talking to him any time soon, but these pests are too much to handle.\n\nWhy " ..
+                "don't we try to limit his supply, first thing. Go out and hunt some Bloodpetals, then " ..
+                "return to me.",
+            rewardMoney = 7500,
+        },
         [4146] = {
             description = "You're in luck, <name>! I've been working on some of my own experiments while " ..
                 "Marvon's been gone, and one of them is a short range bug zapper. With just a few " ..
@@ -14888,6 +14897,13 @@ ns.Overrides.wowhead = {
                 "let you have one of my zapper prototypes, but you'll still need to collect the fuel. You " ..
                 "can get the necessary Atal'ai haze that the zapper needs in the temple of Atal'Hakkar. " ..
                 "The deep lurkers, murk worms, or oozes are the ones you'll need to get it from.",
+        },
+        [4147] = {
+            description = "I managed to spy on what Muigin was doing, and he's actually growing the darn " ..
+                "things over there!\n\nI think the only solution here is to... no, not go talk to him... " ..
+                "What are you thinking? The solution is to fight back!\n\nWe'll need the help of my " ..
+                "friend, Marvon, who has a workshop in Ratchet. I'm sure he'll be able to create some " ..
+                "sort of gadget that will help us.",
         },
         [4148] = {rewardItems = {{11320, 1}}, rewardMoney = 16000},
         [4161] = {
@@ -28011,6 +28027,11 @@ ns.Overrides.wowhead = {
                 "the Crystalbrook river to the east. Perhaps your destination is on the other side of the " ..
                 "river.",
         },
+        [9541] = {
+            description = "The symbols on this totem seem to translate much faster. The patterns and " ..
+                "imagery all seem to blend into familiar words. You are fairly certain the totem is " ..
+                "pointing you south, down the river. Something is at the bottom of the river itself.",
+        },
         [9542] = {
             description = "You no longer see unrecognizable symbology in the totems. The totem of Yor " ..
                 "reads to you just as easily as your native tongue.\n\nThe markings identify another " ..
@@ -29127,6 +29148,13 @@ ns.Overrides.wowhead = {
             description = "I've got everything prepared, <name>. Very soon you will have a weapon " ..
                 "befitting your new status.",
             rewardItems = {{25464, 1}},
+        },
+        [9711] = {
+            description = "Matis will be brought to justice, <name>; and I want you to be the one to find " ..
+                "him and bring him back to the Triumvirate.\n\nScour the island for this bastard. Should " ..
+                "you find him, use this flare gun. When my trackers see the flare, they'll come and " ..
+                "assist in capturing Matis. Return to me after he's been captured.",
+            rewardChoices = {{26007, 1}, {26021, 1}, {26033, 1}},
         },
         [9715] = {
             description = "We must replenish our supply of sanguine hibiscus, which we use for a number " ..

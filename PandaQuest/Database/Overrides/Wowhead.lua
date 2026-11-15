@@ -32734,6 +32734,14 @@ ns.Overrides.wowhead = {
                 "the restoration. Show the blade to Myralion Sunblaze at Quel'Delar's Rest once it is " ..
                 "restored.",
         },
+        [24595] = {
+            description = "I admit, I was skeptical that you had actually re-forged Quel'Delar and I did " ..
+                "not expect Thalorien's spirit to reveal itself to you. You cannot understand what it " ..
+                "means to my people that Quel'Delar has been recovered.\n\nAs promised, I will admit you " ..
+                "to the Sunwell and you will find the leaders of Silvermoon within. Carry the sword to " ..
+                "the chamber of the Sunwell and immerse it. Once the blade is restored, return with it to " ..
+                "Caladis Brightspear at Quel'Delar's Rest.",
+        },
         [24596] = {
             description = "The Sunwell and the end of Quel'Delar's exile await, <name>.\n\nYou will find " ..
                 "Lor'themar Theron, the regent of Quel'Thalas, and Grand Magister Rommath standing " ..
@@ -33230,6 +33238,7 @@ ns.Overrides.wowhead = {
                 "Ridge... one trip around the perimeter will likely suffice.",
             rewardMoney = 7500,
         },
+        [24743] = {rewardItems = {{49888, 1}}},
         [24747] = {
             description = "These dwarven artillery shells have a built-in airburst timer. This is easy! " ..
                 "Just sabotage one of the artillery shells in the loading bay and then hoist it up into " ..
@@ -33475,11 +33484,13 @@ ns.Overrides.wowhead = {
         [24837] = {rewardChoices = {{50384, 1}, {50387, 1}, {50388, 1}, {52570, 1}}},
         [24838] = {rewardChoices = {{50386, 1}, {50384, 1}, {50388, 1}, {52570, 1}}},
         [24839] = {rewardChoices = {{50386, 1}, {50387, 1}, {50384, 1}, {52570, 1}}},
+        [24840] = {rewardChoices = {{50399, 1}, {50401, 1}, {50403, 1}, {52571, 1}}},
         [24841] = {rewardChoices = {{50397, 1}, {50401, 1}, {50403, 1}, {52571, 1}}},
         [24842] = {rewardChoices = {{50399, 1}, {50397, 1}, {50403, 1}, {52571, 1}}},
         [24843] = {rewardChoices = {{50399, 1}, {50401, 1}, {50397, 1}, {52571, 1}}},
         [24844] = {rewardChoices = {{50400, 1}, {50402, 1}, {50404, 1}, {52572, 1}}},
         [24845] = {rewardChoices = {{50398, 1}, {50402, 1}, {50404, 1}, {52572, 1}}},
+        [24846] = {rewardChoices = {{50398, 1}, {50400, 1}, {50404, 1}, {52572, 1}}},
         [24847] = {rewardChoices = {{50398, 1}, {50402, 1}, {50400, 1}, {52572, 1}}},
         [24854] = {
             description = "Zen'Aliri been studyin' the ways of the druid, <race>. Hopefully one day, " ..
@@ -69162,6 +69173,7 @@ ns.Overrides.wowhead = {
             spawns = {[3522] = {{60.2, 24.4}, {60.4, 25}, {60.4, 25.6}, {60.6, 25.2}, {60.6, 25.6}}},
             zoneID = 3522,
         },
+        [24279] = {spawns = {[495] = {{53.4, 66.2}, {53.6, 66.4}}}, zoneID = 495},
         [24796] = {spawns = {[495] = {{32.4, 60.4}, {32.6, 60.2}}}, zoneID = 495},
         [24833] = {
             spawns = {

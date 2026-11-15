@@ -4,6 +4,24 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.567] - 2026-11-15
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,137 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,694 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,208 quests, 70 NPCs, 7 objects
+- quest 24595 - The Purification of Quel'Delar - updated
+  - description added
+- quest 24743 - Shadow's Edge - updated
+  - reward items: +1
+- quest 24840 - A Change of Heart - updated
+  - reward choices: +4
+- quest 24846 - A Change of Heart - updated
+  - reward choices: +4
+- npc 24279 - Animated Plague Slime - updated
+  - coordinates: 2 spawn points added in Howling Fjord
+
 ## [0.2.566] - 2026-11-15
 
 Data from the PandaQuest portal.
@@ -295,21 +313,6 @@ Data from the PandaQuest portal.
 Data from the PandaQuest portal.
 
 - database - TBC Anniversary: data from the PandaQuest portal: 5,175 quests, 69 NPCs, 7 objects
-
-## [0.2.548] - 2026-11-14
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,036 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,678 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,158 quests, 69 NPCs, 7 objects
-- npc 275 - Whit Wantmal - updated
-  - coordinates: 2 spawn points added in Duskwood
-- npc 68795 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
-  - NPC level added (90)
-- npc 68923 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
 
 ## [0.2.412]
 
