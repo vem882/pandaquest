@@ -4,6 +4,16 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.557] - 2026-11-15
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,131 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,685 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,194 quests, 70 NPCs, 7 objects
+- npc 73207 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+
 ## [0.2.554] - 2026-11-14
 
 Data from the PandaQuest portal.
@@ -319,25 +329,6 @@ Data from the PandaQuest portal.
   - coordinates: 4 spawn points added in Swamp of Sorrows
 - npc 60112 - Anduin Wrynn - updated
   - coordinates: 5 spawn points added in Vale of Eternal Blossoms
-
-## [0.2.544] - 2026-11-14
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,255 quests, 1,022 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,127 quests, 68 NPCs, 7 objects
-- npc 2182 - Stormscale Sorceress - updated
-  - coordinates: 35 spawn points added in Darkshore
-- npc 4634 - Kolkar Mauler - updated
-  - coordinates: 40 spawn points added in Desolace
-- npc 10668 - Beaten Corpse - updated
-  - coordinates: 1 spawn point added in The Barrens
-- npc 14381 - Lorekeeper Javon - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14875 - Molthor - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 16133 - Mataus the Wrathcaster - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
 
 ## [0.2.412]
 

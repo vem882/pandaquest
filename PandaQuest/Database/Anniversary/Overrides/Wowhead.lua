@@ -13188,6 +13188,11 @@ ns.Overrides.wowhead = {
                 "seems Frahun would have words with you when you have a moment. Read it and bring it to " ..
                 "him afterwards.",
         },
+        [3119] = {
+            description = "This sigil was given to me by a messenger from our priest trainer, Shanda. It " ..
+                "seems Shanda would have words with you when you have a moment. Read it and bring it to " ..
+                "her afterwards.",
+        },
         [3120] = {
             description = "This sigil was given to me by a messenger from our druid trainer, Mardant. It " ..
                 "seems Mardant would have words with you when you have a moment. Read it and bring it to " ..
@@ -18856,6 +18861,15 @@ ns.Overrides.wowhead = {
                 "commands many strong creatures of his own. His ties to the Earthmother are strong, and " ..
                 "you can learn much from him. Good luck, <name>.",
             rewardXP = 420,
+        },
+        [6101] = {
+            description = "The variance of nature is something that can be relied upon, <name>. It is " ..
+                "predictable in the way that it never remains the same; it is always changing.\n\nThe " ..
+                "tasks I give to you will help you to see and appreciate the vast differences of the " ..
+                "creatures you may choose as your companion.\n\nTake this taming rod and use it to tame a " ..
+                "nightsaber stalker, found to the south. Practice your skills as a hunter. Then you will " ..
+                "begin to understand the similarities and differences of nature.",
+            rewardXP = 840,
         },
         [6102] = {
             description = "You have tamed two creatures that inhabit the land, now you must tame one that " ..
@@ -26547,6 +26561,12 @@ ns.Overrides.wowhead = {
                 "<class>?",
             rewardMoney = 35,
         },
+        [9294] = {
+            description = "Thank goodness, I think it'll work! I have an agent for you to spread at " ..
+                "Silverline Lake to the south. It will neutralize the effects of the irradiated ship's " ..
+                "power crystal that fell there.\n\nSwim out and scatter the neutralizing agent near it. " ..
+                "Don't worry, you won't be exposed long enough to become irradiated.",
+        },
         [9295] = {
             description = "You found this letter on one of the many Scourge minions you've slain. From " ..
                 "its appearance and smell, it has been with the undead for some time. Perhaps someone at " ..
@@ -26794,6 +26814,15 @@ ns.Overrides.wowhead = {
                 "Terrorfiends now walk the area, empowered by the pure demonic energies of the original " ..
                 "blood. Slay them and retrieve as much felblood as you can. I'll make it worth your while.",
             rewardMoney = 27000,
+        },
+        [9369] = {
+            description = "We are the draenei. Our ship crashed and, since we have many wounded, our " ..
+                "immediate concern is the depleted state of our healing crystals. We must replenish them " ..
+                "quickly!\n\nUnfortunately, the only way to do this at this point is to extract the blood " ..
+                "from the local vale moths. Their blood will make for a suitable substitute.\n\nThe moths " ..
+                "can be found in many places around the vale, but mostly in the northwest.",
+            rewardChoices = {{24129, 1}, {24131, 1}, {24130, 1}},
+            rewardMoney = 15,
         },
         [9370] = {
             description = "Our scouts captured a draenei paladin at the Pools of Aggonar. He was to take " ..
@@ -29572,6 +29601,15 @@ ns.Overrides.wowhead = {
             description = "These plans seem important. You should take them to Vindicator Aldar at the " ..
                 "crash site.",
             rewardMoney = 100,
+        },
+        [9799] = {
+            description = "The Ammen Fields to the west are the primary breeding ground of the local " ..
+                "lasher population. With the corruption of the water table from the nearby lake, Botanist " ..
+                "Taerix is worried that the lashers will not be able to repopulate themselves once we've " ..
+                "cleansed the lake.\n\nGo to the Ammen Fields and pick some of the corrupted flowers for " ..
+                "me so that I might take a look at them and see what can be done. You should be able to " ..
+                "identify them by their uncharacteristic red petals.",
+            rewardMoney = 50,
         },
         [9800] = {
             description = "You are ill-equipped to face the restless elements of Nagrand. Before you can " ..
@@ -38563,6 +38601,15 @@ ns.Overrides.wowhead = {
                 "accept nothing less than their utter annihilation.",
             rewardItems = {{29460, 1}},
             rewardMoney = 88000,
+        },
+        [11372] = {
+            description = "I've recently been approached by a tauren whose husband is about to be " ..
+                "elevated to chieftain. She wishes to make a special addition to his " ..
+                "headdress.\n\nSpecifically, she wants to obtain the headfeathers from the dastardly " ..
+                "Talon King Ikiss.\n\nIf you are interested in collecting my reward, travel to " ..
+                "Auchindoun's Sethekk Halls and find him.",
+            rewardItems = {{29434, 2}},
+            rewardMoney = 132000,
         },
         [11373] = {
             description = "Today I have a personal request of you, yet the reward will certainly match " ..
