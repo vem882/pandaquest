@@ -1089,6 +1089,7 @@ local T = {
     ["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] =
         "Jaa omat myynti-ilmoituksesi ja toteutuneiden myyntien kuitit yksityisesti PandaBase-tilillesi Syncillä.",
     ["Stop scan"] = "Lopeta skannaus",
+    ["The auction house is busy. Try again in a moment."] = "Huutokauppa on varattu. Yritä hetken kuluttua uudelleen.",
     ["The auction request failed. Try scanning again."] = "Huutokauppahaku epäonnistui. Yritä skannata uudelleen.",
     ["The auction request timed out. Try scanning again."] = "Huutokauppahaku aikakatkaistiin. Yritä skannata uudelleen.",
     ["Share item prices by realm and faction through Sync after logout or reload."] =
