@@ -12177,6 +12177,14 @@ ns.Overrides.wowhead = {
                 "skill, guaranteed.\n\nI'll teach you, but you'll be working for me for a while. The " ..
                 "first cost is simply ten pieces of thick leather. After this, we'll talk specifics.",
         },
+        [2855] = {
+            description = "Wild Leather shoulders support a wearer's frame extremely well, offering " ..
+                "superior protection of the upper arms as well as the shoulders. As with all Wild Leather " ..
+                "armor, a random yet very potent enhancement is imbued within the item as the wildvine is " ..
+                "stitched in.\n\nFor this pattern, I will require six thick armor kits and a wildvine. " ..
+                "That shouldn't be too tall of an order for you to fill.",
+            rewardItems = {{8403, 1}},
+        },
         [2856] = {
             description = "Wild Leather vests are the staple of any Wild Leather armor set. The frame of " ..
                 "the vest and the wildvine weave within it produces a product that offers maximum " ..
