@@ -18093,6 +18093,14 @@ ns.Overrides.wowhead = {
                 "tested.\n\nReturn there when you can and speak to Priestess Alathea.",
             rewardXP = 390,
         },
+        [5674] = {
+            description = "A wonderful day has come, <name>. You've reached the age in which our " ..
+                "<priests/priestesses> are trained in abilities only Night elves know. But it is not for " ..
+                "me to train you. You must return to the Temple of the Moon and speak to Priestess " ..
+                "Alathea as soon as your business here is concluded. She will test you to ensure you're " ..
+                "prepared, and only then will she teach you Elune's Grace.",
+            rewardXP = 390,
+        },
         [5675] = {
             description = "Time's a wastin', <lad/lass>. It's time for you to return home to Darnassus. " ..
                 "Priestess Alathea 's sent word here that you're to return there for training. Seems they " ..
@@ -20552,6 +20560,7 @@ ns.Overrides.wowhead = {
         [7499] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18466, 1}}},
         [7500] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18468, 1}}},
         [7501] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18472, 1}}},
+        [7502] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18467, 1}}},
         [7503] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18473, 1}}},
         [7504] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18469, 1}}},
         [7505] = {description = "The tome carries the mark of the Athenaeum.", rewardItems = {{18471, 1}}},
@@ -28174,6 +28183,17 @@ ns.Overrides.wowhead = {
                 "armor of great power!\n\nFind them to the east, beyond the road.",
             rewardChoices = {{24108, 1}, {24107, 1}, {24109, 1}},
         },
+        [9561] = {
+            description = "The translation is ready now, <name>.\n\n< Anchorite Paetheus points out a " ..
+                "block of text at the end of his translation.>\n\n'The enemy is nearly upon us. We've " ..
+                "gathered up all the survivors and retreated to the temple to the east. It's the last " ..
+                "ground we truly hold on the island, and there is a sense among the survivors that we " ..
+                "will make our last stand here. I've taken care to bury my last few possessions on the " ..
+                "grounds of the temple, with the hope that someone will find them and know what happened " ..
+                "here.'",
+            rewardItems = {{23846, 1}},
+            rewardXP = 1150,
+        },
         [9562] = {
             description = "These are dark days, Promised One. Even the murlocs are kicking our tails - " ..
                 "literally. Unfortunately, more than just my ego has been bruised.\n\nWhile our " ..
@@ -30351,6 +30371,15 @@ ns.Overrides.wowhead = {
                 "part of the Dead Mire and killing the bat? I'll deal with Reavij in the meantime.",
             rewardChoices = {{27498, 5}, {27503, 5}, {27502, 5}, {27499, 5}, {27501, 5}, {27500, 5}},
             rewardMoney = 27000,
+        },
+        [9900] = {
+            description = "The presence of rogue ethereals in this area might amuse Gezhe, who sees " ..
+                "nothing but opportunity wherever we go, but it's a true threat to the security of our " ..
+                "operations.\n\nTheir leader, Gava'xi, is a dangerous criminal and I've made it my top " ..
+                "priority to see to it that he is neutralized.\n\nIf you're looking to make yourself " ..
+                "useful, go and take care of Gava'xi. I will see to it that you're rewarded properly.",
+            rewardChoices = {{25637, 1}, {25634, 1}, {25544, 1}},
+            rewardMoney = 37000,
         },
         [9901] = {
             description = "The first expedition the league sent reported encountering a gigantic spore " ..
@@ -36567,6 +36596,13 @@ ns.Overrides.wowhead = {
                 "get through to the other end of the tunnel, and take out their leader, Draaca Longtail. " ..
                 "Up for some fun?",
             rewardMoney = 37000,
+        },
+        [10894] = {
+            description = "Hmm, I'm not certain what we should do. I'm not much of a military " ..
+                "planner.\n\nWatcher Moonshade will know what to do. He's heading up our defensive " ..
+                "efforts at the Wyrmskull Tunnel to the west at the end of Wyrmskull Bridge. We have a " ..
+                "force out there just in case the cultists try anything funny.\n\nPlease, take the note " ..
+                "to him with all due haste.",
         },
         [10895] = {
             description = "It's time to strike Zeth'Gor from the air! Our gryphon riders are ready for a " ..

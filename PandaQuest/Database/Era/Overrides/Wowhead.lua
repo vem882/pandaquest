@@ -17787,6 +17787,15 @@ ns.Overrides.wowhead = {
                 "preserved to last for months. I will need several hundred pounds to restock for the " ..
                 "coming winter!",
         },
+        [5545] = {
+            description = "I've got a real problem on my hands. I have a deadline looming for an order of " ..
+                "lumber, and I'm running out of time. The wolves and bears north of here have chased my " ..
+                "workers away from the bundles of wood that they've already chopped.\n\nI've already " ..
+                "talked to Deputy Rainer about clearing the animals, but I need someone to go collect the " ..
+                "wood for me. If you could collect eight bundles of wood for me I might just make my " ..
+                "deadline.",
+            rewardMoney = 300,
+        },
         [5561] = {
             description = "Bibbly thinks he is the only goblin in Desolace who knows how to make money. " ..
                 "Well, the only caravan brave enough to travel these parts relies on me. Ever since I " ..
@@ -22308,6 +22317,16 @@ ns.Overrides.wowhead = {
                 "made, they'd just be pointed at us! Now is the time to help the Alliance in Arathi " ..
                 "Basin, <name>.",
             rewardMoney = 4500,
+        },
+        [8394] = {
+            description = "Winning a war is about more than just outsmarting and outfighting your " ..
+                "opponent. Victory often comes down to simply producing more than your enemy.\n\nWhat we " ..
+                "have in Arathi Basin is a sizeable supply of resources for whichever side manages to " ..
+                "claim it first.\n\nIf the Alliance comes out victorious, it'll mean more swords and " ..
+                "pikes for our troops. If the Horde were to win, those swords and pikes would still get " ..
+                "made, they'd just be pointed at us! Now is the time to help the Alliance in Arathi " ..
+                "Basin, <name>.",
+            rewardMoney = 7000,
         },
         [8395] = {
             description = "Winning a war is about more than just outsmarting and outfighting your " ..
