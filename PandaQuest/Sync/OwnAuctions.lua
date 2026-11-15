@@ -24,10 +24,17 @@ local function settings()
     return ns.Telemetry.GetSettings()
 end
 
+local function forgetPostings()
+    local store = _G.PandaQuestOwnAuctions
+    if not store or store.game ~= game() then return end
+    for _, character in pairs(store.characters or {}) do character.postings = nil end
+end
+
 function M.ApplySettings()
     local store = _G.PandaQuestOwnAuctions
     if type(store) == "table" and store.version == 1 and store.game == game() then
         store.enabled = settings().recordOwnAuctions == true
+        if not store.enabled then forgetPostings() end
     end
 end
 
@@ -69,10 +76,50 @@ local function listing(itemId, quantity, buyout, bid, expiresAt)
     return { itemId = itemId, quantity = quantity, buyout = money(buyout), bid = money(bid), expiresAt = expiresAt }
 end
 
+local function notePosting(auctionId)
+    if not settings().recordOwnAuctions then return end
+    auctionId = integer(auctionId, 1, 9007199254740991)
+    local now = integer(GetServerTime(), 1, 253402300799)
+    if not auctionId or not now then return end
+    local character = record()
+    if not character then return end
+    local postings = character.postings or {}
+    local count, oldestId, oldest = 0, nil, now + 1
+    for id, posted in pairs(postings) do
+        if now - posted > 7 * 86400 then
+            postings[id] = nil
+        else
+            count = count + 1
+            if posted < oldest then oldestId, oldest = id, posted end
+        end
+    end
+    if postings[auctionId] then return end
+    if count >= MAX_LISTINGS then postings[oldestId] = nil end
+    postings[auctionId] = now
+    character.postings = postings
+end
+
+local function noteSold(character, auctionId, itemId, now)
+    local postings = character.postings
+    if not postings then return end
+    local postedAt = postings[auctionId]
+    if not postedAt then return end
+    postings[auctionId] = nil
+    if now < postedAt or now - postedAt > 7 * 86400 then return end
+    local samples = character.saleTimings or {}
+    character.nextTiming = (character.nextTiming or 0) + 1
+    samples[#samples + 1] = {
+        id = string.format("%d-%d", now, character.nextTiming),
+        itemId = itemId, postedAt = postedAt, seenSoldAt = now,
+    }
+    if #samples > MAX_SALES then table.remove(samples, 1) end
+    character.saleTimings = samples
+end
+
 local function saveListings(modern)
     if not auctionOpen or not settings().recordOwnAuctions then return end
     local now = GetServerTime()
-    local rows = {}
+    local rows, soldItems = {}, {}
     local count
     if modern then
         count = C_AuctionHouse.GetNumOwnedAuctions()
@@ -92,6 +139,10 @@ local function saveListings(modern)
                 row = listing(info.itemKey.itemID, info.quantity, info.buyoutAmount, info.bidAmount,
                     seconds and now + seconds)
                 if not row then return end
+            elseif Enum and Enum.AuctionStatus and info.status == Enum.AuctionStatus.Sold then
+                local auctionId = integer(info.auctionID, 1, 9007199254740991)
+                local itemId = integer(info.itemKey.itemID, 1, 10000000)
+                if auctionId and itemId then soldItems[auctionId] = itemId end
             end
         else
             local _, _, quantity, _, _, _, _, _, _, buyout, bid, _, _, _, _, sold, itemId =
@@ -105,7 +156,10 @@ local function saveListings(modern)
         if row then rows[#rows + 1] = row end
     end
     local character = record()
-    if character then character.snapshot = { observedAt = now, listings = rows } end
+    if character then
+        character.snapshot = { observedAt = now, listings = rows }
+        for auctionId, itemId in pairs(soldItems) do noteSold(character, auctionId, itemId, now) end
+    end
 end
 
 local function fingerprint(row)
@@ -163,6 +217,8 @@ driver:RegisterEvent("AUCTION_HOUSE_SHOW")
 driver:RegisterEvent("AUCTION_HOUSE_CLOSED")
 if C_AuctionHouse and C_AuctionHouse.GetNumOwnedAuctions and C_AuctionHouse.GetOwnedAuctionInfo then
     driver:RegisterEvent("OWNED_AUCTIONS_UPDATED")
+    -- Some clients expose owned auctions without the modern creation event.
+    pcall(driver.RegisterEvent, driver, "AUCTION_HOUSE_AUCTION_CREATED")
 end
 if GetNumAuctionItems and GetAuctionItemInfo then
     driver:RegisterEvent("AUCTION_OWNED_LIST_UPDATE")
@@ -172,13 +228,15 @@ if GetInboxNumItems and GetInboxInvoiceInfo and GetInboxHeaderInfo then
     driver:RegisterEvent("MAIL_CLOSED")
     driver:RegisterEvent("MAIL_INBOX_UPDATE")
 end
-driver:SetScript("OnEvent", function(_, event)
+driver:SetScript("OnEvent", function(_, event, auctionId)
     if event == "PLAYER_LOGIN" then
         M.ApplySettings()
     elseif event == "AUCTION_HOUSE_SHOW" then
         auctionOpen = true
     elseif event == "AUCTION_HOUSE_CLOSED" then
         auctionOpen = false
+    elseif event == "AUCTION_HOUSE_AUCTION_CREATED" then
+        notePosting(auctionId)
     elseif event == "OWNED_AUCTIONS_UPDATED" then
         saveListings(true)
     elseif event == "AUCTION_OWNED_LIST_UPDATE" then
