@@ -20813,6 +20813,15 @@ ns.Overrides.wowhead = {
                 "Elmore. His work will not be cheap, but his quality is what we seek. Speak with him.",
             rewardXP = 955,
         },
+        [7642] = {
+            description = "You'll need four things for the barding - runecloth for the lining, arcanite " ..
+                "bars for the plating, Arthas' Tears for the spiritual attunement, and Stratholme holy " ..
+                "water for the spiritual imbuement. Actually, you need five things... gold for my fee. " ..
+                "That fee includes all labor as well as a handcrafted saddle and stirrups.\n\nOnce you've " ..
+                "got all that, I'll be able to finish your barding. Until then, there are some things I " ..
+                "can get started on for you while you assemble your collection of goods.",
+            rewardXP = 14300,
+        },
         [7643] = {
             description = "Your barding needs a special form of blessing, one from an appropriate spirit. " ..
                 "In Dire Maul is such a spirit, the Ancient Equine Spirit. It is currently held by a " ..
