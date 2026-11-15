@@ -1,4 +1,5 @@
 - Resume missing-price scans per market and pause recently searched items.
+- Share price distributions and seller counts from supported auction scans.
 
 - Add a PQ auction search for items without a recent PandaBase price.
 

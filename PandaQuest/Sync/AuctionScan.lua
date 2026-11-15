@@ -10,6 +10,7 @@ local MISSING_BATCH_SIZE = 100
 local PRICE_RECHECK = 86400
 local EMPTY_RECHECK = 6 * 3600
 local MARKET_STATE_MAX_AGE = 7 * 86400
+local MAX_LISTINGS_PER_ITEM = 10000
 
 local function readableNumber(value)
     return not (_G.issecretvalue and _G.issecretvalue(value)) and type(value) == "number"
@@ -151,6 +152,50 @@ local function finishTarget(price, skipped)
     end
 end
 
+-- Seller strings live only in the running scan. Queue just count and price statistics.
+local function summarizeListings()
+    local summaries = {}
+    if not run.listings or run.incompleteListings then return summaries end
+    for id, item in pairs(run.listings) do
+        local prices = item.prices
+        if prices then
+            table.sort(prices)
+            local n = #prices
+            local middle = math.floor((n + 1) / 2)
+            local median = math.floor((prices[middle] + prices[math.floor(n / 2) + 1]) / 2)
+            summaries[id] = {
+                lowest = prices[1], askn = n, askmed = median, askmax = prices[n],
+                sellers = not item.missingOwner and not (item.shortOwners and item.fullOwners) and item.sellerCount or nil,
+            }
+        end
+    end
+    return summaries
+end
+
+local function recordListing(id, price, owner, hasFullOwner)
+    local item = run.listings[id]
+    if not item then
+        item = { prices = {}, owners = {}, sellerCount = 0 }
+        run.listings[id] = item
+    end
+    if not item.prices then return end
+    if #item.prices == MAX_LISTINGS_PER_ITEM then
+        item.prices, item.owners = nil, nil
+        return
+    end
+    item.prices[#item.prices + 1] = price
+    if (_G.issecretvalue and _G.issecretvalue(owner)) or type(owner) ~= "string" or owner == "" then
+        item.missingOwner = true
+        return
+    end
+    if hasFullOwner then item.fullOwners = true else item.shortOwners = true end
+    local key = owner:lower()
+    if not item.owners[key] then
+        item.owners[key] = true
+        item.sellerCount = item.sellerCount + 1
+    end
+end
+
 local function finish(prices, last)
     pending = nil
     if run.target then
@@ -168,7 +213,8 @@ local function finish(prices, last)
             ids[#ids + 1] = id
         end
     end
-    ns.Telemetry.QueueNativeAuctionPrices(updates, last and quantities or nil)
+    ns.Telemetry.QueueNativeAuctionPrices(updates, last and quantities or nil,
+        last and summarizeListings() or nil)
     displayPrices(updates, ids)
     local queued = ns.Telemetry.NativeAuctionPriceCount()
     local percent = last and 100 or total and total > 0 and math.min(99, math.floor(processed / total * 100))
@@ -191,7 +237,6 @@ local function finish(prices, last)
         end
         run = nil
         scanButton:SetText(L["Scan again"])
-        local missing = missingList()
         missingButton:SetEnabled(type(missing) == "table" and #missing > 0)
     else
         continueScan(0.5)
@@ -212,16 +257,31 @@ local function readLegacy()
     local count, reportedTotal = GetNumAuctionItems("list")
     local prices = {}
     for i = 1, count do
-        local _, _, quantity, _, _, _, _, _, _, buyout, _, _, _, _, _, _, id = GetAuctionItemInfo("list", i)
-        if readableNumber(quantity) and readableNumber(buyout) and quantity > 0 then
-            addPrice(prices, id, math.ceil(buyout / quantity), quantity)
+        local _, _, quantity, _, _, _, _, _, _, buyout, _, _, _, owner, ownerFull, _, id, complete =
+            GetAuctionItemInfo("list", i)
+        local readable = readableNumber(quantity) and readableNumber(buyout) and quantity > 0
+        if run.listings and ((_G.issecretvalue and _G.issecretvalue(complete)) or complete ~= true
+            or not readable or not readableNumber(id)) then
+            run.incompleteListings = true
+        end
+        if readable then
+            local price = math.ceil(buyout / quantity)
+            addPrice(prices, id, price, quantity)
+            if run.listings and not run.incompleteListings and price >= 1 and price <= 1000000000000
+                and id >= 1 and id <= 10000000 and id % 1 == 0 then
+                local hasFullOwner = not (_G.issecretvalue and _G.issecretvalue(ownerFull))
+                    and type(ownerFull) == "string" and ownerFull ~= ""
+                recordListing(id, price, hasFullOwner and ownerFull or owner, hasFullOwner)
+            end
         end
     end
     page = page + 1
     processed = processed + count
     if readableNumber(reportedTotal) then total = reportedTotal end
-    finish(prices, count < (_G.NUM_AUCTION_ITEMS_PER_PAGE or 50)
-        or (total and page * (_G.NUM_AUCTION_ITEMS_PER_PAGE or 50) >= total))
+    local pageSize = _G.NUM_AUCTION_ITEMS_PER_PAGE or 50
+    local last = count < pageSize or (total and page * pageSize >= total)
+    if last and (not total or processed ~= total) then run.incompleteListings = true end
+    finish(prices, last)
 end
 
 scan = function()
@@ -325,7 +385,7 @@ local function createTab(parent)
     scanButton:SetScript("OnClick", function()
         if run then reset(); return end
         reset()
-        run = {}
+        run = { listings = not modern and {} or nil }
         missingButton:Disable()
         scanButton:SetText(L["Stop scan"])
         status:SetText(L["Waiting for auction results…"])
