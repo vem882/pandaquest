@@ -6777,6 +6777,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{10919, 1}},
             rewardMoney = 1000,
         },
+        [963] = {
+            description = "In the aftermath of the battles at the Well of Eternity, I heard that " ..
+                "Ameth'Aran had been destroyed, its people dead, including my love, Anaya.\n\nI would " ..
+                "never have thought, thousands of years later, that memories of Anaya would still haunt " ..
+                "my dreams. Wandering the woods of Darkshore in a stupor, I found myself in the ruins of " ..
+                "Ameth'Aran... where I saw the haunted spirit of my beloved.\n\nShe must be freed, but I " ..
+                "lack the heart to do it. Her spirit must be destroyed.",
+            rewardItems = {{5611, 1}},
+        },
         [964] = {
             description = "The key to Scholomance is called a Skeleton Key. It must be forged from the " ..
                 "remains of a skeleton - several actually - and hardened by only the strongest of metals " ..
@@ -8936,6 +8945,13 @@ ns.Overrides.wowhead = {
                 "choose to ally with the Magram then slay their foes, the Gelkis. This will earn you " ..
                 "respect among the Magram. When you earn enough, then meet with the Magram spokesman " ..
                 "Warug, on the outskirts of the Magram Village, in southeast Desolace.",
+        },
+        [1368] = {
+            description = "To beat the centaur, we must use their hatred against them. We will ally with " ..
+                "one of the clans and through them, we will learn how to defeat all the clans.\n\nIf you " ..
+                "choose to ally with the Gelkis then slay their most hated rival, the Magram. After you " ..
+                "earn the respect of the Gelkis, meet with the Gelkis shaman Uthek the Wise, on the " ..
+                "outskirts of the Gelkis Village, in southwest Desolace.",
         },
         [1369] = {
             description = "The Gelkis think our centaur mother, Theradras, protects us. They are stupid. " ..
@@ -18086,6 +18102,15 @@ ns.Overrides.wowhead = {
                 "me.\n\nYou will know of what I speak after you return to your Cathedral of Light. Speak " ..
                 "to High Priestess Laurena when you arrive.",
             rewardXP = 390,
+        },
+        [5713] = {
+            description = "I was traveling to Auberdine with an important message when I was attacked by " ..
+                "the furbolg Marosh and his trackers. During the attack I was poisoned, leaving me barely " ..
+                "able to stand. I can make an antidote, but it will take time before it is ready.\n\nI " ..
+                "would ask that you defend me until I can apply the antidote. I will aid you with my bow " ..
+                "as best I can.\n\nShould we survive, I will be able deliver my message to Auberdine, " ..
+                "while you speak with Onaeya at Maestra's Post to inform her of this incident.",
+            rewardMoney = 1400,
         },
         [5721] = {
             description = "Now, <name>, you will take part in battle of Darrowshire, and you will save " ..
@@ -34346,6 +34371,15 @@ ns.Overrides.wowhead = {
                 "making the infernals may carry a tool that will help disrupt the summoner's magics.",
             rewardMoney = 41000,
         },
+        [10586] = {
+            description = "We've made a lot of progress against the Shadow Council's operations at the " ..
+                "Deathforge, but if we're to truly be triumphant, we'll need to defeat the Legion's " ..
+                "overseer there.\n\nI found a key among the items in Flanis's pack. I'm certain it will " ..
+                "prove useful in tracking down this Warbringer Razuun you observed at Legion " ..
+                "Hold.\n\nAfter you've hunted down and dealt with Warbringer Razuun, report directly to " ..
+                "Wing Commander Nuainn. He'll want to know immediately!",
+            rewardMoney = 41000,
+        },
         [10587] = {
             description = "Our scouts have reported a massive influx of Sunfury blood elf recruits " ..
                 "heading to the Ruins of Karabor. Normally this would represent a purely military threat, " ..
@@ -36369,6 +36403,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{31719, 1}, {31717, 1}, {31718, 1}, {31720, 1}},
             rewardMoney = 58000,
         },
+        [10877] = {
+            description = "Long ago a caravan went to Auchindoun with a mission to take a Dread Relic " ..
+                "from the ancient tombs beneath the necropolis. They fled, but the relic was their " ..
+                "undoing. The relic is evil and it summons evil when touched. Their caravan was destroyed " ..
+                "somewhere to the east.\n\nThis dark artifact is the key to a terrible plan to defeat " ..
+                "Teribus the Cursed, a creature that flies over the Bone Wastes. Help me if you wish, but " ..
+                "your life and even your soul will be at risk.",
+            rewardMoney = 35000,
+        },
         [10878] = {
             description = "After our caravan fell prey to an attack by Shadow Council cabal cultists, " ..
                 "scouts were sent to Shattrath to call for help. The guards think we're safe for now, but " ..
@@ -37824,6 +37867,7 @@ ns.Overrides.wowhead = {
                 "once!",
         },
         [11108] = {description = "Come, highlord <name>. Illidan himself awaits us!", rewardMoney = 132000},
+        [11110] = {rewardItems = {{32860, 1}}},
         [11111] = {rewardItems = {{32857, 1}}},
         [11112] = {rewardItems = {{32858, 1}}},
         [11113] = {rewardItems = {{32862, 1}}},
@@ -38849,6 +38893,14 @@ ns.Overrides.wowhead = {
                 "shrimp are nearly endless.\n\nBut shrimp are too small to catch with a fishing line. So " ..
                 "here's the trick: cut open the bloated barbed gill trout and you'll find a shrimp or two " ..
                 "if you're lucky.",
+            rewardItems = {{34863, 1}},
+        },
+        [11669] = {
+            description = "This old man is going hunting soon. I'm gonna take down a mammoth shark off " ..
+                "the coast of Azshara.\n\nThe thing is, I need a toxin that'll stay on a spear tip while " ..
+                "it's underwater. To make that kind of stuff, I need the glands from a poisonous fish: " ..
+                "the felblood snapper.\n\nSuch a vile fish only thrives in the waters of Hellfire " ..
+                "Peninsula and Shadowmoon Valley. Bring me back a whopper and I'll be a happy old man.",
             rewardItems = {{34863, 1}},
         },
         [11885] = {
