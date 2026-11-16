@@ -16378,6 +16378,14 @@ ns.Overrides.wowhead = {
                 "easy identification.",
             rewardMoney = 18000,
         },
+        [5021] = {
+            description = "\"The package must be delivered... delivered before I'm trapped here!\"\n\nThe " ..
+                "cries of a panicked woman feel almost like a whisper floating through the house. Cowered " ..
+                "in the upstairs corner is the apparition of a woman. She does not seem to be fully " ..
+                "cognizant of her surroundings, and she is only vaguely aware of you.\n\n\"Are you here " ..
+                "to deliver my package? Please, before it gets much worse! I was going to ride out of " ..
+                "here. It should still be by my horse... or am I too late?\"",
+        },
         [5022] = {
             description = "You pick up the package, wiping off a small layer of dust and grime that had " ..
                 "settled on it. It is addressed in a hurried hand to an Emma Felstone of Stormwind; the " ..
