@@ -14073,6 +14073,15 @@ ns.Overrides.wowhead = {
                 "at all.\n\nIf you still want to become a gnome engineer, sign this document pledging " ..
                 "life-long secrecy and speak with me again. Think about it carefully, <name>.",
         },
+        [3641] = {
+            description = "As your mentor, I want some samples of your work. You're a skilled engineer; " ..
+                "there is no question of this, <name>. What I hope to do though is to analyze your work " ..
+                "for ways to emphasize gnome-oriented techniques in your future efforts. I need the " ..
+                "following samples: six mithril tubes, an accurate scope, and two advanced target " ..
+                "dummies.\n\nSubmit these items to me and I will issue you your own Gnome Engineer " ..
+                "Membership Card; it is required for access to all gnome engineering trainers!",
+            rewardItems = {{10790, 1}},
+        },
         [3642] = {
             description = "Gnome engineering is about engineering theory shaped to serve our needs! Our " ..
                 "schemata allow us to make devices that control the world around us; the manual you read " ..

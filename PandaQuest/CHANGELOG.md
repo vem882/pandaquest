@@ -4,6 +4,40 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.585] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,814 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,704 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,223 quests, 70 NPCs, 7 objects
+- npc 10157 - Moonkin Oracle - updated
+  - coordinates: 4 spawn points added in Darkshore
+- npc 10158 - Moonkin - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 10159 - Young Moonkin - updated
+  - coordinates: 31 spawn points added in Darkshore
+- npc 10160 - Raging Moonkin - updated
+  - coordinates: 37 spawn points added in Darkshore
+- npc 10379 - Altsoba Ragetotem - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 10756 - Scalding Elemental - updated
+  - coordinates: 31 spawn points added in Thousand Needles
+- npc 10757 - Boiling Elemental - updated
+  - coordinates: 28 spawn points added in Thousand Needles
+- npc 10758 - Grimtotem Bandit - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 10937 - Captain Redpath - updated
+  - coordinates: 8 spawn points added in Eastern Plaguelands
+- npc 10988 - Kodo Spirit - updated
+  - coordinates: 31 spawn points added in Desolace
+- npc 10992 - Enraged Panther - updated
+  - coordinates: 5 spawn points added in Thousand Needles
+- npc 11024 - Della - updated
+  - coordinates: 1 spawn point added in Felwood
+- npc 11027 - Illusory Wraith - updated
+  - coordinates: 9 spawn points added in Western Plaguelands
+
 ## [0.2.584] - 2026-11-16
 
 Data from the PandaQuest portal.

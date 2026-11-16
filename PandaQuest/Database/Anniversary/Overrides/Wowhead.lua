@@ -16868,6 +16868,15 @@ ns.Overrides.wowhead = {
                 "the Annals of Darrowshire, a book held in the city hall of Andorhal.\n\nBring me that " ..
                 "book. We can then learn Joseph's fate, and with luck... change it!",
         },
+        [5155] = {
+            description = "If I am to trust you in this matter, you will first have to prove " ..
+                "yourself.\n\nI must know that you are an enemy of the Shadow Council--the ones " ..
+                "responsible for many evils here and abroad.\n\nTravel deeper into Felwood. To the west " ..
+                "you will see a path leading to Jaedenar. It is there that the Council plots with the " ..
+                "Burning Legion.\n\nEnter the depths of one of the corrupted Barrow Dens they inhabit and " ..
+                "slay their kind. Return to me after you've done this. Then I will know you truly seek to " ..
+                "help us.",
+        },
         [5156] = {
             description = "To the north, along the east of the road in what's called Shatter Scar Vale, " ..
                 "is an area where infernals were called down during the last great war--the craters still " ..
@@ -32759,6 +32768,15 @@ ns.Overrides.wowhead = {
                 "Last I heard, it was in the keeping of Battle-Mage Dathric. Perhaps his spirit still has " ..
                 "it.",
             rewardMoney = 41000,
+        },
+        [10313] = {
+            description = "If our instincts are right and these manaforges have been made using " ..
+                "technology from Tempest Keep, then all of Outland could be in grave danger.\n\nTempest " ..
+                "Keep's energy-recharging mechanisms were never supposed to be used this close to the " ..
+                "land. The warp energies are capable of destroying this very land, even when contained " ..
+                "within Kael's pipelines.\n\nTake this orb to Manaforge B'naar; it is attuned to measure " ..
+                "warp energies. Use it at the pipelines' ends, where they go into the earth.",
+            rewardChoices = {{30362, 1}, {30363, 1}, {30364, 1}, {30521, 1}},
         },
         [10314] = {
             description = "The strange magical device resembles nothing you've ever seen before. It's " ..
