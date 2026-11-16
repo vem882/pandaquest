@@ -4,6 +4,297 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.577] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,377 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,220 quests, 70 NPCs, 7 objects
+- npc 1479 - Timothy Clark - updated
+  - coordinates: 1 spawn point added in Wetlands
+- npc 1487 - Splinter Fist Enslaver - updated
+  - coordinates: 6 spawn points added in Duskwood
+- npc 1767 - Vile Fin Shredder - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1770 - Moonrage Darkrunner - updated
+  - coordinates: 15 spawn points added in Silverpine Forest
+- npc 1772 - Rot Hide Gladerunner - updated
+  - coordinates: 24 spawn points added in Silverpine Forest
+- npc 1773 - Rot Hide Mystic - updated
+  - coordinates: 24 spawn points added in Silverpine Forest
+- npc 1775 - Zun'dartha - updated
+  - coordinates: 2 spawn points added in Swamp of Sorrows
+- npc 1779 - Moonrage Glutton - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1782 - Moonrage Darksoul - updated
+  - coordinates: 29 spawn points added in Silverpine Forest
+- npc 1785 - Skeletal Terror - updated
+  - coordinates: 15 spawn points added in Western Plaguelands
+- npc 1787 - Skeletal Executioner - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1788 - Skeletal Warlord - updated
+  - coordinates: 20 spawn points added in Western Plaguelands
+- npc 1789 - Skeletal Acolyte - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1793 - Rotting Ghoul - updated
+  - coordinates: 25 spawn points added in Western Plaguelands
+- npc 1795 - Searing Ghoul - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1796 - Freezing Ghoul - updated
+  - coordinates: 22 spawn points added in Western Plaguelands
+- npc 1805 - Flesh Golem - updated
+  - coordinates: 33 spawn points added in Western Plaguelands
+- npc 1806 - Vile Slime - updated
+  - coordinates: 28 spawn points added in Western Plaguelands
+- npc 1808 - Devouring Ooze - updated
+  - coordinates: 30 spawn points added in Western Plaguelands
+- npc 1809 - Carrion Vulture - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+  - coordinates: 32 spawn points added in Tirisfal Glades
+- npc 1812 - Rotting Behemoth - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1813 - Decaying Horror - updated
+  - coordinates: 29 spawn points added in Western Plaguelands
+- npc 1821 - Carrion Lurker - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1827 - Scarlet Sentinel - updated
+  - coordinates: 18 spawn points added in Western Plaguelands
+- npc 1832 - Scarlet Magus - updated
+  - coordinates: 17 spawn points added in Western Plaguelands
+- npc 1834 - Scarlet Paladin - updated
+  - coordinates: 25 spawn points added in Western Plaguelands
+- npc 1836 - Scarlet Cavalier - updated
+  - coordinates: 5 spawn points added in Western Plaguelands
+- npc 1840 - Grand Inquisitor Isillien - updated
+  - coordinates: 6 spawn points added in Western Plaguelands
+- npc 1845 - High Protector Tarsen - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1846 - High Protector Lorik - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 1863 - Succubus - updated
+  - coordinates: 1 spawn point added in Felwood
+  - coordinates: 1 spawn point added in Tanaris
+- npc 1866 - Ravenclaw Slave - updated
+  - coordinates: 13 spawn points added in Silverpine Forest
+- npc 1867 - Dalaran Apprentice - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1868 - Ravenclaw Servant - updated
+  - coordinates: 27 spawn points added in Silverpine Forest
+- npc 1869 - Ravenclaw Champion - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1871 - Eliza's Guard - updated
+  - coordinates: 4 spawn points added in Duskwood
+- npc 1883 - Scarlet Worker - updated
+  - coordinates: 36 spawn points added in Western Plaguelands
+- npc 1891 - Pyrewood Watcher - updated
+  - coordinates: 18 spawn points added in Silverpine Forest
+- npc 1894 - Pyrewood Sentry - updated
+  - coordinates: 20 spawn points added in Silverpine Forest
+- npc 1895 - Pyrewood Elder - updated
+  - coordinates: 18 spawn points added in Silverpine Forest
+- npc 1909 - Vile Fin Lakestalker - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1915 - Ambermill Conjuror - updated
+  - coordinates: 8 spawn points added in Silverpine Forest
+- npc 1923 - Bloodsnout Worg - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1924 - Moonrage Bloodhowler - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1940 - Rot Hide Plague Weaver - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1942 - Rot Hide Savage - updated
+  - coordinates: 8 spawn points added in Silverpine Forest
+- npc 1943 - Raging Rot Hide - updated
+  - coordinates: 7 spawn points added in Silverpine Forest
+- npc 1947 - Thule Ravenclaw - updated
+  - coordinates: 6 spawn points added in Silverpine Forest
+- npc 1953 - Lake Skulker - updated
+  - coordinates: 32 spawn points added in Silverpine Forest
+- npc 1954 - Elder Lake Skulker - updated
+  - coordinates: 25 spawn points added in Silverpine Forest
+- npc 1956 - Elder Lake Creeper - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1957 - Vile Fin Shorecreeper - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1958 - Vile Fin Tidecaller - updated
+  - coordinates: 40 spawn points added in Silverpine Forest
+- npc 1971 - Ivar the Foul - updated
+  - coordinates: 4 spawn points added in Silverpine Forest
+- npc 1972 - Grimson the Pale - updated
+  - coordinates: 5 spawn points added in Silverpine Forest
+- npc 2012 - Gnarlpine Pathfinder - updated
+  - coordinates: 17 spawn points added in Teldrassil
+- npc 2014 - Gnarlpine Totemic - updated
+  - coordinates: 7 spawn points added in Teldrassil
+- npc 2056 - Ravenclaw Apparition - updated
+  - coordinates: 4 spawn points added in Silverpine Forest
+- npc 2069 - Moonstalker - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2091 - Chieftain Nek'rosh - updated
+  - coordinates: 13 spawn points added in Wetlands
+- npc 2156 - Cracked Golem - updated
+  - coordinates: 5 spawn points added in Darkshore
+- npc 2157 - Stone Behemoth - updated
+  - coordinates: 5 spawn points added in Darkshore
+- npc 2163 - Thistle Bear - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2174 - Coastal Frenzy - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2176 - Cursed Highborne - updated
+  - coordinates: 16 spawn points added in Darkshore
+- npc 2177 - Writhing Highborne - updated
+  - coordinates: 23 spawn points added in Darkshore
+- npc 2178 - Wailing Highborne - updated
+  - coordinates: 13 spawn points added in Darkshore
+- npc 2179 - Stormscale Wave Rider - updated
+  - coordinates: 10 spawn points added in Darkshore
+- npc 2180 - Stormscale Siren - updated
+  - coordinates: 10 spawn points added in Darkshore
+- npc 2185 - Darkshore Thresher - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2187 - Elder Darkshore Thresher - updated
+  - coordinates: 30 spawn points added in Darkshore
+- npc 2188 - Deep Sea Threshadon - updated
+  - coordinates: 27 spawn points added in Darkshore
+- npc 2189 - Vile Sprite - updated
+  - coordinates: 15 spawn points added in Darkshore
+- npc 2190 - Wild Grell - updated
+  - coordinates: 19 spawn points added in Darkshore
+- npc 2201 - Greymist Raider - updated
+  - coordinates: 6 spawn points added in Darkshore
+- npc 2202 - Greymist Coastrunner - updated
+  - coordinates: 22 spawn points added in Darkshore
+- npc 2203 - Greymist Seer - updated
+  - coordinates: 20 spawn points added in Darkshore
+- npc 2204 - Greymist Netter - updated
+  - coordinates: 12 spawn points added in Darkshore
+- npc 2205 - Greymist Warrior - updated
+  - coordinates: 17 spawn points added in Darkshore
+- npc 2208 - Greymist Tidehunter - updated
+  - coordinates: 15 spawn points added in Darkshore
+- npc 2212 - Deth'ryll Satyr - updated
+  - coordinates: 14 spawn points added in Darkshore
+- npc 2231 - Pygmy Tide Crawler - updated
+  - coordinates: 30 spawn points added in Darkshore
+- npc 2232 - Tide Crawler - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2234 - Young Reef Crawler - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2235 - Reef Crawler - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2236 - Raging Reef Crawler - updated
+  - coordinates: 29 spawn points added in Darkshore
+- npc 2244 - Syndicate Shadow Mage - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2247 - Syndicate Enforcer - updated
+  - coordinates: 1 spawn point added in Tirisfal Glades
+- npc 2249 - Ferocious Yeti - updated
+  - data rewritten, nothing a player sees changed
+- npc 2258 - Stone Fury - updated
+  - NPC title added (The Mountain Lord)
+- npc 2264 - Hillsbrad Tailor - updated
+  - coordinates: 7 spawn points added in Hillsbrad Foothills
+- npc 2268 - Hillsbrad Footman - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2271 - Dalaran Shield Guard - updated
+  - coordinates: 21 spawn points added in Hillsbrad Foothills
+  - coordinates: 1 spawn point added in Tirisfal Glades
+- npc 2272 - Dalaran Theurgist - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 2322 - Foreststrider - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2323 - Giant Foreststrider - updated
+  - coordinates: 40 spawn points added in Darkshore
+- npc 2327 - Shaina Fuller - updated
+  - coordinates: 1 spawn point added in Stormwind City
+- npc 2332 - Valdred Moray - updated
+  - coordinates: 32 spawn points added in Silverpine Forest
+- npc 2336 - Dark Strand Fanatic - updated
+  - coordinates: 11 spawn points added in Darkshore
+- npc 2337 - Dark Strand Voidcaller - updated
+  - coordinates: 3 spawn points added in Darkshore
+- npc 2338 - Twilight Disciple - updated
+  - coordinates: 11 spawn points added in Darkshore
+- npc 2339 - Twilight Thug - updated
+  - coordinates: 17 spawn points added in Darkshore
+- npc 2347 - Wild Gryphon - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2348 - Elder Moss Creeper - updated
+  - coordinates: 31 spawn points added in Hillsbrad Foothills
+- npc 2351 - Blighted Bear - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2352 - Innkeeper Anderson - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2361 - Tamara Armstrong - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 2362 - Hemmit Armstrong - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 2363 - Apprentice Honeywell - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 2364 - Neema - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2365 - Bront Coldcleave - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2379 - Caretaker Smithers - updated
+  - coordinates: 22 spawn points added in Hillsbrad Foothills
+- npc 2381 - Micha Yance - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2383 - Lindea Rabonne - updated
+  - coordinates: 2 spawn points added in Hillsbrad Foothills
+- npc 2384 - Starving Mountain Lion - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2405 - Tarren Mill Deathguard - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2411 - Ricter - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2427 - Jailor Eston - updated
+  - coordinates: 10 spawn points added in Hillsbrad Foothills
+- npc 2428 - Jailor Marlgen - updated
+  - coordinates: 8 spawn points added in Hillsbrad Foothills
+- npc 2435 - Southshore Crier - updated
+  - coordinates: 14 spawn points added in Hillsbrad Foothills
+- npc 2436 - Farmer Kent - updated
+  - coordinates: 35 spawn points added in Hillsbrad Foothills
+- npc 2440 - Drunken Footpad - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 2466 - Mountaineer Grugelm - updated
+  - coordinates: 13 spawn points added in Loch Modan
+  - coordinates: 10 spawn points added in Wetlands
+- npc 2469 - Mountaineer Rharen - updated
+  - coordinates: 15 spawn points added in Loch Modan
+  - coordinates: 5 spawn points added in Wetlands
+- npc 2475 - Sloth - updated
+  - coordinates: 29 spawn points added in Duskwood
+- npc 2477 - Gradok - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 2478 - Haren Swifthoof - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 2479 - Sludge - updated
+  - coordinates: 30 spawn points added in Duskwood
+- npc 2524 - Mountaineer Haggis - updated
+  - coordinates: 5 spawn points added in Loch Modan
+- npc 2525 - Mountaineer Barn - updated
+  - coordinates: 22 spawn points added in Loch Modan
+- npc 2526 - Mountaineer Morlic - updated
+  - coordinates: 6 spawn points added in Loch Modan
+- npc 2527 - Mountaineer Angst - updated
+  - coordinates: 4 spawn points added in Loch Modan
+- npc 2528 - Mountaineer Haggil - updated
+  - coordinates: 4 spawn points added in Loch Modan
+- npc 2529 - Son of Arugal - updated
+  - coordinates: 8 spawn points added in Silverpine Forest
+- npc 2531 - Minion of Doane - updated
+  - coordinates: 6 spawn points added in Redridge Mountains
+- npc 2534 - Zanzil the Outcast - updated
+  - coordinates: 4 spawn points added in Northern Stranglethorn
+- npc 2536 - Jon-Jon the Crow - updated
+  - coordinates: 6 spawn points added in Northern Stranglethorn
+- npc 2537 - Chucky "Ten Thumbs" - updated
+  - coordinates: 4 spawn points added in Northern Stranglethorn
+- npc 70977 - Anthracite - updated
+  - NPC level added (93)
+
 ## [0.2.576] - 2026-11-16
 
 Data from the PandaQuest portal.
@@ -325,18 +616,6 @@ Data from the PandaQuest portal.
   - coordinates: 30 spawn points added in Feralas
 - npc 17218 - Huraan - updated
   - coordinates: 1 spawn point added in Hillsbrad Foothills
-
-## [0.2.565] - 2026-11-15
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,134 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,689 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,203 quests, 70 NPCs, 7 objects
-- npc 5229 - Gordunni Ogre - updated
-  - coordinates: 32 spawn points added in Feralas
-- npc 6667 - Gelkak Gyromast - updated
-  - coordinates: 2 spawn points added in Darkshore
 
 ## [0.2.412]
 
