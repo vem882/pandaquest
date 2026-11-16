@@ -4,6 +4,210 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.576] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,238 NPCs, 6 objects
+- npc 764 - Swampwalker - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 819 - Servant of Ilgalar - updated
+  - coordinates: 8 spawn points added in Redridge Mountains
+- npc 824 - Defias Digger - updated
+  - coordinates: 18 spawn points added in Westfall
+- npc 854 - Young Jungle Stalker - updated
+  - coordinates: 10 spawn points added in Northern Stranglethorn
+- npc 855 - Young Stranglethorn Raptor - updated
+  - coordinates: 6 spawn points added in Northern Stranglethorn
+- npc 856 - Young Lashtail Raptor - updated
+  - coordinates: 9 spawn points added in Northern Stranglethorn
+- npc 861 - Stonard Scout - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 862 - Stonard Explorer - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 865 - Stonard Wayfinder - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 867 - Stonard Cartographer - updated
+  - coordinates: 17 spawn points added in Swamp of Sorrows
+- npc 891 - Splinter Fist Fire Weaver - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 949 - Carrion Recluse - updated
+  - coordinates: 34 spawn points added in Duskwood
+- npc 1000 - Unkillable Test Dummy - updated
+  - coordinates: 7 spawn points added in Duskwood
+- npc 1009 - Mosshide Mistweaver - updated
+  - coordinates: 22 spawn points added in Wetlands
+- npc 1010 - Mosshide Fenrunner - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1011 - Mosshide Trapper - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1012 - Mosshide Brute - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1013 - Mosshide Mystic - updated
+  - coordinates: 33 spawn points added in Wetlands
+- npc 1014 - Mosshide Alpha - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1015 - Highland Raptor - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1017 - Highland Scytheclaw - updated
+  - coordinates: 9 spawn points added in Wetlands
+- npc 1018 - Highland Razormaw - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1025 - Bluegill Puddlejumper - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1026 - Bluegill Forager - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1027 - Bluegill Warrior - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1028 - Bluegill Muckdweller - updated
+  - coordinates: 29 spawn points added in Wetlands
+- npc 1029 - Bluegill Oracle - updated
+  - coordinates: 30 spawn points added in Wetlands
+- npc 1031 - Crimson Ooze - updated
+  - coordinates: 6 spawn points added in Wetlands
+- npc 1033 - Monstrous Ooze - updated
+  - coordinates: 31 spawn points added in Wetlands
+- npc 1039 - Fen Dweller - updated
+  - coordinates: 17 spawn points added in Wetlands
+- npc 1041 - Fen Lord - updated
+  - coordinates: 6 spawn points added in Wetlands
+- npc 1042 - Red Whelp - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1043 - Lost Whelp - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1044 - Flamesnorting Whelp - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1045 - Red Dragonspawn - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1046 - Red Wyrmkin - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1047 - Red Scalebane - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1048 - Scalebane Lieutenant - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1049 - Wyrmkin Firebrand - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1050 - Scalebane Royal Guard - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1060 - Mogh the Undying - updated
+  - coordinates: 3 spawn points added in Northern Stranglethorn
+- npc 1063 - Jade - updated
+  - NPC title added (Victim of the Nightmare)
+- npc 1069 - Crimson Whelp - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1081 - Mire Lord - updated
+  - coordinates: 4 spawn points added in Swamp of Sorrows
+- npc 1082 - Sawtooth Crocolisk - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 1087 - Sawtooth Snapper - updated
+  - coordinates: 40 spawn points added in Swamp of Sorrows
+- npc 1098 - Watcher Merant - updated
+  - coordinates: 36 spawn points added in Duskwood
+- npc 1100 - Watcher Selkin - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 1101 - Watcher Thayer - updated
+  - coordinates: 34 spawn points added in Duskwood
+- npc 1108 - Mistvale Gorilla - updated
+  - coordinates: 19 spawn points added in Northern Stranglethorn
+- npc 1114 - Jungle Thunderer - updated
+  - coordinates: 40 spawn points added in Northern Stranglethorn
+- npc 1116 - Rockjaw Ambusher - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 1120 - Frostmane Troll - updated
+  - coordinates: 22 spawn points added in Dun Morogh
+- npc 1121 - Frostmane Snowstrider - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 1122 - Frostmane Hideskinner - updated
+  - coordinates: 23 spawn points added in Dun Morogh
+- npc 1124 - Frostmane Shadowcaster - updated
+  - coordinates: 14 spawn points added in Dun Morogh
+- npc 1128 - Young Black Bear - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 1133 - Starving Winter Wolf - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 1134 - Young Wendigo - updated
+  - coordinates: 15 spawn points added in Dun Morogh
+- npc 1135 - Wendigo - updated
+  - coordinates: 28 spawn points added in Dun Morogh
+- npc 1138 - Snow Tracker Wolf - updated
+  - coordinates: 34 spawn points added in Dun Morogh
+- npc 1151 - Saltwater Crocolisk - updated
+  - coordinates: 40 spawn points added in Northern Stranglethorn
+- npc 1160 - Captain Halyndor - updated
+  - coordinates: 3 spawn points added in Wetlands
+- npc 1169 - Dark Iron Insurgent - updated
+  - coordinates: 25 spawn points added in Loch Modan
+  - coordinates: 4 spawn points added in Wetlands
+- npc 1175 - Tunnel Rat Digger - updated
+  - coordinates: 23 spawn points added in Loch Modan
+- npc 1181 - Mo'grosh Shaman - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1183 - Mo'grosh Mystic - updated
+  - coordinates: 27 spawn points added in Loch Modan
+- npc 1184 - Cliff Lurker - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1185 - Wood Lurker - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1188 - Grizzled Black Bear - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1190 - Mountain Boar - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1191 - Mangy Mountain Boar - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1193 - Loch Frenzy - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1199 - Juvenile Snow Leopard - updated
+  - coordinates: 40 spawn points added in Dun Morogh
+- npc 1202 - Tunnel Rat Kobold - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 1203 - Watcher Sarys - updated
+  - coordinates: 15 spawn points added in Duskwood
+- npc 1222 - Dark Iron Sapper - updated
+  - coordinates: 8 spawn points added in Loch Modan
+- npc 1224 - Young Threshadon - updated
+  - coordinates: 40 spawn points added in Loch Modan
+- npc 7445 - Elder Shardtooth - updated
+  - coordinates in Winterspring: 12 spawn points added, 27 refined, 12 removed
+- npc 7449 - Chillwind Ravager - updated
+  - coordinates in Winterspring: 10 spawn points added, 16 refined, 10 removed
+- npc 27059 - Plague Zombie - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 40 spawn points added in Ironforge
+  - coordinates: 40 spawn points added in Orgrimmar
+  - coordinates: 40 spawn points added in Thunder Bluff
+  - coordinates: also changed in 5 more zones
+- npc 27305 - Argent Healer - updated
+  - coordinates: 26 spawn points added in Ironforge
+  - coordinates: 19 spawn points added in Shattrath City
+  - coordinates: 17 spawn points added in Darnassus
+  - coordinates: 16 spawn points added in The Exodar
+  - coordinates: also changed in 4 more zones
+- npc 30027 - Plague Zombie - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 40 spawn points added in Orgrimmar
+  - coordinates: 40 spawn points added in Hellfire Peninsula
+  - coordinates: 40 spawn points added in Shattrath City
+  - coordinates: also changed in 3 more zones
+- npc 30031 - Plague Zombie - updated
+  - coordinates: 11 spawn points added in Elwynn Forest
+  - coordinates: 5 spawn points added in Eversong Woods
+  - coordinates: 4 spawn points added in Stormwind City
+  - coordinates: 3 spawn points added in Redridge Mountains
+  - coordinates: also changed in 8 more zones
+- npc 30032 - Plague Zombie - updated
+  - coordinates: 5 spawn points added in Elwynn Forest
+  - coordinates: 5 spawn points added in The Barrens
+  - coordinates: 4 spawn points added in Orgrimmar
+  - coordinates: 4 spawn points added in Eversong Woods
+  - coordinates: also changed in 6 more zones
+- npc 30033 - Plague Zombie - updated
+  - coordinates: 27 spawn points added in Elwynn Forest
+  - coordinates: 1 spawn point added in Tirisfal Glades
+  - coordinates: 1 spawn point added in Stormwind City
+  - coordinates: 1 spawn point added in Orgrimmar
+- npc 30034 - Plague Zombie - updated
+  - coordinates: 5 spawn points added in Elwynn Forest
+
 ## [0.2.575] - 2026-11-16
 
 Data from the PandaQuest portal.
@@ -133,17 +337,6 @@ Data from the PandaQuest portal.
   - coordinates: 32 spawn points added in Feralas
 - npc 6667 - Gelkak Gyromast - updated
   - coordinates: 2 spawn points added in Darkshore
-
-## [0.2.561] - 2026-11-15
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,132 NPCs, 6 objects
-- database - refreshed auction scan targets without recent prices
-- database - Classic Era: data from the PandaQuest portal: 3,687 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,201 quests, 70 NPCs, 7 objects
-- npc 68084 - Lor'themar Theron - updated
-  - NPC title added (Regent Lord of Quel'Thalas)
 
 ## [0.2.412]
 
