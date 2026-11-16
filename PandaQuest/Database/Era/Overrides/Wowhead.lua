@@ -21759,6 +21759,7 @@ ns.Overrides.wowhead = {
             description = "Amongst the shattered fishing lures and tackle is a rolled, silken measuring " ..
                 "tape. Attached to the tape is a label that reads:\n\n\" Nat Pagle, Dustwallow Marsh.\"",
         },
+        [8228] = {rewardItems = {{19978, 1}}},
         [8229] = {rewardItems = {{19978, 1}}},
         [8231] = {
             description = "The wavethrasher is an amphibious beast living only here in Azshara. They are " ..

@@ -21117,6 +21117,11 @@ ns.Overrides.wowhead = {
             description = "Examine the vessel of his rebirth, mortal. It is from this that the Windseeker " ..
                 "shall be reborn!",
         },
+        [7786] = {
+            description = "I have told you all that I know, <name>. It is you who must find elementium. " ..
+                "It is you who must destroy the Firelord's corporeal form.\n\nDo this and gain the " ..
+                "blessing of Thunderaan.",
+        },
         [7787] = {
             description = "You have defeated the Wind Seeker. Take the dormant blade and force the lying " ..
                 "wretch, Demitrian, to use the materials you provided for his betrayal to wake " ..
@@ -21621,6 +21626,7 @@ ns.Overrides.wowhead = {
         [8142] = {rewardItems = {{19615, 1}}},
         [8143] = {rewardItems = {{19616, 1}}},
         [8144] = {rewardItems = {{19617, 1}}},
+        [8145] = {rewardItems = {{19618, 1}}},
         [8146] = {rewardItems = {{19619, 1}}},
         [8147] = {rewardItems = {{19620, 1}}},
         [8148] = {rewardItems = {{19621, 1}}},
@@ -30168,6 +30174,14 @@ ns.Overrides.wowhead = {
                 "survive, bring her eye to me.",
             rewardChoices = {{25595, 1}, {25594, 1}, {25593, 1}},
             rewardMoney = 74000,
+        },
+        [9857] = {
+            description = "I don't think that I'm up to the hunt today. Do you think that you might take " ..
+                "my place?\n\nI told Hemet that I was going to see about bagging us some of those talbuk " ..
+                "that seem to be all over the place. The stags are especially nice to hunt. You can find " ..
+                "them congregated around the nearby trees.\n\nThink that you could take care of that for " ..
+                "me?",
+            rewardMoney = 33000,
         },
         [9858] = {
             description = "This darned scratch is getting the worst of me it would seem. So, are you up " ..
