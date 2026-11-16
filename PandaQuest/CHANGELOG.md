@@ -4,6 +4,149 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.579] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,482 NPCs, 6 objects
+- npc 2961 - Mountain Cougar - updated
+  - coordinates: 40 spawn points added in Mulgore
+- npc 2968 - Galak Outrunner - updated
+  - coordinates: 40 spawn points added in Mulgore
+- npc 2975 - Venture Co. Hireling - updated
+  - coordinates: 12 spawn points added in Mulgore
+- npc 2983 - The Plains Vision - updated
+  - coordinates: 34 spawn points added in Mulgore
+- npc 3096 - Captured Servant of Azora - updated
+  - coordinates: 4 spawn points added in Redridge Mountains
+- npc 3097 - Bernard Brubaker - updated
+  - coordinates: 3 spawn points added in Redridge Mountains
+- npc 3103 - Makrura Clacker - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3104 - Makrura Shellhide - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3105 - Makrura Snapclaw - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3119 - Kolkar Drudge - updated
+  - coordinates: 35 spawn points added in Durotar
+- npc 3120 - Kolkar Outrunner - updated
+  - coordinates: 14 spawn points added in Durotar
+- npc 3121 - Durotar Tiger - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3131 - Lightning Hide - updated
+  - coordinates: 15 spawn points added in Durotar
+- npc 3141 - Makrura Elder - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3205 - Zalazane - updated
+  - coordinates: 9 spawn points added in Durotar
+- npc 3226 - Corrupted Scorpid - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3228 - Corrupted Surf Crawler - updated
+  - coordinates: 40 spawn points added in Durotar
+- npc 3231 - Corrupted Dreadmaw Crocolisk - updated
+  - coordinates: 40 spawn points added in Durotar
+  - coordinates: 21 spawn points added in The Barrens
+- npc 3235 - Greater Barrens Kodo - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3237 - Wooly Kodo - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3239 - Thunderhead - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3247 - Thunderhawk Hatchling - updated
+  - coordinates: 39 spawn points added in The Barrens
+- npc 3249 - Greater Thunderhawk - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3250 - Silithid Creeper - updated
+  - coordinates: 28 spawn points added in The Barrens
+- npc 3251 - Silithid Grub - updated
+  - coordinates: 19 spawn points added in The Barrens
+- npc 3289 - Spirit of Minshina - updated
+  - coordinates: 2 spawn points added in Durotar
+- npc 3318 - Koma - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 3320 - Soran - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 3349 - Ukra'nor - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 3392 - Prospector Khazgorm - updated
+  - coordinates: 5 spawn points added in The Barrens
+- npc 3406 - Xor'juul - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 3408 - Zel'mak - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 3410 - Jin'sora - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 3417 - Living Flame - updated
+  - coordinates: 3 spawn points added in Westfall
+- npc 3424 - Thunderhawk Cloudscraper - updated
+  - coordinates: 22 spawn points added in The Barrens
+- npc 3434 - Nak - updated
+  - coordinates: 3 spawn points added in The Barrens
+- npc 3435 - Lok Orcbane - updated
+  - coordinates: 3 spawn points added in The Barrens
+- npc 3436 - Kuz - updated
+  - coordinates: 12 spawn points added in The Barrens
+- npc 3451 - Pilot Wizzlecrank - updated
+  - coordinates: 2 spawn points added in The Barrens
+- npc 3456 - Razormane Pathfinder - updated
+  - coordinates: 16 spawn points added in The Barrens
+- npc 3457 - Razormane Stalker - updated
+  - coordinates: 18 spawn points added in The Barrens
+- npc 3459 - Razormane Warfrenzy - updated
+  - coordinates: 14 spawn points added in The Barrens
+- npc 3463 - Wandering Barrens Giraffe - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3466 - Zhevra Courser - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 3472 - Washte Pawne - updated
+  - coordinates: 18 spawn points added in The Barrens
+- npc 3474 - Lakota'mani - updated
+  - coordinates: 14 spawn points added in The Barrens
+- npc 3503 - Silithid Protector - updated
+  - coordinates: 22 spawn points added in The Barrens
+- npc 3528 - Pyrewood Armorer - updated
+  - coordinates: 6 spawn points added in Silverpine Forest
+- npc 3530 - Pyrewood Tailor - updated
+  - coordinates: 8 spawn points added in Silverpine Forest
+- npc 3532 - Pyrewood Leatherworker - updated
+  - coordinates: 8 spawn points added in Silverpine Forest
+- npc 3540 - Hal McAllister - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 3541 - Sarah Raycroft - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 3542 - Jaysin Lanyda - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 3543 - Robert Aebischer - updated
+  - coordinates: 1 spawn point added in Hillsbrad Foothills
+- npc 3621 - Kurll - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 3662 - Delmanis the Hated - updated
+  - coordinates: 5 spawn points added in Darkshore
+- npc 3664 - Ilkrud Magthrull - updated
+  - data rewritten, nothing a player sees changed
+- npc 3684 - Pizznukle - updated
+  - coordinates: 2 spawn points added in The Barrens
+- npc 3689 - Laer Stepperunner - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 3695 - Grimclaw - updated
+  - coordinates: 3 spawn points added in Darkshore
+- npc 3712 - Wrathtail Razortail - updated
+  - coordinates: 21 spawn points added in Ashenvale
+- npc 3715 - Wrathtail Sea Witch - updated
+  - coordinates: 19 spawn points added in Ashenvale
+- npc 3722 - Mystlash Flayer - updated
+  - coordinates: 13 spawn points added in Ashenvale
+- npc 3737 - Saltspittle Puddlejumper - updated
+  - coordinates: 20 spawn points added in Ashenvale
+- npc 3739 - Saltspittle Warrior - updated
+  - coordinates: 21 spawn points added in Ashenvale
+- npc 3740 - Saltspittle Muckdweller - updated
+  - coordinates: 10 spawn points added in Ashenvale
+- npc 3742 - Saltspittle Oracle - updated
+  - coordinates: 13 spawn points added in Ashenvale
+- npc 3748 - Foulweald Shaman - updated
+  - coordinates: 22 spawn points added in Ashenvale
+
 ## [0.2.578] - 2026-11-16
 
 Data from the PandaQuest portal.
@@ -669,24 +812,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Darkshore
 - npc 69784 - Animus Golem - updated
   - NPC level added (90)
-
-## [0.2.567] - 2026-11-15
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,137 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,694 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,208 quests, 70 NPCs, 7 objects
-- quest 24595 - The Purification of Quel'Delar - updated
-  - description added
-- quest 24743 - Shadow's Edge - updated
-  - reward items: +1
-- quest 24840 - A Change of Heart - updated
-  - reward choices: +4
-- quest 24846 - A Change of Heart - updated
-  - reward choices: +4
-- npc 24279 - Animated Plague Slime - updated
-  - coordinates: 2 spawn points added in Howling Fjord
 
 ## [0.2.412]
 
