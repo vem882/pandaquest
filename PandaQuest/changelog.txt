@@ -75,6 +75,127 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.581
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,604 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,221 quests, 70 NPCs, 7 objects
+- npc 3801 - Severed Sleeper - updated
+  - coordinates: 15 spawn points added in Ashenvale
+- npc 3804 - Forsaken Intruder - updated
+  - coordinates: 19 spawn points added in Ashenvale
+- npc 3807 - Forsaken Assassin - updated
+  - coordinates: 19 spawn points added in Ashenvale
+- npc 3808 - Forsaken Dark Stalker - updated
+  - coordinates: 20 spawn points added in Ashenvale
+- npc 3879 - Dark Strand Assassin - updated
+  - coordinates: 4 spawn points added in Ashenvale
+- npc 3923 - Thistlefur Den Watcher - updated
+  - coordinates: 13 spawn points added in Ashenvale
+- npc 3931 - Shadethicket Oracle - updated
+  - coordinates: 5 spawn points added in Ashenvale
+- npc 4248 - Pesterhide Hyena - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4249 - Pesterhide Snarler - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+  - coordinates: 8 spawn points added in Feralas
+- npc 4251 - Goblin Racer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4252 - Gnome Racer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4469 - Emerald Ooze - updated
+  - coordinates: 5 spawn points added in The Hinterlands
+- npc 4493 - Scarlet Avenger - updated
+  - coordinates: 33 spawn points added in Western Plaguelands
+- npc 4494 - Scarlet Spellbinder - updated
+  - coordinates: 9 spawn points added in Western Plaguelands
+- npc 4509 - Sargath - updated
+  - coordinates: 2 spawn points added in Ashenvale
+- npc 4635 - Kolkar Windchaser - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4636 - Kolkar Battle Lord - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4637 - Kolkar Destroyer - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4647 - Gelkis Scout - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4649 - Gelkis Windchaser - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4678 - Mana Eater - updated
+  - coordinates: 13 spawn points added in Desolace
+- npc 4680 - Doomwarder Captain - updated
+  - coordinates: 11 spawn points added in Desolace
+- npc 4682 - Nether Sister - updated
+  - coordinates: 13 spawn points added in Desolace
+- npc 4684 - Nether Sorceress - updated
+  - coordinates: 12 spawn points added in Desolace
+- npc 4685 - Ley Hunter - updated
+  - coordinates: 23 spawn points added in Desolace
+- npc 4686 - Deepstrider Giant - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4687 - Deepstrider Searcher - updated
+  - coordinates: 40 spawn points added in Desolace
+- npc 4785 - Illusionary Nightmare - updated
+  - coordinates: 19 spawn points added in Ashenvale
+- npc 4795 - Force of Nature - updated
+  - coordinates: 20 spawn points added in Feralas
+  - coordinates: 3 spawn points added in Ashenvale
+- npc 5029 - World Survival Trainer - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 5034 - World Brewing Trainer - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 5042 - Nurse Lillian - updated
+  - coordinates: 2 spawn points added in Stormwind City
+- npc 5224 - Murk Slitherer - updated
+  - coordinates: 1 spawn point added in Swamp of Sorrows
+- npc 5262 - Groddoc Thunderer - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5274 - Ironfur Patriarch - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5287 - Longtooth Howler - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5288 - Rabid Longtooth - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5292 - Feral Scar Yeti - updated
+  - coordinates: 19 spawn points added in Feralas
+- npc 5293 - Hulking Feral Scar - updated
+  - coordinates: 13 spawn points added in Feralas
+- npc 5295 - Enraged Feral Scar - updated
+  - coordinates: 18 spawn points added in Feralas
+- npc 5317 - Jademir Oracle - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5334 - Hatecrest Myrmidon - updated
+  - coordinates: 22 spawn points added in Feralas
+- npc 5335 - Hatecrest Screamer - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5336 - Hatecrest Sorceress - updated
+  - coordinates: 35 spawn points added in Feralas
+- npc 5337 - Hatecrest Siren - updated
+  - coordinates: 36 spawn points added in Feralas
+- npc 5348 - Dreamwatcher Forktongue - updated
+  - NPC title added (Victim of the Nightmare)
+- npc 5357 - Land Walker - updated
+  - coordinates: 28 spawn points added in Feralas
+- npc 5358 - Cliff Giant - updated
+  - coordinates: 34 spawn points added in Feralas
+- npc 5360 - Deep Strider - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5361 - Wave Strider - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 5363 - Northspring Roguefeather - updated
+  - coordinates: 33 spawn points added in Feralas
+- npc 5389 - Prospector Gunstan - updated
+  - coordinates: 1 spawn point added in Tanaris
+- npc 5409 - Harvester Swarm - updated
+  - coordinates: 16 spawn points added in The Barrens
+  - coordinates: 4 spawn points added in Dread Wastes
+- npc 5421 - Glasshide Petrifier - updated
+  - coordinates: 40 spawn points added in Tanaris
+- npc 5481 - Thistleshrub Dew Collector - updated
+  - coordinates: 28 spawn points added in Tanaris
+- npc 5506 - Maldryn - updated
+  - coordinates: 4 spawn points added in Stormwind City
+- npc 5523 - War Party Kodo - updated
+  - coordinates: 5 spawn points added in Thousand Needles
+
 0.2.580
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,547 NPCs, 6 objects
 - npc 2686 - Witherbark Broodguard - updated
@@ -972,13 +1093,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - database - TBC Anniversary: data from the PandaQuest portal: 5,217 quests, 70 NPCs, 7 objects
 - npc 50784 - Anith - updated
   - coordinates: 3 spawn points added in Dustwallow Marsh
-
-0.2.570
-- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,140 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,699 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,215 quests, 70 NPCs, 7 objects
-- npc 33947 - Angry Oak Spirit - updated
-  - coordinates: 40 spawn points added in Crystalsong Forest
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

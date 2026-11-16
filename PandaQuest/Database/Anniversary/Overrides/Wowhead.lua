@@ -13119,6 +13119,12 @@ ns.Overrides.wowhead = {
                 "the warlock trainer Maximillion. I would take some time to read it before heading out " ..
                 "again.",
         },
+        [3100] = {
+            description = "I was asked to bring this to your attention as soon as you returned from the " ..
+                "kobold camps, <name>. It appears to be a letter sealed with the insignia of Llane, our " ..
+                "local warrior trainer. I wouldn't hesitate to read it before you go about any other " ..
+                "business here in the Abbey.",
+        },
         [3102] = {
             description = "I was asked to bring this to your attention as soon as you returned from the " ..
                 "kobold camps, <name>. It appears to be a letter sealed with the insignia of Jorik, one " ..
