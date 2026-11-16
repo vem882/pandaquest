@@ -4,6 +4,147 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.580] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,547 NPCs, 6 objects
+- npc 2686 - Witherbark Broodguard - updated
+  - coordinates: 40 spawn points added in The Hinterlands
+- npc 2701 - Dustbelcher Ogre - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2715 - Dustbelcher Brute - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2719 - Dustbelcher Lord - updated
+  - coordinates: 18 spawn points added in Badlands
+- npc 2720 - Dustbelcher Ogre Mage - updated
+  - coordinates: 26 spawn points added in Badlands
+- npc 2721 - Forsaken Bodyguard - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2735 - Lesser Rock Elemental - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2736 - Greater Rock Elemental - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2738 - Stromgarde Cavalryman - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+- npc 2764 - Sleeby - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+- npc 2775 - Daggerspine Marauder - updated
+  - coordinates: 11 spawn points added in Arathi Highlands
+- npc 2776 - Vengeful Surge - updated
+  - coordinates: 6 spawn points added in Arathi Highlands
+- npc 3791 - Terrowulf Shadow Weaver - updated
+  - coordinates: 12 spawn points added in Ashenvale
+- npc 3802 - Severed Dreamer - updated
+  - coordinates: 15 spawn points added in Ashenvale
+- npc 3950 - Minor Water Guardian - updated
+  - coordinates: 1 spawn point added in The Barrens
+- npc 3988 - Venture Co. Operator - updated
+  - coordinates: 28 spawn points added in Stonetalon Mountains
+- npc 3999 - Windshear Digger - updated
+  - coordinates: 14 spawn points added in Stonetalon Mountains
+- npc 4003 - Windshear Geomancer - updated
+  - coordinates: 16 spawn points added in Stonetalon Mountains
+- npc 4004 - Windshear Overlord - updated
+  - coordinates: 13 spawn points added in Stonetalon Mountains
+- npc 4009 - Raging Cliff Stormer - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4011 - Young Pridewing - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4013 - Pridewing Skyhunter - updated
+  - coordinates: 32 spawn points added in Stonetalon Mountains
+- npc 4026 - Bloodfury Windcaller - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4027 - Bloodfury Storm Witch - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4028 - Charred Ancient - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4031 - Fledgling Chimaera - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4032 - Young Chimaera - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4034 - Enraged Stone Spirit - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4035 - Furious Stone Spirit - updated
+  - coordinates: 40 spawn points added in Stonetalon Mountains
+- npc 4038 - Burning Destroyer - updated
+  - coordinates: 33 spawn points added in Stonetalon Mountains
+- npc 4042 - Singed Basilisk - updated
+  - coordinates: 38 spawn points added in Stonetalon Mountains
+- npc 4062 - Dark Iron Bombardier - updated
+  - coordinates: 8 spawn points added in Arathi Highlands
+  - coordinates: 3 spawn points added in Wetlands
+- npc 4063 - Feeboz - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+- npc 4068 - Serpent Messenger - updated
+  - coordinates: 40 spawn points added in Thunder Bluff
+- npc 4072 - Prisoner of Jin'Zil - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 4084 - Chylina - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 4109 - Highperch Consort - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4110 - Highperch Patriarch - updated
+  - coordinates: 34 spawn points added in Thousand Needles
+- npc 4111 - Gravelsnout Kobold - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4112 - Gravelsnout Vermin - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4114 - Gravelsnout Forager - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4119 - Elder Cloud Serpent - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4120 - Thundering Boulderkin - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 4124 - Needles Cougar - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+  - coordinates: 7 spawn points added in Feralas
+- npc 4129 - Hecklefang Snarler - updated
+  - coordinates: 40 spawn points added in The Barrens
+- npc 4154 - Salt Flats Scavenger - updated
+  - coordinates: 34 spawn points added in Thousand Needles
+- npc 4183 - Naram Longclaw - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 4185 - Shaldyn - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 4186 - Mavralyn - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 4188 - Illyanie - updated
+  - coordinates: 2 spawn points added in Stonetalon Mountains
+- npc 4192 - Taldan - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 4193 - Grondal Moonbreeze - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 4195 - Tiyani - updated
+  - coordinates: 2 spawn points added in Darkshore
+- npc 4307 - Heldan Galesong - updated
+  - coordinates: 1 spawn point added in Darkshore
+- npc 4309 - Gorm Grimtotem - updated
+  - coordinates: 17 spawn points added in Thunder Bluff
+- npc 4310 - Cor Grimtotem - updated
+  - coordinates: 18 spawn points added in Thunder Bluff
+- npc 4386 - Withervine Bark Ripper - updated
+  - coordinates: 40 spawn points added in Dustwallow Marsh
+- npc 4387 - Withervine Mire Beast - updated
+  - coordinates: 40 spawn points added in Dustwallow Marsh
+- npc 4402 - Muckshell Snapclaw - updated
+  - coordinates: 40 spawn points added in Dustwallow Marsh
+- npc 4411 - Darkfang Lurker - updated
+  - coordinates in Dustwallow Marsh: 15 spawn points added, 5 refined, 15 removed
+- npc 4429 - Goblin Pit Crewman - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 4430 - Gnome Pit Crewman - updated
+  - coordinates: 4 spawn points added in Thousand Needles
+- npc 4468 - Jade Sludge - updated
+  - coordinates: 14 spawn points added in The Hinterlands
+- npc 4474 - Rotting Cadaver - updated
+  - coordinates: 26 spawn points added in Western Plaguelands
+- npc 4547 - Tarkreu Shadowstalker - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4548 - Steelsnap - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+
 ## [0.2.579] - 2026-11-16
 
 Data from the PandaQuest portal.
@@ -800,18 +941,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 5,215 quests, 70 NPCs, 7 objects
 - npc 33947 - Angry Oak Spirit - updated
   - coordinates: 40 spawn points added in Crystalsong Forest
-
-## [0.2.568] - 2026-11-15
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,260 quests, 1,139 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,696 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,213 quests, 70 NPCs, 7 objects
-- npc 3701 - Tharnariun Treetender - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 69784 - Animus Golem - updated
-  - NPC level added (90)
 
 ## [0.2.412]
 
