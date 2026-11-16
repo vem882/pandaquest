@@ -32661,6 +32661,15 @@ ns.Overrides.wowhead = {
                 "in your abilities. Perhaps they too would like to speak with you.",
             rewardChoices = {{29320, 1}, {29322, 1}, {29321, 1}, {29323, 1}},
         },
+        [10299] = {
+            description = "We cannot shut down the manaforges by force as we'd risk causing an explosion " ..
+                "that would shake Outland to the core.\n\nAccording to your transcription, there is an " ..
+                "emergency shutdown that permanently disables the technology - a safety mechanism common " ..
+                "in naaru constructs.\n\nTo perform this procedure you will have to obtain a crystal that " ..
+                "will allow you to communicate with the console. This access crystal is in the possession " ..
+                "of an overseer called Theredis according to our information.",
+            rewardMoney = 39000,
+        },
         [10301] = {
             description = "While I'm glad to have most of Krasus's Compendium back, it's useless without " ..
                 "the heliotrope oculus. You see, Krasus was well aware of the sheer power of the spells " ..
