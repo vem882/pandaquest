@@ -4360,6 +4360,13 @@ ns.Overrides.wowhead = {
                 "key.\n\nBut if they do, you might have to kill a load of them to find the right one...",
             rewardItems = {{4129, 1}},
         },
+        [616] = {
+            description = "Baron Revilgaz has had me keep an ear out for rumors of the strange and " ..
+                "out-of-place in Booty Bay and Stranglethorn. I don't usually put much stock in ghost " ..
+                "stories, but I heard some sailors in the tavern talking about a haunted island off the " ..
+                "coast. Water elementals and a raving goblin ghost, they say.\n\nIf you're going to go " ..
+                "talk to Revilgaz, could you relay that story to him?",
+        },
         [617] = {
             description = "You looking fer work, <name>? I might have some if you're up for a little " ..
                 "challenge.\n\nI got a friend named Groy who makes a killing selling what the naga call " ..

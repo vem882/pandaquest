@@ -75,6 +75,86 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.578
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,414 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,702 quests, 38 NPCs, 9 objects
+- npc 1255 - Prospector Gehn - updated
+  - coordinates: 2 spawn points added in Dun Morogh
+- npc 1258 - Black Ravager Mastiff - updated
+  - coordinates: 40 spawn points added in Duskwood
+- npc 1271 - Old Icebeard - updated
+  - coordinates: 8 spawn points added in Dun Morogh
+- npc 1353 - Sarltooth - updated
+  - coordinates: 4 spawn points added in Wetlands
+- npc 1397 - Frostmane Seer - updated
+  - coordinates: 19 spawn points added in Dun Morogh
+- npc 1400 - Wetlands Crocolisk - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1417 - Young Wetlands Crocolisk - updated
+  - coordinates: 40 spawn points added in Wetlands
+- npc 1418 - Bluegill Raider - updated
+  - coordinates: 40 spawn points added in Wetlands
+  - coordinates: 10 spawn points added in Arathi Highlands
+- npc 1434 - Menethil Sentry - updated
+  - coordinates: 22 spawn points added in Wetlands
+- npc 1436 - Watcher Cutford - updated
+  - coordinates: 9 spawn points added in Duskwood
+- npc 1669 - Defias Profiteer - updated
+  - coordinates: 1 spawn point added in Westfall
+- npc 2575 - Dark Iron Supplier - updated
+  - coordinates: 7 spawn points added in Arathi Highlands
+- npc 2577 - Dark Iron Shadowcaster - updated
+  - coordinates: 5 spawn points added in Arathi Highlands
+- npc 2607 - Prince Galen Trollbane - updated
+  - coordinates: 4 spawn points added in Arathi Highlands
+- npc 2638 - Syndicate Spectre - updated
+  - coordinates: 9 spawn points added in Northern Stranglethorn
+- npc 2649 - Witherbark Scalper - updated
+  - coordinates: 25 spawn points added in The Hinterlands
+- npc 2650 - Witherbark Zealot - updated
+  - coordinates: 24 spawn points added in The Hinterlands
+- npc 2651 - Witherbark Hideskinner - updated
+  - coordinates: 37 spawn points added in The Hinterlands
+- npc 2652 - Witherbark Venomblood - updated
+  - coordinates: 26 spawn points added in The Hinterlands
+- npc 2653 - Witherbark Sadist - updated
+  - coordinates: 30 spawn points added in The Hinterlands
+- npc 2654 - Witherbark Caller - updated
+  - coordinates: 10 spawn points added in The Hinterlands
+- npc 2675 - Explosive Sheep - updated
+  - coordinates: 6 spawn points added in The Barrens
+  - coordinates: 4 spawn points added in Azshara
+- npc 2704 - Hanashi - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 2716 - Dustbelcher Wyrmhunter - updated
+  - coordinates: 35 spawn points added in Badlands
+- npc 2727 - Crag Coyote - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2765 - Znort - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+- npc 2791 - Enraged Rock Elemental - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2887 - Prismatic Exile - updated
+  - coordinates: 7 spawn points added in Arathi Highlands
+- npc 2892 - Stonevault Seer - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2894 - Stonevault Shaman - updated
+  - coordinates: 28 spawn points added in Badlands
+- npc 2907 - Dustbelcher Mystic - updated
+  - coordinates: 8 spawn points added in Badlands
+- npc 2915 - Hammertoe's Spirit - updated
+  - coordinates: 5 spawn points added in Ironforge
+- npc 2922 - Servo - updated
+  - coordinates: 9 spawn points added in Badlands
+- npc 2944 - Boss Tho'grun - updated
+  - coordinates: 40 spawn points added in Badlands
+- npc 2946 - Puppet of Helcular - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+- npc 2953 - Bristleback Shaman - updated
+  - coordinates: 17 spawn points added in Mulgore
+- npc 2954 - Bristleback Battleboar - updated
+  - coordinates: 31 spawn points added in Mulgore
+
 0.2.577
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,377 NPCs, 6 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 5,220 quests, 70 NPCs, 7 objects
@@ -645,15 +725,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - reward choices: +4
 - npc 24279 - Animated Plague Slime - updated
   - coordinates: 2 spawn points added in Howling Fjord
-
-0.2.566
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,136 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,693 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,204 quests, 70 NPCs, 7 objects
-- npc 5237 - Gordunni Ogre Mage - updated
-  - coordinates: 30 spawn points added in Feralas
-- npc 17218 - Huraan - updated
-  - coordinates: 1 spawn point added in Hillsbrad Foothills
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
