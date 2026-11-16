@@ -75,6 +75,103 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.584
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,801 NPCs, 6 objects
+- database - refreshed auction scan targets without recent prices
+- npc 4875 - Turhaw - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 4945 - Goblin Drag Car - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 4946 - Gnome Drag Car - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 4972 - Kagoro - updated
+  - coordinates: 1 spawn point added in Dustwallow Marsh
+- npc 8539 - Eyeless Watcher - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+- npc 8554 - Chief Sharptusk Thornmantle - updated
+  - coordinates: 2 spawn points added in Mulgore
+- npc 8606 - Living Decay - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+  - coordinates: 10 spawn points added in Plaguelands: The Scarlet Enclave
+- npc 8607 - Rotting Sludge - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+- npc 8616 - Infernal Servant - updated
+  - coordinates: 6 spawn points added in Blasted Lands
+- npc 8617 - Zalashji - updated
+  - coordinates: 2 spawn points added in Tanaris
+- npc 8636 - Morta'gya the Keeper - updated
+  - coordinates: 4 spawn points added in The Hinterlands
+- npc 8678 - Jubie Gadgetspring - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 8716 - Dreadlord - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+- npc 8717 - Felguard Elite - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+- npc 8718 - Manahound - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+- npc 8756 - Raytaf - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 8758 - Zaman - updated
+  - coordinates: 2 spawn points added in Azshara
+- npc 8759 - Mosshoof Runner - updated
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 23 spawn points added in Orgrimmar
+  - coordinates: 15 spawn points added in Ashenvale
+- npc 8760 - Mosshoof Stag - updated
+  - coordinates: 35 spawn points added in Azshara
+- npc 8762 - Timberweb Recluse - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 8763 - Mistwing Rogue - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 8766 - Forest Ooze - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 8837 - Muck Splash - updated
+  - coordinates: 40 spawn points added in Searing Gorge
+- npc 8856 - Tyrion's Spybot - updated
+  - coordinates: 20 spawn points added in Stormwind City
+- npc 9083 - Razal'blade - updated
+  - coordinates: 1 spawn point added in Badlands
+- npc 9085 - Initiate Amakkar - updated
+  - coordinates: 3 spawn points added in Badlands
+- npc 9157 - Bloodpetal Pest - updated
+  - coordinates: 8 spawn points added in Un'Goro Crater
+- npc 9165 - Fledgling Pterrordax - updated
+  - coordinates in Un'Goro Crater: 9 spawn points added, 11 refined, 9 removed
+- npc 9179 - Jazzrik - updated
+  - coordinates: 4 spawn points added in Badlands
+- npc 9377 - Swirling Vortex - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 9465 - Golhine the Hooded - updated
+  - coordinates: 2 spawn points added in Felwood
+- npc 9498 - Gorishi Grub - updated
+  - coordinates: 24 spawn points added in Un'Goro Crater
+- npc 9521 - Enraged Felbat - updated
+  - coordinates: 40 spawn points added in Hillsbrad Foothills
+  - coordinates: 10 spawn points added in Western Plaguelands
+- npc 9525 - Freewind Brave - updated
+  - coordinates: 27 spawn points added in Thousand Needles
+- npc 9527 - Enraged Hippogryph - updated
+  - coordinates: 23 spawn points added in Winterspring
+  - coordinates: 11 spawn points added in Felwood
+  - coordinates: 8 spawn points added in Feralas
+  - coordinates: 6 spawn points added in Silithus
+- npc 9546 - Raschal the Courier - updated
+  - coordinates: 1 spawn point added in Feralas
+- npc 9705 - Illusionary Dreamwatcher - updated
+  - coordinates: 3 spawn points added in Swamp of Sorrows
+- npc 9777 - Flamekin Sprite - updated
+  - coordinates: 40 spawn points added in Burning Steppes
+- npc 9876 - Locheed - updated
+  - coordinates: 4 spawn points added in Searing Gorge
+- npc 9977 - Sylista - updated
+  - coordinates: 6 spawn points added in Stormwind City
+- npc 9978 - Wesley - updated
+  - coordinates: 3 spawn points added in Hillsbrad Foothills
+- npc 10037 - Lakeshire Guard - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 10088 - Xao'tsu - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+
 0.2.583
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,759 NPCs, 6 objects
 - npc 4995 - Stockade Guard - updated
