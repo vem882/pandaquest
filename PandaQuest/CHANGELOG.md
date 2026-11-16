@@ -4,6 +4,38 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.575] - 2026-11-16
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,153 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,219 quests, 70 NPCs, 7 objects
+- npc 36 - Harvest Golem - updated
+  - coordinates: 40 spawn points added in Westfall
+- npc 69 - Diseased Timber Wolf - updated
+  - coordinates: 40 spawn points added in Elwynn Forest
+- npc 89 - Infernal - updated
+  - coordinates: 18 spawn points added in Orgrimmar
+  - coordinates: 5 spawn points added in Terokkar Forest
+- npc 103 - Garrick Padfoot - updated
+  - coordinates: 4 spawn points added in Elwynn Forest
+- npc 125 - Riverpaw Overseer - updated
+  - coordinates: 36 spawn points added in Westfall
+- npc 193 - Blue Dragonspawn - updated
+  - coordinates: 40 spawn points added in Azshara
+- npc 215 - Defias Night Runner - updated
+  - coordinates: 35 spawn points added in Duskwood
+- npc 417 - Felhunter - updated
+  - coordinates: 2 spawn points added in Icecrown
+  - coordinates: 2 spawn points added in Tanaris
+  - coordinates: 1 spawn point added in Silithus
+- npc 440 - Blackrock Grunt - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 450 - Defias Renegade Mage - updated
+  - coordinates: 5 spawn points added in Westfall
+- npc 9273 - Petra Grossen - updated
+  - coordinates: 2 spawn points added in Un'Goro Crater
+
 ## [0.2.574] - 2026-11-15
 
 Data from the PandaQuest portal.
@@ -112,16 +144,6 @@ Data from the PandaQuest portal.
 - database - TBC Anniversary: data from the PandaQuest portal: 5,201 quests, 70 NPCs, 7 objects
 - npc 68084 - Lor'themar Theron - updated
   - NPC title added (Regent Lord of Quel'Thalas)
-
-## [0.2.557] - 2026-11-15
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,256 quests, 1,131 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,685 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,194 quests, 70 NPCs, 7 objects
-- npc 73207 - Anduin Wrynn - updated
-  - NPC title added (Prince of Stormwind)
 
 ## [0.2.412]
 
