@@ -75,6 +75,39 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.596
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,017 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,708 quests, 39 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,249 quests, 71 NPCs, 6 objects
+- npc 21264 - Seeping Ooze - updated
+  - coordinates: 40 spawn points added in Netherstorm
+- npc 21267 - Mana Beast - updated
+  - coordinates: 40 spawn points added in Netherstorm
+- npc 22114 - Huffer - updated
+  - coordinates: 5 spawn points added in Blade's Edge Mountains
+- npc 22115 - Enraged Earth Shard - updated
+  - coordinates: 40 spawn points added in Shadowmoon Valley
+- npc 22189 - Marmot - updated
+  - coordinates: 9 spawn points added in Blade's Edge Mountains
+- npc 22285 - Draenei Tomb Guardian - updated
+  - coordinates: 3 spawn points added in Terokkar Forest
+- npc 22344 - Morcrush Shardling - updated
+  - coordinates: 40 spawn points added in Blade's Edge Mountains
+- npc 22362 - Deathshadow Imp - updated
+  - coordinates: 17 spawn points added in Nagrand
+- npc 22372 - Mok'Nathal Spirit - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 22478 - Evergrove Ancient - updated
+  - coordinates: 7 spawn points added in Blade's Edge Mountains
+- npc 22483 - Sand Gnome - updated
+  - coordinates: 34 spawn points added in Terokkar Forest
+- npc 22490 - Huffer - updated
+  - coordinates: 1 spawn point added in Blade's Edge Mountains
+- npc 22492 - Spirit - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 22498 - Misha - updated
+  - coordinates: 1 spawn point added in Blade's Edge Mountains
+
 0.2.595
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,003 NPCs, 6 objects
 - database - TBC Anniversary: data from the PandaQuest portal: 5,247 quests, 71 NPCs, 6 objects
@@ -614,37 +647,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 12 spawn points added in Durotar
 - npc 13322 - Hydraxian Honor Guard - updated
   - coordinates: 9 spawn points added in Azshara
-
-0.2.585
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,814 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,704 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,223 quests, 70 NPCs, 7 objects
-- npc 10157 - Moonkin Oracle - updated
-  - coordinates: 4 spawn points added in Darkshore
-- npc 10158 - Moonkin - updated
-  - coordinates: 40 spawn points added in Darkshore
-- npc 10159 - Young Moonkin - updated
-  - coordinates: 31 spawn points added in Darkshore
-- npc 10160 - Raging Moonkin - updated
-  - coordinates: 37 spawn points added in Darkshore
-- npc 10379 - Altsoba Ragetotem - updated
-  - coordinates: 1 spawn point added in Felwood
-- npc 10756 - Scalding Elemental - updated
-  - coordinates: 31 spawn points added in Thousand Needles
-- npc 10757 - Boiling Elemental - updated
-  - coordinates: 28 spawn points added in Thousand Needles
-- npc 10758 - Grimtotem Bandit - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 10937 - Captain Redpath - updated
-  - coordinates: 8 spawn points added in Eastern Plaguelands
-- npc 10988 - Kodo Spirit - updated
-  - coordinates: 31 spawn points added in Desolace
-- npc 10992 - Enraged Panther - updated
-  - coordinates: 5 spawn points added in Thousand Needles
-- npc 11024 - Della - updated
-  - coordinates: 1 spawn point added in Felwood
-- npc 11027 - Illusory Wraith - updated
-  - coordinates: 9 spawn points added in Western Plaguelands
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.

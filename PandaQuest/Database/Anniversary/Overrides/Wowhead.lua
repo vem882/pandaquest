@@ -15987,6 +15987,14 @@ ns.Overrides.wowhead = {
                 "blood. From the lesser infernals in Mannoroc Coven, bring me a lesser infernal " ..
                 "stone.\n\nWe will use both in the construction of your robe.",
         },
+        [4784] = {
+            description = "I need only three things now, <name>, then we can finish your robe.\n\nFirst, " ..
+                "the fine gold thread Xizk is making for you. Return to him in Booty Bay and get " ..
+                "it.\n\nSecond, bring me two smoldering coals from the fire elementals in the Arathi " ..
+                "Highlands. If I recall correctly, they are to the west, near Thoradin's " ..
+                "Wall.\n\nFinally, a soul shard created by you.\n\nAfter you have all the components, " ..
+                "return here to the tower and I will complete the robe for you.",
+        },
         [4785] = {rewardItems = {{12293, 1}}},
         [4786] = {
             description = "I will put the robe together for you now. It will take but a few moments. Do " ..
@@ -34532,6 +34540,14 @@ ns.Overrides.wowhead = {
                 "have recovered the medallion that was kept at Baa'ri yet. Its power would provide great " ..
                 "aid in our fight against Illidan.\n\nAkama's lieutenant at Baa'ri, Oronu the Elder, " ..
                 "receives written orders from him daily. Obtain them and bring them to me.",
+        },
+        [10573] = {
+            description = "From your findings at Legion Hold, we know that the Legion's Shadow Council " ..
+                "allies are producing infernals in the Deathforge. I've dispatched a small scouting party " ..
+                "to keep watch over the area, but they're not able to accomplish everything we " ..
+                "need.\n\nIf the Deathforge is left alone to operate, they'll rebuild the infernal " ..
+                "stockpile that you destroyed at Legion Hold.\n\nI want you to meet up with Stormer Ewan " ..
+                "Wildwing, at the Deathforge Tower, to the northwest, overlooking the Deathforge itself.",
         },
         [10574] = {
             description = "According to Akama's letter, four fragments of the medallion were unearthed " ..

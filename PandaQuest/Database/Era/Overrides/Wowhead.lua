@@ -22877,6 +22877,14 @@ ns.Overrides.wowhead = {
                 "attempting to put a dent in the rest of my quota.",
             rewardItems = {{21436, 3}, {21510, 1}},
         },
+        [8515] = {
+            description = "Oh boy, this is going to be great! <class>, the Ahn'Qiraj war effort is in " ..
+                "full swing, and I've been put in charge of keeping track of all of the thick leather " ..
+                "that comes in. We'll make tons of things with it, but first we need to get a ton of it. " ..
+                "And I mean that literally! That's where you come in.\n\nSo, do you think you can go out " ..
+                "there and bring me back a nice, fat stack of thick leather? Do yah, do yah?!",
+            rewardItems = {{21436, 10}, {21512, 1}},
+        },
         [8516] = {
             description = "Yep, the stack's still not high enough. <name>, we still haven't reached our " ..
                 "goal of $2071w thick leather. Just think of all the things that we can make with all of " ..
