@@ -4,6 +4,75 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.598] - 2026-11-17
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,068 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,265 quests, 71 NPCs, 6 objects
+- npc 23036 - Captive Sparrowhawk - updated
+  - coordinates: 4 spawn points added in Nagrand
+  - coordinates: 1 spawn point added in Blade's Edge Mountains
+- npc 23039 - Draenei Reveler - updated
+  - coordinates: 12 spawn points added in The Exodar
+- npc 23052 - Bloodmaul Supplicant - updated
+  - coordinates: 8 spawn points added in Blade's Edge Mountains
+- npc 23090 - Troll Roof Stalker - updated
+  - coordinates: 40 spawn points added in Orgrimmar
+- npc 23133 - Alliance Adventurer - updated
+  - coordinates: 1 spawn point added in Terokkar Forest
+- npc 23152 - Vagath - updated
+  - coordinates: 9 spawn points added in Shadowmoon Valley
+- npc 23167 - Anzuli Hatchling - updated
+  - coordinates: 2 spawn points added in Terokkar Forest
+- npc 23170 - Alliance Soldier - updated
+  - coordinates: 2 spawn points added in Hellfire Peninsula
+- npc 23192 - Ember of Azzinoth - updated
+  - coordinates: 1 spawn point added in Isle of Thunder
+- npc 23249 - Bash'ir Flesh Fiend - updated
+  - coordinates: 12 spawn points added in Blade's Edge Mountains
+- npc 23250 - Disruptor Tower - updated
+  - coordinates: 3 spawn points added in Blade's Edge Mountains
+- npc 23258 - Egbert - updated
+  - coordinates: 23 spawn points added in Valley of the Four Winds
+- npc 23275 - Dreadmaw - updated
+  - coordinates: 5 spawn points added in Blade's Edge Mountains
+- npc 23332 - Bash'ir Reckoner - updated
+  - coordinates: 8 spawn points added in Blade's Edge Mountains
+- npc 23333 - The Grand Collector - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 23350 - The Grand Collector - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 23364 - Black Dragon Whelpling - updated
+  - coordinates: 8 spawn points added in Blade's Edge Mountains
+- npc 23368 - Bash'ir Controller - updated
+  - coordinates: 4 spawn points added in Blade's Edge Mountains
+- npc 23390 - Bash'ir's Harbinger - updated
+  - coordinates: 7 spawn points added in Blade's Edge Mountains
+- npc 23391 - Bash'ir - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 23405 - Flaskataur - updated
+  - NPC title added (PTR Consumables)
+- npc 23414 - Bash'ir Inquisitor - updated
+  - coordinates: 2 spawn points added in Blade's Edge Mountains
+- npc 23430 - Skyguard Lieutenant - updated
+  - coordinates: 38 spawn points added in Blade's Edge Mountains
+- npc 23441 - Dragonmaw Skybreaker - updated
+  - coordinates: 8 spawn points added in Shadowmoon Valley
+- npc 23700 - Barleybrew Festive Keg - updated
+  - coordinates: 2 spawn points added in Dun Morogh
+- npc 23701 - Mirefin Ambusher - updated
+  - coordinates: 33 spawn points added in Dustwallow Marsh
+- npc 23702 - Thunderbrew Festive Keg - updated
+  - coordinates: 4 spawn points added in Dun Morogh
+- npc 23709 - Dark Iron Guzzler - updated
+  - coordinates: 11 spawn points added in Dun Morogh
+  - coordinates: 9 spawn points added in Durotar
+- npc 23769 - Jimmy Hyal - updated
+  - coordinates: 1 spawn point added in Dustwallow Marsh
+- npc 23943 - Hungry Plaguehound - updated
+  - coordinates: 12 spawn points added in Howling Fjord
+
 ## [0.2.597] - 2026-11-17
 
 Data from the PandaQuest portal.
@@ -543,54 +612,6 @@ Data from the PandaQuest portal.
   - coordinates: 9 spawn points added in Moonglade
 - npc 15495 - Nighthaven Defender - updated
   - coordinates: 40 spawn points added in Moonglade
-
-## [0.2.587] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,862 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,229 quests, 70 NPCs, 7 objects
-- npc 12125 - Mammoth Shark - updated
-  - coordinates: 7 spawn points added in Azshara
-  - coordinates: 5 spawn points added in Durotar
-- npc 12140 - Guardian of Elune - updated
-  - coordinates: 1 spawn point added in Winterspring
-- npc 12204 - Spitelash Raider - updated
-  - coordinates: 2 spawn points added in Azshara
-- npc 12205 - Spitelash Witch - updated
-  - coordinates: 3 spawn points added in Azshara
-- npc 12208 - Conquered Soul of the Blightcaller - updated
-  - coordinates: 6 spawn points added in Eastern Plaguelands
-- npc 12248 - Infiltrator Hameya - updated
-  - coordinates: 13 spawn points added in Eastern Plaguelands
-- npc 12799 - Sergeant Ba'sha - updated
-  - coordinates: 5 spawn points added in Orgrimmar
-- npc 12800 - Chimaerok - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 12802 - Chimaerok Devourer - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 14301 - Brinna Valanaar - updated
-  - coordinates: 1 spawn point added in Azshara
-- npc 14348 - Earthcaller Franzahl - updated
-  - coordinates: 1 spawn point added in Winterspring
-- npc 14357 - Lake Thresher - updated
-  - coordinates: 40 spawn points added in Redridge Mountains
-- npc 14361 - Shen'dralar Wisp - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14364 - Shen'dralar Spirit - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14369 - Shen'dralar Zealot - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14371 - Shen'dralar Provisioner - updated
-  - NPC title added (House of Shen'dralar)
-- npc 14372 - Winterfall Ambusher - updated
-  - coordinates: 3 spawn points added in Winterspring
-- npc 14402 - Seeker Cromwell - updated
-  - coordinates: 40 spawn points added in Undercity
-- npc 14403 - Seeker Nahr - updated
-  - coordinates: 40 spawn points added in Undercity
-- npc 14404 - Seeker Thompson - updated
-  - coordinates: 40 spawn points added in Undercity
 
 ## [0.2.412]
 

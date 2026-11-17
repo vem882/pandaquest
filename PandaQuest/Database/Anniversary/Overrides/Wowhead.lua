@@ -10004,6 +10004,14 @@ ns.Overrides.wowhead = {
             rewardItems = {{6811, 20}},
             rewardMoney = 500,
         },
+        [1581] = {
+            description = "Our herb and alchemy shop is booming, but my husband spends so much time " ..
+                "mixing potions that we never have time for each other.\n\nCan you help us?\n\nIf you can " ..
+                "bring me a supply of pre-made elixirs, then I would be happy to trade with you. I have " ..
+                "some rare herbs that you might find useful.",
+            rewardItems = {{2449, 6}, {785, 6}},
+            rewardMoney = 225,
+        },
         [1582] = {
             description = "We in Darnassus, especially we craftsman, are quite busy. Young adventurers " ..
                 "are eager to test themselves in the wilderness, and are in constant need of " ..
@@ -11676,6 +11684,15 @@ ns.Overrides.wowhead = {
                 "this.\n\nYou must help me. The Gnarlpine shaman carry a strange charm which is used to " ..
                 "perform this ritual, and I'd like to examine it. Please, <name>, bring one to me.",
         },
+        [2561] = {
+            description = "After examining this charm, <name>, I see now what must be done. Please take " ..
+                "it, and do as I ask.\n\nYou are to explore the deepest areas of the Ban'ethil Barrow " ..
+                "Den. There, you will find my soulless body... Although I regret what I am about to tell " ..
+                "you, I see no other way to free myself from the control of the Gnarlpine.\n\nIn order " ..
+                "for me to escape them, you must kill my physical form. Once that is done, use the voodoo " ..
+                "charm on my fallen body. After you have completed this task, please return to me.",
+            rewardChoices = {{9598, 1}, {18957, 1}},
+        },
         [2581] = {
             description = "It is a well known fact that hyenas possess tremendous strength in their " ..
                 "jowls, but the strength to snap through three inches of thorium steel? Impossible, " ..
@@ -11915,6 +11932,13 @@ ns.Overrides.wowhead = {
                 "bronze greatswords, and two sharp claws. Bring them for Orokk and we shall continue.",
             rewardItems = {{7979, 1}},
         },
+        [2752] = {
+            description = "Orokk sees the eagerness in your eyes, <name>. Like a sponge you soak in the " ..
+                "wisdom of the Omosh.\n\nThree lessons I shall teach!\n\nReturn to the anvil, soak in the " ..
+                "heat of the forge, create for Orokk four bronze battleaxes and four bronze warhammers. " ..
+                "Only then will you learn of the iron pauldron.",
+            rewardItems = {{7978, 1}},
+        },
         [2753] = {
             description = "Only two more lessons Orokk will teach, <name>. Your muscles ache, I know, but " ..
                 "continue on for the Omosh!\n\nBring to Orokk four green iron helms, four green iron " ..
@@ -11986,6 +12010,14 @@ ns.Overrides.wowhead = {
                 "of mithril and five bars of truesilver. In exchange, you will be taught the secret of " ..
                 "ornate mithril gloves and more importantly, learn that truesilver is a liar!",
             rewardItems = {{7984, 1}},
+        },
+        [2763] = {
+            description = "The harvesting of precious gems is of utmost importance to our craft, <name>. " ..
+                "Few gems are more precious than the citrine. The magical properties we imbue into our " ..
+                "goods are amplified greatly by the presence of citrine.\n\nFor this lesson, we will " ..
+                "fortify forty bars of mithril with four citrines. The result will be a better " ..
+                "understanding of magical gemology and the knowledge to create ornate mithril shoulders.",
+            rewardItems = {{7985, 1}},
         },
         [2764] = {
             description = "If you are ready to conclude your training with Galvan, you should journey to " ..
@@ -19891,6 +19923,12 @@ ns.Overrides.wowhead = {
                 "enough to sit on your duff for hours at a time, doin' nothin'.\n\nI'll tell you what, " ..
                 "catch me a few rare fish and I'll teach you a thing or two. Here's a list:",
         },
+        [6608] = {
+            description = "Lumak no can teach <name> no more. You too good! Find Lumak friend, Nat Pagle. " ..
+                "Is human but no eat! Is Lumak friend! Nat teach you fish gooder.\n\nYou find Nat in " ..
+                "Dustwallow Marsh, south of Humie town, Thermorosomethinglikedat. Nat probably fishing. " ..
+                "Go now!",
+        },
         [6609] = {
             description = "I'm a dwarf fer cryin' out loud, <lad/missy>! I ain't been designed to fish! I " ..
                 "mean look at me! I'm practically made outta stone.\n\nI got nothin' left - ye tapped me " ..
@@ -20465,6 +20503,13 @@ ns.Overrides.wowhead = {
                 "soldier.\n\nAnd soldier, do not go alone.",
             rewardXP = 7070,
         },
+        [7282] = {
+            description = "He must be put out of his misery, soldier! He knows not what he does. He has " ..
+                "become a mindless servant of the dreaded Banshee Queen.\n\nVenture forth, across the " ..
+                "Field of Strife, to the depths of Frostwolf territory. Find my brother and destroy him. " ..
+                "His torment must come to an end.",
+            rewardXP = 7070,
+        },
         [7301] = {
             description = "We got them held prisoner, <race>. I'm talking about their Wing Commanders. It " ..
                 "was a furious battle in the skies but they finally fell! Unfortunately, our best pilots " ..
@@ -20950,6 +20995,7 @@ ns.Overrides.wowhead = {
         [7653] = {rewardItems = {{12688, 1}}},
         [7654] = {rewardItems = {{12700, 1}}},
         [7655] = {rewardItems = {{12690, 1}}},
+        [7656] = {rewardItems = {{12705, 1}}},
         [7657] = {rewardItems = {{12701, 1}}},
         [7658] = {rewardItems = {{12715, 1}}},
         [7659] = {rewardItems = {{12687, 1}}},
@@ -21773,6 +21819,7 @@ ns.Overrides.wowhead = {
         [8190] = {rewardItems = {{19788, 1}}},
         [8191] = {rewardItems = {{19789, 1}}},
         [8192] = {rewardItems = {{19790, 1}}},
+        [8194] = {rewardMoney = 11200},
         [8195] = {rewardItems = {{19858, 1}}},
         [8196] = {rewardItems = {{20031, 10}}},
         [8201] = {
@@ -22137,6 +22184,12 @@ ns.Overrides.wowhead = {
                 "need brains! More specifically, a brain from each silithid type that inhabit the hives. " ..
                 "Bring me brains and Rutgar's work might not be for naught.",
             rewardMoney = 18000,
+        },
+        [8313] = {
+            description = "While the recipe for cooking sandworm meat is legible, it contains references " ..
+                "to herbs and spices you've never heard of. Calandrath might have enough knowledge of the " ..
+                "plants that grow in the desert to make sense of it.",
+            rewardMoney = 8500,
         },
         [8314] = {
             description = "We're on the verge of a breakthrough, <name>! The rubbings you recovered have " ..
@@ -23405,6 +23458,13 @@ ns.Overrides.wowhead = {
                 "the speed and grace of a much smaller creature.\n\nBring me a sample of his skin along " ..
                 "with other minor components and I shall craft you leggings of great power.",
             rewardItems = {{21336, 1}},
+        },
+        [8664] = {
+            description = "It is said among us that the ornate shoulder armor worn by the mortal races " ..
+                "started as an attempt to emulate the wings of a dragon.\n\nBring me the bindings worn by " ..
+                "the highest Qiraji leaders and I shall shape them into a set of pauldrons more dreadful " ..
+                "than even the wings of Nefarian himself!",
+            rewardItems = {{21335, 1}},
         },
         [8665] = {
             description = "Qiraji magic is strong and ancient. The most powerful qiraji wield items of " ..
@@ -30190,6 +30250,14 @@ ns.Overrides.wowhead = {
                 "Nagrand to the west and south.",
             rewardMoney = 37000,
         },
+        [9851] = {
+            description = "Banthar is the fiercest and most elusive of all the clefthoof in Outland. " ..
+                "She's also the hairiest.\n\nIt is said that she roams with her clefthoof herd in the " ..
+                "Field of Spirits near Oshu'gun.\n\nYou want to truly prove your hunting mastery? Bring " ..
+                "me her horn!",
+            rewardChoices = {{25591, 1}, {25592, 1}, {25589, 1}},
+            rewardMoney = 74000,
+        },
         [9852] = {
             description = "The queen of all that dwell in Nagrand is known as Tusker. She's a giant elekk " ..
                 "the likes of which you won't see anywhere else!\n\nYou're right to be fearful of that " ..
@@ -30914,6 +30982,15 @@ ns.Overrides.wowhead = {
                 "Nagrand for awhile and that should they seek a purpose, to find him.",
         },
         [9986] = {
+            description = "We need to show the arakkoa that they cannot attack our people with impunity. " ..
+                "If we don't stop them here, the roads will no longer be safe for our merchants, " ..
+                "couriers, or soldiers.\n\nMy scouts have identified the leaders of each of the major " ..
+                "arakkoa settlements in the area. Seek out Ashkaz, Ayit, and Urdak, in Veil Reskk, Veil " ..
+                "Shienor, and Veil Skith and kill them.",
+            rewardChoices = {{22829, 5}, {22832, 5}},
+            rewardMoney = 31000,
+        },
+        [9987] = {
             description = "We need to show the arakkoa that they cannot attack our people with impunity. " ..
                 "If we don't stop them here, the roads will no longer be safe for our merchants, " ..
                 "couriers, or soldiers.\n\nMy scouts have identified the leaders of each of the major " ..
@@ -31699,6 +31776,14 @@ ns.Overrides.wowhead = {
                 "back. My days of huntin' big game are over. If you end up heading northeast towards " ..
                 "Zangarmarsh and run into the Nesingwary Safari, let them know that \"Shotgun\" " ..
                 "quit.\n\nHey, maybe you can take my place! Good luck, stranger.",
+        },
+        [10114] = {
+            description = "These orcs have never seen a tauren before - if you can believe such a thing. " ..
+                "If it weren't for Captain Kroghan, they would have probably been serving me for their " ..
+                "next meal right about now.\n\nBut where are my manners? I am Ohlorn Farstrider, hunter " ..
+                "extraordinaire! I am part of the Nesingwary expedition that came up here from Azeroth in " ..
+                "search of big game. If you are interested in the hunt, perhaps you should visit my crew " ..
+                "at the Nesingwary Safari, due east of here near the border of Zangarmarsh.",
         },
         [10116] = {
             description = "Wanted: Chieftain Mummaki - leader of the foul and degenerate Lost One tribe " ..
@@ -32825,6 +32910,15 @@ ns.Overrides.wowhead = {
                 "will allow you to communicate with the console. This access crystal is in the possession " ..
                 "of an overseer called Theredis according to our information.",
             rewardMoney = 39000,
+        },
+        [10300] = {
+            description = "< Ravandwyr inspects the staff, noting that part of the headpiece seems to be " ..
+                "missing.>\n\nSimply barbaric! Ekkorash must've taken the staff's crystalline headpiece " ..
+                "for use in some other trinket, not realizing that it works in concert with the rest of " ..
+                "the staff.\n\nAs long as it remains broken, the staff's power is greatly diminished. " ..
+                "With a suitable draenei crystal, I should be able to repair it. I've heard the goblins " ..
+                "remarking about the crystals carried by the ghosts at the Enkaat Ruins to the north.",
+            rewardMoney = 41000,
         },
         [10301] = {
             description = "While I'm glad to have most of Krasus's Compendium back, it's useless without " ..
