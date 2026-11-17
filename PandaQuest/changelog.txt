@@ -75,6 +75,30 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.590
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,961 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,237 quests, 70 NPCs, 7 objects
+- npc 16787 - Argent Outfitter - updated
+  - coordinates: 11 spawn points added in Thunder Bluff
+  - coordinates: 5 spawn points added in Undercity
+  - coordinates: 5 spawn points added in Orgrimmar
+- npc 16788 - Festival Flamekeeper - updated
+  - coordinates: 10 spawn points added in Ironforge
+  - coordinates: 6 spawn points added in Undercity
+  - coordinates: 6 spawn points added in Orgrimmar
+  - coordinates: 6 spawn points added in Thunder Bluff
+  - coordinates: also changed in 1 more zone
+- npc 16996 - Draenei Vindicator - updated
+  - coordinates: 6 spawn points added in Hellfire Peninsula
+- npc 17108 - Forsaken Raider - updated
+  - coordinates: 7 spawn points added in Hillsbrad Foothills
+- npc 17178 - Robotron 3000 - updated
+  - coordinates: 4 spawn points added in Thousand Needles
+- npc 17233 - Ghost of Uther Lightbringer - updated
+  - coordinates: 2 spawn points added in Western Plaguelands
+- npc 31482 - Apothecary Chemist - updated
+  - coordinates: 40 spawn points added in Undercity
+
 0.2.589
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,954 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,707 quests, 38 NPCs, 9 objects

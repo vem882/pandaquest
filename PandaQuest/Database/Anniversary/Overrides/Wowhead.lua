@@ -13182,6 +13182,11 @@ ns.Overrides.wowhead = {
                 "trainer Thorgas. Take a gander at it and go find him inside Anvilmar when you've a " ..
                 "chance.",
         },
+        [3109] = {
+            description = "While you were helping me out, this rune was given to me to pass on to you. " ..
+                "Take some time to read it when you have a chance. I'm thinkin' it came from the rogue " ..
+                "trainer Solm. Take a gander at it and go find him inside Anvilmar when you've a chance.",
+        },
         [3110] = {
             description = "While you were helping me out, this rune was given to me to pass on to you. " ..
                 "Take some time to read it when you have a chance. I'm thinkin' it came from the priest " ..
@@ -30161,6 +30166,16 @@ ns.Overrides.wowhead = {
                 "can talk to me of your hunting prowess.\n\nLook for them all along the middle region of " ..
                 "Nagrand to the west and south.",
             rewardMoney = 37000,
+        },
+        [9852] = {
+            description = "The queen of all that dwell in Nagrand is known as Tusker. She's a giant elekk " ..
+                "the likes of which you won't see anywhere else!\n\nYou're right to be fearful of that " ..
+                "name. Bach'lor, Gutripper, and Banthar are nothing when compared to her. It is said that " ..
+                "she can be found on a huge bluff far to the southwest overlooking Oshu'gun. Bring me her " ..
+                "massive heart if you dare.\n\nDo you want to leave a letter with me so that I can have " ..
+                "it delivered to your next of kin in the likely event that you don't return?",
+            rewardChoices = {{25640, 1}, {29211, 1}, {25639, 1}, {25643, 1}, {25644, 1}, {25645, 1}},
+            rewardMoney = 117000,
         },
         [9853] = {
             description = "Gurok must be summoned. You summon Gurok and you destroy.\n\nYou must go to " ..
