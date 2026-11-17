@@ -25297,6 +25297,7 @@ ns.Overrides.wowhead = {
                 "craft Dreamwalker armor.",
             rewardItems = {{22495, 1}},
         },
+        [9094] = {rewardChoices = {{23084, 1}, {23081, 1}, {23082, 1}, {23078, 1}}},
         [9095] = {
             description = "As a Watcher, I was allowed access to many of Medivh's personal effects. Among " ..
                 "those items, I found the tomes most enlightening. While the majority of the books were " ..
@@ -32745,6 +32746,14 @@ ns.Overrides.wowhead = {
                 "existence. If so, returning it to the dresser in Conjurer Luminrath's quarters might " ..
                 "break the spirit's link to this world, allowing it to rest.",
         },
+        [10307] = {
+            description = "Looking at the hat, you find yourself asking if any Kirin Tor mage would own " ..
+                "such headgear. Judging from the hat's wear, it seems the gnome wouldn't go anywhere " ..
+                "without it.\n\nYou try on the hat momentarily, discovering no magical properties beyond " ..
+                "a faint urge to dance.\n\nThe treasured possession might be the source of the dead " ..
+                "mage's bond to the village. Placing the hat in the footlocker in Cohlien's quarters " ..
+                "might free his spirit.",
+        },
         [10309] = {
             description = "You see that scrapped fel reaver over there to the south? Isn't it a thing of " ..
                 "beauty?\n\nI want its heart!\n\nWhat? Yes, of course it has a heart... what " ..
@@ -36946,6 +36955,16 @@ ns.Overrides.wowhead = {
                 "tired, or perhaps he simply ran away at the sight of Jules floating around the " ..
                 "room.\n\nEither way, Force Commander Danath is looking for you. I suggest that you seek " ..
                 "an audience with him inside the barracks as quickly as possible!",
+        },
+        [10937] = {
+            description = "I'm receiving reports that the Shattered Hand fel orcs, out in front of " ..
+                "Hellfire Citadel, are organizing for what looks like an all-out assault. No doubt, " ..
+                "they're not happy about your successes against all of the clans.\n\nGet to the base of " ..
+                "the citadel, where the Path of Glory ends. You'll find the fel orcs busy with their " ..
+                "preparations, but you're going to catch them with their pants down.\n\nEliminate the one " ..
+                "that's in charge of that force. Kill Drillmaster Zurok!",
+            rewardChoices = {{31719, 1}, {31718, 1}, {31717, 1}, {31720, 1}},
+            rewardMoney = 54000,
         },
         [10938] = {
             description = "Now that you have gathered all of the Blessings cards together into a deck, a " ..
