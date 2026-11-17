@@ -30241,6 +30241,14 @@ ns.Overrides.wowhead = {
                 "find him.",
             rewardChoices = {{25583, 1}, {25585, 1}, {25584, 1}},
         },
+        [9868] = {
+            description = "Thank you, stranger. They would have surely killed me had it not been for " ..
+                "you.\n\nI was kidnapped by these Murkbloods 3 nights ago during a nighttime raid on " ..
+                "Garadar. What I have since uncovered may very well shake the foundation of the Outland: " ..
+                "these savages seek to recover the totem of Kar'dash! We cannot allow the totem to fall " ..
+                "into the hands of the Murkbloods!\n\nYou must help me escape. And stranger, if I do not " ..
+                "make it back to Garadar, you must tell Garrosh what happened here...",
+        },
         [9869] = {
             description = "Greetings, <race>. I am Ioki, elementalist of the Earthen Ring. I have come to " ..
                 "Telaar to inform the Kurenai of the state of the elements.\n\nCould I ask a favor of " ..
@@ -32098,6 +32106,14 @@ ns.Overrides.wowhead = {
                 "siphon energy from one of the larger crystals.\n\nReturn to me so that I may study the " ..
                 "effects of the aura. Do not worry; any side effects should be temporary.",
             rewardMoney = 39000,
+        },
+        [10205] = {
+            description = "Warp-Raider Nesaad must be dealt with! I have no idea how he survived my " ..
+                "attack, but he cannot be allowed to continue his operation out there.\n\nGo back and " ..
+                "take out Nesaad. He keeps a small ethereal camp near the southwestern corner of the " ..
+                "Heap.\n\nDon't fail like I did, <class>.",
+            rewardChoices = {{30266, 1}, {30265, 1}, {30267, 1}},
+            rewardMoney = 41000,
         },
         [10206] = {
             description = "Those ethereal clowns are as opportunistic as us, I'll give them that. But no " ..
@@ -39311,6 +39327,16 @@ ns.Overrides.wowhead = {
                 "more combatants with this sort of worldly understanding... truly seasoned veterans! " ..
                 "<name>, come back to me after you've served against the Horde at all of our active " ..
                 "battlegrounds.",
+            rewardMoney = 4500,
+            rewardXP = 4750,
+        },
+        [95457] = {
+            description = "Serving the Horde in one of the great battles against the Alliance is a source " ..
+                "of great honor! The few however, that have served the Horde in ALL of our active " ..
+                "battlefronts are our truly great fighters. We shall vanquish our opponents, not by " ..
+                "fighting isolated skirmishes, but by waging a well-coordinated war.\n\nGo forth and " ..
+                "crush the Alliance in Arathi Basin, Alterac Valley, Eye of the Storm and Warsong Gulch! " ..
+                "For Honor! For the Horde!",
             rewardMoney = 4500,
             rewardXP = 4750,
         },
