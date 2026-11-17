@@ -20442,6 +20442,15 @@ ns.Overrides.wowhead = {
                 "outside Alterac Valley to begin your tour of duty and honor amongst the Stormpike.",
             rewardXP = 7070,
         },
+        [7281] = {
+            description = "Tragic... My brother faces me on the field of battle: A commander for the " ..
+                "Stormpike.\n\nOf the four Stormpike Commanders, he is undoubtedly the most dangerous. " ..
+                "Perhaps if he is slain, the Banshee Queen could turn him as she did me - show him the " ..
+                "error of his ways...\n\nDeep within enemy territory you will find my brother. Slay him " ..
+                "and return to me. I trust that you are capable of completing this mission, " ..
+                "soldier.\n\nAnd soldier, do not go alone.",
+            rewardXP = 7070,
+        },
         [7301] = {
             description = "We got them held prisoner, <race>. I'm talking about their Wing Commanders. It " ..
                 "was a furious battle in the skies but they finally fell! Unfortunately, our best pilots " ..
@@ -33308,6 +33317,15 @@ ns.Overrides.wowhead = {
                 "cannons along the ridge - and they're aimed straight at us! You must enter the camp and " ..
                 "destroy these fel cannons.\n\n<name>, you must be sure to detonate them all - or nothing " ..
                 "will stop the Legion from raining fiery hell down upon our heads!",
+            rewardMoney = 20000,
+        },
+        [10392] = {
+            description = "You are an honor to us, <name>. But now we must strike before the Legion " ..
+                "recovers! To the north of Thrallmar lies Invasion Point: Annihilator. It houses a " ..
+                "warp-portal through which the Legion draws its reinforcements.\n\nYou must overload that " ..
+                "portal - and blast it back to the abyss it came from. The portal's activation key will " ..
+                "be held by the Point's commander - Warbringer Arix'Amal. Slay him. Take the key. Use it " ..
+                "on the portal and do what must be done. May the warchief's blessings be with you.",
             rewardMoney = 20000,
         },
         [10393] = {

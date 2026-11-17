@@ -4,6 +4,44 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.591] - 2026-11-17
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,975 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,707 quests, 39 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,239 quests, 70 NPCs, 7 objects
+- npc 17209 - William Kielar - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 17499 - Vision of the Forlorn - updated
+  - coordinates: 1 spawn point added in Azuremyst Isle
+- npc 17531 - Draenei Protector - updated
+  - coordinates: 5 spawn points added in Swamp of Sorrows
+- npc 17635 - Lordaeron Commander - updated
+  - coordinates: 4 spawn points added in Eastern Plaguelands
+- npc 17647 - Lordaeron Soldier - updated
+  - coordinates: 6 spawn points added in Eastern Plaguelands
+- npc 17648 - Felhunter Minion - updated
+  - coordinates: 10 spawn points added in Redridge Mountains
+  - coordinates: 8 spawn points added in Burning Steppes
+  - coordinates: 2 spawn points added in Ashenvale
+- npc 17842 - Azgalor - updated
+  - coordinates: 1 spawn point added in Hyjal Summit
+- npc 17853 - Tracker of the Hand - updated
+  - coordinates: 40 spawn points added in Bloodmyst Isle
+- npc 17880 - Temporus - updated
+  - coordinates: 1 spawn point added in The Black Morass
+- npc 17888 - Kaz'rogal - updated
+  - coordinates: 1 spawn point added in Hyjal Summit
+- npc 17995 - Lordaeron Veteran - updated
+  - coordinates: 3 spawn points added in Eastern Plaguelands
+- npc 17996 - Lordaeron Fighter - updated
+  - coordinates: 9 spawn points added in Eastern Plaguelands
+- npc 18042 - Umbrafen Slavebinder - updated
+  - coordinates: 4 spawn points added in Zangarmarsh
+- npc 18109 - Living Fire - updated
+  - coordinates: 7 spawn points added in Nagrand
+
 ## [0.2.590] - 2026-11-17
 
 Data from the PandaQuest portal.
