@@ -32059,6 +32059,15 @@ ns.Overrides.wowhead = {
                 "outside of Manaforge B'naar, is in possession of one such roster. Obtain it for us.",
             rewardMoney = 39000,
         },
+        [10190] = {
+            description = "I have the very important task of collecting the machinery inside these ruins, " ..
+                "but I'm having a problem keeping all of my bots charged up.\n\nThe phase hunters - those " ..
+                "wyrm-looking things - have lots of energy! You can find them all over the edges of this " ..
+                "island, floating in from the nether.\n\nFill the battery on this recharging blaster by " ..
+                "using it on a phase hunter when they're very weak, and then finish it off to soak up the " ..
+                "last of its energy.",
+            rewardMoney = 39000,
+        },
         [10191] = {
             description = "Greetings, <race>. I am charged up and fully functional.\n\nThere are fragile " ..
                 "draenei machines in these ruins, which I must retrieve. I am equipped with delicate " ..
@@ -39981,10 +39990,6 @@ ns.Overrides.wowhead = {
         [142708] = {spawns = {[47] = {{31.6, 57.8}}}, zoneID = 47},
         [142710] = {spawns = {[47] = {{31.6, 57.7}}}, zoneID = 47},
         [142711] = {spawns = {[47] = {{31.6, 57.8}}}, zoneID = 47},
-        [164690] = {
-            spawns = {[17] = {{44.4, 28.1}, {44.7, 28.1}, {44.9, 27.4}, {45, 28.5}, {45.5, 28}, {45.5, 28.7}}},
-            zoneID = 17,
-        },
     },
     items = {},
 }

@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.9.0+v1.1.1 (MoP database + corrections from QuestieDB 1.1.1). DO NOT EDIT.
--- Built: 2026-11-14T02:08:29Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.10.0+v1.1.2 (MoP database + corrections from QuestieDB 1.1.2). DO NOT EDIT.
+-- Built: 2026-11-17T12:06:33Z. Schema version 1.
 -- Format: ns.Data.quests is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- questKeys schema (36 fields). Load with loadstring(ns.Data.quests)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -1394,7 +1394,7 @@ ns.Data.quests = [=[return {
 [1886] = {"The Deathstalkers",nil,{{6467}},10,13,16,8,{"Get Astor's Letter of Introduction and return it to Mennet Carkad in the Rogues' Quarter."},nil,{nil,nil,{{7231}}},nil,nil,{},nil,nil,nil,-162,nil,nil,nil,nil,14419,16392,nil,nil,nil,nil,{1885}},
 [1898] = {"The Deathstalkers",nil,{{6522}},10,13,16,8,{"Speak with Andron Gant in the Undercity."},nil,nil,7231,nil,nil,nil,nil,nil,-162,nil,nil,nil,nil,14421,16384},
 [1899] = {"The Deathstalkers",nil,{{6467}},10,13,16,8,{"Bring Andron's Ledger to Mennet Carkad in the Rogues' Quarter of Undercity."},nil,{nil,nil,{{7294}}},nil,nil,nil,nil,nil,nil,-162,nil,nil,nil,nil,14418,16392},
-[1918] = {"The Befouled Element",{nil,nil,{16408}},{{12737}},23,27,33555378,nil,{"Bring the Befouled Water Globe to Mastok Wrilehiss at Splintertree Post, Ashenvale."},nil,nil,16408,nil,nil,nil,nil,nil,331,nil,nil,nil,nil,824,nil,nil,nil,{{76,2}}},
+[1918] = {"The Befouled Element",{nil,nil,{16408}},{{12737}},23,27,33555378,nil,{"Bring the Befouled Water Globe to Mastok Wrilehiss at Splintertree Post, Ashenvale."},nil,nil,16408,nil,nil,nil,nil,nil,331,nil,nil,nil,nil,824,nil,nil,nil,{{76,2}},nil,nil,nil,nil,nil,nil,nil,25},
 [1919] = {"Report to Jennea",{{328,1228,7312}},{{5497}},15,15,18875469,128,{"Speak with Jennea Cannon in Stormwind."},nil,nil,nil,nil,nil,nil,nil,nil,-161,nil,nil,nil,nil,1920,16392,nil,nil,nil,1920},
 [1920] = {"Investigate the Blue Recluse",nil,{{5497}},15,16,18875469,128,{"Obtain a Cantation of Manifestation and a Chest of Containment coffers from behind Jennea Cannon. Bring 3 Filled Containment Coffers to Jennea at the Wizard's Sanctum."},nil,{nil,nil,{{7292},{7247},{7308}}},nil,nil,{},nil,nil,nil,-161,nil,nil,nil,nil,1921,16384,nil,nil,nil,nil,{1919},{{nil,3,"Use Cantation of Manifestation to reveal Rift Spawn. Use Chest of Containment Coffers on stunned Rift Spawn",0,{{"monster",6492}}}}},
 [1921] = {"Gathering Materials",nil,{{1309}},15,15,18875469,128,{"Bring 10 Linen Cloth and the 6 Charged Rift Gems to Wynne Larson in Stormwind."},nil,{nil,nil,{{2589},{7249}}},nil,nil,{1920},nil,nil,nil,-161,nil,nil,nil,nil,1941,16392},
