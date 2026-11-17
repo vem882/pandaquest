@@ -6626,6 +6626,12 @@ ns.Overrides.wowhead = {
                 "know that you will see my message safely to him.\n\nDeliver this to him and know that " ..
                 "the forest will see you safely along its paths to the forest of stone.",
         },
+        [941] = {
+            description = "I have removed that foul moss from the heart, but it remains tainted...\n\nTry " ..
+                "placing the heart in my planter. It is filled with a nutritive soil that may cleanse and " ..
+                "heal the heart.",
+            rewardItems = {{5218, 1}},
+        },
         [942] = {
             description = "This fossil bears a striking resemblance to one I once saw in Ironforge. An " ..
                 "archaeologist by the name of Flagongut brought it to our annual Explorers' League " ..
@@ -38079,6 +38085,14 @@ ns.Overrides.wowhead = {
                 "overlord gave you and deliver it to Commander Hobb. He is standing guard right outside " ..
                 "this building.",
         },
+        [11096] = {
+            description = "So you want to join the Skyguard? Well, I know you can fly... but can you " ..
+                "fight?\n\nThe Skyguard is sworn to protect Shattrath from the dangers that loom above " ..
+                "us, both near and far. The Gordunni ogres who dwell in the Barrier Hills to the north " ..
+                "are an immediate threat to us.\n\nReaching the ogres has been problematic for " ..
+                "Shattrath's ground units. That's where we come in. See what you can do to help contain " ..
+                "them.",
+        },
         [11097] = {
             description = "Take these Scryer medals. Mor'ghor will need proof of \"victory\" once this is " ..
                 "over. He will recognize them as coming from the corpses of fallen Scryer " ..
@@ -39412,6 +39426,17 @@ ns.Overrides.wowhead = {
             zoneID = 1377,
         },
         [353] = {subName = "Baby Murloc Redemption Merchant"},
+        [698] = {
+            spawns = {
+                [33] = {
+                    {22.2, 8.6}, {22.4, 8.4}, {22.6, 8.4}, {22.6, 8.6}, {22.8, 10.4}, {22.8, 11.2},
+                    {23.4, 13.2}, {23.8, 12.4}, {24, 13.2}, {25, 10.6}, {25.2, 9}, {25.2, 10.4}, {25.4, 13},
+                    {25.6, 9.2}, {25.6, 9.6}, {25.6, 10.6}, {26, 8.4}, {26.2, 13.2}, {26.6, 13.4},
+                    {27.4, 11.2}, {27.6, 11.2}, {27.6, 11.6}, {28.6, 11.4},
+                },
+            },
+            zoneID = 33,
+        },
         [1840] = {
             spawns = {
                 [28] = {{53.4, 23.6}, {53.4, 24.6}, {53.8, 24.4}, {54, 24.6}, {54.6, 23.8}, {54.8, 23.4}},
