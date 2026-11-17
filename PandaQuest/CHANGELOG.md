@@ -4,6 +4,57 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.597] - 2026-11-17
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,038 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,251 quests, 71 NPCs, 6 objects
+- npc 20497 - Fima Five-Fingers - updated
+  - coordinates: 10 spawn points added in Darnassus
+- npc 20499 - Fizim Blastwrench - updated
+  - coordinates: 12 spawn points added in Thunder Bluff
+- npc 21071 - Totem of Spirits - updated
+  - coordinates: 1 spawn point added in Shadowmoon Valley
+- npc 21072 - Living Grove Defender - updated
+  - coordinates: 40 spawn points added in Blade's Edge Mountains
+- npc 21078 - Farahlon Shardling - updated
+  - coordinates: 40 spawn points added in Netherstorm
+- npc 21129 - Scorned Spirit of Earth - updated
+  - coordinates: 1 spawn point added in Shadowmoon Valley
+- npc 21131 - Scorned Spirit of Water - updated
+  - coordinates: 2 spawn points added in Shadowmoon Valley
+- npc 21132 - Scorned Spirit of Air - updated
+  - coordinates: 1 spawn point added in Shadowmoon Valley
+- npc 22448 - Rexxar - updated
+  - coordinates: 4 spawn points added in Blade's Edge Mountains
+- npc 22473 - Baron Sablemane - updated
+  - coordinates: 1 spawn point added in Blade's Edge Mountains
+- npc 22906 - Air Elemental Force - updated
+  - coordinates: 1 spawn point added in Dalaran -
+- npc 22907 - Fire Elemental Force - updated
+  - coordinates: 2 spawn points added in Dalaran -
+- npc 22908 - Earth Elemental Force - updated
+  - coordinates: 2 spawn points added in The Exodar
+- npc 22912 - Sundered Spirit - updated
+  - coordinates: 1 spawn point added in Blade's Edge Mountains
+- npc 22915 - Aspect of the Raven - updated
+  - coordinates: 3 spawn points added in Moonglade
+- npc 22989 - Maiev Shadowsong - updated
+  - coordinates: 9 spawn points added in Shadowmoon Valley
+- npc 22992 - Guardian of the Hawk - updated
+  - coordinates: 4 spawn points added in Terokkar Forest
+- npc 22993 - Guardian of the Eagle - updated
+  - coordinates: 2 spawn points added in Terokkar Forest
+- npc 22994 - Guardian of the Falcon - updated
+  - coordinates: 3 spawn points added in Terokkar Forest
+- npc 23002 - Rizzle Sprysprocket - updated
+  - coordinates: 23 spawn points added in Ashenvale
+  - coordinates: 9 spawn points added in Azshara
+- npc 23025 - Rizzle's Depth Charge - updated
+  - coordinates: 29 spawn points added in Azshara
+  - coordinates: 17 spawn points added in Ashenvale
+
 ## [0.2.596] - 2026-11-17
 
 Data from the PandaQuest portal.
@@ -540,75 +591,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Undercity
 - npc 14404 - Seeker Thompson - updated
   - coordinates: 40 spawn points added in Undercity
-
-## [0.2.586] - 2026-11-16
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,842 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,705 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,226 quests, 70 NPCs, 7 objects
-- npc 11916 - Imelda - updated
-  - coordinates: 2 spawn points added in Stormwind City
-- npc 12263 - Slaughterhouse Protector - updated
-  - coordinates: 5 spawn points added in Eastern Plaguelands
-- npc 12322 - Quel'Lithien Protector - updated
-  - coordinates: 5 spawn points added in Eastern Plaguelands
-- npc 12337 - Crimson Courier - updated
-  - coordinates: 40 spawn points added in Eastern Plaguelands
-- npc 12381 - Ley Sprite - updated
-  - coordinates: 40 spawn points added in Deadwind Pass
-- npc 12382 - Mana Sprite - updated
-  - coordinates: 40 spawn points added in Deadwind Pass
-- npc 12385 - Mortar Team Advanced Target Dummy - updated
-  - coordinates: 1 spawn point added in Dun Morogh
-- npc 12387 - Large Vile Slime - updated
-  - coordinates: 26 spawn points added in Western Plaguelands
-- npc 12396 - Doomguard Commander - updated
-  - coordinates: 40 spawn points added in Blasted Lands
-- npc 12397 - Lord Kazzak - updated
-  - coordinates: 40 spawn points added in Blasted Lands
-- npc 12477 - Verdantine Boughguard - updated
-  - coordinates: 40 spawn points added in The Hinterlands
-  - coordinates: 16 spawn points added in Ironforge
-- npc 12478 - Verdantine Oracle - updated
-  - coordinates: 40 spawn points added in The Hinterlands
-- npc 12479 - Verdantine Tree Warder - updated
-  - coordinates: 40 spawn points added in The Hinterlands
-- npc 12496 - Dreamtracker - updated
-  - coordinates: 33 spawn points added in The Hinterlands
-- npc 12497 - Dreamroarer - updated
-  - coordinates: 26 spawn points added in Feralas
-- npc 12577 - Jarrodenus - updated
-  - coordinates: 2 spawn points added in Azshara
-- npc 12579 - Bloodfury Ripper - updated
-  - coordinates: 16 spawn points added in Stonetalon Mountains
-- npc 12581 - Mercutio - updated
-  - coordinates: 3 spawn points added in Elwynn Forest
-- npc 12656 - Thamarian - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 12657 - Don Pompa - updated
-  - coordinates: 1 spawn point added in Wetlands
-- npc 12778 - Lieutenant Rachel Vaccar - updated
-  - coordinates: 2 spawn points added in Stormwind City
-- npc 12788 - Legionnaire Teena - updated
-  - coordinates: 4 spawn points added in Orgrimmar
-- npc 12922 - Imp Minion - updated
-  - coordinates: 30 spawn points added in Nagrand
-  - coordinates: 28 spawn points added in Northern Stranglethorn
-  - coordinates: 27 spawn points added in Redridge Mountains
-  - coordinates: 27 spawn points added in Felwood
-  - coordinates: also changed in 8 more zones
-- npc 13019 - Burning Blade Seer - updated
-  - coordinates: 1 spawn point added in Desolace
-- npc 13082 - Milton Beats - updated
-  - coordinates: 2 spawn points added in Hillsbrad Foothills
-- npc 13118 - Crimson Bodyguard - updated
-  - coordinates: 40 spawn points added in Eastern Plaguelands
-- npc 13157 - Makasgar - updated
-  - coordinates: 12 spawn points added in Durotar
-- npc 13322 - Hydraxian Honor Guard - updated
-  - coordinates: 9 spawn points added in Azshara
 
 ## [0.2.412]
 

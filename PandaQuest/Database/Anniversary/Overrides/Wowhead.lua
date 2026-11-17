@@ -32275,6 +32275,16 @@ ns.Overrides.wowhead = {
                 "hatred and will not listen to me.\n\nPerhaps they can be forced to join us.",
             rewardMoney = 20000,
         },
+        [10221] = {
+            description = "<name>, my former protege, Sparky Uberthruster, wouldn't wear his helmet while " ..
+                "down here and one day transformed into the infamous Dr. Boom!\n\nAnd he stole off to the " ..
+                "northeast with most of our sapping equipment! He and his Boom Bots have been a menace to " ..
+                "Area 52 ever since.\n\nI need you to go to his Camp of Boom just outside of town and put " ..
+                "an end to him! Use these Boom's Doom bombs to take him out.\n\nAnd make sure not to get " ..
+                "too close to him or his Boom Bots!",
+            rewardChoices = {{29969, 1}, {29968, 1}, {29967, 1}, {30514, 1}},
+            rewardMoney = 39000,
+        },
         [10222] = {
             description = "After Prince Kael'thas's forces destroyed the village and imprisoned the " ..
                 "archmage in the Violet Tower, they withdrew to Sunfury Hold to the northeast. The very " ..
@@ -32456,6 +32466,13 @@ ns.Overrides.wowhead = {
                 "results are less than exact, but should serve as adequate evidence to prove or disprove " ..
                 "the Aldor's suspicions.",
             rewardMoney = 39000,
+        },
+        [10246] = {
+            description = "Your success at Manaforge B'naar was quite noteworthy. I'm sure that Anchorite " ..
+                "Karja will ask you for a repeat performance at Manaforge Coruu next.\n\nWe've learned of " ..
+                "a particularly important regiment of Sunfury arcanists and researchers being deployed " ..
+                "there and I would like you to target them. Succeed and you will deliver a crushing blow " ..
+                "against our enemy's forces.",
         },
         [10248] = {
             description = "Doctor Vomisa, Ph.T. at your service. Here, take this controller. I want you " ..
