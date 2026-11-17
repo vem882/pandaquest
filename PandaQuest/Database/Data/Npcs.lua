@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.9.0+v1.1.1 (MoP database + corrections from QuestieDB 1.1.1). DO NOT EDIT.
--- Built: 2026-11-14T02:08:29Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.10.0+v1.1.2 (MoP database + corrections from QuestieDB 1.1.2). DO NOT EDIT.
+-- Built: 2026-11-17T12:06:33Z. Schema version 1.
 -- Format: ns.Data.npcs is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- npcKeys schema (15 fields; waypoints = {[areaId] = { {{x,y},...} polylines }}). Load with loadstring(ns.Data.npcs)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -2915,7 +2915,7 @@ ns.Data.npcs = [=[return {
 [3473] = {"Owatanka",664,664,24,24,0,{[17]={{44.2,62},{45.4,62.8},{49.2,61.6},{49.4,59.2}}},{},0,nil,nil,14,nil,nil,0},
 [3474] = {"Lakota'mani",573,573,22,22,0,nil,{[17]={{{46,49.4},{44.8,49},{44.866666666667,50.2},{44.933333333333,51.4},{45,52.6},{46.1,52.1},{47.2,51.6},{47.4,51.2},{48.4,52.1},{49.4,53},{49.8,53.4},{49.8,53.6},{49.066666666667,52.733333333333},{48.333333333333,51.866666666667},{47.6,51},{46.8,50.3},{46,49.6}}}},0,nil,nil,15,"AH",nil,0},
 [3475] = {"Echeyakee",328,328,15,15,0,{[17]={{44.82,47.71}}},nil,17,nil,nil,16,nil,nil,0},
-[3476] = {"Isha Awak",840,840,27,27,0,{[17]={{63,52.4},{63.4,50.2},{63.4,53.4},{63.4,53.6},{63.6,53.4},{63.6,53.6},{64,52},{64.2,50.6},{64.4,50.4},{64.6,49.6},{64.6,50.8},{65.2,47.6},{65.4,47.2},{65.6,46.8},{65.6,47.8}}},{[17]={{{63.55,52.72},{63.835,51.675},{64.12,50.63},{64.96,49.44},{64.99,48.78},{64.96,49.44},{64.12,50.63},{63.835,51.675},{63.55,52.72},{63.53,53.85}}}},17,nil,nil,16,nil,nil,0},
+[3476] = {"Isha Awak",840,840,27,27,0,{[17]={{63.55,53.94},{65.49,47.18},{64.14,50.87}}},{},17,nil,nil,16,nil,nil,0},
 [3477] = {"Hraq",417,417,18,18,0,{[17]={{48.04,56.23}}},nil,17,nil,nil,29,"H","Blacksmithing Supplies",4224},
 [3478] = {"Traugh",1107,1107,31,31,0,{[17]={{48.33,56.15}}},nil,17,nil,nil,29,"H","Blacksmithing Trainer",81},
 [3479] = {"Nargal Deatheye",1342,1342,35,35,0,{[17]={{48.23,56.57}}},nil,17,nil,nil,29,"H","Weaponsmith",4224},

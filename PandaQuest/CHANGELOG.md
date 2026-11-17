@@ -4,6 +4,30 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.594] - 2026-11-17
+
+Data from the PandaQuest portal.
+
+- database - rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
+- database - Classic Era rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
+- database - TBC Anniversary rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
+- database - WoW Forever rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,990 NPCs, 6 objects
+- database - refreshed auction scan targets without recent prices
+- database - Classic Era: data from the PandaQuest portal: 3,707 quests, 39 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,244 quests, 71 NPCs, 6 objects
+- quest 1918 - The Befouled Element - updated
+  - availability added
+- npc 3476 - Isha Awak - updated
+  - coordinates in The Barrens: 3 spawn points refined, 12 removed
+  - patrol path removed
+- npc 20669 - Shade of Mal'druk - updated
+  - coordinates: 6 spawn points added in Zangarmarsh
+- npc 20802 - Protectorate Demolitionist - updated
+  - coordinates: 12 spawn points added in Netherstorm
+- npc 32395 - Apothecary Chemist - updated
+  - coordinates: 40 spawn points added in Undercity
+
 ## [0.2.593] - 2026-11-17
 
 Data from the PandaQuest portal.
@@ -650,210 +674,6 @@ Data from the PandaQuest portal.
   - coordinates: 40 spawn points added in Redridge Mountains
 - npc 10088 - Xao'tsu - updated
   - coordinates: 3 spawn points added in Orgrimmar
-
-## [0.2.583] - 2026-11-16
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,759 NPCs, 6 objects
-- npc 4995 - Stockade Guard - updated
-  - coordinates: 9 spawn points added in Stormwind City
-- npc 4996 - Injured Stockade Guard - updated
-  - coordinates: 2 spawn points added in Stormwind City
-- npc 5238 - Gordunni Battlemaster - updated
-  - coordinates: 37 spawn points added in Feralas
-- npc 5239 - Gordunni Mage-Lord - updated
-  - coordinates: 31 spawn points added in Feralas
-- npc 5241 - Gordunni Warlord - updated
-  - coordinates: 24 spawn points added in Feralas
-- npc 5306 - Frayfeather Patriarch - updated
-  - coordinates: 23 spawn points added in Feralas
-- npc 5308 - Rogue Vale Screecher - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 5312 - Lethlas - updated
-  - coordinates: 27 spawn points added in Feralas
-- npc 5319 - Jademir Tree Warder - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 5320 - Jademir Boughguard - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 5326 - Jeremy's Test Monster - updated
-  - NPC title added (Minion of Muffinus)
-- npc 5331 - Hatecrest Warrior - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 5332 - Hatecrest Wave Rider - updated
-  - coordinates: 40 spawn points added in Feralas
-- npc 5333 - Hatecrest Serpent Guard - updated
-  - coordinates: 20 spawn points added in Feralas
-- npc 5422 - Scorpid Hunter - updated
-  - coordinates: 40 spawn points added in Tanaris
-- npc 5423 - Scorpid Tail Lasher - updated
-  - coordinates: 40 spawn points added in Tanaris
-- npc 5424 - Scorpid Dunestalker - updated
-  - coordinates: 40 spawn points added in Tanaris
-- npc 5425 - Starving Blisterpaw - updated
-  - coordinates: 40 spawn points added in Tanaris
-- npc 5428 - Roc - updated
-  - coordinates in Tanaris: 3 spawn points added, 11 refined, 3 removed
-- npc 5441 - Hazzali Wasp - updated
-  - coordinates: 31 spawn points added in Tanaris
-- npc 5453 - Hazzali Tunneler - updated
-  - coordinates: 25 spawn points added in Tanaris
-- npc 5456 - Centipaar Stinger - updated
-  - coordinates: 40 spawn points added in Tanaris
-  - coordinates: 5 spawn points added in Un'Goro Crater
-- npc 5457 - Centipaar Swarmer - updated
-  - coordinates: 40 spawn points added in Tanaris
-  - coordinates: 6 spawn points added in Un'Goro Crater
-- npc 5466 - Coast Strider - updated
-  - coordinates in Tanaris: 6 spawn points added, 13 refined, 6 removed
-- npc 5469 - Dune Smasher - updated
-  - coordinates: 28 spawn points added in Tanaris
-- npc 5470 - Raging Dune Smasher - updated
-  - coordinates: 23 spawn points added in Tanaris
-- npc 5602 - Khan Shaka - updated
-  - coordinates: 5 spawn points added in Desolace
-- npc 5643 - Tyranis Malem - updated
-  - coordinates: 3 spawn points added in Desolace
-- npc 5666 - Gunther's Visage - updated
-  - coordinates: 8 spawn points added in Undercity
-- npc 5682 - Dalin Forgewright - updated
-  - coordinates: 33 spawn points added in Silverpine Forest
-- npc 6068 - Warug's Bodyguard - updated
-  - coordinates: 6 spawn points added in Desolace
-- npc 6113 - Vejrek - updated
-  - coordinates: 4 spawn points added in Dun Morogh
-- npc 6129 - Draconic Magelord - updated
-  - coordinates: 8 spawn points added in Azshara
-- npc 6131 - Draconic Mageweaver - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6133 - Shade of Elura - updated
-  - coordinates: 4 spawn points added in Darkshore
-- npc 6135 - Arkkoran Clacker - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6144 - Son of Arkkoroc - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6146 - Cliff Breaker - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6147 - Cliff Thunderer - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6148 - Cliff Walker - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6167 - Chimaera Matriarch - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 6170 - Gutspill - updated
-  - coordinates: 13 spawn points added in Duskwood
-- npc 6184 - Timbermaw Pathfinder - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6185 - Timbermaw Warrior - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6186 - Timbermaw Totemic - updated
-  - coordinates: 35 spawn points added in Azshara
-- npc 6187 - Timbermaw Den Watcher - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6188 - Timbermaw Shaman - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 6494 - Tazan - updated
-  - coordinates: 10 spawn points added in The Barrens
-- npc 7045 - Scalding Drake - updated
-  - coordinates: 40 spawn points added in Burning Steppes
-- npc 7046 - Searscale Drake - updated
-  - coordinates: 40 spawn points added in Burning Steppes
-- npc 7050 - Defias Drone - updated
-  - coordinates: 37 spawn points added in Westfall
-- npc 7051 - Malformed Defias Drone - updated
-  - coordinates: 40 spawn points added in Westfall
-- npc 7052 - Defias Tower Patroller - updated
-  - coordinates: 4 spawn points added in Westfall
-- npc 7053 - Klaven Mortwake - updated
-  - coordinates: 4 spawn points added in Westfall
-- npc 7056 - Defias Tower Sentry - updated
-  - coordinates: 13 spawn points added in Westfall
-- npc 7069 - Condemned Monk - updated
-  - coordinates: 25 spawn points added in Hillsbrad Foothills
-- npc 7070 - Condemned Cleric - updated
-  - coordinates: 7 spawn points added in Hillsbrad Foothills
-- npc 7071 - Cursed Paladin - updated
-  - coordinates: 34 spawn points added in Hillsbrad Foothills
-- npc 7072 - Cursed Justicar - updated
-  - coordinates: 23 spawn points added in Hillsbrad Foothills
-- npc 7170 - Thragomm - updated
-  - coordinates: 40 spawn points added in Loch Modan
-- npc 7401 - Draenei Refugee - updated
-  - coordinates: 3 spawn points added in Blasted Lands
-- npc 7447 - Fledgling Chillwind - updated
-  - coordinates in Winterspring: 8 spawn points added, 12 refined, 8 removed
-- npc 7457 - Rogue Ice Thistle - updated
-  - coordinates in Winterspring: 11 spawn points added, 9 refined, 11 removed
-- npc 7461 - Hederine Initiate - updated
-  - coordinates in Winterspring: 9 spawn points added, 13 refined, 9 removed
-- npc 7462 - Hederine Manastalker - updated
-  - coordinates in Winterspring: 9 spawn points added, 13 refined, 9 removed
-- npc 7489 - Silverpine Deathguard - updated
-  - coordinates: 21 spawn points added in Silverpine Forest
-- npc 7554 - Snowy Owl - updated
-  - coordinates: 4 spawn points added in Winterspring
-- npc 7728 - Kirith the Damned - updated
-  - coordinates: 8 spawn points added in Blasted Lands
-- npc 7778 - Doran Steelwing - updated
-  - coordinates: 1 spawn point added in The Hinterlands
-- npc 7843 - Gnomeregan Evacuee - updated
-  - coordinates: 14 spawn points added in Dun Morogh
-- npc 7851 - Nethergarde Elite - updated
-  - coordinates: 30 spawn points added in Blasted Lands
-- npc 7864 - Lingering Highborne - updated
-  - coordinates: 40 spawn points added in Azshara
-- npc 7878 - Vestia Moonspear - updated
-  - coordinates: 1 spawn point added in Feralas
-- npc 7880 - Ginro Hearthkindle - updated
-  - coordinates: 1 spawn point added in Feralas
-- npc 7903 - Jewel - updated
-  - coordinates: 2 spawn points added in Feralas
-- npc 7904 - Jacob - updated
-  - coordinates: 2 spawn points added in Feralas
-- npc 7996 - Qiaga the Keeper - updated
-  - coordinates: 4 spawn points added in The Hinterlands
-- npc 8017 - Sen'jin Guardian - updated
-  - coordinates: 12 spawn points added in Durotar
-- npc 8019 - Fyldren Moonfeather - updated
-  - coordinates: 1 spawn point added in Feralas
-- npc 8023 - Sharpbeak - updated
-  - coordinates: 3 spawn points added in The Hinterlands
-- npc 8024 - Sharpbeak's Father - updated
-  - coordinates: 4 spawn points added in The Hinterlands
-- npc 8025 - Sharpbeak's Mother - updated
-  - coordinates: 5 spawn points added in The Hinterlands
-- npc 8055 - Thelsamar Mountaineer - updated
-  - coordinates: 38 spawn points added in Loch Modan
-- npc 8096 - Westfall Brigade Guard - updated
-  - coordinates: 40 spawn points added in Westfall
-- npc 8121 - Jaxxil Sparks - updated
-  - coordinates: 1 spawn point added in The Barrens
-- npc 8136 - Lord Shalzaru - updated
-  - coordinates: 4 spawn points added in Feralas
-- npc 8137 - Gikkix - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 8139 - Jabbey - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 8196 - Occulus - updated
-  - coordinates: 7 spawn points added in Tanaris
-- npc 8381 - Lindros - updated
-  - coordinates: 1 spawn point added in Azshara
-- npc 8382 - Patrick Mills - updated
-  - coordinates: 1 spawn point added in Azshara
-- npc 8386 - Horizon Scout Crewman - updated
-  - coordinates: 3 spawn points added in Azshara
-- npc 8397 - Sentinel Keldara Sunblade - updated
-  - coordinates: 3 spawn points added in Azshara
-- npc 8409 - Caravan Master Tset - updated
-  - coordinates: 2 spawn points added in Azshara
-- npc 8421 - Dorius - updated
-  - coordinates: 4 spawn points added in Searing Gorge
-- npc 8441 - Raze - updated
-  - coordinates: 3 spawn points added in Searing Gorge
-- npc 8446 - Xiggs Fuselighter's Flyingmachine - updated
-  - coordinates: 1 spawn point added in Azshara
-- npc 11861 - Mor'rogal - updated
-  - coordinates: 1 spawn point added in Stonetalon Mountains
 
 ## [0.2.412]
 
