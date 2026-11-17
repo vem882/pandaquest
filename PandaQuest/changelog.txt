@@ -75,6 +75,192 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.589
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,954 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,707 quests, 38 NPCs, 9 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,235 quests, 70 NPCs, 7 objects
+- npc 15571 - Maws - updated
+  - coordinates: 13 spawn points added in Azshara
+- npc 15620 - Hive'Regal Hunter-Killer - updated
+  - coordinates: 12 spawn points added in Silithus
+- npc 15629 - Nightmare Phantasm - updated
+  - coordinates: 40 spawn points added in Moonglade
+- npc 15633 - Tyrande - updated
+  - coordinates: 14 spawn points added in Moonglade
+- npc 15634 - Priestess of the Moon - updated
+  - coordinates: 28 spawn points added in Silithus
+  - coordinates: 8 spawn points added in Moonglade
+- npc 15740 - Colossus of Zora - updated
+  - coordinates: 40 spawn points added in Silithus
+- npc 15741 - Colossus of Regal - updated
+  - coordinates: 40 spawn points added in Silithus
+- npc 15749 - Lesser Silithid Flayer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 15750 - Qiraji Major - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 15752 - Silithid Flayer - updated
+  - coordinates: 40 spawn points added in Thousand Needles
+- npc 15753 - Qiraji Brigadier General - updated
+  - coordinates: 40 spawn points added in Tanaris
+  - coordinates: 40 spawn points added in Silithus
+  - coordinates: 17 spawn points added in Feralas
+- npc 15754 - Greater Anubisath Warbringer - updated
+  - coordinates: 25 spawn points added in Feralas
+  - coordinates: 7 spawn points added in Silithus
+  - coordinates: 6 spawn points added in Tanaris
+- npc 15756 - Greater Silithid Flayer - updated
+  - coordinates: 40 spawn points added in Tanaris
+  - coordinates: 40 spawn points added in Silithus
+  - coordinates: 38 spawn points added in Feralas
+- npc 15774 - Christmas Prince Tortheldrin - updated
+  - NPC title added (Ruler of the Shen'dralar)
+- npc 15811 - Faltering Silithid Flayer - updated
+  - coordinates: 12 spawn points added in The Barrens
+- npc 15812 - Qiraji Officer - updated
+  - coordinates: 6 spawn points added in The Barrens
+- npc 15813 - Qiraji Officer Zod - updated
+  - coordinates: 13 spawn points added in The Barrens
+- npc 15814 - Qiraji Lieutenant Jo-rel - updated
+  - coordinates: 12 spawn points added in The Barrens
+- npc 15839 - Might of Kalimdor Grunt - updated
+  - coordinates: 1 spawn point added in The Barrens
+- npc 15841 - Might of Kalimdor Lieutenant - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+  - coordinates: 1 spawn point added in Tanaris
+- npc 15842 - Might of Kalimdor Mage - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 15843 - Might of Kalimdor Priest - updated
+  - coordinates: 2 spawn points added in Tanaris
+- npc 15844 - Might of Kalimdor Restorer - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 15846 - Might of Kalimdor Archer - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 15847 - Might of Kalimdor Shaman - updated
+  - coordinates: 1 spawn point added in The Barrens
+- npc 15848 - Might of Kalimdor Infantry - updated
+  - coordinates: 4 spawn points added in Silithus
+  - coordinates: 1 spawn point added in Tanaris
+- npc 15849 - Might of Kalimdor Druid - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 15850 - Might of Kalimdor Skirmisher - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 15851 - Might of Kalimdor Marshal - updated
+  - coordinates: 3 spawn points added in Silithus
+- npc 15852 - Orgrimmar Elite Shieldguard - updated
+  - coordinates: 10 spawn points added in Silithus
+- npc 15853 - Orgrimmar Elite Infantryman - updated
+  - coordinates: 18 spawn points added in Silithus
+- npc 15854 - Orgrimmar Elite Cavalryman - updated
+  - coordinates: 40 spawn points added in Silithus
+- npc 15855 - Tauren Rifleman - updated
+  - coordinates: 28 spawn points added in Silithus
+- npc 15856 - Tauren Primalist - updated
+  - coordinates: 10 spawn points added in Silithus
+- npc 15857 - Stormwind Cavalryman - updated
+  - coordinates: 13 spawn points added in Silithus
+- npc 15859 - Stormwind Archmage - updated
+  - coordinates: 13 spawn points added in Silithus
+- npc 15860 - Kaldorei Marksman - updated
+  - coordinates: 21 spawn points added in Silithus
+- npc 15862 - Ironforge Cavalryman - updated
+  - coordinates: 38 spawn points added in Silithus
+- npc 15863 - Darkspear Shaman - updated
+  - coordinates: 7 spawn points added in Silithus
+- npc 15865 - Might of Kalimdor Major - updated
+  - coordinates: 4 spawn points added in Silithus
+  - coordinates: 1 spawn point added in Tanaris
+- npc 15867 - Might of Kalimdor Archmage - updated
+  - coordinates: 3 spawn points added in Silithus
+- npc 16003 - Deathguard Tor - updated
+  - coordinates: 2 spawn points added in Tirisfal Glades
+- npc 16004 - Elenia Haydon - updated
+  - coordinates: 5 spawn points added in Undercity
+- npc 16007 - Orok Deathbane - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 16008 - Temma of the Wells - updated
+  - coordinates: 8 spawn points added in Thunder Bluff
+- npc 16009 - Tormek Stoneriver - updated
+  - coordinates: 16 spawn points added in Ironforge
+- npc 16043 - Magma Lord Bokk - updated
+  - coordinates: 40 spawn points added in Burning Steppes
+- npc 16075 - Kwee Q. Peddlefeet - updated
+  - coordinates: 13 spawn points added in Undercity
+  - coordinates: 11 spawn points added in Ironforge
+  - coordinates: 10 spawn points added in Darnassus
+  - coordinates: 8 spawn points added in Orgrimmar
+  - coordinates: also changed in 1 more zone
+- npc 16093 - Spectral Stalker - updated
+  - coordinates: 15 spawn points added in Orgrimmar
+  - coordinates: 13 spawn points added in Ironforge
+- npc 16108 - Fenstad Argyle - updated
+  - coordinates: 5 spawn points added in Undercity
+- npc 16114 - Scarlet Commander Marjhan - updated
+  - coordinates: 3 spawn points added in Eastern Plaguelands
+- npc 16136 - Necrotic Shard - updated
+  - coordinates: 19 spawn points added in Burning Steppes
+  - coordinates: 15 spawn points added in Azshara
+  - coordinates: 15 spawn points added in Winterspring
+  - coordinates: 13 spawn points added in Tanaris
+  - coordinates: also changed in 1 more zone
+- npc 16139 - Cenarion Hold Reservist - updated
+  - coordinates: 34 spawn points added in Silithus
+- npc 16141 - Ghoul Berserker - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 40 spawn points added in Burning Steppes
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+  - coordinates: also changed in 2 more zones
+- npc 16172 - Damaged Necrotic Shard - updated
+  - coordinates: 16 spawn points added in Burning Steppes
+  - coordinates: 15 spawn points added in Winterspring
+  - coordinates: 14 spawn points added in Azshara
+  - coordinates: 13 spawn points added in Tanaris
+  - coordinates: also changed in 1 more zone
+- npc 16230 - Cultist Engineer - updated
+  - coordinates: 25 spawn points added in Burning Steppes
+  - coordinates: 18 spawn points added in Azshara
+  - coordinates: 17 spawn points added in Blasted Lands
+  - coordinates: 16 spawn points added in Winterspring
+  - coordinates: also changed in 1 more zone
+- npc 16232 - Caravan Mule - updated
+  - coordinates: 21 spawn points added in Eastern Plaguelands
+- npc 16238 - Night Elf Ambusher - updated
+  - coordinates: 5 spawn points added in Ghostlands
+- npc 16298 - Spectral Soldier - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 40 spawn points added in Burning Steppes
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+  - coordinates: also changed in 2 more zones
+- npc 16299 - Skeletal Shocktrooper - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 40 spawn points added in Burning Steppes
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+  - coordinates: also changed in 2 more zones
+- npc 16379 - Spirit of the Damned - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 40 spawn points added in Burning Steppes
+  - coordinates: 40 spawn points added in Tanaris
+  - coordinates: also changed in 2 more zones
+- npc 16380 - Bone Witch - updated
+  - coordinates: 40 spawn points added in Blasted Lands
+  - coordinates: 40 spawn points added in Azshara
+  - coordinates: 40 spawn points added in Burning Steppes
+  - coordinates: 40 spawn points added in Tanaris
+  - coordinates: also changed in 2 more zones
+- npc 16383 - Flameshocker - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 40 spawn points added in Stormwind City
+- npc 16394 - Pallid Horror - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 16432 - Undercity Elite Guardian - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 16435 - Argent Dawn Cleric - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+  - coordinates: 6 spawn points added in Thunder Bluff
+
 0.2.588
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,888 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,706 quests, 38 NPCs, 9 objects
@@ -856,144 +1042,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
   - coordinates: 4 spawn points added in Stormwind City
 - npc 5523 - War Party Kodo - updated
   - coordinates: 5 spawn points added in Thousand Needles
-
-0.2.580
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,547 NPCs, 6 objects
-- npc 2686 - Witherbark Broodguard - updated
-  - coordinates: 40 spawn points added in The Hinterlands
-- npc 2701 - Dustbelcher Ogre - updated
-  - coordinates: 40 spawn points added in Badlands
-- npc 2715 - Dustbelcher Brute - updated
-  - coordinates: 40 spawn points added in Badlands
-- npc 2719 - Dustbelcher Lord - updated
-  - coordinates: 18 spawn points added in Badlands
-- npc 2720 - Dustbelcher Ogre Mage - updated
-  - coordinates: 26 spawn points added in Badlands
-- npc 2721 - Forsaken Bodyguard - updated
-  - coordinates: 40 spawn points added in Arathi Highlands
-  - coordinates: 40 spawn points added in Hillsbrad Foothills
-- npc 2735 - Lesser Rock Elemental - updated
-  - coordinates: 40 spawn points added in Badlands
-- npc 2736 - Greater Rock Elemental - updated
-  - coordinates: 40 spawn points added in Badlands
-- npc 2738 - Stromgarde Cavalryman - updated
-  - coordinates: 40 spawn points added in Arathi Highlands
-- npc 2764 - Sleeby - updated
-  - coordinates: 40 spawn points added in Arathi Highlands
-- npc 2775 - Daggerspine Marauder - updated
-  - coordinates: 11 spawn points added in Arathi Highlands
-- npc 2776 - Vengeful Surge - updated
-  - coordinates: 6 spawn points added in Arathi Highlands
-- npc 3791 - Terrowulf Shadow Weaver - updated
-  - coordinates: 12 spawn points added in Ashenvale
-- npc 3802 - Severed Dreamer - updated
-  - coordinates: 15 spawn points added in Ashenvale
-- npc 3950 - Minor Water Guardian - updated
-  - coordinates: 1 spawn point added in The Barrens
-- npc 3988 - Venture Co. Operator - updated
-  - coordinates: 28 spawn points added in Stonetalon Mountains
-- npc 3999 - Windshear Digger - updated
-  - coordinates: 14 spawn points added in Stonetalon Mountains
-- npc 4003 - Windshear Geomancer - updated
-  - coordinates: 16 spawn points added in Stonetalon Mountains
-- npc 4004 - Windshear Overlord - updated
-  - coordinates: 13 spawn points added in Stonetalon Mountains
-- npc 4009 - Raging Cliff Stormer - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4011 - Young Pridewing - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4013 - Pridewing Skyhunter - updated
-  - coordinates: 32 spawn points added in Stonetalon Mountains
-- npc 4026 - Bloodfury Windcaller - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4027 - Bloodfury Storm Witch - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4028 - Charred Ancient - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4031 - Fledgling Chimaera - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4032 - Young Chimaera - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4034 - Enraged Stone Spirit - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4035 - Furious Stone Spirit - updated
-  - coordinates: 40 spawn points added in Stonetalon Mountains
-- npc 4038 - Burning Destroyer - updated
-  - coordinates: 33 spawn points added in Stonetalon Mountains
-- npc 4042 - Singed Basilisk - updated
-  - coordinates: 38 spawn points added in Stonetalon Mountains
-- npc 4062 - Dark Iron Bombardier - updated
-  - coordinates: 8 spawn points added in Arathi Highlands
-  - coordinates: 3 spawn points added in Wetlands
-- npc 4063 - Feeboz - updated
-  - coordinates: 40 spawn points added in Arathi Highlands
-- npc 4068 - Serpent Messenger - updated
-  - coordinates: 40 spawn points added in Thunder Bluff
-- npc 4072 - Prisoner of Jin'Zil - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 4084 - Chylina - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 4109 - Highperch Consort - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4110 - Highperch Patriarch - updated
-  - coordinates: 34 spawn points added in Thousand Needles
-- npc 4111 - Gravelsnout Kobold - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4112 - Gravelsnout Vermin - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4114 - Gravelsnout Forager - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4119 - Elder Cloud Serpent - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4120 - Thundering Boulderkin - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-- npc 4124 - Needles Cougar - updated
-  - coordinates: 40 spawn points added in Thousand Needles
-  - coordinates: 7 spawn points added in Feralas
-- npc 4129 - Hecklefang Snarler - updated
-  - coordinates: 40 spawn points added in The Barrens
-- npc 4154 - Salt Flats Scavenger - updated
-  - coordinates: 34 spawn points added in Thousand Needles
-- npc 4183 - Naram Longclaw - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 4185 - Shaldyn - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 4186 - Mavralyn - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 4188 - Illyanie - updated
-  - coordinates: 2 spawn points added in Stonetalon Mountains
-- npc 4192 - Taldan - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 4193 - Grondal Moonbreeze - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 4195 - Tiyani - updated
-  - coordinates: 2 spawn points added in Darkshore
-- npc 4307 - Heldan Galesong - updated
-  - coordinates: 1 spawn point added in Darkshore
-- npc 4309 - Gorm Grimtotem - updated
-  - coordinates: 17 spawn points added in Thunder Bluff
-- npc 4310 - Cor Grimtotem - updated
-  - coordinates: 18 spawn points added in Thunder Bluff
-- npc 4386 - Withervine Bark Ripper - updated
-  - coordinates: 40 spawn points added in Dustwallow Marsh
-- npc 4387 - Withervine Mire Beast - updated
-  - coordinates: 40 spawn points added in Dustwallow Marsh
-- npc 4402 - Muckshell Snapclaw - updated
-  - coordinates: 40 spawn points added in Dustwallow Marsh
-- npc 4411 - Darkfang Lurker - updated
-  - coordinates in Dustwallow Marsh: 15 spawn points added, 5 refined, 15 removed
-- npc 4429 - Goblin Pit Crewman - updated
-  - coordinates: 3 spawn points added in Thousand Needles
-- npc 4430 - Gnome Pit Crewman - updated
-  - coordinates: 4 spawn points added in Thousand Needles
-- npc 4468 - Jade Sludge - updated
-  - coordinates: 14 spawn points added in The Hinterlands
-- npc 4474 - Rotting Cadaver - updated
-  - coordinates: 26 spawn points added in Western Plaguelands
-- npc 4547 - Tarkreu Shadowstalker - updated
-  - coordinates: 1 spawn point added in Thousand Needles
-- npc 4548 - Steelsnap - updated
-  - coordinates: 40 spawn points added in Thousand Needles
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
