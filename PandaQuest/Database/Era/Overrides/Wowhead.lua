@@ -4941,6 +4941,13 @@ ns.Overrides.wowhead = {
                 "tower, but they're not gonna stay in their possession for long.\n\nGet one of them gems " ..
                 "an' bring 'em to Kryten--he knows the spell to enchant 'em so they'll work as a key.",
         },
+        [695] = {
+            description = "Here you are, <name>. The gem only needs to be pressed against one of the " ..
+                "pedestals near the base of the tower to activate its defenses. Use it when you're ready " ..
+                "to enter the tower and find Trelane's remaining items.\n\nGood luck to you. I'll be " ..
+                "awaiting your return here at the camp. Oh, and speak to Skuerto before you leave. He'll " ..
+                "give you the rest of the details you'll need.",
+        },
         [696] = {
             description = "Here's what your lookin' for: Trelane's phylactery, Trelane's orb, an' " ..
                 "Trelane's ember agate.\n\nAll three should be in chests within the tower an' you " ..
