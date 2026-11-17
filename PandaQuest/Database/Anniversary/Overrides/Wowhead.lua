@@ -31640,6 +31640,13 @@ ns.Overrides.wowhead = {
                 "southeast near the border of Terokkar. Good luck, <name>!\n\nBe warned, he is a " ..
                 "blademaster...",
         },
+        [10108] = {
+            description = "The huntress's agents send news of the Boulderfist leader: He is an orc! An " ..
+                "ancient orc that passed through the Dark Portal in the time of our fathers and has since " ..
+                "returned to his homeland. I wish for you to track down this orc and try to convince him " ..
+                "to pull back the Boulderfist ogres. He resides on an upper platform in the Burning Blade " ..
+                "Ruins to the east. Good luck, <name>!\n\nBe warned, he is a blademaster...",
+        },
         [10109] = {
             description = "Do you see them?? By Gazlowe's horrific halitosis, I will have those eggs! " ..
                 "Say, you look like you might be of some use.\n\nI'll tell you what, <race>; if you " ..
@@ -32409,6 +32416,15 @@ ns.Overrides.wowhead = {
                 "should start noticing a difference once you've used the device at each point.",
             rewardChoices = {{29785, 1}, {29784, 1}, {29786, 1}, {30398, 1}},
             rewardMoney = 41000,
+        },
+        [10241] = {
+            description = "We were sent here by the Sha'tar to investigate the manaforges that Kael'thas' " ..
+                "army is operating here. Unfortunately, the Scryers threaten to renege on their " ..
+                "information-gathering duties unless we support them with military action.\n\nWe can't " ..
+                "afford to compromise this mission over politics, so we've agreed to weaken the " ..
+                "manaforge's defenses so that the Scryers can do their work.\n\nProve your loyalty to the " ..
+                "Aldor and slay the Sunfury magisters and bloodwarders that guard Manaforge B'naar.",
+            rewardMoney = 39000,
         },
         [10242] = {
             description = "<name>, my equipment here is, unfortunately, not configured for all the tests " ..
@@ -38092,6 +38108,16 @@ ns.Overrides.wowhead = {
             description = "Captain <name>!\n\n<Taskmaster Varkule salutes you.>\n\nOverlord Mor'ghor has " ..
                 "asked to see you in his chambers at once!",
             rewardItems = {{32864, 1}},
+        },
+        [11093] = {
+            description = "Nether rays are surprisingly loyal and obedient once properly trained. " ..
+                "Unfortunately the war on Skettis is taking a toll on them.\n\nWe have dozens of sorties " ..
+                "a day - the poor fellows rarely get a break. And with recent shortages on feed, if those " ..
+                "blasted birdmen don't kill them on a mission then starvation will.\n\nIf you can lend a " ..
+                "hand, take one of our rays to the woods in the south. They don't mind warp chaser meat " ..
+                "as long as it's a fresh kill.",
+            rewardChoices = {{22831, 2}, {28103, 2}},
+            rewardMoney = 44000,
         },
         [11094] = {
             description = "Commander <name>, stand at attention! You are to take a battalion of " ..
