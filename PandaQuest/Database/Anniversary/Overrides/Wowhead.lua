@@ -10316,6 +10316,13 @@ ns.Overrides.wowhead = {
                 "shop.\n\nAnd duck when you give these to him. He's fiercely proud of his skills, and " ..
                 "won't like the idea of learning something from me...",
         },
+        [1701] = {
+            description = "So I gave you a nice shield, but we don't have to stop there. I know the " ..
+                "secrets to make extremely hard mail armor. It's not easy and it takes very rare " ..
+                "materials, but if you're willing to do the legwork then I'll make a piece for " ..
+                "you.\n\nWhat do you say, <name>? If you're up for the challenge, then I'll give you a " ..
+                "list of what to get and where to get them.",
+        },
         [1702] = {
             description = "You really showed what you were made of when you ran the Rethban Gauntlet, " ..
                 "<name>. And I'm true to my word. I'll get you the reward I promised...\n\nExcept it's in " ..
@@ -12735,6 +12742,16 @@ ns.Overrides.wowhead = {
                 "your backpack.\n\nWith the knowledge of the stone watcher learned and the discs returned " ..
                 "to your possession, the time has come to return to Thunder Bluff and inform the Nara " ..
                 "Wildmane of your discovery.",
+        },
+        [2968] = {
+            description = "Well <name>... we seem to be at an unfortunate impasse. We know what we need - " ..
+                "the Plates of Uldum - but we have no idea where they might be. We will research this, " ..
+                "and then devise a solid plan of attack. I have a couple ideas where to start looking; I " ..
+                "have high hopes that soon, we'll be asking you to rejoin our efforts to discover the " ..
+                "truth.\n\nSage Truthseeker needs to be informed on this, <name>; no doubt, he also wants " ..
+                "to thank you personally for once again heeding the call.",
+            rewardChoices = {{34421, 1}, {34422, 1}},
+            rewardMoney = 22000,
         },
         [2969] = {
             description = "The filthy Grimtotem clan are capturing faerie dragons, <name>. Jer'kai and I " ..
@@ -34762,6 +34779,14 @@ ns.Overrides.wowhead = {
                 "Blade's Edge Mountains.\n\nYou should seek him out. His name is Timeon, and you will " ..
                 "find him at Evergrove in Ruuan Weald. Follow the road west from here, then north when it " ..
                 "forks in Razor Ridge. Finally, follow the road west when it splits in the Bladed Gulch.",
+        },
+        [10617] = {
+            description = "The silk from the cocoons of the silkwings are used for all manner of things " ..
+                "in the village. We can never get enough, and we never have enough.\n\nIt is difficult to " ..
+                "harvest the cocoons from the larva once they begin the process of metamorphosis.\n\nOur " ..
+                "warriors are occupied with the assault on our village. If you could gather these for us, " ..
+                "that would be helpful.",
+            rewardMoney = 35000,
         },
         [10618] = {
             description = "Hunting silkwing larva is a difficult challenge for our young warriors, but " ..

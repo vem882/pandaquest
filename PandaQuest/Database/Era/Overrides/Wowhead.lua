@@ -20370,6 +20370,12 @@ ns.Overrides.wowhead = {
                 "and return to me. I trust that you are capable of completing this mission, " ..
                 "soldier.\n\nAnd soldier, do not go alone.",
         },
+        [7282] = {
+            description = "He must be put out of his misery, soldier! He knows not what he does. He has " ..
+                "become a mindless servant of the dreaded Banshee Queen.\n\nVenture forth, across the " ..
+                "Field of Strife, to the depths of Frostwolf territory. Find my brother and destroy him. " ..
+                "His torment must come to an end.",
+        },
         [7301] = {
             description = "We got them held prisoner, <race>. I'm talking about their Wing Commanders. It " ..
                 "was a furious battle in the skies but they finally fell! Unfortunately, our best pilots " ..
