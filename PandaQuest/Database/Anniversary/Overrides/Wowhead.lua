@@ -30599,6 +30599,11 @@ ns.Overrides.wowhead = {
                 "Billy or Lump or Dumpy or whatever! Try to approach him diplomatically. If that doesn't " ..
                 "work, try using some muscle.",
         },
+        [9919] = {
+            description = "You're a kind <race>, <name>. Not like some of the others I've met.\n\nYou " ..
+                "should meet the rest of my people; they'll be very grateful for your help. Take these " ..
+                "spore sacs to my leader, Msshi'fn. You will find him in Sporeggar, north of here.",
+        },
         [9920] = {
             description = "You must seek out Mo'mor immediately! You will find him in the center of " ..
                 "Telaar, by the fountain. Tell him exactly what the ogre told you.",
@@ -32404,6 +32409,14 @@ ns.Overrides.wowhead = {
                 "allow him to study it.\n\nTo reach Spinebreaker Post, speak with Wing Commander Brack, " ..
                 "near the wyverns to the south.",
             rewardMoney = 2300,
+        },
+        [10243] = {
+            description = "The Scryers obtained a personnel roster for Manaforge B'naar and are now " ..
+                "having a field day picking out assassination targets.\n\nThey've missed one small bit of " ..
+                "information, scribbled on the side of the roster. It appeared to be a password or code " ..
+                "like those used to access naaru-made technology like the Exodar or Tempest Keep.\n\nGo " ..
+                "inside the manaforge and look for a control panel. Copy its readouts on this scroll as " ..
+                "well as you can. We must confirm our suspicions about the origin of the technology.",
         },
         [10245] = {
             description = "You try to transcribe the shapes as you see them flash across your eyes. The " ..
