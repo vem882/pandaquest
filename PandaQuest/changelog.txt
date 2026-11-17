@@ -75,6 +75,51 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.587
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,862 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,229 quests, 70 NPCs, 7 objects
+- npc 12125 - Mammoth Shark - updated
+  - coordinates: 7 spawn points added in Azshara
+  - coordinates: 5 spawn points added in Durotar
+- npc 12140 - Guardian of Elune - updated
+  - coordinates: 1 spawn point added in Winterspring
+- npc 12204 - Spitelash Raider - updated
+  - coordinates: 2 spawn points added in Azshara
+- npc 12205 - Spitelash Witch - updated
+  - coordinates: 3 spawn points added in Azshara
+- npc 12208 - Conquered Soul of the Blightcaller - updated
+  - coordinates: 6 spawn points added in Eastern Plaguelands
+- npc 12248 - Infiltrator Hameya - updated
+  - coordinates: 13 spawn points added in Eastern Plaguelands
+- npc 12799 - Sergeant Ba'sha - updated
+  - coordinates: 5 spawn points added in Orgrimmar
+- npc 12800 - Chimaerok - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 12802 - Chimaerok Devourer - updated
+  - coordinates: 40 spawn points added in Feralas
+- npc 14301 - Brinna Valanaar - updated
+  - coordinates: 1 spawn point added in Azshara
+- npc 14348 - Earthcaller Franzahl - updated
+  - coordinates: 1 spawn point added in Winterspring
+- npc 14357 - Lake Thresher - updated
+  - coordinates: 40 spawn points added in Redridge Mountains
+- npc 14361 - Shen'dralar Wisp - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14364 - Shen'dralar Spirit - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14369 - Shen'dralar Zealot - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14371 - Shen'dralar Provisioner - updated
+  - NPC title added (House of Shen'dralar)
+- npc 14372 - Winterfall Ambusher - updated
+  - coordinates: 3 spawn points added in Winterspring
+- npc 14402 - Seeker Cromwell - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 14403 - Seeker Nahr - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 14404 - Seeker Thompson - updated
+  - coordinates: 40 spawn points added in Undercity
+
 0.2.586
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,842 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,705 quests, 38 NPCs, 9 objects
