@@ -11445,6 +11445,15 @@ ns.Overrides.wowhead = {
                 "Jarkal Mossmeld in Kargath might have a special reward waiting for you there.",
             rewardItems = {{7888, 1}},
         },
+        [2342] = {
+            description = "Sweeping the bat pens with this broom is not befitting a Garrett! I've earned " ..
+                "a little coin from this accursed job, and I'm willing to spend it on you to better my " ..
+                "station.\n\nThe Garrett family weapon of choice is locked away in our chest in the South " ..
+                "Common Hall of Uldaman from when we Garretts toiled there as diggers. Without it, I will " ..
+                "be stuck here forever - literally - sweeping up after these infernal bats.\n\nReclaim my " ..
+                "family's treasure and bring it to me! Help me restore my birthright!",
+            rewardMoney = 6000,
+        },
         [2358] = {
             description = "Many years ago, the Horns of Nez'ra were stolen from Ravenholdt manor. Across " ..
                 "continents and oceans I have searched, only to discover that these insignificant beasts " ..
