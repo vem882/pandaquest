@@ -20891,6 +20891,13 @@ ns.Overrides.wowhead = {
                 "and this quiver shall be yours.",
             rewardItems = {{18714, 1}},
         },
+        [7635] = {
+            description = "Vartrus may offer you the stave to create a bow of Ancients but only I can " ..
+                "enchant the string required to complete the bow.\n\nIt is a simple task, puny one. Slay " ..
+                "a mature black dragon and remove the sinew from its bones. Return that sinew to me and I " ..
+                "shall enchant the material into an almost indestructible bow string.",
+            rewardItems = {{18724, 1}},
+        },
         [7636] = {
             description = "Agents of the Burning Legion are still active in our world, <class>. These " ..
                 "agents corrupt all that they touch. Nature wilts and weeps in their presence.\n\nYou " ..
@@ -31359,6 +31366,16 @@ ns.Overrides.wowhead = {
                 "to congregate at Carrion Hill in the north.\n\nReturn to Mawg Grimshot after you've done " ..
                 "the deed and he'll give you a good reward.",
             rewardMoney = 33000,
+        },
+        [10035] = {
+            description = "There's a creature in the Bone Wastes so fearsome that only the dauntless dare " ..
+                "to stalk him.\n\nI speak of Torgos, king of the bonelashers, who circles over Veil Rhaze " ..
+                "on the western edge of the wastes.\n\nToo bad that there's an arakkoan scarecrow there, " ..
+                "known as Torgos's Bane, which keeps him at bay. I'd bet if you laid his mate Trachela's " ..
+                "carcass at the foot of that scarecrow he'd come down anyway. She can be found at Carrion " ..
+                "Hill in the northern wastes.\n\nBring me one of Torgos's tail feathers.",
+            rewardChoices = {{25937, 1}, {25936, 1}},
+            rewardMoney = 66000,
         },
         [10036] = {
             description = "I want Torgos, king of the bonelashers, dead!\n\nNot long ago, while I was out " ..
