@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.10.0+v1.1.2 (Classic Era database + corrections from QuestieDB 1.1.2). DO NOT EDIT.
--- Built: 2026-11-17T12:06:33Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.11.0+v1.1.3 (Classic Era database + corrections from QuestieDB 1.1.3). DO NOT EDIT.
+-- Built: 2026-11-18T20:38:31Z. Schema version 1.
 -- Format: ns.Data.objects is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- objectKeys schema (7 fields). Load with loadstring(ns.Data.objects)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -4781,6 +4781,7 @@ ns.Data.objects = [=[return {
 [178244] = {"Practice Lockbox",nil,nil,{[44]={{51.95,45.35},{51.87,45.09},{51.74,44.92}}},44},
 [178245] = {"Practice Lockbox",nil,nil,nil,0},
 [178246] = {"Practice Lockbox",nil,nil,{[44]={{52.1,45.49},{52.25,45.43}}},44},
+[178247] = {"Naga Brazier",nil,nil,{[331]={{9.64,27.61}}},331},
 [178264] = {"Mercutio Post",nil,nil,{[1519]={{71.34,88.91}}},1519},
 [178265] = {"Mercutio Post",nil,nil,{[12]={{32.36,49.72}}},12},
 [178304] = {"Box o' Squirrels",nil,nil,{[2257]={{-1,-1}}},2257},

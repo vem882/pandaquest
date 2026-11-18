@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.10.0+v1.1.2 (MoP database + corrections from QuestieDB 1.1.2). DO NOT EDIT.
--- Built: 2026-11-17T12:06:33Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.11.0+v1.1.3 (MoP database + corrections from QuestieDB 1.1.3). DO NOT EDIT.
+-- Built: 2026-11-18T20:38:31Z. Schema version 1.
 -- ns.Data.meta: build info and counts. ns.Data.questTagCorrections[questID] = {tagID, tagName} (GetQuestTagInfo fixes).
 -- ns.Data.hiddenQuests[questID] = true (Questie blacklist, plus quests named as Blizzard placeholders such as <NYI>:
 -- not shown at all; see "Placeholder quests" in the generator); ns.Data.hideOnMapQuests[questID] = true
@@ -15,12 +15,12 @@ local _, ns = ...
 ns.Data = ns.Data or {}
 ns.Data.game = "mop"
 ns.Data.meta = {
-  ["built"] = "2026-11-17T12:06:33Z",
+  ["built"] = "2026-11-18T20:38:31Z",
   ["contentPhase"] = 5,
-  ["counts"] = {["items"]=80049,["npcs"]=60224,["objects"]=20326,["questXP"]=17930,["quests"]=17693},
+  ["counts"] = {["items"]=80049,["npcs"]=60224,["objects"]=20327,["questXP"]=17930,["quests"]=17693},
   ["expansion"] = "MoP",
   ["schemaVersion"] = 1,
-  ["source"] = "Questie 12.10.0+v1.1.2",
+  ["source"] = "Questie 12.11.0+v1.1.3",
 }
 ns.Data.questTagCorrections = {
   [19] = {1,"Elite"},
@@ -2332,6 +2332,28 @@ ns.Data.questTagCorrections = {
   [95252] = {41,"PvP"},
   [95455] = {41,"PvP"},
   [95457] = {41,"PvP"},
+  [98887] = {41,"PvP"},
+  [98888] = {41,"PvP"},
+  [98889] = {41,"PvP"},
+  [98890] = {41,"PvP"},
+  [98891] = {41,"PvP"},
+  [98892] = {41,"PvP"},
+  [98893] = {41,"PvP"},
+  [98894] = {41,"PvP"},
+  [98895] = {41,"PvP"},
+  [98896] = {41,"PvP"},
+  [98897] = {41,"PvP"},
+  [98898] = {41,"PvP"},
+  [98899] = {41,"PvP"},
+  [98900] = {41,"PvP"},
+  [98901] = {41,"PvP"},
+  [98902] = {41,"PvP"},
+  [98903] = {41,"PvP"},
+  [98904] = {41,"PvP"},
+  [98905] = {41,"PvP"},
+  [98906] = {41,"PvP"},
+  [98907] = {41,"PvP"},
+  [98908] = {41,"PvP"},
 }
 ns.Data.hiddenQuests = {
   [1] = true,
@@ -9090,6 +9112,7 @@ ns.Data.hiddenQuests = {
   [78297] = true,
   [78304] = true,
   [78611] = true,
+  [78917] = true,
   [78924] = true,
   [79090] = true,
   [79098] = true,
@@ -9221,6 +9244,7 @@ ns.Data.hideOnMapQuests = {
   [78147] = true,
   [78148] = true,
   [78149] = true,
+  [78150] = true,
   [79091] = true,
   [79092] = true,
   [79093] = true,
@@ -9229,6 +9253,7 @@ ns.Data.hideOnMapQuests = {
   [79096] = true,
   [79097] = true,
   [79535] = true,
+  [79536] = true,
   [79947] = true,
   [79948] = true,
   [79949] = true,
@@ -9244,6 +9269,7 @@ ns.Data.hideOnMapQuests = {
   [81954] = true,
   [81955] = true,
   [81956] = true,
+  [82208] = true,
   [84395] = true,
   [84396] = true,
   [84397] = true,
@@ -9260,6 +9286,7 @@ ns.Data.hideOnMapQuests = {
   [91905] = true,
   [91906] = true,
   [91907] = true,
+  [93862] = true,
   [96339] = true,
   [96383] = true,
   [97065] = true,
