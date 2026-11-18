@@ -4,6 +4,121 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.608] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,224 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,712 quests, 51 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,289 quests, 75 NPCs, 6 objects
+- npc 31516 - Blight Doctor - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31526 - Blight Slinger - updated
+  - coordinates: 14 spawn points added in Undercity
+- npc 31527 - Felguard Marauder - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31528 - Plagued Felbeast - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31530 - Grand Apothecary Putress - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31531 - Perfidious Dreadlord - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31532 - Treacherous Guardian - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 12 spawn points added in Tirisfal Glades
+- npc 31704 - Crewman Spinwheel - updated
+  - coordinates: 5 spawn points added in Tirisfal Glades
+  - coordinates: 3 spawn points added in Howling Fjord
+- npc 31708 - Deathguard Barth - updated
+  - coordinates: 9 spawn points added in Tirisfal Glades
+  - coordinates: 4 spawn points added in Howling Fjord
+- npc 31720 - Crewman Shubbscoop - updated
+  - coordinates: 29 spawn points added in Borean Tundra
+  - coordinates: 19 spawn points added in Orgrimmar
+  - coordinates: 12 spawn points added in Durotar
+- npc 31724 - Crewman Paltertop - updated
+  - coordinates: 15 spawn points added in Borean Tundra
+  - coordinates: 10 spawn points added in Orgrimmar
+  - coordinates: 6 spawn points added in Durotar
+- npc 31725 - Sky-Captain LaFontaine - updated
+  - coordinates: 18 spawn points added in Borean Tundra
+  - coordinates: 11 spawn points added in Durotar
+  - coordinates: 10 spawn points added in Orgrimmar
+- npc 31726 - Grunt Gritch - updated
+  - coordinates: 29 spawn points added in Borean Tundra
+  - coordinates: 9 spawn points added in Durotar
+  - coordinates: 9 spawn points added in Orgrimmar
+- npc 31727 - Grunt Grikee - updated
+  - coordinates: 24 spawn points added in Borean Tundra
+  - coordinates: 9 spawn points added in Orgrimmar
+  - coordinates: 8 spawn points added in Durotar
+- npc 31739 - Warsong Battleguard - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 4 spawn points added in Tirisfal Glades
+- npc 31831 - Blight Spreader - updated
+  - coordinates: 34 spawn points added in Undercity
+- npc 31838 - Horde Infra-green Bomber - updated
+  - coordinates: 38 spawn points added in Icecrown
+- npc 31844 - Blight Aberration - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 32178 - Rampaging Ghoul - updated
+  - coordinates: 5 spawn points added in Icecrown
+- npc 32181 - Living Plague - updated
+  - coordinates: 5 spawn points added in Icecrown
+- npc 32184 - The Lich King - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 32233 - Trusty Copper Racer - updated
+  - coordinates: 8 spawn points added in Dalaran -
+  - coordinates: 7 spawn points added in Orgrimmar
+  - coordinates: 5 spawn points added in Stormwind City
+  - coordinates: 4 spawn points added in Ironforge
+- npc 32248 - Heavy Copper Racer - updated
+  - coordinates: 9 spawn points added in Orgrimmar
+  - coordinates: 7 spawn points added in Dalaran -
+  - coordinates: 6 spawn points added in Ironforge
+  - coordinates: 5 spawn points added in Stormwind City
+  - coordinates: also changed in 2 more zones
+- npc 32269 - Legion Invader - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 32271 - Legion Overlord - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 32309 - Ebon Knight - updated
+  - coordinates: 4 spawn points added in Icecrown
+- npc 32356 - Kezzik the Striker - updated
+  - coordinates: 1 spawn point added in Netherstorm
+- npc 32379 - Captain O'Neal - updated
+  - coordinates: 1 spawn point added in Stormwind City
+- npc 32382 - Lady Palanseer - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 32391 - Perfidious Dreadlord - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 7 spawn points added in Tirisfal Glades
+- npc 32394 - Ravishing Betrayer - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 32397 - Blight Doctor - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 6 spawn points added in Tirisfal Glades
+- npc 32401 - King Varian Wrynn - updated
+  - coordinates: 14 spawn points added in Undercity
+  - coordinates: 5 spawn points added in Tirisfal Glades
+- npc 32402 - Lady Jaina Proudmoore - updated
+  - coordinates: 40 spawn points added in Undercity
+  - coordinates: 6 spawn points added in Tirisfal Glades
+- npc 32443 - The Lich King - updated
+  - coordinates: 4 spawn points added in Icecrown
+- npc 32483 - Engorged Blight Worm - updated
+  - coordinates: 10 spawn points added in Undercity
+- npc 32496 - Dancing Runeblade - updated
+  - coordinates: 8 spawn points added in Icecrown
+- npc 32499 - Shambling Zombie - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 32511 - Khanok the Impassable - updated
+  - coordinates: 8 spawn points added in Undercity
+- npc 32513 - Horde Infra-green Bomber - updated
+  - coordinates: 40 spawn points added in Icecrown
+- npc 32519 - Failed Experiment - updated
+  - coordinates: 40 spawn points added in Undercity
+
 ## [0.2.607] - 2026-11-18
 
 Data from the PandaQuest portal.
@@ -453,57 +568,6 @@ Data from the PandaQuest portal.
   - coordinates: 1 spawn point added in Dustwallow Marsh
 - npc 23943 - Hungry Plaguehound - updated
   - coordinates: 12 spawn points added in Howling Fjord
-
-## [0.2.597] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,038 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,251 quests, 71 NPCs, 6 objects
-- npc 20497 - Fima Five-Fingers - updated
-  - coordinates: 10 spawn points added in Darnassus
-- npc 20499 - Fizim Blastwrench - updated
-  - coordinates: 12 spawn points added in Thunder Bluff
-- npc 21071 - Totem of Spirits - updated
-  - coordinates: 1 spawn point added in Shadowmoon Valley
-- npc 21072 - Living Grove Defender - updated
-  - coordinates: 40 spawn points added in Blade's Edge Mountains
-- npc 21078 - Farahlon Shardling - updated
-  - coordinates: 40 spawn points added in Netherstorm
-- npc 21129 - Scorned Spirit of Earth - updated
-  - coordinates: 1 spawn point added in Shadowmoon Valley
-- npc 21131 - Scorned Spirit of Water - updated
-  - coordinates: 2 spawn points added in Shadowmoon Valley
-- npc 21132 - Scorned Spirit of Air - updated
-  - coordinates: 1 spawn point added in Shadowmoon Valley
-- npc 22448 - Rexxar - updated
-  - coordinates: 4 spawn points added in Blade's Edge Mountains
-- npc 22473 - Baron Sablemane - updated
-  - coordinates: 1 spawn point added in Blade's Edge Mountains
-- npc 22906 - Air Elemental Force - updated
-  - coordinates: 1 spawn point added in Dalaran -
-- npc 22907 - Fire Elemental Force - updated
-  - coordinates: 2 spawn points added in Dalaran -
-- npc 22908 - Earth Elemental Force - updated
-  - coordinates: 2 spawn points added in The Exodar
-- npc 22912 - Sundered Spirit - updated
-  - coordinates: 1 spawn point added in Blade's Edge Mountains
-- npc 22915 - Aspect of the Raven - updated
-  - coordinates: 3 spawn points added in Moonglade
-- npc 22989 - Maiev Shadowsong - updated
-  - coordinates: 9 spawn points added in Shadowmoon Valley
-- npc 22992 - Guardian of the Hawk - updated
-  - coordinates: 4 spawn points added in Terokkar Forest
-- npc 22993 - Guardian of the Eagle - updated
-  - coordinates: 2 spawn points added in Terokkar Forest
-- npc 22994 - Guardian of the Falcon - updated
-  - coordinates: 3 spawn points added in Terokkar Forest
-- npc 23002 - Rizzle Sprysprocket - updated
-  - coordinates: 23 spawn points added in Ashenvale
-  - coordinates: 9 spawn points added in Azshara
-- npc 23025 - Rizzle's Depth Charge - updated
-  - coordinates: 29 spawn points added in Azshara
-  - coordinates: 17 spawn points added in Ashenvale
 
 ## [0.2.412]
 
