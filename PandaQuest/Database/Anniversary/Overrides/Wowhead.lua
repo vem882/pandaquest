@@ -9591,6 +9591,15 @@ ns.Overrides.wowhead = {
                 "careful and make haste.\n\nWhen you return, we shall see about finding this demon lord " ..
                 "Azrethoc.",
         },
+        [1483] = {
+            description = "The Venture Company stole many of the best goblin minds, but from time to " ..
+                "time, we get the opportunity to steal some back.\n\nA while ago, the Venture Company " ..
+                "outfit in the Stonetalon Mountains hired Gerenzo Wrenchwhistle--a gnome! Their other " ..
+                "engineer, Ziz Fizziks, was so taken aback by this, he pleaded with me to find him new " ..
+                "employment with the Tinkers' Union. I set him on a few tasks, but he might need " ..
+                "help.\n\nMaybe you could look in on him for me? He's stationed at the western edge of " ..
+                "Windshear Crag.",
+        },
         [1484] = {
             description = "This creature is far more dangerous than I had anticipated. No doubt Takata " ..
                 "questions my abilities to take on such a creature, and it would insult his honor if he " ..
@@ -20874,6 +20883,14 @@ ns.Overrides.wowhead = {
                 "say this leaf came from something ancient and powerful.\n\nMaybe you should find the " ..
                 "original owner of this leaf?",
         },
+        [7634] = {
+            description = "Greetings, <class>. I am Hastat, Ancient of Lore. I hold knowledge lost eons " ..
+                "ago.\n\nWith the proper binding, one of my leaves can serve as a quiver the likes of " ..
+                "which has not been seen in 10,000 years. A quiver that when accompanied by a bow of " ..
+                "Ancients, could grant untold powers.\n\nReturn here with sinew from an adult blue dragon " ..
+                "and this quiver shall be yours.",
+            rewardItems = {{18714, 1}},
+        },
         [7636] = {
             description = "Agents of the Burning Legion are still active in our world, <class>. These " ..
                 "agents corrupt all that they touch. Nature wilts and weeps in their presence.\n\nYou " ..
@@ -30631,6 +30648,15 @@ ns.Overrides.wowhead = {
                 "Will you help Maktu get his revenge on Mragesh?",
             rewardChoices = {{28103, 5}, {28102, 5}},
             rewardMoney = 31000,
+        },
+        [9906] = {
+            description = "Ogres are moved by one thing: Might. If we expose ourselves to them as being " ..
+                "weak, they will take advantage of that weakness and wipe us out.\n\nGarrosh might be " ..
+                "ready to lie down and let the ogre dogs take our lands but I am not! I need you to " ..
+                "deliver a message to the Boulderfist, <name>. The only type of message that they are " ..
+                "capable of understanding: Brutality.\n\nTravel to the Burning Blade Ruins, southeast of " ..
+                "here and show them the might of the Mag'har.\n\nAnd <name>, check in with the others " ..
+                "before leaving.",
         },
         [9907] = {
             description = "Directly west of here you will find the Halaani Basin. Within the basin are " ..
