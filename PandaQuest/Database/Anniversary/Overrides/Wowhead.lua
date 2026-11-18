@@ -30005,6 +30005,14 @@ ns.Overrides.wowhead = {
                 "Boss Grog'ak to Shadow Hunter Denjai shall be well-rewarded.",
             rewardMoney = 31000,
         },
+        [9821] = {
+            description = "< Gordawg picks up a rock and begins to chew on it.>\n\nGordawg tastes. " ..
+                "Gordawg knows where this earth has been.\n\n< Gordawg raises one of his massive legs and " ..
+                "stomps the ground.>\n\nLook. See Nagrand.\n\n< Gordawg directs you to the imprint of his " ..
+                "foot. Within the imprint you see what appears to be a perfect geological map of Nagrand, " ..
+                "marked with the locations of where you can find the elementals Gordawg wants you to " ..
+                "destroy.>\n\nBREAK THEM! Bring Gordawg the pieces to eat.\n\nTake the map.",
+        },
         [9822] = {
             description = "The position of the ogres' mushroom-cutting operation can't be an accident. I " ..
                 "can't escape the suspicion that they're preparing for an attack on Zabra'jin.\n\nI must " ..
@@ -30337,6 +30345,15 @@ ns.Overrides.wowhead = {
                 "have recently sacked an orc village to the southwest known as Sunspring and are using " ..
                 "powerful elemental magic to disturb the lake. Find the putrifiers and destroy them.",
             rewardChoices = {{25566, 1}, {25565, 1}, {25567, 1}},
+        },
+        [9863] = {
+            description = "With our leadership in ruin, we are left open to attacks from all sides. The " ..
+                "foul Murkblood tribe could not have picked a better time to attack us!\n\nIn recent " ..
+                "days, we have been subject to no less than 5 assaults from the Broken. They have even " ..
+                "taken over our only other territorial holding in the area: Sunspring Post.\n\nWe must " ..
+                "strike and show them that we are not powerless! Strike down the vile idolaters and bring " ..
+                "me their twisted idols of worship so that they may ride the lightning.",
+            rewardChoices = {{25570, 1}, {25568, 1}, {25569, 1}},
         },
         [9865] = {
             description = "I do not know you, stranger, but I ask for your help. I feel shame for this, " ..
@@ -32477,6 +32494,16 @@ ns.Overrides.wowhead = {
                 "of those smaller fel reaver parts!",
             rewardMoney = 41000,
         },
+        [10235] = {
+            description = "You know what might just discourage them? Take out their leader!\n\nIt seems " ..
+                "to work everywhere else from what I've heard. And when they see a <grizzled/tough> " ..
+                "<class>, such as yourself take out their leader... why, I bet they'll tuck tail and run " ..
+                "for the hills!\n\nGet back in there and take out the big one they call Doomclaw. I hear " ..
+                "he keeps himself in the eastern part of the Scrap Field underneath the pipe.\n\nBring me " ..
+                "his claw, too! Maybe we can make use of it.",
+            rewardChoices = {{30279, 1}, {30278, 1}, {30277, 1}},
+            rewardMoney = 41000,
+        },
         [10236] = {
             description = "I can't believe I left Booty Bay to come to Outland. My cousin Screed Luckheed " ..
                 "promised me I would make a fortune, but instead he flew off in his zeppelin and left me " ..
@@ -33639,6 +33666,16 @@ ns.Overrides.wowhead = {
                 "usually means Kael's blood elves - but you'd be surprised by where such tomes often turn " ..
                 "up.",
             rewardItems = {{29736, 1}},
+        },
+        [10417] = {
+            description = "Wherever the Consortium establishes a presence, we bring our eco-dome " ..
+                "technology. The fields allow us to work in a controlled and life-sustaining atmosphere " ..
+                "since we often find ourselves in hostile environments.\n\nNetherstorm 's volatile " ..
+                "conditions and creatures have begun to destroy the equipment that sustains our domes, " ..
+                "especially the generator east of here. I've started a diagnostic there in hopes of " ..
+                "understanding what can be done to combat the damage. Would you collect the results and " ..
+                "bring them to me?",
+            rewardMoney = 39000,
         },
         [10418] = {
             description = "In searching the area for clues about the damage to our equipment, I've seen " ..
@@ -36696,6 +36733,16 @@ ns.Overrides.wowhead = {
                 "entirely.\n\nI'd like for you to head north to Razaan's Landing and drop some totems, " ..
                 "which will attact the pink light orbs.\n\nBring them back to me so that I might " ..
                 "determine exactly what they are.",
+            rewardMoney = 37000,
+        },
+        [10860] = {
+            description = "Hungry, <race>? The Great Spirit helps those that help themselves. If you want " ..
+                "to earn a meal, I suggest that you listen up, because Braagor there isn't going to give " ..
+                "you anything for free, nor as tasty!\n\nThe raptors and scalewings of Razor Ridge and " ..
+                "the Scalewing Shelf have everything that's needed for two of the most delicious dishes " ..
+                "you'll ever taste. Bring me their raptor ribs and serpent flesh, and I'll make some of " ..
+                "each for you.\n\nI may even teach you how to cook them up for yourself, if you hurry.",
+            rewardItems = {{31672, 3}, {31673, 3}, {31675, 1}, {31674, 1}},
             rewardMoney = 37000,
         },
         [10861] = {
