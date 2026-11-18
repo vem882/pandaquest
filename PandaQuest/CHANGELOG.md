@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.606] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,159 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,710 quests, 45 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,287 quests, 74 NPCs, 6 objects
+- npc 29607 - Valeera Sanguinar - updated
+  - coordinates: 2 spawn points added in Stormwind City
+- npc 29704 - Towering Horror - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 40 spawn points added in Orgrimmar
+- npc 30093 - Yggdras Worm - updated
+  - coordinates: 4 spawn points added in Zul'Drak
+- npc 30471 - Vargul Assailant - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 30610 - War-Hunter Molog - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 32396 - Apothecary Collaborator - updated
+  - coordinates: 40 spawn points added in Undercity
+
 ## [0.2.605] - 2026-11-18
 
 Data from the PandaQuest portal.
@@ -457,39 +478,6 @@ Data from the PandaQuest portal.
   - coordinates: 2 spawn points added in Blade's Edge Mountains
 - npc 22498 - Misha - updated
   - coordinates: 1 spawn point added in Blade's Edge Mountains
-
-## [0.2.595] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,003 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,247 quests, 71 NPCs, 6 objects
-- npc 21097 - Enraged Fiery Soul - updated
-  - coordinates: 40 spawn points added in Shadowmoon Valley
-- npc 21410 - Blood Lord Zarath - updated
-  - coordinates: 14 spawn points added in Shadowmoon Valley
-- npc 21430 - Unliving Draenei - updated
-  - coordinates: 1 spawn point added in Terokkar Forest
-- npc 21435 - Shadow Horror - updated
-  - coordinates: 40 spawn points added in Netherstorm
-- npc 21628 - Highborne Lamenter - updated
-  - coordinates: 5 spawn points added in Undercity
-- npc 21633 - Deathbringer Jovaan - updated
-  - coordinates: 2 spawn points added in Shadowmoon Valley
-- npc 21634 - Forest Strider - updated
-  - coordinates: 1 spawn point added in Terokkar Forest
-- npc 21738 - Redeemed Spirit of Air - updated
-  - coordinates: 1 spawn point added in Shadowmoon Valley
-- npc 21739 - Redeemed Spirit of Earth - updated
-  - coordinates: 2 spawn points added in Shadowmoon Valley
-- npc 21740 - Redeemed Spirit of Fire - updated
-  - coordinates: 2 spawn points added in Shadowmoon Valley
-- npc 21741 - Redeemed Spirit of Water - updated
-  - coordinates: 2 spawn points added in Shadowmoon Valley
-- npc 21780 - Spawn of Dimensius - updated
-  - coordinates: 5 spawn points added in Netherstorm
-- npc 21945 - Gnome Spirit - updated
-  - coordinates: 2 spawn points added in Blade's Edge Mountains
 
 ## [0.2.412]
 
