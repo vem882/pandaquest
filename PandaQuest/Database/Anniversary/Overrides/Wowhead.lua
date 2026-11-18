@@ -34911,6 +34911,15 @@ ns.Overrides.wowhead = {
             rewardMoney = 132000,
             rewardXP = 19000,
         },
+        [10589] = {
+            description = "According to Razuun's orders, the massive infernal staging area is called " ..
+                "Invasion Point: Cataclysm and it's nestled in the northern mountains. The only way to " ..
+                "reach it is by using a teleporter located at Legion Hold.\n\nCertain members of the " ..
+                "Legion host carry devices allowing them to activate the teleporters. You must capture " ..
+                "one of these devices to win access to the teleporter. Slaughter all of the demons if you " ..
+                "must, but you can't afford to return empty-handed.",
+            rewardMoney = 41000,
+        },
         [10590] = {
             description = "It is time you remembered history that should not be forgotten... the " ..
                 "slaughter of our people by Arthas and his Scourge army.\n\nVengeance on the Scourge is " ..
@@ -39724,6 +39733,17 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [89] = {
+            spawns = {
+                [1637] = {
+                    {46.8, 64.4}, {48.8, 66}, {50.4, 90}, {50.6, 67}, {50.8, 70.2}, {50.8, 70.6}, {51, 67.8},
+                    {51, 69.2}, {51.8, 68}, {52, 65.6}, {52, 67.2}, {52, 69.4}, {52.4, 78.2}, {53, 76.8},
+                    {53.2, 69}, {54.2, 63.6}, {55, 62}, {55, 64}, {55.4, 64.8}, {67, 39.8},
+                },
+                [3519] = {{38.4, 71.4}, {39, 71.6}, {39.4, 71.4}, {39.6, 71.2}, {40.2, 71.6}, {40.6, 71.4}},
+            },
+            zoneID = 1637,
+        },
         [153] = {subName = "Baby Murloc Redemption Merchant"},
         [329] = {
             spawns = {

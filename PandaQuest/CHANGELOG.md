@@ -4,6 +4,48 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.603] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,131 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,710 quests, 41 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,281 quests, 73 NPCs, 6 objects
+- npc 27123 - Icefist Forager - updated
+  - coordinates: 18 spawn points added in Dragonblight
+- npc 27217 - Spirit of Competition - updated
+  - coordinates: 18 spawn points added in Shattrath City
+  - coordinates: 4 spawn points added in Thunder Bluff
+  - coordinates: 4 spawn points added in Netherstorm
+  - coordinates: 3 spawn points added in The Barrens
+  - coordinates: also changed in 8 more zones
+- npc 27373 - Spirit of Ursoc - updated
+  - coordinates: 6 spawn points added in Grizzly Hills
+- npc 27455 - Prince Arthas - updated
+  - coordinates: 2 spawn points added in Dragonblight
+- npc 27476 - Captain Luc Valonforth - updated
+  - coordinates: 1 spawn point added in Dragonblight
+- npc 27556 - Mindless Ghoul - updated
+  - coordinates: 4 spawn points added in Dragonblight
+- npc 27845 - Plagued Roach - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 40 spawn points added in Ironforge
+  - coordinates: 40 spawn points added in Shattrath City
+  - coordinates: 37 spawn points added in Orgrimmar
+  - coordinates: also changed in 3 more zones
+- npc 27874 - Minion of Thel'zan - updated
+  - coordinates: 3 spawn points added in Dragonblight
+- npc 27899 - Future You - updated
+  - coordinates: 19 spawn points added in Dragonblight
+- npc 27900 - Infinite Timerender - updated
+  - coordinates: 11 spawn points added in Dragonblight
+- npc 28066 - Frozen Sphere - updated
+  - coordinates: 19 spawn points added in Borean Tundra
+- npc 28638 - Apothecary Researcher - updated
+  - coordinates: 4 spawn points added in Shattrath City
+- npc 73919 - Apple Bucket - updated
+  - NPC title added (Removes a Racing Ram's fatigue.)
+
 ## [0.2.602] - 2026-11-18
 
 Data from the PandaQuest portal.
@@ -416,37 +458,6 @@ Data from the PandaQuest portal.
   - coordinates: 11 spawn points added in Ironforge
 - npc 20160 - Infernal Defender - updated
   - coordinates: 4 spawn points added in Hellfire Peninsula
-
-## [0.2.592] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,981 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,241 quests, 71 NPCs, 7 objects
-- npc 16868 - Laughing Skull Slayer - updated
-  - coordinates: 2 spawn points added in Orgrimmar
-- npc 16869 - Laughing Skull Neophyte - updated
-  - coordinates: 1 spawn point added in Orgrimmar
-- npc 18846 - Furious Mr. Pinchy - updated
-  - coordinates: 33 spawn points added in Shattrath City
-  - coordinates: 30 spawn points added in Terokkar Forest
-  - coordinates: 25 spawn points added in Dalaran -
-  - coordinates: 10 spawn points added in Orgrimmar
-  - coordinates: also changed in 8 more zones
-- npc 19207 - Infernal Hound - updated
-  - coordinates: 40 spawn points added in Searing Gorge
-  - coordinates: 29 spawn points added in The Hinterlands
-  - coordinates: 19 spawn points added in Azshara
-  - coordinates: 19 spawn points added in Northern Stranglethorn
-  - coordinates: also changed in 1 more zone
-- npc 19214 - Hand of the Highlord - updated
-  - coordinates: 30 spawn points added in Searing Gorge
-  - coordinates: 14 spawn points added in The Hinterlands
-  - coordinates: 9 spawn points added in Silithus
-  - coordinates: 9 spawn points added in Orgrimmar
-  - coordinates: also changed in 8 more zones
-- npc 34526 - Aponi Brightmane - updated
-  - coordinates: 5 spawn points added in Thunder Bluff
 
 ## [0.2.412]
 
