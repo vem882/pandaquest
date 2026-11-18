@@ -21852,6 +21852,7 @@ ns.Overrides.wowhead = {
         [8190] = {rewardItems = {{19788, 1}}},
         [8191] = {rewardItems = {{19789, 1}}},
         [8192] = {rewardItems = {{19790, 1}}},
+        [8193] = {rewardChoices = {{19970, 1}, {19979, 1}}, rewardMoney = 2000},
         [8194] = {rewardMoney = 11200},
         [8195] = {rewardItems = {{19858, 1}}},
         [8196] = {rewardItems = {{20031, 10}}},
@@ -32806,6 +32807,16 @@ ns.Overrides.wowhead = {
                 "the north. He is often present as a holographic image, which you may address.",
             rewardMoney = 21000,
         },
+        [10269] = {
+            description = "There is another reason for the retrieval of the surveying equipment. There is " ..
+                "a crystal from draenei legend of great importance to me.\n\nIt is said that the crystal " ..
+                "bestows god-like powers to its bearer! But it is in danger of being unearthed by others " ..
+                "- namely the Burning Legion.\n\n<name>, take the equipment and use it to find the first " ..
+                "triangulation point. We know it to be somewhere to the east near Manaforge " ..
+                "Ultris.\n\nAfterward, check-in with my agent, Dealer Hazzin, on the Manaforge Ultris " ..
+                "island.",
+            rewardMoney = 41000,
+        },
         [10270] = {
             description = "From the look on your face, I can tell you're a <race> who appreciates a good " ..
                 "profit.\n\nI've built a reputation as a dealer in exotic goods, and I'm about to launch " ..
@@ -39785,6 +39796,13 @@ ns.Overrides.wowhead = {
             zoneID = 1377,
         },
         [353] = {subName = "Baby Murloc Redemption Merchant"},
+        [416] = {
+            spawns = {
+                [440] = {{43, 32}},
+                [1377] = {{35.8, 36.4}, {54.4, 24.2}, {54.6, 57.6}, {56.2, 24}, {56.4, 59.6}},
+            },
+            zoneID = 1377,
+        },
         [698] = {
             spawns = {
                 [33] = {

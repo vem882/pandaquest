@@ -4,6 +4,60 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.605] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,153 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,710 quests, 44 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,286 quests, 74 NPCs, 6 objects
+- npc 29572 - Landgren's Soul - updated
+  - coordinates: 4 spawn points added in Icecrown
+- npc 29578 - Stormwind Harbor Archer - updated
+  - coordinates: 6 spawn points added in Stormwind City
+- npc 29604 - Broll Bearmantle - updated
+  - coordinates: 9 spawn points added in Stormwind City
+- npc 29858 - Lady Nightswood - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 29859 - The Leaper - updated
+  - coordinates: 3 spawn points added in Icecrown
+- npc 29927 - Earthen Ironbane - updated
+  - coordinates: 35 spawn points added in The Storm Peaks
+- npc 29949 - Orgrimmar Defender - updated
+  - coordinates: 16 spawn points added in Orgrimmar
+- npc 30028 - Plague Zombie - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 40 spawn points added in Ironforge
+  - coordinates: 40 spawn points added in Orgrimmar
+  - coordinates: 40 spawn points added in Shattrath City
+  - coordinates: also changed in 2 more zones
+- npc 30029 - Plague Zombie - updated
+  - coordinates: 40 spawn points added in Stormwind City
+  - coordinates: 25 spawn points added in Hillsbrad Foothills
+  - coordinates: 15 spawn points added in Orgrimmar
+  - coordinates: 10 spawn points added in Northern Stranglethorn
+  - coordinates: also changed in 8 more zones
+- npc 30030 - Plague Zombie - updated
+  - coordinates: 33 spawn points added in Stormwind City
+  - coordinates: 15 spawn points added in Orgrimmar
+  - coordinates: 12 spawn points added in Thunder Bluff
+  - coordinates: 7 spawn points added in Ironforge
+  - coordinates: also changed in 8 more zones
+- npc 30042 - Fiend of Fire - updated
+  - coordinates: 3 spawn points added in Zul'Drak
+- npc 30043 - Fiend of Earth - updated
+  - coordinates: 7 spawn points added in Zul'Drak
+- npc 30044 - Fiend of Water - updated
+  - coordinates: 6 spawn points added in Zul'Drak
+- npc 30045 - Fiend of Air - updated
+  - coordinates: 9 spawn points added in Zul'Drak
+- npc 30393 - Veranus - updated
+  - coordinates: 1 spawn point added in The Storm Peaks
+- npc 30420 - Veranus - updated
+  - coordinates: 4 spawn points added in The Storm Peaks
+- npc 30429 - Runeforged Servant - updated
+  - coordinates: 2 spawn points added in The Storm Peaks
+
 ## [0.2.604] - 2026-11-18
 
 Data from the PandaQuest portal.
@@ -436,30 +490,6 @@ Data from the PandaQuest portal.
   - coordinates: 5 spawn points added in Netherstorm
 - npc 21945 - Gnome Spirit - updated
   - coordinates: 2 spawn points added in Blade's Edge Mountains
-
-## [0.2.594] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
-- database - Classic Era rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
-- database - TBC Anniversary rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
-- database - WoW Forever rebuilt from Questie 12.10.0+v1.1.2 (was 12.9.0+v1.1.1)
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,990 NPCs, 6 objects
-- database - refreshed auction scan targets without recent prices
-- database - Classic Era: data from the PandaQuest portal: 3,707 quests, 39 NPCs, 8 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,244 quests, 71 NPCs, 6 objects
-- quest 1918 - The Befouled Element - updated
-  - availability added
-- npc 3476 - Isha Awak - updated
-  - coordinates in The Barrens: 3 spawn points refined, 12 removed
-  - patrol path removed
-- npc 20669 - Shade of Mal'druk - updated
-  - coordinates: 6 spawn points added in Zangarmarsh
-- npc 20802 - Protectorate Demolitionist - updated
-  - coordinates: 12 spawn points added in Netherstorm
-- npc 32395 - Apothecary Chemist - updated
-  - coordinates: 40 spawn points added in Undercity
 
 ## [0.2.412]
 
