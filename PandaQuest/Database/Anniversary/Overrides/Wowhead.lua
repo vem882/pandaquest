@@ -27057,6 +27057,16 @@ ns.Overrides.wowhead = {
                 "this.",
             rewardMoney = 400,
         },
+        [9361] = {
+            description = "Those eggs are superb, but what do you say we kick it up another notch?\n\nA " ..
+                "side of bacon would round out the meal perfectly and I know just where to get " ..
+                "it.\n\nThis place is littered with helboars. Of course, there's no one here to inspect " ..
+                "and tenderize the meat, but we're in luck!\n\n< Legassi rummages around in his pack and " ..
+                "produces a flask.>\n\nThis wasn't made for use on pork, but cooking is as much about " ..
+                "improvisation as anything else!",
+            rewardItems = {{29292, 5}},
+            rewardMoney = 20000,
+        },
         [9362] = {
             description = "There isn't much time, <name>! My scrying spells have revealed a powerful " ..
                 "source of magic. I cannot leave the tower, and would ask you to kill the vile creature " ..

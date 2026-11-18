@@ -11896,6 +11896,12 @@ ns.Overrides.wowhead = {
                 "bracers, and two green iron leggings - for this you learn and your enemies suffer!",
             rewardItems = {{7981, 1}},
         },
+        [2754] = {
+            description = "The final lesson Orokk teaches you, <name>. To the sacred anvil and forge you " ..
+                "return! Bring for Orokk two solid iron mauls, two silvered bronze boots, and two " ..
+                "silvered bronze gauntlets.\n\nSee the fear in their eyes as you approach!",
+            rewardItems = {{7980, 1}},
+        },
         [2755] = {
             description = "Orokk is not crying, <name>. Soot is in eye.\n\n<Orokk wipes a tear " ..
                 "away.>\n\nThere is one last Omosh family secret Orokk will teach you. Orokk will die " ..
@@ -16849,6 +16855,15 @@ ns.Overrides.wowhead = {
                 "or tribal leatherworking; there is only room for practice of one of the three arts. " ..
                 "Furthermore, I'll need adequate proof that you are in tune with the elements of nature; " ..
                 "to that end, bring me the purest essences of fire, water, earth, and wind.",
+        },
+        [5145] = {
+            description = "Dragonscale leatherworking isn't easy, but it's extremely rewarding. I'll " ..
+                "teach you how to make this fine mail armor, but only if you agree to certain " ..
+                "conditions.\n\nBy choosing this path, you agree never to learn elemental or tribal " ..
+                "leatherworking; there is only room for one of the three at the apex of the craft. " ..
+                "Furthermore, I'll need some samples of your best work involving scorpid armor. Finally, " ..
+                "I'll need proof of your ability to acquire the staple of the trade: scales of the " ..
+                "dragonkin.",
         },
         [5146] = {
             description = "Elemental leatherworking is what I know, and if you're willing to open your " ..
@@ -26741,9 +26756,67 @@ ns.Overrides.wowhead = {
         [8338] = {spawns = {[51] = {{74, 18.6}, {74.2, 18.4}}}, zoneID = 51},
         [8581] = {spawns = {[16] = {{59.4, 31.4}, {59.6, 31.4}}}, zoneID = 16},
         [9043] = {spawns = {[46] = {{35.6, 27}}}, zoneID = 46},
+        [9496] = {
+            spawns = {
+                [490] = {
+                    {43.4, 81}, {44, 80.8}, {44.4, 81.6}, {44.6, 81.6}, {45.8, 84.4}, {46.2, 82.6},
+                    {46.4, 85}, {46.4, 86}, {46.4, 87.8}, {46.8, 84}, {46.8, 87}, {47, 85.2}, {47, 86},
+                    {47.6, 86.6}, {47.8, 86}, {48.4, 84.6}, {48.8, 85.2}, {49, 85.8}, {49.2, 84.2},
+                    {49.4, 83.4}, {49.6, 83.2},
+                },
+            },
+            zoneID = 490,
+        },
+        [9521] = {
+            spawns = {
+                [139] = {
+                    {74.6, 57}, {75, 53.2}, {75, 63}, {76.4, 54}, {76.4, 54.8}, {76.4, 64.8}, {76.6, 60.8},
+                    {77.2, 64.4}, {77.4, 56.2}, {77.4, 59.2}, {77.8, 58.2}, {77.8, 60.4}, {78, 55},
+                    {78.2, 56.8}, {78.2, 58.6}, {78.4, 61.8}, {78.8, 58.6}, {79.2, 55.2}, {79.2, 61.4},
+                    {79.2, 62.6}, {79.4, 57.2}, {79.4, 57.8}, {79.4, 62.4}, {79.4, 65.4}, {79.4, 66.4},
+                    {79.6, 59.6}, {79.6, 61.2}, {79.6, 61.6}, {80, 55.8}, {80.2, 57}, {80.4, 58.8},
+                    {80.6, 55.2}, {80.6, 56.2}, {80.6, 65.8}, {80.8, 56.8}, {80.8, 61.2}, {81, 58.4},
+                    {81.6, 59.4}, {81.8, 57.2}, {82, 58.4},
+                },
+                [267] = {
+                    {54.8, 12.8}, {55, 30.8}, {55.4, 23.4}, {55.4, 25.4}, {55.6, 26.6}, {55.6, 27.6},
+                    {55.8, 22.2}, {56, 17.8}, {56.2, 24.6}, {56.4, 16.8}, {56.8, 22.2}, {57.4, 15.8},
+                    {57.4, 18.2}, {57.4, 20}, {57.6, 16.4}, {57.6, 22}, {57.8, 17}, {57.8, 19.8},
+                    {57.8, 21.4}, {58.2, 15}, {58.2, 18.4}, {58.2, 22.6}, {58.6, 13.2}, {58.6, 17.4},
+                    {58.8, 19.6}, {58.8, 26.2}, {59, 18.4}, {59, 22.2}, {59.2, 14.6}, {59.2, 19.4},
+                    {59.6, 15.8}, {59.6, 21.4}, {59.8, 15.2}, {60, 19.8}, {60.2, 16.8}, {60.2, 18.4},
+                    {60.6, 15}, {60.6, 19.8}, {60.8, 18.2}, {61.4, 15.8},
+                },
+            },
+            zoneID = 139,
+        },
         [9605] = {
             spawns = {[46] = {{42.4, 41.4}, {42.4, 41.6}, {42.4, 43}, {42.6, 41.4}, {42.6, 42}, {42.6, 42.6}}},
             zoneID = 46,
+        },
+        [10037] = {
+            spawns = {
+                [44] = {
+                    {12.2, 73.6}, {16, 52.4}, {17.8, 55.2}, {18.4, 56.2}, {19.4, 69.8}, {20, 57},
+                    {21.2, 46.8}, {21.4, 47.6}, {21.8, 47.2}, {22.4, 44.2}, {22.6, 48.8}, {22.8, 43.6},
+                    {23, 48.4}, {23, 70.8}, {23.8, 41.2}, {24, 42.2}, {24.2, 71.8}, {24.6, 50.8}, {25, 54.6},
+                    {25.4, 51.6}, {26, 56}, {26.4, 46.8}, {26.4, 66.2}, {26.6, 73.8}, {26.8, 59.4},
+                    {27, 49.4}, {27.2, 42.8}, {27.2, 68.8}, {27.6, 46.6}, {27.8, 56}, {28, 46.2}, {28.2, 43},
+                    {28.2, 54.8}, {28.2, 68}, {28.4, 61}, {28.6, 62.2}, {28.8, 49.6}, {29, 52.4}, {29.2, 53},
+                    {29.4, 44.2},
+                },
+            },
+            zoneID = 44,
+        },
+        [10938] = {
+            spawns = {
+                [139] = {
+                    {38.4, 88.4}, {38.4, 89}, {38.4, 89.6}, {38.4, 91}, {38.6, 88.4}, {38.6, 89},
+                    {38.6, 89.6}, {38.8, 91}, {39, 92.2}, {39.2, 92.6}, {39.6, 90.8}, {40.2, 88.4},
+                    {41.6, 89.8},
+                },
+            },
+            zoneID = 139,
         },
         [11497] = {
             spawns = {[357] = {{62.2, 30.6}, {62.4, 28.6}, {62.4, 30}, {62.6, 30}, {62.6, 30.8}}},
