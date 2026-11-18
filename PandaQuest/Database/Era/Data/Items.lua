@@ -1,5 +1,5 @@
--- AUTO-GENERATED from Questie 12.10.0+v1.1.2 (Classic Era database + corrections from QuestieDB 1.1.2). DO NOT EDIT.
--- Built: 2026-11-17T12:06:33Z. Schema version 1.
+-- AUTO-GENERATED from Questie 12.11.0+v1.1.3 (Classic Era database + corrections from QuestieDB 1.1.3). DO NOT EDIT.
+-- Built: 2026-11-18T20:38:31Z. Schema version 1.
 -- Format: ns.Data.items is a Lua long-bracket string "return { [id] = {...}, ... }" using Questie's positional
 -- itemKeys schema (16 fields). Load with loadstring(ns.Data.items)(). Ids ascending, one entry per line,
 -- trailing nils trimmed, nested tuples positional, spawn tables keyed by areaId.
@@ -10931,7 +10931,7 @@ ns.Data.items = [=[return {
 [16973] = {"Vial of Dire Water",{},{178224},nil,nil,nil,nil,nil,1,0,0,12,0,nil,{5247}},
 [16974] = {"Empty Water Vial",{},{},nil,nil,nil,64,nil,1,0,0,12,0,nil,{5247}},
 [16975] = {"Warsong Sash",nil,nil,nil,nil,{6571},nil,nil,27,0,0,4,1},
-[16976] = {"Murgut's Totem",{12918},{178227},nil,nil,nil,nil,nil,1,0,0,12,0},
+[16976] = {"Murgut's Totem",{},{178227},nil,nil,nil,nil,nil,1,0,0,12,0},
 [16977] = {"Warsong Boots",nil,nil,nil,nil,{6571},nil,nil,27,0,0,4,2},
 [16978] = {"Warsong Gauntlets",nil,nil,nil,nil,{6571},nil,nil,27,0,0,4,3},
 [16979] = {"Flarecore Gloves",nil,nil,nil,nil,nil,nil,nil,62,57,0,4,1},
