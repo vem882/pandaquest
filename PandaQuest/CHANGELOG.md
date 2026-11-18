@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.599] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,074 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,710 quests, 39 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,270 quests, 71 NPCs, 6 objects
+- npc 24286 - Forsaken Spy - updated
+  - coordinates: 28 spawn points added in Howling Fjord
+- npc 24366 - Nizzle - updated
+  - coordinates: 1 spawn point added in Northern Stranglethorn
+- npc 24456 - Captain Taldar Windsinger - updated
+  - coordinates: 19 spawn points added in Darkshore
+  - coordinates: 10 spawn points added in Teldrassil
+- npc 24476 - Minor Voidwalker - updated
+  - coordinates: 40 spawn points added in Arathi Highlands
+- npc 24780 - Field Repair Bot 110G - updated
+  - coordinates: 1 spawn point added in Shattrath City
+- npc 31524 - Apothecary Collaborator - updated
+  - coordinates: 40 spawn points added in Undercity
+
 ## [0.2.598] - 2026-11-17
 
 Data from the PandaQuest portal.
@@ -520,98 +541,6 @@ Data from the PandaQuest portal.
 - npc 16435 - Argent Dawn Cleric - updated
   - coordinates: 6 spawn points added in Orgrimmar
   - coordinates: 6 spawn points added in Thunder Bluff
-
-## [0.2.588] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,888 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,706 quests, 38 NPCs, 9 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,232 quests, 70 NPCs, 7 objects
-- npc 14697 - Lumbering Horror - updated
-  - coordinates: 40 spawn points added in Blasted Lands
-  - coordinates: 40 spawn points added in Azshara
-  - coordinates: 40 spawn points added in Burning Steppes
-  - coordinates: 40 spawn points added in Tanaris
-  - coordinates: also changed in 2 more zones
-- npc 14761 - Creeping Doom - updated
-  - coordinates: 40 spawn points added in Silithus
-- npc 14876 - Zandalar Headshrinker - updated
-  - coordinates: 7 spawn points added in Northern Stranglethorn
-- npc 14911 - Zandalar Enforcer - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 14912 - Captured Hakkari Zealot - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 14990 - Defilers Envoy - updated
-  - coordinates: 19 spawn points added in Orgrimmar
-  - coordinates: 19 spawn points added in Silvermoon City
-  - coordinates: 13 spawn points added in Undercity
-  - coordinates: 13 spawn points added in Shattrath City
-  - coordinates: also changed in 2 more zones
-- npc 14991 - League of Arathor Emissary - updated
-  - coordinates: 40 spawn points added in Stormwind City
-  - coordinates: 40 spawn points added in Ironforge
-  - coordinates: 40 spawn points added in Darnassus
-  - coordinates: 40 spawn points added in The Exodar
-  - coordinates: also changed in 2 more zones
-- npc 15076 - Zandalarian Emissary - updated
-  - coordinates: 1 spawn point added in Northern Stranglethorn
-- npc 15080 - Servant of the Hand - updated
-  - coordinates: 2 spawn points added in Northern Stranglethorn
-- npc 15136 - Hammerfall Elite - updated
-  - coordinates: 30 spawn points added in Arathi Highlands
-- npc 15162 - Scarlet Inquisitor - updated
-  - coordinates: 2 spawn points added in Eastern Plaguelands
-- npc 15193 - The Banshee Queen - updated
-  - NPC title added (Banshee Queen)
-  - coordinates: 1 spawn point added in Tirisfal Glades
-- npc 15260 - Demented Druid Spirit - updated
-  - coordinates: 40 spawn points added in Duskwood
-  - coordinates: 37 spawn points added in The Hinterlands
-  - coordinates: 23 spawn points added in Ashenvale
-  - coordinates: 10 spawn points added in Feralas
-- npc 15261 - Spirit Shade - updated
-  - coordinates: 40 spawn points added in Duskwood
-  - coordinates: 33 spawn points added in The Hinterlands
-  - coordinates: 23 spawn points added in Ashenvale
-  - coordinates: 8 spawn points added in Feralas
-- npc 15286 - Xil'xix - updated
-  - coordinates: 14 spawn points added in Silithus
-- npc 15302 - Shade of Taerar - updated
-  - coordinates: 40 spawn points added in Duskwood
-  - coordinates: 34 spawn points added in The Hinterlands
-  - coordinates: 23 spawn points added in Ashenvale
-  - coordinates: 18 spawn points added in Feralas
-- npc 15352 - Greater Earth Elemental - updated
-  - coordinates: 40 spawn points added in Netherstorm
-  - coordinates: 30 spawn points added in Shadowmoon Valley
-  - coordinates: 15 spawn points added in Blade's Edge Mountains
-- npc 15368 - Tonk Mine - updated
-  - coordinates: 11 spawn points added in Shattrath City
-  - coordinates: 7 spawn points added in Terokkar Forest
-  - coordinates: 6 spawn points added in Elwynn Forest
-  - coordinates: 5 spawn points added in Mulgore
-  - coordinates: also changed in 8 more zones
-- npc 15382 - Fandral Staghelm - updated
-  - coordinates: 6 spawn points added in Silithus
-- npc 15414 - Qiraji Wasp - updated
-  - coordinates: 8 spawn points added in Silithus
-- npc 15421 - Qiraji Drone - updated
-  - coordinates: 10 spawn points added in Silithus
-- npc 15422 - Qiraji Tank - updated
-  - coordinates: 10 spawn points added in Silithus
-- npc 15423 - Kaldorei Infantry - updated
-  - coordinates: 6 spawn points added in Silithus
-- npc 15438 - Greater Fire Elemental - updated
-  - coordinates: 7 spawn points added in Netherstorm
-  - coordinates: 3 spawn points added in Shadowmoon Valley
-  - coordinates: 2 spawn points added in Blade's Edge Mountains
-  - coordinates: 1 spawn point added in Deadwind Pass
-  - coordinates: also changed in 5 more zones
-- npc 15491 - Eranikus, Tyrant of the Dream - updated
-  - coordinates: 9 spawn points added in Moonglade
-- npc 15495 - Nighthaven Defender - updated
-  - coordinates: 40 spawn points added in Moonglade
 
 ## [0.2.412]
 

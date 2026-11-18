@@ -2259,6 +2259,14 @@ ns.Overrides.wowhead = {
                 "Schneider at the Canal Tailor and Fit Shop, I'd be most grateful.",
             rewardMoney = 17,
         },
+        [334] = {
+            description = "My son Thurman is an apprentice at the Larson Clothiers, in the Mage's " ..
+                "Quarter. He was in a hurry today and forgot his shears and needles. I know a great " ..
+                "<class> like you must have important tasks at hand, but without his tools Thurman can't " ..
+                "do his apprentice work!\n\nPlease, <name>. Can you take my son's sewing kit to him? " ..
+                "Larson Clothiers is one of two clothing shops in the Mage's Quarter - it's the one " ..
+                "deeper in, near the Mage's Tower.",
+        },
         [335] = {
             description = "Lord Wishock is causing quite a stir amongst the House of Nobles. He was made " ..
                 "aware of our little \"establishment\" down here and is lobbying for a full " ..
@@ -12173,6 +12181,15 @@ ns.Overrides.wowhead = {
                 "need an order of two Nightscape pants and two Nightscape boots filled. I also will " ..
                 "require two wildvines... not just one. When you have all this, let me know.",
             rewardItems = {{8406, 1}},
+        },
+        [2852] = {
+            description = "With the basics down, you are ready to master more complex fare, <name>. Wild " ..
+                "Leather leggings are some of the sturdiest and powerful leather gear around. The waist, " ..
+                "thighs, calves, and the vitals - all are given tremendous protection. Coupled with the " ..
+                "enhancement that the wildvine provides, adventurers who own it will thank you each time " ..
+                "they see you.\n\nFor this pattern, I need an order of two Turtle Scale helms, two Turtle " ..
+                "Scale bracers, and two wildvines filled.",
+            rewardItems = {{8407, 1}},
         },
         [2853] = {
             description = "Well <name>, you are the definition of diligence. There is one pattern left " ..
