@@ -30738,6 +30738,15 @@ ns.Overrides.wowhead = {
                 "reasonable amount of moral flexibility. If you're interested, speak to Gezhe, our ground " ..
                 "operations leader. You will find him at Aeris Landing, north of Oshu'gun.",
         },
+        [9914] = {
+            description = "Ivory is a much sought after prize. I have many customers lined up in far off " ..
+                "places to purchase it.\n\nI could be convinced to let you in on a cut of the " ..
+                "profits.\n\nThe wild elekk roaming Nagrand have the high quality of tusks that I'm " ..
+                "after. Steer clear of the bull elekk; their ivory isn't in the condition that I " ..
+                "desire.\n\nOh and don't worry, it's not poaching; I have an understanding with both the " ..
+                "orcs and the draenei.\n\nDo you and I have an understanding?",
+            rewardMoney = 35000,
+        },
         [9916] = {
             description = "The Boulderfist have moved the supplies they stole from our village to the " ..
                 "twin clefts of Nagrand, found west of here in the Halaani Basin.\n\nWhile you are in the " ..
@@ -34717,6 +34726,15 @@ ns.Overrides.wowhead = {
                 "and begin a new wave of attacks.\n\nMy men are ragged and exhausted. I don't know how " ..
                 "much longer they'll hold out. Please, <name>, lend your help to our defenses. Take your " ..
                 "place on the line and halt the advance of the infernals!",
+            rewardMoney = 41000,
+        },
+        [10563] = {
+            description = "The fortress of Legion Hold is nigh impregnable, and to be completely honest, " ..
+                "I can't spare the forces for an assault. Our hopes are riding on you, <name>.\n\nWhat " ..
+                "little information we've been able to gather indicates that the Legion stocks and " ..
+                "prepares its infernals at the hold. With the help of a disguise I'll give you, you must " ..
+                "sneak into Legion Hold and learn about the their plans. Your best hope is to intercept " ..
+                "or overhear communication between their commanders. Good luck, <name>.",
             rewardMoney = 41000,
         },
         [10564] = {
@@ -38953,6 +38971,16 @@ ns.Overrides.wowhead = {
                 "attention.",
             rewardChoices = {{33228, 1}, {33247, 1}, {33253, 1}},
             rewardMoney = 7500,
+        },
+        [11200] = {
+            description = "We've gleaned as much as we can from the ruins of the inn. I'm concerned about " ..
+                "where the investigation will lead us from here, but we must know the truth.\n\nBetween " ..
+                "the hoofprints and the shield with Mosarn's mark, I'm lead to believe that the " ..
+                "Grimtotems may have been involved. They've recently established a settlement in the " ..
+                "swamp, Blackhoof Village to the northeast. Travel to Blackhoof Village and search for " ..
+                "more arms of Mosarn's manufacture.",
+            rewardChoices = {{33272, 1}, {33268, 1}, {33264, 1}},
+            rewardMoney = 4000,
         },
         [11201] = {
             description = "With the activities of the Grimtotems in Thousand Needles brought to light, " ..

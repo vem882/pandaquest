@@ -4,6 +4,27 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.604] - 2026-11-18
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,136 NPCs, 6 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,284 quests, 73 NPCs, 6 objects
+- npc 28524 - Worn Bloodworm - updated
+  - coordinates: 29 spawn points added in Dragonblight
+- npc 28808 - Reverent Paladin - updated
+  - coordinates: 8 spawn points added in Shattrath City
+- npc 28814 - Reverent Priest - updated
+  - coordinates: 5 spawn points added in Shattrath City
+- npc 29341 - Dual-plagued Brain - updated
+  - coordinates: 25 spawn points added in Orgrimmar
+  - coordinates: 9 spawn points added in Borean Tundra
+  - coordinates: 8 spawn points added in The Jade Forest
+  - coordinates: 7 spawn points added in Mount Hyjal
+  - coordinates: also changed in 7 more zones
+- npc 69433 - Magistrix Saia - updated
+  - NPC title added (Illusions and Transformations)
+
 ## [0.2.603] - 2026-11-18
 
 Data from the PandaQuest portal.
@@ -439,25 +460,6 @@ Data from the PandaQuest portal.
   - coordinates: 12 spawn points added in Netherstorm
 - npc 32395 - Apothecary Chemist - updated
   - coordinates: 40 spawn points added in Undercity
-
-## [0.2.593] - 2026-11-17
-
-Data from the PandaQuest portal.
-
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 1,987 NPCs, 6 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,243 quests, 71 NPCs, 7 objects
-- npc 19859 - Max Luna - updated
-  - coordinates: 1 spawn point added in Tanaris
-- npc 19861 - Bip Nigstrom - updated
-  - coordinates: 2 spawn points added in Tanaris
-- npc 19909 - Rex Pixem - updated
-  - coordinates: 15 spawn points added in Undercity
-- npc 19912 - Zeggon Botsnap - updated
-  - coordinates: 4 spawn points added in Orgrimmar
-- npc 19915 - Max Xim - updated
-  - coordinates: 11 spawn points added in Ironforge
-- npc 20160 - Infernal Defender - updated
-  - coordinates: 4 spawn points added in Hellfire Peninsula
 
 ## [0.2.412]
 
