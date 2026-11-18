@@ -31271,6 +31271,13 @@ ns.Overrides.wowhead = {
                 "give you Sal'salabim gold easy. Have to fight, but you strong. You defeat Sal'salabim!",
             rewardMoney = 39000,
         },
+        [10010] = {
+            description = "< Sal'salabim points to the blueprint.>\n\nYou see where fel cannons are?\n\n< " ..
+                "Sal'salabim draws an arrow denoting a change of direction.>\n\nYou turn fel cannon " ..
+                "around and use on structures.\n\nWait! Don't be mad! One thing you not know. Overseers " ..
+                "have key to turn cannons. You need key first! One from each overseer!\n\nNot so easy, " ..
+                "eh?\n\nTake information back to Altruis.",
+        },
         [10011] = {
             description = "Gather your allies, <name>. You will need them if you are to face an " ..
                 "overseer.\n\nOnce you have a suitable group, find and kill the overseers at each camp. " ..
@@ -39811,6 +39818,15 @@ ns.Overrides.wowhead = {
                 [1377] = {{35.8, 36.4}, {54.4, 24.2}, {54.6, 57.6}, {56.2, 24}, {56.4, 59.6}},
             },
             zoneID = 1377,
+        },
+        [659] = {
+            spawns = {
+                [361] = {
+                    {40.2, 46.2}, {40.4, 45.4}, {41, 44.4}, {41.2, 45.6}, {41.4, 44.8}, {41.6, 44.8},
+                    {41.8, 44.4}, {42, 43.4},
+                },
+            },
+            zoneID = 361,
         },
         [698] = {
             spawns = {

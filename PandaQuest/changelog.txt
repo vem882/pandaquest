@@ -75,6 +75,65 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.607
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,183 NPCs, 6 objects
+- database - Classic Era: data from the PandaQuest portal: 3,710 quests, 47 NPCs, 8 objects
+- database - TBC Anniversary: data from the PandaQuest portal: 5,288 quests, 75 NPCs, 6 objects
+- npc 30523 - Thane Illskar the Damned - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 30550 - Image of the North Wind - updated
+  - coordinates: 1 spawn point added in The Storm Peaks
+- npc 30955 - Lady Nightswood - updated
+  - coordinates: 2 spawn points added in Icecrown
+- npc 31282 - Argent Healer - updated
+  - coordinates: 25 spawn points added in Shattrath City
+  - coordinates: 23 spawn points added in Orgrimmar
+  - coordinates: 21 spawn points added in Undercity
+  - coordinates: 15 spawn points added in Thunder Bluff
+  - coordinates: also changed in 2 more zones
+- npc 31301 - The Lich King - updated
+  - coordinates: 1 spawn point added in Icecrown
+- npc 31412 - Thrall - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 31416 - Orgrimmar Grunt - updated
+  - coordinates: 40 spawn points added in Orgrimmar
+- npc 31417 - Kor'kron Elite - updated
+  - coordinates: 9 spawn points added in Orgrimmar
+- npc 31418 - Lady Jaina Proudmoore - updated
+  - coordinates: 7 spawn points added in Undercity
+  - coordinates: 7 spawn points added in Orgrimmar
+- npc 31419 - Lady Sylvanas Windrunner - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 31420 - Karus - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 31421 - Koma - updated
+  - coordinates: 1 spawn point added in Orgrimmar
+- npc 31422 - Soran - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 31423 - Kaja - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 31424 - Gamon - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 31425 - Olvia - updated
+  - coordinates: 3 spawn points added in Orgrimmar
+- npc 31426 - Doras - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 31427 - Felika - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 31429 - Sana - updated
+  - coordinates: 2 spawn points added in Orgrimmar
+- npc 31433 - Innkeeper Gryshka - updated
+  - coordinates: 4 spawn points added in Orgrimmar
+- npc 31434 - Orc Commoner - updated
+  - coordinates: 6 spawn points added in Orgrimmar
+- npc 31437 - Forsaken Refugee - updated
+  - coordinates: 23 spawn points added in Orgrimmar
+  - coordinates: 8 spawn points added in Durotar
+- npc 31529 - Ravishing Betrayer - updated
+  - coordinates: 40 spawn points added in Undercity
+- npc 31565 - Varimathras - updated
+  - coordinates: 40 spawn points added in Undercity
+
 0.2.606
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,159 NPCs, 6 objects
 - database - Classic Era: data from the PandaQuest portal: 3,710 quests, 45 NPCs, 8 objects
@@ -483,39 +542,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - npc 23025 - Rizzle's Depth Charge - updated
   - coordinates: 29 spawn points added in Azshara
   - coordinates: 17 spawn points added in Ashenvale
-
-0.2.596
-- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,017 NPCs, 6 objects
-- database - Classic Era: data from the PandaQuest portal: 3,708 quests, 39 NPCs, 8 objects
-- database - TBC Anniversary: data from the PandaQuest portal: 5,249 quests, 71 NPCs, 6 objects
-- npc 21264 - Seeping Ooze - updated
-  - coordinates: 40 spawn points added in Netherstorm
-- npc 21267 - Mana Beast - updated
-  - coordinates: 40 spawn points added in Netherstorm
-- npc 22114 - Huffer - updated
-  - coordinates: 5 spawn points added in Blade's Edge Mountains
-- npc 22115 - Enraged Earth Shard - updated
-  - coordinates: 40 spawn points added in Shadowmoon Valley
-- npc 22189 - Marmot - updated
-  - coordinates: 9 spawn points added in Blade's Edge Mountains
-- npc 22285 - Draenei Tomb Guardian - updated
-  - coordinates: 3 spawn points added in Terokkar Forest
-- npc 22344 - Morcrush Shardling - updated
-  - coordinates: 40 spawn points added in Blade's Edge Mountains
-- npc 22362 - Deathshadow Imp - updated
-  - coordinates: 17 spawn points added in Nagrand
-- npc 22372 - Mok'Nathal Spirit - updated
-  - coordinates: 2 spawn points added in Blade's Edge Mountains
-- npc 22478 - Evergrove Ancient - updated
-  - coordinates: 7 spawn points added in Blade's Edge Mountains
-- npc 22483 - Sand Gnome - updated
-  - coordinates: 34 spawn points added in Terokkar Forest
-- npc 22490 - Huffer - updated
-  - coordinates: 1 spawn point added in Blade's Edge Mountains
-- npc 22492 - Spirit - updated
-  - coordinates: 2 spawn points added in Blade's Edge Mountains
-- npc 22498 - Misha - updated
-  - coordinates: 1 spawn point added in Blade's Edge Mountains
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
