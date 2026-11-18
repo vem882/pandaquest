@@ -16764,6 +16764,15 @@ ns.Overrides.wowhead = {
                 "Plaguelands!\n\nHeroes of the realm - seek out High Executor Derrington, who has set up " ..
                 "his base camp at the Bulwark, east of Tirisfal Glades!",
         },
+        [5096] = {
+            description = "Before Andorhal, we must tackle the advancing Scarlet Crusade menace from " ..
+                "Hearthglen. They've made camp between Felstone Field and Dalson's Tears, making us risk " ..
+                "conflict against both the Scourge and the Crusade at once.\n\nMy plan is to play them " ..
+                "off of each other by sending you to destroy the command tent they've set up; use some " ..
+                "Flame in a Bottle from this box of incendiaries. Once razed, plant this Scourge banner " ..
+                "by the tent. With some luck, they'll ignore us and focus on the Scourge for vengeance.",
+            rewardMoney = 8000,
+        },
         [5097] = {
             description = "Through the use of a magical device known as a beacon torch, we can mark " ..
                 "targets of our choosing for future actions by our troops. To that end, we think the " ..
@@ -25959,6 +25968,14 @@ ns.Overrides.wowhead = {
                 "the island or on their ship.",
             rewardMoney = 600,
         },
+        [9164] = {
+            description = "Ah, yes. One of my finest creations. This draught will break most forms of " ..
+                "alchemically induced stupor.\n\nSide effects include confusion, nausea and - in rare " ..
+                "cases - temporary blindness. All much preferable to whatever the Scourge plans to do to " ..
+                "those prisoners in Deatholme, if you ask me.\n\nBest of luck, brave <class>. You are " ..
+                "going to need it.",
+            rewardMoney = 2500,
+        },
         [9165] = {
             description = "Without the help of adventurers, my caravan would have never made it! Scourge " ..
                 "were coming out of the woodwork to try and stop us from getting here.\n\n< Guard Didier " ..
@@ -26640,6 +26657,15 @@ ns.Overrides.wowhead = {
                 "Thin the numbers of those aberrations while you're at it; bring me proof of their death " ..
                 "along with your results, and I will reward you. Go!",
             rewardMoney = 100,
+        },
+        [9261] = {
+            description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
+                "you will step up to defend Ironforge from these accursed invaders?\n\nThere are strange " ..
+                "runic circles outside, glowing with the same energy that surrounds the undead and the " ..
+                "Necropolis above. They have significance, I'm certain, and I want you to find out what. " ..
+                "Thin the numbers of those aberrations while you're at it; bring me proof of their death " ..
+                "along with your results, and I will reward you. Go!",
+            rewardMoney = 250,
         },
         [9262] = {
             description = "The Scourge is camped upon our very doorstep; we cannot remain idle! Surely " ..
@@ -29628,6 +29654,15 @@ ns.Overrides.wowhead = {
                 "glaives and arrowheads.\n\nOnly the best armaments will have materials useful to us, " ..
                 "<name>. You will have to seek out the naga of Coilfang Reservoir.",
         },
+        [9769] = {
+            description = "< Magasha chuckles softly to herself.>\n\nI bet if they knew they were wearing " ..
+                "bug parts, the fashion trend would end very quickly.\n\nWe first started killing the " ..
+                "bugs 'round here 'cause they were getting in the way of our construction. Some " ..
+                "enterprising merchant stops here, spends the night, and next thing you know he's buyin' " ..
+                "up all the bug wings we have!\n\nSays he makes clothes out of 'em. I be stickin' to my " ..
+                "armor, thanks. But if you gather the wings of any of the fireflies, I'll gladly buy 'em.",
+            rewardMoney = 27000,
+        },
         [9770] = {
             description = "Sometimes I wish Denjai had sent a shaman with us, or at least given us a " ..
                 "totem to keep the marshfang rippers at bay.\n\nThe whole place is crawling with the " ..
@@ -30837,6 +30872,16 @@ ns.Overrides.wowhead = {
                 "rid Nagrand of this ferocious gronn. Gather your allies and venture to the Spirit " ..
                 "Fields, far southwest of here, near Oshu'gun, and track down Durn. Slay him and I assure " ..
                 "you rewards commensurate with the difficulty of the task at hand.",
+            rewardChoices = {{25774, 1}, {25773, 1}, {25772, 1}},
+            rewardMoney = 111000,
+        },
+        [9938] = {
+            description = "You have destroyed two of the biggest threats in Nagrand, <name>. Are you " ..
+                "ready to take on the scourge of the Spirit Fields?\n\nDurn the Hungerer lords over the " ..
+                "area surrounding Oshu'gun, decimating all in his path. Thus far, none have been able to " ..
+                "rid Nagrand of this ferocious gronn. Gather your allies and venture to the Spirit " ..
+                "Fields, west of here, and track down Durn. Slay him and I assure you rewards " ..
+                "commensurate with the difficulty of the task at hand.",
             rewardChoices = {{25774, 1}, {25773, 1}, {25772, 1}},
             rewardMoney = 111000,
         },
@@ -39679,6 +39724,7 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [153] = {subName = "Baby Murloc Redemption Merchant"},
         [329] = {
             spawns = {
                 [1377] = {
