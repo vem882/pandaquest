@@ -23,6 +23,10 @@ on:
         description: Existing GitHub release tag, such as v0.2.125 or v0.2.140-beta
         type: string
         required: true
+      component:
+        description: Which addon to upload from the release
+        type: string
+        default: core
       release_type:
         description: auto (the tag decides), alpha, beta or release
         type: string
@@ -37,6 +41,11 @@ on:
         type: string
         required: true
         default: latest
+      component:
+        description: Which addon to upload from the release
+        type: choice
+        options: [core, database, auction]
+        default: core
       release_type:
         description: How CurseForge labels the file; auto = the tag decides (-beta is a beta)
         type: choice
@@ -61,6 +70,8 @@ jobs:
       GH_REPO: ${{ github.repository }}
       RELEASE_TAG: ${{ inputs.release_tag }}
       RELEASE_TYPE: ${{ inputs.release_type }}
+      COMPONENT: ${{ inputs.component }}
+      DATABASE_SLUG: ${{ vars.CF_DATABASE_SLUG }}
       DOWNLOAD_DIR: upload
     steps:
       # All history and tags: the reservation tag is made on the release's own commit.
@@ -95,7 +106,40 @@ jobs:
           # The asset name is digits only whatever the tag says.
           VERSION="${RELEASE_TAG#v}"
           VERSION="${VERSION%-beta}"
-          PACKAGE="PandaQuest-${VERSION}.zip"
+          assets="$(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name')"
+          core_split="PandaQuest-Core-${VERSION}.zip"
+          dependency=""
+          case "$COMPONENT" in
+            core)
+              addon=PandaQuest
+              project=1735809
+              reservation="curseforge/${RELEASE_TAG}"
+              if grep -Fx "$core_split" <<< "$assets" >/dev/null; then
+                PACKAGE="$core_split"
+                dependency="${DATABASE_SLUG:?Set CF_DATABASE_SLUG to the approved database project slug}"
+              else
+                PACKAGE="PandaQuest-${VERSION}.zip"
+              fi
+              ;;
+            database)
+              addon=PandaQuestDB
+              project=1807827
+              reservation="curseforge/database/${RELEASE_TAG}"
+              PACKAGE="$addon-${VERSION}.zip"
+              ;;
+            auction)
+              addon=PandaQuestAuction
+              project=1807835
+              reservation="curseforge/auction/${RELEASE_TAG}"
+              PACKAGE="$addon-${VERSION}.zip"
+              dependency=pandaquest
+              ;;
+            *) echo "::error::Unknown component"; exit 1 ;;
+          esac
+          if [[ -n "$dependency" && ! "$dependency" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::Invalid CurseForge dependency slug"
+            exit 1
+          fi
           mkdir -p "${DOWNLOAD_DIR}"
           gh release download "${RELEASE_TAG}" --pattern "${PACKAGE}" --dir "${DOWNLOAD_DIR}"
           # The notes are changelog.txt as it was when the release was made, not as it is now.
@@ -103,6 +147,10 @@ jobs:
           {
             echo "RELEASE_TAG=${RELEASE_TAG}"
             echo "PACKAGE=${PACKAGE}"
+            echo "ADDON_FOLDER=$addon"
+            echo "PROJECT_ID=$project"
+            echo "RESERVATION=$reservation"
+            echo "DEPENDENCY_SLUG=$dependency"
             # "auto" labels the file the way the tag does: -beta is a beta, anything else a release.
             if [[ "${RELEASE_TYPE}" == "auto" ]]; then
               if [[ "${RELEASE_TAG}" == *-beta ]]; then echo "RELEASE_TYPE=beta"; else echo "RELEASE_TYPE=release"; fi
@@ -112,7 +160,6 @@ jobs:
       - name: Reserve the upload
         run: |
           set -euo pipefail
-          RESERVATION="curseforge/${RELEASE_TAG}"
           if git ls-remote --exit-code --tags origin "refs/tags/${RESERVATION}" >/dev/null 2>&1; then
             echo "::error::${RESERVATION} exists: ${RELEASE_TAG} was already sent, or an attempt failed."
             echo "Check CurseForge first. Only if no file was accepted and no run is in progress:"
@@ -130,6 +177,8 @@ jobs:
           set -euo pipefail
           if ! python3 .github/release/curseforge.py upload \
               --zip "${DOWNLOAD_DIR}/${PACKAGE}" \
+              --addon "${ADDON_FOLDER}" --project "${PROJECT_ID}" \
+              --dependency-slug "${DEPENDENCY_SLUG}" \
               --changelog-txt "${DOWNLOAD_DIR}/changelog.txt" \
               --release-tag "${RELEASE_TAG}" \
               --release-type "${RELEASE_TYPE}"; then

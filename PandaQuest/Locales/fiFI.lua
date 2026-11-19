@@ -1051,49 +1051,13 @@ local T = {
     ["Not part of a chain."] = "Ei kuulu ketjuun.",
     ["Click: the next step. Right-click: the step before."] = "Napsautus: seuraava vaihe. Oikea napsautus: edellinen vaihe.",
     ["Recommend a quest"] = "Suosittele tehtävää",
-    ["Item price lookup"] = "Esineen hintahaku",
-    ["Enter an item name, ID, or chat link."] = "Anna esineen nimi, tunniste tai chat-linkki.",
     ["Copy a trace export"] = "Kopioi havaintojen vienti",
     ["Objective icon size"] = "Tavoitekuvakkeen koko",
     ["Change the size of quest objective icons."] = "Muuta tehtävätavoitteiden kuvakkeiden kokoa.",
     ["Community objective observation"] = "Yhteisön tavoitehavainto",
-    ["Auctionator prices queued until logout or reload: %d"] =
-        "Auctionator-hintoja odottaa uloskirjautumista tai käyttöliittymän uudelleenlatausta: %d",
-    ["Scan and share"] = "Hae ja jaa hinnat",
-    ["All missing-price targets were checked recently. Try again later."] =
-        "Kaikki puuttuvien hintojen kohteet tarkistettiin hiljattain. Yritä myöhemmin uudelleen.",
-    ["Find missing prices"] = "Etsi puuttuvat hinnat",
-    ["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] =
-        "Puuttuvat hinnat: %d/%d tarkistettu · %d löytyi · %d ilman ostohintaa · %d ohitettu",
     ["Find next"] = "Etsi seuraavat",
-    ["Scan again"] = "Hae uudelleen",
-    ["PandaQuest auction prices"] = "PandaQuestin huutokauppahinnat",
-    ["Waiting for auction results…"] = "Odotetaan huutokaupan tuloksia…",
     ["%d new prices in this batch. %d queued for Sync after logout or reload."] =
         "%d uutta hintaa tässä erässä. %d hintaa odottaa Synciä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
-    ["Find listed buyout prices and share them by realm and faction through Sync."] =
-        "Hae myynnissä olevien esineiden osta heti -hinnat ja jaa ne palvelimen ja ryhmittymän mukaan Syncillä.",
-    ["PQ auction prices queued until logout or reload: %d"] =
-        "PQ-huutokauppahintoja odottaa uloskirjautumista tai uudelleenlatausta: %d",
-    ["Share completed Auctionator scans"] = "Jaa valmistuneet Auctionator-skannaukset",
-    ["%d%% · %d prices queued for Sync"] = "%d%% · %d hintaa odottaa synkronointia",
-    ["About %d%% · %d prices queued for Sync"] = "Noin %d%% · %d hintaa odottaa synkronointia",
-    ["Another auction search started. Scan again to begin a new list."] =
-        "Toinen huutokauppahaku alkoi. Aloita uusi lista skannaamalla uudelleen.",
-    ["Batch %d · %d prices queued · Total unknown"] = "Erä %d · %d hintaa jonossa · Kokonaismäärä ei tiedossa",
-    ["Enable the Telemetry module to share prices through Sync."] =
-        "Ota telemetriamoduuli käyttöön, jotta voit jakaa hintoja Syncillä.",
-    ["Record my auctions privately"] = "Tallenna omat huutokauppani yksityisesti",
-    ["Reload or log out to save this scan before continuing."] =
-        "Tallenna tämä skannaus lataamalla käyttöliittymä uudelleen tai kirjautumalla ulos ennen jatkamista.",
-    ["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] =
-        "Jaa omat myynti-ilmoituksesi ja toteutuneiden myyntien kuitit yksityisesti PandaBase-tilillesi Syncillä.",
-    ["Stop scan"] = "Lopeta skannaus",
-    ["The auction house is busy. Try again in a moment."] = "Huutokauppa on varattu. Yritä hetken kuluttua uudelleen.",
-    ["The auction request failed. Try scanning again."] = "Huutokauppahaku epäonnistui. Yritä skannata uudelleen.",
-    ["The auction request timed out. Try scanning again."] = "Huutokauppahaku aikakatkaistiin. Yritä skannata uudelleen.",
-    ["Share item prices by realm and faction through Sync after logout or reload."] =
-        "Jaa esinehinnat palvelimen ja ryhmittymän mukaan Syncillä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
 }
 
 -- Gathering skill advice

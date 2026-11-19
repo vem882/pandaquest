@@ -113,13 +113,13 @@ def wanted_versions(tocs: dict) -> list:
     return [(type_id, version, game) for (type_id, version), game in sorted(seen.items())]
 
 
-def zip_tocs(zip_path: Path) -> dict:
+def zip_tocs(zip_path: Path, addon: str = ADDON) -> dict:
     """The TOC files at the top of the package's addon folder, by name."""
     with zipfile.ZipFile(zip_path) as archive:
         return {
             entry.split("/", 1)[1]: archive.read(entry).decode("utf-8-sig")
             for entry in archive.namelist()
-            if entry.startswith(ADDON + "/") and entry.count("/") == 1 and entry.lower().endswith(".toc")
+            if entry.startswith(addon + "/") and entry.count("/") == 1 and entry.lower().endswith(".toc")
         }
 
 
@@ -206,10 +206,10 @@ def toc_project_id(text: str):
     return match.group(1) if match else None
 
 
-def zip_project_id(zip_path: Path):
+def zip_project_id(zip_path: Path, addon: str = ADDON):
     """The project id the package's own TOC names, or None."""
     with zipfile.ZipFile(zip_path) as archive:
-        return toc_project_id(archive.read("PandaQuest/PandaQuest.toc").decode("utf-8-sig"))
+        return toc_project_id(archive.read(f"{addon}/{addon}.toc").decode("utf-8-sig"))
 
 
 def txt_section(text: str, version: str) -> str:
@@ -312,12 +312,15 @@ def _call(request: urllib.request.Request):
         return json.loads(response.read().decode("utf-8"))
 
 
-def upload(zip_path: Path, project, release_type: str, changelog_txt=None, release_tag=None) -> int:
+def upload(
+    zip_path: Path, project, release_type: str, changelog_txt=None, release_tag=None,
+    *, addon: str = ADDON, dependency_slug: str | None = None,
+) -> int:
     token = os.environ.get("CF_API_TOKEN", "")
     if not token:
         print("CF_API_TOKEN is not set; nothing uploaded.", file=sys.stderr)
         return 2
-    in_package = zip_project_id(zip_path)
+    in_package = zip_project_id(zip_path, addon)
     project = project or in_package
     if not project or not re.fullmatch(r"\d+", project):
         print("no project id: pass --project or ship ## X-Curse-Project-ID in the TOC", file=sys.stderr)
@@ -332,7 +335,8 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None, relea
     # The package's own TOCs, not this checkout's: the zip is the release's, and the checkout may
     # be a later commit.
     try:
-        wanted = wanted_versions(zip_tocs(zip_path))
+        tocs = zip_tocs(zip_path, addon)
+        wanted = wanted_versions({ADDON + name[len(addon):]: text for name, text in tocs.items()})
     except ValueError as problem:
         print("%s; nothing uploaded." % problem, file=sys.stderr)
         return 2
@@ -348,9 +352,10 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None, relea
         print("nothing uploaded.", file=sys.stderr)
         return 1
 
-    match = re.fullmatch(r"PandaQuest-(\d+(?:\.\d+)*)\.zip", zip_path.name)
+    asset = "PandaQuest(?:-Core)?" if addon == ADDON else re.escape(addon)
+    match = re.fullmatch(asset + r"-(\d+(?:\.\d+)*)\.zip", zip_path.name)
     if not match:
-        print("%s is not a PandaQuest-<version>.zip" % zip_path.name, file=sys.stderr)
+        print(f"{zip_path.name} is not a valid {addon} release asset", file=sys.stderr)
         return 2
     version = match.group(1)
     previous = previous_tag(release_tags(), version)
@@ -364,6 +369,14 @@ def upload(zip_path: Path, project, release_type: str, changelog_txt=None, relea
         or format_changelog(version, previous, commit_subjects(previous)) \
         or latest_changelog(CHANGELOG.read_text(encoding="utf-8"))
     meta = metadata(version, changelog, ids, release_type)
+    dependency = {"PandaQuest": "1807827", "PandaQuestAuction": "1735809"}.get(addon)
+    if dependency_slug and dependency:
+        if not re.fullmatch(r"[a-z0-9-]+", dependency_slug):
+            print("invalid CurseForge dependency slug; nothing uploaded", file=sys.stderr)
+            return 2
+        meta["relations"] = {"projects": [{
+            "slug": dependency_slug, "projectID": dependency, "type": "requiredDependency",
+        }]}
     content_type, body = multipart({"metadata": json.dumps(meta)}, zip_path.name, zip_path.read_bytes())
     answer = _call(urllib.request.Request(
         "%s/projects/%s/upload-file" % (API, project), data=body, method="POST",
@@ -380,6 +393,8 @@ def main(argv=None) -> int:
     shown.add_argument("--zip", type=Path, help="read the TOCs of this package (default: the TOCs build.py writes)")
     up = sub.add_parser("upload")
     up.add_argument("--zip", required=True, type=Path)
+    up.add_argument("--addon", choices=(ADDON, "PandaQuestDB", "PandaQuestAuction"), default=ADDON)
+    up.add_argument("--dependency-slug", help="CurseForge slug for this component's required addon")
     up.add_argument("--project", help="default: ## X-Curse-Project-ID from the package's TOC")
     up.add_argument("--release-type", default="beta", choices=RELEASE_TYPES)
     up.add_argument("--changelog-txt", type=Path,
@@ -407,7 +422,8 @@ def main(argv=None) -> int:
         for _type_id, version, _game in wanted_versions(tocs):
             print(version)
         return 0
-    return upload(args.zip, args.project, args.release_type, args.changelog_txt, args.release_tag)
+    return upload(args.zip, args.project, args.release_type, args.changelog_txt, args.release_tag,
+                  addon=args.addon, dependency_slug=args.dependency_slug)
 
 
 if __name__ == "__main__":

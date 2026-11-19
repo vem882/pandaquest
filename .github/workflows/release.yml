@@ -67,7 +67,35 @@ jobs:
           python3 --version
           python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 9) else "python3 >= 3.9 required")'
 
+      - name: Read component pins
+        id: pins
+        run: |
+          set -euo pipefail
+          for component in database auction; do
+            pin="$(python3 .github/release/components.py --pin "$component")"
+            echo "$component=$pin" >> "$GITHUB_OUTPUT"
+          done
+
+      - name: Check out PandaQuest Database
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: vem882/pqDB
+          ref: ${{ steps.pins.outputs.database }}
+          path: .components/database
+          persist-credentials: false
+
+      - name: Check out PandaQuest Auction
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: vem882/pqAuction
+          ref: ${{ steps.pins.outputs.auction }}
+          path: .components/auction
+          persist-credentials: false
+
       - name: Run the checks
+        env:
+          PQ_DATABASE_DIR: ${{ github.workspace }}/.components/database/PandaQuestDB
+          PQ_AUCTION_DIR: ${{ github.workspace }}/.components/auction/PandaQuestAuction
         run: python3 .github/release/check.py -v
 
       - name: Build the package
@@ -81,19 +109,22 @@ jobs:
           # instead of building the string again.
           tag="$(python3 .github/release/build.py tag)"
           channel="$(python3 .github/release/build.py channel)"
-          python3 .github/release/build.py package --out "dist/${package}"
+          core="PandaQuest-Core-${version}.zip"
+          for output in dist second; do
+            python3 .github/release/build.py package --out "${output}/${core}"
+            python3 .github/release/components.py --core "${output}/${core}" --out "${output}" \
+              --database .components/database --auction .components/auction
+          done
 
           # Built a second time, into a different directory, and compared. Determinism is part of
           # the contract, and the cheapest honest test of it is to do it twice in one job: it
           # catches a clock, a umask or a directory order leaking into the archive. It does NOT
           # claim the same bytes on a different machine or a different zlib -- README.md says so.
-          python3 .github/release/build.py package --out "second/${package}"
           first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
-          again="$(sha256sum "second/${package}" | cut -d' ' -f1)"
-          if [ "${first}" != "${again}" ]; then
-            echo "::error::Two builds of the same tree differ: ${first} vs ${again}"
-            exit 1
-          fi
+          for artifact in dist/*.zip; do
+            cmp "$artifact" "second/${artifact##*/}"
+          done
+          sha256sum dist/*.zip > dist/SHA256SUMS
           rm -rf second
 
           {
@@ -138,7 +169,9 @@ jobs:
         uses: actions/upload-artifact@v4.4.3
         with:
           name: PandaQuest-${{ steps.build.outputs.version }}
-          path: dist/${{ steps.build.outputs.package }}
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS
           if-no-files-found: error
           retention-days: 14
 
@@ -187,7 +220,7 @@ jobs:
       - name: Check the bytes are the ones that were built
         run: |
           set -euo pipefail
-          echo "${{ needs.build.outputs.sha256 }}  dist/${{ needs.build.outputs.package }}" | sha256sum --check --strict
+          sha256sum --check --strict dist/SHA256SUMS
 
       # gh is preinstalled on GitHub-hosted runners, so this needs no action from anybody's
       # marketplace and no token beyond the run's own.
@@ -303,6 +336,12 @@ jobs:
               echo "${tag} exists without these bytes; uploading ${PACKAGE}"
               gh release upload "${tag}" "dist/${PACKAGE}" --clobber
             fi
+            for component in PandaQuest-Core PandaQuestDB PandaQuestAuction; do
+              asset="$component-${VERSION}.zip"
+              if ! gh release view "$tag" --json assets --jq '.assets[].name' | grep -Fx "$asset" >/dev/null; then
+                gh release upload "$tag" "dist/$asset"
+              fi
+            done
             # `gh release create` with an asset is three API calls: create as a draft, upload,
             # publish. A run that died after the first leaves a draft holding the tag, and a
             # draft is not served by the public releases API -- nobody sees it at all while the
@@ -332,7 +371,7 @@ jobs:
             else
               flags=(--latest)
             fi
-            gh release create "${tag}" "dist/${PACKAGE}" \
+            gh release create "${tag}" dist/*.zip \
               --target "${GITHUB_SHA}" \
               --title "PandaQuest ${label}" \
               --notes-file notes.md \
@@ -375,6 +414,11 @@ jobs:
                   f"but the build's channel is {channel}. A beta must not go out as the stable release, "
                   "or the other way round."
               )
+          for component in ("PandaQuest-Core", "PandaQuestDB", "PandaQuestAuction"):
+              name = f"{component}-{package.removeprefix('PandaQuest-')}"
+              if assets.get(name, 0) <= 0:
+                  raise SystemExit(f"::error::{tag} is missing {name}")
+
           if assets.get(package) != int(size):
               raise SystemExit(
                   f"::error::{tag} does not carry {package} at {size} bytes. It carries: "

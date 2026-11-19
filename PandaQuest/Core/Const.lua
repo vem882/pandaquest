@@ -141,7 +141,6 @@ ns.DEFAULTS = {
                -- p = { [spawnKey] = timesSeen } }`. Local and unconditional - writing to one's own
                -- disk is not the hub's processing - while *sending* it is gated by telemetry.
                nodes = {},
-               auctionMissingProgress = {},
                -- Whether the QuestieDB addon, if installed, completes our database (Database/QuestieDB.lua):
                -- "off", "gaps" or "prefer". Read once, while the database loads.
                questieDB = { mode = "gaps" },

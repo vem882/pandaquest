@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import re
 import struct
 import tempfile
@@ -43,6 +44,7 @@ from pathlib import Path
 from unittest import mock
 
 import build
+import components
 import curseforge
 import games
 
@@ -406,23 +408,14 @@ class TheZipContract(unittest.TestCase):
         )
         self.assertEqual(strays, [], "packaged, and no player has any use for it")
 
-    def test_the_zip_ships_the_generated_database_and_the_embedded_libraries(self) -> None:
-        """Neither is hand-written, which is exactly why they go missing.
-
-        ``Database/Data/*.lua`` is generated outside this repository and ``Libs/``
-        is vendored Ace3. A tree checked out without them still parses and still packages, and
-        the result is an addon with no quest data and no AceAddon, which errors on the first
-        line it runs.
-        """
-        names = set(self.archive.namelist())
-        prefix = f"{build.ADDON}/"
-        data = sorted(name for name in names if name.startswith(f"{prefix}Database/Data/"))
-        self.assertNotEqual(data, [], "the zip has no Database/Data/: the addon has no quests")
-        self.assertIn(
-            f"{prefix}Libs/LibStub/LibStub.lua",
-            names,
-            "every embedded library loads through LibStub, so embeds.xml fails on its first Script",
-        )
+    def test_the_core_zip_ships_libraries_and_declares_database_dependency(self) -> None:
+        names = self.archive.namelist()
+        self.assertIn("PandaQuest/Libs/LibStub/LibStub.lua", names)
+        self.assertIn("PandaQuest/Database/Import.lua", names)
+        self.assertNotIn("PandaQuest/Database/Data/Quests.lua", names)
+        self.assertNotIn("PandaQuest/Sync/AuctionScan.lua", names)
+        directives, _ = toc_lines(self.archive.read("PandaQuest/PandaQuest.toc").decode())
+        self.assertEqual(directives["Dependencies"], "PandaQuestDB")
 
     def test_no_entry_is_empty(self) -> None:
         """A generator that fails halfway writes a zero-byte file, and packaging includes it."""
@@ -836,33 +829,14 @@ class TheTocFiles(unittest.TestCase):
         self.assertIs(games.by_suffix("_TBC"), games.ANNIVERSARY)
         self.assertIs(games.by_suffix("_Camelot"), games.FOREVER)
 
-    def test_each_toc_lists_its_own_database_and_no_other_games(self) -> None:
-        """A client never parses another game's data: each TOC names its own folder only."""
-        folders = {"mop": "database\\data\\", "era": "database\\era\\",
-                   "anniversary": "database\\anniversary\\", "forever": "database\\forever\\"}
-        shared_ok = {"database\\data\\seed.lua"}            # pfQuest's vanilla+tbc seed: Era's and TBC's too
-        for game in games.shipped():
-            name = f"PandaQuest{game.suffixes[0]}.toc"
-            _directives, files = toc_lines(build.toc_texts()[name])
-            own = [*game.zone_data, *game.data]
-            self.assertEqual([entry for entry in files if entry in own], own, f"{name}: in that order")
-            for other, folder in folders.items():
-                if other == game.key:
-                    continue
-                strays = [entry for entry in files if entry.lower().startswith(folder) and entry.lower() not in shared_ok]
-                self.assertEqual(strays, [], f"{name} lists {other}'s files")
-            for entry in own:
-                self.assertTrue((ADDON_DIR / entry.replace("\\", "/")).is_file(), entry)
-
-    def test_forever_ships_its_database(self) -> None:
-        """Forever's TOC lists its own generated database (beta data until launch), no Pending.lua."""
-        _directives, files = toc_lines(build.toc_texts()["PandaQuest_Forever.toc"])
-        forever = [entry for entry in files if entry.lower().startswith("database\\forever\\")]
-        self.assertIn("Database\\Forever\\Data\\Quests.lua", forever)
-        self.assertIn("Database\\Forever\\ZoneData.lua", forever)
-        self.assertNotIn("Database\\Forever\\Pending.lua", forever)
-        self.assertNotIn("Database\\Data\\Seed.lua", files)
-        self.assertFalse((ADDON_DIR / "Database" / "Forever" / "Pending.lua").exists())
+    def test_each_core_toc_loads_the_database_bridge_before_consumers(self) -> None:
+        for name, toc in build.toc_texts().items():
+            directives, files = toc_lines(toc)
+            self.assertEqual(directives["Dependencies"], "PandaQuestDB", name)
+            self.assertNotIn("PandaQuestAuction", directives.get("OptionalDeps", ""), name)
+            self.assertLess(files.index(r"Database\Import.lua"), files.index(r"Database\Zones.lua"))
+            self.assertLess(files.index(r"Database\Overrides\Community.lua"), files.index(r"Database\DB.lua"))
+            self.assertNotIn(r"Sync\AuctionScan.lua", files, name)
 
     def test_the_game_is_known_before_anything_reads_the_database(self) -> None:
         """Core/Game.lua is the first file, and the first after Core/Build.lua in the package."""
@@ -902,15 +876,6 @@ class TheTocFiles(unittest.TestCase):
             self.assertNotIn("PandaQuestAH", code, f"{path.relative_to(ADDON_DIR)} touches PandaQuestAH")
         self.assertNotIn("SavedVariablesPerCharacter", directives)
 
-    def test_the_mop_toc_lists_its_own_database_and_nothing_else(self) -> None:
-        _directives, files = toc_lines(build.toc_texts()["PandaQuest_Mists.toc"])
-        own = [*games.MOP.zone_data, *games.MOP.data]
-        self.assertEqual([name for name in files if name in own], own, "in that order")
-        on_disk = sorted("Database\\Data\\" + path.name for path in (ADDON_DIR / "Database" / "Data").glob("*.lua"))
-        self.assertEqual(sorted(name for name in games.MOP.data if name.startswith("Database\\Data\\")), on_disk)
-        for folder in ("forever", "era", "anniversary"):
-            self.assertFalse([name for name in files if name.lower().startswith(f"database\\{folder}\\")])
-
     def test_the_shared_part_is_the_same_for_every_game(self) -> None:
         """A game changes its own lines and its interface; the rest is the template, once."""
         import dataclasses  # noqa: PLC0415
@@ -920,7 +885,7 @@ class TheTocFiles(unittest.TestCase):
             zone_data=("Database\\Forever\\ZoneData.lua",), data=("Database\\Forever\\Data\\Meta.lua",))
 
         def shared(game):
-            own = {*game.notes, *game.header, *game.zone_data, *game.data, f"## Interface: {game.interface}"}
+            own = {*game.notes, *game.header, f"## Interface: {game.interface}"}
             return [line for line in build.render_toc(game).split("\n") if line not in own]
 
         self.assertEqual(shared(games.MOP), shared(other))
@@ -932,8 +897,8 @@ class TheTocFiles(unittest.TestCase):
     def test_a_template_and_a_row_that_do_not_fit_are_refused(self) -> None:
         good = build.TOC_TEMPLATE.read_text(encoding="utf-8")
         for broken in (
-            good.replace("{{data}}", "{{datas}}"),          # unknown placeholder
-            good.replace("{{zone-data}}\n", ""),             # a game's lines with nowhere to go
+            good.replace("{{notes}}", "{{datas}}"),          # unknown placeholder
+            good.replace("{{notes}}\n", ""),             # a game's lines with nowhere to go
             good.replace("{{interface}}", "50504"),
         ):
             with self.subTest(), self.assertRaises(SystemExit):
@@ -1105,55 +1070,27 @@ class TheReleaseChannel(unittest.TestCase):
         self.assertEqual(comment["channel"], ident["channel"])
 
 
-class TheSyncedData(unittest.TestCase):
-    """The files the PandaQuest portal's data sync writes (README.md, "Data from the portal").
+class TheComponentData(unittest.TestCase):
+    """The split release can only ship validated, game-scoped packages."""
 
-    Lua cannot be run here, so what is checked is their shape: each is listed before Database/DB.lua
-    (which applies them while it loads), each builds its ``ns.Overrides.<name>`` with the four tables
-    DB.lua walks, and none is past the size the sync itself refuses to write -- a file that large
-    means something upstream wrote far more than a quest page holds.
-    """
-
-    #: The file, the name of its set in ns.Overrides, and the most bytes it may have (the sync's own
-    #: MAX_WOWHEAD_BYTES for Wowhead.lua; Portal.lua is one row per moderator correction).
-    FILES = (
-        ("Database/Overrides/Wowhead.lua", "wowhead", 6 * 1024 * 1024),
-        ("Database/Overrides/Portal.lua", "portal", 1024 * 1024),
-    )
-
-    def setUp(self) -> None:
-        _, files = toc_lines(TOC.read_text(encoding="utf-8-sig"))
-        self.order = [name.replace("\\", "/") for name in files]
-
-    def test_each_is_loaded_before_the_database_applies_it(self) -> None:
-        db = self.order.index("Database/DB.lua")
-        for relative, _name, _limit in self.FILES:
-            self.assertIn(relative, self.order, f"the TOC does not load {relative}")
-            self.assertLess(self.order.index(relative), db, f"{relative} must load before Database/DB.lua")
-
-    def test_each_builds_its_set_with_the_four_tables(self) -> None:
-        for relative, name, _limit in self.FILES:
-            text = (ADDON_DIR / relative).read_text(encoding="utf-8")
-            self.assertIn(f"ns.Overrides.{name} = {{", text, relative)
-            body = text.split(f"ns.Overrides.{name} = {{", 1)[1]
-            for table in ("quests", "npcs", "objects", "items"):
-                self.assertRegex(body, rf"(?m)^    {table} = \{{", f"{relative} lost its {table} table")
-            self.assertIn("DO NOT EDIT BY HAND", text.splitlines()[0] + text.splitlines()[1], relative)
-
-    def test_none_is_past_the_size_the_sync_refuses(self) -> None:
-        for relative, _name, limit in self.FILES:
-            size = (ADDON_DIR / relative).stat().st_size
-            self.assertLessEqual(size, limit, f"{relative} is {size} bytes")
-
-    def test_the_database_applies_the_wowhead_set_gap_only(self) -> None:
-        """The sync fills only what the generated database lacks; DB.lua keeps that rule at load time,
-        where the QuestieDB bridge may have filled the gap first, and the moderators' set comes last."""
-        text = (ADDON_DIR / "Database" / "DB.lua").read_text(encoding="utf-8")
-        self.assertIn('local OVERRIDE_SETS = { "wowhead", "community", "portal" }', text)
-        self.assertIn("local FILL_ONLY = { wowhead = true }", text)
-        self.assertIn("if not fillOnly or isBlank(row[index]) then", text)
-        for accessor in ("function DB.GetQuestRewards(", "function DB.GetQuestDescription(", "function DB.GetExtra("):
-            self.assertIn(accessor, text)
+    def test_component_manifests_and_files(self) -> None:
+        for key, (folder, project) in components.COMPONENTS.items():
+            root = os.environ.get({"database": "PQ_DATABASE_DIR", "auction": "PQ_AUCTION_DIR"}[key])
+            if not root:
+                self.skipTest("set PQ_DATABASE_DIR and PQ_AUCTION_DIR to check both component trees")
+            root = Path(root)
+            files = components.component_entries(root.parent, folder, project, "0.2.1")
+            for game in games.shipped():
+                name = f"{folder}/{folder}{game.suffixes[0]}.toc"
+                directives, lines = toc_lines(files[name].decode())
+                self.assertEqual(directives["Version"], "0.2.1")
+                if key == "auction":
+                    self.assertEqual(directives["Dependencies"], "PandaQuest")
+                else:
+                    self.assertNotIn("Dependencies", directives)
+                    expected = [line for line in [*game.zone_data, *game.data]
+                                if line != r"Database\Overrides\Community.lua"]
+                    self.assertEqual(lines, [*expected, r"Database\Export.lua"])
 
 
 class TheChangelogMoves(unittest.TestCase):

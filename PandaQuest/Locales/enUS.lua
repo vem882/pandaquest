@@ -766,9 +766,7 @@ L["No skill-up expected"] = true
 
 L["Recommend a quest"] = true
 
-L["Item price lookup"] = true
 
-L["Enter an item name, ID, or chat link."] = true
 
 L["Copy a trace export"] = true
 
@@ -778,33 +776,6 @@ L["Change the size of quest objective icons."] = true
 
 L["Community objective observation"] = true
 
-L["Share completed Auctionator scans"] = true
-L["Auctionator prices queued until logout or reload: %d"] = true
-L["Share item prices by realm and faction through Sync after logout or reload."] = true
 
 L["%d new prices in this batch. %d queued for Sync after logout or reload."] = true
-L["Another auction search started. Scan again to begin a new list."] = true
-L["Enable the Telemetry module to share prices through Sync."] = true
-L["Find listed buyout prices and share them by realm and faction through Sync."] = true
 L["Find next"] = true
-L["PQ auction prices queued until logout or reload: %d"] = true
-L["PandaQuest auction prices"] = true
-L["Reload or log out to save this scan before continuing."] = true
-L["Scan again"] = true
-L["Scan and share"] = true
-L["The auction house is busy. Try again in a moment."] = true
-L["The auction request failed. Try scanning again."] = true
-L["The auction request timed out. Try scanning again."] = true
-L["Waiting for auction results…"] = true
-L["%d%% · %d prices queued for Sync"] = true
-L["Batch %d · %d prices queued · Total unknown"] = true
-L["Stop scan"] = true
-L["About %d%% · %d prices queued for Sync"] = true
-
-L["Record my auctions privately"] = true
-L["Share your own listings and completed sale invoices privately with your PandaBase account through Sync."] = true
-
-L["Find missing prices"] = true
-L["Missing prices: %d/%d checked · %d found · %d without buyout · %d skipped"] = true
-
-L["All missing-price targets were checked recently. Try again later."] = true

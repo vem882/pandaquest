@@ -1,11 +1,13 @@
 # PandaQuest
 
+Install **PandaQuest Database** alongside the core. **PandaQuest Auction** is optional. The combined GitHub release includes both components.
+
 **Quest helper and navigator for Mists of Pandaria Classic (5.5.4), WoW Classic Era (1.15), The Burning
 Crusade Classic Anniversary (2.5) and WoW Forever (1.60).**
 
 An arrow that always points at your next sensible quest objective, quest pins on the world map and
 minimap, waypoints, gathering nodes, flight times and links to the PandaQuest site — with a
-built-in database of 17 693
+database supplied by PandaQuest Database of 17 693
 quests, 60 224 NPCs, 20 326 objects and 80 049 items.
 
 PandaQuest works fully on its own. The optional **PandaQuest portal at <https://pd.zroot.it>**

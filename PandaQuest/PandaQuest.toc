@@ -21,6 +21,7 @@
 # longer listed here at the next logout, and a player's stored auction scans must not be lost.
 # Nothing reads or writes it any more.
 ## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf, PandaQuestOwnAuctions
+## Dependencies: PandaQuestDB
 ## OptionalDeps: TomTom, Questie, QuestieDB
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/pandaquest
@@ -63,18 +64,9 @@ Locales\ruRU.lua
 Locales\zhCN.lua
 Locales\zhTW.lua
 Database\Schema.lua
-Database\ZoneData.lua
+Database\Import.lua
 Database\Zones.lua
-Database\Data\Meta.lua
-Database\Data\Quests.lua
-Database\Data\Npcs.lua
-Database\Data\Objects.lua
-Database\Data\Items.lua
-Database\Data\Seed.lua
-Database\Overrides\Wowhead.lua
 Database\Overrides\Community.lua
-Database\Overrides\Portal.lua
-Database\Overrides\Flights.lua
 Database\QuestieDB.lua
 Database\DB.lua
 Quest\Player.lua
@@ -116,9 +108,6 @@ Recipes\Store.lua
 Recipes\Scanner.lua
 Recipes\Archaeology.lua
 Sync\Telemetry.lua
-Database\Overrides\AuctionMissing.lua
-Sync\AuctionScan.lua
-Sync\OwnAuctions.lua
 Sync\Trace.lua
 Sync\Character.lua
 Sync\Consent.lua
