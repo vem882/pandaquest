@@ -630,7 +630,9 @@ def package(
         )
     ident = identity()
     target = target or DIST_DIR / package_name(str(ident["version"]))
-    named = PORTAL_PACKAGE_PATTERN.match(target.name)
+    named = PORTAL_PACKAGE_PATTERN.fullmatch(target.name) or re.fullmatch(
+        r"PandaQuest-Core-(\d+(?:\.\d+)*)\.zip", target.name
+    )
     if not named:
         # A consumer lists dist/ and matches this pattern; a name it does not match is a package
         # no player is ever offered, and nothing downstream reports the omission.
