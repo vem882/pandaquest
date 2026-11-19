@@ -10,6 +10,14 @@ local _, ns = ...
 ns.Overrides = ns.Overrides or {}
 ns.Overrides.wowhead = {
     quests = {
+        [318] = {
+            description = "Rejold Barleybrew experiments with his brews. Some of them taste good, some " ..
+                "bad, and some...well, some will lay all but the stoutest dwarf flat.\n\nHe lives at " ..
+                "Brewnall Village, west of Kharanos, and one of his drinks, Evershine, is what I want. " ..
+                "It'll help keep me warm while I'm on the cold road.\n\nAnd...the blessed stuff burns so " ..
+                "hot I can throw it in Jetsteam's furnace for a burst of power! That little tactic has " ..
+                "gotten me out of more than one tight spot.",
+        },
         [321] = {
             description = "The shipwrecks off the shore here are the doomed Third Fleet of Kul'Tiras, " ..
                 "burned and sunk by Red Dragons during the last Great War.\n\nThe Fleet hailed from " ..
@@ -50,6 +58,45 @@ ns.Overrides.wowhead = {
             rewardItems = {{6755, 1}},
         },
         [1711] = {rewardItems = {{6973, 1}}},
+        [1842] = {
+            description = "I can make you a pair of brutal gauntlets, and great magic will they hold. But " ..
+                "first, you must collect this magic and bring it to me.\n\nThe satyrs dwell in " ..
+                "northeastern Ashenvale because of the forest's power. They feed off its purity, leeching " ..
+                "and corrupting. You can tell which satyrs have drawn the most of Ashenvale's magic by " ..
+                "their swollen, uncloven hooves.\n\nThese hooves hold great power. I will need them for " ..
+                "your gauntlets' crafting.",
+        },
+        [2585] = {
+            description = "Have you ever watched them in battle, <name>? The scorpoks, I mean. Have you " ..
+                "ever seen the grace and agility with which they move? The decisiveness of their " ..
+                "strikes?\n\nIf only we could somehow isolate that agility and encapsulate it, we would " ..
+                "be wealthy beyond our... I mean... it would be a boon for the scientific " ..
+                "community.\n\nAssist me, <name>, and I shall allow you a sampling of the assay.\n\nIn " ..
+                "order to create a stable sample, I will need three scorpok pincers, two vulture " ..
+                "gizzards, and one blasted boar lung.",
+            rewardItems = {{8412, 1}},
+        },
+        [2681] = {
+            description = "It will take more than you alone to overcome the forces of Razelikh and his " ..
+                "subordinates.\n\nGather a suitable group of adventurers and free my men of their eternal " ..
+                "torture! Eighteen stones you must shatter.\n\nFight hard and die with honor, <name>.",
+        },
+        [2771] = {
+            description = "It seems as if master had this planned from the start. I was not taught to " ..
+                "create the items which you learned to create and you were not taught the items which I " ..
+                "learned to create.\n\nThe master is wise, <name>. We shall teach each other!\n\nShow me " ..
+                "how to make a mithril coif and ornate mithril shoulders and I shall show you how to " ..
+                "create an ornate mithril helm.",
+        },
+        [2821] = {
+            description = "My philosophy on leatherworking is that the work must be the best quality " ..
+                "possible - no compromises. Anyone who says that quality doesn't matter is trying to sell " ..
+                "you ocean-front property in Dun Morogh!\n\nIn my latest pursuit of high-quality " ..
+                "materials, I have run across thick yeti hides. The Yeti are native to Feralas, with many " ..
+                "found in Feral Scar Vale. I want some, and I'll give you a choice of one of my leather " ..
+                "goods for a stack of ten. If that sounds fair to you, then we're in business.",
+            rewardChoices = {{9630, 1}, {9631, 1}},
+        },
         [2937] = {
             description = "Take his parchment, and read it at the altar of Shadra'Alor, deep within the " ..
                 "witherbark realm in the Hinterlands. This will summon Shadra the spider god.",
@@ -105,6 +152,15 @@ ns.Overrides.wowhead = {
                 "and be safe. I truly hope you are able to withstand the temptation and corruption that " ..
                 "is sure to come as you follow your path.\n\nGood luck.",
         },
+        [5082] = {
+            description = "I came to Winterspring to investigate the Frostfire Hot Springs. I've noticed " ..
+                "that the water seems to have...strange qualities. I haven't yet been able to discover " ..
+                "the source, and to tell you the truth, I've had some difficulty lately, due to the " ..
+                "Winterfall furbolg.\n\nThey seem to be drawn to the springs, just as I am. They have " ..
+                "become extremely protective of the water, and won't let me come near the two larger " ..
+                "springs to the north of here.\n\nI'd like to continue my studies, so won't you help me?",
+            rewardMoney = 8500,
+        },
         [5384] = {
             description = "This is it, <name>.\n\n<Eva points to the vial inside the bag.>\n\nThe blood " ..
                 "of innocents. The purest blood, used to appease Krastinov's master.\n\nIt is with this " ..
@@ -117,6 +173,15 @@ ns.Overrides.wowhead = {
         },
         [5401] = {rewardItems = {{12846, 1}}},
         [5421] = {rewardItems = {{13546, 1}}},
+        [5466] = {
+            description = "There is but one task remaining, <name>. Confront the lich, Ras Frostwhisper, " ..
+                "in his lair.\n\nUse the power of the keepsake against the beast - be unrelenting in your " ..
+                "actions! Weather the blows that the flailing beast will surely bring down upon you. Do " ..
+                "not give in to the pain!\n\nWhen the ritual is complete, Ras will be mortal once more. " ..
+                "It is at that point that he must be slain. Strike him down and take his human head.",
+            rewardChoices = {{13982, 1}, {13986, 1}, {13984, 1}},
+            rewardItems = {{14002, 1}},
+        },
         [6064] = {
             description = "Hi there, <lad/lass>! So, you'd be wanting to know how you can gain a pet of " ..
                 "your own?\n\nWell, let's get started. There's nothing more important than yer equipment " ..
@@ -207,6 +272,15 @@ ns.Overrides.wowhead = {
             rewardItems = {{22666, 1}},
         },
         [9318] = {rewardItems = {{23123, 1}}},
+        [9443] = {
+            description = "I was once a pupil of Uther Lightbringer, founder of the Knights of the Silver " ..
+                "Hand. I saw how he mishandled Prince Arthas's training. It led to the destruction of my " ..
+                "homeland, Quel'Thalas, and I blame Uther and his incompetence for all of it! And now he " ..
+                "has a tomb in his honor - how lovely.\n\nMy sources tell me that the scarlet fools are " ..
+                "keeping one of his 'holy' relics atop their guard tower near the gates of " ..
+                "Hearthglen.\n\nGo to the Western Plaguelands and retrieve it for me.",
+            rewardMoney = 9000,
+        },
         [9499] = {
             description = "What are you still doing here, <name>? Didn't you hear we built a proper " ..
                 "sin'dorei outpost here in Hellfire Peninsula?\n\nSurely you'd rather be among fellow " ..
@@ -214,6 +288,14 @@ ns.Overrides.wowhead = {
                 "beyond Hellfire Citadel. Report to Ranger Captain Venn'ren; he will take care of " ..
                 "you.\n\nThe road ahead is dangerous and heavily patrolled by Alliance scouts. I would " ..
                 "recommend travelling with companions. Blood elves, preferably.",
+        },
+        [9505] = {
+            description = "The Prophet spoke of this day: That on this island, in this new world, our " ..
+                "allies would find us.\n\n\"We will be tested. They will ask that we pay for the sins of " ..
+                "our fathers...\"\n\nAt the time, I did not understand the meaning behind his words, but " ..
+                "seeing this creature and her reaction to us, it is now coming into focus. The corruption " ..
+                "of our people has been felt even here.\n\nVenture south. It is there that we found this " ..
+                "being. Find its kin and tell them of our people.",
         },
         [9542] = {
             description = "You no longer see unrecognizable symbology in the totems. The totem of Yor " ..
@@ -230,6 +312,15 @@ ns.Overrides.wowhead = {
                 "more ale than food or ammunition! Maybe you can go check up on them?\n\nThe arakkoa's " ..
                 "hideout, the Den of Haal'esh, can be found to the far west of here - beyond the Great " ..
                 "Fissure. They set up camp northwest of there, south of Dustquill Ravine.",
+        },
+        [9888] = {
+            description = "I have escaped certain death, surviving a cowardly nighttime attack by " ..
+                "Boulderfist ogres upon my village.\n\nBut I ask you, stranger: For what?\n\n<Jorin " ..
+                "points to Garrosh.>\n\nHe has refused to give us assistance. Ogres are rampaging through " ..
+                "my town and he sits here, weeping into a fire. What has become of us? What will become " ..
+                "of us?\n\nI've sent a scout, Kilrath, to the village, now the Bleeding Hollow Ruins. " ..
+                "Will you find him and give him your assistance? He hides on the border of Nagrand and " ..
+                "Terokkar.",
         },
         [10091] = {
             description = "Gah! They've been torturing me, trying to get me to tell them everything that " ..
@@ -295,6 +386,14 @@ ns.Overrides.wowhead = {
                 "to the northwest, and then southwest through the canyon.\n\nAsk him to fashion us a trap " ..
                 "for the gronn.",
         },
+        [10884] = {
+            description = "Four trials you must pass before you are deemed worthy by the naaru.\n\nWithin " ..
+                "the Shattered Halls of Hellfire Citadel are three of your people. They are held there by " ..
+                "the merciless one, Kargath Bladefist. He seeks to execute them as a sign of his virility " ..
+                "and power. You must save these prisoners before such an atrocity can come to pass. As " ..
+                "proof of deed, bring me the unused axe of the executioner. It must not have a drop of " ..
+                "blood on its blade!",
+        },
         [10909] = {
             description = "Colonel Jules was cursed in a battle near the Gor'gaz Outpost, a haunt for " ..
                 "Shattered Hand fel orcs. My master, Barada, works feverishly to cure the poor human, but " ..
@@ -304,6 +403,22 @@ ns.Overrides.wowhead = {
                 "spirits -- you must slay those fel spirits for Jules' own spirit's recovery.",
             rewardMoney = 20000,
         },
+        [10939] = {
+            description = "Now that you have gathered all of the Storms cards together into a deck, a " ..
+                "ninth card mysteriously appears with the same backing as the first eight. On this card " ..
+                "is inscribed, \"Return these cards to the Darkmoon Faire and be rewarded.\" You have " ..
+                "heard that this faire alternately stops at Mulgore and Goldshire every few months, so " ..
+                "you will have to wait until they are here next.",
+            rewardItems = {{31857, 1}},
+        },
+        [10969] = {
+            description = "It would seem that an outside force has taken an interest in the business " ..
+                "practices of the Consortium. Five Consortium dealers have gone missing in the past two " ..
+                "days. We have reason to believe the Ethereum are involved. If you are interested in " ..
+                "assisting, seek out Commander Ameer at the Protectorate Watch Post.\n\nYou will find the " ..
+                "Protectorate Watch Post directly east of here on the next island.",
+            rewardMoney = 4400,
+        },
         [11014] = {
             description = "<Mor'ghor crumples up the service letter and tosses it aside.>\n\nAlright " ..
                 "grunt, first things first. If you're gonna join my beloved Dragonmaw army, you'll need " ..
@@ -311,6 +426,16 @@ ns.Overrides.wowhead = {
                 "see if there might be something more interesting for you to do later.\n\nGo talk to " ..
                 "Taskmaster Varkule Dragonbreath. He's standin' in the middle of town. He'll assess your " ..
                 "skills and assign work as he sees fit.\n\nNow get out of my face!",
+        },
+        [11506] = {
+            description = "The draenei might be our enemies, but the spirits of their ancestors in " ..
+                "Auchindoun are restless and have no allegiance.\n\nThe draenei's custom required them to " ..
+                "pay their respects at spirit towers at various times during the day. If you can help " ..
+                "secure a tower during these times, you will help the spirits return to peace in " ..
+                "Auchindoun.\n\nThe Alliance will try to capture the towers in order to secure the dead's " ..
+                "favor. We must ensure that our side succeeds instead.",
+            rewardMoney = 37000,
+            rewardXP = 10050,
         },
     },
     npcs = {
