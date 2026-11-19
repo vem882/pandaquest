@@ -4,6 +4,38 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.621] - 2026-11-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,284 NPCs, 6 objects
+- npc 44883 - Lord Darius Crowley - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 44884 - Packleader Ivar Bloodfang - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 44943 - Squawky Jr. - updated
+  - coordinates: 4 spawn points added in The Cape of Stranglethorn
+- npc 45059 - Forsaken Trooper - updated
+  - coordinates: 14 spawn points added in Western Plaguelands
+- npc 45241 - Forsaken Trooper - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 45243 - Forsaken Trooper - updated
+  - coordinates: 40 spawn points added in Western Plaguelands
+- npc 45275 - Harrison Jones - updated
+  - coordinates: 2 spawn points added in Uldum
+- npc 45285 - Skeleton - updated
+  - coordinates: 3 spawn points added in Undercity
+- npc 45437 - Fiona's Caravan - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+- npc 45446 - Arikara - updated
+  - coordinates: 6 spawn points added in Thousand Needles
+- npc 45448 - Arikara - updated
+  - coordinates: 7 spawn points added in Thousand Needles
+- npc 45449 - Arikara - updated
+  - coordinates: 3 spawn points added in Thousand Needles
+- npc 45554 - Woven Shadow - updated
+  - coordinates: 40 spawn points added in Duskwood
+
 ## [0.2.620] - 2026-11-19
 
 Data from the PandaQuest portal.
