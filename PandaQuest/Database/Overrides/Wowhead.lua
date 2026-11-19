@@ -457,6 +457,15 @@ ns.Overrides.wowhead = {
                 "have collected no less than two fists worth of caracoli... Ogre sized fists.",
             rewardItems = {{24421, 5}},
         },
+        [9815] = {
+            description = "The most affected elements of water can be found in the Halaani Basin, " ..
+                "southwest of here, beneath the abandoned city of Halaa. While some distressed elements " ..
+                "can be destroyed without any impact upon the environment, spawns of muck must be " ..
+                "physically removed from the world once destroyed.\n\nYou see, muck spawns leave behind " ..
+                "globules of tainted debris that if left untouched will spread and further contaminate " ..
+                "the environment.\n\nDestroy these muck spawns and bring back their muck-ridden cores.",
+            rewardChoices = {{25559, 1}, {25560, 1}, {25561, 1}},
+        },
         [9821] = {
             description = "< Gordawg picks up a rock and begins to chew on it.>\n\nGordawg tastes. " ..
                 "Gordawg knows where this earth has been.\n\n< Gordawg raises one of his massive legs and " ..
@@ -1549,6 +1558,12 @@ ns.Overrides.wowhead = {
                 "S? All the other military units are named after Alliance towns.\n\nWho's in the unit? " ..
                 "Where are they deployed? We need rumors. See if the innkeeper's heard anything.",
         },
+        [11646] = {
+            description = "Listen closely, <name>, for there is not a moment to spare.\n\nYour prisoner " ..
+                "is being prepared for interrogation here in our tower. In the event that he is less than " ..
+                "forthcoming, your assistance may be required.\n\nMake your way up to where he is being " ..
+                "detained and tell Librarian Normantis that I've sent you to assist him.",
+        },
         [11656] = {
             description = "Tuskarr magic is similar to what your people call shamanism. While we serve " ..
                 "the elements differently than you, the power that we are able to call forth is " ..
@@ -1558,6 +1573,14 @@ ns.Overrides.wowhead = {
                 "one docked off the shores of Pal'ea, to the south. Burn their ships in effigy! For all " ..
                 "to see!",
             rewardChoices = {{37207, 1}, {37418, 1}, {37483, 1}, {37556, 1}},
+        },
+        [11668] = {
+            description = "There's a lot of big fish in the Zangarmarsh lakes. Ever wonder what they " ..
+                "eat?\n\nShrimp. Giant freshwater shrimp. The Rokk tells me the dishes you can make with " ..
+                "shrimp are nearly endless.\n\nBut shrimp are too small to catch with a fishing line. So " ..
+                "here's the trick: cut open the bloated barbed gill trout and you'll find a shrimp or two " ..
+                "if you're lucky.",
+            rewardItems = {{34863, 1}},
         },
         [11688] = {
             description = "Just look at 'em! My beautiful kodos are helpless to defend themselves against " ..
@@ -2912,6 +2935,15 @@ ns.Overrides.wowhead = {
                 "this haul.\n\nFortunately, there's one thing no centaur can take from me and that's " ..
                 "goblin ingenuity! I'll start from scratch and build an empire!\n\n< Bizby spots a " ..
                 "scorpion in the distance.>\n\nThere's always a market for poison. Whatdya say, friend?",
+            rewardMoney = 3000,
+        },
+        [14268] = {
+            description = "Queen Azshara seeks entrance into the plane of water, for what I do not " ..
+                "know.\n\nShe believes that the ancients held the keys to finding its location.\n\nI have " ..
+                "personally been charged with scouring the ruins in this region, and none shall rest " ..
+                "until we discover the secrets we seek!\n\nSubmerged just to the north are a " ..
+                "concentration of ruins. Use this staff to search through the rubble.\n\nReturn to me " ..
+                "only when you have located that which we seek!",
             rewardMoney = 3000,
         },
         [14269] = {
@@ -4733,6 +4765,15 @@ ns.Overrides.wowhead = {
                 "but we still have work to do if we're going to stop the naga from invading the plane of " ..
                 "water.\n\nFirst, we need to set eyes on the tentacled fiend that destroyed our ships " ..
                 "when we first arrived - we don't want a repeat of that nightmare.\n\nHexascrub left " ..
+                "these behind for you. They should speed your trip up a bit.",
+            rewardMoney = 59000,
+        },
+        [26006] = {
+            description = "Legionnaire Nazgrim and many of the other survivors have already made their " ..
+                "way to the surface. I'm sure some are just looking to rid themselves of this place for " ..
+                "good, but we still have work to do if we're going to stop the naga from invading the " ..
+                "plane of water.\n\nFirst, we need to set eyes on the tentacled fiend that destroyed our " ..
+                "ships when we first arrived - we don't want a repeat of that nightmare.\n\nFiasco left " ..
                 "these behind for you. They should speed your trip up a bit.",
             rewardMoney = 59000,
         },
@@ -6790,6 +6831,16 @@ ns.Overrides.wowhead = {
                 "in the area. Can you head over there and clear them out?",
             rewardMoney = 94000,
         },
+        [28726] = {
+            description = "I'd hoped to never return to Teldrassil for such grim business. I'd hoped that " ..
+                "its corruption had been wiped away completely. Something foul lingers.\n\nThese spiders " ..
+                "suffer much more deeply from the corruption than the other nearby wildlife. They are " ..
+                "becoming a danger to your people and a danger to the forest. We must thin their numbers, " ..
+                "but more importantly, we need to find the source of the corruption that plagues " ..
+                "them.\n\nI will come with you and aid you in this.",
+            rewardChoices = {{5392, 1}, {5393, 1}, {5586, 1}, {10544, 1}},
+            rewardMoney = 75,
+        },
         [28766] = {
             description = "So you're the new recruit from Stormwind, eh? I'm Marshal McBride, commander " ..
                 "of this garrison. Glad to have you on board...\n\n<McBride looks through some " ..
@@ -7053,6 +7104,25 @@ ns.Overrides.wowhead = {
                 "no mercy.",
             rewardMoney = 176000,
         },
+        [29623] = {
+            description = "Perfection can be achieved through repetition. Every single student in the " ..
+                "training arena below will eventually perfect his or her form... assuming they don't give " ..
+                "up first. This is a fact.\n\nI encourage you to join them, <name>. As an honorary guest " ..
+                "of the monastery, you are not required to perform the requisite 10,000 daily strikes. " ..
+                "Simply follow the leader's example for a few minutes.",
+            rewardMoney = 98000,
+        },
+        [29630] = {
+            description = "The greenwood sprites in the Waxwood Forest to the west pose no direct threat " ..
+                "to us, this is true. However, their numbers have increased as of late, as have their " ..
+                "wily antics.\n\nPart of our duty as wardens of this forest is to maintain the balance. " ..
+                "Your duty is to do so by returning these sprites to the earth.",
+            rewardChoices = {
+                {80740, 1}, {80741, 1}, {80742, 1}, {80743, 1}, {80744, 1}, {80745, 1}, {80746, 1},
+                {80747, 1}, {80748, 1},
+            },
+            rewardMoney = 98000,
+        },
         [29632] = {
             description = "Alright, <race>. I'd like to see what you're really made of.\n\nYou'll find my " ..
                 "pupils all over the monastery. Challenge them to fights. Push them to their limits. They " ..
@@ -7180,6 +7250,21 @@ ns.Overrides.wowhead = {
                 {81785, 1}, {81786, 1},
             },
             rewardMoney = 102000,
+        },
+        [29986] = {
+            description = "Trainee.\n\nSeveral wards surround us, hidden in the woods near my home. They " ..
+                "are quite effective at dispersing the mist, but they require constant upkeep.\n\nYou " ..
+                "will find one to the north, one to the west, and one to the south. Find these wards and " ..
+                "light them.",
+            rewardChoices = {{81814, 1}, {81815, 1}, {81816, 1}, {81817, 1}, {81818, 1}},
+            rewardMoney = 102000,
+        },
+        [30005] = {
+            description = "Do you like fireworks, <sir/miss>?\n\nI love them! In older times we would set " ..
+                "them off to frighten away demons, but I just like them because they're pretty!\n\nI " ..
+                "think there are still some old launchers lying around the temple.\n\nWould you go set " ..
+                "off some big fireworks for me? It would make me so happy!",
+            rewardMoney = 98000,
         },
         [30047] = {
             description = "Uncle Chen is going to love this. Or... he might tell us to find something " ..
@@ -7479,6 +7564,14 @@ ns.Overrides.wowhead = {
                 "list of activities.\n\nYou look like a handy <class>. Can you go get rid of some of " ..
                 "these crocolisks, so I can get back to my regular routine? The crocolisks normally keep " ..
                 "to themselves up at Kea Krak, to the northwest.",
+            rewardMoney = 102000,
+        },
+        [30670] = {
+            description = "Our true enemies are the sha, not the yungol.\n\nThe sha are emotion manifest. " ..
+                "Destructive, yes. But undisciplined. Undisciplined force cannot last. The flood, in " ..
+                "dispersion, loses its force. The wildfire burns its fuel.\n\nAnd, discipline and wisdom " ..
+                "can turn their destructive energy against themselves.\n\nBring me the essences of the " ..
+                "sha in the village, and I will explain further.",
             rewardMoney = 102000,
         },
         [30683] = {
@@ -8294,10 +8387,63 @@ ns.Overrides.wowhead = {
             rewardItems = {{74866, 1}},
             rewardMoney = 11400,
         },
+        [32713] = {
+            description = "Words fail to describe the massive horror of rock, bone, and blood that " ..
+                "rumbles mindlessly and aimlessly ahead of you.\n\nMassive earthquakes crack the " ..
+                "seemingly hollow shell of ground beneath the figure, leaving destruction in its wake. It " ..
+                "appears that the creature is unaware of your presence.",
+            rewardItems = {{97153, 1}},
+        },
+        [32811] = {
+            description = "Ya want we work together on dis, ya gotta earn me trust.\n\nIn Northern " ..
+                "Barrens, de Kor'kron be massin' for war. Hellscream's goons be stockpilin' lumber, oil, " ..
+                "stone, an' meat. Supplies de Darkspear want ta use against' 'im.\n\nGo to de Barrens. " ..
+                "Kill de Kor'kron. Bring me dem supplies! Fight dem wherever dey spring up, escort supply " ..
+                "caravans, group up ta take down de dangerous ones. Whatever ya gotta do.\n\nProve ta me " ..
+                "da Alliance wants dis! I be watchin'.",
+            rewardMoney = 114000,
+        },
+        [32836] = {
+            description = "The \"grumplefloot\" has been hastily carved out of a tree root, with holes " ..
+                "unevenly spaced along its length.\n\nA close inspection of its backside, however, " ..
+                "reveals words carved into the wood:\n\nRETURN TO BRAWLER'S GUILD",
+            rewardMoney = 57000,
+        },
+        [32873] = {rewardItems = {{89613, 1}}, rewardMoney = 228000, rewardXP = 294000},
+        [32896] = {
+            description = "I have received word from Baine. The Darkspear Rebellion needs your " ..
+                "help.\n\nGo to Razor Hill and seek out Ki'ta Arrowtusk.\n\nBreathe word of this to no " ..
+                "one!",
+            rewardMoney = 57000,
+        },
         [32974] = {
             description = "<The leather vellum is very old. Stained by age, it bears the following " ..
                 "letters:>\n\nOn the isle of time are tall men four Round and strong and nothing more Of " ..
                 "these brothers the shortest be Where the trail leads to me.",
+            rewardMoney = 57000,
+        },
+        [33025] = {
+            objectivesText = {
+                "See if you've already completed this by typing: /run " ..
+                    "print(C_QuestLog.IsQuestFlaggedCompleted(33025))",
+            },
+        },
+        [33100] = {
+            description = "Recently, the August Celestials of Pandaria presented you with a challenge - " ..
+                "and you triumphed.\n\nBut can you defeat them in combat? They are testing the mettle of " ..
+                "all of Pandaria's heroes.\n\nThis challenge is not impossible, but you'll need to follow " ..
+                "the advice of the last Pandaren Emperor and tackle it with unwavering inner strength. " ..
+                "You'll also need a small army, so find a group of people you trust.\n\nDefeat the four " ..
+                "celestials here in the Celestial Court, and our journey is almost complete...",
+            rewardMoney = 228000,
+        },
+        [33104] = {
+            description = "I have learned so much in this timeless place, friend. Between the wisdom of " ..
+                "the celestials and the curious power of these timeless artifacts, I know now how to " ..
+                "safely augment your cloak with my own considerable power.\n\nI need a sacred place to " ..
+                "complete my final incantations. Quickly! Meet me in the Vale of Eternal Blossoms, within " ..
+                "the Seat of Knowledge above the Mogu'shan Palace.\n\nToday, your legend begins!",
+            rewardItems = {{102457, 1, "Timeless Essence of the Black Dragonflight"}},
             rewardMoney = 57000,
         },
         [33230] = {
@@ -8307,6 +8453,7 @@ ns.Overrides.wowhead = {
                 "she wants.",
             rewardMoney = 28500,
         },
+        [33235] = {rewardMoney = 11400, rewardXP = 23600},
         [33378] = {
             description = "The Vision of Time is nearly perfected, we now have much more control over the " ..
                 "visions we seek. Your efforts have been instrumental in completing the artifact and " ..
@@ -8314,6 +8461,14 @@ ns.Overrides.wowhead = {
                 "All of us are in your debt.\n\nQuite fortunately, I have located a sort of crux in time " ..
                 "- an intersection of timeways - right here in Pandaria. Take the Vision of Time to the " ..
                 "Temple of the White Tiger. There, in the cellars, turn the hourglass.",
+        },
+        [91713] = {
+            description = "<name>, the Celestials call out for your aid. Assemble a tranquil group and " ..
+                "lead them into the Shado-Pan Monastery. Invoke the will of the Celestials, and rescue " ..
+                "Taran Zhu from the Sha of Hatred.\n\nReturn to me when you've completed this task, and I " ..
+                "shall reward you handsomely.",
+            rewardMoney = 456000,
+            rewardXP = 471000,
         },
     },
     npcs = {
@@ -8478,6 +8633,7 @@ ns.Overrides.wowhead = {
         },
         [38822] = {spawns = {[4709] = {{67.4, 37.6}}}, zoneID = 4709},
         [40214] = {spawns = {[440] = {{51.4, 28}}}, zoneID = 440},
+        [41755] = {spawns = {[4815] = {{38.8, 31.4}, {38.8, 31.6}, {39.6, 31}}}, zoneID = 4815},
         [58408] = {spawns = {[5840] = {{56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [58465] = {spawns = {[5840] = {{34, 38.2}, {56.4, 43.4}, {56.4, 43.6}, {56.6, 43.4}, {56.6, 43.6}}}},
         [64183] = {maxLevel = 91, minLevel = 91, rank = 1},
@@ -8574,15 +8730,82 @@ ns.Overrides.wowhead = {
         [69321] = {subName = "Legacy Arena Weapons"},
         [69464] = {maxLevel = 90, minLevel = 90},
         [69481] = {subName = "Regent Lord of Quel'Thalas"},
+        [69488] = {maxLevel = 90, minLevel = 90},
         [69529] = {maxLevel = 85, minLevel = 85},
+        [69533] = {maxLevel = 86, minLevel = 86},
+        [69548] = {maxLevel = 92, minLevel = 92},
+        [69562] = {subName = "The Storm Lord"},
+        [69566] = {maxLevel = 69, minLevel = 42},
+        [69613] = {maxLevel = 90, minLevel = 90},
         [69624] = {maxLevel = 90, minLevel = 90},
+        [69717] = {maxLevel = 90, minLevel = 90, subName = "Lord of the Shado-Pan"},
+        [69739] = {maxLevel = 92, minLevel = 92},
+        [69740] = {maxLevel = 92, minLevel = 92},
+        [69797] = {maxLevel = 93, minLevel = 93, subName = "Regent Lord of Quel'Thalas"},
         [69958] = {maxLevel = 92, minLevel = 92},
+        [69969] = {subName = "Glorious Conquest Quartermaster"},
+        [69971] = {subName = "Conquest Quartermaster"},
         [69972] = {subName = "Glorious Conquest Quartermaster"},
+        [69973] = {subName = "Honor Quartermaster"},
         [69980] = {maxLevel = 70, minLevel = 70, subName = "Conquest Quartermaster"},
         [70075] = {maxLevel = 91, minLevel = 91},
         [70081] = {maxLevel = 93, minLevel = 93},
+        [70126] = {maxLevel = 90, minLevel = 90},
+        [70146] = {maxLevel = 90, minLevel = 90},
+        [70165] = {subName = "Goblin Resources Manager"},
+        [70202] = {subName = "Disciple of Iron Qon"},
+        [70212] = {subName = "Head of Megaera"},
+        [70231] = {maxLevel = 90, minLevel = 90},
+        [70301] = {subName = "Riding Trainer"},
+        [70339] = {maxLevel = 90, minLevel = 90},
+        [70379] = {maxLevel = 90, minLevel = 90},
+        [70380] = {maxLevel = 90, minLevel = 90, subName = "People of the Sky"},
+        [70387] = {maxLevel = 90, minLevel = 90},
+        [70415] = {maxLevel = 90, minLevel = 90},
+        [70416] = {maxLevel = 90, minLevel = 90, subName = "Brother Shallowpond's Companion"},
+        [70441] = {maxLevel = 91, minLevel = 91},
+        [70474] = {subName = "The Living Ice"},
+        [70515] = {maxLevel = 90, minLevel = 90},
+        [70530] = {subName = "Tender of Sacrifices"},
+        [70663] = {maxLevel = 90, minLevel = 90},
+        [70728] = {maxLevel = 92, minLevel = 92},
+        [70739] = {maxLevel = 93, minLevel = 93},
+        [71037] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [71105] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [71303] = {subName = "Son of Whale Shark"},
+        [71304] = {subName = "Quartermaster"},
+        [71316] = {maxLevel = 90, minLevel = 90, spawns = {[5842] = {{41.8, 59.2}}}, zoneID = 5842},
+        [71351] = {subName = "The Black Prince"},
+        [71353] = {maxLevel = 91, minLevel = 91},
         [71426] = {subName = "The Black Prince"},
+        [71464] = {subName = "Eternal Cowhand"},
+        [71516] = {maxLevel = 92, minLevel = 92},
+        [71530] = {subName = "Test Realm Purveyor of PvP Pieces"},
+        [71825] = {maxLevel = 90, minLevel = 90},
+        [71839] = {maxLevel = 92, minLevel = 92},
+        [71841] = {maxLevel = 93, minLevel = 93},
+        [71847] = {subName = "The Timewalkers"},
+        [72051] = {maxLevel = 93, minLevel = 93},
+        [72098] = {maxLevel = 25, minLevel = 25},
+        [72157] = {subName = "Reagents"},
+        [72174] = {subName = "Poison Supplies"},
+        [72193] = {subName = "The Gushing Maw"},
+        [72407] = {subName = "Engineering Trainer"},
+        [72430] = {subName = "Fruit Vendor"},
+        [72554] = {subName = "Banker"},
+        [72561] = {subName = "Banshee Queen"},
         [72723] = {maxLevel = 90, minLevel = 90, subName = "The Black Prince"},
+        [72957] = {maxLevel = 9999, minLevel = 9999, subName = "The Last Blood of Galakrond"},
+        [72964] = {subName = "Blackfuse Company"},
+        [72995] = {maxLevel = 90, minLevel = 90},
+        [73008] = {subName = "The Metal Brewmaster"},
+        [73138] = {subName = "The Black Prince"},
+        [73141] = {subName = "Conquest Quartermaster"},
+        [73146] = {subName = "Honor Quartermaster"},
+        [73148] = {subName = "Conquest Quartermaster"},
+        [73151] = {subName = "Combatant Mount Quartermaster"},
+        [73212] = {subName = "Regent Lord of Quel'Thalas"},
+        [73214] = {subName = "Lord of the Shado-Pan"},
     },
     objects = {
         [214341] = {spawns = {[6138] = {{38.7, 31.9}, {41.8, 32.5}, {41.9, 36.6}, {42, 34.4}}}, zoneID = 6138},

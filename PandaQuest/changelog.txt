@@ -75,6 +75,222 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.617
+- database - Wowhead data as the PandaQuest portal read it: 1,073 quests, 143 NPCs, 1 object
+- database - Classic Era: data from the PandaQuest portal: 174 quests, 1 NPC
+- database - TBC Anniversary: data from the PandaQuest portal: 132 quests, 7 NPCs
+- quest 9815 - Muck Diving - updated
+  - description added
+  - reward choices: +3
+- quest 11646 - The Borean Inquisition - updated
+  - description added
+- quest 11668 - Shrimpin' Ain't Easy - updated
+  - description added
+  - reward items: +1
+- quest 14268 - Deep Impact - updated
+  - description added
+  - reward money added (30s)
+- quest 26006 - A Breath of Fresh Air - updated
+  - description added
+  - reward money added (5g 90s)
+- quest 28726 - Webwood Corruption - updated
+  - description added
+  - reward money added (75c)
+  - reward choices: +4
+- quest 29623 - Perfection - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 29630 - And a Heavy Fist - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 29986 - Fog Wards - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +5
+- quest 30005 - Lighting Up the Sky - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30670 - Turnabout - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 32713 - Rocks Fall, People Die - updated
+  - description added
+  - reward items: +1
+- quest 32811 - Battlefield: Barrens - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32836 - A Knockoff Grumplefloot - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32873 - LFGDungeons - Mists - Scenario - Heroic Random - 1st - updated
+  - reward money added (22g 80s)
+  - XP added (294,000)
+  - reward items: +1
+- quest 32896 - The Road to War - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 33025 - NC S2 Q2 - updated
+  - objectives text added
+- quest 33100 - The Emperor's Way - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 33104 - A Pandaren Legend - updated
+  - description added
+  - reward money added (5g 70s)
+  - reward items: +1
+- quest 33235 - Great Turtle Meat - updated
+  - reward money added (1g 14s)
+  - XP added (23,600)
+- quest 91713 - A Celestial Challenge: Sha of Hatred - updated
+  - description added
+  - reward money added (45g 60s)
+  - XP added (471,000)
+- npc 41755 - Hellscream's Vanguard - updated
+  - coordinates: 3 spawn points added in Kelp'thar Forest
+- npc 69488 - Sunreaver Lieutenant - updated
+  - NPC level added (90)
+- npc 69533 - Krasarang Wilds Flame Guardian - updated
+  - NPC level added (86)
+- npc 69548 - Shadowed Loa Spirit - updated
+  - NPC level added (92)
+- npc 69562 - Nalak - updated
+  - NPC title added (The Storm Lord)
+- npc 69566 - Midsummer Reveler - updated
+  - NPC level added (42-69)
+- npc 69613 - Violet Rise Peasant - updated
+  - NPC level added (90)
+- npc 69717 - Taran Zhu - updated
+  - NPC title added (Lord of the Shado-Pan)
+  - NPC level added (90)
+- npc 69739 - Essence of Storms - updated
+  - NPC level added (92)
+- npc 69740 - Twisted Fate - updated
+  - NPC level added (92)
+- npc 69797 - Lor'themar Theron - updated
+  - NPC title added (Regent Lord of Quel'Thalas)
+  - NPC level added (93)
+- npc 69969 - Argex Irongut - updated
+  - NPC title added (Glorious Conquest Quartermaster)
+- npc 69971 - Xazi Smolderpipe - updated
+  - NPC title added (Conquest Quartermaster)
+- npc 69973 - Zom Bocom - updated
+  - NPC title added (Honor Quartermaster)
+- npc 70126 - Willy Wilder - updated
+  - NPC level added (90)
+- npc 70146 - Thunderwing - updated
+  - NPC level added (90)
+- npc 70165 - Julie Fabernackle - updated
+  - NPC title added (Goblin Resources Manager)
+- npc 70202 - Manchu - updated
+  - NPC title added (Disciple of Iron Qon)
+- npc 70212 - Flaming Head - updated
+  - NPC title added (Head of Megaera)
+- npc 70231 - Silver Covenant Hippogryph - updated
+  - NPC level added (90)
+- npc 70301 - Softpaws - updated
+  - NPC title added (Riding Trainer)
+- npc 70339 - Angler Scottie - updated
+  - NPC level added (90)
+- npc 70379 - Lion's Landing Peasant - updated
+  - NPC level added (90)
+- npc 70380 - Hawkmaster Anna - updated
+  - NPC title added (People of the Sky)
+  - NPC level added (90)
+- npc 70387 - Servant to the Klaxxi - updated
+  - NPC level added (90)
+- npc 70415 - Angler Lin Snowclaw - updated
+  - NPC level added (90)
+- npc 70416 - Fishbreath - updated
+  - NPC title added (Brother Shallowpond's Companion)
+  - NPC level added (90)
+- npc 70441 - Lost Soul - updated
+  - NPC level added (91)
+- npc 70474 - Farastu - updated
+  - NPC title added (The Living Ice)
+- npc 70515 - Isirami Fairwind - updated
+  - NPC level added (90)
+- npc 70530 - Ra'sha - updated
+  - NPC title added (Tender of Sacrifices)
+- npc 70663 - Embercore - updated
+  - NPC level added (90)
+- npc 70728 - Bitta Boom - updated
+  - NPC level added (92)
+- npc 70739 - Doctor FIST - updated
+  - NPC level added (93)
+- npc 71037 - Wrathion - updated
+  - NPC title added (The Black Prince)
+  - NPC level added (90)
+- npc 71105 - Wrathion - updated
+  - NPC title added (The Black Prince)
+  - NPC level added (90)
+- npc 71303 - Whale Shark - updated
+  - NPC title added (Son of Whale Shark)
+- npc 71304 - Iris Moondreamer - updated
+  - NPC title added (Quartermaster)
+- npc 71316 - Niuzao - updated
+  - NPC level added (90)
+  - coordinates: 1 spawn point added in Townlong Steppes
+- npc 71351 - Wrathion - updated
+  - NPC title added (The Black Prince)
+- npc 71353 - Viletongue Decimator - updated
+  - NPC level added (91)
+- npc 71464 - Charles Quall - updated
+  - NPC title added (Eternal Cowhand)
+- npc 71516 - Kor'kron Ironblade - updated
+  - NPC level added (92)
+- npc 71530 - Grievous Flaskataur, Esq. - updated
+  - NPC title added (Test Realm Purveyor of PvP Pi...)
+- npc 71825 - Foul Slime - updated
+  - NPC level added (90)
+- npc 71839 - Small Illusionary Ambusher - updated
+  - NPC level added (92)
+- npc 71841 - Large Illusionary Conqueror - updated
+  - NPC level added (93)
+- npc 71847 - Timewalker Mage - updated
+  - NPC title added (The Timewalkers)
+- npc 72051 - Titanic Corruption - updated
+  - NPC level added (93)
+- npc 72098 - Au - updated
+  - NPC level added (25)
+- npc 72157 - Hagrus - updated
+  - NPC title added (Reagents)
+- npc 72174 - Rekkul - updated
+  - NPC title added (Poison Supplies)
+- npc 72193 - Karkanos - updated
+  - NPC title added (The Gushing Maw)
+- npc 72407 - Roxxik - updated
+  - NPC title added (Engineering Trainer)
+- npc 72430 - Shan'ti - updated
+  - NPC title added (Fruit Vendor)
+- npc 72554 - Mezlik - updated
+  - NPC title added (Banker)
+- npc 72561 - Lady Sylvanas Windrunner - updated
+  - NPC title added (Banshee Queen)
+- npc 72957 - Galakras - updated
+  - NPC title added (The Last Blood of Galakrond)
+  - NPC level added (9,999)
+- npc 72964 - Goro'dan - updated
+  - NPC title added (Blackfuse Company)
+- npc 72995 - Chao the Voice - updated
+  - NPC level added (90)
+- npc 73008 - Sam the Wise - updated
+  - NPC title added (The Metal Brewmaster)
+- npc 73138 - Wrathion - updated
+  - NPC title added (The Black Prince)
+- npc 73141 - Doris Chiltonius - updated
+  - NPC title added (Conquest Quartermaster)
+- npc 73146 - Lok'nor Bloodfist - updated
+  - NPC title added (Honor Quartermaster)
+- npc 73148 - Roo Desvin - updated
+  - NPC title added (Conquest Quartermaster)
+- npc 73151 - Deathguard Netharian - updated
+  - NPC title added (Combatant Mount Quartermaster)
+- npc 73212 - Lor'themar Theron - updated
+  - NPC title added (Regent Lord of Quel'Thalas)
+- npc 73214 - Taran Zhu - updated
+  - NPC title added (Lord of the Shado-Pan)
+
 0.2.616
 - database - Wowhead data as the PandaQuest portal read it: 1,052 quests, 75 NPCs, 1 object
 - database - Classic Era: data from the PandaQuest portal: 153 quests, 1 NPC
@@ -1142,295 +1358,6 @@ Older data syncs: see each version's GitHub release notes and https://pd.zroot.i
 - npc 72723 - Wrathion - updated
   - NPC title added (The Black Prince)
   - NPC level added (90)
-
-0.2.613
-- database - Wowhead data as the PandaQuest portal read it: 745 quests, 18 NPCs
-- database - Classic Era: data from the PandaQuest portal: 102 quests
-- database - TBC Anniversary: data from the PandaQuest portal: 72 quests, 7 NPCs
-- quest 187 - Tiger Prowess - updated
-  - description added
-- quest 313 - Forced to Watch from Afar - updated
-  - description added
-  - reward money added (1s 75c)
-- quest 858 - Ignition - updated
-  - description added
-- quest 7223 - Armor Scraps - updated
-  - description added
-- quest 9637 - Kalynna's Request - updated
-  - description added
-- quest 10475 - Defender's Covenant - updated
-  - description added
-  - reward items: +1
-- quest 11523 - Arm the Wards! - updated
-  - description added
-  - reward money added (3g 40s)
-- quest 11912 - Nuts for Berries - updated
-  - description added
-  - reward money added (4g 70s)
-- quest 12558 - Dreadsaber Mastery: Ready to Pounce - updated
-  - description added
-  - reward money added (6g 20s)
-  - reward choices: +5
-- quest 13949 - Crossroads Caravan Pickup - updated
-  - description added
-  - reward money added (5s)
-  - reward choices: +3
-- quest 14151 - Cardinal Ruby - updated
-  - description added
-- quest 14368 - Save the Children! - updated
-  - description added
-  - reward money added (1s 25c)
-  - reward choices: +2
-- quest 24959 - Fresh out of the Grave - updated
-  - description added
-  - reward money added (2c)
-- quest 25095 - Thunderdrome: Sarinexx! - updated
-  - description added
-  - reward money added (2g 10s)
-- quest 25156 - Elemental Goo - updated
-  - description added
-- quest 25218 - Undersea Inflation - updated
-  - description added
-  - reward money added (7g 80s)
-- quest 25220 - Slippery Threat - updated
-  - description added
-  - reward money added (7g 80s)
-- quest 25329 - Might of the Stonemaul - updated
-  - description added
-  - reward money added (80s)
-  - reward choices: +3
-- quest 25854 - I'll Call Him Bitey - updated
-  - description added
-  - reward money added (15s)
-- quest 25873 - Horn of the Traitor - updated
-  - description added
-  - reward money added (1g 20s)
-  - reward items: +1
-- quest 25911 - Welcome News - updated
-  - description added
-  - reward money added (3g 90s)
-  - reward choices: +3
-- quest 26034 - The Twilight Destroyer - updated
-  - description added
-  - reward money added (24g 60s)
-- quest 26177 - Feeling Crabby? - updated
-  - description added
-  - reward money added (2g)
-- quest 26248 - All Our Friends Are Dead - updated
-  - description added
-  - reward money added (8g 20s)
-  - reward choices: +3
-- quest 26274 - The Arts of a Warlock - updated
-  - description added
-  - reward money added (40c)
-- quest 26279 - The Defense of Grom'gol: Ogre Oppression - updated
-  - description added
-  - reward money added (18s)
-  - reward choices: +3
-- quest 26290 - Secrets of the Tower - updated
-  - description added
-- quest 26335 - Ready the Navy - updated
-  - description added
-- quest 26341 - The Stone Shards - updated
-  - description added
-- quest 26384 - Darkcleric Marnal - updated
-  - description added
-  - reward money added (17s)
-- quest 26387 - Starvation Diet - updated
-  - description added
-  - reward money added (35s)
-- quest 26407 - Mosh'Ogg Handiwork - updated
-  - description added
-  - reward money added (14s)
-- quest 26439 - Putting the Pieces Together - updated
-  - description added
-  - reward money added (8g 60s)
-- quest 26472 - Insane Druids - updated
-  - description added
-  - reward money added (30s)
-  - reward items: +1
-- quest 26494 - Mixmaster Jasper - updated
-  - description added
-  - reward money added (3s)
-- quest 26501 - Sealing the Way - updated
-  - description added
-  - reward money added (8g 20s)
-  - reward choices: +3
-- quest 26515 - Ongo'longo's Revenge - updated
-  - description added
-  - reward money added (35s)
-- quest 26576 - Steady Hand - updated
-  - description added
-  - reward money added (2g 15s)
-- quest 26597 - Stranglethorn Fever - updated
-  - description added
-  - reward money added (35s)
-  - reward choices: +3
-- quest 26601 - Mok'rash the Cleaver - updated
-  - description added
-  - reward money added (1g)
-  - reward choices: +4
-- quest 26608 - Negotiations Terminated - updated
-  - description added
-  - reward money added (9g)
-- quest 26635 - Cannonball Swim - updated
-  - description added
-  - reward money added (35s)
-- quest 26697 - The Final Voyage of the Brashtide - updated
-  - description added
-  - reward money added (35s)
-  - reward choices: +3
-- quest 26734 - The Source of the Madness - updated
-  - description added
-  - reward money added (18s)
-- quest 26747 - A Physical Specimen - updated
-  - description added
-  - reward money added (40s)
-  - reward choices: +3
-- quest 26750 - At the Stonemother's Call - updated
-  - description added
-  - reward money added (2g 15s)
-- quest 26754 - Morbent's Bane - updated
-  - description added
-  - reward money added (55s)
-  - reward choices: +3
-- quest 26840 - Return to the Highlands - updated
-  - description added
-  - reward money added (90s)
-- quest 26869 - Depth of the Depths - updated
-  - description added
-- quest 26889 - All Cheered Out - updated
-  - description added
-  - reward money added (17s)
-- quest 26901 - Going, Going, Guano! - updated
-  - description added
-  - reward money added (1g 47s)
-- quest 26905 - Agamaggan's Charge - updated
-  - description added
-  - reward money added (1g 47s)
-  - reward choices: +5
-- quest 26928 - Smells Like A Plan - updated
-  - description added
-  - reward money added (14s)
-- quest 26937 - When Death is Not Enough - updated
-  - description added
-- quest 26948 - Moonfire - updated
-  - description added
-- quest 27001 - This Means WAR (Wild Arachnid Roundup) - updated
-  - description added
-  - reward money added (40s)
-  - reward choices: +3
-- quest 27006 - Fly Over - updated
-  - description added
-  - reward money added (8g 60s)
-- quest 27027 - Primal Strike - updated
-  - description added
-- quest 27076 - Breaking and Entering - updated
-  - description added
-  - reward money added (2g 80s)
-- quest 27100 - Twilight Research - updated
-  - description added
-  - reward money added (8g 20s)
-- quest 27165 - Victory, For Now - updated
-  - description added
-  - reward money added (3s 50c)
-- quest 27182 - The Hermit of Witch Hill - updated
-  - description added
-- quest 27202 - Brother Against Brother - updated
-  - description added
-  - reward money added (1g)
-  - reward choices: +4
-- quest 27271 - Journey to the Wizard's Sanctum - updated
-  - description added
-- quest 27279 - The Shattered Hand - updated
-  - description added
-- quest 27288 - The Deserters - updated
-  - description added
-  - reward money added (80s)
-- quest 27301 - Unbroken - updated
-  - description added
-  - reward money added (9g)
-- quest 27395 - A Marksman's Weapon - updated
-  - description added
-  - reward items: +1
-- quest 29320 - Like Pike? - updated
-  - description added
-  - reward money added (11g 40s)
-  - reward items: +1
-- quest 29581 - The Golden Dream - updated
-  - description added
-  - reward money added (10g 20s)
-- quest 29873 - Ken-Ken - updated
-  - description added
-  - reward money added (94s)
-- quest 29927 - Mann's Man - updated
-  - description added
-  - reward money added (7g 40s)
-- quest 29951 - Muddy Water - updated
-  - description added
-  - reward money added (10g 20s)
-  - reward choices: +9
-- quest 30089 - Apply Directly to the Forehead - updated
-  - description added
-  - reward money added (9g 80s)
-  - reward choices: +9
-- quest 30195 - Blooming Blossoms - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 30603 - The Broketooth Ravage - updated
-  - description added
-  - reward money added (10g 60s)
-- quest 30691 - Misery - updated
-  - description added
-- quest 30775 - The Exile - updated
-  - description added
-  - reward money added (11g)
-- quest 30777 - In Search of Suna - updated
-  - description added
-  - reward money added (5g 50s)
-- quest 31020 - Feeding the Beast - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31063 - Lao-Chin and Serevex - updated
-  - description added
-  - reward money added (11g)
-- quest 31187 - On the Crab - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 31542 - Incarnadine Ink - updated
-  - description added
-  - reward money added (11g 40s)
-  - XP added (236,000)
-  - reward items: +1
-- quest 31841 - Practice Makes Perfect: Master Woo - updated
-  - description added
-- quest 31846 - Practice Makes Perfect: Master Hsu - updated
-  - description added
-- quest 31853 - All Aboard! - updated
-  - description added
-  - reward money added (98s)
-- quest 32252 - Harbingers of the Loa - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32265 - Charged Moganite - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32287 - Enemies Beneath the Tower - updated
-  - description added
-  - reward money added (11g 40s)
-- quest 32684 - You Want Fish? - updated
-  - description added
-  - reward money added (1g 14s)
-  - reward items: +1
-- npc 659 - El Pollo Grande - updated
-  - coordinates: 8 spawn points added in Felwood
-- npc 2691 - Highvale Outrunner - updated
-  - coordinates: 24 spawn points added in The Hinterlands
-- npc 37893 - Vegard the Unforgiven - updated
-  - coordinates: 2 spawn points added in Dragonblight
-- npc 37988 - Zuni - updated
-  - coordinates: 7 spawn points added in Durotar
-  - coordinates: 5 spawn points added in Echo Isles
 
 0.2.386
 - professions - Read learned Forever recipes without changing window filters.
