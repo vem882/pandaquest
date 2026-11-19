@@ -366,12 +366,30 @@ ns.Overrides.wowhead = {
                 "prey, a zhevra, then bring its carcass to the dead tree northwest of Ratchet. Ishamuhale " ..
                 "will smell the carcass and be drawn to it.\n\nBe ready when he comes.",
         },
+        [891] = {
+            description = "Yet another ship from my fleet has been lost to those overzealous humans at " ..
+                "Northwatch Hold!\n\nThose bastards must be dealt with. Their paranoia has them in a " ..
+                "state of frenzy. Trigger happy, reckless louts are shooting at anything in their " ..
+                "sights.\n\nTravel south along the Merchant Coast to the Hold and lay siege to their " ..
+                "forces. Bring me the medals of their soldiers as proof. And for the love of my fleet, " ..
+                "slay Captain Fairmount and her overzealous cannoneers!",
+            rewardChoices = {{5309, 1}, {5310, 1}},
+        },
         [905] = {
             description = "Now, <name>, the hunt deepens. Now you must defeat your prey, and then find " ..
                 "your way to its lair.\n\nHunt the sunscale raptors to the south. Slay them and remove " ..
                 "the feathers they wear. Place the feathers on the scytheclaw nests southwest of the " ..
                 "Stagnant Oasis. Show their brethren you do not fear them!",
             rewardMoney = 900,
+        },
+        [914] = {
+            description = "The druids in the Wailing Caverns, the Druids of the Fang, are an aberration. " ..
+                "They were part of an order of noble druids whose plan was to heal the Barrens, but now " ..
+                "seek to remake that land to match their own, twisted dreams.\n\nThe Druids of the Fang " ..
+                "have four leaders, and each possesses a dream gem. Even now their faces haunt me! Defeat " ..
+                "the leaders and bring me their gems, and the Barrens may again know peace.\n\nGo, " ..
+                "<name>. You will find them lurking deep within the Wailing Caverns.",
+            rewardChoices = {{6505, 1}, {6504, 1}},
         },
         [943] = {
             description = "Prospector Whelgar now holds the original fossil at his site in the Wetlands. " ..
@@ -403,6 +421,13 @@ ns.Overrides.wowhead = {
                 "Take it to Astranaar and give it to the child's parent, Pelturas Whitemoon.\n\nTo reach " ..
                 "Astranaar, follow the road south, then east.",
             rewardMoney = 2500,
+        },
+        [1032] = {
+            description = "I can't believe that Anilia is gone... We used to play together in the forests " ..
+                "all the time. I almost feel... sad.\n\nI know something that might make me feel better. " ..
+                "Please, slay the satyrs that took Anilia from me! Bring me their horns as proof of your " ..
+                "actions and you will forever have my gratitude.",
+            rewardMoney = 3000,
         },
         [1037] = {
             description = "Velinde Starsong was my predecessor here in Ashenvale Forest. At first it " ..
@@ -624,6 +649,7 @@ ns.Overrides.wowhead = {
                 "proven that the paladins here in Stormwind shall never turn their backs on those in " ..
                 "need.\n\nFarewell.",
         },
+        [1794] = {rewardItems = {{6776, 1}}},
         [1822] = {rewardChoices = {{7115, 1}, {7117, 1}, {7116, 1}, {7118, 1}}},
         [1952] = {
             description = "I'll go make the wands now.",
