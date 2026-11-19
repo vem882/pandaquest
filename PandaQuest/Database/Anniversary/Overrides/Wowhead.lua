@@ -34,6 +34,15 @@ ns.Overrides.wowhead = {
             rewardChoices = {{3574, 1}, {3573, 1}},
         },
         [579] = {rewardChoices = {{2154, 1}, {3899, 1}}},
+        [718] = {
+            description = "In our hurry to leave the Uldaman excavation site, we were forced to abandon " ..
+                "many wagons and crates of supplies along the way. The local ogres from Camp Kosh have " ..
+                "been on our abandoned equipment like vultures on a rotting corpse. Don't smell much " ..
+                "better, either. Than the corpses, I mean.\n\nAnyways, they took the cart that was " ..
+                "carrying all our weapons and such... so--well, this is a bit embarrassing--we haven't " ..
+                "been able to get any food.\n\nWe're in a bit of a pickle here, suppose you could help us " ..
+                "out?",
+        },
         [831] = {
             description = "Humans cannot be trusted. We fought alongside them with a weary heart, knowing " ..
                 "they would betray us one day.\n\nAdmiral Proudmoore's death was not enough to stop his " ..
@@ -42,6 +51,23 @@ ns.Overrides.wowhead = {
                 "be before the next waves of Proudmoore's men land upon our shores.\n\nWe need to get " ..
                 "these orders to Vol'jin in Orgrimmar immediately! He can be found in Thrall's chamber.",
             rewardMoney = 175,
+        },
+        [905] = {
+            description = "Now, <name>, the hunt deepens. Now you must defeat your prey, and then find " ..
+                "your way to its lair.\n\nHunt the sunscale raptors to the south. Slay them and remove " ..
+                "the feathers they wear. Place the feathers on the scytheclaw nests southwest of the " ..
+                "Stagnant Oasis. Show their brethren you do not fear them!",
+            rewardMoney = 900,
+        },
+        [935] = {
+            description = "Without the blessings of Alexstrasza the Life-Binder and Nozdormu the " ..
+                "Timeless, Teldrassil 's growth has not been without flaw. Strange beasts have been " ..
+                "reported arising from the very ground of the tree, and crazed furbolgs attack passing " ..
+                "travelers.\n\nI can only hope that the solution the Arch Druid is looking for will be " ..
+                "found quickly. I will pour all the phials you brought into this vessel, for you to " ..
+                "deliver to Darnassus.\n\nBring it to Fandral Staghelm, you will find him in the druid " ..
+                "grove.",
+            rewardChoices = {{5596, 1}, {5595, 1}},
         },
         [1219] = {
             description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
@@ -75,6 +101,13 @@ ns.Overrides.wowhead = {
                 "a Mountaineer escort comes through!",
             rewardChoices = {{117, 5}, {159, 5}},
         },
+        [2281] = {
+            description = "Sending you out in the field now would be suicide. Renzik doesn't need another " ..
+                "dead rogue on his hands. Don't fret, though, <name> - Renzik is going to get you up to " ..
+                "speed.\n\nMake your way to the Redridge Mountains and speak with an associate of SI:7 " ..
+                "named Lucius. You will find him hanging around the docks of Lakeshire with the other " ..
+                "shady good-for-nothings.",
+        },
         [2585] = {
             description = "Have you ever watched them in battle, <name>? The scorpoks, I mean. Have you " ..
                 "ever seen the grace and agility with which they move? The decisiveness of their " ..
@@ -84,6 +117,11 @@ ns.Overrides.wowhead = {
                 "order to create a stable sample, I will need three scorpok pincers, two vulture " ..
                 "gizzards, and one blasted boar lung.",
             rewardItems = {{8412, 1}},
+        },
+        [2607] = {
+            description = "It appears as if you've brought back more information than even I expected. " ..
+                "This certainly is a strange turn of events, <name>.\n\nA cure? Hrm... Go down to the " ..
+                "cellar and speak with Doc Mixilpixil - he may be able to help.",
         },
         [2681] = {
             description = "It will take more than you alone to overcome the forces of Razelikh and his " ..
@@ -200,6 +238,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{13982, 1}, {13986, 1}, {13984, 1}},
             rewardItems = {{14002, 1}},
         },
+        [5727] = {
+            description = "Now let us see if this insignia you found is worth the effort.\n\nThere is a " ..
+                "warlock within the city who believes he has my trust. He does not know that I realize " ..
+                "where his true loyalties lie. He is in fact the leader of the Burning Blade. But do not " ..
+                "rush off to do battle with him; he has a purpose, and we shall use him against our " ..
+                "enemies.\n\nTake this insignia to him in the Cleft of Shadow here in Orgrimmar, speak to " ..
+                "him and see if he believes you are one of his own, then return to me here.",
+        },
         [6064] = {
             description = "Hi there, <lad/lass>! So, you'd be wanting to know how you can gain a pet of " ..
                 "your own?\n\nWell, let's get started. There's nothing more important than yer equipment " ..
@@ -209,6 +255,7 @@ ns.Overrides.wowhead = {
                 "like. So, find a large crag boar, then use the taming rod to tame it.",
             rewardXP = 840,
         },
+        [6545] = {rewardItems = {{16763, 1}}},
         [7302] = {
             description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
                 "over enemy territory. You must find out what became of them so that we can attempt a " ..
@@ -290,6 +337,14 @@ ns.Overrides.wowhead = {
                 "of the Dead Scar. Bring me Dar'Khan's head and your deeds will go down in history!",
             rewardChoices = {{22980, 1}, {22982, 1}, {22984, 1}, {22995, 1}},
             rewardMoney = 4000,
+        },
+        [9211] = {
+            description = "Ah, the Ice Guard. It is a thin sheen of protective magic that covers certain " ..
+                "pieces of equipment. Those that do battle with creatures of frost and ice will gain " ..
+                "increased protection from their attacks by using the Ice Guard.\n\nAs with all things " ..
+                "the Wrathcaster creates, there is a price - a price that I will not lower, regardless of " ..
+                "how much you whimper. Interested?",
+            rewardItems = {{22636, 1}},
         },
         [9228] = {
             description = "Greetings, friend. Have you insignias of the Dawn or the Crusade that you " ..
@@ -412,6 +467,14 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25986, 1}, {25987, 1}, {25985, 1}},
             rewardMoney = 29000,
         },
+        [10431] = {
+            description = "The Sunfury briefings support the theory that Kael'thas has been receiving " ..
+                "outside help in constructing and running these manaforges. Who this is remains a bit of " ..
+                "a mystery, though we're likely to find out in Manaforge Ara.\n\nI've sent a group of my " ..
+                "men to scout the surrounding area. Go to Tuluman's Landing, north of here, and speak to " ..
+                "Kaylaan. See what he's discovered at Manaforge Ara. Find out who is assisting the " ..
+                "Sunfury army and take care of them.",
+        },
         [10494] = {
             description = "You kept your word and brought the device built by Mux. I believe a reward is " ..
                 "in order if I'm to keep you interested in saving my skin. Bring me the belt and set of " ..
@@ -448,6 +511,12 @@ ns.Overrides.wowhead = {
                 "field. They will think it an attack by the Eclipsion and sever all ties!",
             rewardChoices = {{31075, 1}, {31077, 1}, {31076, 1}, {31078, 1}},
             rewardMoney = 132000,
+        },
+        [10790] = {
+            description = "You are a long way from home, <race>. Perhaps it is time you returned to learn " ..
+                "from your master, Gan'rul Bloodeye. His knowledge is known to all of our craft, even " ..
+                "those of us here.\n\nGan'rul dwells in the Cleft of Shadow in Orgrimmar.",
+            rewardXP = 85,
         },
         [10798] = {
             description = "This is bad news. Gorgrom the Dragon-Eater is behind the recent Bloodmaul " ..
