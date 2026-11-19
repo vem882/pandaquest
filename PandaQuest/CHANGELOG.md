@@ -4,6 +4,166 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.611] - 2026-11-19
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 472 quests, 10 NPCs
+- database - Classic Era: data from the PandaQuest portal: 60 quests
+- database - TBC Anniversary: data from the PandaQuest portal: 45 quests, 7 NPCs
+- quest 3091 - Simple Note - updated
+  - description added
+- quest 7383 - Teldrassil: The Burden of the Kaldorei - updated
+  - description added
+- quest 8166 - The Battle for Arathi Basin! - updated
+  - description added
+  - reward money added (1g 30s)
+- quest 9635 - The Zapthrottle Mote Extractor! - updated
+  - description added
+  - reward items: +1
+- quest 9800 - A Rare Bean - updated
+  - description added
+  - reward items: +1
+- quest 10248 - You, Robot - updated
+  - description added
+  - reward money added (4g 10s)
+- quest 11367 - Demolishing Megalith - updated
+  - description added
+  - reward money added (10g)
+  - reward items: +1
+- quest 11381 - Soup for the Soul - updated
+  - description added
+  - reward choices: +2
+- quest 13692 - The Sword and the Sea - updated
+  - description added
+  - reward items: +1
+- quest 13727 - The Valiant's Challenge - updated
+  - description added
+  - reward money added (7g 40s)
+- quest 20441 - Rite of Vision - updated
+  - description added
+  - reward choices: +2
+- quest 25134 - Lazy Peons - updated
+  - description added
+  - reward money added (1s 50c)
+- quest 25141 - Eviscerate - updated
+  - description added
+  - reward items: +1
+- quest 25164 - Backed Into a Corner - updated
+  - description added
+  - reward money added (15g 60s)
+  - reward choices: +3
+- quest 25173 - From Bad to Worse - updated
+  - description added
+  - reward money added (1s 75c)
+  - reward choices: +3
+- quest 25392 - Oh, Deer! - updated
+  - description added
+  - reward money added (7g 80s)
+  - reward choices: +3
+- quest 25491 - Durable Seeds - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 25531 - Twilight Riot - updated
+  - description added
+- quest 25534 - Going Off-Task - updated
+  - description added
+  - reward money added (65s)
+- quest 25596 - Where's Synge? - updated
+  - description added
+  - reward money added (55s)
+- quest 25698 - The Amulet of Sevine - updated
+  - description added
+  - reward money added (85s)
+- quest 25793 - The Deep Reaches - updated
+  - description added
+- quest 25836 - Free Freewind Post - updated
+  - description added
+- quest 25861 - Setting An Example - updated
+  - description added
+- quest 25862 - Stolen Property - updated
+  - description added
+- quest 25962 - Properly Inspired - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 25966 - Visions of the Past: The Slaughter of Biel'aran Ridge - updated
+  - description added
+  - reward money added (31g 20s)
+  - reward choices: +4
+- quest 26008 - Decompression - updated
+  - description added
+  - reward money added (7g 80s)
+  - reward choices: +3
+- quest 26043 - BEWARE OF CRAGJAW! - updated
+  - description added
+  - reward money added (65s)
+  - reward choices: +4
+- quest 26102 - Grimaxe's Demise - updated
+  - description added
+  - reward money added (3s 50c)
+  - reward choices: +4
+- quest 26185 - Advice from the Cenarion Circle - updated
+  - description added
+  - reward money added (9s)
+- quest 26196 - Longbraid the Grim - updated
+  - description added
+  - reward money added (9s)
+- quest 26621 - Insurrection - updated
+  - description added
+  - reward money added (27g)
+  - reward choices: +2
+- quest 29324 - The Sister's Pendant - updated
+  - description added
+  - reward money added (2g)
+  - reward items: +1
+- quest 30056 - The Farmer's Daughter - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30265 - Sparkle in the Eye - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30466 - Sufficient Motivation - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30515 - Challenge Accepted - updated
+  - description added
+  - reward money added (20g 40s)
+- quest 30666 - Sudden, Unexpected Crocolisk Aggression - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30723 - Honor, Even in Death - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30746 - A Fair Trade - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30806 - The Scent of Life - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 31251 - Best Meals Anywhere! - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 31354 - Mazu's Bounty - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31941 - Squash Those Foul Odors - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32275 - Surgical Death - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32527 - Grave Circumstances - updated
+  - description added
+  - reward money added (11g 40s)
+- npc 7667 - Lady Sevine - updated
+  - coordinates: 4 spawn points added in Blasted Lands
+- npc 11863 - Azore Aldamort - updated
+  - coordinates: 1 spawn point added in Desolace
+- npc 35918 - Orc Scout - updated
+  - coordinates: 1 spawn point added in The Lost Isles
+- npc 68651 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+
 ## [0.2.610] - 2026-11-19
 
 Data from the PandaQuest portal.
