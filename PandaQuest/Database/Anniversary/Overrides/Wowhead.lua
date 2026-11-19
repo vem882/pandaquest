@@ -92,6 +92,15 @@ ns.Overrides.wowhead = {
                 "been able to get any food.\n\nWe're in a bit of a pickle here, suppose you could help us " ..
                 "out?",
         },
+        [744] = {
+            description = "<name>, my brother soon stands before Chief Bloodhoof, and it is my honor to " ..
+                "make his headdress for him.\n\nI want to ask a favor of you while I finish tanning these " ..
+                "leather straps. There is not time for me to find enough feathers, and I was wondering, " ..
+                "would you gather more for me?\n\nYou can find feathers of the correct size from the " ..
+                "harpies residing far to the north and northwest of Thunder Bluff. I need only 6 azure " ..
+                "and 6 bronze feathers to complete the design.",
+            rewardChoices = {{4968, 1}, {4967, 1}},
+        },
         [756] = {
             description = "To create the Thunderhorn Cleansing Totem, you must gather the claws of the " ..
                 "predators of the Mulgore plains. Hunt prairie stalkers for their stalker claws and " ..
@@ -152,6 +161,15 @@ ns.Overrides.wowhead = {
                 "powerful!",
             rewardMoney = 1000,
         },
+        [1033] = {
+            description = "I had hoped Orendil's cure would save Relara, but I fear it only slowed the " ..
+                "disease running through my child. We must find more powerful medicine! Thankfully, " ..
+                "Orendil spoke to me of further remedies to try should his first one fail.\n\nElune's " ..
+                "Tear is a type of stone that rests in only one place: the isle on Iris Lake, east of " ..
+                "Astranaar. Orendil said the stone will wash away corruption... please, <name>, bring me " ..
+                "Elune's Tear and pray it will end my child's sickness!",
+            rewardMoney = 1400,
+        },
         [1219] = {
             description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
                 "clutched in the hand is a bone-carved tube. And in the tube is a dirt-stained " ..
@@ -178,6 +196,15 @@ ns.Overrides.wowhead = {
                 "and corrupting. You can tell which satyrs have drawn the most of Ashenvale's magic by " ..
                 "their swollen, uncloven hooves.\n\nThese hooves hold great power. I will need them for " ..
                 "your gauntlets' crafting.",
+        },
+        [1882] = {
+            description = "The Plaguelands to the east are an aberration. Devised by the Lich King, they " ..
+                "spread their magic into the soil, corrupting and killing all that live. Although there " ..
+                "is a certain charm to the destructive forces of the plague, we, the mages of the " ..
+                "Forsaken, believe it is unruly and must be curtailed.\n\nBut first, we must measure how " ..
+                "far it has spread into Tirisfal. Go to the Balnir Farmstead in eastern Tirisfal. In the " ..
+                "garden are flowers--snapdragons. Gather these and return.",
+            rewardChoices = {{7507, 1}, {9514, 1}},
         },
         [1955] = {
             description = "Now that we have a summoner's orb, we must exorcise the demon within it. I can " ..
@@ -291,6 +318,12 @@ ns.Overrides.wowhead = {
             description = "Take his parchment, and read it at the altar of Shadra'Alor, deep within the " ..
                 "witherbark realm in the Hinterlands. This will summon Shadra the spider god.",
         },
+        [2977] = {
+            description = "You access the pedestal again; the platinum discs suddenly appear once more in " ..
+                "your backpack.\n\nWith the knowledge of the stone watcher learned and the discs returned " ..
+                "to your possession, the time has come to return to Ironforge and inform the Explorers' " ..
+                "League of your discovery.",
+        },
         [2987] = {
             description = "I just arrived here in Feralas, and I've heard that the Gordunni Ogres that " ..
                 "inhabit the wilds here have some interesting minerals. Who knows what they are up to, " ..
@@ -347,6 +380,14 @@ ns.Overrides.wowhead = {
                 "according to the journal, he and his companions sought higher ground from the savage " ..
                 "beasts of the Crater once their base camps were overrun.",
         },
+        [4125] = {
+            description = "It's been about a week since Raschal, the courier, set out for Thalanaar. He " ..
+                "knows Feralas well; he's been with us since General Feathermoon led the expeditionary " ..
+                "forces here. I know his plan was to take a row boat down the coast and try and traverse " ..
+                "across southern Feralas to avoid the Horde camp.\n\nI couldn't find his boat, but maybe " ..
+                "you can. Maybe it is hidden, or maybe it was sunk. Regardless, it might hold a clue as " ..
+                "to where he is. If you uncover something, please let me know.",
+        },
         [4186] = {
             description = "I am going to empower you as an acting deputy of Stormwind, <name>.\n\nReturn " ..
                 "to Magistrate Solomon in Lakeshire and deliver this decree.",
@@ -374,6 +415,16 @@ ns.Overrides.wowhead = {
                 "springs to the north of here.\n\nI'd like to continue my studies, so won't you help me?",
             rewardMoney = 8500,
         },
+        [5342] = {
+            description = "Naturally, with my brother still alive, there may be some contention as to the " ..
+                "primary beneficiary of the family's fortune. This cannot be.\n\nA low down guttersnipe " ..
+                "like you isn't above a little cold-blooded murder, I hope.\n\nIt's a simple task and one " ..
+                "that I expect you will complete; that is, if you wish to claim your reward.\n\nWeldon " ..
+                "sits under Alliance protection at Chillwind Camp, to the east. Slay him, return his " ..
+                "head.\n\n<Alexi yawns.>\n\nHurry along now.",
+            rewardItems = {{14022, 1}},
+            rewardMoney = 18000,
+        },
         [5384] = {
             description = "This is it, <name>.\n\n<Eva points to the vial inside the bag.>\n\nThe blood " ..
                 "of innocents. The purest blood, used to appease Krastinov's master.\n\nIt is with this " ..
@@ -394,6 +445,11 @@ ns.Overrides.wowhead = {
                 "It is at that point that he must be slain. Strike him down and take his human head.",
             rewardChoices = {{13982, 1}, {13986, 1}, {13984, 1}},
             rewardItems = {{14002, 1}},
+        },
+        [5481] = {
+            description = "Master want weeds. Us gots big hands and not good at picking. You help us and " ..
+                "we not hurt you. Us need gloom weed. Many weeds around here and near road.\n\nWhen you " ..
+                "have gloom weed you take to Master Holland in Brill graveyard.",
         },
         [5582] = {
             description = "This is a scale shed from a plagued dragon hatchling. But unlike the other " ..
@@ -450,6 +506,13 @@ ns.Overrides.wowhead = {
                 "deliver the leather goods to Jahan Hawkwing.",
             rewardMoney = 350,
         },
+        [6503] = {
+            description = "We received reports that Ashenvale outrunners left Silverwing Outpost not long " ..
+                "ago, and now sneak near our territories in the forest. We don't want them gathering " ..
+                "intelligence on our defenses!\n\nSneak through the forests south of our post here and " ..
+                "east of the Alliance outpost of Silverwing. Find and slay the outrunners, then return to " ..
+                "me.",
+        },
         [6545] = {rewardItems = {{16763, 1}}},
         [6602] = {
             description = "How would you feel about paying a visit to the General? No illusions, this " ..
@@ -458,6 +521,15 @@ ns.Overrides.wowhead = {
                 "security. There are other ways to receive the General's blood.\n\nGo to Blackrock Spire " ..
                 "and kill Drakkisath. Return with his blood and I will activate the key to Onyxia's lair.",
             rewardItems = {{16309, 1}},
+        },
+        [7065] = {
+            description = "In the depths of Maraudon lives a creature of chaos and evil, <name>. Princess " ..
+                "Theradras is an elemental force of earth related somehow to the Old Gods. Ages ago, she " ..
+                "was sought out by Zaetar, first son of Cenarius. The offspring of their... relationship " ..
+                "are the creatures known as centaur. Ever-thankful creatures, the centaur killed Zaetar, " ..
+                "and now Theradras keeps his remains. My quest here is to find those powerful enough to " ..
+                "slay Theradras so we may recover Zaetar's remains before returning to Stonetalon.",
+            rewardChoices = {{17705, 1}, {17743, 1}, {17753, 1}},
         },
         [7302] = {
             description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
@@ -534,6 +606,14 @@ ns.Overrides.wowhead = {
         },
         [8324] = {rewardMoney = 4500},
         [8333] = {rewardItems = {{20422, 1}}},
+        [8338] = {
+            description = "You've found an odd sliver of crystallized mana on the corpse of the tainted " ..
+                "arcane wraith. The sliver is different than others you may have seen in that it is as " ..
+                "dark and sinister-looking as the wraith you looted it from. Just holding it gives you a " ..
+                "sense of unnatural foreboding.\n\nArcanist Helion at the gazebo of the Sunspire on " ..
+                "Sunstrider Isle just might be someone who would have a use for the sliver.",
+            rewardMoney = 150,
+        },
         [8508] = {rewardItems = {{20810, 1}}},
         [8578] = {
             description = "<You hear a sigh of relief escape the crate.>\n\nYou just want his scrying " ..
@@ -566,6 +646,14 @@ ns.Overrides.wowhead = {
                 "of him, he was preparing to venture back into Blackrock Spire. He was never heard of " ..
                 "again.\n\nSeek him out in Blackrock Mountain, though I'm afraid to say he's probably " ..
                 "dead by now. I suggest taking the goblin's device with you, friend.",
+        },
+        [9141] = {
+            description = "You want a writ? What? Do you expect me to hand you a highly sought after work " ..
+                "order just for showing up? I think not, scrub. Crafters from around the world bid for " ..
+                "jobs here at the front lines.\n\nIf you want a work order, you'll have to show me that " ..
+                "you're willing to bleed for the cause. Bring me a valor token and we'll talk.\n\nAnd " ..
+                "there's only one way to get your grubby little scrub mitts on those - get to killin'.",
+            rewardItems = {{22568, 1}},
         },
         [9143] = {
             description = "The lieutenant here rushed us into battle with the trolls across the lake " ..
@@ -821,6 +909,13 @@ ns.Overrides.wowhead = {
             rewardChoices = {{25986, 1}, {25987, 1}, {25985, 1}},
             rewardMoney = 29000,
         },
+        [10413] = {
+            description = "You carefully fill a vial with the fallen void horror's ooze.\n\nResearcher " ..
+                "Navuud at the Protectorate Watch Post would be quite interested in such a find! Take it " ..
+                "to him at once!",
+            rewardChoices = {{30338, 1}, {30339, 1}, {30340, 1}},
+            rewardMoney = 88000,
+        },
         [10431] = {
             description = "The Sunfury briefings support the theory that Kael'thas has been receiving " ..
                 "outside help in constructing and running these manaforges. Who this is remains a bit of " ..
@@ -828,6 +923,14 @@ ns.Overrides.wowhead = {
                 "men to scout the surrounding area. Go to Tuluman's Landing, north of here, and speak to " ..
                 "Kaylaan. See what he's discovered at Manaforge Ara. Find out who is assisting the " ..
                 "Sunfury army and take care of them.",
+        },
+        [10449] = {
+            description = "Apethecary Zelana has been studying the beasts of Hellfire Peninsula in the " ..
+                "field. She wants a sample of the blood you gathered; with luck, she might discover what " ..
+                "turned those Bonechewer bastards' skins red!\n\nZelana is at Reaver's Fall, southeast of " ..
+                "Thrallmar. Follow the road east and when you see a destroyed, green-glowing hunk of " ..
+                "metal, you're there. She has a camp set up behind the wyverns.",
+            rewardMoney = 2300,
         },
         [10463] = {rewardItems = {{29302, 1}}},
         [10468] = {
@@ -852,6 +955,13 @@ ns.Overrides.wowhead = {
                 "to the east into Bloodmaul Outpost and procure me some? I hear they have big barrels of " ..
                 "it laying around and that their brewmasters carry it around to all the other ogres.",
             rewardMoney = 35000,
+        },
+        [10519] = {
+            description = "<Oronok adjusts his posture and stands to his full height.>\n\nI had to be " ..
+                "sure, <name>. And to be sure, I had to test you. Please excuse the little masquerade. I " ..
+                "am as much a farmer as you are <female/male>. Which is to say, not at all.\n\nIf you are " ..
+                "to recover the Cipher of Damnation, you will need to listen to what I have to tell you. " ..
+                "When you are ready, let me know and I will tell you the story.",
         },
         [10530] = {
             description = "Lieutenant Dawnrunner at Farstrider Retreat has requested an audience with all " ..
@@ -971,6 +1081,15 @@ ns.Overrides.wowhead = {
         },
     },
     npcs = {
+        [659] = {
+            spawns = {
+                [361] = {
+                    {40.2, 46.2}, {40.4, 45.4}, {41, 44.4}, {41.2, 45.6}, {41.4, 44.8}, {41.6, 44.8},
+                    {41.8, 44.4}, {42, 43.4},
+                },
+            },
+            zoneID = 361,
+        },
         [14697] = {
             spawns = {
                 [139] = {
