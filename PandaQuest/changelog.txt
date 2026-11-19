@@ -75,6 +75,383 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.616
+- database - Wowhead data as the PandaQuest portal read it: 1,052 quests, 75 NPCs, 1 object
+- database - Classic Era: data from the PandaQuest portal: 153 quests, 1 NPC
+- database - TBC Anniversary: data from the PandaQuest portal: 112 quests, 7 NPCs
+- quest 8629 - Avenger's Legguards - updated
+  - description added
+  - reward items: +1
+- quest 10434 - The Dynamic Duo - updated
+  - description added
+- quest 11733 - Traversing the Rift - updated
+  - description added
+  - reward money added (3g 70s)
+  - reward items: +1
+- quest 26738 - Just Hatched - updated
+  - description added
+- quest 29083 - The Rear is Clear - updated
+  - description added
+  - reward money added (7c)
+- quest 29929 - Trapped! - updated
+  - description added
+  - reward money added (9g 80s)
+- quest 30134 - Wild Things - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30138 - Choosing the One - updated
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +3
+- quest 30249 - Under the Setting Sun - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward items: +1
+- quest 30258 - Mung-Mung's Vote I: A Hozen's Problem - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30259 - Mung-Mung's Vote II: Rotten to the Core - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30308 - Stone Hard Quilen - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30321 - Weed War II - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30323 - They Don't Even Wear Them - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30341 - Under Watchful Eyes - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30384 - Blind Them! - updated
+  - description added
+  - reward money added (10g 20s)
+- quest 30445 - The Waters of Youth - updated
+  - description added
+  - reward money added (10g 20s)
+  - reward choices: +9
+- quest 30471 - A Gift For Chee Chee - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30475 - A Gift For Fung - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30522 - Haohan's Vote II: The Real Culprits - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30528 - Haohan's Vote V: Chief Yip-Yip - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 30567 - Blanche's Boomer Brew - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 30611 - Unleash The Yeti! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30639 - The Secrets of Guo-Lai - updated
+  - description added
+  - reward money added (22g 80s)
+  - reward choices: +5
+- quest 30643 - The Mogu's Message - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 30658 - Huff & Puff - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 30683 - One Traveler's Misfortune - updated
+  - description added
+  - reward money added (10g 60s)
+  - reward choices: +9
+- quest 30684 - Seeker's Folly - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30699 - To Winter's Blossom - updated
+  - description added
+  - reward money added (1g 6s)
+- quest 30767 - Risking It All - updated
+  - description added
+  - reward money added (3s)
+- quest 30795 - Staying Connected - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30801 - Lessons from History - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30945 - What's Yours Is Mine - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 30987 - Joining the Alliance - updated
+  - description added
+  - reward money added (35c)
+- quest 30989 - An Old Pit Fighter - updated
+  - description added
+  - reward money added (35c)
+- quest 30997 - Animal Control - updated
+  - description added
+  - reward money added (33s)
+- quest 30999 - Path Less Traveled - updated
+  - description added
+  - reward money added (5g 30s)
+- quest 31049 - In Sprite Of Everything - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31074 - Wood and Shade - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31095 - The Dark Heart of the Mogu - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31116 - Spirit Dust - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31197 - The Bigger They Come... - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31220 - The Challenger's Ring: Hawkmaster Nurong - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 31266 - Mogu Incursions - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 31277 - Surprise Attack! - updated
+  - description added
+  - reward money added (34g 20s)
+  - reward items: +1
+- quest 31296 - The Ruins of Guo-Lai - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 31315 - The Heartland Legacy - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31322 - Buy A Fish A Keg? - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31381 - Trial At The Temple of the White Tiger - updated
+  - description added
+- quest 31385 - The Golden Lotus - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 31448 - An End to the Suffering - updated
+  - description added
+  - reward money added (45g 60s)
+  - reward choices: +9
+- quest 31481 - Fear Itself - updated
+  - description added
+  - reward money added (34g 20s)
+- quest 31482 - Breath of the Black Prince - updated
+  - description added
+  - reward money added (5g 70s)
+  - reward choices: +3
+- quest 31502 - Wing Clip - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31552 - Learning the Ropes - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31700 - The Shoe Is On The Other Foot - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31711 - The Seed of Doubt - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31713 - The Big Brew-haha - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 31765 - Paint it Red! - updated
+  - description added
+  - reward money added (9g 80s)
+  - reward choices: +9
+- quest 31822 - Level Up! - updated
+  - description added
+  - reward money added (2s 25c)
+- quest 31828 - Level Up! - updated
+  - description added
+  - reward money added (90s)
+- quest 31832 - Level Up! - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31944 - Complete Your Training: The Final Test - updated
+  - description added
+  - reward choices: +3
+- quest 31972 - Brok - updated
+  - description added
+  - reward money added (10g 60s)
+- quest 31975 - The Returning Champion - updated
+  - description added
+  - reward money added (7g 80s)
+- quest 31982 - Exceeding Expectations - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32002 - A Worthy Challenge: Xin the Weaponmaster - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 32123 - Death on Two Legs - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32130 - Good Luck, Have Fun - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32135 - Hero Killer - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32138 - Work Order: Lumber - updated
+  - description added
+  - reward money added (1g 14s)
+- quest 32164 - Beastmaster's Hunt: The Crane - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32165 - Beastmaster's Hunt: The Tiger - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32237 - Precious Resource - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32391 - The Ruins of Korune - updated
+  - description added
+  - reward money added (5g 70s)
+- quest 32399 - Breath of Darkest Shadow - updated
+  - description added
+  - reward money added (34g 20s)
+  - reward items: +1
+- quest 32419 - Nowhere to Hide - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 32476 - A Test of Valor - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32495 - The Bloodletter - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32530 - The Bloodletter - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32535 - The Skumblade Threat - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32549 - Skin of the Saurok - updated
+  - description added
+- quest 32567 - The Beast Pens - updated
+  - description added
+  - reward money added (2g 85s)
+- quest 32588 - On Her Magic-ey Secret Service - updated
+  - description added
+  - reward money added (11g 40s)
+- quest 32594 - Spirit of the Storm Lord - updated
+  - description added
+  - reward money added (22g 80s)
+- quest 32599 - Securing A Future - updated
+  - description added
+  - reward money added (11g 40s)
+  - reward items: +1
+- quest 32608 - Raiding the Vault - updated
+  - description added
+  - reward money added (45g 60s)
+- quest 33230 - A Flash of Bronze... - updated
+  - description added
+  - reward money added (2g 85s)
+- npc 58465 - Anji Autumnlight - updated
+  - coordinates: 5 spawn points added in Vale of Eternal Blossoms
+- npc 67752 - Korune Spellweaver - updated
+  - data rewritten, nothing a player sees changed
+- npc 67806 - Silvermoon Runeseeker - updated
+  - NPC title added (The Reliquary)
+- npc 67999 - Miura Brightweaver - updated
+  - NPC level added (90)
+- npc 68015 - Jhevha - updated
+  - NPC title added (Selenora's Demon)
+- npc 68017 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 68078 - Iron Qon - updated
+  - NPC title added (Master of Quilen)
+- npc 68093 - Rodent Crate - updated
+  - NPC level added (90)
+- npc 68141 - Kor'kron Infiltrator - updated
+  - NPC level added (90)
+- npc 68159 - Fire Head - updated
+  - NPC title added (Head of Megaera)
+- npc 68161 - Poison Head - updated
+  - NPC title added (Head of Megaera)
+- npc 68166 - Sully "The Pickle" McLeary - updated
+  - NPC title added (SI:7)
+  - NPC level added (90)
+- npc 68198 - Field Merchant Skevin - updated
+  - NPC title added (Collector of Commissions)
+  - NPC level added (90)
+- npc 68236 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+- npc 68285 - Melia Sunsoar - updated
+  - NPC level added (90)
+- npc 68287 - Baine Bloodhoof - updated
+  - NPC title added (High Chieftain)
+- npc 68317 - Mavis Harms - updated
+  - NPC title added (Champion of the Shadows)
+- npc 68352 - Nove Rainpaw - updated
+  - NPC level added (90)
+- npc 68377 - Leona Earthwind - updated
+  - NPC level added (92)
+- npc 68420 - Fallsong Laborer - updated
+  - NPC level added (85)
+- npc 68474 - Commander Scargash - updated
+  - NPC level added (92)
+- npc 68542 - Shan Kien - updated
+  - NPC title added (Korune Warlord)
+  - NPC level added (90)
+- npc 68645 - Halduron Brightwing - updated
+  - NPC title added (Ranger General)
+- npc 68678 - Summoned Water Elemental - updated
+  - NPC title added (Jaina's Minion)
+- npc 68807 - Volda Gan'dra - updated
+  - NPC level added (90)
+- npc 68830 - Mishka - updated
+  - NPC title added (SI:7)
+- npc 68851 - High Marshal Twinbraid - updated
+  - NPC level added (93)
+- npc 68908 - Amber Kearnen - updated
+  - NPC title added (SI:7)
+- npc 68922 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+- npc 68923 - Anduin Wrynn - updated
+  - NPC title added (Prince of Stormwind)
+- npc 68930 - King Varian Wrynn - updated
+  - NPC title added (King of Stormwind)
+- npc 68945 - Hilda Hornswaggle - updated
+  - NPC title added (Explorer's League)
+- npc 68966 - Lady Jaina Proudmoore - updated
+  - NPC title added (Leader of the Kirin Tor)
+- npc 68993 - Fenegan Cobbler - updated
+  - NPC title added (Stable Master)
+- npc 69000 - Shademaster Kiryn - updated
+  - NPC level added (90)
+- npc 69054 - 7th Legion Champion - updated
+  - NPC level added (90)
+- npc 69274 - Lu-Shero - updated
+  - NPC title added (The Hoard Keeper)
+- npc 69321 - Herwin Steampop - updated
+  - NPC title added (Legacy Arena Weapons)
+- npc 69464 - Zandalari Pterrorwing - updated
+  - NPC level added (90)
+- npc 69481 - Lor'themar Theron - updated
+  - NPC title added (Regent Lord of Quel'Thalas)
+- npc 69529 - Jade Forest Flame Guardian - updated
+  - NPC level added (85)
+- npc 69624 - Silver Covenant Spellbow - updated
+  - NPC level added (90)
+- npc 69958 - Corrupted Vita - updated
+  - NPC level added (92)
+- npc 69972 - Nargle Lashcord - updated
+  - NPC title added (Glorious Conquest Quartermaster)
+- npc 69980 - Evee Copperspring - updated
+  - NPC title added (Conquest Quartermaster)
+  - NPC level added (70)
+- npc 70075 - Pit Lord - updated
+  - NPC level added (91)
+- npc 70081 - Avenging Angel - updated
+  - NPC level added (93)
+- object 214341 - Pheromone Mine - updated
+  - coordinates: 4 spawn points added in Dread Wastes
+
 0.2.615
 - database - Wowhead data as the PandaQuest portal read it: 964 quests, 28 NPCs
 - database - Classic Era: data from the PandaQuest portal: 129 quests, 1 NPC

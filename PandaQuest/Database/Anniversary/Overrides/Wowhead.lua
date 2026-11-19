@@ -27,11 +27,43 @@ ns.Overrides.wowhead = {
                 "the south of Menethil Harbor. If you find the Lightforge Iron there, bring it to me.",
             rewardItems = {{2702, 1}},
         },
+        [336] = {
+            description = "Lord Wishock, like all men, has his weaknesses. His happens to be a fondness " ..
+                "for liquor. The hypocrisy is astounding. The trite fool spends his days trying to shut " ..
+                "down our little \"tavern\" while his nights are spent upstairs, running up a bill he " ..
+                "never pays. Well, let's see how Wishock likes this special brew I have prepared for him: " ..
+                "Black Claw stout. It's got quite a kick, <name>.\n\nTake it to him and see how he likes " ..
+                "it. Most likely the old fool is milling about the Hall of Petitioners.",
+            rewardMoney = 2500,
+        },
+        [496] = {
+            description = "Ah, another wretched day in Tarren Mill. All of this clean air puts me in such " ..
+                "a foul mood, <name>.\n\nThe sooner we can plague the humans here, the better. I've been " ..
+                "conducting intense studies on possible killing agents to use in my concoctions but I " ..
+                "haven't the time to collect them all.\n\nIf you want to make yourself of use, procure " ..
+                "the following items for me: 10 Gray Bear Tongues and the very rare and hard to find, " ..
+                "Creeper Ichor. You'll find both bears and creepers just outside of Tarren Mill.",
+            rewardMoney = 150,
+        },
+        [519] = {
+            description = "Targ, Muckrake, and Glommus are Mug'Thol's lieutenants. They are loyal to him, " ..
+                "though who can say what drives an ogre to loyalty.\n\nBring me their heads, <name>, and " ..
+                "then all that will remain is to remove Mug'Thol's head, crown and all.",
+        },
         [531] = {
             description = "Light! Don't bring things like that into the Lodge... it's unsanitary, " ..
                 "unspeakable, un... un... unsanitary!\n\nJust get it out of here, will you? No one wants " ..
                 "to see your bloody little trophy, really!",
             rewardChoices = {{3574, 1}, {3573, 1}},
+        },
+        [565] = {
+            description = "I, the great Bartolo, shall make for you the world famous, Alliance renowned, " ..
+                "Yeti Fur Cloak!\n\nTravel the planet and find yourself a better cloak, I dare you. Oh " ..
+                "wait, what is that, little <race>? \"Bartolo, there is no finer cloak!\" Yes, yes! That, " ..
+                "I have heard before.\n\nBartolo requires a Bolt of Wool, a Hillman's Cloak made by a " ..
+                "skilled leatherworker, Fine Thread and Yeti Fur, of course! Bring to me these items and " ..
+                "you shall be a happy customer!",
+            rewardItems = {{2805, 1}},
         },
         [579] = {rewardChoices = {{2154, 1}, {3899, 1}}},
         [718] = {
@@ -58,6 +90,15 @@ ns.Overrides.wowhead = {
                 "these orders to Vol'jin in Orgrimmar immediately! He can be found in Thrall's chamber.",
             rewardMoney = 175,
         },
+        [833] = {
+            description = "Only the most valiant tauren are laid to rest at Red Rocks, our sacred burial " ..
+                "ground. It is an honor bestowed upon the great warriors who helped found and defend " ..
+                "Thunder Bluff and those who have given their lives for the greater good of their tribes " ..
+                "and chieftains.\n\nBut it appears a foul menace has made its way onto our holy land. A " ..
+                "band of Bristleback Interlopers is ravaging the grave site and I am too old and past my " ..
+                "prime to drive them away.\n\nThey must be driven off with force, <name>.",
+            rewardMoney = 250,
+        },
         [905] = {
             description = "Now, <name>, the hunt deepens. Now you must defeat your prey, and then find " ..
                 "your way to its lair.\n\nHunt the sunscale raptors to the south. Slay them and remove " ..
@@ -74,6 +115,16 @@ ns.Overrides.wowhead = {
                 "deliver to Darnassus.\n\nBring it to Fandral Staghelm, you will find him in the druid " ..
                 "grove.",
             rewardChoices = {{5596, 1}, {5595, 1}},
+        },
+        [966] = {
+            description = "A group of warlocks has taken up residence around and inside the tower. I " ..
+                "would have returned to Auberdine to report to Elissa earlier, but I was afraid that I " ..
+                "might miss something while I was away.\n\nDelgren suspected such a company might be " ..
+                "gathering at the tower, but did not know why.\n\nA few scraps of parchment that the " ..
+                "warlocks carry have found their way to my hands, but I need more to complete the puzzle. " ..
+                "I warn you not to venture into the tower, however, the warlocks there are much more " ..
+                "powerful!",
+            rewardMoney = 1000,
         },
         [1219] = {
             description = "Sifting through the loose dirt, the severed hand of an orc is found. And " ..
@@ -97,6 +148,14 @@ ns.Overrides.wowhead = {
                 "and corrupting. You can tell which satyrs have drawn the most of Ashenvale's magic by " ..
                 "their swollen, uncloven hooves.\n\nThese hooves hold great power. I will need them for " ..
                 "your gauntlets' crafting.",
+        },
+        [1955] = {
+            description = "Now that we have a summoner's orb, we must exorcise the demon within it. I can " ..
+                "do that. That's the easy part.\n\nYou're the one who has the hard job. You're the one " ..
+                "who has to kill the demon once it's out.\n\nAnd you'll have to be quick. If you take too " ..
+                "long then he'll jump back in the orb and we'll have to start over!\n\nSo get yourself " ..
+                "ready. Prepare your strongest spells and keep your potions handy, and go get a friend if " ..
+                "you have one. Because this isn't going to be pretty.",
         },
         [2160] = {
             description = "Hey! You look like a hearty adventurer. If you're planning on braving the " ..
@@ -151,6 +210,12 @@ ns.Overrides.wowhead = {
                 "subordinates.\n\nGather a suitable group of adventurers and free my men of their eternal " ..
                 "torture! Eighteen stones you must shatter.\n\nFight hard and die with honor, <name>.",
         },
+        [2764] = {
+            description = "If you are ready to conclude your training with Galvan, you should journey to " ..
+                "Gadgetzan.\n\nThere, you will find my finest pupil: Trenton Lighthammer. He has much to " ..
+                "teach you in the ways of ornate mithril. Otherwise, remain here and learn!\n\nOh, " ..
+                "Gadgetzan is in Tanaris, of course!",
+        },
         [2771] = {
             description = "It seems as if master had this planned from the start. I was not taught to " ..
                 "create the items which you learned to create and you were not taught the items which I " ..
@@ -176,6 +241,13 @@ ns.Overrides.wowhead = {
                 "tiara from her. Return it to me and you'll earn my favor.",
             rewardItems = {{9527, 1}, {9531, 1}},
             rewardMoney = 6500,
+        },
+        [2935] = {
+            description = "The venom from the broodguards wasn't as potent as the venom you brought " ..
+                "originally. It must have come from a different spider.\n\nI want a fresh sample of that " ..
+                "venom. To find out where it came from, you must consult with a troll who knows the " ..
+                "Witherbark well-- Master Gadrin in Sen'jin Village. Travel to Durotar and speak with " ..
+                "Gadrin. With luck, he'll know where the Witherbarks get their venom.",
         },
         [2937] = {
             description = "Take his parchment, and read it at the altar of Shadra'Alor, deep within the " ..
@@ -297,6 +369,14 @@ ns.Overrides.wowhead = {
                 "like. So, find a large crag boar, then use the taming rod to tame it.",
             rewardXP = 840,
         },
+        [6364] = {
+            description = "In order to fly to a town, you must have already been there and spoken with " ..
+                "the wind rider master of that town. You have been to the Crossroads and spoken to their " ..
+                "wind rider master Devrak, so for a small fee you can take a wind rider to him from " ..
+                "here.\n\nSpeak with me again when you are ready. Once at the Crossroads, you can then " ..
+                "deliver the leather goods to Jahan Hawkwing.",
+            rewardMoney = 350,
+        },
         [6545] = {rewardItems = {{16763, 1}}},
         [7302] = {
             description = "Our air support is in shambles, <name>. The Wing Commanders were shot down " ..
@@ -349,6 +429,7 @@ ns.Overrides.wowhead = {
             rewardMoney = 8500,
         },
         [8324] = {rewardMoney = 4500},
+        [8333] = {rewardItems = {{20422, 1}}},
         [8508] = {rewardItems = {{20810, 1}}},
         [8578] = {
             description = "<You hear a sigh of relief escape the crate.>\n\nYou just want his scrying " ..
@@ -418,6 +499,23 @@ ns.Overrides.wowhead = {
                 "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
             rewardChoices = {{22524, 1}, {22523, 1}},
         },
+        [9186] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order LW-736:\n\n9 " ..
+                "Wicked Leather Belts.\n\nAll filled orders should be delivered to Packmaster " ..
+                "Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract is null and " ..
+                "void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
+        [9201] = {
+            description = "The bearer of this writ is entitled to payment in the form of an insignia of " ..
+                "their choice upon completion of the contracted work order.\n\nWork Order AL-1420:\n\n15 " ..
+                "Greater Arcane Protection Potions.\n\nAll filled orders should be delivered to " ..
+                "Packmaster Stonebruiser at Light's Hope Chapel in the Eastern Plaguelands.\n\nContract " ..
+                "is null and void if tampered with or damaged.\n\n-Dispatch Commander Metz, The Argent " ..
+                "Dawn",
+            rewardChoices = {{22524, 1}, {22523, 1}},
+        },
         [9211] = {
             description = "Ah, the Ice Guard. It is a thin sheen of protective magic that covers certain " ..
                 "pieces of equipment. Those that do battle with creatures of frost and ice will gain " ..
@@ -431,6 +529,11 @@ ns.Overrides.wowhead = {
                 "would like to redeem for items of great power?\n\nThose exalted amongst the Dawn receive " ..
                 "our greatest discounts! I encourage you to make a purchase.",
             rewardChoices = {{22657, 1}, {22667, 1}, {22668, 1}, {22659, 1}, {22678, 1}, {22656, 1}},
+        },
+        [9240] = {
+            description = "Thanks to you and Omarion, may he rest in peace, I am now able to create a " ..
+                "Glacial vest. All you need to do is bring me the materials and pay a small crafting fee.",
+            rewardItems = {{22652, 1}},
         },
         [9245] = {
             description = "Thanks to you and Omarion (May he rest in peace), I am now able to create Icy " ..
@@ -546,6 +649,14 @@ ns.Overrides.wowhead = {
                 "culture - until the shadows overtook us. When the clans became a horde, the spirits of " ..
                 "Oshu'gun fell silent. The ancestors turned their backs on us.\n\nYet something now draws " ..
                 "them from their rest. Venture to Oshu'gun and discover what could trouble the spirits so.",
+        },
+        [10159] = {
+            description = "We've been fighting an ongoing battle to keep the pass through Thornfang Hill " ..
+                "to the west clear of ravagers. It would be bad if we were to become completely cut off " ..
+                "from the refuge in Zangarmarsh.\n\nWe don't want to displace the creatures, but there " ..
+                "seems to be little choice as their attacks on travelers through the area have become " ..
+                "more aggressive.\n\nClear some of the ravagers out of there if you can.",
+            rewardMoney = 29000,
         },
         [10162] = {
             description = "Now that you've got your wings, perhaps you'd be interested in running another " ..
@@ -671,6 +782,17 @@ ns.Overrides.wowhead = {
                 "assisting, seek out Commander Ameer at the Protectorate Watch Post.\n\nYou will find the " ..
                 "Protectorate Watch Post directly east of here on the next island.",
             rewardMoney = 4400,
+        },
+        [11004] = {
+            description = "Sky Commander Adaris was seriously injured during a Skettis incursion. He's " ..
+                "been in and out of consciousness since.\n\nI fear he has succumbed to a feverish " ..
+                "delirium. During brief lucid moments he demands that I prepare an elixir made from " ..
+                "shadow dust carried by the arakkoa. He seems to believe it will allow him to see into a " ..
+                "\"world of shadows\" where the arakkoa's true leaders dwell.\n\nI do not believe this " ..
+                "nonsense for a second, but I fear he won't rest until I obtain such an elixir. Will you " ..
+                "help?",
+            rewardItems = {{32446, 1}},
+            rewardMoney = 44000,
         },
         [11014] = {
             description = "<Mor'ghor crumples up the service letter and tosses it aside.>\n\nAlright " ..
