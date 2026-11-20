@@ -19,8 +19,6 @@ on:
         required: true
         type: string
 
-# The reservation tag is a real git tag pushed back to origin, so the job
-# needs write access. Everything else it does is read-only.
 permissions:
   contents: write
 
@@ -33,18 +31,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      # fetch-depth: 0 is load-bearing: the reservation tag is checked against
-      # local refs, and pushing it back needs the full history so git knows
-      # where the branch came from.
+      # fetch-depth: 0 on tarpeen, koska varaustagi tarkistetaan paikallisista
+      # refeistä ja pushataan takaisin.
       - name: Check out the repository, with all of its history and tags
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
-      # VERSION="${VERSION%-beta}" strips the beta suffix once, here, so the
-      # version players see on CurseForge matches the stable form. auto below
-      # means: the tag's -beta suffix decides the channel, without a second
-      # place to keep the rule.
+      # VERSION="${VERSION%-beta}" poistaa beta-päätteen kerran, täällä.
+      # auto-kommentti kertoo, että tagin -beta-pääte ratkaisee kanavan.
       - name: Work out the channel from the tag
         id: channel
         env:
@@ -60,9 +55,8 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "channel=${channel}" >> "$GITHUB_OUTPUT"
 
-      # The reservation tag marks a release whose asset is already on
-      # CurseForge. It is created after a successful upload, so a re-run of
-      # this workflow skips a file that has already been sent.
+      # Varaustagi curseforge/<tag> luodaan vasta onnistuneen uploadin jälkeen.
+      # Näin uudelleenajo ei lähetä samaa tiedostoa kahdesti.
       - name: Check whether this release already has a reservation tag
         id: reservation
         run: |
@@ -84,9 +78,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          # --exclude-drafts is load-bearing: a draft release is invisible to
-          # the public releases API, so downloading from one would either
-          # fail or hand back a stale asset no player can reach.
           gh release download "${RELEASE_TAG}" \
             --pattern "*.zip" \
             --exclude-drafts \
@@ -98,14 +89,12 @@ jobs:
             ls -la dist
             exit 1
           fi
-          echo "file=${zips[0]}" >> "$GITHUB_OUTPUT"
+          echo "zip=${zips[0]}" >> "$GITHUB_OUTPUT"
 
-      # curseforge.py upload is the repository's own helper. It reads the
-      # tag's -beta suffix, matches the asset's TOCs to CurseForge game
-      # versions, and refuses to send a file it has not verified.
-      # --release-tag ties the upload to the release whose notes are its
-      # changelog. --file points at the one asset already downloaded above,
-      # so what is uploaded is what was checked.
+      # curseforge.py upload lukee CF_API_TOKEN-ympäristömuuttujan ja
+      # tarkistaa, että zipin TOC:n X-Curse-Project-ID täsmää --project-
+      # parametriin. --release-tag liittää uploadin GitHub-releasen
+      # changelogiin. --release-type tulee kanavasta.
       - name: Upload to CurseForge
         if: steps.reservation.outputs.already == 'no'
         env:
@@ -113,11 +102,11 @@ jobs:
         run: |
           set -euo pipefail
           python3 .github/release/curseforge.py upload \
-            --release-tag "${RELEASE_TAG}" \
-            --file "${{ steps.asset.outputs.file }}"
+            --zip "${{ steps.asset.outputs.zip }}" \
+            --project "${{ secrets.CF_PROJECT_ID }}" \
+            --release-type "${{ steps.channel.outputs.channel }}" \
+            --release-tag "${RELEASE_TAG}"
 
-      # The tag is pushed only after the upload succeeded. If the workflow
-      # fails earlier, no tag is created and a re-run will try again.
       - name: Reserve the tag so a second run does not upload twice
         if: steps.reservation.outputs.already == 'no'
         env:
