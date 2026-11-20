@@ -99,8 +99,7 @@ TEMPLATE_NOTE = "#~"
 #: The template's placeholders.  ``{{interface}}`` is replaced inside its line; the others stand on
 #: a line of their own, which becomes the game's lines -- or disappears, when the game has none.
 INTERFACE_PLACEHOLDER = "{{interface}}"
-LINE_PLACEHOLDERS = {"{{notes}}": "notes", "{{game-header}}": "header", "{{zone-data}}": "zone_data",
-                     "{{data}}": "data"}
+LINE_PLACEHOLDERS = {"{{notes}}": "notes", "{{game-header}}": "header"}
 
 #: How many leading components of the TOC's ``## Version`` are kept by hand.  The rest is the
 #: commit count.  ``0.2`` + 84 commits is ``0.2.84``.
@@ -631,7 +630,9 @@ def package(
         )
     ident = identity()
     target = target or DIST_DIR / package_name(str(ident["version"]))
-    named = PORTAL_PACKAGE_PATTERN.match(target.name)
+    named = PORTAL_PACKAGE_PATTERN.fullmatch(target.name) or re.fullmatch(
+        r"PandaQuest-Core-(\d+(?:\.\d+)*)\.zip", target.name
+    )
     if not named:
         # A consumer lists dist/ and matches this pattern; a name it does not match is a package
         # no player is ever offered, and nothing downstream reports the omission.

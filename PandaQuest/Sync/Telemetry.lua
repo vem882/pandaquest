@@ -331,68 +331,22 @@ function M.StartSession()
     return session
 end
 
--- Keep the newest full scan separate from quest recording and its rolling event buffer.
-local pendingAuctionScan
-local nativeAuctionScan
-local MAX_SCAN_PRICES = 10000
-M.MAX_NATIVE_AUCTION_PRICES = 50000
-
-local function saveAuctionScan(scan, suffix)
-    if not scan then return end
+-- Supplemental sessions share the character identity and upload format without enabling quest recording.
+function M.StoreSupplementalSession(at, events, suffix)
+    if not ns.IsModuleWanted("Telemetry") or #events == 0 then return end
     local key, name, realm = characterKey()
     updateCharacter(key, name, realm, not M.IsRecording())
     local sessions = ensureStore().sessions
     sessions[#sessions + 1] = {
-        id = key .. "-" .. scan.at .. suffix,
+        id = key .. "-" .. at .. suffix,
         character = key,
-        start = scan.at,
+        start = at,
         ["end"] = unixNow(),
         clientBuild = clientBuild(),
         addonVersion = Const.VERSION,
-        events = scan.events,
+        events = events,
     }
     trimSessions()
-end
-
--- The PQ auction tab asks for explicit consent on each requested page.
-function M.QueueNativeAuctionPrices(prices, quantities, listings, targeted)
-    if not ns.IsModuleWanted("Telemetry") then return 0 end
-    local scan = nativeAuctionScan or { at = unixNow(), events = {}, byItem = {} }
-    local added = 0
-    for id, copper in pairs(prices) do
-        local event = scan.byItem[id]
-        if event then
-            event.money = math.min(event.money, copper)
-            event.count = nil
-            event.askn, event.askmed, event.askmax, event.sellers = nil, nil, nil, nil
-        elseif #scan.events < M.MAX_NATIVE_AUCTION_PRICES then
-            event = { e = "AP", t = 0, item = id, money = copper, kind = "native_scan" }
-            scan.events[#scan.events + 1] = event
-            scan.byItem[id] = event
-            added = added + 1
-        end
-        -- One price event per item can combine targeted and full scans in the same session.
-        if targeted and scan.byItem[id] then scan.byItem[id].targeted = true end
-    end
-    for id, quantity in pairs(quantities or {}) do
-        local event = scan.byItem[id]
-        if event then event.count = quantity end
-    end
-    for id, distribution in pairs(listings or {}) do
-        local event = scan.byItem[id]
-        if event then
-            event.money = distribution.lowest
-            event.askn, event.askmed, event.askmax = distribution.askn, distribution.askmed, distribution.askmax
-            event.sellers = distribution.sellers
-            event.t = math.min(30 * 86400, math.max(0, unixNow() - scan.at))
-        end
-    end
-    if #scan.events > 0 then nativeAuctionScan = scan end
-    return added
-end
-
-function M.NativeAuctionPriceCount()
-    return nativeAuctionScan and #nativeAuctionScan.events or 0
 end
 
 --- EndSession(): stamps `end` and detaches. Called on PLAYER_LOGOUT and when telemetry is disabled.
@@ -995,13 +949,8 @@ function M.GetStatusLines()
     lines[#lines + 1] = format(L["Sessions stored: %d, waiting for upload: %d"],
         #store.sessions, M.GetPendingSessionCount())
 
-    if pendingAuctionScan then
-        lines[#lines + 1] = format(L["Auctionator prices queued until logout or reload: %d"], #pendingAuctionScan.events)
-    end
-
-    if nativeAuctionScan then
-        lines[#lines + 1] = format(L["PQ auction prices queued until logout or reload: %d"], #nativeAuctionScan.events)
-    end
+    local extension = ns.AuctionExtension
+    if extension and extension.AppendSyncStatus then extension.AppendSyncStatus(lines) end
     local ack = formatStamp(tonumber(store.ackUploadedThrough))
     lines[#lines + 1] = format(L["Last upload confirmed: %s"], ack or L["never"])
 
@@ -1031,73 +980,7 @@ function M.OnInitialize()
     ensureStore()
 end
 
-local auctionatorHooked
-local scanPrices
-local function hookAuctionator()
-    local addon = _G.Auctionator
-    local database = addon and addon.Database
-    local bus = addon and addon.EventBus
-    if auctionatorHooked or not (database and database.ProcessScan and bus and bus.Register
-        and _G.hooksecurefunc) then return end
-    local completed = {}
-    local fullScan = addon.FullScan and addon.FullScan.Events
-    if fullScan and fullScan.ScanComplete then
-        completed[#completed + 1] = fullScan.ScanComplete
-    end
-    -- Auctionator's Full Scan button can run the summary scanner on the modern auction house.
-    -- PricesProcessed also fires for ordinary searches, so only listen for ScanComplete.
-    local summaryScan = addon.IncrementalScan and addon.IncrementalScan.Events
-    if summaryScan and summaryScan.ScanComplete then
-        completed[#completed + 1] = summaryScan.ScanComplete
-    end
-    if #completed == 0 then return end
-    auctionatorHooked = true
-    _G.hooksecurefunc(database, "ProcessScan", function(_, items)
-        scanPrices = nil
-        if not ns.IsModuleWanted("Telemetry") or not settings().shareAuctionScans
-            or type(items) ~= "table" then return end
-        local prices = {}
-        for key, listings in pairs(items) do
-            local id = tonumber(key)
-            if id and id >= 1 and id <= 10000000 and id % 1 == 0 and type(listings) == "table" then
-                local cheapest
-                for _, listing in ipairs(listings) do
-                    local copper = type(listing) == "table" and listing.price
-                    if type(copper) == "number" and not (_G.issecretvalue and _G.issecretvalue(copper))
-                        and copper >= 1 and copper <= 1000000000000 and (not cheapest or copper < cheapest) then
-                        cheapest = copper
-                    end
-                end
-                if cheapest then prices[id] = floor(cheapest) end
-            end
-        end
-        scanPrices = prices
-    end)
-    bus:Register({ ReceiveEvent = function()
-        local prices = scanPrices
-        scanPrices = nil
-        if not prices or not ns.IsModuleWanted("Telemetry") or not settings().shareAuctionScans then return end
-        local ids = {}
-        for id in pairs(prices) do ids[#ids + 1] = id end
-        table.sort(ids)
-        local count = math.min(MAX_SCAN_PRICES, #ids)
-        if count == 0 then return end
-        local events = {}
-        for index = 1, count do
-            local id = ids[index]
-            events[index] = { e = "AP", t = 0, item = id, money = prices[id], kind = "auctionator" }
-        end
-        pendingAuctionScan = { at = unixNow(), events = events }
-        Log.Print("Queued %d of %d Auctionator prices. Log out or reload to send them with Sync.", count, #ids)
-    end }, completed)
-end
-
 function M.OnEnable()
-    hookAuctionator()
-    M:RegisterEvent("ADDON_LOADED", function(_, name)
-        if name == "Auctionator" then hookAuctionator() end
-    end)
-    M:RegisterEvent("AUCTION_HOUSE_SHOW", hookAuctionator)
     M:RegisterEvent("QUEST_ACCEPTED", onQuestAccepted)
     M:RegisterEvent("QUEST_TURNED_IN", onQuestTurnedIn)
     M:RegisterEvent("QUEST_REMOVED", onQuestRemoved)
@@ -1108,18 +991,8 @@ function M.OnEnable()
     M:RegisterEvent("GUILD_ROSTER_UPDATE", onGuildChanged)
     M:RegisterEvent("PLAYER_LOGOUT", function()
         M.EndSession()
-        if settings().shareAuctionScans then saveAuctionScan(pendingAuctionScan, "-auction") end
-        if nativeAuctionScan then
-            local all = nativeAuctionScan.events
-            for first = 1, #all, MAX_SCAN_PRICES do
-                local events = {}
-                for i = first, math.min(#all, first + MAX_SCAN_PRICES - 1) do
-                    events[#events + 1] = all[i]
-                end
-                saveAuctionScan({ at = nativeAuctionScan.at, events = events }, "-pq-auction-" .. first)
-            end
-        end
-        pendingAuctionScan, nativeAuctionScan = nil, nil
+        local extension = ns.AuctionExtension
+        if extension and extension.SavePendingScans then extension.SavePendingScans() end
     end)
 
     M:RegisterMessage("PQ_QUESTLOG_CHANGED", onQuestLogChanged)
@@ -1128,9 +1001,9 @@ function M.OnEnable()
     M:RegisterMessage("PQ_TARGET_REACHED", onTargetReached)
     M:RegisterMessage("PQ_SETTING_CHANGED", function(_, path)
         if type(path) == "string" and path:sub(1, 16) == "global.telemetry" then
-            if not settings().shareAuctionScans then
-                scanPrices = nil
-                pendingAuctionScan = nil
+            local extension = ns.AuctionExtension
+            if extension and extension.ClearAuctionatorScan and not settings().shareAuctionScans then
+                extension.ClearAuctionatorScan()
             end
             M.ApplySettings()
         end
@@ -1155,9 +1028,8 @@ end
 --- Switched off in Options > Modules: the session is closed and the recorder stopped, then AceEvent
 -- and AceTimer drop every event, message and timer that is left.
 function M.OnDisable()
-    scanPrices = nil
-    pendingAuctionScan = nil
-    nativeAuctionScan = nil
+    local extension = ns.AuctionExtension
+    if extension and extension.DiscardPendingScans then extension.DiscardPendingScans() end
     M.ApplySettings(true)
 end
 

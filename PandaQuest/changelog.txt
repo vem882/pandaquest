@@ -75,6 +75,12 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.628
+- Added independent PandaQuest Database and PandaQuest Auction addons.
+- Changed the GitHub release to include a combined ZIP and each standalone addon.
+- Changed the required quest database to install as a CurseForge dependency.
+- Removed built-in auction features from the core. Install PandaQuest Auction to use them.
+
 0.2.627
 - database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 78 NPCs, 7 objects
 

@@ -13,9 +13,15 @@ Quest navigation, maps, gathering and community guides for MoP Classic, Classic 
 # PandaQuest
 
 Find your next quest objective, explore your game's world and learn from other players' journeys.
-PandaQuest is a standalone quest helper for **Mists of Pandaria Classic, Classic Era,
-The Burning Crusade Classic Anniversary and WoW Forever**. One download loads the correct
-database for your game.
+PandaQuest is a quest helper for **Mists of Pandaria Classic, Classic Era,
+The Burning Crusade Classic Anniversary and WoW Forever**.
+
+### Installation
+
+Install **PandaQuest** and **PandaQuest Database** (project 1807827) for your client.
+The database contains the matching quest, NPC, item and world data. To scan auction prices or track
+your own listings, add **PandaQuest Auction** (project 1807835). The auction addon is optional.
+For a manual installation, the combined GitHub release includes all three folders.
 
 ### In game
 
