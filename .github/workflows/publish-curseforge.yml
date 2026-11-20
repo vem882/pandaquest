@@ -19,71 +19,33 @@ on:
         required: true
         type: string
 
+# The reservation tag is a real git tag pushed back to origin, so the job
+# needs write access. Everything else it does is read-only.
 permissions:
-  contents: read
+  contents: write
 
 env:
-  # The tag's -beta suffix is the authoritative source for the channel. The
-  # regex below documents the accepted shapes in one place.
+  RELEASE_TAG: ${{ inputs.release_tag }}
   RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      # fetch-depth: 0 is here because the tag is verified against local
-      # history before the asset is downloaded. Without the full history the
-      # tag may not be reachable, and downloading from a release that no
-      # player can see through git would hide a real bug.
-      - name: Check out the repository, with all of its history
+      # fetch-depth: 0 is load-bearing: the reservation tag is checked against
+      # local refs, and pushing it back needs the full history so git knows
+      # where the branch came from.
+      - name: Check out the repository, with all of its history and tags
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
-      - name: Verify the tag exists in this repository
-        env:
-          TAG: ${{ inputs.release_tag }}
-        run: |
-          set -euo pipefail
-          if ! git rev-parse --verify --quiet "refs/tags/${TAG}" >/dev/null; then
-            echo "::error::${TAG} is not a tag in this repository"
-            exit 1
-          fi
-          echo "${TAG} exists"
-
-      - name: Download the one release asset
-        id: asset
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          mkdir -p dist
-
-          # --exclude-drafts is load-bearing. A draft release is invisible to
-          # the public releases API, so downloading from one would either fail
-          # or hand back a stale asset that no player can reach.
-          gh release download "${{ inputs.release_tag }}" \
-            --pattern "*.zip" \
-            --exclude-drafts \
-            --dir dist
-
-          shopt -s nullglob
-          zips=(dist/*.zip)
-          if [ "${#zips[@]}" -ne 1 ]; then
-            echo "::error::Expected exactly one .zip on ${{ inputs.release_tag }}, found ${#zips[@]}"
-            ls -la dist
-            exit 1
-          fi
-          file="${zips[0]}"
-          echo "file_path=${file}" >> "$GITHUB_OUTPUT"
-          echo "file_name=$(basename "$file")" >> "$GITHUB_OUTPUT"
-
-      # The -beta suffix is stripped once, here, so the display name and the
-      # version players see are clean. The tag itself still carries -beta, and
-      # that is what release_type: auto looks at via the display name below.
-      - name: Work out the channel
+      # VERSION="${VERSION%-beta}" strips the beta suffix once, here, so the
+      # version players see on CurseForge matches the stable form. auto below
+      # means: the tag's -beta suffix decides the channel, without a second
+      # place to keep the rule.
+      - name: Work out the channel from the tag
         id: channel
         env:
           TAG: ${{ inputs.release_tag }}
@@ -97,21 +59,72 @@ jobs:
           esac
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "channel=${channel}" >> "$GITHUB_OUTPUT"
-          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
 
+      # The reservation tag marks a release whose asset is already on
+      # CurseForge. It is created after a successful upload, so a re-run of
+      # this workflow skips a file that has already been sent.
+      - name: Check whether this release already has a reservation tag
+        id: reservation
+        run: |
+          set -euo pipefail
+          if git rev-parse --verify --quiet "refs/tags/curseforge/${RELEASE_TAG}" >/dev/null; then
+            echo "already=yes" >> "$GITHUB_OUTPUT"
+            echo "curseforge/${RELEASE_TAG} exists; nothing to upload"
+          else
+            echo "already=no" >> "$GITHUB_OUTPUT"
+            echo "curseforge/${RELEASE_TAG} does not exist; will upload"
+          fi
+
+      - name: Download the release asset
+        if: steps.reservation.outputs.already == 'no'
+        id: asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          # --exclude-drafts is load-bearing: a draft release is invisible to
+          # the public releases API, so downloading from one would either
+          # fail or hand back a stale asset no player can reach.
+          gh release download "${RELEASE_TAG}" \
+            --pattern "*.zip" \
+            --exclude-drafts \
+            --dir dist
+          shopt -s nullglob
+          zips=(dist/*.zip)
+          if [ "${#zips[@]}" -ne 1 ]; then
+            echo "::error::Expected exactly one .zip on ${RELEASE_TAG}, found ${#zips[@]}"
+            ls -la dist
+            exit 1
+          fi
+          echo "file=${zips[0]}" >> "$GITHUB_OUTPUT"
+
+      # curseforge.py upload is the repository's own helper. It reads the
+      # tag's -beta suffix, matches the asset's TOCs to CurseForge game
+      # versions, and refuses to send a file it has not verified.
+      # --release-tag ties the upload to the release whose notes are its
+      # changelog. --file points at the one asset already downloaded above,
+      # so what is uploaded is what was checked.
       - name: Upload to CurseForge
-        uses: itsmeow/curseforge-upload@v3
-        with:
-          token: ${{ secrets.CF_API_TOKEN }}
-          project_id: ${{ secrets.CF_PROJECT_ID }}
-          game_endpoint: 'wow'
-          file_path: ${{ steps.asset.outputs.file_path }}
-          # auto: the display name carries "(beta)" when the tag does, so the
-          # uploader's auto mode picks beta. Anything without "(beta)" is
-          # auto-detected as a full release. The explicit channel step above
-          # is what makes the decision, and it is derived from the tag alone.
-          release_type: auto
-          display_name: ${{ steps.asset.outputs.file_name }}${{ steps.channel.outputs.channel == 'beta' && ' (beta)' || '' }}
-          changelog: |
-            Full changelog: https://github.com/${{ github.repository }}/releases/tag/${{ inputs.release_tag }}
-          changelog_type: 'markdown'
+        if: steps.reservation.outputs.already == 'no'
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 .github/release/curseforge.py upload \
+            --release-tag "${RELEASE_TAG}" \
+            --file "${{ steps.asset.outputs.file }}"
+
+      # The tag is pushed only after the upload succeeded. If the workflow
+      # fails earlier, no tag is created and a re-run will try again.
+      - name: Reserve the tag so a second run does not upload twice
+        if: steps.reservation.outputs.already == 'no'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "curseforge/${RELEASE_TAG}"
+          git push origin "curseforge/${RELEASE_TAG}"
