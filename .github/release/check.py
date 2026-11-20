@@ -767,8 +767,9 @@ class CurseForgeReadiness(unittest.TestCase):
             self.assertIn(needle, release, f"release.yml lost {needle!r}")
         self.assertNotIn('tag="v${VERSION}"', release, "the tag is computed once, by build.py")
         publish = (REPO / ".github" / "workflows" / "publish-curseforge.yml").read_text(encoding="utf-8")
-        for needle in ("(-beta)?", 'VERSION="${VERSION%-beta}"', "--exclude-drafts", "auto"):
+        for needle in ("(-beta)?", 'VERSION="${VERSION%-beta}"', "isDraft", "gh release download", "auto"):
             self.assertIn(needle, publish, f"publish-curseforge.yml lost {needle!r}")
+        self.assertNotIn("--exclude-drafts", publish, "the runner gh does not support --exclude-drafts")
 
     def test_the_avatar_is_the_size_curseforge_asks_for(self) -> None:
         data = (REPO / "assets" / "logo" / "panda-quest-400.png").read_bytes()

@@ -87,12 +87,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          # --exclude-drafts is load-bearing: a draft release is invisible to
-          # the public releases API, so downloading from one would either
-          # fail or hand back a stale asset that no player can reach.
+          # Check the release explicitly instead of relying on a download flag
+          # that older gh releases do not support.
+          gh release view "${RELEASE_TAG}" --json isDraft > release.json
+          if [ "$(python3 -c 'import json; print(json.load(open("release.json"))["isDraft"])')" = "True" ]; then
+            echo "::error::${RELEASE_TAG} is still a draft; refusing to publish it to CurseForge"
+            exit 1
+          fi
           gh release download "${RELEASE_TAG}" \
             --pattern "*.zip" \
-            --exclude-drafts \
             --dir dist
           shopt -s nullglob
           zips=(dist/*.zip)
