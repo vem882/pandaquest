@@ -4,6 +4,18 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.625] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,311 NPCs, 6 objects
+- npc 11703 - Graw Cornerstone - updated
+  - coordinates: 4 spawn points added in Searing Gorge
+- npc 46479 - Kelsey Steelspark - updated
+  - coordinates: 5 spawn points added in Tanaris
+- npc 46497 - Martek the Awesome - updated
+  - coordinates: 20 spawn points added in Badlands
+
 ## [0.2.624] - 2026-11-20
 
 Data from the PandaQuest portal.
