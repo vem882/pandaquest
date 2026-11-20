@@ -76,10 +76,15 @@ jobs:
 
       # check.py validoi pandaquest-repositorion oman PandaQuest/-hakemiston.
       # Jos se epäonnistuu, build jatkuu ja virhe näkyy varoituksena.
-      # Kun PandaQuest/-hakemisto on kunnossa, poista continue-on-error.
       - name: Run the checks on the core addon
         continue-on-error: true
         run: python3 .github/release/check.py -v
+
+      # Valinnainen: Lua-lint. Poista kommenttimerkit, jos haluat ottaa käyttöön.
+      # - name: Lint Lua files
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y lua-check
+      #     luacheck PandaQuest --no-color
 
       - name: Build the package
         id: build
@@ -125,21 +130,6 @@ jobs:
           mkdir -p release-notes
           python3 .github/release/curseforge.py notes --version "${{ steps.build.outputs.version }}" \
             --tag "${{ steps.build.outputs.tag }}" > release-notes/changes.md
-          echo "release notes' changelog: $(wc -c < release-notes/changes.md) bytes"
-
-      - name: Say what was built
-        run: |
-          set -euo pipefail
-          {
-            echo "## ${{ steps.build.outputs.package }}"
-            echo
-            echo "| fact | value |"
-            echo "|------|-------|"
-            echo "| version | \`${{ steps.build.outputs.version }}\` |"
-            echo "| sha256 | \`${{ steps.build.outputs.sha256 }}\` |"
-            echo "| bytes | $(stat -c%s "dist/${{ steps.build.outputs.package }}") |"
-            echo "| entries | $(python3 -c "import zipfile,sys;print(len(zipfile.ZipFile(sys.argv[1]).infolist()))" "dist/${{ steps.build.outputs.package }}") |"
-          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Keep the package
         uses: actions/upload-artifact@v4.4.3

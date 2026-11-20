@@ -9,10 +9,8 @@ on:
         type: string
     secrets:
       CF_API_TOKEN:
-        description: 'CurseForge API token (from curseforge.com/account/api-tokens)'
         required: true
       CF_PROJECT_ID:
-        description: 'Numeric CurseForge project ID, found in the project sidebar'
         required: true
 
 jobs:
