@@ -547,6 +547,7 @@ class TheWorkflow(unittest.TestCase):
         """
         self.assertIn("for local in dist/*.zip", self.text)
         self.assertIn('gh release upload "${tag}" "${missing[@]}" --clobber', self.text)
+        self.assertNotIn("<<'ASSET'", self.text)
 
     def test_it_parses_as_yaml_when_a_parser_is_available(self) -> None:
         try:
