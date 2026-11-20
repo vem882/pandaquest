@@ -74,17 +74,16 @@ jobs:
           gh release download "v$database" -R vem882/pqDB --pattern "PandaQuestDB-$database.zip" --dir .components/releases
           gh release download "v$auction" -R vem882/pqAuction --pattern "PandaQuestAuction-$auction.zip" --dir .components/releases
 
-      # check.py validoi pandaquest-repositorion oman PandaQuest/-hakemiston.
-      # Jos se epäonnistuu, build jatkuu ja virhe näkyy varoituksena.
-      - name: Run the checks on the core addon
-        continue-on-error: true
-        run: python3 .github/release/check.py -v
+      # Lupa runs the waypoint parser's Lua 5.1 code inside Python. Without it
+      # waypoint_checks.WayParser silently skips 35 tests; installing it here
+      # makes them run for real on every PR and every push to main.
+      - name: Install Lua for the waypoint parser tests
+        run: python3 -m pip install --user lupa
 
-      # Valinnainen: Lua-lint. Poista kommenttimerkit, jos haluat ottaa käyttöön.
-      # - name: Lint Lua files
-      #   run: |
-      #     sudo apt-get update && sudo apt-get install -y lua-check
-      #     luacheck PandaQuest --no-color
+      # check.py validoi PandaQuest/-hakemiston ja publish-curseforge.yml:n
+      # rakenteen. Kaikkien 124 testin on pakko mennä läpi, jotta build jatkuu.
+      - name: Run the checks
+        run: python3 .github/release/check.py -v
 
       - name: Build the package
         id: build
@@ -130,6 +129,21 @@ jobs:
           mkdir -p release-notes
           python3 .github/release/curseforge.py notes --version "${{ steps.build.outputs.version }}" \
             --tag "${{ steps.build.outputs.tag }}" > release-notes/changes.md
+          echo "release notes' changelog: $(wc -c < release-notes/changes.md) bytes"
+
+      - name: Say what was built
+        run: |
+          set -euo pipefail
+          {
+            echo "## ${{ steps.build.outputs.package }}"
+            echo
+            echo "| fact | value |"
+            echo "|------|-------|"
+            echo "| version | \`${{ steps.build.outputs.version }}\` |"
+            echo "| sha256 | \`${{ steps.build.outputs.sha256 }}\` |"
+            echo "| bytes | $(stat -c%s "dist/${{ steps.build.outputs.package }}") |"
+            echo "| entries | $(python3 -c "import zipfile,sys;print(len(zipfile.ZipFile(sys.argv[1]).infolist()))" "dist/${{ steps.build.outputs.package }}") |"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Keep the package
         uses: actions/upload-artifact@v4.4.3
@@ -338,15 +352,15 @@ jobs:
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
 
-   curseforge:
-     name: publish the checked package to CurseForge
-     needs: [build, release]
-     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-     permissions:
-       contents: write
-     uses: ./.github/workflows/publish-curseforge.yml
-     with:
-       release_tag: ${{ needs.build.outputs.tag }}
-     secrets:
-       CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-       CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
+  curseforge:
+    name: publish the checked package to CurseForge
+    needs: [build, release]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    uses: ./.github/workflows/publish-curseforge.yml
+    with:
+      release_tag: ${{ needs.build.outputs.tag }}
+    secrets:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
