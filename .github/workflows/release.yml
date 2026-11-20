@@ -4,10 +4,8 @@
 # machine: build.py and check.py are stdlib Python, there is no Lua interpreter and no luacheck,
 # and nothing is pip-installed.
 #
-# The asset keeps a digits-only name, PandaQuest-<version>.zip, with every path under PandaQuest/;
-# README.md, "The release asset", is the definition and check.py asserts it. Players get the addon
-# from CurseForge (publish-curseforge.yml, started by hand, or the repository webhook); the GitHub
-# release is where that zip is built and checked once.
+# The combined asset is PandaQuest-<version>.zip. The GitHub release also carries the checked
+# standalone archives, and the CurseForge job distributes the standalone core from that release.
 name: Release
 
 on:
@@ -271,7 +269,7 @@ jobs:
             prerelease="false"
           fi
           printf '%s\n' \
-            "PandaQuest ${label} for Mists of Pandaria Classic 5.5.4." \
+            "PandaQuest ${label} for MoP Classic, Classic Era, TBC Anniversary and WoW Forever." \
             "${kind}" \
             "" \
             "| | |" \
@@ -280,7 +278,7 @@ jobs:
             "| asset | \`${PACKAGE}\` |" \
             "| sha256 | \`${SHA256}\` |" \
             "" \
-            "Unzip \`${PACKAGE}\` into \`World of Warcraft/_classic_/Interface/AddOns\`." \
+            "Unzip \`${PACKAGE}\` into the Interface/AddOns folder for your game version." \
             "Licence: GPLv3. Content is completed at the PandaQuest portal, pd.zroot.it." > notes.md
           if [ -s release-notes/changes.md ]; then
             { echo; cat release-notes/changes.md; } >> notes.md
@@ -440,3 +438,16 @@ jobs:
           CONFIRM
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
+
+  curseforge:
+    name: publish the checked core to CurseForge
+    needs: [build, release]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    uses: ./.github/workflows/publish-curseforge.yml
+    with:
+      release_tag: ${{ needs.build.outputs.tag }}
+      component: core
+    secrets:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

@@ -733,18 +733,24 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn("- Fix the arrow", text)
         self.assertEqual(curseforge.format_changelog("0.2.120", "v0.2.113", []), "")
 
-    def test_the_upload_is_its_own_workflow_and_only_by_hand(self) -> None:
-        """CurseForge forbids updates made to boost visibility, so nothing uploads by itself."""
+    def test_the_upload_requires_a_published_release(self) -> None:
+        """The release job can call the uploader after publishing its verified asset."""
         text = (REPO / ".github" / "workflows" / "publish-curseforge.yml").read_text(encoding="utf-8")
         triggers = text[text.index("\non:"):text.index("\npermissions:")]
         self.assertIn("workflow_dispatch:", triggers)
+        self.assertIn("workflow_call:", triggers)
         for automatic in ("push:", "pull_request:", "schedule:", "release:"):
             self.assertNotIn(automatic, triggers)
         self.assertIn("fetch-depth: 0", text)
         self.assertIn("curseforge/${RELEASE_TAG}", text, "the reservation tag that stops a second upload")
         self.assertIn("gh release download", text, "it uploads the published zip, it does not build one")
         release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
-        self.assertNotIn("CF_API_TOKEN", release, "the release workflow must not hold the token")
+        build_and_release, upload = release.split("\n  curseforge:\n")
+        self.assertNotIn("CF_API_TOKEN", build_and_release)
+        self.assertIn("needs: [build, release]", upload)
+        self.assertIn("github.event_name == 'push' && github.ref == 'refs/heads/main'", upload)
+        self.assertIn("uses: ./.github/workflows/publish-curseforge.yml", upload)
+        self.assertIn("release_tag: ${{ needs.build.outputs.tag }}", upload)
 
     def test_a_beta_tag_is_a_release_like_any_other_to_the_tools_that_read_tags(self) -> None:
         tags = ["v0.2.140-beta", "v0.2.137", "v0.2.125"]

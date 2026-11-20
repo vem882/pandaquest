@@ -155,13 +155,11 @@ python3 .github/release/components.py --core "dist/PandaQuest-Core-$version.zip"
   --database .components/database --auction .components/auction --out dist
 ```
 
-For CurseForge, run **Upload existing release to CurseForge** for the release tag and select a
-component. The workflow checks that each file targets its own project. Publish and approve the first
-Database file before publishing the split core. Set the repository variable `CF_DATABASE_SLUG` to
-the Database project's CurseForge slug so CurseForge can install the required dependency. Auction
-depends on the core, and can be published once the split core is available. Use the workflow's
-versioned archives for distribution. The older source webhook should be disabled at cutover to avoid
-publishing a second, unversioned package.
+After a push to main, **Release** publishes the standalone core to CurseForge from the checked GitHub
+release. The workflow checks that each file targets its own project. The first Database file must be
+approved before the split core goes live. Set `CF_DATABASE_SLUG` to the Database project's CurseForge
+slug so CurseForge can install the required dependency. Auction depends on the core. For a manual
+upload, run **Upload existing release to CurseForge** with the published tag and component.
 
 PandaBase generates quest data and the downloadable community guide. The static files live in
 [pqDB](https://github.com/vem882/pqDB), and auction scan targets live in
