@@ -151,7 +151,31 @@ jobs:
             git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > "${DOWNLOAD_DIR}/changelog.txt"
             reservation_commit="$(git rev-parse "${RELEASE_TAG}^{commit}")"
           else
-            gh release view "$RELEASE_TAG" -R "$source_repo" --json body --jq .body > "${DOWNLOAD_DIR}/component-notes.md"
+            notes_status=0
+            python3 - "${DOWNLOAD_DIR}/${PACKAGE}" "$addon" > "${DOWNLOAD_DIR}/component-notes.md" <<'PY' || notes_status=$?
+          import hashlib
+          import json
+          import sys
+          import zipfile
+
+          with zipfile.ZipFile(sys.argv[1]) as package:
+              name = f"{sys.argv[2]}/CHANGELOG.md"
+              identity = json.loads(package.comment)
+              if name not in package.namelist() and "changelog_sha256" not in identity:
+                  sys.exit(3)
+              if package.getinfo(name).file_size > 256 * 1024:
+                  raise ValueError("Component changelog is too large")
+              notes = package.read(name)
+              if hashlib.sha256(notes).hexdigest() != identity.get("changelog_sha256"):
+                  raise ValueError("Component changelog digest does not match the release archive")
+              sys.stdout.buffer.write(notes)
+          PY
+            if [[ "$notes_status" == 3 ]]; then
+              # The earlier component ZIPs do not embed a changelog.
+              gh release view "$RELEASE_TAG" -R "$source_repo" --json body --jq .body > "${DOWNLOAD_DIR}/component-notes.md"
+            elif [[ "$notes_status" != 0 ]]; then
+              exit "$notes_status"
+            fi
             printf '%s\n' "$VERSION" > "${DOWNLOAD_DIR}/changelog.txt"
             cat "${DOWNLOAD_DIR}/component-notes.md" >> "${DOWNLOAD_DIR}/changelog.txt"
             reservation_commit="$GITHUB_SHA"

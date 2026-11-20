@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import zipfile
@@ -68,6 +69,36 @@ def release_version(key: str) -> str:
     return version
 
 
+def verified_component(source: zipfile.ZipFile, expected: dict[str, bytes], folder: str,
+                       version: str, revision: str) -> dict[str, bytes]:
+    identity = json.loads(source.comment)
+    if identity["component"] != revision:
+        raise ValueError(f"{folder} was not released from the pinned commit")
+    names = source.namelist()
+    note = f"{folder}/CHANGELOG.md"
+    tracked = set(expected)
+    generated_changelog = note in names and note not in tracked
+    if generated_changelog:
+        tracked.add(note)
+    if len(names) != len(tracked) or set(names) != tracked:
+        raise ValueError(f"{folder} archive contents do not match the pinned source")
+    if any(source.read(path) != content for path, content in expected.items()):
+        raise ValueError(f"{folder} does not match the pinned source")
+    if generated_changelog:
+        if source.getinfo(note).file_size > 256 * 1024:
+            raise ValueError(f"{folder} release changelog is too large")
+        data = source.read(note)
+        if (
+            not data.startswith(f"# {folder} {version}\n".encode())
+            or hashlib.sha256(data).hexdigest() != identity.get("changelog_sha256")
+        ):
+            raise ValueError(f"{folder} release changelog does not match its release metadata")
+        return {**expected, note: data}
+    if "changelog_sha256" in identity:
+        raise ValueError(f"{folder} archive is missing the release changelog")
+    return expected
+
+
 def assemble(core: Path, output: Path, checkouts: dict[str, Path], releases: Path | None = None) -> None:
     refs = pins()
     output.mkdir(parents=True, exist_ok=True)
@@ -89,12 +120,7 @@ def assemble(core: Path, output: Path, checkouts: dict[str, Path], releases: Pat
         else:
             package = (releases / name).read_bytes()
             with zipfile.ZipFile(releases / name) as source:
-                if json.loads(source.comment)["component"] != refs[key]:
-                    raise ValueError(f"{name} was not released from the pinned commit")
-                if len(source.namelist()) != len(files) or {
-                    member: source.read(member) for member in source.namelist()
-                } != files:
-                    raise ValueError(f"{name} does not match the pinned source")
+                files = verified_component(source, files, folder, own_version, refs[key])
             (output / name).write_bytes(package)
         combined.update(files)
     archive(output / f"PandaQuest-{version}.zip", combined, {**identity, "components": refs})
