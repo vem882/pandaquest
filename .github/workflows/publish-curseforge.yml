@@ -64,9 +64,6 @@ jobs:
             echo "curseforge/${RELEASE_TAG} does not exist; will upload"
           fi
 
-      # Tämä korvaa --exclude-drafts-lippunsa: varmistetaan erikseen, että
-      # julkaisu on julkaistu eikä luonnos. gh release download ei tue
-      # --exclude-drafts-lippua, joten tarkistus tehdään tässä.
       - name: Ensure the release is published (not a draft)
         if: steps.reservation.outputs.already == 'no'
         env:
@@ -92,13 +89,6 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          # Check the release explicitly instead of relying on a download flag
-          # that older gh releases do not support.
-          gh release view "${RELEASE_TAG}" --json isDraft > release.json
-          if [ "$(python3 -c 'import json; print(json.load(open("release.json"))["isDraft"])')" = "True" ]; then
-            echo "::error::${RELEASE_TAG} is still a draft; refusing to publish it to CurseForge"
-            exit 1
-          fi
           gh release download "${RELEASE_TAG}" \
             --pattern "*.zip" \
             --dir dist
