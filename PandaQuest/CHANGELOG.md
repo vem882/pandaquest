@@ -4,6 +4,94 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.627] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 78 NPCs, 7 objects
+
+## [0.2.626] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,312 NPCs, 6 objects
+- npc 2682 - Fradd Swiftgear - updated
+  - coordinates: 1 spawn point added in Wetlands
+
+## [0.2.625] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,311 NPCs, 6 objects
+- npc 11703 - Graw Cornerstone - updated
+  - coordinates: 4 spawn points added in Searing Gorge
+- npc 46479 - Kelsey Steelspark - updated
+  - coordinates: 5 spawn points added in Tanaris
+- npc 46497 - Martek the Awesome - updated
+  - coordinates: 20 spawn points added in Badlands
+
+## [0.2.624] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,308 NPCs, 6 objects
+- npc 46035 - Packleader Ivar Bloodfang - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 46137 - Cho'gall - updated
+  - coordinates: 1 spawn point added in Twilight Highlands
+- npc 46148 - Southsea Parrot - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46149 - Southsea Grenadier - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46151 - Southsea Engineer - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 46154 - Southsea Burnmaster - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46178 - Tarenar Sunstrike - updated
+  - coordinates: 21 spawn points added in Eastern Plaguelands
+
+## [0.2.623] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,301 NPCs, 6 objects
+- database - refreshed auction scan targets without recent prices
+- database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 77 NPCs, 7 objects
+- npc 45547 - Fiona's Caravan - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+- npc 45605 - Lady Sylvanas Windrunner - updated
+  - coordinates: 2 spawn points added in Silverpine Forest
+- npc 45643 - Ramkahen Champion - updated
+  - coordinates: 1 spawn point added in Uldum
+- npc 45773 - Wildhammer Hellion - updated
+  - coordinates: 2 spawn points added in Twilight Highlands
+- npc 45783 - Fiona's Caravan - updated
+  - coordinates: 36 spawn points added in Eastern Plaguelands
+- npc 45941 - Fiona - updated
+  - coordinates: 20 spawn points added in Eastern Plaguelands
+- npc 45955 - Gidwin Goldbraids - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 45956 - Baroness Anastari - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+- npc 45962 - Vex'tul - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+- npc 46173 - Gidwin Goldbraids - updated
+  - coordinates: 24 spawn points added in Eastern Plaguelands
+- npc 46191 - Gidwin Goldbraids - updated
+  - coordinates: 6 spawn points added in Eastern Plaguelands
+- npc 46192 - Fiona - updated
+  - coordinates: 19 spawn points added in Eastern Plaguelands
+- npc 46193 - Tarenar Sunstrike - updated
+  - coordinates: 12 spawn points added in Eastern Plaguelands
+- npc 46194 - Argus Highbeacon - updated
+  - coordinates: 31 spawn points added in Eastern Plaguelands
+- npc 46199 - Tarenar Sunstrike - updated
+  - coordinates: 8 spawn points added in Eastern Plaguelands
+- npc 46200 - Argus Highbeacon - updated
+  - coordinates: 3 spawn points added in Eastern Plaguelands
+- npc 46201 - Fiona - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+
 ## [0.2.621] - 2026-11-19
 
 Data from the PandaQuest portal.
