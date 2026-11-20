@@ -1,11 +1,5 @@
-# Build PandaQuest-<version>.zip and publish it as a GitHub release asset.
-#
-# Everything here runs on a GitHub-hosted runner and may depend on nothing installed on anybody's
-# machine: build.py and check.py are stdlib Python, there is no Lua interpreter and no luacheck,
-# and nothing is pip-installed.
-#
-# The combined asset is PandaQuest-<version>.zip. The GitHub release also carries the checked
-# standalone archives, and the CurseForge job distributes the standalone core from that release.
+# Build PandaQuest-<version>+pqAuction-<auction-version>+pqDB-<db-version>.zip and publish it
+# as the single asset of a GitHub release.
 name: Release
 
 on:
@@ -46,32 +40,28 @@ jobs:
       # builds PandaQuest-0.2.1.zip -- well formed, matching the portal's pattern, and sorting below
       # every package the portal already has, so /setup would go on offering the old build while
       # this run stayed green.
-      #
-      # Because that number is wrong rather than missing, the backstop is an explicit one:
-      # check.py's TheVersion.test_the_history_is_whole and build.py's `package` both ask
-      # `git rev-parse --is-shallow-repository` and refuse. Deleting this line fails the run at
-      # the check step, not in the portal a week later.
       - name: Check out the repository, with all of its history
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
-      # No setup-python: build.py and check.py are stdlib only, so the runner image's python3 is
-      # exactly enough. The version is printed so a run records which one built the zip, and the
-      # guard fails loudly rather than letting an old image fail on a syntax error further down.
       - name: Check the runner's python
         run: |
           set -euo pipefail
           python3 --version
           python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 9) else "python3 >= 3.9 required")'
 
-      - name: Read component pins
+      # Emits the pin and the release version for each external component. The versions are
+      # what go into the combined package name; the pins are what the sub-checkouts use.
+      - name: Read component pins and versions
         id: pins
         run: |
           set -euo pipefail
           for component in database auction; do
             pin="$(python3 .github/release/components.py --pin "$component")"
+            ver="$(python3 .github/release/components.py --version "$component")"
             echo "$component=$pin" >> "$GITHUB_OUTPUT"
+            echo "${component}_version=$ver" >> "$GITHUB_OUTPUT"
           done
 
       - name: Check out PandaQuest Database
@@ -109,20 +99,36 @@ jobs:
 
       - name: Build the package
         id: build
+        env:
+          DATABASE_VERSION: ${{ steps.pins.outputs.database_version }}
+          AUCTION_VERSION: ${{ steps.pins.outputs.auction_version }}
         run: |
           set -euo pipefail
           version="$(python3 .github/release/build.py version)"
-          package="PandaQuest-${version}.zip"
-          # The tag and the channel are worked out once, here, from the TOC: v0.2.140 for a stable
-          # build and v0.2.140-beta for a beta. Every later step reads them from this job's outputs
-          # instead of building the string again.
           tag="$(python3 .github/release/build.py tag)"
           channel="$(python3 .github/release/build.py channel)"
           core="PandaQuest-Core-${version}.zip"
+
+          # The one asset players download: every component's version in the name, so a
+          # support ticket or a CurseForge listing can be matched to a build without opening
+          # the zip. Order is PandaQuest, then the components, left to right.
+          package="PandaQuest-${version}+pqAuction-${AUCTION_VERSION}+pqDB-${DATABASE_VERSION}.zip"
+
           for output in dist second; do
             python3 .github/release/build.py package --out "${output}/${core}"
             python3 .github/release/components.py --core "${output}/${core}" --out "${output}" \
               --database .components/database --auction .components/auction --releases .components/releases
+
+            # components.py emits the combined archive as PandaQuest-<version>.zip; give it the
+            # version-carrying name before determinism is checked, so cmp compares like with
+            # like and the sha256 recorded below is a fact about the file that ships.
+            mv "${output}/PandaQuest-${version}.zip" "${output}/${package}"
+
+            # The standalone core and component zips are intermediates. Keeping them out of
+            # dist means the release carries exactly one asset, the same way Questie's does.
+            rm -f "${output}"/PandaQuest-Core-*.zip \
+                  "${output}"/PandaQuestDB-*.zip \
+                  "${output}"/PandaQuestAuction-*.zip
           done
 
           # Built a second time, into a different directory, and compared. Determinism is part of
@@ -144,10 +150,6 @@ jobs:
             echo "channel=${channel}"
           } >> "$GITHUB_OUTPUT"
 
-      # The changelog part of the release notes: this version's section of changelog.txt, every line
-      # of it -- a data sync lists each quest, NPC, object and item it changed, with indented lines
-      # saying what changed. Past GitHub's 125,000-character limit for a release body it is the
-      # section's summary and links to changelog.txt at this tag, which always holds the whole list.
       - name: Write the release notes' changelog
         run: |
           set -euo pipefail
@@ -171,9 +173,6 @@ jobs:
             echo "| build identity | \`$(python3 .github/release/build.py identity --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["build"])')\` |"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # Uploaded from every run, pull requests included: a reviewer can download the zip a branch
-      # would ship and install it, without a release existing. The release job takes its bytes
-      # from here rather than rebuilding, so what is published is what was checked.
       - name: Keep the package
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -195,19 +194,14 @@ jobs:
   release:
     name: publish the release asset
     needs: build
-    # Only main, and only a real push or a deliberate dispatch. A pull request builds and checks;
-    # it does not publish, and its token stays read-only.
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
-      # The one job that needs it, and the only reason it exists: creating a release and
-      # attaching a file to it.
       contents: write
     concurrency:
-      # Two merges in a row publish one after the other. Never cancelled: see above.
       group: release-publish
       cancel-in-progress: false
     steps:
@@ -231,23 +225,8 @@ jobs:
           set -euo pipefail
           sha256sum --check --strict dist/SHA256SUMS
 
-      # gh is preinstalled on GitHub-hosted runners, so this needs no action from anybody's
-      # marketplace and no token beyond the run's own.
-      #
-      # The tag carries a "v" (and "-beta" for a beta) and the asset does not: the asset keeps the
-      # digits-only name PandaQuest-<version>.zip that build.py and check.py enforce. Tags are read
-      # by people and by CurseForge's packaging, which labels a file a beta from the word in the tag.
-      # A beta is created as a prerelease and never as "Latest", so GitHub's Latest stays the newest
-      # stable build until one is published.
       - name: Publish the release
         env:
-          # gh resolves which repository to talk to from --repo, from GH_REPO, or from a git
-          # remote in the working directory. It does NOT read GITHUB_REPOSITORY. This job has no
-          # checkout -- it downloads the artifact and nothing else -- so without GH_REPO every gh
-          # call below dies with "failed to run git: not a git repository", the release is never
-          # created, and the portal goes on offering the previous build. Measured with gh 2.100.0:
-          # with GITHUB_REPOSITORY set and GH_REPO unset, `gh release view` fails that way; with
-          # GH_REPO set it resolves and reaches the API.
           GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.build.outputs.version }}
@@ -284,17 +263,8 @@ jobs:
             { echo; cat release-notes/changes.md; } >> notes.md
           fi
 
-          # One listing, used for two things. Asking for the list rather than for this one
-          # release means "the release is not there yet" is read off data instead of off an
-          # error message: the old code ran `gh release view >/dev/null 2>&1` and took any
-          # failure as "does not exist", so a repository it could not resolve looked exactly
-          # like a first release. If this call fails, the step fails here.
           gh release list --limit 200 --json tagName,isDraft,isPrerelease > releases.json
 
-          # The version must sort above everything already published, betas included. A number
-          # that goes backwards is invisible to anything that picks the highest version, and
-          # nothing reports it. build.py's shallow and no-git guards stop the two known ways to
-          # produce a low number; this is the backstop that says so out loud.
           python3 - "${tag}" "${VERSION}" releases.json exists.txt <<'GUARD'
           import json
           import re
@@ -345,12 +315,6 @@ jobs:
               echo "${tag} exists without these bytes; uploading ${PACKAGE}"
               gh release upload "${tag}" "dist/${PACKAGE}" --clobber
             fi
-            for component in dist/PandaQuest-Core-*.zip dist/PandaQuestDB-*.zip dist/PandaQuestAuction-*.zip; do
-              asset="${component##*/}"
-              if ! gh release view "$tag" --json assets --jq '.assets[].name' | grep -Fx "$asset" >/dev/null; then
-                gh release upload "$tag" "dist/$asset"
-              fi
-            done
             # `gh release create` with an asset is three API calls: create as a draft, upload,
             # publish. A run that died after the first leaves a draft holding the tag, and a
             # draft is not served by the public releases API -- nobody sees it at all while the
@@ -387,9 +351,6 @@ jobs:
               "${flags[@]}"
           fi
 
-      # The old version of this step printed whatever it found and exited 0, so a draft release
-      # with an asset attached, or a release carrying a different file, both read as success.
-      # It asserts now: a green run means a player can download exactly these bytes.
       - name: Check the release a player would download
         env:
           GH_REPO: ${{ github.repository }}
@@ -439,8 +400,9 @@ jobs:
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
 
+
   curseforge:
-    name: publish the checked core to CurseForge
+    name: publish the checked bundle to CurseForge
     needs: [build, release]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
@@ -448,6 +410,6 @@ jobs:
     uses: ./.github/workflows/publish-curseforge.yml
     with:
       release_tag: ${{ needs.build.outputs.tag }}
-      component: core
     secrets:
       CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
