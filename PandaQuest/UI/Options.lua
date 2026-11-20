@@ -768,6 +768,9 @@ local function buildTable()
                     respawnCountdown = toggle(18, L["Fade nodes and mobs until they respawn"],
                         L["A node you gathered or a mob you killed stays faint until its respawn timer says it is back."],
                         "professions.respawnCountdown"),
+                    possibleLocations = toggle(19, L["Show possible gathering locations"],
+                        L["Show faded database locations for ore, herbs and fishing pools alongside player sightings."],
+                        "professions.possibleLocations"),
                 },
             },
             tooltips = {
