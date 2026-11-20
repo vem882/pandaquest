@@ -754,6 +754,8 @@ class CurseForgeReadiness(unittest.TestCase):
         self.assertIn("fetch-depth: 0", text)
         self.assertIn("curseforge/${RELEASE_TAG}", text, "the reservation tag that stops a second upload")
         self.assertIn("gh release download", text, "it uploads the published zip, it does not build one")
+        self.assertNotIn("<<'PY'", text)
+        self.assertIn("PandaQuest-Core-${version}.zip", text)
         release = (REPO / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
         build_and_release, upload = release.split("\n  curseforge:\n")
         self.assertNotIn("CF_API_TOKEN", build_and_release)

@@ -151,20 +151,14 @@ jobs:
             normalized="dist/PandaQuest-${version}.zip"
             temporary="${normalized}.tmp"
             source="${zips[0]}"
-            python3 - "${source}" "${temporary}" <<'PY'
-            import sys
-            import zipfile
-
-            source, target = sys.argv[1:3]
-            with zipfile.ZipFile(source) as source_zip, zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as target_zip:
-                entries = [info for info in source_zip.infolist() if info.filename.startswith("PandaQuest/")]
-                if not entries:
-                    raise SystemExit("the release package has no PandaQuest/ directory")
-                for info in entries:
-                    target_zip.writestr(info, source_zip.read(info.filename))
-            PY
-            mv "${temporary}" "${normalized}"
-            rm -f "${source}"
+            if [[ "${source}" == "dist/PandaQuest-Core-${version}.zip" ]]; then
+              mv "${source}" "${normalized}"
+            else
+              python3 -c 'import sys,zipfile; source,target=sys.argv[1:3]; source_zip=zipfile.ZipFile(source); target_zip=zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED); entries=[info for info in source_zip.infolist() if info.filename.startswith("PandaQuest/")]; [target_zip.writestr(info,source_zip.read(info.filename)) for info in entries]; target_zip.close(); source_zip.close()' \
+                "${source}" "${temporary}"
+              mv "${temporary}" "${normalized}"
+              rm -f "${source}"
+            fi
             zips=("${normalized}")
             git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > dist/changelog.txt
             changelog="dist/changelog.txt"
