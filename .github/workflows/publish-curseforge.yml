@@ -1,9 +1,3 @@
-# Publish the single combined release asset to CurseForge.
-#
-# release.yml produces exactly one archive per release:
-#   PandaQuest-<version>+pqAuction-<auction>+pqDB-<db>.zip
-# This workflow downloads that one file and uploads it. If the release ever carries
-# more than one zip (or none), the job fails loudly rather than guessing which to send.
 name: Publish to CurseForge
 
 on:
@@ -37,8 +31,6 @@ jobs:
           mkdir -p dist
           gh release download "${{ inputs.release_tag }}" --pattern "*.zip" --dir dist
 
-          # release.yml ships exactly one archive. Anything else is a bug upstream, and
-          # uploading "whichever zip we found" is how the wrong file reaches players.
           shopt -s nullglob
           zips=(dist/*.zip)
           if [ "${#zips[@]}" -ne 1 ]; then
@@ -57,7 +49,6 @@ jobs:
           project_id: ${{ secrets.CF_PROJECT_ID }}
           game_endpoint: 'wow'
           file_path: ${{ steps.asset.outputs.file_path }}
-          # A tag ending in -beta is published as a beta; everything else as a release.
           release_type: ${{ contains(inputs.release_tag, '-beta') && 'beta' || 'release' }}
           display_name: ${{ steps.asset.outputs.file_name }}
           changelog: |
