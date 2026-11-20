@@ -7,17 +7,31 @@ on:
         description: 'GitHub release tag, e.g. v0.2.244 or v0.2.244-beta'
         required: true
         type: string
+      component:
+        description: 'Addon to upload from the release'
+        required: false
+        default: core
+        type: string
     secrets:
       CF_API_TOKEN:
         required: true
       CF_PROJECT_ID:
-        required: true
+        required: false
   workflow_dispatch:
     inputs:
       release_tag:
         description: 'GitHub release tag to re-upload'
         required: true
         type: string
+      component:
+        description: 'Addon to upload from the release'
+        required: true
+        default: core
+        type: choice
+        options:
+          - core
+          - database
+          - auction
 
 permissions:
   contents: write
@@ -29,6 +43,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: curseforge-${{ inputs.component }}-${{ inputs.release_tag }}
+      cancel-in-progress: false
     steps:
       - name: Check out with full history and tags
         uses: actions/checkout@v4.2.2
@@ -41,6 +58,10 @@ jobs:
           TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
+          if [[ ! "${TAG}" =~ ${RELEASE_TAG_PATTERN} ]]; then
+            echo "::error::${TAG} is not a release tag of the form v0.2.244 or v0.2.244-beta"
+            exit 1
+          fi
           VERSION="${TAG#v}"
           VERSION="${VERSION%-beta}"
           case "${TAG}" in
@@ -50,59 +71,101 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "channel=${channel}" >> "$GITHUB_OUTPUT"
 
-      - name: Check whether this release already has a reservation tag
-        id: reservation
+      - name: Resolve the component release
+        id: package
         env:
+          COMPONENT: ${{ inputs.component }}
           RELEASE_TAG: ${{ inputs.release_tag }}
-        run: |
-          set -euo pipefail
-          if git rev-parse --verify --quiet "refs/tags/curseforge/${RELEASE_TAG}" >/dev/null; then
-            echo "already=yes" >> "$GITHUB_OUTPUT"
-            echo "curseforge/${RELEASE_TAG} exists; nothing to upload"
-          else
-            echo "already=no" >> "$GITHUB_OUTPUT"
-            echo "curseforge/${RELEASE_TAG} does not exist; will upload"
-          fi
-
-      # Tämä korvaa --exclude-drafts-lippunsa: varmistetaan erikseen, että
-      # julkaisu on julkaistu eikä luonnos. gh release download ei tue
-      # --exclude-drafts-lippua, joten tarkistus tehdään tässä.
-      - name: Ensure the release is published (not a draft)
-        if: steps.reservation.outputs.already == 'no'
-        env:
+          CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
+          DATABASE_SLUG: ${{ vars.CF_DATABASE_SLUG }}
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
-          is_draft=$(gh release view "${RELEASE_TAG}" --json isDraft --jq '.isDraft')
-          if [ "$is_draft" = "true" ]; then
-            echo "::error::Release ${RELEASE_TAG} is a draft. Publish it first, then re-run."
+          version="${RELEASE_TAG#v}"
+          version="${version%-beta}"
+          source_repo="${GH_REPO}"
+          case "${COMPONENT}" in
+            core)
+              package_pattern="*.zip"
+              addon="PandaQuest"
+              project="${CF_PROJECT_ID:-1735809}"
+              dependency="${DATABASE_SLUG:-}"
+              reservation="curseforge/${RELEASE_TAG}"
+              ;;
+            database)
+              source_repo="vem882/pqDB"
+              package_pattern="PandaQuestDB-${version}.zip"
+              addon="PandaQuestDB"
+              project="1807827"
+              dependency=""
+              reservation="curseforge/database/${RELEASE_TAG}"
+              ;;
+            auction)
+              source_repo="vem882/pqAuction"
+              package_pattern="PandaQuestAuction-${version}.zip"
+              addon="PandaQuestAuction"
+              project="1807835"
+              dependency="pandaquest"
+              reservation="curseforge/auction/${RELEASE_TAG}"
+              ;;
+            *)
+              echo "::error::Unknown component: ${COMPONENT}"
+              exit 1
+              ;;
+          esac
+          if [[ -n "${dependency}" && ! "${dependency}" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::Invalid CurseForge dependency slug"
             exit 1
           fi
-          echo "Release ${RELEASE_TAG} is published"
-
-      - name: Download the release asset
-        if: steps.reservation.outputs.already == 'no'
-        id: asset
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ inputs.release_tag }}
-        run: |
-          set -euo pipefail
+          # gh release download does not support --exclude-drafts on all runner gh versions,
+          # so the published-release check is explicit. "auto" remains the tag-derived mode.
+          is_draft=$(gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json isDraft --jq '.isDraft')
+          if [[ "${is_draft}" == "true" ]]; then
+            echo "::error::Release ${RELEASE_TAG} is a draft"
+            exit 1
+          fi
           mkdir -p dist
-          gh release download "${RELEASE_TAG}" \
-            --pattern "*.zip" \
-            --dir dist
+          gh release download "${RELEASE_TAG}" --repo "${source_repo}" \
+            --pattern "${package_pattern}" --dir dist
           shopt -s nullglob
           zips=(dist/*.zip)
-          if [ "${#zips[@]}" -ne 1 ]; then
-            echo "::error::Expected exactly one .zip on ${RELEASE_TAG}, found ${#zips[@]}"
+          if [[ "${#zips[@]}" -ne 1 ]]; then
+            echo "::error::Expected exactly one package for ${COMPONENT}, found ${#zips[@]}"
             ls -la dist
             exit 1
           fi
-          echo "zip=${zips[0]}" >> "$GITHUB_OUTPUT"
+          if [[ "${COMPONENT}" == core ]]; then
+            changelog="PandaQuest/changelog.txt"
+          else
+            printf '%s\n' "${version}" > dist/changelog.txt
+            gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json body --jq '.body' >> dist/changelog.txt
+            changelog="dist/changelog.txt"
+          fi
+          {
+            echo "source_repo=${source_repo}"
+            echo "zip=${zips[0]}"
+            echo "addon=${addon}"
+            echo "project=${project}"
+            echo "dependency=${dependency}"
+            echo "reservation=${reservation}"
+            echo "changelog=${changelog}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check whether this release already has a reservation tag
+        id: reservation
+        env:
+          RESERVATION: ${{ steps.package.outputs.reservation }}
+        run: |
+          set -euo pipefail
+          git fetch origin "refs/tags/${RESERVATION}:refs/tags/${RESERVATION}" 2>/dev/null || true
+          if git rev-parse --verify --quiet "refs/tags/${RESERVATION}" >/dev/null; then
+            echo "already=yes" >> "$GITHUB_OUTPUT"
+            echo "${RESERVATION} exists; nothing to upload"
+          else
+            echo "already=no" >> "$GITHUB_OUTPUT"
+            echo "${RESERVATION} does not exist; will upload"
+          fi
 
       - name: Upload to CurseForge
         if: steps.reservation.outputs.already == 'no'
@@ -112,8 +175,11 @@ jobs:
         run: |
           set -euo pipefail
           python3 .github/release/curseforge.py upload \
-            --zip "${{ steps.asset.outputs.zip }}" \
-            --project "${{ secrets.CF_PROJECT_ID }}" \
+            --zip "${{ steps.package.outputs.zip }}" \
+            --addon "${{ steps.package.outputs.addon }}" \
+            --project "${{ steps.package.outputs.project }}" \
+            --dependency-slug "${{ steps.package.outputs.dependency }}" \
+            --changelog-txt "${{ steps.package.outputs.changelog }}" \
             --release-type "${{ steps.channel.outputs.channel }}" \
             --release-tag "${RELEASE_TAG}"
 
@@ -121,9 +187,10 @@ jobs:
         if: steps.reservation.outputs.already == 'no'
         env:
           RELEASE_TAG: ${{ inputs.release_tag }}
+          RESERVATION: ${{ steps.package.outputs.reservation }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "curseforge/${RELEASE_TAG}"
-          git push origin "curseforge/${RELEASE_TAG}"
+          git tag "${RESERVATION}"
+          git push origin "${RESERVATION}"
