@@ -170,3 +170,9 @@ PandaBase generates quest data and the downloadable community guide. The static 
 [pqAuction](https://github.com/vem882/pqAuction). The Sync app still writes the community guide into
 the installed core. Core keeps ownership of existing game settings, telemetry and auction
 SavedVariables so updates preserve player data.
+
+Each component repository checks pull requests and publishes a GitHub release from its main
+branch. The version advances once for each new commit since its v0.2.624 release. The
+`pq-component-publish.timer` on bananavm runs `.github/release/publish-component-files.sh`
+every ten minutes. It dispatches the CurseForge upload for each new component release.
+`components.json` and `component-versions.json` identify the packages used by the core release.
