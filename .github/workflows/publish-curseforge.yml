@@ -19,11 +19,14 @@ on:
         required: true
         type: string
 
+# The reservation tag is a real git tag pushed back to origin, so the job
+# needs write access. Everything else it does is read-only.
 permissions:
   contents: write
 
 env:
-  RELEASE_TAG: ${{ inputs.release_tag }}
+  # Accepted tag shape: v0.2.244 or v0.2.244-beta. The (-beta)? group is the
+  # only place the beta rule is written down.
   RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
@@ -31,16 +34,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      # fetch-depth: 0 on tarpeen, koska varaustagi tarkistetaan paikallisista
-      # refeistä ja pushataan takaisin.
-      - name: Check out the repository, with all of its history and tags
+      # fetch-depth: 0 is needed for the reservation tag check and push.
+      - name: Check out with full history and tags
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
-      # VERSION="${VERSION%-beta}" poistaa beta-päätteen kerran, täällä.
-      # auto-kommentti kertoo, että tagin -beta-pääte ratkaisee kanavan.
-      - name: Work out the channel from the tag
+      # VERSION="${VERSION%-beta}" strips the beta suffix once, here, so the
+      # version shown to players matches the stable form. auto: the tag's
+      # -beta suffix is the only source of truth for the channel, on both
+      # portals. On GitHub the release is created with --prerelease, on
+      # CurseForge it is uploaded as release_type beta.
+      - name: Work out version and channel from the tag
         id: channel
         env:
           TAG: ${{ inputs.release_tag }}
@@ -55,10 +60,13 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "channel=${channel}" >> "$GITHUB_OUTPUT"
 
-      # Varaustagi curseforge/<tag> luodaan vasta onnistuneen uploadin jälkeen.
-      # Näin uudelleenajo ei lähetä samaa tiedostoa kahdesti.
+      # curseforge/${RELEASE_TAG} is the reservation tag. It is created only
+      # after a successful upload, so a re-run of this workflow skips an
+      # asset that has already reached CurseForge.
       - name: Check whether this release already has a reservation tag
         id: reservation
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
           if git rev-parse --verify --quiet "refs/tags/curseforge/${RELEASE_TAG}" >/dev/null; then
@@ -75,9 +83,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
           mkdir -p dist
+          # --exclude-drafts is load-bearing: a draft release is invisible to
+          # the public releases API, so downloading from one would either
+          # fail or hand back a stale asset that no player can reach.
           gh release download "${RELEASE_TAG}" \
             --pattern "*.zip" \
             --exclude-drafts \
@@ -91,14 +103,11 @@ jobs:
           fi
           echo "zip=${zips[0]}" >> "$GITHUB_OUTPUT"
 
-      # curseforge.py upload lukee CF_API_TOKEN-ympäristömuuttujan ja
-      # tarkistaa, että zipin TOC:n X-Curse-Project-ID täsmää --project-
-      # parametriin. --release-tag liittää uploadin GitHub-releasen
-      # changelogiin. --release-type tulee kanavasta.
       - name: Upload to CurseForge
         if: steps.reservation.outputs.already == 'no'
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
           python3 .github/release/curseforge.py upload \
@@ -110,10 +119,10 @@ jobs:
       - name: Reserve the tag so a second run does not upload twice
         if: steps.reservation.outputs.already == 'no'
         env:
-          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git tag "curseforge/${RELEASE_TAG}"
           git push origin "curseforge/${RELEASE_TAG}"
