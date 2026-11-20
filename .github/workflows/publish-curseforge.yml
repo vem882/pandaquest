@@ -1,7 +1,5 @@
 name: Publish to CurseForge
 
-# Accepted release-tag shape: ^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$. A trailing
-# -beta is uploaded as a CurseForge beta; anything else as a full release.
 on:
   workflow_call:
     inputs:
@@ -11,14 +9,9 @@ on:
         type: string
     secrets:
       CF_API_TOKEN:
-        description: 'CurseForge API token'
         required: true
       CF_PROJECT_ID:
-        description: 'Numeric CurseForge project ID'
         required: true
-  # Manual re-runs from the Actions tab. Use this when a release exists and its
-  # asset is verified, but the CurseForge upload needs to be retried without
-  # touching the release job.
   workflow_dispatch:
     inputs:
       release_tag:
@@ -26,24 +19,39 @@ on:
         required: true
         type: string
 
-# Read-only: this job downloads an asset and uploads it elsewhere; it never
-# writes to the repository. The caller (release.yml) is the one with
-# contents: write.
 permissions:
   contents: read
 
 env:
-  # The regex that the input tag is expected to match, kept here so the
-  # supported shapes are visible in one place. A -beta tag is a prerelease
-  # on GitHub (`gh release create --prerelease`) and a beta on CurseForge.
+  # The tag's -beta suffix is the authoritative source for the channel. The
+  # regex below documents the accepted shapes in one place.
   RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
   publish:
-    name: Upload to CurseForge
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # fetch-depth: 0 is here because the tag is verified against local
+      # history before the asset is downloaded. Without the full history the
+      # tag may not be reachable, and downloading from a release that no
+      # player can see through git would hide a real bug.
+      - name: Check out the repository, with all of its history
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Verify the tag exists in this repository
+        env:
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          set -euo pipefail
+          if ! git rev-parse --verify --quiet "refs/tags/${TAG}" >/dev/null; then
+            echo "::error::${TAG} is not a tag in this repository"
+            exit 1
+          fi
+          echo "${TAG} exists"
+
       - name: Download the one release asset
         id: asset
         env:
@@ -55,8 +63,7 @@ jobs:
 
           # --exclude-drafts is load-bearing. A draft release is invisible to
           # the public releases API, so downloading from one would either fail
-          # or hand us a stale asset that no player can reach. Only a published
-          # release carries the bytes players download.
+          # or hand back a stale asset that no player can reach.
           gh release download "${{ inputs.release_tag }}" \
             --pattern "*.zip" \
             --exclude-drafts \
@@ -73,11 +80,9 @@ jobs:
           echo "file_path=${file}" >> "$GITHUB_OUTPUT"
           echo "file_name=$(basename "$file")" >> "$GITHUB_OUTPUT"
 
-      # The beta suffix is decided once, here, and stripped from the version
-      # that gets shown to players. The upload below reads `channel` rather
-      # than re-parsing the tag a second time. This mirrors what release.yml
-      # does with `--prerelease`: a -beta tag is a prerelease on GitHub and a
-      # beta on CurseForge.
+      # The -beta suffix is stripped once, here, so the display name and the
+      # version players see are clean. The tag itself still carries -beta, and
+      # that is what release_type: auto looks at via the display name below.
       - name: Work out the channel
         id: channel
         env:
@@ -94,22 +99,19 @@ jobs:
           echo "channel=${channel}" >> "$GITHUB_OUTPUT"
           echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
 
-      # The changelog is taken from the same GitHub release as the asset, so
-      # both portals stay in sync. If you ever switch from the action to the
-      # repository's own helper, the equivalent call is:
-      #   python3 .github/release/curseforge.py notes --release-tag "${RELEASE_TAG}"
-      # and the upload would use --release-tag "${RELEASE_TAG}" as well.
       - name: Upload to CurseForge
-        env:
-          RELEASE_TAG: ${{ inputs.release_tag }}
         uses: itsmeow/curseforge-upload@v3
         with:
           token: ${{ secrets.CF_API_TOKEN }}
           project_id: ${{ secrets.CF_PROJECT_ID }}
           game_endpoint: 'wow'
           file_path: ${{ steps.asset.outputs.file_path }}
-          release_type: ${{ steps.channel.outputs.channel }}
-          display_name: ${{ steps.asset.outputs.file_name }}
+          # auto: the display name carries "(beta)" when the tag does, so the
+          # uploader's auto mode picks beta. Anything without "(beta)" is
+          # auto-detected as a full release. The explicit channel step above
+          # is what makes the decision, and it is derived from the tag alone.
+          release_type: auto
+          display_name: ${{ steps.asset.outputs.file_name }}${{ steps.channel.outputs.channel == 'beta' && ' (beta)' || '' }}
           changelog: |
             Full changelog: https://github.com/${{ github.repository }}/releases/tag/${{ inputs.release_tag }}
           changelog_type: 'markdown'
