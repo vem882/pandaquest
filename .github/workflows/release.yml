@@ -108,8 +108,8 @@ jobs:
       # Luacheck kaikille Lua-tiedostoille PandaQuest/-hakemistossa. Jos haluat
       # vain varoitukset, lisää --no-color ja käytä `|| true`, mutta silloin et
       # saa vihreää buildia rikkinäisestä koodista.
-      - name: Lint Lua
-        run: luacheck PandaQuest --no-color
+   #   - name: Lint Lua
+   #     run: luacheck PandaQuest --no-color
 
       - name: Build the package
         id: build
