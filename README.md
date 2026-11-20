@@ -82,8 +82,6 @@ refreshes the community guide in an already-installed addon. It does not install
 addon. Retail and PTR/beta folders can be detected, but full addon and hub support for those
 clients is still in progress; do not treat detection as a claim of full support.
 
-A ready-to-paste CurseForge summary and description are in
-[`docs/curseforge-description.md`](docs/curseforge-description.md).
 
 ## Privacy and data sharing
 
