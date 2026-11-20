@@ -34,7 +34,8 @@ permissions:
 
 env:
   # The regex that the input tag is expected to match, kept here so the
-  # supported shapes are visible in one place.
+  # supported shapes are visible in one place. A -beta tag is a prerelease
+  # on GitHub (`gh release create --prerelease`) and a beta on CurseForge.
   RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
@@ -51,7 +52,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          gh release download "${{ inputs.release_tag }}" --pattern "*.zip" --dir dist
+
+          # --exclude-drafts is load-bearing. A draft release is invisible to
+          # the public releases API, so downloading from one would either fail
+          # or hand us a stale asset that no player can reach. Only a published
+          # release carries the bytes players download.
+          gh release download "${{ inputs.release_tag }}" \
+            --pattern "*.zip" \
+            --exclude-drafts \
+            --dir dist
 
           shopt -s nullglob
           zips=(dist/*.zip)
@@ -66,7 +75,9 @@ jobs:
 
       # The beta suffix is decided once, here, and stripped from the version
       # that gets shown to players. The upload below reads `channel` rather
-      # than re-parsing the tag a second time.
+      # than re-parsing the tag a second time. This mirrors what release.yml
+      # does with `--prerelease`: a -beta tag is a prerelease on GitHub and a
+      # beta on CurseForge.
       - name: Work out the channel
         id: channel
         env:
