@@ -75,6 +75,23 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.624
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,308 NPCs, 6 objects
+- npc 46035 - Packleader Ivar Bloodfang - updated
+  - coordinates: 1 spawn point added in Silverpine Forest
+- npc 46137 - Cho'gall - updated
+  - coordinates: 1 spawn point added in Twilight Highlands
+- npc 46148 - Southsea Parrot - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46149 - Southsea Grenadier - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46151 - Southsea Engineer - updated
+  - coordinates: 1 spawn point added in Thousand Needles
+- npc 46154 - Southsea Burnmaster - updated
+  - coordinates: 2 spawn points added in Thousand Needles
+- npc 46178 - Tarenar Sunstrike - updated
+  - coordinates: 21 spawn points added in Eastern Plaguelands
+
 0.2.623
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,301 NPCs, 6 objects
 - database - refreshed auction scan targets without recent prices
