@@ -16,6 +16,15 @@ on:
       CF_PROJECT_ID:
         description: 'Numeric CurseForge project ID'
         required: true
+  # Manual re-runs from the Actions tab. Use this when a release exists and its
+  # asset is verified, but the CurseForge upload needs to be retried without
+  # touching the release job.
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'GitHub release tag to re-upload'
+        required: true
+        type: string
 
 # Read-only: this job downloads an asset and uploads it elsewhere; it never
 # writes to the repository. The caller (release.yml) is the one with
@@ -55,6 +64,25 @@ jobs:
           echo "file_path=${file}" >> "$GITHUB_OUTPUT"
           echo "file_name=$(basename "$file")" >> "$GITHUB_OUTPUT"
 
+      # The beta suffix is decided once, here, and stripped from the version
+      # that gets shown to players. The upload below reads `channel` rather
+      # than re-parsing the tag a second time.
+      - name: Work out the channel
+        id: channel
+        env:
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          set -euo pipefail
+          VERSION="${TAG#v}"
+          VERSION="${VERSION%-beta}"
+          case "${TAG}" in
+            *-beta) channel="beta" ;;
+            *)      channel="release" ;;
+          esac
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "channel=${channel}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
       # The changelog is taken from the same GitHub release as the asset, so
       # both portals stay in sync. If you ever switch from the action to the
       # repository's own helper, the equivalent call is:
@@ -69,7 +97,7 @@ jobs:
           project_id: ${{ secrets.CF_PROJECT_ID }}
           game_endpoint: 'wow'
           file_path: ${{ steps.asset.outputs.file_path }}
-          release_type: ${{ contains(inputs.release_tag, '-beta') && 'beta' || 'release' }}
+          release_type: ${{ steps.channel.outputs.channel }}
           display_name: ${{ steps.asset.outputs.file_name }}
           changelog: |
             Full changelog: https://github.com/${{ github.repository }}/releases/tag/${{ inputs.release_tag }}
