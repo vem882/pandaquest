@@ -338,17 +338,15 @@ jobs:
 
           echo "published ${tag}: \`${PACKAGE}\` (${bytes} bytes)" >> "$GITHUB_STEP_SUMMARY"
 
-  # CurseForge-julkaisu on toistaiseksi pois päältä. Kun olet päivittänyt
-  # publish-curseforge.yml:n (alla), poista kommenttimerkit tämän jobin ympäriltä.
-  # curseforge:
-  #   name: publish the checked package to CurseForge
-  #   needs: [build, release]
-  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-  #   permissions:
-  #     contents: write
-  #   uses: ./.github/workflows/publish-curseforge.yml
-  #   with:
-  #     release_tag: ${{ needs.build.outputs.tag }}
-  #   secrets:
-  #     CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-  #     CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
+   curseforge:
+     name: publish the checked package to CurseForge
+     needs: [build, release]
+     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+     permissions:
+       contents: write
+     uses: ./.github/workflows/publish-curseforge.yml
+     with:
+       release_tag: ${{ needs.build.outputs.tag }}
+     secrets:
+       CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+       CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}

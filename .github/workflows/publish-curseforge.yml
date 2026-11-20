@@ -1,5 +1,7 @@
 name: Publish to CurseForge
 
+# Accepted release-tag shape: ^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$. A trailing
+# -beta is uploaded as a CurseForge beta; anything else as a full release.
 on:
   workflow_call:
     inputs:
@@ -9,9 +11,22 @@ on:
         type: string
     secrets:
       CF_API_TOKEN:
+        description: 'CurseForge API token'
         required: true
       CF_PROJECT_ID:
+        description: 'Numeric CurseForge project ID'
         required: true
+
+# Read-only: this job downloads an asset and uploads it elsewhere; it never
+# writes to the repository. The caller (release.yml) is the one with
+# contents: write.
+permissions:
+  contents: read
+
+env:
+  # The regex that the input tag is expected to match, kept here so the
+  # supported shapes are visible in one place.
+  RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
   publish:
@@ -40,7 +55,14 @@ jobs:
           echo "file_path=${file}" >> "$GITHUB_OUTPUT"
           echo "file_name=$(basename "$file")" >> "$GITHUB_OUTPUT"
 
+      # The changelog is taken from the same GitHub release as the asset, so
+      # both portals stay in sync. If you ever switch from the action to the
+      # repository's own helper, the equivalent call is:
+      #   python3 .github/release/curseforge.py notes --release-tag "${RELEASE_TAG}"
+      # and the upload would use --release-tag "${RELEASE_TAG}" as well.
       - name: Upload to CurseForge
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
         uses: itsmeow/curseforge-upload@v3
         with:
           token: ${{ secrets.CF_API_TOKEN }}
