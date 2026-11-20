@@ -4,6 +4,14 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.626] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,312 NPCs, 6 objects
+- npc 2682 - Fradd Swiftgear - updated
+  - coordinates: 1 spawn point added in Wetlands
+
 ## [0.2.625] - 2026-11-20
 
 Data from the PandaQuest portal.
