@@ -129,6 +129,9 @@ jobs:
             python3 .github/release/components.py --core "${output}/${core}" --out "${output}" \
               --database .components/database --auction .components/auction --releases .components/releases
             mv "${output}/PandaQuest-${version}.zip" "${output}/${package}"
+            rm -f "${output}/${core}" \
+                  "${output}"/PandaQuestDB-*.zip \
+                  "${output}"/PandaQuestAuction-*.zip
           done
 
           first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
@@ -292,22 +295,21 @@ jobs:
 
           if [ "$(cat exists.txt)" = "yes" ]; then
             gh release view "${tag}" --json isDraft,assets > release.json
-            missing=()
-            for local in dist/*.zip; do
-              name="${local#dist/}"
-              size="$(stat -c%s "${local}")"
-              present="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[3],encoding="utf-8")); print(any(a["name"] == sys.argv[1] and a["size"] == int(sys.argv[2]) for a in r["assets"]))' \
-                "${name}" "${size}" release.json)"
-              if [ "${present}" = "True" ]; then
-                echo "${tag} already carries ${name} at ${size} bytes; leaving it alone"
-              else
-                missing+=("${local}")
-              fi
-            done
-            if [ "${#missing[@]}" -gt 0 ]; then
-              echo "${tag} exists without all verified assets; uploading:"
-              printf '  %s\n' "${missing[@]}"
-              gh release upload "${tag}" "${missing[@]}" --clobber
+            stale="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[2],encoding="utf-8")); print("\n".join(a["name"] for a in r["assets"] if a["name"].endswith(".zip") and a["name"] != sys.argv[1]))' \
+              "${PACKAGE}" release.json)"
+            if [ -n "${stale}" ]; then
+              while IFS= read -r name; do
+                echo "${tag} has stale ZIP asset ${name}; deleting it"
+                gh release delete-asset "${tag}" "${name}" --yes
+              done <<< "${stale}"
+            fi
+            same="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1],encoding="utf-8")); print(any(a["name"] == sys.argv[2] and a["size"] == int(sys.argv[3]) for a in r["assets"]))' \
+              release.json "${PACKAGE}" "${bytes}")"
+            if [ "${same}" = "True" ]; then
+              echo "${tag} already carries ${PACKAGE} at ${bytes} bytes; leaving it alone"
+            else
+              echo "${tag} exists without these bytes; uploading ${PACKAGE}"
+              gh release upload "${tag}" "dist/${PACKAGE}" --clobber
             fi
             draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
             if [ "${draft}" = "True" ]; then
@@ -328,7 +330,7 @@ jobs:
             else
               flags=(--latest)
             fi
-            gh release create "${tag}" dist/*.zip \
+            gh release create "${tag}" "dist/${PACKAGE}" \
               --target "${GITHUB_SHA}" \
               --title "PandaQuest ${label}" \
               --notes-file notes.md \
