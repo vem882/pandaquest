@@ -136,7 +136,13 @@ jobs:
             exit 1
           fi
           if [[ "${COMPONENT}" == core ]]; then
-            changelog="PandaQuest/changelog.txt"
+            normalized="dist/PandaQuest-${version}.zip"
+            if [[ "${zips[0]}" != "${normalized}" ]]; then
+              mv "${zips[0]}" "${normalized}"
+            fi
+            zips=("${normalized}")
+            git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > dist/changelog.txt
+            changelog="dist/changelog.txt"
           else
             printf '%s\n' "${version}" > dist/changelog.txt
             gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json body --jq '.body' >> dist/changelog.txt
