@@ -539,6 +539,15 @@ class TheWorkflow(unittest.TestCase):
             f"{self.WORKFLOW} no longer asks about isDraft, so a draft release reads as published",
         )
 
+    def test_existing_releases_get_every_split_asset(self) -> None:
+        """Re-running a release must fill missing core, database and auction ZIPs.
+
+        Uploading only the combined package leaves split CurseForge packages unpublished
+        even though the build produced all of them.
+        """
+        self.assertIn("for local in dist/*.zip", self.text)
+        self.assertIn('gh release upload "${tag}" "${missing[@]}" --clobber', self.text)
+
     def test_it_parses_as_yaml_when_a_parser_is_available(self) -> None:
         try:
             import yaml  # noqa: PLC0415 - optional, and deliberately not a dependency

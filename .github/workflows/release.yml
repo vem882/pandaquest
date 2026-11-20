@@ -292,13 +292,29 @@ jobs:
 
           if [ "$(cat exists.txt)" = "yes" ]; then
             gh release view "${tag}" --json isDraft,assets > release.json
-            same="$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1], encoding="utf-8")); print(any(a["name"] == sys.argv[2] and a["size"] == int(sys.argv[3]) for a in r["assets"]))' \
-              release.json "${PACKAGE}" "${bytes}")"
-            if [ "${same}" = "True" ]; then
-              echo "${tag} already carries ${PACKAGE} at ${bytes} bytes; leaving it alone"
-            else
-              echo "${tag} exists without these bytes; uploading ${PACKAGE}"
-              gh release upload "${tag}" "dist/${PACKAGE}" --clobber
+            missing=()
+            for local in dist/*.zip; do
+              name="${local#dist/}"
+              size="$(stat -c%s "${local}")"
+              present="$(python3 - "${name}" "${size}" release.json <<'ASSET'
+              import json
+              import sys
+
+              name, size, path = sys.argv[1:4]
+              release = json.load(open(path, encoding="utf-8"))
+              print("True" if any(asset["name"] == name and asset["size"] == int(size) for asset in release["assets"]) else "False")
+              ASSET
+              )"
+              if [ "${present}" = "True" ]; then
+                echo "${tag} already carries ${name} at ${size} bytes; leaving it alone"
+              else
+                missing+=("${local}")
+              fi
+            done
+            if [ "${#missing[@]}" -gt 0 ]; then
+              echo "${tag} exists without all verified assets; uploading:"
+              printf '  %s\n' "${missing[@]}"
+              gh release upload "${tag}" "${missing[@]}" --clobber
             fi
             draft="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["isDraft"])' release.json)"
             if [ "${draft}" = "True" ]; then
