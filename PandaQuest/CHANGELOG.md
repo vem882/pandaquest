@@ -4,6 +4,12 @@ All notable changes to PandaQuest are documented here.
 
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+## [0.2.627] - 2026-11-20
+
+Data from the PandaQuest portal.
+
+- database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 78 NPCs, 7 objects
+
 ## [0.2.626] - 2026-11-20
 
 Data from the PandaQuest portal.

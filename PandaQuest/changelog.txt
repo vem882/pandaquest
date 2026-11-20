@@ -75,6 +75,9 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.627
+- database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 78 NPCs, 7 objects
+
 0.2.626
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,312 NPCs, 6 objects
 - npc 2682 - Fradd Swiftgear - updated
