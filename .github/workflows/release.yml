@@ -17,7 +17,7 @@ jobs:
   build:
     name: check and build the package
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     outputs:
       version: ${{ steps.build.outputs.version }}
       package: ${{ steps.build.outputs.package }}
@@ -45,6 +45,7 @@ jobs:
             ver="$(python3 .github/release/components.py --version "$component")"
             echo "$component=$pin" >> "$GITHUB_OUTPUT"
             echo "${component}_version=$ver" >> "$GITHUB_OUTPUT"
+            echo "$component: pin=$pin version=$ver"
           done
 
       - name: Check out PandaQuest Database
@@ -63,6 +64,9 @@ jobs:
           path: .components/auction
           persist-credentials: false
 
+      # Releases are optional. If pqDB or pqAuction has not published one at the
+      # pinned version yet, log a warning and continue: components.py falls back to
+      # the git checkout in .components/<name>.
       - name: Download the published component releases
         env:
           GH_TOKEN: ${{ github.token }}
@@ -71,19 +75,41 @@ jobs:
           mkdir -p .components/releases
           database="$(python3 .github/release/components.py --version database)"
           auction="$(python3 .github/release/components.py --version auction)"
-          gh release download "v$database" -R vem882/pqDB --pattern "PandaQuestDB-$database.zip" --dir .components/releases
-          gh release download "v$auction" -R vem882/pqAuction --pattern "PandaQuestAuction-$auction.zip" --dir .components/releases
 
-      # Lupa runs the waypoint parser's Lua 5.1 code inside Python. Without it
-      # waypoint_checks.WayParser silently skips 35 tests; installing it here
-      # makes them run for real on every PR and every push to main.
-      - name: Install Lua for the waypoint parser tests
-        run: python3 -m pip install --user lupa
+          if gh release download "v$database" -R vem882/pqDB \
+               --pattern "PandaQuestDB-$database.zip" --dir .components/releases 2>/dev/null; then
+            echo "downloaded pqDB v$database"
+          else
+            echo "::warning::pqDB has no release v$database with PandaQuestDB-$database.zip; using the git checkout"
+          fi
 
-      # check.py validoi PandaQuest/-hakemiston ja publish-curseforge.yml:n
-      # rakenteen. Kaikkien 124 testin on pakko mennä läpi, jotta build jatkuu.
-      - name: Run the checks
+          if gh release download "v$auction" -R vem882/pqAuction \
+               --pattern "PandaQuestAuction-$auction.zip" --dir .components/releases 2>/dev/null; then
+            echo "downloaded pqAuction v$auction"
+          else
+            echo "::warning::pqAuction has no release v$auction with PandaQuestAuction-$auction.zip; using the git checkout"
+          fi
+
+          echo "--- component releases directory ---"
+          ls -la .components/releases || true
+
+      - name: Install lupa and luacheck
+        run: |
+          set -euo pipefail
+          python3 -m pip install --user lupa
+          sudo apt-get update
+          sudo apt-get install -y lua-check
+
+      # check.py valvoo PandaQuest/-hakemistoa ja sitä, että publish-curseforge.yml
+      # on olemassa. Jos se epäonnistuu, build pysähtyy tähän.
+      - name: Run the checks on the core addon
         run: python3 .github/release/check.py -v
+
+      # Luacheck kaikille Lua-tiedostoille PandaQuest/-hakemistossa. Jos haluat
+      # vain varoitukset, lisää --no-color ja käytä `|| true`, mutta silloin et
+      # saa vihreää buildia rikkinäisestä koodista.
+      - name: Lint Lua
+        run: luacheck PandaQuest --no-color
 
       - name: Build the package
         id: build
