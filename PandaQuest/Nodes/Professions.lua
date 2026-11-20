@@ -2,10 +2,9 @@
 --
 -- Three jobs, in the order the document puts them:
 --
---   D1  Draw them. A node is drawn only where one was actually taken: by this character (the
---       saved record D3 makes) or by somebody else (the hub's clustered sightings, which exist
---       only because a player gathered there). ns.Data.professionNodes is the dictionary that says
---       what an id *is* ("mine", skill 75, "Copper Vein") and nothing more - it never places a pin.
+--   D1  Draw player sightings from local gathers and the hub's observations. The optional
+--       possible-location layer reads the active game's object coordinates and uses
+--       ns.Data.professionNodes to identify gatherable objects.
 --   D2  Filter them by skill. A vein the character cannot mine is not a route, it is noise, so the
 --       default is to draw only what this character could actually gather. `showUngatherable`
 --       brings the rest back faded, which is what a player wants when planning the next 25 points.
@@ -27,7 +26,7 @@
 -- recorded at, and the ores share them - 227 of the zone's 340 mine coordinates lie within 0.5%
 -- of a coordinate listed under a different ore. The server fills a few of those shared points at a
 -- time, so a table of all of them is a map of where a vein could be, drawn as if one were there.
--- Nothing in it says which, and play does: so play is the only thing that places a node now.
+-- The possible-location layer treats these points as estimates and keeps player observations first.
 --
 -- Two rules apply throughout. A node we cannot classify is not recorded at all (an
 -- "unknown" kind would poison the hub's aggregate), and a skill requirement we do not have is
@@ -106,6 +105,8 @@ local LAYER = "profession"
 M.LAYER = LAYER
 
 local UNGATHERABLE_ALPHA = 0.4      -- how faint `showUngatherable` draws a node out of reach
+local POSSIBLE_ALPHA = 0.52
+local POSSIBLE_PER_KIND = 24
 local DEPLETED_ALPHA = 0.35         -- and a node this session already emptied (respawnCountdown)
 
 local MAX_NODES_PER_MAP = 250       -- ns.Pins caps at 300 pins total; quests are added first
@@ -373,8 +374,7 @@ end
 -- Where the nodes are
 ---------------------------------------------------------------------------
 
---- The dictionary: ns.Data.professionNodes, from Database/Data/Seed.lua. It classifies an id and
--- nothing else (see the header for why its spawn tables no longer place anything).
+--- The dictionary of gathering identities in the active database component.
 local function definitions()
     local Data = ns.Data
     local nodes = Data and Data.professionNodes
@@ -432,11 +432,6 @@ function M.ResetCache()
 end
 
 --- Professions.ResetMapCache(): the same thing, under the name the map hooks use.
---
--- There used to be a second, expensive cache here - an index of which seeded ids appear on which
--- map, a full pass over every profession id and its spawn table - and this was the call that kept
--- it. With the seed no longer placing nodes there is nothing to keep, but the two names say two
--- different things at their call sites (the map moved, or what we know changed) and stay separate.
 function M.ResetMapCache()
     wipe(nodeCache)
 end
@@ -603,6 +598,7 @@ local function addNode(out, id, def, uiMapID, x, y, unit, source, sightings, gat
         id = id, kind = def.kind, skill = skill, name = def.name,
         uiMapID = uiMapID, x = x, y = y, unit = unit and true or false,
         source = source,
+        possible = source == "database" or source == "wowhead",
         learned = source == "learned",
     }
     if type(sightings) == "number" and sightings > 0 then node.sightings = sightings end
@@ -719,6 +715,7 @@ end
 -- one it cannot. Then this character's own gathers, most first - where the player stood beats an
 -- aggregate of strangers - then the hub's, best corroborated first.
 local function byEvidence(a, b)
+    if a.possible ~= b.possible then return not a.possible end
     if a.gatherable ~= b.gatherable then return a.gatherable and true or false end
     local ga, gb = a.gathered or 0, b.gathered or 0
     if ga ~= gb then return ga > gb end
@@ -732,6 +729,7 @@ end
 -- 340 mine coordinates), so the dot a player gathered Tin at one day and Silver at the next is
 -- still one dot, and its tooltip says both.
 local function absorbNode(host, node)
+    if node.possible and not host.possible then return end
     if node.gathered then host.gathered = (host.gathered or 0) + node.gathered end
     if node.sightings then host.sightings = (host.sightings or 0) + node.sightings end
     if node.id ~= host.id then
@@ -765,6 +763,7 @@ end
 -- Nearest first when the player is standing on this map, and by id otherwise so that what a cap
 -- keeps is at least reproducible rather than a product of table iteration order.
 local function byNearness(a, b)
+    if a.possible ~= b.possible then return not a.possible end
     local da, db = a.dist, b.dist
     if da and db and da ~= db then return da < db end
     return byNode(a, b)
@@ -778,6 +777,63 @@ local function playerPointOn(uiMapID)
         return nil
     end
     return pos.x * 100, pos.y * 100
+end
+
+local function appendPossible(buckets, uiMapID)
+    if not settingOn("possibleLocations", false) then return end
+    local DB, Zones = ns.DB, ns.Zones
+    if not (DB and DB.GetObjectField and DB.GetObjectName and Zones and Zones.GetUiMapIdByAreaId) then
+        return
+    end
+
+    local ids, candidates = {}, {}
+    for id in pairs(definitions() or {}) do ids[id] = true end
+    for id in pairs(ns.GatheringResources or {}) do ids[id] = true end
+    local order = {}
+    for id in pairs(ids) do order[#order + 1] = id end
+    sort(order)
+
+    local overrides = ns.Overrides
+    local wowhead = overrides and overrides.wowhead and overrides.wowhead.objects
+    for i = 1, #order do
+        local id = order[i]
+        local def = dictionaryFor(id, false)
+        if def and KIND_PROFESSION[def.kind] and M.KindEnabled(def.kind) and DB.GetObjectName(id) == def.name then
+            local spawns = DB.GetObjectField(id, "spawns")
+            local fill = wowhead and wowhead[id]
+            if type(spawns) == "table" then
+                for areaID, coords in pairs(spawns) do
+                    if type(coords) == "table" and Zones.GetUiMapIdByAreaId(areaID) == uiMapID then
+                        local source = fill and fill.spawns and fill.spawns[areaID] == coords and "wowhead" or "database"
+                        local bucket = bucketFor(candidates, def.kind)
+                        for j = 1, #coords do
+                            local point = coords[j]
+                            if type(point) == "table" and
+                               not addNode(bucket, id, def, uiMapID, point[1], point[2], false, source) then
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    local px, py = playerPointOn(uiMapID)
+    for kind, bucket in pairs(candidates) do
+        local places = mergeBucket(bucket)
+        if px then
+            for i = 1, #places do
+                local node = places[i]
+                node.dist = sameMapDistance2(px, py, node.x, node.y)
+            end
+        end
+        sort(places, byNearness)
+        local target = bucketFor(buckets, kind)
+        for i = 1, math.min(#places, POSSIBLE_PER_KIND) do
+            places[i].dist = nil
+            target[#target + 1] = places[i]
+        end
+    end
 end
 
 --- Shares MAX_NODES_PER_MAP out between the kinds that have candidates and copies the survivors
@@ -866,8 +922,7 @@ end
 -- Always an array: a map with no profession data returns an empty one rather than nil, so the
 -- caller never has to ask twice. The array is cached per map and rebuilt by ResetCache.
 --
--- Only observed places are in it: this character's saved gathers, then the hub's sightings, folded
--- so that one place is one node whichever of the two - or both - recorded it.
+-- Local and shared sightings take priority over any optional possible location nearby.
 --
 -- One consequence of the cache is worth stating: when the zone has more candidates than the map
 -- budget, which ones survive is decided by distance from the player *at the moment the list was
@@ -885,6 +940,7 @@ function M.NodesForMap(uiMapID)
     local buckets = {}
     appendLearned(buckets, uiMapID)
     appendCommunity(buckets, uiMapID)
+    appendPossible(buckets, uiMapID)
     for i = 1, #KINDS do
         local kind = KINDS[i]
         if buckets[kind] then buckets[kind] = mergeBucket(buckets[kind]) end
@@ -909,6 +965,7 @@ end
 -- was: the spawn point is one, whichever ore the server put in it.
 local function alphaFor(node, spawnKey)
     if not node.gatherable then return UNGATHERABLE_ALPHA end
+    if node.possible then return POSSIBLE_ALPHA end
     if not M.RespawnCountdown() then return 1 end
     local Respawn = ns.Respawn
     if not Respawn or type(Respawn.GetRemaining) ~= "function" then return 1 end
@@ -940,7 +997,7 @@ local function addSpecsForMap(specs, byKey, maxPins, uiMapID, showUngatherable)
                     -- What ns.NodeTooltip.Fill reads straight off the spec.
                     kind = node.kind, skill = node.skill, name = node.name,
                     gatherable = node.gatherable, spawnKey = spawnKey,
-                    source = node.source, sightings = node.sightings,
+                    source = node.source, possible = node.possible, sightings = node.sightings,
                     gathered = node.gathered, alsoHere = node.alsoHere,
                     entityType = node.entityType, entityID = node.entityID,
                     node = node,

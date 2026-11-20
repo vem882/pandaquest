@@ -372,6 +372,10 @@ local T = {
     ["Only my professions"] = "Vain omat ammattini",
     ["A profession you have not learned contributes nothing at all."] =
         "Ammatti jota et ole opetellut ei tuo kartalle mitään.",
+    ["Show possible gathering locations"] = "Näytä mahdolliset keräyspaikat",
+    ["Show faded database locations for ore, herbs and fishing pools alongside player sightings."] = "Näytä tietokannan malmi-, yrtti- ja kalastuspaikat himmeinä pelaajien havaintojen rinnalla.",
+    ["Possible location (Wowhead)"] = "Mahdollinen paikka (Wowhead)",
+    ["Possible location (database)"] = "Mahdollinen paikka (tietokanta)",
     ["Show nodes above my skill"] = "Näytä taitoni yli menevät kohteet",
     ["Drawn faded. Useful for planning where to level a gathering skill next."] =
         "Piirretään haaleana. Hyödyllinen kun suunnittelet missä nostat keräilytaitoa seuraavaksi.",
