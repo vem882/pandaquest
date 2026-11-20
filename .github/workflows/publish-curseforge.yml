@@ -87,7 +87,6 @@ jobs:
           source_repo="${GH_REPO}"
           case "${COMPONENT}" in
             core)
-              package_pattern="*.zip"
               addon="PandaQuest"
               project="${CF_PROJECT_ID:-1735809}"
               dependency="${DATABASE_SLUG:-}"
@@ -126,6 +125,19 @@ jobs:
             exit 1
           fi
           mkdir -p dist
+          if [[ "${COMPONENT}" == core ]]; then
+            assets="$(gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json assets --jq '.assets[].name')"
+            core_package="PandaQuest-Core-${version}.zip"
+            if grep -Fx "${core_package}" <<< "${assets}" >/dev/null; then
+              package_pattern="${core_package}"
+            else
+              package_pattern="$(grep -E "^PandaQuest-${version}(\\+[^/]+)?\\.zip$" <<< "${assets}" | head -n 1)"
+              if [[ -z "${package_pattern}" ]]; then
+                echo "::error::No PandaQuest package found in ${RELEASE_TAG}"
+                exit 1
+              fi
+            fi
+          fi
           gh release download "${RELEASE_TAG}" --repo "${source_repo}" \
             --pattern "${package_pattern}" --dir dist
           shopt -s nullglob
@@ -137,9 +149,22 @@ jobs:
           fi
           if [[ "${COMPONENT}" == core ]]; then
             normalized="dist/PandaQuest-${version}.zip"
-            if [[ "${zips[0]}" != "${normalized}" ]]; then
-              mv "${zips[0]}" "${normalized}"
-            fi
+            temporary="${normalized}.tmp"
+            source="${zips[0]}"
+            python3 - "${source}" "${temporary}" <<'PY'
+import sys
+import zipfile
+
+source, target = sys.argv[1:3]
+with zipfile.ZipFile(source) as source_zip, zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as target_zip:
+    entries = [info for info in source_zip.infolist() if info.filename.startswith("PandaQuest/")]
+    if not entries:
+        raise SystemExit("the release package has no PandaQuest/ directory")
+    for info in entries:
+        target_zip.writestr(info, source_zip.read(info.filename))
+PY
+            mv "${temporary}" "${normalized}"
+            rm -f "${source}"
             zips=("${normalized}")
             git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > dist/changelog.txt
             changelog="dist/changelog.txt"

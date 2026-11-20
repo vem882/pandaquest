@@ -129,9 +129,6 @@ jobs:
             python3 .github/release/components.py --core "${output}/${core}" --out "${output}" \
               --database .components/database --auction .components/auction --releases .components/releases
             mv "${output}/PandaQuest-${version}.zip" "${output}/${package}"
-            rm -f "${output}"/PandaQuest-Core-*.zip \
-                  "${output}"/PandaQuestDB-*.zip \
-                  "${output}"/PandaQuestAuction-*.zip
           done
 
           first="$(sha256sum "dist/${package}" | cut -d' ' -f1)"
