@@ -25,3 +25,7 @@ for spec in pqDB:database pqAuction:auction; do
     echo "Sending $repo $tag to CurseForge"
     gh workflow run "$workflow" -R "$core" --ref "$ref" -f "release_tag=$tag" -f "component=$component"
 done
+
+if [[ "$ref" == "main" ]]; then
+    python3 "$(dirname "${BASH_SOURCE[0]}")/refresh_component_pins.py"
+fi
