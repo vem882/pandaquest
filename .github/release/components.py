@@ -17,6 +17,7 @@ COMPONENTS = {
     "auction": ("PandaQuestAuction", "1807835"),
 }
 LOCK = build.REPO / "components.json"
+VERSIONS = build.REPO / "component-versions.json"
 
 
 def pins() -> dict[str, str]:
@@ -60,7 +61,14 @@ def archive(path: Path, files: dict[str, bytes], identity: dict) -> None:
         output.comment = json.dumps(identity, sort_keys=True, separators=(",", ":")).encode()
 
 
-def assemble(core: Path, output: Path, checkouts: dict[str, Path]) -> None:
+def release_version(key: str) -> str:
+    version = json.loads(VERSIONS.read_text(encoding="utf-8"))[key]
+    if not re.fullmatch(r"[0-9]+(?:\.[0-9]+)+", version):
+        raise ValueError(f"invalid released version for {key}")
+    return version
+
+
+def assemble(core: Path, output: Path, checkouts: dict[str, Path], releases: Path | None = None) -> None:
     refs = pins()
     output.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(core) as source:
@@ -73,8 +81,21 @@ def assemble(core: Path, output: Path, checkouts: dict[str, Path]) -> None:
             raise ValueError(f"{key} checkout does not match components.json")
         if build._git("status", "--porcelain", "--", folder, repo=checkout):
             raise ValueError(f"{key} contains uncommitted addon files")
-        files = component_entries(checkout, folder, project, version)
-        archive(output / f"{folder}-{version}.zip", files, {**identity, "component": refs[key]})
+        own_version = release_version(key)
+        files = component_entries(checkout, folder, project, own_version)
+        name = f"{folder}-{own_version}.zip"
+        if releases is None:
+            archive(output / name, files, {"component": refs[key], "version": own_version})
+        else:
+            package = (releases / name).read_bytes()
+            with zipfile.ZipFile(releases / name) as source:
+                if json.loads(source.comment)["component"] != refs[key]:
+                    raise ValueError(f"{name} was not released from the pinned commit")
+                if len(source.namelist()) != len(files) or {
+                    member: source.read(member) for member in source.namelist()
+                } != files:
+                    raise ValueError(f"{name} does not match the pinned source")
+            (output / name).write_bytes(package)
         combined.update(files)
     archive(output / f"PandaQuest-{version}.zip", combined, {**identity, "components": refs})
 
@@ -82,6 +103,8 @@ def assemble(core: Path, output: Path, checkouts: dict[str, Path]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pin", choices=COMPONENTS)
+    parser.add_argument("--version", choices=COMPONENTS)
+    parser.add_argument("--releases", type=Path)
     parser.add_argument("--core", type=Path)
     parser.add_argument("--out", type=Path)
     for name in COMPONENTS:
@@ -90,9 +113,12 @@ def main() -> None:
     if args.pin:
         print(pins()[args.pin])
         return
+    if args.version:
+        print(release_version(args.version))
+        return
     if not all((args.core, args.out, args.database, args.auction)):
         parser.error("assembly requires --core, --out, --database and --auction")
-    assemble(args.core, args.out, {name: getattr(args, name) for name in COMPONENTS})
+    assemble(args.core, args.out, {name: getattr(args, name) for name in COMPONENTS}, args.releases)
 
 
 if __name__ == "__main__":

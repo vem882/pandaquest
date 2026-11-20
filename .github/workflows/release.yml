@@ -92,6 +92,17 @@ jobs:
           path: .components/auction
           persist-credentials: false
 
+      - name: Download the published component releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p .components/releases
+          database="$(python3 .github/release/components.py --version database)"
+          auction="$(python3 .github/release/components.py --version auction)"
+          gh release download "v$database" -R vem882/pqDB --pattern "PandaQuestDB-$database.zip" --dir .components/releases
+          gh release download "v$auction" -R vem882/pqAuction --pattern "PandaQuestAuction-$auction.zip" --dir .components/releases
+
       - name: Run the checks
         env:
           PQ_DATABASE_DIR: ${{ github.workspace }}/.components/database/PandaQuestDB
@@ -113,7 +124,7 @@ jobs:
           for output in dist second; do
             python3 .github/release/build.py package --out "${output}/${core}"
             python3 .github/release/components.py --core "${output}/${core}" --out "${output}" \
-              --database .components/database --auction .components/auction
+              --database .components/database --auction .components/auction --releases .components/releases
           done
 
           # Built a second time, into a different directory, and compared. Determinism is part of
@@ -336,8 +347,8 @@ jobs:
               echo "${tag} exists without these bytes; uploading ${PACKAGE}"
               gh release upload "${tag}" "dist/${PACKAGE}" --clobber
             fi
-            for component in PandaQuest-Core PandaQuestDB PandaQuestAuction; do
-              asset="$component-${VERSION}.zip"
+            for component in dist/PandaQuest-Core-*.zip dist/PandaQuestDB-*.zip dist/PandaQuestAuction-*.zip; do
+              asset="${component##*/}"
               if ! gh release view "$tag" --json assets --jq '.assets[].name' | grep -Fx "$asset" >/dev/null; then
                 gh release upload "$tag" "dist/$asset"
               fi
@@ -414,10 +425,11 @@ jobs:
                   f"but the build's channel is {channel}. A beta must not go out as the stable release, "
                   "or the other way round."
               )
-          for component in ("PandaQuest-Core", "PandaQuestDB", "PandaQuestAuction"):
-              name = f"{component}-{package.removeprefix('PandaQuest-')}"
-              if assets.get(name, 0) <= 0:
-                  raise SystemExit(f"::error::{tag} is missing {name}")
+          from pathlib import Path
+
+          for local in Path("dist").glob("*.zip"):
+              if assets.get(local.name) != local.stat().st_size:
+                  raise SystemExit(f"::error::{tag} is missing the verified {local.name} asset")
 
           if assets.get(package) != int(size):
               raise SystemExit(

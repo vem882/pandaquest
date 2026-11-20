@@ -39,6 +39,7 @@ import os
 import re
 import subprocess
 import sys
+import urllib.error
 import urllib.request
 import uuid
 import zipfile
@@ -375,12 +376,18 @@ def upload(
             print("invalid CurseForge dependency slug; nothing uploaded", file=sys.stderr)
             return 2
         meta["relations"] = {"projects": [{
-            "slug": dependency_slug, "projectID": dependency, "type": "requiredDependency",
+            "slug": dependency_slug, "type": "requiredDependency",
         }]}
     content_type, body = multipart({"metadata": json.dumps(meta)}, zip_path.name, zip_path.read_bytes())
-    answer = _call(urllib.request.Request(
-        "%s/projects/%s/upload-file" % (API, project), data=body, method="POST",
-        headers={"X-Api-Token": token, "Content-Type": content_type}))
+    try:
+        answer = _call(urllib.request.Request(
+            "%s/projects/%s/upload-file" % (API, project), data=body, method="POST",
+            headers={"X-Api-Token": token, "Content-Type": content_type}))
+    except urllib.error.HTTPError as exc:
+        print(f"CurseForge rejected project {project} with HTTP {exc.code}.", file=sys.stderr)
+        details = exc.read(4096).decode("utf-8", errors="replace")
+        print(details.replace(token, "[redacted]"), file=sys.stderr)
+        return 1
     print("uploaded %s to project %s as file %s (game versions %s)" %
           (zip_path.name, project, answer.get("id"), ids))
     return 0
