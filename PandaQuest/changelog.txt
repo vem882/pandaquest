@@ -75,6 +75,45 @@ Everything else reads "<area> - <what changed>".
 Under a data change, indented lines say what changed: "  - coordinates: 3 spawn points added in Badlands".
 Older data syncs: see each version's GitHub release notes and https://pd.zroot.it/changelog
 
+0.2.623
+- database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,301 NPCs, 6 objects
+- database - refreshed auction scan targets without recent prices
+- database - TBC Anniversary: data from the PandaQuest portal: 5,290 quests, 77 NPCs, 7 objects
+- npc 45547 - Fiona's Caravan - updated
+  - coordinates: 40 spawn points added in Eastern Plaguelands
+- npc 45605 - Lady Sylvanas Windrunner - updated
+  - coordinates: 2 spawn points added in Silverpine Forest
+- npc 45643 - Ramkahen Champion - updated
+  - coordinates: 1 spawn point added in Uldum
+- npc 45773 - Wildhammer Hellion - updated
+  - coordinates: 2 spawn points added in Twilight Highlands
+- npc 45783 - Fiona's Caravan - updated
+  - coordinates: 36 spawn points added in Eastern Plaguelands
+- npc 45941 - Fiona - updated
+  - coordinates: 20 spawn points added in Eastern Plaguelands
+- npc 45955 - Gidwin Goldbraids - updated
+  - coordinates: 2 spawn points added in Eastern Plaguelands
+- npc 45956 - Baroness Anastari - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+- npc 45962 - Vex'tul - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+- npc 46173 - Gidwin Goldbraids - updated
+  - coordinates: 24 spawn points added in Eastern Plaguelands
+- npc 46191 - Gidwin Goldbraids - updated
+  - coordinates: 6 spawn points added in Eastern Plaguelands
+- npc 46192 - Fiona - updated
+  - coordinates: 19 spawn points added in Eastern Plaguelands
+- npc 46193 - Tarenar Sunstrike - updated
+  - coordinates: 12 spawn points added in Eastern Plaguelands
+- npc 46194 - Argus Highbeacon - updated
+  - coordinates: 31 spawn points added in Eastern Plaguelands
+- npc 46199 - Tarenar Sunstrike - updated
+  - coordinates: 8 spawn points added in Eastern Plaguelands
+- npc 46200 - Argus Highbeacon - updated
+  - coordinates: 3 spawn points added in Eastern Plaguelands
+- npc 46201 - Fiona - updated
+  - coordinates: 1 spawn point added in Eastern Plaguelands
+
 0.2.621
 - database - Wowhead data as the PandaQuest portal read it: 8,261 quests, 2,284 NPCs, 6 objects
 - npc 44883 - Lord Darius Crowley - updated
