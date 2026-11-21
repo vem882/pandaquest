@@ -68,7 +68,7 @@ ns.DEFAULTS = {
         -- (Map/Pins.lua's ApplyRespawnFade): one countdown, one toggle.
         professions = { enabled = true, mining = true, herbalism = true, fishing = true,
                         chests = true, rares = true, showUngatherable = false,
-                        onlyMyProfessions = true, respawnCountdown = true },
+                        onlyMyProfessions = true, respawnCountdown = true, possibleLocations = false },
         -- The flight master. `tooltipETA` appends one line to the taxi node tooltip
         -- and `bar` draws the progress bar while the flight runs. Both show nothing at all on a
         -- route this account has never flown, because nothing on this client can say how long an
@@ -129,7 +129,7 @@ ns.DEFAULTS = {
     --
     -- `asked` is what stops the first-run question becoming a nag: Sync/Consent.lua sets it once
     -- the player has answered either way, so "no" is remembered as firmly as "yes".
-    global = { telemetry = { enabled = false, asked = false, shareAuctionScans = false,
+    global = { telemetry = { enabled = false, asked = false, shareAuctionScans = false, recordOwnAuctions = false,
                              breadcrumbs = true, breadcrumbInterval = 10, maxSessions = 30,
                              maxEventsPerSession = 5000,
                              gear = true, gearInterval = 60, gearMoney = false },

@@ -28,6 +28,7 @@ stub that lives in the portal repository (tools/wowstub), and is that repository
 from __future__ import annotations
 
 import math
+import os
 import re
 import unittest
 from pathlib import Path
@@ -274,7 +275,15 @@ class TheDatabaseCheck(unittest.TestCase):
         line yet -- says nothing, which is MoP too.  Either way it loads in MoP."""
         rt = runtime()
         ns = load_game(rt, *MOP_CLIENT)
-        run_file(rt, ns, "Database/Data/Meta.lua")
+        root = os.environ.get("PQ_DATABASE_DIR")
+        if not root:
+            self.skipTest("set PQ_DATABASE_DIR to the PandaQuestDB addon folder")
+        data = rt.table()
+        for name in ("Data/Meta.lua", "Export.lua"):
+            file = Path(root) / "Database" / name
+            rt.execute(file.read_text(encoding="utf-8"), "PandaQuestDB", data)
+        ns.Log = rt.eval("{Error=function(...) error('rejected database') end}")
+        run_file(rt, ns, "Database/Import.lua")
         self.assertIn(ns.Data.game, ("mop", None))
         self.assertEqual(ns.Game.DataGame(), "mop")
         self.assertTrue(ns.Game.DataMatches())

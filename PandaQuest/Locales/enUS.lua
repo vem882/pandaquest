@@ -292,6 +292,10 @@ L["Rare creatures, at the places a rare was looted."] = true
 L["Which of them you can gather"] = true
 L["Only my professions"] = true
 L["A profession you have not learned contributes nothing at all."] = true
+L["Show possible gathering locations"] = true
+L["Show faded database locations for ore, herbs and fishing pools alongside player sightings."] = true
+L["Possible location (Wowhead)"] = true
+L["Possible location (database)"] = true
 L["Show nodes above my skill"] = true
 L["Drawn faded. Useful for planning where to level a gathering skill next."] = true
 L["Fade nodes and mobs until they respawn"] = true
@@ -766,9 +770,7 @@ L["No skill-up expected"] = true
 
 L["Recommend a quest"] = true
 
-L["Item price lookup"] = true
 
-L["Enter an item name, ID, or chat link."] = true
 
 L["Copy a trace export"] = true
 
@@ -778,5 +780,6 @@ L["Change the size of quest objective icons."] = true
 
 L["Community objective observation"] = true
 
-L["Share completed Auctionator scans"] = true
-L["Share item prices by realm and faction through Sync after logout or reload."] = true
+
+L["%d new prices in this batch. %d queued for Sync after logout or reload."] = true
+L["Find next"] = true

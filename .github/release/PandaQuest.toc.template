@@ -3,8 +3,6 @@
 #~   {{interface}}    ## Interface
 #~   {{notes}}        that game's ## Notes lines
 #~   {{game-header}}  lines only that game's TOC has (AllowLoadGameType for Mists of Pandaria Classic)
-#~   {{zone-data}}    that game's zone tables
-#~   {{data}}         that game's database: the generated data and the override files
 #~ Every PandaQuest/PandaQuest*.toc is written from here and kept in the repository, because CurseForge's
 #~ own packager ships them as they are.  Edit this file, never those, then run
 #~   python3 .github/release/build.py tocs
@@ -20,7 +18,8 @@
 # PandaQuestAH stays although the Auction module is gone: WoW deletes a SavedVariable that is no
 # longer listed here at the next logout, and a player's stored auction scans must not be lost.
 # Nothing reads or writes it any more.
-## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf
+## SavedVariables: PandaQuestDB, PandaQuestSync, PandaQuestAH, PandaQuestProf, PandaQuestOwnAuctions
+## Dependencies: PandaQuestDB
 ## OptionalDeps: TomTom, Questie, QuestieDB
 ## IconTexture: Interface\AddOns\PandaQuest\Textures\icon.tga
 ## X-Website: https://github.com/vem882/pandaquest
@@ -61,9 +60,9 @@ Locales\ruRU.lua
 Locales\zhCN.lua
 Locales\zhTW.lua
 Database\Schema.lua
-{{zone-data}}
+Database\Import.lua
 Database\Zones.lua
-{{data}}
+Database\Overrides\Community.lua
 Database\QuestieDB.lua
 Database\DB.lua
 Quest\Player.lua

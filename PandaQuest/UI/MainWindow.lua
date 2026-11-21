@@ -375,6 +375,17 @@ local builders = {
     options = buildOptions,
 }
 
+-- RegisterTab lets optional PandaQuest components add a first-class page to
+-- this window.  The builder receives a correctly sized content panel.
+function M.RegisterTab(key, name, build)
+    if type(key) ~= "string" or type(name) ~= "string" or type(build) ~= "function" then return false end
+    for _, tab in ipairs(M.TABS) do if tab.key == key then return false end end
+    if frame then return false end -- extensions register while their TOC is loading
+    M.TABS[#M.TABS + 1] = { key = key, name = name }
+    builders[key] = function() return build(newPanel()) end
+    return true
+end
+
 --- SelectTab(key): one tab of the window; its page is built the first time.
 function M.SelectTab(key)
     if not frame then return false end

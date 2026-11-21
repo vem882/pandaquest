@@ -11,3 +11,5 @@ __pycache__/
 
 # Notes for publishing on CurseForge: kept on the author's machine, not in the repository.
 /curseforge/
+
+/.components/

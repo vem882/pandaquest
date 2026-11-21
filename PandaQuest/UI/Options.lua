@@ -117,6 +117,10 @@ local APPLIERS = {
     ["global.telemetry"] = function()
         if ns.Telemetry and ns.Telemetry.ApplySettings then ns.Telemetry.ApplySettings() end
     end,
+    ["global.telemetry.recordOwnAuctions"] = function()
+        local extension = ns.AuctionExtension
+        if extension and extension.ApplyOwnSettings then extension.ApplyOwnSettings() end
+    end,
     -- The bar re-reads its own size and lock; the tooltip line reads its switch on every hover, so
     -- nothing has to be told about that one.
     ["flight"] = function()
@@ -764,6 +768,9 @@ local function buildTable()
                     respawnCountdown = toggle(18, L["Fade nodes and mobs until they respawn"],
                         L["A node you gathered or a mob you killed stays faint until its respawn timer says it is back."],
                         "professions.respawnCountdown"),
+                    possibleLocations = toggle(19, L["Show possible gathering locations"],
+                        L["Show faded database locations for ore, herbs and fishing pools alongside player sightings."],
+                        "professions.possibleLocations"),
                 },
             },
             tooltips = {
@@ -818,9 +825,6 @@ local function buildTable()
                     privacy = { type = "description", order = 0.5, name = privacy },
                     consent = command(0.7, L["Ask the data sharing question"], nil, "consent"),
                     enabled = toggle(1, L["Record quest data"], nil, "global.telemetry.enabled"),
-                    shareAuctionScans = toggle(1.5, L["Share completed Auctionator scans"],
-                        L["Share item prices by realm and faction through Sync after logout or reload."],
-                        "global.telemetry.shareAuctionScans"),
                     breadcrumbs = toggle(2, L["Record movement breadcrumbs"],
                         L["Occasional position samples that improve community routes."], "global.telemetry.breadcrumbs"),
                     breadcrumbInterval = range(3, L["Breadcrumb interval (seconds)"], nil,
@@ -932,10 +936,6 @@ local function buildTable()
                     scanArchaeology = command(22, L["Read my archaeology now"], L["Open the archaeology window first."],
                         "scan", "archaeology"),
                     recommend = command(23, L["Recommend a quest"], nil, "recommend"),
-                    itemPrice = { type = "input", order = 24, name = L["Item price lookup"],
-                        desc = L["Enter an item name, ID, or chat link."],
-                        get = function() return "" end,
-                        set = function(_, value) ns.PQ.commands.price(value) end },
                     shareHeader = header(30, L["Synchronisation (optional)"]),
                     syncStatus = command(31, L["Show synchronisation status"], nil, "sync"),
                     consent = command(32, L["Ask the data sharing question"], nil, "consent"),
@@ -1078,6 +1078,11 @@ local function buildTable()
             },
         },
     }
+
+    local extension = ns.AuctionExtension
+    if extension and extension.AddOptions then
+        extension.AddOptions(tbl.args, toggle)
+    end
 
     -- Tabs a module adds itself (Options.AddSection), built with the rest of the table.
     for key, build in pairs(sections) do

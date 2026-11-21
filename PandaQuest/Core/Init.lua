@@ -58,11 +58,16 @@ end
 -- key goes back to its English text first -- an enUS value is the key itself -- and only then is the
 -- chosen table copied over it, so a key that language leaves untranslated reads as English: never
 -- as the game's own language (which AceLocale filled in at load) or the language chosen before.
-local function ApplyLanguage()
-    local choice = PQ.db.global.language
+local function selectedLocale()
+    local choice = PQ.db and PQ.db.global.language
     if choice == nil or choice == "auto" then
-        choice = (GAME_LOCALE or (GetLocale and GetLocale())) or "enUS"
+        return GAME_LOCALE or (GetLocale and GetLocale()) or "enUS"
     end
+    return choice
+end
+
+local function ApplyLanguage()
+    local choice = selectedLocale()
     for _, translated in pairs(ns.LOCALE_TABLES or {}) do
         for key in pairs(translated) do rawset(L, key, key) end
     end
@@ -240,7 +245,6 @@ ns.COMMAND_LINES = {
     "/pq reset - reset arrow position and map pins", "/pq debug [0-4|arrow] - log level",
     "/pq dump quest|npc|object|item <id> - print database entry", "/pq status - addon status",
     "/pq sync - telemetry and community data status",
-    "/pq price <item name, ID, or link> - show Auctionator and TradeSkillMaster prices",
     "/pq recommend - compare XP and gold for nearby quest targets",
     "/pq trace - copy recorded quest and gathering observations",
     "/pq scan professions - read the open profession window",
@@ -454,71 +458,43 @@ end
 commands.trace = function() ns.Trace.Show() end
 
 commands.price = function(arg)
-    local shareItem = arg:match("^(.-)%s+%-%-share$")
-    local share = shareItem ~= nil
-    arg = shareItem or arg
-    local shared = false
-    if arg == "" then
-        Log.Print("Usage: /pq price <item name, ID, or link> [--share]")
-        return
+    local extension = ns.AuctionExtension
+    if extension and extension.Price then
+        extension.Price(arg)
+    else
+        Log.Print("Install PandaQuest Auction to look up auction prices.")
     end
-    local itemID = tonumber(arg:match("^%d+$") or arg:match("|Hitem:(%d+)[:|]"))
-    local db = ns.DB
-    if not itemID then
-        local query = arg:lower()
-        for id in db.IterateItemIDs() do
-            local name = db.GetItemName(id)
-            if name and name:lower() == query then
-                if itemID then
-                    Log.Print("Several items are named %s. Shift-click the item into chat to use its link.", arg)
-                    return
-                end
-                itemID = id
-            end
-        end
-        if not itemID then
-            local lookup = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
-            itemID = lookup and lookup(arg)
-        end
-        if not itemID then
-            Log.Print("Item not found: %s. Shift-click the item into chat to use its link.", arg)
-            return
-        end
+end
+
+-- Versioned bridge for the optional PandaQuest Auction addon.
+function PQ:RegisterAuctionExtension(version, extension)
+    if version ~= 1 or type(extension) ~= "table" or ns.AuctionExtension then return end
+    extension.Core = {
+        addon = PQ,
+        Game = ns.Game,
+        DB = ns.DB,
+        Log = Log,
+        GetLocale = selectedLocale,
+        FormatMoneyCoins = Util.FormatMoneyCoins,
+        Window = {
+            RegisterTab = function(key, name, build)
+                return ns.MainWindow and ns.MainWindow.RegisterTab and ns.MainWindow.RegisterTab(key, name, build)
+            end,
+        },
+        IsTelemetryWanted = function() return ns.IsModuleWanted("Telemetry") end,
+        Telemetry = {
+            GetCharacterIdentity = ns.Telemetry.GetCharacterIdentity,
+            GetSettings = ns.Telemetry.GetSettings,
+            Record = ns.Telemetry.Record,
+            StoreSupplementalSession = ns.Telemetry.StoreSupplementalSession,
+        },
+    }
+    ns.AuctionExtension = extension
+    if type(extension.COMMAND_LINE) == "string" then
+        ns.COMMAND_LINES[#ns.COMMAND_LINES + 1] = extension.COMMAND_LINE
     end
-    if not itemID or itemID < 1 or itemID > 2147483647 then
-        Log.Print("Usage: /pq price <item name, ID, or link> [--share]")
-        return
-    end
-    Log.Print("%s (item ID: %d)", db.GetItemName(itemID) or "Item", itemID)
-    local Auctionator = _G.Auctionator
-    local api = Auctionator and Auctionator.API and Auctionator.API.v1
-    local function quote(label, source, lookup, ...)
-        if type(lookup) ~= "function" then return false end
-        local ok, copper = pcall(lookup, ...)
-        if not ok or (issecretvalue and issecretvalue(copper)) then return false end
-        if type(copper) ~= "number" or not (copper > 0 and copper < math.huge) then return false end
-        copper = math.floor(copper)
-        Log.Print("%s: %s", label, ns.Util.FormatMoneyCoins(copper))
-        if share and copper >= 1 and copper <= 1000000000000 and itemID <= 10000000 then
-            local telemetry = ns.Telemetry
-            if telemetry and telemetry.Record and telemetry.Record("AP", { item = itemID, money = copper, kind = source }) then
-                shared = true
-            end
-        end
-        return true
-    end
-    local scan = quote("Auctionator scan", "auctionator", api and api.GetAuctionPriceByItemID, "PandaQuest", itemID)
-    local tsm = _G.TSM_API and _G.TSM_API.GetCustomPriceValue
-    local recent = quote("TradeSkillMaster recent", "tsm_recent", tsm, "DBRecent", "i:" .. itemID)
-    local market = quote("TradeSkillMaster market value", "tsm_market", tsm, "DBMarket", "i:" .. itemID)
-    if shared then
-        Log.Print("Price queued for public sharing by realm. Log out or reload, then run Sync.")
-    elseif share and (scan or recent or market) then
-        Log.Print("Price could not be queued. Check that PandaQuest data sharing is enabled.")
-    end
-    if not scan and not recent and not market then
-        Log.Print("No Auctionator or TradeSkillMaster price available for item %d.", itemID)
-    end
+    ns.Options.Rebuild()
+    return extension.Core
 end
 
 local function liveQuestXP(id)

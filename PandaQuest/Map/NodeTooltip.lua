@@ -509,11 +509,14 @@ function M.BuildLines(node, lines)
         end
         addDouble(lines, tr("Gathering:"), tr(advice.text), advice.color, "gatheringAdvice")
     end
-    if kind and id then addRespawn(lines, kind, id, spawnKeyFor(node)) end
+    if node.possible then
+        local label = node.source == "wowhead" and "Possible location (Wowhead)" or "Possible location (database)"
+        addLine(lines, tr(label), COLOR_ESTIMATE, false, "source")
+    elseif kind and id then
+        addRespawn(lines, kind, id, spawnKeyFor(node))
+    end
 
-    -- A gathering node is drawn only where somebody took one (Nodes/Professions.lua), so these two
-    -- lines are its evidence, and the evidence is what tells a player the dot is real. "Found by
-    -- you" is how many times this character took it here, from its own saved records.
+    -- "Found by you" is the character's saved gather count at this location.
     if type(node.gathered) == "number" and node.gathered > 0 then
         addDouble(lines, tr("Found by you:"), format("%d", floor(node.gathered)), COLOR_VALUE, "gathered")
     end

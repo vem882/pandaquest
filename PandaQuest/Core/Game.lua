@@ -162,7 +162,9 @@ end
 
 -- Every saved variable PandaQuest.toc declares and the addon still uses. Each one is a table of the
 -- game it was written in.
-Game.SAVED_VARIABLES = { "PandaQuestDB", "PandaQuestSync", "PandaQuestProf" }
+Game.SAVED_VARIABLES = { "PandaQuestDB", "PandaQuestSync", "PandaQuestProf", "PandaQuestOwnAuctions" }
+-- Private auction data only exists after the user enables recording.
+local OPTIONAL_STORE = "PandaQuestOwnAuctions"
 -- Declared in the TOC so WoW keeps a player's copy, and otherwise never touched -- not even tagged:
 -- PandaQuestAH held the auction scans of the Auction module, which is gone.
 Game.RETIRED_SAVED_VARIABLES = { "PandaQuestAH" }
@@ -221,7 +223,7 @@ function Game.ClaimSavedVariables(names)
     if Game.id == Game.UNKNOWN then return moved end
     for _, name in ipairs(names or Game.SAVED_VARIABLES) do
         local store = _G[name]
-        if store == nil then
+        if store == nil and name ~= OPTIONAL_STORE then
             store = {}
             _G[name] = store
         end

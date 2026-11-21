@@ -372,6 +372,10 @@ local T = {
     ["Only my professions"] = "Vain omat ammattini",
     ["A profession you have not learned contributes nothing at all."] =
         "Ammatti jota et ole opetellut ei tuo kartalle mitään.",
+    ["Show possible gathering locations"] = "Näytä mahdolliset keräyspaikat",
+    ["Show faded database locations for ore, herbs and fishing pools alongside player sightings."] = "Näytä tietokannan malmi-, yrtti- ja kalastuspaikat himmeinä pelaajien havaintojen rinnalla.",
+    ["Possible location (Wowhead)"] = "Mahdollinen paikka (Wowhead)",
+    ["Possible location (database)"] = "Mahdollinen paikka (tietokanta)",
     ["Show nodes above my skill"] = "Näytä taitoni yli menevät kohteet",
     ["Drawn faded. Useful for planning where to level a gathering skill next."] =
         "Piirretään haaleana. Hyödyllinen kun suunnittelet missä nostat keräilytaitoa seuraavaksi.",
@@ -1051,15 +1055,13 @@ local T = {
     ["Not part of a chain."] = "Ei kuulu ketjuun.",
     ["Click: the next step. Right-click: the step before."] = "Napsautus: seuraava vaihe. Oikea napsautus: edellinen vaihe.",
     ["Recommend a quest"] = "Suosittele tehtävää",
-    ["Item price lookup"] = "Esineen hintahaku",
-    ["Enter an item name, ID, or chat link."] = "Anna esineen nimi, tunniste tai chat-linkki.",
     ["Copy a trace export"] = "Kopioi havaintojen vienti",
     ["Objective icon size"] = "Tavoitekuvakkeen koko",
     ["Change the size of quest objective icons."] = "Muuta tehtävätavoitteiden kuvakkeiden kokoa.",
     ["Community objective observation"] = "Yhteisön tavoitehavainto",
-    ["Share completed Auctionator scans"] = "Jaa valmistuneet Auctionator-skannaukset",
-    ["Share item prices by realm and faction through Sync after logout or reload."] =
-        "Jaa esinehinnat palvelimen ja ryhmittymän mukaan Syncillä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
+    ["Find next"] = "Etsi seuraavat",
+    ["%d new prices in this batch. %d queued for Sync after logout or reload."] =
+        "%d uutta hintaa tässä erässä. %d hintaa odottaa Synciä uloskirjautumisen tai uudelleenlatauksen jälkeen.",
 }
 
 -- Gathering skill advice

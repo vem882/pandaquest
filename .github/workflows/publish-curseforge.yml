@@ -1,55 +1,43 @@
-# Upload an EXISTING GitHub release to CurseForge.
-#
-# It does not build anything and does not create a GitHub release: release.yml did that, and this
-# distributes the zip it published, byte for byte, with the changelog.txt that release was made
-# from. Start it by hand (Actions > Upload existing release to CurseForge > Run workflow) once
-# there is something worth a new file -- CurseForge's rules forbid file updates made to boost
-# visibility, so nothing here runs on its own.
-#
-# One-time setup, outside this file: the CF_API_TOKEN repository secret. The project is the one
-# the package's own TOC names (## X-Curse-Project-ID), and the upload is refused when that is not
-# the project it was told to send to.
-#
-# Uploading twice is prevented by a reservation tag, curseforge/<release tag>, pushed before the
-# upload starts. If an upload fails after that, the tag stays: check CurseForge first, and only if
-# no file was accepted delete the tag (the failing step prints the command) and run this again.
-name: Upload existing release to CurseForge
-run-name: "Upload to CurseForge (${{ inputs.release_tag }})"
+name: Publish to CurseForge
 
 on:
   workflow_call:
     inputs:
       release_tag:
-        description: Existing GitHub release tag, such as v0.2.125 or v0.2.140-beta
-        type: string
+        description: 'GitHub release tag, e.g. v0.2.244 or v0.2.244-beta'
         required: true
-      release_type:
-        description: auto (the tag decides), alpha, beta or release
         type: string
-        default: auto
+      component:
+        description: 'Addon to upload from the release'
+        required: false
+        default: core
+        type: string
     secrets:
       CF_API_TOKEN:
         required: true
+      CF_PROJECT_ID:
+        required: false
   workflow_dispatch:
     inputs:
       release_tag:
-        description: Existing release tag, or latest for the highest published version (a beta included)
-        type: string
+        description: 'GitHub release tag to re-upload'
         required: true
-        default: latest
-      release_type:
-        description: How CurseForge labels the file; auto = the tag decides (-beta is a beta)
+        type: string
+      component:
+        description: 'Addon to upload from the release'
+        required: true
+        default: core
         type: choice
-        options: [auto, beta, release, alpha]
-        default: auto
+        options:
+          - core
+          - database
+          - auction
 
-# contents: write is for the reservation tag and nothing else.
 permissions:
   contents: write
 
-concurrency:
-  group: publish-curseforge
-  cancel-in-progress: false
+env:
+  RELEASE_TAG_PATTERN: '^v[0-9]+\.[0-9]+\.[0-9]+(-beta)?$'
 
 jobs:
   publish:
@@ -63,78 +51,175 @@ jobs:
       RELEASE_TYPE: ${{ inputs.release_type }}
       DOWNLOAD_DIR: upload
     steps:
-      # All history and tags: the reservation tag is made on the release's own commit.
-      - name: Check out the repository, with its history and tags
+      - name: Check out with full history and tags
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
-      - name: Resolve the release and download its zip
+      - name: Work out version and channel from the tag
+        id: channel
+        env:
+          TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
-          # "latest" is resolved once, so the zip, the notes and the reservation name one release.
-          # It means the highest version published, a beta included: GitHub's own "latest" skips
-          # prereleases, and a beta that could not be sent to CurseForge would defeat its purpose.
-          if [[ "${RELEASE_TAG}" == "latest" ]]; then
-            RELEASE_TAG="$(gh release list --exclude-drafts --limit 100 --json tagName --jq '.[].tagName' \
-              | python3 -c '
-          import re, sys
-          tags = [t.strip() for t in sys.stdin if re.fullmatch(r"v\d+(?:\.\d+)*(?:-beta)?", t.strip())]
-          key = lambda t: (tuple(int(p) for p in t[1:].split("-")[0].split(".")), not t.endswith("-beta"))
-          print(max(tags, key=key) if tags else "")
-          ')"
-            if [[ -z "${RELEASE_TAG}" ]]; then
-              echo "::error::there is no published release to send"
-              exit 1
-            fi
-          fi
-          if ! [[ "${RELEASE_TAG}" =~ ^v[0-9]+(\.[0-9]+)+(-beta)?$ ]]; then
-            echo "::error::${RELEASE_TAG} is not a release tag of the form v0.2.125 or v0.2.140-beta"
+          if [[ ! "${TAG}" =~ ${RELEASE_TAG_PATTERN} ]]; then
+            echo "::error::${TAG} is not a release tag of the form v0.2.244 or v0.2.244-beta"
             exit 1
           fi
-          # The asset name is digits only whatever the tag says.
-          VERSION="${RELEASE_TAG#v}"
+          VERSION="${TAG#v}"
           VERSION="${VERSION%-beta}"
-          PACKAGE="PandaQuest-${VERSION}.zip"
-          mkdir -p "${DOWNLOAD_DIR}"
-          gh release download "${RELEASE_TAG}" --pattern "${PACKAGE}" --dir "${DOWNLOAD_DIR}"
-          # The notes are changelog.txt as it was when the release was made, not as it is now.
-          git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > "${DOWNLOAD_DIR}/changelog.txt"
-          {
-            echo "RELEASE_TAG=${RELEASE_TAG}"
-            echo "PACKAGE=${PACKAGE}"
-            # "auto" labels the file the way the tag does: -beta is a beta, anything else a release.
-            if [[ "${RELEASE_TYPE}" == "auto" ]]; then
-              if [[ "${RELEASE_TAG}" == *-beta ]]; then echo "RELEASE_TYPE=beta"; else echo "RELEASE_TYPE=release"; fi
-            fi
-          } >> "${GITHUB_ENV}"
+          case "${TAG}" in
+            *-beta) channel="beta" ;;
+            *)      channel="release" ;;
+          esac
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "channel=${channel}" >> "$GITHUB_OUTPUT"
 
-      - name: Reserve the upload
+      - name: Resolve the component release
+        id: package
+        env:
+          COMPONENT: ${{ inputs.component }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
+          DATABASE_SLUG: ${{ vars.CF_DATABASE_SLUG }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          RESERVATION="curseforge/${RELEASE_TAG}"
-          if git ls-remote --exit-code --tags origin "refs/tags/${RESERVATION}" >/dev/null 2>&1; then
-            echo "::error::${RESERVATION} exists: ${RELEASE_TAG} was already sent, or an attempt failed."
-            echo "Check CurseForge first. Only if no file was accepted and no run is in progress:"
-            echo "  git push origin --delete ${RESERVATION}"
+          version="${RELEASE_TAG#v}"
+          version="${version%-beta}"
+          source_repo="${GH_REPO}"
+          case "${COMPONENT}" in
+            core)
+              addon="PandaQuest"
+              project="${CF_PROJECT_ID:-1735809}"
+              dependency="${DATABASE_SLUG:-}"
+              reservation="curseforge/${RELEASE_TAG}"
+              ;;
+            database)
+              source_repo="vem882/pqDB"
+              package_pattern="PandaQuestDB-${version}.zip"
+              addon="PandaQuestDB"
+              project="1807827"
+              dependency=""
+              reservation="curseforge/database/${RELEASE_TAG}"
+              ;;
+            auction)
+              source_repo="vem882/pqAuction"
+              package_pattern="PandaQuestAuction-${version}.zip"
+              addon="PandaQuestAuction"
+              project="1807835"
+              dependency="pandaquest"
+              reservation="curseforge/auction/${RELEASE_TAG}"
+              ;;
+            *)
+              echo "::error::Unknown component: ${COMPONENT}"
+              exit 1
+              ;;
+          esac
+          if [[ -n "${dependency}" && ! "${dependency}" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::Invalid CurseForge dependency slug"
             exit 1
           fi
-          git tag "${RESERVATION}" "${RELEASE_TAG}^{commit}"
-          git push origin "refs/tags/${RESERVATION}"
-          echo "RESERVATION=${RESERVATION}" >> "${GITHUB_ENV}"
+          # gh release download does not support --exclude-drafts on all runner gh versions,
+          # so the published-release check is explicit. "auto" remains the tag-derived mode.
+          is_draft=$(gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json isDraft --jq '.isDraft')
+          if [[ "${is_draft}" == "true" ]]; then
+            echo "::error::Release ${RELEASE_TAG} is a draft"
+            exit 1
+          fi
+          mkdir -p dist
+          if [[ "${COMPONENT}" == core ]]; then
+            assets="$(gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json assets --jq '.assets[].name')"
+            core_package="PandaQuest-Core-${version}.zip"
+            if grep -Fx "${core_package}" <<< "${assets}" >/dev/null; then
+              package_pattern="${core_package}"
+            else
+              package_pattern="$(grep -E "^PandaQuest-${version}(\\+[^/]+)?\\.zip$" <<< "${assets}" | head -n 1)"
+              if [[ -z "${package_pattern}" ]]; then
+                echo "::error::No PandaQuest package found in ${RELEASE_TAG}"
+                exit 1
+              fi
+            fi
+          fi
+          gh release download "${RELEASE_TAG}" --repo "${source_repo}" \
+            --pattern "${package_pattern}" --dir dist
+          shopt -s nullglob
+          zips=(dist/*.zip)
+          if [[ "${#zips[@]}" -ne 1 ]]; then
+            echo "::error::Expected exactly one package for ${COMPONENT}, found ${#zips[@]}"
+            ls -la dist
+            exit 1
+          fi
+          if [[ "${COMPONENT}" == core ]]; then
+            normalized="dist/PandaQuest-${version}.zip"
+            temporary="${normalized}.tmp"
+            source="${zips[0]}"
+            if [[ "${source}" == "dist/PandaQuest-Core-${version}.zip" ]]; then
+              mv "${source}" "${normalized}"
+            else
+              python3 -c 'import sys,zipfile; source,target=sys.argv[1:3]; source_zip=zipfile.ZipFile(source); target_zip=zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED); entries=[info for info in source_zip.infolist() if info.filename.startswith("PandaQuest/")]; [target_zip.writestr(info,source_zip.read(info.filename)) for info in entries]; target_zip.close(); source_zip.close()' \
+                "${source}" "${temporary}"
+              mv "${temporary}" "${normalized}"
+              rm -f "${source}"
+            fi
+            zips=("${normalized}")
+            git show "${RELEASE_TAG}:PandaQuest/changelog.txt" > dist/changelog.txt
+            changelog="dist/changelog.txt"
+          else
+            printf '%s\n' "${version}" > dist/changelog.txt
+            gh release view "${RELEASE_TAG}" --repo "${source_repo}" --json body --jq '.body' >> dist/changelog.txt
+            changelog="dist/changelog.txt"
+          fi
+          {
+            echo "source_repo=${source_repo}"
+            echo "zip=${zips[0]}"
+            echo "addon=${addon}"
+            echo "project=${project}"
+            echo "dependency=${dependency}"
+            echo "reservation=${reservation}"
+            echo "changelog=${changelog}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check whether this release already has a reservation tag
+        id: reservation
+        env:
+          RESERVATION: ${{ steps.package.outputs.reservation }}
+        run: |
+          set -euo pipefail
+          git fetch origin "refs/tags/${RESERVATION}:refs/tags/${RESERVATION}" 2>/dev/null || true
+          if git rev-parse --verify --quiet "refs/tags/${RESERVATION}" >/dev/null; then
+            echo "already=yes" >> "$GITHUB_OUTPUT"
+            echo "${RESERVATION} exists; nothing to upload"
+          else
+            echo "already=no" >> "$GITHUB_OUTPUT"
+            echo "${RESERVATION} does not exist; will upload"
+          fi
 
       - name: Upload to CurseForge
+        if: steps.reservation.outputs.already == 'no'
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
         run: |
           set -euo pipefail
-          if ! python3 .github/release/curseforge.py upload \
-              --zip "${DOWNLOAD_DIR}/${PACKAGE}" \
-              --changelog-txt "${DOWNLOAD_DIR}/changelog.txt" \
-              --release-tag "${RELEASE_TAG}" \
-              --release-type "${RELEASE_TYPE}"; then
-            echo "::error::The upload did not complete. ${RESERVATION} still reserves ${RELEASE_TAG}."
-            echo "Check CurseForge and this run first. Only if no file was accepted:"
-            echo "  git push origin --delete ${RESERVATION}"
-            exit 1
-          fi
+          python3 .github/release/curseforge.py upload \
+            --zip "${{ steps.package.outputs.zip }}" \
+            --addon "${{ steps.package.outputs.addon }}" \
+            --project "${{ steps.package.outputs.project }}" \
+            --dependency-slug "${{ steps.package.outputs.dependency }}" \
+            --changelog-txt "${{ steps.package.outputs.changelog }}" \
+            --release-type "${{ steps.channel.outputs.channel }}" \
+            --release-tag "${RELEASE_TAG}"
+
+      - name: Reserve the tag so a second run does not upload twice
+        if: steps.reservation.outputs.already == 'no'
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          RESERVATION: ${{ steps.package.outputs.reservation }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "${RESERVATION}"
+          git push origin "${RESERVATION}"
