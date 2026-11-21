@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     name: check and build the package
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pandaquest-addon]
     timeout-minutes: 20
     outputs:
       version: ${{ steps.build.outputs.version }}
@@ -93,12 +93,10 @@ jobs:
           echo "--- component releases directory ---"
           ls -la .components/releases || true
 
-      - name: Install lupa and luacheck
+      - name: Verify the provisioned Lua toolchain
         run: |
           set -euo pipefail
-          python3 -m pip install --user lupa
-          sudo apt-get update
-          sudo apt-get install -y lua-check
+          python3 -c 'from lupa.lua51 import LuaRuntime; print("lupa ready")'
 
       # check.py valvoo PandaQuest/-hakemistoa ja sitä, että publish-curseforge.yml
       # on olemassa. Jos se epäonnistuu, build pysähtyy tähän.
@@ -195,7 +193,7 @@ jobs:
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pandaquest-addon]
     timeout-minutes: 15
     permissions:
       contents: write
