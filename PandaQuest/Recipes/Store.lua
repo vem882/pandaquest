@@ -121,9 +121,10 @@ function M.CurrentCharacter()
         elseif type(surname) == "string" and surname ~= "" then name = name .. " " .. surname end
     end
     local realm = GetNormalizedRealmName and GetNormalizedRealmName()
-    if not realm or realm == "" then
-        realm = ((GetRealmName and GetRealmName()) or "Unknown"):gsub("[%s%-]", "")
-    end
+    if type(realm) ~= "string" or realm == "" then realm = (GetRealmName and GetRealmName()) or "" end
+    if type(realm) ~= "string" then realm = "" end
+    realm = realm:gsub("[%s%-]", "")
+    if realm == "" then realm = "Unknown" end
     local faction = (UnitFactionGroup and UnitFactionGroup("player")) or "Neutral"
     return name, realm, faction
 end

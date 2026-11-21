@@ -193,10 +193,12 @@ local function characterKey()
     end
     local realm
     if GetNormalizedRealmName then realm = GetNormalizedRealmName() end
-    if not realm or realm == "" then
-        realm = (GetRealmName and GetRealmName()) or "Unknown"
-        realm = realm:gsub("[%s%-]", "")
-    end
+    if type(realm) ~= "string" or realm == "" then realm = (GetRealmName and GetRealmName()) or "" end
+    if type(realm) ~= "string" then realm = "" end
+    realm = realm:gsub("[%s%-]", "")
+    -- WoW Forever can report no realm during early player initialisation. Never write an invalid
+    -- empty realm: one invalid character row makes the hub reject the whole sync payload.
+    if realm == "" then realm = "Unknown" end
     return name .. "-" .. realm, name, realm
 end
 

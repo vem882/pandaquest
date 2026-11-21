@@ -774,10 +774,10 @@ function M.CharacterKey()
     local name = (UnitName and UnitName("player")) or "Unknown"
     local realm
     if GetNormalizedRealmName then realm = GetNormalizedRealmName() end
-    if not realm or realm == "" then
-        realm = (GetRealmName and GetRealmName()) or "Unknown"
-        realm = realm:gsub("[%s%-]", "")
-    end
+    if type(realm) ~= "string" or realm == "" then realm = (GetRealmName and GetRealmName()) or "" end
+    if type(realm) ~= "string" then realm = "" end
+    realm = realm:gsub("[%s%-]", "")
+    if realm == "" then realm = "Unknown" end
     return name .. "-" .. realm
 end
 
