@@ -476,6 +476,11 @@ function PQ:RegisterAuctionExtension(version, extension)
         Log = Log,
         GetLocale = selectedLocale,
         FormatMoneyCoins = Util.FormatMoneyCoins,
+        Window = {
+            RegisterTab = function(key, name, build)
+                return ns.MainWindow and ns.MainWindow.RegisterTab and ns.MainWindow.RegisterTab(key, name, build)
+            end,
+        },
         IsTelemetryWanted = function() return ns.IsModuleWanted("Telemetry") end,
         Telemetry = {
             GetCharacterIdentity = ns.Telemetry.GetCharacterIdentity,
