@@ -33,7 +33,7 @@ concurrency:
 jobs:
   build:
     name: check and build the package
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pandaquest-addon]
     timeout-minutes: 15
     outputs:
       version: ${{ steps.build.outputs.version }}
@@ -158,7 +158,7 @@ jobs:
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pandaquest-addon]
     timeout-minutes: 15
     permissions:
       # The one job that needs it, and the only reason it exists: creating a release and

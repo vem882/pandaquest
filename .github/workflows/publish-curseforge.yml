@@ -54,7 +54,7 @@ concurrency:
 jobs:
   publish:
     name: Upload
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pandaquest-addon]
     timeout-minutes: 10
     env:
       GH_TOKEN: ${{ github.token }}
