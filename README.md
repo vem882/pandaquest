@@ -1,5 +1,9 @@
 # PandaQuest
 
+> A quest helper, navigator and optional community-data client for supported World of Warcraft Classic games.
+
+**Related projects:** [PandaQuest DB](https://github.com/vem882/pqDB) · [PandaQuest Auction](https://github.com/vem882/pqAuction) · [PandaBase](https://pd.zroot.it)
+
 **Quest helper and navigator for World of Warcraft: Mists of Pandaria Classic (5.5.4), Classic Era (1.15),
 The Burning Crusade Classic Anniversary (2.5) and WoW Forever (1.60).**
 
@@ -105,8 +109,11 @@ clients is still in progress; do not treat detection as a claim of full support.
 PandaQuest is free software under the **GNU General Public License v3** ([`LICENSE`](LICENSE)),
 © 2026 vem882.
 
-- **Questie:** the quest, NPC, object and item database is built from Questie's Mists of Pandaria
-  data (GPLv3).
+- **Questie:** PandaQuest thanks the Questie community. Quest, NPC, object and item data begins
+  with [Questie](https://github.com/Questie/Questie); data structure and community research are
+  informed by [QuestieDB](https://github.com/Questie/QuestieDB) and
+  [QuestieTrace](https://github.com/Questie/QuestieTrace). PandaQuest transforms compatible data
+  into its own addon and portal formats and does not copy Questie code.
 - **Libraries:** Ace3, LibStub, CallbackHandler, LibDataBroker, **LibDBIcon** and **HereBeDragons**,
   embedded unchanged under their own licences ([`PandaQuest/Libs/README.md`](PandaQuest/Libs/README.md)).
 - **InFlight** (MIT): PandaQuest uses InFlight's approach to noticing a flight on this client; no
@@ -126,6 +133,10 @@ downloadable source, so it is measured from play. The site at <https://pd.zroot.
 data is collected and corrected, and every two hours the site's data sync brings it into this
 repository as a new release (see "Data from the portal"). Report bugs at
 <https://github.com/vem882/pandaquest/issues> or on the site's bugtracker.
+
+Community observations are opt-in. They improve coordinates, objective coverage, gathering and
+respawn timings, flight times and auction-price coverage after validation; they never replace a
+source record blindly.
 
 ## Build and release
 
