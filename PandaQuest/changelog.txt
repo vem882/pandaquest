@@ -1,3 +1,5 @@
+- Let optional extensions add pages to the PandaQuest window.
+
 - Show optional possible ore, herb and fishing locations from the game's gathering data.
 - Complete the Finnish translations for auction scanning and privacy settings.
 - Track when supported owned auctions are first reported sold by the game.
