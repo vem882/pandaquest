@@ -1,0 +1,29 @@
+name: Merge tested Dependabot updates
+
+on:
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge the exact tested Dependabot pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          REPOSITORY: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          pr_number="$(gh pr list --repo "$REPOSITORY" --head "$BRANCH" --state open --json number,headRefOid,author | jq -r --arg sha "$HEAD_SHA" '.[] | select(.headRefOid == $sha and .author.login == "app/dependabot") | .number')"
+          test -n "$pr_number"
+          gh pr merge "$pr_number" --repo "$REPOSITORY" --squash --delete-branch --match-head-commit "$HEAD_SHA"
