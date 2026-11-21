@@ -17,7 +17,7 @@ jobs:
   build:
     name: check and build the package
     runs-on: [self-hosted, pandaquest-addon]
-    timeout-minutes: 20
+    timeout-minutes: 15
     outputs:
       version: ${{ steps.build.outputs.version }}
       package: ${{ steps.build.outputs.package }}

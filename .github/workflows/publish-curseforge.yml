@@ -41,11 +41,15 @@ env:
 
 jobs:
   publish:
+    name: Upload
     runs-on: [self-hosted, pandaquest-addon]
-    timeout-minutes: 15
-    concurrency:
-      group: curseforge-${{ inputs.component }}-${{ inputs.release_tag }}
-      cancel-in-progress: false
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      RELEASE_TYPE: ${{ inputs.release_type }}
+      DOWNLOAD_DIR: upload
     steps:
       - name: Check out with full history and tags
         uses: actions/checkout@v4.2.2
