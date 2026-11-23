@@ -1,4 +1,4 @@
-- Tooltips - Add a Show vendors on map button for item vendor sources.
+- Tooltips - Use Shift+M to show an item's known vendors on the map while it is hovered.
 
 - Fix Sync when WoW Forever has not supplied a realm name yet.
 

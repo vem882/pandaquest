@@ -26,7 +26,7 @@ local COLOR_AVAILABLE = { 0.4, 0.8, 1 }
 local hooked = false
 local cache = {}                        -- "npc:57232" -> { {text=, r=, g=, b=}, ... }
 local cacheCount = 0
-local vendorButton, vendorItemID
+local vendorHotkey, vendorItemID
 local vendorPins = {}
 local VENDOR_PIN_REF = "PandaQuestItemVendors"
 local MAX_VENDOR_PINS = 120
@@ -312,20 +312,34 @@ function M.ShowVendorsOnMap(itemID)
     return true
 end
 
-local function showVendorButton(tooltip, itemID)
+local function clearVendorShortcut()
+    if vendorHotkey and ClearOverrideBindings then
+        ClearOverrideBindings(vendorHotkey)
+    end
+end
+
+-- Tooltips vanish before a button placed below them can be reached with the
+-- mouse.  Keep the action on the tooltip itself instead: while the item is
+-- hovered, Shift+M opens the map at its known vendor locations.
+local function showVendorShortcut(tooltip, itemID)
     local DB = ns.DB
     local vendors = DB and DB.GetItemSources and DB.GetItemSources(itemID).vendors
     if type(vendors) ~= "table" or #vendors == 0 then
-        if vendorButton then vendorButton:Hide() end
+        clearVendorShortcut()
         return
     end
-    if not vendorButton then
-        vendorButton = CreateFrame("Button", "PandaQuestVendorMapButton", UIParent, "UIPanelButtonTemplate")
-        vendorButton:SetSize(160, 22); vendorButton:SetText(L["Show vendors on map"])
-        vendorButton:SetScript("OnClick", function() if vendorItemID then M.ShowVendorsOnMap(vendorItemID) end end)
+    if not vendorHotkey then
+        vendorHotkey = CreateFrame("Button", "PandaQuestVendorMapHotkey", UIParent)
+        vendorHotkey:SetScript("OnClick", function()
+            if vendorItemID then M.ShowVendorsOnMap(vendorItemID) end
+        end)
     end
     vendorItemID = itemID
-    vendorButton:ClearAllPoints(); vendorButton:SetPoint("TOPLEFT", tooltip, "BOTTOMLEFT", 0, -2); vendorButton:Show()
+    if not (InCombatLockdown and InCombatLockdown()) and SetOverrideBindingClick then
+        SetOverrideBindingClick(vendorHotkey, true, "SHIFT-M", "PandaQuestVendorMapHotkey")
+    end
+    tooltip:AddLine("Press Shift+M to show vendors on map", COLOR_SOURCE[1], COLOR_SOURCE[2], COLOR_SOURCE[3], true)
+    if tooltip.Show then tooltip:Show() end
 end
 
 --- Tooltips.BuildItemLines(itemID) -> lines: quests the item starts, objectives it fills, and where
@@ -364,7 +378,7 @@ end
 --- Handles OnTooltipSetUnit for any tooltip frame.
 function M.OnTooltipSetUnit(tooltip)
     if not enabled() or not tooltip or not tooltip.GetUnit then return end
-    if vendorButton then vendorButton:Hide() end
+    clearVendorShortcut()
     local _, unit = tooltip:GetUnit()
     if not unit then return end
     -- A secret value (Forever, restricted) cannot be parsed: no line rather than an error.
@@ -401,11 +415,17 @@ end
 
 --- Handles OnTooltipSetItem for GameTooltip and ItemRefTooltip.
 function M.OnTooltipSetItem(tooltip)
-    if not enabled() then return end
+    if not enabled() then
+        clearVendorShortcut()
+        return
+    end
     local itemID = itemIdFromTooltip(tooltip)
-    if not itemID then return end
+    if not itemID then
+        clearVendorShortcut()
+        return
+    end
     appendLines(tooltip, M.BuildItemLines(itemID))
-    showVendorButton(tooltip, itemID)
+    showVendorShortcut(tooltip, itemID)
 end
 
 local function hookTooltip(tooltip)
@@ -413,7 +433,7 @@ local function hookTooltip(tooltip)
     -- The script hooks in the classic clients, TooltipDataProcessor in Forever (Core/Compat.lua).
     ns.Compat.HookTooltip(tooltip, "Unit", M.OnTooltipSetUnit)
     ns.Compat.HookTooltip(tooltip, "Item", M.OnTooltipSetItem)
-    tooltip:HookScript("OnHide", function() if vendorButton then vendorButton:Hide() end end)
+    tooltip:HookScript("OnHide", clearVendorShortcut)
 end
 
 ---------------------------------------------------------------------------
