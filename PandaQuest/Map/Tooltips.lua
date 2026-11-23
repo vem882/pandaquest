@@ -26,6 +26,10 @@ local COLOR_AVAILABLE = { 0.4, 0.8, 1 }
 local hooked = false
 local cache = {}                        -- "npc:57232" -> { {text=, r=, g=, b=}, ... }
 local cacheCount = 0
+local vendorButton, vendorItemID
+local vendorPins = {}
+local VENDOR_PIN_REF = "PandaQuestItemVendors"
+local MAX_VENDOR_PINS = 120
 
 local function profile()
     local PQ = ns.PQ
@@ -251,6 +255,79 @@ local function addSources(lines, itemID)
     sourceLine(lines, L["Sold by: %s"], sources.vendors, DB.GetNpcName, DB.IsNpcHidden)
 end
 
+-- A tooltip line cannot receive clicks in the WoW UI.  The small action button
+-- beneath an item tooltip is therefore the honest clickable equivalent of its
+-- "Sold by" line.  It uses the same database coordinates as PandaQuest's map
+-- pins and never invents a vendor location.
+local function hbdPins()
+    return LibStub and LibStub("HereBeDragons-Pins-2.0", true) or nil
+end
+
+local function clearVendorPins()
+    local lib = hbdPins()
+    for pin in pairs(vendorPins) do
+        if lib then lib:RemoveWorldMapIcon(VENDOR_PIN_REF, pin) end
+        pin:Hide()
+        vendorPins[pin] = nil
+    end
+end
+
+function M.ShowVendorsOnMap(itemID)
+    local DB, Zones = ns.DB, ns.Zones
+    local lib, frame = hbdPins(), _G and _G.WorldMapFrame
+    if not (DB and Zones and lib and frame and DB.GetItemSources and DB.GetNpc) then return false end
+    clearVendorPins()
+    local sources, firstMap, count = DB.GetItemSources(itemID), nil, 0
+    for _, npcID in ipairs(sources and sources.vendors or {}) do
+        local npc = DB.GetNpc(npcID)
+        for areaID, points in pairs(npc and npc.spawns or {}) do
+            local uiMapID = Zones.GetUiMapIdByAreaId and Zones.GetUiMapIdByAreaId(areaID) or nil
+            if uiMapID and type(points) == "table" then
+                for _, point in ipairs(points) do
+                    if count >= MAX_VENDOR_PINS then break end
+                    local x, y = point[1], point[2]
+                    if type(x) == "number" and type(y) == "number" then
+                        local pin = CreateFrame("Button", nil, UIParent)
+                        pin:SetSize(18, 18); pin:SetFrameStrata("HIGH")
+                        pin.icon = pin:CreateTexture(nil, "OVERLAY"); pin.icon:SetAllPoints(pin)
+                        pin.icon:SetTexture("Interface\\MINIMAP\\TRACKING\\Auctioneer")
+                        pin.vendorName, pin.itemName = npc.name or ("Vendor #" .. npcID), DB.GetItemName(itemID) or ("Item #" .. itemID)
+                        pin:SetScript("OnEnter", function(self)
+                            GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                            GameTooltip:SetText(self.vendorName, 1, 0.82, 0)
+                            GameTooltip:AddLine("Sells " .. self.itemName, 1, 1, 1, true); GameTooltip:Show()
+                        end)
+                        pin:SetScript("OnLeave", function() GameTooltip:Hide() end)
+                        if lib:AddWorldMapIconMap(VENDOR_PIN_REF, pin, uiMapID, x / 100, y / 100) then
+                            vendorPins[pin] = true; count = count + 1; firstMap = firstMap or uiMapID
+                        else pin:Hide() end
+                    end
+                end
+            end
+        end
+    end
+    if not firstMap then return false end
+    if frame.SetMapID then pcall(frame.SetMapID, frame, firstMap) end
+    if not frame:IsShown() then frame:Show() end
+    return true
+end
+
+local function showVendorButton(tooltip, itemID)
+    local DB = ns.DB
+    local vendors = DB and DB.GetItemSources and DB.GetItemSources(itemID).vendors
+    if type(vendors) ~= "table" or #vendors == 0 then
+        if vendorButton then vendorButton:Hide() end
+        return
+    end
+    if not vendorButton then
+        vendorButton = CreateFrame("Button", "PandaQuestVendorMapButton", UIParent, "UIPanelButtonTemplate")
+        vendorButton:SetSize(160, 22); vendorButton:SetText(L["Show vendors on map"])
+        vendorButton:SetScript("OnClick", function() if vendorItemID then M.ShowVendorsOnMap(vendorItemID) end end)
+    end
+    vendorItemID = itemID
+    vendorButton:ClearAllPoints(); vendorButton:SetPoint("TOPLEFT", tooltip, "BOTTOMLEFT", 0, -2); vendorButton:Show()
+end
+
 --- Tooltips.BuildItemLines(itemID) -> lines: quests the item starts, objectives it fills, and where
 --- it comes from.
 function M.BuildItemLines(itemID)
@@ -287,6 +364,7 @@ end
 --- Handles OnTooltipSetUnit for any tooltip frame.
 function M.OnTooltipSetUnit(tooltip)
     if not enabled() or not tooltip or not tooltip.GetUnit then return end
+    if vendorButton then vendorButton:Hide() end
     local _, unit = tooltip:GetUnit()
     if not unit then return end
     -- A secret value (Forever, restricted) cannot be parsed: no line rather than an error.
@@ -327,6 +405,7 @@ function M.OnTooltipSetItem(tooltip)
     local itemID = itemIdFromTooltip(tooltip)
     if not itemID then return end
     appendLines(tooltip, M.BuildItemLines(itemID))
+    showVendorButton(tooltip, itemID)
 end
 
 local function hookTooltip(tooltip)
@@ -334,6 +413,7 @@ local function hookTooltip(tooltip)
     -- The script hooks in the classic clients, TooltipDataProcessor in Forever (Core/Compat.lua).
     ns.Compat.HookTooltip(tooltip, "Unit", M.OnTooltipSetUnit)
     ns.Compat.HookTooltip(tooltip, "Item", M.OnTooltipSetItem)
+    tooltip:HookScript("OnHide", function() if vendorButton then vendorButton:Hide() end end)
 end
 
 ---------------------------------------------------------------------------
