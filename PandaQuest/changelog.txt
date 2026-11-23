@@ -1,3 +1,5 @@
+- Tooltips - Add a Show vendors on map button for item vendor sources.
+
 - Fix Sync when WoW Forever has not supplied a realm name yet.
 
 - Let optional extensions add pages to the PandaQuest window.
